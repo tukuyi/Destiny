@@ -1,0 +1,52 @@
+add_namespace = hnn
+
+country_event = {#测试事件
+	id = hnn.100000
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.100000" }
+	title = hnn.100000.t 
+	desc = hnn.100000.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = hnn.100000.a
+		HNN_Dong_Bi_Wu = {
+			set_nationality = HNN
+		}
+		promote_character = {
+			character = HNN_Dong_Bi_Wu
+			ideology = liberalized_syndicalism_subtype
+		}
+		set_politics = {
+			ruling_party = syndicalist
+		}
+		# set_power_balance = {
+		# 	id = SHX_power_balance
+		# 	left_side = SHX_yan_winning_side
+		# 	right_side = SHX_feng_winning_side
+		# 	set_value = 0.00
+		# }
+		# set_variable = {
+		# 	SHX_revolution_line = 0
+		# }
+		# set_country_flag = SHX_yan_victory_over_gmj
+
+
+		# set_politics = {
+		# 	ruling_party = authoritarian_democrat
+		# }
+		# create_country_leader = {
+		# 	name = "严家淦 "
+		# 	desc = "POLITICS_Yan_Jia_Gan_DESC"
+		# 	picture = "gfx/leaders/GXC/Portrait_GXC_Yan_Jia_Gan.png"
+		# 	expire = "1.1.1"
+		# 	ideology = autdem_technocratic_tridemism_subtype
+		# }
+		# set_party_name = {
+		# 	ideology = authoritarian_democrat
+		# 	name = GXC_authoritarian_democrat_populist_YJG
+		# 	long_name = GXC_authoritarian_democrat_populist_YJG_long
+		# }
+	}
+}

@@ -1,0 +1,96 @@
+focus_tree = {
+	id = GXC_MC
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = CSA
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 1000 y = 0 }
+
+	focus = {
+		id = GXC_ren_ren_you_ji_chi
+		icon = GFX_goal_GXC_ren_ren_you_ji_chi
+		cost = 2.00
+		x = 0
+		y = 0
+
+		available = {
+ 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_ren_ren_you_ji_chi"
+			
+		}
+	}
+
+	focus = {
+		id = GXC_huan_sheng_you_xiao_yu
+		icon = GFX_goal_GXC_huan_sheng_you_xiao_yu
+		relative_position_id = GXC_ren_ren_you_ji_chi
+		cost = 2.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = GXC_ren_ren_you_ji_chi
+		}
+		available = {
+ 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_huan_sheng_you_xiao_yu"
+			
+		}
+	}
+
+	focus = {
+		id = GXC_zha_ji_gong_she
+		icon = GFX_goal_GXC_zha_ji_gong_she
+		relative_position_id = GXC_ren_ren_you_ji_chi
+		cost = 2.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = GXC_ren_ren_you_ji_chi
+		}
+		available = {
+ 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_zha_ji_gong_she"
+			
+		}
+	}
+
+	focus = {
+		id = GXC_ji_de_ke_le
+		icon = GFX_goal_GXC_ji_de_ke_le
+		relative_position_id = GXC_ren_ren_you_ji_chi
+		cost = 2.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = GXC_zha_ji_gong_she
+		}
+		prerequisite = {
+			focus = GXC_huan_sheng_you_xiao_yu
+		}
+		available = {
+ 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_ji_de_ke_le"
+			
+		}
+	}
+}

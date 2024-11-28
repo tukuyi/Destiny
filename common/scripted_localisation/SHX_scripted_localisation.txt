@@ -1,0 +1,77 @@
+defined_text = {
+	name = Getrevolutionline
+	text = {
+		trigger = {
+			check_variable = {
+				var = SHX_revolution_line
+				value = 20
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "SHXsmall"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SHX_revolution_line
+				value = 40
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "SHXlittle"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SHX_revolution_line
+				value = 60
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SHXmore"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SHX_revolution_line
+				value = 80
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SHXhuge"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SHX_revolution_line
+				value = 100
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SHXover"
+	}
+}
+defined_text = {
+	name = SHX_bei_fang_huang_pu_loc
+	text = {
+		trigger = {
+			has_country_leader = { name = "冯玉祥" ruling_only = yes }
+		}
+		localization_key = "SHX_bei_fang_huang_pu_feng"
+	}
+	text = {
+		localization_key = "SHX_bei_fang_huang_pu_yan"
+	}
+}
+defined_text = {
+	name = SHX_bei_fang_huang_pu_desc_loc
+	text = {
+		trigger = {
+			has_country_leader = { name = "冯玉祥" ruling_only = yes }
+		}
+		localization_key = "SHX_bei_fang_huang_pu_feng_desc"
+	}
+	text = {
+		localization_key = "SHX_bei_fang_huang_pu_yan_desc"
+	}
+}

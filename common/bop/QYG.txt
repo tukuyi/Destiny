@@ -1,0 +1,133 @@
+QYG_power_balance = {
+	initial_value = 0.20
+	left_side = QYG_revolution_winning_side
+	right_side = QYG_army_winning_side
+	decision_category = QYG_balance_of_power_category
+
+	### 革命领衔
+	side = {
+		id = QYG_revolution_winning_side
+		icon = GFX_idea_WCC_civilian_relocation
+
+		range = {
+			id = QYG_revolution_tilt
+			min = -0.30
+			max = 0.00
+			modifier = {
+				max_dig_in = 2
+				army_org_regain = 0.02
+				army_org_factor = 0.02
+				army_speed_factor = 0.02
+				army_morale_factor = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+
+		range = {
+			id = QYG_revolution_ascendant
+			min = -0.80
+			max = -0.30
+			modifier = {
+				max_dig_in = 5
+				army_org_regain = 0.05
+				army_org_factor = 0.05
+				army_speed_factor = 0.05
+				army_morale_factor = 0.05
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = QYG_revolution_dominant
+			min = -1.00
+			max = -0.80
+			modifier = {
+				max_dig_in = 10
+				army_org_regain = 0.10
+				army_org_factor = 0.10
+				army_speed_factor = 0.10
+				army_morale_factor = 0.10
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	### 军事至上
+	side = {
+		id = QYG_army_winning_side
+		icon = GFX_idea_WCC_rollback_strategy
+
+		range = {
+			id = QYG_army_tilt
+			min = 0.00
+			max = 0.30
+			modifier = {
+				command_power_gain = 0.03
+				experience_loss_factor = -0.02
+				army_armor_attack_factor = 0.02
+				experience_gain_army_factor = 0.02
+				army_artillery_attack_factor = 0.02
+				authoritarian_democrat_drift = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = QYG_army_ascendant
+			min = 0.30
+			max = 0.80
+			modifier = {
+				command_power_gain = 0.05
+				experience_loss_factor = -0.05
+				army_armor_attack_factor = 0.05
+				experience_gain_army_factor = 0.05
+				army_artillery_attack_factor = 0.05
+				authoritarian_democrat_drift = 0.04
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = QYG_army_dominant
+			min = 0.80
+			max = 1.00
+			modifier = {
+				totalist_drift = 0.02
+				command_power_gain = 0.10
+				experience_loss_factor = -0.10
+				army_armor_attack_factor = 0.08
+				experience_gain_army_factor = 0.10
+				army_artillery_attack_factor = 0.08
+				authoritarian_democrat_drift = 0.05
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+}

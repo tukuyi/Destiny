@@ -1,0 +1,582 @@
+add_namespace = hnnsuper
+
+country_event = {#董必武统一
+	id = hnnsuper.1
+	title = hnnsuper.1.t
+	desc = hnnsuper.1.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = HNN
+			}
+			#南京
+			613 = {
+				is_owned_by = HNN
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { name = "董必武" ruling_only = yes }
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.1.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "diongbiwu"
+		}
+	}
+}
+
+country_event = {#彭德怀统一
+	id = hnnsuper.2
+	title = hnnsuper.2.t
+	desc = hnnsuper.2.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = HNN
+			}
+			#南京
+			613 = {
+				is_owned_by = HNN
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { name = "彭德怀" ruling_only = yes }
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.2.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_PDF
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "pengdehuai"
+		}
+	}
+}
+
+country_event = {#中社部政变
+	id = hnnsuper.3
+	title = hnnsuper.3.t
+	desc = hnnsuper.3.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			has_completed_focus = HNN_su_fan_zhi_ye
+			has_country_flag = HNN_yao_qian
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.3.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_ZSB
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "zhongshebu"
+		}
+	}
+}
+
+country_event = {#三头同盟政变
+	id = hnnsuper.4
+	title = hnnsuper.4.t
+	desc = hnnsuper.4.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.4.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_ST
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "santoutongmeng"
+		}
+	}
+}
+
+country_event = {#毛泽东政变
+	id = hnnsuper.5
+	title = hnnsuper.5.t
+	desc = hnnsuper.5.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			has_completed_focus = HNN_mao_zhe_dong_zhu_xi
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.5.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_MZD
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "maozedong"
+		}
+	}
+}
+
+country_event = {#佛教统一
+	id = hnnsuper.6
+	title = hnnsuper.6.t
+	desc = hnnsuper.6.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = HNN
+			}
+			#南京
+			613 = {
+				is_owned_by = HNN
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { name = "正明法师" ruling_only = yes }
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.6.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_FJ
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "fojiao"
+		}
+	}
+}
+
+country_event = {#大宋统一
+	id = hnnsuper.7
+	title = hnnsuper.7.t
+	desc = hnnsuper.7.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		HNN ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = HNN
+			}
+			#南京
+			613 = {
+				is_owned_by = HNN
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { name = "光武帝" ruling_only = yes }
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.7.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_DS
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "dasong"
+		}
+	}
+}
+
+country_event = {#彭湃统一
+	id = hnnsuper.8
+	title = hnnsuper.8.t
+	desc = hnnsuper.8.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		GXC ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = GXC
+			}
+			#南京
+			613 = {
+				is_owned_by = GXC
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { name = "彭湃" ruling_only = yes }
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.8.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = GXC_reunification_PB
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "pengbai"
+		}
+	}
+}
+
+country_event = {#李宗仁统一
+	id = hnnsuper.9
+	title = hnnsuper.9.t
+	desc = hnnsuper.9.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		GXC ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = GXC
+			}
+			#南京
+			613 = {
+				is_owned_by = GXC
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { 
+				name = "李宗仁" 
+				ruling_only = yes 
+			}
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.9.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = GXC_reunification_LZR
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "lizongren"
+		}
+	}
+}
+
+country_event = {#登月
+	id = hnnsuper.10
+	title = hnnsuper.10.t
+	desc = hnnsuper.10.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		has_global_flag = china_deng_yue
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.10.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HNN_reunification_QXS
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "dengyue"
+		}
+	}
+}
+
+country_event = {#陈廉伯统一
+	id = hnnsuper.11
+	title = hnnsuper.11.t
+	desc = hnnsuper.11.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		GXC ={
+			#广州
+			592 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			#北京
+			608 = {
+				is_owned_by = GXC
+			}
+			#南京
+			613 = {
+				is_owned_by = GXC
+			}
+			#沈阳
+			716 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			has_country_leader = { 
+				name = "陈廉伯" 
+				ruling_only = yes 
+			}
+		}
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.11.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = GXC_reunification_CLB
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "ancap"
+		}
+	}
+}
+
+country_event = {#辛亥
+	id = hnnsuper.12
+	title = hnnsuper.12.t
+	desc = hnnsuper.12.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		has_global_flag = er_ci_xin_hai_ge_ming
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.12.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = QIE_reunification_XH
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "xinhai"
+		}
+	}
+}
+
+country_event = {#俄共
+	id = hnnsuper.13
+	title = hnnsuper.13.t
+	desc = hnnsuper.13.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		has_global_flag = liu_wang_zhe_guo_xiang
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.13.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHC_reunification_EG
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "sulian"
+		}
+	}
+}

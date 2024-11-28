@@ -1,0 +1,2091 @@
+add_namespace = QYG.earlygame
+add_namespace = QYG.middlegame
+add_namespace = QYG.zujiewwenti
+add_namespace = QYG.news
+
+#一阶段
+country_event = {#开局事件
+	id = QYG.earlygame.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.1"}
+	title = QYG.earlygame.1.t
+	desc = QYG.earlygame.1.d
+	picture = GFX_report_event_QYG_begin
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.1.a
+
+	}
+}
+
+country_event = {#不眠之夜
+	id = QYG.earlygame.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.2"}
+	title = QYG.earlygame.2.t
+	desc = QYG.earlygame.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.2.a
+		add_political_power = 5
+	}
+}
+
+country_event = {#革命娘子军
+	id = QYG.earlygame.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.3"}
+	title = QYG.earlygame.3.t
+	desc = QYG.earlygame.3.d
+	picture = GFX_report_event_HNN_nv_zi_jun
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.3.a
+		division_template = { #Guangxi Army
+			name = "革命娘子军"
+			division_names_group = "QYG_GAR_01"
+			regiments = {
+				irregular_infantry = { x = 0 y = 0 }
+				irregular_infantry = { x = 0 y = 1 }
+				irregular_infantry = { x = 0 y = 2 }
+			}
+			support = {
+					
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 591 }
+			limit = { is_in_home_area = yes }
+			create_unit = {
+				division = "division_template = \"革命娘子军\" start_experience_factor = 0.5"
+				owner = PREV
+				count = 2
+			}
+		}
+	}
+}
+
+country_event = {#八省内乱
+	id = QYG.earlygame.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.4"}
+	title = QYG.earlygame.4.t
+	desc = QYG.earlygame.4.d
+	picture = GFX_report_event_QYG_ba_sheng
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.4.a
+		add_war_support = 0.02
+	}
+}
+
+country_event = {#新生报到
+	id = QYG.earlygame.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.5"}
+	title = QYG.earlygame.5.t
+	desc = QYG.earlygame.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.5.a
+		army_experience = 10.0
+		hidden_effect = {
+			country_event = {
+				id = QYG.earlygame.24
+				days = 4
+			} 
+		}
+	}
+}
+
+country_event = {#新的一年
+	id = QYG.earlygame.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.6"}
+	title = QYG.earlygame.6.t
+	desc = QYG.earlygame.6.d
+	picture = GFX_report_event_QYG_xin_nian
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.6.a
+		add_political_power = 20
+	}
+}
+
+country_event = {#全苏维埃人民代表大会
+	id = QYG.earlygame.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.7"}
+	title = QYG.earlygame.7.t
+	desc = QYG.earlygame.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.7.a
+		add_political_power = 20
+	}
+}
+
+country_event = {#临时军事委员会会议
+	id = QYG.earlygame.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.8"}
+	title = QYG.earlygame.8.t
+	desc = QYG.earlygame.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.8.a
+		army_experience = 20.0
+	}
+}
+
+country_event = {#两广现状
+	id = QYG.earlygame.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.9"}
+	title = QYG.earlygame.9.t
+	desc = QYG.earlygame.9.d
+	picture = GFX_report_event_QYG_fang_fang
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.9.a
+		add_ideas = QYG_dui_Liang_guang_xin_xi
+		add_intel = {
+			target = GXC
+			civilian_intel = 10
+			army_intel = 10
+			navy_intel = 10
+			airforce_intel = 10
+		}
+	}
+}
+
+country_event = {#始料未及
+	id = QYG.earlygame.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.10"}
+	title = QYG.earlygame.10.t
+	desc = QYG.earlygame.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.10.a
+		army_experience = 10.0
+	}
+}
+
+country_event = {#打仗游戏
+	id = QYG.earlygame.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.11"}
+	title = QYG.earlygame.11.t
+	desc = QYG.earlygame.11.d
+	picture = GFX_report_event_QYG_child_game
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.11.a
+		add_war_support = 0.01
+	}
+}
+
+country_event = {#根据地的生命线
+	id = QYG.earlygame.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.12"}
+	title = QYG.earlygame.12.t
+	desc = QYG.earlygame.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.12.a
+		add_political_power = 70
+	}
+}
+
+country_event = {#根据地的生命线
+	id = QYG.earlygame.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.13"}
+	title = QYG.earlygame.13.t
+	desc = QYG.earlygame.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.13.a
+		add_political_power = 70
+	}
+}
+
+country_event = {#两广的新格局-陈铭枢
+	id = QYG.earlygame.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.14"}
+	title = QYG.earlygame.14.t
+	desc = QYG.earlygame.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = QYG.earlygame.14.a
+		ai_chance = {
+			base = 10
+		}
+		declare_war_on = {
+			target = GXC
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = QYG.earlygame.14.b
+		ai_chance = {
+			base = 30
+		}
+		GXC = {
+			effect_tooltip = {
+				annex_country = {
+					target = QYG
+					transfer_troops = yes
+				}
+			}
+			annex_country = {
+				target = QYG
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = {#两广的新格局-李宗仁
+	id = QYG.earlygame.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.15"}
+	title = QYG.earlygame.15.t
+	desc = QYG.earlygame.15.d
+	picture = GFX_report_event_QYG_event_15
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = QYG.earlygame.15.a
+		ai_chance = {
+			base = 10
+		}
+		declare_war_on = {
+			target = GXC
+			type = annex_everything
+		}
+	}
+
+	option = { 
+		name = QYG.earlygame.15.b
+		ai_chance = {
+			base = 10
+		}
+		GXC = {
+			effect_tooltip = {
+				annex_country = {
+					target = QYG
+					transfer_troops = yes
+				}
+			}
+			annex_country = {
+				target = QYG
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = {#时机已到！
+	id = QYG.earlygame.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.16"}
+	title = QYG.earlygame.16.t
+	desc = QYG.earlygame.16.d
+	picture = GFX_report_event_QYG_event_16
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.16.a
+		declare_war_on = {
+			target = var:592.owner
+			type = annex_everything
+		}
+		if = {
+			limit = { 
+				has_global_flag = GXC_bai_se_revolution_took_over
+			}
+			var:599.owner = {
+				diplomatic_relation = {
+					country = QYG
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+		}
+		else = {
+			declare_war_on = {
+				target = var:599.owner
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = QYG.earlygame.26
+				days = 15
+			} 
+		}
+	}
+}
+
+country_event = {#最后一次会议
+	id = QYG.earlygame.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.17"}
+	title = QYG.earlygame.17.t
+	desc = QYG.earlygame.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.17.a
+		set_cosmetic_tag = QYG_YGQ
+		show_unit_leaders_tooltip = GXC_ye_jianying
+		hidden_effect = {
+			GXC_ye_jianying = {
+				QYG_recruit_characters_effect = yes
+			}
+			country_event = {
+				id = QYG.middlegame.1
+				days = 3
+			} 
+			country_event = {
+				id = QYG.middlegame.11
+				days = 30
+			} 
+			news_event = {
+				id = QYG.news.1
+				hours = 4
+			} 
+			if = {
+				limit = { 
+					owns_state = 326
+				}
+				country_event = {
+					id = QYG.zujiewwenti.16
+					days = 2
+				} 
+			}
+			if = {
+				limit = { 
+					HNN = {
+						has_country_flag = HNN_gong_tuan_victory_flag
+					}
+				}
+				country_event = {
+					id = QYG.earlygame.18
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#湖南的党中央
+	id = QYG.earlygame.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.18"}
+	title = QYG.earlygame.18.t
+	desc = QYG.earlygame.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.18.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			HNN = {
+				country_event = {
+					id = QYG.earlygame.23
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#临时采访
+	id = QYG.earlygame.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.19"}
+	title = QYG.earlygame.19.t
+	desc = QYG.earlygame.19.d
+	picture = GFX_report_event_QYG_gong_ren
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.19.a
+		hidden_effect = {
+			country_event = {
+				id = QYG.earlygame.22
+			} 
+		}
+	}
+}
+
+country_event = {#解放广州！
+	id = QYG.earlygame.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.20"}
+	title = QYG.earlygame.20.t
+	desc = QYG.earlygame.20.d
+	picture = GFX_report_event_QYG_guang_zhou
+
+	trigger = {
+		tag = QYG
+		593 = {
+			is_controlled_by = QYG
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = QYG.earlygame.20.a
+		show_unit_leaders_tooltip = GXC_chen_mingshu
+		hidden_effect = {
+			GXC_chen_mingshu = {
+				QYG_recruit_characters_effect = yes
+			}
+			set_party_name = {
+				ideology = social_conservative
+				long_name = QYG_social_conservative_party_zg_long
+				name = QYG_social_conservative_party_zg
+			}
+			country_event = {
+				id = QYG.middlegame.15
+				days = 8
+			} 
+			country_event = {
+				id = QYG.middlegame.31
+				days = 15
+			} 
+		}
+	}
+}
+
+country_event = {#湖南的好消息
+	id = QYG.earlygame.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.21"}
+	title = QYG.earlygame.21.t
+	desc = QYG.earlygame.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.21.a
+		add_stability = 0.02
+		hidden_effect = {
+			if = {
+				limit = { 
+					QYG = {
+						has_completed_focus = QYG_di_yi_bu
+					}
+				}
+				QYG = {
+					country_event = {
+						id = QYG.earlygame.18
+						days = 1
+					} 
+				}
+			}	
+		}
+	}
+}
+
+country_event = {#临时采访
+	id = QYG.earlygame.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.22"}
+	title = QYG.earlygame.22.t
+	desc = QYG.earlygame.22.d
+	picture = GFX_report_event_QYG_gong_ren
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.22.a
+		add_stability = -0.05
+	}
+}
+
+country_event = {#欢迎新同志
+	id = QYG.earlygame.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.23"}
+	title = QYG.earlygame.23.t
+	desc = QYG.earlygame.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.23.a
+		add_stability = 0.02
+		hidden_effect = {
+			if = {
+				limit = { 
+					QYG = {
+						is_ai = no
+					}
+				}
+				QYG = {
+					country_event = {
+						id = QYG.earlygame.25
+						days = 1
+					} 
+				}
+			}
+			else = {
+				country_event = {
+					id = QYG.earlygame.25
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#吃得苦中苦
+	id = QYG.earlygame.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.24"}
+	title = QYG.earlygame.24.t
+	desc = QYG.earlygame.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.24.a
+		army_experience = 10.0
+	}
+}
+
+country_event = {#收拾行李
+	id = QYG.earlygame.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.25"}
+	title = QYG.earlygame.25.t
+	desc = QYG.earlygame.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.25.a
+		trigger = {
+			NOT = {
+				tag = QYG
+			}
+		}
+		HNN = {
+			annex_country = {
+				target = QYG
+				transfer_troops = yes
+			}
+		}
+		show_unit_leaders_tooltip = QYG_peng_pai
+		show_unit_leaders_tooltip = QYG_Feng_Bai_Ju
+		show_unit_leaders_tooltip = QYG_Ma_bai_shan
+		hidden_effect = {
+			QYG_Ma_bai_shan = {
+				HNN_recruit_characters_effect = yes
+			}
+			QYG_Feng_Bai_Ju = {
+				HNN_recruit_characters_effect = yes
+			}
+			QYG_peng_pai = {
+				HNN_recruit_characters_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = QYG.earlygame.25.b
+		trigger = {
+			tag = QYG
+		}
+		QYG = {
+			annex_country = {
+				target = HNN
+				transfer_troops = yes
+			}
+		}
+		new_hu_nan_leaves_hiding = yes
+	}
+
+	option = {
+		name = QYG.earlygame.25.c
+		trigger = {
+			tag = QYG
+		}
+		HNN = {
+			annex_country = {
+				target = QYG
+				transfer_troops = yes
+			}
+		}
+		HNN = {
+			change_tag_from = QYG
+		}
+		show_unit_leaders_tooltip = QYG_peng_pai
+		show_unit_leaders_tooltip = QYG_Feng_Bai_Ju
+		show_unit_leaders_tooltip = QYG_Ma_bai_shan
+		hidden_effect = {
+			QYG_Ma_bai_shan = {
+				HNN_recruit_characters_effect = yes
+			}
+			QYG_Feng_Bai_Ju = {
+				HNN_recruit_characters_effect = yes
+			}
+			QYG_peng_pai = {
+				HNN_recruit_characters_effect = yes
+			}
+		}
+	}
+}
+
+country_event = {#白吃的午餐
+	id = QYG.earlygame.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.26"}
+	title = QYG.earlygame.26.t
+	desc = QYG.earlygame.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.26.a
+		army_experience = 10.0
+	}
+}
+
+country_event = {#糟糕的一天
+	id = QYG.earlygame.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.27"}
+	title = QYG.earlygame.27.t
+	desc = QYG.earlygame.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.27.a
+		
+	}
+}
+
+country_event = {#义务劳动
+	id = QYG.earlygame.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.earlygame.28"}
+	title = QYG.earlygame.28.t
+	desc = QYG.earlygame.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.earlygame.28.a
+		add_war_support = 0.01
+	}
+}
+
+country_event = {#广西起义
+	id =  QYG.earlygame.29 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event  QYG.earlygame.29" }
+	title =  QYG.earlygame.29.t
+	desc =  QYG.earlygame.29.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name =  QYG.earlygame.29.a
+
+	}
+}
+
+country_event = {#广西起义失败
+	id =  QYG.earlygame.30 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event  QYG.earlygame.30" }
+	title =  QYG.earlygame.30.t
+	desc =  QYG.earlygame.30.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name =  QYG.earlygame.30.a
+		new_bai_se_leaves_hiding = yes
+	}
+}
+
+country_event = {#查封一贯道
+	id =  QYG.earlygame.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event  QYG.earlygame.31" }
+	title =  QYG.earlygame.31.t
+	desc =  QYG.earlygame.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name =  QYG.earlygame.31.a
+
+	}
+}
+#二阶段
+country_event = {#革命的新形势
+	id = QYG.middlegame.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.1"}
+	title = QYG.middlegame.1.t
+	desc = QYG.middlegame.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.1.a
+		add_stability = -0.02
+		add_political_power = 10
+		remove_ideas = QYG_tu_di_gai_ge
+		add_ideas = GXC_backwards_guangxi
+		hidden_effect = {
+			set_country_flag = QYG_second
+			set_country_flag = QYG_second_quan
+			QYG_social = yes
+			QYG_patry = yes
+			country_event = {
+				id = QYG.middlegame.8
+				days = 6
+			} 
+			country_event = {
+				id = QYG.middlegame.27
+				days = 30
+			} 
+			country_event = {
+				id = QYG.middlegame.26
+				days = 50
+			} 
+			country_event = {
+				id = QYG.middlegame.29
+				days = 100
+			} 
+		}
+	}
+}
+
+country_event = {#公审陈廉伯
+	id = QYG.middlegame.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.2"}
+	title = QYG.middlegame.2.t
+	desc = QYG.middlegame.2.d
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.3
+				days = 3
+			} 
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.2.a
+		set_country_flag = QYG_chen_lian_bo_dead
+		add_manpower = -1
+		add_political_power = 10
+	}
+
+	option = {
+		name = QYG.middlegame.2.b
+		add_political_power = 10
+	}
+}
+
+country_event = {#向前的命运
+	id = QYG.middlegame.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.3"}
+	title = QYG.middlegame.3.t
+	desc = QYG.middlegame.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.3.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#军队政治工作
+	id = QYG.middlegame.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.4"}
+	title = QYG.middlegame.4.t
+	desc = QYG.middlegame.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.4.a
+		QYG_bop_medium_increase_effect = yes
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.6
+				days = 8
+			} 
+		}
+	}
+
+	option = {
+		name = QYG.middlegame.4.b
+		QYG_bop_medium_decrease_effect = yes
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.7
+				days = 8
+			} 
+		}
+	}
+}
+
+country_event = {#新的开始
+	id = QYG.middlegame.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.5"}
+	title = QYG.middlegame.5.t
+	desc = QYG.middlegame.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.5.a
+		add_stability = 0.01
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.21
+				days = 7
+			} 
+		}
+	}
+}
+
+country_event = {#教育新兵
+	id = QYG.middlegame.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.6"}
+	title = QYG.middlegame.6.t
+	desc = QYG.middlegame.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.6.a
+		QYG_bop_low_decrease_effect_12 = yes
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.22
+				days = 10
+			} 
+		}
+	}
+}
+
+country_event = {#再返课堂
+	id = QYG.middlegame.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.7"}
+	title = QYG.middlegame.7.t
+	desc = QYG.middlegame.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.7.a
+		QYG_bop_low_increase_effect_12 = yes
+	}
+}
+
+country_event = {#处理秘密结社
+	id = QYG.middlegame.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.8"}
+	title = QYG.middlegame.8.t
+	desc = QYG.middlegame.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.8.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.02
+		}
+	}
+}
+
+country_event = {#新工作
+	id = QYG.middlegame.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.9"}
+	title = QYG.middlegame.9.t
+	desc = QYG.middlegame.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.9.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#贪污腐败第一案
+	id = QYG.middlegame.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.10"}
+	title = QYG.middlegame.10.t
+	desc = QYG.middlegame.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.10.a
+		add_manpower = -2
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#公祭烈士
+	id = QYG.middlegame.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.11"}
+	title = QYG.middlegame.11.t
+	desc = QYG.middlegame.11.d
+	picture = GFX_report_event_HNN_lie_shi
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.11.a
+		army_experience = 20.0
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.12
+				hours = 8
+			} 
+		}
+	}
+}
+
+country_event = {#1926年
+	id = QYG.middlegame.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.12"}
+	title = QYG.middlegame.12.t
+	desc = QYG.middlegame.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.12.a
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.30
+				days = 100
+			} 
+		}
+	}
+}
+
+country_event = {#新民主主义革命
+	id = QYG.middlegame.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.13"}
+	title = QYG.middlegame.13.t
+	desc = QYG.middlegame.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.13.a
+		add_stability = 0.02
+		set_country_leader_ideology = new_democracy_subtype
+	}
+}
+
+country_event = {#红军整编
+	id = QYG.middlegame.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.14"}
+	title = QYG.middlegame.14.t
+	desc = QYG.middlegame.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.middlegame.14.a
+		QYG_bop_large_decrease_effect = yes
+	}
+
+	option = {#no
+		name = QYG.middlegame.14.b
+		set_country_flag = QYG_gai_zu_already
+		QYG_bop_large_increase_effect = yes
+		create_country_leader = {
+			name = "中央政治委员会"
+			desc = "lin_shi_DESC"
+			picture = "gfx/leaders/HNN/Portrait_RUS_Workers.png"
+			expire = "1.1.1"
+			ideology = socdem_warlordism_subtype
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = QYG_social_democrat_party_midlle_long
+			name = QYG_social_democrat_party_midlle
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = QYG_totalist_party_midlle_long
+			name = QYG_totalist_party_midlle
+		}
+	}
+}
+
+country_event = {#广州大学更名
+	id = QYG.middlegame.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.15" }
+	title = QYG.middlegame.15.t
+	desc = QYG.middlegame.15.d
+	picture = GFX_report_event_GXC_da_xue
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#
+		name = QYG.middlegame.15.a
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.24
+				days = 5
+			} 
+		}
+	}
+}
+
+country_event = {#飞行表演
+	id = QYG.middlegame.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.16"}
+	title = QYG.middlegame.16.t
+	desc = QYG.middlegame.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.16.a
+		air_experience = 20.0
+	}
+}
+
+country_event = {#第一次中央政治委员会选举
+	id = QYG.middlegame.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.17"}
+	title = QYG.middlegame.17.t
+	desc = QYG.middlegame.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.17.a
+		set_party_name = {
+			ideology = social_democrat
+			long_name = QYG_social_democrat_party_midlle_election_long
+			name = QYG_social_democrat_party_midlle_election
+		}
+	}
+}
+
+country_event = {#第一次临时军事委员会选举
+	id = QYG.middlegame.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.18"}
+	title = QYG.middlegame.18.t
+	desc = QYG.middlegame.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.18.a
+		set_party_name = {
+			ideology = social_democrat
+			long_name = QYG_social_democrat_party_election_long
+			name = QYG_social_democrat_party_election
+		}
+	}
+}
+
+country_event = {#劳资纠纷
+	id = QYG.middlegame.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.19"}
+	title = QYG.middlegame.19.t
+	desc = QYG.middlegame.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.19.a
+		custom_effect_tooltip = QYG_entrepreneur_up_2_worker_down_2
+		add_to_variable = {
+			QYG_worker_vote = -2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+		QYG_social_effect = yes	
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.20
+				days = 30
+			} 
+		}
+	}
+}
+
+country_event = {#商人的选择
+	id = QYG.middlegame.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.20"}
+	title = QYG.middlegame.20.t
+	desc = QYG.middlegame.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.20.a
+		custom_effect_tooltip = QYG_entrepreneur_up_2
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+		QYG_social_effect = yes	
+		592 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {#一正一反
+	id = QYG.middlegame.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.21"}
+	title = QYG.middlegame.21.t
+	desc = QYG.middlegame.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.21.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#化学书里的奥妙
+	id = QYG.middlegame.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.22"}
+	title = QYG.middlegame.22.t
+	desc = QYG.middlegame.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.22.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#退一步，进两步
+	id = QYG.middlegame.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.23"}
+	title = QYG.middlegame.23.t
+	desc = QYG.middlegame.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.23.a
+		custom_effect_tooltip = QYG_Farmer_up_2
+		add_to_variable = {
+			QYG_Farmer_vote = 2
+		}
+		custom_effect_tooltip = QYG_patry_down
+		add_to_variable = {
+			QYG_bureaucracy = -2
+		}
+		QYG_patry_effect = yes
+	}
+}
+
+country_event = {#大学教育工作
+	id = QYG.middlegame.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.24"}
+	title = QYG.middlegame.24.t
+	desc = QYG.middlegame.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.24.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#工会一瞥
+	id = QYG.middlegame.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.25"}
+	title = QYG.middlegame.25.t
+	desc = QYG.middlegame.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.25.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#肃清帝国主义文化影响
+	id = QYG.middlegame.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.26"}
+	title = QYG.middlegame.26.t
+	desc = QYG.middlegame.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.26.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#组建居民委员会
+	id = QYG.middlegame.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.27"}
+	title = QYG.middlegame.27.t
+	desc = QYG.middlegame.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.27.a
+		add_stability = 0.01
+		add_manpower = -3
+		custom_effect_tooltip = QYG_Intellectuals_up_2
+		add_to_variable = {
+			QYG_Intellectuals_vote = 2
+		}
+		QYG_social_effect = yes	
+	}
+}
+
+country_event = {#公审大会
+	id = QYG.middlegame.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.28"}
+	title = QYG.middlegame.28.t
+	desc = QYG.middlegame.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.28.a
+		add_stability = 0.01
+		add_manpower = -3
+		custom_effect_tooltip = QYG_all_up
+		add_to_variable = {
+			QYG_Farmer_vote = 2
+		}
+		add_to_variable = {
+			QYG_worker_vote = 2
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = 2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+	}
+}
+
+country_event = {#茶文化
+	id = QYG.middlegame.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.29"}
+	title = QYG.middlegame.29.t
+	desc = QYG.middlegame.29.d
+	picture = GFX_report_event_HNN_cha_wen_hua
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.29.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#1933年
+	id = QYG.middlegame.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.30"}
+	title = QYG.middlegame.30.t
+	desc = QYG.middlegame.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.30.a
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.36
+				days = 100
+			} 
+		}
+	}
+}
+
+country_event = {#妇女能顶半边天
+	id = QYG.middlegame.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.31"}
+	title = QYG.middlegame.31.t
+	desc = QYG.middlegame.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.31.a
+
+	}
+}
+
+country_event = {#适度降温
+	id = QYG.middlegame.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.32"}
+	title = QYG.middlegame.32.t
+	desc = QYG.middlegame.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.32.a
+
+	}
+}
+
+country_event = {#让体力劳动同教育结合起来
+	id = QYG.middlegame.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.33"}
+	title = QYG.middlegame.33.t
+	desc = QYG.middlegame.33.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.33.a
+
+	}
+}
+
+country_event = {#旧痕迹
+	id = QYG.middlegame.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.34"}
+	title = QYG.middlegame.34.t
+	desc = QYG.middlegame.34.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.34.a
+
+	}
+}
+
+country_event = {#寺庙的变革
+	id = QYG.middlegame.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.35"}
+	title = QYG.middlegame.35.t
+	desc = QYG.middlegame.35.d
+	picture = GFX_report_event_QYG_guang_zhou
+
+	trigger = {
+		tag = QYG
+		613 = {
+			is_controlled_by = QYG
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = QYG.middlegame.35.a
+
+	}
+}
+
+country_event = {#1932年
+	id = QYG.middlegame.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.middlegame.36"}
+	title = QYG.middlegame.36.t
+	desc = QYG.middlegame.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.middlegame.36.a
+
+	}
+}
+
+#租界问题
+country_event = {#第二次省港大罢工
+	id = QYG.zujiewwenti.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.1"}
+	title = QYG.zujiewwenti.1.t
+	desc = QYG.zujiewwenti.1.d
+	picture = GFX_report_event_QYG_ba_gong
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = QYG.zujiewwenti.1.a
+		hidden_effect = {
+			LEC = {
+				country_event = {
+					id = QYG.zujiewwenti.2
+					days = 1
+				} 
+			}	
+		}
+	}
+
+	option = {
+		name = QYG.zujiewwenti.1.b
+		custom_effect_tooltip = QYG_after_time
+		hidden_effect = {
+			add_to_variable = {
+				QYG_worker_vote = -2
+			}
+			QYG_social_effect = yes	
+			LEC = {
+				country_event = {
+					id = QYG.zujiewwenti.5
+					days = 1
+				} 
+			}	
+		}
+	}
+}
+
+country_event = {#香港暴动-香港回归
+	id = QYG.zujiewwenti.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.2"}
+	title = QYG.zujiewwenti.2.t
+	desc = QYG.zujiewwenti.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.2.a
+		ai_chance = {
+			base = 50
+		}
+		hidden_effect = {
+			QYG = {
+				country_event = {
+					id = QYG.zujiewwenti.3
+					days = 1
+				} 
+			}
+		}
+	}
+
+	option = {#no
+		name = QYG.zujiewwenti.2.b
+		ai_chance = {
+			base = 5
+		}
+		hidden_effect = {
+			QYG = {
+				country_event = {
+					id = QYG.zujiewwenti.4
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#香港回归
+	id = QYG.zujiewwenti.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.3"}
+	title = QYG.zujiewwenti.3.t
+	desc = QYG.zujiewwenti.3.d
+	picture = GFX_report_event_QYG_hong_kong
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.3.a
+		custom_effect_tooltip = QYG_all_up
+		add_to_variable = {
+			QYG_Farmer_vote = 2
+		}
+		add_to_variable = {
+			QYG_worker_vote = 2
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = 2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+		transfer_state = 326
+		transfer_state = 801
+		show_unit_leaders_tooltip = QYG_fang_si_qiong
+		show_unit_leaders_tooltip = QYG_Tao_zu
+		show_unit_leaders_tooltip = QYG_Pan_Han_Nian
+		hidden_effect = {
+			QYG_Pan_Han_Nian = {
+				QYG_recruit_characters_effect = yes
+			}
+			QYG_Tao_zu = {
+				QYG_recruit_characters_effect = yes
+			}
+			QYG_fang_si_qiong = {
+				QYG_recruit_characters_effect = yes
+			}
+			326 = {
+				add_core_of = QYG
+			}
+			801 = {
+				add_core_of = QYG
+			}
+			country_event = {
+				id = QYG.zujiewwenti.13
+				days = 1
+			} 
+			news_event = {
+				id = QYG.news.2
+				days = 1
+			} 
+			country_event = {
+				id = QYG.middlegame.2
+				days = 3
+			} 
+		}
+	}
+}
+
+country_event = {#傲慢的洋人
+	id = QYG.zujiewwenti.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.4"}
+	title = QYG.zujiewwenti.4.t
+	desc = QYG.zujiewwenti.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.4.a
+		add_war_support = 0.02
+		set_country_flag = QYG_to_Hongkong
+	}
+}
+
+country_event = {#香港暴动-更温和的要求
+	id = QYG.zujiewwenti.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.5"}
+	title = QYG.zujiewwenti.5.t
+	desc = QYG.zujiewwenti.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.5.a
+		ai_chance = {
+			base = 20
+		}
+		decrease_currency_reserve = yes
+		hidden_effect = {
+			QYG = {
+				country_event = {
+					id = QYG.zujiewwenti.6
+					days = 1
+				} 
+			}
+		}
+	}
+
+	option = {#no
+		name = QYG.zujiewwenti.5.b
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			QYG = {
+				country_event = {
+					id = QYG.zujiewwenti.4
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#大获成功
+	id = QYG.zujiewwenti.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.6"}
+	title = QYG.zujiewwenti.6.t
+	desc = QYG.zujiewwenti.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.6.a
+		add_political_power = 50
+		custom_effect_tooltip = QYG_worker_up
+		add_to_variable = {
+			QYG_worker_vote = 5
+		}
+		QYG_social_effect = yes	
+		hidden_effect = {
+			country_event = {
+				id = QYG.middlegame.2
+				days = 3
+			} 
+		}
+	}
+}
+
+country_event = {#伟大的胜利-边境战争琼崖胜利
+	id = QYG.zujiewwenti.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.7"}
+	title = QYG.zujiewwenti.7.t
+	desc = QYG.zujiewwenti.7.d
+	picture = GFX_report_event_QYG_hong_kong
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.7.a
+		custom_effect_tooltip = QYG_all_up
+		transfer_state = 326
+		transfer_state = 801
+		add_to_variable = {
+			QYG_Farmer_vote = 2
+		}
+		add_to_variable = {
+			QYG_worker_vote = 2
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = 2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+		show_unit_leaders_tooltip = QYG_fang_si_qiong
+		show_unit_leaders_tooltip = QYG_Tao_zu
+		show_unit_leaders_tooltip = QYG_Pan_Han_Nian
+		hidden_effect = {
+			QYG_Pan_Han_Nian = {
+				QYG_recruit_characters_effect = yes
+			}
+			QYG_Tao_zu = {
+				QYG_recruit_characters_effect = yes
+			}
+			QYG_fang_si_qiong = {
+				QYG_recruit_characters_effect = yes
+			}
+			801 = {
+				add_core_of = QYG
+			}
+			326 = {
+				add_core_of = QYG
+			}
+			country_event = {
+				id = QYG.zujiewwenti.13
+				days = 1
+			} 
+			news_event = {
+				id = QYG.news.2
+				days = 1
+			} 
+			country_event = {
+				id = QYG.middlegame.2
+				days = 3
+			} 
+		}
+	}
+}
+
+country_event = {#难以为继-边境战争琼崖失败
+	id = QYG.zujiewwenti.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.8"}
+	title = QYG.zujiewwenti.8.t
+	desc = QYG.zujiewwenti.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.8.a
+		custom_effect_tooltip = QYG_all_down
+		add_to_variable = {
+			QYG_Farmer_vote = -5
+		}
+		add_to_variable = {
+			QYG_worker_vote = -5
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = -5
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = -5
+		}
+	}
+}
+
+country_event = {#停火协议-边境战争琼崖打平
+	id = QYG.zujiewwenti.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.9"}
+	title = QYG.zujiewwenti.9.t
+	desc = QYG.zujiewwenti.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.9.a
+		custom_effect_tooltip = QYG_all_down
+		add_to_variable = {
+			QYG_Farmer_vote = -2
+		}
+		add_to_variable = {
+			QYG_worker_vote = -2
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = -2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = -2
+		}
+	}
+}
+
+country_event = {#城市依旧-边境战争使馆城市胜利
+	id = QYG.zujiewwenti.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.10"}
+	title = QYG.zujiewwenti.10.t
+	desc = QYG.zujiewwenti.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.10.a
+		increase_currency_reserve = yes
+	}
+}
+
+country_event = {#及时撤离-边境战争使馆城市失败
+	id = QYG.zujiewwenti.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.11"}
+	title = QYG.zujiewwenti.11.t
+	desc = QYG.zujiewwenti.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.11.a
+		add_stability = -0.05
+	}
+}
+
+country_event = {#停火协议-边境战争使馆城市打平
+	id = QYG.zujiewwenti.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.12"}
+	title = QYG.zujiewwenti.12.t
+	desc = QYG.zujiewwenti.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.12.a
+		add_stability = 0.02
+	}
+}
+
+country_event = {#澳门大罢工
+	id = QYG.zujiewwenti.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.13"}
+	title = QYG.zujiewwenti.13.t
+	desc = QYG.zujiewwenti.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.13.a
+		hidden_effect = {
+			POR = {
+				country_event = {
+					id = QYG.zujiewwenti.14
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#归还澳门
+	id = QYG.zujiewwenti.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.14"}
+	title = QYG.zujiewwenti.14.t
+	desc = QYG.zujiewwenti.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.14.a
+		add_stability = -0.05
+		hidden_effect = {
+			QYG = {
+				country_event = {
+					id = QYG.zujiewwenti.15
+					days = 1
+				} 
+			}
+		}
+	}
+}
+
+country_event = {#澳门回归
+	id = QYG.zujiewwenti.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.15"}
+	title = QYG.zujiewwenti.15.t
+	desc = QYG.zujiewwenti.15.d
+	picture = GFX_report_event_QYG_ao_men
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.15.a
+		custom_effect_tooltip = QYG_all_up
+		add_to_variable = {
+			QYG_Farmer_vote = 2
+		}
+		add_to_variable = {
+			QYG_worker_vote = 2
+		}
+		add_to_variable = {
+			QYG_Intellectuals_vote = 2
+		}
+		add_to_variable = {
+			QYG_entrepreneur_vote = 2
+		}
+		hidden_effect = {
+			news_event = {
+				id = QYG.news.3
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {#澳门大罢工
+	id = QYG.zujiewwenti.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event QYG.zujiewwenti.16"}
+	title = QYG.zujiewwenti.16.t
+	desc = QYG.zujiewwenti.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = QYG.zujiewwenti.16.a
+		hidden_effect = {
+			POR = {
+				country_event = {
+					id = QYG.zujiewwenti.14
+					days = 1
+				} 
+			}
+		}
+	}
+
+	
+	option = {#no
+		name = QYG.zujiewwenti.16.a
+		custom_effect_tooltip = QYG_worker_down
+		add_to_variable = {
+			QYG_worker_vote = -5
+		}
+	}
+}
+
+#新闻
+news_event = {#两广易主
+	id = QYG.news.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event QYG.news.1" }
+	title = QYG.news.1.t
+	desc = QYG.news.1.d
+	picture = GFX_news_event_NEWS_guang_zhou
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#
+		name = QYG.news.1.a
+		ai_chance = {
+			base = 10
+		}	
+	}
+} 
+
+news_event = {#香港回归
+	id = QYG.news.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event QYG.news.2" }
+	title = QYG.news.2.t
+	desc = QYG.news.2.d
+	picture = GFX_news_event_NEWS_Hong_kong
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#
+		name = QYG.news.2.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_chinese_tag = yes
+		}
+	}
+	
+	option = {#
+		name = QYG.news.2.b
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_chinese_tag = no
+		}
+	}
+} 
+
+news_event = {#澳门回归
+	id = QYG.news.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event QYG.news.3" }
+	title = QYG.news.3.t
+	desc = QYG.news.3.d
+	picture = GFX_news_event_NEWS_ao_men
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#
+		name = QYG.news.3.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_chinese_tag = yes
+		}
+	}
+	
+	option = {#
+		name = QYG.news.3.b
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_chinese_tag = no
+		}
+	}
+} 

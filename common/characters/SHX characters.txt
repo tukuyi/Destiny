@@ -1,0 +1,541 @@
+characters = {
+####################
+####    阎派   #####
+####################
+#阎锡山
+	SHX_yan_xishan = {
+		name = SHX_yan_xishan
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QIE_yan_xishan
+			}
+			army = {
+				small = GFX_Portrait_QIE_yan_xishan
+				large = GFX_Portrait_QIE_yan_xishan
+			}
+		}
+		country_leader = {
+			desc = SHX_yan_xishan_starting_leader_desc
+			ideology = pataut_yan_xishan_thought_subtype
+			traits = {
+				
+			}
+		}
+		field_marshal = {
+			desc = SHX_yan_xishan_commander_desc
+			traits = { 
+				SHX_yan_loyalist 
+				career_officer 
+				politically_connected 
+				inflexible_strategist 
+				thorough_planner 
+				organizer 
+				harsh_leader 
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+#商震
+	SHX_shang_zhen = {
+		name = SHX_shang_zhen
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHX_shang_zhen_army
+				small = GFX_Portrait_SHX_shang_zhen_army
+			}
+		}
+		country_leader = {
+			desc = SHX_shang_zhen_hos_desc
+			ideology = authdem_warlordism_subtype
+		}
+		corps_commander = {
+			desc = SHX_shang_zhen_commander_desc
+			traits = { 
+				SHX_yan_loyalist 
+				politically_connected 
+				career_officer 
+				organizer 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}	
+#趙承瑤
+	SHX_zhao_chengshou = {
+		name = SHX_zhao_chengshou
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_zhao_chengshou
+				large = GFX_Portrait_SHX_zhao_chengshou
+			}
+		}
+		corps_commander = {
+			desc = SHX_zhao_chengshou_commander_desc
+			traits = { 
+				SHX_yan_loyalist
+				career_officer 
+				irregulars_officer 
+				cavalry_leader 
+				cavalry_expert 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#徐永昌
+	SHX_xu_yongchang = {
+		name = SHX_xu_yongchang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_xu_yongchang
+				large = GFX_Portrait_SHX_xu_yongchang
+			}
+		}
+		corps_commander = {
+			desc = SHX_xu_yongchang_desc
+			traits = { 
+				SHX_yan_loyalist 
+				trait_cautious 
+				career_officer 
+				infantry_officer 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#傅作義
+	SHX_fu_zuoyi = {
+		name = SHX_fu_zuoyi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_fu_zuoyi_army
+				large = GFX_Portrait_SHX_fu_zuoyi_army
+			}
+		}
+		corps_commander = {
+			desc = SHX_fu_zuoyi_desc
+			traits = { 
+				SHX_yan_loyalist 
+				career_officer 
+				infantry_officer 
+				artillery_specialist 
+				urban_assault_specialist 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#王靖國
+	SHX_wang_jingguo = {
+		name = SHX_wang_jingguo
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_wang_jingguo
+				large = GFX_Portrait_SHX_wang_jingguo
+			}
+		}
+		corps_commander = {
+			desc = SHX_wang_jingguo_desc
+			traits = { 
+				SHX_yan_loyalist 
+				organizer 
+				career_officer 
+				harsh_leader 
+				skilled_staffer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#楊愛源
+	SHX_yang_aiyuan = {
+		name = SHX_yang_aiyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_yang_aiyuan
+				large = GFX_Portrait_SHX_yang_aiyuan
+			}
+		}
+		corps_commander = {
+			desc = SHX_yang_aiyuan_desc
+			traits = { 
+				SHX_yan_loyalist 
+				trait_reckless 
+				career_officer 
+				infantry_officer 
+				trait_engineer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#李服膺
+	SHX_li_fuying = {
+		name = SHX_li_fuying
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_li_fuying
+				large = GFX_Portrait_SHX_li_fuying
+			}
+		}
+		corps_commander = {
+			desc = SHX_li_fuying_desc
+			traits = { 
+				SHX_yan_loyalist
+				career_officer 
+				trait_reckless 
+				infantry_officer 
+				infantry_leader 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#朱绶光
+	SHX_zhu_shouguang = {
+		name = SHX_zhu_shouguang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_zhu_shouguang
+				large = GFX_Portrait_SHX_zhu_shouguang
+			}
+		}
+		corps_commander = {
+			desc = SHX_zhu_shouguang_desc
+			traits = { 
+				SHX_yan_loyalist 
+				career_officer 
+				engineer_officer 
+				trait_engineer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+####################
+####   国民军  #####
+####################
+#馮玉祥
+	SHX_feng_yuxiang = {
+		name = SHX_feng_yuxiang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_feng_yuxiang
+				large = GFX_Portrait_SHX_feng_yuxiang
+			}
+		}
+		country_leader = {
+			desc = SHX_feng_yuxiang_starting_leader_desc
+			ideology = christian_socialism_subtype
+		}
+		country_leader = {
+			desc = SHX_feng_yuxiang_starting_leader_desc
+			ideology = soccon_jadidism_subtype
+		}
+		country_leader = {
+			desc = SHX_feng_yuxiang_starting_leader_desc
+			ideology = socdem_christian_socialism_subtype
+		}
+		field_marshal = {
+			desc = SHX_feng_yuxiang_commander_desc
+			traits = { 
+				SHX_gmj_officer 
+				infantry_leader 
+				politically_connected 
+				irregulars_officer 
+				organizer 
+				aggressive_assaulter 
+				media_personality 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}	
+#孫岳
+	SHX_sun_yue = {
+		name = SHX_sun_yue
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_sun_yue
+				large = GFX_Portrait_SHX_sun_yue
+			}
+		}
+		corps_commander = {
+			desc = SHX_sun_yue_desc
+			traits = { 
+				SHX_gmj_officer 
+				career_officer 
+				politically_connected 
+				artillery_officer 
+				artillery_specialist 
+				trait_mountaineer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#張自忠
+	SHX_zhang_zizhong = {
+		name = SHX_zhang_zizhong
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_zhang_zizhong
+				large = GFX_Portrait_SHX_zhang_zizhong
+			}
+		}
+
+		corps_commander = {
+			desc = SHX_zhang_zizhong_desc
+			traits = { 
+				SHX_gmj_officer 
+				career_officer 
+				trait_reckless 
+				infantry_officer 
+				adaptable 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#韓復榘
+	SHX_han_fuju = {
+		name = SHX_han_fuju
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_han_fuju
+				large = GFX_Portrait_SHX_han_fuju
+			}
+		}
+
+		corps_commander = {
+			desc = SHX_han_fuju_desc
+			traits = { 
+				SHX_gmj_officer 
+				trait_reckless 
+				infantry_officer 
+				infantry_leader 
+				skilled_staffer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#孫連
+	SHX_sun_lianzhong = {
+		name = SHX_sun_lianzhong
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_sun_lianzhong
+				large = GFX_Portrait_SHX_sun_lianzhong
+			}
+		}
+
+		corps_commander = {
+			desc = SHX_sun_lianzhong_desc
+			traits = { 
+				SHX_gmj_officer 
+				career_officer 
+				artillery_officer 
+				organizer 
+				artillery_specialist 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#楊虎城
+	SHX_yang_hucheng = {
+		name = SHX_yang_hucheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_yang_hucheng
+				large = GFX_Portrait_SHX_yang_hucheng
+			}
+		}
+		corps_commander = {
+			desc = SHX_yang_hucheng_desc
+			traits = { 
+				SHX_gmj_officer 
+				irregulars_officer 
+				trait_reckless 
+				commando 
+				inflexible_strategist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#宋哲元
+	SHX_song_zheyuan = {
+		name = SHX_song_zheyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_song_zheyuan
+				large = GFX_Portrait_SHX_song_zheyuan
+			}
+		}
+		corps_commander = {
+			desc = SHX_song_zheyuan_commander_desc
+			traits = { 
+				SHX_gmj_officer 
+				trait_reckless 
+				harsh_leader 
+				career_officer 
+				trait_engineer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}	
+#高桂滋
+	SHX_gao_guizi = {
+		name = SHX_gao_guizi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_gao_guizi
+				large = GFX_Portrait_SHX_gao_guizi
+			}
+		}
+		corps_commander = {
+			desc = SHX_gao_guizi_desc
+			traits = { 
+				SHX_gmj_officer 
+				career_officer 
+				infantry_officer 
+				organizer 
+				trickster 
+				expert_improviser 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+#鹿鐘麟
+	SHX_lu_zhonglin = {
+		name = SHX_lu_zhonglin
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_lu_zhonglin
+				large = GFX_Portrait_SHX_lu_zhonglin
+			}
+		}
+		corps_commander = {
+			desc = SHX_lu_zhonglin_desc
+			traits = { 
+				SHX_gmj_officer 
+				trait_cautious 
+				organizer 
+				skilled_staffer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
+#宋哲元
+	SHX_song_zheyuan = {
+		name = SHX_song_zheyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_song_zheyuan
+				large = GFX_Portrait_SHX_song_zheyuan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_SONG_ZHEYUAN_ARMY_DESC
+			traits = { 
+				SHX_gmj_officer 
+				trait_reckless 
+				harsh_leader 
+				career_officer 
+				trait_engineer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}		
+#冯安邦
+	SHX_feng_anbang = {
+		name = SHX_feng_anbang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHX_feng_anbang
+				large = GFX_Portrait_SHX_feng_anbang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_FENG_ANBANG_DESC
+			traits = { 
+				SHX_gmj_officer 
+				war_hero 
+				cavalry_officer 
+				trait_engineer 
+				trait_reckless 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+}

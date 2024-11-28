@@ -1,0 +1,201 @@
+﻿capital = 1072
+OOB = "SHX"
+set_research_slots = 3
+#complete_national_focus = SHX_Yan_In_Power
+
+save_global_event_target_as = original_shanxi
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	tech_support = 1
+	tech_mountaineers = 1
+	tech_engineers = 1
+	gw_artillery = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "SHX_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		#set_air_oob = "SHX_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+
+set_country_flag = KX_no_naval_tech_decision_enable
+
+add_offsite_building = {
+	type = arms_factory
+	level = 1
+}
+
+add_offsite_building = {
+	type = industrial_complex
+	level = 2
+}
+
+
+set_research_slots = 3
+add_ideas = {
+	#SHX_model_province
+	SHX_neutrality
+	SHX_power_struggle
+	SHX_legacy_of_guominjun
+	#SHX_militarism
+	unequal_treaties_lesser
+
+	QIE_yan_xi_shan_hog
+	SHX_Liang_Huazhi_for_pau
+	SHX_Nan_Guixin_eco_pau
+	SHX_Yang_Chengyuan_sec_pau
+}
+
+set_politics = {
+	ruling_party = paternal_autocrat
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 0
+	syndicalist = 0
+	radical_socialist = 36 #2
+	social_democrat = 1
+	social_liberal = 4
+	market_liberal = 4
+	social_conservative = 4
+	authoritarian_democrat = 2 #36
+	paternal_autocrat = 46
+	national_populist = 3
+}
+
+set_variable = { SHX_xishan_control_gov = 90 }
+set_variable = { SHX_yuxiang_control_gov = 10 }
+set_variable = { SHX_xishan_control_mil = 38 }
+set_variable = { SHX_yuxiang_control_mil = 62 }
+
+#Max inspiration for each at 100 points
+set_variable = { SHX_thought_socialism = 0 } #syndicalism/narodism ideology represented here # construction speed and either production efficiency or resource efficiency, at higher levels hurts stability and production efficiency growth
+set_variable = { SHX_thought_tridemism = 0 } # rename in game to tridemism, 
+set_variable = { SHX_thought_federal = 0 } #increases max factories as well as compliance gain, at higher levels hurts consumer goods and recruitable population factor
+set_variable = { SHX_thought_christian = 5 }# conscription factor, land morale, war support, hurts stability and political power
+set_variable = { SHX_thought_tradition = 0 } # increases stability as well as defense on core territory when going toward 100, toward 0 increases party popularity stability factor and poltical power gain
+#set_variable = { SHX_thought_militarism = 0 } # conscription factor, land morale, war support, hurts stability and political power
+
+country_event = {
+	id = shx.earlygame.1
+	days = 2
+}
+
+recruit_character = SHX_yan_xishan
+recruit_character = SHX_shang_zhen
+recruit_character = SHX_zhao_chengshou
+recruit_character = SHX_xu_yongchang
+recruit_character = SHX_fu_zuoyi
+recruit_character = SHX_wang_jingguo
+recruit_character = SHX_yang_aiyuan
+recruit_character = SHX_li_fuying
+recruit_character = SHX_zhu_shouguang
+recruit_character = SHX_feng_yuxiang
+recruit_character = SHX_sun_yue
+recruit_character = SHX_zhang_zizhong
+recruit_character = SHX_han_fuju
+recruit_character = SHX_sun_lianzhong
+recruit_character = SHX_yang_hucheng
+recruit_character = SHX_song_zheyuan
+recruit_character = SHX_gao_guizi
+recruit_character = SHX_lu_zhonglin
+recruit_character = SHX_song_zheyuan
+recruit_character = SHX_feng_anbang
+
+SHX_feng_yuxiang = { 
+	set_variable = { china_alignment = token:chinese_southern_republican } 
+}
+SHX_yan_xishan = { 
+	set_variable = { china_alignment = token:others } 
+}
+
+create_country_leader = {
+	name = "乔家才"
+	desc = POLITICS_SHX_QIAO_JIACAI_DESC
+	picture = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
+	expire = "1.1.1"
+	ideology = totalist_subtype
+}
+promote_character = {
+	character = SHX_feng_yuxiang
+	ideology = christian_socialism_subtype
+}
+promote_character = {
+	character = SHX_feng_yuxiang
+	ideology = socdem_christian_socialism_subtype
+}
+create_country_leader = {
+	name = "张自忠"
+	picture = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
+	expire = "1.1.1"
+	ideology = social_liberal_subtype
+}
+create_country_leader = {
+	name = "韩复渠"
+	picture = "gfx/leaders/SHX/Portrait_SHX_Han_Fuju.png"
+	expire = "1.1.1"
+	ideology = market_liberal_subtype
+}
+promote_character = {
+	character = SHX_feng_yuxiang
+	ideology = soccon_jadidism_subtype
+}
+# create_country_leader = {
+# 	name = "Sun Lianzhong"
+# 	picture = "gfx/leaders/SHX/Portrait_SHX_Sun_Lianzhong.png"
+# 	expire = "1.1.1"
+# 	ideology = social_conservative_subtype
+# }
+promote_character = {
+	character = SHX_shang_zhen
+	ideology = authdem_warlordism_subtype
+}
+promote_character = {
+	character = SHX_yan_xishan
+	ideology = pataut_yan_xishan_thought_subtype
+}
+create_country_leader = {
+	name = "赵戴文"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
+	expire = "1.1.1"
+	ideology = occultism_subtype
+}
+
+# create_field_marshal = {
+# 	name = "阎锡山"
+# 	id = 1146
+# }
+
+# create_field_marshal = {
+# 	name = "冯玉祥"
+# 	id = 1147
+# }
+# create_corps_commander = {
+# 	name = "Yang Hucheng"
+# 	id = 5065
+# }
+# create_corps_commander = {
+# 	name = "Shang Zhen"
+# 	id = 5052
+# }
+# create_corps_commander = {
+# 	name = "Fu Zuoyi"
+# 	id = 5053
+# }

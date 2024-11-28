@@ -1,0 +1,301 @@
+H_to_china = {#对全中国的宣战借口
+	create_wargoal = {
+		type = annex_everything
+		target = GXC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = HNN
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = YUN
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SZC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = CHI
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SQI
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = QIE
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = LEC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = FNG
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = TIB
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SHX
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = XSM
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = MON
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SIK
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = TAN
+	}
+}
+
+G_China = {
+	transfer_state = 613
+	transfer_state = 610
+	transfer_state = 716
+	transfer_state = 328
+	transfer_state = 715
+	transfer_state = 886
+	transfer_state = 885
+	transfer_state = 884
+	transfer_state = 714
+	transfer_state = 883
+	transfer_state = 717
+	transfer_state = 1014
+	transfer_state = 1068
+	transfer_state = 596
+	transfer_state = 1067
+	transfer_state = 1044
+	transfer_state = 1069
+	transfer_state = 595
+	transfer_state = 1066
+	transfer_state = 1046
+	transfer_state = 600
+	transfer_state = 602
+	transfer_state = 1052
+	transfer_state = 1013
+	transfer_state = 1055
+	transfer_state = 1054
+	transfer_state = 1053
+	transfer_state = 599
+	transfer_state = 594
+	transfer_state = 1056
+	transfer_state = 591
+	transfer_state = 593
+	transfer_state = 800
+	transfer_state = 1012
+	transfer_state = 1045
+	transfer_state = 592
+	transfer_state = 802
+	transfer_state = 803
+	transfer_state = 322
+	transfer_state = 748
+	transfer_state = 693
+	transfer_state = 330
+	transfer_state = 612
+	transfer_state = 1084
+	transfer_state = 329
+	transfer_state = 811
+	transfer_state = 654
+	transfer_state = 606
+	transfer_state = 611
+	transfer_state = 614
+	transfer_state = 608
+	transfer_state = 615
+	transfer_state = 1062
+	transfer_state = 1063
+	transfer_state = 1061
+	transfer_state = 1060
+	transfer_state = 1059
+	transfer_state = 607
+	transfer_state = 1058
+	transfer_state = 1048
+	transfer_state = 620
+	transfer_state = 1050
+	transfer_state = 608
+	transfer_state = 1047
+	transfer_state = 598
+	transfer_state = 1064
+	transfer_state = 1065
+	transfer_state = 597
+	transfer_state = 603
+	transfer_state = 1051
+	transfer_state = 325
+	transfer_state = 816
+	transfer_state = 601
+	transfer_state = 605
+	transfer_state = 661
+	transfer_state = 650
+	transfer_state = 788
+	transfer_state = 283
+	transfer_state = 604
+	transfer_state = 353
+	transfer_state = 774
+	transfer_state = 348
+	transfer_state = 616
+	transfer_state = 621
+	transfer_state = 622
+	transfer_state = 1015
+	transfer_state = 1072
+	transfer_state = 1083
+	transfer_state = 618
+	transfer_state = 617
+	transfer_state = 619
+	transfer_state = 287
+	transfer_state = 897
+	transfer_state = 1085
+	transfer_state = 1049
+	transfer_state = 1086
+
+	613 = { add_core_of = QIE }
+	592 = { add_core_of = QIE }
+	1045 = { add_core_of = QIE }
+	1014 = { add_core_of = QIE }
+	1068 = { add_core_of = QIE }
+	596 = { add_core_of = QIE }
+	1067 = { add_core_of = QIE }
+	1069 = { add_core_of = QIE }
+	595 = { add_core_of = QIE }
+	1066 = { add_core_of = QIE }
+	1046 = { add_core_of = QIE }
+	600 = { add_core_of = QIE }
+	602 = { add_core_of = QIE }
+	1052 = { add_core_of = QIE }
+	1013 = { add_core_of = QIE }
+	1055 = { add_core_of = QIE }
+	1053 = { add_core_of = QIE }
+	599 = { add_core_of = QIE }
+	594 = { add_core_of = QIE }
+	1056 = { add_core_of = QIE }
+	591 = { add_core_of = QIE }
+	593 = { add_core_of = QIE }
+	800 = { add_core_of = QIE }
+	1012 = { add_core_of = QIE }
+	1044 = { add_core_of = QIE }
+	1054 = { add_core_of = QIE }
+	802 = { add_core_of = QIE }
+	803 = { add_core_of = QIE }
+	322 = { add_core_of = QIE }
+	748 = { add_core_of = QIE }
+	693 = { add_core_of = QIE }
+	330 = { add_core_of = QIE }
+	612 = { add_core_of = QIE }
+	1084 = { add_core_of = QIE }
+	329 = { add_core_of = QIE }
+	811 = { add_core_of = QIE }
+	654 = { add_core_of = QIE }
+	611 = { add_core_of = QIE }
+	606 = { add_core_of = QIE }
+	614 = { add_core_of = QIE }
+	608 = { add_core_of = QIE }
+	615 = { add_core_of = QIE }
+	1062 = { add_core_of = QIE }
+	1063 = { add_core_of = QIE }
+	1061 = { add_core_of = QIE }
+	1060 = { add_core_of = QIE }
+	1059 = { add_core_of = QIE }
+	607 = { add_core_of = QIE }
+	1058 = { add_core_of = QIE }
+	1048 = { add_core_of = QIE }
+	620 = { add_core_of = QIE }
+	1050 = { add_core_of = QIE }
+	608 = { add_core_of = QIE }
+	1047 = { add_core_of = QIE }
+	598 = { add_core_of = QIE }
+	1064 = { add_core_of = QIE }
+	1065 = { add_core_of = QIE }
+	597 = { add_core_of = QIE }
+}
+
+H_in_china = {
+	every_state = {
+		limit = {
+			OR = {
+				is_core_of = HNN
+				is_core_of = YUN
+				is_core_of = SZC
+				is_core_of = CHI
+				is_core_of = SQI
+				is_core_of = QIE
+				is_core_of = LEC
+				is_core_of = FNG
+				is_core_of = TIB
+				is_core_of = SHX
+				is_core_of = XSM
+				is_core_of = MON
+				is_core_of = SIK
+				is_core_of = TAN
+				is_core_of = LEP
+				is_core_of = GXC
+			}
+			NOT = {
+				is_core_of = ROOT
+			}
+		}
+		add_core_of = ROOT
+	}
+}
+
+china_add_research_slots = {
+	if = {
+		limit = { has_global_flag = china_united }
+		add_research_slot_until_five = yes
+	}
+	else = {
+		add_research_slot_until_four = yes
+	}
+}
+
+### 添加研究槽，直到四个，然后提供临时研究速度奖励
+add_research_slot_until_four = {
+	if = {
+		limit = { amount_research_slots < 4 }
+		add_research_slot = 1
+	}
+	else_if = {
+		limit = { has_idea = generic_research_advances }
+		modify_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+}
+
+### 添加研究槽，直到五个，然后提供临时研究速度奖励
+add_research_slot_until_five = {
+	if = {
+		limit = { amount_research_slots < 5 }
+		add_research_slot = 1
+	}
+	else_if = {
+		limit = { has_idea = generic_research_advances }
+		modify_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+}

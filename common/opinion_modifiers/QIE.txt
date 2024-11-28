@@ -1,0 +1,6 @@
+opinion_modifiers = {
+	QIE_di_shi = {
+		value = -100
+	}
+}
+

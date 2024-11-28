@@ -1,0 +1,62 @@
+﻿division_template = {
+	name = "琼崖根据地革命武装"
+	division_names_group = QYG_GAR_01
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 0 y = 2 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
+		irregular_infantry = { x = 1 y = 2 }
+	}
+	priority = 1
+}
+
+units = {
+	division = {
+		name = "第一总队"
+		location = 1038
+		division_template = "琼崖根据地革命武装"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.30
+	}
+	division = {
+		name = "第二总队"
+		location = 1070
+		division_template = "琼崖根据地革命武装"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.30
+	}
+	division = {
+		name = "第三总队"
+		location = 1070
+		division_template = "琼崖根据地革命武装"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.30
+	}
+}
+
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+		}
+		requested_factories = 1
+		progress = 0.82
+		efficiency = 95
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+		}
+		requested_factories = 1
+		progress = 0.82
+		efficiency = 80
+	}
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_0
+		amount = 400
+		producer = QYG
+	}
+}

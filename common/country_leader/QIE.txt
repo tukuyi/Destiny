@@ -1,0 +1,26 @@
+leader_traits = {
+	GXC_ru_jiang = {
+		random = no
+		stability_factor = 0.05
+		experience_gain_army_factor = 0.05
+	}
+	QIE_good_leader = {
+		random = no
+		stability_factor = 0.02
+		political_power_gain = 0.02
+	}
+	QIE_hua_ping = {
+		random = no
+		stability_factor = 0.02
+	}
+	QIE_mo_fan_zheng_ke = {
+		random = no
+		stability_factor = 0.02
+		paternal_autocrat_drift = 0.02
+	}
+	QIE_no_ge_er_han = {
+		random = no
+		stability_weekly = 0.005
+		stability_factor = 0.05
+	}
+}

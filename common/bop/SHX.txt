@@ -1,0 +1,167 @@
+SHX_power_balance = {
+	initial_value = 0.00
+	left_side = SHX_yan_winning_side
+	right_side = SHX_feng_winning_side
+	decision_category = SHX_balance_of_power_category
+
+	###中间地带
+	range = {
+		id = GXC_senate_duma_conflict_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+			stability_weekly = -0.01
+			political_power_cost = 0.5
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	### 阎锡山
+	side = {
+		id = SHX_yan_winning_side
+		icon = GFX_bop_SHX_yan_xishan_side
+
+		range = {
+			id = SHX_bop_waning_strength_range
+			min = -0.25
+			max = -0.10
+			modifier = {
+				stability_weekly = 0.0010
+				political_power_gain = -0.20
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_vulnerable_range
+			min = -0.60
+			max = -0.25
+			modifier = {
+				stability_weekly = 0.0050
+				political_power_gain = -0.10
+				production_factory_max_efficiency_factor = 0.02
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_pacified_range
+			min = -0.85
+			max = -0.60
+			modifier = {
+				stability_weekly = 0.0050
+				production_factory_max_efficiency_factor = 0.05
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_extinguished_range
+			min = -1.00
+			max = -0.85
+			modifier = {
+				stability_weekly = 0.010
+				political_power_gain = 0.10
+				production_factory_max_efficiency_factor = 0.10
+			}
+			on_activate = {
+			
+
+			}
+			on_deactivate = {
+
+			}
+		}
+	}
+
+	### 冯玉祥
+	side = {
+		id = SHX_feng_winning_side
+		icon = GFX_bop_SHX_feng_yuxiang_side
+
+		range = {
+			id = SHX_bop_gathering_strength_range
+			min = 0.10
+			max = 0.25
+			modifier = {
+				war_support_weekly = 0.0010
+				political_power_gain = -0.20
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_menacing_range
+			min = 0.25
+			max = 0.60
+			modifier = {
+				war_support_weekly = 0.0050
+				political_power_gain = -0.10
+				production_factory_efficiency_gain_factor = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_dominant_range
+			min = 0.60
+			max = 0.85
+			modifier = {
+				war_support_weekly = 0.0050
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = SHX_bop_supreme_range
+			min = 0.85
+			max = 1.00
+			modifier = {
+				war_support_weekly = 0.010
+				political_power_gain = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+SQI_agriculture_modifier = { #拯救农业
+	enable = { always = yes }
+	
+	stability_factor = SQI_agriculture_stability
+	war_support_factor = SQI_agriculture_war_support
+	political_power_factor = SQI_agriculture_political_power_factor
+	
+	production_factory_max_efficiency_factor = SQI_agriculture_production_max_factor
+	production_factory_efficiency_gain_factor = SQI_agriculture_production_gain_factor
+}

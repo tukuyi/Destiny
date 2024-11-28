@@ -1,0 +1,4112 @@
+QYG_gen_ju_di_fa_zhan_category = {#发展根据地
+	QYG_xun_lian_xin_bing = {#训练新兵
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			
+		}
+		cost = 60
+		days_remove = 40
+		days_re_enable = 60
+		fire_only_once = no
+
+		modifier = {
+			paternal_autocrat_drift = 0.02
+			experience_gain_army_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xun_lian_xin_bing"
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.04
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xun_lian_xin_bing"
+			army_experience = 40.0
+		}
+	}
+	QYG_kuo_da_bing_yi_fan_wei = {#扩大征兵范围 - 一阶段
+		icon = GFX_decision_generic_motorized
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			NOT = {
+				has_completed_focus = QYG_di_yi_bu
+			}
+		}
+		cost = 75
+		days_remove = 60
+		days_re_enable = 60
+		fire_only_once = no
+
+		modifier = {
+			experience_gain_army = -0.02
+			stability_weekly = -0.005
+			weekly_manpower = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_kuo_da_bing_yi_fan_wei"
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.05
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_kuo_da_bing_yi_fan_wei"
+			add_manpower = 10000
+		}
+	}
+	QYG_huo_qu = {#获取海外华侨投资
+		icon = GFX_decision_give_cash
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			
+		}
+		cost = 50
+		days_remove = 75
+		days_re_enable = 60
+		fire_only_once = no
+
+		modifier = {
+			political_power_cost = -0.05
+			market_liberal_drift = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_huo_qu"
+			add_stability = 0.05
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_huo_qu"
+			if = {
+				limit = { 
+					NOT = {
+						owns_state = 592
+					}
+				}
+				add_political_power = 100
+			}
+			else = {
+				add_political_power = 150
+			}
+		}
+	}
+	QYG_tou_yun_wu_qi = {#武器偷运 - 一阶段
+		icon = GFX_decision_decision_artillery
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			NOT = {
+				has_completed_focus = QYG_di_yi_bu
+			}
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 30
+		fire_only_once = no
+
+		modifier = {
+			political_power_cost = 0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_yun_wu_qi"
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_yun_wu_qi"
+			random_list = {
+				30 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 800
+						producer = SIA
+					}
+				}
+				30 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 800
+						producer = GEA
+					}
+				}
+				30 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 800
+						producer = INS
+					}
+				}
+			}
+		}
+	}
+	QYG_gou_mai_wu_qi = {#购买武器 - 二阶段
+		icon = GFX_decision_decision_artillery
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			has_completed_focus = QYG_di_yi_bu
+		}
+		cost = 50
+		days_remove = 50
+		days_re_enable = 40
+		fire_only_once = no
+
+		modifier = {
+			political_power_cost = 0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gou_mai_wu_qi"
+			add_war_support = 0.05
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gou_mai_wu_qi"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1400
+			}
+		}
+	}
+	QYG_tou_zi_gong_ye = {#促进工业发展
+		icon = GFX_decision_factories
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			
+		}
+		cost = 75
+		days_re_enable = 60
+		days_remove = 60
+		fire_only_once = no
+
+		modifier = {
+			consumer_goods_factor = 0.20
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_zi_gong_ye"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_zi_gong_ye"
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { 
+						building = industrial_complex 
+						size > 0 
+						include_locked = yes 
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	QYG_tou_zi_ji_jian = {#促进基础建设
+		icon = GFX_decision_road
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		visible = {
+			
+		}
+		cost = 60
+		days_remove = 60
+		days_re_enable = 60
+		fire_only_once = no
+
+		modifier = {
+			consumer_goods_factor = 0.20
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_zi_ji_jian"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tou_zi_ji_jian"
+			random_owned_controlled_state = {
+				if = {
+					limit = { infrastructure < 5 }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+	QYG_improved_tungsten_extraction = {#改良钨矿采掘 - 二阶段
+		icon = tungsten
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			1012 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1012
+			}
+		}
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete QYG_improved_tungsten_extraction target: [From.GetName]"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove QYG_improved_tungsten_extraction target: [From.GetName]"
+			1012 = {
+				add_resource = {
+					type = tungsten
+					amount = 18
+				}
+			}
+			hidden_effect = {
+				
+			}
+		}
+
+		ai_will_do = { factor = 100 }
+	}
+}
+QYG_balance_of_power_category = {#军党之争
+	#军队
+	QYG_qiang_diao_zhi_hui_guan = {#强调指挥官权威
+		icon = GFX_decision_trumpet
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_wei_chi_xian_you_ti_xi
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_10 = yes }
+					20 = { QYG_bop_low_increase_effect_13 = yes }
+					10 = { QYG_bop_low_increase_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_12 = yes }
+					20 = { QYG_bop_medium_increase_effect = yes }
+					10 = { QYG_bop_large_increase_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_jia_qiang_xun_lian = {#加强军事训练
+		icon = binoculars
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_wei_chi_xian_you_ti_xi
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_10 = yes }
+					20 = { QYG_bop_low_increase_effect_13 = yes }
+					10 = { QYG_bop_low_increase_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_12 = yes }
+					20 = { QYG_bop_medium_increase_effect = yes }
+					10 = { QYG_bop_large_increase_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_pei_yang_jing_ying_chaun_tong = {#番号传承制度
+		icon = GFX_decision_artillery
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_wei_chi_xian_you_ti_xi
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_10 = yes }
+					20 = { QYG_bop_low_increase_effect_13 = yes }
+					10 = { QYG_bop_low_increase_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_12 = yes }
+					20 = { QYG_bop_medium_increase_effect = yes }
+					10 = { QYG_bop_large_increase_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_jiun_ren_de_lang_xing = {#军人的狼性
+		icon = shield
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_neng_da_sheng_zhang
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_increase_effect_10 = yes }
+				20 = { QYG_bop_low_increase_effect_13 = yes }
+				10 = { QYG_bop_low_increase_effect_12 = yes }
+			}
+		}
+	}
+	QYG_tu_ji_xun_lian = {#突击训练
+		icon = trumpet
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_neng_da_sheng_zhang
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_increase_effect_10 = yes }
+				20 = { QYG_bop_low_increase_effect_13 = yes }
+				10 = { QYG_bop_low_increase_effect_12 = yes }
+			}
+		}
+	}
+	QYG_zhi_zhan_yuan_zhuan_ye = {#指战员专业化
+		icon = soldierly_discipline
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_neng_da_sheng_zhang
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_increase_effect_10 = yes }
+				20 = { QYG_bop_low_increase_effect_13 = yes }
+				10 = { QYG_bop_low_increase_effect_12 = yes }
+			}
+		}
+	}
+	QYG_ti_sheng_jun_guan = {#提拔精英军人
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_jing_bing_qiang_jiang
+		}
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_wei_chi_xian_you_ti_xi
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_10 = yes }
+					20 = { QYG_bop_low_increase_effect_13 = yes }
+					10 = { QYG_bop_low_increase_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_increase_effect_12 = yes }
+					20 = { QYG_bop_medium_increase_effect = yes }
+					10 = { QYG_bop_large_increase_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_jun_shi_shao_mang = {#扫盲教育
+		icon = GFX_decision_Book
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_jing_bing_qiang_jiang
+		}
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_increase_effect_10 = yes }
+				20 = { QYG_bop_low_increase_effect_13 = yes }
+				10 = { QYG_bop_low_increase_effect_12 = yes }
+			}
+		}
+	}
+	QYG_jing_ying_jun_guan = {#精英军官计划
+		icon = soldierly_discipline
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_jing_bing_qiang_jiang
+		}
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_increase_effect_10 = yes }
+				20 = { QYG_bop_low_increase_effect_13 = yes }
+				10 = { QYG_bop_low_increase_effect_12 = yes }
+			}
+		}
+	}	
+	#革命
+	QYG_zheng_zhi_jiao_yu = {#革命政治教育
+		icon = GFX_decision_ban_iron_front
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_decrease_effect_10 = yes }
+				20 = { QYG_bop_low_decrease_effect_13 = yes }
+				10 = { QYG_bop_low_decrease_effect_12 = yes }
+			}
+		}
+	}
+	QYG_lian_he_ming_bing = {#联合民兵训练
+		icon = GFX_decision_artillery
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_decrease_effect_10 = yes }
+				20 = { QYG_bop_low_decrease_effect_13 = yes }
+				10 = { QYG_bop_low_decrease_effect_12 = yes }
+			}
+		}
+	}
+	QYG_su_ku_da_hui = {#军民诉苦大会
+		icon = GFX_decision_caravan
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_gai_zu_zhi_hui_xi_tong
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_10 = yes }
+					20 = { QYG_bop_low_decrease_effect_13 = yes }
+					10 = { QYG_bop_low_decrease_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_13 = yes }
+					20 = { QYG_bop_medium_decrease_effect = yes }
+					10 = { QYG_bop_large_decrease_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_yi_wu_lao_dong = {#红军义务劳动
+		icon = wrenches
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_gai_zu_zhi_hui_xi_tong
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_10 = yes }
+					20 = { QYG_bop_low_decrease_effect_13 = yes }
+					10 = { QYG_bop_low_decrease_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_13 = yes }
+					20 = { QYG_bop_medium_decrease_effect = yes }
+					10 = { QYG_bop_large_decrease_effect = yes }
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = QYG.earlygame.28
+					hours = 12
+				} 
+			}
+		}
+	}
+	QYG_ming_zhu_sheng_huo = {#召开民主生活会
+		icon = decision_election
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_wei_ren_ming
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_ren_ming_zhan_zheng
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_10 = yes }
+					20 = { QYG_bop_low_decrease_effect_13 = yes }
+					10 = { QYG_bop_low_decrease_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_13 = yes }
+					20 = { QYG_bop_medium_decrease_effect = yes }
+					10 = { QYG_bop_large_decrease_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_dang_jian_zai_lian_shang = {#党建在连上
+		icon = wrenches
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_wei_ren_ming
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_ren_ming_zhan_zheng
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_10 = yes }
+					20 = { QYG_bop_low_decrease_effect_13 = yes }
+					10 = { QYG_bop_low_decrease_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_13 = yes }
+					20 = { QYG_bop_medium_decrease_effect = yes }
+					10 = { QYG_bop_large_decrease_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_da_ji_guan_liao_zhu_yi = {#打击军队官僚主义
+		icon = ban_iron_front
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_wei_ren_ming
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = QYG_ren_ming_zhan_zheng
+					}
+				}
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_10 = yes }
+					20 = { QYG_bop_low_decrease_effect_13 = yes }
+					10 = { QYG_bop_low_decrease_effect_12 = yes }
+				}
+			}
+			else = {
+				random_list = {
+					30 = { QYG_bop_low_decrease_effect_13 = yes }
+					20 = { QYG_bop_medium_decrease_effect = yes }
+					10 = { QYG_bop_large_decrease_effect = yes }
+				}
+			}
+		}
+	}
+	QYG_jin_ji_jun_ming_qing = {#紧记军民情 -无产阶级军队
+		icon = GFX_decision_election
+		available = {
+			NOT = { has_country_flag = QYG_has_choose }
+			command_power > 20.0
+		}
+		visible = {
+			has_completed_focus = QYG_gai_zu_zhi_hui_xi_tong
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 0
+		days_remove = 20
+		days_re_enable = 30
+
+		custom_cost_text = 20CP
+		custom_cost_trigger = {
+			command_power > 20.0
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = QYG_has_choose
+			add_command_power = -20
+		}
+		remove_effect = {
+			clr_country_flag = QYG_has_choose
+			random_list = {
+				30 = { QYG_bop_low_decrease_effect_10 = yes }
+				20 = { QYG_bop_medium_decrease_effect = yes }
+				10 = { QYG_bop_large_decrease_effect = yes }
+			}
+		}
+	}
+}
+QYG_ge_ming_xin_jie_duan = {#革命的新阶段
+	QYG_tui_xing_tu_di_gai_ge = {#推行土地改革
+		icon = generic_agriculture
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_dong_tu_di_gai_ge
+		}
+
+		cost = 10
+		days_remove = 20
+		days_re_enable = 40
+
+		modifier = {
+			radical_socialist_drift = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_xing_tu_di_gai_ge"
+			add_stability = -0.05
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_xing_tu_di_gai_ge"
+			custom_effect_tooltip = QYG_farmer_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+	}
+	QYG_jian_li_nong_chun_he_zuo_she = {#建立农村合作社
+		icon = generic_agreement
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_dong_tu_di_gai_ge
+		}
+
+		cost = 10
+		days_remove = 20
+		days_re_enable = 40
+
+		modifier = {
+			radical_socialist_drift = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jian_li_nong_chun_he_zuo_she"
+			custom_effect_tooltip = QYG_farmer_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jian_li_nong_chun_he_zuo_she"
+			add_stability = 0.02
+		}
+	}
+	QYG_nong_ye_jiao_yu = {#重视农业教育
+		icon = GFX_decision_Book
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_dong_tu_di_gai_ge
+		}
+
+		cost = 40
+		days_remove = 20
+		days_re_enable = 40
+
+		modifier = {
+			political_power_cost = 0.10
+			radical_socialist_drift = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_nong_ye_jiao_yu"
+			custom_effect_tooltip = QYG_farmer_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_nong_ye_jiao_yu"
+			add_stability = 0.05
+		}
+	}
+	#up 打土豪，分田地
+	QYG_zheng_yong_jiao_qu_tu_di = {#征用耕地
+		icon = cement_mixer
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = -100
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_shou_gui_guo_you
+		}
+
+		cost = 40
+		days_remove = 20
+		days_re_enable = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zheng_yong_jiao_qu_tu_di"
+			add_stability = -0.05
+			custom_effect_tooltip = QYG_farmer_down_entrepreneur_up
+			add_to_variable = {
+				QYG_Farmer_vote = -5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zheng_yong_jiao_qu_tu_di"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+
+		}
+	}
+	QYG_bu_fen_tong_xiao = {#部分农产统销
+		icon = plate
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = -100
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_shou_gui_guo_you
+		}
+
+		cost = 30
+		days_remove = 50
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = -0.20
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_bu_fen_tong_xiao"
+			custom_effect_tooltip = QYG_Intellectuals_down_worker_up_Farmer_up
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_Farmer_vote = -10
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_bu_fen_tong_xiao"
+			add_political_power = 20
+		}
+	}
+	QYG_lian_chan_cheng_bao = {#联产承包
+		icon = cash_flow
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = -100
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_shou_gui_guo_you
+		}
+
+		cost = 30
+		days_remove = 50
+		days_re_enable = 60
+
+		modifier = {
+			political_power_gain = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_lian_chan_cheng_bao"
+			custom_effect_tooltip = QYG_Farmer_down
+			add_to_variable = {
+				QYG_Farmer_vote = -5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_lian_chan_cheng_bao"
+			add_political_power = 20
+		}
+	}
+	#up 收归国有，统一承包
+	QYG_ge_ming_hsneg_chan_yun_dong = {#革命生产运动
+		icon = wrenches
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_te_shu_shi_qi_te_shu
+		}
+
+		cost = 40
+		days_remove = 40
+		days_re_enable = 40
+
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_hsneg_chan_yun_dong"
+			custom_effect_tooltip = QYG_farmer_down_entrepreneur_up
+			add_to_variable = {
+				QYG_Farmer_vote = -5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_hsneg_chan_yun_dong"
+			add_stability = -0.05
+		}
+	}
+	QYG_yan_chang_lao_dong_shi_jian = {#延长劳动时间
+		icon = wrenches
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_te_shu_shi_qi_te_shu
+		}
+
+		cost = 40
+		days_remove = 40
+		days_re_enable = 40
+
+		modifier = {
+			syndicalist_drift = -0.05
+			production_speed_buildings_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_yan_chang_lao_dong_shi_jian"
+			custom_effect_tooltip = QYG_worker_down_entrepreneur_up
+			add_to_variable = {
+				QYG_worker_vote = -5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_yan_chang_lao_dong_shi_jian"
+			add_stability = -0.05
+		}
+	}
+	QYG_shui_kuan_jian_mian = {#税收减免
+		icon = cash_flow
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_te_shu_shi_qi_te_shu
+		}
+
+		cost = 40
+		days_remove = 20
+		days_re_enable = 40
+
+		modifier = {
+			political_power_cost = 0.10
+			market_liberal_drift = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shui_kuan_jian_mian"
+			custom_effect_tooltip = QYG_entrepreneur_up_7
+			add_to_variable = {
+				QYG_entrepreneur_vote = 7
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shui_kuan_jian_mian"
+			add_stability = 0.05
+		}
+	}
+	#up 特殊时期，特殊办法
+	QYG_ba_xiao_shi_gong_zuo_zhi = {#保障八小时工作制
+		icon = strikeliberals
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_xiu_ding_lao_gong_fa
+		}
+
+		cost = 40
+		days_remove = 30
+		days_re_enable = 40
+
+		modifier = {
+			political_power_cost = 0.10
+			production_factory_efficiency_gain_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ba_xiao_shi_gong_zuo_zhi"
+			custom_effect_tooltip = QYG_entrepreneur_down_worker_up
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = -5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ba_xiao_shi_gong_zuo_zhi"
+			add_stability = 0.05
+		}
+	}
+	QYG_gui_ding_zui_di_gong_zi = {#规定最低工资
+		icon = give_cash
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_xiu_ding_lao_gong_fa
+		}
+
+		cost = 40
+		days_remove = 30
+		days_re_enable = 45
+
+		modifier = {
+			political_power_cost = 0.10
+			industrial_capacity_factory = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gui_ding_zui_di_gong_zi"
+			custom_effect_tooltip = QYG_entrepreneur_down_worker_up
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = -5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gui_ding_zui_di_gong_zi"
+			add_stability = 0.05
+		}
+	}
+	QYG_tui_jin_gong_chang_min_zhu_hua = {#推进产业民主化
+		icon = GFX_decision_docu
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = -100
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_xiu_ding_lao_gong_fa
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 60
+
+		modifier = {
+			syndicalist_drift = 0.05
+			production_factory_max_efficiency_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_gong_chang_min_zhu_hua"
+			custom_effect_tooltip = QYG_worker_Intellectuals_up_entrepreneur_down
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = -5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_gong_chang_min_zhu_hua"
+		}
+	}
+	#up 修订劳工法例
+	QYG_xiao_fei_quan = {#发放居民消费券
+		icon = give_cash
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+
+		cost = 30
+		days_remove = 30
+		days_re_enable = 40
+
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xiao_fei_quan"
+			custom_effect_tooltip = QYG_Intellectuals_up
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xiao_fei_quan"
+			add_stability = 0.05
+		}
+	}
+	QYG_jia_qiang_xue_shu_tou_ru = {#加强学术投入
+		icon = GFX_decision_Book
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 100
+
+		modifier = {
+			research_speed_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jia_qiang_xue_shu_tou_ru"
+			custom_effect_tooltip = QYG_Intellectuals_up
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jia_qiang_xue_shu_tou_ru"
+			add_stability = 0.05
+		}
+	}
+	QYG_tui_dong_gong_si_he_ying = {#推动公私合营
+		icon = hand_out
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+
+		cost = 30
+		days_remove = 25
+		days_re_enable = 40
+
+		modifier = {
+			research_speed_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_dong_gong_si_he_ying"
+			custom_effect_tooltip = QYG_entrepreneur_up
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_dong_gong_si_he_ying"
+
+		}
+	}
+	#up 拉拢多数
+	QYG_gong_ren_ye_xiao = {#试办工人夜校
+		icon = GFX_decision_Book
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tuan_jie_lao_gong
+		}
+
+		cost = 40
+		days_remove = 20
+		days_re_enable = 40
+
+		modifier = {
+			political_power_cost = 0.10
+			syndicalist_drift = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_ren_ye_xiao"
+			custom_effect_tooltip = QYG_worker_up
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_ren_ye_xiao"
+			add_stability = 0.05
+		}
+	}
+	QYG_tui_xiang_chun_shi = {#推进乡村建设
+		icon = electrify
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tuan_jie_lao_gong
+		}
+
+		cost = 0
+		days_remove = 100
+		days_re_enable = 100
+
+		custom_cost_text = 1000MP_60PP
+		custom_cost_trigger = {
+			has_manpower > 1000
+			has_political_power > 60
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_xiang_chun_shi"
+			add_political_power = -60
+			add_manpower = -1000
+			custom_effect_tooltip = QYG_farmer_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_xiang_chun_shi"
+			add_manpower = 1000
+			random_owned_controlled_state = {
+				if = {
+					limit = { infrastructure < 5 }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+	QYG_nong_chun_yi_bao = {#农工医疗建设
+		icon = generic_healthcare
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 50
+		days_remove = 60
+		days_re_enable = 100
+
+		modifier = {
+			stability_weekly = 0.010
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an"
+			custom_effect_tooltip = QYG_worker_up_Farmer_up_5
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an"
+			add_stability = 0.05
+		}
+	}
+	#up 团结农工
+	QYG_tui_jin_cheng_shi = {#推进城市建设
+		icon = electrify
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 0
+		days_remove = 100
+		days_re_enable = 100
+
+		custom_cost_text = 1000MP_60PP
+		custom_cost_trigger = {
+			has_manpower > 1000
+			has_political_power > 60
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_cheng_shi"
+			add_political_power = -60
+			add_manpower = -1000
+			custom_effect_tooltip = QYG_Intellectuals_up_worker_up
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_cheng_shi"
+			add_manpower = 1000
+			random_owned_controlled_state = {
+				if = {
+					limit = { infrastructure < 5 }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+	QYG_wei_hu_zhi_an = {#维护社会治安
+		icon = fortress
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 60
+		days_remove = 60
+		days_re_enable = 100
+
+		modifier = {
+			stability_weekly = 0.010
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an"
+			custom_effect_tooltip = QYG_all_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an"
+			add_stability = 0.05
+		}
+	}
+	QYG_wei_guo_jian_she = {#为国建设
+		icon = GFX_decision_Factory
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 50
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 0
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_guo_jian_she"
+			custom_effect_tooltip = QYG_entrepreneur_down_20
+			add_to_variable = {
+				QYG_entrepreneur_vote = -20
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_guo_jian_she"
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	QYG_lin_shi_zheng_yong = {#临时征用
+		icon = GFX_decision_Factory
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 50
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 0
+		days_remove = 40
+		days_re_enable = 70
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_lin_shi_zheng_yong"
+			custom_effect_tooltip = QYG_Intellectuals_down_20
+			add_to_variable = {
+				QYG_Intellectuals_vote = -20
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_lin_shi_zheng_yong"
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	QYG_wei_hu_zhi_an_hong_kong = {#维护社会治安-香港
+		icon = fortress
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_can_do
+				check_variable = { 
+					var = QYG_Farmer_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Intellectuals_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_entrepreneur_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+			owns_state = 329
+		}
+
+		cost = 50
+		days_remove = 60
+		days_re_enable = 100
+
+		modifier = {
+			stability_weekly = 0.010
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an_hong_kong"
+			custom_effect_tooltip = QYG_all_up
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_wei_hu_zhi_an_hong_kong"
+			add_stability = 0.05
+		}
+	}
+	QYG_di_er_ci_sheng_gang_da_ba_gong = {#第二次省港大罢工
+		icon = decision_artillery
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_75
+				check_variable = { 
+					var = QYG_worker_vote
+					value = 75
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				owns_state = 326
+			}
+			has_country_flag = QYG_second
+			LEC = {
+				NOT = {
+					has_country_flag = shanghai_chaos
+				}
+			}
+		}
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_di_er_ci_sheng_gang_da_ba_gong"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_di_er_ci_sheng_gang_da_ba_gong"
+			country_event = {
+				id = QYG.zujiewwenti.1
+			} 
+		}
+	}
+	QYG_xiang_gang_zheng_duo_zhan = {#重返香港
+		icon = decision_artillery
+
+		allowed = {
+			original_tag = QYG
+		}
+		available = {
+			NOT = {
+				owns_state = 326
+			}
+		}
+		visible = {
+			NOT = {
+				owns_state = 326
+			}
+			has_country_flag = QYG_to_Hongkong
+		}
+		ai_will_do = {
+			factor = 15
+		}
+
+		war_with_on_complete = LEC
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 10
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xiang_gang_zheng_duo_zhan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove QYG_xiang_gang_zheng_duo_zhan"
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 593
+					num_provinces = 4
+					on_win = QYG.zujiewwenti.7
+					on_lose = QYG.zujiewwenti.8
+					on_cancel = QYG.zujiewwenti.9
+				}
+
+				defender = {
+					state = 326
+					num_provinces = 5
+					on_win = QYG.zujiewwenti.10
+					on_lose = QYG.zujiewwenti.11
+					on_cancel = QYG.zujiewwenti.12
+				}
+			}
+		}
+	}
+}
+QYG_ge_ming_qian_lu = {#革命前路
+	QYG_tui_jin_min_zhu_hua = {#推进工会民主化
+		icon = decision_election
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 45
+
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_min_zhu_hua"
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_min_zhu_hua"
+			clr_country_flag = QYG_has_fen
+			set_temp_variable = {
+				QYG_Change_faction = 3
+			}
+			custom_effect_tooltip = QYG_union_down
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_Change_party = yes
+		}
+	}
+	QYG_tui_jin_dang_nei = {#推进党内民主
+		icon = decision_election
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 45
+
+		modifier = {
+			political_power_cost = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_dang_nei"
+			set_country_flag = QYG_has_fen
+			set_temp_variable = {
+				QYG_Change_faction = 3
+			}
+			custom_effect_tooltip = QYG_patry_down
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_Change_union = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_tui_jin_dang_nei"
+			add_political_power = 40
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_ning_ju_dang_yuan = {#凝聚工会会员
+		icon = soldierly_discipline
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			war_support_weekly = 0.005
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ning_ju_dang_yuan"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_union_up
+			add_to_variable = {
+				QYG_Corporation = 5
+			}
+			QYG_Change_union = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ning_ju_dang_yuan"
+		}
+	}
+	QYG_dang_ji_dang_gui = {#强调党纪党规
+		icon = trumpet
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+		}
+
+		modifier = {
+			political_power_cost = -0.10
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_dang_ji_dang_gui"
+			if = {
+				limit = { 
+					has_completed_focus = QYG_zheng_feng_yun_dong
+				}
+				set_temp_variable = {
+					QYG_Change_faction = 7
+				}
+			}
+			else = {
+				set_temp_variable = {
+					QYG_Change_faction = 5
+				}
+			}
+			custom_effect_tooltip = QYG_party_up
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_Change_party = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_dang_ji_dang_gui"
+
+		}
+	}
+	QYG_ge_ge_jiang_cheng_zhi_du = {#改革奖惩制度
+		icon = decision_caravan
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 30
+		days_remove = 35
+		days_re_enable = 60
+
+		modifier = {
+			political_power_cost = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ge_jiang_cheng_zhi_du"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_party_up
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_Change_party = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ge_jiang_cheng_zhi_du"
+			custom_effect_tooltip = QYG_worker_down
+			add_to_variable = {
+				QYG_worker_vote = -5
+			}
+		}
+	}
+	QYG_ge_ming_zheng_zhi_jiao_yu = {#革命政治教育
+		icon = ban_iron_front
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+		}
+
+		cost = 40
+		days_remove = 35
+		days_re_enable = 60
+
+		modifier = {
+			research_speed_factor = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_zheng_zhi_jiao_yu"
+			if = {
+				limit = { 
+					has_completed_focus = QYG_zheng_feng_yun_dong
+				}
+				set_temp_variable = {
+					QYG_Change_faction = 7
+				}
+			}
+			else = {
+				set_temp_variable = {
+					QYG_Change_faction = 5
+				}
+			}
+			QYG_Change_party = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_zheng_zhi_jiao_yu"
+			add_stability = 0.05
+		}
+	}
+	QYG_nong_gong_wen_yu = {#组织工农文娱
+		icon = sex
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		cost = 40
+		days_remove = 35
+		days_re_enable = 60
+
+		modifier = {
+			research_speed_factor = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_nong_gong_wen_yu"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			custom_effect_tooltip = QYG_worker_up_Farmer_up_2
+			add_to_variable = {
+				QYG_worker_vote = 2
+			}
+			add_to_variable = {
+				QYG_Farmer_vote = 2
+			}
+			QYG_social_effect = yes	
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_nong_gong_wen_yu"
+			add_stability = 0.05
+		}
+	}
+	QYG_ji_cheng_dang_yuan = {#赋能基层党员
+		icon = generic_agreement
+
+		available = {
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			production_speed_buildings_factor = 0.05
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ji_cheng_dang_yuan"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_patry_down
+			add_to_variable = {
+				QYG_bureaucracy = -3
+			}
+			QYG_Change_party = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ji_cheng_dang_yuan"
+			add_war_support = 0.05
+			add_political_power = 30
+		}
+	}
+	QYG_da_xin_gong_hui = {#支持大型工农会
+		icon = give_cash
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.10
+		}
+
+		cost = 40
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_da_xin_gong_hui"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_da_xin_gong_hui"
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { 
+						building = industrial_complex 
+						size > 0 
+						include_locked = yes 
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_xiao_xin_gong_hui = {#活跃小型工农会
+		icon = cash_flow
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			syndicalist_drift = 0.05
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xiao_xin_gong_hui"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_xiao_xin_gong_hui"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_gong_nong_he_bing = {#推动工农会合并
+		icon = generic_flags
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.10
+		}
+
+		cost = 40
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_nong_he_bing"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_nong_he_bing"
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { 
+						building = arms_factory 
+						size > 0 
+						include_locked = yes 
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_gong_nong_ji_zhong = {#推动工团集中
+		icon = wrenches
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+		}
+
+		modifier = {
+			totalist_drift = 0.05
+		}
+
+		cost = 20
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_nong_ji_zhong"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_union_up
+			add_to_variable = {
+				QYG_Corporation = 5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_nong_ji_zhong"
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_gong_hui_jian_du = {#保障工会监督权
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 5
+					compare = greater_than_or_equals
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_gai_zu_jiu_zheng_fu
+		}
+		
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+
+		cost = 40
+		days_remove = 35
+		days_re_enable = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_hui_jian_du"
+			add_stability = -0.05
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_patry_down			
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_hui_jian_du"
+			add_political_power = 40
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_zheng_fu_ge_ming_hua = {#政府革命化
+		icon = strikeliberals
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_gai_zu_jiu_zheng_fu
+		}
+
+		modifier = {
+			experience_gain_army = 0.05
+		}
+
+		cost = 25
+		days_remove = 35
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zheng_fu_ge_ming_hua"
+			add_stability = -0.05
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_patry_down			
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_Change_party = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zheng_fu_ge_ming_hua"
+			add_political_power = 40
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_qun_zong_jian_Du = {#鼓励群众监督
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 5
+					compare = greater_than_or_equals
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_gai_zu_jiu_zheng_fu
+		}
+
+		modifier = {
+			political_power_cost = -0.05
+		}
+
+		cost = 15
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qun_zong_jian_Du"
+			if = {
+				limit = { 
+					has_completed_focus = QYG_zhen_zhi_wei_yuan_hui
+				}
+				set_temp_variable = {
+					QYG_Change_faction = 7
+				}
+			}
+			else = {
+				set_temp_variable = {
+					QYG_Change_faction = 5
+				}
+			}
+			custom_effect_tooltip = QYG_patry_down			
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_Change_party = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qun_zong_jian_Du"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_ggu_li_gong_nong = {#鼓励工农参与
+		icon = cavalry
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 5
+					compare = greater_than_or_equals
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+		
+		modifier = {
+			political_power_cost = -0.05
+		}
+
+		cost = 15
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ggu_li_gong_nong"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_union_down			
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ggu_li_gong_nong"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_gong_hui_ling_dao = {#维持工会领导权
+		icon = strikeliberals
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+
+		modifier = {
+			syndicalist_drift = 0.05
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_hui_ling_dao"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			custom_effect_tooltip = QYG_union_up
+			add_to_variable = {
+				QYG_Corporation = 5
+			}
+			QYG_Change_union = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_gong_hui_ling_dao"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_ge_ming_jian_Du = {#加强革命监督
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 5
+					compare = greater_than_or_equals
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_jian_Du"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_union_down		
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_patry_effect = yes
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_ge_ming_jian_Du"
+			add_political_power = 40
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_shen_cha_fan_ge_ming = {#审查反革命
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0.05
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+		}
+
+		cost = 0
+		days_remove = 20
+		days_re_enable = 45
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shen_cha_fan_ge_ming"
+			add_stability = -0.05
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_party_up		
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_patry_effect = yes
+			custom_effect_tooltip = QYG_entrepreneur_down_5
+			add_to_variable = {
+				QYG_entrepreneur_vote = -5
+			}
+			QYG_social_effect = yes	
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shen_cha_fan_ge_ming"
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_shen_cha_yuan_jia_cuo_an = {#审查冤假错案
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shen_cha_yuan_jia_cuo_an"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_party_up		
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_patry_effect = yes
+			custom_effect_tooltip = QYG_entrepreneur_up
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_shen_cha_yuan_jia_cuo_an"
+			add_stability = 0.02
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_zgu_bing_jiu_ren = {#治病救人
+		icon = generic_healthcare
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_zheng_feng_yun_dong
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zgu_bing_jiu_ren"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_party_up		
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_patry_effect = yes
+			custom_effect_tooltip = QYG_worker_down
+			add_to_variable = {
+				QYG_worker_vote = -5
+			}
+			QYG_social_effect = yes	
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zgu_bing_jiu_ren"
+			add_stability = 0.02
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_qing_ting_qun_zong = {#倾听群众
+		icon = generic_healthcare
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_kuo_zhang_su_fan
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qing_ting_qun_zong"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_patry_down		
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_patry_effect = yes
+			custom_effect_tooltip = QYG_worker_up_Farmer_up_2
+			add_to_variable = {
+				QYG_worker_vote = 2
+			}
+			add_to_variable = {
+				QYG_Farmer_vote = 2
+			}
+			QYG_social_effect = yes	
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qing_ting_qun_zong"
+			add_stability = 0.02
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+		}
+	}
+	QYG_qing_cha_zhang_ben = {#清查账本
+		icon = investigation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_zheng_feng_yun_dong
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qing_cha_zhang_ben"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_party_up		
+			add_to_variable = {
+				QYG_bureaucracy = 5
+			}
+			QYG_patry_effect = yes
+			custom_effect_tooltip = QYG_entrepreneur_up
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+			set_country_flag = QYG_has_fen
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_qing_cha_zhang_ben"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+			clr_country_flag = QYG_has_fen
+			hidden_effect = {
+				if = {
+					limit = { 
+						NOT = {
+							has_country_flag = QYG_first_an
+						}
+					}
+					country_event = {
+						id = QYG.middlegame.10
+						days = 9
+					} 
+					set_country_flag = QYG_first_an
+				}
+			}
+		}
+	}
+	QYG_da_ji_wei_quan_zhu_yi = {#打击威权主义
+		icon = ban_iron_front
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_zhen_zhi_wei_yuan_hui
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_da_ji_wei_quan_zhu_yi"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			custom_effect_tooltip = QYG_union_up
+			add_to_variable = {
+				QYG_Corporation = 5
+			}
+			QYG_patry_effect = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_da_ji_wei_quan_zhu_yi"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+		}
+	}
+	QYG_jiang_di_shu_fan_re = {#降低肃反热度
+		icon = cod
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_zhen_zhi_wei_yuan_hui
+		}
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		cost = 20
+		days_remove = 20
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jiang_di_shu_fan_re"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_union = yes
+			custom_effect_tooltip = QYG_union_down	
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_patry_effect = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jiang_di_shu_fan_re"
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+		}
+	}
+	QYG_san_cha_yun_dong = {#三查运动
+		icon = inflation
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_union_vote
+					value = 100
+					compare = less_than
+				}
+				check_variable = { 
+					var = QYG_bureaucracy
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_power
+					value = 100
+					compare = less_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_zheng_feng_yun_dong
+		}
+
+		modifier = {
+			political_power_gain = 0.20
+		}
+
+		cost = 30
+		days_remove = 35
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_san_cha_yun_dong"
+			set_temp_variable = {
+				QYG_Change_faction = 5
+			}
+			QYG_Change_party = yes
+			custom_effect_tooltip = QYG_patry_down
+			add_to_variable = {
+				QYG_bureaucracy = -5
+			}
+			QYG_patry_effect = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_san_cha_yun_dong"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+		}
+	}
+	QYG_hui_fu_dang_nei = {#恢复民主程序
+		icon = decision_election
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_nei_bu_zi_cha
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_hui_fu_dang_nei"
+			set_country_flag = QYG_has_fen
+			set_temp_variable = {
+				QYG_Change_faction = 3
+			}
+			custom_effect_tooltip = QYG_patry_down
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_Change_union = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_hui_fu_dang_nei"
+			clr_country_flag = QYG_has_fen
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+		}
+	}
+	QYG_zi_wo_jian_tao = {#自我检讨运动
+		icon = spirt_of_anzac
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_nei_bu_zi_cha
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zi_wo_jian_tao"
+			set_country_flag = QYG_has_fen
+			set_temp_variable = {
+				QYG_Change_faction = 3
+			}
+			custom_effect_tooltip = QYG_union_down
+			add_to_variable = {
+				QYG_Corporation = -5
+			}
+			QYG_Change_union = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_zi_wo_jian_tao"
+			clr_country_flag = QYG_has_fen
+			custom_effect_tooltip = QYG_fen_quan
+			add_to_variable = {
+				QYG_power = -5
+			}
+		}
+	}
+	QYG_jia_qiang_gan_bu_jiao_yu = {#加强干部教育
+		icon = spirt_of_anzac
+
+		available = {
+			NOT = {
+				has_country_flag = QYG_has_fen
+			}
+			has_stability > 0
+			custom_trigger_tooltip = {
+				tooltip = QYG_da_yu_union
+				check_variable = { 
+					var = QYG_party_vote
+					value = 0
+					compare = greater_than
+				}
+				check_variable = { 
+					var = QYG_Corporation
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		visible = {
+			has_country_flag = QYG_second
+			has_completed_focus = QYG_nei_bu_zi_cha
+		}
+
+		modifier = {
+			research_speed_factor = 0.05
+		}
+
+		cost = 20
+		days_remove = 35
+		days_re_enable = 45
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jia_qiang_gan_bu_jiao_yu"
+			set_country_flag = QYG_has_fen
+			set_temp_variable = {
+				QYG_Change_faction = 3
+			}
+			custom_effect_tooltip = QYG_union_up
+			add_to_variable = {
+				QYG_Corporation = 5
+			}
+			QYG_Change_union = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QYG_jia_qiang_gan_bu_jiao_yu"
+			clr_country_flag = QYG_has_fen
+			custom_effect_tooltip = QYG_ji_quan
+			add_to_variable = {
+				QYG_power = 5
+			}
+		}
+	}
+}
+QYG_yuan_zu = {#援助我们的盟友
+	QYG_xzhi_yuan_wu_qi = {#支援武器
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 5
+		}
+		days_remove = 30
+		days_re_enable = 60
+		cost = 0
+		fire_only_once = no
+
+		custom_cost_text = 500RIFLE
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 500 }
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GEA_strike_tt1
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = QYG
+			}
+			if = {
+				limit = { 
+					INC = {
+						exists = no
+					}
+				}
+				GEA = {
+					add_to_variable = { GEA_socialist_power = 7 }   
+				}
+			}
+			else = {
+				INC = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = QYG
+					}
+				}
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	QYG_zhi_yuan_shi_bing = {#派遣志愿兵
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 5
+		}
+		days_remove = 30
+		days_re_enable = 60
+		cost = 0
+		fire_only_once = no
+
+		custom_cost_text = 1000MP
+		custom_cost_trigger = {
+			has_manpower > 1000
+		}
+		modifier = {
+			experience_gain_army_factor = 0.05
+			weekly_manpower = -50
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GEA_strike_tt1
+			add_manpower = -1000
+			if = {
+				limit = { 
+					INC = {
+						exists = no
+					}
+				}
+				GEA = {
+					add_to_variable = { GEA_socialist_power = 3 }   
+				}
+			}
+			else = {
+				INC = {
+					add_manpower = 1000
+				}
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	QYG_zhi_yuan_wu_zi = {#援助物资
+		icon = GFX_decision_generic_agriculture
+		available = {
+			
+		}
+		visible = {
+			
+		}
+		ai_will_do = {
+			base = 5
+		}
+		days_remove = 30
+		days_re_enable = 60
+		cost = 50
+		fire_only_once = no
+
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = GEA_strike_tt1
+			GEA = {
+				add_to_variable = { GEA_socialist_power = 3 }   
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+}

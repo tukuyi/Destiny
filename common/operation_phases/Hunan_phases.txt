@@ -1,0 +1,26 @@
+HNN_bribe_government_officials_phase = {
+	name = HNN_bribe_government_officials_phase
+	desc = HNN_bribe_government_officials_phase_desc
+	outcome = HNN_bribe_government_officials_phase_outcome
+	picture = "GFX_phase_infiltrate_military_bribe"
+	icon = "GFX_phase_infiltrate_military_bribe_small"
+	requirements = { }
+
+	equipment = {
+		civilian_factories = {
+			amount = 3
+			days = 30
+		}
+	}
+}
+
+HNN_steer_government_decisions_phase = {
+	name = HNN_steer_government_decisions_phase
+	desc = HNN_steer_government_decisions_phase_desc
+	outcome = HNN_steer_government_decisions_phase_outcome
+	picture = "chinese_warlords"
+	icon = "GFX_phase_chinese_warlords_small"
+
+	requirements = {
+	}
+}

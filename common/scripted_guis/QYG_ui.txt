@@ -1,0 +1,7 @@
+scripted_gui = {
+	fen_quan_ji_quan_gui_window = {
+		context_type = decision_category
+		window_name = "fen_quan_ji_quan_gui_window"
+		dirty = dyrektoria_dirty
+	}
+}

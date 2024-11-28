@@ -1,0 +1,33 @@
+defined_text = {#商团
+	name = GXC_shangtuan_party_influence
+	text = {
+		trigger = {
+			has_completed_focus = GXC_Merchant_Government
+		}
+		localization_key = GXC_shangtuan_party_influence_text
+	}
+}
+defined_text = {#德国
+	name = GXC_german_influence
+	text = {
+		trigger = {
+			has_completed_focus = GXC_Merchant_Government
+		}
+		localization_key = GXC_german_influence_text
+	}
+}
+
+defined_text = {#日本
+	name = GXC_japan_clique_influence
+	text = {
+		trigger = {
+			has_completed_focus = GXC_Merchant_Government
+		}
+		localization_key = GXC_japan_clique_influence_text
+	}
+}
+
+
+
+
+	

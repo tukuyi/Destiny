@@ -1,0 +1,35 @@
+QYG_social_modifier = { #社会矛盾
+	enable = { always = yes }
+	
+	production_speed_buildings_factor = QYG_social_production_speed_buildings_factor
+	political_power_cost = QYG_social_political_power_factor
+
+	production_factory_efficiency_gain_factor = QYG_social_production_gain_factor
+	war_support_factor = QYG_social_war_support
+
+	research_speed_factor = QYG_social_research_speed_factor
+	consumer_goods_factor = QYG_social_consumer_goods_factor
+	
+	political_power_gain = QYG_social_political_power_gain
+	production_factory_max_efficiency_factor = QYG_social_production_factory_max_efficiency_factor
+}
+
+QYG_patry_modifier = { #党政矛盾
+	enable = { always = yes }
+	
+	#工农会
+	industrial_capacity_factory = QYG_patry_industrial_capacity_factory
+	stability_factor = QYG_patry_stability_factor
+
+	#党委
+	production_factory_start_efficiency_factor = QYG_patry_production_factory_start_efficiency_factor
+	war_support_factor = QYG_patry_war_support_factor
+	
+	#法团化
+	army_attack_factor = QYG_patry_army_attack_factor
+	political_power_gain = QYG_patry_political_power_gain
+
+	#官僚化
+	political_power_factor = QYG_patry_political_power_factor
+	consumer_goods_factor = QYG_patry_consumer_goods_factor
+}

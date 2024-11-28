@@ -1,0 +1,175 @@
+category = {
+	name = "QIE_HNN_idle"
+	soundeffects = {
+		diongbiwu
+		pengdehuai
+		zhongshebu
+		xinhai
+		santoutongmeng
+		maozedong
+		dasong
+		fojiao
+		ancap
+		pengbai
+		lizongren
+		dengyue
+		sulian
+	}
+}
+
+sound = {
+	name = "diongbiwu"
+	file = "diongbiwu.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = diongbiwu
+	volume = 0.80
+	sounds = {
+		sound = diongbiwu
+	}
+}
+sound = {
+	name = "pengdehuai"
+	file = "pengdehuai.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = pengdehuai
+	volume = 0.80
+	sounds = {
+		sound = pengdehuai
+	}
+}
+sound = {
+	name = "zhongshebu"
+	file = "zhongshebu.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = zhongshebu
+	volume = 0.80
+	sounds = {
+		sound = zhongshebu
+	}
+}
+sound = {
+	name = "sulian"
+	file = "sulian.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = sulian
+	volume = 0.80
+	sounds = {
+		sound = sulian
+	}
+}
+sound = {
+	name = "xinhai"
+	file = "xinhai.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = xinhai
+	volume = 0.80
+	sounds = {
+		sound = xinhai
+	}
+}
+sound = {
+	name = "santoutongmeng"
+	file = "santoutongmeng.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = santoutongmeng
+	volume = 0.80
+	sounds = {
+		sound = santoutongmeng
+	}
+}
+sound = {
+	name = "maozedong"
+	file = "maozedong.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = maozedong
+	volume = 0.80
+	sounds = {
+		sound = maozedong
+	}
+}
+sound = {
+	name = "dasong"
+	file = "dasong.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = dasong
+	volume = 0.80
+	sounds = {
+		sound = dasong
+	}
+}
+sound = {
+	name = "ancap"
+	file = "ancap.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = ancap
+	volume = 0.80
+	sounds = {
+		sound = ancap
+	}
+}
+sound = {
+	name = "fojiao"
+	file = "fojiao.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = fojiao
+	volume = 0.80
+	sounds = {
+		sound = fojiao
+	}
+}
+sound = {
+	name = "pengbai"
+	file = "pengbai.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = pengbai
+	volume = 0.80
+	sounds = {
+		sound = pengbai
+	}
+}
+sound = {
+	name = "lizongren"
+	file = "lizongren.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = lizongren
+	volume = 0.80
+	sounds = {
+		sound = lizongren
+	}
+}
+sound = {
+	name = "dengyue"
+	file = "dengyue.wav"
+	volume = 0.80
+}
+soundeffect = {
+	name = dengyue
+	volume = 0.80
+	sounds = {
+		sound = dengyue
+	}
+}

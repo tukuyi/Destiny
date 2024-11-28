@@ -1,0 +1,2338 @@
+focus_tree = {
+	id = QYG_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = QYG
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 10  y = 2000 }
+#一阶段
+	focus = {
+		id = QYG_new_year
+		icon = GFX_goal_QYG_new_year
+		cost = 1
+		x = 8
+		y = 0
+		ai_will_do = { factor = 90 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_new_year"
+			country_event = {
+				id = QYG.earlygame.6
+				hours = 6
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_ji_ti_da_hui
+		icon = GFX_goal_QYG_ji_ti_da_hui
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = -1
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_new_year
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ji_ti_da_hui"
+			country_event = QYG.earlygame.7 
+		}
+	}
+
+	focus = {
+		id = QYG_wu_ren_hui_yi
+		icon = GFX_goal_QYG_wu_ren_hui_yi
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = 1
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_new_year
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wu_ren_hui_yi"
+			country_event = QYG.earlygame.8
+		}
+	}
+
+	focus = {
+		id = QYG_ting_qu_qing_bao
+		icon = GFX_goal_QYG_ting_qu_qing_bao
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = 0
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_wu_ren_hui_yi
+		}
+		prerequisite = {
+			focus = QYG_ji_ti_da_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ting_qu_qing_bao"
+			country_event = {
+				id = QYG.earlygame.9
+				hours = 6
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_yue_nan_tong_zhi_de_jing_yan
+		icon = GFX_goal_QYG_yue_nan_tong_zhi_de_jing_yan
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = 1
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_ting_qu_qing_bao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_yue_nan_tong_zhi_de_jing_yan"
+			army_experience = 50.0
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = tooltip_white_line
+			unlock_decision_category_tooltip = QYG_yuan_zu
+			add_intel = {
+				target = GEA
+				civilian_intel = 10
+				army_intel = 10
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_hai_wai_yuan_zu
+		icon = GFX_goal_QYG_hai_wai_yuan_zu
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = -1
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_ting_qu_qing_bao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_hai_wai_yuan_zu"
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_pei_yang_jin_bu
+		icon = GFX_goal_QYG_pei_yang_jin_bu
+		relative_position_id = QYG_new_year
+		cost = 4
+		x = 0
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_hai_wai_yuan_zu
+		}
+		prerequisite = {
+			focus = QYG_yue_nan_tong_zhi_de_jing_yan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_pei_yang_jin_bu"
+			add_stability = 0.05
+			add_political_power = 100
+			country_event = {
+				id = QYG.earlygame.2
+				hours = 8
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_tou_zi_jiao_yu
+		icon = GFX_goal_QYG_tou_zi_jiao_yu
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = -1
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_pei_yang_jin_bu
+		}
+		mutually_exclusive = {
+			focus = QYG_jun_shi_hua_jiao_yu_li_nian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_tou_zi_jiao_yu"
+			QYG_bop_low_decrease_effect_13 = yes
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = ENG_militarized_industry
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_jun_shi_hua_jiao_yu_li_nian
+		icon = GFX_goal_QYG_jun_shi_hua_jiao_yu_li_nian
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = 1
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_pei_yang_jin_bu
+		}
+		mutually_exclusive = {
+			focus = QYG_tou_zi_jiao_yu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jun_shi_hua_jiao_yu_li_nian"
+			QYG_bop_low_increase_effect_13 = yes
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = ENG_militarized_industry
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_jing_guo_bu_rang_xu_mei
+		icon = GFX_goal_QYG_jing_guo_bu_rang_xu_mei
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = 3
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		available = {
+			has_completed_focus = QYG_hui_shou
+		}
+		prerequisite = {
+			focus = QYG_wu_ren_hui_yi
+		}
+		prerequisite = {
+			focus = QYG_ji_ti_da_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jing_guo_bu_rang_xu_mei"
+			add_political_power = 40
+			country_event = {
+				id = QYG.earlygame.3
+				days = 1
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_xin_yi_nian_ming_dan
+		icon = GFX_goal_QYG_xin_yi_nian_ming_dan
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = 5
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		available = {
+			has_completed_focus = QYG_hui_shou
+		}
+		prerequisite = {
+			focus = QYG_wu_ren_hui_yi
+		}
+		prerequisite = {
+			focus = QYG_ji_ti_da_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_xin_yi_nian_ming_dan"
+			add_political_power = 20
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			country_event = {
+				id = QYG.earlygame.10
+				hours = 6
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_jun_zheng_gong_yuan
+		icon = GFX_goal_QYG_jun_zheng_gong_yuan
+		relative_position_id = QYG_new_year
+		cost = 4
+		x = 4
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_xin_yi_nian_ming_dan
+		}
+		prerequisite = {
+			focus = QYG_jing_guo_bu_rang_xu_mei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jun_zheng_gong_yuan"
+			add_political_power = 40
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = SRI_replace_the_six_point_five_milimetres
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+			country_event = {
+				id = QYG.earlygame.5
+				hours = 5
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_pei_xun_te_shu_bing_zhong
+		icon = GFX_goal_QYG_pei_xun_te_shu_bing_zhong
+		relative_position_id = QYG_new_year
+		cost = 4
+		x = 4
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_jun_zheng_gong_yuan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_pei_xun_te_shu_bing_zhong"
+			QYG_bop_medium_decrease_effect = yes
+			add_tech_bonus = {
+				name = SRI_alpini_rossi
+				bonus = 1.00
+				uses = 1
+				category = mountaineers_tech
+			}
+			set_technology = { 
+				jungle_warfare = 1 
+				popup = no 
+			}
+			hidden_effect = {
+				country_event = {
+					id = QYG.earlygame.11
+					hours = 5
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_gai_zu_zhi_hui_xi_tong
+		icon = GFX_goal_QYG_gai_zu_zhi_hui_xi_tong
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = 3
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_pei_xun_te_shu_bing_zhong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gai_zu_zhi_hui_xi_tong"
+			add_command_power = 50.0
+			QYG_bop_large_decrease_effect = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = QYG_army_dem
+			unlock_decision_tooltip = QYG_jin_ji_jun_ming_qing
+		}
+	}
+
+	focus = {
+		id = QYG_wei_chi_xian_you_ti_xi
+		icon = GFX_goal_QYG_wei_chi_xian_you_ti_xi
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = 5
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_pei_xun_te_shu_bing_zhong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wei_chi_xian_you_ti_xi"
+			add_command_power = 50.0
+			QYG_bop_large_increase_effect =yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = QYG_army_tot
+		}
+	}
+
+	focus = {
+		id = QYG_hui_shou
+		icon = GFX_goal_QYG_hui_shou
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -3
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		available = {
+			has_completed_focus = QYG_ting_qu_qing_bao
+		}
+		prerequisite = {
+			focus = QYG_wu_ren_hui_yi
+		}
+		prerequisite = {
+			focus = QYG_ji_ti_da_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_hui_shou"
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
+			}
+			country_event = {
+				id = QYG.earlygame.13
+				hours = 4
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_xin_mu_biao
+		icon = GFX_goal_QYG_xin_mu_biao
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -5
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		available = {
+			has_completed_focus = QYG_hui_shou
+		}
+		prerequisite = {
+			focus = QYG_wu_ren_hui_yi
+		}
+		prerequisite = {
+			focus = QYG_ji_ti_da_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_xin_mu_biao"
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
+			}
+			country_event = {
+				id = QYG.earlygame.12
+				hours = 4
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_jian_she_gong_zuo
+		icon = GFX_goal_QYG_jian_she_gong_zuo
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = -4
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_xin_mu_biao
+		}
+		prerequisite = {
+			focus = QYG_hui_shou
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jian_she_gong_zuo"
+			add_resource = {
+				type = rubber
+				amount = 6
+				state = 591
+			}
+			591 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_wen_hua_zhen_xian
+		icon = GFX_goal_QYG_wen_hua_zhen_xian
+		relative_position_id = QYG_new_year
+		cost = 3
+		x = -4
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_jian_she_gong_zuo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wen_hua_zhen_xian"
+			swap_ideas = {
+				remove_idea = QYG_du_hai_er_lai
+				add_idea = QYG_du_hai_er_lai2
+			}
+			hidden_effect = {
+				GXC = {
+					country_event = {
+						id = QYG.earlygame.19
+						days = 2
+					} 
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_chu_jin_shou_gong_ye
+		icon = GFX_goal_QYG_chu_jin_shou_gong_ye
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = -5
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_wen_hua_zhen_xian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_chu_jin_shou_gong_ye"
+			add_political_power = 50
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.03
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = QYG_zi_zhu_wu_qi
+		icon = GFX_goal_QYG_zi_zhu_wu_qi
+		relative_position_id = QYG_new_year
+		cost = 5
+		x = -3
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_wen_hua_zhen_xian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zi_zhu_wu_qi"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = QYG
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_di_yi_bu
+		icon = GFX_goal_QYG_di_yi_bu
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 0
+		y = 6
+		ai_will_do = { factor = 90 }
+
+		available = {
+			owns_state = 592 #广州
+			owns_state = 599 #桂林	
+		}
+		prerequisite = {
+			focus = QYG_zi_zhu_wu_qi
+		}
+		prerequisite = {
+			focus = QYG_chu_jin_shou_gong_ye
+		}
+		prerequisite = {
+			focus = QYG_tou_zi_jiao_yu
+			focus = QYG_jun_shi_hua_jiao_yu_li_nian
+		}
+		prerequisite = {
+			focus = QYG_gai_zu_zhi_hui_xi_tong
+			focus = QYG_wei_chi_xian_you_ti_xi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_di_yi_bu"
+			country_event = {
+				id = QYG.earlygame.17
+				days = 1
+			} 
+			add_research_slot = 1
+			every_state = {
+				limit = {
+					is_core_of = GXC
+				}
+				add_core_of = QYG
+			}
+		}
+	}
+#二阶段
+	#政治
+	focus = {
+		id = QYG_gai_zu_jiu_zheng_fu
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -1
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			has_completed_focus = QYG_di_yi_bu
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+		prerequisite = {
+			focus = QYG_di_yi_bu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gai_zu_jiu_zheng_fu"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				country_event = {
+					id = QYG.middlegame.9
+					days = 3
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_kuo_zhang_su_fan
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -1
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_zhen_zhi_wei_yuan_hui
+		}
+		prerequisite = {
+			focus = QYG_gai_zu_jiu_zheng_fu
+			focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_kuo_zhang_su_fan"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round_hong_kong
+			country_event = {
+				id = QYG.middlegame.5
+				days = 1
+			} 
+			hidden_effect = {
+				country_event = {
+					id = QYG.middlegame.28
+					days = 60
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_zheng_feng_yun_dong
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -1
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_nei_bu_zi_cha
+		}
+		prerequisite = {
+			focus = QYG_kuo_zhang_su_fan
+			focus = QYG_zhen_zhi_wei_yuan_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zheng_feng_yun_dong"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round
+		}
+	}
+
+	focus = {
+		id = QYG_tui_jin_gong_nong_hui_jian_she
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 1
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			has_completed_focus = QYG_di_yi_bu
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_gai_zu_jiu_zheng_fu
+		}
+		prerequisite = {
+			focus = QYG_di_yi_bu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_tui_jin_gong_nong_hui_jian_she"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round
+		}
+	}
+
+	focus = {
+		id = QYG_zhen_zhi_wei_yuan_hui
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 1
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_kuo_zhang_su_fan
+		}
+		prerequisite = {
+			focus = QYG_gai_zu_jiu_zheng_fu
+			focus = QYG_tui_jin_gong_nong_hui_jian_she
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zhen_zhi_wei_yuan_hui"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round
+		}
+	}
+
+	focus = {
+		id = QYG_nei_bu_zi_cha
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 1
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			
+		}
+
+		available = {
+
+		}
+		mutually_exclusive = {
+			focus = QYG_zheng_feng_yun_dong
+		}
+		prerequisite = {
+			focus = QYG_kuo_zhang_su_fan
+			focus = QYG_zhen_zhi_wei_yuan_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_nei_bu_zi_cha"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_after_round
+		}
+	}
+
+	focus = {
+		id = QYG_gai_zu_ge_wei_yuan
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = 0
+		y = 10
+
+		dynamic = yes
+		ai_will_do = { factor = 90 }
+
+		available = {
+			has_completed_focus = QYG_ge_mong_de_sheng_ming_xian
+			has_completed_focus = QYG_ge_mong_jian_dun
+		}
+		prerequisite = {
+			focus = QYG_nei_bu_zi_cha
+			focus = QYG_zheng_feng_yun_dong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gai_zu_ge_wei_yuan"
+			if = {
+				limit = { 
+					has_country_flag = QYG_gai_zu_already
+				}
+				country_event = {
+					id = QYG.middlegame.17
+					days = 1
+				} 
+			}
+			else = {
+				country_event = {
+					id = QYG.middlegame.18
+					days = 1
+				} 
+			}
+		}
+	}
+	#军事
+	focus = {
+		id = QYG_zheng_bian_hong_jun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 4
+		y = 6
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			has_completed_focus = QYG_di_yi_bu
+		}
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_gai_zu_zhi_hui_xi_tong
+			focus = QYG_wei_chi_xian_you_ti_xi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zheng_bian_hong_jun"
+			country_event = {
+				id = QYG.middlegame.14
+				days = 1
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_jia_qiang_jun_dui_si_xiang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 6
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_zheng_bian_hong_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jia_qiang_jun_dui_si_xiang"
+			country_event = {
+				id = QYG.middlegame.4
+				days = 1
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_neng_da_sheng_zhang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 5
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_wei_ren_ming
+		}
+		prerequisite = {
+			focus = QYG_jia_qiang_jun_dui_si_xiang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_neng_da_sheng_zhang"
+			add_command_power = 50.0
+			custom_effect_tooltip = QYG_third_round
+		}
+	}
+
+	focus = {
+		id = QYG_jing_bing_qiang_jiang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 5
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_ren_ming_zhan_zheng
+		}
+		prerequisite = {
+			focus = QYG_neng_da_sheng_zhang
+			focus = QYG_wei_ren_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jing_bing_qiang_jiang"
+			add_command_power = 50.0
+			custom_effect_tooltip = QYG_third_round
+		}
+	}
+
+	focus = {
+		id = QYG_wei_ren_ming
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 7
+		y = 8
+
+		dynamic = yes
+		ai_will_do = { 
+			factor = 90 
+		}
+
+		mutually_exclusive = {
+			focus = QYG_neng_da_sheng_zhang
+		}
+		prerequisite = {
+			focus = QYG_jia_qiang_jun_dui_si_xiang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wei_ren_ming"
+			add_command_power = 50.0
+			custom_effect_tooltip = QYG_third_round
+		}
+	}
+
+	focus = {
+		id = QYG_ren_ming_zhan_zheng
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 7
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_jing_bing_qiang_jiang
+		}
+		prerequisite = {
+			focus = QYG_neng_da_sheng_zhang
+			focus = QYG_wei_ren_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ren_ming_zhan_zheng"
+			add_command_power = 50.0
+			custom_effect_tooltip = QYG_army_dem
+		}
+	}
+
+	focus = {
+		id = QYG_jie_shou_liang_guang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 3
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_zheng_bian_hong_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jie_shou_liang_guang"
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_chong_jian_hang_kong
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 3
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_jie_shou_liang_guang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_chong_jian_hang_kong"
+			add_ideas = QYG_fei_xing
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe
+				amount = 80
+				producer = GXC
+			}
+			country_event = {
+				id = QYG.middlegame.16
+				days = 1
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_ji_dong_hua_zhuang_bei
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = 3
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_chong_jian_hang_kong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ji_dong_hua_zhuang_bei"
+			add_ideas = QYG_war_of_manoeuvre
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_ge_mong_jian_dun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = 4
+		y = 10
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_ji_dong_hua_zhuang_bei
+		}
+		prerequisite = {
+			focus = QYG_jing_bing_qiang_jiang
+			focus = QYG_ren_ming_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ge_mong_jian_dun"
+			add_command_power = 20.0
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#经济
+	focus = {
+		id = QYG_bao_zhang_ge_ming
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -4
+		y = 6
+		ai_will_do = { factor = 90 }
+
+		allow_branch = {
+			has_completed_focus = QYG_di_yi_bu
+		}
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_chu_jin_shou_gong_ye
+		}
+		prerequisite = {
+			focus = QYG_zi_zhu_wu_qi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_bao_zhang_ge_ming"
+			add_political_power = 20
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_jie_jue_guang_xi_fei_huan
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -3
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_bao_zhang_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jie_jue_guang_xi_fei_huan"
+			remove_ideas = GXC_backwards_guangxi
+			599 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_jie_jue_guang_xi_tu_fei
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -3
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_jie_jue_guang_xi_fei_huan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jie_jue_guang_xi_tu_fei"
+			add_timed_idea = {
+				idea = QYG_jiao_fei_yun_dong
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_kai_cai_guang_xi_kuang_chang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -3
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+
+		}
+		prerequisite = {
+			focus = QYG_jie_jue_guang_xi_tu_fei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_kai_cai_guang_xi_kuang_chang"
+			594 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_tui_dong_tu_di_gai_ge
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -5
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_shou_gui_guo_you
+		}
+		prerequisite = {
+			focus = QYG_bao_zhang_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_tui_dong_tu_di_gai_ge"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+			country_event = {
+				id = QYG.middlegame.23
+				days = 5
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_xiu_ding_lao_gong_fa
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -5
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_te_shu_shi_qi_te_shu
+		}
+		prerequisite = {
+			focus = QYG_tui_dong_tu_di_gai_ge
+			focus = QYG_shou_gui_guo_you
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_xiu_ding_lao_gong_fa"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+			country_event = {
+				id = QYG.middlegame.25
+				days = 5
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_shou_gui_guo_you
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -7
+		y = 7
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_tui_dong_tu_di_gai_ge
+		}
+		prerequisite = {
+			focus = QYG_bao_zhang_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_shou_gui_guo_you"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+		}
+	}
+
+	focus = {
+		id = QYG_te_shu_shi_qi_te_shu
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -7
+		y = 8
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		mutually_exclusive = {
+			focus = QYG_xiu_ding_lao_gong_fa
+		}
+		prerequisite = {
+			focus = QYG_tui_dong_tu_di_gai_ge
+			focus = QYG_shou_gui_guo_you
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_te_shu_shi_qi_te_shu"
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+			country_event = {
+				id = QYG.middlegame.19
+				days = 8
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_la_long_duo_shu
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -7
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+			NOT = {
+				AND = {
+					has_completed_focus = QYG_xiu_ding_lao_gong_fa
+					has_completed_focus = QYG_tui_dong_tu_di_gai_ge
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = QYG_tuan_jie_lao_gong
+		}
+		prerequisite = {
+			focus = QYG_te_shu_shi_qi_te_shu
+			focus = QYG_xiu_ding_lao_gong_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_la_long_duo_shu"
+			custom_effect_tooltip = QYG_Intellectuals_up_entrepreneur_up
+			add_to_variable = {
+				QYG_Intellectuals_vote = 5
+			}
+			add_to_variable = {
+				QYG_entrepreneur_vote = 5
+			}
+			QYG_social_effect = yes	
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+			hidden_effect = {
+				country_event = {
+					id = QYG.middlegame.13
+					days = 3
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_tuan_jie_lao_gong
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 2
+		x = -5
+		y = 9
+		ai_will_do = { factor = 90 }
+
+		available = {
+			NOT = {
+				has_completed_focus = QYG_shou_gui_guo_you
+				has_completed_focus = QYG_te_shu_shi_qi_te_shu
+			}
+		}
+		mutually_exclusive = {
+			focus = QYG_la_long_duo_shu
+		}
+		prerequisite = {
+			focus = QYG_te_shu_shi_qi_te_shu
+			focus = QYG_xiu_ding_lao_gong_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_tuan_jie_lao_gong"
+			custom_effect_tooltip = QYG_worker_up_Farmer_up_5
+			add_to_variable = {
+				QYG_Farmer_vote = 5
+			}
+			add_to_variable = {
+				QYG_worker_vote = 5
+			}
+			add_political_power = 50
+			custom_effect_tooltip = QYG_first_round
+		}
+	}
+
+	focus = {
+		id = QYG_ge_mong_de_sheng_ming_xian
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = -4
+		y = 10
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_kai_cai_guang_xi_kuang_chang
+		}
+		prerequisite = {
+			focus = QYG_tuan_jie_lao_gong
+			focus = QYG_la_long_duo_shu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ge_mong_de_sheng_ming_xian"
+			add_political_power = 20
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#收尾
+	focus = {
+		id = QYG_mo_ma_li_bing
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_new_year
+		cost = 1
+		x = 0
+		y = 11
+		ai_will_do = { factor = 90 }
+
+		available = {
+			 
+		}
+		prerequisite = {
+			focus = QYG_ge_mong_de_sheng_ming_xian
+		}
+		prerequisite = {
+			focus = QYG_gai_zu_ge_wei_yuan
+		}
+		prerequisite = {
+			focus = QYG_ge_mong_jian_dun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_mo_ma_li_bing"
+			add_stability = 0.05
+			add_war_support = 0.05
+			custom_effect_tooltip = QYG_to_union
+		}
+	}
+#三阶段
+	#经济
+	focus = {
+		id = QYG_jian_she_wo_men_de_ming_tian
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		cost = 5
+		x = 22
+		y = 0
+		ai_will_do = { factor = 90 }
+		allow_branch = {
+			# has_completed_focus = QYG_mo_ma_li_bing
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jian_she_wo_men_de_ming_tian"
+			
+			hidden_effect = {
+				country_event = {
+					id = QYG.middlegame.34
+					days = 32
+				} 
+			}
+		}
+	}	
+
+	focus = {
+		id = QYG_yi_wu_jiao_yu_fang_zhang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 3
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jian_she_wo_men_de_ming_tian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_yi_wu_jiao_yu_fang_zhang"
+
+		}
+	}
+
+	focus = {
+		id = QYG_gong_du_zhi
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 4
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_yi_wu_jiao_yu_fang_zhang
+		}
+		mutually_exclusive = {
+			focus = QYG_lao_dong_xie_zu_jiao_yu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gong_du_zhi"
+			country_event = {
+				id = QYG.middlegame.33
+				days = 5
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_lao_dong_xie_zu_jiao_yu
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 2
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_yi_wu_jiao_yu_fang_zhang
+		}
+		mutually_exclusive = {
+			focus = QYG_gong_du_zhi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_lao_dong_xie_zu_jiao_yu"
+
+		}
+	}
+
+	focus = {
+		id = QYG_jiao_yu_fu_wu_ge_ming
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 3
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_lao_dong_xie_zu_jiao_yu
+			focus = QYG_gong_du_zhi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jiao_yu_fu_wu_ge_ming"
+
+		}
+	}
+
+	focus = {
+		id = QYG_jiao_yu_fu_wu_da_zong
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 2
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jiao_yu_fu_wu_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jiao_yu_fu_wu_da_zong"
+
+		}
+	}
+
+	focus = {
+		id = QYG_gao_xin_ji_shu
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 4
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jiao_yu_fu_wu_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gao_xin_ji_shu"
+
+		}
+	}
+
+	focus = {
+		id = QYG_tui_jin_nong_chun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 0
+		y = 1
+
+		dynamic = yes
+		ai_will_do = { 
+			factor = 90 
+		}
+
+		prerequisite = {
+			focus = QYG_jian_she_wo_men_de_ming_tian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_tui_jin_nong_chun"
+			country_event = {
+				id = QYG.middlegame.31
+				days = 5
+			} 
+		}
+	}
+
+	focus = {
+		id = QYG_lian_tong_bian_yuan_xiang_chun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_tui_jin_nong_chun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_lian_tong_bian_yuan_xiang_chun"
+
+		}
+	}
+
+	focus = {
+		id = QYG_chu_jin_nong_cun_ji_xie_hua
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -1
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_lian_tong_bian_yuan_xiang_chun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_chu_jin_nong_cun_ji_xie_hua"
+
+		}
+	}
+
+	focus = {
+		id = QYG_pei_yang_xiang_chun_yi_sheng
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 1
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_lian_tong_bian_yuan_xiang_chun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_pei_yang_xiang_chun_yi_sheng"
+
+		}
+	}
+
+	focus = {
+		id = QYG_bu_tie_lang_shi_sheng_chan
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 0
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_pei_yang_xiang_chun_yi_sheng
+		}
+		prerequisite = {
+			focus = QYG_chu_jin_nong_cun_ji_xie_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_bu_tie_lang_shi_sheng_chan"
+
+		}
+	}
+
+	focus = {
+		id = QYG_chong_ran_lu_huo
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -3
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jian_she_wo_men_de_ming_tian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_chong_ran_lu_huo"
+
+		}
+	}	
+
+	focus = {
+		id = QYG_zheng_dun_cheng_shi_jin_rong
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -4
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_chong_ran_lu_huo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zheng_dun_cheng_shi_jin_rong"
+			if = {
+				limit = { 
+					has_completed_focus = QYG_la_long_duo_shu
+				}
+				country_event = {
+					id = QYG.middlegame.32
+					days = 5
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = QYG_da_ji_jue_dui_ping_jun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -2
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_chong_ran_lu_huo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_da_ji_jue_dui_ping_jun"
+
+		}
+	}
+
+	focus = {
+		id = QYG_di_yi_ge_wu_nian_ji_hua
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -3
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_da_ji_jue_dui_ping_jun
+		}
+		prerequisite = {
+			focus = QYG_zheng_dun_cheng_shi_jin_rong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_di_yi_ge_wu_nian_ji_hua"
+
+		}
+	}
+
+	focus = {
+		id = QYG_zu_zhi_hui_fu_sheng_chan_wei
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -4
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_di_yi_ge_wu_nian_ji_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_zu_zhi_hui_fu_sheng_chan_wei"
+
+		}
+	}
+
+	focus = {
+		id = QYG_duo_lao_duo_de
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = -2
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_di_yi_ge_wu_nian_ji_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_duo_lao_duo_de"
+
+		}
+	}
+
+	focus = {
+		id = QYG_wan_wu_wei_wan_ming_suo_you
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_jian_she_wo_men_de_ming_tian
+		cost = 5
+		x = 0
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_bu_tie_lang_shi_sheng_chan
+		}
+		prerequisite = {
+			focus = QYG_zu_zhi_hui_fu_sheng_chan_wei
+		}
+		prerequisite = {
+			focus = QYG_duo_lao_duo_de
+		}
+		prerequisite = {
+			focus = QYG_jiao_yu_fu_wu_da_zong
+		}
+		prerequisite = {
+			focus = QYG_gao_xin_ji_shu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wan_wu_wei_wan_ming_suo_you"
+
+		}
+	}
+	#军事
+	focus = {
+		id = QYG_wei_wo_men_er_zhan
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		cost = 5
+		x = 32
+		y = 0
+		ai_will_do = { factor = 90 }
+		allow_branch = {
+			# has_completed_focus = QYG_mo_ma_li_bing
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_wei_wo_men_er_zhan"
+
+		}
+	}		
+
+	focus = {
+		id = QYG_gai_zao_jiu_jun_fa
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_wei_wo_men_er_zhan
+		}
+		mutually_exclusive = {
+			focus = QYG_han_wei_ge_min_chun_jie
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gai_zao_jiu_jun_fa"
+
+		}
+	}
+
+	focus = {
+		id = QYG_han_wei_ge_min_chun_jie
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_wei_wo_men_er_zhan
+		}
+		mutually_exclusive = {
+			focus = QYG_gai_zao_jiu_jun_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_han_wei_ge_min_chun_jie"
+
+		}
+	}
+
+	focus = {
+		id = QYG_bei_fa_zhan_zheng_de_jiao_yun
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_han_wei_ge_min_chun_jie
+		}
+		prerequisite = {
+			focus = QYG_gai_zao_jiu_jun_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_bei_fa_zhan_zheng_de_jiao_yun"
+
+		}
+	}
+
+	focus = {
+		id = QYG_ning_yao_ren_cai_deng_zhuang_bei
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = -2
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_bei_fa_zhan_zheng_de_jiao_yun
+		}
+		mutually_exclusive = {
+			focus = QYG_gong_ye_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ning_yao_ren_cai_deng_zhuang_bei"
+
+		}
+	}
+
+	focus = {
+		id = QYG_jun_dui_zhi_ye_hua
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = -3
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_ning_yao_ren_cai_deng_zhuang_bei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jun_dui_zhi_ye_hua"
+
+		}
+	}
+
+	focus = {
+		id = QYG_lei_li_feng_xing
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = -2
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jun_dui_zhi_ye_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_lei_li_feng_xing"
+
+		}
+	}
+
+	focus = {
+		id = QYG_ju_bu_tou_xiang
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = -4
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_jun_dui_zhi_ye_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_ju_bu_tou_xiang"
+
+		}
+	}
+
+	focus = {
+		id = QYG_gong_ye_zhan_zheng
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 2
+		y = 3
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_bei_fa_zhan_zheng_de_jiao_yun
+		}
+		mutually_exclusive = {
+			focus = QYG_ning_yao_ren_cai_deng_zhuang_bei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_gong_ye_zhan_zheng"
+
+		}
+	}
+
+	focus = {
+		id = QYG_kong_zhong_zhan_zheng
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 3
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_gong_ye_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_kong_zhong_zhan_zheng"
+
+		}
+	}
+
+	focus = {
+		id = QYG_shou_hu_lan_tian
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 2
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_kong_zhong_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_shou_hu_lan_tian"
+
+		}
+	}
+
+	focus = {
+		id = QYG_mo_tuo_hua_bu_dui
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 4
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_kong_zhong_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_mo_tuo_hua_bu_dui"
+
+		}
+	}
+
+	focus = {
+		id = QYG_san_da_ji_lb_ba_da
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 0
+		y = 4
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_ning_yao_ren_cai_deng_zhuang_bei
+			focus = QYG_gong_ye_zhan_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_san_da_ji_lb_ba_da"
+
+		}
+	}
+
+	focus = {
+		id = QYG_min_bu_wei_shi
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 0
+		y = 5
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_san_da_ji_lb_ba_da
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_min_bu_wei_shi"
+
+		}
+	}
+
+	focus = {
+		id = QYG_jie_fang_quan_ren_lei
+		icon = GFX_goal_ANQ_fengtian_loyalty
+		relative_position_id = QYG_wei_wo_men_er_zhan
+		cost = 5
+		x = 0
+		y = 6
+		ai_will_do = { factor = 90 }
+
+		prerequisite = {
+			focus = QYG_min_bu_wei_shi
+		}
+		prerequisite = {
+			focus = QYG_ju_bu_tou_xiang
+		}
+		prerequisite = {
+			focus = QYG_lei_li_feng_xing
+		}
+		prerequisite = {
+			focus = QYG_shou_hu_lan_tian
+		}
+		prerequisite = {
+			focus = QYG_mo_tuo_hua_bu_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QYG_jie_fang_quan_ren_lei"
+
+		}
+	}
+}
+
+
+

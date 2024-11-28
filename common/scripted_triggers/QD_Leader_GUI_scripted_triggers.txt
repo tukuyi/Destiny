@@ -1,0 +1,27 @@
+# QD_uses_leader_gui = {
+# 	OR = {
+# 		LEC_has_leader_GUI = yes
+# 		has_country_flag = QD_LEADER_GUI_VISIBLE
+# 	}
+# 	NOT = {
+# 		has_country_flag = QD_LEADER_GUI_NOT_VISIBLE
+# 	}
+# }
+
+# QD_uses_double_leader_gui = {
+# 	OR = {
+# 		has_country_flag = QD_DOUBLE_LEADER_GUI_VISIBLE
+# 	}
+# }
+
+# QD_LEADER_GUI_USES_CUSTOM_TITLE = {
+# 	OR = {
+# 		has_country_flag = QD_USES_CUSTOM_TITLE
+# 		has_idea_with_trait = land_marshal_of_liv_ord
+# 		has_idea_with_trait = minister_for_ulster_affairs 
+# 	}
+# }
+
+# LEC_has_leader_GUI = {
+# 	has_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+# }

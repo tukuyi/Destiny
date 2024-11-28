@@ -1,0 +1,296 @@
+defined_text = {
+	name = GetQYG_name
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_union_vote
+				value = 20
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_never"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_union_vote
+				value = 20
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_union_vote
+				value = 40
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_smell"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_union_vote
+				value = 40
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_union_vote
+				value = 60
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_middle"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_union_vote
+				value = 60
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_union_vote
+				value = 80
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_big"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_union_vote
+				value = 80
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_union_vote
+				value = 100
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_huge"
+	}
+}
+defined_text = {
+	name = GetQYG_name_party
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_party_vote
+				value = 20
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_never"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_party_vote
+				value = 20
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_party_vote
+				value = 40
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_smell"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_party_vote
+				value = 40
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_party_vote
+				value = 60
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_middle"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_party_vote
+				value = 60
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_party_vote
+				value = 80
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "QYG_big"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = QYG_party_vote
+				value = 80
+				compare = greater_than
+			} 
+			check_variable = {
+				var = QYG_party_vote
+				value = 100
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "QYG_huge"
+	}
+}
+defined_text = {
+	name = Getfen_quan_ji_quan
+	text = {
+		trigger = {
+			check_variable = { QYG_power > 85 }
+		}
+		localization_key = "Getfen_quan_ji_quan85"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_power > 65 }
+		}
+		localization_key = "Getfen_quan_ji_quan65"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_power > 45 }
+		}
+		localization_key = "Getfen_quan_ji_quan45"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_power > 15 }
+		}
+		localization_key = "Getfen_quan_ji_quan15"
+	}
+	text = {
+		localization_key = "Getfen_quan_ji_quan"
+	}
+}
+defined_text = {
+	name = Getfatuanzhuyi
+	text = {
+		trigger = {
+			check_variable = { QYG_Corporation > 85 }
+		}
+		localization_key = "GetCorporation85"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_Corporation > 65 }
+		}
+		localization_key = "GetCorporation65"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_Corporation > 45 }
+		}
+		localization_key = "GetCorporation45"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_Corporation > 15 }
+		}
+		localization_key = "GetCorporation15"
+	}
+	text = {
+		localization_key = "GetCorporation"
+	}
+}
+defined_text = {
+	name = Getbureaucracy
+	text = {
+		trigger = {
+			check_variable = { QYG_bureaucracy > 85 }
+		}
+		localization_key = "Getbureaucracy85"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_bureaucracy > 65 }
+		}
+		localization_key = "Getbureaucracy65"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_bureaucracy > 45 }
+		}
+		localization_key = "Getbureaucracy45"
+	}
+	text = {
+		trigger = {
+			check_variable = { QYG_bureaucracy > 15 }
+		}
+		localization_key = "Getbureaucracy15"
+	}
+	text = {
+		localization_key = "Getbureaucracy"
+	}
+}
+defined_text = {
+	name = QYG_wei_ren_ming_loc
+	text = {
+		trigger = {
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+		localization_key = "QYG_wei_ren_ming_loc_ren_ming"
+	}
+	text = {
+		localization_key = "QYG_wei_ren_ming_loc_nong_gong"
+	}
+}
+defined_text = {
+	name = QYG_wei_ren_ming_desc_loc
+	text = {
+		trigger = {
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+		localization_key = "QYG_wei_ren_ming_loc_ren_ming_desc"
+	}
+	text = {
+		localization_key = "QYG_wei_ren_ming_loc_nong_gong_desc"
+	}
+}
+defined_text = {
+	name = QYG_gai_zu_ge_wei_yuan_loc
+	text = {
+		trigger = {
+			has_country_flag = QYG_gai_zu_already
+		}
+		localization_key = "QYG_gai_zu_ge_wei_yuan_loc_gai_zu"
+	}
+	text = {
+		localization_key = "QYG_gai_zu_ge_wei_yuan_loc_bao_liu"
+	}
+}
+defined_text = {
+	name = QYG_gai_zu_ge_wei_yuan_desc_loc
+	text = {
+		trigger = {
+			has_country_flag = QYG_gai_zu_already
+		}
+		localization_key = "QYG_gai_zu_ge_wei_yuan_loc_gai_zu_desc"
+	}
+	text = {
+		localization_key = "QYG_gai_zu_ge_wei_yuan_loc_bao_liu_desc"
+	}
+}
+defined_text = {
+	name = QYG_tui_jin_nong_chun_loc
+	text = {
+		trigger = {
+			has_completed_focus = QYG_la_long_duo_shu
+		}
+		localization_key = "QYG_tui_jin_nong_chun_loc_revolution"
+	}
+	text = {
+		localization_key = "QYG_tui_jin_nong_chun_loc_reform"
+	}
+}

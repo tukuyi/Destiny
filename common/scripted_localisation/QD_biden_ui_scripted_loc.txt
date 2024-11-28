@@ -1,0 +1,78 @@
+# defined_text = {
+# 	name = QDGetHOGTitle  #定义按钮名字
+# 	text = {
+# 		trigger = {
+# 			tag = LEC
+# 		}
+# 		localization_key = HNN_EM_OR_PRES
+# 	}
+# }
+# defined_text = {
+# 	name = QDGetFORHOGTitle  ##定义外交
+# 	text = {
+# 		trigger = {
+# 		 	tag = LEC
+# 		}
+# 		localization_key = HNN_EM_OR_PRES2
+# 	}
+# }
+
+# defined_text = {
+# 	name = QDGetHeadDescription #定义副领袖介绍
+
+# }
+
+# defined_text = {
+# 	name = QDGetPrimeMinister  #定义副领袖名字
+# 	text = {
+# 		trigger = {#鲁迅
+# 			tag = LEC
+# 		  	has_completed_focus = LEC_wo_men_de_xin_ling_xiu
+# 		}
+# 		localization_key = LEC_lu_xun_hog
+# 	}
+# }
+
+# defined_text = {
+# 	name = QDGetPMPortrait   #定义图片
+# 	text = {
+# 		trigger = {#鲁迅
+# 			tag = LEC
+# 		  	has_completed_focus = LEC_wo_men_de_xin_ling_xiu
+# 		}
+# 		localization_key = GFX_Portrait_LEC_Lu_Xun
+# 	}
+# }
+
+# defined_text = {
+# 	name = QDGetThirdLeaderTitle   #三头政府定义
+# 	text = {
+# 		trigger = {
+# 			NOT = {
+# 				QD_LEADER_GUI_USES_CUSTOM_TITLE = yes
+# 			}
+# 		}
+# 		localization_key = QD_NORMAL_FOR_TITLE
+# 	}
+# 	text = {
+# 		trigger = {
+# 			QD_LEADER_GUI_USES_CUSTOM_TITLE = yes
+# 		}
+# 		localization_key = QD_CUSTOM_FOR_TITLE
+# 	}
+# }
+
+# defined_text = {
+# 	name = QDGetThirdLeaderTitle  #第三领袖外交按钮
+	
+# }
+
+# defined_text = {
+# 	name = QDGetOtherPrimeMinister  #第三领袖名字
+	
+# }
+
+# defined_text = {
+# 	name = QDGetOtherPMPortrait  #第三领袖图片
+	
+# }

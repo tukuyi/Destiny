@@ -1,0 +1,66 @@
+leader_traits = {
+
+	FNG_light_in_the_north = { #张学良
+		random = no
+		stability_factor = 0.05
+		political_power_gain = 0.1
+		army_morale_factor = 0.1
+	}
+
+	FNG_old_marshal = { #Zhang Zuolin
+		random = no
+		planning_speed = -0.1
+		max_planning = 0.1
+		stability_factor = 0.1
+		materiel_manufacturer_cost_factor = -0.25
+		compliance_gain = -0.05
+	}
+
+	FNG_young_marshal = { #Zhang Xueliang
+		random = no
+		army_morale_factor = 0.1
+		experience_gain_air = 0.1
+		production_speed_air_base_factor = 0.25
+	}
+
+	heir_to_gaozu = {
+		random = no
+		stability_factor = 0.10
+		war_support_factor = 0.10
+	}
+
+	FNG_logistics_and_firepower = { #The Old Marshal's Clique
+		random = no
+		cat_superior_firepower_cost_factor = -0.10
+		army_infantry_defence_factor = 0.05
+		out_of_supply_factor = -0.05
+
+		ai_will_do = { factor = 1 }
+	}
+	FNG_on_daring_wings = { #The Young Marshal's Clique
+		random = no
+		air_doctrine_cost_factor = -0.05
+		land_doctrine_cost_factor = -0.05
+		experience_gain_air = 0.08
+		compliance_gain = 0.05
+
+		ai_will_do = { factor = 1 }
+	}
+	FNG_spirit_and_steel = { #The Shikan Clique
+		random = no
+		cat_grand_battle_plan_cost_factor = -0.10
+		army_infantry_attack_factor = 0.05
+		max_planning = 0.05
+
+		ai_will_do = { factor = 1 }
+	}
+	FNG_spirit_and_steel_2 = {
+		random = no
+		cat_grand_battle_plan_cost_factor = -0.10
+		army_infantry_attack_factor = 0.1
+		max_planning = 0.1
+
+		ai_will_do = { factor = 1 }
+	}
+}
+	

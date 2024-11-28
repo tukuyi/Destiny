@@ -1,0 +1,292 @@
+characters = {
+################
+###  领导人  ###
+################
+#蔡和森
+	QYG_cai_he_sen = {
+		name = QYG_cai_he_sen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QYG_cai_he_sen
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QYG_cai_he_sen_DESC
+			ideology = centralized_syndicalism_subtype
+		}
+	}
+#符克
+	QYG_fu_ke = {
+		name = QYG_fu_ke
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QYG_fu_ke
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QYG_fu_ke_DESC
+			ideology = social_liberal_subtype
+			traits = {
+				
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QYG_fu_ke_DESC
+			ideology = market_liberal_subtype
+			traits = {
+				
+			}
+		}
+	}	
+################
+###   元帅   ###
+################	
+#彭湃
+	QYG_peng_pai = {
+		name = QYG_peng_pai
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_Peng_Pai
+			}
+			army = {
+				small = GFX_Portrait_GXC_Peng_Pai
+				large = GFX_Portrait_GXC_Peng_Pai
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QYG_peng_pai_DESC
+			ideology = anarcho_communism_subtype
+			traits = {
+				
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_QYG_peng_pai_ARMY_DESC
+			traits = {
+				war_hero 
+				organizer 
+				irregulars_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#冯白驹
+	QYG_Feng_Bai_Ju = {
+		name = QYG_Feng_Bai_Ju
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QYG_Feng_Bai_Ju
+			}
+			army = {
+				small = GFX_Portrait_QYG_Feng_Bai_Ju
+				large = GFX_Portrait_QYG_Feng_Bai_Ju
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QYG_Feng_Bai_Ju_DESC
+			ideology = authcom_subtype
+			traits = {
+				
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_QYG_Feng_Bai_Ju_ARMY_DESC
+			traits = {
+				war_hero 
+				infantry_officer
+				militias_officer
+				camouflage_expert
+				irregulars_officer
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+################
+###   将军   ###
+################
+#彭汉垣
+	QYG_Peng_hui = {
+		name = QYG_Peng_hui
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Peng_hui
+				large = GFX_Portrait_GXC_Peng_hui
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_PENG_HUI_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#马白山
+	QYG_Ma_bai_shan = {
+		name = QYG_Ma_bai_shan
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Ma_bai_shan
+				large = GFX_Portrait_QYG_Ma_bai_shan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Ma_bai_shan_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#冯国卿
+	QYG_Feng_Guo_Qing = {
+		name = QYG_Feng_Guo_Qing
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Feng_Guo_Qing
+				large = GFX_Portrait_QYG_Feng_Guo_Qing
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Feng_Guo_Qing_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#庄田
+	QYG_Zhuang_Tian = {
+		name = QYG_Zhuang_Tian
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Zhuang_Tian
+				large = GFX_Portrait_QYG_Zhuang_Tian
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Zhuang_Tian_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#方方
+	QYG_fang_si_qiong = {
+		name = QYG_fang_si_qiong
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_fang_si_qiong
+				large = GFX_Portrait_QYG_fang_si_qiong
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_fang_si_qiong_DESC
+			traits = {
+				harsh_leader
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#陶铸
+	QYG_Tao_zu = {
+		name = QYG_Tao_zu
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Tao_zu
+				large = GFX_Portrait_QYG_Tao_zu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Tao_zu_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#符确坚
+	QYG_Fu_Que_Jian = {
+		name = QYG_Fu_Que_Jian
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Fu_Que_Jian
+				large = GFX_Portrait_QYG_Fu_Que_Jian
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Fu_Que_Jian_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
+#潘汉年
+	QYG_Pan_Han_Nian = {
+		name = QYG_Pan_Han_Nian
+		portraits = {
+			army = {
+				small = GFX_Portrait_QYG_Pan_Han_Nian
+				large = GFX_Portrait_QYG_Pan_Han_Nian
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_QYG_Pan_Han_Nian_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+}

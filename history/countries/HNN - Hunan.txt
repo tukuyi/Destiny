@@ -1,0 +1,445 @@
+﻿capital = 602
+
+oob = "HNN_Collapse"
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	irregular_infantry_tech = 1
+	tech_support = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	tech_recon = 1
+	gw_artillery = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "HNN_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+		}
+	else = {
+		set_air_oob = "HNN_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+		}
+	}
+}
+
+set_country_flag = KX_no_naval_tech_decision_enable
+save_global_event_target_as = original_hunan
+
+add_offsite_building = {
+	type = industrial_complex
+	level = 2
+}
+
+set_research_slots = 2
+set_convoys = 10
+
+set_politics = {
+	ruling_party = social_liberal
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+add_pataut_to_coalition = yes
+
+set_popularities = {
+	totalist = 0
+	syndicalist = 0
+	radical_socialist = 1
+	social_democrat = 25
+	social_liberal = 16
+	market_liberal = 3
+	social_conservative = 21
+	authoritarian_democrat = 11
+	paternal_autocrat = 21
+	national_populist = 2
+}
+
+add_ideas = {
+	HNN_intense_agricultural_imbalance
+	HNN_perilous_industrial_sector
+	HNN_a_democratic_province
+	HNN_the_western_diarchy
+	HNN_intellectual_hub
+	unequal_treaties
+
+	HNN_tan_yan_kai_hog
+	HNN_Huang_Shiheng_for_sco
+	HNN_Hu_Shuhua_eco_sco
+	HNN_Yi_Peiji_sec_sco
+}
+
+#新增
+recruit_character = HNN_ye_kaixin
+recruit_character = HNN_zhao_hengti
+recruit_character = HNN_tang_xiangming
+recruit_character = HNN_chen_quzhen
+recruit_character = HNN_tian_yingzhao
+recruit_character = HNN_he_yaozu
+recruit_character = HNN_yuan_zuming
+recruit_character = HNN_yang_xuancheng
+recruit_character = HNN_long_yunfei
+recruit_character = HNN_dai_jitao
+recruit_character = HNN_zhou_xicheng
+recruit_character = HNN_jiang_chuou
+recruit_character = HNN_tao_zhiyue
+recruit_character = HNN_gong_xian
+recruit_character = HNN_Xia_Dou_Ying
+recruit_character = HNN_Liu_Yong_Yao
+recruit_character = HNN_Fang_Ding_Ying
+recruit_character = HNN_tang_shengming 
+recruit_character = HNN_Teng_Daiyuan
+recruit_character = HNN_Chen_Yi
+recruit_character = HNN_Xiao_Ke
+recruit_character = HNN_peng_dehuai
+recruit_character = HNN_he_jian
+recruit_character = HNN_he_long
+recruit_character = HNN_liu_jianxu
+recruit_character = HNN_tao_guang
+recruit_character = HNN_gong_hao
+recruit_character = HNN_li_minghao
+recruit_character = HNN_que_hanqian
+recruit_character = HNN_lu_dangping
+recruit_character = HNN_liu_xing
+recruit_character = HNN_mao_ze_dong
+recruit_character = HNN_He_Su_Heng
+recruit_character = HNN_Dong_Bi_Wu
+recruit_character = HNN_yang_jie
+recruit_character = HNN_tang_shengzhi
+recruit_character = HNN_cheng_qian
+recruit_character = HNN_song_xilian
+recruit_character = HNN_Zhang_Zhen
+recruit_character = HNN_Wen_Chao_Ji
+recruit_character = HNN_li_pinxian
+recruit_character = GXC_Wan_Dan_Ping
+###
+# create_corps_commander = {
+# 	name = "唐生明"
+# 	id = 1407
+# }
+
+# create_corps_commander = {
+# 	name = "叶开鑫"
+# 	id = 5064
+# }
+
+# create_field_marshal = {
+# 	name = "赵恒惕"
+# 	id = 1406
+# }
+
+# create_corps_commander = {
+# 	name = "彭德怀"
+# 	id = 2011407
+# }
+
+# create_corps_commander = {
+# 	name = "何键"
+# 	id = 1408
+# }
+
+# create_corps_commander = {
+# 	name = "宋希濂"
+# 	id = 5061
+# }
+
+# create_corps_commander = {
+# 	name = "贺龙"
+# 	id = 5062
+# }
+
+# create_corps_commander = {
+# 	name = "滕代远"
+# 	id = 5063
+# }
+
+# create_field_marshal = {
+# 	name = "唐生智"
+# 	id = 1409
+# }
+HNN_chen_quzhen = { 
+	set_variable = { china_alignment = token:northern_zhili }
+	set_character_flag = CHN_original_unit_leader 
+}
+HNN_tang_xiangming = {
+	set_variable = { china_alignment = token:northern_zhili }
+	set_character_flag = HNN_zhili_loyalist_flag
+	set_character_flag = QIE_zhili_leader
+	set_character_flag = CHN_original_unit_leader
+}
+HNN_zhao_hengti = {
+	set_variable = { china_alignment = token:federalists }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+}
+HNN_song_xilian = {
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes #In Exile
+}
+HNN_li_pinxian = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	retire = yes
+}
+HNN_tang_shengzhi = {
+	set_variable = { china_alignment = token:left_kuomintang }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_cheng_qian = {
+	set_variable = { china_alignment = token:right_kuomintang }
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes #In Exile
+}
+HNN_yang_jie = {
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes #In Exile
+}
+HNN_Wen_Chao_Ji = {
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes #In Exile
+}
+HNN_Zhang_Zhen = {
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes #In Exile
+}
+HNN_liu_xing = { #Appears in KMT Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_li_minghao = { #Appears in KMT Content
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+HNN_que_hanqian = { #Appears in KMT Content
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+HNN_lu_dangping = {
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+HNN_liu_jianxu = { #Appears in KMT Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	retire = yes
+}
+HNN_gong_hao = { #Appears in KMT Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_tao_guang = { #Appears in KMT Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_he_jian = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	retire = yes
+}
+HNN_he_long = {
+	set_variable = { china_alignment = token:Syndicalists }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_peng_dehuai = {
+	set_variable = { china_alignment = token:Syndicalists }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_He_Su_Heng = {
+	set_variable = { china_alignment = token:Syndicalists }
+	retire = yes
+}
+HNN_Dong_Bi_Wu = {
+	set_variable = { china_alignment = token:Syndicalists }
+	retire = yes
+}
+HNN_Teng_Daiyuan = {
+	retire = yes
+}
+GXC_Wan_Dan_Ping = {
+	retire = yes
+}
+HNN_Chen_Yi = {
+	retire = yes
+}
+HNN_Xiao_Ke = {
+	retire = yes
+}
+HNN_mao_ze_dong = {
+	retire = yes
+}
+HNN_tang_shengming = { #Appears in KMT Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_Xia_Dou_Ying = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_Liu_Yong_Yao = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_Fang_Ding_Ying = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_jiang_chuou = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_tao_zhiyue = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_gong_xian = { #Appears in Fed Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+	retire = yes
+}
+HNN_zhou_xicheng = { #Appears in Zhili Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_zhili_loyalist_flag
+	retire = yes
+}
+HNN_long_yunfei = { #Appears in Zhili Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_zhili_loyalist_flag
+	retire = yes
+}
+HNN_dai_jitao = { #Appears in Zhili Content
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_zhili_loyalist_flag
+	retire = yes
+}
+
+create_country_leader = {
+	name = "任弼时 "
+	desc = "POLITICS_KONG_LINGYI_DESC"
+	picture = "gfx/leaders/HNN/Portrait_HNN_Ren_Bi_Shi.png"
+	expire = "1965.1.1"
+	ideology = totalist_subtype
+}
+create_country_leader = {
+	name = "董必武 "
+	desc = "POLITICS_HNN_DONG_BIWU_DESC"
+	picture = "gfx/leaders/HNN/Portrait_HNN_Dong_Bi_Wu.png"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+}
+create_country_leader = {
+	name = "彭德怀 "
+	desc = "POLITICS_HNN_PENG_DEHUAI_DESC"
+	picture = "gfx/leaders/HNN/Portrait_Hunan_Peng_De.png"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+}
+create_country_leader = {
+	name = "唐生智"
+	desc = "POLITICS_HNN_TANG_SHENGZHI_DESC"
+	picture = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengzhi.png"
+	expire = "1965.1.1"
+	ideology = socdem_agrarianism_subtype
+}
+create_country_leader = {
+	name = "谭延闿"
+	desc = "POLITICS_HNN_Tan_Yan_Kai_DESC"
+	picture = "gfx/leaders/HNN/Portrait_HNN_Tan_Yan_Kai.png"
+	expire = "1965.1.1"
+	ideology = soclib_tridemism_subtype
+}
+create_country_leader = {
+	name = "刘廷芳"
+	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
+	expire = "1965.1.1"
+	ideology = marlib_warlordism_subtype
+}
+create_country_leader = {
+	name = "程潜"
+	desc = "POLITICS_HNN_CHENG_QIAN_DESC"
+	picture = "gfx/leaders/CHI/Portrait_CHI_Cheng_Qian.png"
+	expire = "1965.1.1"
+	ideology = authdem_tridemism_subtype
+}
+create_country_leader = {
+	name = "汤芗铭"
+	desc = "POLITICS_HNN_tang_xiangming_DESC"
+	picture = "gfx/leaders/HNN/Portrait_HNN_tang_xiangming.png"
+	expire = "1965.1.1"
+	ideology = kleptocracy_subtype
+}
+create_country_leader = {
+	name = "石顶武"
+	desc = "Portrait_HNN_Shi_Dingwu_DESC"
+	picture = "gfx/leaders/HNN/Portrait_HNN_Shi_Dingwu.png"
+	expire = "1965.1.1"
+	ideology = Yiguandao_subtype
+}

@@ -1,0 +1,276 @@
+##############
+#### 琼崖 ####
+##############
+
+ideas = {
+	head_of_government = {
+		QYG_lin_shi_wei_yuan_hui_hog = {
+			allowed = { original_tag = QYG }
+			picture = QYG_lin_shi_wei_yuan_hui_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea QYG_lin_shi_wei_yuan_hui_hog"
+				
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_plodding_bureaucrat
+			}
+		}
+	}
+
+	person_of_influence ={
+		GXC_peng_pai_sec = {#彭湃
+			allowed = { original_tag = QYG }
+			picture = GXC_peng_pai_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GXC_peng_pai_hog"
+				
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				QYG_nong_ye_da_wang
+			}
+		}
+		HNN_Cai_Hesen_for = {#蔡和森
+			allowed = { original_tag = QYG }
+			picture = QYG_cai_he_sen
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea QYG_cai_he_sen"
+				
+			}
+			traits = {
+				foreign_minister
+				syndicalist
+				eco_unionist
+			}
+		}
+		QYG_yang_bao_an_sec = {#杨匏安
+			allowed = { original_tag = QYG }
+			picture = QYG_yang_bao_an_sec
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea QYG_yang_bao_an_sec"
+				
+			}
+			traits = {
+				security_minister
+				syndicalist
+				sec_great_soul
+			}
+		}
+	}
+
+	country = { 
+		QYG_tu_di_gai_ge = {#成功的土地改革
+			allowed = { always = no }
+			picture = UKR_cornbasket
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.02
+				radical_socialist_drift = 0.03
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		QYG_du_hai_er_lai = {#渡海而来
+			allowed = { always = no }
+			picture = HOL_welfare_state
+			modifier = {
+				monthly_population = 0.20
+			}
+		}
+		QYG_du_hai_er_lai2 = {#渡海而来
+			allowed = { always = no }
+			name = QYG_du_hai_er_lai
+			picture = HOL_welfare_state
+			modifier = {
+				stability_factor = 0.05
+				monthly_population = 0.30
+				syndicalist_drift = 0.02
+				radical_socialist_drift = 0.02
+			}
+		}
+		QYG_bei_feng_suo = {#被封锁的海上贸易
+			allowed = { always = no }
+			picture = HOL_labor_camps
+			available = {
+				NOT = {
+					owns_state = 592
+				}
+			}
+			modifier = {
+				trade_opinion_factor = -0.60
+				local_resources_factor = -0.20
+				production_lack_of_resource_penalty_factor = -0.20
+			}
+		}
+		QYG_dui_Liang_guang_xin_xi = {#地下情报网
+			allowed = { always = no }
+			picture = GXC_liangguang_broken
+			available = {
+				NOT = {
+					owns_state = 592
+				}
+			}
+			modifier = {
+				
+			}
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10   
+			}
+		}
+		QYG_ge_ming_xin_jie_duan_idea = {#革命的新阶段
+			allowed = { always = no }
+			picture = ALB_prosperity_shared
+		}
+		QYG_patry_idea = {#革命前景
+			allowed = { always = no }
+			picture = generic_phoenix
+		}
+		QYG_jiao_fei_yun_dong = {#剿匪运动
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QYG_jiao_fei_yun_dong" }
+			picture = HOL_unemployed_conscription
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.10
+				consumer_goods_factor = 0.10
+				political_power_factor = -0.05
+			}
+			on_remove = {
+				add_ideas = QYG_hui_fu_de_guang_xi
+			}
+		}
+		QYG_hui_fu_de_guang_xi = {#恢复的广西经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QYG_hui_fu_de_guang_xi" }
+			allowed = { always = no }
+			picture = KUB_cooperatives
+			modifier = {
+				stability_factor = 0.10
+				consumer_goods_factor = -0.05
+				political_power_factor = 0.05
+			}
+		}
+		QYG_fei_xing = {#航空飞行学院
+			on_add = {log = "[GetDateText]: [Root.GetName]: QYG_fei_xing"}
+			allowed = {	always = no	}
+			picture = death_men
+			modifier = {
+				air_accidents_factor = -0.10
+				experience_gain_air_factor = 0.05
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				cv_small_plane_cas_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				medium_plane_fighter_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+			}
+			research_bonus = {
+				air_equipment = 0.10
+			}
+		}	
+		QYG_war_of_manoeuvre = {#机动化战争
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QYG_war_of_manoeuvre"}
+			picture = NFA_tank_war
+			allowed = { always = no }
+            modifier = {
+				army_armor_speed_factor = 0.05
+				motorized_attack_factor = 0.05
+				mechanized_attack_factor = 0.05
+			}
+			equipment_bonus = {
+				mechanized = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				armored_car_equipment = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+				light_tank_aa_chassis = {
+					build_cost_ic = -0.05
+					reliability = 0.05
+					instant = yes
+				}
+			}
+		}
+	}
+}
+

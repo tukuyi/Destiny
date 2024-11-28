@@ -1,0 +1,345 @@
+﻿capital = 597
+OOB = "SQI"
+
+set_technology = {
+	irregular_infantry_tech = 1
+	basic_train = 1
+	infantry_weapons = 1
+	tech_support = 1
+	gw_artillery = 1
+}
+
+save_global_event_target_as = original_shandong
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "SQI_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		#set_air_oob = "SQI_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+### Navy - MtG ###
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		
+		basic_naval_mines = 1
+
+		## Modules##
+		basic_battery = 1
+		basic_light_battery = 1
+		smoke_generator = 1
+	}
+}
+
+### Navy - Non MtG ###
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+	}
+}
+
+set_research_slots = 2
+set_politics = {
+	ruling_party = paternal_autocrat
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+    totalist = 0
+    radical_socialist = 0
+    syndicalist = 0
+    social_democrat = 0
+    social_liberal = 7
+    market_liberal = 0
+    social_conservative = 22
+    authoritarian_democrat = 0
+    paternal_autocrat = 43
+    national_populist = 28
+}
+
+GER = { embargo_ROOT = yes }
+
+set_stability = 0.20
+set_war_support = 0.40
+starting_train_buffer = 1
+add_offsite_building = {
+	type = arms_factory
+	level = 1
+}
+
+add_offsite_building = {
+	type = industrial_complex
+	level = 1
+}
+
+
+add_ideas = {
+	SQI_Rampant_drug_trade
+	SQI_dogmeat_general
+	SQI_honored_master
+	SQI_flight_north
+	
+	partial_economic_mobilisation
+	unequal_treaties
+
+	SQI_Chu_Yupu_hog_pau
+	SQI_Zhang_Fuyun_for_pau
+	SQI_Zhu_Panzao_eco_pau
+	SQI_Wang_Xugao_sec_pau
+}
+
+country_event = { 
+	id = shandong.1 
+	days = 1 
+}
+
+# country_event = { 
+# 	id = shandong.435 #Zonchang's death
+# 	days = 4018
+# 	random = 4320
+# }
+
+country_event = { 
+	id = shandong.436 #Tianran's death
+	days = 4018
+	random = 4320
+}
+
+country_event = { 
+	id = shandong.437 #Zheyuan's death
+	days = 4018
+	random = 4320
+}
+
+create_country_leader = {
+	name = "傅斯年"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Fu_Sinian.png"
+	expire = "1.1.1"
+	ideology = socdem_warlordism_subtype
+}
+create_country_leader = {
+	name = "张树林"
+	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
+	expire = "1.1.1"
+	ideology = soclib_warlordism_subtype
+}
+create_country_leader = {
+	name = "马士威"
+	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
+	expire = "1.1.1"
+	ideology = marlib_warlordism_subtype
+}
+create_country_leader = {
+	name = "杨树林"
+	desc = "POLITICS_SONG_ZHEYUAN_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Song_Zheyuan.png"
+	expire = "1.1.1"
+	ideology = neo_confucianism_subtype
+}
+create_country_leader = {
+	name = "屈映光"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
+	expire = "1.1.1"
+	ideology = authdem_warlordism_subtype
+}
+create_country_leader = {
+	name = "靳云鹗"
+	desc = "POLITIC_Jin_Yune_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Jin_Yune.png"
+	expire = "1.1.1"
+	ideology = pataut_oligarchy_subtype
+}
+# create_country_leader = {
+# 	name = "张宗昌"
+# 	desc = "POLITICS_ZHANG_ZONGCHANG_DESC"
+# 	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang.png"
+# 	expire = "1.1.1"
+# 	ideology = kleptocracy_subtype
+# }
+create_country_leader = {
+	name = "张天然"
+	desc = "POLITICS_ZHANG_TIANRAN_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
+	expire = "1.1.1"
+	ideology = Yiguandao_subtype
+}
+
+# create_field_marshal = {
+# 	name = "李景林"
+# 	id = 1305
+# }
+# create_corps_commander = {
+# 	name = "宋哲元"
+# 	id = 1190
+# }
+# create_field_marshal = {
+# 	name = "张宗昌"
+# 	id = 1191
+# }
+# create_corps_commander = {
+# 	name = "冯安邦"
+# 	id = 1192
+# }
+# create_corps_commander = {
+# 	name = "张怀芝"
+# 	id = 1193
+# }
+# create_corps_commander = {
+# 	name = "徐源泉"
+# 	id = 1194
+# }
+# create_corps_commander = {
+# 	name = "小日向白朗"
+# 	id = 1195
+# }
+# create_corps_commander = {
+# 	name = "伊达顺之助"
+# 	id = 1196
+# }
+# create_corps_commander = {
+# 	name = "孙殿英"
+# 	id = 1197
+# }
+# create_corps_commander = {
+# 	name = "张敬尧"
+# 	id = 1198
+# }
+# create_corps_commander = {
+# 	name = "李丽久"
+# 	id = 1199
+# }
+# create_corps_commander = {
+# 	name = "薛颠"
+# 	id = 1304
+# }
+# create_corps_commander = {
+# 	name = "卢永祥"
+# 	id = 1301
+# }
+# create_corps_commander = {
+# 	name = "鲍里斯·阿年科夫"
+# 	id = 454
+# }
+
+recruit_character = SQI_jin_yune
+recruit_character = SQI_zhang_jingyao
+recruit_character = SQI_chu_yupu
+recruit_character = SQI_liu_zhennian
+recruit_character = SQI_li_jinglin
+recruit_character = SQI_lu_jin
+recruit_character = SQI_wu_huawen
+recruit_character = SQI_chen_shu_fan
+recruit_character = SQI_duan_qi_rui
+recruit_character = SQI_zhang_zongchang
+recruit_character = SQI_zhang_huaizhi
+recruit_character = SQI_xu_yuanquan
+recruit_character = SQI_hakuro_kohinata
+recruit_character = SQI_junnosuke_date
+recruit_character = SQI_sun_dianying
+recruit_character = SQI_li_lijiu
+recruit_character = SQI_xue_dian
+recruit_character = SQI_lu_yongxiang
+recruit_character = SQI_boris_annenkov
+
+SQI_zhang_zongchang = {
+	set_variable = { china_alignment = token:fengtian }
+	set_character_flag = CHN_original_unit_leader
+}
+SQI_duan_qi_rui = {
+	set_variable = { china_alignment = token:others }
+	retire = yes
+}
+SQI_boris_annenkov = {
+	set_variable = { china_alignment = token:others }
+}
+SQI_zhang_huaizhi = { 
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+SQI_li_lijiu = { 
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+SQI_xue_dian = { 
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+### Admirals ###
+create_navy_leader = {
+	name = "曲同丰"
+	desc = "POLITICS_QU_TONGFENG_DESC"
+	portrait_path = "gfx/leaders/SQI/Portrait_Shandong_Qu_Tongfeng.png"
+	traits = {
+		old_guard_navy
+		air_controller
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+
+	id = 1302
+}
+create_navy_leader = {
+	name = "林建章"
+	desc = "POLITICS_LIN_JIANZHANG_DESC"
+	portrait_path = "gfx/leaders/SQI/Portrait_Shandong_Lin_Jianzhang.png"
+	traits = {
+		navy_media_personality
+		navy_career_officer
+		torpedo_expert
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	maneuvering_skill = 3
+	coordination_skill = 1
+
+	id = 1303
+}

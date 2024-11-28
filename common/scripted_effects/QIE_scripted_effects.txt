@@ -1,0 +1,1438 @@
+QIE_zhili_comeback = {#直系
+	every_other_country = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 1171 #Jiang Baili
+					has_id = 1172 #Wang Huaiqing
+					has_id = 1179 #Zhang Qihuang
+					has_id = 1181 #Xiao Yaonan
+					has_id = 1184 #Zhang Shaozeng
+					has_id = 1176 #Liu Menggeng
+					has_id = 1175 #Cai Chengxun
+					has_id = 1185 #Cao Shijie
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+}
+
+QIE_basheng_comeback = {#孙传芳部
+	LEP = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 1112 #陈仪
+					has_id = 1113 #郑俊彦
+					has_id = 1114 #邓如琢
+					has_id = 1115 #周荫人
+					has_id = 1505 #上官云相
+					has_id = 5056 #汤恩伯
+					has_id = 1098 #石友三
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+}
+
+QIE_sichuan_comeback = {#四川刘厚存部
+	SZC = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 1129 #Yang Sen
+					has_id = 1130 #Liu Cunhou
+					has_id = 1131 #Fan Shaozeng
+					has_id = 1133 #He Guoguang
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+}
+
+QIE_wan_comeback = {#新皖系
+	ANQ = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 5057 #Yang Sen
+					has_id = 1506 #Liu Cunhou
+					has_id = 1110 #Fan Shaozeng
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+}
+
+QIE_jin_comeback = {#晋系
+	event_target:original_shanxi = {
+		SHX_yan_xishan = {
+			if = {
+				limit = {
+					NOT = {
+						THIS = { has_character_flag = is_dead }
+						QIE = { has_character = PREV }
+					}
+				}
+				if = {
+					limit = { THIS = { is_army_leader = yes } }
+					demote_to_general = yes
+					remove_trait = { trait = recently_promoted }
+				}
+				set_nationality = QIE
+			}
+		}
+		SHX_shang_zhen = {
+			if = {
+				limit = {
+					NOT = {
+						THIS = { has_character_flag = is_dead }
+						QIE = { has_character = PREV }
+					}
+				}
+				if = {
+					limit = { THIS = { is_army_leader = yes } }
+					demote_to_general = yes
+					remove_trait = { trait = recently_promoted }
+				}
+				set_nationality = QIE
+			}
+		}
+		SHX_fu_zuoyi = {
+			if = {
+				limit = {
+					NOT = {
+						THIS = { has_character_flag = is_dead }
+						QIE = { has_character = PREV }
+					}
+				}
+				if = {
+					limit = { THIS = { is_army_leader = yes } }
+					demote_to_general = yes
+					remove_trait = { trait = recently_promoted }
+				}
+				set_nationality = QIE
+			}
+		}
+	}
+}
+
+QIE_lu_comeback = {#鲁系
+	event_target:original_shandong = {
+		SQI_zhang_zongchang = {
+			if = {
+				limit = { is_field_marshal = yes }
+				demote_leader = yes
+			}
+			set_nationality = ROOT
+		}
+		SQI_lu_yongxiang = {
+			if = {
+				limit = { is_field_marshal = yes }
+				demote_leader = yes
+			}
+			set_nationality = ROOT
+		}
+		SQI_sun_dianying = {
+			if = {
+				limit = { is_field_marshal = yes }
+				demote_leader = yes
+			}
+			set_nationality = ROOT
+		}
+		SQI_zhang_jingyao = {
+			if = {
+				limit = { is_field_marshal = yes }
+				demote_leader = yes
+			}
+			set_nationality = ROOT
+		}
+	}
+	SQI = {
+		every_unit_leader = {
+			limit = {
+				OR = {  
+					has_id = 1302
+					has_id = 1303
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+}
+
+QIE_ri_ben = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		JAP = {
+			set_cosmetic_tag = QIE_JAP
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+	
+			transfer_state = 528
+			transfer_state = 530
+			transfer_state = 529
+			transfer_state = 531
+			transfer_state = 532
+			transfer_state = 535
+			transfer_state = 534
+			transfer_state = 282
+			transfer_state = 536
+			transfer_state = 533
+			transfer_state = 555
+			transfer_state = 537
+	
+			528 = { add_core_of = QIE }
+			530 = { add_core_of = QIE }
+			529 = { add_core_of = QIE }
+			531 = { add_core_of = QIE }
+			535 = { add_core_of = QIE }
+			534 = { add_core_of = QIE }
+			282 = { add_core_of = QIE }
+			536 = { add_core_of = QIE }
+			533 = { add_core_of = QIE }
+			555 = { add_core_of = QIE }
+			537 = { add_core_of = QIE }
+			532 = { add_core_of = QIE }
+	
+			532 = { remove_claim_by = QIE }
+			528 = { remove_claim_by = QIE }
+			530 = { remove_claim_by = QIE }
+			529 = { remove_claim_by = QIE }
+			531 = { remove_claim_by = QIE }
+			535 = { remove_claim_by = QIE }
+			282 = { remove_claim_by = QIE }
+			534 = { remove_claim_by = QIE }
+			536 = { remove_claim_by = QIE }
+			555 = { remove_claim_by = QIE }
+			288 = { remove_claim_by = QIE }
+			537 = { remove_claim_by = QIE }
+		}
+	}
+	else = {
+		JAP = {
+			set_cosmetic_tag = QIE_JAP_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "金秉藩"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+	
+			transfer_state = 528
+			transfer_state = 530
+			transfer_state = 529
+			transfer_state = 531
+			transfer_state = 532
+			transfer_state = 535
+			transfer_state = 534
+			transfer_state = 282
+			transfer_state = 536
+			transfer_state = 533
+			transfer_state = 555
+			transfer_state = 537
+	
+			528 = { add_core_of = QIE }
+			530 = { add_core_of = QIE }
+			529 = { add_core_of = QIE }
+			531 = { add_core_of = QIE }
+			535 = { add_core_of = QIE }
+			534 = { add_core_of = QIE }
+			282 = { add_core_of = QIE }
+			536 = { add_core_of = QIE }
+			533 = { add_core_of = QIE }
+			555 = { add_core_of = QIE }
+			537 = { add_core_of = QIE }
+			532 = { add_core_of = QIE }
+	
+			532 = { remove_claim_by = QIE }
+			528 = { remove_claim_by = QIE }
+			530 = { remove_claim_by = QIE }
+			529 = { remove_claim_by = QIE }
+			531 = { remove_claim_by = QIE }
+			535 = { remove_claim_by = QIE }
+			282 = { remove_claim_by = QIE }
+			534 = { remove_claim_by = QIE }
+			536 = { remove_claim_by = QIE }
+			555 = { remove_claim_by = QIE }
+			288 = { remove_claim_by = QIE }
+			537 = { remove_claim_by = QIE }
+		}
+	}
+}
+
+QIE_e_luo_si = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		RUS = {
+			set_cosmetic_tag = QIE_pup_RUS
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+	
+			# transfer_state = 1202
+			# transfer_state = 644
+			# transfer_state = 516
+			# transfer_state = 566
+			# transfer_state = 567
+			# transfer_state = 568
+			# transfer_state = 576
+			# transfer_state = 1201
+			# transfer_state = 577
+			# transfer_state = 578
+			# transfer_state = 569
+			# transfer_state = 570
+			# transfer_state = 40
+			# transfer_state = 1200
+			# transfer_state = 580
+			# transfer_state = 570
+			# transfer_state = 40
+			# transfer_state = 1200
+			# transfer_state = 580
+		}
+	}
+	else = {
+		RUS = {
+			set_cosmetic_tag = QIE_pup_RUS_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+	
+			# transfer_state = 1202
+			# transfer_state = 644
+			# transfer_state = 516
+			# transfer_state = 566
+			# transfer_state = 567
+			# transfer_state = 568
+			# transfer_state = 576
+			# transfer_state = 1201
+			# transfer_state = 577
+			# transfer_state = 578
+			# transfer_state = 569
+			# transfer_state = 570
+			# transfer_state = 40
+			# transfer_state = 1200
+			# transfer_state = 580
+			# transfer_state = 570
+			# transfer_state = 40
+			# transfer_state = 1200
+			# transfer_state = 580
+		}
+	}
+}
+
+QIE_de_yi_zhi = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		GER = {
+			set_cosmetic_tag = QIE_GER
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+		}
+	}
+	else = {
+		GER = {
+			set_cosmetic_tag = QIE_GER_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+		}
+	}
+}
+
+QIE_ao_di_li = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		AUS = {
+			set_cosmetic_tag = QIE_AUS
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = HUN
+						is_core_of = CZE
+						is_core_of = CRO
+					}
+				}
+				transfer_state_to = AUS
+				add_core_of = AUS
+			}
+		}
+	}
+	else = {
+		AUS = {
+			set_cosmetic_tag = QIE_AUS_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = HUN
+						is_core_of = CZE
+						is_core_of = CRO
+					}
+				}
+				transfer_state_to = AUS
+				add_core_of = AUS
+			}
+		}
+	}
+}
+
+QIE_ying_ge_lan = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		ENG = {
+			set_cosmetic_tag = QIE_ENG
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = IRE
+					}
+				}
+				transfer_state_to = ENG
+				add_core_of = ENG
+			}
+		}
+	}
+	else = {
+		ENG = {
+			set_cosmetic_tag = QIE_ENG_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_uniform.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+			
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = IRE
+					}
+				}
+				transfer_state_to = ENG
+				add_core_of = ENG
+			}
+		}
+	}
+}
+
+QIE_bei_ou = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		SWE = {
+			set_cosmetic_tag = QIE_BO
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = NOR
+						is_core_of = DEN
+						is_core_of = FIN
+					}
+				}
+				transfer_state_to = SWE
+				add_core_of = SWE
+			}
+		}
+	}
+	else = {
+		ENG = {
+			set_cosmetic_tag = QIE_BO_1
+			set_cosmetic_tag = QIE_BO
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = NOR
+						is_core_of = DEN
+						is_core_of = FIN
+					}
+				}
+				transfer_state_to = SWE
+				add_core_of = SWE
+			}
+		}
+	}
+}
+
+QIE_fa_lan_xi = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		FRA = {
+			set_cosmetic_tag = QIE_FRA
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_FRA.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_FRA.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_FRA.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_FRA.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_FRA.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+		}
+	}
+	else = {
+		FRA = {
+			set_cosmetic_tag = QIE_FRA_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+		}
+	}
+}
+
+QIE_ying_du = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		PRF = {
+			set_cosmetic_tag = QIE_IDA
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BHC
+						is_core_of = DEN
+						is_core_of = MYS
+						is_core_of = MAD
+						is_core_of = TRY
+					}
+				}
+				transfer_state_to = PRF
+				add_core_of = PRF
+			}
+		}
+	}
+	else = {
+		PRF = {
+			set_cosmetic_tag = QIE_IDA_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "宣统帝"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BHC
+						is_core_of = DEN
+						is_core_of = MYS
+						is_core_of = MAD
+						is_core_of = TRY
+					}
+				}
+				transfer_state_to = PRF
+				add_core_of = PRF
+			}
+		}
+	}
+}
+
+QIE_dong_ou = {
+	if = {
+		limit = { 
+			NOT = {
+				OR = {
+					has_cosmetic_tag = QIE_RUS_1
+					has_cosmetic_tag = QIE_RUS_2
+					has_cosmetic_tag = QIE_RUS_3
+				}
+			}
+		}
+		UKR = {
+			set_cosmetic_tag = QIE_MID
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = WHR
+						is_core_of = LIT
+						is_core_of = BAT
+						is_core_of = POL
+					}
+				}
+				transfer_state_to = UKR
+				add_core_of = UKR
+			}
+		}
+	}
+	else = {
+		UKR = {
+			set_cosmetic_tag = QIE_MID_1
+			load_focus_tree = generic_focus
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = market_liberal_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = social_conservative_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = {}
+			}
+			create_country_leader = {
+				name = "亨利一世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+				traits = {}
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = WHR
+						is_core_of = LIT
+						is_core_of = BAT
+						is_core_of = POL
+					}
+				}
+				transfer_state_to = UKR
+				add_core_of = UKR
+			}
+		}	
+	}
+}
+
+QIE_setup_council_of_five_decisions = {#定值
+	set_country_flag = QIE_council_of_five_ongoing
+
+	### 左翼 ###
+	set_variable = { LiHuangSupport = 35 }
+	set_variable = { ZuoSunShengSupport = 12 }
+
+	set_variable = { LeftAll = 0 }#45
+	add_to_variable = { LeftAll = LiHuangSupport }
+	add_to_variable = { LeftAll = ZuoSunShengSupport }
+	
+	### 右翼 ###
+	set_variable = { ZengQiSupport = 25 }
+	set_variable = { ChangYanShengSupport = 10 }
+
+	set_variable = { RightAll = 0 }#35
+	add_to_variable = { RightAll = ZengQiSupport }
+	add_to_variable = { RightAll = ChangYanShengSupport }
+	
+	### 中翼 ###
+	set_variable = { ChenQiTianSupport = 18 }
+}
+
+QIE_increase_middle_wings = {#加强中翼
+	custom_effect_tooltip = QIE_increase_middle_wings_toot
+	
+    ### 中翼 ###
+	add_to_variable = { ChenQiTianSupport = 4 }
+
+	### 左翼 ###
+	add_to_variable = { LiHuangSupport = -1 }
+	add_to_variable = { ZuoSunShengSupport = -1 }
+
+	add_to_variable = { LeftAll = -2 }
+	
+	### 右翼 ###
+	add_to_variable = { ZengQiSupport = -1 }
+	add_to_variable = { ChangYanShengSupport = -1 }
+
+	add_to_variable = { RightAll = -2 }
+}
+
+QIE_increase_chang_wings = {#加强常燕生
+	custom_effect_tooltip = QIE_increase_chang_wings_toot
+	
+	### 右翼 ###
+	add_to_variable = { ZengQiSupport = -2 }
+	add_to_variable = { ChangYanShengSupport = 2 }
+}
+
+QIE_increase_zuo_wings = {#加强左舜生
+	custom_effect_tooltip = QIE_increase_zuo_wings_toot
+	
+	### 左翼 ###
+	add_to_variable = { LiHuangSupport = -2 }
+	add_to_variable = { ZuoSunShengSupport = 2 }
+}
+
+QIE_decrease_Left_wings = {#打压左翼
+	custom_effect_tooltip = QIE_decrease_Left_wings
+
+	### 左翼 ###
+	add_to_variable = { LeftAll = -8 }	
+
+	add_to_variable = { LiHuangSupport = -5 }
+	add_to_variable = { ZuoSunShengSupport = -3 }
+
+    ### 中翼 ###
+	add_to_variable = { ChenQiTianSupport = 2 }	
+
+	### 右翼 ###
+	add_to_variable = { RightAll = 6 }
+
+	add_to_variable = { ZengQiSupport = 4 }
+	add_to_variable = { ChangYanShengSupport = 2 }		
+}
+
+QIE_decrease_Right_wings2 = {#诋毁右翼
+	custom_effect_tooltip = QIE_decrease_Right_wings2
+
+	### 右翼 ###
+	add_to_variable = { RightAll = -6 }
+
+	add_to_variable = { ZengQiSupport = -3 }
+	add_to_variable = { ChangYanShengSupport = -3 }	
+
+	### 左翼 ###
+	add_to_variable = { LeftAll = 6 }	
+
+	add_to_variable = { LiHuangSupport = 2 }
+	add_to_variable = { ZuoSunShengSupport = 4 }
+}
+
+QIE_decrease_Right_wings = {#打压右翼
+	custom_effect_tooltip = QIE_decrease_Right_wings
+
+	### 右翼 ###
+	add_to_variable = { RightAll = -8 }
+
+	add_to_variable = { ZengQiSupport = -5 }
+	add_to_variable = { ChangYanShengSupport = -3 }	
+
+	### 左翼 ###
+	add_to_variable = { LeftAll = 6 }	
+
+	add_to_variable = { LiHuangSupport = 4 }
+	add_to_variable = { ZuoSunShengSupport = 2 }
+
+    ### 中翼 ###
+	add_to_variable = { ChenQiTianSupport = 2 }		
+}
+
+QIE_increase_Right_wings = {#加强右翼
+	custom_effect_tooltip = QIE_increase_Right_wings_toot
+
+	### 右翼 ###
+	add_to_variable = { RightAll = 4 }
+
+	add_to_variable = { ZengQiSupport = 2 }
+	add_to_variable = { ChangYanShengSupport = 2 }	
+    ### 中翼 ###
+	add_to_variable = { ChenQiTianSupport = -2 }
+
+	### 左翼 ###
+	add_to_variable = { LiHuangSupport = -1 }
+	add_to_variable = { ZuoSunShengSupport = -1 }
+
+	add_to_variable = { LeftAll = -2 }
+}
+
+QIE_increase_Left_wings = {#加强左翼
+	custom_effect_tooltip = QIE_increase_Left_wings_toot
+
+	### 右翼 ###
+	add_to_variable = { RightAll = -2 }
+
+	add_to_variable = { ZengQiSupport = -1 }
+	add_to_variable = { ChangYanShengSupport = -1 }	
+    ### 中翼 ###
+	add_to_variable = { ChenQiTianSupport = -2 }
+
+	### 左翼 ###
+	add_to_variable = { LiHuangSupport = 2 }
+	add_to_variable = { ZuoSunShengSupport = 2 }
+
+	add_to_variable = { LeftAll = 4 }
+}
+
+QIE_coucil_of_five_will_end = {#最终序幕
+	if = {
+		limit = { 
+			check_variable = {
+				RightAll > 80
+			}
+			has_country_flag = QIE_OVER
+		}
+		country_event = { 
+			id = qieyoung.3 
+			days = 5
+		} 
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				LeftAll > 80
+			}
+			has_country_flag = QIE_OVER
+		}
+		country_event = { 
+			id = qieyoung.4 
+			days = 5
+		} 
+	}
+	else_if = {
+		limit = { 
+			check_variable = {
+				ChenQiTianSupport > 80
+			}
+		}
+		country_event = { 
+			id = qieyoung.5 
+			days = 5
+		} 
+	}
+}

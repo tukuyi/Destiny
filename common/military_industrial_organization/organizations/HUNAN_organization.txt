@@ -1,0 +1,27 @@
+HNN_tiema_organisation = {
+	name = HNN_tie
+	icon = GFX_idea_HNN_tie
+	include = generic_mobile_tank_organization
+	allowed = { 
+		is_chinese_tag = yes 
+	}
+	available = {
+		FROM = {
+			owns_state = 602
+		}
+	}
+}
+HNN_krupp_tank_organisation = {
+	include = generic_infantry_tank_organization
+	name = HNN_krupp
+	icon = GFX_idea_krupp
+	allowed = { 
+		tag = HNN
+		has_completed_focus = HNN_yin_jin_de_shi_zhuang_bei 
+	}
+	available = {
+		FROM = {
+			has_completed_focus = HNN_yin_jin_de_shi_zhuang_bei 
+		}
+	}
+}

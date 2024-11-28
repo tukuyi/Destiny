@@ -1,0 +1,38 @@
+
+music_station = "HNNsuperevents"
+
+sound = {
+	song = "diongbiwu"
+	chance = {
+		factor = 0
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,971 @@
+characters = {
+################
+###   元帅   ###
+################	
+#陈铭枢
+	GXC_chen_mingshu = {
+		name = GXC_chen_mingshu
+		portraits = {
+			# civilian = {
+			# 	large = GFX_portrait_GXC_chen_mingshu_civilian_large
+			# }
+			army = {
+				small = GFX_Portrait_GXC_chen_mingshu_army
+				large = GFX_Portrait_GXC_chen_mingshu_army
+			}
+		}
+		# country_leader = {
+		# 	desc = GXC_chen_mingshu_leader_desc
+		# 	ideology = radical_socialist_subtype
+		# }
+		field_marshal = {
+			desc = POLITICS_GXC_CHEN_MINSHU_ARMY_DESC
+			traits = {
+				GXC_guangdong_clique_officer
+				politically_connected
+				trait_reckless
+				infantry_leader
+				infantry_expert
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 4
+		}
+	}
+#陈炯明
+	GXC_chen_jiongming = {
+		name = GXC_chen_jiongming
+		portraits = {
+			# civilian = {
+			# 	small = GFX_Portrait_GXC_chen_jiongming_civilian
+			# 	large = GFX_Portrait_GXC_chen_jiongming_civilian
+			# }
+			army = {
+				small = GFX_portrait_GXC_chen_jiongming_army
+				large = GFX_portrait_GXC_chen_jiongming_army
+			}
+		}
+		# country_leader = {
+		# 	desc = GXC_chen_jiongming_leader_desc
+		# 	ideology = socdem_warlordism_subtype
+		# }
+		# country_leader = {
+		# 	desc = GXC_chen_jiongming_leader_desc
+		# 	ideology = soclib_lianshengism_subtype
+		# }
+		field_marshal = {
+			desc = POLITICS_GXC_CHEN_JIONGMING_ARMY_DESC
+			traits = { 
+				old_guard 
+				trait_cautious 
+				war_hero 
+				GXC_guangdong_clique_officer 
+				organizer
+				skilled_staffer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+#陈廉伯
+	GXC_chen_lianbo = {
+		name = GXC_chen_lianbo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_chen_lianbo_civilian
+				small = GFX_Portrait_GXC_chen_lianbo_civilian
+			}
+			army = {
+				large = GFX_Portrait_GXC_chen_lianbo_army
+				small = GFX_Portrait_GXC_chen_lianbo_army
+			}
+		}
+		country_leader = {
+			desc = POLITICS_GXC_CHEN_LIANBO_DESC
+			ideology = free_market_capitalist_subtype
+		}
+		field_marshal = {
+			desc = GXC_chen_lianbo_commander_desc
+			traits = {
+				GXC_guangdong_clique_officer
+				politically_connected
+				media_personality
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			visible = {
+				has_country_leader = {
+					name = "陈廉伯"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+#李宗仁
+	GXC_li_zongren = {
+		name = GXC_li_zongren
+		portraits = {
+			# civilian = {
+			# 	large = GFX_Portrait_GXC_Li_Zhong_Ren
+			# }
+			army = {
+				large = GFX_Portrait_GXC_li_zongren_kuomintang
+				small = GFX_Portrait_GXC_li_zongren_kuomintang
+			}
+		}
+		# country_leader = {
+		# 	desc = POLITICS_GXC_LI_ZONGREN_DESC
+		# 	ideology = authdem_tridemism_subtype
+		# }
+		field_marshal = {
+			desc = POLITICS_YUNNAN_LI_ZONGREN_ARMY_DESC
+			traits = { 
+				GXC_guangxi_clique_officer 
+				GXC_rkmt_officer 
+				war_hero 
+				inflexible_strategist 
+				politically_connected
+				unyielding_defender 
+				organizer 
+				offensive_doctrine 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#马济
+	GXC_ma_ji = {
+		name = GXC_ma_ji
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_ma_ji
+				small = GFX_Portrait_GXC_ma_ji
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_GXC_MA_JI_ARMY_DESC
+			traits = { 
+				trait_reckless 
+				infantry_officer 
+				politically_connected 
+				GXC_guangxi_clique_officer 
+				trickster 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#李明瑞
+	GXC_Li_Ming_Rui = {
+		name = GXC_Li_Ming_Rui
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_Li_Ming_Rui_CIV
+			}
+			army = {
+				small = GFX_Portrait_GXC_Li_Ming_Rui
+				large = GFX_Portrait_GXC_Li_Ming_Rui
+			}
+		}
+		country_leader = {
+			desc = POLITICS_GXC_Li_Ming_Rui_CIV_DESC
+			ideology = radsoc_tridemism_subtype
+		}
+		field_marshal = {
+			desc = POLITICS_GXC_Li_Ming_Rui_DESC
+			traits = {
+				fast_planner
+				ranger
+				career_officer
+				artillery_officer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#韦拔群
+	GXC_Wei_Bo_Qun = {
+		name = GXC_Wei_Bo_Qun
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Wei_Bo_Qun
+				large = GFX_Portrait_GXC_Wei_Bo_Qun
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_GXC_Wei_Bo_Qun_DESC
+			traits = {
+				ranger
+				irregulars_officer
+				guerilla_fighter
+				militias_officer 
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
+################
+###   将领   ###
+################	
+#许崇智
+	GXC_xu_chongzhi = {	
+		name = GXC_xu_chongzhi
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_xu_chongzhi
+				small = GFX_Portrait_GXC_xu_chongzhi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_xu_chongzhi_ARMY_DESC
+			traits = { 
+				career_officer
+				infantry_officer
+				politically_connected
+				GXC_rkmt_officer 
+
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#罗卓英
+	GXC_luo_zuo_ying = {	
+		name = GXC_luo_zuo_ying
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_luo_zuo_ying
+				small = GFX_Portrait_GXC_luo_zuo_ying
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_luo_zuo_ying_ARMY_DESC
+			traits = { 
+				career_officer
+				gunnery_expert
+				GXC_rkmt_officer 
+				harsh_leader
+				expert_improviser
+				GXC_guangxi_clique_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#顾祝同
+	GXC_gu_zhu_tong = {	
+		name = GXC_gu_zhu_tong
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_gu_zhu_tong
+				small = GFX_Portrait_GXC_gu_zhu_tong
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_gu_zhu_tong_ARMY_DESC
+			traits = { 
+				career_officer
+				infantry_leader
+				GXC_rkmt_officer 
+				politically_connected
+				harsh_leader
+				brilliant_strategist
+				GXC_guangxi_clique_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#刘峙
+	GXC_liu_zhi = {	
+		name = GXC_liu_zhi
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_liu_zhi
+				small = GFX_Portrait_GXC_liu_zhi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_liu_zhi_ARMY_DESC
+			traits = { 
+				GXC_rkmt_officer 
+				career_officer 
+				trickster 
+				expert_improviser 
+				infantry_leader
+				inflexible_strategist
+				skilled_staffer
+				GXC_guangxi_clique_officer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#陈济棠
+	GXC_chen_jitang = {
+		name = GXC_chen_jitang
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_chen_jitang_army
+				small = GFX_Portrait_GXC_chen_jitang_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_CHEN_JITANG_ARMY_DESC
+			traits = { 
+				politically_connected 
+				war_hero 
+				organizer 
+				GXC_guangdong_clique_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#蒋光鼐
+	GXC_jiang_guangnai = {
+		name = GXC_jiang_guangnai
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_jiang_guangnai_army
+				small = GFX_Portrait_GXC_jiang_guangnai_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_JIANG_GUANGNAI_ARMY_DESC
+			traits = { 
+				career_officer 
+				trickster 
+				expert_improviser 
+				GXC_guangdong_clique_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#林虎
+	GXC_lin_hu = {
+		name = GXC_lin_hu
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_lin_hu
+				large = GFX_Portrait_GXC_lin_hu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_LIN_HU_ARMY_DESC
+			traits = { 
+				politically_connected 
+				infantry_officer 
+				infantry_leader 
+				GXC_guangxi_clique_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+#陆裕光
+	GXC_lu_yuguang = {
+		name = GXC_lu_yuguang
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_lu_yuguang
+				small = GFX_Portrait_GXC_lu_yuguang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_LU_YUGUANG_ARMY_DESC
+			traits = { 
+				trait_reckless 
+				politically_connected 
+				GXC_guangxi_clique_officer 
+				infantry_officer 
+				infantry_leader 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#蔡廷鍇
+	GXC_cai_tingkai = {
+		name = GXC_cai_tingkai
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_cai_tingkai_army
+				large = GFX_Portrait_GXC_cai_tingkai_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_CAI_TINGKAI_ARMY_DESC
+			traits = { 
+				politically_connected 
+				inflexible_strategist 
+				urban_assault_specialist 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#张淦
+	GXC_zhang_gan = {
+		name = GXC_zhang_gan
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_zhang_gan
+				large = GFX_Portrait_GXC_zhang_gan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_ZHANG_GAN_ARMY_DESC
+			traits = { 
+				GXC_guangxi_clique_officer 
+				career_officer 
+				light_infantry_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#洪兆麟
+	GXC_hong_zhaolin = {
+		name = GXC_hong_zhaolin
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_hong_zhaolin
+				large = GFX_Portrait_GXC_hong_zhaolin
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_HONG_ZHAOLIN_ARMY_DESC
+			traits = {
+				war_hero 
+				GXC_guangdong_clique_officer 
+				harsh_leader 
+				infantry_officer 
+			}	
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#刘斐
+	GXC_liu_fei = {
+		name = GXC_liu_fei
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_liu_fei_army
+				large = GFX_Portrait_GXC_liu_fei_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_LIU_FEI_ARMY_DESC
+			traits = { 
+				career_officer 
+				GXC_guangxi_clique_officer 
+				organizer 
+				infantry_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#叶剑英
+	GXC_ye_jianying = {
+		name = GXC_ye_jianying
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_ye_jianying_kuomintang
+				large = GFX_Portrait_GXC_ye_jianying_kuomintang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_YE_JIANYING_ARMY_DESC
+			traits = { 
+				politically_connected 
+				trickster 
+				guerilla_fighter 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+
+	}
+#李扬敬
+	GXC_li_yangjing = {
+		name = GXC_li_yangjing
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_li_yangjing
+				large = GFX_Portrait_GXC_li_yangjing
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_LI_YANGJING_ARMY_DESC
+			traits = { career_officer infantry_officer trait_reckless GXC_guangdong_clique_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#叶举
+	GXC_ye_ju = {
+		name = GXC_ye_ju
+		portraits = {
+			army = {
+				large = GFX_Portrait_GXC_ye_ju
+				small = GFX_Portrait_GXC_ye_ju
+			}
+		}
+		corps_commander = {
+			desc = GXC_ye_ju_commander_desc
+			traits = { 
+				politically_connected 
+				trait_reckless 
+				artillery_specialist 
+				skilled_staffer 
+				GXC_guangdong_clique_officer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#白崇禧
+	GXC_bai_chongxi = {
+		name = GXC_bai_chongxi
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_bai_chongxi
+				large = GFX_Portrait_GXC_bai_chongxi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_BAI_CHONGXI_ARMY_DESC
+			traits = { 
+				GXC_rkmt_officer 
+				politically_connected 
+				career_officer 
+				brilliant_strategist 
+				infantry_officer 
+				trickster 
+				GXC_guangxi_clique_officer 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#杨坤如
+	GXC_yang_kunru = {
+		name = GXC_yang_kunru
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_yang_kunru
+				large = GFX_Portrait_GXC_yang_kunru
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_YANG_KUNRU_ARMY_DESC
+			traits = { 
+				trait_cautious 
+				infantry_leader 
+				trickster 
+				expert_improviser 
+				GXC_guangdong_clique_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+#何成濬
+	GXC_He_Chen_Jun = {
+		name = GXC_He_Chen_Jun
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_He_Chen_Jun
+				large = GFX_Portrait_GXC_He_Chen_Jun
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_He_Chen_Jun_ARMY_DESC
+			traits = { 
+				war_hero
+				trait_cautious 
+				infantry_leader 
+				GXC_rkmt_officer
+				logistics_wizard 
+				ambusher 
+				politically_connected
+				GXC_guangdong_clique_officer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}	
+#缪培南
+	SQI_miao_pei_nan = {
+		name = SQI_miao_pei_nan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_miao_pei_nan
+				large = GFX_Portrait_SQI_miao_pei_nan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_miao_pei_nan_DESC
+			traits = { 
+				career_officer 
+				politically_connected 
+				trickster 
+				guerilla_fighter 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}		
+################
+###   百色   ###
+################		
+#俞作柏
+	GXC_yu_zuobai = {
+		name = GXC_yu_zuobai
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_yu_zuobai
+				large = GFX_Portrait_GXC_yu_zuobai
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_YU_ZUOBAI_ARMY_DESC
+			traits = { 
+				career_officer 
+				trait_mountaineer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#陈豪人
+	GXC_Chen_Hao_Ren = {
+		name = GXC_Chen_Hao_Ren
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_Chen_Hao_Ren
+			}
+			army = {
+				small = GFX_Portrait_GXC_Chen_Hao_Ren_army
+				large = GFX_Portrait_GXC_Chen_Hao_Ren_army
+			}
+		}
+		country_leader = {
+			desc = POLITICS_GXC_Chen_Hao_Ren_CIV_DESC
+			ideology = centralized_syndicalism_subtype
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_Chen_Hao_Ren_DESC
+			traits = {
+				irregulars_officer
+				guerilla_fighter
+				militias_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#何世昌
+	GXC_He_Si_Cang = {
+		name = GXC_He_Si_Cang
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_He_Si_Cang
+				large = GFX_Portrait_GXC_He_Si_Cang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_He_Si_Cang_DESC
+			traits = {
+				irregulars_officer
+				guerilla_fighter
+				militias_officer 
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}			
+#韦国清
+	GXC_Wei_Guo_Qing = {
+		name = GXC_Wei_Guo_Qing
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Wei_Guo_Qing
+				large = GFX_Portrait_GXC_Wei_Guo_Qing
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Wei_Guo_Qing_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
+#张震球
+	GXC_Zhang_zheng_qiu = {
+		name = GXC_Zhang_zheng_qiu
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Zhang_zheng_qiu
+				large = GFX_Portrait_GXC_Zhang_zheng_qiu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_Zhang_zheng_qiu_DESC
+			traits = {
+				career_officer
+				trait_cautious
+				infantry_officer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}		
+#宛旦平
+	GXC_Wan_Dan_Ping = {
+		name = GXC_Wan_Dan_Ping
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Wan_Dan_Ping
+				large = GFX_Portrait_GXC_Wan_Dan_Ping
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_Wan_Dan_Ping_DESC
+			traits = {
+				ranger
+				career_officer
+				guerilla_fighter
+				infantry_officer 
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
+#邓垦
+	GXC_deng_ken = {
+		name = GXC_deng_ken
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_deng_ken
+				large = GFX_Portrait_GXC_deng_ken
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_deng_ken_DESC
+			traits = {
+				irregulars_officer
+				militias_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#俞作豫
+	GXC_Yu_zuo_yu = {
+		name = GXC_Yu_zuo_yu
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Yu_zuo_yu
+				large = GFX_Portrait_GXC_Yu_zuo_yu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_GXC_Yu_zuo_yu_DESC
+			traits = {
+				ranger
+				irregulars_officer
+				guerilla_fighter
+				militias_officer 
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+################
+###   海军   ###
+################
+#邓兆祥
+	GXC_Deng_Zhao_Xiang = {
+		name = GXC_Deng_Zhao_Xiang
+		portraits = {
+			navy = {
+				large = GFX_Portrait_GXC_Deng_Zhao_Xiang
+				small = GFX_Portrait_GXC_Deng_Zhao_Xiang
+			}
+		}
+		navy_leader = {
+			desc = GXC_Deng_Zhao_Xiang_admiral_desc
+			traits = { 
+				navy_media_personality 
+				navy_career_officer 
+				green_water_expert 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+#陈策
+	GXC_chen_ce = {
+		name = GXC_chen_ce
+		portraits = {
+			navy = {
+				large = GFX_Portrait_GXC_chen_ce
+				small = GFX_Portrait_GXC_chen_ce
+			}
+		}
+		navy_leader = {
+			desc = POLITICS_GXC_CHEN_CE_NAVY_DESC
+			traits = {
+				GXC_guangdong_clique_officer
+				navy_career_officer
+				navy_media_personality
+				inshore_fighter
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+#李庆文
+	GXC_li_qingwen = {
+		name = GXC_li_qingwen
+		portraits = {
+			navy = {
+				large = GFX_Portrait_GXC_li_qingwen
+				small = GFX_Portrait_GXC_li_qingwen
+			}
+		}
+		navy_leader = {
+			desc = POLITICS_GXC_LI_QINGWEN_NAVY_DESC
+			traits = {
+				GXC_guangdong_clique_officer
+				navy_career_officer
+				inshore_fighter
+				green_water_expert
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 1
+		}
+	}
+}

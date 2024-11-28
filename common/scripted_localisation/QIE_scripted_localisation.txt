@@ -1,0 +1,676 @@
+defined_text = {#李璜
+	name = GetLiHuangsurppot
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = LiHuangSupport
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = LiHuangSupport
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = LiHuangSupport
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = LiHuangSupport
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LiHuangSupport
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#左舜生
+	name = GetZuoSunShengSurppot
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZuoSunShengSupport
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#左翼
+	name = GetLeftAllsurppot
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = LeftAll
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = LeftAll
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = LeftAll
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = LeftAll
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = LeftAll
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#曾琦
+	name = GetZengQiSupport
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZengQiSupport
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZengQiSupport
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZengQiSupport
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = ZengQiSupport
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ZengQiSupport
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#张荫梧
+	name = GetChangYanShengSupport
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChangYanShengSupport
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#右翼
+	name = GetRightAllSupport
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = RightAll
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = RightAll
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = RightAll
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = RightAll
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = RightAll
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {#陈启天
+	name = GetChenQiTianSupport
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 0
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "hateit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 15
+				compare = less_than_or_equals
+			} 
+		}
+		localization_key = "noknowit"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 15
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "insignificantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 25
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 40
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "lowauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 40
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "moderateauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 75
+				compare = greater_than
+			}
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "significantauthority"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ChenQiTianSupport
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "unlimitedauthority"
+	}
+}
+defined_text = {
+	name = QIE_bu_tie_ming_yong_gong_ye_loc
+	text = {
+		trigger = { 
+			has_completed_focus = QIE_zai_yin_ru_fan_hua_lian_meng	
+		}
+		localization_key = QIE_bu_tie_ming_yong_gong_ye_de_hua
+	}
+	text = {
+		localization_key = QIE_bu_tie_ming_yong_gong_ye_jiao_tong
+	}
+}
+
+defined_text = {
+	name = QIE_xiang_yin_hang_jie_kuan_loc_desc
+	text = {
+		trigger = {  
+			has_completed_focus = QIE_zai_yin_ru_fan_hua_lian_meng	
+		}
+		localization_key = QIE_bu_tie_ming_yong_gong_ye_de_hua_desc
+	}
+	text = {
+		localization_key = QIE_bu_tie_ming_yong_gong_ye_jiao_tong_desc
+	}
+}

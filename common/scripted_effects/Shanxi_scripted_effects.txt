@@ -1,0 +1,304 @@
+##############################################
+### WordZero struggles with variables time ###
+##############################################
+
+SHX_add_xishan_gov = {
+	if = {
+		limit = { has_idea = SHX_power_struggle }
+		custom_effect_tooltip = SHX_xishan_increase_gov_control_tooltip
+		add_to_variable = { SHX_xishan_control_gov = SHX_xishan_gov_change }
+		subtract_from_variable = { SHX_yuxiang_control_gov = SHX_xishan_gov_change }
+
+		clamp_variable = {
+			var = SHX_xishan_control_gov
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = SHX_yuxiang_control_gov
+			min = 0
+			max = 100
+		}
+	}
+}
+SHX_add_yuxiang_gov = {
+	if = {
+		limit = { has_idea = SHX_power_struggle }
+		custom_effect_tooltip = SHX_yuxiang_increase_gov_control_tooltip
+		add_to_variable = { SHX_yuxiang_control_gov = SHX_yuxiang_gov_change }
+		subtract_from_variable = { SHX_xishan_control_gov = SHX_yuxiang_gov_change }
+
+		clamp_variable = {
+			var = SHX_yuxiang_control_gov
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = SHX_xishan_control_gov
+			min = 0
+			max = 100
+		}
+	}
+}
+SHX_add_xishan_mil = {
+	if = {
+		limit = { has_idea = SHX_power_struggle }
+		custom_effect_tooltip = SHX_xishan_increase_mil_control_tooltip
+		add_to_variable = { SHX_xishan_control_mil = SHX_xishan_mil_change }
+		subtract_from_variable = { SHX_yuxiang_control_mil = SHX_xishan_mil_change }
+
+		clamp_variable = {
+			var = SHX_xishan_control_mil
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = SHX_yuxiang_control_mil
+			min = 0
+			max = 100
+		}
+	}
+}
+SHX_add_yuxiang_mil = {
+	if = {
+		limit = { has_idea = SHX_power_struggle }
+		custom_effect_tooltip = SHX_yuxiang_increase_mil_control_tooltip
+		add_to_variable = { SHX_yuxiang_control_mil = SHX_yuxiang_mil_change }
+		subtract_from_variable = { SHX_xishan_control_mil = SHX_yuxiang_mil_change }
+
+		clamp_variable = {
+			var = SHX_yuxiang_control_gov
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = SHX_xishan_control_gov
+			min = 0
+			max = 100
+		}
+	}
+}
+
+#冯玉祥军事精神
+SHX_upgrade_guominjun_model_spirit_effect = {
+	if = {
+		limit = { has_idea = SHX_guominjun_model_idea } #Fallback in case somehow the player made it to phase 4 without taking army tree
+		swap_ideas = {
+			remove_idea = SHX_guominjun_model_idea
+			add_idea = SHX_guominjun_model_idea_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_guominjun_model_idea_2 }
+		swap_ideas = {
+			remove_idea = SHX_guominjun_model_idea_2
+			add_idea = SHX_guominjun_model_idea_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_guominjun_model_idea_3 }
+		swap_ideas = {
+			remove_idea = SHX_guominjun_model_idea_3
+			add_idea = 	SHX_guominjun_model_idea_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_guominjun_model_idea_4 }
+		swap_ideas = {
+			remove_idea = SHX_guominjun_model_idea_4
+			add_idea = 	SHX_guominjun_model_idea_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_guominjun_model_idea_5 } #Fallback
+		every_unit_leader = {
+			gain_xp = 200
+		}
+	}
+	else = {
+		custom_effect_tooltip = SHX_upgrade_guominjun_model_spirit_effect_tt
+	}
+	SHX_strengthen_feng_medium = yes
+}
+###- Balance of Power - ###
+
+#NOTE：阎锡山为负值，冯玉祥为正值。
+
+SHX_change_pop_effect = {#改变支持度
+	set_temp_variable = { SHX_pop_change_var = SHX_bop_change_var }
+
+	if = {
+		limit = { 
+			has_active_mission = SHX_looming_gmj_coup 
+		}
+		multiply_temp_variable = { SHX_pop_change_var = 0.25 } #1/4
+	}
+	else = {
+		multiply_temp_variable = { SHX_pop_change_var = 0.10 } #Tenth it so post power struggle it’s not as easy to get 100%
+	}
+
+	set_temp_variable = { SHX_pop_change_neg_var = SHX_pop_change_var }
+
+	multiply_temp_variable = { SHX_pop_change_neg_var = -1 } 
+
+	add_popularity = {#冯玉祥
+		ideology = authoritarian_democrat
+		popularity = SHX_pop_change_var
+	}
+	add_popularity = {#阎锡山
+		ideology = paternal_autocrat
+		popularity = SHX_pop_change_neg_var
+	}
+}
+
+SHX_change_timeout_effect = {#改变政变时间
+	set_temp_variable = { SHX_timeout_change_var = SHX_bop_change_var }
+	multiply_temp_variable = { SHX_timeout_change_var = 100 } #Turn it into a whole number
+	multiply_temp_variable = { SHX_timeout_change_var = -4 } #Double it and invert it
+	add_days_mission_timeout = {
+		mission = SHX_looming_gmj_coup
+		days = SHX_timeout_change_var
+	}
+}
+
+#提升阎锡山的支持度
+SHX_strengthen_yan_small = {
+	set_temp_variable = { SHX_bop_change_var = -0.05 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = -0.05
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_yan_small_tooltip
+	}
+	log = "SHX_BOP_logging; Yan increase by +5 - overall decrease by -5 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+
+SHX_strengthen_yan_medium = {
+	set_temp_variable = { SHX_bop_change_var = -0.15 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = -0.15
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_yan_medium_tooltip
+	}
+	log = "SHX_BOP_logging; Yan increase by +15 - overall decrease by -15 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+
+SHX_strengthen_yan_large = {
+	set_temp_variable = { SHX_bop_change_var = -0.25 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = -0.25
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_yan_large_tooltip
+	}
+	log = "SHX_BOP_logging; Yan increase by +25 - overall decrease by -25 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+
+#提升冯玉祥的支持度
+SHX_strengthen_feng_small = {
+	set_temp_variable = { SHX_bop_change_var = 0.05 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = 0.05
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_feng_small_tooltip
+	}
+	log = "SHX_BOP_logging; Feng increase by +5 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+
+SHX_strengthen_feng_medium = {
+	set_temp_variable = { SHX_bop_change_var = 0.15 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = 0.15
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_feng_medium_tooltip
+	}
+	log = "SHX_BOP_logging; Feng increase by +15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+
+SHX_strengthen_feng_large = {
+	set_temp_variable = { SHX_bop_change_var = 0.25 }
+	hidden_effect = {
+		SHX_change_pop_effect = yes
+		if = {
+			limit = { has_active_mission = SHX_looming_gmj_coup }
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = 0.25
+			}
+			SHX_change_timeout_effect = yes
+		}
+	}
+	if = {
+		limit = { 
+			NOT = { has_active_mission = SHX_looming_gmj_coup } 
+		}
+		effect_tooltip = { SHX_change_pop_effect = yes }
+	}
+	else = {
+		custom_effect_tooltip = SHX_strengthen_feng_large_tooltip
+	}
+	log = "SHX_BOP_logging; Feng increase by +25 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}

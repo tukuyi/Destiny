@@ -1,0 +1,110 @@
+HNN_revolution_RUS = { ### 1/50
+	icon = GFX_operations_infiltrate_civilian_govt
+	map_icon = GFX_operations_infiltrate_civilian_govt_map
+	name = HNN_revolution_RUS
+	desc = HNN_revolution_RUS_desc
+	days = 180
+
+	allowed = {
+		original_tag = HNN
+	}
+	visible = {
+		FROM = {
+			tag = RUS
+		}
+		has_country_flag = ready_to_revolution
+	}
+
+	available = {
+		RUS = {
+			NOT = {
+				has_war_with = ROOT
+				has_government = totalist 
+				has_government = syndicalist
+				has_government = radical_socialist 
+			}
+		}
+	}
+
+	outcome_modifiers = { operation_outcome }
+	cost_modifiers = { operation_cost }
+	risk_modifiers = { operation_risk }
+
+	operatives = 2
+
+	# Integer [0-100] - Every operation has a hard requirement of network strength in the target country
+	network_strength = 80
+
+	equipment = {
+		infantry_equipment = 5000
+		support_equipment = 500
+	}
+
+	on_start = {  # SCOPE_OPERATION
+		ROOT = {
+			add_political_power = -25
+		}
+	}
+	risk_chance = 0.1
+	# outcome is an effect that runs when the operation has completed
+	outcome_potential = { # SCOPE_OPERATION
+		random_list = {
+			50 = {
+				RUS = {
+					set_politics = {
+						ruling_party = syndicalist
+					}
+				}
+			}
+			50 = {
+				HNN = {
+					create_wargoal = {
+						target = RUS
+						type = annex_everything
+					}
+				}	
+			}
+		}
+	}
+	risk_chance = 0.2
+	outcome_extra_chance = 0.25
+	outcome_execute = { # SCOPE_OPERATION
+		random_list = {
+			50 = {
+				RUS = {
+					set_politics = {
+						ruling_party = syndicalist
+					}
+				}
+			}
+			50 = {
+				HNN = {
+					create_wargoal = {
+						target = RUS
+						type = annex_everything
+					}
+				}	
+			}
+		}
+	}	
+
+	# This is where all the separate phases are defined
+	# Each phase for an operation may have a single actual phase assigned to it, which is determined here
+	phases = { #infiltration 
+		infiltration_submarine = { base = 33 } 
+		infiltration_paradrop = { 
+			base = 33 
+			modifier = {
+				ROOT = { has_equipment = { transport_plane_equipment < 1 } }
+				factor = 0.1
+			}
+		} 
+		infiltration_diplomatic = { base = 33 } 
+	}
+	phases = { 
+		HNN_bribe_government_officials_phase = { base = 25 }
+	}
+	phases = { 
+		HNN_steer_government_decisions_phase = { base = 25 }
+	}
+}

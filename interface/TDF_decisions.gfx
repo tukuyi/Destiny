@@ -1,0 +1,31 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_decision_docu"
+		texturefile = "gfx/interface/decisions/docu.png"
+	}
+	spriteType = {
+		name = "GFX_decision_Factory"
+		texturefile = "gfx/interface/decisions/Factory.png"
+	}
+	spriteType = {
+		name = "GFX_decision_Book"
+		texturefile = "gfx/interface/decisions/Book.png"
+	}
+	spriteType = {
+		name = "GFX_decision_PRC_rocket_strike"
+		texturefile = "gfx/interface/decisions/PRC_rocket_strike.png"
+	}
+	spriteType = {
+		name = "GFX_decision_category_red_start"
+		texturefile = "gfx/interface/decisions/decisions_categories/red_start.png"
+	}
+	spriteType = {
+		name = "GFX_decision_category_industrial_china"
+		texturefile = "gfx/interface/decisions/decisions_categories/industrial_china.png"
+	}
+	spriteType = {
+		name = "GFX_decision_category_Research"
+		texturefile = "gfx/interface/decisions/decisions_categories/Research.png"
+	}
+}

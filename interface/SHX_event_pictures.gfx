@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType  = {
+		name = "GFX_report_event_SHX_tongpu_railway"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_tongpu_railway.png"
+	}
+}

@@ -1,0 +1,32 @@
+SHC_HD_idaa_change = {
+	if = {
+		limit = { 
+			has_idea = LEC_fu_hao_yi_hui3
+		}
+		swap_ideas = {
+			remove_idea = LEC_fu_hao_yi_hui3
+			add_idea = LEC_fu_hao_yi_hui4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = LEC_fu_hao_yi_hui2
+		}
+		swap_ideas = {
+			remove_idea = LEC_fu_hao_yi_hui2
+			add_idea = LEC_fu_hao_yi_hui3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = LEC_fu_hao_yi_hui
+		}
+		swap_ideas = {
+			remove_idea = LEC_fu_hao_yi_hui
+			add_idea = LEC_fu_hao_yi_hui2
+		}
+	}
+	else = {
+		add_ideas = LEC_fu_hao_yi_hui
+	}
+}

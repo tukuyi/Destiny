@@ -1,0 +1,965 @@
+characters = {
+#张作霖
+	FNG_zhang_zuolin = {
+		name = FNG_zhang_zuolin
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_FNG_zhang_zuolin_civ
+			}
+			army = {
+				small = GFX_Portrait_FNG_zhang_zuolin
+				large = GFX_Portrait_FNG_zhang_zuolin
+			}
+		}
+		country_leader = {
+			desc = POLITICS_ZHANG_ZUOLIN_DESC
+			ideology = authdem_warlordism_subtype
+			traits = {
+				FNG_old_marshal
+			}
+		}
+		country_leader = {
+			desc = POLITICS_ZHANG_ZUOLIN_DESC
+			ideology = pataut_warlordism_subtype
+			traits = {
+				FNG_old_marshal
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_ZHANG_ZUOLIN_ARMY_DESC
+			traits = { 
+				politically_connected 
+				organizer 
+				skilled_staffer 
+				logistics_wizard 
+				irregulars_officer 
+				offensive_doctrine 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+
+#張學良
+	FNG_zhang_xueliang = {
+		name = FNG_zhang_xueliang
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_FNG_zhang_xueliang_civilian
+			}
+			army = {
+				small = GFX_Portrait_FNG_zhang_xueliang_army
+				large = GFX_Portrait_FNG_zhang_xueliang_army
+			}
+		}
+		country_leader = {
+			desc = FNG_zhang_xueliang_leader_desc
+			ideology = national_democracy_subtype
+			traits = { FNG_young_marshal }
+		}
+		country_leader = {
+			desc = FNG_zhang_xueliang_leader_desc
+			ideology = junta_subtype
+			traits = { FNG_young_marshal }
+		}
+		corps_commander = {
+			desc = POLITICS_ZHANG_XUELIANG_ARMY_DESC
+			traits = {
+				artillery_officer
+				artillery_specialist
+				organizer
+				career_officer
+				politically_connected
+				substance_abuser
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
+#楊宇霆
+	FNG_yang_yuting = {
+		name = FNG_yang_yuting
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_yang_yuting
+				large = GFX_Portrait_FNG_yang_yuting
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YANG_YUTING_ARMY_DESC
+			traits = { 
+				career_officer 
+				organizer 
+				artillery_officer 
+				trickster 
+				artillery_specialist 
+				politically_connected 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
+################
+### Generals ###
+################
+#吴俊升
+	FNG_wu_junsheng = {
+		name = FNG_wu_junsheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_wu_junsheng
+				large = GFX_Portrait_FNG_wu_junsheng
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_WU_JUNSHENG_ARMY_DESC
+			traits = { 
+				old_guard 
+				cavalry_officer 
+				trait_cautious 
+				substance_abuser 
+				irregulars_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#张作相
+	FNG_zhang_zuoxiang = {
+		name = FNG_zhang_zuoxiang
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_zuoxiang
+				large = GFX_Portrait_FNG_zhang_zuoxiang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ZHANG_ZUOXIANG_ARMY_DESC
+			traits = { 
+				politically_connected
+				war_hero 
+				skilled_staffer 
+				irregulars_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#王樹常
+	FNG_wang_shuchang = {
+		name = FNG_wang_shuchang
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_wang_shuchang
+				large = GFX_Portrait_FNG_wang_shuchang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_WANG_SHUCHANG_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				organizer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#马占山
+	FNG_ma_zhanshan = {
+		name = FNG_ma_zhanshan
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_ma_zhanshan_army
+				large = GFX_Portrait_FNG_ma_zhanshan_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_MA_ZHANSHAN_ARMY_DESC
+			traits = { 
+				trait_reckless 
+				trickster 
+				irregulars_officer 
+				commando 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#万福麟
+	FNG_wan_fulin = {
+		name = FNG_wan_fulin
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_wan_fulin
+				large = GFX_Portrait_FNG_wan_fulin
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_WAN_FULIN_ARMY_DESC
+			traits = { 
+				irregulars_officer 
+				cavalry_officer 
+				ranger 
+				politically_connected 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}	
+#臧式毅
+	FNG_zang_shiyi = {
+		name = FNG_zang_shiyi
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zang_shiyi
+				large = GFX_Portrait_FNG_zang_shiyi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ZANG_SHIYI_ARMY_DESC
+			traits = { 
+				career_officer 
+				cavalry_officer 
+				skilled_staffer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#张海鹏
+	FNG_zhang_haipeng = {
+		name = FNG_zhang_haipeng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_haipeng
+				large = GFX_Portrait_FNG_zhang_haipeng
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ZHANG_HAIPENG_ARMY_DESC
+			traits = { 
+				old_guard 
+				cavalry_officer 
+				irregulars_officer 
+				trait_reckless 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#汤玉麟
+	FNG_tang_yulin = {
+		name = FNG_tang_yulin
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_tang_yulin
+				large = GFX_Portrait_FNG_tang_yulin
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_TANG_YULIN_ARMY_DESC
+			traits = { 
+				politically_connected 
+				old_guard 
+				irregulars_officer 
+				trait_reckless 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#鮑文樾
+	FNG_bao_wenyue = {
+		name = FNG_bao_wenyue
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_bao_wenyue
+				large = GFX_Portrait_FNG_bao_wenyue
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_BAO_WENYUE_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				organizer 
+				trait_cautious 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#張景惠
+	FNG_zhang_jinghui = {
+		name = FNG_zhang_jinghui
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_jinghui
+				large = GFX_Portrait_FNG_zhang_jinghui
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ZHANG_JINGHUI_ARMY_DESC
+			traits = { 
+				old_guard 
+				politically_connected 
+				irregulars_officer 
+				trait_cautious 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+#冯占海
+	FNG_feng_zhanhai = {
+		name = FNG_feng_zhanhai
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_feng_zhanhai
+				large = GFX_Portrait_FNG_feng_zhanhai
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_FENG_ZHANHAI_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}		
+#苏炳文
+	FNG_su_bingwen = {
+		name = FNG_su_bingwen
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_su_bingwen
+				large = GFX_Portrait_FNG_su_bingwen
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_SU_BINGWEN_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				winter_specialist 
+				light_infantry_officer 
+				commando 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#于芷山
+	FNG_yu_zhishan = {
+		name = FNG_yu_zhishan
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_yu_zhishan
+				large = GFX_Portrait_FNG_yu_zhishan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YU_ZHISHAN_ARMY_DESC
+			traits = { 
+				trait_reckless 
+				infantry_officer 
+				infantry_leader 
+				hill_fighter 
+				career_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#邹作华
+	FNG_zou_zuohua = {
+		name = FNG_zou_zuohua
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zou_zuohua
+				large = GFX_Portrait_FNG_zou_zuohua
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ZOU_ZUOHA_ARMY_DESC
+			traits = { 
+				career_officer 
+				war_hero 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#何柱國
+	FNG_he_zhuguo = {
+		name = FNG_he_zhuguo
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_he_zhuguo
+				large = GFX_Portrait_FNG_he_zhuguo
+			}
+		}
+		corps_commander = {
+			desc = FNG_he_zhuguo_commander_desc
+			traits = { 
+				career_officer 
+				cavalry_officer 
+				trickster 
+				cavalry_leader 
+				brilliant_strategist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+
+#劉鎮東
+	FNG_liu_zhendong = {
+		name = FNG_liu_zhendong
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_liu_zhendong
+				large = GFX_Portrait_FNG_liu_zhendong
+			}
+		}
+		corps_commander = {
+			desc = FNG_liu_zhendong_commander_desc
+			traits = { 
+				trait_reckless 
+				career_officer 
+				infantry_officer 
+				trickster 
+				light_infantry_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#周福成
+	FNG_zhou_fucheng = {
+		name = FNG_zhou_fucheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhou_fucheng
+				large = GFX_Portrait_FNG_zhou_fucheng
+			}
+		}
+		corps_commander = {
+			desc = FNG_zhou_fucheng_commander_desc
+			traits = { 
+				career_officer 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#郭恩霖
+	FNG_guo_enlin = {
+		name = FNG_guo_enlin
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_FNG_guo_enlin
+				large = GFX_Portrait_FNG_FNG_guo_enlin
+			}
+		}
+		corps_commander = {
+			desc = FNG_guo_enlin_commander_desc
+			traits = { 
+				career_officer 
+				infantry_officer 
+				artillery_officer 
+				organizer 
+				trait_cautious 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#郭希鵬
+	FNG_guo_xipeng = {
+		name = FNG_guo_xipeng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_guo_xipeng
+				large = GFX_Portrait_FNG_guo_xipeng
+			}
+		}
+		corps_commander = {
+			desc = FNG_guo_xipeng_commander_desc
+			traits = { 
+				career_officer 
+				trait_reckless 
+				cavalry_officer 
+				cavalry_expert 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#常荫槐
+	FNG_chang_ying_huai = {
+		name = FNG_chang_ying_huai
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_chang_ying_huai
+				large = GFX_Portrait_FNG_chang_ying_huai
+			}
+		}
+		corps_commander = {
+			desc = FNG_chang_ying_huai_desc
+			traits = { 
+				politically_connected
+				cavalry_expert
+				logistics_wizard
+				trickster
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}		
+#冯庸
+	FNG_feng_yong = {
+		name = FNG_feng_yong
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_feng_yong
+				large = GFX_Portrait_FNG_feng_yong
+			}
+		}
+		corps_commander = {
+			desc = FNG_feng_yong_desc
+			traits = { 
+				politically_connected
+				skirmisher
+				career_officer
+				trait_cautious
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}	
+#吕正操
+	FNG_lv_zheng_chao = {
+		name = FNG_lv_zheng_chao
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_lv_zheng_chao
+				large = GFX_Portrait_FNG_lv_zheng_chao
+			}
+		}
+		corps_commander = {
+			desc = FNG_lv_zheng_chao_desc
+			traits = { 
+				infantry_expert
+				logistics_wizard
+				winter_specialist
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}		
+#解方
+	FNG_xie_fang = {
+		name = FNG_xie_fang
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_xie_fang
+				large = GFX_Portrait_FNG_xie_fang
+			}
+		}
+		corps_commander = {
+			desc = FNG_xie_fang_desc
+			traits = { 
+				infantry_expert
+				offensive_doctrine
+				winter_specialist
+				infantry_leader
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}		
+#王以哲
+	FNG_wang_yi_zhe = {
+		name = FNG_wang_yi_zhe
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_wang_yi_zhe
+				large = GFX_Portrait_FNG_wang_yi_zhe
+			}
+		}
+		corps_commander = {
+			desc = FNG_wang_yi_zhe_desc
+			traits = { 
+				career_officer
+				engineer_officer
+				trait_engineer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#吴克仁
+	FNG_ww_ke_ren = {
+		name = FNG_ww_ke_ren
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_ww_ke_ren
+				large = GFX_Portrait_FNG_ww_ke_ren
+			}
+		}
+		corps_commander = {
+			desc = FNG_ww_ke_ren_desc
+			traits = { 
+				artillery_officer
+				artillery_expert
+				fast_planner
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}		
+#张廷枢
+	FNG_zhang_ting_shu = {
+		name = FNG_zhang_ting_shu
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_ting_shu
+				large = GFX_Portrait_FNG_zhang_ting_shu
+			}
+		}
+		corps_commander = {
+			desc = FNG_zhang_ting_shu_desc
+			traits = { 
+				career_officer
+				harsh_leader
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#黄显声
+	FNG_huang_xian_sheng = {
+		name = FNG_huang_xian_sheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_huang_xian_sheng
+				large = GFX_Portrait_FNG_huang_xian_sheng
+			}
+		}
+		corps_commander = {
+			desc = FNG_huang_xian_sheng_desc
+			traits = { 
+				career_officer
+				artillery_specialist
+				politically_connected
+
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}			
+#刘多荃
+	FNG_liu_duo_kuei = {
+		name = FNG_liu_duo_kuei
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_liu_duo_kuei
+				large = GFX_Portrait_FNG_liu_duo_kuei
+			}
+		}
+		corps_commander = {
+			desc = FNG_liu_duo_kuei_desc
+			traits = { 
+				career_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#缪澄流
+	FNG_miu_cheng_liu = {
+		name = FNG_miu_cheng_liu
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_miu_cheng_liu
+				large = GFX_Portrait_FNG_miu_cheng_liu
+			}
+		}
+		corps_commander = {
+			desc = FNG_miu_cheng_liu_desc
+			traits = { 
+				career_officer
+				infantry_expert
+				infantry_leader
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
+#孙铭九
+	FNG_sun_ming_jiu = {
+		name = FNG_sun_ming_jiu
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_sun_ming_jiu
+				large = GFX_Portrait_FNG_sun_ming_jiu
+			}
+		}
+		corps_commander = {
+			desc = FNG_sun_ming_jiu_desc
+			traits = { 
+				defensive_doctrine
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#张学成
+	FNG_zhang_xue_cheng = {
+		name = FNG_zhang_xue_cheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_xue_cheng
+				large = GFX_Portrait_FNG_zhang_xue_cheng
+			}
+		}
+		corps_commander = {
+			desc = FNG_zhang_xue_cheng_desc
+			traits = { 
+				inflexible_strategist
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#张学铭
+	FNG_zhang_xue_ming = {
+		name = FNG_zhang_xue_ming
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_zhang_xue_ming
+				large = GFX_Portrait_FNG_zhang_xue_ming
+			}
+		}
+		corps_commander = {
+			desc = FNG_zhang_xue_ming_desc
+			traits = { 
+				old_guard
+				politically_connected
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+################
+### Admirals ###
+################
+#沈鴻烈
+	FNG_shen_honglie = {
+		name = FNG_shen_honglie
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_shen_honglie
+				large = GFX_Portrait_FNG_shen_honglie
+			}
+		}
+		navy_leader = {
+			desc = POLITICS_SHEN_HONGLIE_NAVY_DESC
+			traits = { 
+				navy_career_officer 
+				aviation_enthusiast 
+				fighter_director 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}	
+#尹祚乾
+	FNG_yin_zuoqian = {
+		name = FNG_yin_zuoqian
+		portraits = {
+			army = {
+				small = GFX_Portrait_FNG_yin_zuoqian
+				large = GFX_Portrait_FNG_yin_zuoqian
+			}
+		}
+		navy_leader = {
+			traits = { 
+				cuts_corners 
+				spotter 
+				navy_career_officer 
+			}
+			skill = 2
+			desc = FNG_yin_zuoqian_admiral_desc
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}	
+#################
+### Theorists ###
+#################
+	FNG_the_old_marshals_clique = {
+		name = FNG_the_old_marshals_clique
+		portraits = {
+			army = {
+				small = GFX_idea_doctrinal_orthodoxy_spirit
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = FNG_the_old_marshals_clique
+			ledger = army
+			traits = { FNG_logistics_and_firepower }
+			cost = 100
+		}
+	}
+	FNG_the_young_marshals_clique = {
+		name = FNG_the_young_marshals_clique
+		portraits = {
+			army = {
+				small = GFX_idea_duelling_obsession_spirit
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = FNG_the_young_marshals_clique
+			ledger = army
+			traits = { FNG_on_daring_wings }
+			cost = 100
+		}
+	}
+	FNG_the_shikan_clique = {
+		name = FNG_the_shikan_clique
+		portraits = {
+			army = {
+				small = GFX_idea_upbeat_command_spirit
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = FNG_the_shikan_clique
+			ledger = army
+			traits = { FNG_spirit_and_steel }
+			cost = 100
+		}
+	}	
+}

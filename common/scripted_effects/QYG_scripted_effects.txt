@@ -1,0 +1,398 @@
+#军事至上
+	QYG_bop_low_increase_effect_10 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.03
+		}
+	}
+	QYG_bop_low_increase_effect_12 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.05
+		}
+	}
+	QYG_bop_low_increase_effect_13 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.07
+		}
+	}
+	QYG_bop_medium_increase_effect = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.10
+		}
+	}
+	QYG_bop_large_increase_effect = {	
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.15
+		}
+	}
+	QYG_bop_very_large_increase_effect = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = 0.20
+		}
+	}
+	
+
+#革命领衔
+	QYG_bop_low_decrease_effect_10 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.03
+		}
+	}
+	QYG_bop_low_decrease_effect_12 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.05
+		}
+	}
+	QYG_bop_low_decrease_effect_13 = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.07
+		}
+	}
+	QYG_bop_medium_decrease_effect = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.10
+		}
+	}
+	QYG_bop_large_decrease_effect = {	
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.15
+		}
+	}
+	QYG_bop_very_large_decrease_effect = {
+		add_power_balance_value = {
+			id = QYG_power_balance
+			value = -0.20
+		}
+	}
+#第二个该死的决议
+	QYG_social = {#定值
+		add_dynamic_modifier = {
+			modifier = QYG_social_modifier
+		}
+		hidden_effect = {
+			add_ideas = QYG_ge_ming_xin_jie_duan_idea
+		}
+		set_variable = { QYG_Farmer_vote = 40 }#农民支持度
+		set_variable = { QYG_worker_vote = 20 }#工人支持度
+		set_variable = { QYG_Intellectuals_vote = 10 }#市民支持度
+		set_variable = { QYG_entrepreneur_vote = -20 }#企业家支持度
+
+		QYG_social_effect = yes
+	}
+	QYG_social_effect = {
+		QYG_social_clamp = yes
+
+		#农民
+		set_variable = { QYG_Farmer_vote_var = QYG_Farmer_vote }
+
+		set_temp_variable = { QYG_Farmer_vote_factor = QYG_Farmer_vote_var }#40
+		divide_temp_variable = { QYG_Farmer_vote_factor = 500 }#0.08
+		set_variable = { QYG.QYG_social_production_speed_buildings_factor = QYG_Farmer_vote_factor }#0.08
+		divide_temp_variable = { QYG_Farmer_vote_factor = 0.5 }#0.16
+		set_variable = { QYG.QYG_social_political_power_factor = QYG_Farmer_vote_factor }#0.16
+
+		#工人
+		set_variable = { QYG_worker_vote_var = QYG_worker_vote }
+
+		set_temp_variable = { QYG_worker_vote_factor = QYG_worker_vote_var }#20
+		divide_temp_variable = { QYG_worker_vote_factor = 500 }#0.04
+		set_variable = { QYG.QYG_social_production_gain_factor = QYG_worker_vote_factor }#0.04
+		divide_temp_variable = { QYG_worker_vote_factor = -1 }#-0.04
+		set_variable = { QYG.QYG_social_war_support = QYG_worker_vote_factor }#-0.04
+
+		#市民
+		set_variable = { QYG_Intellectuals_vote_var = QYG_Intellectuals_vote }
+
+		set_temp_variable = { QYG_Intellectuals_vote_factor = QYG_Intellectuals_vote_var }#10
+		divide_temp_variable = { QYG_Intellectuals_vote_factor = 500 }#0.02
+		set_variable = { QYG.QYG_social_research_speed_factor = QYG_Intellectuals_vote_factor }#0.02
+		set_variable = { QYG.QYG_social_consumer_goods_factor = QYG_Intellectuals_vote_factor }#0.02
+
+		#企业家
+		set_variable = { QYG_entrepreneur_vote_var = QYG_entrepreneur_vote }
+
+		set_temp_variable = { QYG_entrepreneur_vote_factor = QYG_entrepreneur_vote_var }#-20
+		divide_temp_variable = { QYG_entrepreneur_vote_factor = 250 }#-0.08
+		set_variable = { QYG.QYG_social_political_power_gain = QYG_entrepreneur_vote_factor }#-0.08
+		divide_temp_variable = { QYG_entrepreneur_vote_factor = -2 }#0.04
+		set_variable = { QYG.QYG_social_production_factory_max_efficiency_factor = QYG_entrepreneur_vote_factor }#-0.08
+
+		clear_variable = QYG_Farmer_vote_var
+		clear_variable = QYG_Intellectuals_vote_var
+		clear_variable = QYG_worker_vote_var
+		clear_variable = QYG_entrepreneur_vote_var
+
+		force_update_dynamic_modifier = yes
+	}
+	QYG_social_clamp = {#确定上下限
+		clamp_variable = {
+			var = QYG_Farmer_vote
+			min = -100
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_worker_vote
+			min = -100
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_Intellectuals_vote
+			min = -100
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_entrepreneur_vote
+			min = -100
+			max = 100
+		}
+	}	
+#第三个该死的决议
+	QYG_patry = {#定值
+		add_dynamic_modifier = {
+			modifier = QYG_patry_modifier
+		}
+		hidden_effect = {
+			add_ideas = QYG_patry_idea
+		}
+		set_variable = { QYG_union_vote = 40 }#工会支持度
+		set_variable = { QYG_party_vote = 60 }#党委支持度
+
+		set_variable = { QYG_power = 0 } #分权-集权
+		set_temp_variable = { QYG_union_vote_mul = QYG_union_vote }
+		multiply_temp_variable = { QYG_union_vote_mul = 0.3 }
+		add_to_variable = { QYG_power = QYG_union_vote_mul }
+
+		set_temp_variable = { QYG_party_vote_mul = QYG_party_vote }
+		multiply_temp_variable = { QYG_party_vote_mul = 0.7 }
+		add_to_variable = { QYG_power = QYG_party_vote_mul }
+
+		set_variable = { QYG_Corporation = 30 }#法团化
+		set_variable = { QYG_bureaucracy = 20 }#官僚化
+
+		QYG_patry_effect = yes
+	}
+	QYG_patry_effect = {#给效果
+		#工农会
+		set_variable = { QYG_union_vote_var = QYG_union_vote }
+
+		set_temp_variable = { QYG_union_vote_factor = QYG_union_vote_var }#40
+		divide_temp_variable = { QYG_union_vote_factor = 500 }#0.08
+		set_variable = { QYG.QYG_patry_industrial_capacity_factory = QYG_union_vote_factor }#0.08
+		set_variable = { QYG.QYG_patry_stability_factor = QYG_union_vote_factor }#0.08
+
+		#党委
+		set_variable = { QYG_party_vote_var = QYG_party_vote }
+
+		set_temp_variable = { QYG_party_vote_factor = QYG_party_vote_var }#60
+		divide_temp_variable = { QYG_party_vote_factor = 500 }#0.12
+		set_variable = { QYG.QYG_patry_production_factory_start_efficiency_factor = QYG_party_vote_factor }#0.12
+		set_variable = { QYG.QYG_patry_war_support_factor = QYG_party_vote_factor }#0.12
+
+		#法团化
+		set_variable = { QYG_Corporation_var = QYG_Corporation }
+
+		set_temp_variable = { QYG_Corporation_factor = QYG_Corporation_var }#30
+		divide_temp_variable = { QYG_Corporation_factor = 1000 }#0.03
+		set_variable = { QYG.QYG_patry_army_attack_factor = QYG_Corporation_factor }#0.03
+		multiply_temp_variable = { QYG_Corporation_factor = -2 }#-0.06
+		set_variable = { QYG.QYG_patry_political_power_gain = QYG_Corporation_factor }#-0.06
+
+		#官僚化
+		set_variable = { QYG_bureaucracy_var = QYG_bureaucracy }
+
+		set_temp_variable = { QYG_bureaucracy_factor = QYG_bureaucracy_var }#30
+		divide_temp_variable = { QYG_bureaucracy_factor = 1000 }#0.03
+		set_variable = { QYG.QYG_patry_political_power_factor = QYG_bureaucracy_factor }#0.03
+		multiply_temp_variable = { QYG_bureaucracy_factor = 2 }#0.06
+		set_variable = { QYG.QYG_patry_consumer_goods_factor = QYG_bureaucracy_factor }#0.06		
+
+		clear_variable = QYG_bureaucracy_var
+		clear_variable = QYG_Corporation_var
+		clear_variable = QYG_party_vote_var
+		clear_variable = QYG_union_vote_var
+
+		force_update_dynamic_modifier = yes
+	}
+	QYG_Change_union = {#工会上涨
+		custom_effect_tooltip = QYG_Change_union
+
+		add_to_variable = { QYG_union_vote = QYG_Change_faction }
+		subtract_from_variable = { QYG_party_vote = QYG_Change_faction }
+		
+		QYG_patry_clamp = yes
+	
+		set_temp_variable = { QYG_max_temp = 100 }
+		subtract_from_temp_variable = { QYG_max_temp = QYG_union_vote }
+		set_temp_variable = { QYG_party_vote = QYG_max_temp }	
+
+		QYG_patry_effect = yes
+	}
+	QYG_Change_party= {#党委上涨
+		custom_effect_tooltip = QYG_Change_party
+
+		add_to_variable = { QYG_party_vote = QYG_Change_faction }
+		subtract_from_variable = { QYG_union_vote = QYG_Change_faction }
+		
+		QYG_patry_clamp = yes
+	
+		set_temp_variable = { QYG_max_temp = 100 }
+		subtract_from_temp_variable = { QYG_max_temp = QYG_party_vote }
+		set_temp_variable = { QYG_union_vote = QYG_max_temp }	
+
+		QYG_patry_effect = yes
+	}
+	QYG_patry_clamp = {
+		clamp_variable = {
+			var = QYG_union_vote
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_party_vote
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_bureaucracy
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = QYG_Corporation
+			min = 0
+			max = 100
+		}
+	}
+#军队
+	QYG_recruit_characters_effect = {#重新招募
+		if = {
+			limit = {
+				NOT = {
+					THIS = { has_character_flag = is_dead }
+					QYG = { has_character = PREV }
+				}
+			}
+			if = {
+				limit = { THIS = { is_army_leader = yes } }
+				demote_to_general = yes
+				remove_trait = { trait = recently_promoted }
+			}
+			set_nationality = QYG
+		}
+	}
+	new_bai_se_leaves_hiding = {#招募百色起义
+		show_unit_leaders_tooltip = GXC_Wei_Guo_Qing
+		show_unit_leaders_tooltip = GXC_Wei_Bo_Qun
+		show_unit_leaders_tooltip = GXC_Zhang_zheng_qiu
+		show_unit_leaders_tooltip = GXC_deng_ken
+		show_unit_leaders_tooltip = GXC_Yu_zuo_yu
+		show_unit_leaders_tooltip = GXC_Chen_Hao_Ren
+		show_unit_leaders_tooltip = GXC_He_Si_Cang
+		show_unit_leaders_tooltip = GXC_Li_Ming_Rui
+		show_unit_leaders_tooltip = GXC_yu_zuobai
+		hidden_effect = {
+			event_target:original_liangguang = {
+				GXC_Wei_Guo_Qing = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_Wei_Bo_Qun = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_Zhang_zheng_qiu = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_deng_ken = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_Yu_zuo_yu = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_Chen_Hao_Ren = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_He_Si_Cang = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_Li_Ming_Rui = {
+					QYG_recruit_characters_effect = yes
+				}
+				GXC_yu_zuobai = {
+					QYG_recruit_characters_effect = yes
+				}
+			}
+		}
+	}
+	new_hu_nan_leaves_hiding = {#招募湖南
+		show_unit_leaders_tooltip = HNN_Teng_Daiyuan
+		show_unit_leaders_tooltip = HNN_Chen_Yi
+		show_unit_leaders_tooltip = HNN_Xiao_Ke
+		show_unit_leaders_tooltip = HNN_mao_ze_dong
+		show_unit_leaders_tooltip = HNN_he_long
+		show_unit_leaders_tooltip = HNN_peng_dehuai
+		show_unit_leaders_tooltip = GXC_Wan_Dan_Ping
+		hidden_effect = {
+			event_target:original_hunan = {
+				GXC_Wan_Dan_Ping = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_peng_dehuai = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_he_long = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_mao_ze_dong = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_Xiao_Ke = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_Chen_Yi = {
+					QYG_recruit_characters_effect = yes
+				}
+				HNN_Teng_Daiyuan = {
+					QYG_recruit_characters_effect = yes
+				}
+			}
+		}
+	}	
+	# new_qiongya_leaves_hiding = {#招募湖南
+	# 	show_unit_leaders_tooltip = HNN_Teng_Daiyuan
+	# 	show_unit_leaders_tooltip = HNN_Chen_Yi
+	# 	show_unit_leaders_tooltip = HNN_mao_ze_dong
+	# 	show_unit_leaders_tooltip = HNN_he_long
+	# 	show_unit_leaders_tooltip = HNN_peng_dehuai
+	# 	show_unit_leaders_tooltip = GXC_Wan_Dan_Ping
+	# 	hidden_effect = {
+	# 		event_target:original_qiong_ya = {
+	# 			GXC_Wan_Dan_Ping = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 			HNN_peng_dehuai = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 			HNN_he_long = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 			HNN_mao_ze_dong = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 			HNN_Chen_Yi = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 			HNN_Teng_Daiyuan = {
+	# 				QYG_recruit_characters_effect = yes
+	# 			}
+	# 		}
+	# 	}
+	# }	

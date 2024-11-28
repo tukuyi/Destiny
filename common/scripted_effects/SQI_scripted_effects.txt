@@ -1,0 +1,55 @@
+SQI_agriculture = {#给农村问题定值
+	add_dynamic_modifier = {
+		modifier = SQI_agriculture_modifier
+	}
+	hidden_effect = { add_ideas = SQI_agriculture_idea }
+
+	set_variable = { SQI_Farmer_vote = -40 }#农民支持度
+	set_variable = { SQI_Landlord_vote = 20 }#地主支持度
+
+	set_variable = { HNN_illiteracy_imrovement_rate = 0 }
+	SQI_agriculture_modifer = yes
+}
+
+SQI_agriculture_modifer = {#通过赋值变动来给效果变化
+	set_variable = { SQI_Farmer_vote_var = SQI_Farmer_vote }
+	set_variable = { SQI_Landlord_vote_var = SQI_Landlord_vote }
+
+	set_temp_variable = { SQI_Farmer_vote_factor = SQI_Farmer_vote_var }#-40
+	set_temp_variable = { SQI_Landlord_vote_factor = SQI_Landlord_vote_var }#20
+	set_temp_variable = { SQI_plus_all = SQI_Farmer_vote_factor }
+	set_temp_variable = { SQI_plus_all = SQI_Landlord_vote_var }
+	add_to_variable = { SQI_plus_all = SQI_Landlord_vote_var }#-20
+
+	divide_temp_variable = { SQI_Farmer_vote_factor = 200 }
+	divide_temp_variable = { SQI_Landlord_vote_factor = 200 }
+	
+	set_variable = { SQI.SQI_agriculture_stability = SQI_Farmer_vote_factor }#-0.20
+	set_variable = { SQI.SQI_agriculture_war_support = SQI_Farmer_vote_factor }#-0.20
+	
+	divide_temp_variable = { SQI_Landlord_vote_factor = 2 }
+	set_variable = { SQI.SQI_agriculture_political_power_factor = SQI_Landlord_vote_factor }#0.10
+
+	divide_temp_variable = { SQI_plus_all = 200 }#-0.1
+	set_variable = { SQI.SQI_agriculture_production_max_factor = SQI_plus_all }
+	set_variable = { SQI.SQI_agriculture_production_gain_factor = SQI_plus_all }
+
+	clear_variable = SQI_Farmer_vote_var
+	clear_variable = SQI_Landlord_vote_var
+
+	force_update_dynamic_modifier = yes
+	SQI_agriculture_clamp = yes
+}
+
+SQI_agriculture_clamp = {#确定上下限
+	clamp_variable = {
+		var = SQI_Farmer_vote
+		min = -50
+		max = 50
+	}
+	clamp_variable = {
+		var = SQI_Landlord_vote
+		min = -50
+		max = 50
+	}
+}

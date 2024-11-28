@@ -1,0 +1,2 @@
+SHC = "countries/Shang Hai City.txt"
+QYG = "countries/Qiong Ya Revolution.txt" 
