@@ -3143,6 +3143,32 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
 		available = {
 			has_country_flag = SHX_feng_land_reform
 		}
