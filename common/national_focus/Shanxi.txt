@@ -2764,6 +2764,7 @@ focus_tree = {
 			}
 		}
 		
+		ai_will_do = { base = 300 }
 
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
@@ -2772,6 +2773,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_jue_hei_she_xing_qi_yi"
 			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = SHX_underdeveloped_mountain_economy0
 				add_idea = SHX_underdeveloped_mountain_economy1
@@ -2785,7 +2787,9 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = -1
 		y = 1
-		cost = 5
+		cost = 4
+
+		ai_will_do = { base = 300 }
 
 		prerequisite = {
 			focus = SHX_jie_jue_hei_she_xing_qi_yi
@@ -2793,7 +2797,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jiao_yu_gui_hua"
-			
+			add_political_power = 50
+			SHX_QIE_investment_medium = yes
 		}
 	}
 
@@ -2803,7 +2808,9 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = 1
 		y = 1
-		cost = 5
+		cost = 4
+
+		ai_will_do = { base = 300 }
 
 		prerequisite = {
 			focus = SHX_jie_jue_hei_she_xing_qi_yi
@@ -2811,7 +2818,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zi_zhu_gong_ye"
-			
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
 
@@ -2849,6 +2859,8 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = { base = 300 }
+
 		prerequisite = {
 			focus = SHX_da_kai_lv_deng
 		}
@@ -2858,7 +2870,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_ji_xu_shi_nian"
-			
+			country_event = {
+				id = shx.earlygame.12
+				days = 1
+			}
+			add_ideas = SHX_Ten_Year_Plan_begins
 		}
 	}
 
@@ -3084,13 +3100,38 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_ji_xu_shi_nian
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_gong_gu_xiang_cun_cheng_zheng"
-			
+			swap_ideas = {
+				remove_idea = SHX_agriculture_reform
+				add_idea = SHX_agriculture_reform1
+			}
+			country_event = {
+				id = shx.agri.1
+				days = 1
+			}
 		}
 	}
 
@@ -3102,6 +3143,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		available = {
+			has_country_flag = SHX_feng_land_reform
+		}
 		prerequisite = {
 			focus = SHX_gong_gu_xiang_cun_cheng_zheng
 		}
@@ -3141,6 +3185,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		available = {
+			has_country_flag = SHX_yan_land_reform
+		}
 		prerequisite = {
 			focus = SHX_gong_gu_xiang_cun_cheng_zheng
 		}
@@ -3180,6 +3227,9 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
 		prerequisite = {
 			focus = SHX_zhi_pei_xiang_cun
 			focus = SHX_da_ji_xiang_cun_e_ba

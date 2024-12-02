@@ -732,6 +732,51 @@ ideas = {
 				production_factory_start_efficiency_factor = 0.1
 			}
 		}
+
+		### 10 year Plan Spirits ###
+		SHX_Ten_Year_Plan_begins = {#重振十年计划
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_Ten_Year_Plan_begins" }
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.2
+				stability_factor = -0.2
+			}
+		}
+		SHX_Ten_Year_Plan_disrupted = {#十年计划中断
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_Ten_Year_Plan_disrupted" }
+			picture = KTG_Industrial_Crisis_Town
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				stability_factor = -0.2
+			}
+		}
+
+		###Agricultural Spirits ###
+		SHX_agriculture_reform1 = { #Promises of Land Reform
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform1" }
+			picture = DEI_solid_foodsystem
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.2
+				production_speed_buildings_factor = -0.15
+				conscription_factor = -0.10
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		SHX_paying_off_gentry = {#From an Event
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_paying_off_gentry " }
+			picture = ETH_customs_barrier_ITA
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+
 		###SHX Industrial Spirits
 		SHX_underdeveloped_mountain_economy0 = {#山区经济崩溃
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy0" }

@@ -6,6 +6,7 @@
 
 add_namespace = shx
 add_namespace = shx.earlygame
+add_namespace = shx.agri
 add_namespace = shx.mil
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
@@ -295,6 +296,440 @@ country_event = {#黑色星期一到来！
 		add_stability = -0.10
 	}
 }
+country_event = {#十年计划继续！
+	id = shx.earlygame.12 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.12" }
+	title = shx.earlygame.12.t
+	desc = shx.earlygame.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.12.a
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.13
+	}
+	option = {
+		name = shx.earlygame.12.b
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.14
+	}
+	option = {
+		name = shx.earlygame.12.c
+
+	}
+}
+country_event = {#十年计划的目标
+	id = shx.earlygame.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.13" }
+	title = shx.earlygame.13.t
+	desc = shx.earlygame.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.12.b
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.14
+	}
+	option = {
+		name = shx.earlygame.13.a
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.12
+	}
+	option = {
+		name = shx.earlygame.12.c
+
+	}
+}
+country_event = {#十年计划的目标
+	id = shx.earlygame.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.14" }
+	title = shx.earlygame.14.t
+	desc = shx.earlygame.14.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.13.a
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.12
+	}
+	option = {
+		name = shx.earlygame.12.a
+		trigger = { is_ai = no }
+		country_event = shx.earlygame.13
+	}
+	option = {
+		name = shx.earlygame.12.c
+
+	}
+}
+
+########################################
+########-       农业          -#########
+########################################
+country_event = {#土地改革
+	id = shx.agri.1 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.1" }
+	title = shx.agri.1.t
+	desc = shx.agri.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			activate_mission = shx_agricultural_reform_mission_timer
+			country_event = { id = shx.agri.4 days = 7 } 
+		}
+	}
+
+	option = {
+		name = shx.agri.1.yan
+		trigger = {
+			NOT = { has_country_flag = SHX_feng_victory_over_yan }
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		hidden_effect = {
+			set_country_flag = SHX_yan_land_reform
+		}
+		custom_effect_tooltip = SHX_Yan_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = shx_agricultural_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+	}
+	option = {
+		name = shx.agri.1.feng
+		trigger = {
+			NOT = { has_country_flag = SHX_yan_victory_over_gmj }
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After mid 1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.06.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		hidden_effect = {
+			set_country_flag = SHX_feng_land_reform
+		}
+		custom_effect_tooltip = SHX_Feng_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+	}
+}
+country_event = {#土地改革完成
+	id = shx.agri.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.2" }
+	title = shx.agri.2.t
+	desc = {
+		text = shx.agri.2.d.yan
+		trigger = {
+			has_country_flag = SHX_yan_land_reform
+		}
+	}
+	desc = {
+		text = shx.agri.2.d.feng
+		trigger = {
+			has_country_flag = SHX_feng_land_reform
+		}
+	}
+	desc = {
+		text = shx.agri.2.default
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = SHX_yan_land_reform
+					has_country_flag = SHX_feng_land_reform
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.agri.2.a
+		set_country_flag = SHX_agricultural_reform_completed_flag
+		if = { #Failsafe
+			limit = { has_active_mission = SHX_agricultural_reform_mission_timer }
+			remove_mission = SHX_agricultural_reform_mission_timer
+		}
+		custom_effect_tooltip = SHX_Agriculture_Reform_Complete_Tooltip
+	}
+}
+country_event = {#三师传
+	id = shx.agri.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.4" }
+	title = shx.agri.4.t
+	desc = shx.agri.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.agri.5 days = 21 } 
+		}
+	}
+
+	option = {
+		name = shx.agri.4.a
+		add_political_power = 50
+	}
+}
+country_event = {#乡绅抗议
+	id = shx.agri.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.5" }
+	title = shx.agri.5.t
+	desc = shx.agri.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.agri.6 days = 62 } #The Great Grain Robbery
+		}
+	}
+
+	option = {
+		name = shx.agri.5.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				check_variable = {
+					SHX_QIE_influence_variable < 30
+				}
+			}
+		}
+		SHX_QIE_investment_medium = yes
+		add_stability = -0.07
+	}
+
+	option = {
+		name = shx.agri.5.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				check_variable = {
+					has_political_power < 25
+				}
+			}
+		}
+		add_political_power = 75
+		add_timed_idea = {
+			idea = SHX_paying_off_gentry
+			days = 90
+		}
+	}
+}
+country_event = {#大稻贼
+	id = shx.agri.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.6" }
+	title = shx.agri.6.t
+	desc = shx.agri.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.agri.7 days = 21 } 
+		}
+	}
+
+	option = {
+		name = shx.agri.6.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				check_variable = {
+					has_stability > 0.30
+				}
+			}
+		}
+		add_days_mission_timeout = {
+			mission = SHX_agricultural_reform_mission_timer
+			days = -120
+		}
+	}
+
+	option = {
+		name = shx.agri.6.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				check_variable = {
+					has_political_power < 25
+				}
+			}
+		}
+		add_political_power = 50
+		add_days_mission_timeout = {
+			mission = SHX_agricultural_reform_mission_timer
+			days = 120
+		}
+	}
+}
+country_event = {#公道之团
+	id = shx.agri.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.7" }
+	title = shx.agri.7.t
+	desc = {
+		text = shx.agri.7.feng
+		trigger = { has_country_flag = SHX_feng_victory_over_yan }
+	}
+	desc = {
+		text = shx.agri.7.default
+		trigger = { NOT = { has_country_flag = SHX_feng_victory_over_yan } }
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.agri.7.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					state = 1072
+				}
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 0.25
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					state = 1072
+				}
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.25
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = SHX_feng_victory_over_yan } }
+			SHX_strengthen_yan_medium = yes
+		}
+		else = {
+			SHX_strengthen_feng_medium = yes
+		}
+	}
+
+	option = {
+		name = shx.agri.7.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -300
+		}
+		add_war_support = -0.03
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = SHX_feng_victory_over_yan
+				}
+			}
+			SHX_strengthen_feng_medium = yes
+		}
+		else = {
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.03
+			}
+		}
+	}
+}
+
 ########################################
 ########-       军队          -#########
 ########################################

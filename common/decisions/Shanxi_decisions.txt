@@ -96,6 +96,33 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			SHX_yan_victory_effect = yes
 		}
 	}
+
+	#Shanxi Agriculture Decisions
+	SHX_agricultural_reform_mission_timer = {#山西的土地改革进程
+		icon = GFX_decision_generic_agriculture
+		allowed = {
+			always = no
+		}
+		available = {
+			OR = {
+				has_country_flag = SHX_agricultural_reform_completed_flag
+				has_country_flag = SHX_lategame_begin_flag
+			}
+		}
+
+		fire_only_once = yes
+		is_good = yes
+		priority = 35
+		days_mission_timeout = 600
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_agricultural_reform_mission_timer"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_agricultural_reform_mission_timer"
+			country_event = shx.agri.2
+		}
+	}
 }
 
 SHX_QIE_ties = {#在北京的阴影下
