@@ -2787,7 +2787,7 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = -1
 		y = 1
-		cost = 4
+		cost = 3
 
 		ai_will_do = { base = 300 }
 
@@ -2808,7 +2808,7 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = 1
 		y = 1
-		cost = 4
+		cost = 3
 
 		ai_will_do = { base = 300 }
 
@@ -3383,6 +3383,9 @@ focus_tree = {
 			622 = { #Yulin
 				increase_state_category_by_one_level = yes
 			}
+			1015 = {
+				increase_state_category_by_one_level = yes
+			}
 			1072 = { #Western Shanxi
 				increase_state_category_by_one_level = yes
 			}
@@ -3472,7 +3475,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_zheng_jing_ji"
-
+			add_political_power = 50
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_economic_reconstruction_committee
 		}
 	}	
 
@@ -3510,16 +3516,34 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 125 #Slightly More Valuable Than Others
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_ji_xu_shi_nian
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xian_dai_shi_mo_fan_sheng"
-			add_political_power = 50
-			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = SHX_economic_reconstruction_committee
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy1
+				add_idea = SHX_underdeveloped_mountain_economy2
+			}
 		}
 	}
 

@@ -871,6 +871,15 @@ ideas = {
 				production_speed_buildings_factor = -0.1
 			}
 		}
+		SHX_underdeveloped_mountain_economy2 = {#国家资本主义萌芽
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy2" }
+			picture = SOV_second_five_year_plan_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.2
+			}
+		}
 		SHX_qie_influence_idea0 = {#在北京的阴影下
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea0" }
 			picture = SHX_beijing_influence
