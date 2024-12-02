@@ -2771,7 +2771,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_jue_hei_she_xing_qi_yi"
-			
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy0
+				add_idea = SHX_underdeveloped_mountain_economy1
+			}
 		}
 	}
 

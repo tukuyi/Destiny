@@ -733,6 +733,27 @@ ideas = {
 			}
 		}
 		###SHX Industrial Spirits
+		SHX_underdeveloped_mountain_economy0 = {#山区经济崩溃
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy0" }
+			picture = POL_disjointed_industry
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.10
+				consumer_goods_factor = 0.30
+				industrial_capacity_factory = -0.30
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		SHX_underdeveloped_mountain_economy1 = {#山区经济崩溃
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy1" }
+			picture = POL_disjointed_industry
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.25
+				production_speed_buildings_factor = -0.1
+			}
+		}
 		SHX_qie_influence_idea0 = {#在北京的阴影下
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea0" }
 			picture = SHX_beijing_influence
