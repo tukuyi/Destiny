@@ -71,4 +71,12 @@ spriteTypes = {
 		name = "GFX_Portrait_SHX_feng_anbang"
 		texturefile = "gfx/leaders/SHX/Portrait_SHX_feng_anbang.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SHX_Zhao_dai_wen"
+		texturefile = "gfx/leaders/SHX/Portrait_SHX_Zhao_dai_wen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHX_liang_huazhi"
+		texturefile = "gfx/leaders/SHX/Portrait_SHX_liang_huazhi.png"
+	}
 }

@@ -9053,7 +9053,7 @@ focus_tree = {
 			}
 			else = {
 				add_equipment_to_stockpile = {
-					type = fighter_equipment_0
+					type = small_plane_airframe
 					amount = 50
 					producer = QIE
 				}

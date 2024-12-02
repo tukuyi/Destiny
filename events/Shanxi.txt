@@ -1,12 +1,15 @@
 ﻿###########################
 # Shanxi Clique Events
 ###########################
-# By WordZero
+# By 彭湃
 ###########################
 
 add_namespace = shx
 add_namespace = shx.earlygame
 add_namespace = shx.mil
+add_namespace = shx.powerstruggle
+add_namespace = shx.QIE.aid
+add_namespace = shx.shx.suiyuan.campaign
 
 ########################################
 ########-       开局          -#########
@@ -31,11 +34,11 @@ country_event = {#晋系军阀
 	option = {
 		name = shx.0.b
 		hidden_effect = {
+			add_ideas = SHX_dual_armies
 			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
-
 country_event = {#晋绥军与国民军的联盟
 	id = shx.earlygame.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.1" }
@@ -56,11 +59,11 @@ country_event = {#晋绥军与国民军的联盟
 	option = {
 		name = shx.earlygame.1.b
 		hidden_effect = {
+			add_ideas = SHX_dual_armies
 			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
-
 country_event = {#同省异梦
 	id = shx.earlygame.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.2" }
@@ -74,11 +77,11 @@ country_event = {#同省异梦
 	option = {
 		name = shx.earlygame.2.a
 		hidden_effect = {
+			add_ideas = SHX_dual_armies
 			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
-
 country_event = {#东亚监事会宣布在八省联合扩张
 	id = shx.earlygame.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.3" }
@@ -97,7 +100,6 @@ country_event = {#东亚监事会宣布在八省联合扩张
 		}
 	}
 }
-
 country_event = {#农民对德国人掠夺资源感到震怒
 	id = shx.earlygame.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.4" }
@@ -110,16 +112,228 @@ country_event = {#农民对德国人掠夺资源感到震怒
 
 	option = { 
 		name = shx.earlygame.4.a
+		add_stability = -0.01
+	}
+}
+country_event = {#十年一梦
+	id = shx.earlygame.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.5" }
+	title = shx.earlygame.5.t
+	desc = shx.earlygame.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = shx.earlygame.5.a
+		set_country_flag = SHX_yan_feng_split
 		hidden_effect = {
-			country_event = { id = shx.13 days = 14 }
+			set_power_balance = {
+				id = SHX_power_balance
+				left_side = SHX_yan_winning_side
+				right_side = SHX_feng_winning_side
+				set_value = -0.2
+			}
+			activate_mission = SHX_looming_gmj_coup
+			add_ideas = SHX_guominjun_unrest_idea
+			set_variable = {
+				SHX_revolution_line = 0
+			}			
+			country_event = {
+				id = shx.earlygame.7
+				days = 3
+			}
 		}
 	}
 }
+country_event = {#夜谈
+	id = shx.earlygame.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.6" }
+	title = shx.earlygame.6.t
+	desc = shx.earlygame.6.d
 
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = Shanxi_open_for_investment
+		hidden_effect = {
+			QIE = {
+				country_event = { 
+					id = shx.QIE.aid.2 
+					days = 7 
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = shx.earlygame.6.a
+		SHX_QIE_investment_medium = yes
+		add_political_power = -20
+		SHX_set_up_QIE_influence_game = yes
+		hidden_effect = {
+			country_event = { id = shx.earlygame.9 days = 2 }
+		}
+	}
+}
+country_event = {#冯玉祥提出向国民军划拨更多经费
+	id = shx.earlygame.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.7" }
+	title = shx.earlygame.7.t
+	desc = shx.earlygame.7.d
+	picture = GFX_report_event_SHX_feng_and_yan_2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = shx.earlygame.7.a
+		add_war_support = -0.025
+		add_command_power = 30
+	}
+	option = {
+		name = shx.earlygame.7.b 
+		trigger = { is_ai = no }
+		add_war_support = -0.025
+		add_command_power = 30
+		country_event = shx.earlygame.8
+	}
+}
+country_event = {#我军组成
+	id = shx.earlygame.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.8" }
+	title = shx.earlygame.8.t
+	desc = shx.earlygame.8.d
+	picture = GFX_report_event_SHX_yan_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.8.a
+	}
+}
+country_event = {#冯玉祥前往陕西
+	id = shx.earlygame.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.9" }
+	title = shx.earlygame.9.t
+	desc = shx.earlygame.9.d
+	picture = GFX_report_event_SHX_feng_nature
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.earlygame.10 days = 14 }
+		}
+	}
+
+	option = {
+		name = shx.earlygame.9.a
+		add_stability = -0.05
+		hidden_effect = {
+			set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+			remove_from_coalition = yes
+		}
+		custom_effect_tooltip = SHX_GMJ_leaves_coalition_tooltip
+	}
+}
+country_event = {#井岳秀之死
+	id = shx.earlygame.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.10" }
+	title = shx.earlygame.10.t
+	desc = shx.earlygame.10.d
+	picture = GFX_report_event_SHX_jing_yuexiu
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.10.a
+		ai_chance = {
+			base = 50
+		}
+		add_stability = -0.025
+		SHX_strengthen_feng_small = yes
+		SHX_revolution_small = yes
+	}
+
+	option = {
+		name = shx.earlygame.10.b
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = -25
+		SHX_strengthen_yan_small = yes
+		SHX_revolution_small = yes
+	}
+}
+country_event = {#黑色星期一到来！
+	id = shx.earlygame.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.11" }
+	title = shx.earlygame.11.t
+	desc = shx.earlygame.11.d
+	picture = GFX_report_event_SHX_taiyuan_panic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.11.a
+		add_stability = -0.10
+	}
+}
 ########################################
 ########-       军队          -#########
 ########################################
+country_event = {#邀请外国顾问
+	id = shx.mil.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.mil.1" }
+	title = shx.mil.1.t
+	desc = shx.mil.1.d
+	picture = GFX_report_event_SHX_feng_advisors
 
+	fire_only_once = yes
+	is_triggered_only = yes 
+	
+	option = {
+		name = shx.mil.1.a
+		ai_chance = {
+			base = 30
+		}
+		add_ideas = SHX_russian_aid
+		hidden_effect = { set_country_flag = SHX_russian_aid_flag }
+		SHX_strengthen_feng_medium = yes
+	}
+
+	option = {
+		name = shx.mil.1.b
+		trigger = {
+			NOT = {
+				has_war_with = JAP
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+		add_ideas = SHX_japanese_aid
+		hidden_effect = { set_country_flag = SHX_japanese_aid_flag }
+		SHX_strengthen_feng_small = yes
+	}
+
+	option = {
+		name = shx.mil.1.c
+		ai_chance = {
+			base = 45
+		}
+		add_ideas = SHX_german_aid
+		SHX_strengthen_yan_medium = yes
+		hidden_effect = { set_country_flag = SHX_german_aid }
+	}
+}
 country_event = {#政治训导的模式
 	id = shx.mil.2 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.mil.2" }
@@ -181,11 +395,778 @@ country_event = {#兵农合一
 		add_war_support = -0.05
 	}
 }
+country_event = {#山西省空军构想
+	id = shx.mil.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.mil.4" }
+	title = shx.mil.4.t
+	desc = shx.mil.4.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.mil.4.a  
+		add_tech_bonus = {
+			name = SHX_study_aircraft_tech
+			bonus = 1
+			uses = 1
+			category = light_air
+		}
+		air_experience = 25
+	}
+}
+########################################
+######-       政治斗争          -#######
+########################################
+country_event = {#清洗国民军
+	id = shx.powerstruggle.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.3" }
+	title = shx.powerstruggle.3.t
+	desc = shx.powerstruggle.3.d
+	picture = GFX_report_event_SHX_yan_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Good Riddance
+		name = shx.powerstruggle.3.a
+
+		promote_character = {
+			character = SHX_yan_xishan
+			ideology = pataut_yan_xishan_thought_subtype
+		}
+		add_political_power = 25
+		add_stability = 0.10
+		clr_country_flag = SHX_yan_feng_split
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.075
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.025
+		}
+
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = SHX_feng_victory_over_yan }
+				clr_country_flag = SHX_feng_victory_over_yan
+			}
+			set_country_flag = SHX_yan_victory_over_gmj
+
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = -2.0
+			}
+
+			if = {
+				limit = {
+					has_country_flag = SHX_Feng_purpose
+				}
+				clr_country_flag = SHX_Feng_purpose
+			}
+			set_country_flag = SHX_Yan_purpose
+			# uncomplete_national_focus = {
+			# 	focus = SHX_socialism
+			# 	uncomplete_children = yes
+			# }
+
+
+			SHX = {
+				country_event = { id = shx.powerstruggle.5 days = 5 }
+				country_event = { id = shx.powerstruggle.7 days = 10 }
+				country_event = { id = shx.powerstruggle.8 days = 15 }
+			}
+		}
+	}
+}
+country_event = {#国民军起义
+	id = shx.powerstruggle.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.4" }
+	title = shx.powerstruggle.4.t
+	desc = shx.powerstruggle.4.d
+	picture = GFX_report_event_SHX_guominjun_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Finally it is done
+		name = shx.powerstruggle.4.a
+		clr_country_flag = SHX_yan_feng_split
+		add_political_power = 25
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		add_stability = 0.10
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.075
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.025
+		}
+		hidden_effect = {
+			end_coalition = yes
+
+			add_ideas = {
+				SHX_He_Qigong_hog_ade
+				SHX_Su_Tiren_for_ade
+				SHX_Guo_Zhigang_eco_ade
+				SHX_Fang_Zhenwu_sec_ade
+			}
+
+			if = {
+				limit = { has_country_flag = SHX_yan_victory_over_gmj }
+				clr_country_flag = SHX_yan_victory_over_gmj
+			}
+			set_country_flag = SHX_feng_victory_over_yan
+
+			add_power_balance_value = {
+				id = SHX_power_balance
+				value = 2.0
+			}
+
+			if = {
+				limit = {
+					has_country_flag = SHX_Yan_purpose
+				}
+				clr_country_flag = SHX_Yan_purpose
+			}
+			set_country_flag = SHX_Feng_purpose
+			# uncomplete_national_focus = {
+			# 	focus = SHX_doctrine_of_mean
+			# 	uncomplete_children = yes
+			# }
+			set_country_leader_description = {
+				ideology = authoritarian_democrat
+				desc = SHX_feng_yuxiang_victory_leader_desc
+			}
+			SHX = {
+				country_event = { id = shx.powerstruggle.5 days = 5 }
+				country_event = { id = shx.powerstruggle.7 days = 10 }
+				country_event = { id = shx.powerstruggle.8 days = 15 }
+			}
+		}
+		if = {
+			limit = { 
+				SHX = { 
+					is_subject_of = QIE 
+				} 
+			}
+			china_break_puppet_effect = yes
+			set_country_flag = SHX_broke_from_qie
+			effect_tooltip = {
+				QIE = {
+					create_wargoal = {
+						target = SHX
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {#至胜方休
+	id = shx.powerstruggle.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.5" }
+	title = shx.powerstruggle.5.t
+	desc = {
+		text = shx.powerstruggle.5.yan.d
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+	}
+	desc = {
+		text = shx.powerstruggle.5.feng.d
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Pardon Feng and his leaders
+		name = shx.powerstruggle.5.yan.a
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 0 }
+		SHX_feng_yuxiang = { demote_to_general = yes }
+		add_stability = -0.15
+		add_political_power = -100
+		add_popularity = { 
+			ideology = authoritarian_democrat 
+			popularity = 0.05 
+		}
+	}
+	option = { #Bye bye Feng
+		name = shx.powerstruggle.5.yan.b
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 100 }
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = characters_will_be_retired
+		character_list_tooltip = {
+			limit = {
+				OR = {
+					is_character = SHX_feng_yuxiang
+					is_character = SHX_sun_yue
+				}
+			}
+		}
+		hidden_effect = {
+			retire_character = SHX_feng_yuxiang
+			SHX_sun_yue = {
+				remove_unit_leader_role = yes
+			}
+		}
+		add_country_leader_role = {
+			character = SHX_yang_hucheng
+			country_leader = {
+				ideology = authoritarian_democrat_subtype
+				desc = SHX_yang_hucheng_country_leader_desc
+			}
+			promote_leader = yes
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = SHX_yan_authoritarian_democrat_party_long
+				name = SHX_yan_authoritarian_democrat_party
+			}
+			set_party_name = {
+				ideology = social_democrat
+				long_name = SHX_yan_social_democrat_party_long
+				name = SHX_yan_social_democrat_party
+			}
+		}
+	}
+	option = {
+		name = shx.powerstruggle.5.feng.a  #Pardon Yan and them
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		ai_chance = { base = 0 }
+		SHX_yan_xishan = { 
+			demote_to_general = yes 
+		}
+		add_stability = -0.15
+		add_political_power = -100
+		add_popularity = { 
+			ideology = paternal_autocrat 
+			popularity = 0.05 
+		}
+	}
+	option = {
+		name = shx.powerstruggle.5.feng.b # Don't pardon
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		ai_chance = { base = 100 }
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = characters_will_be_retired
+		character_list_tooltip = {
+			limit = {
+				is_character = SHX_yan_xishan
+			}
+		}
+		hidden_effect = {
+			retire_character = SHX_yan_xishan
+		}
+		add_country_leader_role = {
+			character = SHX_fu_zuoyi
+			country_leader = {
+				ideology = paternal_autocrat_subtype
+				desc = SHX_fu_zuoyi_country_leader_desc
+			}
+			promote_leader = yes
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = paternal_autocrat
+				long_name = SHX_feng_paternal_autocrat_party_long
+				name = SHX_feng_paternal_autocrat_party
+			}
+		}
+	}
+}	
+country_event = {#处理叛徒
+	id = shx.powerstruggle.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.7" }
+	title = shx.powerstruggle.7.t
+	desc = {
+		text = shx.powerstruggle.7.yan.d
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+	}
+	desc = {
+		text = shx.powerstruggle.7.feng.d
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Forgive and forget
+		name = shx.powerstruggle.7.yan.a
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		add_stability = -0.1
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.05 }
+	}
+	option = { # PURGE
+		name = shx.powerstruggle.7.yan.b
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 100 }
+		add_political_power = 50
+		add_stability = 0.1
+	}
+	option = { #Forgive and forget
+		log = "[GetLogInfo]: event shx.powerstruggle.7 option shx.powerstruggle.7.feng.a"
+		name = shx.powerstruggle.7.feng.a
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		add_stability = -0.1
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+	option = { # PURGE
+		log = "[GetLogInfo]: event shx.powerstruggle.7 option shx.powerstruggle.7.feng.b"
+		name = shx.powerstruggle.7.feng.b
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		ai_chance = { base = 100 }
+		add_political_power = 50
+		add_stability = 0.1
+	}
+}
+country_event = {#败军之将
+	id = shx.powerstruggle.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.8" }
+	title = shx.powerstruggle.8.t
+	desc = {
+		text = shx.powerstruggle.8.yan.d
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+	}
+	desc = {
+		text = shx.powerstruggle.8.feng.d
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # Forgiveness is a virtue
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.yan.a"
+		name = shx.powerstruggle.8.yan.a
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.05 }
+	}
+	option = { #BUT WE SHALL NOT EXERCISE IT
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.yan.b"
+		name = shx.powerstruggle.8.yan.b
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		ai_chance = { base = 100 }
+		add_political_power = 100
+		add_stability = 0.2 #Yan gets a bit more stab since weaker generals
+		add_command_power = 50 #Yan has so few generals he'll definitely need this
+		SHX_feng_army_purged = yes
+	}
+	option = { #Forgiveness is a virtue
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.feng.a"
+		name = shx.powerstruggle.8.feng.a
+		ai_chance = { base = 0 }
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		add_political_power = -100
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+	option = { #BUT WE SHALL NOT EXERCISE IT
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.feng.b"
+		name = shx.powerstruggle.8.feng.b
+		ai_chance = { base = 100 }
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		SHX_yan_army_purged = yes
+		SHX_shang_zhen = {
+			remove_unit_leader_trait = SHX_yan_loyalist
+		}
+		custom_effect_tooltip = SHX_characters_will_added_to_MHC
+		add_stability = 0.1
+		add_political_power = 100
+	}
+}
+country_event = {#再续旧盟
+	id = shx.powerstruggle.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.9" }
+	title = shx.powerstruggle.9.t
+	desc = shx.powerstruggle.9.d
+	picture = GFX_report_event_SHX_feng_and_yan_2
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.powerstruggle.9.a
+		remove_ideas = SHX_guominjun_unrest_idea
+		remove_power_balance = { id = SHX_power_balance }
+		add_stability = 0.10
+		clr_country_flag = SHX_yan_feng_split
+		set_country_flag = SHX_yan_victory_over_gmj
+		set_country_flag = SHX_renewed_alliance_outcome_flag
+		log = "KR_Event_Logging;SHX Game Progression - Yan Xishan, Renewed Alliance, Survived Independent;[GetDateText]"
+		add_popularity = {
+			ideology = social_democrat
+			popularity = -0.10
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = -0.10
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = -0.20
+		}
+		add_authdem_to_coalition = yes
+		SHX_convert_influence_to_war_support_effect = yes
+	}
+}
+country_event = {#晋军流亡者抵达
+	id = shx.powerstruggle.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.10" }
+	title = shx.powerstruggle.10.t
+	desc = shx.powerstruggle.10.d
+	picture = GFX_report_event_SHX_guominjun_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = { #Defenders of Order
+		name = shx.powerstruggle.10.a
+		trigger = { SHX = { has_country_flag = SHX_feng_victory_over_yan } }
+		ai_chance = { base = 100 }
+		add_political_power = -50
+		add_manpower = 1000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 100
+			producer = SHX
+		}
+	}
+
+	option = { #Arrest those fugitives at once!
+		name = shx.powerstruggle.10.b
+		ai_chance = { base = 0 } #I mean, why?
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_pleased
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_trait = SHX_yan_loyalist
+					has_trait = SHX_gmj_officer
+				}
+			}
+			remove_unit_leader_role = yes
+		}
+	}
+}
+country_event = {#国民军残部抵达
+	id = shx.powerstruggle.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.12" }
+	title = shx.powerstruggle.12.t
+	desc = shx.powerstruggle.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.powerstruggle.12.a
+		add_political_power = -20
+	}
+}
+########################################
+########-       直奉          -#########
+########################################
+country_event = {#阎锡山平定陕西！
+	id = shx.zhifeng.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.1" }
+	title = shx.zhifeng.1.t
+	desc = shx.zhifeng.1.d
+	picture = GFX_report_event_SHX_yanan_street
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.1.a 
+		add_political_power = 30
+		SHX = {
+			SHX_QIE_investment_small = yes
+		}
+		add_opinion_modifier = { 
+			target = SHX 
+			modifier = KR_approves_of_govt 
+		}
+	}
+}
+country_event = {#山西省府倒台！
+	id = shx.zhifeng.2 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.2" }
+	title = shx.zhifeng.2.t
+	desc = shx.zhifeng.2.d
+	picture = GFX_report_event_SHX_feng
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.2.a 
+		add_political_power = -25
+		SHX = {
+			SHX_QIE_spend_large = yes
+			add_opinion_modifier = { 
+				target = QIE 
+				modifier = KR_outraged 
+			}
+		}
+		add_opinion_modifier = { 
+			target = SHX 
+			modifier = KR_hostile 
+		}
+		if = {
+			limit = { 
+				SHX = { 
+					has_country_flag = SHX_broke_from_qie 
+				} 
+			}
+			set_country_flag = china_revolted_against_@FROM
+			add_ai_strategy = {
+				type = contain
+				id = SHX
+				value = 200
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SHX
+				value = 200
+			}
+			effect_tooltip = { 
+				SHX = { 
+					china_break_puppet_effect = yes 
+				} 
+			}
+			create_wargoal = {
+				target = SHX
+				type = annex_everything
+			}
+		}
+	}
+}
+########################################
+######-       大清影响力        -#######
+########################################
+country_event = {#太原火车谈判脱轨
+	id = shx.QIE.aid.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.1" }
+	title = shx.QIE.aid.1.t
+	desc = shx.QIE.aid.1.d
+	picture = GFX_report_event_SHX_zhengtai_railway
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.1.a 
+
+	}
+}
+country_event = {#太原回电
+	id = shx.QIE.aid.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.2" }
+	title = shx.QIE.aid.2.t
+	desc = shx.QIE.aid.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.2.a 
+		country_event = shx.QIE.aid.3
+	}
+
+	option = {
+		name = shx.QIE.aid.2.b 
+		custom_effect_tooltip = SHX_QIE_telegram_tooltip
+	}
+}
+country_event = {#北京在山西的利益（介绍）
+	id = shx.QIE.aid.3 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.3" }
+	title = shx.QIE.aid.3.t
+	desc = shx.QIE.aid.3.d
+	picture = GFX_report_event_SHX_shanxi_provincal_bank
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.3.a
+		custom_effect_tooltip = SHX_QIE_telegram_tooltip
+	}
+}
+country_event = {#黑色星期一救济一揽子协议
+	id = shx.QIE.aid.5 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.5" }
+	title = shx.QIE.aid.5.t
+	desc = shx.QIE.aid.5.d
+	picture = GFX_report_event_SHX_shanxi_provincal_bank
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.5.a 
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		SHX_QIE_investment_medium = yes
+		add_timed_idea = {
+			idea = SHX_black_monday_relief
+			days = 365
+		}
+	}
+
+	option = {
+		name = shx.QIE.aid.5.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		set_country_flag = SHX_reject_BM_relief
+		add_political_power = -25
+		SHX_strengthen_feng_small = yes
+		SHX_revolution_small = yes
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.13 days = 1 }
+			}
+		}
+	}
+}
+country_event = {#山西拒绝黑色星期一救济
+	id = shx.QIE.aid.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.13" }
+	title = shx.QIE.aid.13.t
+	desc = shx.QIE.aid.13.d
+	picture = GFX_report_event_SHX_yan_formal
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.13.a
+		add_political_power = -5
+	}
+}
+
+########################################
+########-       其他          -#########
+########################################
+country_event = {#太原为西北暂停与我们合作
+	id = shx.suiyuan.campaign.60
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.60" }
+	title = shx.suiyuan.campaign.60.t
+	desc = shx.suiyuan.campaign.60.d
+	picture = GFX_report_event_SHX_yan_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.60.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = SHX
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.60.b
+	}
+}
 
 ########################################
 ########-      旧事件         -#########
 ########################################
-
 country_event = { # Yan and Feng meet in Taiyuan to discuss budgets
 	id = shx.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.2" }
@@ -201,27 +1182,7 @@ country_event = { # Yan and Feng meet in Taiyuan to discuss budgets
 	option = {
 		name = shx.2.a
 		hidden_effect = {
-			country_event = { id = shx.3 days = 7 }
-		}
-	}
-}
-
-country_event = { # Feng suggests larger investments in the army, rather unrealistic
-	id = shx.3
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.3" }
-	title = shx.3.t
-	desc = shx.3.d
-	picture = GFX_report_event_FNG_army1
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.3.a
-		hidden_effect = {
-			country_event = { id = shx.4 days = 7 }
+			country_event = { id = shx.earlygame.7 days = 7 }
 		}
 	}
 }

@@ -1498,8 +1498,6 @@
  GXC_PB_2_ADJ: "中华工农自由地区"
  GXC_PB_2_DEF: "中华工农自由地区"
 
- KR_zi_you_di_qu_Federalist:0 "自由地区国策树"
-
  GXC_peng_pai_hog: "彭湃"
  GXC_wei_guo_qing_hog: "韦国清"
  GXC_yu_zuo_bo_for: "俞作柏"
@@ -1572,9 +1570,7 @@
  GXC_farmer_army:0 "农工武装"
  GXC_farmer_army_desc:0 "日头出来对面山，欢送阿郎去打战；打了胜仗阿郎返，伢爱手枪和炸弹。"
  GXC_fire_all:0 "废除债约"
- GXC_fire_all_desc:0 ""
  GXC_fire_all_1:0 "新金融"
- GXC_fire_all_1_desc:0 ""
  GXC_xing_dong_zhi_shang:0 "行动宣传"
  GXC_xing_dong_zhi_shang_desc:0 "天上雷公，地上海陆丰！"
  GXC_xing_dong_zhi_shang_1:0 "自由领导人民"

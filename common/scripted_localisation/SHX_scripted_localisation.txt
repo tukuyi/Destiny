@@ -75,3 +75,130 @@ defined_text = {
 		localization_key = "SHX_bei_fang_huang_pu_yan_desc"
 	}
 }
+defined_text = {
+	name = SHX_struggle_for_shanxi_title_defined_text
+	text = {
+		trigger = { has_active_mission = SHX_looming_gmj_coup }
+		localization_key = SHX_sfs_active_title_key
+	}
+	text = {
+		trigger = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		localization_key = SHX_sfs_inactive_title_key
+	}
+}
+defined_text = {
+	name = SHX_struggle_for_shanxi_desc_defined_text
+	text = {
+		trigger = { has_active_mission = SHX_looming_gmj_coup }
+		localization_key = SHX_sfs_active_desc_key
+	}
+	text = {
+		trigger = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		localization_key = SHX_sfs_inactive_desc_key
+	}
+}
+defined_text = { #GMJ Coup Strength
+	name = GMJ_coup_strength
+
+	text = { #Vanquished
+		trigger = {
+			SHX = {
+				has_country_flag = SHX_yan_victory_over_gmj
+			}
+		}
+		localization_key = GMJ_strength_variable_perception_yan_won
+	}
+
+	text = { #Triumphant
+		trigger = {
+			SHX = {
+				has_country_flag = SHX_feng_victory_over_yan
+			}
+		}
+		localization_key = GMJ_strength_variable_perception_feng_won
+	}
+
+	text = { #Supreme
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_supreme_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception7
+	}
+	text = { #Dominant
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_dominant_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception6
+	}
+	text = { #Menacing
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_menacing_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception5
+	}
+	text = { #Gathering Strength
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_gathering_strength_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception4
+	}
+	text = { #Waning Strength
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_waning_strength_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception3
+	}
+	text = { #Vulnerable
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_vulnerable_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception2
+	}
+	text = { #Pacified
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_pacified_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception1
+	}
+	text = { #Extinguished
+		trigger = {
+			is_power_balance_in_range = {
+				id = SHX_power_balance
+				range = SHX_bop_extinguished_range
+			}
+		}
+		localization_key = GMJ_strength_variable_perception0
+	}
+}
+defined = {
+	name = SHX_paying_with_inf_or_pp_defined_text
+	text = {
+		trigger = { has_country_flag = SHX_paying_with_pp }
+		localization_key = SHX_paying_with_pp_key
+	}
+	text = {
+		trigger = { has_country_flag = SHX_paying_with_inf }
+		localization_key = SHX_paying_with_inf_key
+	}
+}

@@ -83,7 +83,6 @@ GEA_mucke_reform = {
 	war_support_factor = GEA_mucke_reform_war_support
 	war_support_weekly = GEA_mucke_reform_war_support_weekly
 	production_speed_infrastructure_factor = GEA_mucke_reform_production_speed_infrastructure_factor
-	local_resources_factor = GEA_mucke_reform_local_resources
 	army_core_attack_factor = GEA_mucke_reform_army_core_attack_factor       
 	army_core_defence_factor = GEA_mucke_reform_army_core_defence_factor 
 	conscription = GEA_mucke_reform_army_conscription

@@ -4584,29 +4584,6 @@ country_event = {#腹背受敌
 	}
 }
 
-country_event = {#爆炸案
-	id = lngpb.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lngpb.9" }
-	title = lngpb.9.t
-	desc = lngpb.9.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {#
-		name = lngpb.9.a
-		add_stability = -0.01
-		add_war_support = -0.01
-		add_popularity = {
-			ideology = social_liberal
-			popularity = -0.01
-		}
-		hidden_effect = {
-			
-		}
-	}
-}
-
 country_event = {#崩溃的共和派
 	id = lngpb.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lngpb.10" }
@@ -4634,10 +4611,6 @@ country_event = {#崩溃的共和派
 			name =  GXC_radical_socialist_party_PB
 		}
 		set_cosmetic_tag = GXC_PB
-		load_focus_tree = { 
-			tree = KR_zi_you_di_qu_Federalist 
-			keep_completed = yes 
-		}
 		remove_all_ministers = yes
 		add_ideas = {
 			GXC_peng_pai_hog

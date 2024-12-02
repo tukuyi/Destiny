@@ -1,10 +1,12 @@
-SHX_xishan_fuxiang_power_struggle = {
-	icon = GFX_decision_category_generic_political_actions
-	priority = 100
-	visible_when_empty = yes
-	allowed = { tag = SHX }
-	visible = { 
-		has_idea = SHX_power_struggle 
+SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
+	icon = GFX_decision_category_Shanxi_province
+	priority = 120
+	visible_when_empty = no
+	allowed = {
+		tag = SHX
+	}
+	visible = {
+		NOT = { has_country_flag = SHX_lategame_begin_flag }
 	}
 }
 
@@ -14,7 +16,7 @@ SHX_Foreign_Policy_decisions = {
 	allowed = { tag = SHX }
 }
 
-SHX_balance_of_power_category = {
+SHX_balance_of_power_category = {#逐鹿山西-权力平衡
 	icon = GFX_decision_category_power_struggle
 
 	allowed = {
@@ -24,4 +26,30 @@ SHX_balance_of_power_category = {
 	visible_when_empty = no
 
 	priority = 110
+}
+
+SHX_QIE_ties = {#在北京的阴影下
+	icon = generic_industry
+	picture = GFX_decision_category_industry_KMT
+	priority = 100
+	visible_when_empty = yes
+
+	allowed = { 
+		tag = SHX 
+	}
+	visible = {
+		SHX_QIE_influence_active = yes
+	}
+}
+
+SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
+	icon = GFX_decision_category_Shanxi_province
+	picture = GFX_decision_category_industry_KMT
+	visible_when_empty = yes
+
+	allowed = { tag = QIE }
+	visible = {
+		SHX_QIE_influence_active = yes
+		NOT = { has_war_with = SHX }
+	}
 }

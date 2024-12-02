@@ -110,5 +110,6 @@ OR = {
 		tag = FOP
 		tag = KIK
 		tag = EGY
+		tag = NFL
 	}
 }

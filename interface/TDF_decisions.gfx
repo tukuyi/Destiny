@@ -25,6 +25,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decisions_categories/industrial_china.png"
 	}
 	spriteType = {
+		name = "GFX_decision_category_Shanxi_province"
+		texturefile = "gfx/interface/decisions/decisions_categories/Shanxi_province.png"
+	}
+	spriteType = {
 		name = "GFX_decision_category_Research"
 		texturefile = "gfx/interface/decisions/decisions_categories/Research.png"
 	}

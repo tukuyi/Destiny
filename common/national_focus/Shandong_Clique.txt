@@ -1081,7 +1081,6 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 1
-						include_locked = yes 
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1844,8 +1843,6 @@ focus_tree = {
 		id = SQI_Purchasing_Convoys_For_The_Navy
 		icon = GFX_goal_NFA_buy_ships
 		prerequisite = { focus = SQI_Declare_Official_Offshoot_Of_The_Beiyang_Navy }
-		available = {
-		}
 		x = 20
 		y = 6
 		cost = 5
@@ -1863,8 +1860,6 @@ focus_tree = {
 		id = SQI_Purchasing_Submarines_For_The_Navy
 		icon = GFX_goal_CRO_submarine_enterprise
 		prerequisite = { focus = SQI_Purchasing_Convoys_For_The_Navy }
-		available = {
-		}
 		x = 20
 		y = 7
 		cost = 5

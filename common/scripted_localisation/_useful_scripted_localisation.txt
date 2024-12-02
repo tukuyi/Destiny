@@ -3669,7 +3669,13 @@ defined_text = {
 		}
 		localization_key = poujadisme_subtype
 	}
-
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_tridemism_subtype
+		}
+		localization_key = pataut_tridemism_subtype
+	}
+	
 	text = {
 		trigger = {
 			has_country_leader_ideology = national_populist_subtype

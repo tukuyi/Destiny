@@ -112,7 +112,7 @@ add_equipment_to_stockpile = {
 	producer = GXC
 }
 add_equipment_to_stockpile = {
-	type = fighter_equipment_0
+	type = small_plane_airframe
 	amount = 20
 	producer = GER
 }

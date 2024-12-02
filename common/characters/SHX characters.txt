@@ -2,6 +2,19 @@ characters = {
 ####################
 ####    阎派   #####
 ####################
+#赵戴文
+	SHX_zhao_dai_wen = {
+		name = SHX_zhao_dai_wen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SHX_Zhao_dai_wen
+			}
+		}
+		country_leader = {
+			desc = POLITICS_zhao_dai_wen_DESC
+			ideology = pataut_yan_xishan_thought_subtype
+		}
+	}
 #阎锡山
 	SHX_yan_xishan = {
 		name = SHX_yan_xishan
@@ -50,7 +63,7 @@ characters = {
 		}
 		country_leader = {
 			desc = SHX_shang_zhen_hos_desc
-			ideology = authdem_warlordism_subtype
+			ideology = social_conservative_subtype
 		}
 		corps_commander = {
 			desc = SHX_shang_zhen_commander_desc
@@ -241,7 +254,7 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 		}
-	}	
+	}
 ####################
 ####   国民军  #####
 ####################
@@ -255,16 +268,12 @@ characters = {
 			}
 		}
 		country_leader = {
-			desc = SHX_feng_yuxiang_starting_leader_desc
-			ideology = christian_socialism_subtype
-		}
-		country_leader = {
-			desc = SHX_feng_yuxiang_starting_leader_desc
-			ideology = soccon_jadidism_subtype
-		}
-		country_leader = {
-			desc = SHX_feng_yuxiang_starting_leader_desc
+			desc = SHX_feng_yuxiang_victory_leader_desc
 			ideology = socdem_christian_socialism_subtype
+		}
+		country_leader = {
+			desc = SHX_feng_yuxiang_victory_leader_desc
+			ideology = authdem_tridemism_subtype
 		}
 		field_marshal = {
 			desc = SHX_feng_yuxiang_commander_desc
@@ -412,32 +421,7 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 		}
-	}	
-#宋哲元
-	SHX_song_zheyuan = {
-		name = SHX_song_zheyuan
-		portraits = {
-			army = {
-				small = GFX_Portrait_SHX_song_zheyuan
-				large = GFX_Portrait_SHX_song_zheyuan
-			}
-		}
-		corps_commander = {
-			desc = SHX_song_zheyuan_commander_desc
-			traits = { 
-				SHX_gmj_officer 
-				trait_reckless 
-				harsh_leader 
-				career_officer 
-				trait_engineer 
-			}
-			skill = 2
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 3
-		}
-	}	
+	}		
 #高桂滋
 	SHX_gao_guizi = {
 		name = SHX_gao_guizi

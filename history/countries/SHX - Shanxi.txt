@@ -49,8 +49,9 @@ set_research_slots = 3
 add_ideas = {
 	#SHX_model_province
 	SHX_neutrality
-	SHX_power_struggle
-	SHX_legacy_of_guominjun
+	SHX_underdeveloped_mountain_economy
+	SHX_unfinished_education
+	SHX_agriculture_reform
 	#SHX_militarism
 	unequal_treaties_lesser
 
@@ -68,17 +69,23 @@ set_politics = {
 }
 
 set_popularities = {
-	totalist = 0
-	syndicalist = 0
-	radical_socialist = 36 #2
+	totalist = 1
+	syndicalist = 1
+	radical_socialist = 3
 	social_democrat = 1
 	social_liberal = 4
-	market_liberal = 4
-	social_conservative = 4
-	authoritarian_democrat = 2 #36
-	paternal_autocrat = 46
+	market_liberal = 9
+	social_conservative = 2
+	authoritarian_democrat = 36 
+	paternal_autocrat = 40
 	national_populist = 3
 }
+
+set_variable = { country_intro_page_count = 2 }
+set_variable = { SHX_QIE_influence_variable = 9 }
+set_variable = { SHX_pay_with_pp_small_variable = 25 }
+set_variable = { SHX_pay_with_pp_medium_variable = 50 }
+set_variable = { SHX_pay_with_pp_large_variable = 75 }
 
 set_variable = { SHX_xishan_control_gov = 90 }
 set_variable = { SHX_yuxiang_control_gov = 10 }
@@ -94,10 +101,11 @@ set_variable = { SHX_thought_tradition = 0 } # increases stability as well as de
 #set_variable = { SHX_thought_militarism = 0 } # conscription factor, land morale, war support, hurts stability and political power
 
 country_event = {
-	id = shx.earlygame.1
+	id = shx.0
 	days = 2
 }
 
+recruit_character = SHX_zhao_dai_wen
 recruit_character = SHX_yan_xishan
 recruit_character = SHX_shang_zhen
 recruit_character = SHX_zhao_chengshou
@@ -113,7 +121,6 @@ recruit_character = SHX_zhang_zizhong
 recruit_character = SHX_han_fuju
 recruit_character = SHX_sun_lianzhong
 recruit_character = SHX_yang_hucheng
-recruit_character = SHX_song_zheyuan
 recruit_character = SHX_gao_guizi
 recruit_character = SHX_lu_zhonglin
 recruit_character = SHX_song_zheyuan
@@ -125,17 +132,30 @@ SHX_feng_yuxiang = {
 SHX_yan_xishan = { 
 	set_variable = { china_alignment = token:others } 
 }
+SHX_zhao_dai_wen = { 
+	set_variable = { china_alignment = token:others } 
+}
 
 create_country_leader = {
-	name = "乔家才"
+	name = "高君宇"
 	desc = POLITICS_SHX_QIAO_JIACAI_DESC
 	picture = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
 	expire = "1.1.1"
 	ideology = totalist_subtype
 }
-promote_character = {
-	character = SHX_feng_yuxiang
-	ideology = christian_socialism_subtype
+create_country_leader = {
+	name = "彭真"
+	desc = POLITICS_SHX_QIAO_JIACAI_DESC
+	picture = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
+	expire = "1.1.1"
+	ideology = syndicalist_subtype
+}
+create_country_leader = {
+	name = "陈永贵"
+	desc = POLITICS_SHX_QIAO_JIACAI_DESC
+	picture = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
+	expire = "1.1.1"
+	ideology = radical_socialist_subtype
 }
 promote_character = {
 	character = SHX_feng_yuxiang
@@ -148,27 +168,21 @@ create_country_leader = {
 	ideology = social_liberal_subtype
 }
 create_country_leader = {
-	name = "韩复渠"
+	name = "王骧"
 	picture = "gfx/leaders/SHX/Portrait_SHX_Han_Fuju.png"
 	expire = "1.1.1"
 	ideology = market_liberal_subtype
 }
 promote_character = {
-	character = SHX_feng_yuxiang
-	ideology = soccon_jadidism_subtype
-}
-# create_country_leader = {
-# 	name = "Sun Lianzhong"
-# 	picture = "gfx/leaders/SHX/Portrait_SHX_Sun_Lianzhong.png"
-# 	expire = "1.1.1"
-# 	ideology = social_conservative_subtype
-# }
-promote_character = {
 	character = SHX_shang_zhen
-	ideology = authdem_warlordism_subtype
+	ideology = social_conservative_subtype
 }
 promote_character = {
-	character = SHX_yan_xishan
+	character = SHX_feng_yuxiang
+	ideology = authdem_tridemism_subtype
+}
+promote_character = {
+	character = SHX_zhao_dai_wen
 	ideology = pataut_yan_xishan_thought_subtype
 }
 create_country_leader = {
@@ -177,6 +191,10 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = occultism_subtype
 }
+
+add_soccon_to_coalition = yes
+add_authdem_to_coalition = yes
+add_marlib_to_coalition = yes
 
 # create_field_marshal = {
 # 	name = "阎锡山"

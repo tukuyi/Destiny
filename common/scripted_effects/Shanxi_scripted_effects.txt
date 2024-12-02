@@ -1,84 +1,44 @@
-##############################################
-### WordZero struggles with variables time ###
-##############################################
-
-SHX_add_xishan_gov = {
+#阎锡山军事精神
+SHX_upgrade_xiang_jun_model_spirit_effect = {
 	if = {
-		limit = { has_idea = SHX_power_struggle }
-		custom_effect_tooltip = SHX_xishan_increase_gov_control_tooltip
-		add_to_variable = { SHX_xishan_control_gov = SHX_xishan_gov_change }
-		subtract_from_variable = { SHX_yuxiang_control_gov = SHX_xishan_gov_change }
-
-		clamp_variable = {
-			var = SHX_xishan_control_gov
-			min = 0
-			max = 100
-		}
-		clamp_variable = {
-			var = SHX_yuxiang_control_gov
-			min = 0
-			max = 100
+		limit = { has_idea = SHX_xiang_jun_model_idea_1 } #Fallback in case somehow the player made it to phase 4 without taking army tree
+		swap_ideas = {
+			remove_idea = SHX_xiang_jun_model_idea_1
+			add_idea = SHX_xiang_jun_model_idea_2
 		}
 	}
-}
-SHX_add_yuxiang_gov = {
-	if = {
-		limit = { has_idea = SHX_power_struggle }
-		custom_effect_tooltip = SHX_yuxiang_increase_gov_control_tooltip
-		add_to_variable = { SHX_yuxiang_control_gov = SHX_yuxiang_gov_change }
-		subtract_from_variable = { SHX_xishan_control_gov = SHX_yuxiang_gov_change }
-
-		clamp_variable = {
-			var = SHX_yuxiang_control_gov
-			min = 0
-			max = 100
-		}
-		clamp_variable = {
-			var = SHX_xishan_control_gov
-			min = 0
-			max = 100
+	else_if = {
+		limit = { has_idea = SHX_xiang_jun_model_idea_2 }
+		swap_ideas = {
+			remove_idea = SHX_xiang_jun_model_idea_2
+			add_idea = SHX_xiang_jun_model_idea_3
 		}
 	}
-}
-SHX_add_xishan_mil = {
-	if = {
-		limit = { has_idea = SHX_power_struggle }
-		custom_effect_tooltip = SHX_xishan_increase_mil_control_tooltip
-		add_to_variable = { SHX_xishan_control_mil = SHX_xishan_mil_change }
-		subtract_from_variable = { SHX_yuxiang_control_mil = SHX_xishan_mil_change }
-
-		clamp_variable = {
-			var = SHX_xishan_control_mil
-			min = 0
-			max = 100
-		}
-		clamp_variable = {
-			var = SHX_yuxiang_control_mil
-			min = 0
-			max = 100
+	else_if = {
+		limit = { has_idea = SHX_xiang_jun_model_idea_3 }
+		swap_ideas = {
+			remove_idea = SHX_xiang_jun_model_idea_3
+			add_idea = 	SHX_xiang_jun_model_idea_4
 		}
 	}
-}
-SHX_add_yuxiang_mil = {
-	if = {
-		limit = { has_idea = SHX_power_struggle }
-		custom_effect_tooltip = SHX_yuxiang_increase_mil_control_tooltip
-		add_to_variable = { SHX_yuxiang_control_mil = SHX_yuxiang_mil_change }
-		subtract_from_variable = { SHX_xishan_control_mil = SHX_yuxiang_mil_change }
-
-		clamp_variable = {
-			var = SHX_yuxiang_control_gov
-			min = 0
-			max = 100
-		}
-		clamp_variable = {
-			var = SHX_xishan_control_gov
-			min = 0
-			max = 100
+	else_if = {
+		limit = { has_idea = SHX_xiang_jun_model_idea_4 }
+		swap_ideas = {
+			remove_idea = SHX_xiang_jun_model_idea_4
+			add_idea = SHX_xiang_jun_model_idea_5
 		}
 	}
+	else_if = {
+		limit = { has_idea = SHX_xiang_jun_model_idea_5 } #Fallback
+		every_unit_leader = {
+			gain_xp = 200
+		}
+	}
+	else = {
+		custom_effect_tooltip = SHX_upgrade_xiang_jun_model_spirit_effect_tt
+	}
+	SHX_strengthen_yan_medium = yes
 }
-
 #冯玉祥军事精神
 SHX_upgrade_guominjun_model_spirit_effect = {
 	if = {
@@ -231,6 +191,23 @@ SHX_strengthen_yan_large = {
 	log = "SHX_BOP_logging; Yan increase by +25 - overall decrease by -25 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
 }
 
+#激进度改变
+SHX_revolution_small = {
+	add_to_variable = {
+		var = SHX_revolution_line
+		value = 3
+	}
+	custom_effect_tooltip = SHX_revolution_small_tooltip
+}
+
+SHX_increase_revolution_small = {
+	add_to_variable = {
+		var = SHX_revolution_line
+		value = -5
+	}
+	custom_effect_tooltip = SHX_increase_revolution_small_tooltip
+}
+
 #提升冯玉祥的支持度
 SHX_strengthen_feng_small = {
 	set_temp_variable = { SHX_bop_change_var = 0.05 }
@@ -301,4 +278,332 @@ SHX_strengthen_feng_large = {
 		custom_effect_tooltip = SHX_strengthen_feng_large_tooltip
 	}
 	log = "SHX_BOP_logging; Feng increase by +25 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
+}
+###- Victory Effects -###
+SHX_yan_victory_effect = {#阎锡山大获全胜
+
+	set_temp_variable = { yan_distance_from_victory_temp_variable = power_balance_value } #Ranges from 0 to 1
+	#修改稳定度
+	if = {
+		limit = { SHX_yan_is_winning_trigger = yes }
+		divide_temp_variable = { yan_distance_from_victory_temp_variable = 2 } #Ranges now from 0 to 0.5
+	}
+	else_if = {
+		limit = { SHX_feng_is_winning_trigger = yes }
+		divide_temp_variable = { yan_distance_from_victory_temp_variable = -2 } #Ranges now from 0 to -0.5
+	}
+	else = {
+		set_temp_variable = { yan_distance_from_victory_temp_variable = -0.05 }
+	}
+	add_stability = yan_distance_from_victory_temp_variable
+
+	remove_mission = SHX_looming_gmj_coup
+	remove_ideas = SHX_guominjun_unrest_idea
+	remove_power_balance = { id = SHX_power_balance }
+
+	country_event = { id = shx.powerstruggle.3 days = 1 }
+
+	hidden_effect = {
+		QIE = {
+			country_event = { id = shx.zhifeng.1 days = 7 } #QIE is informed of outcome of Yan power struggle
+		}
+		log = "KR_Event_Logging;SHX Game Progression - Yan Xishan, Standard Path, Survived Independent;[GetDateText]"
+	}
+	mark_focus_tree_layout_dirty = yes
+}
+SHX_feng_victory_effect = {#冯玉祥大获全胜
+
+	set_temp_variable = { feng_distance_from_victory_temp_variable = power_balance_value } #Ranges from 0 to 1
+	#修改稳定度
+	if = {
+		limit = { SHX_yan_is_winning_trigger = yes }
+		divide_temp_variable = { feng_distance_from_victory_temp_variable = -2 } #Ranges now from 0 to -0.5
+	}
+	else_if = {
+		limit = { SHX_feng_is_winning_trigger = yes }
+		divide_temp_variable = { feng_distance_from_victory_temp_variable = 2 } #Ranges now from 0 to 0.5
+	}
+	else = {
+		set_temp_variable = { feng_distance_from_victory_temp_variable = -0.05 }
+	}
+	add_stability = feng_distance_from_victory_temp_variable
+
+	remove_mission = SHX_looming_gmj_coup
+	remove_ideas = SHX_guominjun_unrest_idea
+	remove_power_balance = { id = SHX_power_balance }
+
+	country_event = { id = shx.powerstruggle.4 days = 1 } #The Shanxi Government Toppled!
+
+	hidden_effect = {
+		QIE = {
+			country_event = { id = shx.zhifeng.2 days = 7 } #QIE is informed of outcome of Yan power struggle
+		}
+		log = "KR_Event_Logging;SHX Game Progression - Feng Yuxiang, Standard Path, Survived Independent;[GetDateText]"
+	}
+	mark_focus_tree_layout_dirty = yes 
+}
+#冯玉祥军队滚蛋
+SHX_feng_army_purged = {
+	hidden_effect = {
+		if = {
+			limit = { 
+				CHI = {
+					exists = yes
+				}
+			}
+			every_unit_leader = {
+				limit = { 
+					has_trait = SHX_gmj_officer 
+					NOT = { 
+						is_character = SHX_feng_yuxiang 
+						is_character = SHX_yang_hucheng 
+					}
+				}
+				demote_to_general = yes
+				set_nationality = CHI
+			}
+			CHI = {
+				country_event = {
+					id = shx.powerstruggle.12
+					days = 1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				HNN = {
+					exists = yes
+					has_completed_focus = HNN_victory_of_the_united_front
+				}
+			}
+			every_unit_leader = {
+				limit = { 
+					has_trait = SHX_gmj_officer 
+					NOT = { 
+						is_character = SHX_feng_yuxiang 
+						is_character = SHX_yang_hucheng 
+					}
+				}
+				demote_to_general = yes
+				set_nationality = HNN
+			}
+			HNN = {
+				country_event = {
+					id = shx.powerstruggle.12
+					days = 1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				GXC = {
+					GXC_has_KMT_government = yes
+				}
+			}
+			every_unit_leader = {
+				limit = { 
+					has_trait = SHX_gmj_officer 
+					NOT = { 
+						is_character = SHX_feng_yuxiang 
+						is_character = SHX_yang_hucheng 
+					}
+				}
+				demote_to_general = yes
+				set_nationality = GXC
+			}
+			GXC = {
+				country_event = {
+					id = shx.powerstruggle.12
+					days = 1
+				}
+			}
+		}	
+	}
+}
+#阎锡山军队滚蛋
+SHX_yan_army_purged = {
+	hidden_effect = {
+		608 = { #owner of Beijing
+			owner = {
+				if = {
+					limit = { is_chinese_tag = yes }
+					SHX = {
+						SHX_zhao_chengshou = {
+							demote_to_general = yes
+							set_nationality = PREV.PREV
+						}
+						SHX_li_fuying = {
+							demote_to_general = yes
+							set_nationality = PREV.PREV
+						}
+						SHX_wang_jingguo = {
+							demote_to_general = yes
+							set_nationality = PREV.PREV
+						}
+						SHX_yang_aiyuan = {
+							demote_to_general = yes
+							set_nationality = PREV.PREV
+						}
+					}
+					country_event = { id = shx.powerstruggle.10 days = 1 } #Exiles from Shanxi
+				}
+			}
+		}
+	}
+	custom_effect_tooltip = characters_will_be_retired
+	character_list_tooltip = {
+		limit = {
+			OR = {
+				AND = {
+					NOT = { is_character = SHX_shang_zhen }
+					is_unit_leader = yes
+					has_trait = SHX_yan_loyalist
+				}
+				is_character = SHX_zhu_shouguang
+			}
+		}
+	}
+	hidden_effect = {
+		every_unit_leader = {
+			limit = {
+				has_trait = SHX_yan_loyalist
+				NOT = { is_character = SHX_shang_zhen }
+			}
+			remove_unit_leader_role = yes
+		}
+	}
+}
+###- 北京 -###
+SHX_convert_influence_to_war_support_effect = {
+	custom_effect_tooltip = SHX_convert_inf_to_ws_tooltip
+	set_temp_variable = { SHX_War_Support = SHX_QIE_influence_variable }
+	divide_temp_variable = { SHX_War_Support = 100 }
+	divide_temp_variable = { SHX_War_Support = -2 }
+	add_war_support = SHX_War_Support
+	set_variable = { SHX_QIE_influence_variable = 0 }
+	clr_country_flag = Shanxi_open_for_investment
+}
+
+SHX_set_up_QIE_influence_game = {#设定精神
+	set_country_flag = SHX_paying_with_inf
+	QIE = { 
+		set_country_flag = QIE_influence_shanxi_available 
+	}
+	SHX_econ_update = yes
+}
+###- 北京影响力等级 -###
+SHX_econ_update = {
+	hidden_effect = {
+		SHX_remove_qie_econ = yes
+		if = {
+			limit = { check_variable = { SHX.SHX_QIE_influence_variable > 90 } }
+			add_ideas = SHX_qie_influence_idea4
+		}
+		else_if = {
+			limit = { check_variable = { SHX.SHX_QIE_influence_variable > 60 } }
+			add_ideas = SHX_qie_influence_idea3
+		}
+		else_if = {
+			limit = { check_variable = { SHX.SHX_QIE_influence_variable > 30 } }
+			add_ideas = SHX_qie_influence_idea2
+		}
+		else_if = {
+			limit = { check_variable = { SHX.SHX_QIE_influence_variable > 10 } }
+			add_ideas = SHX_qie_influence_idea1
+		}
+		else = { add_ideas = SHX_qie_influence_idea0 }
+	}
+}
+SHX_remove_qie_econ = {
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea0 }
+		remove_ideas = SHX_qie_influence_idea0
+	}
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea1 }
+		remove_ideas = SHX_qie_influence_idea1
+	}
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea2 }
+		remove_ideas = SHX_qie_influence_idea2
+	}
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea3 }
+		remove_ideas = SHX_qie_influence_idea3
+	}
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea4 }
+		remove_ideas = SHX_qie_influence_idea4
+	}
+}
+SHX_QIE_investment_change_inf_effect = {
+	add_to_variable = {
+		var = SHX.SHX_QIE_influence_variable
+		value = SHX_QIE_inf_change_var
+	}
+	clamp_variable = {
+		var = SHX.SHX_QIE_influence_variable
+		min = 0
+		max = 100
+	}
+	SHX_econ_update = yes
+}
+#增减北京影响力
+SHX_QIE_investment_small = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } 
+		set_temp_variable = { SHX_QIE_inf_change_var = 5 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_investment_small_tooltip
+		log = "SHX_influence_logging; investment increase by +5 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_investment_medium = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = 10 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_investment_medium_tooltip
+		log = "SHX_influence_logging; investment increase by +10 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_spend_large = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } 
+		set_temp_variable = { SHX_QIE_inf_change_var = -15 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_spend_large_tooltip
+		log = "SHX_influence_logging; investment decrease by -15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_investment_large = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = 15 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_investment_large_tooltip
+		log = "SHX_influence_logging; investment increase by +15 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+#增加市自影响力
+SHX_marlib_change_pop_effect = {
+	set_temp_variable = { SHX_marlib_change_pop_var = SHX_QIE_inf_change_var }
+	multiply_temp_variable = { SHX_marlib_change_pop_var = 0.01 } #Turn it into a decimal
+	multiply_temp_variable = { SHX_marlib_change_pop_var = 0.33 } #Third it
+	add_popularity = {
+		ideology = market_liberal
+		popularity = SHX_marlib_change_pop_var
+	}
 }

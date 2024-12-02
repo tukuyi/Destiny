@@ -127,7 +127,7 @@ add_ideas = {
 	partial_economic_mobilisation
 	unequal_treaties
 
-	SQI_Chu_Yupu_hog_pau
+	SQI_jin_yune_hog
 	SQI_Zhang_Fuyun_for_pau
 	SQI_Zhu_Panzao_eco_pau
 	SQI_Wang_Xugao_sec_pau

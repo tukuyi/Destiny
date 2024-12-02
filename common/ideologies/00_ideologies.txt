@@ -877,6 +877,7 @@ ideologies = {
 			spectral_state_subtype = {can_be_randomly_selected = no} #Spectral State
 			pataut_kritarchy_subtype = {can_be_randomly_selected = no} #Kritarchy
 			poujadisme_subtype = {can_be_randomly_selected = no} #Poujadisme
+			pataut_tridemism_subtype = {can_be_randomly_selected = no} #Tridemism
 	    }
 		dynamic_faction_names = {
 			"FACTION_NAME_PATERNAL_AUTOCRAT_1"

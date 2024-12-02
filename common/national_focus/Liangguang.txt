@@ -7458,11 +7458,7 @@ shared_focus = {
 	cost = 5
 
 	prerequisite = { focus = GXC_gai_ge_jian_cha_yuan }
-
 	ai_will_do = { factor = 50 }
-	available = {
-		
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gai_ge_kao_shi_yuan"
@@ -7539,13 +7535,10 @@ shared_focus = {
 	prerequisite = { focus = GXC_qu_di_gong_hui }
 
 	ai_will_do = { factor = 50 }
-	available = {
-		
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zai_quan_shi_san_ming"
-		remove_idea = GXC_gong_tuan_sao_dong
+		remove_ideas = GXC_gong_tuan_sao_dong
 		swap_ideas = {
 			remove_idea = GXC_sanmin_minzu
 			add_idea = GXC_san_ming_zhu_yi6
@@ -16688,25 +16681,6 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zheng_he_zhong_te"
-
-	}
-}
-
-shared_focus = {
-	id = GXC_kong_zhi_yi_si_xing
-	icon = GFX_goal_GXC_zong_si_lin_kai_xuan
-	relative_position_id = GXC_dang_zhu_xi
-	cost = 10.00
-	x = 3
-	y = 3
-
-	ai_will_do = { base = 50 }
-	prerequisite = {
-		focus = GXC_zheng_he_zhong_te
-	}	
-
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus GXC_kong_zhi_yi_si_xing"
 
 	}
 }

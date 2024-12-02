@@ -3,4 +3,56 @@ spriteTypes = {
 		name = "GFX_report_event_SHX_tongpu_railway"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_tongpu_railway.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_feng_advisors"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_advisors.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_feng_and_yan_2"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_and_yan_2.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_yan_troops"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_yan_troops.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_yanan_street"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_yanan_street.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_guominjun_soldiers"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_guominjun_soldiers.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_feng"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_feng.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_shanxi_provincal_bank"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_shanxi_provincal_bank.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_feng_nature"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_nature.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_jing_yuexiu"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_jing_yuexiu.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_yan_speech"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_yan_speech.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_yan_formal"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_yan_formal.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_zhengtai_railway"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_zhengtai_railway.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_taiyuan_panic"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_taiyuan_panic.png"
+	}
 }

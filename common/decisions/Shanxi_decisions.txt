@@ -1,511 +1,508 @@
-### Shanxi Clique Decisions ###
-### By Ido,Maltesefalcon and Wordzero#######
+SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
+	SHX_looming_gmj_coup = {#国民军预备谋反
+		icon = GFX_decision_lkmt_flag 
 
-SHX_xishan_fuxiang_power_struggle = {
-	SHX_Feng_Coup = {
-		icon = generic_agreement
-
+		allowed = {
+			always = no
+		}
 		available = {
-			check_variable = { SHX_yuxiang_control_gov > 50 }
-			check_variable = { SHX_yuxiang_control_mil > 79 }
+			custom_trigger_tooltip = {
+				tooltip = SHX_special_coup_circumstances_tooltip
+				has_defensive_war = yes
+			}
+		}
+		cancel_trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
 		}
 
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 1000
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_looming_gmj_coup"
+			if = {
+				limit = {
+					NOT = { 
+						# has_game_rule = { 
+						# 	rule = SHX_forpol 
+						# 	option = SHX_FORPOL_QIE 
+						# } 
+					}
+				}
+				country_event = shx.powerstruggle.9
+			}
+			else = {
+				SHX_yan_victory_effect = yes
+			}
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_looming_gmj_coup"
+			if = {
+				limit = {
+					NOT = { 
+						# has_game_rule = { 
+						# 	rule = SHX_path 
+						# 	option = SHX_PATH_PATAUT 
+						# } 
+					}
+					NOT = { 
+						# has_game_rule = { 
+						# 	rule = SHX_forpol 
+						# 	option = SHX_FORPOL_QIE 
+						# } 
+					}
+				}
+				SHX_feng_victory_effect = yes
+			}
+			else = {
+				SHX_yan_victory_effect = yes
+			}
+		}
+	}
+
+	SHX_purge_the_gmj = {#清洗国民军
+		icon = GFX_decision_chinese_flag
 		visible = {
+			has_active_mission = SHX_looming_gmj_coup
+			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+		}
+		available = {
 			OR = {
-				check_variable = { SHX_yuxiang_control_gov > 49 }
-				check_variable = { SHX_yuxiang_control_mil > 49 }
-			}
-		}
-
-		cost = 0
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 1000
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Feng_Coup"
-			country_event = shx.63
-		}
-	}
-
-	SHX_Yan_Xishan_Schools = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_SchoolsFeng }
-			has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-		}
-
-		visible = {
-			NOT = { has_country_flag = SHX_SchoolsFeng }
-		}
-
-		cost = 25
-		days_remove = 30
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_xishan_chance = SHX.party_popularity@paternal_autocrat }
-				multiply_temp_variable = { SHX_xishan_chance = 100 }
-				add = SHX_xishan_chance
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_JOIN_THE_FRAY }
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_FENGS_CRUSADE }
+				is_power_balance_in_range = {
+					id = SHX_power_balance
+					range = SHX_bop_pacified_range
+				}
+				is_power_balance_in_range = {
+					id = SHX_power_balance
+					range = SHX_bop_extinguished_range
 				}
 			}
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Yan_Xishan_Schools"
-			set_country_flag = SHX_SchoolsYan
+		priority = 100 #Make this on top of category
+		ai_will_do = {
+			base = 0
+			modifier = { #start considering taking if its already been over a year
+				add = 50
+				date > 1937.3.15
+			}
+			modifier = { #start considering taking if its already been over two years
+				add = 50
+				date > 1938.3.15
+			}
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Yan_Xishan_Schools"
-			set_temp_variable = { SHX_xishan_gov_change = 2 }
-			SHX_add_xishan_gov = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_purge_the_gmj"
+			SHX_yan_victory_effect = yes
 		}
 	}
+}
 
-	SHX_Discredit_Fengs_Religion = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_FaithFeng }
-			has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-		}
-
-		visible = {
-			NOT = { has_country_flag = SHX_FaithFeng }
-		}
-
-		cost = 25
-		days_remove = 14
-		fire_only_once = yes
-
+SHX_QIE_ties = {#在北京的阴影下
+	SHX_switch_payment = {#切换支付方式
+		icon = GFX_decision_gre_investment_decisions
+		fire_only_once = no
 		ai_will_do = {
-			factor = 10
+			base = 0
 			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
+				factor = 0
+				has_country_flag = SHX_ai_limit_payment_swaps
 			}
 			modifier = {
 				factor = 0
+				has_country_flag = SHX_paying_with_pp 
+			}
+			modifier = {
+				add = 5
+				AND = {
+					has_country_flag = SHX_paying_with_inf
+					check_variable = { SHX.SHX_QIE_influence_variable > 10 }
+				}
+			}
+			modifier = {
+				add = 5
+				AND = {
+					has_country_flag = SHX_paying_with_inf
+					has_political_power > 100
+				}
+			}
+			modifier = {
+				add = 5
+				AND = {
+					has_country_flag = SHX_paying_with_pp
+					has_political_power < 100
+				}
+			}
+			modifier = {
+				add = 10
+				AND = {
+					has_country_flag = SHX_paying_with_pp
+					check_variable = { SHX.SHX_QIE_influence_variable < 10 }
+				}
+			}
+			modifier = {
+				add = 10000
+				has_country_flag = SHX_paying_with_inf #opposite of above - switch away from buying with influence if has anti beijing path
 				OR = {
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_JOIN_THE_FRAY }
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_FENGS_CRUSADE }
+					AND = { #check if they have a non-QIE forpol rule set
+						NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_QIE } }
+					}
+					has_game_rule = { rule = SHX_path option = SHX_PATH_AUTDEM }
 				}
 			}
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Discredit_Fengs_Religion"
-			set_country_flag = SHX_FaithYan
+		visible = {
+			SHX_QIE_influence_active = yes
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Discredit_Fengs_Religion"
-			set_temp_variable = { SHX_xishan_mil_change = 2 }
-			SHX_add_xishan_mil = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_switch_payment"
+			set_country_flag = { 
+				flag = SHX_ai_limit_payment_swaps 
+				days = 90 
+				value = 1 
+			}
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				custom_effect_tooltip = SHX_change_to_paying_with_inf_tooltip
+				clr_country_flag = SHX_paying_with_pp
+				set_country_flag = SHX_paying_with_inf
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				custom_effect_tooltip = SHX_change_to_paying_with_pp_tooltip
+				clr_country_flag = SHX_paying_with_inf
+				set_country_flag = SHX_paying_with_pp
+			}
 		}
 	}
-
-	SHX_Anti_Corruption_Army = {
-		icon = generic_agreement
-
-		visible = {
-			NOT = { has_country_flag = SHX_CorruptionFeng }
-		}
-
+	SHX_suiyuan_betrayal_decision = {#背叛中央政府
+  		icon = GFX_decision_freedom
+		allowed = { always = no }
 		available = {
-			NOT = { has_country_flag = SHX_CorruptionFeng }
-			has_completed_focus = SHX_ban_opium_trade
+			ROOT = {
+				has_war = no
+				is_subject_of = FROM
+				# has_autonomy_state = associated_governorate 
+			}
 		}
-
-		cost = 50
-		days_remove = 30
-		fire_only_once = yes
-
+		cost = 100
 		ai_will_do = {
-			factor = 10
+			base = 0
 			modifier = {
-				set_temp_variable = { SHX_xishan_chance = SHX.party_popularity@paternal_autocrat }
-				multiply_temp_variable = { SHX_xishan_chance = 100 }
-				add = SHX_xishan_chance
+				add = 100
+				FROM = { surrender_progress > 0.5 }
 			}
 			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_JOIN_THE_FRAY }
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_FENGS_CRUSADE }
+				add = 100
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
 				}
 			}
 		}
-
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Anti_Corruption_Army"
-			set_country_flag = SHX_CorruptionYan
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_suiyuan_betrayal_decision target: [From.GetName]"
+			ROOT = { china_break_puppet_effect = yes }
+			FROM = { 
+				country_event = { 
+					id = shx.suiyuan.campaign.60 
+					days = 3 
+				} 
+			}
+			custom_effect_tooltip = SHX_suiyuan_may_lead_to_war_tooltip
 		}
+	}
+	
+	SHX_seek_loan_from_beijing = {#寻求一项贷款
+		icon = GFX_decision_generic_agreement
+		visible = { SHX_QIE_influence_active = yes }
+		custom_cost_text = SHX_QIE_eco_invest_large_texticon
+		custom_cost_trigger = {
+			always = yes
+		}
+		days_re_enable = 100
 
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Anti_Corruption_Army"
-			set_temp_variable = { SHX_xishan_mil_change = 5 }
-			SHX_add_xishan_mil = yes
-			set_country_flag = SHX_CorruptionYan
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power < -49
+			}
+			modifier = {
+				add = 3
+				has_political_power < -99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 35 }
+				has_political_power < 100
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_seek_loan_from_beijing"
+			SHX_QIE_investment_large = yes
+			add_political_power = 125
 		}
 	}
 
-	SHX_Introduce_Western_Reforms = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_ReformsFeng }
-			has_completed_focus = SHX_A_Benevolent_Dictatorship
-		}
-
+	SHX_hire_qie_labour = {#从直隶省雇佣熟练劳工
+		icon = GFX_decision_cement_mixer
 		visible = {
-			NOT = { has_country_flag = SHX_ReformsFeng }
+			SHX_QIE_influence_active = yes
+			num_of_factories < 12
 		}
-
-		cost = 50
-		days_remove = 14
-		fire_only_once = yes
-
+		cancel_trigger = { 
+			QIE = { exists = no } 
+		}
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+		days_re_enable = 150
+		modifier = {
+			production_speed_buildings_factor = 0.2
+		}
+		days_remove = 100
 		ai_will_do = {
-			factor = 100
+			base = 0
 			modifier = {
 				factor = 0
-				OR = {
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_JOIN_THE_FRAY }
-					has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_FENG_FENGS_CRUSADE }
+				num_of_civilian_factories_available_for_projects < 5
+			}
+			modifier = {
+				add = 2
+				has_political_power > 200
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_hire_qie_labour"
+			add_tech_bonus = {
+				name = SHX_hire_qie_labour
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
 				}
 			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Introduce_Western_Reforms"
-			custom_effect_tooltip = SHX_Western_Reforms
-			set_country_flag = SHX_Western_Reforms_Introduced
-			set_country_flag = SHX_ReformsYan
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Introduce_Western_Reforms"
-		}
-	}
-
-	SHX_Adapt_Shanxi_Bureaucracy = {
-		icon = generic_agreement
-
-		available = {
-			has_country_flag = SHX_Western_Reforms_Introduced
-			has_completed_focus = SHX_With_Progressive_Customs
-		}
-
-		visible = {
-			has_country_flag = SHX_Western_Reforms_Introduced
-		}
-
-		cost = 50
-		days_remove = 30
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_xishan_chance = SHX.party_popularity@paternal_autocrat }
-				multiply_temp_variable = { SHX_xishan_chance = 100 }
-				add = SHX_xishan_chance
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
 			}
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Adapt_Shanxi_Bureaucracy"
-		}
-
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Adapt_Shanxi_Bureaucracy"
-			set_temp_variable = { SHX_xishan_gov_change = 5 }
-			SHX_add_xishan_gov = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_hire_qie_labour"
+
 		}
 	}
-
-	SHX_Adapt_Shanxi_Military = {
-		icon = generic_agreement
-
-		available = {
-			has_country_flag = SHX_Western_Reforms_Introduced
-			has_completed_focus = SHX_New_Army_Staff
-		}
+	SHX_hire_qie_labour2 = {#从直隶省雇佣熟练劳工
+		icon = GFX_decision_cement_mixer
 
 		visible = {
-			has_country_flag = SHX_Western_Reforms_Introduced
+			SHX_QIE_influence_active = yes
+			num_of_factories > 12
 		}
-
-		cost = 50
-		days_remove = 30
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_xishan_chance = SHX.party_popularity@paternal_autocrat }
-				multiply_temp_variable = { SHX_xishan_chance = 100 }
-				add = SHX_xishan_chance
+		cancel_trigger = { 
+			QIE = { 
+				exists = no 
+			} 
+		}
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
 			}
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Adapt_Shanxi_Military"
+		days_re_enable = 150
+		modifier = {
+			production_speed_buildings_factor = 0.1
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Adapt_Shanxi_Military"
-			remove_ideas = SHX_power_struggle
-			set_temp_variable = { SHX_xishan_mil_change = 5 }
-			SHX_add_xishan_mil = yes
-		}
-	}
-
-	SHX_Christian_Schools = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_SchoolsYan }
-			has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-		}
-
-		visible = {
-			NOT = { has_country_flag = SHX_SchoolsYan }
-		}
-
-		cost = 25
-		days_remove = 30
-		fire_only_once = yes
-
+		days_remove = 100
 		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
-			}
+			base = 0
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_YAN }
+				num_of_civilian_factories_available_for_projects < 5
+			}
+			modifier = {
+				add = 2
+				has_political_power > 200
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
 			}
 		}
-
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Christian_Schools"
-			set_country_flag = SHX_SchoolsFeng
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_hire_qie_labour2"
+			add_tech_bonus = {
+				name = SHX_hire_qie_labour
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
 		}
-
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Christian_Schools"
-			set_temp_variable = { SHX_yuxiang_gov_change = 8 }
-			SHX_add_yuxiang_gov = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_hire_qie_labour2"
+
 		}
 	}
 
-	SHX_Attack_Yan_Xishan_Thought = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_FaithYan }
-			has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-		}
-
+	SHX_military_construction_crews = {#雇佣军事建设人员
+		icon = GFX_decision_generic_motorized
 		visible = {
-			NOT = { has_country_flag = SHX_FaithYan }
+			SHX_QIE_influence_active = yes
 		}
-
-		cost = 30
-		days_remove = 7
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
+		cancel_trigger = { QIE = { exists = no } }
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable
 			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+		days_re_enable = 150
+		modifier = {
+			production_speed_arms_factory_factor = 0.10
+			industrial_capacity_factory = 0.1
+		}
+		days_remove = 100
+		ai_will_do = {
+			base = 0
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_YAN }
+				num_of_civilian_factories_available_for_projects < 5
+			}
+			modifier = {
+				add = 2
+				has_political_power > 200
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
 			}
 		}
-
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Attack_Yan_Xishan_Thought"
-			set_country_flag = SHX_FaithFeng
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_military_construction_crews"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
 		}
-
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Attack_Yan_Xishan_Thought"
-			set_temp_variable = { SHX_yuxiang_mil_change = 10 }
-			SHX_add_yuxiang_mil = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_military_construction_crews"
+
 		}
 	}
+}
 
-	SHX_Install_Guominjun_Officers = {
-		icon = generic_agreement
-
-		available = {
-			NOT = { has_country_flag = SHX_CorruptionYan }
-			has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-		}
-
+SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
+	SHX_QIE_relief_for_shanxi = {#黑色星期一救济一揽子协议
+		icon = GFX_decision_give_cash
 		visible = {
-			NOT = { has_country_flag = SHX_CorruptionYan }
-		}
-
-		cost = 30
-		days_remove = 14
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_YAN }
+			AND = {
+				SHX = {
+					exists = yes
+					has_completed_focus = SHX_jie_jue_hei_she_xing_qi_yi
+					NOT = {
+						has_country_flag = SHX_reject_BM_relief
+					}
+				}
+				has_country_flag = QIE_influence_shanxi_available
+				# NOT = { 
+				# 	SHX = { 
+				# 		has_completed_focus = SHX_destiny 
+				# 	} 
+				# }
 			}
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Install_Guominjun_Officers"
-			set_country_flag = SHX_CorruptionFeng
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Install_Guominjun_Officers"
-			set_temp_variable = { SHX_yuxiang_mil_change = 15 }
-			SHX_add_yuxiang_mil = yes
-		}
-	}
-
-	SHX_Christian_Mission = {
-		icon = generic_agreement
-
 		available = {
-			NOT = { has_country_flag = SHX_ReformsYan }
-			has_completed_focus = SHX_A_Benevolent_Dictatorship
-		}
+			SHX = {
+				has_completed_focus = SHX_jie_jue_hei_she_xing_qi_yi
+				NOT = {
+					has_country_flag = SHX_reject_BM_relief
+				}
+			}
+			NOT = { has_war_with = SHX }
 
-		visible = {
-			NOT = { has_country_flag = SHX_ReformsYan }
+			num_of_civilian_factories_available_for_projects > 3
 		}
-
-		cost = 50
-		days_remove = 21
+		cancel_trigger = {
+			OR = {
+				SHX = { has_country_flag = SHX_reject_BM_relief }
+				SHX = { exists = no }
+			}
+		}
 		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = { rule = SHX_struggle option = SHX_STRUGGLE_YAN }
-			}
+		ai_will_do = { factor = 5 }
+		days_remove = 100
+		cost = 10
+		modifier = {
+			civilian_factory_use = 3
 		}
-
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Christian_Mission"
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Christian_Mission"
-			custom_effect_tooltip = SHX_Christian_Mission_tol_desc
-			set_country_flag = SHX_Christian_Mission_Started
-			set_country_flag = SHX_ReformsFeng
-		}
-	}
-
-	SHX_Install_Guominjun_Bureaucrats = {
-		icon = generic_agreement
-
-		available = {
-			has_country_flag = SHX_Christian_Mission_Started
-		}
-
-		visible = {
-			has_country_flag = SHX_Christian_Mission_Started
-		}
-
-		cost = 75
-		days_remove = 30
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_QIE_relief_for_shanxi"
+			SHX = {
+				country_event = { id = shx.QIE.aid.5 days = 3 } #Black Monday Relief Package
 			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_QIE_relief_for_shanxi_tooltip
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Install_Guominjun_Bureaucrats"
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Install_Guominjun_Bureaucrats"
-			set_temp_variable = { SHX_yuxiang_gov_change = 15 }
-			SHX_add_yuxiang_gov = yes
-		}
-	}
-
-	SHX_Guominjun_Dominate_the_Army = {
-		icon = generic_agreement
-
-		available = {
-			has_country_flag = SHX_Christian_Mission_Started
-		}
-
-		visible = {
-			has_country_flag = SHX_Christian_Mission_Started
-		}
-
-		cost = 75
-		days_remove = 30
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				set_temp_variable = { SHX_yuxiang_chance = SHX.party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { SHX_yuxiang_chance = 100 }
-				add = SHX_yuxiang_chance
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SHX_Guominjun_Dominate_the_Army"
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Guominjun_Dominate_the_Army"
-			set_temp_variable = { SHX_yuxiang_mil_change = 20 }
-			SHX_add_yuxiang_mil = yes
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel SHX_QIE_relief_for_shanxi"
+			add_political_power = 10
 		}
 	}
 }
@@ -937,38 +934,6 @@ SHX_Foreign_Policy_decisions = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Integrate_Lanzhou"
 			283 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
-		}
-	}
-}
-
-SHX_balance_of_power_category = {#逐鹿山西
-	SHX_looming_gmj_coup = {
-		icon = GFX_decision_lkmt_flag 
-
-		allowed = {
-			always = no
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_special_coup_circumstances_tooltip
-				has_defensive_war = yes
-			}
-		}
-		cancel_trigger = {
-			has_country_flag = SHX_yan_victory_over_gmj
-		}
-
-		priority = 100 
-		is_good = no
-		days_mission_timeout = 1000
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_looming_gmj_coup"
-
-		}
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_looming_gmj_coup"
-
 		}
 	}
 }

@@ -10050,7 +10050,7 @@ focus_tree = {
 		id = HNN_tong_e_mo_de_jiao_yi
 		icon = GFX_goal_AOG_Direct_German_Rule
 		relative_position_id = HNN_chong_fan_si_jie_wu_tai
-		x = 5
+		x = 6
 		y = 1
 		cost = 2
 
@@ -10395,7 +10395,7 @@ focus_tree = {
 		id = HNN_zhang_kong_ya_zhou
 		icon = GFX_goal_VIN_pan_asian_appeals
 		relative_position_id = HNN_chong_fan_si_jie_wu_tai
-		x = 10
+		x = 11
 		y = 1
 		cost = 2
 

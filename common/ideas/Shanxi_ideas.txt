@@ -3,32 +3,66 @@
 ideas = {
 	country = {
 		### Starting ideas
-		SHX_neutrality = {
+		SHX_neutrality = {#山西中立政策
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_neutrality"}
 			picture = hol_aloof_neutrality
+			cancel = { is_subject = yes }
 			modifier = {
-				stability_factor = 0.15
-				war_support_factor = -0.2
-				generate_wargoal_tension = 1
 				guarantee_tension = 1
-
+				surrender_limit = 0.20
+				stability_factor = 0.15
+				justify_war_goal_time = 1
+				army_intel_to_others = -15
+				war_support_factor = -0.30
+				generate_wargoal_tension = 1
+				civilian_intel_to_others = -10
+				enemy_justify_war_goal_time = 1
 			}
 		}
-		SHX_power_struggle = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_power_struggle"}
-			picture = generic_disjointed_gov
+		SHX_dual_armies = {#一省两军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_dual_armies" }
+			picture = army_cooperation
+			allowed = { always = no }
+			on_add = {
+				country_lock_all_division_template = yes
+			}
+			on_remove = { 
+				country_lock_all_division_template = no
+			}
 			modifier = {
-				stability_factor = -0.05
-				political_power_factor = -0.10
+				army_org_factor = -0.20
+				command_power_gain_mult = -0.20
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				custom_modifier_tooltip = SHX_dual_armies_modifier_tooltip
 			}
 		}
-		SHX_legacy_of_guominjun = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_legacy_of_guominjun"}
-			picture = MEX_politicised_army_2
+		SHX_unfinished_education = {#教育改革停滞
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education" }
+			picture = generic_research_reduction
+			allowed = { always = no }
 			modifier = {
-				army_org = 0.5
-				land_reinforce_rate = 0.05
-				army_attack_factor = 0.05
+				research_speed_factor = -0.35
+			}
+		}
+		SHX_underdeveloped_mountain_economy = {#落后的山区经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy" }
+			picture = BHU_mountain_nation
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.25
+			}
+		}
+		SHX_agriculture_reform = {#贫困的农村
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform" }
+			picture = DEI_solid_foodsystem
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.2
+				production_speed_buildings_factor = -0.15
+				conscription_factor = -0.10
 			}
 		}
 
@@ -698,8 +732,144 @@ ideas = {
 				production_factory_start_efficiency_factor = 0.1
 			}
 		}
-
+		###SHX Industrial Spirits
+		SHX_qie_influence_idea0 = {#在北京的阴影下
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea0" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			available = {
+				OR = {
+					NOT = {
+						has_war_with = QIE
+					}
+					NOT = {
+						country_exists = QIE
+					}
+				}
+			}
+			cancel = {
+				QIE = { exists = no }
+			}
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.05
+			}
+		}
+		SHX_qie_influence_idea1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea1" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			available = {
+				OR = {
+					NOT = {
+						has_war_with = QIE
+					}
+					NOT = {
+						country_exists = QIE
+					}
+				}
+			}
+			cancel = {
+				QIE = { exists = no }
+			}
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.1
+			}
+		}
+		SHX_qie_influence_idea2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea2" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			available = {
+				OR = {
+					NOT = {
+						has_war_with = QIE
+					}
+					NOT = {
+						country_exists = QIE
+					}
+				}
+			}
+			cancel = {
+				QIE = { exists = no }
+			}
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.15
+			}
+		}
+		SHX_qie_influence_idea3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea3" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			available = {
+				OR = {
+					NOT = {
+						has_war_with = QIE
+					}
+					NOT = {
+						country_exists = QIE
+					}
+				}
+			}
+			cancel = {
+				QIE = { exists = no }
+			}
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.2
+			}
+		}
+		SHX_qie_influence_idea4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_influence_idea4" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			available = {
+				OR = {
+					NOT = {
+						has_war_with = QIE
+					}
+					NOT = {
+						country_exists = QIE
+					}
+				}
+			}
+			cancel = {
+				QIE = { exists = no }
+			}
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.25
+			}
+		}
+		SHX_black_monday_relief = {#黑色星期一救济一揽子协议
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_black_monday_relief" }
+			picture = FNG_china_money
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		### Coup Mechanic Idea ###
+		SHX_guominjun_unrest_idea = {#国民军不满
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_guominjun_unrest_idea" }
+			picture = SHX_Guominjun_unrest
+			allowed = { always = no }
+		}
 		###Army ideas
+		SHX_dual_armies2 = {#一省两军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_dual_armies2" }
+			picture = army_cooperation
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = -0.10
+				command_power_gain_mult = -0.10
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
 		SHX_labouring_army_idea = {#劳动的军队
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_labouring_army_idea" }
 			picture = Recruitment_Crisis
@@ -731,6 +901,55 @@ ideas = {
 			}
 			on_remove = {
 				SHX_strengthen_feng_medium = yes
+			}
+		}
+		SHX_renovated_taiyuan_idea = {#修缮太原兵工厂
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_renovated_taiyuan_idea" }
+			picture = SHX_taiyuan_arsenal_company
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		SHX_russian_aid = {#俄国顾问
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_russian_aid " }
+			picture = advisors_russia
+			allowed = { always = no }
+			modifier = {
+				breakthrough_factor = 0.05
+			}
+		}
+		SHX_japanese_aid = {#日本顾问
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_japanese_aid " }
+			picture = advisors_japan
+			allowed = { always = no }
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+		SHX_german_aid = {#德国顾问
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_german_aid " }
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.05
+			}
+		}
+		SHX_artillery_idea = {#现代化十四式加农炮
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_artillery_idea" }
+			picture = generic_artillery_regiments
+			allowed = { always = no }
+			equipment_bonus = {
+				artillery_equipment = {
+					breakthrough = 0.10
+					instant = yes
+				}
+				rocket_artillery_equipment = {
+					breakthrough = 0.05
+					instant = yes
+				}
 			}
 		}
 		SHX_guominjun_model_idea = {#国民军模范

@@ -84,7 +84,6 @@ ideas = {
 	country = {
 		SQI_dogmeat_general = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_dogmeat_general"}
-
 			picture = generic_intel_bonus
 			allowed = { always = no }
             modifier = {
@@ -95,7 +94,6 @@ ideas = {
 
 		SQI_honored_master = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master"}
-
 			picture = generic_volunteer_expedition_bonus
 			allowed = { always = no }
             modifier = {
@@ -106,7 +104,6 @@ ideas = {
 
 		SQI_flight_north = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_north"}
-
 			picture = prc_the_long_march2
 			allowed = { always = no }
             modifier = {
@@ -131,7 +128,6 @@ ideas = {
 
 		SQI_flee_to_zongchang = { #Flee to Zongchang
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flee_to_zongchang"}
-
 			picture = ROM_king_carol_ii_hedonist
 			allowed = { always = no }
             modifier = {
@@ -144,21 +140,17 @@ ideas = {
 
 		SQI_flight_to_safety = { #Flee to Song Zheyuan
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_to_safety"}
-
 			picture = man_low_legitimacy3
 			allowed = { always = no }
             modifier = {
 				stability_factor = 0.03
 				political_power_gain = 0.02
 				social_conservative_drift = 0.01
-
-
 			}
 		}
 
 		SQI_black_monday = { #Black Monday
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_black_monday"}
-
 			picture = great_depression
 			allowed = { always = no }
             modifier = {
@@ -171,7 +163,6 @@ ideas = {
 
 		SQI_red_spears = { #Red Spears
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_red_spears"}
-
 			allowed = { always = no }
             modifier = {
 				surrender_limit = 0.15
@@ -184,8 +175,6 @@ ideas = {
 
 		SQI_big_swords = { #Big Swords
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_big_swords"}
-
-
 			picture = raj_indian_gentlemen_officers
 			allowed = { always = no }
             modifier = {
@@ -199,7 +188,6 @@ ideas = {
 
 		SQI_Yiguandao_revolt = { #Yiguandao Revolt
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Yiguandao_revolt"}
-
 			picture = saf_history_of_segregation_2
 			allowed = { always = no }
             modifier = {
@@ -212,7 +200,6 @@ ideas = {
 
 		SQI_Loyal_citizens = { #Loyal citizens
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Loyal_citizens"}
-
 			picture = generic_manpower_bonus
 			allowed = { always = no }
             modifier = {
@@ -225,7 +212,6 @@ ideas = {
 
 		SQI_Peasant_revolt = { #Peasant Revolt
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Peasant_revolt"}
-
 			picture = chi_war_of_resistance2
 			allowed = { always = no }
             modifier = {
@@ -238,7 +224,6 @@ ideas = {
 
 		SQI_Zongchang_revolt = { #Zongchang Revolt
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Zongchang_revolt"}
-
 			picture = death_men
 			allowed = { always = no }
             modifier = {
@@ -251,7 +236,6 @@ ideas = {
 
 		SQI_Guiyidao_support = { #Guiyidao Support
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Guiyidao_support"}
-
 			picture = generic_traditional_values
 			allowed = { always = no }
             modifier = {
@@ -262,7 +246,6 @@ ideas = {
 
 		SQI_railroad_assisted_army = { #Railroad Assisted Army
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_railroad_assisted_army"}
-
 			picture = generic_build_infrastructure
 			allowed = { always = no }
             modifier = {
@@ -275,7 +258,6 @@ ideas = {
 
 		SQI_Japanese_military_assistance = { #Japanese Military Assistance
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Japanese_military_assistance"}
-
 			picture = FNG_xinhai_order
 			allowed = { always = no }
             modifier = {
@@ -286,7 +268,6 @@ ideas = {
 
 		SQI_German_military_assistance = { #German Military Assistance
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_German_military_assistance"}
-
 			picture = advisors_germany
 			allowed = { always = no }
             modifier = {
@@ -297,7 +278,6 @@ ideas = {
 
 		SQI_controlled_drug_trade = { #Controlled Drug Trade
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_controlled_drug_trade"}
-
 			picture = SZC_opium_monopoly
 			allowed = { always = no }
             modifier = {
