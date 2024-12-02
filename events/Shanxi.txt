@@ -11,6 +11,7 @@ add_namespace = shx.mil
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
 add_namespace = shx.shx.suiyuan.campaign
+add_namespace = shx_mission_tick
 
 ########################################
 ########-       开局          -#########
@@ -413,6 +414,7 @@ country_event = {#土地改革
 		}
 		hidden_effect = {
 			set_country_flag = SHX_yan_land_reform
+			country_event = { id = shx_mission_tick.3 days = 5 }
 		}
 		custom_effect_tooltip = SHX_Yan_Favored_10_Year_tooltip
 		if = {
@@ -452,6 +454,7 @@ country_event = {#土地改革
 		}
 		hidden_effect = {
 			set_country_flag = SHX_feng_land_reform
+			country_event = { id = shx_mission_tick.6 days = 5 }
 		}
 		custom_effect_tooltip = SHX_Feng_Favored_10_Year_tooltip
 		if = {
@@ -503,6 +506,56 @@ country_event = {#土地改革完成
 			remove_mission = SHX_agricultural_reform_mission_timer
 		}
 		custom_effect_tooltip = SHX_Agriculture_Reform_Complete_Tooltip
+	}
+}
+country_event = {#制定农业预算案
+	id = shx.agri.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.3" }
+	title = shx.agri.3.t
+	desc = shx.agri.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.agri.3.a
+		ai_chance = {
+			base = 33
+			modifier = {
+				factor = 1.5
+				has_political_power > 60
+			}
+		}
+		add_political_power = -100
+		add_stability = -0.05
+	}
+
+	option = {
+		name = shx.agri.3.b
+		ai_chance = {
+			base = 33
+			modifier = {
+				factor = 1.5
+				has_political_power < 25
+			}
+		}
+		trigger = { SHX_QIE_influence_active = yes }
+		SHX_QIE_investment_medium = yes
+		SHX_econ_update = yes
+		SHX_revolution_medium = yes
+	}
+
+	option = {
+		name = shx.agri.3.c
+		ai_chance = {
+			base = 33
+			modifier = {
+				factor = 1.5
+				has_war_support > 0.50
+			}
+		}
+		add_political_power = -50
+		add_war_support = -0.1
 	}
 }
 country_event = {#三师传
@@ -1437,6 +1490,7 @@ country_event = {#山西省府倒台！
 		}
 	}
 }
+
 ########################################
 ######-       大清影响力        -#######
 ########################################
@@ -1605,6 +1659,78 @@ country_event = {#太原为西北暂停与我们合作
 	}
 	option = {
 		name = shx.suiyuan.campaign.60.b
+	}
+}
+
+########################################
+#######-       hidden          -########
+########################################
+country_event = {
+	id = shx_mission_tick.3 #Tick for Feng Agriculuture Missions
+	title = shx_mission_tick.3.t
+	desc = shx_mission_tick.3.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.3 option shx_mission_tick.3.a"
+		name = shx_mission_tick.3.a
+		if = {
+			limit = { NOT = { has_country_flag = SHX_peasant_deal_completed } }
+			activate_mission = SHX_feng_taking_SHX_peasant_deal
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_control_peasants_completed } }
+			activate_mission = SHX_feng_taking_SHX_control_peasants
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_feng_taking_SHX_unfair_rent_completed } }
+			activate_mission = SHX_feng_taking_SHX_unfair_rent
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_feng_taking_SHX_building_Villages_completed } }
+			activate_mission = SHX_feng_taking_SHX_building_villages
+		}
+	}
+}
+country_event = {
+	id = shx_mission_tick.6 #Tick for Yan Agriculuture Missions
+	title = shx_mission_tick.6.t
+	desc = shx_mission_tick.6.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.6 option shx_mission_tick.6.a"
+		name = shx_mission_tick.6.a
+		if = {
+			limit = { NOT = { has_country_flag = yan_taking_SHX_gentry_deal_completed } }
+			activate_mission = SHX_yan_taking_SHX_gentry_deal
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = yan_taking_SHX_control_gentry_completed } }
+			activate_mission = SHX_yan_taking_SHX_control_gentry
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = yan_taking_SHX_litigation_completed } }
+			activate_mission = SHX_yan_taking_SHX_litigation
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = yan_taking_SHX_empower_magistrates_completed } }
+			activate_mission = SHX_yan_taking_empower_magistrates
+		}
 	}
 }
 

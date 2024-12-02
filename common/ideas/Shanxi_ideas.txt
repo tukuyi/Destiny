@@ -756,7 +756,7 @@ ideas = {
 		}
 
 		###Agricultural Spirits ###
-		SHX_agriculture_reform1 = { #Promises of Land Reform
+		SHX_agriculture_reform1 = {#承诺土地改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform1" }
 			picture = DEI_solid_foodsystem
 			allowed = { always = no }
@@ -768,12 +768,84 @@ ideas = {
 				production_speed_infrastructure_factor = 0.1
 			}
 		}
-		SHX_paying_off_gentry = {#From an Event
+		SHX_agriculture_reform_Yan = {#徒有其名的土地改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Yan" }
+			picture = DEI_abandoned_ethical_policy
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.05
+				production_speed_buildings_factor = -0.15
+				conscription_factor = -0.05
+				production_speed_infrastructure_factor = 0.15
+				industry_repair_factor = 0.05
+			}
+		}
+		SHX_agriculture_reform_Yan1 = {#儒家农耕理想
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Yan1" }
+			picture = generic_agrarian_reform
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.05
+				production_speed_buildings_factor = -0.05
+				production_speed_infrastructure_factor = 0.15
+				industry_repair_factor = 0.10
+				global_building_slots_factor = 0.1
+				war_support_factor = 0.10
+			}
+		}
+		SHX_agriculture_reform_Feng = {#有限土地再分配
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng" }
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.10
+				production_speed_infrastructure_factor = 0.1
+				global_building_slots_factor = 0.05
+				war_support_factor = 0.10
+			}
+		}
+		SHX_agriculture_reform_Feng1 = {#耕者有其田
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng1" }
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = -0.15
+				production_speed_infrastructure_factor = 0.1
+				global_building_slots_factor = 0.10
+				supply_node_range = 0.1
+				war_support_factor = 0.20
+			}
+		}
+		SHX_paying_off_gentry = {#回报乡绅
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_paying_off_gentry " }
 			picture = ETH_customs_barrier_ITA
 			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = 0.1
+			}
+		}
+		SHX_agriculture_budget = {#农业修正案
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_budget " }
+			picture = ITA_devaluated_lira
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.3
+			}
+		}
+
+		### Domestic - Political ####
+		SHX_fight_corruption_idea = {#反腐败斗争
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_fight_corruption_idea " }
+			picture = MEX_callistas
+			allowed = { always = no }
+			modifier = {
+				war_support_weekly = 0.0075
+				stability_weekly = -0.0075
+				industrial_capacity_factory = 0.15
 			}
 		}
 
@@ -1277,6 +1349,29 @@ ideas = {
 			modifier = {
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.05
+			}
+		}
+	}
+	industrial_concern = {
+		SHX_economic_reconstruction_committee = {#经济建设委员会
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_economic_reconstruction_committee" }
+			allowed = { original_tag = SHX }
+			traits = { industrial_manufacturer }
+			picture = state_economy
+			available = {
+				has_completed_focus = SHX_geng_chu_fu_bai
+			}
+			cost = 50
+			modifier = {
+				political_power_gain = 0.25
+				production_speed_infrastructure_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.1
+			}
+			research_bonus = {
+				excavation_tech = 0.05
+				construction_tech = 0.05
 			}
 		}
 	}

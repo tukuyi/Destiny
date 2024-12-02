@@ -11,8 +11,6 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		set_country_flag = SHX_yan_victory_over_gmj
-		SHX_yan_victory_effect = yes
 		# set_power_balance = {
 		# 	id = SHX_power_balance
 		# 	left_side = SHX_yan_winning_side

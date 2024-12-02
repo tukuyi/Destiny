@@ -3181,7 +3181,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_dong_nong_min"
-			
+			add_war_support = 0.1
+			swap_ideas = {
+				remove_idea = SHX_agriculture_reform1
+				add_idea = 	SHX_agriculture_reform_Feng
+			}
+			SHX_strengthen_feng_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_agriculture_reform_tooltip
 		}
 	}	
 
@@ -3193,13 +3200,48 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_completed_focus = SHX_fa_dong_nong_min
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_fa_dong_nong_min
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_da_ji_xiang_cun_e_ba"
-			
+			add_stability = -0.1
+			add_war_support = 0.1
+			add_political_power = 75
+			SHX_strengthen_feng_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_agriculture_reform_tooltip
 		}
 	}	
 
@@ -3210,6 +3252,32 @@ focus_tree = {
 		x = 1
 		y = 1
 		cost = 5
+
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
 
 		available = {
 			has_country_flag = SHX_yan_land_reform
@@ -3223,7 +3291,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_he_shi_shen_tuo_xie"
-			
+			add_political_power = 80
+			swap_ideas = {
+				remove_idea = SHX_agriculture_reform1
+				add_idea = 	SHX_agriculture_reform_Yan
+			}
+			SHX_strengthen_yan_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_agriculture_reform_tooltip
 		}
 	}	
 	
@@ -3235,13 +3310,47 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_completed_focus = SHX_he_shi_shen_tuo_xie
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_he_shi_shen_tuo_xie
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhi_pei_xiang_cun"
-			
+			add_war_support = 0.05
+			add_stability = 0.05
+			SHX_strengthen_yan_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_agriculture_reform_tooltip
 		}
 	}	
 
@@ -3253,6 +3362,14 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+
 		available = {
 			has_country_flag = SHX_agricultural_reform_completed_flag
 		}
@@ -3263,7 +3380,57 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tu_di_zhi_du_gai_ge"
-			
+			622 = { #Yulin
+				increase_state_category_by_one_level = yes
+			}
+			1072 = { #Western Shanxi
+				increase_state_category_by_one_level = yes
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_idea = SHX_agriculture_reform_Yan }
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Yan
+					add_idea = SHX_agriculture_reform_Yan1
+				}
+			}
+			else_if = {
+				limit = { has_idea = SHX_agriculture_reform_Feng }
+				622 = {
+					add_extra_state_shared_building_slots = 1
+				}
+				1072 = {
+					add_extra_state_shared_building_slots = 1
+				}
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Feng
+					add_idea = SHX_agriculture_reform_Feng1
+				}
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_agriculture_reform_Yan
+						add_idea = SHX_agriculture_reform_Yan1
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					622 = {
+						add_extra_state_shared_building_slots = 1
+					}
+					1072 = {
+						add_extra_state_shared_building_slots = 1
+					}
+					swap_ideas = {
+						remove_idea = SHX_agriculture_reform_Feng
+						add_idea = SHX_agriculture_reform_Feng1
+					}
+				}
+			}
 		}
 	}	
 
@@ -3281,7 +3448,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_nong_ye_tou_zi"
-			
+			add_timed_idea = {
+				idea = SHX_agriculture_budget
+				days = 200
+			}
+			hidden_effect = {
+				country_event = { id = shx.agri.3 days = 15 } #Raising Agricultural Revenue
+			}
 		}
 	}	
 
@@ -3299,7 +3472,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_zheng_jing_ji"
-			
+
 		}
 	}	
 
@@ -3320,7 +3493,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_geng_chu_fu_bai"
-			
+			add_timed_idea = {
+				idea = SHX_fight_corruption_idea
+				days = 100
+			}
+			add_political_power = 75
+			add_stability = -0.05
 		}
 	}	
 
@@ -3338,7 +3516,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xian_dai_shi_mo_fan_sheng"
-			
+			add_political_power = 50
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_economic_reconstruction_committee
 		}
 	}
 

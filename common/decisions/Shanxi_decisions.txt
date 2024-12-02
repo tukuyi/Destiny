@@ -123,6 +123,736 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			country_event = shx.agri.2
 		}
 	}
+	SHX_increase_taxes = {#助农强国
+		icon = GFX_decision_hand_palm_down
+		visible = {
+			has_completed_focus = SHX_he_shi_shen_tuo_xie
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+
+		cost = 50
+		days_remove = 60
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		
+		modifier = {
+			consumer_goods_factor = -0.25
+			political_power_gain = -0.5
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_increase_taxes"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_increase_taxes"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SHX_maintain_countryside = {#在乡村保持均衡
+		icon = GFX_decision_generic_healthcare	
+		visible = {
+			has_completed_focus = SHX_he_shi_shen_tuo_xie
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.5
+			war_support_weekly = 0.005
+			civilian_factory_use = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_maintain_countryside"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_maintain_countryside"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+
+	SHX_litigation = {#息讼会
+		icon = GFX_decision_generic_agreement
+		visible = {
+			has_completed_focus = SHX_zhi_pei_xiang_cun
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.5
+			war_support_weekly = 0.01
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_litigation"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_litigation"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SHX_limited_nationalisation = {#有限国有化
+		icon = GFX_decision_generic_inflation
+		visible = {
+			has_completed_focus = SHX_zhi_pei_xiang_cun
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 100
+		modifier = {
+			political_power_gain = -0.5
+			stability_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_limited_nationalisation"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_limited_nationalisation"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+			SHX_strengthen_yan_medium = yes
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	SHX_intimidate_landlords = {#震慑地主
+		icon = GFX_decision_hand_grab
+		visible = {
+			has_completed_focus = SHX_fa_dong_nong_min
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = 0.3
+			war_support_weekly = -0.01
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_intimidate_landlords"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_intimidate_landlords"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = SHX
+			}
+		}
+	}
+	SHX_unfair_rent = {#终结不公地租
+		visible = {
+			has_completed_focus = SHX_fa_dong_nong_min
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+		fire_only_once = yes
+		icon = GFX_decision_scales
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.005
+			production_factory_efficiency_gain_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_unfair_rent"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_unfair_rent"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+
+	SHX_peasant_cooperatives = {#组建农民合作社
+		icon = GFX_decision_generic_healthcare
+		visible = {
+			has_completed_focus = SHX_da_ji_xiang_cun_e_ba
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.0075
+			production_speed_buildings_factor = -0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_peasant_cooperatives"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_peasant_cooperatives"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -60
+			}
+			add_manpower = 10000
+			SHX_strengthen_feng_small = yes
+		}
+	}
+	SHX_land_to_villages = {#一切土地归农村
+		icon = GFX_decision_hand_palm_down
+		visible = {
+			has_completed_focus = SHX_da_ji_xiang_cun_e_ba
+			NOT = {
+				has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+			}
+		}
+
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 35 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			production_factory_max_efficiency_factor = -0.3
+			political_power_gain = -0.3
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_land_to_villages"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_land_to_villages"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+			622 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	SHX_cheap_credit = {#廉价信贷与化肥
+		icon = GFX_decision_card
+		visible = {
+			OR = {
+				has_completed_focus = SHX_fa_dong_nong_min
+				has_completed_focus = SHX_he_shi_shen_tuo_xie
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		fire_only_once = yes
+		priority = 30
+		ai_will_do = { factor = 25 }
+
+		cancel_if_not_visible = no
+		
+		cost = 50
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+			war_support_weekly = 0.005
+			monthly_population = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_cheap_credit"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_cheap_credit"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+			add_war_support = 0.025
+			add_manpower = 2500
+		}
+	}
+	SHX_water_control = {#治水造林
+		icon = GFX_decision_electrify
+		visible = {
+			OR = {
+				has_completed_focus = SHX_fa_dong_nong_min
+				has_completed_focus = SHX_he_shi_shen_tuo_xie
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		fire_only_once = yes
+		priority = 30
+		ai_will_do = { factor = 25 }
+
+		cancel_if_not_visible = no
+		
+		cost = 50
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_water_control"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_water_control"
+			1072 = { add_extra_state_shared_building_slots = 1 } #Western Shanxi
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+
+	SHX_upgrade_telecommunications = {#扩展电子通信
+		icon = GFX_decision_radar
+		visible = {
+			OR = {
+				has_completed_focus = SHX_da_ji_xiang_cun_e_ba
+				has_completed_focus = SHX_zhi_pei_xiang_cun
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		fire_only_once = yes
+		ai_will_do = { factor = 25 }
+		priority = 30
+
+		cancel_if_not_visible = no
+		cost = 50
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_upgrade_telecommunications"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_upgrade_telecommunications"
+			add_tech_bonus = {
+				name = SHX_upgrade_telecommunications
+				ahead_reduction = 0.5
+				bonus = 0.5
+				uses = 1
+				technology = radio
+				technology = improved_radio
+				technology = advanced_radio
+			}
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SHX_connect_yanan = {#到山西的铁路与公路
+		icon = GFX_decision_railroad
+		visible = {
+			OR = {
+				has_completed_focus = SHX_da_ji_xiang_cun_e_ba
+				has_completed_focus = SHX_zhi_pei_xiang_cun
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 75
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_connect_yanan"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_connect_yanan"
+			build_railway = {
+				path = { 8049 7208 1034 1531 4174 }
+				start_state = 622
+				target_state = 1072
+				level = 1
+				fallback = yes
+			}
+			622 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = infrastructure size > 0 }
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -60
+			}
+		}
+	}
+
+	### Shanxi Agriculture Counter Missions
+	SHX_yan_taking_SHX_gentry_deal = {#与乡绅交易
+		icon = GFX_decision_generic_agriculture
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_he_shi_shen_tuo_xie_desc
+		fire_only_once = yes
+		
+		priority = 33
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_SHX_gentry_deal"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_SHX_gentry_deal"
+			add_political_power = 40
+			SHX_strengthen_yan_small = yes
+			set_country_flag = yan_taking_SHX_gentry_deal_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.6 days = 1 }
+			}
+		}
+	}
+	SHX_yan_taking_SHX_control_gentry = {#支配乡村
+		icon = GFX_decision_generic_agriculture
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_zhi_pei_xiang_cun_desc
+		fire_only_once = yes
+		priority = 33
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_SHX_control_gentry"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_SHX_control_gentry"
+			add_war_support = 0.025
+			add_stability = 0.025
+			SHX_strengthen_yan_small = yes
+			set_country_flag = yan_taking_SHX_control_gentry_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.6 days = 1 }
+			}
+		}
+	}
+	SHX_yan_taking_SHX_litigation = {#息讼会
+		icon = GFX_decision_scales
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_litigation_desc
+		fire_only_once = yes
+		priority = 33
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.25
+			war_support_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_SHX_litigation"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_SHX_litigation"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_yan_taking_SHX_litigation"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -30
+			}
+			set_country_flag = yan_taking_SHX_litigation_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.6 days = 1 }
+			}
+		}
+	}
+	SHX_yan_taking_empower_magistrates = {#有限国有化
+ 		icon = GFX_decision_shield
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_limited_nationalisation_desc
+		fire_only_once = yes
+		priority = 33
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.25
+			stability_weekly = -0.0025
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_empower_magistrates"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_empower_magistrates"
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_yan_taking_empower_magistrates"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -30
+			}
+			SHX_strengthen_yan_small = yes
+			set_country_flag = yan_taking_SHX_empower_magistrates_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.6 days = 1 }
+			}
+		}
+	}
+
+	SHX_feng_taking_SHX_peasant_deal = {#发动农民
+		icon = GFX_decision_generic_agriculture
+
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_fa_dong_nong_min_desc
+		fire_only_once = yes
+		
+		priority = 33
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_SHX_peasant_deal"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_SHX_peasant_deal"
+			add_war_support = 0.05
+			SHX_strengthen_feng_small = yes
+			set_country_flag = SHX_peasant_deal_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.3 days = 1 }
+			}
+		}
+	}
+	SHX_feng_taking_SHX_control_peasants = {#剪除乡绅
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_da_ji_xiang_cun_e_ba_desc
+		fire_only_once = yes
+		icon = GFX_decision_freedom
+		priority = 33
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_SHX_control_peasants"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_SHX_control_peasants"
+			add_stability = -0.04
+			add_war_support = 0.05
+			add_political_power = 35
+			SHX_strengthen_feng_small = yes
+			set_country_flag = SHX_control_peasants_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.3 days = 1 }
+			}
+		}
+	}
+	SHX_feng_taking_SHX_unfair_rent = {#终结不公地租
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_unfair_rent_desc
+		fire_only_once = yes
+		icon = GFX_decision_give_cash
+		priority = 33
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.005
+			production_factory_efficiency_gain_factor = 0.05
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_SHX_unfair_rent"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_SHX_unfair_rent"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_feng_taking_SHX_unfair_rent"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -30
+			}
+			set_country_flag = SHX_feng_taking_SHX_unfair_rent_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.3 days = 1 }
+			}
+		}
+	}
+	SHX_feng_taking_SHX_building_villages = {#组建农民合作社
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_agricultural_reform_completed_flag
+		}
+		desc = SHX_peasant_cooperatives_desc
+		fire_only_once = yes
+		icon = GFX_decision_soldierly_discipline
+		priority = 33
+		days_mission_timeout = 0
+		days_remove = 60
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_SHX_building_villages"
+
+		}
+		modifier = {
+			stability_weekly = -0.003
+			production_speed_buildings_factor = -0.05
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_SHX_building_villages"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_feng_taking_SHX_building_villages"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -30
+			}
+			SHX_strengthen_feng_small = yes
+			add_manpower = 5000
+			set_country_flag = SHX_feng_taking_SHX_building_villages_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.3 days = 1 }
+			}
+		}
+	}
 }
 
 SHX_QIE_ties = {#在北京的阴影下

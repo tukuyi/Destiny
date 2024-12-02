@@ -199,6 +199,13 @@ SHX_revolution_small = {
 	}
 	custom_effect_tooltip = SHX_revolution_small_tooltip
 }
+SHX_revolution_medium = {
+	add_to_variable = {
+		var = SHX_revolution_line
+		value = 7
+	}
+	custom_effect_tooltip = SHX_revolution_medium_tooltip
+}
 
 SHX_increase_revolution_small = {
 	add_to_variable = {
