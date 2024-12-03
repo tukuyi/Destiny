@@ -2791,6 +2791,159 @@ SHX_QIE_ties = {#在北京的阴影下
 		}
 
 	}
+	SHX_sell_shanxi_cotton = {#出售晋棉
+		icon = GFX_decision_generic_agriculture
+		visible = {
+			has_completed_focus = SHX_tu_di_zhi_du_gai_ge
+		}
+
+		cancel_trigger = { QIE = { exists = no } }
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable #Variable Set in History File
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+
+		days_remove = 100
+		days_re_enable = 180
+		modifier = {
+			consumer_goods_factor = -0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_sell_shanxi_cotton"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_sell_shanxi_cotton"
+
+		}
+	}
+	SHX_expand_coal_sale = {#扩大煤矿出口
+		icon = GFX_decision_fortress
+		visible = {
+			has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+		}
+
+		cancel_trigger = { QIE = { exists = no } }
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable  #Variable Set in History File
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+
+		days_remove = 100
+		days_re_enable = 180
+		modifier = {
+			local_resources_factor = 0.05
+			production_factory_max_efficiency_factor = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_expand_coal_sale"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
+		}
+	}
+
+	SHX_crackdown_foreign_agitators = {#镇压外来煽动者
+		visible = {
+			has_government = paternal_autocrat
+		}
+		available = {
+			has_government = paternal_autocrat
+			check_variable = {
+				tooltip = SHX_QIE_influence_variable_above_10_tooltip
+				SHX.SHX_QIE_influence_variable > 9
+			}
+		}
+		cancel_trigger = { QIE = { exists = no } }
+		icon = GFX_descision_generic_flags
+
+		days_re_enable = 100
+		cost = 10
+		days_remove = 90
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable > 35 }
+			}
+		}
+		modifier = {
+			political_power_gain = -0.30
+		}
+		fire_only_once = no
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_crackdown_foreign_agitators"
+			SHX_QIE_spend_medium = yes
+		}
+	}
 }
 
 SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
