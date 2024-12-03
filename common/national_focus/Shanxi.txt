@@ -4172,7 +4172,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_na_zuo_yi"
-			
+			set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.20
+			}
 		}
 	}	
 

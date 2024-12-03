@@ -1770,7 +1770,7 @@ country_event = {#国民军起义
 		}
 		hidden_effect = {
 			end_coalition = yes
-			
+
 			add_ideas = {
 				SHX_He_Qigong_hog_ade
 				SHX_Su_Tiren_for_ade
@@ -2638,7 +2638,6 @@ country_event = {
 ########################################
 ########-      旧事件         -#########
 ########################################
-
 country_event = { # Feng ups recruitment due to fear of lep collapse
 	id = shx.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.7" }

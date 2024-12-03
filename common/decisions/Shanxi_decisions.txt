@@ -2501,6 +2501,83 @@ SHX_QIE_ties = {#在北京的阴影下
 		}
 	}
 
+	SHX_beijing_bribes = {#北京的贿赂
+		icon = GFX_decision_generic_flags
+		visible = {
+			has_completed_focus = SHX_shan_xi_wang
+			has_country_leader = {
+				character = SHX_yan_xishan
+				ruling_only = yes
+			}
+		}
+		available = {
+			has_completed_focus = SHX_shan_xi_wang
+			has_country_leader = {
+				character = SHX_yan_xishan
+				ruling_only = yes
+			}
+		}
+		cancel_trigger = { QIE = { exists = no } }
+
+		custom_cost_text = SHX_QIE_eco_invest_choice_small_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_small_variable #Variable Set in History File
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 100
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 45 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_beijing_bribes"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_small_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_small = yes
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_beijing_bribes"
+			custom_effect_tooltip = SHX_beijing_bribes_tt
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+		}
+	}
+
 	SHX_build_a_mill_dec = {#建造大型炼钢厂
 		icon = GFX_decision_electrify
 		visible = {
@@ -2654,6 +2731,65 @@ SHX_QIE_ties = {#在北京的阴影下
 				}
 			}
 		}
+	}
+	SHX_distribute_research_grants = {#发放科研津贴
+		icon = GFX_decision_card
+		visible = {
+			has_completed_focus = SHX_xin_zhi_shi_jie_ceng
+		}
+		cancel_trigger = { QIE = { exists = no } }
+
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable 
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+
+		days_re_enable = 180
+		days_remove = 100
+		modifier = {
+			research_speed_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_distribute_research_grants"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_distribute_research_grants"
+		}
+
 	}
 }
 
