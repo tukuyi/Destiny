@@ -1078,6 +1078,13 @@ focus_tree = {
 				has_country_flag = SHX_yan_victory_over_gmj
 			}
 		}
+		offset = {
+			x = 1
+			y = 0
+			trigger = {
+				has_country_flag = SHX_feng_victory_over_yan
+			}
+		}
 
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
@@ -1145,6 +1152,13 @@ focus_tree = {
 			y = 0
 			trigger = {
 				has_country_flag = SHX_yan_victory_over_gmj
+			}
+		}
+		offset = {
+			x = -3
+			y = 0
+			trigger = {
+				has_country_flag = SHX_feng_victory_over_yan
 			}
 		}
 		
@@ -1225,7 +1239,10 @@ focus_tree = {
 		}
 		allow_branch = {
 			NOT = {
-				has_country_flag = SHX_yan_victory_over_gmj
+				OR = {
+					has_country_flag = SHX_yan_victory_over_gmj
+					has_country_flag = SHX_feng_victory_over_yan
+				}
 			}
 		}
 
@@ -1310,6 +1327,32 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
 		available = {
 			has_country_flag = shx_education_feng_path
 		}
@@ -1322,7 +1365,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhong_shi_ji_chu_jiao_yu"
-			
+			add_war_support = 0.1
+			SHX_strengthen_feng_medium = yes
+			swap_ideas = {
+				remove_idea = SHX_unfinished_education1
+				add_idea = SHX_unfinished_education_feng
+			}
+			custom_effect_tooltip = SHX_education_decision_unlock_tooltip
 		}
 	}
 
@@ -1334,13 +1383,42 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_zhong_shi_ji_chu_jiao_yu
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_nv_xing_jiao_yu"
-			
+			add_manpower = 50000
+			add_stability = 0.05
+			SHX_strengthen_feng_medium = yes
+			custom_effect_tooltip = SHX_education_decision_unlock_tooltip
 		}
 	}
 
@@ -1352,13 +1430,33 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_nv_xing_jiao_yu
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shi_dian_xiang_chun_jiao_yu"
-			
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+				name = SHX_experimental_school_to_village
+			}
+			country_event = {
+				id = shx.edu.8
+				days = 4 
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_experimental_school_concern
 		}
 	}	
 
@@ -1369,6 +1467,32 @@ focus_tree = {
 		x = 1
 		y = 1
 		cost = 5
+
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
 
 		available = {
 			has_country_flag = shx_education_yan_path
@@ -1382,7 +1506,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhong_shi_gao_deng_jiao_yu"
-			
+			swap_ideas = {
+				remove_idea = SHX_unfinished_education1
+				add_idea = SHX_unfinished_education_yan
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = electronics
+				name = SHX_emphasise_higher_education
+			}
+			SHX_strengthen_yan_medium = yes
+			custom_effect_tooltip = SHX_education_decision_unlock_tooltip
 		}
 	}
 
@@ -1394,13 +1529,46 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_zhong_shi_gao_deng_jiao_yu
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xi_ying_hai_wai_ren_cai"
-			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+				name = SHX_foreign_experts
+			}
+			SHX_strengthen_yan_medium = yes
+			custom_effect_tooltip = SHX_education_decision_unlock_tooltip
 		}
 	}
 
@@ -1412,13 +1580,28 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_xi_ying_hai_wai_ren_cai
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_kuo_zhan_zhi_ye_jiao_yu"
-			
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+				name = SHX_swords_to_plowshares
+			}
 		}
 	}
 
@@ -1430,6 +1613,14 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_nv_xing_jiao_yu
 			focus = SHX_xi_ying_hai_wai_ren_cai
@@ -1437,7 +1628,50 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xin_zhi_shi_jie_ceng"
-			
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			add_war_support = 0.10
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_country_flag = shx_education_yan_path
+				}
+				swap_ideas = {
+					remove_idea = SHX_unfinished_education_yan
+					add_idea = SHX_unfinished_education_yan1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = shx_education_feng_path
+				}
+				swap_ideas = {
+					remove_idea = SHX_unfinished_education_feng
+					add_idea = SHX_unfinished_education_feng1
+				}
+				add_political_power = 50
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_unfinished_education_yan
+						add_idea = SHX_unfinished_education_yan1
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_unfinished_education_feng
+						add_idea = SHX_unfinished_education_feng1
+					}
+					add_political_power = 50
+				}
+			}
 		}
 	}	
 
@@ -1459,7 +1693,28 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhu_jian_wei_li"
-			
+			622 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			1015 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1072 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}	
 
@@ -1481,7 +1736,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_gai_ge_shan_xi_da_xue"
-			
+			add_research_slot_until_three = yes
 		}
 	}	
 
@@ -1493,6 +1748,14 @@ focus_tree = {
 		y = 5
 		cost = 5
 
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_gai_ge_shan_xi_da_xue
 			focus = SHX_zhu_jian_wei_li
@@ -1500,7 +1763,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_zhan_zhong_chan_jie_ji"
-			
+			add_war_support = 0.10
+			1072 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -2592,6 +2863,14 @@ focus_tree = {
 		y = 7
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_fa_zhan_zhong_chan_jie_ji
 		}
@@ -2604,8 +2883,32 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_mo_fan_sheng"
-			
+			add_war_support = 0.15
+			if = {
+				limit = { has_idea = SHX_Ten_Year_Plan_begins }
+				remove_ideas = SHX_Ten_Year_Plan_begins
+			}
+			else_if = {
+				limit = { has_idea = SHX_Ten_Year_Plan_disrupted }
+				remove_ideas = 	SHX_Ten_Year_Plan_disrupted
+			}
+			if = {
+				limit = { has_country_leader = { character = SHX_feng_yuxiang } }
+				if = {
+					limit = { owns_state = 799 } #Guanzhong (Xi'an)
+					799 = { add_dynamic_modifier = { modifier = SHX_model_province_taiyuan } }
+				}
+				else = { 622 = { add_dynamic_modifier = { modifier = SHX_model_province_taiyuan } } } #Yulin
+			}
+			else = {
+				1072 = {
+					add_dynamic_modifier = {
+						modifier = SHX_model_province_taiyuan
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_PRODUCTION }
 	}
 #军事
  	focus = {
@@ -3824,6 +4127,358 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_mo_shou_cheng_gui"
+			
+		}
+	}
+#冯玉祥
+	focus = {
+		id = SHX_feng_yu_xiang
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
+		x = 0
+		y = 3
+		cost = 5
+
+		available = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		prerequisite = {
+			focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+		}
+		allow_branch = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_feng_yu_xiang"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_jie_na_zuo_yi
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_feng_yu_xiang
+		}
+		mutually_exclusive = {
+			focus = SHX_chong_hui_zheng_gui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_na_zuo_yi"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_chong_hui_zheng_gui
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_feng_yu_xiang
+		}
+		mutually_exclusive = {
+			focus = SHX_jie_na_zuo_yi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_hui_zheng_gui"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_she_li_sheng_xian
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 0
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_chong_hui_zheng_gui
+			focus = SHX_jie_na_zuo_yi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_she_li_sheng_xian"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_tu_di_ge_ming
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -1
+		y = 3
+		cost = 5
+
+		available = {
+			has_government = social_democrat
+		}
+		prerequisite = {
+			focus = SHX_she_li_sheng_xian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_tu_di_ge_ming"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_gai_zu_sheng_yi_hui
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -2
+		y = 4
+		cost = 5
+
+		available = {
+			has_government = social_democrat
+		}
+		prerequisite = {
+			focus = SHX_tu_di_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_gai_zu_sheng_yi_hui"
+			
+		}
+	}		
+
+	focus = {
+		id = SHX_tui_jin_gong_ye_hua
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 1
+		y = 3
+		cost = 5
+
+		available = {
+			has_government = authoritarian_democrat
+		}
+		prerequisite = {
+			focus = SHX_she_li_sheng_xian
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_jin_gong_ye_hua"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_yu_tai_yuan_shang_hui
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 2
+		y = 4
+		cost = 5
+
+		available = {
+			has_government = authoritarian_democrat
+		}
+		prerequisite = {
+			focus = SHX_tui_jin_gong_ye_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_yu_tai_yuan_shang_hui"
+			
+		}
+	}	
+
+
+	focus = {
+		id = SHX_xiang_cun_yi_wu_jiao_yu
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 0
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_tu_di_ge_ming
+			focus = SHX_tui_jin_gong_ye_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_xiang_cun_yi_wu_jiao_yu"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_gai_ge_sheng_fu
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 0
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_xiang_cun_yi_wu_jiao_yu
+		}
+		prerequisite = {
+			focus = SHX_gai_zu_sheng_yi_hui
+			focus = SHX_yu_tai_yuan_shang_hui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_gai_ge_sheng_fu"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_fa_yang_she_hui_zheng
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 1
+		y = 6
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_gai_ge_sheng_fu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_yang_she_hui_zheng"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_tui_xing_sheng_jian_yun_dong
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 1
+		y = 7
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_fa_yang_she_hui_zheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_yang_she_hui_zheng"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_tui_gao_fu_li_dai_yu
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -1
+		y = 6
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_gai_ge_sheng_fu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_gao_fu_li_dai_yu"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_gong_hui_ping_deng
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -1
+		y = 7
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_tui_gao_fu_li_dai_yu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_gong_hui_ping_deng"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_shan_xi_de_wei_lai
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 0
+		y = 8
+		cost = 5
+
+		prerequisite = {
+			focus = SHX_gong_hui_ping_deng
+		}
+		prerequisite = {
+			focus = SHX_tui_xing_sheng_jian_yun_dong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_de_wei_lai"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_jin_bu_zhi_sheng
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = -1
+		y = 9
+		cost = 5
+
+		available = {
+			has_government = social_democrat
+		}
+		prerequisite = {
+			focus = SHX_shan_xi_de_wei_lai
+		}
+		mutually_exclusive = {
+			focus = SHX_xian_dai_hua_mo_fan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_jin_bu_zhi_sheng"
+			
+		}
+	}
+
+	focus = {
+		id = SHX_xian_dai_hua_mo_fan
+		icon = GFX_goal_SHX_sheng_yi_hui
+		relative_position_id = SHX_feng_yu_xiang
+		x = 1
+		y = 9
+		cost = 5
+
+		available = {
+			has_government = authoritarian_democrat
+		}
+		prerequisite = {
+			focus = SHX_shan_xi_de_wei_lai
+		}
+		mutually_exclusive = {
+			focus = SHX_jin_bu_zhi_sheng
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_xian_dai_hua_mo_fan"
 			
 		}
 	}

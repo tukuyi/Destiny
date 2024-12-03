@@ -349,6 +349,7 @@ SHX_feng_victory_effect = {#冯玉祥大获全胜
 	}
 	mark_focus_tree_layout_dirty = yes 
 }
+
 #冯玉祥军队滚蛋
 SHX_feng_army_purged = {
 	hidden_effect = {
@@ -480,6 +481,7 @@ SHX_yan_army_purged = {
 		}
 	}
 }
+
 ###- 北京 -###
 SHX_convert_influence_to_war_support_effect = {
 	custom_effect_tooltip = SHX_convert_inf_to_ws_tooltip

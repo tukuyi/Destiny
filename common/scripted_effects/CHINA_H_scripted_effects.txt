@@ -258,6 +258,27 @@ china_add_research_slots = {
 	}
 }
 
+### 添加研究槽，直到三个，然后提供临时研究速度奖励
+add_research_slot_until_three = {
+	if = {
+		limit = { amount_research_slots < 3 }
+		add_research_slot = 1
+	}
+	else_if = {
+		limit = { has_idea = generic_research_advances }
+		modify_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = generic_research_advances
+			days = 730
+		}
+	}
+}
+
 ### 添加研究槽，直到四个，然后提供临时研究速度奖励
 add_research_slot_until_four = {
 	if = {

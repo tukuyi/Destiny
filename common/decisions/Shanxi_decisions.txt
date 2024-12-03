@@ -120,6 +120,576 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		}
 	}
 
+	#SHX Actual Education Decisions
+	SHX_reinforce_primary_school = {#山西的教育改革进程
+	 	icon = GFX_decision_cement_mixer
+		visible = {
+			has_completed_focus = SHX_zhong_shi_ji_chu_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_reinforce_primary_school"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_reinforce_primary_school"
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = { building = infrastructure size > 0 }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = { building = infrastructure size > 0 }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -100
+			}
+			SHX_strengthen_feng_medium = yes
+		}
+	}
+	SHX_increase_school_taxes = {#增加办学税
+		icon = GFX_decision_hand_grab
+		visible = {
+			has_completed_focus = SHX_zhong_shi_ji_chu_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.0025
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_increase_school_taxes"
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_increase_school_taxes"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -80
+			}
+		}
+	}
+
+	SHX_clamp_traditional_roles = {#淡化传统女性定位
+		visible = {
+			has_completed_focus = SHX_nv_xing_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+		fire_only_once = yes
+		icon = GFX_decision_freedom
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = 0.25
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_clamp_traditional_roles"
+			add_stability = -0.05
+			log = "[GetDateText] [Root.GetName]: decision SHX_clamp_traditional_roles"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_clamp_traditional_roles"
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -80
+			}
+		}
+	}
+	SHX_womens_college = {#妇女大学教育
+		icon = GFX_decision_cash_flow
+		visible = {
+			has_completed_focus = SHX_nv_xing_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.0025
+			industrial_capacity_factory = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_womens_college"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_womens_college"
+			add_political_power = 50
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -100
+			}
+		}
+	}
+
+	SHX_eliminate_academic_corruption = {#消灭学术腐败
+		icon = GFX_decision_give_cash
+		visible = {
+			has_completed_focus = SHX_zhong_shi_gao_deng_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 1
+			research_speed_factor = 0.25
+			political_power_gain = -0.5
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_eliminate_academic_corruption"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_eliminate_academic_corruption"
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -80
+			}
+		}
+	}
+	SHX_cultivate_youthful_elite = {#培育青年菁英
+		icon = GFX_decision_peace_dove
+		visible = {
+			has_completed_focus = SHX_zhong_shi_gao_deng_jiao_yu
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.5
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_cultivate_youthful_elite"
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.03
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_cultivate_youthful_elite"
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -80
+			}
+			SHX_strengthen_yan_medium = yes
+		}
+	}
+
+	SHX_cultivate_foreign_aid_connections = {#利用外援网络
+		icon = GFX_decision_global_trade
+		visible = {
+			has_completed_focus = SHX_xi_ying_hai_wai_ren_cai
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			war_support_weekly = -0.0025
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_cultivate_foreign_aid_connections"
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			SHX_QIE_investment_medium = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_cultivate_foreign_aid_connections"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = engineers_tech
+				name = SHX_cultivate_foreign_aid_connections
+			}
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -80
+			}
+		}
+	}
+	SHX_expand_research_Beijing = {#与北京学术合作
+		icon = GFX_decision_generic_flags
+		visible = {
+			has_completed_focus = SHX_xi_ying_hai_wai_ren_cai
+			NOT = { has_completed_focus = SHX_xin_zhi_shi_jie_ceng }
+		}
+
+		fire_only_once = yes
+		priority = 45
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 0
+		days_remove = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_expand_research_Beijing"
+			SHX_QIE_investment_small = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_expand_research_Beijing"
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = electronics
+				name = SHX_expand_research_Beijing
+			}
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -85
+			}
+		}
+	}
+
+	#Feng Counter Missions
+	Feng_taking_SHX_education_for_all = {#重视基础教育
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_zhong_shi_ji_chu_jiao_yu_desc
+		fire_only_once = yes
+		icon = GFX_decision_scales
+		priority = 50
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Feng_taking_SHX_education_for_all"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Feng_taking_SHX_education_for_all"
+			add_war_support = 0.05
+			SHX_strengthen_feng_small = yes
+			set_country_flag = SHX_education_for_all_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.1 days = 1 }
+			}
+		}
+	}
+	Feng_taking_increase_school_taxes = {#增加办学税
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_increase_school_taxes_desc
+		fire_only_once = yes
+		icon = GFX_decision_hand_grab
+		priority = 50
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Feng_taking_increase_school_taxes"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Feng_taking_increase_school_taxes"
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -15
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove Feng_taking_increase_school_taxes"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			set_country_flag = SHX_increase_school_taxes_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.1 days = 1 }
+			}
+		}
+	}
+	Feng_taking_womens_education = {#保护女性受教育权
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_nv_xing_jiao_yu_desc
+		fire_only_once = yes
+		icon = GFX_decision_freedom
+		priority = 50
+
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Feng_taking_womens_education"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Feng_taking_womens_education"
+			add_manpower = 25000
+			SHX_strengthen_feng_small = yes
+			set_country_flag = SHX_feng_womens_education_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.1 days = 1 }
+			}
+		}
+	}
+	Feng_taking_clamp_down_traditional_roles = {#淡化传统女性定位
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_clamp_traditional_roles_desc
+		fire_only_once = yes
+		icon = GFX_decision_hand_palm_down
+		priority = 50
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = 0.125
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Feng_taking_clamp_down_traditional_roles"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Feng_taking_clamp_down_traditional_roles"
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -15
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove Feng_taking_clamp_down_traditional_roles"
+			set_country_flag = SHX_clamp_down_traditional_roles_completed
+			add_stability = -0.025
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.1 days = 1 }
+			}
+		}
+	}
+
+	Yan_taking_emphasise_higher_education = {#重视高等教育
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_zhong_shi_gao_deng_jiao_yu_desc
+		fire_only_once = yes
+		icon = GFX_decision_trumpet
+		priority = 50
+
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Yan_taking_emphasise_higher_education"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Yan_taking_emphasise_higher_education"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+				name = Yan_taking_emphasise_higher_education
+			}
+			SHX_strengthen_yan_small = yes
+			set_country_flag = SHX_yan_emphasise_higher_education_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.4 days = 1 }
+			}
+		}
+	}
+	Yan_taking_crack_down_on_corruption = {#严打教育腐败
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_eliminate_academic_corruption_desc
+		fire_only_once = yes
+		icon = GFX_decision_hand_palm_down
+		priority = 50
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			research_speed_factor = 0.10
+			political_power_gain = -0.25
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Yan_taking_crack_down_on_corruption"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Yan_taking_crack_down_on_corruption"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.015
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove Yan_taking_crack_down_on_corruption"
+
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -30
+			}
+			set_country_flag = SHX_yan_crack_down_on_corruption_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.4 days = 1 }
+			}
+		}
+	}
+	Yan_taking_foreign_experts = {#外国科学人才
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_xi_ying_hai_wai_ren_cai_desc
+		fire_only_once = yes
+		icon = GFX_decision_global_trade
+		priority = 50
+
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Yan_taking_foreign_experts"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Yan_taking_foreign_experts"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+				name = Yan_taking_foreign_experts
+			}
+			SHX_strengthen_yan_small = yes
+			set_country_flag = SHX_yan_foreign_experts_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.4 days = 1 }
+			}
+		}
+	}
+	Yan_taking_cultivate_foreign_aid_connections = {#利用外援网络
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_educational_reform_completed_flag
+		}
+		desc = SHX_cultivate_foreign_aid_connections_desc
+		fire_only_once = yes
+		icon = GFX_decision_hand_palm_down
+		priority = 50
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			war_support_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete Yan_taking_cultivate_foreign_aid_connections"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout Yan_taking_cultivate_foreign_aid_connections"
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = -30
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove Yan_taking_cultivate_foreign_aid_connections"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			set_country_flag = SHX_yan_cultivate_foreign_aid_connections_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.4 days = 1 }
+			}
+		}
+	}
+
 	#Shanxi Agriculture Decisions
 	SHX_agricultural_reform_mission_timer = {#山西的土地改革进程
 		icon = GFX_decision_generic_agriculture

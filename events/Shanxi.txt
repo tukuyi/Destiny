@@ -520,6 +520,20 @@ country_event = {#任之恭归乡！
 		add_political_power = 20
 	}
 }
+country_event = {#乡村教育实验学校
+	id = shx.edu.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.8" }
+	title = shx.edu.8.t
+	desc = shx.edu.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.edu.8.a
+		add_political_power = 25
+	}
+}
 
 ########################################
 ########-       农业          -#########
@@ -1756,7 +1770,7 @@ country_event = {#国民军起义
 		}
 		hidden_effect = {
 			end_coalition = yes
-
+			
 			add_ideas = {
 				SHX_He_Qigong_hog_ade
 				SHX_Su_Tiren_for_ade

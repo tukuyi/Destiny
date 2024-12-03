@@ -466,6 +466,45 @@ ideas = {
 				political_power_gain = -0.1
 			}
 		}
+		SHX_unfinished_education_yan = {#拓展技术教育
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education_yan" }
+			picture = generic_research_increase
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = -0.25
+				consumer_goods_factor = 0.1
+				political_power_gain = -0.1
+			}
+		}
+		SHX_unfinished_education_yan1 = {#现代化大学教育
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education_yan1" }
+			picture = generic_research_increase
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = -0.2
+				consumer_goods_factor = 0.1
+				political_power_gain = -0.1
+			}
+		}
+		SHX_unfinished_education_feng = {#扩充入学途径
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education_feng" }
+			picture = generic_research_increase
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = -0.15
+				consumer_goods_factor = 0.1
+				political_power_gain = -0.1
+			}
+		}
+		SHX_unfinished_education_feng1 = {#普及小学教育
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education_feng1" }
+			picture = generic_research_increase
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = 0.05
+				consumer_goods_factor = 0.1
+			}
+		}
 
 		###Agricultural Spirits ###
 		SHX_agriculture_reform1 = {#承诺土地改革
@@ -1330,6 +1369,21 @@ ideas = {
 			}
 			research_bonus = {
 				motorized_equipment = 0.05
+			}
+		}
+		SHX_experimental_school_concern = {#乡村教育实验学校
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_experimental_school_concern" }
+			allowed = { original_tag = SHX }
+			picture = LIT_invested_in_farms
+			traits = { oil_concern }
+			available = {
+				has_completed_focus = SHX_kuo_zhan_zhi_ye_jiao_yu
+			}
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+			}
+			research_bonus = {
+				construction_tech = 0.15
 			}
 		}
 	}
