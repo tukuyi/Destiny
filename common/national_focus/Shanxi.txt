@@ -14,1341 +14,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 1775 y = 850 }
-	focus = {
-		id = SHX_The_Model_Governor
-		icon = GFX_goal_china_yan_xishan
-		allow_branch = { NOT = { has_country_flag = SHX_Feng_in_power } }
-		x = 4
-		y = 0
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_Model_Governor"
-			add_political_power = 50
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_A_Benevolent_Dictatorship
-		icon = GFX_goal_FIU_popular_internationalism
-		prerequisite = {
-			focus = SHX_The_Model_Governor
-		}
-		relative_position_id = SHX_The_Model_Governor
-		x = -4
-		y = 1
-		cost = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_A_Benevolent_Dictatorship"
-			add_stability = 0.05
-			set_temp_variable = { SHX_xishan_gov_change = 2 }
-			SHX_add_xishan_gov = yes
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_A_Progressive_State
-		icon = GFX_goal_TIB_Peaceful_Reformation_Guided_Piety
-		prerequisite = {
-			focus = SHX_A_Benevolent_Dictatorship
-			focus = SHX_The_First_Steps_To_Modernisation
-		}
-		relative_position_id = SHX_A_Benevolent_Dictatorship
-		x = 0
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_A_Progressive_State"
-			increase_ruling_party_popularity_by_5 = yes
-		}
-	}
-	focus = {
-		id = SHX_With_Progressive_Customs
-		icon = GFX_goal_generic_culture2
-		prerequisite = {
-			focus = SHX_A_Progressive_State
-		}
-		relative_position_id = SHX_A_Progressive_State
-		x = 0
-		y = 1
-		cost = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_With_Progressive_Customs"
-			add_stability = 0.05
-			set_temp_variable = { SHX_xishan_gov_change = 2 }
-			SHX_add_xishan_gov = yes
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_The_First_Steps_To_Modernisation
-		icon = GFX_goal_MON_Modernized_Pastoral_Arcadianism
-		prerequisite = {
-			focus = SHX_The_Model_Governor
-		}
-		relative_position_id = SHX_The_Model_Governor
-		x = -1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_First_Steps_To_Modernisation"
-			1072 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			1015 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_The_Land_Reform
-		icon = GFX_UKR_Agrarian_Reform
-		available = {
-			has_political_power > 50
-		}
-		prerequisite = {
-			focus = SHX_A_Benevolent_Dictatorship
-			focus = SHX_The_First_Steps_To_Modernisation
-		}
-		relative_position_id = SHX_The_First_Steps_To_Modernisation
-		x = 0
-		y = 1
-		cost = 6
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_Land_Reform"
-			add_political_power = -50
-			add_stability = 0.05
-			1072 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			1015 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			hidden_effect = {
-				country_event = {
-					id = shx.301
-					days = 5
-					random = 240
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_New_Army_Staff
-		icon = GFX_goal_generic_army_high_command
-		prerequisite = {
-			focus = SHX_The_Land_Reform
-		}
-		relative_position_id = SHX_The_Land_Reform
-		x = -1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_New_Army_Staff"
-			army_experience = 20
-			set_temp_variable = { SHX_xishan_mil_change = 5 }
-			SHX_add_xishan_mil = yes
-		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
-	}
-	focus = {
-		id = SHX_The_Soldier_And_His_Labour
-		icon = GFX_goal_NEE_From_Soldiers_Rebuilders
-		prerequisite = {
-			focus = SHX_The_Land_Reform
-		}
-		relative_position_id = SHX_The_Land_Reform
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_Soldier_And_His_Labour"
-			army_experience = 20
-			set_temp_variable = { SHX_xishan_mil_change = 5 }
-			SHX_add_xishan_mil = yes
-			1072 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			hidden_effect = {
-				country_event = {
-					id = shx.300
-					days = 5
-					random = 240
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_The_Model_Province
-		icon = GFX_goal_NYC_Shining_City
-		prerequisite = {
-			focus = SHX_With_Progressive_Customs
-		}
-		prerequisite = {
-			focus = SHX_New_Army_Staff
-		}
-		relative_position_id = SHX_New_Army_Staff
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_Model_Province"
-			1072 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			1015 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_The_Model_Citizen
-		icon = GFX_goal_NYC_People_Power
-		prerequisite = {
-			focus = SHX_New_Army_Staff
-		}
-		prerequisite = {
-			focus = SHX_The_Soldier_And_His_Labour
-		}
-		relative_position_id = SHX_New_Army_Staff
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_The_Model_Citizen"
-			#set_temp_variable = { SHX_xishan_mil_change = 5 }
-			#SHX_add_xishan_mil = yes
-			add_war_support = 0.2
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
-		id = SHX_Public_Education
-		icon = GFX_goal_CZE_rural_education
-		prerequisite = {
-			focus = SHX_The_Model_Province
-		}
-		prerequisite = {
-			focus = SHX_The_Model_Citizen
-		}
-		relative_position_id = SHX_New_Army_Staff
-		x = 0
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Public_Education"
-			SZC_add_research_slot = yes
-		}
-	}
-	focus = {
-		id = SHX_Develop_Yan_Xishan_Thought
-		icon = GFX_goal_FNG_Xishan_Thought
-		prerequisite = {
-			focus = SHX_The_Model_Governor
-		}
-		relative_position_id = SHX_The_Model_Governor
-		x = 3
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Develop_Yan_Xishan_Thought"
-			add_ideas = SHX_yan_xishan_thought_1
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_Virtue_Knowledge_Welfare
-		icon = GFX_goal_AUS_big_brain
-		mutually_exclusive = {
-			focus = SHX_Self_Reflection
-		}
-		prerequisite = {
-			focus = SHX_Develop_Yan_Xishan_Thought
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = -1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Virtue_Knowledge_Welfare"
-			swap_ideas = {
-				remove_idea = SHX_yan_xishan_thought_1
-				add_idea = SHX_yan_xishan_thought_2
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = SHX_Self_Reflection
-		icon = GFX_goal_SQI_confucianism
-		mutually_exclusive = {
-			focus = SHX_Virtue_Knowledge_Welfare
-		}
-		prerequisite = {
-			focus = SHX_Develop_Yan_Xishan_Thought
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Self_Reflection"
-			swap_ideas = {
-				remove_idea = SHX_yan_xishan_thought_1
-				add_idea = SHX_yan_xishan_thought_3
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_Follow_Tradition
-		icon = GFX_goal_FNG_Defend_Confucius
-		mutually_exclusive = {
-			focus = SHX_Move_With_The_Times
-		}
-		prerequisite = {
-			focus = SHX_Virtue_Knowledge_Welfare
-			focus = SHX_Self_Reflection
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = 1
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Follow_Tradition"
-			add_stability = 0.1
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_Move_With_The_Times
-		icon = GFX_goal_AUS_Industrialisms_Past_Present_Future
-		mutually_exclusive = {
-			focus = SHX_Follow_Tradition
-		}
-		prerequisite = {
-			focus = SHX_Virtue_Knowledge_Welfare
-			focus = SHX_Self_Reflection
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = -1
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Move_With_The_Times"
-			add_political_power = 100
-			set_temp_variable = { ideology_change_var = 5 }
-			change_ruling_party_popularity = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_From_The_Bottom_Up
-		icon = GFX_goal_MEX_Worker_Base
-		mutually_exclusive = {
-			focus = SHX_From_The_Top_Down
-		}
-		prerequisite = {
-			focus = SHX_Move_With_The_Times
-			focus = SHX_Follow_Tradition
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = -1
-		y = 3
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_From_The_Bottom_Up"
-			custom_effect_tooltip = SHX_From_The_Bottom_Up_tooltip
-			hidden_effect = {
-				if = { #western
-					limit = {
-						has_idea = SHX_yan_xishan_thought_2
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_2
-						add_idea = SHX_yan_xishan_thought_4
-					}
-				}
-				else_if = { #homegrown
-					limit = {
-						has_idea = SHX_yan_xishan_thought_3
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_3
-						add_idea = SHX_yan_xishan_thought_6
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = SHX_From_The_Top_Down
-		icon = GFX_goal_collaborate_local_elites
-		mutually_exclusive = {
-			focus = SHX_From_The_Bottom_Up
-		}
-		prerequisite = {
-			focus = SHX_Follow_Tradition
-			focus = SHX_Move_With_The_Times
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = 1
-		y = 3
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_From_The_Top_Down"
-			custom_effect_tooltip = SHX_From_The_Top_Down_tooltip
-			hidden_effect = {
-				if = { #western
-					limit = {
-						has_idea = SHX_yan_xishan_thought_2
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_2
-						add_idea = SHX_yan_xishan_thought_5
-					}
-				}
-				else_if = { #homegrown
-					limit = {
-						has_idea = SHX_yan_xishan_thought_3
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_3
-						add_idea = SHX_yan_xishan_thought_7
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = SHX_Peaceful_Existence
-		icon = GFX_goal_GUA_Pacifism_World_Stage
-		mutually_exclusive = {
-			focus = SHX_Maintain_The_Edge
-		}
-		prerequisite = {
-			focus = SHX_From_The_Bottom_Up
-			focus = SHX_From_The_Top_Down
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = -1
-		y = 4
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Peaceful_Existence"
-			custom_effect_tooltip = SHX_Peaceful_Existence_tooltip
-			hidden_effect = {
-				if = { #western + bottom up
-					limit = {
-						has_idea = SHX_yan_xishan_thought_4
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_4
-						add_idea = SHX_yan_xishan_thought_8
-					}
-				}
-				else_if = { #western + top_down
-					limit = {
-						has_idea = SHX_yan_xishan_thought_5
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_5
-						add_idea = SHX_yan_xishan_thought_10
-					}
-				}
-				else_if = { #homegrown + bottom up
-					limit = {
-						has_idea = SHX_yan_xishan_thought_6
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_6
-						add_idea = SHX_yan_xishan_thought_12
-					}
-				}
-				else_if = { #homegrown + top_down
-					limit = {
-						has_idea = SHX_yan_xishan_thought_7
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_7
-						add_idea = SHX_yan_xishan_thought_14
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
-	}
-	focus = {
-		id = SHX_Maintain_The_Edge
-		icon = GFX_goal_AOG_Reshape_East_Our_Image
-		mutually_exclusive = {
-			focus = SHX_Peaceful_Existence
-		}
-		prerequisite = {
-			focus = SHX_From_The_Bottom_Up
-			focus = SHX_From_The_Top_Down
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = 1
-		y = 4
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Maintain_The_Edge"
-			custom_effect_tooltip = SHX_Maintain_The_Edge_tooltip
-			hidden_effect = {
-				if = { #western + bottom up
-					limit = {
-						has_idea = SHX_yan_xishan_thought_4
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_4
-						add_idea = SHX_yan_xishan_thought_9
-					}
-				}
-				else_if = { #western + top_down
-					limit = {
-						has_idea = SHX_yan_xishan_thought_5
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_5
-						add_idea = SHX_yan_xishan_thought_11
-					}
-				}
-				else_if = { #homegrown + bottom up
-					limit = {
-						has_idea = SHX_yan_xishan_thought_6
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_6
-						add_idea = SHX_yan_xishan_thought_13
-					}
-				}
-				else_if = { #homegrown + top_down
-					limit = {
-						has_idea = SHX_yan_xishan_thought_7
-					}
-					swap_ideas = {
-						remove_idea = SHX_yan_xishan_thought_7
-						add_idea = SHX_yan_xishan_thought_15
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
-	}
-	focus = {
-		id = SHX_Fluid_Like_Water
-		icon = GFX_goal_AUS_tauernkraftwerk_hydro_power
-		prerequisite = {
-			focus = SHX_Peaceful_Existence
-			focus = SHX_Maintain_The_Edge
-		}
-		relative_position_id = SHX_Develop_Yan_Xishan_Thought
-		x = 0
-		y = 5
-		cost = 6
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Fluid_Like_Water"
-			add_political_power = 200
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	###Economic Tree
-	focus = {
-		id = SHX_expand_the_taiyuan_railway
-		icon = GFX_goal_POL_Warszawa_Glowna_Railway_Station
-		cost = 5
-		x = 15
-		y = 0
-		available = {
-			owns_state = 1072
-			owns_state = 1015
-			has_full_control_of_state = 1072
-			has_full_control_of_state = 1015
-			has_country_flag = SHX_industry_start_flag
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_expand_the_taiyuan_railway"
-			1072 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			1015 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			build_railway = {
-				start_province = 4174
-				target_province = 1575
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_prepare_datong_connections
-		icon = GFX_goal_TIB_Rails_Around_Tanggula_Pass
-		cost = 5
-		prerequisite = { focus = SHX_expand_the_taiyuan_railway }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -2
-		y = 1
-		available = {
-			owns_state = 1015
-			has_full_control_of_state = 1015
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_prepare_datong_connections"
-			add_political_power = 50
-			1015 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_the_datong_yanan_railway
-		icon = GFX_goal_ROM_Railway_Investments
-		cost = 5
-		prerequisite = { focus = SHX_prepare_datong_connections }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -4
-		y = 2
-		available = {
-			owns_state = 615
-			owns_state = 1015
-			owns_state = 622
-			has_full_control_of_state = 615
-			has_full_control_of_state = 1015
-			has_full_control_of_state = 622
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_the_datong_yanan_railway"
-			615 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			1015 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			build_railway = {
-				path = { 1962 1203 1027 10480 12432 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_standardise_new_railway_gauges
-		icon = GFX_thenorthernraillink
-		cost = 8
-		prerequisite = { focus = SHX_prepare_datong_connections }
-		mutually_exclusive = { focus = SHX_continue_narrow_gauges }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -2
-		y = 2
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_standardise_new_railway_gauges"
-			add_ideas = SHX_standardised_railway_gauges
-			add_stability = 0.05
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_get_more_imports
-		icon = GFX_goal_POL_International_Trade_Reform
-		cost = 8
-		prerequisite = { focus = SHX_the_datong_yanan_railway }
-		prerequisite = { focus = SHX_standardise_new_railway_gauges }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -3
-		y = 3
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_get_more_imports"
-			add_ideas = SHX_more_imports_idea
-			custom_effect_tooltip = SHX_will_cause_some_opium_trade_tooltip
-			hidden_effect = {
-				country_event = {
-					id = shx.16
-					days = 30
-					random = 240
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_fight_the_opium_trade
-		icon = GFX_seedthepoppies
-		cost = 8
-		prerequisite = { focus = SHX_get_more_imports }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -3
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_fight_the_opium_trade"
-			custom_effect_tooltip = SHX_get_fucked_opium_trade_tooltip
-		}
-	}
-	focus = {
-		id = SHX_expand_to_xian
-		icon = GFX_BAY_RAILWAYS
-		cost = 5
-		prerequisite = {
-			focus = SHX_standardise_new_railway_gauges
-			focus = SHX_continue_narrow_gauges
-		}
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = -1
-		y = 3
-		available = {
-			owns_state = 799
-			owns_state = 622
-			has_full_control_of_state = 799
-			has_full_control_of_state = 622
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_expand_to_xian"
-			799 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			build_railway = {
-				path = { 1962 1203 1027 10480 12432 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_continue_narrow_gauges
-		icon = GFX_goal_NIC_Pacific_Rail_Expansion
-		cost = 8
-		prerequisite = { focus = SHX_prepare_datong_connections }
-		mutually_exclusive = { focus = SHX_standardise_new_railway_gauges }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 0
-		y = 2
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_continue_narrow_gauges"
-			add_ideas = SHX_narrow_railway_gauges_1
-			add_political_power = 50
-		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_military_infrastructure
-		icon = GFX_goal_generic_seize_railway
-		cost = 8
-		prerequisite = { focus = SHX_continue_narrow_gauges }
-		prerequisite = { focus = SHX_improve_roads }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 1
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_military_infrastructure"
-			add_war_support = 0.05
-			622 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			swap_ideas = {
-				remove_idea = SHX_narrow_railway_gauges_1
-				add_idea = SHX_narrow_railway_gauges_2
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_rural_industry
-		icon = GFX_BBR_industrializing_land
-		cost = 8
-		available = {
-			has_country_flag = SHX_agriculture_modernise
-		}
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 9
-		y = 0
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_rural_industry"
-			1015 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_agricultural_economy
-		icon = GFX_USA_sweep_farm_tariffs
-		cost = 8
-		prerequisite = { focus = SHX_rural_industry }
-		relative_position_id = SHX_rural_industry
-		x = 0
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_agricultural_economy"
-			add_ideas = SHX_agri_eco_idea
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_self_reliance
-		icon = GFX_goal_VIN_agricultural_modernization
-		cost = 8
-		prerequisite = { focus = SHX_agricultural_economy }
-		mutually_exclusive = { focus = SHX_farm_cooperation }
-		relative_position_id = SHX_agricultural_economy
-		x = -1
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_self_reliance"
-			swap_ideas = {
-				remove_idea = SHX_agri_eco_idea
-				add_idea = SHX_self_reliance_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_urban_development
-		icon = GFX_goal_NEE_Meritocracy_Focused_Growing_Urban_Heart_alt
-		cost = 8
-		prerequisite = { focus = SHX_self_reliance }
-		relative_position_id = SHX_self_reliance
-		x = 0
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_urban_development"
-			1072 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_Industrial_Development
-		icon = GFX_RUS_Money_For_Industrialization
-		prerequisite = { focus = SHX_urban_development }
-		relative_position_id = SHX_urban_development
-		x = 0
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Industrial_Development"
-			swap_ideas = {
-				remove_idea = SHX_self_reliance_idea
-				add_idea = SHX_self_reliance_idea2
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_farm_cooperation
-		icon = GFX_NEE_needy_farmers
-		cost = 8
-		prerequisite = { focus = SHX_agricultural_economy }
-		mutually_exclusive = { focus = SHX_self_reliance }
-		relative_position_id = SHX_agricultural_economy
-		x = 1
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_farm_cooperation"
-			swap_ideas = {
-				remove_idea = SHX_agri_eco_idea
-				add_idea = SHX_farm_coop_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_ban_opium_trade
-		icon = GFX_seedthemeverywhere
-		cost = 8
-		prerequisite = { focus = SHX_rural_industry }
-		relative_position_id = SHX_rural_industry
-		x = 2
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_ban_opium_trade"
-			add_stability = 0.05
-			add_political_power = 75
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_promote_things_other_than_opium_to_farm
-		icon = GFX_goal_SKM_Diversify_Crops
-		cost = 8
-		prerequisite = { focus = SHX_ban_opium_trade }
-		prerequisite = { focus = SHX_farm_cooperation }
-		relative_position_id = SHX_farm_cooperation
-		x = 1
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_promote_things_other_than_opium_to_farm"
-			swap_ideas = {
-				remove_idea = SHX_farm_coop_idea
-				add_idea = SHX_farm_coop_idea2
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = SHX_Combat_Soil_Erosion
-		icon = GFX_goal_TEX_soil_conservation
-		prerequisite = { focus = SHX_promote_things_other_than_opium_to_farm }
-		relative_position_id = SHX_promote_things_other_than_opium_to_farm
-		x = 0
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Combat_Soil_Erosion"
-			swap_ideas = {
-				remove_idea = SHX_farm_coop_idea2
-				add_idea = SHX_farm_coop_idea3
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_Urbanisation_In_Taiyuan
-		icon = GFX_goal_KIV_urban
-		prerequisite = {
-			focus = SHX_urban_development
-			focus = SHX_promote_things_other_than_opium_to_farm
-		}
-		relative_position_id = SHX_urban_development
-		x = 1
-		y = 1
-		cost = 6
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Urbanisation_In_Taiyuan"
-			1072 = {
-				add_extra_state_shared_building_slots = 2
-				set_state_category = six
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_begin_the_modernisation
-		icon = GFX_goal_MON_Modernized_Pastoral_Arcadianism
-		cost = 15
-		prerequisite = {
-			focus = SHX_expand_the_taiyuan_railway
-			focus = SHX_rural_industry
-		}
-		select_effect = {
-			country_event = {
-				id = shx.17
-				days = 5
-			}
-		}
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 3
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_begin_the_modernisation"
-			effect_tooltip = {
-				country_event = { id = shx.17 }
-			}
-			hidden_effect = {
-				country_event = { id = shx.18 }
-			}
-		}
-	}
-	focus = {
-		id = SHX_remove_corrupt_bosses
-		icon = GFX_goal_KIV_no_corruption
-		cost = 15
-		prerequisite = {
-			focus = SHX_expand_the_taiyuan_railway
-			focus = SHX_rural_industry
-		}
-		select_effect = {
-			country_event = {
-				id = shx.19
-				days = 75
-			}
-		}
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 5
-		y = 1
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_remove_corrupt_bosses"
-			effect_tooltip = {
-				country_event = { id = shx.19 }
-			}
-			hidden_effect = {
-				country_event = { id = shx.20 }
-			}
-		}
-	}
-	focus = {
-		id = SHX_Land_Reform_Programs
-		icon = GFX_goal_SKM_Dire_Need_Land_Reforms
-		prerequisite = {
-			focus = SHX_promote_things_other_than_opium_to_farm
-			focus = SHX_urban_development
-		}
-		prerequisite = { focus = SHX_remove_corrupt_bosses }
-		relative_position_id = SHX_remove_corrupt_bosses
-		x = 2
-		y = 3
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Land_Reform_Programs"
-			effect_tooltip = {
-				add_timed_idea = {
-					idea = SHX_ongoing_land_reform
-					days = 300
-				}
-			}
-			custom_effect_tooltip = UPC_after_reforms_tooltip
-			effect_tooltip = {
-				add_stability = 0.10
-				1015 = { set_state_category = four }
-				622 = { set_state_category = four }
-				add_ideas = SHX_land_reform_completed
-			}
-			hidden_effect = {
-				add_ideas = SHX_ongoing_land_reform
-				country_event = {
-					id = shx.302
-					days = 300
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = SHX_improve_roads
-		icon = GFX_CSA_red_roads
-		cost = 5
-		prerequisite = { focus = SHX_begin_the_modernisation }
-		prerequisite = { focus = SHX_remove_corrupt_bosses }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 2
-		y = 2
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_improve_roads"
-			1072 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			1015 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_factory_funding
-		icon = GFX_GRU_german_industrial_miracle-4038
-		cost = 8
-		prerequisite = { focus = SHX_improve_roads }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 2
-		y = 3
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_factory_funding"
-			1015 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_expand_coal_mines
-		icon = GFX_goal_ALB_Resource_Miner
-		cost = 8
-		prerequisite = { focus = SHX_begin_the_modernisation }
-		prerequisite = { focus = SHX_remove_corrupt_bosses }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 4
-		y = 2
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_expand_coal_mines"
-			1015 = {
-				add_resource = {
-					type = steel
-					amount = 6
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			1072 = {
-				add_resource = {
-					type = steel
-					amount = 4
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_invest_in_companies
-		icon = GFX_goal_CSA_capital_investments
-		cost = 8
-		prerequisite = { focus = SHX_begin_the_modernisation }
-		prerequisite = { focus = SHX_remove_corrupt_bosses }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 6
-		y = 2
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_invest_in_companies"
-			add_ideas = SHX_investment_idea
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_beat_chinese_company_competition
-		icon = GFX_goal_KIV_equal_market
-		cost = 8
-		prerequisite = { focus = SHX_invest_in_companies }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 6
-		y = 3
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_beat_chinese_company_competition"
-			swap_ideas = {
-				remove_idea = SHX_investment_idea
-				add_idea = SHX_investment_idea2
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_modern_manifacturing_techniques
-		icon = GFX_goal_POL_Contemporary_Assembly_Lines
-		cost = 8
-		prerequisite = { focus = SHX_expand_coal_mines }
-		prerequisite = { focus = SHX_factory_funding }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 3
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_modern_manifacturing_techniques"
-			add_tech_bonus = {
-				name = SHX_modern_manifacturing_techniques
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = SHX_improve_metal_refining
-		icon = GFX_goal_AOG_Metal_Cog_Economy
-		cost = 8
-		prerequisite = { focus = SHX_expand_coal_mines }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 4
-		y = 3
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_improve_metal_refining"
-			1015 = {
-				add_resource = {
-					type = steel
-					amount = 4
-				}
-			}
-			622 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_resource = {
-					type = steel
-					amount = 7
-				}
-				add_resource = {
-					type = tungsten
-					amount = 3
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_purchase_new_equipment_designs
-		icon = GFX_goal_OTT_arms_purchase
-		cost = 8
-		prerequisite = { focus = SHX_improve_metal_refining }
-		prerequisite = { focus = SHX_beat_chinese_company_competition }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 5
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_purchase_new_equipment_designs"
-			add_tech_bonus = {
-				name = SHX_purchase_new_equipment_designs
-				bonus = 0.25
-				uses = 3
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = SHX_further_modernisation
-		icon = GFX_goal_ALB_Modernization
-		cost = 10
-		prerequisite = { focus = SHX_modern_manifacturing_techniques }
-		prerequisite = { focus = SHX_improve_metal_refining }
-		prerequisite = { focus = SHX_beat_chinese_company_competition }
-		relative_position_id = SHX_expand_the_taiyuan_railway
-		x = 4
-		y = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_further_modernisation"
-			1015 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			622 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			1072 = {
-				add_resource = {
-					type = steel
-					amount = 2
-				}
-			}
-			1015 = {
-				add_resource = {
-					type = steel
-					amount = 6
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
+	continuous_focus_position = { x = 1775 y = 2000 }
 
 	###Military Tree
 	focus = {
@@ -1950,292 +616,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SHX_Christian_Statism
-		icon = GFX_goal_NYC_Christian_Front
-		allow_branch = { has_country_flag = SHX_Feng_in_power }
-		x = 3
-		y = 0
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Christian_Statism"
-			add_ideas = SHX_christian_statism_1
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = SHX_Rural_Literacy_Programs
-		icon = GFX_goal_CZE_rural_god
-		prerequisite = {
-			focus = SHX_Christian_Statism
-		}
-		relative_position_id = SHX_Christian_Statism
-		x = -1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Rural_Literacy_Programs"
-			if = { #has christian education
-				limit = { has_idea = SHX_christian_statism_8 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_8
-					add_idea = SHX_christian_statism_9
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_1
-					add_idea = SHX_christian_statism_2
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_A_Church_Of_Our_Own
-		icon = GFX_goal_generic_cathedral
-		prerequisite = {
-			focus = SHX_Rural_Literacy_Programs
-		}
-		relative_position_id = SHX_Rural_Literacy_Programs
-		x = 0
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_A_Church_Of_Our_Own"
-			if = { #has christian education
-				limit = { has_idea = SHX_christian_statism_9 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_9
-					add_idea = SHX_christian_statism_10
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_1
-					add_idea = SHX_christian_statism_3
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_Sunday_Schools
-		icon = GFX_goal_TEX_rural_schools
-		prerequisite = {
-			focus = SHX_A_Church_Of_Our_Own
-		}
-		relative_position_id = SHX_A_Church_Of_Our_Own
-		x = 0
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Sunday_Schools"
-			if = { #has trade unions
-				limit = { has_idea = SHX_christian_statism_5 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_5
-					add_idea = SHX_christian_statism_6
-				}
-			}
-			else_if = { #has christian education
-				limit = { has_idea = SHX_christian_statism_10 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_10
-					add_idea = SHX_christian_statism_11
-				}
-			}
-			else_if = { #has trade unions and christian education
-				limit = { has_idea = SHX_christian_statism_12 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_12
-					add_idea = SHX_christian_statism_13
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_3
-					add_idea = SHX_christian_statism_4
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_Christian_Trade_Unions
-		icon = GFX_goal_COR_protestant_corporatism
-		prerequisite = {
-			focus = SHX_A_Church_Of_Our_Own
-		}
-		relative_position_id = SHX_A_Church_Of_Our_Own
-		x = 2
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Christian_Trade_Unions"
-			if = { #has schools
-				limit = { has_idea = SHX_christian_statism_4 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_4
-					add_idea = SHX_christian_statism_6
-				}
-			}
-			else_if = { #has christian education
-				limit = { has_idea = SHX_christian_statism_10 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_10
-					add_idea = SHX_christian_statism_12
-				}
-			}
-			else_if = { #has schools and christian education
-				limit = { has_idea = SHX_christian_statism_11 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_11
-					add_idea = SHX_christian_statism_13
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_3
-					add_idea = SHX_christian_statism_5
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_Promote_The_Christian_Ideal
-		icon = GFX_goal_BEL_Catholic_Morality
-		prerequisite = {
-			focus = SHX_A_Church_Of_Our_Own
-		}
-		relative_position_id = SHX_A_Church_Of_Our_Own
-		x = 1
-		y = 1
-		cost = 8
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Promote_The_Christian_Ideal"
-			add_stability = 0.1
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = SHX_Social_Welfare
-		icon = GFX_DKB_Orthodox_Welfare
-		prerequisite = {
-			focus = SHX_Sunday_Schools
-		}
-		prerequisite = {
-			focus = SHX_Christian_Trade_Unions
-		}
-		relative_position_id = SHX_A_Church_Of_Our_Own
-		x = 1
-		y = 3
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Social_Welfare"
-			if = { #has christian education
-				limit = { has_idea = SHX_christian_statism_13 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_13
-					add_idea = SHX_christian_statism_14
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_6
-					add_idea = SHX_christian_statism_7
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_Christian_Education
-		icon = GFX_goal_POL_Wisdom_Of_Church
-		prerequisite = {
-			focus = SHX_Christian_Statism
-		}
-		relative_position_id = SHX_Christian_Statism
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_Christian_Education"
-			if = { #has rural literacy
-				limit = { has_idea = SHX_christian_statism_2 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_2
-					add_idea = SHX_christian_statism_9
-				}
-			}
-			else_if = { #has church
-				limit = { has_idea = SHX_christian_statism_3 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_3
-					add_idea = SHX_christian_statism_10
-				}
-			}
-			else_if = { #has schools
-				limit = { has_idea = SHX_christian_statism_4 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_4
-					add_idea = SHX_christian_statism_11
-				}
-			}
-			else_if = { #has trade unions
-				limit = { has_idea = SHX_christian_statism_5 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_5
-					add_idea = SHX_christian_statism_12
-				}
-			}
-			else_if = { #has schools and trade unions
-				limit = { has_idea = SHX_christian_statism_6 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_6
-					add_idea = SHX_christian_statism_13
-				}
-			}
-			else_if = { #has social welfare
-				limit = { has_idea = SHX_christian_statism_7 }
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_7
-					add_idea = SHX_christian_statism_14
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = SHX_christian_statism_1
-					add_idea = SHX_christian_statism_8
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = SHX_A_University_In_Taiyuan
-		icon = GFX_goal_generic_red_university
-		prerequisite = {
-			focus = SHX_Christian_Education
-		}
-		relative_position_id = SHX_Christian_Statism
-		x = 1
-		y = 2
-		cost = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHX_A_University_In_Taiyuan"
-			SZC_add_research_slot = yes
-		}
-	}
-
-	focus = {
 		id = SHX_Rebuild_The_Guominjun
 		icon = GFX_goal_NYC_Cath_Legion
 		available = { has_government = radical_socialist }
@@ -2625,8 +1005,8 @@ focus_tree = {
 	focus = {
 		id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		icon = GFX_goal_SHX_zhao_du_li_de_zui_hou_yi_nian
-		x = 4
-		y = 8
+		x = 0
+		y = 0
 		cost = 3
 
 		completion_reward = {
@@ -2688,7 +1068,7 @@ focus_tree = {
 		id = SHX_jun_dui_wen_yi
 		icon = GFX_goal_SHX_jun_dui_wen_yi
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
-		cost = 5
+		cost = 3
 		x = 8
 		y = 2
 		offset = {
@@ -2705,7 +1085,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jun_dui_wen_yi"
-			
+			army_experience = 50
 		}
 	}
 
@@ -2723,7 +1103,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_jue_fei_huan"
-			
+			add_stability = -0.05
+			custom_effect_tooltip = SHX_small_militias_tooltip
+			hidden_effect = {
+				load_oob = "SHX_raised_militias"
+			}
 		}
 	}
 
@@ -2886,13 +1270,35 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_ji_xu_shi_nian
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_zhan_jiao_yu"
-			
+			swap_ideas = {
+				remove_idea = SHX_unfinished_education
+				add_idea = SHX_unfinished_education1
+			}
+			country_event = shx.edu.1
 		}
 	}
 
@@ -2904,6 +1310,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		available = {
+			has_country_flag = shx_education_feng_path
+		}
 		prerequisite = {
 			focus = SHX_fa_zhan_jiao_yu
 		}
@@ -2961,6 +1370,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		available = {
+			has_country_flag = shx_education_yan_path
+		}
 		prerequisite = {
 			focus = SHX_fa_zhan_jiao_yu
 		}
@@ -3544,6 +1956,12 @@ focus_tree = {
 				remove_idea = SHX_underdeveloped_mountain_economy1
 				add_idea = SHX_underdeveloped_mountain_economy2
 			}
+			country_event = shx.industry.1
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_model_city_warning_tooltip
+			hidden_effect = {
+				country_event = { id = shx.industry.2 days = 25 }
+			}
 		}
 	}
 
@@ -3555,6 +1973,35 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
+		available = {
+			has_country_flag = SHX_favored_feng_industry
+		}
 		prerequisite = {
 			focus = SHX_xian_dai_shi_mo_fan_sheng
 		}
@@ -3564,7 +2011,40 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhi_li_geng_sheng"
-			
+			1072 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = infrastructure size > 0 }
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy2
+				add_idea = SHX_underdeveloped_mountain_economy_feng
+			}
+			SHX_strengthen_feng_medium = yes
+			SHX_QIE_spend_small = yes
+
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
 	}
 
@@ -3576,6 +2056,35 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+
+		available = {
+			has_country_flag = SHX_favored_yan_industry
+		}
 		prerequisite = {
 			focus = SHX_xian_dai_shi_mo_fan_sheng
 		}
@@ -3585,7 +2094,33 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_kuo_da_dui_de_mao_yi"
-			
+			1072 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = industrial_complex size > 1 include_locked = yes }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy2
+				add_idea = SHX_underdeveloped_mountain_economy_yan
+			}
+			SHX_strengthen_yan_small = yes
+			SHX_econ_update = yes
+			SHX_QIE_investment_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
 	}
 
@@ -3597,6 +2132,41 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				has_country_flag = SHX_favored_yan_industry
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				has_country_flag = SHX_favored_feng_industry
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
 		prerequisite = {
 			focus = SHX_chu_li_wai_bu_shi_li
 			focus = SHX_fa_song_jian_guan
@@ -3604,7 +2174,89 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shen_ru_mei_tan_chan_ye"
-			
+			1072 = { prioritize_state = yes }
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 1072
+			}
+			custom_effect_tooltip = SHX_merge_coal_spirit_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_country_flag = SHX_favored_yan_industry
+				}
+				SHX_QIE_investment_large = yes
+				SHX_strengthen_yan_medium = yes
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_yan
+					add_idea = SHX_underdeveloped_mountain_economy_yan1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = SHX_favored_feng_industry
+				}
+				SHX_strengthen_feng_large = yes
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_feng
+					add_idea = SHX_underdeveloped_mountain_economy_feng1
+				}
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					SHX_QIE_investment_large = yes
+					SHX_strengthen_yan_medium = yes
+					add_offsite_building = {
+						type = industrial_complex
+						level = 1
+					}
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_yan
+						add_idea = SHX_underdeveloped_mountain_economy_yan1
+					}
+				}
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					SHX_strengthen_feng_large = yes
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_feng
+						add_idea = SHX_underdeveloped_mountain_economy_feng1
+					}
+				}
+			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_share_the_wealth_mining_concern
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_shanxi_yanchang_petroleum_concern
+
+			hidden_effect = {
+				country_event = { id = shx.industry.11 days = 25 } 
+				if = {
+					limit = {
+						has_idea = SHX_private_coal
+					}
+					remove_ideas = SHX_private_coal
+				}
+				else_if = {
+					limit = {
+						has_idea = SHX_regulate_coal
+					}
+					remove_ideas = SHX_regulate_coal
+				}
+				else_if = {
+					limit = {
+						has_idea = SHX_inefficient_coal
+					}
+					remove_ideas = SHX_inefficient_coal
+				}
+			}
 		}
 	}
 
@@ -3616,13 +2268,46 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_zhi_li_geng_sheng
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chu_li_wai_bu_shi_li"
-			
+			add_war_support = -0.1
+			add_timed_idea = {
+				idea = SHX_make_due_monopolies
+				days = 200
+			}
+			SHX_QIE_spend_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
 	}
 
@@ -3634,8 +2319,25 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 60
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		available = {
 			has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			OR = {
+				NOT = {
+					has_war_with = QIE
+				}
+				AND = {
+					owns_state = 799
+					owns_state = 615
+				}
+			}
 		}
 		prerequisite = {
 			focus = SHX_chu_li_wai_bu_shi_li
@@ -3643,7 +2345,26 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tong_pu_tie_lu"
-			
+			hidden_effect = {
+				build_railway = {
+					path = { 8049 7208 1034 1531 4174 }
+					start_state = 622
+					target_state = 1072
+					level = 1
+					fallback = yes
+				}
+			}
+			SHX_QIE_investment_small = yes
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = train_tech
+				name = SHX_tongpu_railway_project
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_tongpu_railway_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { id = shx.industry.14 days = 5 } 
 		}
 	}
 
@@ -3655,13 +2376,34 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_kuo_da_dui_de_mao_yi
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_song_jian_guan"
-			
+			add_stability = -0.1
+			add_timed_idea = {
+				idea = SHX_private_economy
+				days = 200
+			}
+			SHX_QIE_investment_large = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
 	}
 
@@ -3673,8 +2415,26 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 60
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		available = {
 			has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			OR = {
+				NOT = {
+					has_war_with = QIE
+				}
+				AND = {
+					owns_state = 608
+					owns_state = 615
+					owns_state = 1062
+				}
+			}
 		}
 		prerequisite = {
 			focus = SHX_fa_song_jian_guan
@@ -3682,7 +2442,27 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jing_tai_tie_lu"
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 30
+				producer = JAP
+			}
+			SHX_QIE_investment_medium = yes
 			
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_beijing_railway_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { id = shx.industry.14 days = 5 } 
+
+			hidden_effect = {
+				1072 = {
+					build_railway = {
+						level = 2
+						start_state = 1072
+						target_state = 608
+					}
+				}
+			}
 		}
 	}
 
@@ -3694,6 +2474,14 @@ focus_tree = {
 		y = 4
 		cost = 5
 
+		ai_will_do = {
+			base = 70
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_tong_pu_tie_lu
 			focus = SHX_jing_tai_tie_lu
@@ -3704,7 +2492,29 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_da_sheng_gong_cheng"
-			
+			country_event = shx.industry.9 
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_grand_state_project_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SHX_northwest_industrial_company_concern
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = SHX_shanxi_automobile_company_concern
+			}
+			else = {
+				if = {
+					limit = { mio:SHX_shanxi_automobile_company_concern = { is_mio_available = no } }
+					custom_effect_tooltip = available_mio_tt
+					show_mio_tooltip = SHX_shanxi_automobile_company_concern
+				}
+				mio:SHX_shanxi_automobile_company_concern = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 1
+				}
+			}
 		}
 	}
 
@@ -3715,6 +2525,14 @@ focus_tree = {
 		x = 0
 		y = 5
 		cost = 5
+		
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
 
 		prerequisite = {
 			focus = SHX_da_sheng_gong_cheng
@@ -3722,7 +2540,47 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_niu_zhuan_mao_yi"
-			
+			add_stability = 0.10
+			add_political_power = 50
+			if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_yan1
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_yan1
+					add_idea = SHX_underdeveloped_mountain_economy_yan2
+				}
+				SHX_QIE_spend_medium = yes
+			}
+			else_if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_feng1
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_feng1
+					add_idea = SHX_underdeveloped_mountain_economy_feng2
+				}
+				SHX_QIE_spend_large = yes
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_yan1
+						add_idea = SHX_underdeveloped_mountain_economy_yan2
+					}
+					SHX_QIE_spend_medium = yes
+				}
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_feng1
+						add_idea = SHX_underdeveloped_mountain_economy_feng2
+					}
+					SHX_QIE_spend_large = yes
+				}
+			}
 		}
 	}
 
@@ -3756,7 +2614,7 @@ focus_tree = {
 		relative_position_id = SHX_jun_dui_wen_yi
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 
 		prerequisite = {
 			focus = SHX_jie_jue_fei_huan
@@ -3767,7 +2625,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xin_shan_xi_jun_shi_gui_hua"
-			
+			add_ideas = SHX_taiyuan_general_staff_idea
 		}
 	}	
 	focus = {

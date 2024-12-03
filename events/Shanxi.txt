@@ -6,7 +6,9 @@
 
 add_namespace = shx
 add_namespace = shx.earlygame
+add_namespace = shx.edu
 add_namespace = shx.agri
+add_namespace = shx.industry
 add_namespace = shx.mil
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
@@ -37,7 +39,6 @@ country_event = {#晋系军阀
 		name = shx.0.b
 		hidden_effect = {
 			add_ideas = SHX_dual_armies
-			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
@@ -62,7 +63,6 @@ country_event = {#晋绥军与国民军的联盟
 		name = shx.earlygame.1.b
 		hidden_effect = {
 			add_ideas = SHX_dual_armies
-			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
@@ -80,7 +80,6 @@ country_event = {#同省异梦
 		name = shx.earlygame.2.a
 		hidden_effect = {
 			add_ideas = SHX_dual_armies
-			country_event = { id = shx.2 days = 12 }
 		}
 	}
 }
@@ -364,6 +363,161 @@ country_event = {#十年计划的目标
 	option = {
 		name = shx.earlygame.12.c
 
+	}
+}
+
+########################################
+########-       教育          -#########
+########################################
+country_event = {#教育改革接近完成
+	id = shx.edu.0
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.0" }
+	title = shx.edu.0.t
+	desc = {
+		text = shx.edu.0.d.yan
+		trigger = {
+			has_country_flag = shx_education_yan_path
+		}
+	}
+	desc = {
+		text = shx.edu.0.d.feng
+		trigger = {
+			has_country_flag = shx_education_feng_path
+		}
+	}
+	desc = {
+		text = shx.edu.0.d.default
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = shx_education_yan_path
+					has_country_flag = shx_education_feng_path
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.edu.0.a
+		set_country_flag = SHX_educational_reform_completed_flag
+		if = { #Failsafe
+			limit = { has_active_mission = SHX_educational_reform_mission_timer }
+			remove_mission = SHX_educational_reform_mission_timer
+		}
+		custom_effect_tooltip = SHX_Education_Reform_Complete_Tooltip
+	}
+}
+country_event = {#教育新生一代
+	id = shx.edu.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.1" }
+	title = shx.edu.1.t
+	desc = shx.edu.1.d
+	picture = GFX_report_event_SHX_shanxi_university
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.edu.2 days = 7 } #Jen comes home, starts flavor event chain
+			activate_mission = SHX_educational_reform_mission_timer
+		}
+	}
+
+	option = {
+		name = shx.edu.1.a #Sorry kids
+		trigger = { NOT = { has_country_flag = SHX_feng_victory_over_yan } }
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		set_country_flag = shx_education_yan_path
+		hidden_effect = {
+			country_event = { id = shx_mission_tick.1 days = 5 }
+		}
+		custom_effect_tooltip = SHX_Yan_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+	}
+
+	option = {
+		name = shx.edu.1.b
+		trigger = { NOT = { has_country_flag = SHX_yan_victory_over_gmj } }
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		set_country_flag = shx_education_feng_path
+		hidden_effect = {
+			country_event = { id = shx_mission_tick.4 days = 5 }
+		}
+		custom_effect_tooltip = SHX_Feng_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = SHX_educational_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+	}
+}
+country_event = {#任之恭归乡！
+	id = shx.edu.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.2" }
+	title = shx.edu.2.t
+	desc = shx.edu.2.d
+	picture = GFX_report_event_SHX_ren_zhigong
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.edu.2.a
+		add_political_power = 20
 	}
 }
 
@@ -784,6 +938,601 @@ country_event = {#公道之团
 }
 
 ########################################
+########-       工业          -#########
+########################################
+country_event = {#工业改革接近完成！
+	id = shx.industry.0 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.0" }
+	title = shx.industry.0.t
+	desc = {
+		text = shx.industry.0.d_Yan
+		trigger = {
+			has_country_flag = SHX_favored_yan_industry
+		}
+	}
+	desc = {
+		text = shx.industry.0.d_Feng
+		trigger = {
+			has_country_flag = SHX_favored_feng_industry
+		}
+	}
+	desc = {
+		text = shx.industry.0.default
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = SHX_favored_feng_industry
+					has_country_flag = SHX_favored_yan_industry
+				}
+			}
+		}
+	}
+	is_triggered_only = yes
+	option = {
+		name = shx.industry.0.a
+		if = { #Failsafe
+			limit = { has_active_mission = SHX_industrial_reform_mission_timer }
+			remove_mission = SHX_industrial_reform_mission_timer
+		}
+		set_country_flag = SHX_industrial_reform_completed_flag
+		custom_effect_tooltip = SHX_Industry_Reform_Complete_Tooltip
+	}
+}
+country_event = {#我们的工业化之路
+	id = shx.industry.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.1" }
+	title = shx.industry.1.t
+	desc = {
+		text = shx.industry.1.warwithQIE
+		trigger = { 
+			has_war_with = QIE 
+		}
+	}
+	desc = {
+		text = shx.industry.1.d_Yan
+		trigger = { has_country_flag = SHX_yan_victory_over_gmj }
+	}
+	desc = {
+		text = shx.industry.1.d_Feng
+		trigger = { has_country_flag = SHX_feng_victory_over_yan }
+	}
+	desc = {
+		text = shx.industry.1.d_default
+		trigger = {
+			NOT = { has_war_with = QIE }
+			NOT = { has_country_flag = SHX_yan_victory_over_gmj }
+			NOT = { has_country_flag = SHX_feng_victory_over_yan }
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = { activate_mission = SHX_industrial_reform_mission_timer }
+	}
+
+	option = {
+		name = shx.industry.1.yan
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		trigger = {
+			NOT = {
+				has_country_flag = SHX_feng_victory_over_yan
+				has_war_with = QIE
+			}
+		}
+		hidden_effect = {
+			set_country_flag = SHX_favored_yan_industry
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.2 days = 5 }
+			}
+		}
+		custom_effect_tooltip = SHX_Yan_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+		SHX_revolution_small = yes
+	}
+
+	option = {
+		name = shx.industry.1.feng
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		trigger = {
+			OR = {
+				NOT = { has_country_flag = SHX_yan_victory_over_gmj }
+				has_war_with = QIE
+			}
+		}
+		hidden_effect = {
+			set_country_flag = SHX_favored_feng_industry
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.5 days = 5 }
+			}
+		}
+		custom_effect_tooltip = SHX_Feng_Favored_10_Year_tooltip
+		if = {
+			limit = { has_war = yes }
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = 400
+			}
+			custom_effect_tooltip = SHX_reform_disrupted_by_war_tooltip
+		}
+	}
+}
+country_event = {#薄利煤矿
+	id = shx.industry.2 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.2" }
+	title = shx.industry.2.t
+	desc = shx.industry.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.industry.3 days = 30 }
+		}
+	}
+	option = {
+		name = shx.industry.2.privitize
+		ai_chance = {
+			base = 30
+		}
+		trigger = {
+			NOT = { has_country_flag = SHX_feng_victory_over_yan }
+		}
+		SHX_QIE_investment_medium = yes
+		SHX_econ_update = yes
+		add_ideas = SHX_private_coal
+		hidden_effect = {
+			country_event = { id = shx.industry.10 days = 15 } #Tung-chi Mining
+		}
+	}
+	option = {
+		name = shx.industry.2.regulate
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		SHX_QIE_investment_small = yes
+		SHX_econ_update = yes
+		SHX_strengthen_yan_small = yes
+		add_ideas = SHX_regulate_coal
+		hidden_effect = {
+			country_event = { id = shx.industry.10 days = 20 } #Tung-chi Mining
+		}
+	}
+	option = {
+		name = shx.industry.2.statusquo
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		SHX_strengthen_feng_medium = yes
+		add_ideas = SHX_inefficient_coal
+	}
+}
+country_event = {#铁路贪污丑闻！
+	id = shx.industry.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.3" }
+	title = shx.industry.3.t
+	desc = shx.industry.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.industry.4 days = 30 } 
+		}
+	}
+
+	option = {
+		name = shx.industry.3.a
+		add_stability = -0.10
+	}
+
+	option = {
+		name = shx.industry.3.b
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = 100
+		}
+		add_political_power = 50
+		SHX_strengthen_feng_medium = yes
+	}
+}
+country_event = {#工会罢工
+	id = shx.industry.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.4" }
+	title = shx.industry.4.t
+	desc = shx.industry.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.industry.5 days = 30 } 
+		}
+	}
+
+	option = {
+		name = shx.industry.4.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		add_political_power = -25
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
+		}
+		SHX_revolution_small = yes
+		SHX_strengthen_yan_medium = yes
+	}
+
+	option = {
+		name = shx.industry.4.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+		}
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = 50
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.03
+		}
+		SHX_strengthen_feng_medium = yes
+	}
+}
+country_event = {#巡回表演
+	id = shx.industry.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.5" }
+	title = shx.industry.5.t
+	desc = shx.industry.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.industry.12 days = 30 }
+		}
+	}
+
+	option = {
+		name = shx.industry.5.a
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = -50
+		}
+		add_political_power = 30
+	}
+}
+country_event = {#山西开征盐税
+	id = shx.industry.6 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.6" }
+	title = shx.industry.6.t
+	desc = shx.industry.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_war_with = SHX
+		}
+	}
+
+	option = { 
+		name = shx.industry.6.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.25
+				SHX_yan_is_winning_trigger = yes
+			}
+		}
+		SHX = {
+			country_event = { id = shx.industry.7 days = 10 }
+		}
+	}
+
+	option = { 
+		name = shx.industry.6.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.25
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				SHX = {
+					has_country_flag = SHX_feng_victory_over_yan
+				}
+			}
+		}
+		SHX = {
+			country_event = { id = shx.industry.8 days = 10 }
+		}
+		add_political_power = 25
+	}
+}
+country_event = {#北京对盐税开征进行反击
+	id = shx.industry.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.7" }
+	title = shx.industry.7.t
+	desc = shx.industry.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.7.a
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = 100
+		}
+		SHX_QIE_spend_small = yes
+	}
+}
+country_event = {#北京的慷慨回应
+	id = shx.industry.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.8" }
+	title = shx.industry.8.t
+	desc = shx.industry.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.8.a
+		if = {
+			limit = {
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			SHX_strengthen_yan_medium = yes
+		}
+		else = {
+			add_war_support = -0.05
+		}
+	}
+}
+country_event = {#处理商贾世家
+	id = shx.industry.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.9" }
+	title = shx.industry.9.t
+	desc = shx.industry.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.9.a
+		custom_effect_tooltip = SHX_great_plan_mill_tt
+		hidden_effect = {
+			set_country_flag = SHX_build_a_mill
+		}
+	}
+
+	option = {
+		name = shx.industry.9.b
+		custom_effect_tooltip = SHX_factory_tt
+		hidden_effect = {
+			set_country_flag = SHX_build_a_factory
+		}
+	}
+}
+country_event = {#通济矿业公司
+	id = shx.industry.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.10" }
+	title = shx.industry.10.t
+	desc = shx.industry.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.10.a
+		set_country_flag = SHX_private_coal_flag
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = SHX_tung_chi_mining_concern
+	}
+}
+country_event = {#自然科学研究院
+	id = shx.industry.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.11" }
+	title = shx.industry.11.t
+	desc = shx.industry.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.11.a
+		add_resource = {
+			type = oil
+			amount = 6
+			state = 1072
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = synth_resources
+			name = shx_industry.11.t
+		}
+		add_political_power = -50
+	}
+
+	option = {
+		name = shx.industry.11.b
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = synth_resources
+			name = shx_industry.11.t
+		}
+	}
+}
+country_event = {#平民百姓之厂
+	id = shx.industry.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.12" }
+	title = shx.industry.12.t
+	desc = shx.industry.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.12.a
+		random_owned_controlled_state = {
+			prioritize = { 1072 }
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+country_event = {#处理商贾世家
+	id = shx.industry.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.13" }
+	title = shx.industry.13.t
+	desc = shx.industry.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.13.a
+		add_war_support = 0.05
+	}
+
+	option = {
+		name = shx.industry.13.b
+		add_stability = 0.10
+	}
+}
+country_event = {#火车轨道
+	id = shx.industry.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.14" }
+	title = shx.industry.14.t
+	desc = shx.industry.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.industry.14.a
+		add_ideas = SHX_standardised_railway_gauges
+	}
+
+	option = {
+		name = shx.industry.14.b
+		add_ideas = SHX_narrow_railway_gauges_1
+	}
+}
+
+########################################
 ########-       军队          -#########
 ########################################
 country_event = {#邀请外国顾问
@@ -912,6 +1661,7 @@ country_event = {#山西省空军构想
 		air_experience = 25
 	}
 }
+
 ########################################
 ######-       政治斗争          -#######
 ########################################
@@ -1412,6 +2162,7 @@ country_event = {#国民军残部抵达
 		add_political_power = -20
 	}
 }
+
 ########################################
 ########-       直奉          -#########
 ########################################
@@ -1666,6 +2417,74 @@ country_event = {#太原为西北暂停与我们合作
 #######-       hidden          -########
 ########################################
 country_event = {
+	id = shx_mission_tick.1 #Tick for Feng Education Missions
+	title = shx_mission_tick.1.t
+	desc = shx_mission_tick.1.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_educational_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.1 option shx_mission_tick.1.a"
+		name = shx_mission_tick.1.a
+		if = {
+			limit = { NOT = { has_country_flag = SHX_education_for_all_completed } }
+			activate_mission = Feng_taking_SHX_education_for_all
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_increase_school_taxes_completed } }
+			activate_mission = Feng_taking_increase_school_taxes
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_feng_womens_education_completed } }
+			activate_mission = Feng_taking_womens_education
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_clamp_down_traditional_roles_completed } }
+			activate_mission = Feng_taking_clamp_down_traditional_roles
+		}
+	}
+}
+country_event = {
+	id = shx_mission_tick.2 #Tick for Feng Industry Missions
+	title = shx_mission_tick.2.t
+	desc = shx_mission_tick.2.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.2 option shx_mission_tick.2.a"
+		name = shx_mission_tick.2.a
+		if = {
+			limit = { NOT = { has_country_flag = SHX_shanxi_solutions_completed } }
+			activate_mission = SHX_feng_taking_shanxi_solutions
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_feng_taking_utilize_banks_completed } }
+			activate_mission = SHX_feng_taking_utilize_banks
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_manage_monopolies_completed } }
+			activate_mission = SHX_feng_taking_manage_monopolies
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_feng_taking_economic_controls_completed } }
+			activate_mission = SHX_feng_taking_economic_controls
+		}
+	}
+}
+country_event = {
 	id = shx_mission_tick.3 #Tick for Feng Agriculuture Missions
 	title = shx_mission_tick.3.t
 	desc = shx_mission_tick.3.d
@@ -1696,6 +2515,74 @@ country_event = {
 		else_if = {
 			limit = { NOT = { has_country_flag = SHX_feng_taking_SHX_building_Villages_completed } }
 			activate_mission = SHX_feng_taking_SHX_building_villages
+		}
+	}
+}
+country_event = {
+	id = shx_mission_tick.4 #Tick for Yan Education Missions
+	title = shx_mission_tick.4.t
+	desc = shx_mission_tick.4.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_educational_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.4 option shx_mission_tick.4.a"
+		name = shx_mission_tick.4.a
+		if = {
+			limit = { NOT = { has_country_flag = SHX_yan_emphasise_higher_education_completed } }
+			activate_mission = Yan_taking_emphasise_higher_education
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_crack_down_on_corruption_completed } }
+			activate_mission = Yan_taking_crack_down_on_corruption
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_foreign_experts_completed } }
+			activate_mission = Yan_taking_foreign_experts
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_cultivate_foreign_aid_connections_completed } }
+			activate_mission = Yan_taking_cultivate_foreign_aid_connections
+		}
+	}
+}
+country_event = {
+	id = shx_mission_tick.5 #Tick for Yan Industry Missions
+	title = shx_mission_tick.5.t
+	desc = shx_mission_tick.5.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+			has_country_flag = SHX_yan_victory_over_gmj
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx_mission_tick.5 option shx_mission_tick.5.a"
+		name = shx_mission_tick.5.a
+		if = {
+			limit = { NOT = { has_country_flag = SHX_yan_taking_seek_outside_capital_completed } }
+			activate_mission = SHX_yan_taking_seek_outside_capital
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_taking_wave_of_foreign_capital_completed } }
+			activate_mission = SHX_yan_taking_wave_of_foreign_capital
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_taking_mass_privatization_completed } }
+			activate_mission = SHX_yan_taking_mass_privatization
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = SHX_yan_taking_modern_equipment_completed } }
+			activate_mission = SHX_yan_taking_modern_equipment
 		}
 	}
 }
@@ -1737,91 +2624,6 @@ country_event = {
 ########################################
 ########-      旧事件         -#########
 ########################################
-country_event = { # Yan and Feng meet in Taiyuan to discuss budgets
-	id = shx.2
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.2" }
-	title = shx.2.t
-	desc = shx.2.d
-	picture = GFX_report_event_ELS_meeting
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.2.a
-		hidden_effect = {
-			country_event = { id = shx.earlygame.7 days = 7 }
-		}
-	}
-}
-
-country_event = { # A dinner with Feng
-	id = shx.4
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.4" }
-	title = shx.4.t
-	desc = shx.4.d
-	picture = GFX_report_event_IRE_dail_meeting
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.4.a
-		hidden_effect = {
-			country_event = { id = shx.5 days = 19 }
-		}
-	}
-}
-
-country_event = { # Feng sidesteps Yan, securing more funding through Yan's corrupt officials
-	id = shx.5
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.5" }
-	title = shx.5.t
-	desc = shx.5.d
-	picture = GFX_report_event_JAP_meeting
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.5.a
-		add_stability = -0.02
-		add_war_support = 0.02
-		add_political_power = -30
-		set_temp_variable = { SHX_yuxiang_mil_change = 2 }
-		SHX_add_yuxiang_mil = yes
-	}
-}
-
-country_event = { # Yan holds meeting on the economy following Black Monday, thankfully we're not really affected
-	id = shx.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.6" }
-	title = shx.6.t
-	desc = shx.6.d
-	picture = GFX_report_event_JAP_meeting
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.6.a
-		add_stability = -0.02
-		set_country_flag = SHX_industry_start_flag
-		set_temp_variable = { SHX_xishan_gov_change = 4 }
-		SHX_add_xishan_gov = yes
-		hidden_effect = {
-			country_event = { id = shx.9 days = 51 }
-		}
-	}
-}
 
 country_event = { # Feng ups recruitment due to fear of lep collapse
 	id = shx.7
@@ -1868,25 +2670,6 @@ country_event = { # Yan speaks to Feng about his military rearmament
 		}
 	}
 }
-
-country_event = { # Yan begins to plan modernise agriculture
-	id = shx.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.9" }
-	title = shx.9.t
-	desc = shx.9.d
-	picture = GFX_report_event_FNG_farmers
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.9.a
-		set_country_flag = SHX_agriculture_modernise
-	}
-}
-
 country_event = { # Feng holds meeting with local government officials, bribery involved most likley
 	id = shx.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.10" }
@@ -1994,118 +2777,6 @@ country_event = { # After rising anger about the German companies, Feng is able 
 		hidden_effect = {
 			country_event = { id = shx.21 days = 25 }
 		}
-	}
-}
-
-country_event = { # Opium trade in Shanxi
-	id = shx.16
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.16" }
-	title = shx.16.t
-	desc = shx.16.d
-	picture = GFX_report_event_SIK_uyghur_family
-	trigger = {
-		NOT = { has_completed_focus = SHX_fight_the_opium_trade }
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = shx.16.a
-		add_stability = -0.02
-		add_political_power = -25
-		hidden_effect = {
-			country_event = {
-				id = shx.16
-				days = 30
-				random = 240
-			}
-		}
-	}
-}
-
-country_event = { # How we gonna finance the modernisation?
-	id = shx.17
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.17" }
-	title = shx.17.t
-	desc = shx.17.d
-	picture = GFX_report_event_IRE_factory_construction
-	is_triggered_only = yes
-
-	option = { # Through our own coffers!
-		name = shx.17.a
-		add_political_power = -150
-		add_ideas = SHX_funding_modernisation_ourselves_idea
-	}
-
-	option = { # Raise taxes!
-		name = shx.17.b
-		add_stability = -0.15
-		add_ideas = SHX_funding_modernisation_taxes_idea
-	}
-	option = { # Lower army funding!
-		name = shx.17.c
-		add_war_support = -0.15
-		add_ideas = SHX_funding_modernisation_lower_military_idea
-	}
-}
-
-country_event = { # we have the money for now
-	id = shx.18
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.18" }
-	title = shx.18.t
-	desc = shx.18.d
-	picture = GFX_report_event_IRE_factory_construction
-	is_triggered_only = yes
-
-	option = { #
-		name = shx.18.a
-		set_country_flag = SHX_can_modernise_1
-		if = {
-			limit = {
-				has_idea = SHX_funding_modernisation_ourselves_idea
-			}
-			remove_ideas = SHX_funding_modernisation_ourselves_idea
-		}
-		if = {
-			limit = {
-				has_idea = SHX_funding_modernisation_taxes_idea
-			}
-			remove_ideas = SHX_funding_modernisation_taxes_idea
-		}
-		if = {
-			limit = {
-				has_idea = SHX_funding_modernisation_lower_military_idea
-			}
-			remove_ideas = SHX_funding_modernisation_lower_military_idea
-		}
-	}
-}
-
-country_event = { # removing corrupt bosses
-	id = shx.19
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.19" }
-	title = shx.19.t
-	desc = shx.19.d
-	picture = GFX_report_event_SRI_arrests
-	is_triggered_only = yes
-
-	option = { #
-		name = shx.19.a
-		add_political_power = -100
-	}
-}
-
-country_event = { # corrupt bosses gone
-	id = shx.20
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.20" }
-	title = shx.20.t
-	desc = shx.20.d
-	picture = GFX_report_event_SRI_arrests
-	is_triggered_only = yes
-
-	option = { #
-		name = shx.20.a
-		add_political_power = 50
 	}
 }
 
@@ -2663,78 +3334,6 @@ country_event = { #Country responds
 		add_opinion_modifier = {
 			target = FROM
 			modifier = KR_disapproves_of_govt
-		}
-	}
-}
-
-country_event = { #worker's rights? - focus
-	id = shx.300
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.300" }
-	title = shx.300.t
-	desc = shx.300.d
-	picture = GFX_report_event_CHI_worker
-	is_triggered_only = yes
-
-	option = { # officials will carry out reforms
-		name = shx.300.a
-		add_stability = 0.05
-		add_political_power = 25
-		set_temp_variable = { SHX_xishan_gov_change = 2 }
-		SHX_add_xishan_gov = yes
-	}
-
-	option = { # ensure reform from the top
-		name = shx.300.b
-		add_stability = -0.05
-		add_war_support = 0.05
-		set_temp_variable = { SHX_yuxiang_gov_change = 2 }
-		SHX_add_yuxiang_gov = yes
-	}
-}
-
-country_event = { #landowner's rights? - focus
-	id = shx.301
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.301" }
-	title = shx.301.t
-	desc = shx.301.d
-	picture = GFX_report_event_CHI_worker
-	is_triggered_only = yes
-
-	option = { # landowners will give us a modernized china
-		name = shx.301.a
-		add_stability = -0.05
-		add_war_support = -0.05
-		add_political_power = 50
-		set_temp_variable = { SHX_xishan_gov_change = 2 }
-		SHX_add_xishan_gov = yes
-	}
-
-	option = { # the peasants will give us a modernized china
-		name = shx.301.b
-		add_stability = 0.05
-		add_war_support = 0.05
-		add_political_power = -50
-		set_temp_variable = { SHX_yuxiang_gov_change = 2 }
-		SHX_add_yuxiang_gov = yes
-	}
-}
-
-country_event = { #Successful Land Reform
-	id = shx.302
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.302" }
-	title = shx.302.t
-	desc = shx.302.d
-	picture = GFX_report_event_CHI_worker
-	is_triggered_only = yes
-
-	option = {
-		name = shx.302.a
-		add_ideas = SHX_land_reform_completed
-		1015 = { set_state_category = four }
-		622 = { set_state_category = four }
-		swap_ideas = {
-			remove_idea = SHX_ongoing_land_reform
-			add_idea = SHX_land_reform_completed
 		}
 	}
 }

@@ -555,6 +555,7 @@ SHX_QIE_investment_change_inf_effect = {
 	}
 	SHX_econ_update = yes
 }
+
 #增减北京影响力
 SHX_QIE_investment_small = {
 	if = {
@@ -580,18 +581,6 @@ SHX_QIE_investment_medium = {
 		log = "SHX_influence_logging; investment increase by +10 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
 	}
 }
-SHX_QIE_spend_large = {
-	if = {
-		limit = { SHX_QIE_influence_active = yes } 
-		set_temp_variable = { SHX_QIE_inf_change_var = -15 }
-		hidden_effect = {
-			SHX_QIE_investment_change_inf_effect = yes
-			SHX_marlib_change_pop_effect = yes
-		}
-		custom_effect_tooltip = SHX_QIE_spend_large_tooltip
-		log = "SHX_influence_logging; investment decrease by -15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
-	}
-}
 SHX_QIE_investment_large = {
 	if = {
 		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
@@ -604,6 +593,44 @@ SHX_QIE_investment_large = {
 		log = "SHX_influence_logging; investment increase by +15 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
 	}
 }
+
+SHX_QIE_spend_small = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = -5 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_spend_small_tooltip
+		log = "SHX_influence_logging; investment decrease by -5 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_spend_medium = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = -10 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_spend_medium_tooltip
+		log = "SHX_influence_logging; investment decrease by -10 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_spend_large = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } 
+		set_temp_variable = { SHX_QIE_inf_change_var = -15 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_spend_large_tooltip
+		log = "SHX_influence_logging; investment decrease by -15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+
 #增加市自影响力
 SHX_marlib_change_pop_effect = {
 	set_temp_variable = { SHX_marlib_change_pop_var = SHX_QIE_inf_change_var }

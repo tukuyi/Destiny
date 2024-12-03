@@ -97,6 +97,29 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		}
 	}
 
+	#SHX Education Decisions
+	SHX_educational_reform_mission_timer = {#山西的教育改革进程
+		allowed = {
+			always = no
+		}
+		available = {
+			OR = {
+				has_country_flag = SHX_educational_reform_completed_flag
+				has_country_flag = SHX_lategame_begin_flag
+			}
+		}
+		icon = GFX_decision_eng_trade_unions_support
+		days_mission_timeout = 600
+		priority = 51
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_educational_reform_mission_timer"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_educational_reform_mission_timer"
+			country_event = shx.edu.0
+		}
+	}
+
 	#Shanxi Agriculture Decisions
 	SHX_agricultural_reform_mission_timer = {#山西的土地改革进程
 		icon = GFX_decision_generic_agriculture
@@ -853,6 +876,710 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			}
 		}
 	}
+
+	#Industry Counter Missions
+	SHX_industrial_reform_mission_timer = {#山西的工业改革进程
+ 		icon = GFX_decision_factories
+		allowed = {
+			always = no
+		}
+		available = {
+			OR = {
+				has_country_flag = SHX_industrial_reform_completed_flag
+				has_country_flag = SHX_lategame_begin_flag
+			}
+		}
+
+		fire_only_once = yes
+		is_good = yes
+		priority = 25 
+		days_mission_timeout = 600
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_industrial_reform_mission_timer"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_industrial_reform_mission_timer"
+			country_event = SHX.industry.0
+		}
+	}
+	SHX_autarky_committee = {#宣传晋货
+		icon = GFX_decision_scales
+		visible = {
+			has_completed_focus = SHX_zhi_li_geng_sheng
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 20
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 15 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			war_support_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_autarky_committee"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_autarky_committee"
+			add_stability = 0.05
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+			SHX_QIE_spend_small = yes
+		}
+	}
+	SHX_land_bank = {#利用银行业
+		icon = GFX_decision_give_cash
+		visible = {
+			has_completed_focus = SHX_zhi_li_geng_sheng
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 20
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.5
+			production_speed_buildings_factor = 1.0
+			consumer_goods_factor = -0.25
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_land_bank"
+			SHX_QIE_spend_medium = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_land_bank"
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SHX_Beijing_Annoyed_tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						country_exists = QIE
+					}
+					QIE = {
+						country_event = { id = shx.industry.6 days = 20 } 
+					}
+				}
+			}
+		}
+	}
+
+	SHX_Bureau_Econ_Controls = {#经济统制处
+		icon = GFX_decision_generic_inflation
+		visible = {
+			has_completed_focus = SHX_chu_li_wai_bu_shi_li
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 19
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			war_support_weekly = -0.01
+			production_factory_max_efficiency_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_Bureau_Econ_Controls"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Bureau_Econ_Controls"
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+			SHX_QIE_spend_small = yes
+		}
+	}
+	SHX_Baojin_Iron_Factory = {#建造保晋铁厂
+		icon = GFX_decision_factories
+		visible = {
+			has_completed_focus = SHX_chu_li_wai_bu_shi_li
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 19
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.005
+			war_support_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_Baojin_Iron_Factory"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_Baojin_Iron_Factory"
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+			add_resource = {
+				type = steel
+				amount = 8
+				state = 1072
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				prioritize = { 1072 }
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	SHX_reinforce_bank_of_SHX = {#支持山西银行
+		icon = GFX_decision_scales
+		visible = {
+			has_completed_focus = SHX_kuo_da_dui_de_mao_yi
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 20
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = 0.30
+			stability_weekly = 0.01
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_reinforce_bank_of_SHX"
+			SHX_QIE_investment_medium = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_reinforce_bank_of_SHX"
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -100
+			}
+		}
+	}
+	SHX_wave_of_capital = {#搭上外资顺风船
+		icon = GFX_decision_give_cash
+		visible = {
+			has_completed_focus = SHX_kuo_da_dui_de_mao_yi
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 20
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_wave_of_capital"
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			hidden_effect = {
+				country_event = { id = shx.industry.13 days = 3 } 
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_wave_of_capital"
+			add_offsite_building = {
+				type = industrial_complex
+				level = -2
+			}
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+			SHX_QIE_investment_medium = yes
+		}
+	}
+
+	SHX_liquidate_railroad_bank = {#山西铁路银行清盘
+		icon = GFX_decision_train
+		visible = {
+			has_completed_focus = SHX_fa_song_jian_guan
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 19
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = 0.25
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_liquidate_railroad_bank"
+			SHX_QIE_investment_small = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_liquidate_railroad_bank"
+			add_timed_idea = {
+				idea = SHX_privatized_railroad_bank
+				days = 450
+			}
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SHX_modernizing_industry_equipment = {#现代化工业设备
+		icon = GFX_decision_wrenches
+		visible = {
+			has_completed_focus = SHX_fa_song_jian_guan
+			NOT = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+		}
+
+		fire_only_once = yes
+		priority = 19
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 20 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.30
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_modernizing_industry_equipment"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_modernizing_industry_equipment"
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -75
+			}
+			add_political_power = 100
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+				name = SHX_modernizing_industry_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+				name = SHX_modernizing_industry_equipment
+			}
+		}
+	}
+
+	SHX_railway_up = {#保障军事物流畅通
+		icon = GFX_decision_railroad
+		visible = {
+			has_idea = SHX_narrow_railway_gauges_1
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 75
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_connect_yanan"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_connect_yanan"
+			add_war_support = 0.05
+			622 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = SHX_narrow_railway_gauges_1
+				add_idea = SHX_narrow_railway_gauges_2
+			}
+		}
+	}
+
+	### Shanxi Industry Counter Missions
+	SHX_feng_taking_shanxi_solutions = {#自力更生
+		icon = GFX_decision_wrenches	
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_zhi_li_geng_sheng_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 42
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_shanxi_solutions"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_shanxi_solutions"
+
+			1072 = {
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = infrastructure size > 0 }
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			SHX_strengthen_feng_small = yes
+			set_country_flag = SHX_shanxi_solutions_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.2 days = 1 }
+			}
+		}
+	}
+	SHX_feng_taking_utilize_banks = {#利用银行业
+		icon = GFX_decision_give_cash	
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_land_bank_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.25
+			production_speed_buildings_factor = 0.2
+			consumer_goods_factor = -0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_utilize_banks"
+			SHX_QIE_spend_small = yes
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_utilize_banks"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_feng_taking_utilize_banks"
+			set_country_flag = SHX_feng_taking_utilize_banks_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.2 days = 1 }
+			}
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -30
+			}
+		}
+	}
+	SHX_feng_taking_manage_monopolies = {#处理外部势力
+		icon = GFX_decision_factories
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_chu_li_wai_bu_shi_li_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 42
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_manage_monopolies"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_manage_monopolies"
+
+			add_war_support = -0.05
+			add_timed_idea = {
+				idea = SHX_make_due_monopolies
+				days = 75
+			}
+			set_country_flag = SHX_manage_monopolies_completed
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.2 days = 1 }
+			}
+		}
+	}
+	SHX_feng_taking_economic_controls = {#经济统制处
+	 	icon = GFX_decision_hand_grab
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_Bureau_Econ_Controls_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			war_support_weekly = -0.005
+			production_factory_max_efficiency_factor = 0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_feng_taking_economic_controls"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_feng_taking_economic_controls"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_feng_taking_economic_controls"
+			set_country_flag = SHX_feng_taking_economic_controls_completed
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -30
+			}
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.2 days = 1 }
+			}
+		}
+	}
+
+	SHX_yan_taking_seek_outside_capital = {#寻求外部资金
+		icon = GFX_decision_give_cash
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_kuo_da_dui_de_mao_yi_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 42
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_seek_outside_capital"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_seek_outside_capital"
+			set_country_flag = SHX_yan_taking_seek_outside_capital_completed
+			1072 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SHX
+						free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.5 days = 1 }
+			}
+			SHX_strengthen_yan_small = yes
+		}
+	}
+	SHX_yan_taking_wave_of_foreign_capital = {#搭上外资顺风船
+		icon = GFX_decision_cash_flow
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_wave_of_capital_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_wave_of_foreign_capital"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_wave_of_foreign_capital"
+
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_yan_taking_wave_of_foreign_capital"
+			set_country_flag = SHX_yan_taking_wave_of_foreign_capital_completed
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -30
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = -1
+			}
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.5 days = 1 }
+			}
+			SHX_QIE_investment_small = yes
+		}
+	}
+	SHX_yan_taking_mass_privatization = {#放松监管
+		icon = GFX_decision_give_cash
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_fa_song_jian_guan_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 36
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_mass_privatization"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_mass_privatization"
+			set_country_flag = SHX_yan_taking_mass_privatization_completed
+			add_stability = -0.05
+			SHX_QIE_investment_small = yes
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.5 days = 1 }
+			}
+		}
+	}
+	SHX_yan_taking_modern_equipment = {#现代化工业设备
+		icon = GFX_decision_cash_flow
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SHX_industrial_reform_completed_flag
+		}
+		desc = SHX_modernizing_industry_equipment_desc
+
+		fire_only_once = yes
+		priority = 23
+		days_mission_timeout = 0
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_yan_taking_modern_equipment"
+
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_yan_taking_modern_equipment"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_yan_taking_modern_equipment"
+			set_country_flag = SHX_yan_taking_modern_equipment_completed
+			add_days_mission_timeout = {
+				mission = SHX_industrial_reform_mission_timer
+				days = -30
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = electronics
+				name = SHX_yan_taking_modern_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = industry
+				name = SHX_yan_taking_modern_equipment
+			}
+			hidden_effect = {
+				country_event = { id = shx_mission_tick.5 days = 1 }
+			}
+		}
+	}
 }
 
 SHX_QIE_ties = {#在北京的阴影下
@@ -1201,6 +1928,161 @@ SHX_QIE_ties = {#在北京的阴影下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_military_construction_crews"
 
+		}
+	}
+
+	SHX_build_a_mill_dec = {#建造大型炼钢厂
+		icon = GFX_decision_electrify
+		visible = {
+			AND = {
+				has_completed_focus = SHX_da_sheng_gong_cheng
+				has_country_flag = SHX_build_a_mill
+			}
+		}
+
+		allowed = { tag = SHX }
+		fire_only_once = yes
+		
+		highlight_states = {
+			highlight_state_targets = { state = 1072 }
+		}
+		
+		available = {
+			1072 = { is_owned_and_controlled_by = ROOT }
+			num_of_civilian_factories_available_for_projects > 2
+			has_country_flag = SHX_build_a_mill
+		}
+		cancel_trigger = { QIE = { exists = no } }
+		modifier = {
+			civilian_factory_use = 3
+		}
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable  #Variable Set in History File
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+		days_remove = 100
+		ai_will_do = { #SHX Really Wants a Mill
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 100
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 60 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_build_a_mill_dec"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_build_a_mill_dec"
+			1072 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = SHX_build_a_mill
+			}
+		}
+	}
+	SHX_build_a_factory_dec = {#建造现代汽车厂
+		icon = GFX_decision_generic_industry
+		visible = {
+			AND = {
+				has_completed_focus = SHX_da_sheng_gong_cheng
+				has_country_flag = SHX_build_a_mill
+			}
+		}
+		cancel_trigger = { QIE = { exists = no } }
+		fire_only_once = yes	
+		highlight_states = {
+			highlight_state_targets = { state = 1072 } #Western Shanxi
+		}
+		allowed = { tag = SHX }
+		available = {
+			1072 = { is_owned_and_controlled_by = ROOT }
+			num_of_civilian_factories_available_for_projects > 2
+			has_country_flag = SHX_build_a_factory
+		}
+		modifier = {
+			civilian_factory_use = 3
+		}
+		custom_cost_text = SHX_QIE_eco_invest_choice_medium_texticon
+		custom_cost_trigger = {
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				has_political_power > SHX_pay_with_pp_medium_variable #Variable Set in History File
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_influence_max_check = yes
+			}
+		}
+		days_remove = 100
+		ai_will_do = { #SHX Really Wants a Mill
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 100
+				has_country_flag = SHX_paying_with_pp
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 60 }
+				has_country_flag = SHX_paying_with_inf
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_build_a_factory_dec"
+			if = {
+				limit = { has_country_flag = SHX_paying_with_pp }
+				hidden_effect = {
+					set_temp_variable = { SHX_PP_cost = SHX_pay_with_pp_medium_variable } #Variable Set in History File
+					multiply_temp_variable = { SHX_PP_cost = -1 }
+					add_political_power = SHX_PP_cost
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = SHX_paying_with_inf }
+				SHX_QIE_investment_medium = yes
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_build_a_factory_dec"
+			1072 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 }

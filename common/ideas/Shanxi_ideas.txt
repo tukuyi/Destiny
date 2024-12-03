@@ -334,23 +334,6 @@ ideas = {
 			name = SHX_rural_economy
 			picture = generic_agrarian_reform
 		}
-		SHX_ongoing_land_reform = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_ongoing_land_reform"}
-			picture = generic_agrarian_society
-			modifier = {
-				political_power_gain = -0.1
-				industrial_capacity_factory = -0.10
-				production_factory_max_efficiency_factor = -0.05
-			}
-		}
-		SHX_land_reform_completed = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_land_reform_completed"}
-			picture = generic_agrarian_society
-			modifier = {
-				production_factory_max_efficiency_factor = 0.10
-				global_building_slots_factor = 0.10
-			}
-		}
 		SHX_construction_investments = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_construction_investments"}
 			picture = generic_exploit_mines
@@ -358,160 +341,6 @@ ideas = {
 				consumer_goods_factor = 0.1
 				production_speed_buildings_factor = 0.1
 			}
-		}
-		SHX_christian_statism_1 = { #initial
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_1"}
-			modifier = {
-				political_power_gain = 0.1
-				consumer_goods_factor = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_2 = { #rural literacy
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_2"}
-			modifier = {
-				political_power_gain = 0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_3 = { #church
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_3"}
-			modifier = {
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-				stability_factor = 0.05
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_4 = { #schools
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_4"}
-			modifier = {
-				political_power_gain = -0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-				stability_factor = 0.1
-				war_support_factor = 0.05
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_5 = { #trade unions
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_5"}
-			modifier = {
-				political_power_gain = -0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-				stability_factor = 0.1
-				industrial_capacity_factory = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_6 = { #schools + trade unions
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_6"}
-			modifier = {
-				political_power_gain = -0.2
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-				stability_factor = 0.15
-				industrial_capacity_factory = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_7 = { #social welfare
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_7"}
-			modifier = {
-				political_power_gain = -0.3
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.05
-				stability_factor = 0.25
-				industrial_capacity_factory = 0.15
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_8 = { #christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_8"}
-			modifier = {
-				political_power_gain = 0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.03
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_9 = { #rural literacy + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_9"}
-			modifier = {
-				political_power_gain = 0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_10 = { #church + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_10"}
-			modifier = {
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-				stability_factor = 0.05
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_11 = { #schools + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_11"}
-			modifier = {
-				political_power_gain = -0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-				stability_factor = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_12 = { #trade unions + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_12"}
-			modifier = {
-				political_power_gain = -0.1
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-				stability_factor = 0.1
-				industrial_capacity_factory = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_13 = { #schools + trade unions + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_13"}
-			modifier = {
-				political_power_gain = -0.2
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-				stability_factor = 0.15
-				industrial_capacity_factory = 0.1
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
-		}
-		SHX_christian_statism_14 = { #social welfare + christian education
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_statism_14"}
-			modifier = {
-				political_power_gain = -0.3
-				consumer_goods_factor = 0.1
-				research_speed_factor = 0.08
-				stability_factor = 0.25
-				industrial_capacity_factory = 0.15
-			}
-			name = SHX_christian_statism
-			picture = SHX_christian_statism
 		}
 		SHX_christian_army_1 = { #initial
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_1"}
@@ -595,141 +424,12 @@ ideas = {
 		}
 
 		### Economy ideas
-		SHX_standardised_railway_gauges = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_standardised_railway_gauges"}
-			picture = generic_build_infrastructure
-			modifier = {
-				industrial_capacity_factory = 0.2
-			}
-		}
-		SHX_narrow_railway_gauges_1 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_narrow_railway_gauges_1"}
-			name = SHX_narrow_railway_gauges
-			picture = generic_build_infrastructure
-			modifier = {
-				production_speed_infrastructure_factor = 0.2
-				army_core_defence_factor = 0.05
-				production_speed_rail_way_factor = 0.05
-			}
-		}
-		SHX_narrow_railway_gauges_2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_narrow_railway_gauges_2"}
-			name = SHX_narrow_railway_gauges
-			picture = generic_build_infrastructure
-			modifier = {
-				production_speed_rail_way_factor = 0.06
-				production_speed_infrastructure_factor = 0.2
-				army_core_attack_factor = 0.08
-				army_core_defence_factor = 0.08
-			}
-		}
 		SHX_more_imports_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_more_imports_idea"}
 			picture = generic_economic_increase
 			modifier = {
 				consumer_goods_factor = -0.15
 				min_export = 0.05
-			}
-		}
-		SHX_agri_eco_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agri_eco_idea"}
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.2
-				local_resources_factor = 0.10
-			}
-		}
-		SHX_farm_coop_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_farm_coop_idea"}
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.4
-				local_resources_factor = 0.15
-				stability_factor = 0.05
-			}
-		}
-		SHX_farm_coop_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_farm_coop_idea2"}
-			name = SHX_farm_coop_idea
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.5
-				local_resources_factor = 0.15
-				stability_factor = 0.1
-				war_support_factor = 0.05
-			}
-		}
-		SHX_farm_coop_idea3 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_farm_coop_idea2"}
-			name = SHX_farm_coop_idea
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.60
-				local_resources_factor = 0.30
-				global_building_slots_factor = 0.10
-				stability_factor = 0.1
-				war_support_factor = 0.05
-			}
-		}
-		SHX_self_reliance_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_self_reliance_idea"}
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.2
-				local_resources_factor = 0.10
-				political_power_gain = 0.1
-				consumer_goods_factor = -0.15
-			}
-		}
-		SHX_self_reliance_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_self_reliance_idea"}
-			name = SHX_agri_eco_idea
-			picture = generic_agrarian_reform
-			modifier = {
-				monthly_population = 0.2
-				production_speed_buildings_factor = 0.20
-				local_resources_factor = 0.10
-				political_power_gain = 0.1
-				consumer_goods_factor = -0.15
-			}
-		}
-		SHX_funding_modernisation_ourselves_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_funding_modernisation_ourselves_idea"}
-			picture = generic_foreign_capital
-			modifier = {
-				political_power_gain = -0.5
-			}
-		}
-		SHX_funding_modernisation_taxes_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_funding_modernisation_taxes_idea"}
-			picture = generic_foreign_capital
-			modifier = {
-				stability_weekly = -0.01
-			}
-		}
-		SHX_funding_modernisation_lower_military_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_funding_modernisation_lower_military_idea"}
-			picture = generic_foreign_capital
-			modifier = {
-				war_support_weekly = -0.01
-			}
-		}
-		SHX_investment_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_investment_idea"}
-			picture = generic_foreign_capital
-			modifier = {
-				production_factory_efficiency_gain_factor = 0.08
-				production_factory_start_efficiency_factor = 0.08
-			}
-		}
-		SHX_investment_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_investment_idea2"}
-			name = SHX_investment_idea
-			picture = generic_foreign_capital
-			modifier = {
-				production_speed_buildings_factor = 0.1
-				production_factory_efficiency_gain_factor = 0.1
-				production_factory_start_efficiency_factor = 0.1
 			}
 		}
 
@@ -752,6 +452,18 @@ ideas = {
 				political_power_factor = -0.10
 				consumer_goods_factor = 0.10
 				stability_factor = -0.2
+			}
+		}
+
+		###Education Spirits######
+		SHX_unfinished_education1 = {#教育改革续行
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education1" }
+			picture = generic_research_reduction
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = -0.3
+				consumer_goods_factor = 0.05
+				political_power_gain = -0.1
 			}
 		}
 
@@ -850,6 +562,59 @@ ideas = {
 		}
 
 		###SHX Industrial Spirits
+		SHX_standardised_railway_gauges = {#标准轨距
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_standardised_railway_gauges"}
+			picture = generic_build_infrastructure
+			modifier = {
+				industrial_capacity_factory = 0.2
+			}
+		}
+		SHX_narrow_railway_gauges_1 = {#窄轨铁路
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_narrow_railway_gauges_1"}
+			name = SHX_narrow_railway_gauges
+			picture = generic_build_infrastructure
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+				army_core_defence_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+			}
+		}
+		SHX_narrow_railway_gauges_2 = {#窄轨铁路
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_narrow_railway_gauges_2"}
+			name = SHX_narrow_railway_gauges
+			picture = generic_build_infrastructure
+			modifier = {
+				production_speed_rail_way_factor = 0.06
+				production_speed_infrastructure_factor = 0.2
+				army_core_attack_factor = 0.08
+				army_core_defence_factor = 0.08
+			}
+		}
+		SHX_private_coal = {#私有化煤矿业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_private_coal" }
+			picture = generic_exploit_mines
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		SHX_regulate_coal = {#监管煤炭行业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_regulate_coal" }
+			picture = generic_exploit_mines
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.10
+				political_power_gain = -0.10
+			}
+		}
+		SHX_inefficient_coal = {#自给自足的煤矿行业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_regulate_coal" }
+			picture = generic_exploit_mines
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.05
+			}
+		}
 		SHX_underdeveloped_mountain_economy0 = {#山区经济崩溃
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy0" }
 			picture = POL_disjointed_industry
@@ -878,6 +643,69 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.2
 				industrial_capacity_factory = -0.2
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng = {#自足国家资本主义
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng" }
+			picture = SOV_third_five_year_plan_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.15
+				production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng1 = {#自足山区经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng1" }
+			picture = SOV_third_five_year_plan_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.10
+				production_lack_of_resource_penalty_factor = -0.10
+				local_resources_factor = 0.10
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng2 = {#革命山西经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng2" }
+			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = -0.10
+				production_lack_of_resource_penalty_factor = -0.10
+				local_resources_factor = 0.10
+			}
+		}
+		SHX_underdeveloped_mountain_economy_yan = {#发展山区经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_yan" }
+			picture = LEC_low_reserves
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.10
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		SHX_underdeveloped_mountain_economy_yan1 = {#山区经济重振
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_yan1" }
+			picture = LEC_high_reserves
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = -0.15
+				production_factory_max_efficiency_factor = 0.10
+				local_resources_factor = 0.15
+			}
+		}
+		SHX_underdeveloped_mountain_economy_yan2 = {#山西经济重生
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_yan2" }
+			picture = LEC_staggering_reserves
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.2
+				production_factory_max_efficiency_factor = 0.10
+				local_resources_factor = 0.15
 			}
 		}
 		SHX_qie_influence_idea0 = {#在北京的阴影下
@@ -999,12 +827,43 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
+		SHX_make_due_monopolies = {#凑合利用垄断企业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_make_due_monopolies" }
+			picture = tur_etatism
+			allowed = { always = no }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				production_factory_start_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+		SHX_privatized_railroad_bank = {#私有化山西铁路银行
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_privatized_railroad_bank" }
+			picture = JAP_Shitty_Tracks
+			allowed = { always = no }
+			modifier = {
+				production_speed_rail_way_factor = 0.50
+			}
+		}
+		SHX_private_economy = {#私有化经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_private_economy" }
+			picture = generic_economic_increase
+			allowed = { always = no }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+
 		### Coup Mechanic Idea ###
 		SHX_guominjun_unrest_idea = {#国民军不满
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_guominjun_unrest_idea" }
 			picture = SHX_Guominjun_unrest
 			allowed = { always = no }
 		}
+
 		###Army ideas
 		SHX_dual_armies2 = {#一省两军
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_dual_armies2" }
@@ -1381,6 +1240,96 @@ ideas = {
 			research_bonus = {
 				excavation_tech = 0.05
 				construction_tech = 0.05
+			}
+		}
+		SHX_share_the_wealth_mining_concern = {#同宝矿业公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_share_the_wealth_mining_concern" }
+			allowed = { original_tag = SHX }
+			available = {
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+			picture = generic_exploit_mines
+			traits = { mining_company }
+			modifier = {
+				local_resources_factor = 0.05
+				political_power_gain = 0.10
+			}
+			research_bonus = {
+				excavation_tech = 0.075
+			}
+		}
+		SHX_shanxi_yanchang_petroleum_concern = {#延长石油公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_shanxi_yanchang_petroleum_concern" }
+			allowed = { original_tag = SHX }
+			picture = generic_refining_concern_1
+			traits = { oil_concern }
+			available = {
+				owns_state = 622 #Yulin
+				has_completed_focus = SHX_shen_ru_mei_tan_chan_ye
+			}
+			modifier = {
+				fuel_gain_factor = 0.1
+				production_speed_synthetic_refinery_factor = 0.1
+				production_speed_fuel_silo_factor = 0.1
+			}
+			research_bonus = {
+				synth_resources = 0.1
+			}
+			on_add = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = SHX_appoint_yanchang_petroleum_flag }
+					}
+					add_resource = {
+						type = oil
+						amount = 4 #Same as the generic decisions to exploit oil in China
+						state = 622 #Yulin
+					}
+					set_country_flag = SHX_appoint_yanchang_petroleum_flag
+				}
+			}
+		}
+		SHX_tung_chi_mining_concern = {#通济矿业公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_tung_chi_mining_concern" }
+			allowed = { original_tag = SHX }
+			picture = mantetsu_industrial_subsidiaries
+			visible = {
+				has_country_flag = SHX_private_coal_flag
+				NOT = { has_country_flag = SHX_tung_chi_mining_concern_abolished_flag }
+			}
+			traits = { mining_company }
+			modifier = {
+				local_resources_factor = 0.10
+			}
+			research_bonus = {
+				excavation_tech = 0.1
+				synth_resources = 0.1
+			}
+		}
+		SHX_northwest_industrial_company_concern = {#西北实业公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_northwest_industrial_company_concern" }
+			picture = SHX_northwestern_industrial_company
+			allowed = { original_tag = SHX }
+			available = {
+				has_completed_focus = SHX_da_sheng_gong_cheng
+			}
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = { industry = 0.075 }
+		}
+		SHX_shanxi_automobile_company_concern = {#西北汽车运输公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_shanxi_automobile_company_concern" }
+			allowed = { original_tag = SHX }
+			picture = FRA_motorized_focus
+			traits = { motorised_equipment_producer_mass_0 }
+			available = {
+				has_completed_focus = SHX_da_sheng_gong_cheng
+			}
+			research_bonus = {
+				motorized_equipment = 0.05
 			}
 		}
 	}

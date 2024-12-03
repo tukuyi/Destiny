@@ -55,4 +55,12 @@ spriteTypes = {
 		name = "GFX_report_event_SHX_taiyuan_panic"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_taiyuan_panic.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_shanxi_university"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_shanxi_university.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_ren_zhigong"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_ren_zhigong.png"
+	}
 }
