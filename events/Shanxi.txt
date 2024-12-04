@@ -368,6 +368,80 @@ country_event = {#十年计划的机制
 
 	}
 }
+country_event = {
+	id = shx.earlygame.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.15" }
+	title = shx.earlygame.15.t
+	desc = {
+		text = shx.earlygame.15.yan.d
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+	}
+	desc = {
+		text = shx.earlygame.15.feng.d
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	picture = GFX_report_event_SHX_yan_troops
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.15.yan.a
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		delete_unit_template_and_units = { division_template = "GMJ Bubing Shi" disband = yes }
+		delete_unit_template_and_units = { division_template = "GMJ Qibing Shi" disband = yes }
+		delete_unit_template_and_units = { division_template = "GMJ Shandi Shi" disband = yes }
+
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_integrated_army
+		}
+	}
+	option = {
+		name = shx.earlygame.15.yan.b
+		trigger = {
+			has_country_flag = SHX_yan_victory_over_gmj
+		}
+		delete_unit_template_and_units = { division_template = "GMJ Shandi Shi" disband = yes } #These are the most fanatical and loyal units of the GMJ
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_dual_armies2
+		}
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.05 }
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.earlygame.15 option shx.earlygame.15.feng.a"
+		name = shx.earlygame.15.feng.a  #Feng, integrate the armed forces
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+
+		delete_unit_template_and_units = { division_template = "Xiang Jun" disband = yes }
+		delete_unit_template_and_units = { division_template = "Bubing Shi" disband = yes }
+		delete_unit_template_and_units = { division_template = "Qibing Shi" disband = yes }
+		delete_unit_template_and_units = { division_template = "Shandi Shi" disband = yes }
+
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_integrated_army
+		}
+	}
+	option = {
+		name = shx.earlygame.15.feng.b
+		trigger = {
+			has_country_flag = SHX_feng_victory_over_yan
+		}
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_dual_armies2
+		}
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+}
 
 ########################################
 ########-       教育          -#########

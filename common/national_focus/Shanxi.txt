@@ -3089,7 +3089,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_he_bian_liang_jun"
-			
+			add_command_power = 30
+			country_event = { id = shx.earlygame.15 }
 		}
 	}	
 	focus = {
