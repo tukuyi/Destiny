@@ -192,16 +192,6 @@ units = {
 			name = "Fu Cunhuai"
 		}
 	}
-	division = {
-		name = "Shanxi Xian Bing" #Yan's Militia/Army, the Gendarmerie
-		location = 1962
-		division_template = "Xiang Jun"
-		start_experience_factor = 0.2
-		start_equipment_factor = 1.0
-		officer = {
-			name = "Nan Peilang"
-		}
-	}
 
 	division = {
 		name = "Di shiliu \"Feng's Own\" huncheng lu (GMJ)" #Feng's Elite, the 16th Mixed Brigade - been with him from the start
@@ -248,17 +238,6 @@ units = {
 	}
 
 	division = {
-		name = "Di shiyi shi (GMJ)" #Feng's Seasoned, longtime members of his army - 11th Central Army division was his division prior to the coup
-		location = 8049
-		division_template = "GMJ Bubing Shi"
-		start_experience_factor = 0.80
-		start_equipment_factor = 1.0
-		officer = {
-			name = "Sun Weiru"
-		}
-	}
-
-	division = {
 		name = "Di qi/di bā huncheng lu (GMJ)" #Feng's Cavalry name is taken from various brigades he once commanded (the 7th and 8th Mixed Brigades)
 		location = 12156
 		division_template = "GMJ Qibing Shi"
@@ -266,17 +245,6 @@ units = {
 		start_equipment_factor = 1.0
 		officer = {
 			name = "Huang Qiaosong"
-		}
-	}
-
-	division = {
-		name = "Di shisi/ershiwu huncheng lu (GMJ)" #Feng's cavalry, name is taken from various brigades he once commanded, the 14th and 25th Mixed Brigade
-		location = 7208
-		division_template = "GMJ Qibing Shi"
-		start_experience_factor = 0.8
-		start_equipment_factor = 1.0
-		officer = {
-			name = "Fang Zhenwu"
 		}
 	}
 }

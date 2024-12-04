@@ -5602,10 +5602,9 @@ country_event = {
 		}
 		trigger = {
 			SHX = {
-				has_country_leader = {
-					name = "阎锡山"
-					ruling_only = yes
-				}
+				exists = yes
+				has_war = no
+				has_government = paternal_autocrat
 			}
 		}
 		SHX = {
