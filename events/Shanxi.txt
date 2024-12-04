@@ -368,7 +368,7 @@ country_event = {#十年计划的机制
 
 	}
 }
-country_event = {
+country_event = {#一省两军的命运
 	id = shx.earlygame.15
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.15" }
 	title = shx.earlygame.15.t
