@@ -34,6 +34,25 @@ spriteTypes = {
 		textureFile = "gfx/interface/autonomy/autonomous_rich.png"
 	}
 	spriteType = {
+		name = "GFX_associated_governorate_icon"
+		textureFile = "gfx/interface/decisions/decision_generic_nationalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomous_governorate_icon"
+		textureFile = "gfx/interface/decisions/decision_generic_nationalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_governorate_icon"
+		textureFile = "gfx/interface/decisions/decision_generic_nationalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_integrated_governorate_icon"
+		textureFile = "gfx/interface/decisions/decision_generic_nationalism.dds"
+	}
+	spriteType = {
 		name = "GFX_KR_game_rule_flag_LEC_GT_S"
 		texturefile = "gfx/flags/small/LEC_GT_S.tga"
 		legacy_lazy_load = no

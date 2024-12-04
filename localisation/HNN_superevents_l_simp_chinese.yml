@@ -85,3 +85,4 @@
  COUNTRY_governorate_DEF: "$NONIDEOLOGYDEF$"
  COUNTRY_integrated_governorate: "$NONIDEOLOGY$"
  COUNTRY_integrated_governorate_DEF: "$NONIDEOLOGYDEF$"
+ cannot_change_autonomy_manually: "§R无法手动改变自治等级§!"

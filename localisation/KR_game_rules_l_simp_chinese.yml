@@ -1771,6 +1771,17 @@
  RULE_OPTION_NFA_DEMOCRACY_PATH_NATPOP_DESC: "贝当功成身退后，共和国举行了流亡后的首届民主选举，奉行国家民粹主义的法兰西行动获得了民众的认同。"
  RULE_OPTION_NFA_DEMOCRACY_PATH_MONARCH: "£KR_game_rule_flag_NFK_DEM 未曾设想的复辟"
  RULE_OPTION_NFA_DEMOCRACY_PATH_MONARCH_DESC: "奉行国家民粹主义的法兰西行动赢得了第二届民主选举。若此前法兰西行动已赢得第一届选举，那么他们就会复辟君主制。"
+ NFL_POLITICAL_PATH:0 "£KR_game_rule_flag_NFL 委任政府"
+ RULE_OPTION_NFL_POLITICAL_PATH_RANDOM:0 "默认"
+ RULE_OPTION_NFL_POLITICAL_PATH_RANDOM_DESC:0 "在黑色星期一的摧残下，纽芬兰的经济状况一落千丈，民选政府再无力维持自身的运转，而§X王家委任政府§!将肩负起领导国家的重任。"
+ RULE_OPTION_NFL_POLITICAL_PATH_COMMISSION:0 "£KR_game_rule_flag_NFL 委任延续"
+ RULE_OPTION_NFL_POLITICAL_PATH_COMMISSION_DESC:0 "§X委任政府§!拒绝恢复民主，直到英国本土光复之前都会一直看管纽芬兰国事。"
+ RULE_OPTION_NFL_POLITICAL_PATH_DEMOCRATIC:0 "£GFX_KR_game_rule_flag_NFL_republic 责任政府归来"
+ RULE_OPTION_NFL_POLITICAL_PATH_DEMOCRATIC_DESC:0 "从大萧条中恢复的步伐比预期的还要快，纽芬兰委任政府也打算听取公众舆论，尽早还权于§M责任政府§!。"
+ RULE_OPTION_NFL_POLITICAL_PATH_SYNDICALIST:0 "£GFX_KR_game_rule_flag_NFL_syndicalist 对加密谋"
+ RULE_OPTION_NFL_POLITICAL_PATH_SYNDICALIST_DESC:0 "§X委任政府§!非但没有行使好非民主代表的职责，还听信商贾精英们的话语，积极打压新生的劳工运动，逼得纽芬兰的各大工会没法，只能勾搭上§V不列颠联盟§!，意欲借后者之手取回对国家的控制。"
+ RULE_OPTION_NFL_POLITICAL_PATH_CANADIAN_ANNEXATION:0 "£KR_game_rule_flag_CAN 加拿大一体化"
+ RULE_OPTION_NFL_POLITICAL_PATH_CANADIAN_ANNEXATION_DESC:0 "在黑色星期一的摧残下濒临破产的纽芬兰政府转眼望向了东方的宗主国，希望实现两国的§B一体化§!，而加拿大人也同意了这一想法，让其成为了加拿大的第十个省。"
 
 #调整
  QIE_LEP_PATH:0 "£KR_game_rule_flag_QIE 鼠年"

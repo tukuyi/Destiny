@@ -102,8 +102,6 @@ set_popularities = {
     national_populist = 28
 }
 
-GER = { embargo_ROOT = yes }
-
 set_stability = 0.20
 set_war_support = 0.40
 starting_train_buffer = 1
@@ -116,7 +114,6 @@ add_offsite_building = {
 	type = industrial_complex
 	level = 1
 }
-
 
 add_ideas = {
 	SQI_Rampant_drug_trade
@@ -137,12 +134,6 @@ country_event = {
 	id = shandong.1 
 	days = 1 
 }
-
-# country_event = { 
-# 	id = shandong.435 #Zonchang's death
-# 	days = 4018
-# 	random = 4320
-# }
 
 country_event = { 
 	id = shandong.436 #Tianran's death
@@ -175,14 +166,14 @@ create_country_leader = {
 	ideology = marlib_warlordism_subtype
 }
 create_country_leader = {
-	name = "杨树林"
+	name = "屈映光"
 	desc = "POLITICS_SONG_ZHEYUAN_DESC"
 	picture = "gfx/leaders/SQI/Portrait_Shandong_Song_Zheyuan.png"
 	expire = "1.1.1"
 	ideology = neo_confucianism_subtype
 }
 create_country_leader = {
-	name = "屈映光"
+	name = "张宗昌"
 	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
 	expire = "1.1.1"
 	ideology = authdem_warlordism_subtype

@@ -289,15 +289,22 @@ country_event = { # 大清把靳云鹗抓了
 				expire = "1.1.1"
 				ideology = authdem_warlordism_subtype
 			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = SQI_authoritarian_democrat_party_long
-				name =  SQI_authoritarian_democrat_party
+			create_country_leader = {
+				name = "屈映光"
+				desc = "POLITICS_Qu_Yingguang_DESC"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
 			}
 			set_party_name = {
-				ideology = social_conservative
-				long_name = SQI_authoritarian_democrat_party_long
-				name =  SQI_authoritarian_democrat_party
+				ideology = paternal_autocrat
+				long_name = SQI_social_conservative_party_long
+				name =  SQI_social_conservative_party
+			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = SQI_social_conservative_party_long
+				name =  SQI_social_conservative_party
 			}
 			set_cosmetic_tag = SQI_CSONG
 			QIE = {
@@ -308,7 +315,7 @@ country_event = { # 大清把靳云鹗抓了
 		}
 		country_event = { id = shandong.992 days = 7 } # Zongchang and Yiguadao Riot
 		set_politics = {
-			ruling_party = authoritarian_democrat
+			ruling_party = social_conservative
 			elections_allowed = no
 		}
 		set_country_flag = SQI_Zheyuan_beat_Zongchang
