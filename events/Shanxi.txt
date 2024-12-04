@@ -2188,85 +2188,6 @@ country_event = {#国民军残部抵达
 }
 
 ########################################
-########-       直奉          -#########
-########################################
-country_event = {#阎锡山平定陕西！
-	id = shx.zhifeng.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.1" }
-	title = shx.zhifeng.1.t
-	desc = shx.zhifeng.1.d
-	picture = GFX_report_event_SHX_yanan_street
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {
-		name = shx.zhifeng.1.a 
-		add_political_power = 30
-		SHX = {
-			SHX_QIE_investment_small = yes
-		}
-		add_opinion_modifier = { 
-			target = SHX 
-			modifier = KR_approves_of_govt 
-		}
-	}
-}
-country_event = {#山西省府倒台！
-	id = shx.zhifeng.2 
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.2" }
-	title = shx.zhifeng.2.t
-	desc = shx.zhifeng.2.d
-	picture = GFX_report_event_SHX_feng
-
-	fire_only_once = yes
-	is_triggered_only = yes 
-
-	option = {
-		name = shx.zhifeng.2.a 
-		add_political_power = -25
-		SHX = {
-			SHX_QIE_spend_large = yes
-			add_opinion_modifier = { 
-				target = QIE 
-				modifier = KR_outraged 
-			}
-		}
-		add_opinion_modifier = { 
-			target = SHX 
-			modifier = KR_hostile 
-		}
-		if = {
-			limit = { 
-				SHX = { 
-					has_country_flag = SHX_broke_from_qie 
-				} 
-			}
-			set_country_flag = china_revolted_against_@FROM
-			add_ai_strategy = {
-				type = contain
-				id = SHX
-				value = 200
-			}
-			add_ai_strategy = {
-				type = antagonize
-				id = SHX
-				value = 200
-			}
-			effect_tooltip = { 
-				SHX = { 
-					china_break_puppet_effect = yes 
-				} 
-			}
-			create_wargoal = {
-				target = SHX
-				type = annex_everything
-			}
-		}
-	}
-}
-
-########################################
 ######-       大清影响力        -#######
 ########################################
 country_event = {#太原火车谈判脱轨
@@ -2597,6 +2518,481 @@ country_event = {#北京商人收购公司
 		}
 	}
 }
+country_event = {#北京商人加强控制
+	id = shx.QIE.aid.7 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.7" }
+	title = shx.QIE.aid.7.t
+	desc = shx.QIE.aid.7.d
+	picture = GFX_report_event_FNG_industry2
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.7.a 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		add_timed_idea = {
+			idea = SHX_beijing_industrial_aid
+			days = 400
+		}
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = -100
+		}
+		SHX_QIE_investment_large = yes
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.04
+		}
+	}
+
+	option = {
+		name = shx.QIE.aid.7.b 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		add_political_power = -20
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
+		}
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.01
+		}
+		set_country_flag = shx_reject_entrenchment
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.15 days = 1 }
+			}
+		}
+	}
+}
+country_event = {#农业救济一揽子协议
+	id = shx.QIE.aid.8 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.8" }
+	title = shx.QIE.aid.8.t
+	desc = shx.QIE.aid.8.d
+	picture = GFX_report_event_FNG_farmers
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.8.a 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		add_timed_idea = {
+			idea = SHX_beijing_agricultural_relief_package
+			days = 365
+		}
+		add_days_mission_timeout = {
+			mission = SHX_agricultural_reform_mission_timer
+			days = -75
+		}
+		SHX_QIE_investment_large = yes
+	}
+
+	option = {
+		name = shx.QIE.aid.8.b 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		add_political_power = -50
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.02
+		}
+		set_country_flag = shx_reject_agriculture
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.16 days = 1 }
+			}
+		}
+	}
+}
+country_event = {#新扫盲运动
+	id = shx.QIE.aid.9 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.9" }
+	title = shx.QIE.aid.9.t
+	desc = shx.QIE.aid.9.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_FNG_mantetsu_school
+
+	option = {
+		name = shx.QIE.aid.9.a 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		add_days_mission_timeout = {
+			mission = SHX_educational_reform_mission_timer
+			days = -75
+		}
+		add_timed_idea = {
+			idea = SHX_james_yens_literacy_campaign
+			days = 365
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
+		SHX_QIE_investment_medium = yes
+
+	}
+
+	option = {
+		name = shx.QIE.aid.9.b 
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+
+		add_political_power = -50
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = syndicalist 
+			popularity = 0.01
+		}
+		SHX_revolution_large = yes
+		set_country_flag = shx_reject_literacy
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.17 days = 1 }
+			}
+		}
+	}
+}
+country_event = {#北京训练团
+	id = shx.QIE.aid.10 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.10" }
+	title = shx.QIE.aid.10.t
+	desc = shx.QIE.aid.10.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_QIE_zhili_soldiers
+
+	option = {
+		name = shx.QIE.aid.10.a 
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		add_timed_idea = {
+			idea = SHX_beijing_training_group
+			days = 365
+		}
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = land_doctrine
+			name = shx.QIE.aid.10.t
+		}
+		SHX_QIE_investment_large = yes
+	}
+
+	option = {
+		name = shx.QIE.aid.10.b 
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		SHX_revolution_small = yes
+		add_political_power = -30
+		SHX_strengthen_feng_medium = yes
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.18 days = 1 }
+			}
+			set_country_flag = shx_rejects_military_mission
+		}
+	}
+}
+country_event = {#新模范师
+	id = shx.QIE.aid.11 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.11" }
+	title = shx.QIE.aid.11.t
+	desc = shx.QIE.aid.11.d
+	picture = GFX_report_event_QIE_qing_patrol
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.11.a 
+		if = {
+			limit = { NOT = { has_template = "Beijing-Style Infantry" } }
+			division_template = {
+				name = "北京模范第一师"
+				division_names_group = CHYN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+		}
+		random_controlled_state = {
+			limit = {
+				impassable = no
+				is_in_home_area = yes
+			}
+			prioritize = { 1072 } #Taiyuan
+			create_unit = {
+				division = "division_template = \"北京模范第一师\" start_experience_factor = 0.60"
+				owner = SHX
+			}
+		}
+	}
+
+	option = {
+		name = shx.QIE.aid.11.b 
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 1000
+			producer = QIE
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 50
+			producer = QIE
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 50
+			producer = QIE
+		}
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = land_doctrine
+			name = shx.QIE.aid.11.t
+		}
+	}
+}
 country_event = {#太原拒绝我们的示好
 	id = shx.QIE.aid.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.12" }
@@ -2640,6 +3036,426 @@ country_event = {#太原叫停公司收购
 	option = {
 		name = shx.QIE.aid.14.a
 		add_political_power = -5
+	}
+}
+country_event = {#太原阻止进一步收购
+	id = shx.QIE.aid.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.15" }
+	title = shx.QIE.aid.15.t
+	desc = shx.QIE.aid.15.d
+	picture = GFX_report_event_SHX_yan_uniform
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.15.a
+		add_political_power = -5
+	}
+}
+country_event = {#太原拒绝农业救济一揽子协议
+	id = shx.QIE.aid.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.16" }
+	title = shx.QIE.aid.16.t
+	desc = shx.QIE.aid.16.d
+	picture = GFX_report_event_SHX_yan_smile
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.16.a
+		add_political_power = -5
+	}
+}
+country_event = {#山西中止扫盲计划
+	id = shx.QIE.aid.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.17" }
+	title = shx.QIE.aid.17.t
+	desc = shx.QIE.aid.17.d
+	picture = GFX_report_event_SHX_yan_smile
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.17.a
+		add_political_power = 95
+	}
+}
+country_event = {#山西拒收军事顾问团
+	id = shx.QIE.aid.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.18" }
+	title = shx.QIE.aid.18.t
+	desc = shx.QIE.aid.18.d
+	picture = GFX_report_event_SHX_yan_uniform
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.18.a
+		add_political_power = -5
+	}
+}
+country_event = {#北京派出监管人员
+	id = shx.QIE.aid.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.19" }
+	title = shx.QIE.aid.19.t
+	desc = shx.QIE.aid.19.d
+	picture = GFX_report_event_QIE_qing_patrol
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.19.a
+		add_political_power = -30
+		SHX_QIE_spend_small = yes
+	}
+}
+country_event = {#北京挑起民族主义情绪
+	id = shx.QIE.aid.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.20" }
+	title = shx.QIE.aid.20.t
+	desc = shx.QIE.aid.20.d
+	picture = GFX_report_event_LEP_sun_chuanfang_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.20.a
+		add_war_support = -0.10
+		SHX_QIE_spend_medium = yes
+	}
+}
+country_event = {#北京支持阎派政府
+	id = shx.QIE.aid.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.21" }
+	title = shx.QIE.aid.21.t
+	desc = shx.QIE.aid.21.d
+	picture = GFX_report_event_CHI_vote
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.21.a
+		SHX_strengthen_yan_medium = yes
+		SHX_QIE_spend_medium = yes
+	}
+}
+country_event = {#太原兵工厂收到订单
+	id = shx.QIE.aid.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.22" }
+	title = shx.QIE.aid.22.t
+	desc = shx.QIE.aid.22.d
+	picture = GFX_report_event_SHX_taiyuan_arsenal_2
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.22.a
+		add_timed_idea = {
+			idea = SHX_taiyuan_arsenal_order
+			days = 100
+		}
+		SHX_QIE_spend_large = yes
+	}
+}
+country_event = {#北京为优惠贸易条件而施压
+	id = shx.QIE.aid.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.23" }
+	title = shx.QIE.aid.23.t
+	desc = shx.QIE.aid.23.d
+	picture = GFX_report_event_QIE_armored_car
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.23.a
+		add_ideas = SHX_QIE_favorable_trade_deal
+		SHX_QIE_spend_large = yes
+	}
+}
+
+########################################
+########-       直奉          -#########
+########################################
+country_event = {#阎锡山平定陕西！
+	id = shx.zhifeng.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.1" }
+	title = shx.zhifeng.1.t
+	desc = shx.zhifeng.1.d
+	picture = GFX_report_event_SHX_yanan_street
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.1.a 
+		add_political_power = 30
+		SHX = {
+			SHX_QIE_investment_small = yes
+		}
+		add_opinion_modifier = { 
+			target = SHX 
+			modifier = KR_approves_of_govt 
+		}
+	}
+}
+country_event = {#山西省府倒台！
+	id = shx.zhifeng.2 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.2" }
+	title = shx.zhifeng.2.t
+	desc = shx.zhifeng.2.d
+	picture = GFX_report_event_SHX_feng
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.2.a 
+		add_political_power = -25
+		SHX = {
+			SHX_QIE_spend_large = yes
+			add_opinion_modifier = { 
+				target = QIE 
+				modifier = KR_outraged 
+			}
+		}
+		add_opinion_modifier = { 
+			target = SHX 
+			modifier = KR_hostile 
+		}
+		if = {
+			limit = { 
+				SHX = { 
+					has_country_flag = SHX_broke_from_qie 
+				} 
+			}
+			set_country_flag = china_revolted_against_@FROM
+			add_ai_strategy = {
+				type = contain
+				id = SHX
+				value = 200
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SHX
+				value = 200
+			}
+			effect_tooltip = { 
+				SHX = { 
+					china_break_puppet_effect = yes 
+				} 
+			}
+			create_wargoal = {
+				target = SHX
+				type = annex_everything
+			}
+		}
+	}
+}
+country_event = {#和平的最后机会（介绍）
+	id = shx_zhifeng.5 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.5" }
+	title = shx_zhifeng.5.t
+	desc = shx_zhifeng.5.d
+	picture = GFX_report_event_SHX_yan_coat
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.5.a 
+		trigger = { 
+			tag = SHX
+			NOT = { is_subject_of = QIE }
+			SHX_QIE_can_reject_negotiation_check = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				QIE = { has_war_with = FNG }
+			}
+			modifier = {
+				factor = 1.5
+				QIE = { any_enemy_country = { owns_state = 613 } } 
+				QIE = {
+					has_war_with = FNG
+				}
+			}
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.6 days = 7 } 
+			}
+		}
+		if = {
+			limit = { check_variable = { SHX_QIE_influence_variable > 14 }
+			}
+			add_war_support = -0.075
+			custom_effect_tooltip = SHX_QIE_spend_large_tooltip
+		}
+		custom_effect_tooltip = SHX_zhifeng_no_negotiations_tooltip
+	}
+
+	option = {
+		name = shx.zhifeng.5.b 
+		trigger = {
+			tag = SHX
+			OR = {
+				is_subject_of = QIE
+				SHX_QIE_can_negotiate_check = yes 
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				FNG = { exists = no } 
+			}
+			modifier = {
+				factor = 1.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 50 }
+			}
+			modifier = {
+				factor = 0.20
+				QIE = {
+					has_completed_focus = QIE_purge_zhili 
+				}
+			}
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.7 days = 1 } 
+			}
+			SHX = {
+				# country_event = { id = shx.zhifeng.8 days = 3 } 
+			}
+		}
+		custom_effect_tooltip = SHX_zhifeng_yes_negotiations_tooltip
+		if = {
+			limit = { SHX_QIE_can_reject_negotiation_check = no }
+			custom_effect_tooltip = SHX_zhifeng_forced_to_negotiate_tooltip
+		}
+	}
+	option = {
+		name = shx.zhifeng.5.c 
+		trigger = {
+			tag = QIE
+		}
+		custom_effect_tooltip = SHX_QIE_await_proposal_tooltip
+	}
+}
+country_event = {#北京的邀请
+	id = shx.zhifeng.7001 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.7001" }
+	title = shx.zhifeng.7001.t
+	desc = shx.zhifeng.7001.d
+	picture = GFX_report_event_CHI_intelligence
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.7001.a 
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.7 days = 1 } 
+			}
+			SHX = {
+				# country_event = { id = shx.zhifeng.8 days = 3 } 
+			}
+		}
+		custom_effect_tooltip = SHX_zhifeng_yes_negotiations_tooltip
+	}
+
+	option = {
+		name = shx.zhifeng.7001.b 
+		trigger = {
+			NOT = { is_subject_of = QIE }
+			SHX_QIE_can_reject_negotiation_check = yes 
+		}
+
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.6 days = 7 } 
+			}
+		}
+		if = {
+			limit = { check_variable = { SHX_QIE_influence_variable > 14 }
+			}
+			add_war_support = -0.075
+			custom_effect_tooltip = SHX_QIE_spend_large_tooltip
+		}
+		custom_effect_tooltip = SHX_zhifeng_no_negotiations_tooltip
+	}
+
+	option = {
+		name = shx.zhifeng.7001.c 
+		ai_chance = { base = 0 }
+		country_event = shx.zhifeng.5
+	}
+}
+country_event = {#太原对我们强硬！
+	id = shx.zhifeng.6 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.6" }
+	title = shx.zhifeng.6.t
+	desc = shx.zhifeng.6.d
+	picture = GFX_report_event_SHX_yan_coat
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.6.a 
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_hostile
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_hostile
+		}
+		SHX = {
+			SHX_QIE_spend_large = yes
+		}
+	}
+}
+country_event = {#太原使节抵达
+	id = shx.zhifeng.7 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.7" }
+	title = shx.zhifeng.7.t
+	desc = {
+		text = shx.zhifeng.7.d.1
+		trigger = { SHX = { NOT = { has_country_flag = SHX_QIE_preemptively_began_negotiations } } }
+	}
+	desc = {
+		text = shx.zhifeng.7.d.2
+		trigger = { SHX = { has_country_flag = SHX_QIE_preemptively_began_negotiations } }
+	}
+	picture = GFX_report_event_QIE_armored_car
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.7.a
+		custom_effect_tooltip = SHX_QIE_await_proposal_tooltip
+	}
+
+	option = {
+		name = shx.zhifeng.7.b 
+		country_event = shx.zhifeng.5
 	}
 }
 

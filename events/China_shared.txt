@@ -148,21 +148,21 @@ country_event = { #FROM demands ROOT submit
 					has_game_rule = { rule = GXC_PATH option = GXC_PATH_EXPANSIONISM }
 					AND = { #check for zhili
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_PATAUT_QIE }
-						has_country_leader = { name = "Ma Ji" ruling_only = yes }
+						has_country_leader = { name = "马济" ruling_only = yes }
 						FROM = { is_ruled_by_pro_zhili = no }
 					}
 					AND = { #check for NPA
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_NPA }
 						OR = {
-							has_country_leader = { name = "Ma Ji" ruling_only = yes }
-							has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+							has_country_leader = { name = "马济" ruling_only = yes }
+							has_country_leader = { name = "陈廉伯" ruling_only = yes }
 						}
 						FROM = { china_is_unaligned = no }
 					}
 					#outright refuse if have following
 					AND = {
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_MARLIB_JAP }
-						has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+						has_country_leader = { name = "陈廉伯" ruling_only = yes }
 					}
 				}
 			}
@@ -170,7 +170,7 @@ country_event = { #FROM demands ROOT submit
 				factor = 0
 				#Guominjun Shanxi never submits to QIE - traitors to Zhili and hates Monarchy
 				tag = SHX
-				has_country_flag = SHX_Feng_in_power
+				has_country_leader = { name = "冯玉祥" ruling_only = yes }
 				FROM = { tag = QIE }
 			}
 			modifier = {
@@ -530,21 +530,21 @@ country_event = { #FROM invites ROOT to alliance
 					has_game_rule = { rule = GXC_PATH option = GXC_PATH_EXPANSIONISM }
 					AND = { #check for zhili
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_PATAUT_QIE }
-						has_country_leader = { name = "Ma Ji" ruling_only = yes }
+						has_country_leader = { name = "马济" ruling_only = yes }
 						FROM = { is_ruled_by_pro_zhili = no }
 					}
 					AND = { #check for NPA
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_NPA }
 						OR = {
-							has_country_leader = { name = "Ma Ji" ruling_only = yes }
-							has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+							has_country_leader = { name = "马济" ruling_only = yes }
+							has_country_leader = { name = "陈廉伯" ruling_only = yes }
 						}
 						FROM = { china_is_unaligned = no }
 					}
 					#outright refuse if have following
 					AND = {
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_MARLIB_JAP }
-						has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+						has_country_leader = { name = "陈廉伯" ruling_only = yes }
 					}
 				}
 			}
@@ -630,21 +630,21 @@ country_event = { #FROM invites ROOT to alliance
 					has_game_rule = { rule = GXC_PATH option = GXC_PATH_EXPANSIONISM }
 					AND = { #check for zhili
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_PATAUT_QIE }
-						has_country_leader = { name = "Ma Ji" ruling_only = yes }
+						has_country_leader = { name = "马济" ruling_only = yes }
 						FROM = { is_ruled_by_pro_zhili = no }
 					}
 					AND = { #check for NPA
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_NPA }
 						OR = {
-							has_country_leader = { name = "Ma Ji" ruling_only = yes }
-							has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+							has_country_leader = { name = "马济" ruling_only = yes }
+							has_country_leader = { name = "陈廉伯" ruling_only = yes }
 						}
 						FROM = { china_is_unaligned = no }
 					}
 					#outright refuse if have following
 					AND = {
 						has_game_rule = { rule = GXC_PATH option = GXC_PATH_MARLIB_JAP }
-						has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+						has_country_leader = { name = "陈廉伯" ruling_only = yes }
 					}
 				}
 			}

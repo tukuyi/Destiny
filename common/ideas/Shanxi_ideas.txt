@@ -342,7 +342,7 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
-		
+
 		### Economy ideas
 		SHX_more_imports_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_more_imports_idea"}
@@ -423,6 +423,15 @@ ideas = {
 			modifier = {
 				research_speed_factor = 0.05
 				consumer_goods_factor = 0.1
+			}
+		}
+		SHX_james_yens_literacy_campaign = {#晏阳初扫盲计划
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_james_yens_literacy_campaign	" }
+			picture = generic_army_war_college
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = 0.15
+				consumer_goods_factor = -0.15
 			}
 		}
 
@@ -507,6 +516,15 @@ ideas = {
 				consumer_goods_factor = -0.3
 			}
 		}
+		SHX_beijing_agricultural_relief_package = {#北京农业救济一揽子协议
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_beijing_agricultural_relief_package	" }
+			picture = PAL_Shortage_of_Goods
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.15
+				political_power_gain = 0.25
+			}
+		}
 
 		### Domestic - Political ####
 		SHX_fight_corruption_idea = {#反腐败斗争
@@ -528,6 +546,16 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.10
 				production_speed_buildings_factor = 0.10
+			}
+		}
+		SHX_beijing_industrial_aid = {#北京工业援助
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_beijing_industrial_aid	" }
+			picture = SOV_fourth_five_year_plan
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
 			}
 		}
 		SHX_standardised_railway_gauges = {#标准轨距
@@ -833,6 +861,43 @@ ideas = {
 		}
 
 		###Army ideas
+		SHX_QIE_favorable_trade_deal = {#北京的剥削协议
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_QIE_favorable_trade_deal" }
+			picture = generic_trade
+			allowed = { always = no }
+			cancel = {
+				OR = {
+					QIE = { exists = no }
+					has_war_with = QIE
+				}
+			}
+			modifier = {
+				extra_trade_to_overlord_factor = 1.0
+				overlord_trade_cost_factor = -0.5
+				min_export = 0.25
+				local_resources_factor = 0.10
+			}
+		}
+		SHX_beijing_training_group = {#北京训练团
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_beijing_training_group	" }
+			picture = ETH_peacekeeping_forces
+			allowed = { always = no }
+			modifier = {
+				experience_gain_army = 0.15
+				experience_gain_air = 0.05
+				command_power_gain = 0.10
+				training_time_army_factor = -0.10
+			}
+		}
+		SHX_taiyuan_arsenal_order = {#太原兵工厂订单
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_arsenal_order" }
+			picture = ast_volunteer_defence_corps
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.5
+				political_power_gain = 0.15
+			}
+		}
 		SHX_dual_armies2 = {#一省两军
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_dual_armies2" }
 			picture = army_cooperation
