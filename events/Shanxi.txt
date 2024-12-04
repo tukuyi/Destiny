@@ -301,6 +301,7 @@ country_event = {#十年计划继续！
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.12" }
 	title = shx.earlygame.12.t
 	desc = shx.earlygame.12.d
+	picture = GFX_report_event_FNG_industry
 
 	is_triggered_only = yes
 
@@ -324,6 +325,7 @@ country_event = {#十年计划的目标
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.13" }
 	title = shx.earlygame.13.t
 	desc = shx.earlygame.13.d
+	picture = GFX_report_event_FNG_industry3
 
 	is_triggered_only = yes
 
@@ -342,11 +344,12 @@ country_event = {#十年计划的目标
 
 	}
 }
-country_event = {#十年计划的目标
+country_event = {#十年计划的机制
 	id = shx.earlygame.14
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.14" }
 	title = shx.earlygame.14.t
 	desc = shx.earlygame.14.d
+	picture = GFX_report_event_FNG_farmers
 
 	is_triggered_only = yes
 
@@ -373,6 +376,7 @@ country_event = {#教育改革接近完成
 	id = shx.edu.0
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.0" }
 	title = shx.edu.0.t
+	picture = GFX_report_event_SIA_Siam_Compulsory_Education
 	desc = {
 		text = shx.edu.0.d.yan
 		trigger = {
@@ -525,6 +529,7 @@ country_event = {#乡村教育实验学校
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.edu.8" }
 	title = shx.edu.8.t
 	desc = shx.edu.8.d
+	picture = GFX_report_event_SIA_Siam_Compulsory_Education
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -543,6 +548,7 @@ country_event = {#土地改革
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.1" }
 	title = shx.agri.1.t
 	desc = shx.agri.1.d
+	picture = GFX_report_event_FNG_farmers
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -681,6 +687,7 @@ country_event = {#制定农业预算案
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.3" }
 	title = shx.agri.3.t
 	desc = shx.agri.3.d
+	picture = GFX_report_event_generic_farming
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -751,6 +758,7 @@ country_event = {#乡绅抗议
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.5" }
 	title = shx.agri.5.t
 	desc = shx.agri.5.d
+	picture = GFX_report_event_CHI_protest
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -799,6 +807,7 @@ country_event = {#大稻贼
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.6" }
 	title = shx.agri.6.t
 	desc = shx.agri.6.d
+	picture = GFX_report_event_generic_scandal
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -848,6 +857,7 @@ country_event = {#公道之团
 	id = shx.agri.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.agri.7" }
 	title = shx.agri.7.t
+	picture = GFX_report_event_CHI_militia
 	desc = {
 		text = shx.agri.7.feng
 		trigger = { has_country_flag = SHX_feng_victory_over_yan }
@@ -2308,6 +2318,88 @@ country_event = {#北京在山西的利益（介绍）
 		custom_effect_tooltip = SHX_QIE_telegram_tooltip
 	}
 }
+country_event = {#太原的外来阴谋
+	id = shx.QIE.aid.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.4" }
+	title = shx.QIE.aid.4.t
+	desc = shx.QIE.aid.4.d
+	picture = GFX_report_event_generic_diplomacy3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.QIE.aid.4.a
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+
+			modifier = {
+				factor = 0.25
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		SHX_QIE_investment_medium = yes
+		add_political_power = 30
+	}
+
+	option = {
+		name = shx.QIE.aid.4.b #Try to clamp down on it the best we can
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		SHX_QIE_Investment_small = yes
+		add_political_power = -10
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.12 days = 1 }
+			}
+		}
+	}
+}
 country_event = {#黑色星期一救济一揽子协议
 	id = shx.QIE.aid.5 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.5" }
@@ -2386,6 +2478,140 @@ country_event = {#黑色星期一救济一揽子协议
 		}
 	}
 }
+country_event = {#北京商人收购公司
+	id = shx.QIE.aid.6 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.6" }
+	title = shx.QIE.aid.6.t
+	desc = shx.QIE.aid.6.d
+	picture = GFX_report_event_FNG_industry
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.6.a
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { SHX_QIE_influence_variable < 30 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 45 }
+			}
+
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX_QIE_influence_variable > 60 }
+			}
+
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX_QIE_influence_variable > 75 }
+			}
+		}
+		add_timed_idea = {
+			idea = SHX_expanded_beijing_investment
+			days = 365
+		}
+		add_days_mission_timeout = {
+			mission = SHX_industrial_reform_mission_timer
+			days = -75
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.04
+		}
+		SHX_QIE_investment_medium = yes
+		QIE = {
+			set_country_flag = QIE_buysout_SHX_companies
+		}
+	}
+
+	option = {
+		name = shx.QIE.aid.6.b
+
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 50
+			}
+
+			modifier = {
+				factor = 1.2
+				has_political_power > 100
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 50
+			}
+
+			modifier = {
+				factor = 0.8
+				has_political_power < 25
+			}
+
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+
+		add_political_power = -20
+		add_popularity = {
+			ideology = radical_socialist 
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
+		}
+		add_popularity = {
+			ideology = national_populist 
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.01
+		}
+		set_country_flag = SHX_reject_buyout
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.QIE.aid.14 days = 1 }
+			}
+		}
+	}
+}
+country_event = {#太原拒绝我们的示好
+	id = shx.QIE.aid.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.12" }
+	title = shx.QIE.aid.12.t
+	desc = shx.QIE.aid.12.d
+	picture = GFX_report_event_SHX_yan_car
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.12.a
+		add_political_power = -5
+	}
+}
 country_event = {#山西拒绝黑色星期一救济
 	id = shx.QIE.aid.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.13" }
@@ -2398,6 +2624,21 @@ country_event = {#山西拒绝黑色星期一救济
 
 	option = {
 		name = shx.QIE.aid.13.a
+		add_political_power = -5
+	}
+}
+country_event = {#太原叫停公司收购
+	id = shx.QIE.aid.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.QIE.aid.14" }
+	title = shx.QIE.aid.14.t
+	desc = shx.QIE.aid.14.d
+	picture = GFX_report_event_SHX_yan_smile
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.QIE.aid.14.a
 		add_political_power = -5
 	}
 }
@@ -2638,71 +2879,6 @@ country_event = {
 ########################################
 ########-      旧事件         -#########
 ########################################
-country_event = { # Feng ups recruitment due to fear of lep collapse
-	id = shx.7
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.7" }
-	title = shx.7.t
-	desc = shx.7.d
-	picture = GFX_report_event_QIE_soldiers_mobilize
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.7.a
-		add_war_support = 0.02
-		set_temp_variable = { SHX_yuxiang_mil_change = 2 }
-		SHX_add_yuxiang_mil = yes
-		hidden_effect = {
-			country_event = { id = shx.8 days = 13 }
-		}
-	}
-}
-
-country_event = { # Yan speaks to Feng about his military rearmament
-	id = shx.8
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.8" }
-	title = shx.8.t
-	desc = shx.8.d
-	picture = GFX_report_event_QIE_soldiers_mobilize
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.8.a
-		add_war_support = -0.05
-		set_temp_variable = { SHX_xishan_mil_change = 5 }
-		SHX_add_xishan_mil = yes
-		hidden_effect = {
-			country_event = { id = shx.10 days = 28 }
-		}
-	}
-}
-country_event = { # Feng holds meeting with local government officials, bribery involved most likley
-	id = shx.10
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.10" }
-	title = shx.10.t
-	desc = shx.10.d
-	picture = GFX_report_event_CHI_warlords
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.10.a
-		add_political_power = -15
-		set_temp_variable = { SHX_yuxiang_gov_change = 5 }
-		SHX_add_yuxiang_gov = yes
-	}
-}
-
 country_event = { # peasants in north Jinxi protest against German companies mining into Shanxi
 	id = shx.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.13" }
@@ -3208,145 +3384,6 @@ country_event = { #Miners put down - Feng not happy with bloody mess left
 		SHX_add_yuxiang_gov = yes
 		hidden_effect = {
 			country_event = { id = shx.21 days = 25 }
-		}
-	}
-}
-
-country_event = { # Feng Takes Over
-	id = shx.63
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.63" }
-	title = shx.63.t
-	desc = shx.63.d
-	picture = GFX_report_event_CHI_warlords
-	is_triggered_only = yes
-
-	trigger = {
-		has_idea = SHX_power_struggle
-	}
-
-	option = {
-		name = shx.63.a
-		set_politics = {
-			ruling_party = radical_socialist
-			elections_allowed = no
-		}
-		remove_ideas = SHX_power_struggle
-		hidden_effect = {
-			remove_all_ministers = yes
-			set_country_flag = SHX_Feng_in_power
-			remove_ideas = {
-				SHX_yan_xishan_thought_1
-				SHX_yan_xishan_thought_2
-				SHX_yan_xishan_thought_3
-				SHX_yan_xishan_thought_4
-				SHX_yan_xishan_thought_5
-				SHX_yan_xishan_thought_6
-				SHX_yan_xishan_thought_7
-				SHX_yan_xishan_thought_8
-				SHX_yan_xishan_thought_9
-				SHX_yan_xishan_thought_10
-				SHX_yan_xishan_thought_11
-				SHX_yan_xishan_thought_12
-				SHX_yan_xishan_thought_13
-				SHX_yan_xishan_thought_14
-				SHX_yan_xishan_thought_15
-			}
-		}
-		add_ideas = {
-			SHX_He_Qigong_hog_ade
-			SHX_Su_Tiren_for_ade
-			SHX_Guo_Zhigang_eco_ade
-			SHX_Fang_Zhenwu_sec_ade
-		}
-	}
-}
-
-country_event = { #Feng Yuxiang wants an alliance
-	id = shx.64
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.64" }
-	title = shx.64.t
-	desc = shx.64.d
-	picture = GFX_report_event_AUS_Ausgleich_dip_agree
-	is_triggered_only = yes
-
-	option = {
-		name = shx.64.a
-		if = {
-			limit = { is_faction_leader = yes }
-			add_to_faction = FROM
-		}
-		else = {
-			give_guarantee = FROM
-		}
-		FROM = {
-			set_country_flag = SHX_alliance_@ROOT
-			country_event = {
-				id = shx.65
-				days = 2
-			}
-		}
-	}
-
-	option = {
-		name = shx.64.b
-		trigger = {
-			is_ai = no
-		}
-		FROM = {
-			country_event = {
-				id = shx.65
-				days = 2
-			}
-		}
-	}
-}
-
-country_event = { #Country responds
-	id = shx.65
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.65" }
-	picture = GFX_report_event_AUS_Ausgleich_dip_agree
-	title = {
-		text = shx.65.t.accept
-		trigger = { has_country_flag = SHX_alliance_@FROM }
-	}
-	title = {
-		text = shx.65.t.refuse
-		trigger = { NOT = { has_country_flag = SHX_alliance_@FROM } }
-	}
-
-	desc = {
-		text = shx.65.d.accept
-		trigger = { has_country_flag = SHX_alliance_@FROM }
-	}
-	desc = {
-		text = shx.65.d.refuse
-		trigger = { NOT = { has_country_flag = SHX_alliance_@FROM } }
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = shx.65.a
-		trigger = {
-			has_country_flag = SHX_alliance_@FROM
-		}
-		give_guarantee = FROM
-		add_political_power = 25
-		add_opinion_modifier = {
-			target = FROM
-			modifier = KR_approves_of_govt
-		}
-	}
-
-	option = {
-		name = shx.65.b
-		trigger = {
-			NOT = { has_country_flag = SHX_alliance_@FROM }
-		}
-		add_political_power = -25
-		add_opinion_modifier = {
-			target = FROM
-			modifier = KR_disapproves_of_govt
 		}
 	}
 }

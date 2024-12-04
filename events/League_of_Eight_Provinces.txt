@@ -840,13 +840,6 @@ news_event = {# The Illusion Shatters
 					days = 10
 				}
 			}
-			else_if = {
-				limit = { tag = SHX }
-				country_event = {
-					id = shx.7
-					days = 5
-				}
-			}
 		}
 	}
 

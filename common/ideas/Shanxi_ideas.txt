@@ -342,87 +342,7 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
-		SHX_christian_army_1 = { #initial
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_1"}
-			modifier = {
-				army_org_factor = 0.05
-				army_morale_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_2 = { #officers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_2"}
-			modifier = {
-				army_org_factor = 0.05
-				army_morale_factor = 0.1
-				experience_gain_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_3 = { #chaplains
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_3"}
-			modifier = {
-				army_org_factor = 0.1
-				army_morale_factor = 0.1
-				recon_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_4 = { #soldiers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_4"}
-			modifier = {
-				army_org_factor = 0.1
-				army_morale_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_5 = { #officers + chaplains
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_5"}
-			modifier = {
-				army_org_factor = 0.1
-				army_morale_factor = 0.1
-				experience_gain_factor = 0.1
-				recon_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_6 = { #officers + soldiers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_6"}
-			modifier = {
-				army_org_factor = 0.1
-				army_morale_factor = 0.1
-				experience_gain_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_7 = { #chaplains + soldiers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_7"}
-			modifier = {
-				army_org_factor = 0.15
-				army_morale_factor = 0.1
-				recon_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-		SHX_christian_army_8 = { #officers + chaplains + soldiers
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_christian_army_8"}
-			modifier = {
-				army_org_factor = 0.15
-				army_morale_factor = 0.1
-				experience_gain_factor = 0.1
-				recon_factor = 0.1
-			}
-			name = SHX_christian_army
-			picture = MEX_politicised_army
-		}
-
+		
 		### Economy ideas
 		SHX_more_imports_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_more_imports_idea"}
@@ -601,6 +521,15 @@ ideas = {
 		}
 
 		###SHX Industrial Spirits
+		SHX_expanded_beijing_investment = {#北京投资增加
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_expanded_beijing_investment	" }
+			picture = generic_loans
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+			}
+		}
 		SHX_standardised_railway_gauges = {#标准轨距
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_standardised_railway_gauges"}
 			picture = generic_build_infrastructure

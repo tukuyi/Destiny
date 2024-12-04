@@ -238,7 +238,6 @@ SHX_strengthen_feng_small = {
 	}
 	log = "SHX_BOP_logging; Feng increase by +5 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
 }
-
 SHX_strengthen_feng_medium = {
 	set_temp_variable = { SHX_bop_change_var = 0.15 }
 	hidden_effect = {
@@ -261,7 +260,6 @@ SHX_strengthen_feng_medium = {
 	}
 	log = "SHX_BOP_logging; Feng increase by +15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
 }
-
 SHX_strengthen_feng_large = {
 	set_temp_variable = { SHX_bop_change_var = 0.25 }
 	hidden_effect = {
@@ -286,6 +284,7 @@ SHX_strengthen_feng_large = {
 	}
 	log = "SHX_BOP_logging; Feng increase by +25 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_power_balance|= 3];" #temp logging effects so BoP changes could be seen in game log
 }
+
 ###- Victory Effects -###
 SHX_yan_victory_effect = {#阎锡山大获全胜
 
