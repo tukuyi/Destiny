@@ -4,6 +4,10 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/SHX_zhao_du_li_de_zui_hou_yi_nian.png"
 	}
 	spriteType = {
+		name = "GFX_goal_SHX_fa_zhan_jiao_yu"
+		texturefile = "gfx/interface/goals/SHX_fa_zhan_jiao_yu.png"
+	}
+	spriteType = {
 		name = "GFX_goal_SHX_sheng_yi_hui"
 		texturefile = "gfx/interface/goals/SHX_sheng_yi_hui.png"
 	}

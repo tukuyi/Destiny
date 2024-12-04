@@ -167,8 +167,8 @@ create_country_leader = {
 }
 create_country_leader = {
 	name = "屈映光"
-	desc = "POLITICS_SONG_ZHEYUAN_DESC"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Song_Zheyuan.png"
+	desc = "POLITICS_QU_YINGUANG_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
 	expire = "1.1.1"
 	ideology = neo_confucianism_subtype
 }
@@ -280,6 +280,7 @@ recruit_character = SQI_boris_annenkov
 SQI_zhang_zongchang = {
 	set_variable = { china_alignment = token:fengtian }
 	set_character_flag = CHN_original_unit_leader
+	retire = yes
 }
 SQI_duan_qi_rui = {
 	set_variable = { china_alignment = token:others }

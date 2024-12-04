@@ -547,6 +547,7 @@ country_event = { #张天然的胜利
 		hidden_effect = {
 			SQI_zhang_huaizhi = { set_nationality = ROOT }
 			SQI_li_lijiu = { set_nationality = ROOT }
+			SQI_zhang_zongchang = { set_nationality = ROOT }
 			SQI_xue_dian = { set_nationality = ROOT }
 			create_country_leader = {
 				name = "张天然"

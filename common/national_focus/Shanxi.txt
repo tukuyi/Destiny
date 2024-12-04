@@ -894,7 +894,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_fa_zhan_jiao_yu
-		icon = GFX_goal_SHX_ji_xu_shi_nian
+		icon = GFX_goal_SHX_fa_zhan_jiao_yu
 		relative_position_id = SHX_ji_xu_shi_nian
 		x = -4
 		y = 1
