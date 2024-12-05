@@ -179,4 +179,8 @@ SpriteTypes = {
 		name = "GFX_goal_SHX_fa_tuan_jing_ji"
 		texturefile = "gfx/interface/goals/SHX_fa_tuan_jing_ji.png"
 	}
+	spriteType = {
+		name = "GFX_goal_SHX_qi_ye_gai_ge"
+		texturefile = "gfx/interface/goals/SHX_qi_ye_gai_ge.png"
+	}
 }

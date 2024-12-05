@@ -3716,7 +3716,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_qi_ye_gai_ge
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_qi_ye_gai_ge
 		relative_position_id = SHX_shan_xi_wang
 		x = 1
 		y = 6
@@ -3734,7 +3734,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_mo_shou_cheng_gui
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_QIE_li_fa_wei_hu
 		relative_position_id = SHX_shan_xi_wang
 		x = 0
 		y = 7
