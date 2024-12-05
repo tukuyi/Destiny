@@ -147,4 +147,36 @@ SpriteTypes = {
 		name = "GFX_goal_SHX_quan_li_and_cai_fu"
 		texturefile = "gfx/interface/goals/SHX_quan_li_and_cai_fu.png"
 	}
+	spriteType = {
+		name = "GFX_goal_SHX_ren_ming_xu_shi"
+		texturefile = "gfx/interface/goals/SHX_ren_ming_xu_shi.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_jin_bu_ju"
+		texturefile = "gfx/interface/goals/SHX_jin_bu_ju.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_wei_hu_chuan_tong"
+		texturefile = "gfx/interface/goals/SHX_wei_hu_chuan_tong.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_tui_xing_ru_jia_si_xiang"
+		texturefile = "gfx/interface/goals/SHX_tui_xing_ru_jia_si_xiang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_ji_quan_sheng_fu"
+		texturefile = "gfx/interface/goals/SHX_ji_quan_sheng_fu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_shen_fen_ren_tong"
+		texturefile = "gfx/interface/goals/SHX_shen_fen_ren_tong.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_yan_lun_tong_he"
+		texturefile = "gfx/interface/goals/SHX_yan_lun_tong_he.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_fa_tuan_jing_ji"
+		texturefile = "gfx/interface/goals/SHX_fa_tuan_jing_ji.png"
+	}
 }

@@ -3569,7 +3569,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_ren_ming_xu_shi
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_ren_ming_xu_shi
 		relative_position_id = SHX_shan_xi_wang
 		x = -2
 		y = 3
@@ -3587,7 +3587,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_jin_bu_ju
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_jin_bu_ju
 		relative_position_id = SHX_shan_xi_wang
 		x = 1
 		y = 2
@@ -3605,7 +3605,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_wei_hu_chuan_tong
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_wei_hu_chuan_tong
 		relative_position_id = SHX_shan_xi_wang
 		x = 2
 		y = 3
@@ -3623,7 +3623,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_tui_xing_ru_jia_si_xiang
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_tui_xing_ru_jia_si_xiang
 		relative_position_id = SHX_shan_xi_wang
 		x = 0
 		y = 3
@@ -3644,7 +3644,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_ji_quan_sheng_fu
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_ji_quan_sheng_fu
 		relative_position_id = SHX_shan_xi_wang
 		x = 0
 		y = 4
@@ -3662,7 +3662,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_shen_fen_ren_tong
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_shen_fen_ren_tong
 		relative_position_id = SHX_shan_xi_wang
 		x = -1
 		y = 5
@@ -3680,7 +3680,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_yan_lun_tong_he
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_yan_lun_tong_he
 		relative_position_id = SHX_shan_xi_wang
 		x = -1
 		y = 6
@@ -3698,7 +3698,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_fa_tuan_jing_ji
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_fa_tuan_jing_ji
 		relative_position_id = SHX_shan_xi_wang
 		x = 1
 		y = 5
