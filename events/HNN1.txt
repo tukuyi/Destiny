@@ -11,8 +11,24 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		SHX_feng_victory_effect = yes
-		set_country_flag = SHX_feng_victory_over_yan
+		# set_country_flag = QD_LEADER_GUI_VISIBLE
+
+		# create_country_leader = {
+		# 	name = "王亚樵"
+		# 	picture = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
+		# 	desc = "POLITICS_WANG_YA_QIAO_DESC"
+		# 	expire = "1965.1.1"
+		# 	ideology = syn_illegalism_subtype
+		# }
+		# set_politics = {
+		# 	ruling_party = syndicalist
+		# }
+		# set_party_name = {
+		# 	ideology = syndicalist
+		# 	long_name = LEC_triad_syndicalist_party_long
+		# 	name = LEC_triad_syndicalist_party
+		# }
+
 		# set_power_balance = {
 		# 	id = SHX_power_balance
 		# 	left_side = SHX_yan_winning_side

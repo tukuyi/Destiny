@@ -2470,12 +2470,20 @@ focus_tree = {
 
 	focus = {
 		id = SHX_mo_fan_sheng
-		icon = GFX_goal_SHX_mo_fan_sheng
+		icon = {
+			trigger = { has_country_leader = { character = SHX_feng_yuxiang } }
+			value = GFX_goal_SHX_mo_fan_sheng_feng_yuxiang
+		}
+		icon = {
+			trigger = { NOT = { has_country_leader = { character = SHX_feng_yuxiang } } }
+			value = GFX_goal_SHX_mo_fan_sheng
+		}
 		relative_position_id = SHX_ji_xu_shi_nian
 		x = 0
 		y = 7
 		cost = 5
 
+		dynamic = yes
 		ai_will_do = {
 			base = 100
 			modifier = {
@@ -3501,7 +3509,7 @@ focus_tree = {
 #阎锡山
 	focus = {
 		id = SHX_shan_xi_wang
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_shan_xi_wang
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 3
@@ -3525,7 +3533,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_yan_xi_shan_si_xiang
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_yan_xi_shan_si_xiang
 		relative_position_id = SHX_shan_xi_wang
 		x = 0
 		y = 1
@@ -3543,7 +3551,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_quan_li_and_cai_fu
-		icon = GFX_goal_AUS_Humble_Three_Noble_Knights
+		icon = GFX_goal_SHX_quan_li_and_cai_fu
 		relative_position_id = SHX_shan_xi_wang
 		x = -1
 		y = 2

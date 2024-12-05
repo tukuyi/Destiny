@@ -8808,10 +8808,6 @@ focus_tree = {
 			}
 		}
 	
-		allow_branch = {
- 
-		}
-	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_PROC_navy"
 			navy_experience = 75

@@ -1,18 +1,19 @@
-# QD_uses_leader_gui = {
-# 	OR = {
-# 		LEC_has_leader_GUI = yes
-# 		has_country_flag = QD_LEADER_GUI_VISIBLE
-# 	}
-# 	NOT = {
-# 		has_country_flag = QD_LEADER_GUI_NOT_VISIBLE
-# 	}
-# }
+QD_uses_leader_gui = {
+	OR = {
+		SHC_has_leader_GUI = yes
+		DQI_has_leader_GUI = yes
+		has_country_flag = QD_LEADER_GUI_VISIBLE
+	}
+	NOT = {
+		has_country_flag = QD_LEADER_GUI_NOT_VISIBLE
+	}
+}
 
-# QD_uses_double_leader_gui = {
-# 	OR = {
-# 		has_country_flag = QD_DOUBLE_LEADER_GUI_VISIBLE
-# 	}
-# }
+QD_uses_double_leader_gui = {
+	OR = {
+		has_country_flag = QD_DOUBLE_LEADER_GUI_VISIBLE
+	}
+}
 
 # QD_LEADER_GUI_USES_CUSTOM_TITLE = {
 # 	OR = {
@@ -22,6 +23,15 @@
 # 	}
 # }
 
-# LEC_has_leader_GUI = {
-# 	has_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
-# }
+SHC_has_leader_GUI = {
+	has_country_flag = SHC_wo_men_de_xin_ling_xiu
+}
+DQI_has_leader_GUI = {
+	OR = {
+		has_idea = QIE_yan_xi_shan_hog #阎锡山
+	}
+	has_country_leader = {
+		name = "溥仪"
+		ruling_only = yes
+	}
+}

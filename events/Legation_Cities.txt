@@ -15020,7 +15020,7 @@ country_event = {#情场“高手”
 }
 
 ###工团
-country_event = {
+country_event = {#领导人
 	id = lecgong.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecgong.1"}
 	title = lecgong.1.t
@@ -15571,7 +15571,9 @@ country_event = {#新领袖
 
 	option = {
 		name = lecgong.9.a
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+
 		create_country_leader = {
 			name = "周扬"
 			desc = "Zhou_Yang_DESC"
@@ -15588,16 +15590,13 @@ country_event = {#新领袖
 			ruling_party = totalist
 			elections_allowed = no
 		}
-		remove_ideas = LEC_lu_xun_hog
-		add_ideas = LEC_zhou_yang_hog
-		hidden_effect = {
-			
-		}
 	}
 
 	option = {
 		name = lecgong.9.b
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "康生"
 			desc = "Kang_Shen_DESC"
@@ -15614,16 +15613,13 @@ country_event = {#新领袖
 			ruling_party = totalist
 			elections_allowed = no
 		}
-		remove_ideas = LEC_lu_xun_hog
-		add_ideas = LEC_kang_sheng_hog
-		hidden_effect = {
-			
-		}
 	}
 
 	option = {
 		name = lecgong.9.c
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "饶漱石"
 			desc = "Rao_Shu_Shi_DESC"
@@ -15635,16 +15631,13 @@ country_event = {#新领袖
 			ruling_party = syndicalist
 			elections_allowed = no
 		}
-		remove_ideas = LEC_lu_xun_hog
-		add_ideas = LEC_rao_shu_shi_hog
-		hidden_effect = {
-			
-		}
 	}
 	
 	option = {
 		name = lecgong.9.e
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+
 		create_country_leader = {
 			name = "王亚樵"
 			picture = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
@@ -15664,7 +15657,9 @@ country_event = {#新领袖
 
 	option = {
 		name = lecgong.9.f
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "景梅九"
 			desc = "Jing_Mei_Jiu_DESC"
@@ -15701,7 +15696,9 @@ country_event = {#新领袖
 
 	option = {#方君瑛
 		name = lecgong.17.a
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+
 		create_country_leader = {
 			name = "方君瑛"
 			picture = "gfx/leaders/CHI/Portrait_KMT_Fang_Junying.png"
@@ -15722,7 +15719,9 @@ country_event = {#新领袖
 	
 	option = {#向警予
 		name = lecgong.17.b
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "向警予"
 			picture = "gfx/leaders/HNN/Portrait_HNN_Xiang_Jing_Yu.png"
@@ -15738,7 +15737,9 @@ country_event = {#新领袖
 
 	option = {#赵世炎
 		name = lecgong.17.c
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "赵世炎"
 			picture = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
@@ -15754,7 +15755,9 @@ country_event = {#新领袖
 
 	option = {#茅盾
 		name = lecgong.17.e
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "茅盾"
 			picture = "gfx/leaders/LEC/Portrait_LEC_Mao_Dun.png"
@@ -15807,7 +15810,9 @@ country_event = {#新领袖
 
 	option = {#马三立
 		name = lecgong.18.a
-		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
 		create_country_leader = {
 			name = "马三立"
 			picture = "gfx/leaders/LEC/Portrait_LEC_ma_san_li.png"

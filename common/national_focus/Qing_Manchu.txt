@@ -2218,9 +2218,6 @@ focus_tree = {
 		}
 		available = {
 			has_government = paternal_autocrat
-			NOT = {
-				 
-			}
 		}
 
 

@@ -8046,10 +8046,11 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
+		set_country_flag = QD_LEADER_GUI_VISIBLE
 		create_country_leader = {
-			name = "阎锡山"
-			desc = "POLITICS_YAN_XISHAN_DESC"
-			picture = "gfx/leaders/QIE/Portrait_QIE_yan_xishan.png"
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
 			expire = "1.1.1"
 			ideology = pataut_yan_xishan_thought_subtype
 		}
@@ -8067,9 +8068,6 @@ country_event = {
 			QIE_su_ti_ren_for
 			QIE_du_ren_zhi_eco
 			QIE_wang_jin_guo_sec
-		}
-		hidden_effect = {
-			
 		}
 	}
 }

@@ -1,48 +1,70 @@
-# defined_text = {
-# 	name = QDGetHOGTitle  #定义按钮名字
-# 	text = {
-# 		trigger = {
-# 			tag = LEC
-# 		}
-# 		localization_key = HNN_EM_OR_PRES
-# 	}
-# }
-# defined_text = {
-# 	name = QDGetFORHOGTitle  ##定义外交
-# 	text = {
-# 		trigger = {
-# 		 	tag = LEC
-# 		}
-# 		localization_key = HNN_EM_OR_PRES2
-# 	}
-# }
+defined_text = {
+	name = QDGetHOGTitle  #定义按钮名字
+	text = {
+		trigger = {
+			tag = SHC
+		}
+		localization_key = HNN_EM_OR_PRES
+	}
+	text = {
+		trigger = {
+		  	tag = QIE
+		}
+		localization_key = EM_OR_PRES
+	}
+}
+defined_text = {
+	name = QDGetFORHOGTitle  ##定义外交
+	text = {
+		trigger = {
+		 	tag = SHC
+		}
+		localization_key = HNN_EM_OR_PRES2
+	}
+	text = {
+		trigger = {
+		 	tag = QIE
+		}
+		localization_key = EM_OR_PRES2
+	}
+}
 
-# defined_text = {
-# 	name = QDGetHeadDescription #定义副领袖介绍
+defined_text = {
+	name = QDGetHeadDescription #定义副领袖介绍
 
-# }
+}
 
-# defined_text = {
-# 	name = QDGetPrimeMinister  #定义副领袖名字
-# 	text = {
-# 		trigger = {#鲁迅
-# 			tag = LEC
-# 		  	has_completed_focus = LEC_wo_men_de_xin_ling_xiu
-# 		}
-# 		localization_key = LEC_lu_xun_hog
-# 	}
-# }
+defined_text = {
+	name = QDGetPrimeMinister  #定义副领袖名字
+	text = {
+		trigger = {#鲁迅
+		  	has_country_flag = SHC_wo_men_de_xin_ling_xiu
+		}
+		localization_key = LEC_lu_xun_hog
+	}
+	text = {
+		trigger = {#阎锡山
+		 	has_idea = QIE_yan_xi_shan_hog
+		}
+		localization_key = QIE_yan_xi_shan_hog
+	}
+}
 
-# defined_text = {
-# 	name = QDGetPMPortrait   #定义图片
-# 	text = {
-# 		trigger = {#鲁迅
-# 			tag = LEC
-# 		  	has_completed_focus = LEC_wo_men_de_xin_ling_xiu
-# 		}
-# 		localization_key = GFX_Portrait_LEC_Lu_Xun
-# 	}
-# }
+defined_text = {
+	name = QDGetPMPortrait   #定义图片
+	text = {
+		trigger = {#鲁迅
+			has_country_flag = SHC_wo_men_de_xin_ling_xiu
+		}
+		localization_key = GFX_Portrait_LEC_Lu_Xun
+	}
+	text = {
+		trigger = {#阎锡山
+			has_idea = QIE_yan_xi_shan_hog
+		}
+		localization_key = GFX_Portrait_QIE_yan_xishan
+	}
+}
 
 # defined_text = {
 # 	name = QDGetThirdLeaderTitle   #三头政府定义

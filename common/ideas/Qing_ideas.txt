@@ -3,7 +3,7 @@
 ####################
 
 ideas = {
-
+	
 	head_of_government = {
 		QIE_Wu_pei_fu_hog = {#吴佩孚
 			allowed = { original_tag = QIE }
@@ -17,7 +17,6 @@ ideas = {
 			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea QIE_Wu_pei_fu_hog"
-				
 			}
 			traits = {
 				head_of_government
@@ -36,8 +35,7 @@ ideas = {
 			}
 			cancel_if_invalid = no
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea QIE_jiang_kang_hu_hog"
-				
+				log = "[GetDateText]: [Root.GetName]: add idea QIE_jiang_kang_hu_hog"		
 			}
 			traits = {
 				head_of_government

@@ -1,100 +1,113 @@
-# scripted_gui = {
-# 	QD_view_pm = {
-# 		context_type = player_context
-# 		parent_window_token = politics_tab
-# 		window_name = "QD_joe_biden_gui"
+scripted_gui = {
+	QD_view_pm = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "QD_joe_biden_gui"
 
-# 		ai_check = {
-# 			always = no
-# 		}
+		ai_check = {
+			always = no
+		}
 
-# 		triggers = {
-# 			QD_pm_frame_visible = {
-# 				OR = {
-# 					has_country_flag = QD_HOG_veiw
-# 					# has_country_flag = QD_HOG_second_veiw
-# 				}
-# 				NOT = {
-# 					has_country_flag = QD_pm_is_hos
-# 				}
-# 			}
-# 			QD_leader_button_visible = {
-# 				QD_uses_leader_gui = yes
-# 			}
-			# QD_second_leader_button_visible = {
-			# 	QD_uses_double_leader_gui = yes
-			# }
+		triggers = {
+			QD_pm_frame_visible = {
+				OR = {
+					has_country_flag = QD_HOG_veiw
+					has_country_flag = QD_HOG_second_veiw
+				}
+				NOT = {
+					has_country_flag = QD_pm_is_hos
+				}
+			}
+			QD_leader_button_visible = {
+				QD_uses_leader_gui = yes
+			}
+			QD_second_leader_button_visible = {
+				QD_uses_double_leader_gui = yes
+			}
 
-			# QD_pm_name_visible = {
-			# 	has_country_flag = QD_HOG_veiw
-			# }			
-			# QD_second_pm_name_visible = {
-			# 	has_country_flag = QD_HOG_second_veiw
-			# }
-		# }
+			QIE_yan_xishan_visible ={#阎锡山
+				AND = {
+					has_country_flag = QD_HOG_veiw
+					has_idea = QIE_yan_xi_shan_hog
+				}
+			}
+			lu_xun_visible = {#鲁迅
+				AND = {
+					has_country_flag = QD_HOG_veiw
+					has_idea = LEC_lu_xun_hog
+				}
+			}
 
-		# visible = {
-		# 	QD_uses_leader_gui = yes
-		# }
+			QD_pm_name_visible = {#副领袖
+				has_country_flag = QD_HOG_veiw
+			}			
+			QD_second_pm_name_visible = {#三头领袖
+				has_country_flag = QD_HOG_second_veiw
+			}
+		}
+
+		visible = {
+			QD_uses_leader_gui = yes
+		}
 		
-		# effects = {
-		# 	QD_leader_button_click = {
-		# 		if = {
-		# 			limit = {
-		# 				has_country_flag = QD_HOG_veiw
-		# 			}
-		# 			clr_country_flag = QD_HOG_veiw
-		# 			else = {
-		# 				set_country_flag = QD_HOG_veiw
-		# 			}
-		# 		}
-				# if = {
-				# 	limit = {
-				# 		has_country_flag = QD_HOG_second_veiw
-				# 	}
-				# 	clr_country_flag = QD_HOG_second_veiw
-				# }
-			# }
+		effects = {
+			QD_leader_button_click = {#副领袖
+				if = {
+					limit = {
+						has_country_flag = QD_HOG_veiw
+					}
+					clr_country_flag = QD_HOG_veiw
+					else = {
+						set_country_flag = QD_HOG_veiw
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = QD_HOG_second_veiw
+					}
+					clr_country_flag = QD_HOG_second_veiw
+				}
+			}
 			
-			# QD_second_leader_button_click = {
-			# 	if = {
-			# 		limit = {
-			# 			has_country_flag = QD_HOG_second_veiw
-			# 		}
-			# 		clr_country_flag = QD_HOG_second_veiw
-			# 		else = {
-			# 			set_country_flag = QD_HOG_second_veiw
-			# 		}
-			# 	}
-			# 	if = {
-			# 		limit = {
-			# 			has_country_flag = QD_HOG_veiw
-			# 		}
-			# 		clr_country_flag = QD_HOG_veiw
-			# 	}
-			# }
-# 		}
-# 	}
-# }
+			QD_second_leader_button_click = {#第三领袖
+				if = {
+					limit = {
+						has_country_flag = QD_HOG_second_veiw
+					}
+					clr_country_flag = QD_HOG_second_veiw
+					else = {
+						set_country_flag = QD_HOG_second_veiw
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = QD_HOG_veiw
+					}
+					clr_country_flag = QD_HOG_veiw
+				}
+			}
+		}
+	}
+}
 
-# scripted_gui = {
-# 	QD_FOR_view_pm = {
-# 		context_type = selected_country_context
-# 		parent_window_token = selected_country_view_diplomacy
-# 		window_name = "QD_for_joe_biden_gui"
+scripted_gui = {
+	QD_FOR_view_pm = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "QD_for_joe_biden_gui"
 
-# 		ai_check = {
-# 			always = no
-# 		}
+		ai_check = {
+			always = no
+		}
 
-# 		triggers = {
-# 			QD_for_leader_button_visible = {
-# 				QD_uses_leader_gui = yes
-# 			}
+		triggers = {
+			QD_for_leader_button_visible = {
+				QD_uses_leader_gui = yes
+			}
 			
-# 			QD_for_second_leader_button_visible = {
-# 				QD_uses_double_leader_gui = yes
-# 			}
-# 		}	
-# 	}
-# }
+			QD_for_second_leader_button_visible = {
+				QD_uses_double_leader_gui = yes
+			}
+		}	
+	}
+}

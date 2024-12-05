@@ -4,6 +4,10 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/SHX_zhao_du_li_de_zui_hou_yi_nian.png"
 	}
 	spriteType = {
+		name = "GFX_goal_SHX_mo_fan_sheng_feng_yuxiang"
+		texturefile = "gfx/interface/goals/SHX_mo_fan_sheng_feng_yuxiang.png"
+	}
+	spriteType = {
 		name = "GFX_goal_SHX_fa_zhan_jiao_yu"
 		texturefile = "gfx/interface/goals/SHX_fa_zhan_jiao_yu.png"
 	}
@@ -130,5 +134,17 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_goal_SHX_mo_fan_sheng"
 		texturefile = "gfx/interface/goals/SHX_mo_fan_sheng.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_shan_xi_wang"
+		texturefile = "gfx/interface/goals/SHX_shan_xi_wang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_yan_xi_shan_si_xiang"
+		texturefile = "gfx/interface/goals/SHX_yan_xi_shan_si_xiang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_quan_li_and_cai_fu"
+		texturefile = "gfx/interface/goals/SHX_quan_li_and_cai_fu.png"
 	}
 }
