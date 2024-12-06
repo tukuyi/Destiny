@@ -2,7 +2,7 @@
 
 ideas = {
 	country = {
-		### Starting ideas
+	### Starting ideas
 		SHX_neutrality = {#山西中立政策
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_neutrality"}
 			picture = hol_aloof_neutrality
@@ -66,7 +66,7 @@ ideas = {
 			}
 		}
 
-		### Yan Xishan ideas
+	### Yan Xishan ideas
 		SHX_yan_xishan_thought_1 = { #initial
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_yan_xishan_thought_1"}
 			modifier = {
@@ -222,138 +222,7 @@ ideas = {
 			picture = jap_supremacy_of_will
 		}
 
-		### Feng Yuxiang ideas
-		SHX_rural_economy_1 = { #initial
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_1"}
-			modifier = {
-				monthly_population = 0.1
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_2 = { #farm cooperation
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_2"}
-			modifier = {
-				monthly_population = 0.1
-				production_factory_max_efficiency_factor = 0.05
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_3 = { #soil erosion
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_3"}
-			modifier = {
-				monthly_population = 0.15
-				local_resources_factor = 0.1
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_4 = { #farm cooperation + soil erosion
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_4"}
-			modifier = {
-				monthly_population = 0.2
-				local_resources_factor = 0.1
-				production_factory_max_efficiency_factor = 0.05
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_5 = { #grain production
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_5"}
-			modifier = {
-				monthly_population = 0.3
-				local_resources_factor = 0.1
-				production_factory_max_efficiency_factor = 0.05
-				consumer_goods_factor = -0.15
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_6 = { #opium ban
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_6"}
-			modifier = {
-				monthly_population = 0.1
-				political_power_gain = 0.1
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_7 = { #farm cooperation + opium ban
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_7"}
-			modifier = {
-				monthly_population = 0.1
-				political_power_gain = 0.1
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_8 = { #soil erosion + opium ban
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_8"}
-			modifier = {
-				monthly_population = 0.15
-				political_power_gain = 0.1
-				local_resources_factor = 0.1
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_9 = { #farm cooperation + soil erosion + opium ban
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_9"}
-			modifier = {
-				monthly_population = 0.2
-				political_power_gain = 0.1
-				local_resources_factor = 0.1
-				production_factory_max_efficiency_factor = 0.05
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_10 = { #grain production + opium ban
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_10"}
-			modifier = {
-				monthly_population = 0.3
-				production_factory_max_efficiency_factor = 0.05
-				local_resources_factor = 0.1
-				political_power_gain = 0.1
-				consumer_goods_factor = -0.15
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_rural_economy_11 = { #land reform
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_rural_economy_11"}
-			modifier = {
-				monthly_population = 0.3
-				production_factory_max_efficiency_factor = 0.05
-				local_resources_factor = 0.1
-				political_power_gain = 0.1
-				consumer_goods_factor = -0.15
-				industrial_capacity_factory = 0.15
-			}
-			name = SHX_rural_economy
-			picture = generic_agrarian_reform
-		}
-		SHX_construction_investments = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_construction_investments"}
-			picture = generic_exploit_mines
-			modifier = {
-				consumer_goods_factor = 0.1
-				production_speed_buildings_factor = 0.1
-			}
-		}
-
-		### Economy ideas
-		SHX_more_imports_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_more_imports_idea"}
-			picture = generic_economic_increase
-			modifier = {
-				consumer_goods_factor = -0.15
-				min_export = 0.05
-			}
-		}
-
-		### 10 year Plan Spirits ###
+	### 10 year Plan Spirits ###
 		SHX_Ten_Year_Plan_begins = {#重振十年计划
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_Ten_Year_Plan_begins" }
 			picture = generic_production_bonus
@@ -375,7 +244,7 @@ ideas = {
 			}
 		}
 
-		###Education Spirits######
+	###Education Spirits######
 		SHX_unfinished_education1 = {#教育改革续行
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education1" }
 			picture = generic_research_reduction
@@ -391,9 +260,9 @@ ideas = {
 			picture = generic_research_increase
 			allowed = { always = no }
 			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_gain = -0.10
 				research_speed_factor = -0.25
-				consumer_goods_factor = 0.1
-				political_power_gain = -0.1
 			}
 		}
 		SHX_unfinished_education_yan1 = {#现代化大学教育
@@ -401,9 +270,9 @@ ideas = {
 			picture = generic_research_increase
 			allowed = { always = no }
 			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_gain = -0.10
 				research_speed_factor = -0.2
-				consumer_goods_factor = 0.1
-				political_power_gain = -0.1
 			}
 		}
 		SHX_unfinished_education_feng = {#扩充入学途径
@@ -411,9 +280,9 @@ ideas = {
 			picture = generic_research_increase
 			allowed = { always = no }
 			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_gain = -0.10
 				research_speed_factor = -0.15
-				consumer_goods_factor = 0.1
-				political_power_gain = -0.1
 			}
 		}
 		SHX_unfinished_education_feng1 = {#普及小学教育
@@ -422,7 +291,7 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				research_speed_factor = 0.05
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.10
 			}
 		}
 		SHX_james_yens_literacy_campaign = {#晏阳初扫盲计划
@@ -435,17 +304,17 @@ ideas = {
 			}
 		}
 
-		###Agricultural Spirits ###
+	###Agricultural Spirits ###
 		SHX_agriculture_reform1 = {#承诺土地改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform1" }
 			picture = DEI_solid_foodsystem
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = -0.15
-				consumer_goods_factor = 0.2
-				production_speed_buildings_factor = -0.15
 				conscription_factor = -0.10
-				production_speed_infrastructure_factor = 0.1
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.20
+				production_speed_buildings_factor = -0.15
+				production_speed_infrastructure_factor = 0.10
 			}
 		}
 		SHX_agriculture_reform_Yan = {#徒有其名的土地改革
@@ -453,11 +322,11 @@ ideas = {
 			picture = DEI_abandoned_ethical_policy
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = -0.05
-				production_speed_buildings_factor = -0.15
 				conscription_factor = -0.05
-				production_speed_infrastructure_factor = 0.15
+				political_power_gain = -0.05
 				industry_repair_factor = 0.05
+				production_speed_buildings_factor = -0.15
+				production_speed_infrastructure_factor = 0.15
 			}
 		}
 		SHX_agriculture_reform_Yan1 = {#儒家农耕理想
@@ -465,12 +334,12 @@ ideas = {
 			picture = generic_agrarian_reform
 			allowed = { always = no }
 			modifier = {
+				war_support_factor = 0.10
 				political_power_gain = 0.05
-				production_speed_buildings_factor = -0.05
-				production_speed_infrastructure_factor = 0.15
 				industry_repair_factor = 0.10
 				global_building_slots_factor = 0.1
-				war_support_factor = 0.10
+				production_speed_buildings_factor = -0.05
+				production_speed_infrastructure_factor = 0.15
 			}
 		}
 		SHX_agriculture_reform_Feng = {#有限土地再分配
@@ -478,12 +347,12 @@ ideas = {
 			picture = generic_agrarian_society
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = -0.15
-				consumer_goods_factor = 0.1
-				production_speed_buildings_factor = -0.10
-				production_speed_infrastructure_factor = 0.1
-				global_building_slots_factor = 0.05
 				war_support_factor = 0.10
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.10
+				global_building_slots_factor = 0.05
+				production_speed_buildings_factor = -0.10
+				production_speed_infrastructure_factor = 0.10
 			}
 		}
 		SHX_agriculture_reform_Feng1 = {#耕者有其田
@@ -491,12 +360,12 @@ ideas = {
 			picture = generic_agrarian_society
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = -0.15
-				consumer_goods_factor = -0.15
-				production_speed_infrastructure_factor = 0.1
-				global_building_slots_factor = 0.10
 				supply_node_range = 0.1
 				war_support_factor = 0.20
+				political_power_gain = -0.15
+				consumer_goods_factor = -0.15
+				global_building_slots_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
 			}
 		}
 		SHX_paying_off_gentry = {#回报乡绅
@@ -526,7 +395,7 @@ ideas = {
 			}
 		}
 
-		### Domestic - Political ####
+	### Domestic - Political ####
 		SHX_fight_corruption_idea = {#反腐败斗争
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_fight_corruption_idea " }
 			picture = MEX_callistas
@@ -538,7 +407,7 @@ ideas = {
 			}
 		}
 
-		###SHX Industrial Spirits
+	###SHX Industrial Spirits
 		SHX_expanded_beijing_investment = {#北京投资增加
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_expanded_beijing_investment	" }
 			picture = generic_loans
@@ -879,14 +748,14 @@ ideas = {
 			}
 		}
 
-		### Coup Mechanic Idea ###
+	### Coup Mechanic Idea ###
 		SHX_guominjun_unrest_idea = {#国民军不满
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_guominjun_unrest_idea" }
 			picture = SHX_Guominjun_unrest
 			allowed = { always = no }
 		}
 
-		###Army ideas
+	###Army ideas
 		SHX_taiyuan_general_staff_idea = {#太原总参谋部
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea"}
 			picture = generic_army_war_college
