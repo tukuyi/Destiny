@@ -852,15 +852,6 @@ ideas = {
 				line_change_production_efficiency_factor = 0.05
 			}
 		}
-
-		### Coup Mechanic Idea ###
-		SHX_guominjun_unrest_idea = {#国民军不满
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_guominjun_unrest_idea" }
-			picture = SHX_Guominjun_unrest
-			allowed = { always = no }
-		}
-
-		###Army ideas
 		SHX_QIE_favorable_trade_deal = {#北京的剥削协议
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_QIE_favorable_trade_deal" }
 			picture = generic_trade
@@ -872,10 +863,36 @@ ideas = {
 				}
 			}
 			modifier = {
+				min_export = 0.25
 				extra_trade_to_overlord_factor = 1.0
 				overlord_trade_cost_factor = -0.5
-				min_export = 0.25
 				local_resources_factor = 0.10
+			}
+		}
+		SHX_taiyuan_arsenal_order = {#太原兵工厂订单
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_arsenal_order" }
+			picture = ast_volunteer_defence_corps
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.5
+				political_power_gain = 0.15
+			}
+		}
+
+		### Coup Mechanic Idea ###
+		SHX_guominjun_unrest_idea = {#国民军不满
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_guominjun_unrest_idea" }
+			picture = SHX_Guominjun_unrest
+			allowed = { always = no }
+		}
+
+		###Army ideas
+		SHX_taiyuan_general_staff_idea = {#太原总参谋部
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea"}
+			picture = generic_army_war_college
+			modifier = {
+				max_planning = 0.03
+				planning_speed = 0.03
 			}
 		}
 		SHX_beijing_training_group = {#北京训练团
@@ -887,15 +904,6 @@ ideas = {
 				experience_gain_air = 0.05
 				command_power_gain = 0.10
 				training_time_army_factor = -0.10
-			}
-		}
-		SHX_taiyuan_arsenal_order = {#太原兵工厂订单
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_arsenal_order" }
-			picture = ast_volunteer_defence_corps
-			allowed = { always = no }
-			modifier = {
-				industrial_capacity_factory = -0.5
-				political_power_gain = 0.15
 			}
 		}
 		SHX_dual_armies2 = {#一省两军
@@ -1134,136 +1142,6 @@ ideas = {
 				max_dig_in_factor = 0.10
 				resistance_growth_on_our_occupied_states = 0.10
 				supply_consumption_factor = -0.10
-			}
-		}
-
-		SHX_recruitment_problem_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_recruitment_problem_idea"}
-			picture = chi_army_corruption
-			modifier = {
-				war_support_factor = 0.05
-				conscription_factor = 0.025
-			}
-		}
-		SHX_recruitment_problem_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_recruitment_problem_idea2"}
-			name = SHX_recruitment_problem_idea2
-			picture = chi_army_corruption2
-			modifier = {
-				planning_speed = 0.05
-				army_org_factor = 0.05
-				war_support_factor = 0.05
-				conscription_factor = 0.025
-			}
-		}
-		SHX_recruitment_problem_idea3 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_recruitment_problem_idea3"}
-			name = SHX_recruitment_problem_idea2
-			picture = chi_army_corruption3
-			modifier = {
-				planning_speed = 0.05
-				army_org_factor = 0.05
-				war_support_factor = 0.05
-				conscription_factor = 0.05
-			}
-		}
-		SHX_arm_the_troops_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_arm_the_troops_idea"}
-			picture = ast_volunteer_defence_corps
-			modifier = {
-				war_support_factor = 0.02
-			}
-			equipment_bonus = {
-				infantry_equipment = {
-					build_cost_ic = -0.02
-					instant = yes
-				}
-			}
-		}
-		SHX_arm_the_troops_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_arm_the_troops_idea2"}
-			name = SHX_arm_the_troops_idea
-			picture = ast_volunteer_defence_corps
-			modifier = {
-				war_support_factor = 0.05
-			}
-			equipment_bonus = {
-				infantry_equipment = {
-					build_cost_ic = -0.05
-					instant = yes
-				}
-			}
-		}
-		SHX_arm_the_troops_idea3 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_arm_the_troops_idea3"}
-			name = SHX_arm_the_troops_idea
-			picture = ast_volunteer_defence_corps
-			modifier = {
-				stability_factor = -0.1
-				war_support_factor = 0.05
-			}
-			equipment_bonus = {
-				infantry_equipment = {
-					build_cost_ic = -0.1
-					instant = yes
-				}
-			}
-		}
-		SHX_taiyuan_general_staff_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea"}
-			picture = generic_army_war_college
-			modifier = {
-				max_planning = 0.03
-				planning_speed = 0.03
-			}
-		}
-		SHX_taiyuan_general_staff_idea2 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea2"}
-			name = SHX_taiyuan_general_staff_idea
-			picture = generic_army_war_college
-			modifier = {
-				army_morale_factor = 0.02
-				max_planning = 0.06
-				planning_speed = 0.06
-			}
-		}
-		SHX_taiyuan_general_staff_idea3 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea3"}
-			name = SHX_taiyuan_general_staff_idea
-			picture = generic_army_war_college
-			modifier = {
-				army_morale_factor = 0.05
-				max_planning = 0.09
-				planning_speed = 0.09
-			}
-		}
-		SHX_taiyuan_general_staff_idea4 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea4"}
-			name = SHX_taiyuan_general_staff_idea
-			picture = generic_army_war_college
-			modifier = {
-				army_morale_factor = 0.1
-				max_planning = 0.12
-				planning_speed = 0.12
-			}
-		}
-		SHX_taiyuan_general_staff_idea5 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea5"}
-			name = SHX_taiyuan_general_staff_idea
-			picture = generic_army_war_college
-			modifier = {
-				army_org_factor = 0.05
-				army_morale_factor = 0.1
-				max_planning = 0.15
-				planning_speed = 0.15
-			}
-		}
-		SHX_dare_to_die_corps_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_dare_to_die_corps_idea"}
-			picture = chi_chinese_support
-			modifier = {
-				army_core_attack_factor = 0.05
-				army_core_defence_factor = 0.05
 			}
 		}
 	}
