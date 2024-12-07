@@ -2320,7 +2320,7 @@ focus_tree = {
 	}	
 	focus = {
 		id = SHX_shen_tou_zhan_shu
-		icon = GFX_goal_SHX_jiao_yu_gui_hua
+		icon = GFX_goal_AST_uphold_the_white_armys_crusade
 		relative_position_id = SHX_yi_guo_min_jun_wei_shi
 		x = 1
 		y = 3
@@ -3340,6 +3340,24 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+			modifier = {
+				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_feng_yu_xiang
 		}
@@ -3349,13 +3367,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_na_zuo_yi"
-			set_politics = {
-				ruling_party = social_democrat
-				elections_allowed = no
+			custom_effect_tooltip = shx_feng_goverment_left_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = SHX_towards_revolution_idea
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = shx.feng.1 
+				days = 10 
 			}
-			add_popularity = {
-				ideology = social_democrat
-				popularity = 0.20
+			hidden_effect = {
+				set_politics = {
+					ruling_party = social_democrat
+					elections_allowed = no
+				}
+				add_authdem_to_coalition = yes
+				add_popularity = {
+					ideology = social_democrat
+					popularity = 0.20
+				}
 			}
 		}
 	}	
@@ -3377,7 +3406,21 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_hui_zheng_gui"
-			
+			custom_effect_tooltip = shx_feng_goverment_right_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = SHX_stable_future_idea
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = shx.feng.3
+				days = 10 
+			}
+			hidden_effect = {
+				add_socdem_to_coalition = yes
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.10
+				}
+			}
 		}
 	}	
 

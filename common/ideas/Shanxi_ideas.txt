@@ -184,13 +184,13 @@ ideas = {
 			picture = ANQ_credibility
 			allowed = { always = no }
 			modifier = {
-				compliance_gain = 0.010
+				compliance_gain = 0.015
 				stability_factor = 0.10
 				resistance_decay = 0.10
 				compliance_growth = 0.05
 				war_support_factor = 0.05
 				political_power_gain = 0.20
-				local_resources_factor = 0.10
+				local_resources_factor = 0.15
 				paternal_autocrat_drift = 0.20
 			}
 		}
@@ -203,6 +203,26 @@ ideas = {
 				decryption = 1
 				stability_factor = -0.05
 				war_support_factor = 0.05
+			}
+		}
+	### Feng Yuxiang ideas	
+		SHX_towards_revolution_idea = {#迈向革命未来
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_towards_revolution_idea " }
+			picture = generic_phoenix
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = 0.10
+				stability_weekly = -0.0010
+				political_power_gain = 0.10
+			}
+		}
+		SHX_stable_future_idea = {#稳健的未来
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_stable_future_idea" }
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.1
+				stability_weekly = 0.001
 			}
 		}
 

@@ -91,4 +91,8 @@ spriteTypes = {
 		name = "GFX_report_event_SHX_yan_coat"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_yan_coat.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_shaanxi_poor"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_shaanxi_poor.png"
+	}
 }
