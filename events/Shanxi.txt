@@ -10,6 +10,7 @@ add_namespace = shx.edu
 add_namespace = shx.agri
 add_namespace = shx.industry
 add_namespace = shx.mil
+add_namespace = shx.yan
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
 add_namespace = shx.shx.suiyuan.campaign
@@ -440,6 +441,134 @@ country_event = {#一省两军的命运
 			add_idea = SHX_dual_armies2
 		}
 		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+}
+country_event = {#大清行省
+	id = shx.409 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.409" }
+	title = shx.409.t
+	desc = shx.409.d
+	picture = GFX_report_event_CHI_tiger_room
+	is_triggered_only = yes
+
+	option = { #cool
+		name = shx.409.a
+		add_political_power = 100
+		set_cosmetic_tag = SHX_QIE
+	}
+}
+
+########################################
+########-       阎锡山        -#########
+########################################
+country_event = {#官僚体系的最新状况
+	id = shx.yan.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.1" }
+	title = shx.yan.1.t
+	desc = shx.yan.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.1.a
+		add_popularity = {
+			ideology = market_liberal
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.05
+		}
+	}
+}
+country_event = {#中庸之道
+	id = shx.yan.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.2" }
+	title = shx.yan.2.t
+	desc = shx.yan.2.d
+	picture = GFX_report_event_SHX_taiyuan_confucian_temple
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.yan.3 days = 25 } 
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.2.a
+		add_stability = 0.05
+	}
+}
+country_event = {#山西的儒家思想
+	id = shx.yan.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.3" }
+	title = shx.yan.3.t
+	desc = shx.yan.3.d
+	picture = GFX_report_event_SHX_taiyuan_confucian_temple
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.yan.4 days = 25 } 
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.3.a
+		add_stability = 0.025
+	}
+}
+country_event = {#山西的佛教教诲
+	id = shx.yan.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.4" }
+	title = shx.yan.4.t
+	desc = shx.yan.4.d
+	picture = GFX_report_event_SHX_yungang_grottoes
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.4.a
+		add_political_power = 10
+	}
+}
+country_event = {#人民须知！
+	id = shx.yan.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.5" }
+	title = shx.yan.5.t
+	desc = shx.yan.5.d
+	picture = GFX_report_event_CHI_newspaper
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.5.a
+		add_war_support = 0.025
+	}
+}
+country_event = {#媒体审查
+	id = shx.yan.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.6" }
+	title = shx.yan.6.t
+	desc = shx.yan.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.6.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.02
+		}
 	}
 }
 
@@ -3862,20 +3991,5 @@ country_event = { # The Mas Resist
 		add_political_power = -50
 		set_temp_variable = { SHX_yuxiang_mil_change = 10 }
 		SHX_add_yuxiang_mil = yes
-	}
-}
-
-country_event = {
-	id = shx.409 #yan xishan backs coup, gets to call himself imperial governor
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.409" }
-	title = shx.409.t
-	desc = shx.409.d
-	picture = GFX_report_event_CHI_tiger_room
-	is_triggered_only = yes
-
-	option = { #cool
-		name = shx.409.a
-		add_political_power = 100
-		set_cosmetic_tag = SHX_QIE
 	}
 }

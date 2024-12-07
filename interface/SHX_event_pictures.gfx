@@ -16,6 +16,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/SHX/SHX_yan_troops.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_SHX_taiyuan_confucian_temple"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_taiyuan_confucian_temple.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_yungang_grottoes"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_yungang_grottoes.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_SHX_yanan_street"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_yanan_street.png"
 	}

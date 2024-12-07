@@ -1917,10 +1917,12 @@ focus_tree = {
 			if = {
 				limit = { has_country_leader = { character = SHX_feng_yuxiang } }
 				if = {
-					limit = { owns_state = 799 } #Guanzhong (Xi'an)
+					limit = { owns_state = 799 } 
 					799 = { add_dynamic_modifier = { modifier = SHX_model_province_taiyuan } }
 				}
-				else = { 622 = { add_dynamic_modifier = { modifier = SHX_model_province_taiyuan } } } #Yulin
+				else = { 
+					622 = { add_dynamic_modifier = { modifier = SHX_model_province_taiyuan } } 
+				} 
 			}
 			else = {
 				1072 = {
@@ -2490,7 +2492,7 @@ focus_tree = {
 		relative_position_id = SHX_xin_shan_xi_jun_shi_gui_hua
 		x = -2
 		y = 4
-		cost = 5
+		cost = 3
 
 		prerequisite = {
 			focus = SHX_tian_ran_ping_zhang
@@ -2574,7 +2576,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = available_designer
-				show_mio_tooltip = SHX_taiyuan_arsenal
+				show_mio_tooltip = SHX_taiyuan_arsenal_organisation
 			}
 			else = {
 				if = {
@@ -2916,6 +2918,14 @@ focus_tree = {
 		y = 3
 		cost = 5
 
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
 		available = {
 			has_country_flag = SHX_yan_victory_over_gmj
 		}
@@ -2928,7 +2938,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_wang"
-			
+			add_ideas = SHX_yan_xishan_thought_1
 		}
 	}	
 
@@ -2946,7 +2956,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_yan_xi_shan_si_xiang"
-			
+			swap_ideas = {
+				remove_idea = SHX_yan_xishan_thought_1
+				add_idea = SHX_yan_xishan_thought_2
+			}
 		}
 	}	
 
@@ -2964,7 +2977,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_quan_li_and_cai_fu"
-			
+			SHX_QIE_spend_small = yes
+			custom_effect_tooltip = SHX_QIE_biger_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = SHX_consolidate_bureaucracy
+				days = 200
+			}
 		}
 	}	
 
@@ -2982,7 +3001,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_ren_ming_xu_shi"
-			
+			add_ideas = SHX_a_higher_purpose_idea
 		}
 	}
 
@@ -3000,7 +3019,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jin_bu_ju"
-			
+			add_ideas = SHX_she_hui_fu_li
 		}
 	}
 
@@ -3018,7 +3037,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_wei_hu_chuan_tong"
-			
+			swap_ideas = {
+				remove_idea = SHX_she_hui_fu_li
+				add_idea = SHX_she_hui_fu_liB
+			}
+			country_event = { 
+				id = shx.yan.5
+				days = 10 
+			}
+			add_political_power = 100
 		}
 	}
 
@@ -3039,7 +3066,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_xing_ru_jia_si_xiang"
-			
+			add_ideas = SHX_confucian_order
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = shx.yan.2 
+				days = 10 
+			}
 		}
 	}
 
@@ -3057,7 +3089,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_ji_quan_sheng_fu"
-			
+			swap_ideas = {
+				remove_idea = SHX_confucian_order
+				add_idea = SHX_confucian_orderB
+			}
+			set_party_name = {
+				ideology = totalist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = syndicalist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
 		}
 	}
 
@@ -3075,7 +3120,45 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shen_fen_ren_tong"
-			
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				if = {
+					limit = { has_intelligence_agency = yes }
+					if = {
+						limit = {
+							NOT = { has_done_agency_upgrade = upgrade_commando_training }
+						}
+						upgrade_intelligence_agency = upgrade_commando_training
+					}
+					if = {
+						limit = {
+							NOT = { has_done_agency_upgrade = upgrade_crypto_strength }
+						}
+						upgrade_intelligence_agency = upgrade_crypto_strength
+					}
+					if = {
+						limit = {
+							NOT = { has_done_agency_upgrade = upgrade_decryption_boost }
+						}
+						upgrade_intelligence_agency = upgrade_decryption_boost
+					}
+				}
+				else_if = {
+					limit = { has_intelligence_agency = no }
+					create_intelligence_agency = {
+						icon = GFX_intelligence_agency_logo_KX_oss
+						name = "政治保卫局"
+					}
+					upgrade_intelligence_agency = upgrade_passive_defense
+					upgrade_intelligence_agency = upgrade_blueprint_stealing 
+				}
+			}
+			if = {
+				limit = { NOT = { has_dlc = "La Resistance" } }
+				army_experience = 50
+				navy_experience = 25
+				air_experience = 25
+			}
 		}
 	}
 
@@ -3093,7 +3176,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shen_fen_ren_tong"
-			
+			SHX_QIE_spend_small = yes
+			custom_effect_tooltip = SHX_QIE_biger_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = SHX_mass_censorship
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = shx.yan.6
+				days = 10 
+			}
 		}
 	}
 
@@ -3108,10 +3199,16 @@ focus_tree = {
 		prerequisite = {
 			focus = SHX_ji_quan_sheng_fu
 		}
+		available = {
+			has_completed_focus = SHX_niu_zhuan_mao_yi
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_tuan_jing_ji"
-			
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy_yan2
+				add_idea = SHX_underdeveloped_mountain_economy_yan3
+			}
 		}
 	}
 
@@ -3129,7 +3226,35 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_qi_ye_gai_ge"
-			
+			mio:SHX_aircraft_design_board_organisation = {
+				set_mio_flag = CHN_mio_unlocked
+				add_mio_size = 1
+			}
+			mio:SHX_arsenal_arms_committee_organisation = {
+				set_mio_flag = CHN_mio_unlocked
+				add_mio_size = 1
+			}
+			mio:SHX_taiyuan_arsenal_organisation = {
+				set_mio_flag = CHN_mio_unlocked
+				add_mio_size = 1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			1072 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			1015 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -3141,6 +3266,19 @@ focus_tree = {
 		y = 7
 		cost = 5
 
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 10 #Need war support
+				date > 1938.01.01
+				has_war_support < 0.50
+			}
+		}
+
 		prerequisite = {
 			focus = SHX_qi_ye_gai_ge
 		}
@@ -3150,7 +3288,23 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_mo_shou_cheng_gui"
-			
+			if = {
+				limit = { has_idea = SHX_neutrality }
+				swap_ideas = {
+					remove_idea = SHX_neutrality
+					add_idea = 	SHX_strict_neutrality1
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = SHX_confucian_orderB
+				add_idea = SHX_confucian_orderC
+			}
 		}
 	}
 #冯玉祥

@@ -2,7 +2,12 @@
 # Chinese Shared Triggers
 #####################################
 china_is_governorate = {
-	has_autonomy_state = kr_governorate
+	OR = {
+		has_autonomy_state = associated_governorate
+		has_autonomy_state = autonomous_governorate
+		has_autonomy_state = kr_governorate
+		has_autonomy_state = integrated_governorate
+	}
 }
 
 is_stronger_than_ROOT = {

@@ -2942,6 +2942,53 @@ SHX_QIE_ties = {#在北京的阴影下
 		fire_only_once = no
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_crackdown_foreign_agitators"
+			if = {
+				limit = { 
+					has_completed_focus = SHX_quan_li_and_cai_fu
+				}
+				SHX_QIE_spend_large = yes
+			}
+			else = {
+				SHX_QIE_spend_medium = yes
+			}
+		}
+	}
+	SHX_shen_cha_foreign_agitators = {#媒体审查
+		icon = investigation
+		visible = {
+			has_government = paternal_autocrat
+		}
+		available = {
+			has_government = paternal_autocrat
+			check_variable = {
+				tooltip = SHX_QIE_influence_variable_above_10_tooltip
+				SHX.SHX_QIE_influence_variable > 9
+			}
+			has_completed_focus = SHX_yan_lun_tong_he
+		}
+
+		cancel_trigger = { QIE = { exists = no } }
+
+		days_re_enable = 80
+		cost = 10
+		days_remove = 70
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 150
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable > 35 }
+			}
+		}
+		modifier = {
+			political_power_gain = -0.20
+		}
+		fire_only_once = no
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_crackdown_foreign_agitators"
 			SHX_QIE_spend_medium = yes
 		}
 	}

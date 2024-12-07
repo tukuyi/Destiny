@@ -1,6 +1,6 @@
 ﻿capital = 1072
 OOB = "SHX"
-set_research_slots = 3
+set_research_slots = 2
 #complete_national_focus = SHX_Yan_In_Power
 
 save_global_event_target_as = original_shanxi
@@ -44,8 +44,6 @@ add_offsite_building = {
 	level = 2
 }
 
-
-set_research_slots = 3
 add_ideas = {
 	#SHX_model_province
 	SHX_neutrality
@@ -68,6 +66,8 @@ set_politics = {
 	elections_allowed = no
 }
 
+set_stability = 0.40
+set_war_support = 0.40
 set_popularities = {
 	totalist = 1
 	syndicalist = 1

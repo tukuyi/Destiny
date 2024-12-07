@@ -11,7 +11,8 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# set_country_flag = QD_LEADER_GUI_VISIBLE
+		SHX_yan_victory_effect = yes
+		set_country_flag = SHX_yan_victory_over_gmj
 
 		# create_country_leader = {
 		# 	name = "王亚樵"

@@ -56,9 +56,9 @@ SHX_taiyuan_arsenal_organisation = {
 	}
 	available = {
 		FROM = {
-			OR = {
-				original_tag = SHX
-				has_completed_focus = SHX_arm_the_troops
+			if = {
+				limit = { original_tag = SHX }
+				has_completed_focus = SHX_xiu_shan_tai_yuan_jun
 			}
 		}
 		1072 = { is_core_of = FROM }
@@ -71,6 +71,6 @@ SHX_shanxi_automobile_company_concern = {
 	include = generic_motorized_mechanized_organization
 	allowed = { original_tag = SHX }
 	available = {
-		FROM = { has_completed_focus = SHX_Industrial_Development }
+		FROM = { has_completed_focus = SHX_da_sheng_gong_cheng }
 	}
 }

@@ -870,7 +870,12 @@ country_event = { #Clique refused integration
 		}
 		every_subject_country = {
 			limit = {
-				has_autonomy_state = kr_governorate
+				OR = {
+					has_autonomy_state = associated_governorate
+					has_autonomy_state = autonomous_governorate
+					has_autonomy_state = kr_governorate
+					has_autonomy_state = integrated_governorate
+				}
 			}
 			country_event = { id = china_events.14 days = 1 random_days = 2 }
 		}

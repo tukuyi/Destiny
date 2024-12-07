@@ -2683,16 +2683,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_da_ye_yi_cheng 
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-
-		available = {
-			 
-		}
 		mutually_exclusive = {
 			focus = QIE_zi_zhi
 		}

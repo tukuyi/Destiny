@@ -934,7 +934,16 @@ chinese_unification = {
 			NOT = { has_war_together_with = FROM }
 			NOT = { has_rule = can_not_declare_war } #united front
 			if = {
-				limit = { FROM = { has_autonomy_state = kr_governorate } }
+				limit = { 
+					FROM = { 
+						OR = {
+							has_autonomy_state = associated_governorate
+							has_autonomy_state = autonomous_governorate
+							has_autonomy_state = kr_governorate
+							has_autonomy_state = integrated_governorate
+						}
+					} 
+				}
 				has_global_flag = china_united
 				is_neighbor_of = FROM
 				received_expeditionary_forces = { sender = FROM value < 1 }
@@ -945,7 +954,16 @@ chinese_unification = {
 			OR = {
 				NOT = { has_subject = FROM }
 				if = {
-					limit = { FROM = { has_autonomy_state = kr_governorate } }
+					limit = { 
+						FROM = { 
+							OR = {
+								has_autonomy_state = associated_governorate
+								has_autonomy_state = autonomous_governorate
+								has_autonomy_state = kr_governorate
+								has_autonomy_state = integrated_governorate
+							}
+						} 
+					}
 					received_expeditionary_forces = { sender = FROM value > 0 }
 				}
 				else = {

@@ -523,6 +523,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/compannies/HNN_tie.png"
 	}
 	spriteType = {
+		name = "GFX_idea_SHX_northwestern_industrial_company"
+		texturefile = "gfx/interface/compannies/SHX_northwestern_industrial_company.png"
+	}
+	spriteType = {
 		name = "GFX_idea_FNG_dong_bei"
 		texturefile = "gfx/interface/compannies/FNG_dong_bei.png"
 	}

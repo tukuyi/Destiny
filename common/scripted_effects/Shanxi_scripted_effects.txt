@@ -601,6 +601,18 @@ SHX_QIE_investment_large = {
 		log = "SHX_influence_logging; investment increase by +15 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
 	}
 }
+SHX_QIE_investment_giga = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = 30 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_investment_giga_tooltip
+		log = "SHX_influence_logging; investment increase by +30 [ROOT.GetTag];[GetDateText]; amount after increase: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
 
 SHX_QIE_spend_small = {
 	if = {
@@ -636,6 +648,18 @@ SHX_QIE_spend_large = {
 		}
 		custom_effect_tooltip = SHX_QIE_spend_large_tooltip
 		log = "SHX_influence_logging; investment decrease by -15 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
+	}
+}
+SHX_QIE_spend_giga = {
+	if = {
+		limit = { SHX_QIE_influence_active = yes } #make sure that influence is still relevent
+		set_temp_variable = { SHX_QIE_inf_change_var = -30 }
+		hidden_effect = {
+			SHX_QIE_investment_change_inf_effect = yes
+			SHX_marlib_change_pop_effect = yes
+		}
+		custom_effect_tooltip = SHX_QIE_spend_giga_tooltip
+		log = "SHX_influence_logging; investment decrease by -30 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
 	}
 }
 

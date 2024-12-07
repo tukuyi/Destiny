@@ -1814,6 +1814,7 @@ focus_tree = {
 						has_intelligence_agency = no 
 					}
 					create_intelligence_agency = {
+						icon = GFX_intelligence_agency_logo_KX_xinjiang
 						name = "中央社会部"
 					}
 					upgrade_intelligence_agency = upgrade_passive_defense
