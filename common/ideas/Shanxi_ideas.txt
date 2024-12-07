@@ -77,154 +77,7 @@ ideas = {
 			}
 		}
 
-	### Yan Xishan ideas
-		SHX_yan_xishan_thought_1 = {#阎锡山思想
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_yan_xishan_thought_1"}
-			name = SHX_yan_xishan_thought
-			picture = jap_supremacy_of_will
-			modifier = {
-				political_power_gain = 0.10
-				production_speed_buildings_factor = 0.1
-			}
-		}
-		SHX_yan_xishan_thought_2 = {#阎锡山思想
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_yan_xishan_thought_1"}
-			name = SHX_yan_xishan_thought
-			picture = jap_supremacy_of_will
-			modifier = {
-				political_power_gain = 0.10
-				paternal_autocrat_drift = 0.05
-				party_popularity_stability_factor = 0.10
-				production_speed_buildings_factor = 0.10
-				production_speed_arms_factory_factor = 0.05
-			}
-		}
-		SHX_consolidate_bureaucracy = {#整肃官僚群体
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_consolidate_bureaucracy" }
-			on_remove = {
-				SHX = {
-					country_event = shx.yan.1
-					add_war_support = 0.05
-				}
-			}
-			picture = generic_investigation
-			allowed = { always = no }
-			modifier = {
-				stability_weekly = 0.0025
-				political_power_gain = 0.25
-				paternal_autocrat_drift = 0.040
-			}
-		}
-		SHX_she_hui_fu_li = {#福利主义
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_she_hui_fu_li"}
-			picture = enlightenment
-			allowed = { always = no }
-            modifier = {
-				stability_factor = 0.10
-				stability_weekly = 0.005
-				war_support_factor = 0.05
-				consumer_goods_factor = 0.10
-				social_democrat_drift = 0.02
-			}
-		}
-		SHX_a_higher_purpose_idea = {#重整本地政治
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_a_higher_purpose_idea" }
-			picture = SPR_torchbearers_of_tomorrow
-			allowed = { always = no }
-			modifier = {
-				compliance_gain = 0.01
-				compliance_growth = 0.10
-				stability_weekly = 0.005
-				political_power_gain = 0.10
-			}
-		}
-		SHX_she_hui_fu_liB = {#大同之梦
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_she_hui_fu_liB"}
-			picture = enlightenment
-			allowed = { always = no }
-            modifier = {
-				local_supplies = 0.06
-				compliance_gain = 0.10
-				stability_factor = 0.10
-				stability_weekly = 0.005
-				war_support_factor = 0.05
-				social_democrat_drift = 0.04
-				consumer_goods_factor = 0.10
-				industrial_capacity_factory = 0.04
-			}
-		}
-		SHX_confucian_order = {#儒家秩序
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_good_people_movement_idea" }
-			picture = ANQ_credibility
-			allowed = { always = no }
-			modifier = {
-				compliance_gain = 0.01
-				stability_factor = 0.10
-				resistance_decay = 0.10
-				political_power_gain = 0.10
-			}
-		}
-		SHX_confucian_orderB = {#儒家秩序
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_confucian_orderB" }
-			name = SHX_confucian_order
-			picture = ANQ_credibility
-			allowed = { always = no }
-			modifier = {
-				compliance_gain = 0.010
-				stability_factor = 0.10
-				resistance_decay = 0.10
-				political_power_gain = 0.20
-				local_resources_factor = 0.10
-				paternal_autocrat_drift = 0.20
-			}
-		}
-		SHX_confucian_orderC = {#儒家秩序
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_confucian_orderC" }
-			name = SHX_confucian_order
-			picture = ANQ_credibility
-			allowed = { always = no }
-			modifier = {
-				compliance_gain = 0.015
-				stability_factor = 0.10
-				resistance_decay = 0.10
-				compliance_growth = 0.05
-				war_support_factor = 0.05
-				political_power_gain = 0.20
-				local_resources_factor = 0.15
-				paternal_autocrat_drift = 0.20
-			}
-		}
-		SHX_mass_censorship = {#新闻审查
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_mass_censorship" }
-			picture = generic_secret_police
-			allowed = { always = no }
-			modifier = {
-				encryption = 1
-				decryption = 1
-				stability_factor = -0.05
-				war_support_factor = 0.05
-			}
-		}
-	### Feng Yuxiang ideas	
-		SHX_towards_revolution_idea = {#迈向革命未来
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_towards_revolution_idea " }
-			picture = generic_phoenix
-			allowed = { always = no }
-			modifier = {
-				war_support_factor = 0.10
-				stability_weekly = -0.0010
-				political_power_gain = 0.10
-			}
-		}
-		SHX_stable_future_idea = {#稳健的未来
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_stable_future_idea" }
-			picture = generic_victors_of_ww1
-			allowed = { always = no }
-			modifier = {
-				political_power_gain = 0.1
-				stability_weekly = 0.001
-			}
-		}
+
 
 	### 10 year Plan Spirits ###
 		SHX_Ten_Year_Plan_begins = {#重振十年计划
@@ -539,10 +392,10 @@ ideas = {
 			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
 			allowed = { always = no }
 			modifier = {
+				local_resources_factor = 0.10
 				consumer_goods_factor = -0.15
 				industrial_capacity_factory = -0.10
 				production_lack_of_resource_penalty_factor = -0.10
-				local_resources_factor = 0.10
 			}
 		}
 		SHX_underdeveloped_mountain_economy_yan = {#发展山区经济
@@ -1029,6 +882,180 @@ ideas = {
 				max_dig_in_factor = 0.10
 				resistance_growth_on_our_occupied_states = 0.10
 				supply_consumption_factor = -0.10
+			}
+		}
+
+	### Yan Xishan ideas
+		SHX_yan_xishan_thought_1 = {#阎锡山思想
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_yan_xishan_thought_1"}
+			name = SHX_yan_xishan_thought
+			picture = jap_supremacy_of_will
+			modifier = {
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		SHX_yan_xishan_thought_2 = {#阎锡山思想
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_yan_xishan_thought_1"}
+			name = SHX_yan_xishan_thought
+			picture = jap_supremacy_of_will
+			modifier = {
+				political_power_gain = 0.10
+				paternal_autocrat_drift = 0.05
+				party_popularity_stability_factor = 0.10
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		SHX_consolidate_bureaucracy = {#整肃官僚群体
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_consolidate_bureaucracy" }
+			on_remove = {
+				SHX = {
+					country_event = shx.yan.1
+					add_war_support = 0.05
+				}
+			}
+			picture = generic_investigation
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = 0.0025
+				political_power_gain = 0.25
+				paternal_autocrat_drift = 0.040
+			}
+		}
+		SHX_she_hui_fu_li = {#福利主义
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_she_hui_fu_li"}
+			picture = enlightenment
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				stability_weekly = 0.005
+				war_support_factor = 0.05
+				consumer_goods_factor = 0.10
+				social_democrat_drift = 0.02
+			}
+		}
+		SHX_a_higher_purpose_idea = {#重整本地政治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_a_higher_purpose_idea" }
+			picture = SPR_torchbearers_of_tomorrow
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.01
+				compliance_growth = 0.10
+				stability_weekly = 0.005
+				political_power_gain = 0.10
+			}
+		}
+		SHX_she_hui_fu_liB = {#大同之梦
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_she_hui_fu_liB"}
+			picture = enlightenment
+			allowed = { always = no }
+            modifier = {
+				local_supplies = 0.06
+				compliance_gain = 0.10
+				stability_factor = 0.10
+				stability_weekly = 0.005
+				war_support_factor = 0.05
+				social_democrat_drift = 0.04
+				consumer_goods_factor = 0.10
+				industrial_capacity_factory = 0.04
+			}
+		}
+		SHX_confucian_order = {#儒家秩序
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_good_people_movement_idea" }
+			picture = ANQ_credibility
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.01
+				stability_factor = 0.10
+				resistance_decay = 0.10
+				political_power_gain = 0.10
+			}
+		}
+		SHX_confucian_orderB = {#儒家秩序
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_confucian_orderB" }
+			name = SHX_confucian_order
+			picture = ANQ_credibility
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.010
+				stability_factor = 0.10
+				resistance_decay = 0.10
+				political_power_gain = 0.20
+				local_resources_factor = 0.10
+				paternal_autocrat_drift = 0.20
+			}
+		}
+		SHX_confucian_orderC = {#儒家秩序
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_confucian_orderC" }
+			name = SHX_confucian_order
+			picture = ANQ_credibility
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.015
+				stability_factor = 0.10
+				resistance_decay = 0.10
+				compliance_growth = 0.05
+				war_support_factor = 0.05
+				political_power_gain = 0.20
+				local_resources_factor = 0.15
+				paternal_autocrat_drift = 0.20
+			}
+		}
+		SHX_mass_censorship = {#新闻审查
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_mass_censorship" }
+			picture = generic_secret_police
+			allowed = { always = no }
+			modifier = {
+				encryption = 1
+				decryption = 1
+				stability_factor = -0.05
+				war_support_factor = 0.05
+			}
+		}
+
+	### Feng Yuxiang ideas	
+		SHX_towards_revolution_idea = {#迈向革命未来
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_towards_revolution_idea " }
+			picture = generic_phoenix
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = 0.10
+				stability_weekly = -0.0010
+				political_power_gain = 0.10
+			}
+		}
+		SHX_stable_future_idea = {#稳健的未来
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_stable_future_idea" }
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.1
+				stability_weekly = 0.001
+			}
+		}
+		SHX_agriculture_reform_Feng2 = {#耕者有其田
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng2" }
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			modifier = {
+				supply_node_range = 0.15
+				war_support_factor = 0.20
+				political_power_gain = -0.20
+				consumer_goods_factor = -0.15
+				global_building_slots_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng3 = {#革命山西经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng3" }
+			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.15
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = -0.05
+				production_lack_of_resource_penalty_factor = -0.05
 			}
 		}
 	}

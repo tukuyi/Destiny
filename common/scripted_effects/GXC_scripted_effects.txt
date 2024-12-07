@@ -1154,40 +1154,6 @@ GXC_POL_build = {#波兰
 	}	
 }
 
-GXC_pb_peace = {
-	white_peace = {
-		tag = LEC
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = JAP
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = GER
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = USA
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = AUS
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = AST
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = CAN
-		message = GXC_peace_shan_tt
-	}
-	white_peace = {
-		tag = NFA
-		message = GXC_peace_shan_tt
-	}
-}
 
 #李宗仁在行动
 GXC_bop_low_increase_effect_10 = {

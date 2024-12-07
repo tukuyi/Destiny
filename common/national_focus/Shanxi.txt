@@ -3453,6 +3453,7 @@ focus_tree = {
 
 		available = {
 			has_government = social_democrat
+			has_completed_focus = SHX_tu_di_zhi_du_gai_ge
 		}
 		prerequisite = {
 			focus = SHX_she_li_sheng_xian
@@ -3460,7 +3461,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tu_di_ge_ming"
-			
+			swap_ideas = {
+				remove_idea = SHX_agriculture_reform_Feng1
+				add_idea = SHX_agriculture_reform_Feng2
+			}
 		}
 	}	
 
@@ -3495,6 +3499,7 @@ focus_tree = {
 
 		available = {
 			has_government = authoritarian_democrat
+			has_completed_focus = SHX_niu_zhuan_mao_yi
 		}
 		prerequisite = {
 			focus = SHX_she_li_sheng_xian
@@ -3502,7 +3507,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_jin_gong_ye_hua"
-			
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy_feng2
+				add_idea = SHX_underdeveloped_mountain_economy_feng3
+			}
 		}
 	}	
 

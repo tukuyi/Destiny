@@ -62,23 +62,6 @@ GXC_UPC_reunification_decisions = {
 	allowed = { original_tag = GXC }
 	visible = { is_subject = no }
 }
-GXC_dealing_with_the_leftover_bandits_decisions = {#抗议
-	icon = GFX_generic_oppression
-
-	allowed = { original_tag = GXC }
-
-	visible = {
-		has_country_flag = GXC_hai_bao
-	}
-}
-
-GXC_peace = {#和平
-	icon = GFX_generic_oppression
-	allowed = { original_tag = GXC }
-	visible = {
-		
-	}
-}
 
 GXC_zou_si_wang_lu = {#大走私
 	icon = GFX_generic_oppression

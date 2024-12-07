@@ -3096,12 +3096,6 @@ FNG_foreign_policy = { #The Road to Reclamation
 			log = "[GetDateText]: [Root.GetName]: Decision remove FNG_The_Grand_Marshals_Proclamation"
 			country_event = fengtian.101
 			add_political_power = 100
-			# SQI = {
-			# 	if = {
-			# 		limit = { has_country_flag = SQI_Zongchang_beat_Tianran }
-			# 		country_event = { id = shandong.441 days = 3 }
-			# 	}
-			# }
 			hidden_effect = {
 				ANQ = {
 					if = {

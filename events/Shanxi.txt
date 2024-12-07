@@ -634,7 +634,7 @@ country_event = {#百姓崇拜
 		}
 	}
 }
-country_event = {#百姓崇拜
+country_event = {#现实政治
 	id = shx.feng.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.3" }
 	title = shx.feng.3.t

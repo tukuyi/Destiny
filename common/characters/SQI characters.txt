@@ -73,6 +73,13 @@ characters = {
 				small = GFX_Portrait_SQI_Jin_Yune
 				large = GFX_Portrait_SQI_Jin_Yune
 			}
+			civilian = {
+				large = GFX_Portrait_SQI_Jin_Yune
+			}
+		}
+		country_leader = {
+			desc = POLITIC_Jin_Yune_DESC
+			ideology = pataut_oligarchy_subtype
 		}
 		field_marshal = {
 			desc = POLITICS_Jin_Yune_DESC

@@ -117,7 +117,6 @@ add_offsite_building = {
 
 add_ideas = {
 	SQI_Rampant_drug_trade
-	SQI_dogmeat_general
 	SQI_honored_master
 	SQI_flight_north
 	
@@ -178,11 +177,8 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = authdem_warlordism_subtype
 }
-create_country_leader = {
-	name = "靳云鹗"
-	desc = "POLITIC_Jin_Yune_DESC"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Jin_Yune.png"
-	expire = "1.1.1"
+promote_character = {
+	character = SQI_jin_yune
 	ideology = pataut_oligarchy_subtype
 }
 # create_country_leader = {
@@ -277,6 +273,9 @@ recruit_character = SQI_xue_dian
 recruit_character = SQI_lu_yongxiang
 recruit_character = SQI_boris_annenkov
 
+SQI_jin_yune = {
+	set_variable = { china_alignment = token:others }
+}
 SQI_zhang_zongchang = {
 	set_variable = { china_alignment = token:fengtian }
 	set_character_flag = CHN_original_unit_leader
