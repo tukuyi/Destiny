@@ -5694,17 +5694,17 @@ HNN_tu_di_gai_ge_category = {#土地改革
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_Agricultural_Crisis_deadline"
 			custom_effect_tooltip = UKR_completion_info
-			HNN_tu_gaI_jie_shu = yes
+			HNN_tu_gaI_jie_sh = yes
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_Agricultural_Crisis_deadline"
 			custom_effect_tooltip = UKR_completion_info
-			HNN_tu_gaI_jie_shu = yes
+			HNN_tu_gaI_jie_sh = yes
 		}
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout HNN_Agricultural_Crisis_deadline"
 			custom_effect_tooltip = UKR_completion_info
-			HNN_tu_gaI_jie_shu = yes
+			HNN_tu_gaI_jie_sh = yes
 		}
 	}
 }

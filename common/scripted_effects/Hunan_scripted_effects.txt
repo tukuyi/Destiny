@@ -495,7 +495,7 @@ HNN_tu_di_gai_ge = {#土改BUFF
 		}
 	}
 }
-HNN_tu_gaI_jie_shu = {#土地改革结束
+HNN_tu_gaI_jie_sh = {#土地改革结束
 	if = {
 		limit = { 
 			NOT = {

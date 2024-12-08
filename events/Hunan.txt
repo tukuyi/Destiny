@@ -6524,7 +6524,7 @@ country_event = {#革命成功
 		show_unit_leaders_tooltip = HNN_Chen_Yun
 		# show_unit_leaders_tooltip = HNN_Hua_Guofeng
 		hidden_effect = {
-			add_stability = -0.20
+			add_stability = -0.40
 			remove_ideas = {
 				HNN_fire_repubilc
 				HNN_intense_agricultural_imbalance
