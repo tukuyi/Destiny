@@ -444,6 +444,20 @@ country_event = {#一省两军的命运
 		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
 	}
 }
+country_event = {#省议会
+	id = shx.earlygame.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.earlygame.16" }
+	title = shx.earlygame.16.t
+	desc = shx.earlygame.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.earlygame.16.a
+
+	}
+}
 country_event = {#大清行省
 	id = shx.409 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.409" }
@@ -572,6 +586,42 @@ country_event = {#媒体审查
 		}
 	}
 }
+country_event = {#《村话》
+	id = shx.yan.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.7" }
+	title = shx.yan.7.t
+	desc = shx.yan.7.d
+	picture = GFX_report_event_SHX_yan_smile
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.7.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = SHX
+		}
+		add_manpower = 5000
+	}
+}
+country_event = {#通往人间乐土
+	id = shx.yan.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.yan.8" }
+	title = shx.yan.8.t
+	desc = shx.yan.8.d
+	picture = GFX_report_event_SHX_yan_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.yan.8.a
+		add_war_support = 0.025
+		add_political_power = 30
+	}
+}
 
 ########################################
 ########-       冯玉祥        -#########
@@ -620,7 +670,12 @@ country_event = {#百姓崇拜
 
 	fire_only_once = yes
 	is_triggered_only = yes 
-	
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.feng.5 days = 30 } 
+		}
+	}
 
 	option = {
 		name = shx.feng.2.a
@@ -642,14 +697,201 @@ country_event = {#现实政治
 	picture = GFX_report_event_SHX_feng
 
 	fire_only_once = yes
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes 	
 
 	option = {
 		name = shx.feng.3.a
 		add_popularity = {
 			ideology = authoritarian_democrat
 			popularity = 0.02
+		}
+	}
+}
+country_event = {#赋权地方议会
+	id = shx.feng.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.4" }
+	title = shx.feng.4.t
+	desc = shx.feng.4.d
+	picture = GFX_report_event_SHX_feng_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.4.a
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.05
+		}
+	}
+}
+country_event = {#政治部
+	id = shx.feng.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.5" }
+	title = shx.feng.5.t
+	desc = shx.feng.5.d
+	picture = GFX_report_event_kmt_newspaper
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.5.a
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.03
+		}
+	}
+}
+country_event = {#人民剧院
+	id = shx.feng.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.6" }
+	title = shx.feng.6.t
+	desc = shx.feng.6.d
+	picture = GFX_report_event_SHX_theater_performance
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.6.a
+		trigger = {
+			is_ai = no
+		}
+		add_political_power = 50
+		country_event = { 
+			id = shx.feng.7 
+			days = 3 
+		}
+	}
+
+	option = {
+		name = shx.feng.6.b
+		add_political_power = 50
+	}
+}
+country_event = {#第一幕
+	id = shx.feng.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.7" }
+	title = shx.feng.7.t
+	desc = shx.feng.7.d
+	picture = GFX_report_event_SHX_theater_performance
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.7.a
+		trigger = {
+			is_ai = no
+		}
+		country_event = { 
+			id = shx.feng.8 
+			days = 3 
+		}
+	}
+
+	option = {
+		name = shx.feng.7.b
+	}
+}
+country_event = {#第二幕
+	id = shx.feng.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.8" }
+	title = shx.feng.8.t
+	desc = shx.feng.8.d
+	picture = GFX_report_event_SHX_theater_performance
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.8.a
+		trigger = {
+			is_ai = no
+		}
+		country_event = { 
+			id = shx.feng.9 
+			days = 3 
+		}
+	}
+
+	option = {
+		name = shx.feng.8.b
+	}
+}
+country_event = {#第三幕
+	id = shx.feng.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.9" }
+	title = shx.feng.9.t
+	desc = shx.feng.9.d
+	picture = GFX_report_event_SHX_theater_performance
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.9.a
+		hidden_effect = {
+			country_event = { 
+				id = shx.feng.10 
+				days = 15 
+			}	
+		}
+	}
+}
+country_event = {#《冯玉祥北伐工作记》
+	id = shx.feng.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.10" }
+	title = shx.feng.10.t
+	desc = shx.feng.10.d
+	picture = GFX_report_event_SHX_feng_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.10.a
+		add_war_support = 0.01
+	}
+}
+country_event = {#新思想问答
+	id = shx.feng.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.feng.11" }
+	title = shx.feng.11.t
+	desc = shx.feng.11.d
+	picture = GFX_report_event_SHX_feng_coat
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.feng.11.
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = SHX
+		}
+		add_manpower = 10000
+		1015 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 }
@@ -2244,6 +2486,11 @@ country_event = {#至胜方休
 			promote_leader = yes
 		}
 		hidden_effect = {
+			set_party_name = {
+				ideology = social_liberal
+				long_name = SHX_feng_social_liberal_party_long
+				name = SHX_feng_social_liberal_party
+			}
 			set_party_name = {
 				ideology = paternal_autocrat
 				long_name = SHX_feng_paternal_autocrat_party_long

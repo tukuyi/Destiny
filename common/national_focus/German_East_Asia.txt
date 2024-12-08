@@ -6851,10 +6851,10 @@ focus = {
 				}
 		}
 		add_tech_bonus = {
-		bonus = 1
-		uses = 1
-		category = armor
-		category = cat_anti_air
+			bonus = 1
+			uses = 1
+			category = armor
+			category = cat_anti_air
 		}
 	}
 }

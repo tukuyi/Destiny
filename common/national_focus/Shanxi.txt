@@ -59,22 +59,18 @@ focus_tree = {
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 2
-		cost = 3
+		cost = 2
 
-		available = {
-			OR = {
-				has_completed_focus = SHX_fa_zhan_zhong_chan_jie_ji
-				has_completed_focus = SHX_geng_chu_fu_bai
-				has_completed_focus = SHX_niu_zhuan_mao_yi
-			}
-		}
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_yu_tai_yuan_shang_hui_de_mi_tan"
-			
+			country_event = {
+				id = shx.earlygame.16
+				days = 7
+			}
 		}
 	}
 
@@ -100,6 +96,9 @@ focus_tree = {
 			}
 		}
 
+		available = {
+			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+		}
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
 		}
@@ -178,6 +177,9 @@ focus_tree = {
 		
 		ai_will_do = { base = 300 }
 
+		available = {
+			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+		}
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
 		}
@@ -2939,6 +2941,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_wang"
 			add_ideas = SHX_yan_xishan_thought_1
+			hidden_effect = {
+				country_event = { 
+					id = shx.yan.7
+					days = 25 
+				}
+			}
 		}
 	}	
 
@@ -3305,16 +3313,30 @@ focus_tree = {
 				remove_idea = SHX_confucian_orderB
 				add_idea = SHX_confucian_orderC
 			}
+			hidden_effect = {
+				country_event = { 
+					id = shx.yan.8
+					days = 15 
+				}
+			}
 		}
 	}
 #冯玉祥
 	focus = {
 		id = SHX_feng_yu_xiang
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_feng_yu_xiang
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 3
 		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
 
 		available = {
 			has_country_flag = SHX_feng_victory_over_yan
@@ -3328,13 +3350,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_feng_yu_xiang"
-			
+			add_ideas = SHX_national_revolution
 		}
 	}	
 
 	focus = {
 		id = SHX_jie_na_zuo_yi
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_jie_na_zuo_yi
 		relative_position_id = SHX_feng_yu_xiang
 		x = -1
 		y = 1
@@ -3345,16 +3367,6 @@ focus_tree = {
 			modifier = {
 				factor = 0.75
 				has_war = yes
-			}
-			modifier = {
-				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
-				date > 1936.10.01
-				has_active_mission = SHX_looming_gmj_coup
-			}
-			modifier = {
-				factor = 3 #Lock-in: After Jan 1937 SHX should try to be more aggressive in choosing a side
-				date > 1937.01.01
-				has_active_mission = SHX_looming_gmj_coup
 			}
 		}
 
@@ -3369,8 +3381,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jie_na_zuo_yi"
 			custom_effect_tooltip = shx_feng_goverment_left_tt
 			custom_effect_tooltip = tooltip_white_line
-			add_ideas = SHX_towards_revolution_idea
-			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = SHX_national_revolution
+				add_idea = SHX_towards_revolution_idea
+			}
 			country_event = { 
 				id = shx.feng.1 
 				days = 10 
@@ -3391,11 +3405,19 @@ focus_tree = {
 
 	focus = {
 		id = SHX_chong_hui_zheng_gui
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_chong_hui_zheng_gui
 		relative_position_id = SHX_feng_yu_xiang
 		x = 1
 		y = 1
 		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
 
 		prerequisite = {
 			focus = SHX_feng_yu_xiang
@@ -3408,8 +3430,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_hui_zheng_gui"
 			custom_effect_tooltip = shx_feng_goverment_right_tt
 			custom_effect_tooltip = tooltip_white_line
-			add_ideas = SHX_stable_future_idea
-			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = SHX_national_revolution
+				add_idea = SHX_stable_future_idea
+			}
 			country_event = { 
 				id = shx.feng.3
 				days = 10 
@@ -3426,7 +3450,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_she_li_sheng_xian
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_FNG_xiu_ding_zhang_cheng
 		relative_position_id = SHX_feng_yu_xiang
 		x = 0
 		y = 2
@@ -3439,13 +3463,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_she_li_sheng_xian"
-			
+			add_political_power = 50
+			add_ideas = SHX_ling_shi_yue_fa
 		}
 	}	
 
 	focus = {
 		id = SHX_tu_di_ge_ming
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_tu_di_ge_ming
 		relative_position_id = SHX_feng_yu_xiang
 		x = -1
 		y = 3
@@ -3470,7 +3495,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_gai_zu_sheng_yi_hui
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_FNG_hui_fu_sheng_yi_hui_yun_zuo
 		relative_position_id = SHX_feng_yu_xiang
 		x = -2
 		y = 4
@@ -3485,13 +3510,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_gai_zu_sheng_yi_hui"
-			
+			add_timed_idea = {
+				idea = SHX_strengthen_local_councils
+				days = 200
+			}
 		}
 	}		
 
 	focus = {
 		id = SHX_tui_jin_gong_ye_hua
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_tui_jin_gong_ye_hua
 		relative_position_id = SHX_feng_yu_xiang
 		x = 1
 		y = 3
@@ -3516,7 +3544,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_yu_tai_yuan_shang_hui
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_qi_ye_gai_ge
 		relative_position_id = SHX_feng_yu_xiang
 		x = 2
 		y = 4
@@ -3531,14 +3559,25 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_yu_tai_yuan_shang_hui"
-			
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = SHX
+			}
+
+			add_manpower = 10000
+			add_soclib_to_coalition = yes
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.01
+			}
 		}
 	}	
 
 
 	focus = {
 		id = SHX_xiang_cun_yi_wu_jiao_yu
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_xiang_cun_yi_wu_jiao_yu
 		relative_position_id = SHX_feng_yu_xiang
 		x = 0
 		y = 4
@@ -3551,13 +3590,50 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xiang_cun_yi_wu_jiao_yu"
-			
+			add_stability = 0.10
+			add_political_power = -50
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = SHX_shi_dian_xiang_chun_jiao_yu
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = excavation_tech
+					name = SHX_experimental_school_to_village
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = available_industrial_concern
+				show_ideas_tooltip = SHX_experimental_school_concern
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = excavation_tech
+					name = SHX_experimental_school_to_village
+				}
+				add_tech_bonus = {
+					name = HNN_The_Arsenals_of_the_South
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+			}
+			hidden_effect = {
+				country_event = { 
+					id = shx.feng.6 
+					days = 10 
+				}
+			}
 		}
 	}	
 
 	focus = {
 		id = SHX_gai_ge_sheng_fu
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_ren_ming_xu_shi
 		relative_position_id = SHX_feng_yu_xiang
 		x = 0
 		y = 5
@@ -3573,13 +3649,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_gai_ge_sheng_fu"
-			
+			swap_ideas = {
+				remove_idea = SHX_ling_shi_yue_fa
+				add_idea = SHX_nationalist_order
+			}
 		}
 	}	
 
 	focus = {
 		id = SHX_fa_yang_she_hui_zheng
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_yan_xi_shan_si_xiang
 		relative_position_id = SHX_feng_yu_xiang
 		x = 1
 		y = 6
@@ -3591,13 +3670,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_yang_she_hui_zheng"
-			
+			country_event = { 
+				id = shx.feng.11
+				days = 10 
+			}
 		}
 	}	
 
 	focus = {
 		id = SHX_tui_xing_sheng_jian_yun_dong
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_tui_xing_sheng_jian_yun_dong
 		relative_position_id = SHX_feng_yu_xiang
 		x = 1
 		y = 7
@@ -3609,13 +3691,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_fa_yang_she_hui_zheng"
-			
+			add_one_random_infrastructure = yes
+			add_two_random_civilian_factories = yes
 		}
 	}	
 
 	focus = {
 		id = SHX_tui_gao_fu_li_dai_yu
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_GXC_kong_zhi_xuan_chuan_kou
 		relative_position_id = SHX_feng_yu_xiang
 		x = -1
 		y = 6
@@ -3627,13 +3710,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_gao_fu_li_dai_yu"
-			
+			add_ideas =  SHX_she_hui_fu_liC
 		}
 	}	
 
 	focus = {
 		id = SHX_gong_hui_ping_deng
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_gong_hui_ping_deng
 		relative_position_id = SHX_feng_yu_xiang
 		x = -1
 		y = 7
@@ -3645,17 +3728,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_gong_hui_ping_deng"
-			
+			add_ideas = SHX_Golden_Economy_idea
 		}
 	}	
 
 	focus = {
 		id = SHX_shan_xi_de_wei_lai
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_shan_xi_de_wei_lai
 		relative_position_id = SHX_feng_yu_xiang
 		x = 0
 		y = 8
-		cost = 5
+		cost = 2
 
 		prerequisite = {
 			focus = SHX_gong_hui_ping_deng
@@ -3666,13 +3749,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_de_wei_lai"
-			
+			add_political_power = 20
+			increase_ruling_party_popularity_by_5 = yes
 		}
 	}	
 
 	focus = {
 		id = SHX_jin_bu_zhi_sheng
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_jin_bu_zhi_sheng
 		relative_position_id = SHX_feng_yu_xiang
 		x = -1
 		y = 9
@@ -3690,13 +3774,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jin_bu_zhi_sheng"
-			
+			swap_ideas = {
+				remove_idea = SHX_agriculture_reform_Feng2
+				add_idea = SHX_agriculture_reform_Feng3
+			}
 		}
 	}
 
 	focus = {
 		id = SHX_xian_dai_hua_mo_fan
-		icon = GFX_goal_SHX_sheng_yi_hui
+		icon = GFX_goal_SHX_xian_dai_hua_mo_fan
 		relative_position_id = SHX_feng_yu_xiang
 		x = 1
 		y = 9
@@ -3714,7 +3801,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xian_dai_hua_mo_fan"
-			
+			swap_ideas = {
+				remove_idea = SHX_underdeveloped_mountain_economy_feng3
+				add_idea = SHX_underdeveloped_mountain_economy_feng4
+			}
 		}
 	}
 }

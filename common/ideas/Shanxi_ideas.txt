@@ -1015,6 +1015,65 @@ ideas = {
 		}
 
 	### Feng Yuxiang ideas	
+		SHX_agriculture_reform_Feng2 = {#耕者有其田
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng2" }
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			modifier = {
+				supply_node_range = 0.15
+				war_support_factor = 0.20
+				political_power_gain = -0.20
+				consumer_goods_factor = -0.15
+				global_building_slots_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		SHX_agriculture_reform_Feng3 = {#耕者有其田
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng3" }
+			name = SHX_agriculture_reform_Feng2
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			modifier = {
+				supply_node_range = 0.20
+				war_support_factor = 0.20
+				political_power_gain = -0.20
+				consumer_goods_factor = -0.20
+				global_building_slots_factor = 0.20
+				production_speed_infrastructure_factor = 0.20
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng3 = {#革命山西经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng3" }
+			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.15
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		SHX_underdeveloped_mountain_economy_feng4 = {#革命山西经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng4" }
+			name = SHX_underdeveloped_mountain_economy_feng3
+			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.20
+				consumer_goods_factor = -0.20
+				industrial_capacity_factory = 0.10
+				production_lack_of_resource_penalty_factor = -0.10
+			}
+		}
+		SHX_national_revolution = {#国民革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_national_revolution " }
+			picture = ANQ_credibility
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = 0.05
+				resistance_activity = -0.1
+			}	
+		}	
 		SHX_towards_revolution_idea = {#迈向革命未来
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_towards_revolution_idea " }
 			picture = generic_phoenix
@@ -1030,33 +1089,70 @@ ideas = {
 			picture = generic_victors_of_ww1
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = 0.1
 				stability_weekly = 0.001
+				war_support_factor = 0.05
+				political_power_gain = 0.1
 			}
 		}
-		SHX_agriculture_reform_Feng2 = {#耕者有其田
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform_Feng2" }
-			picture = generic_agrarian_society
+		SHX_ling_shi_yue_fa = {#勘定宪法
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_ling_shi_yue_fa"}
+			picture = hamiltonian_constitution
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.05
+				stability_weekly = 0.005
+				paternal_autocrat_drift = -0.05
+			}
+		}
+		SHX_nationalist_order = {#民族主义秩序
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea 	SHX_nationalist_order " }
+			picture = FNG_xinhai_order
 			allowed = { always = no }
 			modifier = {
-				supply_node_range = 0.15
+				stability_weekly = 0.005
 				war_support_factor = 0.20
-				political_power_gain = -0.20
-				consumer_goods_factor = -0.15
-				global_building_slots_factor = 0.15
-				production_speed_infrastructure_factor = 0.15
+				political_power_gain = 0.20
+				paternal_autocrat_drift = -0.05
+				required_garrison_factor = -0.1
 			}
 		}
-		SHX_underdeveloped_mountain_economy_feng3 = {#革命山西经济
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_underdeveloped_mountain_economy_feng3" }
-			picture = SOV_third_five_year_plan_military_ccp_2d_sov_compatibility
+		SHX_strengthen_local_councils = {#强化地方议会
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_strengthen_local_councils" }
+			on_remove = {
+				SHX = {
+					country_event = shx.feng.4 
+					add_political_power = 50
+				}
+			}
+			picture = generic_disjointed_gov
 			allowed = { always = no }
 			modifier = {
-				local_resources_factor = 0.15
-				consumer_goods_factor = -0.15
-				industrial_capacity_factory = -0.05
-				production_lack_of_resource_penalty_factor = -0.05
+				war_support_weekly = 0.005
 			}
+		}
+		SHX_she_hui_fu_liC = {#福利主义
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHX_she_hui_fu_liC"}
+			picture = warriors_of_elijah
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				consumer_goods_factor = 0.10
+				social_democrat_drift = 0.02
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+		SHX_Golden_Economy_idea = {#社会平等
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KEN_Golden_Economy_idea"}
+			allowed = { always = no }
+			modifier = {
+				local_manpower = 0.02
+				local_resources = 0.02
+				industrial_capacity_factory = 0.06
+				production_speed_arms_factory_factor = 0.06
+				production_factory_efficiency_gain_factor = 0.03
+				production_factory_start_efficiency_factor = 0.03
+			}
+			picture = generic_war_preparation
 		}
 	}
 	industrial_concern = {
@@ -1177,7 +1273,10 @@ ideas = {
 			picture = LIT_invested_in_farms
 			traits = { oil_concern }
 			available = {
-				has_completed_focus = SHX_kuo_zhan_zhi_ye_jiao_yu
+				OR = {
+					has_completed_focus = SHX_kuo_zhan_zhi_ye_jiao_yu
+					has_completed_focus = SHX_xiang_cun_yi_wu_jiao_yu
+				}
 			}
 			modifier = {
 				production_speed_infrastructure_factor = 0.15
