@@ -107,4 +107,16 @@ spriteTypes = {
 		name = "GFX_report_event_SHX_feng_coat"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_coat.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_wang_xiang"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_wang_xiang.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_guominjun_cavalry"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_guominjun_cavalry.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_feng_soldiers"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_soldiers.png"
+	}
 }

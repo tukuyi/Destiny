@@ -202,3 +202,234 @@ defined = {
 		localization_key = SHX_paying_with_inf_key
 	}
 }
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_minus_1
+	#All values should be current negotiation value minus 1. DO NOT ACCOUNT FOR CASES THAT SHOULD NOT OCCUR - VARIABLES SHOULD ALWAYS BE WITHIN 1-5.
+
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+		}
+		localization_key = SHX_QIE_negotiation_value_1_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+		}
+		localization_key = SHX_QIE_negotiation_value_2_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+		}
+		localization_key = SHX_QIE_negotiation_value_3_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+		}
+		localization_key = SHX_QIE_negotiation_value_4_key
+	}
+
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_minus_2
+	#All values should be current negotiation value minus 2. DO NOT ACCOUNT FOR CASES THAT SHOULD NOT OCCUR - VARIABLES SHOULD ALWAYS BE WITHIN 1-5.
+
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+		}
+		localization_key = SHX_QIE_negotiation_value_1_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+		}
+		localization_key = SHX_QIE_negotiation_value_2_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+		}
+		localization_key = SHX_QIE_negotiation_value_3_key
+	}
+
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_plus_1
+	#All values should be current negotiation value plus 1. DO NOT ACCOUNT FOR CASES THAT SHOULD NOT OCCUR - VARIABLES SHOULD ALWAYS BE WITHIN 1-5.
+
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+		}
+		localization_key = SHX_QIE_negotiation_value_2_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+		}
+		localization_key = SHX_QIE_negotiation_value_3_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+		}
+		localization_key = SHX_QIE_negotiation_value_4_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+		}
+		localization_key = SHX_QIE_negotiation_value_5_key
+	}
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_plus_2
+	#All values should be current negotiation value plus 2. DO NOT ACCOUNT FOR CASES THAT SHOULD NOT OCCUR - VARIABLES SHOULD ALWAYS BE WITHIN 1-5.
+
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+		}
+		localization_key = SHX_QIE_negotiation_value_3_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+		}
+		localization_key = SHX_QIE_negotiation_value_4_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+		}
+		localization_key = SHX_QIE_negotiation_value_5_key
+	}
+
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_plus_3
+	#All values should be current negotiation value plus 3. DO NOT ACCOUNT FOR CASES THAT SHOULD NOT OCCUR - VARIABLES SHOULD ALWAYS BE WITHIN 1-5.
+
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+		}
+		localization_key = SHX_QIE_negotiation_value_4_key
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+		}
+		localization_key = SHX_QIE_negotiation_value_5_key
+	}
+
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+
+defined_text = {
+	name = SHX_QIE_negotiation_demand_level_closing
+	#All values should be current negotiation value with no changes.
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+		}
+		localization_key = SHX_QIE_negotiation_value_1_key #joint control over East Shanxi
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+		}
+		localization_key = SHX_QIE_negotiation_value_2_key #Eastern Shanxi
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+		}
+		localization_key = SHX_QIE_negotiation_value_3_key #Guanzhong (Xian)
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+		}
+		localization_key = SHX_QIE_negotiation_value_4_key #Eastern Shanxi and Guangzhong
+	}
+	text = {
+		trigger = {
+			check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+		}
+		localization_key = SHX_QIE_negotiation_value_5_key #Eastern Shanxi, Guanzhong, and claims in Suiyuan
+	}
+	text = {
+		localization_key = SHX_QIE_negotiation_value_error_key #If the total after addition would be higher than 5 or lower than 1, should shoot an error. Either this defined text is being incorrectly used, or the option shouldn't be there.
+	}
+}
+
+defined_text = {
+	name = SHX_QIE_negotiation_offer_on_table
+	text = {
+		trigger = { check_variable = { SHX.SHX_QIE_negotiation_value = 1 } }
+		localization_key = SHX_QIE_negotiation_offer_on_table_level_1_key
+	}
+	text = {
+		trigger = { check_variable = { SHX.SHX_QIE_negotiation_value = 2 } }
+		localization_key = SHX_QIE_negotiation_offer_on_table_level_2_key
+	}
+	text = {
+		trigger = { check_variable = { SHX.SHX_QIE_negotiation_value = 3 } }
+		localization_key = SHX_QIE_negotiation_offer_on_table_level_3_key
+	}
+	text = {
+		trigger = { check_variable = { SHX.SHX_QIE_negotiation_value = 4 } }
+		localization_key = SHX_QIE_negotiation_offer_on_table_level_4_key
+	}
+	text = {
+		trigger = { check_variable = { SHX.SHX_QIE_negotiation_value = 5 } }
+		localization_key = SHX_QIE_negotiation_offer_on_table_level_5_key
+	}
+}
+
+defined_text = {
+	name = SHX_give_divisions_number
+
+	text = {
+		trigger = {
+			has_completed_focus = SHX_shen_tou_zhan_shu
+		}
+		localization_key = SHX_give_one_division
+	}
+	text = {
+		localization_key = empty
+	}
+}
+
+defined_text = {
+	name = SHX_give_compliance_numbers
+
+	text = {
+		trigger = {
+			has_completed_focus = SHX_dao_de_zhi_shi
+		}
+		localization_key = SHX_give_thirty_compliance
+	}
+	text = {
+		localization_key = empty
+	}
+}

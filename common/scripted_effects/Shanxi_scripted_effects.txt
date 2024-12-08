@@ -673,3 +673,417 @@ SHX_marlib_change_pop_effect = {
 		popularity = SHX_marlib_change_pop_var
 	}
 }
+
+###- QIE Negotiations and Zhifeng -###
+SHX_QIE_negotiation_demand_minus_1_effect = {
+	subtract_from_variable = {
+		var = SHX.SHX_QIE_negotiation_value
+		value = 1
+		tooltip = SHX_QIE_negotiation_demand_minus_1_tooltip
+	}
+}
+SHX_QIE_negotiation_demand_minus_2_effect = {
+	subtract_from_variable = {
+		var = SHX.SHX_QIE_negotiation_value
+		value = 2
+		tooltip = SHX_QIE_negotiation_demand_minus_2_tooltip
+	}
+}
+
+
+SHX_QIE_negotiation_demand_plus_1_effect = {
+	add_to_variable = {
+		var = SHX.SHX_QIE_negotiation_value
+		value = 1
+		tooltip = SHX_QIE_negotiation_demand_plus_1_tooltip
+	}
+}
+SHX_QIE_negotiation_demand_plus_2_effect = {
+	add_to_variable = {
+		var = SHX.SHX_QIE_negotiation_value
+		value = 2
+		tooltip = SHX_QIE_negotiation_demand_plus_2_tooltip
+	}
+}
+SHX_QIE_negotiation_demand_plus_3_effect = {
+	add_to_variable = {
+		var = SHX.SHX_QIE_negotiation_value
+		value = 3
+		tooltip = SHX_QIE_negotiation_demand_plus_3_tooltip
+	}
+}
+
+SHX_QIE_negotiation_accept_effect = {
+
+	set_global_flag = SHX_deal_QIE
+
+	SHX = {
+		set_country_flag = SHX_QIE_negotiations_succeed
+		complete_national_focus = SHX_recognise_gov
+		country_event = { id = shx.zhifeng.17 days = 1 } #Inform them of the SHX-QIE alliance
+	}
+
+	if = {
+		limit = {
+			check_variable = { #Activate Scenario 1 - SHX gets demilitarized East Shanxi
+				SHX.SHX_QIE_negotiation_value = 1
+			}
+		}
+		hidden_effect = {
+			set_global_flag = SHX_QIE_negotiation_scenario_1
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+			SHX = {
+				SHX_transfer_east_shanxi_effect = yes
+				give_resource_rights = {
+					receiver = QIE
+					state = 615
+				}
+				if = {
+					limit = {
+						has_war = no
+					}
+					615 = {
+						set_demilitarized_zone = yes
+					}
+				}
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+		}
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { #Activate Scenario 2 - SHX gets East Shanxi
+				SHX.SHX_QIE_negotiation_value = 2
+			}
+		}
+		hidden_effect = {
+			set_global_flag = SHX_QIE_negotiation_scenario_2
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+			SHX = {
+				SHX_transfer_east_shanxi_effect = yes
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+		}
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { #Activate Scenario 3 - SHX gets Guanzhong (Xi'an)
+				SHX.SHX_QIE_negotiation_value = 3
+			}
+		}
+		hidden_effect = {
+			set_global_flag = SHX_QIE_negotiation_scenario_3
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+			SHX = {
+				SHX_transfer_guanzhong_effect = yes
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+		}
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { #Activate Scenario 4 - SHX gets East Shanxi and Guanzhong (Xi'an)
+				SHX.SHX_QIE_negotiation_value = 4
+			}
+		}
+		hidden_effect = {
+			set_global_flag = SHX_QIE_negotiation_scenario_4
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+			SHX = {
+				SHX_transfer_east_shanxi_effect = yes
+				SHX_transfer_guanzhong_effect = yes
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+		}
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { #Activate Scenario 5 - SHX gets East Shanxi and Guanzhong (Xi'an) + Claims on Suiyuan
+				SHX.SHX_QIE_negotiation_value = 5
+			}
+		}
+		hidden_effect = {
+			set_global_flag = SHX_QIE_negotiation_scenario_5
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+			}
+			SHX = {
+				country_event = shx.zhifeng.16 #Inform both parties of what just happened
+				SHX_transfer_east_shanxi_effect = yes
+				SHX_transfer_guanzhong_effect = yes
+				add_state_claim = 616 #Ordos
+				add_state_claim = 621 #Ulanqab
+			}
+		}
+	}
+
+	else = {
+		hidden_effect = {
+			QIE = {
+				country_event = shx.zhifeng.16 #Inform there's been an error - Scenario 2 loaded
+			}
+			SHX = {
+				SHX_transfer_east_shanxi_effect = yes
+				country_event = shx.zhifeng.16 #Inform there's been an error - Scenario 2 loaded
+			}
+		}
+	}
+
+	custom_effect_tooltip = SHX_QIE_negotiation_accept_tooltip
+	clear_variable = SHX.SHX_QIE_negotiation_value
+
+}
+
+SHX_transfer_east_shanxi_effect = {
+	if = {
+		limit = { 615 = { is_fully_controlled_by = QIE } }
+		transfer_state = 615 #Eastern Shanxi
+	}
+	else = { set_state_owner = 615 } #Eastern Shanxi
+}
+SHX_transfer_guanzhong_effect = {
+	if = {
+		limit = { 799 = { is_fully_controlled_by = QIE } }
+		transfer_state = 799 #Guanzhong (Xi'an)
+	}
+	else = { set_state_owner = 799 } #Guanzhong (Xi'an)
+	add_state_core = 799 #Guanzhong (Xi'an)
+}
+
+###- Zhifeng War -###
+SHX_attack_beijing_effect = { 
+	var:608.owner = {
+		SHX = {
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = SHX_collapse_of_shanxi
+					}
+					any_neighbor_country = { controls_state = 608 }
+				}
+				effect_tooltip = { activate_mission = SHX_collapse_of_shanxi }
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = { PREV = { tag = QIE } }
+				QIE = { setup_decision_attack_AI = yes }
+				SHX_convert_influence_to_war_support_effect = yes
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = SHX_war_of_liberation
+			}
+			else = {
+				add_ideas = SHX_war_of_liberation
+			}
+		}
+	}
+}
+
+SHX_set_NCPC_cosmetic_effect = {
+	if = {
+		limit = { has_cosmetic_tag = SHX_KMT }
+		set_cosmetic_tag = SHX_NCPC_KMT
+	}
+	else = {
+		set_cosmetic_tag = SHX_NCPC
+	}
+}
+
+SHX_add_join_government_decisions = {
+	if = { # Feng only ones
+		limit = { has_country_leader = { character = SHX_feng_yuxiang } }
+		if = { #LKMT
+			limit = { CHI = { china_is_valid_government_to_join = yes } }
+			activate_targeted_decision = { target = CHI decision = SHX_join_government }
+		}
+		if = { #Feds
+			limit = { country_exists = UPC }# needed a check if NPA exists so it wont give errors on scoping to it
+			if = {
+				limit = { UPC = { china_is_valid_government_to_join = yes } }
+				activate_targeted_decision = { target = UPC decision = SHX_join_government }
+			}
+		}
+	}
+	else = { # Yan only ones
+		if = { # Fengtian
+			limit = { FNG = { china_is_valid_government_to_join = yes } }
+			activate_targeted_decision = { target = FNG decision = SHX_join_government }
+		}
+		if = { # Zhili Remnants
+			limit = {
+				SZC = { china_is_valid_government_to_join = yes }
+				SZC = { SZC_zhili_in_exile = yes }
+			}
+			activate_targeted_decision = { target = SZC decision = SHX_join_government }
+		}
+	}
+	else_if = { # check for GXC RKMT second
+		limit = {
+			GXC = {
+				china_is_valid_government_to_join = yes
+				is_ruled_by_right_kmt = yes
+			}
+		}
+		activate_targeted_decision = { target = GXC decision = SHX_join_government }
+	}
+	if = { # NPA
+		limit = { country_exists = NPA }#needed a check if NPA exists so it wont give errors on scoping to it
+		if = {
+			limit = { NPA = { china_is_valid_government_to_join = yes } }
+			activate_targeted_decision = { target = NPA decision = SHX_join_government }
+		}
+	}
+}
+
+SHX_negotiate_econ_treaty = {
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea4 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea4
+			add_idea = SHX_qie_dominated_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea3 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea3
+			add_idea = SHX_qie_prevelant_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea2 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea2
+			add_idea = SHX_qie_equal_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea1 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea1
+			add_idea = SHX_qie_shx_dominated_econ
+		}
+	}
+	else = { remove_ideas = SHX_qie_influence_idea0 }
+}
+
+SHX_seize_suiyuan_effect = {
+	if = {
+		limit = { ROOT = { owns_state = 616 } } #Ordos
+		616 = { transfer_state_to = SHX }
+	}
+	if = {
+		limit = { ROOT = { owns_state = 621 } } #Ulanqab
+		621 = { transfer_state_to = SHX }
+	}
+	if = {
+		limit = {
+			owns_state = 612 #Northern Chahar
+			330 = { owner = { NOT = { tag = ROOT } } } #If Mongolia isn't also owned by (directly or indirectly) whoever Suiyuan is being stolen from, will steal Northern Chahar as well)
+		}
+		612 = { transfer_state_to = SHX }
+		custom_effect_tooltip = SHX_suiyuan_warn_loss_of_chahar_to_SHX_tooltip
+	}
+	else_if = { #Basically if XSM vassalized Mongolia and loses Suiyuan, Northern Chahar goes to Mongolia to avoid border gore
+		limit = {
+			owns_state = 612 #Northern Chahar
+			MON = { is_subject_of = ROOT }
+		}
+		330 = { transfer_state_to = MON }
+		custom_effect_tooltip = SHX_suiyuan_warn_loss_of_chahar_to_MON_tooltip
+	}
+	add_opinion_modifier = {
+		target = SHX
+		modifier = KR_outraged
+	}
+	reverse_add_opinion_modifier = {
+		target = SHX
+		modifier = KR_returned_land
+	}
+}
+
+SHX_start_suiyuan_crisis = {
+	if = {
+		limit = { has_country_flag = SHX_QIE_declared_neutrality_in_suiyuan_campaign_flag }
+		QIE = {
+			add_ideas = SHX_suiyuan_QIE_neutrality_idea #Keep QIE from participating in Northwest affairs for the duration of the spirit
+			activate_targeted_decision = { 
+				target = QIE 
+				decision = SHX_QIE_end_northwestern_neutrality_decision 
+			}
+			set_country_flag = { flag = SHX_suiyuan_QIE_neutrality_flag days = 365 value = 1 } # Value needs to be there or the effect won't work
+		}
+	}
+	activate_mission = SHX_march_on_suiyuan_mission
+	activate_mission_tooltip = SHX_march_on_suiyuan_mission
+	#activate all related decisions
+	if = {
+		limit = { var:616.owner = { NOT = { tag = SHX } } }
+		activate_targeted_decision = { 
+			target = var:616.owner 
+			decision = SHX_suiyuan_begin_northwestern_expedition 
+		}
+		activate_targeted_decision = { 
+			target = var:616.owner 
+			decision = SHX_suiyuan_send_scouts_to_enemy 
+		}
+		activate_targeted_decision = { 
+			target = SHX 
+			decision = SHX_suiyuan_gather_supplies 
+		}
+		activate_targeted_decision = { 
+			target = SHX 
+			decision = SHX_suiyuan_decisive_first_strike_decision 
+		}
+	}
+	if = {
+		limit = { var:616.owner = { is_chinese_tag = no } }
+		activate_targeted_decision = { 
+			target = var:616.owner 
+			decision = SHX_prepare_hui_provisional_leaders 
+		}
+	}
+	#activate decisions on enemy side
+	var:616.owner = {#Ordos
+		country_event = shx_suiyuan_campaign.31 #Shanxi mobilises for Suiyuan!
+		activate_mission = SHX_march_on_suiyuan_mission
+		activate_targeted_decision = { target = SHX decision = SHX_suiyuan_send_scouts_to_enemy }
+		activate_targeted_decision = { target = SHX decision = SHX_suiyuan_raid_SHX_supply_bases_decision }
+		activate_targeted_decision = { target = THIS decision = SHX_suiyuan_fortify_frontier_decision }
+		activate_targeted_decision = { target = THIS decision = SHX_suiyuan_rally_local_supporters_decision }
+		if = {
+			limit = {
+				is_guaranteed_by = TIB
+			}
+			TIB = {
+				country_event = shx_suiyuan_campaign.31
+				activate_mission = SHX_march_on_suiyuan_mission
+				activate_targeted_decision = { target = SHX decision = SHX_suiyuan_send_scouts_to_enemy }
+				activate_targeted_decision = { target = SHX decision = SHX_suiyuan_raid_SHX_supply_bases_decision }
+				activate_targeted_decision = { target = THIS decision = SHX_suiyuan_fortify_frontier_decision }
+				activate_targeted_decision = { target = THIS decision = SHX_suiyuan_rally_local_supporters_decision }
+			}
+		}
+		if = { #allow Shanxi's enemy to destablized them in Gansu if they own it
+			limit = { SHX = { owns_state = 283 } } #Lanzhou
+			activate_targeted_decision = { target = 283 decision = SHX_suiyuan_destabilise_province }
+		}
+	}
+	country_event = shx_suiyuan_campaign.36
+	616 = { save_global_event_target_as = SHX_targeted_state }
+}

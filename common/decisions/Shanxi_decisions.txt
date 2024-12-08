@@ -2237,7 +2237,7 @@ SHX_QIE_ties = {#在北京的阴影下
 			ROOT = {
 				has_war = no
 				is_subject_of = FROM
-				# has_autonomy_state = associated_governorate 
+				has_autonomy_state = associated_governorate 
 			}
 		}
 		cost = 100
@@ -2995,53 +2995,53 @@ SHX_QIE_ties = {#在北京的阴影下
 }
 
 SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
-	# SHX_QIE_begin_negotiations = {#向太原提出谈判
-	# 	icon = GFX_decision_generic_agreement
-	# 	visible = {
-	# 		AND = {
-	# 			country_exists = SHX
-	# 			has_completed_focus = QIE_futureofzhili
-	# 		}
-	# 		SHX = { is_subject = no }
-	# 	}
-	# 	available = {
-	# 		SHX_QIE_negotiations_over = yes
-	# 		SHX = {
-	# 			has_country_flag = SHX_yan_victory_over_gmj
-	# 			# NOT = {
-	# 			# 	focus_progress = {
-	# 			# 		focus = SHX_out_of_beijing
-	# 			# 		progress > 0.01
-	# 			# 	}
-	# 			# }
-	# 			has_war = no
-	# 		}
-	# 		owns_state = 615 #Eastern Shanxi
-	# 		owns_state = 799 #Guanzhong (Xi'an)
-	# 		has_war = no
-	# 		check_variable = {
-	# 			tooltip = SHX_QIE_influence_variable_above_50_tooltip
-	# 			SHX.SHX_QIE_influence_variable > 49
-	# 		}
-	# 	}
-	# 	fire_only_once = yes
+	SHX_QIE_begin_negotiations = {#向太原提出谈判
+		icon = GFX_decision_generic_agreement
+		visible = {
+			AND = {
+				country_exists = SHX
+				has_completed_focus = QIE_futureofzhili
+			}
+			SHX = { is_subject = no }
+		}
+		available = {
+			SHX_QIE_negotiations_over = yes
+			SHX = {
+				has_country_flag = SHX_yan_victory_over_gmj
+				# NOT = {
+				# 	focus_progress = {
+				# 		focus = SHX_out_of_beijing
+				# 		progress > 0.01
+				# 	}
+				# }
+				has_war = no
+			}
+			owns_state = 615 #Eastern Shanxi
+			owns_state = 799 #Guanzhong (Xi'an)
+			has_war = no
+			check_variable = {
+				tooltip = SHX_QIE_influence_variable_above_50_tooltip
+				SHX.SHX_QIE_influence_variable > 49
+			}
+		}
+		fire_only_once = yes
 
-	# 	ai_will_do = {
-	# 		base = 0
-	# 		modifier = {
-	# 			add = 5
-	# 			SHX = { is_ai = yes }
-	# 		}
-	# 	}
-	# 	cost = 50
-	# 	complete_effect = {
-	# 		log = "[GetDateText]: [Root.GetName]: Decision complete SHX_QIE_begin_negotiations"
-	# 		SHX = {
-	# 			country_event = { id = shx.zhifeng.7001 days = 3 } #An invitation from Beijing
-	# 			set_country_flag = SHX_QIE_preemptively_began_negotiations
-	# 		}
-	# 	}
-	# }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 5
+				SHX = { is_ai = yes }
+			}
+		}
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_QIE_begin_negotiations"
+			SHX = {
+				country_event = { id = shx.zhifeng.7001 days = 3 } #An invitation from Beijing
+				set_country_flag = SHX_QIE_preemptively_began_negotiations
+			}
+		}
+	}
 
 	SHX_QIE_court_influence_in_taiyuan = {#朝廷在太原的影响力
 		icon = GFX_decision_hand_palm_down
@@ -3670,6 +3670,764 @@ SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
 			custom_effect_tooltip = SHX_QIE_favorable_trade_deal_tooltip
 		}
 	}
+}
+
+SHX_zhi_feng_war = {#迈向统一
+	SHX_set_targeted_state = {#山西战备
+		icon = GFX_decision_infiltrate_state
+		available = {
+			check_variable = {
+				tooltip = SHX_has_enough_states_available_for_setting_plans_tt
+				SHX_states_available_for_setting_plans > 0
+			}
+		}
+		visible = {
+			has_completed_focus = SHX_war_plan
+		}
+		ai_will_do = { base = 1 }
+
+		fire_only_once = no
+		on_map_mode = map_only
+
+		state_target = yes
+		target_array = SHX_zhifeng_targets_array
+		target_root_trigger = { has_completed_focus = SHX_war_plan }
+		target_trigger = {
+			FROM = {
+				NOT = {
+					is_owned_by = ROOT
+					is_controlled_by = ROOT
+					has_state_flag = SHX_war_plan_flagged_state
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_set_targeted_state target: [From.GetName]"
+			FROM = {
+				set_state_flag = SHX_war_plan_flagged_state
+			}
+			add_to_variable = { SHX_states_available_for_setting_plans = -1 }
+			custom_effect_tooltip = SHX_war_plan_info_tt
+		}
+	}
+	SHX_march_to_war = {#迈向战争
+		visible = {
+			NOT = { owns_state = 608 } #Jingzhao
+			is_subject = no
+		}
+		available = {
+			OR = {
+				has_war_support > 0.75
+				AND = {
+					has_war_support > 0.50
+					check_variable = {
+						tooltip = SHX_QIE_influence_variable_below_50_tooltip
+						SHX.SHX_QIE_influence_variable < 50
+					}
+				}
+				AND = {
+					has_war_support > 0.3
+					check_variable = {
+						tooltip = SHX_QIE_influence_variable_below_25_tooltip
+						SHX.SHX_QIE_influence_variable < 25
+					}
+				}
+				AND = {
+					has_war_support > 0.45
+					QIE = { exists = no } #Means a strong power is on horizon
+				}
+			}
+			has_war = no
+			can_declare_war_on = var:608.owner
+			NOT = { has_non_aggression_pact_with = var:608.owner }
+		}
+		fire_only_once = no #Let player use this multiple times.
+		icon = GFX_decision_lkmt_flag
+		priority = 30
+
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 25
+		}
+		days_remove = 30
+
+		war_with_on_remove = QIE
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel SHX_march_to_war"
+			clear_decision_attack_AI = yes
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_march_to_war"
+			setup_decision_attack_AI = yes
+			var:608.owner = { incoming_war_notification_effect = yes }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_march_to_war"
+			clear_decision_attack_AI = yes
+			SHX_attack_beijing_effect = yes
+		}
+	}
+	SHX_collapse_of_shanxi = {#日益紧张的战争
+		icon = GFX_decision_chinese_flag
+
+		allowed = { always = no }
+		available = { 
+			has_country_flag = has_united_china
+		}
+		is_good = no
+		days_mission_timeout = 365
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_collapse_of_shanxi"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_collapse_of_shanxi"
+			if = {
+				limit = {
+					has_war = yes
+					has_war_support < 0.01
+					NOT = {
+						has_war_with_major = yes #Sino-Japanese War with pause this
+						has_war_with = JAP 
+					}	
+				}
+				if = {
+					limit = { has_idea = SHX_war_of_liberation }
+					remove_ideas = SHX_war_of_liberation
+				}
+				add_ideas = SHX_total_collapse_idea
+			}
+			else_if = {
+				limit = {
+					has_war = yes
+					has_war_support > 0.01
+					is_subject = no 
+					NOT = {
+						has_war_with_major = yes 
+						has_war_with = JAP
+					}
+				}
+				add_stability = -0.10 #Every year at war incurs a 10% stability loss.
+				activate_mission = SHX_collapse_of_shanxi
+				add_days_mission_timeout = {
+					mission = SHX_collapse_of_shanxi
+					days = 180
+				}
+			}
+			else = {
+				activate_mission = SHX_collapse_of_shanxi
+				add_days_mission_timeout = {
+					mission = SHX_collapse_of_shanxi
+					days = 180
+				}
+			}
+		}
+	}
+
+	SHX_QIE_improve_supply_networks = {#改善补给网
+		visible = {
+			QIE = { exists = yes }
+			has_completed_focus = SHX_northern_war_plan
+		}
+		available = {
+			has_completed_focus = SHX_northern_war_plan
+		}
+		fire_only_once = yes
+		icon = GFX_decision_generic_motorized
+		priority = 30
+
+		cancel_if_not_visible = yes
+		ai_will_do = { factor = 25 }
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_QIE_improve_supply_networks"
+		}
+		days_remove = 60
+		modifier = {
+			supply_consumption_factor = -0.1
+		}
+		targeted_modifier = {
+			tag = QIE
+			supply_consumption_factor = -0.1
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_QIE_improve_supply_networks"
+			army_experience = 15
+		}
+	}
+	SHX_rapid_military_expansion = {#快速扩军！
+		icon = GFX_decision_trumpet
+		activation = {
+			has_completed_focus = SHX_destiny
+		}
+		available = {
+			has_army_manpower = { size > 100000 }
+		}
+		cancel_trigger = {
+			has_war = yes
+		}
+		is_good = yes
+		days_mission_timeout = 100
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_rapid_military_expansion"
+			add_war_support = 0.1
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SHX_rapid_military_expansion"
+			add_war_support = -0.1
+		}
+	}
+	SHX_crash_modernisation = {#急速现代化
+	 	icon = GFX_decision_artillery
+		visible = {
+			SHX = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_destiny
+		}
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		custom_cost_trigger = {
+			has_war_support > 0.1
+		}
+		days_remove = 60
+		custom_cost_text = war_support10
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_crash_modernisation"
+			custom_effect_tooltip = SHX_will_use_10ws_tt
+			add_tech_bonus = {
+				name = SHX_crash_modernisation
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+			hidden_effect = {
+				add_war_support = -0.1
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_crash_modernisation"
+		}
+	}
+	SHX_desperate_defense = {#殊死防御
+		visible = {
+			SHX = { has_war = yes }
+		}
+		available = {
+			has_completed_focus = SHX_defend_resist
+			surrender_progress > 0.80
+			SHX = { has_war = yes }
+		}
+		days_re_enable = 100
+		icon = GFX_decision_fortress
+		ai_will_do = { factor = 25 }
+		priority = 30
+		custom_cost_trigger = {
+			has_war_support > 0.05
+		}
+		custom_cost_text = war_support5
+		cancel_if_not_visible = no
+		modifier = {
+			army_core_defence_factor = 0.2
+		}
+		days_remove = 60
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_desperate_defense"
+			custom_effect_tooltip = SHX_will_use_5ws_tt
+			hidden_effect = {
+				add_war_support = -0.05
+			}
+		}
+	}
+
+	SHX_encourage_partisans = {#鼓励地方游击队
+		visible = {
+			has_war = yes
+		}
+		available = {
+			has_completed_focus = SHX_defend_resist
+			SHX = { has_war = yes }
+		}
+		ai_will_do = { factor = 25 }
+		icon = GFX_decision_shield
+		priority = 30
+		days_re_enable = 100
+		custom_cost_trigger = {
+			has_war_support > 0.05
+		}
+		custom_cost_text = war_support5
+		days_remove = 60
+		cancel_if_not_visible = no
+		modifier = {
+			resistance_growth_on_our_occupied_states = 0.1
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_encourage_partisans"
+			custom_effect_tooltip = SHX_will_use_5ws_tt
+			hidden_effect = {
+				add_war_support = -0.05
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_encourage_partisans"
+		}
+	}
+	SHX_dare_to_die = {#敢死队
+		visible = {
+			SHX = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_defend_resist
+		}
+		ai_will_do = { factor = 25 }
+		icon = GFX_decision_generic_reorganize_irregulars
+		priority = 30
+		days_re_enable = 100
+		custom_cost_trigger = {
+			has_war_support > 0.1
+		}
+		custom_cost_text = war_support10
+		days_remove = 100
+		cancel_if_not_visible = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_dare_to_die"
+			custom_effect_tooltip = SHX_will_use_10ws_tt
+			hidden_effect = {
+				add_war_support = -0.1
+			}
+			every_army_leader = {
+				add_temporary_buff_to_units = {
+					combat_offense = 0.1
+					combat_breakthrough = 0.05
+					days = 100
+				}
+			}
+		}
+	}
+	SHX_revolutionary_army = {#人民革命卫队
+		visible = {
+			SHX = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_destiny
+			has_war = no
+		}
+		fire_only_once = yes
+		icon = GFX_decision_soldierly_discipline
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				has_reached_maximum_divisions = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_war_support > 0.05
+		}
+		custom_cost_text = war_support5
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_revolutionary_army"
+			custom_effect_tooltip = SHX_will_use_5ws_tt
+			hidden_effect = {
+				add_war_support = -0.05
+			}
+			add_ideas = SHX_revolutionary_army_idea
+			division_template = {
+				name = "民兵师" #Temporary name for now lol - Suzu
+				division_names_group = CHYN_MIL_01
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1072 }
+				limit = {
+					is_in_home_area = yes
+					impassable = no
+				}
+				create_unit = {
+					division = "name = \"Sacrifice League\" division_template = \"Shanxi Minbing\" start_experience_factor = 1.0"
+					prioritize_location = 1072
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Shanxi People's Military Training Regiment\" division_template = \"Shanxi Minbing\" start_experience_factor = 1.0"
+					prioritize_location = 1072
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"People's Volunteers Vanguard Corps\" division_template = \"Shanxi Minbing\" start_experience_factor = 1.0"
+					prioritize_location = 1072
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	SHX_purge_beijing_loyalists = {#清洗亲北京分子
+		icon = GFX_decision_freedom
+		allowed = { always = no }
+
+		visible = {
+			QIE = { exists = yes }
+			NOT = {
+				has_war_with = QIE
+			}
+		}
+
+		available = {
+			has_completed_focus = SHX_cut_qie_ties
+			check_variable = { SHX.SHX_QIE_influence_variable > 0 }
+		}
+
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 300 }
+		}
+		custom_cost_text = 300_guns
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_purge_beijing_loyalists"
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -500
+				}
+			}
+			SHX_QIE_spend_large = yes
+			if = {
+				limit = { check_variable = { SHX.SHX_QIE_influence_variable < 1 } }
+				SHX_remove_qie_econ = yes
+			}
+		}
+	}
+	SHX_nationalise_beijing_assets = {#强征北京资产
+		icon = GFX_decision_give_cash
+		allowed = { always = no }
+
+		visible = {
+			QIE = { exists = yes }
+			NOT = {
+				has_war_with = QIE
+			}
+		}
+
+		available = {
+			has_completed_focus = SHX_cut_qie_ties
+		}
+
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		custom_cost_trigger = {
+			has_stability > 0.1
+		}
+		custom_cost_text = stability10
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_nationalise_beijing_assets"
+			custom_effect_tooltip = SHX_will_use_10stab_tt
+			hidden_effect = {
+				add_stability = -0.1
+			}
+			SHX_QIE_spend_large = yes
+			if = {
+				limit = { check_variable = { SHX.SHX_QIE_influence_variable < 1 } }
+				SHX_remove_qie_econ = yes
+			}
+		}
+	}
+	SHX_expel_german_investors = {#驱逐德国投资者
+	 	icon = GFX_decision_hand_palm_down
+		cancel_trigger = {
+			QIE = { exists = no }
+		}
+		visible = {
+			QIE = { exists = yes }
+			NOT = {
+				has_war_with = QIE
+			}
+		}
+		available = {
+			has_completed_focus = SHX_cut_qie_ties
+			num_of_civilian_factories_available_for_projects > 2
+			NOT = { has_war_with = QIE }
+		}
+		allowed = { always = no }
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 2
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_expel_german_investors"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_expel_german_investors"
+			SHX_QIE_spend_large = yes
+			if = {
+				limit = { check_variable = { SHX.SHX_QIE_influence_variable < 1 } }
+				SHX_remove_qie_econ = yes
+			}
+		}
+	}
+
+	SHX_peoples_volunteers = {#人民志愿军
+		visible = {
+			QIE = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_northern_war_plan
+		}
+		icon = GFX_decision_trumpet
+		priority = 30
+		days_re_enable = 180
+
+		cancel_if_not_visible = yes
+		ai_will_do = { factor = 25 }
+
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 500 }
+		}
+		custom_cost_text = CHI_500_guns
+		modifier = {
+			training_time_factor = -0.1
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_peoples_volunteers"
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -500
+				}
+			}
+		}
+		days_remove = 100
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_peoples_volunteers"
+		}
+	}
+	SHX_baoding_division = {#保定第一师
+		icon = GFX_decision_shield
+		visible = {
+			QIE = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_northern_war_plan
+		}
+
+		priority = 30
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				has_reached_maximum_divisions = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 25
+			command_power > 15
+		}
+		custom_cost_text = SHX_army_exp_25_cp_25
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_baoding_division"
+			hidden_effect = {
+				army_experience = -25
+				add_command_power = -15
+			}
+			division_template = {
+				name = "保定步兵师" #Temporary name for now lol - Suzu
+				division_names_group = CHYN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1072 }
+				limit = {
+					is_in_home_area = yes
+					impassable = no
+				}
+				create_unit = {
+					division = "name = \"Dì yī shī\" division_template = \"Bǎodìng bùbīng\" start_experience_factor = 1.0" #The First Division, Baoding Infantry
+					prioritize_location = 1072
+					owner = ROOT
+				}
+			}
+		}
+	}
+	SHX_production_overdrive = {#超负荷生产
+		visible = {
+			QIE = { exists = yes }
+		}
+		available = {
+			has_completed_focus = SHX_shanxi_baoding
+		}
+		icon = GFX_decision_wrenches
+		priority = 30
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		modifier = {
+			industrial_capacity_factory = 0.25
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_production_overdrive"
+		}
+		days_remove = 100
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_production_overdrive"
+			every_owned_state = {
+				limit = {
+					arms_factory > 0
+					is_controlled_by = ROOT
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 1
+				}
+			}
+		}
+	}	
+
+	SHX_negotiate_with_XSM = {#与马家军谈判
+		visible = {
+			XSM = {
+				exists = yes
+			}
+			has_completed_focus = SHX_xibei_loyalty
+		}
+		available = {
+			has_completed_focus = SHX_xibei_loyalty
+			is_in_faction = no
+			XSM = {
+				has_war = no
+				OR = {
+					is_subject = no
+					is_subject_of = QIE
+				}
+			}
+		}
+		allowed = { always = no }
+		icon = GFX_decision_chinese_flag
+		priority = 30
+		fire_only_once = yes
+		days_remove = 20
+
+		ai_will_do = { factor = 25 }
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_negotiate_with_XSM target: [From.GetName]"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHX_negotiate_with_XSM target: [From.GetName]"
+
+			FROM = {
+				country_event = shx.zhifeng.21
+			}
+		}
+	}	
+}
+
+foreign_politics = {
+	SHX_join_government = {#与[FROM.GetNameDef]结盟
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_neighbor_country = { is_subject_of = FROM }
+			}
+			FROM = { has_civil_war = no }
+		}
+
+		visible = { #to prevent case of subject switching alliance
+			is_subject = no
+			FROM = { china_is_valid_government_to_join = yes }
+		}
+
+		cancel_if_not_visible = yes
+
+		allowed = { always = no } #manually activated
+
+		target_trigger = {
+			FROM = {
+				is_subject = no
+				at_war_with_or_justifying_wargoal_against_FROM = no
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 150
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_join_government target: [From.GetName]"
+			FROM = {
+				country_event = china_events.4
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = { china_puppet_ROOT_effect = yes }
+			}
+		}
+	}
+
+	SHX_QIE_end_northwestern_neutrality_decision = {#结束对西北事务中立 
+		icon = GFX_decision_trumpet
+
+		available = {
+			OR = {
+				SHX = { exists = no }
+				has_war_with = SHX
+				NOT = { has_country_flag = SHX_suiyuan_QIE_neutrality_flag }
+			}
+		}
+
+		allowed = { always = no } #manually activated
+
+		cost = 50
+		fire_only_once = yes
+
+		ai_will_do = { base = 50 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_QIE_end_northwestern_neutrality_decision"
+			remove_ideas = SHX_suiyuan_QIE_neutrality_idea
+		}
+	}	
 }
 
 SHX_Foreign_Policy_decisions = {

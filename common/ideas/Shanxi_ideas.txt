@@ -101,7 +101,7 @@ ideas = {
 			}
 		}
 
-	###Education Spirits######
+	### Education Spirits######
 		SHX_unfinished_education1 = {#教育改革续行
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_unfinished_education1" }
 			picture = generic_research_reduction
@@ -161,7 +161,7 @@ ideas = {
 			}
 		}
 
-	###Agricultural Spirits ###
+	### Agricultural Spirits ###
 		SHX_agriculture_reform1 = {#承诺土地改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_agriculture_reform1" }
 			picture = DEI_solid_foodsystem
@@ -264,7 +264,7 @@ ideas = {
 			}
 		}
 
-	###SHX Industrial Spirits
+	### SHX Industrial Spirits
 		SHX_expanded_beijing_investment = {#北京投资增加
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_expanded_beijing_investment	" }
 			picture = generic_loans
@@ -626,7 +626,7 @@ ideas = {
 			allowed = { always = no }
 		}
 
-	###Army ideas
+	### rmy ideas
 		SHX_taiyuan_general_staff_idea = {#太原总参谋部
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_taiyuan_general_staff_idea"}
 			picture = generic_army_war_college
@@ -1154,6 +1154,166 @@ ideas = {
 			}
 			picture = generic_war_preparation
 		}
+	### Zhi Feng War
+		SHX_war_of_liberation = {#国民解放战争
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea 	SHX_war_of_liberation" }
+			picture = jap_intervene_in_china
+			allowed = { always = no }
+			cancel = { #Fallback way to remove this spirit
+				OR = {
+					FNG = { exists = no }
+					AND = {
+						owns_state = 608 #Beijing
+						owns_state = 613 #Nanjing
+						owns_state = 1048 #Wuhan
+					}
+				}
+			}
+			modifier = {
+				army_attack_against_major_factor = 0.10
+				army_defence_against_major_factor = 0.10
+				army_breakthrough_against_major_factor = 0.10
+				war_support_weekly = -0.005 #You lose about 25% a year.
+			}
+			targeted_modifier = {
+				tag = QIE
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = FNG
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		SHX_cadre_training_force_idea = {#山西干部训练军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_cadre_training_force_idea" }
+			picture = HOL_unemployed_conscription
+			allowed = { always = no }
+			modifier = {
+				training_time_factor = -0.15
+				minimum_training_level = -0.1
+			}
+		}		
+		SHX_total_collapse_idea = {#土崩瓦解
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea 	SHX_total_collapse_idea" }
+			picture = generic_desertion
+			allowed = { always = no }
+			cancel = {
+				owns_state = 608 #Beijing
+				owns_state = 613 #Nanjing
+				owns_state = 1048 #Wuhan
+			}
+			modifier = {
+				surrender_limit = -0.50
+				army_org_factor = -0.20
+				army_org_regain = -0.20
+				offensive_war_stability_factor = -0.20
+				authoritarian_democrat_drift = -0.05
+				paternal_autocrat_drift = -0.05
+			}
+		}
+		SHX_revolutionary_army_idea = {#人民革命卫队
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_revolutionary_army " }
+			picture = FRA_scw_intervention_republicans_focus
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = -0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				training_time_factor = -0.1
+			}
+		}		
+		SHX_spy_agency = {#保安局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_spy_agency " }
+			picture = generic_spy_coup
+			research_bonus = {
+				decryption_tech = 0.10
+				encryption_tech = 0.10
+			}
+			modifier = {
+				decryption_factor = 0.20
+				encryption_factor = 0.20
+			}
+		}
+		SHX_spy_agency_2_idea = {#保安局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_spy_agency_2_idea" }
+			picture = generic_spy_coup
+			research_bonus = {
+				decryption_tech = 0.15
+				encryption_tech = 0.15
+			}
+			modifier = {
+				decryption_factor = 0.25
+				encryption_factor = 0.25
+			}
+		}
+
+	### Negotiated Econ
+		SHX_qie_dominated_econ = {#北京-山西关系：紧密合作
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_dominated_econ" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			cancel = { has_war_with = QIE }
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.25
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		SHX_qie_prevelant_econ = {#北京-山西关系：高度合作
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_prevelant_econ" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			cancel = { has_war_with = QIE }
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.2
+			}
+			modifier = {
+				industrial_capacity_factory = 0.15
+			}
+		}
+		SHX_qie_equal_econ = {#平等合作
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_equal_econ " }
+			picture = ANQ_credibility
+			allowed = { always = no }
+			cancel = { has_war_with = QIE }
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.15
+			}
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		SHX_qie_shx_dominated_econ = {#独立
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_qie_shx_dominated_econ" }
+			picture = ANQ_credibility
+			allowed = { always = no }
+			cancel = { has_war_with = QIE }
+			targeted_modifier = {
+				tag = QIE
+				cic_to_target_factor = 0.1
+			}
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.05
+			}
+		}	
+
+	#Suiyuan Crisis Ideas
+		SHX_suiyuan_QIE_neutrality_idea = {#对西北事务保持中立
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_suiyuan_QIE_neutrality_idea" }
+			picture = generic_desertion
+			allowed = { always = no }
+			modifier = {
+				custom_modifier_tooltip = SHX_suiyuan_QIE_neutrality_tooltip
+			}
+		}	
 	}
 	industrial_concern = {
 		SHX_economic_reconstruction_committee = {#经济建设委员会

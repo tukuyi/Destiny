@@ -2052,12 +2052,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xiang_xin_jun_guan"
-			add_command_power = 25
 			every_unit_leader = {
 				gain_xp = 200
 			}
 			custom_effect_tooltip = tooltip_white_line
 			SHX_strengthen_yan_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { NOT = { has_completed_focus = SHX_war_plan } }
+				custom_effect_tooltip = SHX_if_took_war_focus
+			}
+			else_if = {
+				limit = { has_variable = SHX_war_plan_supplies_modifier }
+				add_to_variable = { SHX_war_plan_supplies_modifier = -0.1 }
+			}
 		}
 	}	
 	focus = {
@@ -2112,13 +2120,21 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jun_shi_jiao_dao_tuan"
-			add_command_power = 30
 			army_experience = 100
 			add_doctrine_cost_reduction = {
 				name = SHX_military_instruction_corps_research
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { NOT = { has_completed_focus = SHX_war_plan } }
+				custom_effect_tooltip = SHX_if_took_war_focus
+			}
+			else_if = {
+				limit = { has_variable = SHX_war_plan_speed_modifier }
+				add_to_variable = { SHX_war_plan_speed_modifier = -0.1 }
 			}
 		}
 	}	
@@ -2334,7 +2350,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shen_tou_zhan_shu"
-			
+			if = {
+				limit = { NOT = { has_completed_focus = SHX_war_plan } }
+				custom_effect_tooltip = SHX_if_took_war_focus
+			}
+			else_if = {
+				limit = { has_variable = SHX_states_available_for_setting_plans }
+				add_to_variable = { SHX_states_available_for_setting_plans = 1 }
+			}
+			custom_effect_tooltip = SHX_gain_division_after_taking_state
+			custom_effect_tooltip = SHX_flag_extra_state
 		}
 	}	
 	focus = {
@@ -2532,6 +2557,15 @@ focus_tree = {
 			SHX_strengthen_feng_large = yes
 			custom_effect_tooltip = tooltip_white_line
 			add_research_slot = 1
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { NOT = { has_completed_focus = SHX_war_plan } }
+				custom_effect_tooltip = SHX_if_took_war_focus
+			}
+			else_if = {
+				limit = { has_variable = SHX_war_plan_org_rate_modifier }
+				add_to_variable = { SHX_war_plan_org_rate_modifier = -0.05 }
+			}	
 		}
 	}	
 	focus = {
@@ -3166,6 +3200,15 @@ focus_tree = {
 				army_experience = 50
 				navy_experience = 25
 				air_experience = 25
+			}
+			if = {
+				limit = { 
+					has_idea = SHX_spy_agency
+				}
+				swap_ideas = {
+					remove_idea = SHX_spy_agency
+					add_idea = SHX_spy_agency_2_idea
+				}
 			}
 		}
 	}
@@ -3806,5 +3849,720 @@ focus_tree = {
 				add_idea = SHX_underdeveloped_mountain_economy_feng4
 			}
 		}
+	}
+#外交
+	focus = {
+		id = SHX_out_of_beijing
+		icon = GFX_goal_QIE_zhili_unite_china
+		cost = 6
+
+		x = 20
+		y = 0
+
+		# allow_branch = {
+		# 	NOT = {
+		# 		has_country_flag = SHX_lategame_begin_flag
+		# 	}
+		# }
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				date > 1938.01.01
+			}
+			modifier = {
+				factor = 2.5
+				date > 1938.06.01
+			}
+			modifier = {
+				factor = 2
+				date > 1939.01.01
+			}
+		}
+
+		available = {
+			has_war_support > 0.5
+			OR = {
+				has_country_flag = SHX_feng_victory_over_yan
+				has_country_flag = SHX_yan_victory_over_gmj
+			}
+		}
+
+		cancelable = no
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+
+		bypass = {
+			OR = {
+				has_country_flag = SHX_QIE_negotiations_succeed
+				has_country_flag = SHX_QIE_negotiations_fail_SHX
+				has_country_flag = SHX_QIE_negotiations_fail_QIE
+				has_war_with = QIE
+			}
+		}
+
+		select_effect = {
+			log = "[GetDateText]: [Root.GetName]: Select Focus SHX_out_of_beijing"
+			if = {
+				limit = {
+					has_idea = SHX_neutrality
+				}
+				remove_ideas = SHX_neutrality
+			}
+			else_if = {
+				limit = {
+					has_idea = SHX_strict_neutrality1
+				}
+				remove_ideas = SHX_strict_neutrality1
+			}
+			if = {
+				limit = {
+					has_country_flag = SHX_yan_victory_over_gmj
+					NOT = {
+						has_war_with = QIE
+						is_subject_of = QIE
+					}
+				}
+				country_event = shx.zhifeng.4 
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_out_of_beijing"
+			if = {
+				limit = { #Failsafe
+					QIE = {
+						exists = no
+					}
+				}
+				country_event = SHX.zhifeng.15 
+			}
+			else_if = {
+				limit = { has_war_with = QIE }
+				set_country_flag = SHX_QIE_negotiations_cancelled 
+			}
+			custom_effect_tooltip = SHX_Depends_tooltip
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}	
+
+	focus = {
+		id = SHX_destiny #Shanxi Marches on
+		icon = GFX_goal_SHX_Destiny
+		cost = 4
+
+		relative_position_id = SHX_out_of_beijing
+		x = -3
+		y = 1
+
+		ai_will_do = { base = 100 }
+		prerequisite = {
+			focus = SHX_out_of_beijing
+		}
+		available = { 
+			NOT = { is_subject_of = QIE } 
+		}
+		bypass = {
+			QIE = { exists = no }
+		}
+		mutually_exclusive = {
+			focus = SHX_recognise_gov
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_destiny"
+			add_timed_idea = {
+				idea = SHX_cadre_training_force_idea
+				days = 180
+			}
+			custom_effect_tooltip = SHX_prepare_for_war_tooltip
+			unlock_decision_category_tooltip = SHX_zhi_feng_war
+		}
+	}
+
+	focus = {
+		id = SHX_recognise_gov
+		icon = {
+			trigger = { 
+				QIE = { 
+					NOT = {
+						OR = {
+							has_completed_focus = QIE_wu_pei_fu
+							has_completed_focus = QIE_shi_liao_wei_ji
+							has_completed_focus = QIE_wu_constitution
+						}
+					}
+				}
+			}
+			value = GFX_goal_QIE_hail_to_the_qing
+		}
+		icon = {
+			value = GFX_goal_QIE_reorganise_warlord_divisions
+		}
+		dynamic = yes
+		cost = 4
+
+		relative_position_id = SHX_out_of_beijing
+		x = 3
+		y = 1
+
+		ai_will_do = { base = 100 }
+		prerequisite = {
+			focus = SHX_out_of_beijing
+		}
+		mutually_exclusive = {
+			focus = SHX_destiny
+		}
+		available = {
+			OR = {
+				has_country_flag = SHX_QIE_negotiations_succeed
+				is_subject_of = QIE
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_recognise_gov"
+			QIE = { 
+				china_puppet_FROM_effect = yes
+				every_enemy_country = {
+					limit = { can_declare_war_on = SHX }
+					SHX = {
+						add_to_war = {
+							targeted_alliance = QIE
+							enemy = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = { any_unit_leader = { has_trait = CHI_left_kmt_officer } }
+				custom_effect_tooltip = characters_will_be_retired
+				every_unit_leader = {
+					limit = { has_trait = CHI_left_kmt_officer }
+					retire = yes
+				}
+			}
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = SHX_mobilisation
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		cost = 4
+
+		relative_position_id = SHX_destiny
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 75
+		}
+		prerequisite = {
+			focus = SHX_destiny
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_mobilisation"
+			add_war_support = -0.1
+			custom_effect_tooltip = SHX_mobilisation_tt
+			division_template = {
+				name = "参谋军官训练团" #Temporary name for now lol - Suzu
+				division_names_group = CHYN_MIL_01
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+					militia = { x = 2 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1072 }
+				limit = {
+					is_in_home_area = yes
+					impassable = no
+				}
+				create_unit = {
+					division = "name = \"参谋军官训练团\" division_template = \"Staff Officers Training Regiment\" start_experience_factor = 0.35"
+					prioritize_location = 1072
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SHX_war_plan
+		icon = GFX_goal_generic_army_grand_battleplan
+		cost = 4
+
+		relative_position_id = SHX_destiny
+		x = 0
+		y = 1
+
+		available = {
+			can_declare_war_on = QIE
+		}
+		bypass = {
+			OR = {
+				is_subject = yes
+				NOT = { country_exists = QIE }
+				AND = {
+					has_war_with = QIE
+					# NOT = { has_active_mission = QIE_SHX_intervention_visual_only }
+				}
+			}
+		}
+		ai_will_do = { base = 75 }
+		prerequisite = {
+			focus = SHX_destiny
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_war_plan"
+			custom_effect_tooltip = SHX_war_plan_tt
+			if = {
+				limit = { is_ai = no }
+				QIE = {
+					every_owned_state = {
+						limit = {
+							any_neighbor_state = {
+								is_owned_and_controlled_by = SHX
+							}
+							OR = {
+								region = 209 #north china plain
+								region = 211 #huangtu plateau
+								region = 212 #Lower Yangtze
+								region = 213 #middle Yangtze
+								NOT = { state = 608 } #Beijing
+							}
+						}
+						add_to_array = { SHX.SHX_zhifeng_targets_array = THIS }
+					}
+				}
+			}
+			else = {
+				add_to_array = { SHX_zhifeng_targets_array = 799.id } #Guanzhong
+				add_to_array = { SHX_zhifeng_targets_array = 607.id } #Heluo
+				add_to_array = { SHX_zhifeng_targets_array = 615.id } #Eastern Shanxi
+			}
+			set_variable = { SHX_states_available_for_setting_plans = 2 }
+			set_variable = { SHX_war_plan_supplies_modifier = -0.05 }
+			set_variable = { SHX_war_plan_org_rate_modifier = -0.05 }
+			set_variable = { SHX_war_plan_speed_modifier = -0.05 }
+			set_variable = { SHX_war_plan_resistance_target = 0 }
+			if = {
+				limit = { has_completed_focus = SHX_gu_li_wen_ming_bing }
+				add_to_variable = { SHX_war_plan_org_rate_modifier = -0.1 }
+			}
+			if = {
+				limit = { has_completed_focus = SHX_bei_fang_huang_pu }
+				add_to_variable = { SHX_war_plan_org_rate_modifier = -0.05 }
+			}
+			if = {
+				limit = { has_completed_focus = SHX_xiang_xin_jun_guan }
+				add_to_variable = { SHX_war_plan_supplies_modifier = 0.1 }
+			}
+			if = {
+				limit = { has_completed_focus = SHX_jun_shi_jiao_dao_tuan }
+				add_to_variable = { SHX_war_plan_speed_modifier = -0.1 }
+			}
+			if = {
+				limit = { has_completed_focus = SHX_shen_tou_zhan_shu }
+				add_to_variable = { SHX_states_available_for_setting_plans = 1 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESISTANCE }
+	}
+
+	focus = {
+		id = SHX_cut_qie_ties
+		icon = GFX_goal_break_rifle
+		cost = 4
+
+		relative_position_id = SHX_destiny
+		x = 2
+		y = 1
+
+		ai_will_do = { base = 75 }
+		prerequisite = {
+			focus = SHX_destiny
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = QIE }
+				has_war_with = QIE
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_cut_qie_ties"
+			SHX_QIE_spend_medium = yes
+			custom_effect_tooltip = SHX_cut_qie_ties_tt
+			activate_targeted_decision = { target = SHX decision = SHX_purge_beijing_loyalists }
+			activate_targeted_decision = { target = SHX decision = SHX_nationalise_beijing_assets }
+			activate_targeted_decision = { target = SHX decision = SHX_expel_german_investors }
+			hidden_effect = {
+				country_event = { id = shx.zhifeng.25 days = 3 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}	
+
+	focus = {
+		id = SHX_defend_resist
+		icon = GFX_goal_CHI_tigress_battalions
+		cost = 4
+
+		relative_position_id = SHX_war_plan
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = 25
+				has_war = yes
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					owns_state = 608 #Beijing
+					owns_state = 1048 #Wuhan
+					owns_state = 613 #Nanjing
+				}
+			}
+		}
+		prerequisite = {
+			focus = SHX_war_plan
+		}
+		prerequisite = {
+			focus = SHX_cut_qie_ties
+		}
+		bypass = {
+			owns_state = 608 #Beijing
+			owns_state = 1048 #Wuhan
+			owns_state = 613 #Nanjing
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_defend_resist"
+			custom_effect_tooltip = SHX_defend_resist_tt
+			add_war_support = 0.05
+			if = {
+				limit = {
+					NOT = {
+						has_idea = extensive_conscription
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_WAR_SUPPORT }
+	}	
+
+	focus = {
+		id = SHX_cloak_dagger
+		icon = GFX_goal_backstab
+		cost = 4
+
+		relative_position_id = SHX_war_plan
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_war_plan
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_cloak_dagger"
+			if = {
+				limit = { has_dlc_lar = yes }
+				create_intelligence_agency = yes
+				upgrade_intelligence_agency = upgrade_commando_training
+				upgrade_intelligence_agency = upgrade_decryption_boost
+				upgrade_intelligence_agency = upgrade_form_department
+			}
+			else = {
+				add_war_support = 0.1
+				add_ideas = SHX_spy_agency
+			}
+			custom_effect_tooltip = SHX_start_resistance_in_state
+			custom_effect_tooltip = SHX_increase_resistance_in_state
+			if = {
+				limit = { has_variable = SHX_war_plan_resistance_target }
+				add_to_variable = { SHX_war_plan_resistance_target = 0.35 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESISTANCE }
+	}
+
+	focus = {
+		id = SHX_beyond_borders
+		icon = GFX_goal_FNG_unification_by_subjugation
+		cost = 4
+
+		relative_position_id = SHX_cloak_dagger
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					owns_state = 608 #Beijing
+					owns_state = 1048 #Wuhan
+					owns_state = 613 #Nanjing
+				}
+			}
+		}
+		available = {
+			NOT = { country_exists = QIE }
+		}
+		prerequisite = {
+			focus = SHX_cloak_dagger
+		}
+		prerequisite = {
+			focus = SHX_defend_resist
+		}
+		bypass = {
+			OR = {
+				is_subject = yes
+				AND = {
+					owns_state = 608 #Beijing
+					owns_state = 1048 #Wuhan
+					owns_state = 613 #Nanjing
+				}
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_beyond_borders"
+			add_war_support = 0.15
+			country_event = shx.zhifeng.26
+			custom_effect_tooltip = SHX_beyond_borders_tt
+			effect_tooltip = { SHX_add_join_government_decisions = yes }
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = SHX_negotiate_trade
+		icon = GFX_goal_generic_debt_negotiations
+		cost = 5
+
+		relative_position_id = SHX_recognise_gov
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_recognise_gov
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_negotiate_trade"
+			SHX_negotiate_econ_treaty = yes
+			custom_effect_tooltip = SHX_negotiate_econ_treaty_tt
+			clr_country_flag = Shanxi_open_for_investment
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = SHX_northern_war_plan
+		icon = GFX_goal_planning_bonus
+		cost = 4
+
+		relative_position_id = SHX_recognise_gov
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = 25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_recognise_gov
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_northern_war_plan"
+			custom_effect_tooltip = SHX_northern_war_plan_tt
+			unlock_decision_category_tooltip = SHX_zhi_feng_war
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SHX_joint_training
+		icon = GFX_focus_POL_beck_ribbentrop
+		cost = 5
+
+		relative_position_id = SHX_negotiate_trade
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = 25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_negotiate_trade
+		}
+		prerequisite = {
+			focus = SHX_northern_war_plan
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_joint_training"
+			add_doctrine_cost_reduction = {
+				name = SHX_joint_training_tech
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SHX_suiyuan_question
+		icon = GFX_goal_china_MON_banner
+		cost = 5
+
+		relative_position_id = SHX_negotiate_trade
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_cut_qie_ties
+			focus = SHX_negotiate_trade
+		}
+		available = {
+			has_war = no
+			OR = {
+				is_subject = no
+				is_subject_of = QIE #Having Beijing watching your flank makes SHX more confident to do this type of stuff.
+			}
+			has_global_flag = northwest_conflict_begun
+			OR = {
+				XSM = {
+					NOT = {
+						has_war_with = MON
+						has_war_with = TIB
+					}
+					owns_state = 616 #Ordos
+					owns_state = 621 #Ulanqab
+				}
+				MON = {
+					NOT = {
+						is_guaranteed_by = RUS
+						is_subject_of = RUS
+						is_in_faction = yes
+						has_war_with = XSM
+					}
+					owns_state = 616 #Ordos
+					owns_state = 621 #Ulanqab
+				}
+			}
+		}
+		cancelable = no
+		cancel_if_invalid = yes 
+		will_lead_to_war_with = MON
+
+		bypass = {
+			owns_state = 616 #Ordos
+			owns_state = 621 #Ulanqab
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_suiyuan_question"
+			country_event = { id = shx.suiyuan.campaign.1 days = 3 } #Introduction to Suiyuan
+			if = {
+				limit = { NOT = { has_global_flag = northwest_conflict_begun } }
+				custom_effect_tooltip = SHX_Depends_tooltip
+			}
+
+			else_if = { #Check Scenario where Suiyuan is owned by XSM post Northwest war
+				limit = {
+					SHX_ma_clique_victorious_outcome_check = yes
+					XSM = {
+						owns_state = 616 #Ordos
+						owns_state = 621 #Ulanqab
+					}
+				}
+				country_event = { id = shx.suiyuan.campaign.2 days = 7 } #Start the Event Chain
+			}
+			else_if = { #Check Scenario where Suiyuan is owned by Mongolia and XSM went to SHX
+				limit = {
+					SHX_ma_clique_victorious_outcome_check = no
+					MON = {
+						owns_state = 616 #Ordos
+						owns_state = 621 #Ulanqab
+					}
+					SHX = {
+						owns_state = 283 #Lanzhou
+						owns_state = 774 #Hexi Corridor
+					}
+				}
+				country_event = {
+					id = shx_suiyuan_campaign.20	#Start the Event Chain
+					days = 7
+				}
+			}
+			else = { #Suiyuan is owned by someone else OR Mongolia went all the way with XSM
+				616 = { #Wargoal on controller of Ordos
+					owner = {
+						SHX = {
+							create_wargoal = {
+								type = take_state_focus
+								generator = { 616 }
+								target = PREV
+							}
+						}
+					}
+				}
+				621 = { #Wargoal on controller of Ulanqab
+					owner = {
+						SHX = {
+							create_wargoal = {
+								type = take_state_focus
+								generator = { 621 }
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 	}
 }

@@ -455,7 +455,7 @@ country_event = {#省议会
 
 	option = {
 		name = shx.earlygame.16.a
-
+		add_stability = 0.05
 	}
 }
 country_event = {#大清行省
@@ -3792,6 +3792,123 @@ country_event = {#山西省府倒台！
 		}
 	}
 }
+country_event = {#和平的最后机会
+	id = shx.zhifeng.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.4" }
+	title = shx.zhifeng.4.t
+	desc = {
+		text = shx.zhifeng.4.d.1
+		trigger = { QIE = { exists = yes } }
+	}
+	desc = {
+		text = shx.zhifeng.4.d.2
+		trigger = { QIE = { exists = no } }
+	}
+	picture = GFX_report_event_SHX_yan_car
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.4.a 
+		trigger = {
+			is_ai = no
+			SHX_QIE_can_negotiate_check = yes
+		}
+		country_event = shx.zhifeng.5
+	}
+
+	option = {
+		name = shx.zhifeng.4.b 
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 3
+				QIE = { has_war_with = FNG } 
+			}
+			modifier = {
+				factor = 3
+				QIE = {
+					any_enemy_country = { owns_state = 613 }
+					has_war_with = FNG
+				}
+			}
+			modifier = {
+				factor = 1000
+				QIE = { has_completed_focus = QIE_purge_zhili }
+			}
+		}
+		trigger = {
+			SHX_QIE_can_reject_negotiation_check = yes 
+			NOT = { is_subject_of = QIE } 
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.6 days = 7 } #Taiyuan Takes a Hardline
+			}
+		}
+		custom_effect_tooltip = SHX_zhifeng_no_negotiations_tooltip
+	}
+
+	option = {
+		name = shx.zhifeng.4.c 
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 1.5
+				FNG = { exists = no } #Feng is dead
+			}
+			modifier = {
+				factor = 1.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 50 }
+			}
+			modifier = {
+				factor = 1.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 25 }
+			}
+			modifier = {
+				factor = 0.5
+				QIE = {
+					NOT = {
+						controls_state = 1048 #Wuhan
+						controls_state = 608 #Beijing
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				QIE = { surrender_progress > 0.25 }
+			}
+			modifier = {
+				factor = 0.20
+				QIE = {
+					has_completed_focus = QIE_purge_zhili 
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				is_subject_of = QIE 
+				SHX_QIE_can_negotiate_check = yes 
+			}
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.7 days = 1 } #Representatives Arrive from Taiyuan
+			}
+			SHX = {
+				country_event = { id = shx.zhifeng.8 days = 3 } #Starting Point for Discussions
+			}
+		}
+		custom_effect_tooltip = SHX_zhifeng_yes_negotiations_tooltip
+		if = {
+			limit = {
+				SHX_QIE_can_reject_negotiation_check = no
+			}
+			custom_effect_tooltip = SHX_zhifeng_forced_to_negotiate_tooltip
+		}
+	}
+}
 country_event = {#和平的最后机会（介绍）
 	id = shx_zhifeng.5 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.5" }
@@ -3868,7 +3985,7 @@ country_event = {#和平的最后机会（介绍）
 				country_event = { id = shx.zhifeng.7 days = 1 } 
 			}
 			SHX = {
-				# country_event = { id = shx.zhifeng.8 days = 3 } 
+				country_event = { id = shx.zhifeng.8 days = 3 } 
 			}
 		}
 		custom_effect_tooltip = SHX_zhifeng_yes_negotiations_tooltip
@@ -3905,7 +4022,7 @@ country_event = {#北京的邀请
 				country_event = { id = shx.zhifeng.7 days = 1 } 
 			}
 			SHX = {
-				# country_event = { id = shx.zhifeng.8 days = 3 } 
+				country_event = { id = shx.zhifeng.8 days = 3 } 
 			}
 		}
 		custom_effect_tooltip = SHX_zhifeng_yes_negotiations_tooltip
@@ -3990,10 +4107,2371 @@ country_event = {#太原使节抵达
 		country_event = shx.zhifeng.5
 	}
 }
+country_event = {#太原-北京谈判：第一轮
+	id = shx.zhifeng.8 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.8" }
+	title = shx.zhifeng.8.t
+	desc = {
+		trigger = {
+			has_war_support > 0.64
+		}
+		text = shx.zhifeng.8.d.three
+	}
+	desc = {
+		trigger = {
+			has_war_support > 0.59
+		}
+		text = shx.zhifeng.8.d.two
+	}
+	desc = {
+		trigger = {
+			has_war_support < 0.60
+		}
+		text = shx.zhifeng.8.d.one
+	}
+	picture = GFX_report_event_SHX_yan_speech
+
+	is_triggered_only = yes 
+
+	trigger = { 
+		SHX = { NOT = { has_war_with = QIE } } 
+	} 
+
+	immediate = {
+		set_variable = {
+			var = SHX_QIE_negotiation_value
+			value = 1
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.8.a 
+
+		#Always Available
+
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 1.5
+				FNG = {
+					exists = no
+				}
+			}
+			modifier = {
+				factor = 1.5
+				613 = { is_owned_and_controlled_by = QIE }
+			}
+		}
+
+		add_war_support = -0.05
+		SHX_QIE_negotiation_demand_plus_1_effect = yes
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.9 days = 3 }
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.8.b 
+		trigger = {
+			has_war_support > 0.59 
+		}
+
+		ai_chance = {
+			base = 35
+			modifier = {
+				factor = 1.5
+				QIE = {
+					has_war_with_major = yes
+				}
+			}
+			modifier = {
+				factor = 1.5
+				SHX = {
+					has_war_support > 0.69
+				}
+			}
+		}
+
+		add_war_support = -0.10
+		SHX_QIE_negotiation_demand_plus_2_effect = yes
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.9 days = 3 }
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.8.c 
+		trigger = {
+			has_war_support > 0.64 
+		}
+
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 2
+				QIE = {
+					has_war_with_major = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				SHX = {
+					has_war_support > 0.74
+				}
+			}
+		}
+
+		add_war_support = -0.15
+		SHX_QIE_negotiation_demand_plus_3_effect = yes
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.9 days = 3 }
+			}
+		}
+	}
+}
+country_event = {#太原-北京谈判：第二轮
+	id = shx.zhifeng.9 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.9" }
+	title = shx.zhifeng.9.t
+	desc = shx.zhifeng.9.d
+	picture = GFX_report_event_QIE_hu_shih_speech
+
+	is_triggered_only = yes 
+
+	trigger = { SHX = { NOT = { has_war_with = QIE } } } 
+
+	option = {
+		name = shx.zhifeng.9.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 15
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 5
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+			}
+
+			modifier = {
+				factor = 1.25
+				QIE = { NOT = { has_completed_focus = QIE_purge_zhili } } 
+			}
+
+			modifier = { 
+				factor = 1.25
+				num_divisions_in_states = {
+					count > 9
+					states = { 615 1060 607 799 } 
+				}
+			}
+			modifier = { 
+				factor = 1.25
+				num_divisions_in_states = {
+					count > 14
+					states = { 615 1060 607 799 } 
+				}
+			}
+			modifier = { #How many soldiers does SHX have in the army?
+				factor = 1.25
+				SHX = { has_army_manpower = { size > 200000 } } #For Reference, SHX' starting max manpower is 194k
+			}
+			modifier = { #How many divisions does SHX have in the army?
+				factor = 1.25
+				SHX = { num_divisions > 19 } #For reference, SHX's starting division cap is 15
+			}
+			modifier = { #How many military factories does SHX have?
+				factor = 1.25
+				SHX = { num_of_military_factories > 9 } #For reference, SHX's mic is 3
+			}
+			modifier = { #Does QIE even hold East Shanxi? If not, may as well give it SHX so we don't lose the war
+				factor = 1.25
+				QIE = { NOT = { controls_state = 615 } }
+			}
+			modifier = { #Does QIE even hold Guanzhong (Xi'an)? If not, may as well give it SHX so we don't lose the war
+				factor = 1.25
+				QIE = { NOT = { controls_state = 799 } }
+			}
+		}
+
+		SHX_QIE_negotiation_accept_effect = yes
+	}
+
+	option = {
+		name = shx.zhifeng.9.b #Counteroffer
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				check_variable = { SHX.SHX_QIE_influence_variable < 40 }
+			}
+		}
+		trigger = {
+			check_variable = { SHX.SHX_QIE_influence_variable > 24 } #QIE needs at least 25% influence
+			check_variable = { SHX.SHX_QIE_negotiation_value > 1 } #Current Offer on the Table is 2 or more
+		}
+		SHX = { SHX_QIE_spend_large = yes } #QIE spends 15% Influence
+		SHX_QIE_negotiation_demand_minus_1_effect = yes #Pushes the deal down 1 level
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.10 days = 3 } #Taiyuan-Beijing Talks: Round 3
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.9.c #Drive a Hard Bargain
+		ai_chance = { base = 40 }
+		trigger = {
+			check_variable = { SHX.SHX_QIE_influence_variable > 39 } #QIE needs at least 40% influence
+			check_variable = { SHX.SHX_QIE_negotiation_value > 2 } #Current Offer on the Table is 3 or more
+		}
+		SHX = { SHX_QIE_spend_giga = yes } #QIE spends 30% Influence
+		SHX_QIE_negotiation_demand_minus_2_effect = yes #Pushes the deal down 2 level
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.10 days = 3 } #Taiyuan-Beijing Talks: Round 3
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.9.e #Walk out of talks
+		trigger = {
+			NOT = { SHX = { is_subject_of = QIE } } #In case SHX gets puppeted midway through
+		}
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 5
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 15
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+			modifier = {
+				add = 18
+				check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+			}
+
+			#QIE Influence
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX.SHX_QIE_influence_variable > 49 } #Sunk Cost
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 64 } #Sunk Cost
+			}
+
+			#QIE Diplomatic Status
+			modifier = {
+				factor = 0.8
+				QIE = { has_war = yes } #QIE less likely to say no if they are at war
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { any_enemy_country = { owns_state = 613 } } #QIE less likely to say no if they are fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { any_allied_country = { owns_state = 613 } } #QIE more likely to say no if they are fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				FNG = { exists = no } #QIE more likely to say no if Fengtian is dead
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { has_war_with = FNG } #QIE more less to say no at war with FNG
+			}
+			modifier = {
+				factor = 1.25
+				JAP = { has_war_with_major = yes } #QIE more likely to say no if Japan is distracted
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { has_war_with = JAP } #QIE less likely to say no if at war with JAP
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio > 1.25 } #QIE more likely to say no if stronger than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio > 1.5 } #QIE more likely to say no if way stronger than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 716 } #QIE more likely to say no if controls Shenyang
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 608 } #QIE more likely to say no if controls Beijing
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 1048 } #QIE more likely to say no if controls Wuhan
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 613 } #QIE more likely to say no if controls Nanjing
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 592 } #QIE more likely to say no if controls Canton/Guangzhou
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { surrender_progress > 0.25 } #QIE less likely to say no if losing ground
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { surrender_progress > 0.50 } #QIE less likely to say no if losing ground
+			}
+		}
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.14 days = 3 } #Negotiations Collapse (QIE's Fault)
+			}
+			QIE = {
+				country_event = { id = shx.zhifeng.14 days = 3 } #Negotiations Collapse (QIE's Fault)
+			}
+		}
+	}
+}
+country_event = {#太原-北京谈判：第三轮
+	id = shx.zhifeng.10 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.10" }
+	title = shx.zhifeng.10.t
+	desc = shx.zhifeng.10.d
+	picture = GFX_report_event_SHX_wang_xiang
+
+	is_triggered_only = yes
+
+	trigger = { SHX = { NOT = { has_war_with = QIE } } } 
+
+	option = {
+		name = shx_zhifeng.10.a #Accept As is
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+			}
+			modifier = {
+				add = 15
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 18
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 20
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+
+			#SHX-QIE Relations
+			modifier = {
+				factor = 1.25
+				QIE = { NOT = { has_completed_focus = QIE_purge_zhili } } #SHX is more willing to accept terms if Zhili clique remains in power, seen as stronger
+			}
+
+			#Can QIE beat SHX in a fight?
+			modifier = {
+				factor = 1.25
+				has_war_support < 0.59 #SHX more likely to accept if their war support is lower
+			}
+			modifier = {
+				factor = 1.25
+				ic_ratio = {
+					tag = QIE
+					ratio < 0.20 #SHX more likley to accept if QIE's factory ratio is way higher. For reference, SHX starts with 5 and QIE starts with 22 (ratio 0.22)
+				}
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { num_subjects > 2 } #SHX more likely to accept if QIE has secure the recognition of a significant number of governments (ANQ/LEP, SQI, SZC, YUN, GXC, XSM all possible)
+			}
+			modifier = {
+				factor = 1.25
+				strength_ratio = {
+					tag = QIE
+					ratio > 2 #SHX starts with a cap of 15 divisions, QIE starts with a cap of 57 and has 3 fronts to fight. SHX more likely to say yes if QIE has a decent sized force
+				}
+			}
+			modifier = {
+				factor = 1.25
+				strength_ratio = {
+					tag = QIE
+					ratio > 3 #SHX starts with a cap of 15 divisions, QIE starts with a cap of 57 and has 3 fronts to fight. SHX more likely to say yes if QIE dwarfs them
+				}
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { enemies_strength_ratio < 0.75 } #SHX more likely to say yes if QIE outnumbers the enemy by a decent amount, making SHX less likely to win a potential wawr
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { enemies_strength_ratio < 0.50 } #SHX more likely to say yes if QIE outnumbers the enemy by a decent amount, making SHX less likely to win a potential wawr
+			}
+		}
+		SHX_QIE_negotiation_accept_effect = yes
+	}
+
+	option = {
+		name = shx.zhifeng.10.b #Counteroffer
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				has_war_support < 0.55
+			}
+		}
+		trigger = {
+			has_war_support > 0.54 
+			check_variable = { SHX.SHX_QIE_negotiation_value < 5 }
+		}
+		add_war_support = -0.05 
+		SHX_QIE_negotiation_demand_plus_1_effect = yes 
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.11 days = 3 } 
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.10.c 
+		ai_chance = { base = 40 }
+		trigger = {
+			has_war_support > 0.59 
+			check_variable = { SHX.SHX_QIE_negotiation_value < 5 } 
+		}
+		add_war_support = -0.10 
+		SHX_QIE_negotiation_demand_plus_2_effect = yes 
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.11 days = 3 } 
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.10.e 
+		trigger = {
+			NOT = { SHX = { is_subject_of = QIE } } 
+		}
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+			}
+			modifier = {
+				add = 5
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 0
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+
+			#QIE Influence
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX.SHX_QIE_influence_variable > 49 } #Sunk Cost
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 64 } #Sunk Cost
+			}
+
+			#QIE diplomatic status
+			modifier = {
+				factor = 1.25
+				QIE = { has_war = yes } #SHX is more likely to say no if QIE is at war
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { any_enemy_country = { owns_state = 613 } } #SHX more likely to say no if QIE is fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { any_allied_country = { owns_state = 613 } } #SHX less likely to say no if QIE is allied with a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				FNG = { exists = yes } #SHX more likely to say no if Fengtian is alive
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { has_war_with = FNG } #SHX more less to say no if QIE is at war with FNG
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { has_war_with = JAP } #SHX more likely to say no if SHX is at war with JAP
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { alliance_strength_ratio < 0.80 } #SHX more likely to say no if QIE is weaker than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio < 0.66 } #SHX more likely to say no if QIE is weaker than foes
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 716 } #SHX less likely to say no if QIE controls Shenyang
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 608 } #SHX less likely to say no if QIE controls Beijing
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 1048 } #SHX less likely to say no if QIE controls Wuhan
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 613 } #SHX less likely to say no if QIE controls Nanjing
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 592 } #SHX less likely to say no if QIE controls Canton/Guangzhou
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { surrender_progress > 0.25 } #SHX more likely to say no if QIE is losing ground
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { surrender_progress > 0.50 } #SHX more likely to say no if QIE is losing ground
+			}
+		}
+
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.13 days = 3 } 
+			}
+			SHX = {
+				country_event = { id = shx.zhifeng.13 days = 3 }
+			}
+		}
+	}
+}
+country_event = {#太原-北京谈判：第四轮
+	id = shx.zhifeng.11 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.11" }
+	title = shx.zhifeng.11.t
+	desc = shx.zhifeng.11.d
+	picture = GFX_report_event_SHX_yan_smile
+
+	is_triggered_only = yes 
+
+	trigger = { 
+		SHX = { NOT = { has_war_with = QIE } } 
+	}
+
+	option = {
+		name = shx.zhifeng.11.a 
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 30
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 20
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+			modifier = {
+				add = 4
+				check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+			}
+
+			#SHX-QIE Relations
+			modifier = {
+				factor = 1.25
+				QIE = { has_completed_focus = QIE_purge_zhili } #QIE is more willing to accept terms if they have purged the Zhili, seen as weaker
+			}
+			modifier = {
+				factor = 1.05 #QIE is more willing to accept terms in general because negotiations have gone on and otherwise their loss of influence is for nothing. Other conditions loosened below
+				always = yes
+			}
+
+			#How useful would an alliance with SHX be?
+			modifier = { #How many QIE troops are being wasted guarding SHX's border?
+				factor = 1.25
+				num_divisions_in_states = {
+					count > 6
+					states = { 615 1060 607 799 } #Eastern Shanxi, Hebi, Heluo, Guanzhong
+				}
+			}
+			modifier = { #How many QIE troops are being wasted guarding SHX's border?
+				factor = 1.25
+				num_divisions_in_states = {
+					count > 9
+					states = { 615 1060 607 799 } #Eastern Shanxi, Hebi, Heluo, Guanzhong
+				}
+			}
+			modifier = { #How many soldiers does SHX have in the army?
+				factor = 1.25
+				SHX = { has_army_manpower = { size > 175000 } } #For Reference, SHX' starting max manpower is 194k
+			}
+			modifier = { #How many divisions does SHX have in the army?
+				factor = 1.25
+				SHX = { num_divisions > 14 } #For reference, SHX's starting division cap is 15
+			}
+			modifier = { #How many military factories does SHX have?
+				factor = 1.25
+				SHX = { num_of_military_factories > 7 } #For reference, SHX's mic is 3
+			}
+			modifier = { #Does QIE even hold East Shanxi? If not, may as well give it SHX so we don't lose the war
+				factor = 1.30
+				QIE = { NOT = { controls_state = 615 } }
+			}
+			modifier = { #Does QIE even hold Guanzhong (Xi'an)? If not, may as well give it SHX so we don't lose the war
+				factor = 1.30
+				QIE = { NOT = { controls_state = 799 } }
+			}
+		}
+		SHX_QIE_negotiation_accept_effect = yes
+	}
+
+	option = {
+		name = shx.zhifeng.11.b #Counteroffer
+		ai_chance = { base = 60 }
+		trigger = {
+			check_variable = { SHX.SHX_QIE_influence_variable > 24 } #QIE needs at least 25% influence
+			check_variable = { SHX.SHX_QIE_negotiation_value > 1 } #Current Offer on the Table is 2 or more
+		}
+		SHX = { SHX_QIE_spend_large = yes } #QIE spends 15% Influence
+		SHX_QIE_negotiation_demand_minus_1_effect = yes #Pushes the deal down 1 level
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.12 days = 3 } #Taiyuan-Beijing Talks: Round 3
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.11.c 
+		trigger = {
+			NOT = { SHX = { is_subject_of = QIE } } #In case SHX gets puppeted midway through
+		}
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 20
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 30
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+			modifier = {
+				add = 36
+				check_variable = { SHX.SHX_QIE_negotiation_value = 5 }
+			}
+
+			#QIE Influence
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX.SHX_QIE_influence_variable > 49 } #Sunk Cost
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 64 } #Sunk Cost
+			}
+
+			#QIE Diplomatic Status
+			modifier = {
+				factor = 0.8
+				QIE = { has_war = yes } #QIE less likely to say no if they are at war
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { any_enemy_country = { owns_state = 613 } } #QIE less likely to say no if they are fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { any_allied_country = { owns_state = 613 } } #QIE more likely to say no if they are fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				FNG = { exists = no } #QIE more likely to say no if Fengtian is dead
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { has_war_with = FNG } #QIE more less to say no at war with FNG
+			}
+			modifier = {
+				factor = 1.25
+				JAP = { has_war_with_major = yes } #QIE more likely to say no if Japan is distracted
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { has_war_with = JAP } #QIE less likely to say no if at war with JAP
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio > 1.25 } #QIE more likely to say no if stronger than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio > 1.5 } #QIE more likely to say no if way stronger than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 716 } #QIE more likely to say no if controls Shenyang
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 608 } #QIE more likely to say no if controls Beijing
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 1048 } #QIE more likely to say no if controls Wuhan
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 613 } #QIE more likely to say no if controls Nanjing
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { controls_state = 592 } #QIE more likely to say no if controls Canton/Guangzhou
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { surrender_progress > 0.25 } #QIE less likely to say no if losing ground
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { surrender_progress > 0.50 } #QIE less likely to say no if losing ground
+			}
+		}
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.14 days = 3 } #Negotiations Collapse (QIE's Fault)
+			}
+			QIE = {
+				country_event = { id = shx.zhifeng.14 days = 3 } #Negotiations Collapse (QIE's Fault)
+			}
+		}
+	}
+}
+country_event = {#太原-北京谈判：第五轮
+	id = shx.zhifeng.12 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.12" }
+	title = shx.zhifeng.12.t
+	desc = shx.zhifeng.12.d
+	picture = GFX_report_event_SHX_taiyuan_shouyi_gate
+
+	is_triggered_only = yes 
+
+	trigger = { SHX = { NOT = { has_war_with = QIE } } } 
+
+	option = {
+		name = shx.zhifeng.12.a #Accept As is
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 50
+				check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+			}
+			modifier = {
+				add = 75
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 90
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 100
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+
+			#SHX-QIE Relations
+			modifier = {
+				factor = 1.25
+				QIE = { NOT = { has_completed_focus = QIE_purge_zhili } } #SHX is more willing to accept terms if Zhili clique remains in power, seen as stronger
+			}
+			modifier = {
+				factor = 1.10
+				always = yes #SHX is more willing to accept terms the longer negotiations go on as to avoid sunk costs. Requirements loosened below as well
+			}
+
+			#Can QIE beat SHX in a fight?
+			modifier = {
+				factor = 1.25
+				has_war_support < 0.51 #SHX more likely to accept if their war support is lower
+			}
+			modifier = {
+				factor = 1.25
+				ic_ratio = {
+					tag = QIE
+					ratio < 0.40 #SHX more likley to accept if QIE's factory ratio is way higher. For reference, SHX starts with 5 and QIE starts with 22 (ratio 0.22)
+				}
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { num_subjects > 1 }#SHX more likely to accept if QIE has secure the recognition of a significant number of governments (ANQ/LEP, SQI, SZC, YUN, GXC, XSM all possible)
+			}
+			modifier = {
+				factor = 1.3
+				strength_ratio = {
+					tag = QIE
+					ratio > 2 #SHX starts with a cap of 15 divisions, QIE starts with a cap of 57 and has 3 fronts to fight. SHX more likely to say yes if QIE has a decent sized force
+				}
+			}
+			modifier = {
+				factor = 1.3
+				strength_ratio = {
+					tag = QIE
+					ratio > 3 #SHX starts with a cap of 15 divisions, QIE starts with a cap of 57 and has 3 fronts to fight. SHX more likely to say yes if QIE dwarfs them
+				}
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { enemies_strength_ratio < 0.90 } #SHX more likely to say yes if QIE outnumbers the enemy by a decent amount, making SHX less likely to win a potential wawr
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { enemies_strength_ratio < 0.65 } #SHX more likely to say yes if QIE outnumbers the enemy by a decent amount, making SHX less likely to win a potential wawr
+			}
+		}
+		SHX_QIE_negotiation_accept_effect = yes
+	}
+
+	option = {
+		name = shx.zhifeng.12.b
+		trigger = {
+			NOT = { SHX = { is_subject_of = QIE } } 
+		}
+		ai_chance = {
+			base = 0
+			#Baseline Values for Talks
+			modifier = {
+				add = 50
+				check_variable = { SHX.SHX_QIE_negotiation_value = 1 }
+			}
+			modifier = {
+				add = 25
+				check_variable = { SHX.SHX_QIE_negotiation_value = 2 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { SHX.SHX_QIE_negotiation_value = 3 }
+			}
+			modifier = {
+				add = 0
+				check_variable = { SHX.SHX_QIE_negotiation_value = 4 }
+			}
+
+			#QIE Influence
+			modifier = {
+				factor = 0.8
+				check_variable = { SHX.SHX_QIE_influence_variable > 49 } #Sunk Cost
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SHX.SHX_QIE_influence_variable > 64 } #Sunk Cost
+			}
+
+			#QIE diplomatic status
+			modifier = {
+				factor = 1.25
+				QIE = { has_war = yes } #SHX is more likely to say no if QIE is at war
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { any_enemy_country = { owns_state = 613 } } #SHX more likely to say no if QIE is fighting a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { any_allied_country = { owns_state = 613 } } #SHX less likely to say no if QIE is allied with a tag that owns Nanjing (probably a LEP unifier)
+			}
+			modifier = {
+				factor = 1.25
+				FNG = { exists = yes } #SHX more likely to say no if Fengtian is alive
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { has_war_with = FNG } #SHX more less to say no if QIE is at war with FNG
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { has_war_with = JAP } #SHX more likely to say no if SHX is at war with JAP
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { alliance_strength_ratio < 0.80 } #SHX more likely to say no if QIE is weaker than foes
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { alliance_strength_ratio < 0.66 } #SHX more likely to say no if QIE is weaker than foes
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 716 } #SHX less likely to say no if QIE controls Shenyang
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 608 } #SHX less likely to say no if QIE controls Beijing
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 1048 } #SHX less likely to say no if QIE controls Wuhan
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 613 } #SHX less likely to say no if QIE controls Nanjing
+			}
+			modifier = {
+				factor = 0.8
+				QIE = { controls_state = 592 } #SHX less likely to say no if QIE controls Canton/Guangzhou
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { surrender_progress > 0.25 } #SHX more likely to say no if QIE is losing ground
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { surrender_progress > 0.50 } #SHX more likely to say no if QIE is losing ground
+			}
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.zhifeng.13 days = 3 } #Negotiations Collapse (SHX's Fault)
+			}
+			SHX = {
+				country_event = { id = shx.zhifeng.13 days = 3 } #Negotiations Collapse (SHX's Fault)
+			}
+		}
+	}
+}
+country_event = {#太原退出谈判！
+	id = shx.zhifeng.13 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.13" }
+	title = shx.zhifeng.13.t
+	desc = shx.zhifeng.13.d
+	picture = GFX_report_event_SHX_taiyuan_arsenal_2
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.13.a #Insolent Warlords
+		trigger = {
+			original_tag = QIE
+		}
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		activate_targeted_decision = { 
+			decision = china_attack_decision 
+			target = SHX 
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.13.b 
+		trigger = {
+			original_tag = SHX
+		}
+		add_war_support = -0.15 
+		set_country_flag = SHX_QIE_negotiations_fail_SHX
+		complete_national_focus = SHX_destiny
+	}
+}
+country_event = {#北京退出谈判！
+	id = shx.zhifeng.14 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.14" }
+	title = shx.zhifeng.14.t
+	desc = shx.zhifeng.14.d
+	picture = GFX_report_event_QIE_imperial_guard
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.14.a 
+		trigger = {
+			original_tag = QIE
+		}
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		activate_targeted_decision = { 
+			decision = china_attack_decision 
+			target = SHX 
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.14.b 
+		trigger = {
+			original_tag = SHX
+		}
+		add_war_support = 0.15 
+		set_country_flag = SHX_QIE_negotiations_fail_QIE
+		complete_national_focus = SHX_destiny
+	}
+}
+country_event = {#太原-北京谈判中止
+	id = shx.zhifeng.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.15" }
+	title = shx.zhifeng.15.t
+	desc = shx.zhifeng.15.d
+	picture = GFX_report_event_SHX_yan_coat
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.15.a 
+		add_state_claim = 615 
+		add_state_claim = 799 
+		add_state_claim = 616 
+		add_state_claim = 621 
+		set_country_flag = SHX_QIE_negotiations_cancelled
+		complete_national_focus = SHX_destiny
+	}
+}
+country_event = {#太原-北京谈判成功！
+	id = shx.zhifeng.16 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.16" }
+	title = shx.zhifeng.16.t
+	desc = {
+		text = shx.zhifeng.16.d.1
+		trigger = {
+			has_global_flag = SHX_QIE_negotiation_scenario_1
+		}
+	}
+	desc = {
+		text = shx.zhifeng.16.d.2
+		trigger = {
+			has_global_flag = SHX_QIE_negotiation_scenario_2
+		}
+	}
+	desc = {
+		text = shx.zhifeng.16.d.3
+		trigger = {
+			has_global_flag = SHX_QIE_negotiation_scenario_3
+		}
+	}
+	desc = {
+		text = shx.zhifeng.16.d.4
+		trigger = {
+			has_global_flag = SHX_QIE_negotiation_scenario_4
+		}
+	}
+	desc = {
+		text = shx.zhifeng.16.d.5
+		trigger = {
+			has_global_flag = SHX_QIE_negotiation_scenario_5
+		}
+	}
+	picture = GFX_report_event_SHX_yan_smile
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.zhifeng.16.a 
+		if = {
+			limit = {
+				tag = SHX
+			}
+			add_opinion_modifier = {
+				target = QIE
+				modifier = KR_returned_land
+			}
+		}
+		else_if = {
+			limit = {
+				tag = QIE
+			}
+			country_event = { 
+				id = shx.zhifeng.18 
+				days = 2 
+			}
+			add_opinion_modifier = {
+				target = SHX
+				modifier = KR_approves_of_govt
+			}
+		}
+	}
+}
+country_event = {#太原站在北京一边
+	id = shx.zhifeng.17 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.17" }
+	title = shx.zhifeng.17.t
+	desc = shx.zhifeng.17.d
+	picture = GFX_report_event_generic_beijing_map
+	is_triggered_only = yes 
+
+	major = yes
+	show_major = {
+		OR = {
+			is_tag_in_china_area = yes
+			has_war_with = QIE
+			has_war_with = SHX
+			tag = JAP
+			tag = GEA
+		}
+		NOT = {
+			tag = QIE
+			tag = SHX
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.17.a 
+		trigger = {
+			has_war_with = QIE
+		}
+	}
+	option = {
+		name = shx.zhifeng.17.b 
+		trigger = {
+			is_ally_with = QIE
+		}
+	}
+	option = {
+		name = shx.zhifeng.17.c 
+		trigger = {
+			NOT = {
+				has_war_with = QIE
+				is_ally_with = QIE
+			}
+		}
+	}
+}
+country_event = {#应得的奖励
+	id = shx.zhifeng.18 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.18" }
+	title = shx.zhifeng.18.t
+	desc = {
+		text = shx.zhifeng.18.d.1
+		trigger = { QIE = { owns_state = 615 } }
+	}
+
+	desc = {
+		text = shx.zhifeng.18.d.2
+		trigger = { 615 = { has_resources_rights = { receiver = QIE } } } 
+	}
+	picture = GFX_report_event_generic_beijing_map
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			QIE = { owns_state = 615 }
+			615 = { has_resources_rights = { receiver = QIE } }
+		}
+		country_exists = SHX
+		NOT = { has_war_with = SHX }
+		SHX = {
+			OR = {
+				is_subject = no
+				is_subject_of = ROOT
+			}
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.18.a
+		trigger = { QIE = { owns_state = 615 } }
+		ai_chance = { base = 5 }
+		SHX = { transfer_state = 615 }
+		615 = { add_core_of = SHX }
+	}
+	option = {
+		name = shx.zhifeng.18.b
+		trigger = { 615 = { has_resources_rights = { receiver = QIE } } }
+		ai_chance = { base = 5 }
+		QIE = { remove_resource_rights = 615 }
+	}
+	option = { 
+		name = shx.zhifeng.18.c
+		ai_chance = { base = 0 }	
+		add_stability = -0.10
+	}
+}
+country_event = {#山西发来要求
+	id = shx.zhifeng.21 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.21" }
+	title = shx.zhifeng.21.t
+	desc = shx.zhifeng.21.d
+
+	picture = GFX_report_event_FNG_japanese_at_shanhaiguan
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = SHX
+					ratio < 0.33
+				}
+			}
+		}
+		name = shx.zhifeng.21.a
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.zhifeng.24 days = 3 }
+			}
+		}
+	}
+
+	option = {
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 0.5
+				SHX = {
+					owns_state = 616 #Ordos
+					owns_state = 621 #Ulanqab
+				}
+			}
+			modifier = {
+				factor = 0.1
+				NOT = {
+					owns_state = 348 #Ningxia
+					owns_state = 353 #Xining
+				}
+			}
+			modifier = {
+				factor = 0
+				is_subject_of = QIE
+			}
+		}
+		name = shx.zhifeng.21.b
+		hidden_effect = {
+			SHX = { country_event = shx.zhifeng.23 }
+		}
+	}
+
+	option = {
+		ai_chance = {
+			base = 0 #Player option
+			modifier = {
+				add = 50
+				is_subject_of = QIE
+			}
+		}
+		name = shx.zhifeng.21.c #if accept, XSM becomes a puppet of QIE
+		hidden_effect = {
+			if = {
+				limit = {
+					XSM = {
+						NOT = {
+							is_subject_of = QIE
+						}
+					}
+				}
+				QIE = { china_puppet_ROOT_effect = yes }
+			}
+			QIE = { country_event = shx.zhifeng.22 }
+			SHX = { country_event = shx.zhifeng.22 }
+		}
+	}
+}
+country_event = {#马家军屈服于中央政府
+	id = shx.zhifeng.22 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.22" }
+	title = shx.zhifeng.22.t
+	desc = {
+		text = shx.zhifeng.22.d.1
+		trigger = {
+			tag = QIE
+		}
+	}
+	desc = {
+		text = shx.zhifeng.22.d.2
+		trigger = {
+			tag = SHX
+		}
+	}
+	picture = GFX_report_event_CHI_ambassador_announcement
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.22.a 
+		trigger = {
+			tag = QIE
+		}
+	}
+
+	option = {
+		name = shx.zhifeng.22.b
+		trigger = {
+			tag = SHX
+		}
+		add_stability = 0.10
+	}
+}
+country_event = {#马家军拒绝了我们的要求
+	id = shx.zhifeng.23 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.23" }
+	title = shx.zhifeng.23.t
+	desc = shx.zhifeng.23.d
+	picture = GFX_report_event_FNG_army1
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.23.a 
+		SHX = {
+			create_wargoal = {
+				type = annex_everything
+				target = XSM
+			}
+		}
+	}
+}
+country_event = {#马家军的终结
+	id = shx.zhifeng.24 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.24" }
+	title = shx.zhifeng.24.t
+	desc = shx.zhifeng.24.d
+	picture = GFX_report_event_FNG_army1
+	is_triggered_only = yes
+
+	major = yes
+	show_major = {
+		is_tag_in_china_area = yes
+	}
+
+	option = {
+		name = shx.zhifeng.24.a
+		trigger = {
+			tag = SHX
+			XSM = {
+				has_war = no
+			}
+		}
+		SHX = {
+			annex_country = {
+				target = XSM
+				transfer_troops = yes
+			}
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.21 days = 15 }
+		}
+	}
+	option = {
+		name = shx.zhifeng.24.b
+		trigger = {
+			NOT = {
+				tag = SHX
+			}
+		}
+	}
+}
+country_event = {#逮捕王骧
+	id = shx.zhifeng.25 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.25" }
+	title = shx.zhifeng.25.t
+	desc = shx.zhifeng.25.d
+	picture = GFX_report_event_SHX_wang_xiang
+
+	is_triggered_only = yes
+	
+	option = {
+		name = shx.zhifeng.25.a
+		add_stability = -0.05
+		retire_ideology_leader = market_liberal
+		if = {
+			limit = { check_variable = { SHX_QIE_influence_variable < 1 } }
+			SHX_remove_qie_econ = yes
+		}
+	}
+}
+country_event = {#清政府垮台
+	id = shx.zhifeng.26 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.26" }
+	title = shx.zhifeng.26.t
+	desc = shx.zhifeng.26.d
+	picture = GFX_report_event_QIE_soldiers_planning
+
+	trigger = {
+		NOT = {
+			has_war_with = var:716.owner #Shenyang
+			has_war_with = var:608.owner #Beijing
+			has_war_with = var:1048.owner #Wuhan
+			has_war_with = var:613.owner #Nanjing
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = shx.zhifeng.26.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				608 = {
+					is_owned_and_controlled_by = SHX
+				}
+			}
+			modifier = {
+				factor = 1.5
+				608 = { owner = { alliance_strength_ratio < 1.25 } }
+			}
+			modifier = {
+				factor = 0.25
+				608 = { is_owned_and_controlled_by = FNG }
+				FNG = { is_guaranteed_by = JAP }
+				JAP = { NOT = { has_war_with_major = yes } }
+			}
+			modifier = {
+				factor = 0 #check if they have unifier game rule
+				NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
+				NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_SHX } }
+			}
+		}
+		if = {
+			limit = { #If Beijing is not owned by SHX
+				NOT = { has_wargoal_against = 608.owner }
+				608 = { is_owned_by_ROOT_or_subject = no }
+			}
+			create_wargoal = {
+				type = topple_government
+				target = 608.owner
+			}
+		}
+		if = {
+			limit = { #Go for Wuhan if Beijing is owned already
+				owns_state = 608
+				NOT = { has_wargoal_against = 1048.owner }
+				1048 = { is_owned_by_ROOT_or_subject = no }
+			}
+			create_wargoal = {
+				type = topple_government
+				target = 1048.owner
+			}
+		}
+		if = {
+			limit = { #Go for Nanjing if Beijing and Wuhan are owned already
+				owns_state = 608
+				owns_state = 1048
+				NOT = { has_wargoal_against = 613.owner }
+				613 = { is_owned_by_ROOT_or_subject = no }
+			}
+			create_wargoal = {
+				type = topple_government
+				target = 613.owner
+			}
+		}
+	}
+	option = {
+		name = shx.zhifeng.26.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				608 = { owner = { alliance_strength_ratio > 1.25 } }
+			}
+			modifier = {
+				factor = 0 #check if they have unifier game rule
+				has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_SHX }
+			}
+		}
+		remove_ideas = SHX_war_of_liberation
+		add_ideas = SHX_fortress_shanxi
+		SHX_add_join_government_decisions = yes
+	}
+}
 
 ########################################
 ########-       其他          -#########
 ########################################
+country_event = {#我们在绥远的利益
+	id = shx.suiyuan.campaign.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.1" }
+	title = shx.suiyuan.campaign.1.t
+	desc = shx.suiyuan.campaign.1.d
+	picture = GFX_report_event_MON_palace
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.1.a
+		add_war_support = 0.05
+	}
+}
+country_event = {#进军绥远之路
+	id = shx.suiyuan.campaign.2 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.2" }
+	title = shx.suiyuan.campaign.2.t
+	desc = shx.suiyuan.campaign.2.d
+	picture = GFX_report_event_MON_mongolor
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.2.a
+		trigger = { NOT = { is_subject_of = QIE } } 
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = XSM
+					ratio < 1
+				}
+			}
+		}
+		XSM = {
+			country_event = { id = shx.suiyuan.campaign.3 days = 7 } 
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.2.b
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 0.5
+				strength_ratio = {
+					tag = XSM
+					ratio < 1
+				}
+			}
+		}
+		trigger = { is_subject_of = QIE }
+		QIE = {
+			country_event = { id = shx.suiyuan.campaign.6 days = 7 }
+		}
+	}
+	option = { #We must move on
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.2 option shx.suiyuan.campaign.2.c"
+		name = shx.suiyuan.campaign.2.c
+		ai_chance = { base = 25 }
+		add_stability = 0.05
+		reverse_add_opinion_modifier = {
+			target = XSM
+			modifier = KR_pleased
+		}
+		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
+	}
+}
+country_event = {#山西要求归还绥远
+	id = shx.suiyuan.campaign.3 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.3" }
+	title = shx.suiyuan.campaign.3.t
+	desc = shx.suiyuan.campaign.3.d
+	picture = GFX_report_event_SHX_guominjun_cavalry
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.3.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = SHX
+					ratio < 1
+				}
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { has_war = yes }
+			}
+		}
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.suiyuan.campaign.4 days = 7 } 
+			}
+		}
+		add_stability = -0.10
+		SHX_seize_suiyuan_effect = yes
+	}
+	option = {
+		name = shx.suiyuan.campaign.3.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = SHX
+					ratio > 1
+				}
+			}
+		}
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.suiyuan.campaign.5 days = 7 } #The Ma clique does not yield!
+			}
+		}
+		add_war_support = 0.10
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+	}
+}
+country_event = {#马家军归还绥远
+	id = shx.suiyuan.campaign.4 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.4" }
+	title = shx.suiyuan.campaign.4.t
+	desc = shx.suiyuan.campaign.4.d
+	picture = GFX_report_event_SHX_feng_soldiers
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.4.a
+		add_war_support = 0.10
+	}
+}
+country_event = {#向草原进军！
+	id = shx.suiyuan.campaign.5 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.5" }
+	title = shx.suiyuan.campaign.5.t
+	desc = shx.suiyuan.campaign.5.d
+	picture = GFX_report_event_SHX_guominjun_soldiers
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.5.a
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = XSM
+					ratio > 1
+				}
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { has_war = yes }
+			}
+		}
+		country_event = { id = shx.suiyuan.campaign.30 days = 5 } #Activates the campaign
+		custom_effect_tooltip = SHX_suiyuan_activates_campaign_tooltip
+	}
+	option = {
+		name = shx.suiyuan.campaign.5.b
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = XSM
+					ratio < 1
+				}
+			}
+		}
+		add_political_power = -50
+		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
+	}
+}
+country_event = {#山西要求仲裁绥远问题
+	id = shx.suiyuan.campaign.6 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.6" }
+	title = shx.suiyuan.campaign.6.t
+	desc = shx.suiyuan.campaign.6.d
+	picture = GFX_report_event_MON_palace
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.6.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0.5
+				SHX = {
+					strength_ratio = {
+						tag = XSM
+						ratio < 1
+					}
+				}
+			}
+		}
+		XSM = {
+			country_event = { id = shx.suiyuan.campaign.7 days = 7 } 
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.6.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0.5
+				XSM = {
+					strength_ratio = {
+						tag = SHX
+						ratio < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+		}
+		trigger = {
+			XSM = {
+				OR = {
+					is_ally_with = QIE
+					is_subject_of = QIE
+				}
+			}
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.9 days = 7 } 
+			if = { 
+				limit = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+				SHX_QIE_spend_giga = yes
+				custom_effect_tooltip = SHX_QIE_suiyuan_betrayal_tooltip
+			}
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.6.c
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes #QIE does not have time for this BS
+			}
+			modifier = {
+				factor = 0
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+		}
+		custom_effect_tooltip = SHX_QIE_neutrality_warning_tooltip
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.12 days = 7 }
+		}
+		if = {
+			limit = {
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+			SHX_QIE_spend_large = yes
+			custom_effect_tooltip = SHX_QIE_suiyuan_betrayal_tooltip
+		}
+	}
+}
+country_event = {#大清裁定
+	id = shx.suiyuan.campaign.7 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.7" }
+	title = {
+		text = shx.suiyuan.campaign.7.t.1 
+		trigger = { SHX = { has_country_flag = SHX_XSM_QIE_favors_SHX_flag } }
+	}
+	title = {
+		text = shx.suiyuan.campaign.7.t.2 #Normal
+		trigger = { SHX = { NOT = { has_country_flag = SHX_XSM_QIE_favors_SHX_flag } } }
+	}
+	desc = {
+		text = shx.suiyuan.campaign.7.d.1 
+		trigger = { SHX = { has_country_flag = SHX_XSM_QIE_favors_SHX_flag } }
+	}
+	desc = {
+		text = shx.suiyuan.campaign.7.d.2 #Normal
+		trigger = { SHX = { NOT = { has_country_flag = SHX_XSM_QIE_favors_SHX_flag } } }
+	}
+	picture = GFX_report_event_QIE_soldiers_planning
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.7.a
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = QIE
+					ratio < 1
+				}
+			}
+			modifier = {
+				factor = 0.5
+				QIE = { has_war = yes }
+			}
+		}
+		hidden_effect = {
+			SHX = {
+				country_event = { id = shx.suiyuan.campaign.4 days = 7 } #The Ma clique returns Suiyuan!
+			}
+			QIE = {
+				country_event = { id = shx.suiyuan.campaign.4 days = 7 } #The Ma clique returns Suiyuan!
+			}
+		}
+		add_stability = -0.10
+		SHX_seize_suiyuan_effect = yes
+	}
+	option = {
+		name = shx.suiyuan.campaign.7.b
+		trigger = { NOT = { SHX = { has_country_flag = SHX_XSM_QIE_favors_SHX_flag } } }
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				SHX = { is_ai = no } 
+			}
+		}
+		QIE = {
+			country_event = { id = shx.suiyuan.campaign.8 days = 3 } 
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.7.c
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = QIE
+					ratio > 1
+				}
+			}
+			modifier = {
+				factor = 0.5
+				QIE = { is_subject_of = QIE }
+			}
+		}
+		hidden_effect = {
+			QIE = {
+				country_event = { id = shx.suiyuan.campaign.10 days = 7 } #The Ma clique defies central authority!
+			}
+		}
+		add_war_support = 0.10
+		add_opinion_modifier = {
+			target = QIE
+			modifier = KR_outraged
+		}
+		reverse_add_opinion_modifier = {
+			target = QIE
+			modifier = KR_outraged
+		}
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_outraged
+		}
+	}
+}
+country_event = {#马家军重申忠诚
+	id = shx.suiyuan.campaign.8 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.8" }
+	title = shx.suiyuan.campaign.8.t
+	desc = shx.suiyuan.campaign.8.d
+	picture = GFX_report_event_MON_palace
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.8.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0.5
+				SHX = {
+					strength_ratio = {
+						tag = XSM
+						ratio < 1
+					}
+				}
+			}
+		}
+		SHX = { set_country_flag = SHX_XSM_QIE_favors_SHX_flag }
+		XSM = {
+			country_event = { id = shx.suiyuan.campaign.7 days = 7 } #Beijing demands the return of Suiyuan! (Send this again, but this time no option to wiggle out)
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.8.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0.5
+				XSM = {
+					strength_ratio = {
+						tag = SHX
+						ratio < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				SHX = {
+					is_ai = no
+				}
+			}
+			modifier = {
+				factor = 0.25
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+			modifier = {
+				factor = 1.5
+				XSM = {
+					is_ai = no
+				}
+			}
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.9 days = 7 } 
+			if = {
+				limit = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+				SHX_QIE_spend_giga = yes
+				custom_effect_tooltip = SHX_QIE_suiyuan_betrayal_tooltip
+			}
+		}
+		if = {
+			limit = {
+				XSM = { NOT = { is_subject_of = QIE } }
+			}
+			puppet = {
+				target = XSM
+				end_wars = yes 
+			}
+			set_autonomy = {
+				target = XSM
+				autonomy_state = associated_governorate
+			}
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.8.c
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes 
+			}
+			modifier = {
+				factor = 0.25
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+			modifier = {
+				factor = 1.5
+				XSM = {
+					is_ai = no
+				}
+			}
+			modifier = {
+				factor = 1.5
+				SHX = {
+					is_ai = no
+				}
+			}
+		}
+		custom_effect_tooltip = SHX_QIE_neutrality_warning_tooltip
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.12 days = 7 }
+		}
+		if = { 
+			limit = {
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+			SHX_QIE_spend_large = yes
+			custom_effect_tooltip = SHX_QIE_suiyuan_betrayal_tooltip
+		}
+	}
+}
+country_event = {#北京偏向三马
+	id = shx.suiyuan.campaign.9 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.9" }
+	title = shx.suiyuan.campaign.9.t
+	desc = shx.suiyuan.campaign.9.d
+	picture = GFX_report_event_SHX_yanan_street
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.9.a
+		activate_targeted_decision = { 
+			target = QIE 
+			decision = SHX_suiyuan_betrayal_decision 
+		}
+	}
+}
+country_event = {#三马背叛中央政府
+	id = shx.suiyuan.campaign.10 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.10" }
+	title = shx.suiyuan.campaign.10.t
+	desc = shx.suiyuan.campaign.10.d
+	picture = GFX_report_event_CHI_warlord_cavalry
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.10.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 25
+				QIE = { has_war = no }
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { is_ai = no } #Give the player something more fun to do usually.
+			}
+			modifier = {
+				add = 25
+				FNG = { exists = no }
+			}
+			modifier = {
+				factor = 2
+				QIE = { owns_state = 613 } #Owning Nanjing is a good sign QIE is strong
+			}
+			modifier = {
+				factor = 0
+				XSM = { is_ai = no } #Give the Ma a chance
+			}
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = XSM
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.11 days = 3 } #The Central Government marches on Suiyuan!
+		}
+		if = {
+			limit = {
+				XSM = { is_subject_of = QIE }
+			}
+			set_autonomy = {
+				target = XSM
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		if = {
+			limit = {
+				XSM = { is_in_faction_with = QIE }
+			}
+			remove_from_faction = XSM
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.10.b
+		ai_chance = { base = 75 }
+		custom_effect_tooltip = SHX_QIE_neutrality_warning_tooltip
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.12 days = 3 } #We are on our own
+			set_country_flag = SHX_suiyuan_QIE_defied_by_ma
+		}
+		if = {
+			limit = {
+				XSM = { is_subject_of = QIE }
+			}
+			set_autonomy = {
+				target = XSM
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		if = {
+			limit = {
+				XSM = { is_in_faction_with = QIE }
+			}
+			remove_from_faction = XSM
+		}
+	}
+}
+country_event = {#北京向绥远进军
+	id = shx.suiyuan.campaign.11 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.11" }
+	title = shx.suiyuan.campaign.11.t
+	desc = shx.suiyuan.campaign.11.d
+	picture = GFX_report_event_CHI_warlord_battle
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.11.a
+		add_war_support = 0.05
+		add_to_war = {
+			targeted_alliance = QIE
+			enemy = XSM
+			hostility_reason = asked_to_join
+		}
+	}
+}
+country_event = {#北京允许我们自由行动
+	id = shx.suiyuan.campaign.12 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.12" }
+	title = shx.suiyuan.campaign.12.t
+	desc = {
+		text = shx.suiyuan.campaign.12.d.1
+		trigger = { has_country_flag = SHX_suiyuan_QIE_defied_by_ma }
+	}
+	desc = {
+		text = shx.suiyuan.campaign.12.d.2
+		trigger = { NOT = { has_country_flag = SHX_suiyuan_QIE_defied_by_ma } }
+	}
+	picture = GFX_report_event_CHI_warlords
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.12.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				XSM = { is_subject_of = QIE }
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { has_war = yes }
+			}
+		}
+		if = {
+			limit = { is_subject_of = QIE }
+			china_break_puppet_effect = yes
+			add_opinion_modifier = {
+				target = QIE
+				modifier = KR_close_allies
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = non_aggression_pact
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = guarantee
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = military_access
+			}
+			QIE = {
+				diplomatic_relation = {
+					country = SHX
+					relation = non_aggression_pact
+				}
+				diplomatic_relation = {
+					country = SHX
+					relation = guarantee
+				}
+				diplomatic_relation = {
+					country = SHX
+					relation = military_access
+				}
+			}
+			set_country_flag = SHX_QIE_declared_neutrality_in_suiyuan_campaign_flag
+		}
+		country_event = { id = shx.suiyuan.campaign.30 days = 3 } 
+	}
+
+	option = { 
+		name = shx.suiyuan.campaign.12.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				XSM = { NOT = { is_subject_of = QIE } }
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { has_war = no }
+			}
+		}
+		add_stability = 0.05
+		reverse_add_opinion_modifier = {
+			target = XSM
+			modifier = KR_pleased
+		}
+		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
+	}
+}
+country_event = {#与马家军会面
+	id = shx.suiyuan.campaign.21 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.21" }
+	title = shx.suiyuan.campaign.21.t
+	desc = {
+		text = shx.suiyuan.campaign.21.d.1
+		trigger = {
+			has_country_flag = SHX_XSM_warlike_approach_flag
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.21.d.2
+		trigger = {
+			NOT = { has_country_flag = SHX_XSM_warlike_approach_flag }
+		}
+	}
+	picture = GFX_report_event_SHX_taiyuan_confucian_temple
+	is_triggered_only = yes 
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.suiyuan.campaign.30 days = 5 }
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.21.a
+		XSM = {
+			every_unit_leader = {
+				limit = { is_field_marshal = yes }
+				set_nationality = { target_country = SHX }
+				demote_leader = yes
+			}
+		}
+		add_political_power = -50
+		if = {
+			limit = {
+				SHX_no_cosmetic_flag_check = yes
+			}
+			SHX_set_NCPC_cosmetic_effect = yes
+		}
+		774 = { #Hexi Corridor
+			add_compliance = 5
+		}
+		283 = { #Lanzhou
+			add_compliance = 5
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.21.b
+		XSM = {
+			every_unit_leader = {
+				set_nationality = { target_country = SHX }
+				if = {
+					limit = { is_field_marshal = yes }
+					demote_leader = yes
+				}
+			}
+		}
+		add_political_power = -100
+		if = {
+			limit = {
+				SHX_no_cosmetic_flag_check = yes
+			}
+			SHX_set_NCPC_cosmetic_effect = yes
+		}
+		774 = { #Hexi Corridor
+			add_compliance = 10
+		}
+		283 = { #Lanzhou
+			add_compliance = 10
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.21.c
+		add_command_power = 35
+		if = {
+			limit = {
+				SHX_no_cosmetic_flag_check = yes
+			}
+			SHX_set_NCPC_cosmetic_effect = yes
+		}
+	}
+}
+country_event = {#进军绥远
+	id = shx.suiyuan.campaign.30 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.30" }
+	title = shx.suiyuan.campaign.30.t
+	desc = shx.suiyuan.campaign.30.d
+	picture = GFX_report_event_YUN_inspection
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.30.a
+		SHX_start_suiyuan_crisis = yes
+		set_variable = {
+			var = SHX_suiyuan_campaign_prep_variable
+			value = 10
+			tooltip = SHX_suiyuan_campaign_prep_intro_tooltip
+		}
+	}
+}
 country_event = {#太原为西北暂停与我们合作
 	id = shx.suiyuan.campaign.60
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.60" }
