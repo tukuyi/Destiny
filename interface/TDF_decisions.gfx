@@ -17,6 +17,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/PRC_rocket_strike.png"
 	}
 	spriteType = {
+		name = "GFX_decision_card"
+		texturefile = "gfx/interface/decisions/card.png"
+	}
+	spriteType = {
 		name = "GFX_decision_category_red_start"
 		texturefile = "gfx/interface/decisions/decisions_categories/red_start.png"
 	}

@@ -21,13 +21,8 @@ focus_tree = {
 		icon = GFX_goal_SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 0
-		cost = 3
+		cost = 2
 
-		allow_branch = {
-			NOT = {
-				has_country_flag = SHX_lategame_begin_flag
-			}
-		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhao_du_li_de_zui_hou_yi_nian"
 			country_event = {
@@ -43,7 +38,7 @@ focus_tree = {
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 1
-		cost = 3
+		cost = 2
 
 		prerequisite = {
 			focus = SHX_zhao_du_li_de_zui_hou_yi_nian
@@ -53,7 +48,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_sheng_yi_hui"
 			country_event = {
 				id = shx.earlygame.6
-				days = 7
+				days = 2
 			}
 		}
 	}
@@ -74,7 +69,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_yu_tai_yuan_shang_hui_de_mi_tan"
 			country_event = {
 				id = shx.earlygame.16
-				days = 7
+				days = 3
 			}
 		}
 	}
@@ -83,7 +78,7 @@ focus_tree = {
 		id = SHX_jun_dui_wen_yi
 		icon = GFX_goal_SHX_jun_dui_wen_yi
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
-		cost = 3
+		cost = 2
 		x = 8
 		y = 2
 		offset = {
@@ -111,6 +106,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jun_dui_wen_yi"
 			army_experience = 50
+			add_doctrine_cost_reduction = {
+				name = SHX_military_instruction_corps_research
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 	}
 
@@ -120,7 +121,7 @@ focus_tree = {
 		relative_position_id = SHX_jun_dui_wen_yi
 		x = 1
 		y = 1
-		cost = 5
+		cost = 2
 
 		prerequisite = {
 			focus = SHX_jun_dui_wen_yi
@@ -142,7 +143,7 @@ focus_tree = {
 		relative_position_id = SHX_jun_dui_wen_yi
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 
 		prerequisite = {
 			focus = SHX_jun_dui_wen_yi
@@ -153,7 +154,6 @@ focus_tree = {
 			add_stability = 0.02
 			SHX_strengthen_feng_small = yes
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = SHX_strengthen_feng_small_tooltip
 			SHX_increase_revolution_small = yes
 		}
 	}
@@ -162,7 +162,7 @@ focus_tree = {
 		id = SHX_jie_jue_hei_she_xing_qi_yi
 		icon = GFX_goal_SHX_jie_jue_hei_she_xing_qi_yi
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
-		cost = 5
+		cost = 3
 		x = -6
 		y = 2
 		offset = {
@@ -206,7 +206,7 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = -1
 		y = 1
-		cost = 3
+		cost = 2
 
 		ai_will_do = { base = 300 }
 
@@ -227,7 +227,7 @@ focus_tree = {
 		relative_position_id = SHX_jie_jue_hei_she_xing_qi_yi
 		x = 1
 		y = 1
-		cost = 3
+		cost = 2
 
 		ai_will_do = { base = 300 }
 
@@ -1255,6 +1255,8 @@ focus_tree = {
 				country_event = { id = shx.industry.2 days = 25 }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1338,6 +1340,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1414,6 +1418,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1550,6 +1556,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1601,6 +1609,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1658,6 +1668,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			country_event = { id = shx.industry.14 days = 5 } 
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1697,6 +1709,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = SHX_industry_decision_unlock_tooltip
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1756,6 +1770,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1808,6 +1824,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -1874,6 +1892,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -3066,6 +3086,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_jin_bu_ju"
+			add_war_support = 0.05
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = SHX_she_hui_fu_li
 		}
 	}
@@ -3088,11 +3111,15 @@ focus_tree = {
 				remove_idea = SHX_she_hui_fu_li
 				add_idea = SHX_she_hui_fu_liB
 			}
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 100
+			custom_effect_tooltip = tooltip_white_line
 			country_event = { 
 				id = shx.yan.5
 				days = 10 
 			}
-			add_political_power = 100
+			
 		}
 	}
 
@@ -3266,6 +3293,8 @@ focus_tree = {
 				add_idea = SHX_underdeveloped_mountain_economy_yan3
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -3312,6 +3341,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -3534,9 +3565,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tu_di_ge_ming"
-			swap_ideas = {
-				remove_idea = SHX_agriculture_reform_Feng1
-				add_idea = SHX_agriculture_reform_Feng2
+			if = {
+				limit = { 
+					has_idea = SHX_agriculture_reform_Yan1
+				}
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Yan1
+					add_idea = SHX_agriculture_reform_Feng2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Feng1
+					add_idea = SHX_agriculture_reform_Feng2
+				}
 			}
 		}
 	}	
@@ -3583,9 +3625,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_jin_gong_ye_hua"
-			swap_ideas = {
-				remove_idea = SHX_underdeveloped_mountain_economy_feng2
-				add_idea = SHX_underdeveloped_mountain_economy_feng3
+			if = {
+				limit = { 
+					has_idea = SHX_underdeveloped_mountain_economy_yan2
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_yan2
+					add_idea = SHX_underdeveloped_mountain_economy_feng3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_feng2
+					add_idea = SHX_underdeveloped_mountain_economy_feng3
+				}
 			}
 		}
 	}	
@@ -4777,7 +4830,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_vanguard_of_north
-		icon = YUN_GFX_Goal_Secure_Western_China
+		icon = GFX_YUN_Goal_Secure_Western_China
 		cost = 5
 
 		relative_position_id = SHX_xibei_loyalty

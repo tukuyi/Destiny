@@ -2908,7 +2908,7 @@ SHX_QIE_ties = {#在北京的阴影下
 	}
 
 	SHX_crackdown_foreign_agitators = {#镇压外来煽动者
-		icon = GFX_descision_generic_flags
+		icon = generic_flags
 		visible = {
 			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
 		}
@@ -3008,12 +3008,12 @@ SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
 			SHX_QIE_negotiations_over = yes
 			SHX = {
 				has_country_flag = SHX_yan_victory_over_gmj
-				# NOT = {
-				# 	focus_progress = {
-				# 		focus = SHX_out_of_beijing
-				# 		progress > 0.01
-				# 	}
-				# }
+				NOT = {
+					focus_progress = {
+						focus = SHX_out_of_beijing
+						progress > 0.01
+					}
+				}
 				has_war = no
 			}
 			owns_state = 615 #Eastern Shanxi

@@ -12,9 +12,10 @@ add_namespace = shx.industry
 add_namespace = shx.mil
 add_namespace = shx.yan
 add_namespace = shx.feng
+add_namespace = shx.zhifeng
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
-add_namespace = shx.shx.suiyuan.campaign
+add_namespace = shx.suiyuan.campaign
 add_namespace = shx.endgame
 add_namespace = shx_mission_tick
 
@@ -1840,6 +1841,7 @@ country_event = {#巡回表演
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.industry.5" }
 	title = shx.industry.5.t
 	desc = shx.industry.5.d
+	picture = GFX_report_event_CHI_school_uniform
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -5685,11 +5687,6 @@ country_event = {#清政府垮台
 				608 = { is_owned_and_controlled_by = FNG }
 				FNG = { is_guaranteed_by = JAP }
 				JAP = { NOT = { has_war_with_major = yes } }
-			}
-			modifier = {
-				factor = 0 #check if they have unifier game rule
-				NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
-				NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_SHX } }
 			}
 		}
 		if = {
