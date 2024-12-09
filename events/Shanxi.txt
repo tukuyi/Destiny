@@ -15,6 +15,7 @@ add_namespace = shx.feng
 add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
 add_namespace = shx.shx.suiyuan.campaign
+add_namespace = shx.endgame
 add_namespace = shx_mission_tick
 
 ########################################
@@ -3713,6 +3714,110 @@ country_event = {#北京为优惠贸易条件而施压
 		SHX_QIE_spend_large = yes
 	}
 }
+country_event = {#山西提出向西北进军
+	id = shx.QIE.aid.30 #Yan Xishan and the Northwestern March
+	title = shx.QIE.aid.30.t
+	desc = shx.QIE.aid.30.d
+	is_triggered_only = yes #Triggered by SHX focus SHX_vanguard_of_north
+	picture = GFX_report_event_SHX_yan_uniform
+
+	option = {
+		log = "[GetLogInfo]: event shx.QIE.aid.30 option shx.QIE.aid.30.a"
+		name = shx.QIE.aid.30.a #Very well, but time is ticking.
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				var:global.russia = {
+					OR = {
+						is_in_faction_with = TIB
+						is_in_faction_with = MON
+						is_in_faction_with = ETS
+						is_in_faction_with = SIK
+						is_in_faction_with = KUM
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = SHX_QIE_approve_vanguard_plan_tt
+		effect_tooltip = { SHX = { china_break_puppet_effect = yes } }
+		activate_targeted_decision = { target = SHX decision = china_demand_submission }
+		diplomatic_relation = {
+			country = SHX
+			relation = non_aggression_pact
+		}
+		diplomatic_relation = {
+			country = SHX
+			relation = guarantee
+		}
+		diplomatic_relation = {
+			country = SHX
+			relation = military_access
+		}
+		hidden_effect = { SHX = { country_event = { id = shx.QIE.aid.31 days = 3 } } } #The Vanguard of the North
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.QIE.aid.30 option shx.QIE.aid.30.b"
+		name = shx.QIE.aid.30.b #No he shall stay put.
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				china_is_the_unifier_of_china_trigger = no
+			}
+		}
+		custom_effect_tooltip = SHX_QIE_reject_vanguard_plan_tt
+		hidden_effect = { SHX = { country_event = { id = shx.QIE.aid.32 days = 3 } } } #The Disappointed Watchman
+	}
+}
+country_event = {#北方先锋军
+	id = shx.QIE.aid.31 #The Vanguard of the North
+	title = shx.QIE.aid.31.t
+	desc = shx.QIE.aid.31.d
+	is_triggered_only = yes #Triggered by SHX event shx.QIE.aid.31.a
+	picture = GFX_report_event_QIE_soldiers_mobilize
+
+	option = {
+		log = "[GetLogInfo]: event shx.QIE.aid.31 option shx.QIE.aid.31.a"
+		name = shx.QIE.aid.31.a #We must move swiftly
+		china_break_puppet_effect = yes
+		add_opinion_modifier = {
+			target = QIE
+			modifier = KR_close_allies
+		}
+		diplomatic_relation = {
+			country = QIE
+			relation = non_aggression_pact
+		}
+		diplomatic_relation = {
+			country = QIE
+			relation = guarantee
+		}
+		diplomatic_relation = {
+			country = QIE
+			relation = military_access
+		}
+		custom_effect_tooltip = SHX_QIE_has_approved_vanguard_plan_tt
+		SHX_vanguard_wargoals_effect = yes
+	}
+}
+country_event = {#封疆大吏，抱负成空
+	id = shx.QIE.aid.32 #The Disappointed Watchman
+	title = shx.QIE.aid.32.t
+	desc = shx.QIE.aid.32.d
+	is_triggered_only = yes #Triggered by SHX event shx.QIE.aid.32.b
+	picture = GFX_report_event_SHX_yan_car
+
+	option = {
+		log = "[GetLogInfo]: event shx.QIE.aid.32 option shx.QIE.aid.32.a"
+		name = shx.QIE.aid.32.a #A flicker of anger flashes in his eyes.
+		add_opinion_modifier = {
+			target = QIE
+			modifier = KR_outraged
+		}
+		activate_targeted_decision = { target = QIE decision = SHX_suiyuan_betrayal_decision }
+	}
+}
 
 ########################################
 ########-       直奉          -#########
@@ -5633,19 +5738,61 @@ country_event = {#清政府垮台
 				factor = 1.5
 				608 = { owner = { alliance_strength_ratio > 1.25 } }
 			}
-			modifier = {
-				factor = 0 #check if they have unifier game rule
-				has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_SHX }
-			}
 		}
 		remove_ideas = SHX_war_of_liberation
 		add_ideas = SHX_fortress_shanxi
 		SHX_add_join_government_decisions = yes
 	}
 }
+country_event = {#家乡远在天边，胜利近在眼前
+	id = shx.zhifeng.30 #Far From Home, Not Far From Victory
+	title = shx.zhifeng.30.t
+	desc = shx.zhifeng.30.d
+	picture = GFX_report_event_QIE_zhili_soldiers
+	is_triggered_only = yes #Triggered by on_action when you seize an Eastern state outside of Arrow Shanxi
+	fire_only_once = yes #Would be awful if this kept spamming.
+
+	option = {
+		log = "[GetLogInfo]: event shx.zhifeng.30 option shx.zhifeng.30.a"
+		name = shx.zhifeng.30.a #Push onwards, to unification!
+		ai_chance = { base = 100 }
+		add_ideas = SHX_war_of_liberation
+		if = {
+			limit = { NOT = { has_active_mission = SHX_collapse_of_shanxi } }
+			activate_mission = SHX_collapse_of_shanxi
+		}
+		if = {
+			limit = { has_idea = SHX_neutrality }
+			remove_ideas = SHX_neutrality
+		}
+		else_if = {
+			limit = { has_idea = SHX_strict_neutrality1 }
+			remove_ideas = SHX_strict_neutrality1
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.zhifeng.30 option shx.zhifeng.30.b"
+		name = shx.zhifeng.30.b #Let us stay realistic about our chances.
+		ai_chance = { base = 0 }
+		add_command_power = -100
+		add_war_support = -0.25
+		if = {
+			limit = { NOT = { has_active_mission = SHX_collapse_of_shanxi } }
+			activate_mission = SHX_collapse_of_shanxi
+		}
+		if = {
+			limit = { has_idea = SHX_neutrality }
+			remove_ideas = SHX_neutrality
+		}
+		else_if = {
+			limit = { has_idea = SHX_strict_neutrality1 }
+			remove_ideas = SHX_strict_neutrality1
+		}
+	}
+}
 
 ########################################
-########-       其他          -#########
+########-       西北战争      -#########
 ########################################
 country_event = {#我们在绥远的利益
 	id = shx.suiyuan.campaign.1
@@ -6367,6 +6514,50 @@ country_event = {#北京允许我们自由行动
 		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
 	}
 }
+country_event = {#为西北战争复仇
+	id = shx.suiyuan.campaign.20 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.20" }
+	title = shx.suiyuan.campaign.20.t
+	desc = shx.suiyuan.campaign.20.d
+	picture = GFX_report_event_MON_palace
+	is_triggered_only = yes #Triggered by Focus SHX_suiyuan_question
+
+	option = {
+		name = shx.suiyuan.campaign.20.a
+		trigger = { NOT = { is_subject_of = QIE } } #Non-QIE puppets can't take this focus in general
+		country_event = { id = shx.suiyuan.campaign.21 days = 3 } #The Fate of the Ma Clique
+		custom_effect_tooltip = SHX_XSM_warlike_approach_tooltip
+		set_country_flag = SHX_XSM_warlike_approach_flag
+		#Ma Clique are rallying to your side since you're basically offering to avenge them.
+		774 = { #Hexi Corridor
+			add_compliance = 40
+		}
+		283 = { #Lanzhou
+			add_compliance = 40
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.20.b
+		trigger = { is_subject_of = QIE }
+		QIE = { country_event = { id = shx.suiyuan.campaign.23 } } #Yan Xishan and the Northwestern Campaign
+	}
+
+	option = { 
+		name = shx.suiyuan.campaign.20.c
+		add_stability = 0.05
+		add_war_support = -0.05
+		country_event = { id = shx.suiyuan.campaign.21 days = 3 } #The Fate of the Ma Clique
+		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
+		custom_effect_tooltip = SHX_XSM_peaceful_approach_tooltip
+		774 = { #Hexi Corridor
+			add_compliance = 25
+		}
+		283 = { #Lanzhou
+			add_compliance = 25
+		}
+	}
+}
 country_event = {#与马家军会面
 	id = shx.suiyuan.campaign.21 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.21" }
@@ -6453,6 +6644,236 @@ country_event = {#与马家军会面
 		}
 	}
 }
+country_event = {#西北战争的余波
+	id = shx.suiyuan.campaign.22 
+	title = shx.suiyuan.campaign.22.t
+	desc = {
+		text = shx.suiyuan.campaign.22.d.1
+		trigger = { SHX = { has_active_mission = SHX_looming_gmj_coup } }
+	}
+	desc = {
+		text = shx.suiyuan.campaign.22.d.2
+		trigger = { SHX = { NOT = { has_active_mission = SHX_looming_gmj_coup } } }
+	}
+	picture = GFX_report_event_TIB_army_2
+	is_triggered_only = yes #Triggered by event mac.225.a
+
+	trigger = {
+		XSM = {
+			exists = yes
+			is_ai = yes #Player XSM will get eaten by another focus probably
+			OR = {
+				is_subject = no
+				is_subject_of = QIE
+			}
+			has_war = no
+		}
+	}
+
+	major = yes
+	show_major = {
+		is_tag_in_china_area = yes
+	}
+
+	option = { #A necessary decision, given the circumstances
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.22 option shx.suiyuan.campaign.22.a"
+		name = shx.suiyuan.campaign.22.a
+		trigger = {
+			tag = SHX
+		}
+		annex_country = {
+			target = XSM
+			transfer_troops = yes
+		}
+		SHX = {
+			add_state_claim = 774
+			add_state_claim = 283
+		}
+		#NOTE - if some adventurous coder wants to add a check for if XSM beat Tibet but then got killed by Mongolia, feel free.
+	}
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.22 option shx.suiyuan.campaign.22.b"
+		name = shx.suiyuan.campaign.22.b #A national calamity
+		trigger = {
+			is_chinese_tag = yes
+			NOT = { tag = SHX }
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.22 option shx.suiyuan.campaign.22.c"
+		name = shx.suiyuan.campaign.22.c #We only fight for the freedoms of our people
+		trigger = {
+			is_chinese_tag = no
+		}
+	}
+}
+country_event = {#阎锡山与西北战役
+	id = shx.suiyuan.campaign.23 #Yan Xishan and the Northwestern Campaign
+	title = shx.suiyuan.campaign.23.t
+	desc = shx.suiyuan.campaign.23.d
+	picture = GFX_report_event_MON_palace
+	is_triggered_only = yes #Triggered by event option shx_suiyuan_campaign.20.b
+
+	option = { #Wish Governor Yan well...he will need it.
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.23 option shx.suiyuan.campaign.23.a"
+		name = shx.suiyuan.campaign.23.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0.5
+				SHX = {
+					strength_ratio = {
+						tag = MON
+						ratio < 1
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = SHX_QIE_neutrality_warning_tooltip
+		SHX = { country_event = { id = shx.suiyuan.campaign.24 days = 7 } } #Beijing has approved of our Northwestern campaign!
+	}
+	option = { #We will not approve a course of action that will lead to war.
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.23 option shx.suiyuan.campaign.23.b"
+		name = shx.suiyuan.campaign.23.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0.5
+				MON = {
+					strength_ratio = {
+						tag = SHX
+						ratio < 1
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				616 = { is_claimed_by = SHX } #Ordos
+				621 = { is_claimed_by = SHX } #Ulanqab
+			}
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.25 days = 7 } #The Central Government has ordered restraint!
+			if = { #Punish QIE if they previously promised SHX Suiyuan
+				limit = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+				SHX_QIE_spend_giga = yes
+				custom_effect_tooltip = SHX_QIE_suiyuan_betrayal_tooltip
+			}
+		}
+	}
+}
+country_event = {#北京已经批准了我们在西北的行动！
+	id = shx.suiyuan.campaign.24 #Beijing has approved of our Northwestern campaign!
+	title = shx.suiyuan.campaign.24.t
+	desc = shx.suiyuan.campaign.24.d
+	picture = GFX_report_event_CHI_warlords
+	is_triggered_only = yes #Triggered by event shx.suiyuan.campaign.23.a
+
+	option = { #We shall prepare a Northwestern Campaign.
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.24 option shx.suiyuan.campaign.24.a"
+		name = shx.suiyuan.campaign.24.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				MON = {
+					OR = {
+						is_subject_of = RUS
+						is_ally_with = RUS
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				SHX = { has_war = yes }
+			}
+		}
+		if = {
+			limit = { is_subject_of = QIE }
+			china_break_puppet_effect = yes
+			add_opinion_modifier = {
+				target = QIE
+				modifier = KR_close_allies
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = non_aggression_pact
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = guarantee
+			}
+			diplomatic_relation = {
+				country = QIE
+				relation = military_access
+			}
+			QIE = {
+				diplomatic_relation = {
+					country = SHX
+					relation = non_aggression_pact
+				}
+				diplomatic_relation = {
+					country = SHX
+					relation = guarantee
+				}
+				diplomatic_relation = {
+					country = SHX
+					relation = military_access
+				}
+			}
+			set_country_flag = SHX_QIE_declared_neutrality_in_suiyuan_campaign_flag
+		}
+		country_event = { id = shx.suiyuan.campaign.21 days = 3 } #The Fate of the Ma Clique
+		custom_effect_tooltip = SHX_XSM_warlike_approach_tooltip
+		set_country_flag = SHX_XSM_warlike_approach_flag
+		#Ma Clique are rallying to your side since you're basically offering to avenge them.
+		774 = { #Hexi Corridor
+			add_compliance = 40
+		}
+		283 = { #Lanzhou
+			add_compliance = 40
+		}
+	}
+
+	option = { #We must move on
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.24 option shx.suiyuan.campaign.24.b"
+		name = shx.suiyuan.campaign.24.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				MON = { has_war = no }
+			}
+		}
+		add_stability = 0.05
+		reverse_add_opinion_modifier = {
+			target = XSM
+			modifier = KR_pleased
+		}
+		custom_effect_tooltip = SHX_XSM_abandon_claims_tooltip
+	}
+}
+country_event = {#中央政府已下令保持克制！
+	id = shx.suiyuan.campaign.25 #The Central Government has ordered restraint!
+	title = shx.suiyuan.campaign.25.t
+	desc = shx.suiyuan.campaign.25.d
+	picture = GFX_report_event_SHX_yanan_street
+	is_triggered_only = yes #Triggered by event option shx.suiyuan.campaign.23.b
+
+	option = { #Perhaps we should reconsider this alliance...
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.25 option shx.suiyuan.campaign.25.a"
+		name = shx.suiyuan.campaign.25.a
+		activate_targeted_decision = { 
+			target = QIE 
+			decision = SHX_suiyuan_betrayal_decision 
+		}
+	}
+}
 country_event = {#进军绥远
 	id = shx.suiyuan.campaign.30 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.30" }
@@ -6469,6 +6890,1281 @@ country_event = {#进军绥远
 			var = SHX_suiyuan_campaign_prep_variable
 			value = 10
 			tooltip = SHX_suiyuan_campaign_prep_intro_tooltip
+		}
+	}
+}
+country_event = {#山西为进军绥远而动员
+	id = shx.suiyuan.campaign.31 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.31" }
+	title = shx.suiyuan.campaign.31.t
+	desc = {
+		text = shx.suiyuan.campaign.31.d.1
+		trigger = {
+			owns_state = 616 #Ordos
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.31.d.2
+		trigger = {
+			tag = TIB
+		}
+	}
+	picture = GFX_report_event_YUN_inspection
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.31.a 
+	}
+}
+country_event = {#山西警告我们置身事外
+	id = shx.suiyuan.campaign.33 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.33" }
+	title = shx.suiyuan.campaign.33.t
+	desc = shx.suiyuan.campaign.33.d
+	picture = GFX_report_event_SHX_feng_looking_in_telescope
+	is_triggered_only = yes #Triggered by decision
+
+	option = {
+		name = shx.suiyuan.campaign.33.a #We stand by our allies
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				strength_ratio = {
+					tag = SHX
+					ratio > 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		SHX = { country_event = shx.suiyuan.campaign.35 } #Tibet stands firm
+		MON = { country_event = shx.suiyuan.campaign.35 }
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.33.b #We wash our hands of this
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				353 = { is_claimed_by = SHX } #Yushu
+			}
+			modifier = {
+				factor = 0.5
+				604 = { is_claimed_by = SHX } #Xining
+			}
+		}
+		SHX = { country_event = shx.suiyuan.campaign.34 } #Tibet withdraws from its obligations
+		MON = { country_event = shx.suiyuan.campaign.34 }
+		if = {
+			limit = {
+				has_guaranteed = MON
+				MON = { owns_state = 616 } #Ordos
+			}
+			diplomatic_relation = {
+				country = MON
+				relation = guarantee
+				active = no
+			}
+		}
+		if = {
+			limit = {
+				has_guaranteed = XSM
+				XSM = { owns_state = 616 } #Ordos
+			}
+			diplomatic_relation = {
+				country = XSM
+				relation = guarantee
+				active = no
+			}
+		}
+	}
+}
+country_event = {#西藏撤回盟约
+	id = shx.suiyuan.campaign.34 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.34" }
+	title = shx.suiyuan.campaign.34.t
+	desc = shx.suiyuan.campaign.34.d
+	picture = GFX_report_event_TIB_dalai_lama_four_years
+	is_triggered_only = yes #Triggered by event shx_suiyuan_campaign.33.b
+
+	option = {
+		name = shx.suiyuan.campaign.34.a #A wise decision really
+		trigger = {
+			tag = SHX
+		}
+		add_political_power = -25
+		add_war_support = 0.05
+		diplomatic_relation = {
+			country = TIB
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.34.b #Treacherous Fiends!
+		trigger = {
+			owns_state = 616 #Ordos
+		}
+		add_political_power = -25
+		add_opinion_modifier = {
+			target = TIB
+			modifier = KR_disapproves_of_govt
+		}
+		if = {
+			limit = {
+				has_guaranteed = TIB
+			}
+			diplomatic_relation = {
+				country = TIB
+				relation = guarantee
+				active = no
+			}
+		}
+	}
+}
+country_event = {#西藏拒绝退让
+	id = shx.suiyuan.campaign.35 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.35" }
+	title = shx.suiyuan.campaign.35.t
+	desc = shx.suiyuan.campaign.35.d
+	picture = GFX_report_event_TIB_army
+	is_triggered_only = yes #Triggered by event shx_suiyuan_campaign.33.a
+
+	option = {
+		name = shx.suiyuan.campaign.35.a #They will pay for this
+		trigger = {
+			tag = SHX
+		}
+		add_political_power = -25
+		add_war_support = -0.05
+	}
+	option = {
+		name = shx.suiyuan.campaign.35.b #They are good allies
+		trigger = {
+			owns_state = 616 #Ordos
+		}
+		add_political_power = 25
+	}
+}
+country_event = {#对西北的领土主张
+	id = shx.suiyuan.campaign.36
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.36" }
+	title = shx.suiyuan.campaign.36.t
+	desc = {
+		text = shx.suiyuan.campaign.36.d.1
+		trigger = {
+			owns_state = 283 #Lanzhou
+			owns_state = 774 #Hexi Corridor
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.36.d.2
+		trigger = {
+			NOT = {
+				owns_state = 283 #Lanzhou
+				owns_state = 774 #Hexi Corridor
+			}
+		}
+	}
+	picture = GFX_report_event_CHI_warlord_observer
+
+	is_triggered_only = yes #Triggered by event shx_suiyuan_campaign.30
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					QIE = {
+						exists = yes
+						NOT = { has_war_with = SHX }
+					}
+				}
+				QIE = {
+					country_event = { id = shx.suiyuan.campaign.41 days = 3 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.36.a #We only want Suiyuan
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				is_subject_of = QIE
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+			}
+			add_political_power = -50
+			add_state_claim = 616 #Ordos
+			add_state_claim = 621 #Ulanqab
+			if = {
+				limit = {
+					XSM = {
+						owns_state = 616
+						owns_state = 621
+						owns_state = 612 #Northern Chahar
+					}
+					NOT = { 612 = { is_claimed_by = SHX } } #Northern Chahar
+				}
+				add_state_claim = 612 #SHX gets Northern Chahar as well if they are demanding it from a victorious XSM to avoid bordergore
+			}
+		}
+		set_variable = { SHX_suiyuan_claimed_states_variable = 2 }
+		if = {
+			limit = {
+				TIB = { has_guaranteed = MON }
+				MON = {
+					owns_state = 616 #Ordos
+				}
+			}
+			TIB = {
+				country_event = { id = shx.suiyuan.campaign.33 days = 3 } #Shanxi warns us off
+			}
+		}
+		activate_targeted_decision = { target = 616 decision = SHX_suiyuan_destabilise_province }
+		if = {
+			limit = { MON = { owns_state = 348 } }
+			activate_targeted_decision = { target = 348 decision = SHX_suiyuan_destabilise_province }
+		}
+		if = {
+			limit = { TIB = { owns_state = 604 } }
+			activate_targeted_decision = { target = 604 decision = SHX_suiyuan_destabilise_province }
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.36.b #We want Suiyuan and Ningxia
+		trigger = {
+			owns_state = 283 #Lanzhou
+			owns_state = 774 #Hexi Corridor
+		}
+		ai_chance = { base = 30 }
+		if = {
+			limit = {
+				NOT = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+			}
+			add_political_power = -50
+			add_state_claim = 616 #Ordos
+			add_state_claim = 621 #Ulanqab
+		}
+		add_state_claim = 348 #Ningxia
+		add_state_claim = 612 #Northern Chahar
+		add_political_power = -100
+		set_variable = { SHX_suiyuan_claimed_states_variable = 3 }
+		if = {
+			limit = {
+				TIB = { has_guaranteed = MON }
+				MON = {
+					owns_state = 616 #Ordos
+				}
+			}
+			TIB = {
+				country_event = { id = shx.suiyuan.campaign.33 days = 3 } #Shanxi warns us off
+			}
+		}
+		activate_targeted_decision = { target = 616 decision = SHX_suiyuan_destabilise_province }
+		activate_targeted_decision = { target = 348 decision = SHX_suiyuan_destabilise_province }
+		if = {
+			limit = { TIB = { owns_state = 604 } }
+			activate_targeted_decision = { target = 604 decision = SHX_suiyuan_destabilise_province }
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.36 option shx.suiyuan.campaign.36.c"
+		name = shx.suiyuan.campaign.36.c #We shall reconquer all Hui lands
+		trigger = {
+			owns_state = 283 #Lanzhou
+			owns_state = 774 #Hexi Corridor
+		}
+		ai_chance = { base = 20 }
+		if = {
+			limit = {
+				NOT = {
+					616 = { is_claimed_by = SHX } #Ordos
+					621 = { is_claimed_by = SHX } #Ulanqab
+				}
+			}
+			add_state_claim = 616 #Ordos
+			add_state_claim = 621 #Ulanqab
+		}
+		add_state_claim = 348 #Ningxia
+		add_state_claim = 612 #Northern Chahar
+		add_state_claim = 604 #Xining
+		add_state_claim = 353 #Yushu
+		add_political_power = -150
+		set_variable = { SHX_suiyuan_claimed_states_variable = 5 }
+		activate_targeted_decision = { target = 616 decision = SHX_suiyuan_destabilise_province }
+		activate_targeted_decision = { target = 348 decision = SHX_suiyuan_destabilise_province }
+		activate_targeted_decision = { target = 604 decision = SHX_suiyuan_destabilise_province }
+	}
+}
+country_event = {#[FROM.GetNameDefCap]在[SHX_targeted_state.ChinaGetStateProvinceTitle]煽风点火
+	id = shx.suiyuan.campaign.37 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.37" }
+	title = shx.suiyuan.campaign.37.t
+	desc = {
+		text = shx.suiyuan.campaign.37.d.Suiyuan
+		trigger = {
+			event_target:SHX_targeted_state = { state = 616 } #ordos
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.37.d.Ningxia
+		trigger = {
+			event_target:SHX_targeted_state = { state = 348 } #Ningxia
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.37.d.Qinghai
+		trigger = {
+			event_target:SHX_targeted_state = { state = 604 } #xining
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.37.d.Gansu
+		trigger = {
+			event_target:SHX_targeted_state = { state = 283 } #Lanzhou
+		}
+	}
+	picture = GFX_report_event_CHI_warlord_cavalry
+	is_triggered_only = yes #Triggered by decision
+
+	option = {
+		name = shx.suiyuan.campaign.37.a #They will pay for this
+		 #since this event is directed at the state
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_disapproves_of_govt
+		}
+	}
+}
+country_event = {#晋系请求帮助
+	id = shx.suiyuan.campaign.41 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.41" }
+	title = shx.suiyuan.campaign.41.t
+	desc = shx.suiyuan.campaign.41.d
+	picture = GFX_report_event_SHX_wang_xiang
+	is_triggered_only = yes #Triggered by decision
+
+	option = {
+		name = shx.suiyuan.campaign.41.a #We will not condone a course of action that will lead us to war
+		ai_chance = { base = 25 }
+		SHX = { set_country_flag = SHX_QIE_suiyuan_no_blessing }
+		reverse_add_opinion_modifier = {
+			target = QIE
+			modifier = KR_disapproves_of_govt
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.42 days = 7 } #Beijing's Response
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.41.b #We shall appoint him Pacification Commissioner
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 0
+				has_war_with = MON #If QIE is already invading Mongolia for them, why bother?
+			}
+		}
+		SHX = { set_country_flag = SHX_QIE_suiyuan_blessing_small }
+		add_political_power = -10
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.42 days = 7 } #Beijing's Response
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.41 option shx.suiyuan.campaign.41.c"
+		name = shx.suiyuan.campaign.41.c #and furnish him with supplies
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 25
+				has_political_power > 249
+			}
+			modifier = {
+				add = 25
+				FNG = { exists = no }
+			}
+		}
+		SHX = { set_country_flag = SHX_QIE_suiyuan_blessing_medium }
+		add_political_power = -50
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.42 days = 7 } #Beijing's Response
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.41 option shx.suiyuan.campaign.41.e"
+		name = shx.suiyuan.campaign.41.e #and ensure his armies are up for the task.
+		trigger = {
+			has_equipment = {
+				infantry_equipment > 999
+			}
+			has_equipment = {
+				artillery_equipment > 49
+			}
+		}
+		ai_chance = {
+			modifier = {
+				add = 25
+				has_political_power > 249
+				has_equipment = {
+					infantry_equipment > 4999
+				}
+				has_equipment = {
+					artillery_equipment > 249
+				}
+			}
+			modifier = {
+				add = 25
+				FNG = { exists = no }
+			}
+		}
+		SHX = { set_country_flag = SHX_QIE_suiyuan_blessing_large }
+		add_political_power = -100
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = -50
+		}
+		SHX = {
+			country_event = { id = shx.suiyuan.campaign.42 days = 7 } #Beijing's Response
+		}
+	}
+}
+country_event = {#北京回电
+	id = shx.suiyuan.campaign.42 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.42" }
+	title = shx.suiyuan.campaign.42.t
+	desc = {
+		text = shx.suiyuan.campaign.42.d.1 #QIE rejects us
+		trigger = {
+			has_country_flag = SHX_QIE_suiyuan_no_blessing
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.42.d.2 #QIE supports us
+		trigger = {
+			NOT = {
+				has_country_flag = SHX_QIE_suiyuan_no_blessing
+			}
+		}
+	}
+	picture = GFX_report_event_QIE_hu_shih_speech
+	is_triggered_only = yes #Triggered by event shx_suiyuan_campaign.41
+
+	option = {
+		name = shx.suiyuan.campaign.42.a #Thanks for nothing
+		trigger = { has_country_flag = SHX_QIE_suiyuan_no_blessing }
+		clr_country_flag = SHX_QIE_suiyuan_no_blessing
+		add_political_power = 10 #Net loss of 40
+	}
+	option = {
+		name = shx.suiyuan.campaign.42.b #We shall serve them well
+		trigger = {
+			has_country_flag = SHX_QIE_suiyuan_blessing_small
+		}
+		clr_country_flag = SHX_QIE_suiyuan_blessing_small
+		SHX_suiyuan_campaign_prep_add_small = yes
+	}
+	option = {
+		name = shx.suiyuan.campaign.42.c #We thank them for their generosity
+		trigger = {
+			has_country_flag = SHX_QIE_suiyuan_blessing_medium
+		}
+		clr_country_flag = SHX_QIE_suiyuan_blessing_medium
+		SHX_suiyuan_campaign_prep_add_medium = yes
+	}
+	option = {
+		name = shx.suiyuan.campaign.42.e #Our armies march for all of China!
+		trigger = {
+			has_country_flag = SHX_QIE_suiyuan_blessing_large
+		}
+		clr_country_flag = SHX_QIE_suiyuan_blessing_large
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = QIE
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 50
+			producer = QIE
+		}
+		SHX_suiyuan_campaign_prep_add_large = yes
+	}
+}
+country_event = {#驾驭回族骑兵
+	id = shx.suiyuan.campaign.43 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.43" }
+	title = shx.suiyuan.campaign.43.t
+	desc = shx.suiyuan.campaign.43.d
+	picture = GFX_report_event_CHI_warlord_cavalry
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.43.a 
+		add_timed_idea = {
+			idea = SHX_hui_cavalry_idea
+			days = 600
+		}
+	}
+}
+country_event = {#发现侦察兵
+	id = shx.suiyuan.campaign.44 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.44" }
+	title = shx.suiyuan.campaign.44.t
+	desc = shx.suiyuan.campaign.44.d
+	picture = GFX_report_event_CHI_warlord_cavalry
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.44.a 
+		if = {
+			limit = { tag = SHX }
+			effect_tooltip = { SHX_suiyuan_campaign_prep_subtract_small = yes }
+		}
+		else = {
+			effect_tooltip = { SHX_suiyuan_campaign_prep_add_small = yes }
+		}
+	}
+}
+country_event = {#回族临时领袖倾巢而出
+	id = shx.suiyuan.campaign.45 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.45" }
+	title = shx.suiyuan.campaign.45.t
+	desc = shx.suiyuan.campaign.45.d
+	picture = GFX_report_event_XSM_ma_biao
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.45.a 
+		effect_tooltip = { SHX_suiyuan_campaign_prep_add_large = yes }
+	}
+}
+country_event = {#边境线上补给站林立
+	id = shx.suiyuan.campaign.46 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.46" }
+	title = shx.suiyuan.campaign.46.t
+	desc = shx.suiyuan.campaign.46.d
+	picture = GFX_report_event_CHI_warlord_cavalry
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.46.a 
+		effect_tooltip = { SHX_suiyuan_campaign_prep_add_large = yes }
+	}
+}
+country_event = {#补给站遇袭！
+	id = shx.suiyuan.campaign.47 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.47" }
+	title = shx.suiyuan.campaign.47.t
+	desc = shx.suiyuan.campaign.47.d
+	picture = GFX_report_event_SIK_mongols
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.47.a 
+		effect_tooltip = { SHX_suiyuan_campaign_prep_subtract_medium = yes }
+	}
+}
+country_event = {#新造防御工事
+	id = shx.suiyuan.campaign.48 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.48" }
+	title = shx.suiyuan.campaign.48.t
+	desc = shx.suiyuan.campaign.48.d
+	picture = GFX_report_event_USA_soldiers_watching
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.48.a 
+		effect_tooltip = { SHX_suiyuan_campaign_prep_subtract_medium = yes }
+	}
+}
+country_event = {#敌方支持者集结
+	id = shx.suiyuan.campaign.49 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.49" }
+	title = shx.suiyuan.campaign.49.t
+	desc = shx.suiyuan.campaign.49.d
+	picture = GFX_report_event_USA_soldiers_watching
+
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.49.a 
+		effect_tooltip = { SHX_suiyuan_campaign_prep_subtract_large = yes }
+	}
+}
+country_event = {#精疲力竭的西北
+	id = shx.suiyuan.campaign.50 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.50" }
+	title = shx.suiyuan.campaign.50.t
+	desc = shx.suiyuan.campaign.50.d
+	picture = GFX_report_event_SHX_shaanxi_poor
+	is_triggered_only = yes
+
+	option = {
+		name = shx.suiyuan.campaign.50.a #There can be no peace, we must fight on
+		ai_chance = { base = 0 }
+		add_war_support = -0.25
+		if = {
+			limit = { tag = SHX }
+			set_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+			616 = {
+				owner = {
+					country_event = { id = shx.suiyuan.campaign.50 days = 2 }
+				}
+			}
+		}
+		if = {
+			limit = { tag = XSM }
+			set_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+			SHX = { country_event = shx.suiyuan.campaign.51 }
+		}
+		if = {
+			limit = { tag = MON }
+			set_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+			if = {
+				limit = { is_guaranteed_by = TIB }
+				TIB = {
+					country_event = { id = shx.suiyuan.campaign.50 days = 2 }
+				}
+			}
+			else = { SHX = { country_event = shx.suiyuan.campaign.51 } }
+		}
+		if = {
+			limit = { tag = TIB }
+			set_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			SHX = { country_event = shx.suiyuan.campaign.51 }
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.50.b #Perhaps it is time to end this
+		ai_chance = { base = 100 }
+		add_war_support = -0.10
+		if = {
+			limit = { tag = SHX }
+			616 = {
+				owner = {
+					if = {
+						limit = { NOT = { tag = SHX } }
+						country_event = { id = shx.suiyuan.campaign.50 days = 2 }
+					}
+					else_if = {
+						limit = { has_war_with = TIB }
+						TIB = { country_event = { id = shx.suiyuan.campaign.50 days = 2 } }
+					}
+				}
+			}
+		}
+		if = {
+			limit = { tag = XSM }
+			SHX = { country_event = shx.suiyuan.campaign.51 }
+		}
+		if = {
+			limit = { tag = MON }
+			if = {
+				limit = { is_guaranteed_by = TIB }
+				TIB = { country_event = { id = shx.suiyuan.campaign.50 days = 2 } }
+			}
+			else = { SHX = { country_event = shx.suiyuan.campaign.51 } }
+		}
+		if = {
+			limit = { tag = TIB }
+			SHX = { country_event = shx.suiyuan.campaign.51 }
+		}
+		add_stability = 0.10
+		custom_effect_tooltip = SHX_suiyuan_campaign_peace_out_effects_tooltip
+	}
+}
+country_event = {#和平降临西北/战事继续
+	id = shx.suiyuan.campaign.51 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.51" }
+	title = {
+		text = shx.suiyuan.campaign.51.t.1 #Peace in Xibei
+		trigger = {
+			NOT = {
+				OR = {
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+				}
+			}
+		}
+	}
+	title = {
+		text = shx.suiyuan.campaign.51.t.2 #War Continues in Xibei
+		trigger = {
+			OR = {
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.51.d.1 #Desc of Peace Treaty
+		trigger = {
+			NOT = {
+				OR = {
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+					has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+				}
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.51.d.2 #Desc of War Continuing
+		trigger = {
+			OR = {
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			}
+		}
+	}
+	picture = GFX_report_event_SHX_yan_coat
+	is_triggered_only = yes #Event shx_suiyuan_campaign.50
+
+	major = yes
+	show_major = {
+		OR = {
+			tag = SHX
+			owns_state = 616 #Ordos
+			AND = {
+				has_guaranteed = MON
+				MON = {
+					owns_state = 616
+				}
+			}
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.51.a #Peace prevails then.
+		trigger = {
+			NOT = {
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			}
+		}
+		if = {
+			limit = { tag = SHX }
+			MON = {
+				every_owned_state = {
+					limit = {
+						is_claimed_by = SHX
+						is_controlled_by = SHX
+					}
+					transfer_state_to = SHX
+				}
+			}
+			XSM = {
+				every_owned_state = {
+					limit = {
+						is_claimed_by = SHX
+						is_controlled_by = SHX
+					}
+					transfer_state_to = SHX
+				}
+			}
+			TIB = {
+				every_owned_state = {
+					limit = {
+						is_claimed_by = SHX
+						is_controlled_by = SHX
+					}
+					transfer_state_to = SHX
+				}
+			}
+			every_enemy_country = {
+				limit = {
+					OR = {
+						owns_state = 616 #Ordos
+						is_ally_with = TIB
+						is_ally_with = MON
+						is_ally_with = XSM
+						has_guaranteed = XSM
+						has_guaranteed = MON
+						has_guaranteed = TIB
+					}
+				}
+				white_peace = SHX #If SHX has any puppet states I might actually die.
+			}
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			clear_variable = SHX_suiyuan_campaign_prep_variable
+			SHX_suiyuan_campaign_tally_success_effect = yes
+			hidden_effect = { country_event = { id = shx.suiyuan.campaign.53 days = 5 } }
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.51.b #What's another year of war?
+		trigger = {
+			OR = {
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+				has_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+			}
+		}
+		if = {
+			limit = { tag = SHX }
+			activate_mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+			add_days_mission_timeout = {
+				mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+				days = SHX.SHX_suiyuan_campaign_prep_variable
+			}
+			hidden_effect = {
+				616 = {
+					owner = {
+						activate_mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+						add_days_mission_timeout = {
+							mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+							days = SHX.SHX_suiyuan_campaign_prep_variable
+						}
+						if = {
+							limit = {
+								is_guaranteed_by = TIB
+							}
+							TIB = {
+								activate_mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+								add_days_mission_timeout = {
+									mission = SHX_suiyuan_northwestern_war_exhaustion_mission
+									days = SHX.SHX_suiyuan_campaign_prep_variable
+								}
+							}
+						}
+					}
+				}
+			}
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_SHX
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_XSM
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_MON
+			clr_global_flag = SHX_suiyuan_campaign_peace_rejected_TIB
+		}
+	}
+}
+country_event = {#西北大捷/小胜/惨败
+	id = shx.suiyuan.campaign.53 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.53" }
+	title = {
+		text = shx.suiyuan.campaign.53.t.1 #Total Victory in Xibei
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable = 0
+			}
+		}
+	}
+	title = {
+		text = shx.suiyuan.campaign.53.t.2 #Partial in Xibei
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable < SHX_suiyuan_claimed_states_variable
+			}
+		}
+	}
+	title = {
+		text = shx.suiyuan.campaign.53.t.3 #Defeat in Xibei
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable = SHX_suiyuan_claimed_states_variable
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.53.d.1 #Description if Total Victory
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable = 0
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.53.d.2 #Description if Partial Victory
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable < SHX_suiyuan_claimed_states_variable
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.53.d.3 #Description if Defeat
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable = SHX_suiyuan_claimed_states_variable
+			}
+		}
+	}
+	picture = GFX_report_event_SHX_feng_advisors
+	is_triggered_only = yes #event shx_suiyuan_campaign.51
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.53 option shx.suiyuan.campaign.53.a"
+		name = shx.suiyuan.campaign.53.a #A glorious victory to be sure
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable < SHX_suiyuan_claimed_states_variable
+			}
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					region = 220 #xibei
+					region = 222 #inner mongolia
+				}
+			}
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.53 option shx.suiyuan.campaign.53.b"
+		trigger = {
+			check_variable = {
+				SHX_suiyuan_claimed_states_unfulfilment_variable = SHX_suiyuan_claimed_states_variable
+			}
+		}
+		name = shx.suiyuan.campaign.53.b #A devastating loss
+		add_war_support = -0.10
+		add_political_power = -50
+	}
+}
+country_event = {#晋系在西北退缩
+	id = shx.suiyuan.campaign.54 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.54" }
+	title = shx.suiyuan.campaign.54.t
+	desc = {
+		text = shx.suiyuan.campaign.54.d.1 #Campaign was against Mongolia
+		trigger = {
+			SHX = {
+				owns_state = 283
+				owns_state = 774
+			}
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.54.d.2 #Campaign was against XSM
+		trigger = {
+			SHX = {
+				NOT = {
+					owns_state = 283
+					owns_state = 774
+				}
+			}
+		}
+	}
+	picture = GFX_report_event_SHX_feng_reading
+	is_triggered_only = yes 
+
+	major = yes
+	show_major = {
+		or = {
+			tag = SHX
+			owns_state = 616
+			AND = {
+				has_guaranteed = MON
+				MON = {
+					owns_state = 616
+				}
+			}
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.54.a
+		trigger = { tag = SHX }
+		if = {
+			limit = {
+				owns_state = 283
+				owns_state = 774
+			}
+			283 = { #Lanzhou
+				add_dynamic_modifier = {
+					modifier = SHX_suiyuan_campaign_destabilise_modifier
+					days = 200
+				}
+			}
+			774 = { #Hexi Corridor
+				add_dynamic_modifier = {
+					modifier = SHX_suiyuan_campaign_destabilise_modifier
+					days = 200
+				}
+			}
+		}
+		else = {
+			add_war_support = -0.10
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.54.b 
+		trigger = { NOT = { tag = SHX } }
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+country_event = {#新任绥远督理
+	id = shx.suiyuan.campaign.55 #Appointing a New Governor for Suiyuan
+	title = shx.suiyuan.campaign.55.t
+	desc = shx.suiyuan.campaign.55.d
+	picture = GFX_report_event_SHX_feng_soldiers
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = shx.suiyuan.campaign.56 days = 7 } #Dealing with the Mongol Princes
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.55 option shx.suiyuan.campaign.55.a"
+		name = shx.suiyuan.campaign.55.a #A Han Military Officer
+		if = {
+			limit = {
+				616 = { #Ordos
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			616 = {
+				add_resistance = -20
+				add_compliance = -10
+				#set_occupation_law = military_governor_occupation - doesn't work in any scope
+			}
+		}
+		if = {
+			limit = {
+				621 = { #Ulanqab
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			621 = {
+				add_resistance = -20
+				add_compliance = -10
+				#set_occupation_law = military_governor_occupation - doesn't work in any scope
+			}
+		}
+		add_stability = 0.05
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.55 option shx.suiyuan.campaign.55.b"
+		name = shx.suiyuan.campaign.55.b #A Han Scholar-Official
+		if = {
+			limit = {
+				616 = { #Ordos
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			616 = {
+				add_resistance = 10
+				add_compliance = 15
+				#set_occupation_law = foreign_civilian_oversight - doesn't work in any scope
+			}
+		}
+		if = {
+			limit = {
+				621 = { #Ulanqab
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			621 = {
+				add_resistance = 10
+				add_compliance = 15
+				#set_occupation_law = foreign_civilian_oversight - doesn't work in any scope
+			}
+		}
+		add_political_power = 50
+	}
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.55 option shx.suiyuan.campaign.55.c"
+		name = shx.suiyuan.campaign.55.c #A Hui Elder
+		if = {
+			limit = {
+				616 = { #Ordos
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			616 = {
+				add_resistance = -5
+				add_compliance = 5
+				#set_occupation_law = local_police_force_garrison - doesn't work in any scope
+			}
+		}
+		if = {
+			limit = {
+				621 = { #Ulanqab
+					is_controlled_by = SHX
+					NOT = { is_core_of = SHX }
+				}
+			}
+			621 = {
+				add_resistance = -5
+				add_compliance = 5
+				#set_occupation_law = local_police_force_garrison - doesn't work in any scope
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = XSM
+		}
+	}
+}
+country_event = {#处理蒙古王公
+	id = shx.suiyuan.campaign.56 #Dealing with the Mongol Princes
+	title = shx.suiyuan.campaign.56.t
+	desc = shx.suiyuan.campaign.56.d
+	picture = GFX_report_event_MON_ungern2
+	is_triggered_only = yes #Triggered by shx_suiyuan_campaign.55
+
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.56 option shx.suiyuan.campaign.56.a"
+		name = shx.suiyuan.campaign.56.a #Autonomy Under a Watchful Eye
+		616 = {
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_autonomous_mongol_princes
+			}
+		}
+		621 = {
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_autonomous_mongol_princes
+			}
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event shx.suiyuan.campaign.56 option shx.suiyuan.campaign.56.b"
+		name = shx.suiyuan.campaign.56.b #We tolerate no dissent
+		add_political_power = -100
+	}
+}
+country_event = {#与蒙古牧民的冲突
+	id = shx.suiyuan.campaign.57
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.57" }
+	title = shx.suiyuan.campaign.57.t
+	desc = shx.suiyuan.campaign.57.d
+	picture = GFX_report_event_MON_ja_lama
+	is_triggered_only = yes
+
+	option = {
+		name = shx.suiyuan.campaign.57.a #Surely we can cut a deal?
+		616 = {
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_autonomous_mongol_princes
+			}
+		}
+		621 = {
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_autonomous_mongol_princes
+			}
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.57.b #Progress shall go on unabetted.
+		add_stability = -0.10
+		616 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_campaign_destabilise_modifier
+				days = 300
+			}
+		}
+		621 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			add_dynamic_modifier = {
+				modifier = SHX_suiyuan_campaign_destabilise_modifier
+				days = 300
+			}
+		}
+	}
+}
+news_event = {#西北冲突再起！
+	id = shx.suiyuan.campaign.58 
+	immediate = { log = "[GetLogInfo]: event shx.suiyuan.campaign.58" }
+	title = shx.suiyuan.campaign.58.t
+	desc = {
+		text = shx.suiyuan.campaign.58.d.2 #Variant if it's anti-Ma
+		trigger = {
+			SHX = { has_war_with = XSM }
+		}
+	}
+	desc = {
+		text = shx.suiyuan.campaign.58.d.1 #Variant if it's anti-Mongolian
+		trigger = {
+			SHX = { has_war_with = MON }
+		}
+	}
+	picture = GFX_news_event_SIK_western_china
+	is_triggered_only = yes #Triggered by decision SHX_suiyuan_begin_northwestern_expedition
+
+	major = yes
+	show_major = {
+		OR = {
+			is_tag_in_china_area = yes
+			is_russian_tag = yes
+			is_ally_with = 616.owner
+			has_guaranteed = 616.owner
+		}
+	}
+
+	option = {
+		name = shx.suiyuan.campaign.58.a #We shall fight and win!
+		trigger = {
+			OR = {
+				tag = SHX
+				owns_state = 616 #Ordos
+				has_war_with = SHX
+			}
+		}
+	}
+	option = {
+		name = shx.suiyuan.campaign.58.b #An interesting development
+		trigger = {
+			NOT = {
+				tag = SHX
+				owns_state = 616
+				has_war_with = SHX
+			}
 		}
 	}
 }
@@ -6493,7 +8189,40 @@ country_event = {#太原为西北暂停与我们合作
 		name = shx.suiyuan.campaign.60.b
 	}
 }
+country_event = {#绥远战事升级
+	id = shx.suiyuan.campaign.61 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.suiyuan.campaign.61" }
+	title = shx.suiyuan.campaign.61.t
+	desc = shx.suiyuan.campaign.61.d
+	picture = GFX_report_event_CHI_chiang_wei_kuo
 
+	is_triggered_only = yes 
+
+	option = {
+		name = shx.suiyuan.campaign.61.a 
+		effect_tooltip = { remove_mission = SHX_suiyuan_northwestern_war_exhaustion_mission }
+	}
+}
+
+########################################
+#######-         终点          -########
+########################################
+ country_event = {#北方势力异军突起
+	id = shx.endgame.1 
+	title = shx.endgame.1.t
+	desc = shx.endgame.1.d
+	picture = GFX_report_event_generic_beijing_map
+	is_triggered_only = yes 
+	fire_only_once = yes
+
+	option = {
+		log = "[GetLogInfo]: event shx.endgame.1 option shx.endgame.1.a"
+		name = shx.endgame.1.a 
+		add_stability = -0.25
+		add_war_support = -0.25
+		SHX_lategame_transition_effect = yes
+	}
+}
 ########################################
 #######-       hidden          -########
 ########################################
@@ -6699,104 +8428,5 @@ country_event = {
 			limit = { NOT = { has_country_flag = yan_taking_SHX_empower_magistrates_completed } }
 			activate_mission = SHX_yan_taking_empower_magistrates
 		}
-	}
-}
-
-########################################
-########-      旧事件         -#########
-########################################
-
-country_event = { #Shanxi Moves Troops into Gansu
-	id = shx.31
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.31" }
-	title = shx.31.t
-	desc = shx.31.d
-	picture = GFX_report_event_USA_desert_battle
-	is_triggered_only = yes
-
-	option = {
-		name = shx.31.a #We can't afford another war
-		ai_chance = {
-			factor = 70
-		}
-		hidden_effect = {
-			FROM = {
-				country_event = {
-					id = shx.32
-					days = 1
-				}
-			}
-		}
-	}
-
-	option = {
-		name = shx.31.b #Resist the traitors
-		ai_chance = {
-			factor = 30
-		}
-		hidden_effect = {
-			FROM = {
-				country_event = {
-					id = shx.33
-					days = 1
-				}
-			}
-		}
-	}
-}
-
-country_event = { # The Mas Surrender
-	id = shx.32
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.32" }
-	title = shx.32.t
-	desc = shx.32.d
-	picture = GFX_report_event_FNG_prisoner
-	is_triggered_only = yes
-
-	option = {
-		name = shx.32.a
-		transfer_state = 283
-	}
-}
-
-country_event = { # The Mas Resist
-	id = shx.33
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.33" }
-	title = shx.33.t
-	desc = shx.33.d
-	picture = GFX_report_event_MAF_boer_war
-	is_triggered_only = yes
-
-	option = {
-		name = shx.33.a #Declare war
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 0
-				has_war = yes
-			}
-			modifier = {
-				factor = 0
-				is_in_faction = yes
-			}
-			modifier = {
-				factor = 0
-				FROM = { is_in_faction = yes }
-			}
-		}
-		declare_war_on = {
-			target = FROM
-			type = take_state
-			generator = { 283 }
-		}
-	}
-	option = {
-		name = shx.33.a #Back down
-		ai_chance = {
-			factor = 20
-		}
-		add_political_power = -50
-		set_temp_variable = { SHX_yuxiang_mil_change = 10 }
-		SHX_add_yuxiang_mil = yes
 	}
 }

@@ -23,6 +23,11 @@ focus_tree = {
 		y = 0
 		cost = 3
 
+		allow_branch = {
+			NOT = {
+				has_country_flag = SHX_lategame_begin_flag
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_zhao_du_li_de_zui_hou_yi_nian"
 			country_event = {
@@ -3859,11 +3864,11 @@ focus_tree = {
 		x = 20
 		y = 0
 
-		# allow_branch = {
-		# 	NOT = {
-		# 		has_country_flag = SHX_lategame_begin_flag
-		# 	}
-		# }
+		allow_branch = {
+			NOT = {
+				has_country_flag = SHX_lategame_begin_flag
+			}
+		}
 
 		ai_will_do = {
 			base = 100
@@ -4447,6 +4452,33 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SHX_shanxi_baoding
+		icon = GFX_goal_QIE_baoding
+		cost = 5
+
+		relative_position_id = SHX_recognise_gov
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = 25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_recognise_gov
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_shanxi_baoding"
+			add_ideas = SHX_baoding_investment_idea
+			add_research_slot_until_three = yes #Early-Mid Game Focuses should only go up to 3 slots
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
 		id = SHX_suiyuan_question
 		icon = GFX_goal_china_MON_banner
 		cost = 5
@@ -4534,7 +4566,7 @@ focus_tree = {
 					}
 				}
 				country_event = {
-					id = shx_suiyuan_campaign.20	#Start the Event Chain
+					id = shx.suiyuan.campaign.20	#Start the Event Chain
 					days = 7
 				}
 			}
@@ -4561,6 +4593,255 @@ focus_tree = {
 						}
 					}
 				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = SHX_suiyuan_order
+		icon = GFX_goal_INS_focus_abandon_ethical_policy
+		cost = 5
+
+		relative_position_id = SHX_suiyuan_question
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_suiyuan_question
+		}
+		available = {
+			owns_state = 616 #Ordos
+			owns_state = 621 #Ulanqab
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_suiyuan_order"
+			country_event = { id = shx.suiyuan.campaign.55 days = 5 } #A New Governor for Suiyuan
+			custom_effect_tooltip = SHX_suiyuan_order_focus_tooltip
+			activate_targeted_decision = { target = 616 decision = SHX_suiyuan_invite_farmers_to_suiyuan_decision }
+			activate_targeted_decision = { target = 616 decision = SHX_suiyuan_tapping_into_the_riches_of_suiyuan_decision }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = SHX_suiyuan_connect
+		icon = GFX_goal_OTT_Railroad
+		cost = 5
+
+		relative_position_id = SHX_suiyuan_question
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = SHX_suiyuan_question
+		}
+		available = {
+			owns_state = 616 #Ordos
+			owns_state = 621 #Ulanqab
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_suiyuan_connect"
+			random_owned_state = {
+				prioritize = { 616 621 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				prioritize = { 616 621 }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = SHX_suiyuan_connect_focus_tooltip
+			if = {
+				limit = { country_exists = RUS }
+				activate_targeted_decision = { target = RUS decision = SHX_suiyuan_building_the_russian_connection_decision }
+			}
+			else_if = {
+				limit = { country_exists = TRM }
+				activate_targeted_decision = { target = TRM decision = SHX_suiyuan_building_the_russian_connection_decision }
+			}
+			#fire railway decisions if you have the states
+			if = {
+				limit = { owns_state = 283 }#Lanzhou
+				activate_targeted_decision = { target = 283 decision = SHX_suiyuan_lay_tracks_to_target_decision }
+			}
+			if = {
+				limit = { owns_state = 774 }#Hexi Corridor
+				activate_targeted_decision = { target = 774 decision = SHX_suiyuan_lay_tracks_to_target_decision }
+			}
+			if = {
+				limit = { owns_state = 616 }#Suiyuan
+				activate_targeted_decision = { target = 616 decision = SHX_suiyuan_lay_tracks_to_target_decision }
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SHX_xibei_loyalty
+		icon = GFX_goal_XSM_the_military_civilian_administration
+		cost = 5
+
+		relative_position_id = SHX_shanxi_baoding
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_shanxi_baoding
+		}
+
+		available = {
+			has_global_flag = northwest_conflict_ended
+			has_completed_focus = SHX_suiyuan_question
+			OR = {
+				AND = {
+					owns_state = 616 #Ordos
+					owns_state = 621 #Ulanqab
+					strength_ratio = {
+						tag = XSM
+						ratio > 1.25
+					}
+				}
+				strength_ratio = {
+					tag = XSM
+					ratio > 1.5
+				}
+			}
+			NOT = {
+				has_war_with = XSM
+			}
+			XSM = {
+				has_war = no
+			}
+		}
+		bypass = {
+			NOT = {
+				country_exists = XSM
+			}
+		}
+
+		will_lead_to_war_with = XSM
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_xibei_loyalty"
+			if = {
+				limit = {
+					XSM = {
+						is_subject = yes
+						NOT = {
+							is_subject_of = QIE
+						}
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XSM
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = XSM decision = SHX_negotiate_with_XSM }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = SHX_vanguard_of_north
+		icon = YUN_GFX_Goal_Secure_Western_China
+		cost = 5
+
+		relative_position_id = SHX_xibei_loyalty
+		x = -1
+		y = 2
+
+		ai_will_do = { base = 100 }
+		prerequisite = {
+			focus = SHX_xibei_loyalty
+		}
+		prerequisite = {
+			focus = SHX_joint_training
+		}
+		available = {
+			XSM = {
+				OR = {
+					exists = no
+					is_subject_of = QIE
+				}
+			}
+			SHX = {
+				has_war = no
+				is_in_faction = no #United Front
+				has_completed_focus = SHX_suiyuan_question
+			}
+			custom_trigger_tooltip = {
+				tooltip = SHX_vanguard_targets_available_tt
+				OR = {
+					MON = {
+						exists = yes
+						NOT = { is_subject_of = QIE }
+					}
+					TIB = {
+						exists = yes
+						NOT = { is_subject_of = QIE }
+					}
+					SIK = {
+						exists = yes
+						NOT = { is_subject_of = QIE }
+					}
+					ETS = {
+						exists = yes
+						NOT = { is_subject_of = QIE }
+					}
+					KUM = {
+						exists = yes
+						NOT = { is_subject_of = QIE }
+					}
+				}
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_vanguard_of_north"
+			add_political_power = 100
+			if = {
+				limit = { 
+					SHX = { is_subject_of = QIE } 
+				}
+				QIE = { country_event = { id = shx.QIE.aid.30 days = 3 } } #Yan Xishan and the Northwestern March
+				custom_effect_tooltip = SHX_vanguard_of_north_tt
+				effect_tooltip = { SHX_vanguard_wargoals_effect = yes }
+			}
+			else = {
+				SHX_vanguard_wargoals_effect = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }

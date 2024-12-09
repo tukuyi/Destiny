@@ -433,3 +433,95 @@ defined_text = {
 		localization_key = empty
 	}
 }
+
+defined_text = {
+	name = SHX_suiyuan_campaign_prep
+	text = {
+		trigger = {
+			SHX = {
+				has_active_mission = SHX_march_on_suiyuan_mission
+			}
+		}
+		localization_key = SHX_suiyuan_campaign_prep_active_key
+	}
+	text = {
+		trigger = {
+			SHX = {
+				NOT = {
+					has_active_mission = SHX_march_on_suiyuan_mission
+				}
+			}
+		}
+		localization_key = SHX_suiyuan_campaign_prep_inactive_key
+	}
+}
+defined_text = {
+	name = SHX_send_scouts_desc
+	text = {
+		trigger = {
+			tag = SHX
+		}
+		localization_key = SHX_send_scouts_shanxi_desc
+	}
+	text = {
+		trigger = {
+			NOT = { tag = SHX }
+		}
+		localization_key = SHX_send_scouts_against_shanxi_desc
+	}
+}
+defined_text = {
+	name = SHX_Get_Destabilise_desc
+	text = {
+		trigger = { has_state_flag = suiyuan_province_state }
+		localization_key = SHX_suiyuan_destabilise_suiyuan_desc
+	}
+	text = {
+		trigger = { has_state_flag = ningxia_province_state }
+		localization_key = SHX_suiyuan_destabilise_ningxia_desc
+	}
+	text = {
+		trigger = { has_state_flag = qinghai_province_state }
+		localization_key = SHX_suiyuan_destabilise_qinghai_desc
+	}
+	text = {
+		trigger = { has_state_flag = gansu_province_state }
+		localization_key = SHX_suiyuan_destabilise_gansu_desc
+	}
+}
+defined_text = {
+	name = SHX_get_exhuastion_desc
+	text = {
+		trigger = {
+			tag = SHX
+		}
+		localization_key = SHX_suiyuan_northwestern_war_exhaustion_mission_shanxi_desc
+	}
+	text = {
+		trigger = {
+			NOT = { tag = SHX }
+		}
+		localization_key = SHX_suiyuan_northwestern_war_exhaustion_mission_enemy_desc
+	}
+}
+defined_text = {
+	name = SHX_Get_Tracks_Desc
+	text = {
+		trigger = {
+			state = 283
+		}
+		localization_key = SHX_suiyuan_lay_tracks_to_lanzhou_decision_desc
+	}
+	text = {
+		trigger = {
+			state = 774
+		}
+		localization_key = SHX_suiyuan_lay_tracks_to_zhangye_decision_desc
+	}
+	text = {
+		trigger = {
+			state = 616
+		}
+		localization_key = SHX_suiyuan_lay_tracks_to_suiyuan_decision_desc
+	}
+}

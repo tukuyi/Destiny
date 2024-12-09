@@ -1248,6 +1248,24 @@ ideas = {
 				encryption_factor = 0.25
 			}
 		}
+		SHX_baoding_investment_idea = {#保定投资
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_baoding_investment_idea" }
+			picture = SZC_baoding_influence
+			allowed = { always = no }
+			cancel = { has_war_with = QIE }
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+		SHX_fortress_shanxi = {#山西堡垒
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_fortress_shanxi" }
+			picture = guns_shield
+			modifier = {
+				dig_in_speed_factor = 0.10
+				production_speed_bunker_factor = 0.15
+			}
+		}
 
 	### Negotiated Econ
 		SHX_qie_dominated_econ = {#北京-山西关系：紧密合作
@@ -1314,6 +1332,43 @@ ideas = {
 				custom_modifier_tooltip = SHX_suiyuan_QIE_neutrality_tooltip
 			}
 		}	
+		SHX_decisive_first_strike_idea = {#在西北先发制人
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_decisive_first_strike_idea" }
+			picture = FRA_scw_intervention_nationalists_focus
+			allowed = { always = no }
+			cancel = {
+				owns_state = 616
+				owns_state = 621
+			}
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = MON
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = TIB
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+			on_remove = {
+				add_war_support = -0.10
+			}
+		}
+		SHX_hui_cavalry_idea = {#受驯的回族骑兵
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHX_hui_cavalry_idea" }
+			picture = ETH_national_studs
+			allowed = { always = no }
+			modifier = {
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.05
+				army_speed_factor = 0.05
+			}
+		}
 	}
 	industrial_concern = {
 		SHX_economic_reconstruction_committee = {#经济建设委员会

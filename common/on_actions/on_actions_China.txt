@@ -883,6 +883,48 @@ on_actions = {
 				}
 				country_event = { id = sichuan.276 hours = 8 random_hours = 16 }
 			}
+			
+			if = {#山西战争计划修改器 - 对占领州给予奖励
+				limit = { tag = SHX }
+				if = {
+					limit = {
+						has_variable = SHX_states_available_for_setting_plans
+						FROM.FROM = { has_state_flag = SHX_war_plan_flagged_state }
+					}
+					FROM.FROM = { SHX_convert_flag_modifier = yes }
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							OR = {
+								state = 608 #Beijing
+								state = 613 #Nanjing
+								state = 1048 #Wuhan
+							}
+						}
+					}
+					SHX = { country_event = { id = shx.endgame.1 days = 3 } } #A Rising Power in the North
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_country_flag = SHX_lategame_begin_flag
+							has_idea = SHX_war_of_liberation
+						}
+						FROM.FROM = {
+							OR = {
+								state = 1062 #Baoding
+								state = 1061 #Shimen
+								state = 1060 #Hebi
+								state = 1059 #Kaifeng
+								state = 1058 #Ruyang
+								state = 620 #Xiangyang
+							}
+						}
+					}
+					country_event = shx.zhifeng.30 #Far from Home, Not Far From Victory
+				}
+			}
 
 			# Fengtian events
 			if = {
@@ -1256,6 +1298,39 @@ on_actions = {
 					has_country_flag = QIE_LEP_major
 				}
 				country_event = qiedom.23
+			}
+		}
+	}
+
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = SHX
+						FROM = { tag = SHX }
+					}
+				}
+				SHX = {
+					if = {
+						#Setup the Shanxi plan modifer on enemy states
+						limit = { has_variable = SHX_states_available_for_setting_plans }
+						SHX_add_flag_modifier = yes
+					}
+				}
+			}
+		}
+	}
+
+	on_peace = {
+		effect = {
+			clr_country_flag = LEC_war_backer
+			if = {
+				limit = { tag = SHX }
+				if = {
+					limit = { has_variable = SHX_states_available_for_setting_plans }
+					SHX_remove_flag_modifier = yes
+				}
 			}
 		}
 	}

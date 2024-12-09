@@ -17,6 +17,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decisions_categories_pictures/SHX_zhi_feng_war.png"
 	}
 	spriteType  = {
+		name = "GFX_decision_category_xsm_qinghai"
+		texturefile = "gfx/interface/decisions/decisions_categories_pictures/xsm_qinghai.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_shuang_xiu_fa"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_shuang_xiu_fa.png"
 	}
@@ -248,6 +252,10 @@ spriteTypes = {
 	spriteType  = {
 		name = "GFX_news_event_NEWS_guang_zhou"
 		texturefile = "gfx/event_news_pictures/news/NEWS_guang_zhou.png"
+	}
+	spriteType  = {
+		name = "GFX_news_event_SIK_western_china"
+		texturefile = "gfx/event_news_pictures/news/news_event_SIK_western_china.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_NEWS_ao_men"
