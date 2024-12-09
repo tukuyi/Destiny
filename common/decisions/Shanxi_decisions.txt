@@ -2910,10 +2910,10 @@ SHX_QIE_ties = {#在北京的阴影下
 	SHX_crackdown_foreign_agitators = {#镇压外来煽动者
 		icon = GFX_descision_generic_flags
 		visible = {
-			has_government = paternal_autocrat
+			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
 		}
 		available = {
-			has_government = paternal_autocrat
+			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
 			check_variable = {
 				tooltip = SHX_QIE_influence_variable_above_10_tooltip
 				SHX.SHX_QIE_influence_variable > 9

@@ -85,8 +85,16 @@ SHX_power_balance = {
 				production_factory_max_efficiency_factor = 0.10
 			}
 			on_activate = {
-			
-
+				#Automatically Triggers GMJ Purge
+				if = {
+					limit = {
+						has_active_mission = SHX_looming_gmj_coup
+					}
+					hidden_effect = {
+						SHX_yan_victory_effect = yes
+					}
+					custom_effect_tooltip = SHX_automatic_Yan_purge_tooltip
+				}
 			}
 			on_deactivate = {
 
@@ -157,7 +165,17 @@ SHX_power_balance = {
 				production_factory_efficiency_gain_factor = 0.10
 			}
 			on_activate = {
-
+				#Automatically Triggers GMJ Coup
+				if = {
+					limit = {
+						has_active_mission = SHX_looming_gmj_coup
+					}
+					hidden_effect = {
+						SHX_feng_victory_effect = yes
+						log = "KR_Event_Logging;SHX POWER STRUGGLE - Feng Yuxiang (balance of power);[GetDateText]"
+					}
+					custom_effect_tooltip = SHX_automatic_GMJ_coup_tooltip
+				}
 			}
 			on_deactivate = {
 

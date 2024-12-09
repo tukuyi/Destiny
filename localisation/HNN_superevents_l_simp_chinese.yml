@@ -71,6 +71,8 @@
  geacps: "§j共荣圈§!"
  others: "§g其他主张§!"
 
+ northwest_conflict_surrender: "向敌人投降"
+
  tooltip_enable_hidden_tech: "启用$TECH|Y$\n$EFFECT$"
 
  associated_governorate: "合作省"

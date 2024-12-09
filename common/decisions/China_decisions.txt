@@ -1745,6 +1745,74 @@ chinese_unification = {
 			custom_effect_tooltip = maybe_war_tt
 		}
 	}
+
+	northwest_conflict_surrender = {#向敌人投降
+		icon = generic_break_treaty
+		allowed = {
+			OR = {
+				original_tag = XSM
+				original_tag = TIB
+				original_tag = MON
+			}
+		}
+
+		available = {
+			if = {
+				limit = {
+					original_tag = TIB
+					MON = { has_country_flag = MON_defeated_in_northwest_war_flag }
+					XSM = { is_ai = yes }
+					TIB = { is_ai = yes }
+					MON = { is_ai = yes }
+				}
+				surrender_progress > 0.15
+			}
+			else = {
+				surrender_progress > 0.4
+			}
+		}
+
+		visible = {
+			has_global_flag = northwest_conflict_begun
+			NOT = { has_global_flag = northwest_conflict_ended }
+			OR = {
+				has_war_with = XSM
+				has_war_with = TIB
+				has_war_with = MON
+			}
+			is_subject = no
+			is_in_faction = no
+			has_civil_war = no
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = { factor = 100 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete northwest_conflict_surrender"
+			if = {
+				limit = {
+					original_tag = XSM
+				}
+				log = "KR_Event_Logging;MA LOSES NORTHWESTERN WAR;[GetDateText]"
+				every_enemy_country = {
+					limit = {
+						OR = {
+							tag = TIB
+							tag = MON
+						}
+						is_valid_peace_target = yes
+					}
+					country_event = { id = mac.226 }
+				}
+			}
+			else = {
+				log = "KR_Event_Logging;MA WINS NORTHWESTERN WAR;[GetDateText]"
+				XSM = { country_event = mac.230 }
+			}
+		}
+	}
 }
 political_actions = {
 	LEC_china_observer_rights = {
