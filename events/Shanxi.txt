@@ -1729,6 +1729,7 @@ country_event = {#薄利煤矿
 				SHX_feng_is_winning_trigger = yes
 			}
 		}
+		SHX_increase_revolution_small = yes
 		SHX_strengthen_feng_medium = yes
 		add_ideas = SHX_inefficient_coal
 	}
@@ -2626,7 +2627,6 @@ country_event = {#败军之将
 		SHX_shang_zhen = {
 			remove_unit_leader_trait = SHX_yan_loyalist
 		}
-		custom_effect_tooltip = SHX_characters_will_added_to_MHC
 		add_stability = 0.1
 		add_political_power = 100
 	}

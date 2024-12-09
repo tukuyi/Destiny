@@ -4040,7 +4040,7 @@ SHX_zhi_feng_war = {#迈向统一
 			}
 			add_ideas = SHX_revolutionary_army_idea
 			division_template = {
-				name = "民兵师" #Temporary name for now lol - Suzu
+				name = "Shanxi Minbing" #Temporary name for now lol - Suzu
 				division_names_group = CHYN_MIL_01
 				regiments = {
 					militia = { x = 0 y = 0 }
@@ -4256,7 +4256,7 @@ SHX_zhi_feng_war = {#迈向统一
 				add_command_power = -15
 			}
 			division_template = {
-				name = "保定步兵师" #Temporary name for now lol - Suzu
+				name = "Bǎodìng bùbīng" #Temporary name for now lol - Suzu
 				division_names_group = CHYN_INF_01
 				regiments = {
 					infantry = { x = 0 y = 0 }

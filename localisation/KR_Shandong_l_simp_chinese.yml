@@ -1,6 +1,12 @@
 ﻿l_simp_chinese:
  Shandong:0 "鲁系国策树"
 
+ SQI:0 "山东"
+ SQI_ADJ:0 "山东"
+ SQI_DEF:0 "山东"
+ SQI_QIE:0 "山东"
+ SQI_QIE_ADJ:0 "山东"
+ SQI_QIE_DEF:0 "山东"
  SQI_QIE_totalist:0 "中华人民共和国"
  SQI_QIE_totalist_ADJ:0 "中国"
  SQI_QIE_totalist_DEF:0 "中华人民共和国"
@@ -61,6 +67,9 @@
  SQI_LSP_national_populist:0 "华东省联合"
  SQI_LSP_national_populist_ADJ:0 "南奉天"
  SQI_LSP_national_populist_DEF:0 "华东省联合"
+ SQI_CSONG:0 "山东"
+ SQI_CSONG_ADJ:0 "山东"
+ SQI_CSONG_DEF:0 "山东"
  SQI_CSONG_totalist:0 "山东共和国"
  SQI_CSONG_totalist_ADJ:0 "山东"
  SQI_CSONG_totalist_DEF:0 "山东共和国"

@@ -11,12 +11,40 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		SHX_feng_victory_effect = yes
-		set_country_flag = SHX_feng_victory_over_yan
-		set_politics = {
-			ruling_party = authoritarian_democrat
-			elections_allowed = no
+		division_template = {
+			name = "Staff Officers Training Regiment" #Temporary name for now lol - Suzu
+			division_names_group = CHYN_MIL_01
+			regiments = {
+				militia = { x = 0 y = 0 }
+				militia = { x = 0 y = 1 }
+				militia = { x = 0 y = 2 }
+				militia = { x = 1 y = 0 }
+				militia = { x = 1 y = 1 }
+				militia = { x = 1 y = 2 }
+				militia = { x = 2 y = 0 }
+				militia = { x = 2 y = 1 }
+				militia = { x = 2 y = 2 }
+			}
 		}
+		random_owned_controlled_state = {
+			prioritize = { 1072 }
+			limit = {
+				is_in_home_area = yes
+				impassable = no
+			}
+			create_unit = {
+				division = "name = \"Cānmóu jūnguān xùnliàn tuán\" division_template = \"Staff Officers Training Regiment\" start_experience_factor = 0.35"
+				prioritize_location = 1072
+				owner = ROOT
+			}
+		}
+
+		# SHX_feng_victory_effect = yes
+		# set_country_flag = SHX_feng_victory_over_yan
+		# set_politics = {
+		# 	ruling_party = authoritarian_democrat
+		# 	elections_allowed = no
+		# }
 		
 		# create_country_leader = {
 		# 	name = "王亚樵"
@@ -33,18 +61,6 @@ country_event = {#测试事件
 		# 	long_name = LEC_triad_syndicalist_party_long
 		# 	name = LEC_triad_syndicalist_party
 		# }
-
-		# set_power_balance = {
-		# 	id = SHX_power_balance
-		# 	left_side = SHX_yan_winning_side
-		# 	right_side = SHX_feng_winning_side
-		# 	set_value = 0.00
-		# }
-		# set_variable = {
-		# 	SHX_revolution_line = 0
-		# }
-		# set_country_flag = SHX_yan_victory_over_gmj
-
 
 		# set_politics = {
 		# 	ruling_party = authoritarian_democrat

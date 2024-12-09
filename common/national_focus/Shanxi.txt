@@ -113,6 +113,8 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
@@ -135,6 +137,8 @@ focus_tree = {
 				load_oob = "SHX_raised_militias"
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
@@ -156,6 +160,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			SHX_increase_revolution_small = yes
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
@@ -184,6 +190,7 @@ focus_tree = {
 
 		available = {
 			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+			has_idea = SHX_underdeveloped_mountain_economy0
 		}
 		prerequisite = {
 			focus = SHX_sheng_yi_hui
@@ -694,6 +701,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}	
 
 	focus = {
@@ -794,6 +803,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}
 
 	focus = {
@@ -1959,7 +1970,8 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = { FOCUS_FILTER_PRODUCTION }
+
+		search_filters = { FOCUS_FILTER_PRODUCTION FOCUS_FILTER_WAR_SUPPORT }
 	}
 #军事
  	focus = {
@@ -1981,6 +1993,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xin_shan_xi_jun_shi_gui_hua"
 			add_ideas = SHX_taiyuan_general_staff_idea
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_kuo_bian_xiang_jun
@@ -2008,6 +2022,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			SHX_strengthen_yan_large = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_zheng_bian_fei_Zheng_gui_bu_dui
@@ -3543,8 +3559,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_she_li_sheng_xian"
 			add_political_power = 50
+			add_war_support = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = SHX_ling_shi_yue_fa
 		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}	
 
 	focus = {
@@ -3912,7 +3932,7 @@ focus_tree = {
 	focus = {
 		id = SHX_out_of_beijing
 		icon = GFX_goal_QIE_zhili_unite_china
-		cost = 6
+		cost = 5
 
 		x = 20
 		y = 0
@@ -4124,7 +4144,7 @@ focus_tree = {
 			add_war_support = -0.1
 			custom_effect_tooltip = SHX_mobilisation_tt
 			division_template = {
-				name = "参谋军官训练团" #Temporary name for now lol - Suzu
+				name = "Staff Officers Training Regiment" #Temporary name for now lol - Suzu
 				division_names_group = CHYN_MIL_01
 				regiments = {
 					militia = { x = 0 y = 0 }
@@ -4145,7 +4165,7 @@ focus_tree = {
 					impassable = no
 				}
 				create_unit = {
-					division = "name = \"参谋军官训练团\" division_template = \"Staff Officers Training Regiment\" start_experience_factor = 0.35"
+					division = "name = \"Cānmóu jūnguān xùnliàn tuán\" division_template = \"Staff Officers Training Regiment\" start_experience_factor = 0.35"
 					prioritize_location = 1072
 					owner = ROOT
 				}
