@@ -12,18 +12,20 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		declare_war_on = {
-			target = QIE
-			type = take_claimed_state
-			generator = { 615 }
+		set_cosmetic_tag = SHX_FU
+		set_country_flag = SHX_shao_zhuang_victory_over_all
+		promote_character = {
+			character = SHX_fu_zuoyi
+			ideology = authdem_yan_xishan_thought_subtype
 		}
+		SHX_shao_zhuang_victory_effect = yes
 
 		# SHX_feng_victory_effect = yes
 		# set_country_flag = SHX_feng_victory_over_yan
-		# set_politics = {
-		# 	ruling_party = authoritarian_democrat
-		# 	elections_allowed = no
-		# }
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
 		
 		# create_country_leader = {
 		# 	name = "王亚樵"

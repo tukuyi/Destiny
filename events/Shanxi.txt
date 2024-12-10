@@ -381,7 +381,10 @@ country_event = {#一省两军的命运
 	desc = {
 		text = shx.earlygame.15.yan.d
 		trigger = {
-			has_country_flag = SHX_yan_victory_over_gmj
+			OR = {
+				has_country_flag = SHX_yan_victory_over_gmj
+				has_country_flag = SHX_shao_zhuang_victory_over_all
+			}
 		}
 	}
 	desc = {
@@ -396,7 +399,10 @@ country_event = {#一省两军的命运
 	option = {
 		name = shx.earlygame.15.yan.a
 		trigger = {
-			has_country_flag = SHX_yan_victory_over_gmj
+			OR = {
+				has_country_flag = SHX_yan_victory_over_gmj
+				has_country_flag = SHX_shao_zhuang_victory_over_all
+			}
 		}
 		delete_unit_template_and_units = { division_template = "GMJ Bubing Shi" disband = yes }
 		delete_unit_template_and_units = { division_template = "GMJ Qibing Shi" disband = yes }
@@ -410,7 +416,10 @@ country_event = {#一省两军的命运
 	option = {
 		name = shx.earlygame.15.yan.b
 		trigger = {
-			has_country_flag = SHX_yan_victory_over_gmj
+			OR = {
+				has_country_flag = SHX_yan_victory_over_gmj
+				has_country_flag = SHX_shao_zhuang_victory_over_all
+			}
 		}
 		delete_unit_template_and_units = { division_template = "GMJ Shandi Shi" disband = yes } #These are the most fanatical and loyal units of the GMJ
 		swap_ideas = {
@@ -2796,7 +2805,9 @@ country_event = {#少壮派政变
 		name = shx.powerstruggle.13.a
 		set_cosmetic_tag = SHX_FU
 
-		promote_character = SHX_fu_zuoyi
+		SHX_fu_zuoyi = {
+			promote_leader = yes
+		}
 		promote_character = {
 			character = SHX_fu_zuoyi
 			ideology = authdem_yan_xishan_thought_subtype
@@ -8923,6 +8934,7 @@ country_event = {
 			has_country_flag = SHX_educational_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {
@@ -8957,6 +8969,7 @@ country_event = {
 			has_country_flag = SHX_industrial_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {
@@ -8991,6 +9004,7 @@ country_event = {
 			has_country_flag = SHX_agricultural_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {
@@ -9025,6 +9039,7 @@ country_event = {
 			has_country_flag = SHX_educational_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {
@@ -9059,6 +9074,7 @@ country_event = {
 			has_country_flag = SHX_industrial_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {
@@ -9093,6 +9109,7 @@ country_event = {
 			has_country_flag = SHX_agricultural_reform_completed_flag
 			has_country_flag = SHX_yan_victory_over_gmj
 			has_country_flag = SHX_feng_victory_over_yan
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 	option = {

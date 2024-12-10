@@ -95,6 +95,14 @@ focus_tree = {
 				has_country_flag = SHX_feng_victory_over_yan
 			}
 		}
+		offset = {
+			x = 1
+			y = 0
+			trigger = {
+				has_country_flag = SHX_shao_zhuang_victory_over_all
+			}
+		}
+
 
 		available = {
 			has_completed_focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
@@ -183,6 +191,13 @@ focus_tree = {
 			y = 0
 			trigger = {
 				has_country_flag = SHX_feng_victory_over_yan
+			}
+		}
+		offset = {
+			x = -3
+			y = 0
+			trigger = {
+				has_country_flag = SHX_shao_zhuang_victory_over_all
 			}
 		}
 		
@@ -2045,6 +2060,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			SHX_upgrade_xiang_jun_model_spirit_effect = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_fu_cong_yan_zhang_guan
@@ -2227,6 +2244,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			SHX_strengthen_feng_large = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_jia_qiang_yan_ge_xun_lian
@@ -2251,6 +2270,8 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_she_li_zheng_zhi_bu
@@ -2273,6 +2294,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			country_event = shx.mil.2
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_biao_zhun_hua_bu_bing
@@ -2305,6 +2328,8 @@ focus_tree = {
 				category = infantry_weapons
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_ren_min_jun_dui
@@ -2326,6 +2351,8 @@ focus_tree = {
 			SHX_upgrade_guominjun_model_spirit_effect = yes
 			add_command_power = 25
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_geng_zhan_jun_dui
@@ -2343,6 +2370,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_geng_zhan_jun_dui"
 			add_ideas = SHX_labouring_army_idea
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_ji_lv_yu_zhong_cheng
@@ -2360,6 +2389,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_ji_lv_yu_zhong_cheng"
 			SHX_upgrade_guominjun_model_spirit_effect = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_dao_de_zhi_shi
@@ -2378,6 +2409,8 @@ focus_tree = {
 			SHX_upgrade_guominjun_model_spirit_effect = yes
 			add_command_power = 25
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_shen_tou_zhan_shu
@@ -2404,6 +2437,8 @@ focus_tree = {
 			custom_effect_tooltip = SHX_gain_division_after_taking_state
 			custom_effect_tooltip = SHX_flag_extra_state
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_kuo_da_hou_qing
@@ -2451,6 +2486,8 @@ focus_tree = {
 				producer = QIE
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_tian_ran_ping_zhang
@@ -2555,6 +2592,8 @@ focus_tree = {
 				country_event = { id = shx.mil.3 days = 3 }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_he_bian_liang_jun
@@ -2573,6 +2612,8 @@ focus_tree = {
 			add_command_power = 30
 			country_event = { id = shx.earlygame.15 }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_bei_fang_huang_pu
@@ -2610,6 +2651,8 @@ focus_tree = {
 				add_to_variable = { SHX_war_plan_org_rate_modifier = -0.05 }
 			}	
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_xiu_shan_tai_yuan_jun
@@ -2671,6 +2714,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_shan_xi_kong_jun
@@ -2750,6 +2795,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_mountains_our_home
@@ -2774,6 +2821,8 @@ focus_tree = {
 			# 	set_technology = { tech_ski_infantry = 1 popup = no }
 			# }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_shan_di_zhuang_bei
@@ -2804,6 +2853,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_modern_artillery
@@ -2863,6 +2914,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_tui_jin_xin_liu_shui_xian
@@ -2885,6 +2938,8 @@ focus_tree = {
 				category = infantry_weapons
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_ping_qing_wai_guo_gu_wen
@@ -2904,6 +2959,8 @@ focus_tree = {
 			country_event = shx.mil.1 
 			add_manpower = 1000
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_gu_li_ben_di_hua_sheng_chan
@@ -2926,6 +2983,8 @@ focus_tree = {
 				producer = SHX
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_wei_yu_chou_mou
@@ -2961,6 +3020,8 @@ focus_tree = {
 			}
 			add_war_support = 0.1
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 	focus = {
 		id = SHX_modern_arsenal
@@ -2987,6 +3048,8 @@ focus_tree = {
 			custom_effect_tooltip = available_designer
 			show_mio_tooltip = SHX_arsenal_arms_committee_organisation
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_BONUS }
 	}		
 #阎锡山
 	focus = {
@@ -3418,6 +3481,394 @@ focus_tree = {
 			}
 		}
 	}
+#傅作义
+	focus = {
+		id = SHX_shao_zhuang_pai_shang_tai
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
+		x = 0
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		available = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+		prerequisite = {
+			focus = SHX_yu_tai_yuan_shang_hui_de_mi_tan
+		}
+		allow_branch = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_shao_zhuang_pai_shang_tai"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_geng_wen_he_de_zhen_fu
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_shao_zhuang_pai_shang_tai
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_geng_wen_he_de_zhen_fu"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_min_zhu_xuan_yan
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_geng_wen_he_de_zhen_fu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_min_zhu_xuan_yan"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_you_xian_zhi_you_hua
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = -1
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_min_zhu_xuan_yan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_you_xian_zhi_you_hua"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_you_xian_si_you_hua
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 1
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_min_zhu_xuan_yan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_you_xian_si_you_hua"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_si_you_jiao_yu
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 0
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_you_xian_zhi_you_hua
+		}
+		prerequisite = {
+			focus = SHX_you_xian_si_you_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_si_you_jiao_yu"
+			
+		}
+	}	
+	
+	focus = {
+		id = SHX_tui_dong_yi_yuan_zhi_xuan
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = -2
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_you_xian_zhi_you_hua
+		}
+		prerequisite = {
+			focus = SHX_you_xian_si_you_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_dong_yi_yuan_zhi_xuan"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_chong_zu_shang_hui
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 2
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_you_xian_zhi_you_hua
+		}
+		prerequisite = {
+			focus = SHX_you_xian_si_you_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_zu_shang_hui"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_min_zhu_sheng_fu
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 0
+		y = 5
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_chong_zu_shang_hui
+		}
+		prerequisite = {
+			focus = SHX_tui_dong_yi_yuan_zhi_xuan
+		}
+		prerequisite = {
+			focus = SHX_si_you_jiao_yu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_min_zhu_sheng_fu"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_hun_he_xian_dai_hua
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = -1
+		y = 6
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_min_zhu_sheng_fu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_hun_he_xian_dai_hua"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_ru_xue_xian_dai_hua
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = -1
+		y = 7
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_hun_he_xian_dai_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_ru_xue_xian_dai_hua"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_nong_cun_di_yi_wei
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 1
+		y = 6
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_min_zhu_sheng_fu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_nong_cun_di_yi_wei"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_cha_feng_xie_jiao
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 1
+		y = 7
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_nong_cun_di_yi_wei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_cha_feng_xie_jiao"
+			
+		}
+	}	
+
+	focus = {
+		id = SHX_shan_xi_ren_de_shan_xi
+		icon = GFX_goal_SHX_feng_yu_xiang
+		relative_position_id = SHX_shao_zhuang_pai_shang_tai
+		x = 0
+		y = 8
+		cost = 5
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0.75
+				has_war = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SHX_cha_feng_xie_jiao
+		}
+		prerequisite = {
+			focus = SHX_ru_xue_xian_dai_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_ren_de_shan_xi"
+			
+		}
+	}	
 #冯玉祥
 	focus = {
 		id = SHX_feng_yu_xiang

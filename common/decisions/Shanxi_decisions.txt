@@ -98,8 +98,10 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 				SHX_shao_zhuang_victory_effect = yes
 			}
 			else = {
+				hidden_effect = {
+					activate_mission = SHX_shao_zhuang_pai_zai_yun_dong
+				}
 				SHX_revolution_all_time = yes
-				activate_mission = SHX_shao_zhuang_pai_zai_yun_dong
 			}
 		}
 	}
@@ -3050,7 +3052,10 @@ SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
 		available = {
 			SHX_QIE_negotiations_over = yes
 			SHX = {
-				has_country_flag = SHX_yan_victory_over_gmj
+				OR = {
+					has_country_flag = SHX_yan_victory_over_gmj
+					has_country_flag = SHX_shao_zhuang_victory_over_all
+				}
 				NOT = {
 					focus_progress = {
 						focus = SHX_out_of_beijing
