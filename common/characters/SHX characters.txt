@@ -139,6 +139,13 @@ characters = {
 				small = GFX_Portrait_SHX_fu_zuoyi_army
 				large = GFX_Portrait_SHX_fu_zuoyi_army
 			}
+			civilian = {
+				large = GFX_Portrait_SHX_fu_zuoyi_army
+			}
+		}
+		country_leader = {
+			desc = SHX_fu_zuoyi_leader_desc
+			ideology = authdem_yan_xishan_thought_subtype
 		}
 		corps_commander = {
 			desc = SHX_fu_zuoyi_desc

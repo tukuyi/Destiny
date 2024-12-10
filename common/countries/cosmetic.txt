@@ -5018,3 +5018,8 @@ QIE_JKH_RED = {
 	color = rgb { 222 20 16 }
 	color_ui = rgb { 222 20 16 }
 }
+#山西
+SHX_FU = {
+	color = rgb { 42 96 59 }
+	color_ui = rgb { 42 96 59 }
+}

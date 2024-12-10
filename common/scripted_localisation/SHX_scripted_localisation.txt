@@ -78,11 +78,17 @@ defined_text = {
 defined_text = {
 	name = SHX_struggle_for_shanxi_title_defined_text
 	text = {
-		trigger = { has_active_mission = SHX_looming_gmj_coup }
+		trigger = { 
+			has_active_mission = SHX_looming_gmj_coup 
+		}
 		localization_key = SHX_sfs_active_title_key
 	}
 	text = {
-		trigger = { NOT = { has_active_mission = SHX_looming_gmj_coup } }
+		trigger = { 
+			NOT = { 
+				has_active_mission = SHX_looming_gmj_coup 
+			} 
+		}
 		localization_key = SHX_sfs_inactive_title_key
 	}
 }

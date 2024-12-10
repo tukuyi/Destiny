@@ -40,28 +40,28 @@ characters = {
 ###   将领   ###
 ################
 #王怀庆
-	QIE_wang_huaiqing = {
-		name = QIE_wang_huaiqing
-		portraits = {
-			army = {
-				small = GFX_Portrait_QIE_wang_huaiqing
-				large = GFX_Portrait_QIE_wang_huaiqing
-			}
-		}
-		corps_commander = {
-			desc = QIE_WANG_HUAIQING_ARMY_DESC
-			traits = { 
-				QIE_Zhili_officer 
-				trait_cautious 
-				career_officer 
-				infantry_officer 
-				organizer 
-			}
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-		}
-	}	
+	# QIE_wang_huaiqing = {
+	# 	name = QIE_wang_huaiqing
+	# 	portraits = {
+	# 		army = {
+	# 			small = GFX_Portrait_QIE_wang_huaiqing
+	# 			large = GFX_Portrait_QIE_wang_huaiqing
+	# 		}
+	# 	}
+	# 	corps_commander = {
+	# 		desc = QIE_WANG_HUAIQING_ARMY_DESC
+	# 		traits = { 
+	# 			QIE_Zhili_officer 
+	# 			trait_cautious 
+	# 			career_officer 
+	# 			infantry_officer 
+	# 			organizer 
+	# 		}
+	# 		skill = 1
+	# 		attack_skill = 1
+	# 		defense_skill = 1
+	# 		planning_skill = 1
+	# 		logistics_skill = 1
+	# 	}
+	# }	
 }

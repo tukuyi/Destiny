@@ -127,4 +127,8 @@ spriteTypes = {
 		name = "GFX_report_event_SHX_feng_looking_in_telescope"
 		texturefile = "gfx/event_news_pictures/SHX/SHX_feng_looking_in_telescope.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHX_fu"
+		texturefile = "gfx/event_news_pictures/SHX/SHX_fu.png"
+	}
 }

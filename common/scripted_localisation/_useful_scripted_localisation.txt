@@ -4452,6 +4452,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = authdem_yan_xishan_thought_subtype
+		}
+		localization_key = authdem_yan_xishan_thought_subtype
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = Yiguandao_subtype
 		}
 		localization_key = Yiguandao_subtype

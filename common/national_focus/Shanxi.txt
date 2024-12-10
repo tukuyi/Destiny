@@ -270,6 +270,7 @@ focus_tree = {
 				OR = {
 					has_country_flag = SHX_yan_victory_over_gmj
 					has_country_flag = SHX_feng_victory_over_yan
+					has_country_flag = SHX_shao_zhuang_victory_over_all
 				}
 			}
 		}
@@ -2210,6 +2211,7 @@ focus_tree = {
 		available = {
 			NOT = {
 				has_country_flag = SHX_yan_victory_over_gmj
+				has_country_flag = SHX_shao_zhuang_victory_over_all
 			}
 		}
 		prerequisite = {
@@ -3964,6 +3966,7 @@ focus_tree = {
 			OR = {
 				has_country_flag = SHX_feng_victory_over_yan
 				has_country_flag = SHX_yan_victory_over_gmj
+				has_country_flag = SHX_shao_zhuang_victory_over_all
 			}
 		}
 
@@ -4892,10 +4895,6 @@ focus_tree = {
 						NOT = { is_subject_of = QIE }
 					}
 					ETS = {
-						exists = yes
-						NOT = { is_subject_of = QIE }
-					}
-					KUM = {
 						exists = yes
 						NOT = { is_subject_of = QIE }
 					}

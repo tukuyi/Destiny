@@ -455,7 +455,6 @@ country_event = { #Ask Yuxiang for support from Guominjun FOR SHANXI
 		}
 		add_manpower = -2000
 		set_temp_variable = { SHX_yuxiang_mil_change = 2 }
-		SHX_add_yuxiang_mil = yes
 		XSM = {
 			country_event = { id = mac.101 days = 5 }
 		}
@@ -471,7 +470,6 @@ country_event = { #Ask Yuxiang for support from Guominjun FOR SHANXI
 			}
 		}
 		set_temp_variable = { SHX_xishan_mil_change = 2 }
-		SHX_add_xishan_mil = yes
 		XSM = {
 			country_event = { id = mac.102 days = 5 }
 		}

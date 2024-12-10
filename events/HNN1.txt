@@ -12,6 +12,12 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
+		declare_war_on = {
+			target = QIE
+			type = take_claimed_state
+			generator = { 615 }
+		}
+
 		# SHX_feng_victory_effect = yes
 		# set_country_flag = SHX_feng_victory_over_yan
 		# set_politics = {

@@ -698,6 +698,7 @@ ideologies = {
 		types = {
 			authoritarian_democrat_subtype = {}
 			new_legalism_subtype = {can_be_randomly_selected = no} #新法家
+			authdem_yan_xishan_thought_subtype = {can_be_randomly_selected = no} #阎锡山思想
 			autdem_technocratic_tridemism_subtype = {can_be_randomly_selected = no} #技官三民主义
 			authdem_lianshengism_subtype = {can_be_randomly_selected = no} #联省主义
 			authdem_chiangism_subtype = {can_be_randomly_selected = no} #蒋介石思想

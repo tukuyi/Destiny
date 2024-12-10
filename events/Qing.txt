@@ -6934,7 +6934,7 @@ country_event = {#皇帝一鸣惊人
 	}
 }
 
-country_event = {
+country_event = {#守节尽忠
 	id = qiecoup.23 #SQI/SHX intervention
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiecoup.23" }
 	title = qiecoup.23.t
@@ -6948,25 +6948,7 @@ country_event = {
 
 	option = {
 		name = qiecoup.23.a #time to join the qing sphere!
-		hidden_effect = {
-			QIE = {
-				create_faction = qing_sphere_faction
-				set_country_flag = created_qing_faction
-			}
-			if = {
-				limit = { has_war = yes }
-				set_country_flag = QIE_alliance_@ROOT
-			}
-			else = {
-				QIE = {
-					add_to_faction = ROOT
-				}
-			}
-			country_event = { # do we want to help QIE?
-				id = qiecoup.30
-				days = 10
-			}
-		}
+		separate_peace_all_wars = yes
 	}
 }
 
@@ -7172,44 +7154,19 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = qiecoup.30 #coup backer aids QIE
+country_event = {#奉系趁势而动！
+	id = qiecoup.30 
 	title = qiecoup.30.t
 	desc = qiecoup.30.d
+	picture = GFX_report_event_FNG_zhang_xueliang_salute
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
-		log = "[GetDateText]: [Root.GetName]: event qiecoup.30"
-		if = {
-			limit = {
-				tag = SHX
-			}
-			country_event = {
-				id = shx.409 #sets cosmetic tag for them backing coup
-				hours = 6
-			}
-		}
-	}
-
 	option = {
 		name = qiecoup.30.a #yes
-		ai_chance = {
-			factor = 100
-		}
-		add_political_power = -75
-		hidden_effect = {
-			QIE = {
-				country_event = { id = qiecoup.31 }
-			}
-		}
-	}
-	option = {
-		name = qiecoup.30.b #no
-		ai_chance = {
-			factor = 0
-		}
+		activate_mission = QIE_eyes_on_the_border #Redundant - but useful as a visual aid for the QIE Player
+		custom_effect_tooltip = QIE_fear_fengtian
 	}
 }
 
@@ -12399,7 +12356,7 @@ country_event = {#人心惶惶
 				factor = 0
 				has_game_rule = {
 					rule = QIE_XinHai_PATH
-					option = RULE_OPTION_QIE_xinhai_LOSE
+					option = QIE_xinhai_LOSE
 				}
 			}
 		}

@@ -141,6 +141,7 @@ country_event = {#十年一梦
 				set_value = -0.2
 			}
 			activate_mission = SHX_looming_gmj_coup
+			activate_mission = SHX_shao_zhuang_pai_zai_yun_dong
 			add_ideas = SHX_guominjun_unrest_idea
 			set_variable = {
 				SHX_revolution_line = 0
@@ -459,20 +460,6 @@ country_event = {#省议会
 	option = {
 		name = shx.earlygame.16.a
 		add_stability = 0.05
-	}
-}
-country_event = {#大清行省
-	id = shx.409 
-	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.409" }
-	title = shx.409.t
-	desc = shx.409.d
-	picture = GFX_report_event_CHI_tiger_room
-	is_triggered_only = yes
-
-	option = { #cool
-		name = shx.409.a
-		add_political_power = 100
-		set_cosmetic_tag = SHX_QIE
 	}
 }
 
@@ -2387,6 +2374,12 @@ country_event = {#至胜方休
 			has_country_flag = SHX_feng_victory_over_yan
 		}
 	}
+	desc = {
+		text = shx.powerstruggle.5.fu.d
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+	}
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -2449,6 +2442,7 @@ country_event = {#至胜方休
 			}
 		}
 	}
+
 	option = {
 		name = shx.powerstruggle.5.feng.a  #Pardon Yan and them
 		trigger = {
@@ -2503,6 +2497,40 @@ country_event = {#至胜方休
 			}
 		}
 	}
+
+	option = { #该往前看了
+		log = "[GetLogInfo]: event shx.powerstruggle.7 option shx.powerstruggle.5.fu.a"
+		name = shx.powerstruggle.5.fu.a
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		add_stability = -0.1
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+	option = { #处理完他们再看
+		log = "[GetLogInfo]: event shx.powerstruggle.7 option shx.powerstruggle.5.fu.b"
+		name = shx.powerstruggle.5.fu.b
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = characters_will_be_retired
+		character_list_tooltip = {
+			limit = {
+				OR = {
+					is_character = SHX_yan_xishan
+					is_character = SHX_feng_yuxiang
+				}
+			}
+		}
+		hidden_effect = {
+			retire_character = SHX_yan_xishan
+			retire_character = SHX_feng_yuxiang
+		}
+	}
 }	
 country_event = {#处理叛徒
 	id = shx.powerstruggle.7
@@ -2543,6 +2571,7 @@ country_event = {#处理叛徒
 		add_political_power = 50
 		add_stability = 0.1
 	}
+
 	option = { #Forgive and forget
 		log = "[GetLogInfo]: event shx.powerstruggle.7 option shx.powerstruggle.7.feng.a"
 		name = shx.powerstruggle.7.feng.a
@@ -2564,6 +2593,7 @@ country_event = {#处理叛徒
 		add_political_power = 50
 		add_stability = 0.1
 	}
+
 }
 country_event = {#败军之将
 	id = shx.powerstruggle.8
@@ -2579,6 +2609,12 @@ country_event = {#败军之将
 		text = shx.powerstruggle.8.feng.d
 		trigger = {
 			has_country_flag = SHX_feng_victory_over_yan
+		}
+	}
+	desc = {
+		text = shx.powerstruggle.8.fu.d
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
 		}
 	}
 
@@ -2607,6 +2643,7 @@ country_event = {#败军之将
 		add_command_power = 50 #Yan has so few generals he'll definitely need this
 		SHX_feng_army_purged = yes
 	}
+
 	option = { #Forgiveness is a virtue
 		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.feng.a"
 		name = shx.powerstruggle.8.feng.a
@@ -2630,6 +2667,29 @@ country_event = {#败军之将
 		}
 		add_stability = 0.1
 		add_political_power = 100
+	}
+
+	option = { # Forgiveness is a virtue
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.fu.a"
+		name = shx.powerstruggle.8.fu.a
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+		ai_chance = { base = 0 }
+		add_political_power = -100
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+	}
+	option = { #BUT WE SHALL NOT EXERCISE IT
+		log = "[GetLogInfo]: event shx.powerstruggle.8 option shx.powerstruggle.8.fu.b"
+		name = shx.powerstruggle.8.fu.b
+		trigger = {
+			has_country_flag = SHX_shao_zhuang_victory_over_all
+		}
+		ai_chance = { base = 100 }
+		add_political_power = 100
+		add_stability = 0.2 #Yan gets a bit more stab since weaker generals
+		add_command_power = 50 #Yan has so few generals he'll definitely need this
+		SHX_shao_zhuang_army_purged = yes
 	}
 }
 country_event = {#再续旧盟
@@ -2720,6 +2780,89 @@ country_event = {#国民军残部抵达
 	option = {
 		name = shx.powerstruggle.12.a
 		add_political_power = -20
+	}
+}
+country_event = {#少壮派政变
+	id = shx.powerstruggle.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.powerstruggle.13" }
+	title = shx.powerstruggle.13.t
+	desc = shx.powerstruggle.13.d
+	picture = GFX_report_event_SHX_fu
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = shx.powerstruggle.13.a
+		set_cosmetic_tag = SHX_FU
+
+		promote_character = SHX_fu_zuoyi
+		promote_character = {
+			character = SHX_fu_zuoyi
+			ideology = authdem_yan_xishan_thought_subtype
+		}
+		add_political_power = 25
+		add_stability = 0.10
+		clr_country_flag = SHX_yan_feng_split
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.20
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = -0.10
+		}
+
+		add_country_leader_role = {
+			character = SHX_yang_hucheng
+			country_leader = {
+				ideology = authoritarian_democrat_subtype
+				desc = SHX_yang_hucheng_country_leader_desc
+			}
+			promote_leader = yes
+		}
+		add_pataut_to_coalition = yes
+
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = SHX_feng_victory_over_yan 
+						has_country_flag = SHX_yan_victory_over_gmj
+					} 
+				}
+				clr_country_flag = SHX_feng_victory_over_yan
+				clr_country_flag = SHX_yan_victory_over_gmj
+			}
+			set_country_flag = SHX_shao_zhuang_victory_over_all	
+
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = SHX_Feng_purpose
+						has_country_flag = SHX_Yan_purpose
+					} 
+				}
+				clr_country_flag = SHX_Feng_purpose
+				clr_country_flag = SHX_Yan_purpose
+			}
+
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = SHX_fu_authoritarian_democrat_party_long
+				name = SHX_fu_authoritarian_democrat_party
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				long_name = SHX_fu_paternal_autocrat_party_long
+				name = SHX_fu_paternal_autocrat_party
+			}
+
+			SHX = {
+				country_event = { id = shx.powerstruggle.5 days = 5 }
+				country_event = { id = shx.powerstruggle.8 days = 15 }
+			}
+		}
 	}
 }
 
@@ -3737,7 +3880,6 @@ country_event = {#山西提出向西北进军
 						is_in_faction_with = MON
 						is_in_faction_with = ETS
 						is_in_faction_with = SIK
-						is_in_faction_with = KUM
 					}
 				}
 			}
@@ -3764,10 +3906,6 @@ country_event = {#山西提出向西北进军
 		name = shx.QIE.aid.30.b #No he shall stay put.
 		ai_chance = {
 			base = 50
-			modifier = {
-				factor = 0
-				china_is_the_unifier_of_china_trigger = no
-			}
 		}
 		custom_effect_tooltip = SHX_QIE_reject_vanguard_plan_tt
 		hidden_effect = { SHX = { country_event = { id = shx.QIE.aid.32 days = 3 } } } #The Disappointed Watchman
@@ -4018,10 +4156,10 @@ country_event = {#和平的最后机会
 	}
 }
 country_event = {#和平的最后机会（介绍）
-	id = shx_zhifeng.5 
+	id = shx.zhifeng.5 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shx.zhifeng.5" }
-	title = shx_zhifeng.5.t
-	desc = shx_zhifeng.5.d
+	title = shx.zhifeng.5.t
+	desc = shx.zhifeng.5.d
 	picture = GFX_report_event_SHX_yan_coat
 
 	is_triggered_only = yes 
@@ -5918,7 +6056,6 @@ country_event = {#黄河战役
 					NOT = { is_character = SHX_shang_zhen }
 					NOT = { is_character = SHX_yan_xishan }
 				}
-				remove_army_chief_role = yes #Yan will be the only possible army chief, so may as well free them to become other MHC
 				demote_to_general = yes
 				set_nationality = QIE
 			}

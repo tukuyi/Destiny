@@ -61,6 +61,49 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		}
 	}
 
+	SHX_shao_zhuang_pai_zai_yun_dong = {#少壮派在运动
+		icon = GFX_decision_chinese_flag
+
+		allowed = {
+			always = no
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHX_special_coup_circumstances_shao_tooltip
+				has_defensive_war = yes
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_flag = SHX_feng_victory_over_yan
+				has_country_flag = SHX_yan_victory_over_gmj
+			}
+		}
+
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_shao_zhuang_pai_zai_yun_dong"
+			
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_shao_zhuang_pai_zai_yun_dong"
+			if = {
+				limit = {
+					check_variable = { SHX.SHX_revolution_line > 80 }
+				}
+				SHX_shao_zhuang_victory_effect = yes
+			}
+			else = {
+				SHX_revolution_all_time = yes
+				activate_mission = SHX_shao_zhuang_pai_zai_yun_dong
+			}
+		}
+	}
+
 	SHX_purge_the_gmj = {#清洗国民军
 		icon = GFX_decision_chinese_flag
 		visible = {
@@ -2194,17 +2237,17 @@ SHX_QIE_ties = {#在北京的阴影下
 					check_variable = { SHX.SHX_QIE_influence_variable < 10 }
 				}
 			}
-			modifier = {
-				add = 10000
-				has_country_flag = SHX_paying_with_inf #opposite of above - switch away from buying with influence if has anti beijing path
-				OR = {
-					AND = { #check if they have a non-QIE forpol rule set
-						NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
-						NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_QIE } }
-					}
-					has_game_rule = { rule = SHX_path option = SHX_PATH_AUTDEM }
-				}
-			}
+			# modifier = {
+			# 	add = 10000
+			# 	has_country_flag = SHX_paying_with_inf #opposite of above - switch away from buying with influence if has anti beijing path
+			# 	OR = {
+			# 		AND = { #check if they have a non-QIE forpol rule set
+			# 			NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
+			# 			NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_QIE } }
+			# 		}
+			# 		has_game_rule = { rule = SHX_path option = SHX_PATH_AUTDEM }
+			# 	}
+			# }
 		}
 		visible = {
 			SHX_QIE_influence_active = yes

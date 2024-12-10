@@ -192,6 +192,30 @@ SHX_strengthen_yan_large = {
 }
 
 #激进度改变
+SHX_revolution_all_time = {
+	random_list = {
+		30 = {
+			add_to_variable = {
+				var = SHX_revolution_line
+				value = 1
+			}
+		}
+		30 = {
+			add_to_variable = {
+				var = SHX_revolution_line
+				value = 2
+			}
+		}
+		30 = {
+			add_to_variable = {
+				var = SHX_revolution_line
+				value = 3
+			}
+		}
+	}
+	custom_effect_tooltip = SHX_revolution_all_time_tooltip
+}
+
 SHX_revolution_small = {
 	add_to_variable = {
 		var = SHX_revolution_line
@@ -311,6 +335,7 @@ SHX_yan_victory_effect = {#阎锡山大获全胜
 	add_stability = yan_distance_from_victory_temp_variable
 
 	remove_mission = SHX_looming_gmj_coup
+	remove_mission = SHX_shao_zhuang_pai_zai_yun_dong
 	remove_ideas = SHX_guominjun_unrest_idea
 	remove_power_balance = { id = SHX_power_balance }
 
@@ -342,6 +367,7 @@ SHX_feng_victory_effect = {#冯玉祥大获全胜
 	add_stability = feng_distance_from_victory_temp_variable
 
 	remove_mission = SHX_looming_gmj_coup
+	remove_mission = SHX_shao_zhuang_pai_zai_yun_dong
 	remove_ideas = SHX_guominjun_unrest_idea
 	remove_power_balance = { id = SHX_power_balance }
 
@@ -354,6 +380,31 @@ SHX_feng_victory_effect = {#冯玉祥大获全胜
 		log = "KR_Event_Logging;SHX Game Progression - Feng Yuxiang, Standard Path, Survived Independent;[GetDateText]"
 	}
 	mark_focus_tree_layout_dirty = yes 
+}
+SHX_shao_zhuang_victory_effect = {#少壮派胜出
+	set_temp_variable = { feng_distance_from_victory_temp_variable = power_balance_value } #Ranges from 0 to 1
+	#修改稳定度
+	if = {
+		limit = { SHX_yan_is_winning_trigger = yes }
+		divide_temp_variable = { feng_distance_from_victory_temp_variable = -2 } #Ranges now from 0 to -0.5
+	}
+	else_if = {
+		limit = { SHX_feng_is_winning_trigger = yes }
+		divide_temp_variable = { feng_distance_from_victory_temp_variable = 2 } #Ranges now from 0 to 0.5
+	}
+	else = {
+		set_temp_variable = { feng_distance_from_victory_temp_variable = -0.05 }
+	}
+	add_stability = feng_distance_from_victory_temp_variable
+
+	remove_mission = SHX_looming_gmj_coup
+	remove_mission = SHX_shao_zhuang_pai_zai_yun_dong
+	remove_ideas = SHX_guominjun_unrest_idea
+	remove_power_balance = { id = SHX_power_balance }
+
+	country_event = { id = shx.powerstruggle.13 days = 1 } #The Shanxi Government Toppled!
+
+	mark_focus_tree_layout_dirty = yes
 }
 
 #冯玉祥军队滚蛋
@@ -486,6 +537,122 @@ SHX_yan_army_purged = {
 			remove_unit_leader_role = yes
 		}
 	}
+}
+#冯玉祥、阎锡山军队一起滚蛋
+SHX_shao_zhuang_army_purged = {
+	#阎锡山
+		hidden_effect = {
+			608 = { #owner of Beijing
+				owner = {
+					if = {
+						limit = { is_chinese_tag = yes }
+						SHX = {
+							SHX_zhao_chengshou = {
+								demote_to_general = yes
+								set_nationality = PREV.PREV
+							}
+							SHX_wang_jingguo = {
+								demote_to_general = yes
+								set_nationality = PREV.PREV
+							}
+							SHX_yang_aiyuan = {
+								demote_to_general = yes
+								set_nationality = PREV.PREV
+							}
+						}
+						country_event = { id = shx.powerstruggle.10 days = 1 } #Exiles from Shanxi
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = characters_will_be_retired
+		character_list_tooltip = {
+			limit = {
+				is_character = SHX_zhu_shouguang
+			}
+		}
+		hidden_effect = {
+			retire_character = SHX_zhu_shouguang
+		}
+	#冯玉祥
+		hidden_effect = {
+			if = {
+				limit = { 
+					CHI = {
+						exists = yes
+					}
+				}
+				every_unit_leader = {
+					limit = { 
+						has_trait = SHX_gmj_officer 
+						NOT = { 
+							is_character = SHX_feng_yuxiang 
+							is_character = SHX_yang_hucheng 
+							is_character = SHX_han_fuju
+						}
+					}
+					demote_to_general = yes
+					set_nationality = CHI
+				}
+				CHI = {
+					country_event = {
+						id = shx.powerstruggle.12
+						days = 1
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					HNN = {
+						exists = yes
+						has_completed_focus = HNN_victory_of_the_united_front
+					}
+				}
+				every_unit_leader = {
+					limit = { 
+						has_trait = SHX_gmj_officer 
+						NOT = { 
+							is_character = SHX_feng_yuxiang 
+							is_character = SHX_yang_hucheng 
+							is_character = SHX_han_fuju
+						}
+					}
+					demote_to_general = yes
+					set_nationality = HNN
+				}
+				HNN = {
+					country_event = {
+						id = shx.powerstruggle.12
+						days = 1
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					GXC = {
+						GXC_has_KMT_government = yes
+					}
+				}
+				every_unit_leader = {
+					limit = { 
+						has_trait = SHX_gmj_officer 
+						NOT = { 
+							is_character = SHX_feng_yuxiang 
+							is_character = SHX_yang_hucheng 
+							is_character = SHX_han_fuju
+						}
+					}
+					demote_to_general = yes
+					set_nationality = GXC
+				}
+				GXC = {
+					country_event = {
+						id = shx.powerstruggle.12
+						days = 1
+					}
+				}
+			}	
+		}
 }
 
 ###- 北京 -###
@@ -983,7 +1150,7 @@ SHX_convert_flag_modifier = { #for use when SHX captured a state they flagged - 
 		limit = { has_dynamic_modifier = { modifier = SHX_war_plan_modifier } }
 		SHX = {
 			if = {
-				limit = { has_completed_focus = SHX_infilitration_tactics } #spawn divisions
+				limit = { has_completed_focus = SHX_shen_tou_zhan_shu } #spawn divisions
 				if = {
 					limit = {
 						NOT = { has_template = "Sacrifice League" } ##placeholder name based on 牺牲救国同盟会
@@ -1041,7 +1208,6 @@ SHX_vanguard_wargoals_effect = {
 	}
 	MON = { SHX_vanguard_claim_effect = yes }
 	TIB = { SHX_vanguard_claim_effect = yes }
-	KUM = { SHX_vanguard_claim_effect = yes }
 	SIK = { SHX_vanguard_claim_effect = yes }
 	ETS = { SHX_vanguard_claim_effect = yes }
 	XSM = { SHX_vanguard_claim_effect = yes }
@@ -1647,7 +1813,7 @@ SHX_manchu_coup_setup_effect = {
 	declare_war_on = {
 		target = QIE
 		type = take_claimed_state
-		generator = { 1072 615 }
+		generator = { 615 }
 	}
 	SHX_manchu_set_up_timer_effect = yes
 	hidden_effect = { news_event = SHX.manchu.11 } #The Central Plains War
@@ -1856,18 +2022,18 @@ SHX_manchu_peace_effect = {
 	if = {
 		limit = { 
 			QIE = { 
+				controls_state = 1015 
+			} 
+		} 
+		1015 = { SHX_manchu_state_transfer_effect = yes }
+	}
+	if = {
+		limit = { 
+			QIE = { 
 				controls_state = 1072 
 			} 
 		} #Western Shanxi - starts off in SHX ownership
 		1072 = { SHX_manchu_state_transfer_effect = yes }
-		if = {
-			limit = { 
-				QIE = { 
-					controls_state = 1015 
-				} 
-			} 
-			1015 = { SHX_manchu_state_transfer_effect = yes }
-		}
 	}
 	else_if = {
 		limit = { SHX = { controls_state = 615 } } #Eastern Shanxi - Starts off in QIE ownership

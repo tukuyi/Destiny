@@ -21,6 +21,11 @@ focus_tree = {
 		x = 20
 		y = 0
 
+		select_effect = {
+			log = "[GetDateText]: [Root.GetName]: Select Focus QIE_purge_zhili"
+			country_event = { id = qiecoup.30 days = 1 }
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_purge_zhili"
 			add_popularity = {

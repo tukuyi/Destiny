@@ -88,6 +88,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/pataut_yan_xishan_thought.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_authdem_yan_xishan_thought_subtype"
+		texturefile = "gfx/ideologies/subideologies/authdem_yan_xishan_thought.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_Yiguandao_subtype"
 		texturefile = "gfx/ideologies/subideologies/Yiguandao.png"
 	}

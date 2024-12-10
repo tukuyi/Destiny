@@ -146,56 +146,6 @@ country_event = {
 	random = 4320
 }
 
-create_country_leader = {
-	name = "傅斯年"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Fu_Sinian.png"
-	expire = "1.1.1"
-	ideology = socdem_warlordism_subtype
-}
-create_country_leader = {
-	name = "张树林"
-	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
-	expire = "1.1.1"
-	ideology = soclib_warlordism_subtype
-}
-create_country_leader = {
-	name = "马士威"
-	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
-	expire = "1.1.1"
-	ideology = marlib_warlordism_subtype
-}
-create_country_leader = {
-	name = "屈映光"
-	desc = "POLITICS_QU_YINGUANG_DESC"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
-	expire = "1.1.1"
-	ideology = neo_confucianism_subtype
-}
-create_country_leader = {
-	name = "张宗昌"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
-	expire = "1.1.1"
-	ideology = authdem_warlordism_subtype
-}
-promote_character = {
-	character = SQI_jin_yune
-	ideology = pataut_oligarchy_subtype
-}
-# create_country_leader = {
-# 	name = "张宗昌"
-# 	desc = "POLITICS_ZHANG_ZONGCHANG_DESC"
-# 	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang.png"
-# 	expire = "1.1.1"
-# 	ideology = kleptocracy_subtype
-# }
-create_country_leader = {
-	name = "张天然"
-	desc = "POLITICS_ZHANG_TIANRAN_DESC"
-	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
-	expire = "1.1.1"
-	ideology = Yiguandao_subtype
-}
-
 # create_field_marshal = {
 # 	name = "李景林"
 # 	id = 1305
@@ -333,4 +283,54 @@ create_navy_leader = {
 	coordination_skill = 1
 
 	id = 1303
+}
+
+create_country_leader = {
+	name = "傅斯年"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Fu_Sinian.png"
+	expire = "1.1.1"
+	ideology = socdem_warlordism_subtype
+}
+create_country_leader = {
+	name = "张树林"
+	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
+	expire = "1.1.1"
+	ideology = soclib_warlordism_subtype
+}
+create_country_leader = {
+	name = "马士威"
+	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
+	expire = "1.1.1"
+	ideology = marlib_warlordism_subtype
+}
+create_country_leader = {
+	name = "屈映光"
+	desc = "POLITICS_QU_YINGUANG_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
+	expire = "1.1.1"
+	ideology = neo_confucianism_subtype
+}
+create_country_leader = {
+	name = "张宗昌"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Qu_Yingguang.png"
+	expire = "1.1.1"
+	ideology = authdem_warlordism_subtype
+}
+promote_character = {
+	character = SQI_jin_yune
+	ideology = pataut_oligarchy_subtype
+}
+# create_country_leader = {
+# 	name = "张宗昌"
+# 	desc = "POLITICS_ZHANG_ZONGCHANG_DESC"
+# 	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang.png"
+# 	expire = "1.1.1"
+# 	ideology = kleptocracy_subtype
+# }
+create_country_leader = {
+	name = "张天然"
+	desc = "POLITICS_ZHANG_TIANRAN_DESC"
+	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
+	expire = "1.1.1"
+	ideology = Yiguandao_subtype
 }
