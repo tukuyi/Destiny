@@ -1,6 +1,6 @@
 SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 	SHX_looming_gmj_coup = {#国民军预备谋反
-		icon = GFX_decision_lkmt_flag 
+		icon = GFX_decision_SHX_GMJ_flag 
 
 		allowed = {
 			always = no

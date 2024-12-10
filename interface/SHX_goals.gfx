@@ -227,4 +227,16 @@ SpriteTypes = {
 		name = "GFX_goal_SHX_xian_dai_hua_mo_fan"
 		texturefile = "gfx/interface/goals/SHX_xian_dai_hua_mo_fan.png"
 	}
+	spriteType = {
+		name = "GFX_goal_SHX_min_zhu_sheng_fu"
+		texturefile = "gfx/interface/goals/SHX_min_zhu_sheng_fu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_si_you_jiao_yu"
+		texturefile = "gfx/interface/goals/SHX_si_you_jiao_yu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_tui_dong_yi_yuan_zhi_xuan"
+		texturefile = "gfx/interface/goals/SHX_tui_dong_yi_yuan_zhi_xuan.png"
+	}
 }

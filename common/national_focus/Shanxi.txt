@@ -3620,7 +3620,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_si_you_jiao_yu
-		icon = GFX_goal_SHX_feng_yu_xiang
+		icon = GFX_goal_SHX_si_you_jiao_yu
 		relative_position_id = SHX_shao_zhuang_pai_shang_tai
 		x = 0
 		y = 4
@@ -3649,7 +3649,7 @@ focus_tree = {
 	
 	focus = {
 		id = SHX_tui_dong_yi_yuan_zhi_xuan
-		icon = GFX_goal_SHX_feng_yu_xiang
+		icon = GFX_goal_SHX_tui_dong_yi_yuan_zhi_xuan
 		relative_position_id = SHX_shao_zhuang_pai_shang_tai
 		x = -2
 		y = 4
@@ -3707,7 +3707,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_min_zhu_sheng_fu
-		icon = GFX_goal_SHX_feng_yu_xiang
+		icon = GFX_goal_SHX_min_zhu_sheng_fu
 		relative_position_id = SHX_shao_zhuang_pai_shang_tai
 		x = 0
 		y = 5
@@ -3765,7 +3765,7 @@ focus_tree = {
 
 	focus = {
 		id = SHX_ru_xue_xian_dai_hua
-		icon = GFX_goal_SHX_feng_yu_xiang
+		icon = GFX_goal_SHX_tui_xing_ru_jia_si_xiang
 		relative_position_id = SHX_shao_zhuang_pai_shang_tai
 		x = -1
 		y = 7
