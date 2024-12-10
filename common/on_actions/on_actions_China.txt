@@ -884,6 +884,16 @@ on_actions = {
 				country_event = { id = sichuan.276 hours = 8 random_hours = 16 }
 			}
 			
+			# SHX-QIE Manchu Coup Central Plains War Fall of Yulin
+			if = {
+				limit = {
+					tag = QIE
+					has_idea = QIE_zhili_manchu_war_idea
+					FROM.FROM = { state = 799 } #Yulin
+				}
+				SHX = { country_event = { id = SHX.manchu.10 days = 3 } } #Give SHX a grace period to recapture it
+			}
+
 			if = {#山西战争计划修改器 - 对占领州给予奖励
 				limit = { tag = SHX }
 				if = {

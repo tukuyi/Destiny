@@ -4490,7 +4490,73 @@ country_event = { #gea/ger informed of anti-concession stance following coup
 	}
 }
 
+country_event = { #Beijing looks weak
+	id = qiefor.90
+	title = qiefor.90.t
+	desc = qiefor.90.d
+	picture = GFX_report_event_FNG_shanhaiguan
 
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #This defeat is the gateway to many victories
+		log = "[GetLogInfo]: event qiefor.90 option qiefor.90.a"
+		name = qiefor.90.a
+		transfer_state = 1068 #Qinhuangdao
+		hidden_effect = {
+			QIE = { country_event = { id = qiefor.91 hours = 1 } }
+		}
+	}
+}
+country_event = { #We look weak
+	id = qiefor.91
+	title = qiefor.91.t
+	desc = qiefor.91.d
+	picture = GFX_report_event_FNG_shanhaiguan
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Humiliating
+		log = "[GetLogInfo]: event qiefor.91 option qiefor.91.a"
+		name = qiefor.91.a
+		effect_tooltip = { 1068 = { transfer_state_to = FNG } } #Qinhuangdao
+	}
+}
+
+country_event = { #The Bridge on the River Dai
+	id = qiefor.92
+	title = qiefor.92.t
+	desc = qiefor.92.d
+	picture = GFX_report_event_generic_beijing_map
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #This defeat is the gateway to many victories
+		log = "[GetLogInfo]: event qiefor.92 option qiefor.92.a"
+		name = qiefor.92.a
+		transfer_state = 614 #Tangshan
+		hidden_effect = {
+			QIE = { country_event = { id = qiefor.93 hours = 1 } }
+		}
+	}
+}
+country_event = { #Beijing in Peril!
+	id = qiefor.93
+	title = qiefor.93.t
+	desc = qiefor.93.d
+	picture = GFX_report_event_generic_beijing_map
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Humiliating
+		log = "[GetLogInfo]: event qiefor.93 option qiefor.93.a"
+		name = qiefor.93.a
+		effect_tooltip = { 614 = { transfer_state_to = FNG } } #Qinhuangdao
+	}
+}
 
 #RESERVED FOR ANQING UP UNTIL .100
 
@@ -6068,6 +6134,12 @@ country_event = {
 				days = 3
 			}
 		}
+		SHX = {
+			country_event = { 
+				id = SHX.manchu.1 
+				days = 1 
+			}
+		}
 	}
 }
 
@@ -6475,6 +6547,9 @@ country_event = {
 				id = qiecoup.13
 				days = 1
 			}
+			SHX = { 
+				country_event = SHX.manchu.6 
+			} #Inform them of the Plot's Failure
 		}
 		create_wargoal = {
 			target = SHX
@@ -6608,14 +6683,24 @@ country_event = {
 			set_country_flag = on_our_own_militarily
 			#kill_ideology_leader = paternal_autocrat
 			create_country_leader = {
-				name = "Jiang Baili"
+				name = "蒋百里"
 				desc = "QIE_JIANG_BAILI_ARMY_DESC"
 				picture = "gfx/leaders/QIE/Portrait_QIE_Jiang_Baili.png"
 				expire = "1.1.1"
 				ideology = pataut_warlordism_subtype
 			}
+			if = {
+				limit = { has_country_flag = QIE_yan_backs_coup }
+				SHX = { 
+					country_event = { 
+						id = SHX.manchu.2 
+						days = 7 
+					} 
+				} #The Invasion Begins, will show for both QIE and SHX
+			}
 		}
 	}
+
 	option = { #政变失败
 		name = qiecoup.21.b
 		ai_chance = {
@@ -6632,6 +6717,7 @@ country_event = {
 			country_event = qiecoup.24
 		}
 	}
+
 	option = { #无人生还
 		name = qiecoup.21.c
 		ai_chance = {
@@ -6965,6 +7051,9 @@ country_event = {
 			create_wargoal = {
 				target = SHX
 				type = annex_everything
+			}
+			SHX = {
+				country_event = { id = SHX.manchu.6 days = 1 } #Inform them of the Plot's Failure
 			}
 		}
 		else_if = {

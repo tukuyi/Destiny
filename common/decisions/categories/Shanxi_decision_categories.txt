@@ -80,3 +80,18 @@ SHX_northwest_decision_category = {#狂野西北
 		}
 	}
 }
+
+SHX_Foreign_Policy_decisions = {#中原大战
+	icon = GFX_decision_category_patriotic
+	priority = 800
+	visible_when_empty = no
+	allowed = {
+		QIE = { has_idea = QIE_zhili_manchu_war_idea }
+		# SHX = {
+		# 	OR = {
+		# 		has_completed_focus = SHX_from_china_to_world
+		# 		has_completed_focus = SHX_statesman
+		# 	}
+		# }
+	}
+}

@@ -17,6 +17,7 @@ add_namespace = shx.powerstruggle
 add_namespace = shx.QIE.aid
 add_namespace = shx.suiyuan.campaign
 add_namespace = shx.endgame
+add_namespace = SHX.manchu
 add_namespace = shx_mission_tick
 
 ########################################
@@ -5785,6 +5786,556 @@ country_event = {#家乡远在天边，胜利近在眼前
 			limit = { has_idea = SHX_strict_neutrality1 }
 			remove_ideas = SHX_strict_neutrality1
 		}
+	}
+}
+
+########################################
+########-       宣统维新      -#########
+########################################
+country_event = {#宣统维新
+	id = SHX.manchu.1 #Yan tells Feng to cool it, we're gonna beat up QIE
+	title = SHX.manchu.1.t
+	desc = SHX.manchu.1.d
+	picture = GFX_report_event_SHX_feng_and_yan_2
+
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.1 option SHX.manchu.1.a"
+		name = SHX.manchu.1.a #definitely not double dealing
+		remove_mission = SHX_looming_gmj_coup
+		remove_ideas = SHX_guominjun_unrest_idea
+		remove_power_balance = { id = SHX_power_balance }
+		add_stability = 0.15
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {#西安陷落
+	id = SHX.manchu.2 #The Siege of Xi'an (the Invasion Begins)
+	title = SHX.manchu.2.t
+	desc = SHX.manchu.2.d
+	picture = GFX_report_event_SHX_feng_looking_in_telescope
+
+	is_triggered_only = yes #Fires for both QIE and SHX after the death of Wu Peifu and Cao Kun
+
+	major = yes
+	show_major = {
+		OR = {
+			tag = QIE
+			tag = SHX
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.2 option SHX.manchu.2.a"
+		name = SHX.manchu.2.a #This is our chance
+		trigger = { tag = SHX }
+		transfer_state = 799 #Guanzhong (Xi'an)
+		add_state_core = 799 #Guanzhong (Xi'an)
+		799 = { set_demilitarized_zone = no } #Xi'an
+		if = {
+			limit = { NOT = { has_template = "Guomindang Minbing" } }
+			division_template = {
+				name = "Guomindang Minbing" #KMT Militia
+				division_names_group = CHYN_MIL_01
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+				}
+			}
+		}
+		799 = {
+			teleport_armies = {
+				limit = { tag = QIE }
+				to_state = 607 #Every QIE division in Xi'an goes to Luoyang
+			}
+			create_unit = {
+				division = "name = \"Xi'an County Farmers' Militia\" division_template = \"Guomindang Minbing\" start_experience_factor = 0.60"
+				owner = SHX
+			}
+			create_unit = {
+				division = "name = \"Shaanxi Garrison Defectors\" division_template = \"Guomindang Minbing\" start_experience_factor = 0.60"
+				owner = SHX
+			}
+		}
+
+		hidden_effect = {
+			every_owned_state = {
+				teleport_armies = {
+					limit = { tag = QIE }
+					to_state = 615 #Every other QIE division in SHX territory goes to East Shanxi
+				}
+			}
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.2 option SHX.manchu.2.b"
+		name = SHX.manchu.2.b #We held up our end, they better do the same
+		trigger = { tag = QIE }
+	}
+}
+country_event = {#黄河战役
+	id = SHX.manchu.3 #The Yellow River Campaign
+	title = SHX.manchu.3.t
+	desc = SHX.manchu.3.d
+	picture = GFX_report_event_SHX_yan_uniform
+
+	is_triggered_only = yes #Fires for both QIE and SHX after QIE's Push to the Yellow River Decision is Complete
+
+	major = yes
+	show_major = {
+		OR = {
+			tag = QIE
+			tag = SHX
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.3 option SHX.manchu.3.a"
+		name = SHX.manchu.3.a #Forward to the end of the Zhili!
+		trigger = { tag = SHX }
+		delete_unit_template_and_units = { division_template = "Xiang Jun" }
+		delete_unit_template_and_units = { division_template = "Bubing Shi" }
+		delete_unit_template_and_units = { division_template = "Shandi Shi" }
+		delete_unit_template_and_units = { division_template = "Qibing Shi" }
+	}
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.3 option SHX.manchu.3.b"
+		name = SHX.manchu.3.b #An excellent performance by Grand Marshal Yan
+		trigger = { tag = QIE }
+
+		SHX = {
+			SHX_zhu_shouguang = { set_nationality = QIE }
+
+			every_unit_leader = {
+				limit = {
+					has_trait = SHX_yan_loyalist
+					NOT = { is_character = SHX_shang_zhen }
+					NOT = { is_character = SHX_yan_xishan }
+				}
+				remove_army_chief_role = yes #Yan will be the only possible army chief, so may as well free them to become other MHC
+				demote_to_general = yes
+				set_nationality = QIE
+			}
+		}
+		hidden_effect = { #Make sure QIE has mountaineers so divisions aren't useless
+			if = {
+				limit = { NOT = { has_tech = tech_mountaineers } }
+				set_technology = { tech_mountaineers = 1 }
+			}
+		}
+		if = {
+			limit = { NOT = { has_template = "Shanxi Xiang Jun" } }
+			division_template = {
+				name = "Shanxi Xiang Jun"
+				division_names_group = CHYN_MIL_01
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_template = "Shanxi Bubing Shi" } }
+			division_template = {
+				name = "Shanxi Bubing Shi"
+				division_names_group = CHYN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_template = "Shanxi Shandi Shi" } }
+			division_template = {
+				name = "Shanxi Shandi Shi"
+				division_names_group = CHYN_MTN_01
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_template = "Shanxi Qibing Shi" } }
+			division_template = {
+				name = "Shanxi Qibing Shi"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+				}
+			}
+		}
+
+		#Spawned divisions have decreased equipment but increase in experience
+		1060 = {
+			create_unit = {
+				prioritize_location = 1139
+				division = "name = \"Dì shíyī hunchéng lü\" division_template = \"Shanxi Shandi Shi\" start_experience_factor = 0.35 start_equipment_factor = 0.90 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+			create_unit = {
+				prioritize_location = 4606
+				division = "name = \"Dì èr lü\" division_template = \"Shanxi Bubing Shi\" start_experience_factor = 0.20 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+			create_unit = {
+				prioritize_location = 4144
+				division = "name = \"Dì jiǔ/dì shí xùn liàn lü\" division_template = \"Shanxi Xiang Jun\" start_experience_factor = 0.15 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+		}
+		1061 = {
+			create_unit = {
+				prioritize_location = 1169
+				division = "name = \"Dì qī/dì bā hunchéng lü\" division_template = \"Shanxi Xiang Jun\" start_experience_factor = 0.15 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+			create_unit = {
+				prioritize_location = 1188
+				division = "name = \"Dì wu/dì liù hunchéng lü\" division_template = \"Shanxi Xiang Jun\" start_experience_factor = 0.15 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+		}
+		1062 = {
+			create_unit = {
+				prioritize_location = 4190
+				division = "name = \"Shānxī Xiàn Bīng\" division_template = \"Shanxi Xiang Jun\" start_experience_factor = 0.25 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+			create_unit = {
+				prioritize_location = 7109
+				division = "name = \"Dì yī lü\" division_template = \"Shanxi Bubing Shi\" start_experience_factor = 0.20 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+		}
+		608 = {
+			create_unit = {
+				prioritize_location = 12026
+				division = "name = \"Dì sān/dì sì hunchéng lü\" division_template = \"Shanxi Qibing Shi\" start_experience_factor = 0.25 start_equipment_factor = 0.75 start_manpower_factor = 0.90"
+				owner = QIE
+			}
+		}
+	}
+}
+country_event = {#中原同盟崩溃！
+	id = SHX.manchu.4 #The Alliance Collapses!
+	title = SHX.manchu.4.t
+	desc = SHX.manchu.4.d
+	picture = GFX_report_event_SHX_feng_soldiers
+
+	is_triggered_only = yes #Fires for both QIE and SHX after QIE's Assault on Luoyang Decision is Complete
+
+	#Don't treat this as a major event because it seems like tag switch breaks.
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { tag = SHX }
+				clr_country_flag = SHX_yan_feng_split
+				set_country_flag = SHX_feng_victory_over_yan
+				set_country_flag = SHX_feng_manchu_coup_outcome_flag
+				log = "KR_Event_Logging;SHX Game Progression - Feng Yuxiang, Manchu Coup, Survived Independent;[GetDateText]"
+				clr_country_flag = SHX_Yan_purpose
+				set_country_flag = SHX_Feng_purpose
+				set_politics = {
+					ruling_party = authoritarian_democrat
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = paternal_autocrat
+					popularity = -0.20
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.04
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.01
+				}
+				set_country_leader_description = {
+					ideology = authoritarian_democrat
+					desc = SHX_feng_yuxiang_victory_leader_desc
+				}
+				add_war_support = 0.75 #Need to make up for -30% from strict neutrality and -20% from offensive war. Should add up to 25% War support which is enough for conscription.
+				add_political_power = 200
+			}
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.4 option SHX.manchu.4.a"
+		name = SHX.manchu.4.a #Feng Yuxiang will complete the revolution!
+		trigger = { tag = SHX }
+		SHX_manchu_coup_setup_effect = yes
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.4 option SHX.manchu.4.b"
+		name = SHX.manchu.4.b #Yan Xishan will save China! (Tag Switch)
+		trigger = {
+			tag = SHX
+			is_ai = no
+		}
+		SHX_manchu_coup_setup_effect = yes
+		QIE = { change_tag_from = ROOT }
+	}
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.4 option SHX.manchu.4.c"
+		name = SHX.manchu.4.c #A New Imperial Commisioner Rises!
+		trigger = { tag = QIE }
+		effect_tooltip = { SHX_manchu_set_up_timer_effect = yes }
+		custom_effect_tooltip = QIE_fear_fengtian
+	}
+}
+country_event = {#中原休战！
+	id = SHX.manchu.5 #Ceasefire in the Central Plains!
+	title = SHX.manchu.5.t
+	desc = SHX.manchu.5.d
+	picture = GFX_report_event_SHX_guominjun_cavalry
+
+	major = yes
+	show_major = {
+		OR = {
+			tag = QIE
+			tag = SHX
+		}
+	}
+
+	is_triggered_only = yes #Triggered by end of SHX-QIE war exhaustion mission
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.5 option SHX.manchu.5.a"
+		name = SHX.manchu.5.a
+		trigger = { tag = QIE }
+		SHX_manchu_peace_effect = yes
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.5 option SHX.manchu.5.b"
+		name = SHX.manchu.5.b
+		trigger = { tag = SHX }
+		effect_tooltip = { SHX_manchu_peace_effect = yes }
+		hidden_effect = {
+			country_event = { id = SHX.manchu.9 days = 7 }
+		}
+	}
+}
+country_event = {#中原大战爆发！
+	id = SHX.manchu.6 
+	title = SHX.manchu.6.t
+	desc = SHX.manchu.6.d
+	picture = GFX_report_event_SHX_yan_troops
+
+	is_triggered_only = yes #Triggered only for SHX when they are fighting QIE if Manchu coup fails
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.6 option SHX.manchu.6.a"
+		name = SHX.manchu.6.a #Our Gambit Failed...
+		clr_country_flag = SHX_yan_feng_split
+		set_country_flag = SHX_yan_victory_over_gmj
+		add_command_power = 100
+		add_political_power = 200
+		add_war_support = 0.75 #Need to make up for -30% from strict neutrality and -20% from offensive war. Should add up to 25% War support which is enough for conscription.
+		SHX_convert_influence_to_war_support_effect = yes
+		SHX_remove_qie_econ = yes
+		complete_national_focus = SHX_destiny
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_dual_armies2
+		}
+		custom_effect_tooltip = SHX_will_make_regional_army_easier_tt
+		set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+		add_to_coalition = yes
+		unlock_national_focus = SHX_he_bian_liang_jun
+	}
+}
+country_event = {#临时省会
+	id = SHX.manchu.7 #An Emergency Capital
+	title = SHX.manchu.7.t
+	desc = SHX.manchu.7.d
+	picture = GFX_report_event_SHX_feng
+
+	is_triggered_only = yes #Triggered only for SHX when they are fighting QIE if Manchu coup succeeds
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.7 option SHX.manchu.7.a"
+		name = SHX.manchu.7.a #We stay in Yan'an
+		622 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = 0.05
+		add_command_power = 50
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.7 option SHX.manchu.7.b"
+		name = SHX.manchu.7.b #We move to Xi'an
+		trigger = {
+			799 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+			}
+		}
+		set_capital = { state = 799 } #Guanzhong
+		799 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_war_support = 0.05
+		add_political_power = 50
+	}
+}
+country_event = {#临时首都
+	id = SHX.manchu.9 
+	title = SHX.manchu.9.t
+	desc = SHX.manchu.9.d
+	picture = GFX_report_event_SHX_taiyuan_shouyi_gate
+
+	is_triggered_only = yes #Triggered for Shanxi after they finish Central Plains war
+
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.9 option SHX.manchu.9.a"
+		name = SHX.manchu.9.a #To the safety of Yan'an
+		trigger = {
+			622 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+			}
+		}
+		ai_chance = { base = 20 }
+		set_capital = { state = 622 } #Yulin
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.9 option SHX.manchu.9.b"
+		name = SHX.manchu.9.b #We move to Xi'an
+		trigger = {
+			799 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+			}
+		}
+		ai_chance = { base = 25 }
+		set_capital = { state = 799 } #Guanzhong
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.9 option SHX.manchu.9.c"
+		name = SHX.manchu.9.c #We move to Taiyuan
+		ai_chance = { base = 25 }
+		trigger = {
+			1072 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+			}
+		}
+		set_capital = { state = 1072 } #Western Shanxi
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.9 option SHX.manchu.9.e"
+		name = SHX.manchu.9.e #We move to Luoyang
+		trigger = {
+			607 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+			}
+		}
+		ai_chance = { base = 5 }
+		set_capital = { state = 607 } #Heluo
+	}
+	option = {
+		log = "[GetLogInfo]: event SHX.manchu.9 option SHX.manchu.9.f"
+		name = SHX.manchu.9.f #We'll stay put
+		ai_chance = { base = 25 }
+		add_stability = 0.10
+	}
+}
+country_event = {#延安陷落
+	id = SHX.manchu.10 
+	title = SHX.manchu.10.t
+	desc = {
+		text = SHX.manchu.10.d.yulincapital
+		trigger = { 799 = { is_capital = yes } }
+	}
+	desc = {
+		text = SHX.manchu.10.d.yulinnotcapital
+		trigger = { 799 = { is_capital = no } }
+	}
+	picture = GFX_report_event_YUN_intellectuals
+	is_triggered_only = yes
+	trigger = { NOT = { owns_state = 799 } } #Yulin. Gives SHX a grace period to recapture it
+
+	option = { #A catastrophe!
+		log = "[GetLogInfo]: event SHX.manchu.10 option SHX.manchu.10.a"
+		name = SHX.manchu.10.a
+		if = {
+			limit = { 799 = { is_capital = yes } }
+			add_stability = -0.25
+			add_war_support = -0.25
+		}
+		else = {
+			add_stability = -0.10
+			add_war_support = -0.10
+		}
+		if = {
+			limit = { has_idea = SHX_central_plains_war_idea }
+			remove_ideas = SHX_central_plains_war_idea
+		}
+	}
+}
+news_event = {#中原大战
+	id = SHX.manchu.11 #The Central Plains War!
+	immediate = { log = "[GetLogInfo]: event SHX.manchu.11" }
+	title = SHX.manchu.11.t
+	desc = SHX.manchu.11.d
+	picture = GFX_news_event_SHX_central_plains_war
+
+	is_triggered_only = yes #Triggered by effect SHX_manchu_coup_setup_effect
+	major = yes
+	fire_for_sender = no
+	show_major = {
+		NOT = {
+			tag = QIE
+			tag = SHX
+		}
+	}
+
+	option = { #Two strongmen face off.
+		name = SHX.manchu.11.a
+		trigger = { is_tag_in_china_area = no }
+	}
+	option = { #We need just one more slip.
+		name = SHX.manchu.11.b
+		trigger = { is_tag_in_china_area = yes }
 	}
 }
 

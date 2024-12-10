@@ -4517,7 +4517,145 @@ QIE_anqing_diplomacy_decisions_category = {
 
 
 #zhili_manchu_war
-QIE_zhili_manchu_war_decisions_category = {
+QIE_zhili_manchu_war_decisions_category = {#向南进军
+	QIE_eyes_on_the_border = {#守望边境
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no }
+
+		highlight_states = {
+			highlight_state_targets = { state = 611 state = 614 state = 608 state = 1062 state = 1063 state = 1068 }
+		}
+
+		available = {
+			num_divisions_in_states = {
+				count < 10
+				states = { 611 614 608 1062 1063 1068 }
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { has_idea = QIE_zhili_manchu_war_idea }
+				NOT = { country_exists = FNG }
+				has_war_with = FNG
+			}
+		}
+
+		is_good = yes
+		days_mission_timeout = 150 #Approximately the amount of time needed for everything to happen
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete QIE_eyes_on_the_border"
+			activate_mission = QIE_fangs_on_the_border
+			hidden_effect = {
+				if = {
+					limit = { QIE = { owns_state = 1068 } } #Qinhuangdao - 5+3x15 = 50 days. Added with the slight delay (around 5 days) it should be barely possible for QIE to start an early war with Fengtian.
+					add_days_mission_timeout = {
+						mission = QIE_fangs_on_the_border
+						days = 5
+					}
+				}
+			}
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout QIE_eyes_on_the_border"
+			activate_mission = QIE_eyes_on_the_border
+		}
+	}
+
+	QIE_fangs_on_the_border = {#边境上的獠牙
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no }
+
+		highlight_states = {
+			highlight_state_targets = { state = 611 state = 614 state = 608 state = 1062 state = 1063 state = 1068 }
+		}
+
+		available = {
+			num_divisions_in_states = {
+				count > 9
+				states = { 611 614 608 1062 1063 1068 }
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { has_war_with = SHX }
+				NOT = { country_exists = FNG }
+				has_war_with = FNG
+			}
+		}
+
+		is_good = yes
+		days_mission_timeout = 15 #Central Plains War lasts for 60 days, so basically impossible for the Ai to cause a war. The player still can if they choose not to guard the border from day 1.
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete QIE_fangs_on_the_border"
+			activate_mission = QIE_eyes_on_the_border
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout QIE_fangs_on_the_border"
+			if = {
+				limit = { QIE = { owns_state = 1068 } } #Qinhuangdao
+				FNG = { country_event = qiefor.90 }
+				if = {
+					limit = { QIE = { has_war_with = SHX } }
+					activate_mission = QIE_eyes_on_the_border
+				}
+			}
+			else_if = {
+				limit = { QIE = { owns_state = 614 } } #Tangshan
+				FNG = { country_event = qiefor.92 }
+				if = {
+					limit = { QIE = { has_war_with = SHX } }
+					activate_mission = QIE_eyes_on_the_border
+				}
+			}
+			else = {
+				FNG = {
+					complete_national_focus = FNG_Begin_the_War_of_National_Reclamation
+					effect_tooltip = {
+						create_wargoal = {
+							target = QIE
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+	}
+
+	QIE_SHX_intervention = {#中原大战
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no }
+
+		available = {
+			NOT = { country_exists = SHX }
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { has_war_with = SHX }
+				has_war_with = FNG
+			}
+		}
+
+		days_mission_timeout = 60
+		is_good = no
+
+		selectable_mission = no
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout QIE_SHX_intervention"
+			QIE = { country_event = SHX.manchu.5 }
+		}
+	}
+
 	QIE_push_to_yellow_river = {
 		icon = generic_prepare_civil_war
 		highlight_states = {
@@ -4553,11 +4691,15 @@ QIE_zhili_manchu_war_decisions_category = {
 			}
 			hidden_effect = {
 				country_event = { id = qiecoup.25 }
+				if = {
+					limit = { has_country_flag = QIE_yan_backs_coup }
+					country_event = SHX.manchu.3
+				}
 			}
 		}
 	}
 
-	QIE_assault_luoyang = { #607 heluo
+	QIE_assault_luoyang = { #袭击洛阳
 		icon = generic_prepare_civil_war
 		available = {
 			1063 = { is_demilitarized_zone = no }
@@ -4589,6 +4731,18 @@ QIE_zhili_manchu_war_decisions_category = {
 			add_popularity = {
 				ideology = authoritarian_democrat
 				popularity = -0.10
+			}
+			if = {
+				limit = { has_country_flag = QIE_yan_backs_coup }
+				country_event = SHX.manchu.4
+				hidden_effect = { 
+					SHX = { 
+						country_event = { 
+							id = SHX.manchu.4 
+							hours = 23 
+						} 
+					} 
+				}
 			}
 			hidden_effect = {
 				country_event = { id = qiecoup.26 }

@@ -5227,3 +5227,38 @@ SHX_northwest_decision_category = {#狂野西北
 		}
 	}
 }
+
+SHX_Foreign_Policy_decisions = {#中原大战
+	QIE_SHX_intervention_visual_only = {#中原大战
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no }
+
+		available = {
+			QIE = { exists = no }
+		}
+
+		cancel_trigger = {
+			QIE = {
+				OR = {
+					NOT = { has_war_with = SHX }
+					has_war_with = FNG
+				}
+			}
+		}
+
+		days_mission_timeout = 60
+		is_good = no
+
+		selectable_mission = no
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout QIE_SHX_intervention_visual_only"
+			#no logging here - this mission is only meant to give a player information
+			effect_tooltip = {
+				custom_effect_tooltip = SHX_feng_beating_yan_out
+				country_event = SHX.manchu.5
+			}
+		}
+	}
+}

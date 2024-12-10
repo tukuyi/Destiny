@@ -489,7 +489,7 @@ SHX_yan_army_purged = {
 }
 
 ###- 北京 -###
-SHX_convert_influence_to_war_support_effect = {
+SHX_convert_influence_to_war_support_effect = {#移除北京的影响力
 	custom_effect_tooltip = SHX_convert_inf_to_ws_tooltip
 	set_temp_variable = { SHX_War_Support = SHX_QIE_influence_variable }
 	divide_temp_variable = { SHX_War_Support = 100 }
@@ -1631,5 +1631,311 @@ SHX_lategame_transform_agriculture_spirits_effect = {
 	if = {
 		limit = { has_idea = SHX_agriculture_reform_Feng }
 		remove_ideas = SHX_agriculture_reform_Feng
+	}
+}
+
+#########################
+####- Manchu Coup - #####
+#########################
+SHX_manchu_coup_setup_effect = {
+	SHX_manchu_set_up_starting_positions_effect = yes
+	SHX_manchu_gmj_leadership_activation = yes
+	SHX_convert_influence_to_war_support_effect = yes
+	SHX_remove_qie_econ = yes
+	complete_national_focus = SHX_destiny
+	add_command_power = 100
+	declare_war_on = {
+		target = QIE
+		type = take_claimed_state
+		generator = { 1072 615 }
+	}
+	SHX_manchu_set_up_timer_effect = yes
+	hidden_effect = { news_event = SHX.manchu.11 } #The Central Plains War
+}
+
+SHX_manchu_set_up_starting_positions_effect = {
+	hidden_effect = {
+		QIE = {
+			remove_opinion_modifier = {
+				target = SHX
+				modifier = KR_friendly
+			}
+			set_province_controller = 1962
+			if = {
+				limit = { NOT = { has_template = "Fangong Baoweituan" } }
+				division_template = {
+					name = "Fangong Baoweituan" #PLACEHOLDER - historically it was the Anti-Communist Militia - might want to look up "Anti-Socialist"
+					division_names_group = CHYN_MIL_01
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+					}
+				}
+			}
+			615 = {
+				#Eastern Shanxi
+				teleport_armies = {
+					limit = { tag = QIE }
+					to_state = 1062 #Every QIE division in Eastern Shanxi goes to Baoding
+				}
+			}
+			1072 = {
+				#Western Shanxi
+				teleport_armies = {
+					limit = { tag = SHX }
+					to_state = 1072 #Every SHX division in Taiyuan goes to the rest of Western Shanxi
+				}
+				create_unit = {
+					division = "name = \"Taiyuan Anti-Socialist Militia\" division_template = \"Fangong Baoweituan\" start_experience_factor = 0.60"
+					owner = QIE
+				}
+				if = {
+					limit = { SHX = { has_country_flag = SHX_took_payout_flag } } #Lol I bet you thought this decision was inconsequential
+					create_unit = {
+						division = "name = \"Taiyuan Merchants' Militia\" division_template = \"Fangong Baoweituan\" start_experience_factor = 0.60"
+						owner = QIE
+					}
+				}
+			}
+		}
+
+		SHX = {
+			add_timed_idea = {
+				idea = SHX_central_plains_war_idea
+				days = 30
+			}
+			remove_opinion_modifier = {
+				target = QIE
+				modifier = KR_friendly
+			}
+
+			#Get a mountaineer related bonus
+			if = {
+				limit = { NOT = { has_completed_focus = SHX_mountains_our_home } }
+				complete_national_focus = SHX_mountains_our_home
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_template = "GMJ Shandi Shi" } }
+					division_template = {
+						name = "GMJ Shandi Shi"
+						division_names_group = CHYN_INF_01
+						regiments = {
+							mountaineers = { x = 0 y = 0 }
+							mountaineers = { x = 0 y = 1 }
+							mountaineers = { x = 1 y = 0 }
+							mountaineers = { x = 1 y = 1 }
+						}
+						support = {
+							recon = { x = 0 y = 0 }
+						}
+					}
+				}
+				1072 = {
+					create_unit = {
+						division = "name = \"Guominjun Reservists\" division_template = \"GMJ Shandi Shi\" start_experience_factor = 0.60"
+						owner = SHX
+						prioritize_location = 1115
+					}
+				}
+			}
+
+			#Add the spawned militias
+			if = {
+				limit = { NOT = { has_template = "Guomindang Minbing" } }
+				division_template = {
+					name = "Guomindang Minbing" #KMT Militia
+					division_names_group = CHYN_MIL_01
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+					}
+				}
+			}
+			1072 = {
+				create_unit = {
+					division = "name = \"Shang Clique Defectors\" division_template = \"Guomindang Minbing\" start_experience_factor = 0.60"
+					owner = SHX
+					prioritize_location = 1115
+				}
+				if = {
+					limit = { SHX = { NOT = { has_country_flag = SHX_took_payout_flag } } } #Lol and you thought stoking resistance was worthless
+					create_unit = {
+						division = "name = \"Taiyuan Republican Rebels\" division_template = \"Guomindang Minbing\" start_experience_factor = 0.60"
+						owner = SHX
+						prioritize_location = 1115
+					}
+				}
+				add_resistance = 80 #Get it high to balance out QIE
+			}
+			if = {
+				limit = { SHX = { NOT = { has_country_flag = SHX_took_payout_flag } } } #Lol and you thought stoking resistance was worthless
+				set_province_controller = 12432
+				615 = {
+					#Eastern Shanxi
+					create_unit = {
+						division = "name = \"Datong Miners' Uprising\" division_template = \"Guomindang Minbing\" start_experience_factor = 0.60"
+						owner = SHX
+						prioritize_location = 12432
+					}
+				}
+			}
+
+			#Adjust advisor stuff now that they belong to QIE
+			SHX_yan_xishan = {
+				set_nationality = QIE
+			}
+			create_country_leader = {
+				name = "贾景德"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
+				expire = "1.1.1"
+				ideology = paternal_autocrat_subtype
+			}
+			set_party_name = { #Rename Feng's Party from GMJ to National Party
+				ideology = paternal_autocrat
+				long_name = SHX_jia_jingde_remnant_party_long
+				name = SHX_jia_jingde_remnant_party
+			}
+		}
+	}
+	if = {
+		limit = { tag = SHX }
+		set_capital = { 
+			state = 622 
+			remember_old_capital = no 
+		} #Keeps the capital in Yulin, post-war event will allow you to decide whether or not to move the capital.
+		country_event = { id = SHX.manchu.7 days = 2 } #An Emergency Capital.
+		swap_ideas = {
+			remove_idea = SHX_dual_armies
+			add_idea = SHX_integrated_army
+		}
+		unlock_national_focus = SHX_he_bian_liang_jun
+	}
+}
+
+SHX_manchu_gmj_leadership_activation = {
+	hidden_effect = {
+		SHX_lu_zhonglin = {
+			hidden_effect = { #temp fix for CTD
+				set_nationality = ROOT
+			}
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief
+					idea_token = SHX_lu_zhonglin_army_chief
+					desc = SHX_lu_zhonglin_desc
+					traits = { KR_army_chief_reform_2 }
+					cost = 100
+				}
+			}
+		}
+	}
+}
+
+SHX_manchu_set_up_timer_effect = {
+	QIE = {
+		activate_mission = QIE_eyes_on_the_border #Redundant - do not get rid of it because QIE might fail the mission earlier
+		activate_mission = QIE_SHX_intervention
+		custom_effect_tooltip = QIE_SHX_intervention_tooltip
+	}
+	SHX = {
+		activate_mission = QIE_SHX_intervention_visual_only
+	}
+}
+
+SHX_manchu_peace_effect = {
+	#Check to see progress in the northern front
+	if = {
+		limit = { 
+			QIE = { 
+				controls_state = 1072 
+			} 
+		} #Western Shanxi - starts off in SHX ownership
+		1072 = { SHX_manchu_state_transfer_effect = yes }
+		if = {
+			limit = { 
+				QIE = { 
+					controls_state = 1015 
+				} 
+			} 
+			1015 = { SHX_manchu_state_transfer_effect = yes }
+		}
+	}
+	else_if = {
+		limit = { SHX = { controls_state = 615 } } #Eastern Shanxi - Starts off in QIE ownership
+		615 = {
+			SHX_manchu_state_transfer_effect = yes
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SHX_eastern_shanxi_strikes_modifier } }
+				remove_dynamic_modifier = { modifier = SHX_eastern_shanxi_strikes_modifier }
+			}
+		}
+	}
+	#Check to See Progress in the Southern Front
+	if = {
+		limit = { QIE = { controls_state = 799 } } #Guanzhong (Xi'an) - Starts off in SHX ownership
+		799 = { SHX_manchu_state_transfer_effect = yes }
+		QIE = {
+			if = {
+				limit = {
+					controls_state = 622 #Yulin - Starts off in SHX control. This is a failsafe
+					controls_state = 1015
+					controls_state = 1072 #If QIE owns Yulin and GMJ failed to retake Taiyuan, game over for SHX
+				}
+				annex_country = { target = SHX }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			SHX = {
+				controls_state = 607 #Helou - starts off in QIE ownership.
+				controls_state = 1015
+				controls_state = 1072 #West Shanxi - starts off SHX ownership
+			}
+		}
+		607 = {
+			SHX_manchu_state_transfer_effect = yes
+			add_core_of = SHX
+		}
+	}
+	QIE = {
+		white_peace = SHX
+		set_truce = {
+			target = SHX
+			days = 180
+		}
+		diplomatic_relation = {
+			country = SHX
+			relation = non_aggression_pact
+		}
+		reverse_add_opinion_modifier = {
+			target = SHX
+			modifier = KR_hostile
+		}
+		add_opinion_modifier = {
+			target = SHX
+			modifier = KR_hostile
+		}
+	}
+}
+
+SHX_manchu_state_transfer_effect = {
+	#Initial Scope should be a state
+	if = {
+		limit = { is_owned_by = QIE }
+		transfer_state_to = SHX
+	}
+	else_if = {
+		limit = { is_owned_by = SHX }
+		transfer_state_to = QIE
 	}
 }

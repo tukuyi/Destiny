@@ -1266,6 +1266,23 @@ ideas = {
 				production_speed_bunker_factor = 0.15
 			}
 		}
+		SHX_central_plains_war_idea = {#中原大战！
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea 	SHX_central_plains_war_idea" }
+			picture = china_five_races_soldier
+			allowed = { always = no }
+			modifier = {
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				army_org_factor = 0.25
+				supply_combat_penalties_on_core_factor = -0.25
+			}
+			targeted_modifier = {
+				tag = QIE
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+				breakthrough_bonus_against = 0.25
+			}
+		}
 
 	### Negotiated Econ
 		SHX_qie_dominated_econ = {#北京-山西关系：紧密合作
