@@ -2833,14 +2833,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_mountains_our_home"
-			# custom_override_tooltip = {
-			# 	tooltip = {
-			# 		localization_key = tooltip_enable_hidden_tech
-			# 		TECH = country_culture|tech_ski_infantry
-			# 		EFFECT = tech_effect|tech_ski_infantry
-			# 	}
-			# 	set_technology = { tech_ski_infantry = 1 popup = no }
-			# }
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = tooltip_enable_hidden_tech
+					TECH = country_culture|tech_ski_infantry
+					EFFECT = tech_effect|tech_ski_infantry
+				}
+				set_technology = { tech_ski_infantry = 1 popup = no }
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
