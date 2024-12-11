@@ -141,6 +141,15 @@ recruit_character = HNN_Zhang_Zhen
 recruit_character = HNN_Wen_Chao_Ji
 recruit_character = HNN_li_pinxian
 recruit_character = GXC_Wan_Dan_Ping
+recruit_character = HNN_wang_zhen
+recruit_character = HNN_Tan_Zhen_Lin
+recruit_character = HNN_Yuan_Wen_Cai
+recruit_character = HNN_Long_Chao_Qing
+recruit_character = HNN_Wan_Xi_Xian
+recruit_character = HNN_Tan_zheng
+recruit_character = HNN_Chen_Yun 
+recruit_character = HNN_Hua_Guofeng
+
 ###
 # create_corps_commander = {
 # 	name = "唐生明"
@@ -327,6 +336,30 @@ HNN_Xiao_Ke = {
 	retire = yes
 }
 HNN_mao_ze_dong = {
+	retire = yes
+}
+HNN_wang_zhen = {
+	retire = yes
+}
+HNN_Tan_Zhen_Lin = {
+	retire = yes
+}
+HNN_Yuan_Wen_Cai = {
+	retire = yes
+}
+HNN_Long_Chao_Qing = {
+	retire = yes
+}
+HNN_Wan_Xi_Xian = {
+	retire = yes
+}
+HNN_Tan_zheng = {
+	retire = yes
+}
+HNN_Chen_Yun = {
+	retire = yes
+}
+HNN_Hua_Guofeng = {
 	retire = yes
 }
 HNN_tang_shengming = { #Appears in KMT Content

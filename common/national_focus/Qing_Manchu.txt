@@ -536,14 +536,7 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_yan_xishan
 		}
-		available = {
-			SHX = {
-				has_completed_focus = SHX_Develop_Yan_Xishan_Thought
-			}
-			NOT = {
-				 
-			}
-		}
+
 		x = 1
 		y = 1
 		relative_position_id = QIE_yan_xishan

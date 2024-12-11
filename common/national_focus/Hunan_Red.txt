@@ -79,1343 +79,1588 @@ focus_tree = {
 			}
 		}
 	}
-
-	focus = {
-		id = HNN_dong_bi_wu_jiang_ling_dao_us
-		icon = GFX_goal_HNN_dong_bi_wu_jiang_ling_dao_us
-		relative_position_id = HNN_gongtuan
-		x = -8
-		y = 2
-		cost = 5
-	
-		available = {
-			has_country_flag = HNN_dong_victory
-		}
-		bypass = {
-			has_country_flag = HNN_dong_victory
-		}
-	
-		prerequisite = {
-			focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_dong_bi_wu_jiang_ling_dao_us"
-		}
-	}
-
-	focus = {
-		id = HNN_ban_bu_xin_xian_fa
-		icon = GFX_goal_HNN_ban_bu_xin_xian_fa
-		relative_position_id = HNN_gongtuan
-		x = -8
-		y = 3
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_dong_bi_wu_jiang_ling_dao_us
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ban_bu_xin_xian_fa"
-			add_ideas = HNN_worker_constitution
-			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
-			custom_effect_tooltip = tooltip_white_line
-			country_event = { 
-				id = hungong.144
-				days = 3
+	#董必武
+		focus = {
+			id = HNN_dong_bi_wu_jiang_ling_dao_us
+			icon = GFX_goal_HNN_dong_bi_wu_jiang_ling_dao_us
+			relative_position_id = HNN_gongtuan
+			x = -6
+			y = 2
+			cost = 5
+		
+			available = {
+				has_country_flag = HNN_dong_victory
 			}
-			hidden_effect = {
+			bypass = {
+				has_country_flag = HNN_dong_victory
+			}
+		
+			prerequisite = {
+				focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_dong_bi_wu_jiang_ling_dao_us"
+			}
+		}
+
+		focus = {
+			id = HNN_qiang_ying_tai_du
+			icon = GFX_goal_CSA_subdue_bourgeoisie
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -1
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_ban_bu_xin_xian_fa
+			}
+			prerequisite = {
+				focus = HNN_jiao_yu_wu_chan_jie_ji
+			}
+
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_qiang_ying_tai_du"
+				custom_effect_tooltip = HNN_revolutionary_tt
+				add_political_power = 100
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 2000
+					producer = HNN
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_gu_li_nong_ye_shen_chan
+			icon = GFX_goal_HNN_gu_li_nong_ye_shen_chan
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 1
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+				modifier = {
+					factor = 1.4
+					has_war = no
+				}
+			}
+			prerequisite = {
+				focus = HNN_ban_bu_xin_xian_fa
+			}
+			prerequisite = {
+				focus = HNN_xin_ding_dan
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_gu_li_nong_ye_shen_chan"
+				add_political_power = 20
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
+			}
+		}
+
+		focus = {
+			id = HNN_ban_bu_xin_xian_fa
+			icon = GFX_goal_HNN_ban_bu_xin_xian_fa
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 0
+			y = 1
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_dong_bi_wu_jiang_ling_dao_us
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_ban_bu_xin_xian_fa"
+				add_ideas = HNN_worker_constitution
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
+				custom_effect_tooltip = tooltip_white_line
+				country_event = { 
+					id = hungong.144
+					days = 3
+				}
+				hidden_effect = {
+					add_popularity = {
+						ideology = paternal_autocrat
+						popularity = -1
+					}
+					set_party_name = {
+						ideology = social_liberal
+						long_name =  HNN_social_liberal_party_dashan_long
+						name =  HNN_social_liberal_party_dashan
+					}
+					set_party_name = {
+						ideology = social_conservative
+						long_name =  HNN_social_conservative_party_dashan_long
+						name =  HNN_social_conservative_party_dashan
+					}
+					set_party_name = {
+						ideology = market_liberal
+						long_name =  HNN_market_liberal_party_dashan_long
+						name =  HNN_market_liberal_party_dashan
+					}
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_xin_ding_dan
+			icon = GFX_goal_HNN_xin_ding_dan
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 2
+			y = 1
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_dong_bi_wu_jiang_ling_dao_us
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_ding_dan"
+				add_stability = 0.1
+				add_war_support = 0.1
+				add_political_power = 100
+				602 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type =  industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				country_event = { 
+					id = hungong.145
+					days = 3
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
+			icon = GFX_goal_HNN_zheng_fu_gan_YU_shi_chang_jing_ji
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 3
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_xin_ding_dan
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_chang_jing_ji"
+				add_ideas = HNN_half_Social_economy
+			}
+		}
+
+		focus = {
+			id = HNN_jian_li_wu_jia_ju
+			icon = GFX_goal_HNN_jian_li_wu_jia_ju
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 2
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jian_li_wu_jia_ju"
+				swap_ideas = {
+					remove_idea = HNN_half_Social_economy
+					add_idea = HNN_half_Social_economy2
+				}
+			}
+		}
+		
+		focus = {
+			id = HNN_liang_tiao_tui_zou_lu
+			icon = GFX_goal_HNN_jian_li_wu_jia_ju
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 3
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jian_li_wu_jia_ju
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_tiao_tui_zou_lu"
+
+			}
+		}
+
+		focus = {
+			id = HNN_jiao_yu_wu_chan_jie_ji
+			icon = GFX_goal_HNN_jiao_yu_wu_chan_jie_ji
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -2
+			y = 1
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_dong_bi_wu_jiang_ling_dao_us
+			}
+
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jiao_yu_wu_chan_jie_ji"
+				add_political_power = 100
+				add_ideas = HNN_gai_ge_jiao_yu
+				add_research_slot_until_three = yes
+			}
+
+			search_filters = { FOCUS_FILTER_RESEARCH }
+		}
+
+		focus = {
+			id = HNN_yi_wu_jiao_yu
+			icon = GFX_goal_HNN_yi_wu_jiao_yu
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -3
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jiao_yu_wu_chan_jie_ji
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_yi_wu_jiao_yu"
+				add_political_power = 50
+				swap_ideas = {
+					remove_idea = HNN_gai_ge_jiao_yu
+					add_idea = HNN_gai_ge_jiao_yu2
+				}
+				country_event = { 
+					id = hungong.47
+					days = 5
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_jie_fang_fu_nu
+			icon = GFX_goal_HNN_shi_ge_jiao_yu
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -2
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_yi_wu_jiao_yu
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jie_fang_fu_nu"
+				add_ideas = FRA_working_women_idea
+			}
+		}
+
+		focus = {
+			id = HNN_shi_ge_jiao_yu
+			icon = GFX_goal_HNN_shi_ge_jiao_yu
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -3
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jie_fang_fu_nu
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_ge_jiao_yu"
+				add_ideas = HNN_acrt_worker_and_former
+				custom_effect_tooltip = tooltip_white_line
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -10
+					}
+				}
+				hidden_effect = {
+					country_event = { 
+						id = hungong.30
+						days = 5
+					}
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 0
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_qiang_ying_tai_du
+			}
+			prerequisite = {
+				focus = HNN_gu_li_nong_ye_shen_chan
+			}
+
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_he_zg_de_gong_tuan_zhu_yi"
+				add_ideas = HNN_hunan_syndicalist
+			}
+		}
+		
+		focus = {
+			id = HNN_zu_jian_nong_hui
+			icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -1
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			}
+
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_he_zg_de_gong_tuan_zhu_yi"
+				
+			}
+		}
+
+		focus = {
+			id = HNN_fu_quan_gong_hui
+			icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 1
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			}
+
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_fu_quan_gong_hui"
+				
+			}
+		}
+
+
+		focus = {
+			id = HNN_ge_ming_de_li_shi
+			icon = GFX_goal_HNN_ge_ming_de_li_shi
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = -2
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_shi_ge_jiao_yu
+			}
+			prerequisite = {
+				focus = HNN_zu_jian_nong_hui
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_de_li_shi"
+				add_political_power = 50
+				add_command_power = 50
+				add_stability = 0.1
+				add_war_support = 0.1
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.1
+				}
 				add_popularity = {
 					ideology = paternal_autocrat
-					popularity = -1
-				}
-				set_party_name = {
-					ideology = social_liberal
-					long_name =  HNN_social_liberal_party_dashan_long
-					name =  HNN_social_liberal_party_dashan
-				}
-				set_party_name = {
-					ideology = social_conservative
-					long_name =  HNN_social_conservative_party_dashan_long
-					name =  HNN_social_conservative_party_dashan
-				}
-				set_party_name = {
-					ideology = market_liberal
-					long_name =  HNN_market_liberal_party_dashan_long
-					name =  HNN_market_liberal_party_dashan
+					popularity = -0.1
 				}
 			}
-		}
-	}
-
-	focus = {
-		id = HNN_jiao_yu_wu_chan_jie_ji
-		icon = GFX_goal_HNN_jiao_yu_wu_chan_jie_ji
-		relative_position_id = HNN_gongtuan
-		x = -10
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ban_bu_xin_xian_fa
 		}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jiao_yu_wu_chan_jie_ji"
-			add_research_slot = 1
-			add_political_power = 100
-			add_ideas = HNN_gai_ge_jiao_yu
-		}
-	}
+		focus = {
+			id = HNN_jing_ji_dong_yuan_qi_lai
+			icon = GFX_goal_HNN_jian_li_wu_jia_ju
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 2
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_fu_quan_gong_hui
+			}
+			prerequisite = {
+				focus = HNN_liang_tiao_tui_zou_lu
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jing_ji_dong_yuan_qi_lai"
 
-	focus = {
-		id = HNN_shi_he_zg_de_gong_tuan_zhu_yi
-		icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
-		relative_position_id = HNN_gongtuan
-		x = -8
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ban_bu_xin_xian_fa
+			}
 		}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_he_zg_de_gong_tuan_zhu_yi"
-			add_ideas = HNN_hunan_syndicalist
-		}
-	}
-	
-	focus = {
-		id = HNN_xin_ding_dan
-		icon = GFX_goal_HNN_xin_ding_dan
-		relative_position_id = HNN_gongtuan
-		x = -6
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ban_bu_xin_xian_fa
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_ding_dan"
-			add_stability = 0.1
-			add_war_support = 0.1
-			add_political_power = 100
-			602 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type =  industrial_complex
-					level = 1
-					instant_build = yes
-				}
+		focus = {
+			id = HNN_gong_nong_gong_he_guo
+			icon = GFX_goal_HNN_gong_nong_gong_he_guo
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 0
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
 			}
-			custom_effect_tooltip = tooltip_white_line
-			country_event = { 
-				id = hungong.145
-				days = 3
+			prerequisite = {
+				focus = HNN_zu_jian_nong_hui
 			}
-		}
-	}
-
-	focus = {
-		id = HNN_gu_li_nong_ye_shen_chan
-		icon = GFX_goal_HNN_gu_li_nong_ye_shen_chan
-		relative_position_id = HNN_gongtuan
-		x = -5
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-			modifier = {
-				factor = 1.4
-				has_war = no
+			prerequisite = {
+				focus = HNN_fu_quan_gong_hui
 			}
-		}
-		prerequisite = {
-			focus = HNN_xin_ding_dan
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_gu_li_nong_ye_shen_chan"
-			add_political_power = 20
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 5
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
-		}
-	}
-	
-	focus = {
-		id = HNN_shi_ge_jiao_yu
-		icon = GFX_goal_HNN_shi_ge_jiao_yu
-		relative_position_id = HNN_gongtuan
-		x = -11
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jiao_yu_wu_chan_jie_ji
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_ge_jiao_yu"
-			add_ideas = HNN_acrt_worker_and_former
-			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
-				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -10
-				}
-			}
-			hidden_effect = {
-				country_event = { 
-					id = hungong.30
-					days = 5
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_gong_nong_gong_he_guo"
+				add_ideas = HNN_gong_nong_gong_he
+				custom_effect_tooltip = tooltip_white_line
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -20
+					}
 				}
 			}
 		}
-	}
 
-	focus = {
-		id = HNN_yi_wu_jiao_yu
-		icon = GFX_goal_HNN_yi_wu_jiao_yu
-		relative_position_id = HNN_gongtuan
-		x = -9
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jiao_yu_wu_chan_jie_ji
-		}
-		prerequisite = {
-			focus = HNN_shi_he_zg_de_gong_tuan_zhu_yi
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_yi_wu_jiao_yu"
-			add_political_power = 50
-			swap_ideas = {
-				remove_idea = HNN_gai_ge_jiao_yu
-				add_idea = HNN_gai_ge_jiao_yu2
+		focus = {
+			id = HNN_gao_qing_huo_ju
+			icon = GFX_goal_HNN_gao_ju_huo_ju
+			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
+			x = 0
+			y = 6
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
 			}
-			country_event = { 
-				id = hungong.47
-				days = 5
+			prerequisite = {
+				focus = HNN_ge_ming_de_li_shi
 			}
-		}
-	}
-
-	focus = {
-		id = HNN_ge_ming_de_li_shi
-		icon = GFX_goal_HNN_ge_ming_de_li_shi
-		relative_position_id = HNN_gongtuan
-		x = -10
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_shi_ge_jiao_yu
-		}
-		prerequisite = {
-			focus = HNN_yi_wu_jiao_yu
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_de_li_shi"
-			add_political_power = 50
-			add_command_power = 50
-			add_stability = 0.1
-			add_war_support = 0.1
-			add_popularity = {
-				ideology = syndicalist
-				popularity = 0.1
+			prerequisite = {
+				focus = HNN_gong_nong_gong_he_guo
 			}
-			add_popularity = {
-				ideology = paternal_autocrat
-				popularity = -0.1
+			prerequisite = {
+				focus = HNN_jing_ji_dong_yuan_qi_lai
 			}
-		}
-	}
-
-	focus = {
-		id = HNN_gao_ju_huo_ju
-		icon = GFX_goal_HNN_gao_ju_huo_ju
-		relative_position_id = HNN_gongtuan
-		x = -8
-		y = 7
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jian_li_wu_jia_ju
-		}
-		prerequisite = {
-			focus = HNN_ge_ming_de_li_shi
-		}
-		prerequisite = {
-			focus = HNN_gong_nong_gong_he_guo
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_gao_ju_huo_ju"
-			custom_effect_tooltip = HNN_kmt_politics_spirit_tt
-			hidden_effect = {
-				HNN_merge_kmt_spirits_dong = yes
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
-		icon = GFX_goal_HNN_zheng_fu_gan_YU_shi_chang_jing_ji
-		relative_position_id = HNN_gongtuan
-		x = -7
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_shi_he_zg_de_gong_tuan_zhu_yi
-		}
-		prerequisite = {
-			focus = HNN_xin_ding_dan
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_chang_jing_ji"
-			add_ideas = HNN_half_Social_economy
-		}
-	}
-
-	focus = {
-		id = HNN_jian_li_wu_jia_ju
-		icon = GFX_goal_HNN_jian_li_wu_jia_ju
-		relative_position_id = HNN_gongtuan
-		x = -8
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_yi_wu_jiao_yu
-		}
-		prerequisite = {
-			focus = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jian_li_wu_jia_ju"
-			swap_ideas = {
-				remove_idea = HNN_half_Social_economy
-				add_idea = HNN_half_Social_economy2
-			}
-		}
-	}
-
-	focus = {
-		id = HNN_gong_nong_gong_he_guo
-		icon = GFX_goal_HNN_gong_nong_gong_he_guo
-		relative_position_id = HNN_gongtuan
-		x = -6
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
-		}
-		prerequisite = {
-			focus = HNN_gu_li_nong_ye_shen_chan
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_gong_nong_gong_he_guo"
-			add_ideas = HNN_gong_nong_gong_he
-			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
-				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -20
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_gao_qing_huo_ju"
+				custom_effect_tooltip = HNN_kmt_politics_spirit_tt
+				hidden_effect = {
+					HNN_merge_kmt_spirits_dong = yes
 				}
 			}
 		}
-	}
 	
-	focus = {
-		id = HNN_qiang_ying_tai_du
-		icon = GFX_goal_CSA_subdue_bourgeoisie
-		relative_position_id = HNN_gongtuan
-		x = -4
-		y = 3
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_dong_bi_wu_jiang_ling_dao_us
-			focus = HNN_peng_de_huai_jiang_ling_dao_us
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_qiang_ying_tai_du"
-			custom_effect_tooltip = HNN_revolutionary_tt
-			add_political_power = 100
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 2000
-				producer = HNN
+	#彭德怀
+		focus = {
+			id = HNN_peng_de_huai_jiang_ling_dao_us
+			icon = GFX_goal_HNN_peng_de_huai_jiang_ling_dao_us
+			relative_position_id = HNN_gongtuan
+			x = 6
+			y = 2
+			cost = 5
+		
+			prerequisite = {
+				focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
 			}
-		}
-	}
-	
-	focus = {
-		id = HNN_peng_de_huai_jiang_ling_dao_us
-		icon = GFX_goal_HNN_peng_de_huai_jiang_ling_dao_us
-		relative_position_id = HNN_gongtuan
-		x = -1
-		y = 2
-		cost = 5
-	
-		prerequisite = {
-			focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
-		}
-		available = {
-			has_country_flag = HNN_peng_victory
-		}
-		bypass = {
-			OR={
+			available = {
 				has_country_flag = HNN_peng_victory
 			}
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_peng_de_huai_jiang_ling_dao_us"
-		}
-	}
-	
-	focus = {
-		id = HNN_jun_shi_hua_zheng_fu_bu_meng
-		icon = GFX_goal_HNN_jun_shi_hua_zheng_fu_bu_meng
-		relative_position_id = HNN_gongtuan
-		x = -1
-		y = 3
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_peng_de_huai_jiang_ling_dao_us
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_shi_hua_zheng_fu_bu_meng"
-			add_popularity = {
-				ideology = syndicalist
-				popularity = 0.1
-			}
-			custom_effect_tooltip = tooltip_white_line
-			every_unit_leader = {
-				add_planning = 1
-				add_logistics = 1
-			}
-			custom_effect_tooltip = tooltip_white_line
-			add_ideas = FRA_society
-		}
-	}
-	
-	focus = {
-		id = HNN_nong_chun_he_zuo_she 
-		icon = GFX_goal_HNN_nong_chun_he_zuo_she
-		relative_position_id = HNN_gongtuan
-		x = -2
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jun_shi_hua_zheng_fu_bu_meng
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_nong_chun_he_zuo_she"
-			add_ideas = HNN_union_loyalty
-			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
-				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -45
+			bypass = {
+				OR={
+					has_country_flag = HNN_peng_victory
 				}
 			}
-			custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
-		}
-	}
-	
-	focus = {
-		id = HNN_you_ji_hua_de_jing_ji
-		icon = GFX_goal_HNN_you_ji_hua_de_jing_ji
-		relative_position_id = HNN_gongtuan
-		x = 0
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jun_shi_hua_zheng_fu_bu_meng
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_you_ji_hua_de_jing_ji"
-			add_ideas = command_economy
-			custom_effect_tooltip = tooltip_white_line
-			add_timed_idea = {
-				idea = GRU_KOMMANDOWIRTSCHAFT
-				days = 360
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_peng_de_huai_jiang_ling_dao_us"
 			}
 		}
-	}
-	
-	focus = {
-		id = HNN_ji_xie_hua_nong_ju
-		icon = GFX_goal_HNN_ji_xie_hua_nong_ju
-		relative_position_id = HNN_gongtuan
-		x = -3
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_nong_chun_he_zuo_she
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
-			add_stability = 0.1
-			602 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type =  industrial_complex
-					level = 1
-					instant_build = yes
+		
+		focus = {
+			id = HNN_jun_shi_hua_zheng_fu_bu_meng
+			icon = GFX_goal_HNN_jun_shi_hua_zheng_fu_bu_meng
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 0
+			y = 1
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_peng_de_huai_jiang_ling_dao_us
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_shi_hua_zheng_fu_bu_meng"
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.1
 				}
-			}
-			1052 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type =  industrial_complex
-					level = 1
-					instant_build = yes
+				custom_effect_tooltip = tooltip_white_line
+				every_unit_leader = {
+					add_planning = 1
+					add_logistics = 1
 				}
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = FRA_society
 			}
-		}
-	}
-	
-	focus = {
-		id = HNN_shi_shi_qiu_shi
-		icon = GFX_goal_HNN_shi_shi_qiu_shi
-		relative_position_id = HNN_gongtuan
-		x = -1
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_nong_chun_he_zuo_she
-		}
-		prerequisite = {
-			focus = HNN_you_ji_hua_de_jing_ji
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
-			add_stability = 0.05
-			add_popularity = {
-				ideology = syndicalist
-				popularity = 0.1
-			}
-			country_event = { 
-				id = hungong.17
-				days = 3
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_kuo_zhan_jiao_yu
-		icon = GFX_goal_HNN_kuo_zhan_jiao_yu
-		relative_position_id = HNN_gongtuan
-		x = 1
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_you_ji_hua_de_jing_ji
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_kuo_zhan_jiao_yu"
-			add_stability = 0.10
-			add_research_slot = 1
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_fa_zhan_zhong_gong_ye
-		icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
-		relative_position_id = HNN_gongtuan
-		x = -2
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ji_xie_hua_nong_ju
-		}
-		prerequisite = {
-			focus = HNN_shi_shi_qiu_shi
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_fa_zhan_zhong_gong_ye"
-			add_equipment_to_stockpile = {
-				type = small_plane_airframe
-				amount = 40
-				producer = HNN
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 400
-				producer = HNN
-			}
-			custom_effect_tooltip = tooltip_white_line
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = tooltip_white_line
-			add_ideas = ENG_mobilized_industry_idea
-		}
-	}
-	
-	focus = {#改为农村知识分子
-		id = HNN_jun_dui_chun_jie_hua
-		icon = GFX_goal_HNN_jun_dui_chun_jie_hua
-		relative_position_id = HNN_gongtuan
-		x = 0
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_kuo_zhan_jiao_yu
-		}
-		prerequisite = {
-			focus = HNN_shi_shi_qiu_shi
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_dui_chun_jie_hua"
-			add_ideas = HNN_educated_workers_idea
-			hidden_effect = {
-				country_event = { 
-					id = hungong.30
-					days = 5
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = HNN_si_xiang_ying_ling
-		icon = GFX_goal_HNN_si_xiang_ying_ling
-		relative_position_id = HNN_gongtuan
-		x = -1
-		y = 7
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_fa_zhan_zhong_gong_ye
-		}
-		prerequisite = {
-			focus = HNN_jun_dui_chun_jie_hua
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_si_xiang_ying_ling"
-			add_command_power = 20
-			army_experience = 50
-			custom_effect_tooltip = tooltip_white_line
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = tooltip_white_line
-			add_ideas = HNN_chun_jie_de_jun_de
-		}
-	}
-	
-	focus = {
-		id = HNN_he_shu_huan_jiang_ling_dao_us
-		icon = GFX_goal_HNN_he_shu_huan_jiang_ling_dao_us
-		relative_position_id = HNN_gongtuan
-		x = 4
-		y = 2
-		cost = 5
-	
-		prerequisite = {
-			focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
-		}
-		available = {
-			has_country_flag = HNN_he_victory
-		}
-		bypass = {
-			has_country_flag = HNN_he_victory
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_he_shu_huan_jiang_ling_dao_us"
-		}
-	}
-	
-	focus = {
-		id = HNN_dui_guo_ming_dang_tuo_xie
-		icon = GFX_goal_HNN_dui_guo_ming_dang_tuo_xie
-		relative_position_id = HNN_gongtuan
-		x = 4
-		y = 3
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_he_shu_huan_jiang_ling_dao_us
-		}
-		available = {
-			CHI = {
-				exists = yes
-				is_puppet = no
-			}
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_dui_guo_ming_dang_tuo_xie"
-			add_stability = 0.05
-			add_opinion_modifier = {
-				target = CHI
-				modifier = CHI_exist_YUN
-			}
-			CHI = {
-				country_event = { 
-					id = hungong.26
-					days = 3
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_liang_dang_he_zuo
-		icon = GFX_goal_HNN_liang_dang_he_zuo
-		relative_position_id = HNN_gongtuan
-		x = 4
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_dui_guo_ming_dang_tuo_xie
-		}
-		available = {
-			CHI = {
-				exists = yes
-				is_puppet = no
-			}
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_dang_he_zuo"
-			add_popularity = {
-				ideology = radical_socialist
-				popularity = 0.05
-			}
-			CHI = {
-				country_event = { 
-					id = hungong.27
-					days = 3
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_cong_xin_ru_dang
-		icon = GFX_goal_HNN_cong_xin_ru_dang
-		relative_position_id = HNN_gongtuan
-		x = 3
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_liang_dang_he_zuo
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_dang_he_zuo"
-			add_war_support = 0.05
-			country_event = { 
-				id = hungong.28
-				days = 3
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_gong_gu_xian_fa
-		icon = GFX_goal_HNN_gong_gu_xian_fa
-		relative_position_id = HNN_gongtuan
-		x = 5
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_liang_dang_he_zuo
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_gong_gu_xian_fa"
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = HNN_hu_nan_sheng_de_xin_jing_ji
-		icon = GFX_goal_HNN_hu_nan_sheng_de_xin_jing_ji
-		relative_position_id = HNN_gongtuan
-		x = 4
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_cong_xin_ru_dang
-		}
-		prerequisite = {
-			focus = HNN_gong_gu_xian_fa
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_hu_nan_sheng_de_xin_jing_ji"
-			602 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type =  arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type =  industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_tang_sheng_ming_jiang_ling_dao_us
-		icon = GFX_goal_HNN_tang_sheng_ming_jiang_ling_dao_us
-		relative_position_id = HNN_gongtuan
-		x = 9
-		y = 2
-		cost = 5
-	
-		prerequisite = {
-			focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
-		}
-		available = {
-			has_country_flag = HNN_tang_victory
-		}
-		bypass = {
-			has_country_flag = HNN_tang_victory
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_tang_sheng_ming_jiang_ling_dao_us"
-		}
-	}
-	
-	focus = {
-		id = HNN_nei_zhan_de_jiao_xun
-		icon = GFX_goal_HNN_nei_zhan_de_jiao_xun
-		relative_position_id = HNN_gongtuan
-		x = 8
-		y = 3
-		cost = 4
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_tang_sheng_ming_jiang_ling_dao_us
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_nei_zhan_de_jiao_xun"
-			add_manpower = -2000
-			add_popularity = {
-				ideology = totalist
-				popularity = 0.05
-			}
-			add_ideas = HNN_direndejiaoxun
-		}
-	}
-	
-	focus = {
-		id = HNN_ge_ming_qing_bao_ju
-		icon = GFX_goal_HNN_ge_ming_qing_bao_ju
-		relative_position_id = HNN_gongtuan
-		x = 7
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_nei_zhan_de_jiao_xun
 		}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_qing_bao_ju"
-			if = {
-				limit = { has_dlc = "La Resistance" }
+		focus = {
+			id = HNN_you_ji_hua_de_jing_ji
+			icon = GFX_goal_HNN_you_ji_hua_de_jing_ji
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -1
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_you_ji_hua_de_jing_ji"
+				add_ideas = command_economy
+				custom_effect_tooltip = tooltip_white_line
+				add_timed_idea = {
+					idea = GRU_KOMMANDOWIRTSCHAFT
+					days = 360
+				}
+			}
+		}
+		
+		focus = {
+			id = HNN_nong_chun_he_zuo_she 
+			icon = GFX_goal_HNN_nong_chun_he_zuo_she
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -1
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_you_ji_hua_de_jing_ji
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_nong_chun_he_zuo_she"
+				add_ideas = HNN_union_loyalty
+				custom_effect_tooltip = tooltip_white_line
 				if = {
-					limit = { has_intelligence_agency = no }
-					create_intelligence_agency = yes
-					upgrade_intelligence_agency = upgrade_passive_defense
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -45
+					}
 				}
-				else = { upgrade_intelligence_agency = upgrade_blueprint_stealing }
+				custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
 			}
-			if = {
-				limit = { has_dlc = "La Resistance" }
-				add_intel = {
+		}
+
+		focus = {
+			id = HNN_ji_xie_hua_nong_ju
+			icon = GFX_goal_HNN_ji_xie_hua_nong_ju
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -1
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_nong_chun_he_zuo_she
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
+				add_stability = 0.1
+				602 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type =  industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				1052 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type =  industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_kuo_zhan_jiao_yu
+			icon = GFX_goal_HNN_kuo_zhan_jiao_yu
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -3
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_you_ji_hua_de_jing_ji
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_kuo_zhan_jiao_yu"
+				add_stability = 0.10
+				add_research_slot_until_three = yes
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+
+			search_filters = { FOCUS_FILTER_RESEARCH }
+		}
+
+		focus = {#改为农村知识分子
+			id = HNN_jun_dui_chun_jie_hua
+			icon = GFX_goal_HNN_jun_dui_chun_jie_hua
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -3
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_kuo_zhan_jiao_yu
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_dui_chun_jie_hua"
+				add_ideas = HNN_educated_workers_idea
+				hidden_effect = {
+					country_event = { 
+						id = hungong.30
+						days = 5
+					}
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_shi_shi_qiu_shi
+			icon = GFX_goal_HNN_shi_shi_qiu_shi
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = -2
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jun_dui_chun_jie_hua
+			}
+			prerequisite = {
+				focus = HNN_ji_xie_hua_nong_ju
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
+				add_stability = 0.05
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.1
+				}
+				country_event = { 
+					id = hungong.17
+					days = 3
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_si_xiang_ying_ling
+			icon = GFX_goal_HNN_si_xiang_ying_ling
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 1
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_si_xiang_ying_ling"
+				add_command_power = 20
+				army_experience = 50
+				custom_effect_tooltip = tooltip_white_line
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = HNN_chun_jie_de_jun_de
+			}
+		}
+		
+		focus = {
+			id = HNN_fa_zhan_zhong_gong_ye
+			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 1
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_si_xiang_ying_ling
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_fa_zhan_zhong_gong_ye"
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe
+					amount = 40
+					producer = HNN
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 400
+					producer = HNN
+				}
+				custom_effect_tooltip = tooltip_white_line
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = ENG_mobilized_industry_idea
+			}
+		}
+
+		focus = {
+			id = HNN_bu_tie_you_zhi_qi_ye
+			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 1
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_fa_zhan_zhong_gong_ye
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_bu_tie_you_zhi_qi_ye"
+
+			}
+		}
+
+		focus = {
+			id = HNN_jun_shi_hua_qing_nan_tuan
+			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 3
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_si_xiang_ying_ling
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_shi_hua_qing_nan_tuan"
+				show_unit_leaders_tooltip = HNN_Hua_Guofeng
+				hidden_effect = {
+					HNN_Hua_Guofeng = { HNN_recruit_characters_effect = yes }
+				}
+			}
+		}
+
+		focus = {
+			id = HNN_kuo_bian_chi_wei_dui
+			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 3
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_jun_shi_hua_qing_nan_tuan
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_kuo_bian_chi_wei_dui"
+
+			}
+		}
+
+		focus = {
+			id = HNN_wu_chan_jie_ji_da_ge_ming
+			icon = GFX_goal_HNN_shi_shi_qiu_shi
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 0
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_ji_xie_hua_nong_ju
+			}
+			prerequisite = {
+				focus = HNN_bu_tie_you_zhi_qi_ye
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_wu_chan_jie_ji_da_ge_ming"
+
+			}
+		}
+
+		focus = {
+			id = HNN_wei_le_dou_zheng_er_tuan_jie
+			icon = GFX_goal_HNN_shi_shi_qiu_shi
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 2
+			y = 5
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_kuo_bian_chi_wei_dui
+			}
+			prerequisite = {
+				focus = HNN_bu_tie_you_zhi_qi_ye
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_wei_le_dou_zheng_er_tuan_jie"
+
+			}
+		}
+
+		focus = {
+			id = HNN_qian_jin_qian_Jin_qian_jin
+			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
+			x = 0
+			y = 6
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_shi_shi_qiu_shi
+			}
+			prerequisite = {
+				focus = HNN_wei_le_dou_zheng_er_tuan_jie
+			}
+			prerequisite = {
+				focus = HNN_wu_chan_jie_ji_da_ge_ming
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_qian_jin_qian_Jin_qian_jin"
+
+			}
+		}
+	#何叔衡
+		focus = {
+			id = HNN_he_shu_huan_jiang_ling_dao_us
+			icon = GFX_goal_HNN_he_shu_huan_jiang_ling_dao_us
+			relative_position_id = HNN_gongtuan
+			x = 0
+			y = 2
+			cost = 5
+		
+			prerequisite = {
+				focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
+			}
+			available = {
+				has_country_flag = HNN_he_victory
+			}
+			bypass = {
+				has_country_flag = HNN_he_victory
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_he_shu_huan_jiang_ling_dao_us"
+			}
+		}
+		
+		focus = {
+			id = HNN_dui_guo_ming_dang_tuo_xie
+			icon = GFX_goal_HNN_dui_guo_ming_dang_tuo_xie
+			relative_position_id = HNN_he_shu_huan_jiang_ling_dao_us
+			x = 0
+			y = 1
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_he_shu_huan_jiang_ling_dao_us
+			}
+			available = {
+				CHI = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_dui_guo_ming_dang_tuo_xie"
+				add_stability = 0.05
+				add_opinion_modifier = {
 					target = CHI
-					civilian_intel = 5
-					army_intel = 5
-					navy_intel = 5
-					airforce_intel = 5
+					modifier = CHI_exist_YUN
 				}
-				add_intel = {
-					target = QIE
-					civilian_intel = 5
-					army_intel = 5
-					navy_intel = 5
-					airforce_intel = 5
-				}
-				add_intel = {
-					target = GXC
-					civilian_intel = 5
-					army_intel = 5
-					navy_intel = 5
-					airforce_intel = 5
+				CHI = {
+					country_event = { 
+						id = hungong.26
+						days = 3
+					}
 				}
 			}
 		}
-	}
-	
-	focus = {
-		id = HNN_wu_hai_hua_dang_nei_fan_dui_pai
-		icon = GFX_goal_HNN_wu_hai_hua_dang_nei_fan_dui_pai
-		relative_position_id = HNN_gongtuan
-		x = 10
-		y = 3
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_tang_sheng_ming_jiang_ling_dao_us
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_wu_hai_hua_dang_nei_fan_dui_pai"
-			add_research_slot = 1
-			country_event = {
-				id = hungong.25
-				days = 5
+		
+		focus = {
+			id = HNN_liang_dang_he_zuo
+			icon = GFX_goal_HNN_liang_dang_he_zuo
+			relative_position_id = HNN_he_shu_huan_jiang_ling_dao_us
+			x = 0
+			y = 2
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
 			}
-		}
-	}
-	
-	focus = {
-		id = HNN_ji_shi_gongre_yeshi_junren
-		icon = GFX_goal_HNN_ji_shi_gongre_yeshi_junren
-		relative_position_id = HNN_gongtuan
-		x = 11
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_wu_hai_hua_dang_nei_fan_dui_pai
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_shi_gongre_yeshi_junren"
-			custom_effect_tooltip = HNN_revolutionary_army_tt
-			hidden_effect = {
-				load_oob = "HNN_Elite_Units"
+			prerequisite = {
+				focus = HNN_dui_guo_ming_dang_tuo_xie
 			}
-		}
-	}
-	
-	focus = {
-		id = HNN_ming_zhu_ji_zhong
-		icon = GFX_goal_HNN_ming_zhu_ji_zhong
-		relative_position_id = HNN_gongtuan
-		x = 9
-		y = 4
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_wu_hai_hua_dang_nei_fan_dui_pai
-		}
-		prerequisite = {
-			focus = HNN_nei_zhan_de_jiao_xun
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_ming_zhu_ji_zhong"
-			add_ideas = FRA_centralism_idea
-		}
-	}
-	
-	focus = {
-		id = HNN_jin_ji_ji_hua
-		icon = GFX_goal_HNN_jin_ji_ji_hua
-		relative_position_id = HNN_gongtuan
-		x = 8
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ming_zhu_ji_zhong
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jin_ji_ji_hua"
-			add_timed_idea = {
-				idea = HNN_five_year_plan
-				days = 1800
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_quan_sheng_tu_gai
-		icon = GFX_goal_HNN_quan_sheng_tu_gai
-		relative_position_id = HNN_gongtuan
-		x = 10
-		y = 5
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_ming_zhu_ji_zhong
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_quan_sheng_tu_gai"
-			602 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			1013 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			1049 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			1052 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			add_stability = -0.05
-			country_event = {
-				id = hungong.33
-				days = 5
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_cheng_shi_gong_ye_Hua
-		icon = GFX_goal_HNN_cheng_shi_gong_ye_Hua
-		relative_position_id = HNN_gongtuan
-		x = 7
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jin_ji_ji_hua
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_jin_ji_ji_hua"
-			602 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type =  arms_factory
-					level = 3
-					instant_build = yes
+			available = {
+				CHI = {
+					exists = yes
+					is_puppet = no
 				}
 			}
-			add_tech_bonus = {
-				name = HNN_Subsidies_to_Military_Industry
-				bonus = 1.00
-				uses = 2
-				category = industry
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_dang_he_zuo"
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 0.05
+				}
+				CHI = {
+					country_event = { 
+						id = hungong.27
+						days = 3
+					}
+				}
 			}
 		}
-	}
-	
-	focus = {
-		id = HNN_dong_ting_hu_qi_ji
-		icon = GFX_goal_HNN_dong_ting_hu_qi_ji
-		relative_position_id = HNN_gongtuan
-		x = 8
-		y = 7
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
+		
+		focus = {
+			id = HNN_cong_xin_ru_dang
+			icon = GFX_goal_HNN_cong_xin_ru_dang
+			relative_position_id = HNN_he_shu_huan_jiang_ling_dao_us
+			x = -1
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_liang_dang_he_zuo
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_dang_he_zuo"
+				add_war_support = 0.05
+				country_event = { 
+					id = hungong.28
+					days = 3
+				}
+			}
 		}
-		prerequisite = {
-			focus = HNN_cheng_shi_gong_ye_Hua
+		
+		focus = {
+			id = HNN_gong_gu_xian_fa
+			icon = GFX_goal_HNN_gong_gu_xian_fa
+			relative_position_id = HNN_he_shu_huan_jiang_ling_dao_us
+			x = 1
+			y = 3
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_liang_dang_he_zuo
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_gong_gu_xian_fa"
+				add_political_power = 100
+			}
 		}
-		prerequisite = {
-			focus = HNN_gao_xiao_jing_ji_ji_qi
+		
+		focus = {
+			id = HNN_hu_nan_sheng_de_xin_jing_ji
+			icon = GFX_goal_HNN_hu_nan_sheng_de_xin_jing_ji
+			relative_position_id = HNN_he_shu_huan_jiang_ling_dao_us
+			x = 0
+			y = 4
+			cost = 5
+		
+			ai_will_do = {
+				base = 15
+			}
+			prerequisite = {
+				focus = HNN_cong_xin_ru_dang
+			}
+			prerequisite = {
+				focus = HNN_gong_gu_xian_fa
+			}
+		
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus HNN_hu_nan_sheng_de_xin_jing_ji"
+				602 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type =  arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type =  industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
+	#唐生明
+		# focus = {
+		# 	id = HNN_tang_sheng_ming_jiang_ling_dao_us
+		# 	icon = GFX_goal_HNN_tang_sheng_ming_jiang_ling_dao_us
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 9
+		# 	y = 2
+		# 	cost = 5
+		
+		# 	prerequisite = {
+		# 		focus = HNN_di_yi_ci_hnn_dai_bioa_da_hui
+		# 	}
+		# 	available = {
+		# 		has_country_flag = HNN_tang_victory
+		# 	}
+		# 	bypass = {
+		# 		has_country_flag = HNN_tang_victory
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_tang_sheng_ming_jiang_ling_dao_us"
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_nei_zhan_de_jiao_xun
+		# 	icon = GFX_goal_HNN_nei_zhan_de_jiao_xun
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 8
+		# 	y = 3
+		# 	cost = 4
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_tang_sheng_ming_jiang_ling_dao_us
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_nei_zhan_de_jiao_xun"
+		# 		add_manpower = -2000
+		# 		add_popularity = {
+		# 			ideology = totalist
+		# 			popularity = 0.05
+		# 		}
+		# 		add_ideas = HNN_direndejiaoxun
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_ge_ming_qing_bao_ju
+		# 	icon = GFX_goal_HNN_ge_ming_qing_bao_ju
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 7
+		# 	y = 4
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_nei_zhan_de_jiao_xun
+		# 	}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_dong_ting_hu_qi_ji"
-			add_research_slot = 1
-			add_popularity = {
-				ideology = totalist
-				popularity = 0.1
-			}
-			add_stability = 0.1
-			602 = {
-				set_state_category = nine
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_gao_xiao_jing_ji_ji_qi
-		icon = GFX_goal_HNN_gao_xiao_jing_ji_ji_qi
-		relative_position_id = HNN_gongtuan
-		x = 9
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_jin_ji_ji_hua
-		}
-		prerequisite = {
-			focus = HNN_quan_sheng_tu_gai
-		}
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_qing_bao_ju"
+		# 		if = {
+		# 			limit = { has_dlc = "La Resistance" }
+		# 			if = {
+		# 				limit = { has_intelligence_agency = no }
+		# 				create_intelligence_agency = yes
+		# 				upgrade_intelligence_agency = upgrade_passive_defense
+		# 			}
+		# 			else = { upgrade_intelligence_agency = upgrade_blueprint_stealing }
+		# 		}
+		# 		if = {
+		# 			limit = { has_dlc = "La Resistance" }
+		# 			add_intel = {
+		# 				target = CHI
+		# 				civilian_intel = 5
+		# 				army_intel = 5
+		# 				navy_intel = 5
+		# 				airforce_intel = 5
+		# 			}
+		# 			add_intel = {
+		# 				target = QIE
+		# 				civilian_intel = 5
+		# 				army_intel = 5
+		# 				navy_intel = 5
+		# 				airforce_intel = 5
+		# 			}
+		# 			add_intel = {
+		# 				target = GXC
+		# 				civilian_intel = 5
+		# 				army_intel = 5
+		# 				navy_intel = 5
+		# 				airforce_intel = 5
+		# 			}
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_wu_hai_hua_dang_nei_fan_dui_pai
+		# 	icon = GFX_goal_HNN_wu_hai_hua_dang_nei_fan_dui_pai
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 10
+		# 	y = 3
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_tang_sheng_ming_jiang_ling_dao_us
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_wu_hai_hua_dang_nei_fan_dui_pai"
+		# 		add_research_slot = 1
+		# 		country_event = {
+		# 			id = hungong.25
+		# 			days = 5
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_ji_shi_gongre_yeshi_junren
+		# 	icon = GFX_goal_HNN_ji_shi_gongre_yeshi_junren
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 11
+		# 	y = 4
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_wu_hai_hua_dang_nei_fan_dui_pai
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_shi_gongre_yeshi_junren"
+		# 		custom_effect_tooltip = HNN_revolutionary_army_tt
+		# 		hidden_effect = {
+		# 			load_oob = "HNN_Elite_Units"
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_ming_zhu_ji_zhong
+		# 	icon = GFX_goal_HNN_ming_zhu_ji_zhong
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 9
+		# 	y = 4
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_wu_hai_hua_dang_nei_fan_dui_pai
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_nei_zhan_de_jiao_xun
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_ming_zhu_ji_zhong"
+		# 		add_ideas = FRA_centralism_idea
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_jin_ji_ji_hua
+		# 	icon = GFX_goal_HNN_jin_ji_ji_hua
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 8
+		# 	y = 5
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_ming_zhu_ji_zhong
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_jin_ji_ji_hua"
+		# 		add_timed_idea = {
+		# 			idea = HNN_five_year_plan
+		# 			days = 1800
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_quan_sheng_tu_gai
+		# 	icon = GFX_goal_HNN_quan_sheng_tu_gai
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 10
+		# 	y = 5
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_ming_zhu_ji_zhong
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_quan_sheng_tu_gai"
+		# 		602 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 		}
+		# 		1013 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 		}
+		# 		1049 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 		}
+		# 		1052 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 		}
+		# 		add_stability = -0.05
+		# 		country_event = {
+		# 			id = hungong.33
+		# 			days = 5
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_cheng_shi_gong_ye_Hua
+		# 	icon = GFX_goal_HNN_cheng_shi_gong_ye_Hua
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 7
+		# 	y = 6
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_jin_ji_ji_hua
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_jin_ji_ji_hua"
+		# 		602 = {
+		# 			add_extra_state_shared_building_slots = 3
+		# 			add_building_construction = {
+		# 				type =  arms_factory
+		# 				level = 3
+		# 				instant_build = yes
+		# 			}
+		# 		}
+		# 		add_tech_bonus = {
+		# 			name = HNN_Subsidies_to_Military_Industry
+		# 			bonus = 1.00
+		# 			uses = 2
+		# 			category = industry
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_dong_ting_hu_qi_ji
+		# 	icon = GFX_goal_HNN_dong_ting_hu_qi_ji
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 8
+		# 	y = 7
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_cheng_shi_gong_ye_Hua
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_gao_xiao_jing_ji_ji_qi
+		# 	}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_gao_xiao_jing_ji_ji_qi"
-			add_ideas = HNN_economies_of_scale
-		}
-	}
-	
-	focus = {
-		id = HNN_nong_ye_ji_ti_hua
-		icon = GFX_goal_HNN_nong_ye_ji_ti_hua
-		relative_position_id = HNN_gongtuan
-		x = 11
-		y = 6
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_quan_sheng_tu_gai
-		}
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_dong_ting_hu_qi_ji"
+		# 		add_research_slot = 1
+		# 		add_popularity = {
+		# 			ideology = totalist
+		# 			popularity = 0.1
+		# 		}
+		# 		add_stability = 0.1
+		# 		602 = {
+		# 			set_state_category = nine
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_gao_xiao_jing_ji_ji_qi
+		# 	icon = GFX_goal_HNN_gao_xiao_jing_ji_ji_qi
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 9
+		# 	y = 6
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_jin_ji_ji_hua
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_quan_sheng_tu_gai
+		# 	}
 
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_nong_ye_ji_ti_hua"
-			1013 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type =  industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			1049 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type =  industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			1052 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type =  industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = HNN_yue_yue_you_zhu_chi
-		icon = GFX_goal_HNN_yue_yue_you_zhu_chi
-		relative_position_id = HNN_gongtuan
-		x = 10
-		y = 7
-		cost = 5
-	
-		ai_will_do = {
-			base = 15
-		}
-		prerequisite = {
-			focus = HNN_nong_ye_ji_ti_hua
-		}
-		prerequisite = {
-			focus = HNN_gao_xiao_jing_ji_ji_qi
-		}
-	
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_yue_yue_you_zhu_chi"
-			add_ideas = HNN_capone_welfare_3
-		}
-	}
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_gao_xiao_jing_ji_ji_qi"
+		# 		add_ideas = HNN_economies_of_scale
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_nong_ye_ji_ti_hua
+		# 	icon = GFX_goal_HNN_nong_ye_ji_ti_hua
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 11
+		# 	y = 6
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_quan_sheng_tu_gai
+		# 	}
+
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_nong_ye_ji_ti_hua"
+		# 		1013 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 			add_building_construction = {
+		# 				type =  industrial_complex
+		# 				level = 2
+		# 				instant_build = yes
+		# 			}
+		# 		}
+		# 		1049 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 			add_building_construction = {
+		# 				type =  industrial_complex
+		# 				level = 2
+		# 				instant_build = yes
+		# 			}
+		# 		}
+		# 		1052 = {
+		# 			add_extra_state_shared_building_slots = 2
+		# 			add_building_construction = {
+		# 				type =  industrial_complex
+		# 				level = 2
+		# 				instant_build = yes
+		# 			}
+		# 		}
+		# 	}
+		# }
+		
+		# focus = {
+		# 	id = HNN_yue_yue_you_zhu_chi
+		# 	icon = GFX_goal_HNN_yue_yue_you_zhu_chi
+		# 	relative_position_id = HNN_gongtuan
+		# 	x = 10
+		# 	y = 7
+		# 	cost = 5
+		
+		# 	ai_will_do = {
+		# 		base = 15
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_nong_ye_ji_ti_hua
+		# 	}
+		# 	prerequisite = {
+		# 		focus = HNN_gao_xiao_jing_ji_ji_qi
+		# 	}
+		
+		# 	completion_reward = {
+		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_yue_yue_you_zhu_chi"
+		# 		add_ideas = HNN_capone_welfare_3
+		# 	}
+		# }
 ###中华人民共和国
 	focus = {
 		id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
@@ -1428,10 +1673,14 @@ focus_tree = {
 			base = 15
 		}
 		available = {
-			NOT = { 
-				has_country_flag = HNN_tang_victory 
-			}
+			# NOT = { 
+			# 	has_country_flag = HNN_tang_victory 
+			# }
 			has_country_flag = HNN_PROC_victory
+			OR = {
+				has_completed_focus = HNN_qian_jin_qian_Jin_qian_jin
+				has_completed_focus = HNN_gao_qing_huo_ju
+			}
 		}
 
 		completion_reward = {
@@ -5131,149 +5380,6 @@ focus_tree = {
 			}
 		}	
 
-	#赵紫阳
-		# focus = {
-		# 	id = HNN_zhao_zi_yang_zhu_xi
-		# 	icon = GFX_goal_HNN_zhao_zi_yang_zhu_xi
-		# 	relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		# 	x = 15
-		# 	y = 5
-		# 	cost = 5
-		
-		# 	ai_will_do = {
-		# 		base = 15
-		# 	}
-		# 	available = {
-				
-		# 	}
-		# 	bypass = {
-				
-		# 	}
-		
-		# 	prerequisite = {
-		# 		focus = HNN_dang_de_fa_lv
-		# 		focus = HNN_ren_ming_zui_gao_fa_yuan
-		# 	}
-	
-		# 	completion_reward = {
-		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_zhao_zi_yang_zhu_xi"
-				
-		# 	}
-		# }	
-
-		# focus = {
-		# 	id = HNN_you_xjan_si_you_hua
-		# 	icon = GFX_goal_DOM_The_Phoenix
-		# 	relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		# 	x = 15
-		# 	y = 7
-		# 	cost = 5
-		
-		# 	ai_will_do = {
-		# 		base = 15
-		# 	}
-		# 	available = {
-				
-		# 	}
-		# 	bypass = {
-				
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_zhao_zi_yang_zhu_xi
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_shi_chang_jing_ji
-		# 	}
-	
-		# 	completion_reward = {
-		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_you_xjan_si_you_hua"
-				
-		# 	}
-		# }	
-
-		# focus = {
-		# 	id = HNN_xian_fu_dai_dong_hou_fu
-		# 	icon = GFX_goal_DOM_The_Phoenix
-		# 	relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		# 	x = 14
-		# 	y = 8
-		# 	cost = 5
-		
-		# 	ai_will_do = {
-		# 		base = 15
-		# 	}
-		# 	available = {
-				
-		# 	}
-		# 	bypass = {
-				
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_you_xjan_si_you_hua
-		# 	}
-	
-		# 	completion_reward = {
-		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_xian_fu_dai_dong_hou_fu"
-				
-		# 	}
-		# }	
-
-		# focus = {
-		# 	id = HNN_jie_ru_guo_ji
-		# 	icon = GFX_goal_DOM_The_Phoenix
-		# 	relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		# 	x = 16
-		# 	y = 8
-		# 	cost = 5
-		
-		# 	ai_will_do = {
-		# 		base = 15
-		# 	}
-		# 	available = {
-				
-		# 	}
-		# 	bypass = {
-				
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_you_xjan_si_you_hua
-		# 	}
-	
-		# 	completion_reward = {
-		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_jie_ru_guo_ji"
-				
-		# 	}
-		# }
-
-		# focus = {
-		# 	id = HNN_fan_dui_ping_deng_zhu_yi
-		# 	icon = GFX_goal_DOM_The_Phoenix
-		# 	relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		# 	x = 15
-		# 	y = 9
-		# 	cost = 5
-		
-		# 	ai_will_do = {
-		# 		base = 15
-		# 	}
-		# 	available = {
-				
-		# 	}
-		# 	bypass = {
-				
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_xian_fu_dai_dong_hou_fu
-		# 	}
-		# 	prerequisite = {
-		# 		focus = HNN_jie_ru_guo_ji
-		# 	}
-	
-		# 	completion_reward = {
-		# 		log = "[GetDateText]: [Root.GetName]: Focus HNN_fan_dui_ping_deng_zhu_yi"
-				
-		# 	}
-		# }
 	#彭德怀	
 		focus = {
 			id = HNN_wei_chi_jun_shi_guan_li
@@ -8527,6 +8633,7 @@ focus_tree = {
 			OR = {
 				has_completed_focus = HNN_over_time
 				has_war_with = JAP
+				has_war_with = FNG
 			}
 		}
 	
@@ -8806,6 +8913,7 @@ focus_tree = {
 			OR = {
 				has_completed_focus = HNN_over_time
 				has_war_with = JAP
+				has_war_with = FNG
 			}
 		}
 	
@@ -9193,7 +9301,6 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
 	}	
 
 	focus = {

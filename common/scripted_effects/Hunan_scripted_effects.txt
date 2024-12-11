@@ -601,6 +601,7 @@ HNN_recruit_characters_effect = {#重新招募
 		set_nationality = HNN
 	}
 }
+
 demote_to_general = {
 	hidden_effect = {
 		if = {
@@ -1126,6 +1127,7 @@ HNN_merge_kmt_spirits_dong = {#合并精神-董必武
 		HNN_worker_constitution
 		HNN_hunan_syndicalist
 		HNN_gai_ge_jiao_yu2
+		FRA_working_women_idea
 	}
 	add_ideas = HNN_hunan_syndicalist2
 }

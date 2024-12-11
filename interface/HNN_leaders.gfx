@@ -21,7 +21,7 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_lu_dangping.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_HNN_tan_zheng"
+		name = "GFX_Portrait_HNN_Tan_zheng"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Tan_zheng.png"
 	}
 	spriteType = {

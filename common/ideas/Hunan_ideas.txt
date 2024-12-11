@@ -1876,11 +1876,9 @@ ideas = {
             modifier = {			
 				stability_factor = 0.10
 				syndicalist_drift = 0.01
-				monthly_population = 0.5
 				stability_weekly = 0.0095
 				war_support_weekly = 0.0095
 				political_power_gain = 0.10
-				party_popularity_stability_factor = 0.20
 			}
 		}
 		HNN_hunan_syndicalist = {#湖南式工团主义
@@ -1895,7 +1893,7 @@ ideas = {
             modifier = {
 				syndicalist_drift = 0.05
 				production_speed_buildings_factor = 0.10
-				production_factory_max_efficiency_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 		HNN_hunan_syndicalist2 = {#湖南式工团主义
@@ -1907,25 +1905,23 @@ ideas = {
 				} 
 			}
 			allowed = { always = no }
-            modifier = {
-				weekly_manpower = 200											
+            modifier = {										
 				local_manpower = 0.10
 				local_supplies = 0.10
 				local_factories = 0.10
 				local_org_regain = 0.10
-				stability_factor = 0.20
+				stability_factor = 0.10
 				syndicalist_drift = 0.06
 				stability_weekly = 0.010
-				monthly_population = 0.20
 				war_support_weekly = 0.010
-				research_speed_factor = 0.100
+				conscription_factor = 0.04
+				research_speed_factor = 0.10
 				justify_war_goal_time = -0.20
 				local_resources_factor = 0.10
 				political_power_factor = 0.05
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.15
 				license_tech_difference_speed = 0.10
 				industrial_concern_cost_factor = -0.10
-				party_popularity_stability_factor = 0.20
 				production_speed_buildings_factor = 0.15
 				production_factory_max_efficiency_factor = 0.10
 			}
@@ -1945,10 +1941,9 @@ ideas = {
 			picture = generic_lightbulb
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.05
 				stability_factor = 0.05
 				monthly_population = 0.20
-				weekly_manpower = 200
+				research_speed_factor = 0.05
 			}
 		}
 		HNN_gai_ge_jiao_yu2 = {#改革教育
@@ -1956,7 +1951,6 @@ ideas = {
 			picture = generic_lightbulb
 			allowed = { always = no }
 			modifier = {
-				weekly_manpower = 200
 				stability_factor = 0.10
 				monthly_population = 0.20
 				research_speed_factor = 0.10
@@ -2016,7 +2010,7 @@ ideas = {
 			picture = turtleisland
 			allowed = { always = no }
 			modifier = {
-				local_manpower = 0.10
+				local_manpower = 0.05
 				local_supplies = 0.10
 				local_factories = 0.10
 				local_org_regain = 0.10

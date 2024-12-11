@@ -11,7 +11,7 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		add_ideas = NFA_ties_with_business
+		load_focus_tree = { tree = Hunan_Red }
 
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
