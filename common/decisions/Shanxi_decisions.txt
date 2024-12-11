@@ -41,16 +41,10 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			if = {
 				limit = {
 					NOT = { 
-						# has_game_rule = { 
-						# 	rule = SHX_path 
-						# 	option = SHX_PATH_PATAUT 
-						# } 
-					}
-					NOT = { 
-						# has_game_rule = { 
-						# 	rule = SHX_forpol 
-						# 	option = SHX_FORPOL_QIE 
-						# } 
+						has_game_rule = { 
+							rule = SHX_path 
+							option = SHX_STRUGGLE_YAN 
+						} 
 					}
 				}
 				SHX_feng_victory_effect = yes
@@ -127,9 +121,29 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		priority = 100 #Make this on top of category
 		ai_will_do = {
 			base = 0
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { 
+						rule = SHX_path 
+						option = SHX_STRUGGLE_FENG 
+					}
+					has_game_rule = { 
+						rule = SHX_path 
+						option = SHX_STRUGGLE_FU 
+					}
+				}
+			}
 			modifier = { #start considering taking if its already been over a year
 				add = 50
 				date > 1937.3.15
+			}
+			modifier = { #take as soon as can if got Yan path
+				add = 1000
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
 			}
 			modifier = { #start considering taking if its already been over two years
 				add = 50
@@ -158,6 +172,13 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			modifier = { #start considering taking if its already been over two years
 				add = 50
 				date > 1938.3.15
+			}
+			modifier = {
+				add = 1000
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
 			}
 		}
 
@@ -190,6 +211,13 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			modifier = { #start considering taking if its already been over two years
 				add = 50
 				date > 1938.3.15
+			}
+			modifier = {
+				add = 1000
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
 			}
 		}
 
@@ -226,6 +254,13 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 				add = 50
 				date > 1938.3.15
 			}
+			modifier = {
+				add = 1000
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 		}
 
 		cost = 10
@@ -250,7 +285,14 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		}
 
 		ai_will_do = {
-			base = 0
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = { #start considering taking if its already been over a year
 				add = 50
 				date > 1937.3.15
@@ -258,6 +300,15 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 			modifier = { #start considering taking if its already been over two years
 				add = 50
 				date > 1938.3.15
+			}
+			modifier = {
+				add = 1000
+				NOT = {
+					has_game_rule = { 
+						rule = SHX_path 
+						option = SHX_STRUGGLE_FU 
+					}
+				}
 			}
 		}
 
@@ -2374,17 +2425,22 @@ SHX_QIE_ties = {#在北京的阴影下
 					check_variable = { SHX.SHX_QIE_influence_variable < 10 }
 				}
 			}
-			# modifier = {
-			# 	add = 10000
-			# 	has_country_flag = SHX_paying_with_inf #opposite of above - switch away from buying with influence if has anti beijing path
-			# 	OR = {
-			# 		AND = { #check if they have a non-QIE forpol rule set
-			# 			NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
-			# 			NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_QIE } }
-			# 		}
-			# 		has_game_rule = { rule = SHX_path option = SHX_PATH_AUTDEM }
-			# 	}
-			# }
+			modifier = {
+				add = 10000
+				has_country_flag = SHX_paying_with_inf #opposite of above - switch away from buying with influence if has anti beijing path
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = SHX_paying_with_pp #basically if Yan is set to go anti-Beijing he shouldn't buy with influence
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
 		}
 		visible = {
 			SHX_QIE_influence_active = yes

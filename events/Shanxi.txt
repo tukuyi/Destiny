@@ -270,6 +270,13 @@ country_event = {#井岳秀之死
 		name = shx.earlygame.10.a
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 		}
 		add_stability = -0.025
 		SHX_strengthen_feng_small = yes
@@ -280,6 +287,13 @@ country_event = {#井岳秀之死
 		name = shx.earlygame.10.b
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
 		}
 		add_political_power = -25
 		SHX_strengthen_yan_small = yes
@@ -1055,6 +1069,13 @@ country_event = {#教育新生一代
 		ai_chance = {
 			base = 60
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
 				has_active_mission = SHX_looming_gmj_coup
@@ -1093,6 +1114,13 @@ country_event = {#教育新生一代
 		trigger = { NOT = { has_country_flag = SHX_yan_victory_over_gmj } }
 		ai_chance = {
 			base = 40
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1186,6 +1214,13 @@ country_event = {#土地改革
 		ai_chance = {
 			base = 40
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
 				has_active_mission = SHX_looming_gmj_coup
@@ -1225,6 +1260,13 @@ country_event = {#土地改革
 		}
 		ai_chance = {
 			base = 60
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1318,6 +1360,13 @@ country_event = {#制定农业预算案
 				factor = 1.5
 				has_political_power > 60
 			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 		}
 		add_political_power = -100
 		add_stability = -0.05
@@ -1342,6 +1391,13 @@ country_event = {#制定农业预算案
 		name = shx.agri.3.c
 		ai_chance = {
 			base = 33
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = {
 				factor = 1.5
 				has_war_support > 0.50
@@ -1493,6 +1549,13 @@ country_event = {#公道之团
 		ai_chance = {
 			base = 50
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
 				has_active_mission = SHX_looming_gmj_coup
@@ -1540,6 +1603,13 @@ country_event = {#公道之团
 		name = shx.agri.7.b
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1659,6 +1729,13 @@ country_event = {#我们的工业化之路
 		ai_chance = {
 			base = 60
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
 				has_active_mission = SHX_looming_gmj_coup
@@ -1705,6 +1782,20 @@ country_event = {#我们的工业化之路
 		name = shx.industry.1.feng
 		ai_chance = {
 			base = 40
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = {
 				factor = 5 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1765,6 +1856,13 @@ country_event = {#薄利煤矿
 		name = shx.industry.2.privitize
 		ai_chance = {
 			base = 30
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 		}
 		trigger = {
 			NOT = { has_country_flag = SHX_feng_victory_over_yan }
@@ -1780,6 +1878,13 @@ country_event = {#薄利煤矿
 		name = shx.industry.2.regulate
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
 			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1805,6 +1910,13 @@ country_event = {#薄利煤矿
 		name = shx.industry.2.statusquo
 		ai_chance = {
 			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1873,6 +1985,13 @@ country_event = {#工会罢工
 		ai_chance = {
 			base = 50
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
 				has_active_mission = SHX_looming_gmj_coup
@@ -1898,6 +2017,20 @@ country_event = {#工会罢工
 		name = shx.industry.4.b
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = {
 				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
 				date > 1936.10.01
@@ -1972,6 +2105,13 @@ country_event = {#山西开征盐税
 			modifier = {
 				factor = 0.25
 				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
 			}
 		}
 		SHX = {
@@ -2194,6 +2334,13 @@ country_event = {#邀请外国顾问
 		name = shx.mil.1.a
 		ai_chance = {
 			base = 30
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 		}
 		add_ideas = SHX_russian_aid
 		hidden_effect = { set_country_flag = SHX_russian_aid_flag }
@@ -2209,6 +2356,13 @@ country_event = {#邀请外国顾问
 		}
 		ai_chance = {
 			base = 25
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
 		}
 		add_ideas = SHX_japanese_aid
 		hidden_effect = { set_country_flag = SHX_japanese_aid_flag }
@@ -2219,6 +2373,13 @@ country_event = {#邀请外国顾问
 		name = shx.mil.1.c
 		ai_chance = {
 			base = 45
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
 		}
 		add_ideas = SHX_german_aid
 		SHX_strengthen_yan_medium = yes
@@ -2239,6 +2400,25 @@ country_event = {#政治训导的模式
 		name = shx.mil.2.a
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
 		}
 		trigger = { 
 			has_character = SHX_feng_yuxiang 
@@ -2259,6 +2439,25 @@ country_event = {#政治训导的模式
 		name = shx.mil.2.b
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1936 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
 		}
 		trigger = { 
 			has_character = SHX_yan_xishan 
@@ -3119,6 +3318,13 @@ country_event = {#黑色星期一救济一揽子协议
 		ai_chance = {
 			base = 50
 			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
+			modifier = {
 				factor = 1.2
 				check_variable = { SHX_QIE_influence_variable < 15 }
 			}
@@ -3524,7 +3730,13 @@ country_event = {#新扫盲运动
 
 		ai_chance = {
 			base = 50
-
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = {
 				factor = 1.2
 				check_variable = { SHX_QIE_influence_variable < 15 }
@@ -3632,6 +3844,13 @@ country_event = {#北京训练团
 
 		ai_chance = {
 			base = 50
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
 			modifier = {
 				factor = 1.2
 				check_variable = { SHX_QIE_influence_variable < 15 }

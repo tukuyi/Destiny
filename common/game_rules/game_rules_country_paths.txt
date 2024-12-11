@@ -15066,35 +15066,6 @@ XSM_head = {
 	}
 }
 
-SHX_struggle = {
-	name = "SHX_STRUGGLE"
-	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
-	option = {
-		name = DEFAULT
-		text = "RULE_OPTION_SHX_STRUGGLE_RANDOM"
-		desc = "RULE_OPTION_SHX_STRUGGLE_RANDOM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = SHX_STRUGGLE_YAN
-		text = "RULE_OPTION_SHX_STRUGGLE_YAN"
-		desc = "RULE_OPTION_SHX_STRUGGLE_YAN_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = SHX_STRUGGLE_FENG_JOIN_THE_FRAY
-		text = "RULE_OPTION_SHX_STRUGGLE_FENG_JOIN_THE_FRAY"
-		desc = "RULE_OPTION_SHX_STRUGGLE_FENG_JOIN_THE_FRAY_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = SHX_STRUGGLE_FENG_FENGS_CRUSADE
-		text = "RULE_OPTION_SHX_STRUGGLE_FENG_FENGS_CRUSADE"
-		desc = "RULE_OPTION_SHX_STRUGGLE_FENG_FENGS_CRUSADE_DESC"
-		allow_achievements = yes
-	}
-}
-
 SIK_coup = {
 	name = "SIK_COUP"
 	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
@@ -16122,6 +16093,35 @@ SQI_path = {#山东
 		name = SQI_BAIE
 		text = "RULE_OPTION_SQI_BAIE"
 		desc = "RULE_OPTION_SQI_BAIE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SHX_path = {#山西
+	name = "SHX_STRUGGLE"
+	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
+	option = {#默认
+		name = DEFAULT
+		text = "RULE_OPTION_SHX_STRUGGLE_RANDOM"
+		desc = "RULE_OPTION_SHX_STRUGGLE_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {#阎锡山
+		name = SHX_STRUGGLE_YAN
+		text = "RULE_OPTION_SHX_STRUGGLE_YAN"
+		desc = "RULE_OPTION_SHX_STRUGGLE_YAN_DESC"
+		allow_achievements = yes
+	}
+	option = {#冯玉祥
+		name = SHX_STRUGGLE_FENG
+		text = "SHX_STRUGGLE_FENG"
+		desc = "SHX_STRUGGLE_FENG_DESC"
+		allow_achievements = yes
+	}
+	option = {#傅作义
+		name = SHX_STRUGGLE_FU
+		text = "SHX_STRUGGLE_FU"
+		desc = "SHX_STRUGGLE_FU_DESC"
 		allow_achievements = yes
 	}
 }

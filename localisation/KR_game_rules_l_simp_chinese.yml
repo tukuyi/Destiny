@@ -1929,3 +1929,11 @@
  RULE_OPTION_YUN_right_KMT_DESC:0 "唐继尧将被废黜，朱培德将在随后的内战中取得胜利。"
  RULE_OPTION_YUN_left_KMT:0 "£KR_game_rule_flag_YUN_KMTL 国民党左派上位"
  RULE_OPTION_YUN_left_KMT_DESC:0 "唐继尧将被废黜。内战会转化为长期拉锯，朱德由此获得了充足的时间，把龙云和朱培德都流放出去。"
+
+ SHX_STRUGGLE:0 "£KR_game_rule_flag_SHX 太行山上两虎相争"
+ RULE_OPTION_SHX_STRUGGLE_RANDOM:0 "默认"
+ RULE_OPTION_SHX_STRUGGLE_RANDOM_DESC:0 "紧张局势再临，重压之下，阎冯双头体系崩解，冯玉祥开始挑战阎锡山的统治。利用权力平衡系统，阎锡山会试图巩固权力，直到足以清洗国民军；而国民军则会利用阎锡山的弱点，试图用（大多数情况下）不流血的政变推翻阎锡山的统治。当然除了两位大帅，还有更多的人窥视着山西大位"
+ SHX_STRUGGLE_FENG:0 "£KR_game_rule_flag_SHX_authoritarian_democrat  冯玉祥 - 国民军革命"
+ SHX_STRUGGLE_FENG_DESC:0 "§g冯玉祥§!将围绕他那民粹主义的国民军，组建一个由民族主义者、社会主义激进分子、心怀不满的知识分子以及其他人组成的革命同盟，以罢黜端坐太原的督理阎锡山。这将不可避免地导致与中央政府的冲突。"  
+ SHX_STRUGGLE_FU:0 "£KR_game_rule_flag_SHX_FU  少壮派政变"
+ SHX_STRUGGLE_FU_DESC:0 "傅作义把握住了机会，一锤定音。"  

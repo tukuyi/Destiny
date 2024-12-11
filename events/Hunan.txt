@@ -6671,6 +6671,8 @@ country_event = {#革命成功
 					}
 				}
 			}
+
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 

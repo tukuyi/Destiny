@@ -93,6 +93,11 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	spriteType = {
+		name = "GFX_KR_game_rule_flag_SHX_FU"
+		texturefile = "gfx/flags/small/SHX_FU.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
 		name = "GFX_KR_game_rule_flag_YUN_BAI"
 		texturefile = "gfx/flags/small/YUN_BAI.tga"
 		legacy_lazy_load = no

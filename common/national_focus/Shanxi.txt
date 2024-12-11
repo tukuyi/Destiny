@@ -304,7 +304,25 @@ focus_tree = {
 		y = 2
 		cost = 5
 
-		ai_will_do = { base = 300 }
+		ai_will_do = { 
+			base = 300 
+			modifier = {
+				factor = 0
+				date < 1936.7.1
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.7.1
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_FU 
+				}
+			}
+		}
 
 		prerequisite = {
 			focus = SHX_da_kai_lv_deng
@@ -2029,6 +2047,50 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		ai_will_do = {
+			base = 80
+			modifier = {
+				add = 30
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path
+					option = SHX_STRUGGLE_FENG 
+				}
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 10 #Should try and remove Dual Armies ASAP after GMJ coup is over
+				NOT = { has_country_flag = SHX_yan_feng_split }
+				has_completed_focus = SHX_ji_xu_shi_nian #Otherwise ai tends to beeline this
+				has_idea = SHX_dual_armies
+			}
+			modifier = {
+				factor = 100 #Gotta remove dual armies fast if you still have it while at war
+				has_war = yes
+				has_idea = SHX_dual_armies
+			}
+		}
+
 		available = {
 			NOT = {
 				has_country_flag = SHX_feng_victory_over_yan
@@ -2245,6 +2307,50 @@ focus_tree = {
 		x = -5
 		y = 1
 		cost = 5
+
+		ai_will_do = {
+			base = 120
+			modifier = {
+				add = 30
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SHX_path 
+					option = SHX_STRUGGLE_YAN 
+				}
+			}
+			modifier = {
+				factor = 2 #Lock-in: After Oct-1936 SHX should try to be more aggressive in choosing a side
+				date > 1936.10.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 3 #Lock-in: After Jan-1937 SHX should try to be more aggressive in choosing a side
+				date > 1937.01.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_feng_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 0 #Lock-in: After Mar-1937 SHX will stop choosing focuses related to the opposite side until the power struggle is won.
+				date > 1937.03.01
+				has_active_mission = SHX_looming_gmj_coup
+				SHX_yan_is_winning_trigger = yes
+			}
+			modifier = {
+				factor = 10 #Should try and remove Dual Armies ASAP after GMJ coup is over
+				NOT = { has_country_flag = SHX_yan_feng_split }
+				has_completed_focus = SHX_ji_xu_shi_nian #Otherwise ai tends to beeline this
+				has_idea = SHX_dual_armies
+			}
+			modifier = {
+				factor = 100 #Gotta remove dual armies fast if you still have it while at war
+				has_war = yes
+				has_idea = SHX_dual_armies
+			}
+		}
 
 		available = {
 			NOT = {
