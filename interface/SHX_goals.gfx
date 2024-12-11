@@ -239,4 +239,48 @@ SpriteTypes = {
 		name = "GFX_goal_SHX_tui_dong_yi_yuan_zhi_xuan"
 		texturefile = "gfx/interface/goals/SHX_tui_dong_yi_yuan_zhi_xuan.png"
 	}
+	spriteType = {
+		name = "GFX_goal_SHX_shao_zhuang_pai_shang_tai"
+		texturefile = "gfx/interface/goals/SHX_shao_zhuang_pai_shang_tai.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_geng_wen_he_de_zhen_fu"
+		texturefile = "gfx/interface/goals/SHX_geng_wen_he_de_zhen_fu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_tui_gao_fu_li_dai_yu"
+		texturefile = "gfx/interface/goals/SHX_tui_gao_fu_li_dai_yu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_min_zhu_xuan_yan"
+		texturefile = "gfx/interface/goals/SHX_min_zhu_xuan_yan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_you_xian_zhi_you_hua"
+		texturefile = "gfx/interface/goals/SHX_you_xian_zhi_you_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_you_xian_si_you_hua"
+		texturefile = "gfx/interface/goals/SHX_you_xian_si_you_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_chong_zu_shang_hui"
+		texturefile = "gfx/interface/goals/SHX_chong_zu_shang_hui.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_hun_he_xian_dai_hua"
+		texturefile = "gfx/interface/goals/SHX_hun_he_xian_dai_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_nong_cun_di_yi_wei"
+		texturefile = "gfx/interface/goals/SHX_nong_cun_di_yi_wei.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_cha_feng_xie_jiao"
+		texturefile = "gfx/interface/goals/SHX_cha_feng_xie_jiao.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHX_shan_xi_ren_de_shan_xi"
+		texturefile = "gfx/interface/goals/SHX_shan_xi_ren_de_shan_xi.png"
+	}
 }
