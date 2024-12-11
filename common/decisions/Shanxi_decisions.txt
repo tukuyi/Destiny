@@ -142,6 +142,141 @@ SHX_xishan_fuxiang_power_struggle = {#逐鹿山西
 		}
 	}
 
+	#激进度
+	SHX_shan_dong_jun_dui = {#煽动军队
+		icon = soldierly_discipline
+		visible = {
+			has_active_mission = SHX_shao_zhuang_pai_zai_yun_dong
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = { #start considering taking if its already been over a year
+				add = 50
+				date > 1937.3.15
+			}
+			modifier = { #start considering taking if its already been over two years
+				add = 50
+				date > 1938.3.15
+			}
+		}
+
+		cost = 10
+		days_re_enable = 30
+		days_remove = 15
+
+		modifier = {
+			experience_gain_army = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_shan_dong_jun_dui"
+			army_experience = 10
+			SHX_revolution_medium = yes
+		}
+	}
+	SHX_li_yong_zhi_xi = {#寻求北京支援
+		icon = generic_flags
+		visible = {
+			has_active_mission = SHX_shao_zhuang_pai_zai_yun_dong
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = { #start considering taking if its already been over a year
+				add = 50
+				date > 1937.3.15
+			}
+			modifier = { #start considering taking if its already been over two years
+				add = 50
+				date > 1938.3.15
+			}
+		}
+
+		cost = 30
+		days_re_enable = 30
+		days_remove = 15
+
+		modifier = {
+			political_power_gain = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_li_yong_zhi_xi"
+			SHX_strengthen_yan_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			SHX_QIE_spend_medium = yes
+			custom_effect_tooltip = tooltip_white_line
+			SHX_revolution_medium = yes
+		}
+	}
+	SHX_kong_he_fan_dui_pai = {#恐吓反对派
+		icon = bear
+		visible = {
+			has_active_mission = SHX_shao_zhuang_pai_zai_yun_dong
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = { #start considering taking if its already been over a year
+				add = 50
+				date > 1937.3.15
+			}
+			modifier = { #start considering taking if its already been over two years
+				add = 50
+				date > 1938.3.15
+			}
+		}
+
+		cost = 10
+		days_re_enable = 30
+		days_remove = 15
+
+		modifier = {
+			stability_weekly = -0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_kong_he_fan_dui_pai"
+			SHX_strengthen_yan_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			SHX_revolution_medium = yes
+		}
+	}
+	SHX_an_fu_jun_dui = {#安抚军队
+		icon = give_cash
+		visible = {
+			has_active_mission = SHX_shao_zhuang_pai_zai_yun_dong
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = { #start considering taking if its already been over a year
+				add = 50
+				date > 1937.3.15
+			}
+			modifier = { #start considering taking if its already been over two years
+				add = 50
+				date > 1938.3.15
+			}
+		}
+
+		cost = 30
+		days_re_enable = 30
+		days_remove = 15
+
+		modifier = {
+			political_power_gain = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_li_yong_zhi_xi"
+			SHX_strengthen_yan_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			SHX_decrease_revolution_medium = yes
+		}
+	}
+
 	#SHX Education Decisions
 	SHX_educational_reform_mission_timer = {#山西的教育改革进程
 		allowed = {
@@ -2340,6 +2475,12 @@ SHX_QIE_ties = {#在北京的阴影下
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_seek_loan_from_beijing"
+			if = {
+				limit = { 
+					has_active_mission = SHX_shao_zhuang_pai_zai_yun_dong
+				}
+				SHX_revolution_small = yes
+			}
 			SHX_QIE_investment_large = yes
 			add_political_power = 125
 		}
@@ -3035,6 +3176,48 @@ SHX_QIE_ties = {#在北京的阴影下
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_crackdown_foreign_agitators"
 			SHX_QIE_spend_medium = yes
+		}
+	}
+
+	SHX_jian_mian_jun_fei = {#减免山西军费
+		icon = GFX_decision_generic_agreement
+		visible = { 
+			has_completed_focus = SHX_chong_zu_shang_hui
+			SHX_QIE_influence_active = yes 
+		}
+		custom_cost_text = SHX_QIE_eco_invest_large_texticon
+		custom_cost_trigger = {
+			always = yes
+		}
+
+		days_remove = 30
+		days_re_enable = 100
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power < -49
+			}
+			modifier = {
+				add = 3
+				has_political_power < -99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SHX.SHX_QIE_influence_variable < 35 }
+				has_political_power < 100
+			}
+		}
+
+		modifier = {
+			political_power_gain = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_jian_mian_jun_fei"
+			SHX_QIE_investment_large = yes
+			add_political_power = 50
 		}
 	}
 }

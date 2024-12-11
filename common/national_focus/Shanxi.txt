@@ -166,7 +166,7 @@ focus_tree = {
 			add_stability = 0.02
 			SHX_strengthen_feng_small = yes
 			custom_effect_tooltip = tooltip_white_line
-			SHX_increase_revolution_small = yes
+			SHX_decrease_revolution_small = yes
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
@@ -311,6 +311,15 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = SHX_zi_zhu_gong_ye
+		}
+
+		select_effect = {
+			if = {
+				limit = { 
+					date > 1936.7.1
+				}
+				SHX_revolution_large = yes
+			}
 		}
 
 		completion_reward = {
@@ -2093,6 +2102,8 @@ focus_tree = {
 			add_command_power = 25
 			SHX_strengthen_yan_large = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_xiang_xin_jun_guan
@@ -2126,6 +2137,8 @@ focus_tree = {
 				add_to_variable = { SHX_war_plan_supplies_modifier = -0.1 }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_ou_zhan_li_kun
@@ -2145,6 +2158,8 @@ focus_tree = {
 			army_experience = 50
 			air_experience = 50
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_gu_li_wen_ming_bing
@@ -2164,6 +2179,8 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			SHX_upgrade_xiang_jun_model_spirit_effect = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_jun_shi_jiao_dao_tuan
@@ -2196,6 +2213,8 @@ focus_tree = {
 				add_to_variable = { SHX_war_plan_speed_modifier = -0.1 }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_xian_dai_xin_xiang_jun
@@ -2216,6 +2235,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_xian_dai_xin_xiang_jun"
 			SHX_upgrade_xiang_jun_model_spirit_effect = yes
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_yi_guo_min_jun_wei_shi
@@ -2872,6 +2893,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_modern_artillery"
 			add_ideas = SHX_artillery_idea
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 	focus = {
 		id = SHX_aa_measures
@@ -3373,6 +3396,14 @@ focus_tree = {
 				remove_idea = SHX_underdeveloped_mountain_economy_yan2
 				add_idea = SHX_underdeveloped_mountain_economy_yan3
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = SHX_underdeveloped_mountain_economy_feng2
+					}
+					remove_ideas = SHX_underdeveloped_mountain_economy_feng2
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3488,7 +3519,7 @@ focus_tree = {
 		relative_position_id = SHX_zhao_du_li_de_zui_hou_yi_nian
 		x = 0
 		y = 3
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			base = 40
@@ -3510,7 +3541,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shao_zhuang_pai_shang_tai"
-			
+			add_stability = 0.05
+			add_political_power = 50
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
 		}
 	}	
 
@@ -3536,7 +3572,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_geng_wen_he_de_zhen_fu"
-			
+			add_ideas = SHX_yan_xishan_fu_thought_1
 		}
 	}	
 
@@ -3562,7 +3598,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_min_zhu_xuan_yan"
-			
+			add_ideas = SHX_strengthened_assembly
 		}
 	}	
 
@@ -3588,8 +3624,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_you_xian_zhi_you_hua"
-			
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			add_war_support = 0.05
+			add_country_leader_trait = SHX_bu_yi_general
 		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 	}	
 
 	focus = {
@@ -3608,14 +3651,57 @@ focus_tree = {
 			}
 		}
 
+		available = {
+			has_completed_focus = SHX_niu_zhuan_mao_yi
+		}
 		prerequisite = {
 			focus = SHX_min_zhu_xuan_yan
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_you_xian_si_you_hua"
-			
+			if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_yan2
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_yan2
+					add_idea = SHX_underdeveloped_mountain_economy_fu
+				}
+				SHX_QIE_investment_small = yes
+			}
+			else_if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_feng2
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_feng2
+					add_idea = SHX_underdeveloped_mountain_economy_feng2
+				}
+				SHX_QIE_investment_small = yes
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_yan2
+						add_idea = SHX_underdeveloped_mountain_economy_fu
+					}
+					SHX_QIE_investment_small = yes
+				}
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_feng2
+						add_idea = SHX_underdeveloped_mountain_economy_fuB
+					}
+					SHX_QIE_investment_small = yes
+				}
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_PRODUCTION }
 	}	
 
 	focus = {
@@ -3643,7 +3729,40 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_si_you_jiao_yu"
-			
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = SHX_shi_dian_xiang_chun_jiao_yu
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = excavation_tech
+					name = SHX_experimental_school_to_village
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = available_industrial_concern
+				show_ideas_tooltip = SHX_experimental_school_concern
+			}
+			else = {
+				add_stability = 0.05
+				add_research_slot_until_three = yes
+				1015 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				622 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}	
 	
@@ -3672,7 +3791,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_tui_dong_yi_yuan_zhi_xuan"
-			
+			add_command_power = 20.0
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.05
+			}
 		}
 	}	
 
@@ -3701,7 +3830,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_chong_zu_shang_hui"
-			
+			add_marlib_to_coalition = yes
+			SHX_QIE_spend_medium = yes
+			custom_effect_tooltip = SHX_wealth_and_power_tooltip
 		}
 	}	
 
@@ -3733,7 +3864,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_min_zhu_sheng_fu"
-			
+			swap_ideas = {
+				remove_idea = SHX_strengthened_assembly
+				add_idea = SHX_strengthened_assembly2
+			}
 		}
 	}	
 
@@ -3759,7 +3893,41 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_hun_he_xian_dai_hua"
-			
+			if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_yan2
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_fu
+					add_idea = SHX_underdeveloped_mountain_economy_fu2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_feng2
+				}
+				swap_ideas = {
+					remove_idea = SHX_underdeveloped_mountain_economy_fuB
+					add_idea = SHX_underdeveloped_mountain_economy_fuB2
+				}
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_fu
+						add_idea = SHX_underdeveloped_mountain_economy_fu2
+					}
+				}
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_fuB
+						add_idea = SHX_underdeveloped_mountain_economy_fuB2
+					}
+				}
+			}
 		}
 	}	
 
@@ -3785,7 +3953,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_ru_xue_xian_dai_hua"
-			
+			add_ideas = SQI_xin_ru_xue
 		}
 	}	
 
@@ -3805,13 +3973,53 @@ focus_tree = {
 			}
 		}
 
+		available = {
+			has_completed_focus = SHX_xin_zhi_shi_jie_ceng
+		}
 		prerequisite = {
 			focus = SHX_min_zhu_sheng_fu
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_nong_cun_di_yi_wei"
-			
+			if = {
+				limit = {
+					has_idea = SHX_agriculture_reform_Yan1
+				}
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Yan1
+					add_idea = SHX_agriculture_reform_FU
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SHX_agriculture_reform_Feng1
+				}
+				swap_ideas = {
+					remove_idea = SHX_agriculture_reform_Feng1
+					add_idea = SHX_agriculture_reform_FUB
+				}
+				add_political_power = 50
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_agriculture_reform_Yan1
+						add_idea = SHX_agriculture_reform_FU
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_agriculture_reform_Feng1
+						add_idea = SHX_agriculture_reform_FUB
+					}
+					add_political_power = 50
+				}
+			}
 		}
 	}	
 
@@ -3837,7 +4045,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_cha_feng_xie_jiao"
-			
+			add_ideas = QIE_ruralpolitics_idea
 		}
 	}	
 
@@ -3866,7 +4074,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_shan_xi_ren_de_shan_xi"
-			
+			swap_ideas = {
+				remove_idea = SHX_strengthened_assembly2
+				add_idea = SHX_strengthened_assembly3
+			}
 		}
 	}	
 #冯玉祥
@@ -4107,10 +4318,30 @@ focus_tree = {
 					add_idea = SHX_underdeveloped_mountain_economy_feng3
 				}
 			}
-			else = {
+			else_if = {
+				limit = {
+					has_idea = SHX_underdeveloped_mountain_economy_feng2
+				}
 				swap_ideas = {
 					remove_idea = SHX_underdeveloped_mountain_economy_feng2
 					add_idea = SHX_underdeveloped_mountain_economy_feng3
+				}
+			}
+			else = {
+				custom_effect_tooltip = SHX_Depends_tooltip
+				custom_effect_tooltip = SHX_if_favor_yan_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_yan2
+						add_idea = SHX_underdeveloped_mountain_economy_feng3
+					}
+				}
+				custom_effect_tooltip = SHX_if_favor_feng_tooltip
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SHX_underdeveloped_mountain_economy_feng2
+						add_idea = SHX_underdeveloped_mountain_economy_feng3
+					}
 				}
 			}
 		}

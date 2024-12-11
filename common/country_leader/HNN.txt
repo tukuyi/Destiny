@@ -111,5 +111,11 @@ leader_traits = {
 		war_stability_factor = 0.15
 		resistance_damage_to_garrison = -0.10
 	}
+	SHX_bu_yi_general = { #傅作义
+		random = no
+		mobilization_speed = 0.05
+		war_stability_factor = 0.10
+		resistance_damage_to_garrison = -0.10
+	}
 }
 	

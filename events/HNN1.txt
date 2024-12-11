@@ -11,52 +11,21 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
+		add_ideas = NFA_ties_with_business
 
-		set_cosmetic_tag = SHX_FU
-		set_country_flag = SHX_shao_zhuang_victory_over_all
-		promote_character = {
-			character = SHX_fu_zuoyi
-			ideology = authdem_yan_xishan_thought_subtype
-		}
-		SHX_shao_zhuang_victory_effect = yes
+		# set_cosmetic_tag = SHX_FU
+		# set_country_flag = SHX_shao_zhuang_victory_over_all
+		# promote_character = {
+		# 	character = SHX_fu_zuoyi
+		# 	ideology = authdem_yan_xishan_thought_subtype
+		# }
+		# SHX_shao_zhuang_victory_effect = yes
 
 		# SHX_feng_victory_effect = yes
 		# set_country_flag = SHX_feng_victory_over_yan
-		set_politics = {
-			ruling_party = authoritarian_democrat
-			elections_allowed = no
-		}
-		
-		# create_country_leader = {
-		# 	name = "王亚樵"
-		# 	picture = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
-		# 	desc = "POLITICS_WANG_YA_QIAO_DESC"
-		# 	expire = "1965.1.1"
-		# 	ideology = syn_illegalism_subtype
-		# }
-		# set_politics = {
-		# 	ruling_party = syndicalist
-		# }
-		# set_party_name = {
-		# 	ideology = syndicalist
-		# 	long_name = LEC_triad_syndicalist_party_long
-		# 	name = LEC_triad_syndicalist_party
-		# }
-
 		# set_politics = {
 		# 	ruling_party = authoritarian_democrat
-		# }
-		# create_country_leader = {
-		# 	name = "严家淦 "
-		# 	desc = "POLITICS_Yan_Jia_Gan_DESC"
-		# 	picture = "gfx/leaders/GXC/Portrait_GXC_Yan_Jia_Gan.png"
-		# 	expire = "1.1.1"
-		# 	ideology = autdem_technocratic_tridemism_subtype
-		# }
-		# set_party_name = {
-		# 	ideology = authoritarian_democrat
-		# 	name = GXC_authoritarian_democrat_populist_YJG
-		# 	long_name = GXC_authoritarian_democrat_populist_YJG_long
+		# 	elections_allowed = no
 		# }
 	}
 }
