@@ -9308,17 +9308,10 @@ focus_tree = {
 			focus = HNN_bai_jia_zhi_chang 
 			focus = HNN_bomber_command 
 		}
-		available = {
-			
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_mai_bu_zao"
-			swap_ideas = {
-				remove_idea = HNN_domestic_air_production
-				add_idea = HNN_domestic_air_production2
-			} 
+			add_ideas = HNN_domestic_air_production2
 		}
 	}	
 
