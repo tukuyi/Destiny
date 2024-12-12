@@ -8554,7 +8554,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_qu_shi_fan_dui_pai
-		icon = GFX_goal_Automobile_Production
+		icon = GFX_focus_generic_military_equipment
 		relative_position_id = HNN_officer_corps_experience
 		cost = 5.00
 		x = 1

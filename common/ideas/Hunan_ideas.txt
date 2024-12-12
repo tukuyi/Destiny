@@ -2318,16 +2318,6 @@ ideas = {
 				training_time_army_factor = -0.05
 			}
 		}
-		HNN_central_command_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_central_command_idea"}
-			allowed = { always = no }
-			picture = FRA_idea_revenge
-            modifier = {
-				max_planning = 0.10
-				planning_speed = 0.10
-				army_org_Factor = 0.10
-			}
-		}
 		HNN_dan_yi_zhi = {#单一制
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_dan_yi_zhi"}
 			allowed = { always = no }
