@@ -622,10 +622,8 @@ GXC_setup_merchant = {
 	load_focus_tree = { tree = KR_Guangdong_Merchants keep_completed = yes } #pls don't break
 	set_merchant_ministers = yes
 	hidden_effect = {
-		XXA = {
-			GXC_chen_lianbo = {
-				set_nationality = ROOT
-			}
+		GXC_chen_lianbo = {
+			set_nationality = ROOT
 		}
 	}
 }

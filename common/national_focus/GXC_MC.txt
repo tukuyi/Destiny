@@ -74,7 +74,7 @@ focus_tree = {
 		id = GXC_ji_de_ke_le
 		icon = GFX_goal_GXC_ji_de_ke_le
 		relative_position_id = GXC_ren_ren_you_ji_chi
-		cost = 2.00
+		cost = 100000.00
 		x = 0
 		y = 2
 

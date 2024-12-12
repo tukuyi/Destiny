@@ -217,7 +217,7 @@ GXC_COR_build = {#肯德基宪政国
 	}
 	COR = {
 		set_cosmetic_tag = GXC_KFC
-		load_focus_tree = generic_focus
+		load_focus_tree = GXC_KFC_Y
 
 		create_country_leader = {
 			name = "乔治·威廉·克里斯蒂安斯"
@@ -235,6 +235,7 @@ GXC_COR_build = {#肯德基宪政国
 			name =  GXC_totalist_KFC
 		}
 
+		transfer_state = 370
 		transfer_state = 366
 		transfer_state = 1171
 		transfer_state = 1169
@@ -1154,6 +1155,135 @@ GXC_POL_build = {#波兰
 	}	
 }
 
+GXC_ARG_build = {#阿根廷
+	release = ARG
+	puppet = ARG
+	set_autonomy = {
+		target = ARG
+		autonomy_state = autonomous_rich_puppet
+		end_wars = yes
+	}
+	ARG = {
+		set_cosmetic_tag = GXC_ARG
+		load_focus_tree = generic_focus
+
+		create_country_leader = {
+			name = "J·波萨达斯"
+			picture = "gfx/leaders/FOP/Portrait_FOP_Juan_Posadas.png"
+			expire = "1.1.1"
+			ideology = internationalism_subtype
+		}
+		set_politics = {
+			ruling_party = totalist
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = FOP_totalist_crusader_party_long
+			name = FOP_totalist_crusader_party
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = ARG
+					is_core_of = FOP
+					is_core_of = PAR
+					is_core_of = URG
+				}
+			}
+			transfer_state_to = ARG
+			add_core_of = ARG
+		}
+	}	
+}
+
+GXC_BRA_build = {#巴西
+	release = BRA
+	puppet = BRA
+	set_autonomy = {
+		target = BRA
+		autonomy_state = autonomous_rich_puppet
+		end_wars = yes
+	}
+	BRA = {
+		set_cosmetic_tag = GXC_BRA
+		load_focus_tree = generic_focus
+
+		create_country_leader = {
+			name = "古斯塔沃·多德·巴罗索"
+			picture = "gfx/leaders/BRA/Portrait_BRA_Gustavo_Dodt_Barroso.png"
+			expire = "1.1.1"
+			ideology = pataut_ancap_subtype
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = BRA_paternal_autocrat_crusader_party_long
+			name = BRA_paternal_autocrat_crusader_party
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					is_claimed_by = SUR
+					is_core_of = SUR
+					is_core_of = BRA
+					is_core_of = GYA
+				}
+			}
+			transfer_state_to = BRA
+			add_core_of = BRA
+		}
+		1037 = {
+			transfer_state_to = BRA
+		}
+		310 = {
+			transfer_state_to = BRA
+		}
+	}	
+}
+
+GXC_MEX_build = {#墨西哥
+	release = MEX
+	puppet = MEX
+	set_autonomy = {
+		target = MEX
+		autonomy_state = autonomous_rich_puppet
+		end_wars = yes
+	}
+	MEX = {
+		set_cosmetic_tag = GXC_MEX
+		load_focus_tree = generic_focus
+
+		create_country_leader = {
+			name = "玛丽亚三世"
+			picture = "gfx/leaders/MEX/Portrait_Mexico_Maria_III_paint.png"
+			expire = "1.1.1"
+			ideology = monopolized_anarchism_subtype
+			traits = {}
+		}
+		set_politics = {
+			ruling_party = national_populist
+		}
+		set_party_name = {
+			ideology = national_populist
+			long_name = MEX_national_populist_crusader_party_long
+			name = MEX_national_populist_crusader_party
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = MEX
+				}
+			}
+			transfer_state_to = MEX
+			add_core_of = MEX
+		}
+	}	
+}
 
 #李宗仁在行动
 GXC_bop_low_increase_effect_10 = {

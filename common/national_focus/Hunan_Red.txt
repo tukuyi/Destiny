@@ -9285,7 +9285,7 @@ focus_tree = {
 		}
 	}		
 
-	focus = {#
+	focus = {
 		id = HNN_mai_bu_zao
 		icon = GFX_MON_improve_airbases_in_mongolia
 		relative_position_id = HNN_air_frcoe
@@ -9315,7 +9315,7 @@ focus_tree = {
 		}
 	}	
 
-	focus = {#
+	focus = {
 		id = HNN_gong_ye_shi_ji_chu
 		icon = GFX_goal_CZE_air_industry
 		relative_position_id = HNN_air_frcoe

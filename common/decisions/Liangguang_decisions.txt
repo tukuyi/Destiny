@@ -1969,7 +1969,7 @@ GXC_zou_si_wang_lu = {#发财之路
 	}
 }
 
-GXC_quan_qiu_da_bing_gou = {
+GXC_quan_qiu_da_bing_gou = {#全球大并购
 	GXC_chong_jian_ri_ben = {#日本
 		available = {
 			KOR = {
@@ -1986,9 +1986,6 @@ GXC_quan_qiu_da_bing_gou = {
 					is_subject_of = GXC
 				}
 			}
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2041,9 +2038,6 @@ GXC_quan_qiu_da_bing_gou = {
 					is_subject_of = GXC
 				}
 			}
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2815,6 +2809,123 @@ GXC_quan_qiu_da_bing_gou = {
 			
 		}
 	}	
+	GXC_chong_jian_ARG = {#阿根廷
+		available = {
+			OR = {
+				AND = {
+					owns_state = 902
+					owns_state = 278
+					owns_state = 300
+					owns_state = 301
+					owns_state = 512
+					owns_state = 511
+					owns_state = 903
+				}
+				AND = {
+					ARG = {
+						is_subject_of = GXC
+					}
+					FOP = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}
+					PAR = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}
+					URG = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}				
+				}
+			} 
+		}
+
+		fire_only_once = yes
+		days_remove = 0
+		cost = 0
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_chong_jian_ARG"
+			GXC_ARG_build = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GXC_chong_jian_ARG"
+			
+		}
+	}	
+	GXC_chong_jian_BRA = {#巴西
+		available = {
+			OR = {
+				AND = {
+					owns_state = 1038
+					owns_state = 309
+					owns_state = 310
+					owns_state = 1037
+					owns_state = 1039
+					owns_state = 687
+					owns_state = 1078
+					owns_state = 1079
+					owns_state = 1039
+					owns_state = 1308
+					owns_state = 498
+					owns_state = 496
+					owns_state = 500
+					owns_state = 499
+					owns_state = 501
+					owns_state = 502
+				}
+				AND = {
+					BRA = {
+						is_subject_of = GXC
+					}
+					GYA = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}
+					SUR = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}			
+					HOL = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}
+					CAF = {
+						OR ={
+							exists = no
+							is_subject_of = GXC
+						}
+					}		
+				}
+			} 
+		}
+
+		fire_only_once = yes
+		days_remove = 0
+		cost = 0
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_chong_jian_ARG"
+			GXC_BRA_build = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GXC_chong_jian_ARG"
+			
+		}
+	}	
 	GXC_chong_jian_USA = {#美国
 		available = {
 			owns_state = 1162
@@ -2986,9 +3097,6 @@ GXC_quan_qiu_da_bing_gou = {
 			owns_state = 392
 			owns_state = 391
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2996,6 +3104,10 @@ GXC_quan_qiu_da_bing_gou = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GXC_chong_jian_CSA"
+			country_event = { 
+				id = lngst.49
+			}
+			custom_effect_tooltip = tooltip_white_line
 			GXC_CSA_build = yes
 		}
 		remove_effect = {
@@ -3003,6 +3115,39 @@ GXC_quan_qiu_da_bing_gou = {
 			
 		}
 	}		
+	GXC_chong_jian_MEX = {#巴西
+		available = {
+			OR = {
+				AND = {
+					owns_state = 277
+					owns_state = 476
+					owns_state = 480
+					owns_state = 484
+					owns_state = 474
+					owns_state = 478
+					owns_state = 481
+				}
+				AND = {
+					MEX = {
+						is_subject_of = GXC
+					}
+				}
+			} 
+		}
+
+		fire_only_once = yes
+		days_remove = 0
+		cost = 0
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_chong_jian_MEX"
+			GXC_MEX_build = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GXC_chong_jian_MEX"
+			
+		}
+	}	
 }
 
 GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
@@ -4859,7 +5004,6 @@ prospect_for_resources = {
 		ai_will_do = { factor = 100 }
 	}
 }
-
 
 GXC_balance_of_power_category = {#政治斗争
 	GXC_wu_Bribe_Officials = {#贿赂官员

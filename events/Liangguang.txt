@@ -11337,6 +11337,21 @@ country_event = {#拜谒中山陵
 	}
 }
 
+country_event = {#万岁老大个
+	id = lngst.49
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.49" }
+	title = lngst.49.t
+	desc = lngst.49.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.49.a
+		add_political_power = 10
+	}
+}
+
 ########################################
 ########-       百色起义     -##########
 ########################################

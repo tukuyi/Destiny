@@ -35,7 +35,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 	icon = GFX_generic_oppression
 	allowed = { original_tag = GXC }
 	visible = {
-		has_completed_focus = GXC_heng_kua_yi_qie
+		# has_completed_focus = GXC_heng_kua_yi_qie
 	}
 }
 

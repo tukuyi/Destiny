@@ -1,5 +1,17 @@
 SpriteTypes = {	
 	spriteType = {
+		name = "GFX_goal_GXC_bai_ren_de_xiang_shou"
+		texturefile = "gfx/interface/goals/GXC_bai_ren_de_xiang_shou.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GXC_feng_kuang_mei_yi_tian"
+		texturefile = "gfx/interface/goals/GXC_feng_kuang_mei_yi_tian.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GXC_jin_tian_mei_de_chi"
+		texturefile = "gfx/interface/goals/GXC_jin_tian_mei_de_chi.png"
+	}
+	spriteType = {
 		name = "GFX_goal_GXC_zha_ji_gong_she"
 		texturefile = "gfx/interface/goals/GXC_zha_ji_gong_she.png"
 	}

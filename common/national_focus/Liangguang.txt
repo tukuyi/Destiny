@@ -463,7 +463,7 @@ shared_focus = {
 	relative_position_id = GXC_Education_Reform_focus
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_Expand_Yue_University"
-		SZC_add_research_slot = yes
+		add_research_slot_until_four = yes
 	}
 	search_filters = { FOCUS_FILTER_RESEARCH }
 }
@@ -13613,7 +13613,7 @@ shared_focus = {
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_ling_nan_rong_yao"
-		add_research_slot = 1
+		add_research_slot_until_four = yes
 	}
 }	
 

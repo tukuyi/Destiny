@@ -319,7 +319,7 @@ create_country_leader = {
 	ideology = occultism_subtype
 }
 
-recruit_character = QIE_wang_huaiqing
+# recruit_character = QIE_wang_huaiqing
 
 ### Field Marshals
 
