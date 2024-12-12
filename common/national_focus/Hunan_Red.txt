@@ -132,6 +132,8 @@ focus_tree = {
 					producer = HNN
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -170,13 +172,22 @@ focus_tree = {
 				random_owned_state = {
 					add_building_construction = {
 						type = infrastructure
-						level = 5
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
 						instant_build = yes
 					}
 				}
 				custom_effect_tooltip = tooltip_white_line
 				custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -262,6 +273,8 @@ focus_tree = {
 					days = 3
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 
 		focus = {
@@ -281,7 +294,7 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_chang_jing_ji"
-				add_ideas = HNN_half_Social_economy
+				add_ideas = HNN_half_Social_economy0
 			}
 		}
 
@@ -303,8 +316,8 @@ focus_tree = {
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_jian_li_wu_jia_ju"
 				swap_ideas = {
-					remove_idea = HNN_half_Social_economy
-					add_idea = HNN_half_Social_economy2
+					remove_idea = HNN_half_Social_economy0
+					add_idea = HNN_half_Social_economy
 				}
 			}
 		}
@@ -326,7 +339,10 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_tiao_tui_zou_lu"
-
+				swap_ideas = {
+					remove_idea = HNN_half_Social_economy
+					add_idea = HNN_half_Social_economy2
+				}
 			}
 		}
 
@@ -382,6 +398,8 @@ focus_tree = {
 					days = 5
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -483,8 +501,38 @@ focus_tree = {
 
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_shi_he_zg_de_gong_tuan_zhu_yi"
-				
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.05
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
+
+			search_filters = { FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -504,10 +552,20 @@ focus_tree = {
 
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_fu_quan_gong_hui"
-				
+				add_stability = 0.10
+				add_manpower = 15000
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.10
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.05
+				}
 			}
-		}
 
+			search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
+		}
 
 		focus = {
 			id = HNN_ge_ming_de_li_shi
@@ -542,6 +600,8 @@ focus_tree = {
 					popularity = -0.1
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 
 		focus = {
@@ -564,8 +624,35 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_jing_ji_dong_yuan_qi_lai"
-
+				add_war_support = 0.04
+				add_manpower = 1000
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
+
+			search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -675,9 +762,11 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_shi_hua_zheng_fu_bu_meng"
+				add_stability = -0.05
+				add_war_support = 0.05
 				add_popularity = {
 					ideology = syndicalist
-					popularity = 0.1
+					popularity = 0.05
 				}
 				custom_effect_tooltip = tooltip_white_line
 				every_unit_leader = {
@@ -686,6 +775,10 @@ focus_tree = {
 				}
 				custom_effect_tooltip = tooltip_white_line
 				add_ideas = FRA_society
+			}
+			
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
 			}
 		}
 
@@ -709,7 +802,7 @@ focus_tree = {
 				add_ideas = command_economy
 				custom_effect_tooltip = tooltip_white_line
 				add_timed_idea = {
-					idea = GRU_KOMMANDOWIRTSCHAFT
+					idea = HNN_KOMMANDOWIRTSCHAFT
 					days = 360
 				}
 			}
@@ -764,7 +857,8 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
-				add_stability = 0.1
+				add_political_power = -50
+				add_stability = 0.10
 				602 = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
@@ -782,6 +876,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -813,7 +909,7 @@ focus_tree = {
 				}
 			}
 
-			search_filters = { FOCUS_FILTER_RESEARCH }
+			search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {#改为农村知识分子
@@ -863,6 +959,8 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_xie_hua_nong_ju"
+				custom_effect_tooltip = HNN_unlock_agricultural_revolution_decisions
+				custom_effect_tooltip = tooltip_white_line
 				add_stability = 0.05
 				add_popularity = {
 					ideology = syndicalist
@@ -906,6 +1004,8 @@ focus_tree = {
 				custom_effect_tooltip = tooltip_white_line
 				add_ideas = HNN_chun_jie_de_jun_de
 			}
+
+			search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_INDUSTRY }
 		}
 		
 		focus = {
@@ -947,6 +1047,8 @@ focus_tree = {
 				custom_effect_tooltip = tooltip_white_line
 				add_ideas = ENG_mobilized_industry_idea
 			}
+
+			search_filters = { FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -966,8 +1068,26 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_bu_tie_you_zhi_qi_ye"
-
+				mio:HNN_tiema_organisation = {
+					add_mio_size = 1
+				}
+				mio:HNN_hengyang_arsenal_organisation = { 
+					add_mio_size = 1 
+				}
+				mio:HNN_zhuzhou_artillery_organisation = { 
+					add_mio_size = 1 
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
+
+			search_filters = { FOCUS_FILTER_INDUSTRY }
 		}
 
 		focus = {
@@ -988,6 +1108,8 @@ focus_tree = {
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_jun_shi_hua_qing_nan_tuan"
 				show_unit_leaders_tooltip = HNN_Hua_Guofeng
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = HNN_chantiers_de_la_jeunesse
 				hidden_effect = {
 					HNN_Hua_Guofeng = { HNN_recruit_characters_effect = yes }
 				}
@@ -1011,7 +1133,10 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_kuo_bian_chi_wei_dui"
-
+				custom_effect_tooltip = HNN_revolutionary_miltia_tt
+				hidden_effect = {
+					load_oob = "HNN_Revolutionary_Militia"
+				}
 			}
 		}
 
@@ -1035,7 +1160,18 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_wu_chan_jie_ji_da_ge_ming"
+				add_stability = 0.05
+				add_war_support = 0.10
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.10
+				}
+			}
 
+			search_filters = {
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_WAR_SUPPORT
+				FOCUS_FILTER_MANPOWER
 			}
 		}
 
@@ -1059,7 +1195,10 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_wei_le_dou_zheng_er_tuan_jie"
-
+				swap_ideas = {
+					remove_idea = HNN_chun_jie_de_jun_de
+					add_idea = HNN_chun_jie_de_jun_de2
+				}
 			}
 		}
 
@@ -1086,7 +1225,10 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_qian_jin_qian_Jin_qian_jin"
-
+				swap_ideas = {
+					remove_idea = HNN_chun_jie_de_jun_de2
+					add_idea = HNN_chun_jie_de_jun_de3
+				}
 			}
 		}
 	#何叔衡
@@ -1209,6 +1351,10 @@ focus_tree = {
 					days = 3
 				}
 			}
+
+			search_filters = {
+				FOCUS_FILTER_WAR_SUPPORT
+			}
 		}
 		
 		focus = {
@@ -1230,6 +1376,8 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_gong_gu_xian_fa"
 				add_political_power = 100
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 		
 		focus = {
@@ -1266,6 +1414,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_INDUSTRY }
 		}
 	#唐生明
 		# focus = {
@@ -2504,6 +2654,8 @@ focus_tree = {
 					popularity = 0.10
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -2527,7 +2679,7 @@ focus_tree = {
 
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_she_hui_zhu_yi_jiao_yu"
-				add_research_slot = 1
+				add_research_slot_until_five = yes
 				add_popularity = {
 					ideology = totalist
 					popularity = 0.10
@@ -2845,6 +2997,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -2982,6 +3136,10 @@ focus_tree = {
 					id = hungong.75
 					days = 5
 				}
+			}
+
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
 			}
 		}
 
@@ -3251,6 +3409,10 @@ focus_tree = {
 					set_state_category = nine
 				}
 			}
+
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
+			}
 		}
 		
 		focus = {
@@ -3280,6 +3442,8 @@ focus_tree = {
 				add_political_power = 100
 				add_ideas = HNN_xin_jing_ji
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -3330,6 +3494,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 
 	#钱学森
@@ -4031,6 +4197,10 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
+			}
 		}	
 
 		focus = {
@@ -4285,6 +4455,8 @@ focus_tree = {
 					popularity = 0.05
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 
 		focus = {
@@ -4494,6 +4666,8 @@ focus_tree = {
 				add_political_power = 100
 				custom_effect_tooltip = HNN_fu_nong_tooltip
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -4970,6 +5144,8 @@ focus_tree = {
 					add_idea = HNN_jing_ji_wei_yuan_hui2
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 		
 		focus = {
@@ -5060,6 +5236,8 @@ focus_tree = {
 				add_soclib_to_coalition = yes
 				add_radsoc_to_coalition = yes
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 
 		focus = {
@@ -5181,6 +5359,8 @@ focus_tree = {
 					popularity = -0.10
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 
 		focus = {
@@ -5385,7 +5565,7 @@ focus_tree = {
 			id = HNN_wei_chi_jun_shi_guan_li
 			icon = GFX_goal_HNN_wei_chi_jun_shi_guan_li
 			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
+			x = 18
 			y = 5
 			cost = 5
 	
@@ -5408,9 +5588,9 @@ focus_tree = {
 		focus = {
 			id = HNN_xiao_chu_ji_duan_ying_xiang
 			icon = GFX_goal_HNN_xiao_chu_ji_duan_ying_xiang
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 18
-			y = 6
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = -2
+			y = 1
 			cost = 2
 	
 			ai_will_do = {
@@ -5445,14 +5625,16 @@ focus_tree = {
 					name = HNN_national_populist_party_proc_P
 				}			
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 	
 		focus = {
 			id = HNN_mi_he_dang_nei_fen_qi
 			icon = GFX_goal_HNN_mi_he_dang_nei_fen_qi
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
-			y = 6
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 0
+			y = 1
 			cost = 2
 	
 			ai_will_do = {
@@ -5470,14 +5652,16 @@ focus_tree = {
 				add_political_power = 50
 				add_radsoc_to_coalition = yes
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}		
 	
 		focus = {
 			id = HNN_dang_jing
 			icon = GFX_goal_HNN_dang_jing
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 22
-			y = 6
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 2
+			y = 1
 			cost = 2
 	
 			ai_will_do = {
@@ -5521,14 +5705,16 @@ focus_tree = {
 					name = HNN_authoritarian_democrat_party_proc_P
 				}	
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 	
 		focus = {
 			id = HNN_quan_shi_qian_er_shi
 			icon = GFX_goal_HNN_quan_shi_qian_er_shi
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 19
-			y = 7
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = -1
+			y = 2
 			cost = 5
 	
 			ai_will_do = {
@@ -5562,9 +5748,9 @@ focus_tree = {
 		focus = {
 			id = HNN_zhan_wang_wei_lai
 			icon = GFX_goal_HNN_zhan_wang_wei_lai
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 21
-			y = 7
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 1
+			y = 2
 			cost = 5
 	
 			ai_will_do = {
@@ -5595,9 +5781,9 @@ focus_tree = {
 		focus = {
 			id = HNN_lao_bu_ke_po_de_dang
 			icon = GFX_goal_HNN_lao_bu_ke_po_de_dang
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
-			y = 8
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 0
+			y = 3
 			cost = 2
 	
 			ai_will_do = {
@@ -5619,14 +5805,16 @@ focus_tree = {
 				add_socdem_to_coalition = yes
 				add_soclib_to_coalition = yes
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 	
 		focus = {
 			id = HNN_kuo_da_he_zuo_she
 			icon = GFX_goal_HNN_kuo_da_he_zuo_she
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
-			y = 9
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 0
+			y = 4
 			cost = 3.8
 	
 			ai_will_do = {
@@ -5651,9 +5839,9 @@ focus_tree = {
 		focus = {
 			id = HNN_qing_zhong_bing_xing
 			icon = GFX_goal_HNN_qing_zhong_bing_xing
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 22
-			y = 9
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 2
+			y = 4
 			cost = 5
 	
 			ai_will_do = {
@@ -5698,9 +5886,9 @@ focus_tree = {
 		focus = {
 			id = HNN_jiu_nian_yi_wu_zhi_jiao_yu
 			icon = GFX_goal_HNN_jiu_nian_yi_wu_zhi_jiao_yu
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 18
-			y = 9
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = -2
+			y = 4
 			cost = 5
 	
 			ai_will_do = {
@@ -5729,9 +5917,9 @@ focus_tree = {
 		focus = {
 			id = HNN_ji_shu_guan_liao_he_zuo
 			icon = GFX_goal_HNN_ji_shu_guan_liao_he_zuo
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 19
-			y = 10
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = -1
+			y = 5
 			cost = 6
 	
 			ai_will_do = {
@@ -5752,7 +5940,7 @@ focus_tree = {
 	
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_ji_shu_guan_liao_he_zuo"
-				add_research_slot = 1
+				add_research_slot_until_five = yes
 				add_tech_bonus = {
 					name = HNN_The_Arsenals_of_the_South
 					bonus = 1
@@ -5771,9 +5959,9 @@ focus_tree = {
 		focus = {
 			id = HNN_wen_bu_xian_dai_hua
 			icon = GFX_goal_HNN_wen_bu_xian_dai_hua
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 21
-			y = 10
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 1
+			y = 5
 			cost = 6
 	
 			ai_will_do = {
@@ -5804,9 +5992,9 @@ focus_tree = {
 		focus = {
 			id = HNN_jun_guan_xia_de_chun_tian
 			icon = GFX_goal_HNN_jun_guan_xia_de_chun_tian
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
-			y = 11
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 0
+			y = 6
 			cost = 3
 	
 			ai_will_do = {
@@ -5832,14 +6020,16 @@ focus_tree = {
 				add_stability = 0.10
 				add_war_support = 0.10
 			}	
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}	
 	
 		focus = {
 			id = HNN_wu_chan_zhe_de_tian_tang
 			icon = GFX_goal_HNN_wu_chan_zhe_de_tian_tang
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 20
-			y = 12
+			relative_position_id = HNN_wei_chi_jun_shi_guan_li
+			x = 0
+			y = 7
 			cost = 7
 	
 			ai_will_do = {
@@ -5865,7 +6055,7 @@ focus_tree = {
 			id = HNN_mao_zhe_dong_zhu_xi
 			icon = GFX_goal_HNN_mao_zhe_dong_zhu_xi
 			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 28
+			x = 25
 			y = 5
 			cost = 5
 		
@@ -5983,6 +6173,8 @@ focus_tree = {
 				add_political_power = 30
 				HNN_tu_di_gai_ge = yes
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}		
 	
 		focus = {
@@ -6205,6 +6397,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 	
 		focus = {
@@ -6257,6 +6451,8 @@ focus_tree = {
 					add_idea = HNN_jiao_yu3
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 		
 		focus = {
@@ -6287,6 +6483,8 @@ focus_tree = {
 				add_war_support = 0.05
 				add_stability = 0.05
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 	
 		focus = {
@@ -6437,7 +6635,7 @@ focus_tree = {
 			id = HNN_hong_jun_de_san_tou_tong_meng
 			icon = GFX_goal_HNN_hong_jun_de_san_tou_tong_meng
 			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = 45
+			x = 40
 			y = 5
 			cost = 5
 	
@@ -6488,6 +6686,8 @@ focus_tree = {
 					days = 2
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 	
 		focus = {#放宽言路
@@ -6523,6 +6723,8 @@ focus_tree = {
 				}
 	
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 	
 		focus = {#清算暴君
@@ -6575,6 +6777,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}	
 	
 		focus = {#
@@ -6613,6 +6817,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 	
 		focus = {#
@@ -6746,6 +6952,8 @@ focus_tree = {
 					popularity = 0.05
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		}
 	
 		focus = {#
@@ -7460,6 +7668,8 @@ focus_tree = {
 				add_political_power = 50
 				add_country_leader_trait = HNN_ge_ming_de_shou_hu_zhe
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}		
 	
 		focus = {#
@@ -7535,6 +7745,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 	
 		focus = {#林彪
@@ -8033,6 +8245,8 @@ focus_tree = {
 					}
 				}
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}		
 	
 		focus = {# 
@@ -8071,7 +8285,7 @@ focus_tree = {
 ###军事
 	focus = {
 		id = HNN_improve_army
-		icon = GFX_goal_ENG_army
+		icon = GFX_TRM_Fate_Of_Unions
 		available = {
 			has_country_flag = HNN_gong_tuan_victory_flag
 		}
@@ -8103,51 +8317,13 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_improve_army"
 			army_experience = 50
 		}
-	}
 
-	focus = {
-		id = HNN_purge_militia_remains
-		icon = GFX_BBR_red_militia_justice
-		cost = 5.00
-		prerequisite = {
-			focus = HNN_reform_militia
-			focus = HNN_dissolve_militias
-		}
-		x = 0
-		y = 3
-		relative_position_id = HNN_improve_army
-			ai_will_do = {
-				factor = 3
-				modifier = {
-					factor = 2
-					date > 1937.1.1
-				}
-				modifier = {
-					factor = 2
-					date > 1938.1.1
-				}
-				modifier = {
-					factor = 2.5
-					date > 1939.1.1
-				}
-			}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_purge_militia_remains"
-			army_experience = 50
-			navy_experience = 50
-			air_experience = 50
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 	}
 
 	focus = {
 		id = HNN_officer_corps_experience
-		icon = GFX_goal_HOL_military_union
+		icon = GFX_goal_CSA_union_army
 		relative_position_id = HNN_improve_army
 		cost = 5.00
 		x = -2
@@ -8179,60 +8355,31 @@ focus_tree = {
 				date > 1939.1.1
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_officer_corps_experience"
-			add_ideas = ENG_decentralized_command_idea
-		}
-	}
-
-	focus = {
-		id = HNN_reform_militia
-		icon = GFX_goal_CSA_militia_support
-		relative_position_id = HNN_improve_army
-		cost = 5.00
-		x = -1
-		y = 2
-
-		prerequisite = {
-			focus = HNN_officer_corps_experience
-		}
-
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > 1937.1.1
+			swap_ideas = {
+				remove_idea = HNN_militia_idea
+				add_idea = HNN_militia_idea2
 			}
-			modifier = {
-				factor = 2
-				date > 1938.1.1
-			}
-			modifier = {
-				factor = 2.5
-				date > 1939.1.1
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_reform_militia"
-			army_experience = 25
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
-				category = cat_mass_assault
-				category = cat_mobile_warfare
+				uses = 1
+				category = land_doctrine
 			}
 		}
 
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
 		id = HNN_formazione_di_difesa
-		icon = GFX_goal_FRA_Defence_Revolution
-		relative_position_id = HNN_improve_army
-		cost = 2
-		x = -3
-		y = 2
+		icon = GFX_RUS_Revolutionary_Terror
+		relative_position_id = HNN_officer_corps_experience
+		cost = 5
+		x = 0
+		y = 1
 
 		prerequisite = {
 			focus = HNN_officer_corps_experience
@@ -8260,27 +8407,73 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_formazione_di_difesa"
-			custom_effect_tooltip = HNN_revolutionary_miltia_tt
-			hidden_effect = {
-				load_oob = "HNN_Revolutionary_Militia"
+			add_war_support = 0.05
+			swap_ideas = {
+				remove_idea = HNN_militia_idea2
+				add_idea = HNN_collectivist_doctrine_idea
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = HNN_reform_militia
+		icon = GFX_goal_CSA_militia_support
+		relative_position_id = HNN_officer_corps_experience
+		cost = 5.00
+		x = -2
+		y = 2
+
+		prerequisite = {
+			focus = HNN_formazione_di_difesa
+		}
+
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 2.5
+				date > 1939.1.1
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_reform_militia"
+			add_ideas = CSA_militia_support_idea
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 135
+				producer = HNN
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
 		id = HNN_maintain_officer_autonomy
 		icon = GFX_goal_NFA_Galvanize_Officer_Corp
+		relative_position_id = HNN_officer_corps_experience
 		cost = 5
-
-		relative_position_id = HNN_improve_army
-		x = -2
-		y = 3
+		x = 0
+		y = 2
 
 		prerequisite = {
 			focus = HNN_formazione_di_difesa
-		}
-		prerequisite = {
-			focus = HNN_reform_militia
 		}
 
 		ai_will_do = {
@@ -8305,51 +8498,29 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_maintain_officer_autonomy"
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1200
-				producer = HNN
-				}
-				add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 40
-				producer = HNN
-				}
-				add_tech_bonus = {
-					name = industrial_bonus
-					bonus = 0.5
-					uses = 1
-					category = para_tech
-				}
-				add_tech_bonus = {
-					name = SRI_alpini_rossi
-					bonus = 0.75
-					uses = 2
-					category = mountaineers_tech
-				}
-				random_owned_state = {
-					limit = {
-						is_core_of = HNN
-						is_controlled_by = HNN
-						arms_factory > 0
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
+			swap_ideas = {
+				remove_idea = HNN_collectivist_doctrine_idea
+				add_idea = HNN_collectivist_doctrine_idea_2
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
 		id = HNN_revolutionary_army
 		icon = GFX_goal_CSA_revolutionary_army
-		cost = 5
-		relative_position_id = HNN_improve_army
+		relative_position_id = HNN_officer_corps_experience
 		x = -1
-		y = 4
+		y = 3
+		cost = 5
+
 		ai_will_do = {
 			factor = 25
 			modifier = {
@@ -8361,13 +8532,142 @@ focus_tree = {
 			focus = HNN_maintain_officer_autonomy
 		}
 		prerequisite = {
-			focus = HNN_purge_militia_remains
+			focus = HNN_reform_militia
 		}
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_revolutionary_army"
-			add_ideas = CSA_collectivist_doctrine_idea_2
+			swap_ideas = {
+				remove_idea = HNN_collectivist_doctrine_idea_2
+				add_idea = HNN_collectivist_doctrine_idea_3
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = HNN_qu_shi_fan_dui_pai
+		icon = GFX_goal_Automobile_Production
+		relative_position_id = HNN_officer_corps_experience
+		cost = 5.00
+		x = 1
+		y = 3
+
+		prerequisite = {
+			focus = HNN_maintain_officer_autonomy
+		}
+		prerequisite = {
+			focus = HNN_purge_militia_remains
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 2.5
+				date > 1938.1.1
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_qu_shi_fan_dui_pai"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1200
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = ROOT
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+					arms_factory > 0
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = HNN_ge_ming_jun_dui
+		icon = GFX_goal_AUS_canvas_red
+		relative_position_id = HNN_officer_corps_experience
+		cost = 5.00
+		x = 0
+		y = 4
+
+		prerequisite = {
+			focus = HNN_qu_shi_fan_dui_pai
+		}
+		prerequisite = {
+			focus = HNN_revolutionary_army
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 2.5
+				date > 1938.1.1
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_jun_dui"
+			swap_ideas = {
+				remove_idea = HNN_collectivist_doctrine_idea_3
+				add_idea = HNN_collectivist_doctrine_idea_4
+			}
+			add_manpower = 10000
+			add_popularity = { ideology = syndicalist popularity = 0.03 }
+			add_popularity = { ideology = totalist popularity = 0.03 }
+			add_political_power = 40
+			add_war_support = 0.05
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
@@ -8406,25 +8706,33 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_central_command"
-			add_ideas = HNN_central_command_idea
+			swap_ideas = {
+				remove_idea = HNN_militia_idea
+				add_idea = HNN_militia_idea3
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
 		id = HNN_dissolve_militias
 		icon = GFX_goal_CSA_centralist_reorganization
+		relative_position_id = HNN_central_command
 		cost = 5.00
-		relative_position_id = HNN_improve_army
-
-		x = 1
-		y = 2
+		x = 0
+		y = 1
 		
 		prerequisite = {
 			focus = HNN_central_command
 		}
-		available = {
 
-		}
 		ai_will_do = {
 			base = 20
 			modifier = {
@@ -8445,29 +8753,68 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus ENG_dissolve_militias"
-			army_experience = 25
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_dissolve_militias"
+			swap_ideas = {
+				remove_idea = HNN_militia_idea3
+				add_idea = HNN_centralist_doctrine_idea
+			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 2
-				category = cat_superior_firepower
-				category = cat_grand_battle_plan
+				uses = 1
+				category = land_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = HNN_modernized_army
+		icon = GFX_HUN_gorlice_tarnow
+		relative_position_id = HNN_central_command
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 25
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = HNN_dissolve_militias
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_modernized_army"
+			swap_ideas = {
+				remove_idea = HNN_centralist_doctrine_idea
+				add_idea = HNN_centralist_doctrine_idea_2
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
 		id = HNN_reform_modena_military_academy
 		icon = GFX_goal_KEN_officer_corps
+		relative_position_id = HNN_central_command
+		x = 2
+		y = 2
 		cost = 5
 
-		relative_position_id = HNN_improve_army
-		x = 3
-		y = 2
-
 		prerequisite = {
-			focus = HNN_central_command
+			focus = HNN_dissolve_militias
 		}
 
 		ai_will_do = {
@@ -8495,10 +8842,12 @@ focus_tree = {
 			army_experience = 15
 			add_doctrine_cost_reduction = {
 				name = SRI_reform_modena_military_academy
-				cost_reduction = 0.75
+				cost_reduction = 0.50
 				uses = 1
 				category = land_doctrine
 			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = CSA_professional_red_army
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
 	}
@@ -8506,17 +8855,16 @@ focus_tree = {
 	focus = {
 		id = HNN_motorised
 		icon = GFX_goal_Automobile_Production
+		relative_position_id = HNN_central_command
 		cost = 5.00
-		relative_position_id = HNN_improve_army
-
-		x = 2
+		x = -1
 		y = 3
 
 		prerequisite = {
-			focus = HNN_dissolve_militias
+			focus = HNN_modernized_army
 		}
 		prerequisite = {
-			focus = HNN_reform_modena_military_academy
+			focus = HNN_purge_militia_remains
 		}
 
 		ai_will_do = {
@@ -8541,23 +8889,24 @@ focus_tree = {
 				amount = 500
 				producer = HNN
 			}
-			add_tech_bonus = {
-				name = CSA_iww_doctrine_bonus
-				bonus = 1
-				uses = 2
-				category = armor
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+				producer = HNN
 			}
 			add_ideas = FRA_mass_fire_support_idea
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
-		id = HNN_modernized_army
-		icon = GFX_goal_CSA_professional_red_army
-		cost = 5
-		relative_position_id = HNN_improve_army
+		id = HNN_zhi_ye_hong_kun
+		icon = GFX_GRU_RED_PATRIOT
+		relative_position_id = HNN_central_command
 		x = 1
-		y = 4
+		y = 3
+		cost = 5
 
 		ai_will_do = {
 			base = 25
@@ -8567,16 +8916,162 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = HNN_purge_militia_remains
+			focus = HNN_modernized_army
 		}
 		prerequisite = {
-			focus = HNN_motorised
+			focus = HNN_reform_modena_military_academy
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_modernized_army"
-			add_ideas = CSA_centralist_doctrine_idea_2
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhi_ye_hong_kun"
+			swap_ideas = {
+				remove_idea = HNN_centralist_doctrine_idea_2
+				add_idea = HNN_centralist_doctrine_idea_3
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 20
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 15
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment
+				amount = 15
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = { 
+				type = medium_plane_airframe
+				amount = 30
+				producer = ROOT
+			}
+			602 = {
+				if = {
+					limit = { is_owned_and_controlled_by = ROOT }
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = HNN_ren_ming_jun_dui
+		icon = GFX_GRU_SMEPD_WORLD
+		relative_position_id = HNN_central_command
+		x = 0
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_motorised
+		}
+		prerequisite = {
+			focus = HNN_zhi_ye_hong_kun
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 2.5
+				date > 1938.1.1
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_ren_ming_jun_dui"
+			swap_ideas = {
+				remove_idea = HNN_centralist_doctrine_idea_3
+				add_idea = HNN_centralist_doctrine_idea_4
+			}
+			add_stability = 0.05
+			add_political_power = 30
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = CSA_centralist_doctrine_bonus
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = HNN_purge_militia_remains
+		icon = GFX_BBR_red_militia_justice
+		relative_position_id = HNN_improve_army
+		x = 0
+		y = 3
+		cost = 5.00
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 2
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 2.5
+				date > 1939.1.1
+			}
+		}
+		prerequisite = {
+			focus = HNN_formazione_di_difesa
+			focus = HNN_dissolve_militias
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_purge_militia_remains"
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
 	}
 
 	focus = {
@@ -8585,7 +9080,7 @@ focus_tree = {
 		relative_position_id = HNN_improve_army
 		cost = 5
 		x = 0
-		y = 5
+		y = 6
 
 		ai_will_do = {
 			base = 25
@@ -8595,11 +9090,11 @@ focus_tree = {
 			}
 		}
 		available = {
-			has_completed_focus = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
+			has_country_flag = HNN_PROC_victory
 		}
 		prerequisite = {
-			focus = HNN_revolutionary_army
-			focus = HNN_modernized_army
+			focus = HNN_ge_ming_jun_dui
+			focus = HNN_ren_ming_jun_dui
 		}
 	
 		completion_reward = {
@@ -8613,6 +9108,8 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
 	}
 
 	focus = {
@@ -8641,6 +9138,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_air_frcoe"
 			air_experience = 50.0
 		}
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
 	}	
 
 	focus = {#
@@ -8905,9 +9404,16 @@ focus_tree = {
 		id = HNN_PROC_navy
 		icon = GFX_goal_generic_sea_focused_navy
 		cost = 3
-		x = 38
+		x = 15
 		y = 1
 	
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
 		available = {
 			num_of_naval_factories > 4
 			OR = {
@@ -8983,7 +9489,7 @@ focus_tree = {
 				
 			}
 		}
-		search_filters = { FOCUS_FILTER_NAVY_BONUS }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}	
 
 	focus = {
@@ -9073,10 +9579,9 @@ focus_tree = {
 					}
 				}
 			}
-			hidden_effect = {
-				
-			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}	
 
 	focus = {
@@ -9253,11 +9758,8 @@ focus_tree = {
 				bonus = 0.75
 				category = naval_air
 			}
-			hidden_effect = {
-				
-			}
 		}
-		search_filters = { FOCUS_FILTER_NAVY_BONUS }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}		
 
 	focus = {
@@ -9301,6 +9803,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}	
 
 	focus = {
@@ -9416,18 +9920,15 @@ focus_tree = {
 		id = HNN_chong_fan_zhong_guo_zheng_zhi_wu_tai
 		icon = GFX_goal_FNG_China_Reach
 		cost = 2
-		x = 17
+		x = -15
 		y = 1
 
 		available = {
-			AND={
-				OR = {
-					has_country_flag = HNN_qiangying_KMT
-				}
-				has_army_manpower = {
-					size > 60000
-				}
+			has_country_flag = HNN_qiangying_KMT
+			has_army_manpower = {
+				size > 60000
 			}
+			has_war_support > 0.60
 		}
 
 		ai_will_do = {
@@ -9445,6 +9946,8 @@ focus_tree = {
 			add_political_power = 50
 			set_potential_national_government = yes
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9489,6 +9992,8 @@ focus_tree = {
 				 }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9529,6 +10034,8 @@ focus_tree = {
 				target = var:594.owner
 		 	}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9583,6 +10090,8 @@ focus_tree = {
 				target = var:613.owner
 		 	}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 	
 	focus = {
@@ -9633,6 +10142,8 @@ focus_tree = {
 				858 = { add_core_of = HNN }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9688,6 +10199,8 @@ focus_tree = {
 				target = var:330.owner
 		 	}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9727,6 +10240,8 @@ focus_tree = {
 				target = var:716.owner
 		 	}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9779,6 +10294,8 @@ focus_tree = {
 				target = var:613.owner
 		 	}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9821,6 +10338,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9860,6 +10379,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -9904,13 +10425,14 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}	
 ###PROC外交
 	focus = {
 		id = HNN_chong_fan_si_jie_wu_tai
 		icon = GFX_goal_CSA_all_for_revolution
-
-		x = 51
+		x = 45
 		y = 1
 		cost = 2
 
@@ -9926,6 +10448,8 @@ focus_tree = {
 			add_political_power = 100
 			set_major = yes
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -9957,6 +10481,8 @@ focus_tree = {
 			army_experience = 20.0
 			add_political_power = 50
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -10531,6 +11057,8 @@ focus_tree = {
 			army_experience = 20.0
 			add_political_power = 50
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}	
 
 	focus = {
@@ -10852,6 +11380,8 @@ focus_tree = {
 			army_experience = 20.0
 			add_political_power = 50
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -10879,6 +11409,8 @@ focus_tree = {
 			set_country_flag = ready_to_revolution
 			unlock_decision_category_tooltip = HNN_let_he_in
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -10901,6 +11433,8 @@ focus_tree = {
 			add_political_power = 50
 			unlock_decision_category_tooltip = HNN_hai_fang
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11254,6 +11788,8 @@ focus_tree = {
 				add_opinion_modifier = { target = HNN modifier = large_increase }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11276,6 +11812,8 @@ focus_tree = {
 			add_political_power = 100
 			custom_effect_tooltip = HNN_heat_them
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11298,6 +11836,8 @@ focus_tree = {
 			add_political_power = 50
 			custom_effect_tooltip = HNN_heat_them
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11320,6 +11860,8 @@ focus_tree = {
 			add_political_power = 50
 			custom_effect_tooltip = HNN_heat_them
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11366,6 +11908,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11656,7 +12200,6 @@ focus_tree = {
 	focus = {
 		id = HNN_guo_jia_jian_she
 		icon = GFX_SIA_Urban_Warfare_NF
-		
 		x = 32
 		y = 7
 		cost = 2
@@ -11673,6 +12216,8 @@ focus_tree = {
 			add_political_power = 100
 			unlock_decision_category_tooltip = HNN_tie_lu_category
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -11947,6 +12492,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -11989,6 +12536,8 @@ focus_tree = {
 				category = air_equipment
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12014,8 +12563,11 @@ focus_tree = {
 			add_political_power = -200
 			mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 2 }
 			mio:HNN_tiema_organisation = { add_mio_size = 2 }
-			custom_effect_tooltip = HNN_factory_change_tt
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = CN_zhong_ke_yuan
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12058,6 +12610,8 @@ focus_tree = {
 			add_political_power = 50
 			unlock_decision_category_tooltip = HNN_tie_lu_category
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12089,6 +12643,8 @@ focus_tree = {
 			custom_effect_tooltip = HNN_develop_tie_shan_long_tungsten_mines_tooltip
 			custom_effect_tooltip = HNN_develop_xi_zang_chromium_mines_tooltip
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12237,6 +12793,8 @@ focus_tree = {
 			}
 			custom_effect_tooltip = HNN_shi_zi_ban_tootip
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12284,6 +12842,8 @@ focus_tree = {
 			add_political_power = 20
 			custom_effect_tooltip = HNN_education_change_tt
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12349,6 +12909,8 @@ focus_tree = {
 				HNN_illiteracy = 3
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -12517,6 +13079,8 @@ focus_tree = {
 			add_political_power = 100
 			add_ideas = HNN_da_guo_idea
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	# focus = {

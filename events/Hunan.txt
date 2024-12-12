@@ -6524,6 +6524,14 @@ country_event = {#革命成功
 		show_unit_leaders_tooltip = HNN_Chen_Yun
 		hidden_effect = {
 			add_stability = -0.40
+			add_war_support = -0.30
+			add_ideas = {
+				HNN_militia_idea
+			}
+			add_timed_idea = {
+				idea = HNN_she_hui_zhu_yi_yu_wen
+				days = 100
+			}
 			remove_ideas = {
 				HNN_fire_repubilc
 				HNN_intense_agricultural_imbalance
@@ -10303,6 +10311,21 @@ country_event = {#全面超人张宝胜
 
 	option = { #yes
 		name = hungong.165.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#劳动妇女
+	id = hungong.166
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.166" }
+	title = hungong.166.t
+	desc = hungong.166.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #yes
+		name = hungong.166.a
 		add_political_power = 10
 	}
 }

@@ -151,7 +151,7 @@ HNN_defence_commission_category = {#防务专署
 }
 
 HNN_tu_di_gai_ge_hunan_category = {#土地改革-湖南
-	icon = GFX_decision_category_nkvdcat
+	icon = GFX_decision_agriculture_grain
 	priority = 120
 	allowed = {
 		tag = HNN
@@ -159,7 +159,7 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革-湖南
 }
 
 HNN_tu_di_gai_ge_category = {#土地改革
-	icon = GFX_decision_category_nkvdcat
+	icon = GFX_decision_agriculture_grain
 	allowed = { original_tag = HNN }
 	visible = {
 		has_country_flag = HNN_PROC_victory

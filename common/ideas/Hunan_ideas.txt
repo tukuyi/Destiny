@@ -1814,7 +1814,206 @@ ideas = {
 				training_time_army_factor = 0.05
 			}
 		}				
+	#工团军队
+		HNN_militia_idea = {#革命武装
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_militia_idea"}
+			picture = UoB_militia_idea
+			allowed = { always = no }
+            modifier = {
+				max_planning = -0.5
+				army_org_Factor = -0.2
+				army_morale_factor = 0.02
+				training_time_army_factor = -0.05
+			}
+		}	
+		HNN_militia_idea2 = {#赤卫队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_militia_idea2"}
+			picture = UoB_militia_idea
+			allowed = { always = no }
+            modifier = {
+				max_planning = -0.25
+				surrender_limit = 0.05
+				army_org_Factor = -0.1
+				army_morale_factor = 0.02
+				training_time_army_factor = -0.10
+			}
+		}
+		HNN_collectivist_doctrine_idea = {#赤卫队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_collectivist_doctrine_idea"}
+			name = HNN_militia_idea2
+			picture = collectivist_primacy_1
+			allowed = { always = no }
+            modifier = {
+				surrender_limit	= 0.05
+				non_core_manpower = 0.03
+				mobilization_speed = 0.10
+				conscription_factor = 0.03
+				war_stability_factor = 0.10
+				training_time_army_factor = -0.10
+			}
+		}
+		HNN_collectivist_doctrine_idea_2 = {#赤卫队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_collectivist_doctrine_idea_2"}
+			name = HNN_militia_idea2
+			picture = collectivist_primacy_1
+			allowed = { always = no }
+            modifier = {
+				surrender_limit	= 0.05
+				non_core_manpower = 0.05
+				mobilization_speed = 0.15
+				conscription_factor = 0.04
+				land_reinforce_rate = 0.03
+				war_stability_factor = 0.15
+				minimum_training_level = -0.08
+				terrain_penalty_reduction = 0.05
+				training_time_army_factor = -0.15
+			}
+		}
+		HNN_collectivist_doctrine_idea_3 = {#赤卫队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_collectivist_doctrine_idea_3"}
+			name = HNN_militia_idea2
+			picture = collectivist_primacy_1
+			allowed = { always = no }
+            modifier = {
+				surrender_limit	= 0.1
+				mobilization_speed = 0.2
+				non_core_manpower = 0.075
+				war_stability_factor = 0.2
+				conscription_factor = 0.05
+				land_reinforce_rate = 0.075
+				out_of_supply_factor = -0.05
+				minimum_training_level = -0.1
+				terrain_penalty_reduction = 0.10
+				training_time_army_factor = -0.15
+			}
+		}
+		HNN_collectivist_doctrine_idea_4 = {#赤卫队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_collectivist_doctrine_idea_4"}
+			name = HNN_militia_idea2
+			picture = collectivist_primacy_1
+			allowed = { always = no }
+            modifier = {
+				surrender_limit	= 0.1
+				conscription_factor = 0.1
+				non_core_manpower = 0.15
+				mobilization_speed = 0.25
+				land_reinforce_rate = 0.15
+				war_stability_factor = 0.50
+				out_of_supply_factor = -0.10
+				minimum_training_level = -0.10
+				terrain_penalty_reduction = 0.15
+				training_time_army_factor = -0.20
+			}
+		}
+		HNN_militia_idea3 = {#红军
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_militia_idea3"}
+			picture = UoB_militia_idea
+			allowed = { always = no }
+            modifier = {
+				max_planning = -0.25
+				surrender_limit = 0.05
+				army_org_Factor = -0.1
+				army_morale_factor = 0.02
+				training_time_army_factor = -0.10
+			}
+		}
+		HNN_centralist_doctrine_idea = {#红军
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_centralist_doctrine_idea"}
+			name = HNN_militia_idea3
+			picture = centralist_gdc
+			allowed = { always = no }
+            modifier = {
+				max_planning = 0.05
+				planning_speed = 0.02
+				dig_in_speed_factor = 0.05
+				training_time_army_factor = 0.05
+				equipment_conversion_speed = 0.10				
+				army_artillery_defence_factor = 0.03
+			}
+		}
+		HNN_centralist_doctrine_idea_2 = {#红军
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_centralist_doctrine_idea_2"}
+			name = HNN_militia_idea3
+			picture = centralist_gdc
+			allowed = { always = no }
+            modifier = {
+				max_planning = 0.10
+				planning_speed = 0.05
+				max_command_power = 25
+				dig_in_speed_factor = 0.05
+				shore_bombardment_bonus	= 0.05
+				training_time_army_factor = 0.10
+				equipment_conversion_speed = 0.10
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.05
+				experience_gain_artillery_training_factor = 0.10
+			}
+			equipment_bonus = {	
+				artillery = { 
+					build_cost_ic = -0.1 
+					instant = yes 
+				}	
+			}
+		}
+		HNN_centralist_doctrine_idea_3 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_centralist_doctrine_idea_3"}
+			name = HNN_militia_idea3
+			picture = centralist_gdc
+			allowed = { always = no }
+            modifier = {
+				max_planning = 0.10
+				planning_speed = 0.05
+				max_command_power = 30
+				dig_in_speed_factor = 0.05
+				shore_bombardment_bonus	= 0.10
+				training_time_army_factor = 0.15
+				equipment_conversion_speed = 0.15
+				army_artillery_attack_factor = 0.08
+				army_artillery_defence_factor = 0.05
+				air_strategic_bomber_bombing_factor = 0.05
+				experience_gain_artillery_training_factor = 0.1
+			}
+			equipment_bonus = {	artillery = { build_cost_ic = -0.12 instant = yes }	}
+			equipment_bonus = {	anti_tank_equipment = { build_cost_ic = -0.05 instant = yes }	}
+			equipment_bonus = {	anti_air_equipment = { build_cost_ic = -0.05 instant = yes }	}
+			equipment_bonus = {	medium_plane_airframe = { build_cost_ic = -0.05 instant = yes }	}
+		}
+		HNN_centralist_doctrine_idea_4 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_centralist_doctrine_idea_4"}
+			name = HNN_militia_idea3
+			picture = centralist_gdc
+			allowed = { always = no }
+            modifier = {
+				max_planning = 0.20
+				planning_speed = 0.10
+				max_command_power = 50
+				dig_in_speed_factor = 0.10
+				shore_bombardment_bonus	= 0.10
+				training_time_army_factor = 0.20
+				equipment_conversion_speed = 0.15
+				army_artillery_attack_factor = 0.10
+				army_artillery_defence_factor = 0.10
+				air_strategic_bomber_bombing_factor = 0.10
+				experience_gain_artillery_training_factor = 0.10
+			}
+			equipment_bonus = {	artillery = { build_cost_ic = -0.15 instant = yes }	}
+			equipment_bonus = {	anti_tank_equipment = { build_cost_ic = -0.1 instant = yes }	}
+			equipment_bonus = {	anti_air_equipment = { build_cost_ic = -0.1 instant = yes }	}
+			equipment_bonus = {	medium_plane_airframe = { build_cost_ic = -0.1 instant = yes }	}
+		}
 	#工团
+		HNN_she_hui_zhu_yi_yu_wen = {#社会动荡
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_she_hui_zhu_yi_yu_wen"}
+			allowed = { always = no }
+			picture = red_militias
+			modifier = {
+				stability_factor = -0.20
+				stability_weekly = -0.010
+				war_support_factor = -0.20
+				production_factory_max_efficiency_factor = -0.10
+				production_factory_efficiency_gain_factor = -0.10
+			}
+		}
 		HNN_direndejiaoxun = {#革命的教训
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_direndejiaoxun"}
 			picture = HOL_dutch_militia
@@ -1959,6 +2158,27 @@ ideas = {
 				license_tech_difference_speed = 0.10
 			}
 		}
+		HNN_half_Social_economy0 = {#市场经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_half_Social_economy0"}
+			name = HNN_half_Social_economy
+			picture = debts
+			allowed = { always = no }
+			available = {
+				NOT = {
+					OR = {
+						has_country_leader = { name = "高岗" ruling_only = yes }
+						has_country_leader = { name = "周恩来" ruling_only = yes }
+						has_country_leader = { name = "刘少奇" ruling_only = yes }
+					}
+				} 
+			}
+			modifier = {
+				social_liberal_drift = 0.01
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
 		HNN_half_Social_economy = {#市场经济
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_half_Social_economy"}
 			picture = debts
@@ -1973,16 +2193,16 @@ ideas = {
 				} 
 			}
 			modifier = {
+				social_liberal_drift = 0.02
 				consumer_goods_factor = -0.05
-				social_liberal_drift = 0.01
 				production_speed_buildings_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				line_change_production_efficiency_factor = 0.05
 			}
 		}
 		HNN_half_Social_economy2 = {#市场经济
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_half_Social_economy"}
+			name = HNN_half_Social_economy
 			picture = debts
 			allowed = { always = no }
 			available = {
@@ -1995,14 +2215,14 @@ ideas = {
 				} 
 			}
 			modifier = {
+				social_liberal_drift = 0.05
 				market_liberal_drift = -0.01
-				social_liberal_drift = 0.01
 				consumer_goods_factor = -0.05
-				production_speed_buildings_factor = 0.20
-				production_factory_efficiency_gain_factor = 0.10
+				production_speed_buildings_factor = 0.15
 				production_factory_max_efficiency_factor = 0.10
 				line_change_production_efficiency_factor = 0.10
-				production_speed_industrial_complex_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
 			}
 		}
 		HNN_gong_nong_gong_he = {#工农共和
@@ -2048,10 +2268,54 @@ ideas = {
 			modifier = {
 				army_org_factor = 0.05
 				army_speed_factor = 0.05
+				political_power_cost = 0.20
+				supply_consumption_factor = -0.05
+			}
+		}
+		HNN_chun_jie_de_jun_de2 = {#纯洁的军队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_chun_jie_de_jun_de2"}
+			name = HNN_chun_jie_de_jun_de
+			allowed = { always = no }
+			picture = GEN_army_doctrine_off
+			modifier = {
+				compliance_gain = 0.05
+				army_org_factor = 0.05
+				army_speed_factor = 0.05
+				army_defence_factor = 0.05
+				political_power_cost = 0.30
+				command_power_gain_mult = 0.15
+				land_doctrine_cost_factor = -0.16
+				supply_consumption_factor = -0.05
+				offensive_war_stability_factor = 0.2
+			}
+		}
+		HNN_chun_jie_de_jun_de3 = {#纯洁的军队
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_chun_jie_de_jun_de3"}
+			allowed = { always = no }
+			picture = GEN_army_doctrine_off
+			modifier = {
+				compliance_gain = 0.08
+				army_org_factor = 0.05
+				army_speed_factor = 0.05
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
-				exile_manpower_factor = 0.05
+				political_power_cost = 0.30
+				command_power_gain_mult = 0.20
+				land_doctrine_cost_factor = -0.16
 				supply_consumption_factor = -0.05
+				offensive_war_stability_factor = 0.24
+			}
+		}
+		HNN_chantiers_de_la_jeunesse = {#军事化青年团
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_chantiers_de_la_jeunesse"}
+			picture = syndicalist_resistance
+			allowed = { always = no }
+            modifier = {
+				stability_factor = -0.04
+				resistance_target = -0.03
+				mobilization_speed = 0.07
+				conscription_factor = 0.06
+				training_time_army_factor = -0.05
 			}
 		}
 		HNN_central_command_idea = {
@@ -2553,10 +2817,10 @@ ideas = {
 				consumer_goods_factor = -0.05
 				industrial_capacity_factory = 0.10
 				industrial_concern_cost_factor = -0.10
-				production_speed_buildings_factor = 0.40
+				production_speed_buildings_factor = 0.25
 				production_factory_max_efficiency_factor = 0.10
 				line_change_production_efficiency_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.10
 				production_speed_industrial_complex_factor = 0.10
 			}
 		}
@@ -2766,7 +3030,7 @@ ideas = {
 				production_speed_buildings_factor = 0.20
 				production_factory_max_efficiency_factor = 0.10
 				line_change_production_efficiency_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.10
 				production_speed_industrial_complex_factor = 0.10
 			}
 		}
@@ -4027,25 +4291,25 @@ ideas = {
 			}
 		}
 	#彭德怀
-		# GRU_KOMMANDOWIRTSCHAFT = {
-		# 	on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRU_KOMMANDOWIRTSCHAFT"}
-		# 	picture = GRU_KOMMANDOWIRTSCHAFT
-		# 	allowed = { always = no }
-        #     modifier = {
-		# 		production_factory_start_efficiency_factor = 0.35
-		# 		production_factory_max_efficiency_factor = -0.1
-		# 		line_change_production_efficiency_factor = 0.2
-		# 		production_lack_of_resource_penalty_factor = -0.2
-		# 		production_oil_factor = 0.05
-		# 		conscription_factor = 0.01
-		# 		industry_free_repair_factor	= 0.1
-		# 		local_resources_factor = 0.25
-		# 		monthly_population = 0.10
-		# 		production_speed_buildings_factor = 0.3
-		# 		global_building_slots_factor = 0.3
-		# 		unit_limit_bonus = 100
-		# 	}
-		# }
+		HNN_KOMMANDOWIRTSCHAFT = {#计划经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_KOMMANDOWIRTSCHAFT"}
+			picture = GRU_KOMMANDOWIRTSCHAFT
+			allowed = { always = no }
+            modifier = {
+				monthly_population = 0.10
+				conscription_factor = 0.01
+				production_oil_factor = 0.05
+				local_resources_factor = 0.25
+				industry_free_repair_factor	= 0.10
+				global_building_slots_factor = 0.20
+				consumer_goods_expected_value = 0.10
+				production_speed_buildings_factor = 0.20
+				line_change_production_efficiency_factor = 0.2
+				production_factory_max_efficiency_factor = -0.10	
+				production_factory_start_efficiency_factor = 0.20		
+				production_lack_of_resource_penalty_factor = -0.20
+			}
+		}
 		HNN_ge_ming_shi = {#革命的历史
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_ge_ming_shi"}
 			picture = CZE_revolution_idea

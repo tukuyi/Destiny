@@ -2497,6 +2497,7 @@ HNN_budd_category = {#佛教权力统一
 
 HNN_bei_zhan_category = {#统一事宜
 	HNN_tou_zi_ji_chu_jian_she = {#投资基础设施
+		icon = cement_mixer
 		available = {
 			OR = {
 				owns_state = 602
@@ -2523,8 +2524,8 @@ HNN_bei_zhan_category = {#统一事宜
 			num_of_owned_factories < 20
 		}
 
-		days_remove = 30
-		cost = 0
+		days_remove = 60
+		cost = 50
 		days_re_enable = 15
 
 		complete_effect = {
@@ -2568,6 +2569,7 @@ HNN_bei_zhan_category = {#统一事宜
 		}
 	}
 	HNN_tou_zi_gong_chang = {#投资民用工厂
+		icon = cement_mixer
 		available = {
 			OR = {
 				owns_state = 602
@@ -2594,9 +2596,9 @@ HNN_bei_zhan_category = {#统一事宜
 			num_of_owned_factories < 20
 		}
 
-		days_remove = 30
-		cost = 0
-		days_re_enable = 15
+		days_remove = 90
+		cost = 100
+		days_re_enable = 30
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_tou_zi_gong_chang"
@@ -2665,7 +2667,6 @@ HNN_bei_zhan_category = {#统一事宜
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_liang_guang_jun_fa_tan_pan"
-			custom_effect_tooltip = HNN_he_liang_guang_jun_fa_tan_pan_tooltip
 			var:592.owner = {
 				country_event = { 
 					id = hunbao.40
@@ -2704,7 +2705,6 @@ HNN_bei_zhan_category = {#统一事宜
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_yun_nan_jun_fa_tan_pan"
-			custom_effect_tooltip = HNN_he_yun_nan_jun_fa_tan_pan_tooltip
 			YUN = {
 				country_event = { 
 					id = hunbao.40
@@ -2744,7 +2744,6 @@ HNN_bei_zhan_category = {#统一事宜
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_yun_nan_jun_fa_tan_pan_1"
-			custom_effect_tooltip = HNN_he_yun_nan_jun_fa_tan_pan_1_tooltip
 			YUN = {
 				country_event = { 
 					id = hunbao.40
@@ -4797,6 +4796,43 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 		}
 	}
 
+	HNN_xiao_mie_feng_jin = {#消灭乡村封建主义
+		icon = boot
+
+		visible = {
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
+		}
+		cancel_if_not_visible = no
+
+		ai_will_do = { base = 25 }
+		fire_only_once = yes	
+		cost = 50
+		days_remove = 60
+
+		modifier = {
+			syndicalist_drift = 0.01
+			totalist_drift = 0.01
+			political_power_gain = -0.10
+			radical_socialist_drift = 0.01
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_xiao_mie_feng_jin"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_xiao_mie_feng_jin"
+			increase_ruling_party_popularity_by_5 = yes
+			if = {
+				limit = {
+					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = HNN_syn_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
+		}
+	}
 	HNN_zu_zhi_nong_hui = {#组织农会
 		icon = GFX_decision_soldierly_discipline
 		visible = {
@@ -4804,6 +4840,7 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 				has_completed_focus = HNN_ban_bu_xin_xian_fa
 				has_completed_focus = HNN_nong_chun_he_zuo_she
 			}
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -4845,6 +4882,7 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 				has_completed_focus = HNN_ban_bu_xin_xian_fa
 				has_completed_focus = HNN_nong_chun_he_zuo_she
 			}
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
 		}
 		cancel_if_not_visible = no
 
@@ -4884,6 +4922,7 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 				has_completed_focus = HNN_ban_bu_xin_xian_fa
 				has_completed_focus = HNN_nong_chun_he_zuo_she
 			}
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
 		}
 		cancel_if_not_visible = no
 
@@ -4953,6 +4992,155 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 				add_days_mission_timeout = {
 					mission = HNN_syn_agricultural_reform_mission_timer
 					days = -20
+				}
+			}
+		}
+	}
+	HNN_jiu_zheng_ji_zuo_cuo_wu = {#纠正错误
+		icon = GFX_decision_ban_iron_front
+
+		available = {
+			has_completed_focus = HNN_shi_shi_qiu_shi
+		}
+		visible = {
+			has_completed_focus = HNN_shi_shi_qiu_shi
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
+		}
+
+		cost = 50
+		days_remove = 40
+		days_re_enable = 55
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_jiu_zheng_ji_zuo_cuo_wu"
+			add_manpower = -1000
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_jiu_zheng_ji_zuo_cuo_wu"
+			add_stability = 0.05
+			add_political_power = 100
+			if = {
+				limit = {
+					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = HNN_syn_agricultural_reform_mission_timer
+					days = 30
+				}
+			}
+		}
+	}
+	HNN_zheng_dun_dang_nei = {#纠正错误
+		icon = GFX_decision_ban_iron_front
+
+		available = {
+			has_completed_focus = HNN_shi_shi_qiu_shi
+		}
+		visible = {
+			has_completed_focus = HNN_shi_shi_qiu_shi
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
+		}
+
+		cost = 35
+		days_remove = 40
+		days_re_enable = 55
+
+		modifier = {
+			syndicalist_drift = -0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_zheng_dun_dang_nei"
+		
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_zheng_dun_dang_nei"
+			if = {
+				limit = {
+					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = HNN_syn_agricultural_reform_mission_timer
+					days = -30
+				}
+			}
+		}
+	}
+	HNN_cong_di_san_guo_ji_jin = {#进口肥料
+		icon = card
+
+		available = {
+			OR = {
+				FRA = {
+					exists = yes
+					has_socialist_government = yes
+				}
+				ENG = {
+					exists = yes
+					has_socialist_government = yes
+				}
+				RUS = {
+					exists = yes
+					has_socialist_government = yes
+				}
+			}
+		}
+		visible = {
+			has_active_mission = HNN_syn_agricultural_reform_mission_timer
+		}
+		cancel_if_not_visible = no
+
+		ai_will_do = { base = 25 }
+		fire_only_once = no	
+		cost = 50
+		days_remove = 60
+		days_re_enable = 60
+
+		modifier = {
+			political_power_gain = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_cong_di_san_guo_ji_jin"
+			add_political_power = -50
+			if = {
+				limit = { 
+					FRA = {
+						exists = yes
+						has_socialist_government = yes
+					}
+				}
+				FRA = {
+					add_political_power = 50
+				}
+			}
+			else_if = {
+				limit = { 
+					ENG = {
+						exists = yes
+						has_socialist_government = yes
+					}
+				}
+				ENG = {
+					add_political_power = 50
+				}
+			}
+			else = {
+				RUS = {
+					add_political_power = 50
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_cong_di_san_guo_ji_jin"
+			increase_ruling_party_popularity_by_5 = yes
+			if = {
+				limit = {
+					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = HNN_syn_agricultural_reform_mission_timer
+					days = -50
 				}
 			}
 		}
