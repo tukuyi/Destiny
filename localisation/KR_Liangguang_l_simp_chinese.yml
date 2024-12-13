@@ -3344,6 +3344,7 @@
  GXC_chong_jian_ARG:0 "组建阿根廷子公司"
  GXC_chong_jian_BRA:0 "组建巴西子公司"
  GXC_chong_jian_USA:0 "组建美利坚子公司"
+ GXC_chong_jian_USA_desc:0 "你最好在释放了其他美国子公司后释放他"
  GXC_chong_jian_NEE:0 "组建新英格兰子公司"
  GXC_chong_jian_COL:0 "组建加利福尼亚子公司"
  GXC_chong_jian_COR:0 "组建肯塔基子公司"

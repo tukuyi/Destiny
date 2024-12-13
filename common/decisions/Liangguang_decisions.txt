@@ -1971,6 +1971,7 @@ GXC_zou_si_wang_lu = {#发财之路
 
 GXC_quan_qiu_da_bing_gou = {#全球大并购
 	GXC_chong_jian_ri_ben = {#日本
+		icon = GFX_decision_global_trade
 		available = {
 			KOR = {
 				is_subject_of = GXC
@@ -2028,6 +2029,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_cx = {#朝鲜
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2054,6 +2056,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_GEA = {#中南
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2085,9 +2088,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2103,6 +2103,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_xby = {#西班牙
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2115,9 +2116,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					is_subject_of = GXC
 				}
 			} 
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2134,6 +2132,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_ydl = {#意大利
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2170,9 +2169,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			}
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2188,6 +2184,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_eng = {#英格兰
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2210,9 +2207,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2228,6 +2222,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_nei_nuo = {#法国
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2238,9 +2233,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					is_subject_of = GXC
 				}
 			} 
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2257,6 +2249,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_GER = {#德国
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2268,9 +2261,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					is_subject_of = GXC
 				}
 			} 
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2287,6 +2277,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_AUS = {#奥地利
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2326,9 +2317,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2344,6 +2332,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_RUS = {#俄罗斯
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2360,6 +2349,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
+
 		fire_only_once = yes
 		days_remove = 0
 		cost = 0
@@ -2374,6 +2364,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_UKR = {#乌克兰
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2392,9 +2383,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2410,6 +2398,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_SWI = {#瑞士
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2421,9 +2410,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					is_subject_of = GXC
 				}
 			} 
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2440,6 +2426,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_BLE = {#比利时
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2477,6 +2464,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_POL = {#波兰
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2516,6 +2504,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_MFA = {#法属非洲
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2629,9 +2618,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				is_owned_by_ROOT_or_ally = yes
 			}
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2647,6 +2633,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_LIB = {#利比里亚
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2698,9 +2685,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2716,6 +2700,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}			
 	GXC_chong_jian_CAN = {#加拿大
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2730,9 +2715,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					is_subject_of = GXC
 				}
 			} 
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2749,6 +2731,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_HON = {#中美洲
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2792,9 +2775,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 				}
 			} 
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -2810,6 +2790,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_ARG = {#阿根廷
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2861,6 +2842,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_BRA = {#巴西
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {
@@ -2927,15 +2909,13 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_USA = {#美国
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 1162
 			owns_state = 930
 			owns_state = 1159
 			owns_state = 362
 			owns_state = 1158
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2952,6 +2932,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_NEE = {#新英格兰
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 357
 			owns_state = 934
@@ -2959,9 +2940,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 			owns_state = 796
 			owns_state = 932
 			owns_state = 931
-		}
-		visible = {
-			
 		}
 
 		fire_only_once = yes
@@ -2978,6 +2956,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_COL = {#加利福尼亚
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 386
 			owns_state = 1157
@@ -3006,6 +2985,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_COR = {#肯塔基
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 366
 			owns_state = 1171
@@ -3044,6 +3024,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_TEX = {#德克萨斯
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 371
 			owns_state = 375
@@ -3064,9 +3045,6 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 			owns_state = 382
 			owns_state = 1096
 		}
-		visible = {
-			
-		}
 
 		fire_only_once = yes
 		days_remove = 0
@@ -3082,6 +3060,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}	
 	GXC_chong_jian_CSA = {#芝加哥
+		icon = GFX_decision_global_trade
 		available = {
 			owns_state = 358
 			owns_state = 359
@@ -3115,7 +3094,8 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 			
 		}
 	}		
-	GXC_chong_jian_MEX = {#巴西
+	GXC_chong_jian_MEX = {#墨西哥
+		icon = GFX_decision_global_trade
 		available = {
 			OR = {
 				AND = {

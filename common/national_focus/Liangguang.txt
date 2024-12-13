@@ -13610,7 +13610,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_ling_nan_rong_yao"
 		add_research_slot_until_four = yes
@@ -13635,7 +13634,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gong_chang_hopng_ming"
@@ -13682,7 +13680,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zui_shu_ying_yong_guo_wang"
 		add_ideas = GXC_rong_yao
@@ -13704,7 +13701,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_kai_chuang_zhan_xi_wei_lai"
@@ -13759,7 +13755,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gou_ru_xin_shi_zhuang_bei"
 		add_tech_bonus = {
@@ -13801,7 +13796,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zui_you_xiu"
 		swap_ideas = {
@@ -13829,7 +13823,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_si_ren_ding_zhi"
@@ -13861,7 +13854,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zhong_cheng_wu_xu_duo_yan"
@@ -13896,7 +13888,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_jia_ge_jue_dui_gong_dao"
 		swap_ideas = {
@@ -13924,7 +13915,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_wei_ming_si_chong"
@@ -13987,7 +13977,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_ning_lan_wu_qie"
@@ -14052,7 +14041,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_jin_da_xi_suan"
 		swap_ideas = {
@@ -14080,7 +14068,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zai_shao_ye_shi"
@@ -14113,7 +14100,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gu_yong_zhi"
 		swap_ideas = {
@@ -14139,7 +14125,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_cai_chan_quan_ran_wu_yong"
 		add_ideas = GXC_jin_qian_de_mo_li
@@ -14164,7 +14149,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_ti_bu"
@@ -14200,7 +14184,6 @@ shared_focus = {
 		factor = 0.25
 	}
 
-
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_si_ren_an_bao_ye"
 		add_war_support = 0.05
@@ -14227,7 +14210,6 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0.25
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gong_wu_bu_ke"
@@ -14543,13 +14525,6 @@ shared_focus = {
 	x = 27
 	y = 7
 
-	prerequisite = {
-		
-	}
-	prerequisite = {
-		
-	}
-
 	available = {
 		has_country_flag = has_united_china
 	}
@@ -14575,9 +14550,6 @@ shared_focus = {
 
 	prerequisite = {
 		focus = GXC_gui_xi_hui_yi
-	}
-	prerequisite = {
-		
 	}
 
 	available = {
@@ -14741,9 +14713,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_gui_xi_hui_yi
 	}
-	prerequisite = {
-		
-	}
 
 	available = {
 		has_country_leader = {
@@ -14771,9 +14740,6 @@ shared_focus = {
 
 	prerequisite = {
 		focus = GXC_gui_xi_hui_yi
-	}
-	prerequisite = {
-		
 	}
 
 	available = {
@@ -15043,9 +15009,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_wen_he_de_qiu_lue_duo
 		focus = GXC_wen_ding_hang_xian
-	}
-	prerequisite = {
-		
 	}
 
 	ai_will_do = {
@@ -15538,9 +15501,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_wei_you_gong_tuan
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gong_nong_zi_zhi"
@@ -15614,9 +15574,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_jun_dui_ling_dao_ge_ming
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_jwei_quan_dai_lai_zi_you"
@@ -15640,9 +15597,6 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = GXC_jwei_quan_dai_lai_zi_you
-	}
-	available = {
-
 	}
 
 	completion_reward = {
@@ -15700,10 +15654,7 @@ shared_focus = {
 		focus = GXC_san_ming_lian_he
 		focus = GXC_wei_you_gong_tuan
 	}
-	available = {
-
-	}
-
+	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_tuna_jie_zuo_yi"
 		add_soclib_to_coalition = yes
@@ -15733,9 +15684,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_jun_dui_ling_dao_ge_ming
 		focus = GXC_wei_you_gong_tuan
-	}
-	available = {
-
 	}
 
 	completion_reward = {
@@ -15790,9 +15738,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_gong_nong_zi_zhi
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_tui_dong_chan_ye"
@@ -15820,9 +15765,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_gong_nong_zi_zhi
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_di_yu_chan_ye"
@@ -15847,9 +15789,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_min_zu_jie_fang
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_she_hui_jun_shi_hua"
@@ -15873,9 +15812,6 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = GXC_guo_jia_ge_ming
-	}
-	available = {
-
 	}
 
 	completion_reward = {
@@ -15904,9 +15840,6 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_tui_dong_chan_ye
 	}
-	available = {
-
-	}
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gong_nong_guo_du"
@@ -15930,9 +15863,6 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = GXC_san_ming_lian_he
-	}
-	available = {
-
 	}
 
 	completion_reward = {
@@ -15961,9 +15891,6 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = GXC_tuna_jie_zuo_yi
-	}
-	available = {
-
 	}
 
 	completion_reward = {
@@ -16002,9 +15929,6 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = GXC_tuna_jie_zuo_yi
-	}
-	available = {
-
 	}
 
 	completion_reward = {

@@ -131,6 +131,14 @@ focus_tree = {
 					amount = 2000
 					producer = HNN
 				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 
 			search_filters = { FOCUS_FILTER_POLITICAL }
@@ -260,10 +268,10 @@ focus_tree = {
 				add_war_support = 0.1
 				add_political_power = 100
 				602 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type =  industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -900,10 +908,10 @@ focus_tree = {
 				add_stability = 0.10
 				add_research_slot_until_three = yes
 				random_owned_state = {
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = industrial_complex
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -993,15 +1001,6 @@ focus_tree = {
 				add_command_power = 20
 				army_experience = 50
 				custom_effect_tooltip = tooltip_white_line
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				custom_effect_tooltip = tooltip_white_line
 				add_ideas = HNN_chun_jie_de_jun_de
 			}
 
@@ -1034,15 +1033,6 @@ focus_tree = {
 					type = artillery_equipment
 					amount = 400
 					producer = HNN
-				}
-				custom_effect_tooltip = tooltip_white_line
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
 				}
 				custom_effect_tooltip = tooltip_white_line
 				add_ideas = ENG_mobilized_industry_idea
