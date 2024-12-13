@@ -1,30 +1,14 @@
-has_compele_china = {
-	if = {
-		limit = { 
-			tag = HNN
+SQI_GER_influence_active = {
+	SQI = {
+		exists = yes
+		has_country_flag = Shandong_not_big
+		NOT = {
+			is_puppet_of = QIE
 		}
-		has_completed_focus = HNN_gong_ye_hua
 	}
-	else_if = {
-		limit = { 
-			tag = GXC
-		}
-		has_completed_focus = GXC_martial_law
-	}
-}
-
-has_compele_china2 = {
-	if = {
-		limit = { 
-			tag = HNN
-		}
-		has_completed_focus = HNN_hou_cai_kuang
-	}
-	else_if = {
-		limit = { 
-			tag = GXC
-		}
-		has_completed_focus = GXC_shi_si_xiang_jian_she
+	GER = {
+		exists = yes
+		NOT = { has_war_with = SQI }
 	}
 }
 

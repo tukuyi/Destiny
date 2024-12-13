@@ -101,3 +101,16 @@ SQI_chu_li_nong_chun_wen_ti = {#处理农村问题
 	}
 	visible_when_empty = yes
 }
+SQI_GER_yin_xiang_li = {#德意志的阴影下
+	icon = generic_industry
+	picture = GFX_decision_category_industry_KMT
+	priority = 100
+	visible_when_empty = yes
+
+	allowed = { 
+		tag = SQI 
+	}
+	visible = {
+		SQI_GER_influence_active = yes
+	}
+}

@@ -681,38 +681,6 @@ SHX_set_up_QIE_influence_game = {#设定精神
 	SHX_econ_update = yes
 }
 
-SHX_negotiate_econ_treaty = {
-	if = {
-		limit = { has_idea = SHX_qie_influence_idea4 }
-		swap_ideas = {
-			remove_idea = SHX_qie_influence_idea4
-			add_idea = SHX_qie_dominated_econ
-		}
-	}
-	else_if = {
-		limit = { has_idea = SHX_qie_influence_idea3 }
-		swap_ideas = {
-			remove_idea = SHX_qie_influence_idea3
-			add_idea = SHX_qie_prevelant_econ
-		}
-	}
-	else_if = {
-		limit = { has_idea = SHX_qie_influence_idea2 }
-		swap_ideas = {
-			remove_idea = SHX_qie_influence_idea2
-			add_idea = SHX_qie_equal_econ
-		}
-	}
-	else_if = {
-		limit = { has_idea = SHX_qie_influence_idea1 }
-		swap_ideas = {
-			remove_idea = SHX_qie_influence_idea1
-			add_idea = SHX_qie_shx_dominated_econ
-		}
-	}
-	else = { remove_ideas = SHX_qie_influence_idea0 }
-}
-
 ###- 北京影响力等级 -###
 SHX_econ_update = {
 	hidden_effect = {
@@ -757,6 +725,37 @@ SHX_remove_qie_econ = {
 		limit = { has_idea = SHX_qie_influence_idea4 }
 		remove_ideas = SHX_qie_influence_idea4
 	}
+}
+SHX_negotiate_econ_treaty = {
+	if = {
+		limit = { has_idea = SHX_qie_influence_idea4 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea4
+			add_idea = SHX_qie_dominated_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea3 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea3
+			add_idea = SHX_qie_prevelant_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea2 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea2
+			add_idea = SHX_qie_equal_econ
+		}
+	}
+	else_if = {
+		limit = { has_idea = SHX_qie_influence_idea1 }
+		swap_ideas = {
+			remove_idea = SHX_qie_influence_idea1
+			add_idea = SHX_qie_shx_dominated_econ
+		}
+	}
+	else = { remove_ideas = SHX_qie_influence_idea0 }
 }
 SHX_QIE_investment_change_inf_effect = {
 	add_to_variable = {

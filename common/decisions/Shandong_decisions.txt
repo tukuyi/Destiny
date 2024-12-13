@@ -2316,3 +2316,229 @@ SQI_chu_li_nong_chun_wen_ti = {#处理农村问题
 		}
 	}
 }
+
+SQI_GER_yin_xiang_li = {#德意志的阴影之下
+	SQI_jin_kou_de_guo_wu_qi = {#进口德国武器
+		icon = GFX_decision_artillery
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+			GER = {
+				has_equipment = {
+					infantry_equipment_0 > 500
+				}
+			}
+		}
+
+		cost = 30
+		days_remove = 15
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_wu_qi"
+			SQI_GER_investment_small = yes
+			GER = {
+				add_political_power = 30
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = -500
+					producer = GER
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_wu_qi"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500
+				producer = GER
+			}
+		}
+	}
+	SQI_jin_kou_de_guo_ka_che = {#进口德国卡车
+		icon = generic_motorized
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+			GER = {
+				has_equipment = {
+					motorized_equipment > 100
+				}
+			}
+		}
+
+		cost = 30
+		days_remove = 15
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_ka_che"
+			SQI_GER_investment_medium = yes
+			GER = {
+				add_political_power = 30
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = -100
+					producer = GER
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_ka_che"
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = GER
+			}
+		}
+	}
+	SQI_jin_kou_de_guo_huo_pao = {#进口德国火炮
+		icon = GFX_decision_artillery
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+			GER = {
+				has_equipment = {
+					artillery_equipment > 200
+				}
+			}
+		}
+
+		cost = 30
+		days_remove = 15
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_huo_pao"
+			SQI_GER_investment_large = yes
+			GER = {
+				add_political_power = 30
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = -200
+					producer = GER
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_huo_pao"
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = GER
+			}
+		}
+	}
+	SQI_yao_qing_de_guo_zhuan_jia = {#邀请德国工业专家
+		icon = GFX_Volkswagen
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+		}
+
+		cost = 50
+		days_remove = 20
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_yao_qing_de_guo_zhuan_jia"
+			SQI_GER_investment_medium = yes
+			GER = {
+				add_political_power = 50
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_yao_qing_de_guo_zhuan_jia"
+			random_list = {
+				50 = {
+					add_tech_bonus = {
+						name = HNN_The_Arsenals_of_the_South
+						bonus = 0.75
+						uses = 1
+						category = industry
+					}
+				}
+				50 = {
+					add_tech_bonus = {
+						name = HNN_The_Arsenals_of_the_South
+						bonus = 0.75
+						uses = 1
+						category = electronics
+					}
+				}
+			}
+		}
+	}
+}

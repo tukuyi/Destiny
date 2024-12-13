@@ -119,6 +119,7 @@ add_ideas = {
 	SQI_Rampant_drug_trade
 	SQI_honored_master
 	SQI_flight_north
+	# SQI_gea_influence_idea1
 	
 	partial_economic_mobilisation
 	unequal_treaties
@@ -333,4 +334,10 @@ create_country_leader = {
 	picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Tianran.png"
 	expire = "1.1.1"
 	ideology = Yiguandao_subtype
+}
+
+# set_country_flag = Shandong_not_big
+
+set_variable = {
+	SQI_gea_influence_variable = 20
 }

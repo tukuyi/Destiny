@@ -82,37 +82,165 @@ ideas = {
 # Country ideas
 ##############
 	country = {
-		SQI_honored_master = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master"}
-			picture = generic_volunteer_expedition_bonus
-			allowed = { always = no }
-            modifier = {
-				conscription = 0.01
-				national_populist_drift = 0.01
+		#开局
+			SQI_honored_master = {#上师
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master"}
+				picture = generic_volunteer_expedition_bonus
+				allowed = { always = no }
+				modifier = {
+					conscription = 0.01
+					national_populist_drift = 0.01
+				}
 			}
-		}
 
-		SQI_flight_north = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_north"}
-			picture = prc_the_long_march2
-			allowed = { always = no }
-            modifier = {
-				monthly_population = 0.05
-				political_power_gain = -0.05
-				national_populist_drift = 0.01
+			SQI_flight_north = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_north"}
+				picture = prc_the_long_march2
+				allowed = { always = no }
+				modifier = {
+					monthly_population = 0.05
+					political_power_gain = -0.05
+					national_populist_drift = 0.01
+				}
 			}
-		}
 
-		SQI_Rampant_drug_trade = { #Rampant Drug Trade
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Rampant_drug_trade"}
-			picture = SZC_opium_monopoly
-			allowed = { always = no }
-            modifier = {
-				stability_factor = -0.10
-				local_resources_factor = -0.1
-				political_power_factor = -0.05
+			SQI_Rampant_drug_trade = { #Rampant Drug Trade
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Rampant_drug_trade"}
+				picture = SZC_opium_monopoly
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.10
+					local_resources_factor = -0.1
+					political_power_factor = -0.05
+				}
 			}
-		}
+			SQI_gea_influence_idea1 = {#德国人的影响力
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea1" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.1
+				}
+			}
+
+		#德国人的影响力
+			SQI_gea_influence_idea0 = {#德国人的影响力
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea0" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.05
+				}
+			}
+			SQI_gea_influence_idea2 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea2" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.15
+				}
+			}
+			SQI_gea_influence_idea3 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea3" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.2
+				}
+			}
+			SQI_gea_influence_idea4 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea4" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.25
+				}
+			}	
 
 		####Focus Tree Ideas####
 

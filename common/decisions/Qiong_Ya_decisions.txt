@@ -109,7 +109,7 @@ QYG_gen_ju_di_fa_zhan_category = {#发展根据地
 		}
 	}
 	QYG_tou_yun_wu_qi = {#武器偷运 - 一阶段
-		icon = GFX_decision_decision_artillery
+		icon = GFX_decision_artillery
 		available = {
 
 		}
@@ -162,7 +162,7 @@ QYG_gen_ju_di_fa_zhan_category = {#发展根据地
 		}
 	}
 	QYG_gou_mai_wu_qi = {#购买武器 - 二阶段
-		icon = GFX_decision_decision_artillery
+		icon = GFX_decision_artillery
 		available = {
 
 		}
@@ -2171,7 +2171,7 @@ QYG_ge_ming_xin_jie_duan = {#革命的新阶段
 		}
 	}
 	QYG_di_er_ci_sheng_gang_da_ba_gong = {#第二次省港大罢工
-		icon = decision_artillery
+		icon = GFX_decision_artillery
 
 		available = {
 			has_stability > 0
@@ -2212,7 +2212,7 @@ QYG_ge_ming_xin_jie_duan = {#革命的新阶段
 		}
 	}
 	QYG_xiang_gang_zheng_duo_zhan = {#重返香港
-		icon = decision_artillery
+		icon = GFX_decision_artillery
 
 		allowed = {
 			original_tag = QYG
