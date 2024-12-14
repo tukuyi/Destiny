@@ -29,6 +29,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/SHX_GMJ_flag.png"
 	}
 	spriteType = {
+		name = "GFX_decision_GEA_colonial_department"
+		texturefile = "gfx/interface/decisions/GEA_colonial_department.png"
+	}
+	spriteType = {
 		name = "GFX_decision_category_red_start"
 		texturefile = "gfx/interface/decisions/decisions_categories/red_start.png"
 	}
@@ -47,5 +51,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_category_Research"
 		texturefile = "gfx/interface/decisions/decisions_categories/Research.png"
+	}
+	spriteType = {
+		name = "GFX_decision_category_GEA_decision"
+		texturefile = "gfx/interface/decisions/GEA_decision.png"
 	}
 }

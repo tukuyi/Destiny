@@ -5205,4 +5205,472 @@ focus_tree = {
 				add_state_claim = 725
 			}
 		}
+#新工业
+	focus = {
+		id = SQI_make_shandong_great
+		icon = GFX_RUS_Money_For_Industrialization
+		x = 17
+		y = 10
+		cost = 5
+
+		allow_branch = {
+			SQI_GER_influence_active = yes
+		}
+		available = {
+			OR = {
+				has_country_flag = SQI_Zheyuan_beat_Zongchang
+				has_country_flag = SQI_Tianran_beat_Zongchang
+				has_country_flag = SQI_Zongchang_beat_Tianran
+				has_country_flag = SQI_baie_jue_qi
+				SQI = {
+					is_puppet = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_make_shandong_great"
+
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_chu_li_nong_ye_wei_ji
+		icon = GFX_RUS_Agriculture_Secure_Council
+		relative_position_id = SQI_make_shandong_great
+		x = 0
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_make_shandong_great
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_nong_ye_wei_ji"
+
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_nong_ye_duo_yang_hua
+		icon = GFX_RUS_Final_Land_Policy_Solution
+		relative_position_id = SQI_make_shandong_great
+		x = -1
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_chu_li_nong_ye_wei_ji
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_nong_ye_duo_yang_hua"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_jin_kou_de_guo_fei_liao
+		icon = GFX_RUS_Municipalization_Of_Land
+		relative_position_id = SQI_make_shandong_great
+		x = 1
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_chu_li_nong_ye_wei_ji
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_jin_kou_de_guo_fei_liao"
+			SQI_GER_investment_small = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_kuo_da_nong_ye_chu_kou
+		icon = GFX_RUS_Land_Socialization
+		relative_position_id = SQI_make_shandong_great
+		x = 0
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_jin_kou_de_guo_fei_liao
+		}
+		prerequisite = {
+			focus = SQI_nong_ye_duo_yang_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_da_nong_ye_chu_kou"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_nong_ye_bu_tie
+		icon = GFX_focus_rus_industry2
+		relative_position_id = SQI_make_shandong_great
+		x = 0
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kuo_da_nong_ye_chu_kou
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_nong_ye_bu_tie"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_fang_song_dui_de
+		icon = GFX_RUS_Support_Small_Business_vns
+		relative_position_id = SQI_make_shandong_great
+		x = 3
+		y = 1
+		cost = 5
+
+		available = {
+			NOT = {
+				is_puppet_of = QIE
+				has_country_flag = SQI_Zheyuan_beat_Zongchang
+				has_country_flag = SQI_Tianran_beat_Zongchang
+			}
+		}
+		prerequisite = {
+			focus = SQI_make_shandong_great
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_fang_song_dui_de"
+			SQI_GER_investment_medium = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_cheng_ji_de_guo_she_bei
+		icon = GFX_RUS_Moderate_Industrialization
+		relative_position_id = SQI_make_shandong_great
+		x = 3
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_fang_song_dui_de
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_cheng_ji_de_guo_she_bei"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_jiang_di_gong_chang_men_kan
+		icon = GFX_RUS_A_New_Russian_Worker
+		relative_position_id = SQI_make_shandong_great
+		x = 2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_cheng_ji_de_guo_she_bei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_jiang_di_gong_chang_men_kan"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_kuo_jian_ji_nan_bing_gong_chang
+		icon = GFX_RUS_Perestroika
+		relative_position_id = SQI_make_shandong_great
+		x = 4
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_cheng_ji_de_guo_she_bei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_jian_ji_nan_bing_gong_chang"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_gan_ru_gong_chang
+		icon = GFX_RUS_Collective_Management
+		relative_position_id = SQI_make_shandong_great
+		x = 1
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_jiang_di_gong_chang_men_kan
+		}
+		prerequisite = {
+			focus = SQI_kuo_jian_ji_nan_bing_gong_chang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_gan_ru_gong_chang"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_jie_chu_ri_ben_ren
+		icon = GFX_RUS_Find_A_Compromise
+		relative_position_id = SQI_make_shandong_great
+		x = 3
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_jiang_di_gong_chang_men_kan
+		}
+		prerequisite = {
+			focus = SQI_kuo_jian_ji_nan_bing_gong_chang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_jie_chu_ri_ben_ren"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_wu_qi_zi_ji_zi_zhu
+		icon = GFX_RUS_Decentralize_Power
+		relative_position_id = SQI_make_shandong_great
+		x = 5
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_jiang_di_gong_chang_men_kan
+		}
+		prerequisite = {
+			focus = SQI_kuo_jian_ji_nan_bing_gong_chang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_wu_qi_zi_ji_zi_zhu"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_shan_xi_gong_ye_hua
+		icon = GFX_RUS_Strong_Executive
+		relative_position_id = SQI_make_shandong_great
+		x = 3
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_wu_qi_zi_ji_zi_zhu
+		}
+		prerequisite = {
+			focus = SQI_jie_chu_ri_ben_ren
+		}
+		prerequisite = {
+			focus = SQI_gan_ru_gong_chang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_shan_xi_gong_ye_hua"
+			 
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+
+	focus = {
+		id = SQI_lian_tong_si_fang
+		icon = GFX_RUS_Iron_Veins
+		relative_position_id = SQI_make_shandong_great
+		x = -3
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_make_shandong_great
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_lian_tong_si_fang"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_sheng_ji_cai_kuang_ye
+		icon = GFX_RUS_Begin_Industrialization
+		relative_position_id = SQI_make_shandong_great
+		x = -3
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_lian_tong_si_fang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_sheng_ji_cai_kuang_ye"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_kai_chai_mei_kuang
+		icon = GFX_RUS_Reaffirm_Protectionism
+		relative_position_id = SQI_make_shandong_great
+		x = -4
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_sheng_ji_cai_kuang_ye
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kai_chai_mei_kuang"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_kai_chai_jin_ling_tie_kuang
+		icon = GFX_RUS_Forge_A_New_Coalition
+		relative_position_id = SQI_make_shandong_great
+		x = -2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_sheng_ji_cai_kuang_ye
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kai_chai_jin_ling_tie_kuang"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_sheng_chan_xin_nong_ju
+		icon = GFX_RUS_Emergence_Of_Farmers
+		relative_position_id = SQI_make_shandong_great
+		x = -1
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kai_chai_mei_kuang
+		}
+		prerequisite = {
+			focus = SQI_kai_chai_jin_ling_tie_kuang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_sheng_chan_xin_nong_ju"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_kuo_da_yan_tai_gang
+		icon = GFX_RUS_Submarines_Kamchatka
+		relative_position_id = SQI_make_shandong_great
+		x = -3
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kai_chai_mei_kuang
+		}
+		prerequisite = {
+			focus = SQI_kai_chai_jin_ling_tie_kuang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_da_yan_tai_gang"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_bao_hu_si_ying_qi_ye
+		icon = GFX_RUS_Oligarchs_Triumphant
+		relative_position_id = SQI_make_shandong_great
+		x = -5
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kai_chai_mei_kuang
+		}
+		prerequisite = {
+			focus = SQI_kai_chai_jin_ling_tie_kuang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_bao_hu_si_ying_qi_ye"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SQI_yi_qie_wei_le_jin_da_shuai
+		icon = GFX_RUS_Panic_In_Petrograd
+		relative_position_id = SQI_make_shandong_great
+		x = -3
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kuo_da_yan_tai_gang
+		}
+		prerequisite = {
+			focus = SQI_bao_hu_si_ying_qi_ye
+		}
+		prerequisite = {
+			focus = SQI_sheng_chan_xin_nong_ju
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_yi_qie_wei_le_jin_da_shuai"
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
 }

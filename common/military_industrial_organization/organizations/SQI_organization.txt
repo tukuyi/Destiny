@@ -1,0 +1,59 @@
+###################
+### Armour MIOs ###
+###################
+
+##################
+### Naval MIOs ###
+##################
+SQI_qing_dao_zao_chuan_chang_organisation = {#青岛造船厂
+	name = SQI_qing_dao_zao_chuan_chang
+	icon = GFX_idea_kaiserliche_werft_wilhelmshaven
+	include = generic_battle_line_ship_organization
+	allowed = {
+		original_tag = SQI
+	}
+	available = {
+		FROM = {
+			OR = {
+				owns_state = 744
+				has_idea = SQI_gea_influence_idea2
+			}
+		}
+	}
+}
+
+#####################
+### Airplane MIOs ###
+#####################
+
+#####################
+### Materiel MIOs ###
+#####################
+SQI_jinan_arsenal_organisation = {
+	name = jinan_arsenal
+	icon = GFX_idea_jinan_arsenal
+	include = generic_infantry_equipment_organization
+	allowed = { original_tag = SQI }
+}
+SQI_seventy_two_cannon_artillery_foundry = {
+	name = seventy_two_cannon_artillery_foundry
+	icon = generic_infantry_equipment_manufacturer_3
+	include = generic_artillery_organization
+	allowed = { original_tag = SQI }
+}
+SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
+	name = SQI_si_fang_ji_che
+	icon = GFX_idea_FNG_ji_che_gong_shi
+	include = generic_motorized_mechanized_organization
+	allowed = {
+		original_tag = SQI
+	}
+	available = {
+		FROM = {
+			OR = {
+				owns_state = 744
+				has_idea = SQI_gea_influence_idea2
+			}
+		}
+	}
+}

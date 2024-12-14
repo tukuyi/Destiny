@@ -1,11 +1,10 @@
 ﻿###########################
 # Shandong events
 ###########################
-# By DSFDaker and OMD
-###########################
-# Lore by OMD
+# By 彭湃
 ###########################
 
+add_namespace = SQI
 add_namespace = shandong
 add_namespace = sqiwr
 add_namespace = sqiwan
@@ -17,11 +16,34 @@ country_event = {# Start up Event
 	desc = shandong.1.d
 	picture = GFX_report_event_CHI_china_abandoned
 
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = SQI.1
+				days = 1
+			}
+		}
+	}
+
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = shandong.1.a
+	}
+}
+
+country_event = {#青岛
+	id = SQI.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.1" }
+	title = SQI.1.t
+	desc = SQI.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.1.a
 	}
 }
 

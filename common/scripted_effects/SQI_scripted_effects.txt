@@ -111,7 +111,34 @@ SQI_agriculture_clamp = {#确定上下限
 		}
 		SQI_econ_update = yes
 	}
+	
 #增减德国影响力
+	SQI_GER_spend_all_time = {
+		hidden_effect = {
+			if = {
+				limit = { SQI_GER_influence_active = yes } 
+				random_list = {
+					20 = {
+						set_temp_variable = { SQI_gea_inf_change_var = 5 }
+					}
+					20 = {
+						set_temp_variable = { SQI_gea_inf_change_var = 4 }
+					}
+					20 = {
+						set_temp_variable = { SQI_gea_inf_change_var = 3 }
+					}
+					20 = {
+						set_temp_variable = { SQI_gea_inf_change_var = 2 }
+					}
+					20 = {
+						set_temp_variable = { SQI_gea_inf_change_var = 1 }
+					}
+				}
+			}
+			SQI_GER_investment_change_inf_effect = yes
+		}
+		custom_effect_tooltip = SQI_GER_spend_all_time_tooltip
+	}
 	SQI_GER_investment_small = {
 		if = {
 			limit = { SQI_GER_influence_active = yes } 

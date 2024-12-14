@@ -119,7 +119,7 @@ add_ideas = {
 	SQI_Rampant_drug_trade
 	SQI_honored_master
 	SQI_flight_north
-	# SQI_gea_influence_idea1
+	SQI_gea_influence_idea1
 	
 	partial_economic_mobilisation
 	unequal_treaties
@@ -336,8 +336,9 @@ create_country_leader = {
 	ideology = Yiguandao_subtype
 }
 
-# set_country_flag = Shandong_not_big
+set_country_flag = Shandong_not_big
 
 set_variable = {
 	SQI_gea_influence_variable = 20
 }
+activate_mission = SQI_jin_kou_de_guo_shang_ping_mission

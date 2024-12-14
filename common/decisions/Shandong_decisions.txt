@@ -2318,16 +2318,148 @@ SQI_chu_li_nong_chun_wen_ti = {#处理农村问题
 }
 
 SQI_GER_yin_xiang_li = {#德意志的阴影之下
+	SQI_jin_kou_de_guo_shang_ping_mission = {#进口德国商品
+		icon = GFX_decision_GEA_colonial_department
+
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				SQI_GER_influence_active = no
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				SQI_GER_influence_active = no
+			}
+		}
+
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_shang_ping_mission"
+			
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_shang_ping_mission"
+			if = {
+				limit = {
+					check_variable = { SQI_gea_influence_variable < 95 }
+				}
+				hidden_effect = {
+					activate_mission = SQI_jin_kou_de_guo_shang_ping_mission
+				}
+				SQI_GER_spend_all_time = yes
+			}
+		}
+	}
+	SQI_xiang_de_qi_zheng_shou = {#对德企加征额外税款
+		icon = GFX_decision_hand_grab
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+		}
+
+		cost = 0
+		days_remove = 30
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > -29
+			}
+			modifier = {
+				add = 3
+				has_political_power > -49
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > -79
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_qi_zheng_shou"
+			SQI_GER_spend_medium = yes
+			GER = {
+				add_opinion_modifier = {
+					target = SQI
+					modifier = KR_disapproves_of_govt
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_qi_zheng_shou"
+			add_political_power = 50
+		}
+	}
+	SQI_xiang_de_guo_xun_qiu_dai_kuan = {#向德国寻求贷款
+		icon = give_cash
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			GER = {
+				has_political_power > 99
+			}
+		}
+
+		cost = 0
+		days_remove = 100
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > -29
+			}
+			modifier = {
+				add = 2
+				has_political_power > -49
+			}
+			modifier = {
+				add = 3
+				has_political_power > -99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > -100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_guo_xun_qiu_dai_kuan"
+			SQI_GER_investment_medium = yes
+			add_political_power = 100
+			GER = {
+				add_political_power = -100
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_guo_xun_qiu_dai_kuan"
+			add_political_power = -120
+			GER = {
+				add_political_power = 120
+			}
+		}
+	}
 	SQI_jin_kou_de_guo_wu_qi = {#进口德国武器
 		icon = GFX_decision_artillery
 		visible = { SQI_GER_influence_active = yes }
 		available = {
 			has_idea = SQI_gea_influence_idea1
-			GER = {
-				has_equipment = {
-					infantry_equipment_0 > 500
-				}
-			}
 		}
 
 		cost = 30
@@ -2346,7 +2478,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 			modifier = {
 				add = 2
-				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > 100
 			}
 		}
@@ -2358,7 +2490,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 				add_political_power = 30
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = -500
+					amount = -1000
 					producer = GER
 				}
 			}
@@ -2368,7 +2500,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_wu_qi"
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
-				amount = 500
+				amount = 1000
 				producer = GER
 			}
 		}
@@ -2380,7 +2512,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			has_idea = SQI_gea_influence_idea1
 			GER = {
 				has_equipment = {
-					motorized_equipment > 100
+					motorized_equipment > 99
 				}
 			}
 		}
@@ -2401,7 +2533,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 			modifier = {
 				add = 2
-				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > 100
 			}
 		}
@@ -2435,7 +2567,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			has_idea = SQI_gea_influence_idea1
 			GER = {
 				has_equipment = {
-					artillery_equipment > 200
+					artillery_equipment > 199
 				}
 			}
 		}
@@ -2456,7 +2588,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 			modifier = {
 				add = 2
-				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > 100
 			}
 		}
@@ -2488,6 +2620,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		visible = { SQI_GER_influence_active = yes }
 		available = {
 			has_idea = SQI_gea_influence_idea1
+			GER = {
+				NOT = { has_idea = GER_black_monday }
+			}
 		}
 
 		cost = 50
@@ -2506,7 +2641,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 			modifier = {
 				add = 2
-				check_variable = { SQI.SQI_gea_influence_variable < 35 }
+				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > 100
 			}
 		}
@@ -2539,6 +2674,54 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 					}
 				}
 			}
+		}
+	}
+	SQI_de_guo_gong_ye_yuan_zu = {#德国工业援助
+		icon = GFX_decision_wrenches
+		visible = { SQI_GER_influence_active = yes }
+		available = {
+			has_idea = SQI_gea_influence_idea1
+			GER = {
+				NOT = { has_idea = GER_black_monday }
+			}
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 60
+		modifier = {
+			industrial_capacity_factory = 0.05
+			production_speed_buildings_factor = 0.20
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_guo_gong_ye_yuan_zu"
+			SQI_GER_investment_large = yes
+			GER = {
+				add_political_power = 50
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_guo_gong_ye_yuan_zu"
+
 		}
 	}
 }

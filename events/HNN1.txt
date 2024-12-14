@@ -11,7 +11,7 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		load_focus_tree = GXC_KFC
+		activate_mission = SQI_jin_kou_de_guo_shang_ping_mission
 
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
