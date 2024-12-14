@@ -249,7 +249,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_xin_ding_dan
-			icon = GFX_goal_HNN_xin_ding_dan
+			icon = GFX_goal_generic_market_socialism
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = 2
 			y = 1
@@ -332,7 +332,7 @@ focus_tree = {
 		
 		focus = {
 			id = HNN_liang_tiao_tui_zou_lu
-			icon = GFX_goal_HNN_jian_li_wu_jia_ju
+			icon = GFX_goal_HNN_liang_tiao_tui_zou_lu
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = 3
 			y = 4
@@ -412,7 +412,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_jie_fang_fu_nu
-			icon = GFX_goal_HNN_shi_ge_jiao_yu
+			icon = GFX_goal_HNN_jie_fang_fu_nu
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = -2
 			y = 3
@@ -494,7 +494,7 @@ focus_tree = {
 		
 		focus = {
 			id = HNN_zu_jian_nong_hui
-			icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			icon = GFX_goal_BUL_mechanize_farming
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = -1
 			y = 4
@@ -545,7 +545,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_fu_quan_gong_hui
-			icon = GFX_goal_HNN_shi_he_zg_de_gong_tuan_zhu_yi
+			icon = GFX_goal_CSA_craft_unions_committee
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = 1
 			y = 4
@@ -614,7 +614,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_jing_ji_dong_yuan_qi_lai
-			icon = GFX_goal_HNN_jian_li_wu_jia_ju
+			icon = GFX_goal_COR_Southern_Command_Economy
 			relative_position_id = HNN_dong_bi_wu_jiang_ling_dao_us
 			x = 2
 			y = 5
@@ -1043,7 +1043,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_bu_tie_you_zhi_qi_ye
-			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			icon = GFX_goal_HNN_bu_tie_you_zhi_qi_ye
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 1
 			y = 4
@@ -1082,7 +1082,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_jun_shi_hua_qing_nan_tuan
-			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			icon = GFX_goal_HNN_jun_shi_hua_qing_nan_tuan
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 3
 			y = 3
@@ -1108,7 +1108,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_kuo_bian_chi_wei_dui
-			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			icon = GFX_goal_HNN_kuo_bian_chi_wei_dui
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 3
 			y = 4
@@ -1132,7 +1132,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_wu_chan_jie_ji_da_ge_ming
-			icon = GFX_goal_HNN_shi_shi_qiu_shi
+			icon = GFX_goal_HNN_wu_chan_jie_ji_da_ge_ming
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 0
 			y = 5
@@ -1167,7 +1167,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_wei_le_dou_zheng_er_tuan_jie
-			icon = GFX_goal_HNN_shi_shi_qiu_shi
+			icon = GFX_goal_SER_Unity_or_death
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 2
 			y = 5
@@ -1194,7 +1194,7 @@ focus_tree = {
 
 		focus = {
 			id = HNN_qian_jin_qian_Jin_qian_jin
-			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
+			icon = GFX_goal_GUA_October_Revolution
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 0
 			y = 6

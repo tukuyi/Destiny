@@ -1004,8 +1004,9 @@ ideas = {
 				industry = 0.1
 			}
 		}
-		qingdao_dian_deng_company = {#青岛电灯厂
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea qingdao_dian_deng_company"}
+		SQI_schantung_bergbaugesellschaft = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_schantung_bergbaugesellschaft"}
+			picture = GEA_Schantung_Bergbaugesellschaft
 			allowed = { original_tag = SQI }
 			available = {
 				OR = {
@@ -1013,7 +1014,23 @@ ideas = {
 					has_idea = SQI_gea_influence_idea2
 				}
 			}
-			picture = GFX_idea_siemens
+			traits = { industrial_manufacturer }
+            modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = { industry = 0.1 }
+		}
+		qingdao_dian_deng_company = {#青岛电灯厂
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea qingdao_dian_deng_company"}
+			allowed = { original_tag = SQI }
+			available = {
+				OR = {
+					owns_state = 744
+					has_idea = SQI_gea_influence_idea3
+				}
+			}
+			picture = GFX_idea_siemens_ostasien
 			traits = { electronics_manufacturer }
 			modifier = {
 				production_speed_radar_station_factor = 0.15
