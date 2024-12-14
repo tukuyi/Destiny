@@ -202,6 +202,7 @@ ideologies = {
 	radical_socialist = {
 		types = {
 			radical_socialist_subtype = {} #generic
+			radsoc_lu_xun_thought_subtype = {can_be_randomly_selected = no} #无政府君主主义
 			monanarchism_subtype = {can_be_randomly_selected = no} #无政府君主主义
 			anarcho_tridemism_subtype = {can_be_randomly_selected = no} #无政府三民主义
 			radsoc_datong_shu_thought_subtype = {can_be_randomly_selected = no} #大同书思想

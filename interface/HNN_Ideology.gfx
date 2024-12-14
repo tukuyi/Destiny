@@ -8,6 +8,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/lu_xun_thought_group.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_radsoc_lu_xun_thought_subtype"
+		texturefile = "gfx/ideologies/subideologies/radsoc_lu_xun_thought_group.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_sorelian_marketism_subtype"
 		texturefile = "gfx/ideologies/subideologies/sorelian_marketism_group.png"
 	}

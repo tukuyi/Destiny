@@ -4332,6 +4332,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = radsoc_lu_xun_thought_subtype
+		}
+		localization_key = radsoc_lu_xun_thought_subtype
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = buddhist_autocrat_subtype
 		}
 		localization_key = buddhist_autocrat_subtype

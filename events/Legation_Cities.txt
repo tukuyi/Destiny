@@ -15776,21 +15776,21 @@ country_event = {#新领袖
 		}
 	}
 
-	# option = {
-	# 	name = lecgong.17.f
-	# 	set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
-	# 	create_country_leader = {
-	# 		name = "孙伏园"
-	# 		picture = "gfx/leaders/LEC/Portrait_LEC_Sun_Fuyuan.png"
-	# 		expire = "1.1.1"
-	# 		ideology = radsoc_communism_subtype
-	# 		traits = {  }
-	# 	}
-	# 	set_politics = {
-	# 		ruling_party = radical_socialist
-	# 		elections_allowed = no
-	# 	}
-	# }
+	option = {#柔石
+		name = lecgong.17.f
+		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
+		create_country_leader = {
+			name = "柔石"
+			picture = "gfx/leaders/LEC/Portrait_LEC_rou_shi.png"
+			expire = "1.1.1"
+			ideology = radsoc_lu_xun_thought_subtype
+			traits = {  }
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+	}
 
 	option = {
 		name = lecgong.17.g
