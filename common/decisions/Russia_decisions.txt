@@ -2741,6 +2741,7 @@ RUS_Alliance_decisions = {
 			country_exists = FROM
 			FROM = { 
 				is_in_faction = no
+				has_country_flag = ITA_forpol_unlocked
 				is_subject = no
 				NOT = { is_guaranteed_by = AUS }
 			}
@@ -4749,13 +4750,6 @@ RUS_Foreign_Policy_decisions = {
 				}
 			}
 			if = {
-				limit = { FROM = { tag = CRM } }
-				create_wargoal = {
-					target = CRM
-					type = annex_everything
-				}
-			}
-			if = {
 				limit = {
 					FROM = { 
 						OR = {
@@ -5250,7 +5244,7 @@ RUS_Foreign_Policy_decisions = {
 				can_declare_war_on = FROM
 				FROM = {
 					has_country_leader = {
-						name = "Stanisłaŭ Bułak-Bałachowič"
+						name = "Stanisłaŭ Bułak-Bałachowiĝ"
 						ruling_only = yes
 					}
 				}
@@ -5271,7 +5265,7 @@ RUS_Foreign_Policy_decisions = {
 				can_declare_war_on = FROM
 				FROM = {
 					has_country_leader = {
-						name = "Stanisłaŭ Bułak-Bałachowič"
+						name = "Stanisłaŭ Bułak-Bałachowiĝ"
 						ruling_only = yes
 					}
 				}
@@ -5313,7 +5307,7 @@ RUS_Foreign_Policy_decisions = {
 				limit = {
 					WHR = {
 						has_country_leader = {
-							name = "Stanisłaŭ Bułak-Bałachowič"
+							name = "Stanisłaŭ Bułak-Bałachowiĝ"
 							ruling_only = yes
 						}
 					}

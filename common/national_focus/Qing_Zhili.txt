@@ -2246,6 +2246,7 @@ focus_tree = {
 			OR = {
 				has_global_flag = JAP_Fading_Sun
 				NOT = { country_exists = JAP }
+				NOT = { has_war_with = JAP }
 			}
 		}
 		x = -1
@@ -2281,6 +2282,7 @@ focus_tree = {
 			OR = {
 				has_global_flag = JAP_Fading_Sun
 				NOT = { country_exists = JAP }
+				NOT = { has_war_with = JAP }
 			}
 		}
 
