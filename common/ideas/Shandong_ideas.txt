@@ -94,12 +94,14 @@ ideas = {
 			}
 			SQI_flight_north = {#飘向北方
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_flight_north"}
-				picture = prc_the_long_march2
+				picture = generic_destruction
 				allowed = { always = no }
 				modifier = {
+					stability_factor = -0.15
 					monthly_population = 0.05
-					political_power_gain = -0.05
+					political_power_gain = -0.10
 					national_populist_drift = 0.01
+					production_factory_efficiency_gain_factor = -0.10
 				}
 			}
 			SQI_Rampant_drug_trade = { #猖獗的毒品贸易
@@ -135,6 +137,59 @@ ideas = {
 				targeted_modifier = {
 					tag = GER
 					cic_to_target_factor = 0.10
+				}
+			}
+
+		#工农业
+			SQI_liang_shi_wei_ji_jia_ju = {#粮食危机
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_liang_shi_wei_ji_jia_ju"}
+				picture = generic_destruction
+				allowed = { always = no }
+				modifier = {
+					stability_weekly = -0.05
+					stability_factor = -0.30
+					monthly_population = -0.10
+					political_power_gain = -0.10
+					national_populist_drift = 0.04
+					production_speed_buildings_factor = -0.20
+					production_factory_efficiency_gain_factor = -0.10
+				}
+			}	
+			SQI_liang_shi_wei_ji_jia_juA = {#赈济难民
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_liang_shi_wei_ji_jia_juA"}
+				picture = generic_destruction
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.20
+					monthly_population = -0.05
+					political_power_gain = -0.20
+					national_populist_drift = 0.04
+					production_speed_buildings_factor = -0.10
+					production_factory_efficiency_gain_factor = -0.05
+				}
+			}	
+			SQI_liang_shi_wei_ji_jia_juB = {#稳固的粮食安全
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_liang_shi_wei_ji_jia_juB"}
+				picture = UKR_corn_erosion
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.20
+					monthly_population = 0.05
+					political_power_gain = 0.05
+					production_speed_buildings_factor = 0.10
+					production_factory_efficiency_gain_factor = 0.05
+				}
+			}	
+			SQI_reynaud_economy = {#保护民族工业
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_reynaud_economy"}
+				picture = keynesian_econ
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.03
+					consumer_goods_factor = -0.10
+					production_factory_max_efficiency_factor = 0.03
+					production_factory_efficiency_gain_factor = -0.02
+					production_factory_start_efficiency_factor = 0.03
 				}
 			}
 
@@ -1030,7 +1085,7 @@ ideas = {
 					has_idea = SQI_gea_influence_idea3
 				}
 			}
-			picture = GFX_idea_siemens_ostasien
+			picture = siemens_schuckert
 			traits = { electronics_manufacturer }
 			modifier = {
 				production_speed_radar_station_factor = 0.15

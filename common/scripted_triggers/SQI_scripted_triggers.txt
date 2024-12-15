@@ -5,10 +5,23 @@ SQI_GER_influence_active = {
 		NOT = {
 			is_puppet_of = QIE
 		}
+		NOT = {
+			owns_state = 608
+		}
 	}
 	GER = {
 		exists = yes
 		NOT = { has_war_with = SQI }
 	}
 }
-
+SQI_over_all_struggle = {
+	custom_trigger_tooltip = {
+		tooltip = SQI_over_all_struggle_tooltip
+		OR = {
+			has_country_flag = SQI_Zheyuan_beat_Zongchang
+			has_country_flag = SQI_Tianran_beat_Zongchang
+			has_country_flag = SQI_Zongchang_beat_Tianran
+			has_country_flag = SQI_baie_jue_qi
+		}
+	}
+}

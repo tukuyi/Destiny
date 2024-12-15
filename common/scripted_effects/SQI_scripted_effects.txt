@@ -59,19 +59,19 @@ SQI_agriculture_clamp = {#确定上下限
 		hidden_effect = {
 			SQI_remove_ger_econ = yes
 			if = {
-				limit = { check_variable = { SQI.SQI_gea_influence_variable > 90 } }
+				limit = { check_variable = { SQI_gea_influence_variable > 90 } }
 				add_ideas = SQI_gea_influence_idea4
 			}
 			else_if = {
-				limit = { check_variable = { SQI.SQI_gea_influence_variable > 60 } }
+				limit = { check_variable = { SQI_gea_influence_variable > 60 } }
 				add_ideas = SQI_gea_influence_idea3
 			}
 			else_if = {
-				limit = { check_variable = { SQI.SQI_gea_influence_variable > 30 } }
+				limit = { check_variable = { SQI_gea_influence_variable > 30 } }
 				add_ideas = SQI_gea_influence_idea2
 			}
 			else_if = {
-				limit = { check_variable = { SQI.SQI_gea_influence_variable > 10 } }
+				limit = { check_variable = { SQI_gea_influence_variable > 10 } }
 				add_ideas = SQI_gea_influence_idea1
 			}
 			else = { add_ideas = SQI_gea_influence_idea0 }
@@ -228,3 +228,5 @@ SQI_agriculture_clamp = {#确定上下限
 			log = "SHX_influence_logging; investment decrease by -30 [ROOT.GetTag];[GetDateText]; amount after decrease: [?SHX.SHX_QIE_influence_variable];" #temp logging effects so influence could be seen in game log
 		}
 	}
+
+#粮食危机

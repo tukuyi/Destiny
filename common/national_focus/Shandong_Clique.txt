@@ -731,13 +731,10 @@ focus_tree = {
 		icon = GFX_goal_AUS_great_soldier
 		available = {
 			OR = {
-				has_country_flag = SQI_Zheyuan_beat_Zongchang
-				has_country_flag = SQI_Tianran_beat_Zongchang
-				has_country_flag = SQI_Zongchang_beat_Tianran
-				has_country_flag = SQI_baie_jue_qi
 				SQI = {
 					is_puppet = yes
 				}
+				SQI_over_all_struggle = yes
 			}
 		}
 		x = 10
@@ -1046,13 +1043,10 @@ focus_tree = {
 		icon = GFX_RUS_Money_For_Industrialization
 		available = {
 			OR = {
-				has_country_flag = SQI_Zheyuan_beat_Zongchang
-				has_country_flag = SQI_Tianran_beat_Zongchang
-				has_country_flag = SQI_Zongchang_beat_Tianran
-				has_country_flag = SQI_baie_jue_qi
 				SQI = {
 					is_puppet = yes
 				}
+				SQI_over_all_struggle = yes
 			}
 		}
 		x = 17
@@ -5218,19 +5212,37 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				has_country_flag = SQI_Zheyuan_beat_Zongchang
-				has_country_flag = SQI_Tianran_beat_Zongchang
-				has_country_flag = SQI_Zongchang_beat_Tianran
-				has_country_flag = SQI_baie_jue_qi
 				SQI = {
 					is_puppet = yes
 				}
+				SQI_over_all_struggle = yes
 			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_make_shandong_great"
-
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5243,15 +5255,23 @@ focus_tree = {
 		y = 1
 		cost = 5
 
+		available = {
+			has_idea = SQI_liang_shi_wei_ji_jia_ju
+		}
 		prerequisite = {
 			focus = SQI_make_shandong_great
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_nong_ye_wei_ji"
-
+			add_stability = 0.10
+			swap_ideas = {
+				remove_idea = SQI_liang_shi_wei_ji_jia_ju
+				add_idea = SQI_liang_shi_wei_ji_jia_juA
+			}
+			activate_mission = SQI_agricultural_reform_mission_timer
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 	}	
 
 	focus = {
@@ -5268,7 +5288,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_nong_ye_duo_yang_hua"
-			
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5288,6 +5319,17 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jin_kou_de_guo_fei_liao"
 			SQI_GER_investment_small = yes
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
+			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5301,15 +5343,22 @@ focus_tree = {
 		cost = 5
 
 		prerequisite = {
-			focus = SQI_jin_kou_de_guo_fei_liao
-		}
-		prerequisite = {
 			focus = SQI_nong_ye_duo_yang_hua
+			focus = SQI_jin_kou_de_guo_fei_liao
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_da_nong_ye_chu_kou"
-			
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
+			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5367,6 +5416,11 @@ focus_tree = {
 		y = 2
 		cost = 5
 
+		available = {
+			GER = {
+				has_idea = GER_black_monday
+			}
+		}
 		prerequisite = {
 			focus = SQI_fang_song_dui_de
 		}
@@ -5452,6 +5506,18 @@ focus_tree = {
 		prerequisite = {
 			focus = SQI_kuo_jian_ji_nan_bing_gong_chang
 		}
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = SQI_Zheyuan_beat_Zongchang
+					has_country_flag = SQI_Tianran_beat_Zongchang
+					SQI = {
+						is_puppet = yes
+					}
+				}
+			}
+		}
+		bypass_if_unavailable = yes
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jie_chu_ri_ben_ren"
@@ -5521,7 +5587,61 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_lian_tong_si_fang"
-			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			build_railway = {
+				path = { 1069 10102 12074 1184 }
+			}
+			build_railway = {
+				path = { 1069 7189 11980 9969 10022 7109 }
+			}
+			build_railway = {
+				path = { 1069 10072 12069 7129 7656 9958 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5540,7 +5660,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_sheng_ji_cai_kuang_ye"
-			
+			add_tech_bonus = {
+				name = GRE_greek_mining
+				bonus = 0.75
+				uses = 2
+				category = excavation_tech
+			}
+			add_resource = {
+				type = chromium
+				amount = 4
+				state = 597
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5559,7 +5689,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kai_chai_mei_kuang"
-			
+			1065 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = SQI_zi_yuan_zhong_zheng_modifier
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5578,7 +5718,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kai_chai_jin_ling_tie_kuang"
-			
+			add_resource = {
+				type = steel
+				amount = 4
+				state = 597
+			}
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 1065
+			}
+			add_resource = {
+				type = Tungsten
+				amount = 8
+				state = 1065
+			}
+			1065 = {
+				increase_state_category_by_one_level = yes
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5600,9 +5757,74 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_sheng_chan_xin_nong_ju"
-			
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_manpower = 2500
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 	}
 
 	focus = {
@@ -5622,7 +5844,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_da_yan_tai_gang"
-			
+			1065 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1104
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5644,7 +5879,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_bao_hu_si_ying_qi_ye"
-			
+			add_ideas = SQI_reynaud_economy
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

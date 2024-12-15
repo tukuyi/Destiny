@@ -81,7 +81,7 @@ focus_tree = {
 				category = naval_doctrine
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_LEC_CURRENCY }
 	}
 	focus = {
 		id = LEC_HSBC
@@ -147,6 +147,10 @@ focus_tree = {
 			}
 			set_country_flag = british_loan
 		}
+
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
+		}
 	}
 	focus = {
 		id = LEC_deutsch_asiatische_bank
@@ -205,6 +209,10 @@ focus_tree = {
 			}
 			set_country_flag = german_loan
 		}
+
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
+		}
 	}
 	focus = {
 		id = LEC_wheelock_and_marden
@@ -257,7 +265,7 @@ focus_tree = {
 				category = naval_equipment
 			}
 		}
-		search_filters = { FOCUS_FILTER_NAVY_BONUS  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_LEC_CURRENCY FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = LEC_green_island_cement
@@ -304,7 +312,7 @@ focus_tree = {
 				category = industry
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_LEC_CURRENCY }
 	}
 	focus = {
 		id = LEC_china_light_and_power
@@ -324,7 +332,7 @@ focus_tree = {
 				category = electronics
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_LEC_CURRENCY }
 		ai_will_do = {
 			factor = 75
 			modifier = {
@@ -509,6 +517,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_russo_asiatic_bank"
 			increase_currency_reserve = yes
+		}
+
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
 		}
 	}
 	focus = {
@@ -863,6 +875,10 @@ focus_tree = {
 			}
 			set_country_flag = japanese_loan
 		}
+
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
+		}
 	}
 	focus = {
 		id = LEC_manchus_in_tianjin
@@ -950,10 +966,6 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = LEC_string_of_pearls_scheme
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_hong_kong_land"
-			increase_currency_reserve = yes
-		}
 		bypass = {
 			has_country_flag = LEC_bankrupt
 			NOT = { owns_state = 326 }
@@ -983,6 +995,15 @@ focus_tree = {
 					option = LEC_COLLAPSE
 				}
 			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_hong_kong_land"
+			increase_currency_reserve = yes
+		}
+
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
 		}
 	}
 	
@@ -1692,47 +1713,50 @@ focus_tree = {
 		x = 5
 		y = 2
 		relative_position_id = LEC_jardines
-			completion_reward = {
-				log = "[GetDateText]: [Root.GetName]: Focus LEC_arnold_and_karlberg"
-				if = {
-					limit = { has_idea = LEC_black_monday3 }
-					remove_ideas = LEC_black_monday3
-				}
-				else = {
-					swap_ideas = {
-						remove_idea = LEC_black_monday2
-						add_idea = LEC_black_monday3
-					}
-				}
-				decrease_currency_reserve = yes
+
+		ai_will_do = {
+			factor = 60
+			modifier = {
+				add = 20
+				currency_reserves_high = yes
 			}
-			search_filters = { FOCUS_FILTER_INDUSTRY }
-			ai_will_do = {
-				factor = 60
-				modifier = {
-					add = 20
-					currency_reserves_high = yes
-				}
-				modifier = {
-					add = 15
-					currency_reserves_medium = yes
-				}
-				modifier = {
-					add = -10
-					currency_reserves_low = yes
-				}
-				modifier = {
-					add = -20
-					currency_reserves_critical = yes
-				}
-				modifier = {
-					factor = 1000
-					has_game_rule = {
-						rule = LEC_path
-						option = LEC_COLLAPSE
-					}
+			modifier = {
+				add = 15
+				currency_reserves_medium = yes
+			}
+			modifier = {
+				add = -10
+				currency_reserves_low = yes
+			}
+			modifier = {
+				add = -20
+				currency_reserves_critical = yes
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = LEC_path
+					option = LEC_COLLAPSE
 				}
 			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_arnold_and_karlberg"
+			if = {
+				limit = { has_idea = LEC_black_monday3 }
+				remove_ideas = LEC_black_monday3
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = LEC_black_monday2
+					add_idea = LEC_black_monday3
+				}
+			}
+			decrease_currency_reserve = yes
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_LEC_CURRENCY }
 	}
 	focus = {
 		id = LEC_to_the_coal_fields
@@ -2096,10 +2120,6 @@ focus_tree = {
 		x = -3
 		y = 2
 		relative_position_id = LEC_greater_shanghai_plan
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_land_spec_in_neutral_zone"
-			increase_currency_reserve = yes
-		}
 		bypass = { has_country_flag = LEC_bankrupt }
 		ai_will_do = {
 			factor = 60
@@ -2126,6 +2146,14 @@ focus_tree = {
 					option = LEC_COLLAPSE
 				}
 			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_land_spec_in_neutral_zone"
+			increase_currency_reserve = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_LEC_CURRENCY
 		}
 	}
 	focus = {

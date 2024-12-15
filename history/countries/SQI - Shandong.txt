@@ -339,6 +339,6 @@ create_country_leader = {
 set_country_flag = Shandong_not_big
 
 set_variable = {
-	SQI_gea_influence_variable = 20
+	SQI_gea_influence_variable = 40
 }
 activate_mission = SQI_jin_kou_de_guo_shang_ping_mission

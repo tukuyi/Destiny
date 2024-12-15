@@ -5030,7 +5030,7 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			}
 		}
 	}
-	HNN_zheng_dun_dang_nei = {#纠正错误
+	HNN_zheng_dun_dang_nei = {#整顿基层党组织
 		icon = GFX_decision_ban_iron_front
 
 		available = {

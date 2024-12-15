@@ -681,7 +681,7 @@ SQI_riot_policy_decisions = {# dealing with Yiguandao
 	}
 }
 
-SQI_raise_army = {
+SQI_raise_army = {#扩军
 	SQI_raise_xuzhou = {
 		icon = generic_civil_support
 		highlight_states = {
@@ -721,6 +721,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_xuzhou"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1047 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -776,6 +785,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_yangzhou"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			598 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -831,6 +849,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_huaisi"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1050 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -881,6 +908,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_anqing"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			606 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -936,6 +972,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_wuhu"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1014 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -991,6 +1036,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_nanjing"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			613 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1046,6 +1100,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_qiantang"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			596 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1101,6 +1164,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_kuaiji"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1068 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1156,6 +1228,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_jinhua"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1067 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1211,6 +1292,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_lishui"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1069 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1266,6 +1356,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_gandongbei"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1044 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1321,6 +1420,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_ganxibei"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1045 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1376,6 +1484,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_gannan"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			600 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1431,6 +1548,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_jianan"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			595 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1486,6 +1612,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_minhou"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1066 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -1541,6 +1676,15 @@ SQI_raise_army = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_raise_tingzhang"
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 20
+				}
+			}
 			clr_country_flag = SQI_is_recruiting
 			1046 = {
 				clr_state_flag = SQI_recruiting_@ROOT
@@ -2383,6 +2527,10 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > -79
 			}
+			modifier = {
+				factor = 0
+				check_variable = { SQI_gea_influence_variable < 15 }
+			}
 		}
 
 		complete_effect = {
@@ -2435,6 +2583,14 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 				add = 2
 				check_variable = { SQI_gea_influence_variable < 35 }
 				has_political_power > -100
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 15 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { SQI_gea_influence_variable < 5 }
 			}
 		}
 
@@ -2722,6 +2878,145 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_guo_gong_ye_yuan_zu"
 
+		}
+	}
+
+	#粮食危机
+	SQI_agricultural_reform_mission_timer = {#解决粮食危机
+		icon = GFX_decision_generic_agriculture
+		allowed = {
+			always = no
+		}
+		available = {
+			has_country_flag = SQI_agricultural_reform_completed_flag
+		}
+
+		fire_only_once = yes
+		is_good = yes
+		priority = 35
+		days_mission_timeout = 800
+
+		modifier = {
+			stability_weekly = 0.005
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_agricultural_reform_mission_timer"
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SQI_agricultural_reform_mission_timer"
+			country_event = { id = SQI.3 } 
+		}
+	}
+	SQI_shi_yong_hua_fei = {#进口化肥
+		icon = GFX_decision_hand_palm_down
+		visible = {
+			# has_completed_focus = SQI_jin_kou_de_guo_fei_liao
+		}
+
+		cost = 50
+		days_remove = 60
+		fire_only_once = yes
+		priority = 30
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_shi_yong_hua_fei"
+			add_stability = 0.03
+			SQI_GER_investment_small = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_shi_yong_hua_fei"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SQI_water_control = {#治理水患
+		icon = GFX_decision_electrify
+		visible = {
+			# has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		fire_only_once = yes
+		priority = 30
+		ai_will_do = { factor = 25 }
+
+		cancel_if_not_visible = no
+		
+		cost = 50
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_water_control"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_water_control"
+			597 = { 
+				add_extra_state_shared_building_slots = 1 
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 10072
+					}
+				}
+				custom_effect_tooltip = {
+					localization_key = building_state_modifier|dam
+					INDENT = "    "
+				}
+			} 
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SQI_bao_zhang_tu_rang = {#治理水患
+		icon = GFX_decision_electrify
+		visible = {
+			# has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		fire_only_once = yes
+		priority = 30
+		ai_will_do = { factor = 25 }
+
+		cancel_if_not_visible = no
+		
+		cost = 50
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_bao_zhang_tu_rang"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_bao_zhang_tu_rang"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
 		}
 	}
 }

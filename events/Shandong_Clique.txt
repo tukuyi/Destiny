@@ -9,6 +9,9 @@ add_namespace = shandong
 add_namespace = sqiwr
 add_namespace = sqiwan
 
+########################################
+########-       开局          -#########
+########################################
 country_event = {# Start up Event
 	id = shandong.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.1" }
@@ -38,14 +41,56 @@ country_event = {#青岛
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.1" }
 	title = SQI.1.t
 	desc = SQI.1.d
+	picture = GFX_report_event_generic_big_city
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = SQI.1.a
+		add_political_power = 10
 	}
 }
+
+country_event = {#粮食危机
+	id = SQI.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.2" }
+	title = SQI.2.t
+	desc = SQI.2.d
+	picture = japan_drought_farmers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.2.a
+		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = SQI_flight_north
+			add_idea = SQI_liang_shi_wei_ji_jia_ju
+		}
+	}
+}
+
+country_event = {#粮食危机已经解除
+	id = SQI.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.3" }
+	title = SQI.3.t
+	desc = SQI.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.2.a
+		set_country_flag = SQI_agricultural_reform_completed_flag
+		swap_ideas = {
+			remove_idea = SQI_liang_shi_wei_ji_jia_juA
+			add_idea = SQI_liang_shi_wei_ji_jia_juB
+		}
+	}
+}
+
 
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2

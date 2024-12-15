@@ -99,7 +99,7 @@ country_event = { # death of wang chengbin
 	}
 }
 
-country_event = { #black monday
+country_event = { #黑色星期一的余波
 	id = qiedom.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiedom.5" }
 	title = qiedom.5.t
@@ -123,6 +123,12 @@ country_event = { #black monday
 			SHX = { #Shanxi Black Monday event
 				country_event = { 
 					id = shx.earlygame.11
+					days = 2 
+				}
+			}
+			SQI = { #农业危机加剧
+				country_event = { 
+					id = SQI.2
 					days = 2 
 				}
 			}

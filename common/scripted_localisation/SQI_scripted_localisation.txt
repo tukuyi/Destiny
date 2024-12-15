@@ -51,3 +51,27 @@ defined_text = {
 		localization_key = "SQIhuge"
 	}
 }
+defined_text = {
+	name = SQIGetleadername
+	text = {
+		trigger = {
+			has_country_leader = {
+				ruling_only = yes
+				name = "张天然"
+			}
+		}
+		localization_key = "SQItianran"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				ruling_only = yes
+				name = "鲍里斯·阿年科夫"
+			}
+		}
+		localization_key = "SQIbaieren"
+	}
+	text = {
+		localization_key = "SQIjindashuai"
+	}
+}	
