@@ -119,7 +119,7 @@ add_ideas = {
 	SQI_Rampant_drug_trade
 	SQI_honored_master
 	SQI_flight_north
-	SQI_gea_influence_idea1
+	SQI_gea_influence_idea2
 	
 	partial_economic_mobilisation
 	unequal_treaties

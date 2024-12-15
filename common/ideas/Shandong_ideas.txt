@@ -114,31 +114,7 @@ ideas = {
 					political_power_factor = -0.05
 				}
 			}
-			SQI_gea_influence_idea1 = {#德国人的影响力
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea1" }
-				picture = AOG_profits_idea
-				allowed = { always = no }
-				available = {
-					OR = {
-						NOT = {
-							has_war_with = GEA
-						}
-						NOT = {
-							country_exists = GEA
-						}
-						NOT = {
-							country_exists = GER
-						}
-					}
-				}
-				cancel = {
-					GER = { exists = no }
-				}
-				targeted_modifier = {
-					tag = GER
-					cic_to_target_factor = 0.10
-				}
-			}
+
 
 		#工农业
 			SQI_liang_shi_wei_ji_jia_ju = {#粮食危机
@@ -173,11 +149,24 @@ ideas = {
 				picture = UKR_corn_erosion
 				allowed = { always = no }
 				modifier = {
-					stability_factor = 0.20
+					stability_factor = 0.10
 					monthly_population = 0.05
 					political_power_gain = 0.05
 					production_speed_buildings_factor = 0.10
 					production_factory_efficiency_gain_factor = 0.05
+				}
+			}	
+			SQI_liang_shi_wei_ji_jia_juC = {#农业补贴工业
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_liang_shi_wei_ji_jia_juC"}
+				picture = UKR_corn_erosion
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.20
+					monthly_population = 0.05
+					political_power_gain = 0.10
+					production_speed_buildings_factor = 0.15
+					production_factory_max_efficiency_factor = 0.05
+					production_factory_efficiency_gain_factor = 0.10
 				}
 			}	
 			SQI_reynaud_economy = {#保护民族工业
@@ -190,6 +179,15 @@ ideas = {
 					production_factory_max_efficiency_factor = 0.03
 					production_factory_efficiency_gain_factor = -0.02
 					production_factory_start_efficiency_factor = 0.03
+				}
+			}
+			SQI_expanded_bolin_investment = {#德国投资增加
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_expanded_bolin_investment	" }
+				picture = GEA_corporate_economy
+				allowed = { always = no }
+				modifier = {
+					industrial_capacity_factory = 0.10
+					production_speed_buildings_factor = 0.10
 				}
 			}
 
@@ -217,6 +215,31 @@ ideas = {
 				targeted_modifier = {
 					tag = GER
 					cic_to_target_factor = 0.05
+				}
+			}
+			SQI_gea_influence_idea1 = {#德国人的影响力
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea1" }
+				picture = AOG_profits_idea
+				allowed = { always = no }
+				available = {
+					OR = {
+						NOT = {
+							has_war_with = GEA
+						}
+						NOT = {
+							country_exists = GEA
+						}
+						NOT = {
+							country_exists = GER
+						}
+					}
+				}
+				cancel = {
+					GER = { exists = no }
+				}
+				targeted_modifier = {
+					tag = GER
+					cic_to_target_factor = 0.10
 				}
 			}
 			SQI_gea_influence_idea2 = {
@@ -1103,11 +1126,32 @@ ideas = {
 
 		jinan_arsenal = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea jinan_arsenal"}
-			allowed = { original_tag = SQI }
-			available = { }
+			allowed = { 
+				is_Chinese_tag = yes
+			}
+			available = { 
+				FROM = { 
+					owns_state = 597 
+				} 
+			}
+			visible = { NOT = { has_country_flag = improve_jinan_arsenal } }
 			traits = { infantry_equipment_producer_offense_1 }
 
 			picture = generic_arms_company
+		}
+		jinan_arsenal_improved = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea jinan_arsenal" }
+			allowed = { 
+				is_Chinese_tag = yes
+			}
+			available = { 
+				FROM = { 
+					owns_state = 597 
+				} 
+			}
+			visible = { has_country_flag = improve_jinan_arsenal }
+			traits = { jinan_arsenal_improved_SQI }
+			ai_will_do = { base = 1 }
 		}
 
 		seventy_two_cannon_artillery_foundry = {

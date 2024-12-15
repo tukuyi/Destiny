@@ -91,6 +91,22 @@ country_event = {#粮食危机已经解除
 	}
 }
 
+country_event = {#农村匪患
+	id = SQI.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.4" }
+	title = SQI.4.t
+	desc = SQI.4.d
+	picture = GFX_FOP_bandit_king
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.2.a
+		add_stability = -0.02
+		add_political_power = -20
+	}
+}
 
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2

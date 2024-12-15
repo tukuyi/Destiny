@@ -5262,6 +5262,15 @@ focus_tree = {
 			focus = SQI_make_shandong_great
 		}
 
+		select_effect = {
+			hidden_effect = {
+				country_event = {
+					id = SQI.4
+					days = 10
+				}
+			}
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_nong_ye_wei_ji"
 			add_stability = 0.10
@@ -5270,6 +5279,7 @@ focus_tree = {
 				add_idea = SQI_liang_shi_wei_ji_jia_juA
 			}
 			activate_mission = SQI_agricultural_reform_mission_timer
+			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5300,8 +5310,11 @@ focus_tree = {
 					days = -50
 				}
 			}
+			else = {
+				custom_effect_tooltip = SQI_agricultural_reform_mission_timer_tooltip
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 	}	
 
 	focus = {
@@ -5328,6 +5341,9 @@ focus_tree = {
 					mission = SQI_agricultural_reform_mission_timer
 					days = -50
 				}
+			}
+			else = {
+				custom_effect_tooltip = SQI_agricultural_reform_mission_timer_tooltip
 			}
 			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
@@ -5371,13 +5387,19 @@ focus_tree = {
 		y = 5
 		cost = 5
 
+		available = {
+			has_idea = SQI_liang_shi_wei_ji_jia_juB
+		}
 		prerequisite = {
 			focus = SQI_kuo_da_nong_ye_chu_kou
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_nong_ye_bu_tie"
-			
+			swap_ideas = {
+				remove_idea = SQI_liang_shi_wei_ji_jia_juB
+				add_idea = SQI_liang_shi_wei_ji_jia_juC
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5404,6 +5426,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_fang_song_dui_de"
 			SQI_GER_investment_medium = yes
+			add_timed_idea = {
+				idea = SHX_expanded_beijing_investment
+				days = 180
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5427,7 +5453,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_cheng_ji_de_guo_she_bei"
-			 
+			add_tech_bonus = {
+				name = HNN_The_Arsenals_of_the_South
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+			1065 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5446,7 +5485,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jiang_di_gong_chang_men_kan"
-			 
+			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5465,7 +5504,34 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_jian_ji_nan_bing_gong_chang"
-			 
+			597 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_dlc_aat = yes }
+				mio:SQI_jinan_arsenal_organisation = {
+					unlock_mio_trait_tooltip = {
+						trait = imz_upgrade_3_1
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = improve_jinan_arsenal_tt
+				show_ideas_tooltip = jinan_arsenal_improved
+				if = {
+					limit = { has_idea = jinan_arsenal }
+					swap_ideas = {
+						remove_idea = jinan_arsenal
+						add_idea = jinan_arsenal_improved
+					}
+				}
+				set_country_flag = improve_jinan_arsenal
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5487,9 +5553,21 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_gan_ru_gong_chang"
-			 
+			add_stability = -0.05
+			if = {
+				limit = { 
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = 100
+				}
+			}
+			else = {
+				custom_effect_tooltip = SQI_agricultural_reform_mission_timer_down_tooltip
+			}
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 	}	
 
 	focus = {

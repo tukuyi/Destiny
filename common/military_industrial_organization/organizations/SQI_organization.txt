@@ -29,11 +29,246 @@ SQI_qing_dao_zao_chuan_chang_organisation = {#青岛造船厂
 #####################
 ### Materiel MIOs ###
 #####################
-SQI_jinan_arsenal_organisation = {
+SQI_jinan_arsenal_organisation = {#济南兵工厂
 	name = jinan_arsenal
 	icon = GFX_idea_jinan_arsenal
-	include = generic_infantry_equipment_organization
-	allowed = { original_tag = SQI }
+
+	allowed = { 
+		is_Chinese_tag = yes
+	}
+	available = { 
+		FROM = { 
+			owns_state = 597 
+		} 
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	equipment_type = {
+		infantry_equipment
+		support_equipment
+	}
+
+	research_categories = {
+		infantry_weapons
+		support_tech
+		battlefield_support_tree
+		cat_battlefield_support
+		night_vision
+		cat_special_forces_generic
+	}
+
+	initial_trait = {
+		name = jinan_arsenal_mio_desc
+
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.25
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1
+		name = imz_upgrade_1
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x = 1 y = 0 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2
+		name = imz_upgrade_2
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x = 3 y = 1 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_3
+		name = imz_upgrade_3
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 5 y = 1 }
+
+		production_bonus = {
+			production_resource_need_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_4
+		name = imz_upgrade_4
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 7 y = 0 }
+
+		production_bonus = {
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_1
+		name = imz_upgrade_1_1
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x = 0 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_2 }
+
+		all_parents = { imz_upgrade_1 imz_upgrade_2 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_2
+		name = imz_upgrade_1_2
+		icon = GFX_KR_generic_mio_trait_icon_production_output
+
+		position = { x = 2 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_1 imz_upgrade_1_3 }
+
+		all_parents = { imz_upgrade_1 imz_upgrade_2 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+			production_efficiency_cap_factor = 0.1
+			production_resource_need_factor = -0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = 1.0
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_3
+		name = imz_upgrade_1_3
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 4 y = 2 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_2 }
+
+		mutually_exclusive = { imz_upgrade_1_2 imz_upgrade_1_4 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_4
+		name = imz_upgrade_1_4
+		icon = GFX_KR_generic_mio_trait_icon_research_speed
+
+		position = { x = 6 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_3 imz_upgrade_1_5 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_4 }
+
+		on_complete = {
+			FROM = { 
+				if = {
+					limit = { 
+						has_active_mission = SQI_jin_kou_de_guo_shang_ping_mission
+					}
+					SQI_GER_investment_small = yes 
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.3
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_5
+		name = imz_upgrade_1_5
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 8 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_4 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_4 }
+
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2_1
+		name = imz_upgrade_2_1
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x = 3 y = 3 }
+
+		any_parent = { imz_upgrade_1_1 imz_upgrade_1_2 imz_upgrade_1_3 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2_2
+		name = imz_upgrade_2_2
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 5 y = 3 }
+
+		any_parent = { imz_upgrade_1_5 imz_upgrade_1_4 imz_upgrade_1_3 }
+
+		production_bonus = {
+			production_resource_need_factor = -0.05
+			production_cost_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_3_1
+		name = imz_upgrade_3_1
+		icon = GFX_icon_jinan_arsenal
+
+		special_trait_background = yes
+
+		position = { x = 4 y = 4 }
+
+		all_parents = { imz_upgrade_2_1 imz_upgrade_2_2 }
+
+		available = {
+			FROM = { 
+				has_completed_focus = SQI_kuo_jian_ji_nan_bing_gong_chang
+			}
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_gain_factor = 0.1
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
 }
 SQI_seventy_two_cannon_artillery_foundry = {
 	name = seventy_two_cannon_artillery_foundry

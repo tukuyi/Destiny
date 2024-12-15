@@ -2509,6 +2509,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 0
+		priority = 50
 		days_remove = 30
 		days_re_enable = 60
 
@@ -2559,6 +2560,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 0
+		priority = 50
 		days_remove = 100
 		days_re_enable = 60
 		modifier = {
@@ -2619,6 +2621,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 30
+		priority = 50
 		days_remove = 15
 		days_re_enable = 60
 
@@ -2674,6 +2677,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 30
+		priority = 50
 		days_remove = 15
 		days_re_enable = 60
 
@@ -2729,6 +2733,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 30
+		priority = 50
 		days_remove = 15
 		days_re_enable = 60
 
@@ -2782,6 +2787,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 50
+		priority = 50
 		days_remove = 20
 		days_re_enable = 60
 
@@ -2843,6 +2849,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		}
 
 		cost = 50
+		priority = 50
 		days_remove = 100
 		days_re_enable = 60
 		modifier = {
@@ -2880,6 +2887,47 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 
 		}
 	}
+	SQI_gu_li_guo_huo = {#鼓励国货
+		icon = GFX_decision_trumpet
+		available = {
+			has_completed_focus = SQI_jiang_di_gong_chang_men_kan
+		}
+
+		cost = 30
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_gu_li_guo_huo"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_gu_li_guo_huo"
+			SQI_GER_spend_small = yes
+		}
+	}
 
 	#粮食危机
 	SQI_agricultural_reform_mission_timer = {#解决粮食危机
@@ -2906,6 +2954,70 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout SQI_agricultural_reform_mission_timer"
 			country_event = { id = SQI.3 } 
+		}
+	}
+	SQI_jiang_di_dian_zu = {#耕者有其田
+		icon = GFX_decision_generic_healthcare
+		visible = {
+			# has_completed_focus = SQI_chu_li_nong_ye_wei_ji
+		}
+		fire_only_once = yes
+		priority = 30
+
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			stability_weekly = -0.0075
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jiang_di_dian_zu"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_jiang_di_dian_zu"
+			add_days_mission_timeout = {
+				mission = SHX_agricultural_reform_mission_timer
+				days = -75
+			}
+		}
+	}
+	SQI_maintain_order_in_countryside = {#维护乡村治安
+		icon = GFX_decision_soldierly_discipline
+		visible = {
+			# has_completed_focus = SQI_chu_li_nong_ye_wei_ji
+		}
+
+		priority = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		ai_will_do = { factor = 25 }
+		cost = 50
+		days_remove = 60
+		modifier = {
+			command_power_gain = -0.2
+			stability_weekly = 0.0050
+			weekly_manpower = -500
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_maintain_order_in_countryside"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_maintain_order_in_countryside"
+			add_manpower = 200
+			if = {
+				limit = {
+					has_active_mission = SQI_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = SQI_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
 		}
 	}
 	SQI_shi_yong_hua_fei = {#进口化肥
@@ -2986,7 +3098,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 		}
 	}
-	SQI_bao_zhang_tu_rang = {#治理水患
+	SQI_bao_zhang_tu_rang = {#保障水土
 		icon = GFX_decision_electrify
 		visible = {
 			# has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
