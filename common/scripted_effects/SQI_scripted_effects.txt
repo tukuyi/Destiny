@@ -240,3 +240,11 @@ SQI_agriculture_clamp = {#确定上下限
 			add_ideas = SQI_chantiers_de_la_jeunesse3
 		}
 	}
+
+#军工
+	SQI_begin = {
+		mio:SQI_si_fang_ji_che_organisation = {
+			set_variable = { CIC_bonus = 500 }
+			set_variable = { total_campaign_CIC = 0 }
+		}
+	}

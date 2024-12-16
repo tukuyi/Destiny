@@ -342,7 +342,4 @@ set_variable = {
 	SQI_gea_influence_variable = 40
 }
 activate_mission = SQI_jin_kou_de_guo_shang_ping_mission
-mio:SQI_si_fang_ji_che_organisation = {
-	set_variable = { CIC_bonus = 500 }
-	set_variable = { total_campaign_CIC = 0 }
-}
+SQI_begin = yes

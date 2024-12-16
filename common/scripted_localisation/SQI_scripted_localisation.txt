@@ -75,3 +75,19 @@ defined_text = {
 		localization_key = "SQIjindashuai"
 	}
 }	
+
+define_text = {
+	name = RUS_MIO_Funds_Requirement_R_and_D
+	text = {
+		trigger = {
+			check_variable = { Funds_Difference > weekly_funds_requirement }
+		}
+		localization_key = RUS_MIO_Research_Gain_R_and_D_positive_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { Funds_Difference < weekly_funds_requirement }
+		}
+		localization_key = RUS_MIO_Research_Gain_R_and_D_negative_tt
+	}
+}
