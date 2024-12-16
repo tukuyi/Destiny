@@ -5985,6 +5985,15 @@ focus_tree = {
 			focus = SQI_kai_chai_jin_ling_tie_kuang
 		}
 
+		select_effect = {
+			hidden_effect = {
+				country_event = {
+					id = SQI.5
+					days = 10
+				}
+			}
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_bao_hu_si_ying_qi_ye"
 			add_ideas = SQI_reynaud_economy
@@ -6016,4 +6025,87 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
+#军事改革
+	focus = {
+		id = SQI_chu_li_jun_dui
+		icon = GFX_goal_AUS_great_soldier
+		x = 17
+		y = 17
+		cost = 5
+
+		allow_branch = {
+			SQI_GER_influence_active = yes
+		}
+		available = {
+			OR = {
+				SQI = {
+					is_puppet = yes
+				}
+				SQI_over_all_struggle = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_jun_dui"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_de_shi_jun_dui
+		icon = GFX_goal_AUS_great_soldier
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -2
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_chu_li_jun_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_de_shi_jun_dui"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_xin_sho_qi_bing
+		icon = GFX_goal_AUS_great_soldier
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -1
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_de_shi_jun_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_sho_qi_bing"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_xin_yang_zhi_jun
+		icon = GFX_goal_AUS_great_soldier
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 2
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_chu_li_jun_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_yang_zhi_jun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
 }

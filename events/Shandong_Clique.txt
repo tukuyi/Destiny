@@ -108,6 +108,21 @@ country_event = {#农村匪患
 	}
 }
 
+country_event = {#崂山汽水厂
+	id = SQI.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.5" }
+	title = SQI.5.t
+	desc = SQI.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.5.a
+		add_political_power = 20
+	}
+}
+
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.2" }
