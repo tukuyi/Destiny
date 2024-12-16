@@ -270,18 +270,27 @@ SQI_jinan_arsenal_organisation = {#济南兵工厂
 		}
 	}
 }
+
 SQI_seventy_two_cannon_artillery_foundry = {
 	name = seventy_two_cannon_artillery_foundry
 	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
 	include = generic_artillery_organization
-	allowed = { original_tag = SQI }
+	allowed = { 
+		is_Chinese_tag = yes
+	}
+	available = { 
+		FROM = { 
+			owns_state = 597 
+		} 
+	}
 }
+
 SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
 	name = SQI_si_fang_ji_che
 	icon = GFX_idea_FNG_ji_che_gong_shi
 	include = generic_motorized_mechanized_organization
-	allowed = {
-		original_tag = SQI
+	allowed = { 
+		is_Chinese_tag = yes
 	}
 	available = {
 		FROM = {

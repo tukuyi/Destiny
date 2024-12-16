@@ -229,4 +229,14 @@ SQI_agriculture_clamp = {#确定上下限
 		}
 	}
 
-#粮食危机
+#工业
+	SQI_industry_to_all = {
+		custom_effect_tooltip = SQI_industry_to_all_tooltip
+		hidden_effect = {
+			remove_ideas = {
+				SQI_zi_ji_zhi_zu
+				SQI_chantiers_de_la_jeunesse2
+			}
+			add_ideas = SQI_chantiers_de_la_jeunesse3
+		}
+	}

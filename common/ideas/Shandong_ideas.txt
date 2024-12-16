@@ -115,7 +115,6 @@ ideas = {
 				}
 			}
 
-
 		#工农业
 			SQI_liang_shi_wei_ji_jia_ju = {#粮食危机
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_liang_shi_wei_ji_jia_ju"}
@@ -149,7 +148,7 @@ ideas = {
 				picture = UKR_corn_erosion
 				allowed = { always = no }
 				modifier = {
-					stability_factor = 0.10
+					stability_factor = 0.20
 					monthly_population = 0.05
 					political_power_gain = 0.05
 					production_speed_buildings_factor = 0.10
@@ -161,7 +160,7 @@ ideas = {
 				picture = UKR_corn_erosion
 				allowed = { always = no }
 				modifier = {
-					stability_factor = 0.20
+					stability_factor = 0.10
 					monthly_population = 0.05
 					political_power_gain = 0.10
 					production_speed_buildings_factor = 0.15
@@ -188,6 +187,88 @@ ideas = {
 				modifier = {
 					industrial_capacity_factory = 0.10
 					production_speed_buildings_factor = 0.10
+				}
+			}
+			SQI_zi_ji_zhi_zu = {#自给自足
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_zi_ji_zhi_zu	" }
+				picture = GFX_idea_jinan_arsenal
+				allowed = { always = no }
+				modifier = {
+					industrial_capacity_factory = 0.10
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						build_cost_ic = -0.10
+						instant = yes
+					}
+					artillery_equipment = {
+						build_cost_ic = -0.10
+						instant = yes
+					}
+					support_equipment = {
+						build_cost_ic = -0.10
+						instant = yes
+					}
+				}
+			}
+			SQI_chantiers_de_la_jeunesse = {#劳工大军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_chantiers_de_la_jeunesse"}
+				picture = BBR_workers_market
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.05
+					mobilization_speed = -0.04
+					conscription_factor = -0.05
+					industrial_capacity_factory = 0.05
+					production_speed_buildings_factor = 0.10
+					production_factory_start_efficiency_factor = 0.05
+					production_speed_industrial_complex_factor = 0.10
+				}
+			}
+			SQI_chantiers_de_la_jeunesse2 = {#劳工大军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_chantiers_de_la_jeunesse2"}
+				picture = BBR_workers_market
+				name = SQI_chantiers_de_la_jeunesse
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.10
+					mobilization_speed = -0.04
+					conscription_factor = -0.10
+					industrial_capacity_factory = 0.07
+					production_speed_buildings_factor = 0.15
+					production_speed_arms_factory_factor = 0.05
+					production_factory_start_efficiency_factor = 0.10
+					production_speed_industrial_complex_factor = 0.10
+				}
+			}
+			SQI_chantiers_de_la_jeunesse3 = {#稳步工业化
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_chantiers_de_la_jeunesse3"}
+				picture = worker_guarantees
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.10
+					mobilization_speed = -0.04
+					conscription_factor = -0.10
+					industrial_capacity_factory = 0.20
+					production_speed_buildings_factor = 0.20
+					production_speed_arms_factory_factor = 0.10
+					production_factory_max_efficiency_factor = 0.05
+					production_factory_start_efficiency_factor = 0.10
+					production_speed_industrial_complex_factor = 0.10
+				}
+				equipment_bonus = {
+					infantry_equipment = {
+						build_cost_ic = -0.15
+						instant = yes
+					}
+					artillery_equipment = {
+						build_cost_ic = -0.10
+						instant = yes
+					}
+					support_equipment = {
+						build_cost_ic = -0.10
+						instant = yes
+					}
 				}
 			}
 
@@ -1141,6 +1222,7 @@ ideas = {
 		}
 		jinan_arsenal_improved = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea jinan_arsenal" }
+			picture = generic_arms_company
 			allowed = { 
 				is_Chinese_tag = yes
 			}

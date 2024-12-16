@@ -11,7 +11,7 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		add_ideas = NFA_reynaud_economy
+		add_ideas = NFA_chantiers_de_la_jeunesse
 
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
@@ -23,6 +23,7 @@ country_event = {#测试事件
 
 		# SHX_feng_victory_effect = yes
 		# set_country_flag = SHX_feng_victory_over_yan
+		# clr_country_flag = SHX_feng_victory_over_yan
 		# set_politics = {
 		# 	ruling_party = authoritarian_democrat
 		# 	elections_allowed = no

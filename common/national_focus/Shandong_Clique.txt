@@ -3590,6 +3590,8 @@ focus_tree = {
 				add_ideas = rus_okhrana_focus
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -4152,6 +4154,8 @@ focus_tree = {
 				name =  RUS_authoritarian_democrat_party
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -4294,6 +4298,8 @@ focus_tree = {
 			add_political_power = 100
 			add_ideas = SQI_dong_zhen
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -4565,6 +4571,8 @@ focus_tree = {
 				add_war_support = 0.05
 				add_political_power = 25
 			}
+
+			search_filters = { FOCUS_FILTER_POLITICAL }
 		}
 
 		focus = {
@@ -5365,6 +5373,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_da_nong_ye_chu_kou"
+			add_political_power = 50
 			if = {
 				limit = { 
 					has_active_mission = SQI_agricultural_reform_mission_timer
@@ -5373,10 +5382,13 @@ focus_tree = {
 					mission = SQI_agricultural_reform_mission_timer
 					days = -50
 				}
+				else = {
+					custom_effect_tooltip = SQI_agricultural_reform_mission_timer_tooltip
+				}
 			}
 			custom_effect_tooltip = SHX_QIE_telegram_tooltip
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}	
 
 	focus = {
@@ -5486,6 +5498,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jiang_di_gong_chang_men_kan"
 			custom_effect_tooltip = SHX_QIE_telegram_tooltip
+			add_ideas = SQI_chantiers_de_la_jeunesse
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -5554,6 +5567,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_gan_ru_gong_chang"
 			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = SQI_chantiers_de_la_jeunesse
+				add_idea = SQI_chantiers_de_la_jeunesse2
+			}
 			if = {
 				limit = { 
 					has_active_mission = SQI_agricultural_reform_mission_timer
@@ -5599,7 +5616,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jie_chu_ri_ben_ren"
-			 
+			SQI_GER_spend_medium = yes
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			1065 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5621,7 +5649,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_wu_qi_zi_ji_zi_zhu"
-			 
+			SQI_GER_spend_small = yes
+			add_ideas = SQI_zi_ji_zhi_zu 
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -5646,7 +5675,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_shan_xi_gong_ye_hua"
-			 
+			SQI_GER_spend_small = yes
+			SQI_industry_to_all = yes 
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	

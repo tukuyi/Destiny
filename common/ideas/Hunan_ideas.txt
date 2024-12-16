@@ -4206,9 +4206,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_si_wang_yu_rong_yao3"}
 			picture = death_or_glory
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				max_planning = 0.05
 				army_org_factor = 0.05

@@ -2505,7 +2505,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = GFX_decision_hand_grab
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 		}
 
 		cost = 0
@@ -2617,7 +2619,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = GFX_decision_artillery
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 		}
 
 		cost = 30
@@ -2668,7 +2672,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = generic_motorized
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 			GER = {
 				has_equipment = {
 					motorized_equipment > 99
@@ -2724,7 +2730,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = GFX_decision_artillery
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 			GER = {
 				has_equipment = {
 					artillery_equipment > 199
@@ -2780,7 +2788,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = GFX_Volkswagen
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 			GER = {
 				NOT = { has_idea = GER_black_monday }
 			}
@@ -2842,7 +2852,9 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		icon = GFX_decision_wrenches
 		visible = { SQI_GER_influence_active = yes }
 		available = {
-			has_idea = SQI_gea_influence_idea1
+			NOT = {
+				has_idea = SQI_gea_influence_idea0
+			}
 			GER = {
 				NOT = { has_idea = GER_black_monday }
 			}
@@ -2959,7 +2971,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 	SQI_jiang_di_dian_zu = {#耕者有其田
 		icon = GFX_decision_generic_healthcare
 		visible = {
-			# has_completed_focus = SQI_chu_li_nong_ye_wei_ji
+			has_completed_focus = SQI_chu_li_nong_ye_wei_ji
 		}
 		fire_only_once = yes
 		priority = 30
@@ -2988,7 +3000,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 	SQI_maintain_order_in_countryside = {#维护乡村治安
 		icon = GFX_decision_soldierly_discipline
 		visible = {
-			# has_completed_focus = SQI_chu_li_nong_ye_wei_ji
+			has_completed_focus = SQI_chu_li_nong_ye_wei_ji
 		}
 
 		priority = 30
@@ -3023,7 +3035,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 	SQI_shi_yong_hua_fei = {#进口化肥
 		icon = GFX_decision_hand_palm_down
 		visible = {
-			# has_completed_focus = SQI_jin_kou_de_guo_fei_liao
+			has_completed_focus = SQI_jin_kou_de_guo_fei_liao
 		}
 
 		cost = 50
@@ -3053,7 +3065,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 	SQI_water_control = {#治理水患
 		icon = GFX_decision_electrify
 		visible = {
-			# has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
+			has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 0
@@ -3101,7 +3113,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 	SQI_bao_zhang_tu_rang = {#保障水土
 		icon = GFX_decision_electrify
 		visible = {
-			# has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
+			has_completed_focus = SQI_kuo_da_nong_ye_chu_kou
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 0
