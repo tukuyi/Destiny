@@ -1193,7 +1193,7 @@ ideas = {
 			visible = {
 				OR = {
 					owns_state = 744
-					has_idea = SQI_gea_influence_idea2
+					tag = SQI	
 				}
 			}
 			available = {
@@ -1217,7 +1217,7 @@ ideas = {
 			visible = {
 				OR = {
 					owns_state = 744
-					has_idea = SQI_gea_influence_idea3
+					tag = SQI	
 				}
 			}
 			available = {

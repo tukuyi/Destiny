@@ -6021,14 +6021,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_yi_qie_wei_le_jin_da_shuai"
-			
+			add_research_slot_until_three = yes
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 	}
 #军事改革
 	focus = {
 		id = SQI_chu_li_jun_dui
-		icon = GFX_goal_AUS_great_soldier
+		icon = GFX_focus_rus_for_republic
 		x = 17
 		y = 17
 		cost = 5
@@ -6053,8 +6053,90 @@ focus_tree = {
 	}	
 
 	focus = {
+		id = SQI_gong_bi_shan_qi_qi
+		icon = GFX_goal_FNG_qin_zhong_gong_ye
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -6
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_chu_li_jun_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_gong_bi_shan_qi_qi"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_da_pao_fang_an
+		icon = GFX_GEA_battle_behemoth
+		relative_position_id = SQI_gong_bi_shan_qi_qi
+		x = -1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_gong_bi_shan_qi_qi
+		}
+		mutually_exclusive = {
+			focus = SQI_ji_dong_cai_shi_wang_dao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_da_pao_fang_an"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_ji_dong_cai_shi_wang_dao
+		icon = GFX_GEA_breakthrough_spearhead
+		relative_position_id = SQI_gong_bi_shan_qi_qi
+		x = 1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_gong_bi_shan_qi_qi
+		}
+		mutually_exclusive = {
+			focus = SQI_da_pao_fang_an
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_da_pao_fang_an"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_zhang_wo_hou_qing_zhu_dong
+		icon = GFX_GEA_save_agriculture
+		relative_position_id = SQI_gong_bi_shan_qi_qi
+		x = 0
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_gong_bi_shan_qi_qi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_zhang_wo_hou_qing_zhu_dong"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
 		id = SQI_de_shi_jun_dui
-		icon = GFX_goal_AUS_great_soldier
+		icon = GFX_GEA_born_in_iron_and_blood
 		relative_position_id = SQI_chu_li_jun_dui
 		x = -2
 		y = 1
@@ -6062,6 +6144,14 @@ focus_tree = {
 
 		prerequisite = {
 			focus = SQI_chu_li_jun_dui
+		}
+		available = {
+			NOT = {
+				has_government = national_populist
+			}
+		}
+		mutually_exclusive = {
+			focus = SQI_xin_yang_zhi_jun
 		}
 
 		completion_reward = {
@@ -6073,7 +6163,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_xin_sho_qi_bing
-		icon = GFX_goal_AUS_great_soldier
+		icon = GFX_goal_NEE_Modern_Midnight_Ride
 		relative_position_id = SQI_chu_li_jun_dui
 		x = -1
 		y = 2
@@ -6090,9 +6180,95 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
 
+
+	focus = {
+		id = SQI_kuo_zhang_bai_e_jun
+		icon = GFX_RUS_combat
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -3
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_de_shi_jun_dui
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_zhang_bai_e_jun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_ying_xiang_zhu_yi_jiao_yu
+		icon = GFX_GEA_Incite_Japanese_colonies
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_sho_qi_bing
+		}
+		prerequisite = {
+			focus = SQI_kuo_zhang_bai_e_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_ying_xiang_zhu_yi_jiao_yu"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_kan_ke_jun_xun
+		icon = GFX_GEA_integrated_air_ground_strike
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -4
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_sho_qi_bing
+		}
+		prerequisite = {
+			focus = SQI_kuo_zhang_bai_e_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kan_ke_jun_xun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_feng_xin_jun_guo_zhu_yi
+		icon = GFX_GEA_german_leader
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -3
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_kan_ke_jun_xun
+		}
+		prerequisite = {
+			focus = SQI_ying_xiang_zhu_yi_jiao_yu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_feng_xin_jun_guo_zhu_yi"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
 	focus = {
 		id = SQI_xin_yang_zhi_jun
-		icon = GFX_goal_AUS_great_soldier
+		icon = GFX_focus_rus_yellowshirts
 		relative_position_id = SQI_chu_li_jun_dui
 		x = 2
 		y = 1
@@ -6101,6 +6277,12 @@ focus_tree = {
 		prerequisite = {
 			focus = SQI_chu_li_jun_dui
 		}
+		available = {
+			has_government = national_populist
+		}
+		mutually_exclusive = {
+			focus = SQI_de_shi_jun_dui
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_yang_zhi_jun"
@@ -6108,4 +6290,191 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
+
+	focus = {
+		id = SQI_wei_tian_shi_er_zhan
+		icon = GFX_goal_generic_fanatic_inquisition
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 1
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_yang_zhi_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_wei_tian_shi_er_zhan"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_xin_tu_wu_qi
+		icon = GFX_TRM_Japanese_Arms
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 3
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_yang_zhi_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_tu_wu_qi"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_zu_zhi_gan_si_dui
+		icon = GFX_RUS_Zarists
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_tu_wu_qi
+		}
+		prerequisite = {
+			focus = SQI_wei_tian_shi_er_zhan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_zu_zhi_gan_si_dui"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_shou_bian_ming_tuan
+		icon = GFX_RUS_Arm_The_Combat_Squads
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 4
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_tu_wu_qi
+		}
+		prerequisite = {
+			focus = SQI_wei_tian_shi_er_zhan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_shou_bian_ming_tuan"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_kuang_re_zho_jun
+		icon = GFX_GEA_we_need_arms
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 3
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_zu_zhi_gan_si_dui
+		}
+		prerequisite = {
+			focus = SQI_shou_bian_ming_tuan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuang_re_zho_jun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_jun_guan_fan_xiao
+		icon = GFX_goal_POL_Modern_Military_Thought
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 0
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xin_sho_qi_bing
+			focus = SQI_wei_tian_shi_er_zhan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_jun_guan_fan_xiao"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_xue_xin_xing_li_lun
+		icon = GFX_GEA_careful_planning
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 0
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_jun_guan_fan_xiao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_xue_xin_xing_li_lun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}	
+
+	focus = {
+		id = SQI_gang_tie_zhi_jun
+		icon = GFX_GEA_anti_air
+		relative_position_id = SQI_chu_li_jun_dui
+		x = -2
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xue_xin_xing_li_lun
+		}
+		prerequisite = {
+			focus = SQI_feng_xin_jun_guo_zhu_yi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_gang_tie_zhi_jun"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = SQI_xue_rou_chang_Cheng
+		icon = GFX_GEA_only_capital_punishment
+		relative_position_id = SQI_chu_li_jun_dui
+		x = 2
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = SQI_xue_xin_xing_li_lun
+		}
+		prerequisite = {
+			focus = SQI_kuang_re_zho_jun
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_xue_rou_chang_Cheng"
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
 }
