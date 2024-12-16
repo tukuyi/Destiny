@@ -25,3 +25,26 @@ SQI_over_all_struggle = {
 		}
 	}
 }
+SQI_has_amo_upgrade_1_2 = {
+	FROM = {
+		mio:SQI_si_fang_ji_che_organisation = {
+			is_mio_trait_completed = amo_upgrade_1_2
+		}
+	}
+}
+SQI_has_amo_upgrade_1_4 = {
+	FROM = {
+		mio:SQI_si_fang_ji_che_organisation = {
+			is_mio_trait_completed = amo_upgrade_1_4
+		}
+	}
+}
+SQI_has_amo_policy = {
+	FROM = {
+		OR = {
+			mio:SQI_si_fang_ji_che_organisation = {
+				has_mio_policy_active = RUS_mio_policy_expand_weapon_deals
+			}
+		}
+	}
+}

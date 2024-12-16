@@ -117,8 +117,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/GEA/GEA_secure_naval.png"
 	}
 	spriteType = {
-		name = "GFX_idea_GEA_GEA_army"
-		texturefile = "gfx/interface/ideas/GEA/GEA_GEA_army.png"
+		name = "GFX_idea_GEA_gea_army"
+		texturefile = "gfx/interface/ideas/GEA/GEA_gea_army.png"
 	}
 	spriteType = {
 		name = "GFX_idea_ordnance"

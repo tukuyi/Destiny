@@ -21,10 +21,53 @@ SQI_qing_dao_zao_chuan_chang_organisation = {#青岛造船厂
 		}
 	}
 }
+SQI_zao_xin_lun_chuan_organisation = {#肇兴轮船
+	name = SQI_zao_xin_lun_chuan
+	icon = GFX_idea_generic_naval_manufacturer_1
+	include = generic_escort_ship_organization
+	allowed = { is_chinese_tag = yes }
+	visible = {
+		FROM = {
+			owns_state = 597
+		}
+	}
+	available = {
+		597 = { is_core_of = FROM }
+	}
+}
 
 #####################
 ### Airplane MIOs ###
 #####################
+SQI_siemens_schuckert_organisation = {#青岛飞机制造厂
+	include = generic_multi_role_aircraft_organization
+	name = SQI_siemens_schuckert
+	icon = GFX_idea_siemens
+	allowed = { 
+		OR = {
+			is_chinese_tag = yes
+			tag = GEA
+		}
+	}
+	visible = {
+		FROM = {
+			OR = {
+				owns_state = 744
+				is_puppet_of = GER
+				has_idea = SQI_gea_influence_idea2
+			}
+		}
+	}
+	available = {
+		FROM = {
+			OR = {
+				owns_state = 744
+				is_puppet_of = GER
+				has_idea = SQI_gea_influence_idea2
+			}
+		}
+	}
+}
 
 #####################
 ### Materiel MIOs ###
@@ -34,7 +77,12 @@ SQI_jinan_arsenal_organisation = {#济南兵工厂
 	icon = GFX_idea_jinan_arsenal
 
 	allowed = { 
-		is_Chinese_tag = yes
+		is_chinese_tag = yes
+	}
+	visible = {
+		FROM = { 
+			owns_state = 597 
+		} 
 	}
 	available = { 
 		FROM = { 
@@ -271,12 +319,12 @@ SQI_jinan_arsenal_organisation = {#济南兵工厂
 	}
 }
 
-SQI_seventy_two_cannon_artillery_foundry = {
+SQI_seventy_two_cannon_artillery_foundry = {#七二炮铸造厂
 	name = seventy_two_cannon_artillery_foundry
 	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
 	include = generic_artillery_organization
 	allowed = { 
-		is_Chinese_tag = yes
+		is_chinese_tag = yes
 	}
 	available = { 
 		FROM = { 
@@ -288,16 +336,363 @@ SQI_seventy_two_cannon_artillery_foundry = {
 SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
 	name = SQI_si_fang_ji_che
 	icon = GFX_idea_FNG_ji_che_gong_shi
-	include = generic_motorized_mechanized_organization
 	allowed = { 
-		is_Chinese_tag = yes
+		OR = {
+			is_chinese_tag = yes
+			tag = GEA
+		}
+	}
+	visible = {
+		FROM = {
+			OR = {
+				owns_state = 744
+				is_puppet_of = GER
+				has_idea = SQI_gea_influence_idea2
+			}
+		}
 	}
 	available = {
 		FROM = {
 			OR = {
 				owns_state = 744
+				is_puppet_of = GER
 				has_idea = SQI_gea_influence_idea2
 			}
+		}
+	}
+	ai_will_do = { 
+		base = 100 
+	}
+
+	on_tech_research_completed = {
+		set_temp_variable = {
+			var = SQI_si_fang_cic_base
+			value = 3000
+		}
+		set_temp_variable = {
+			var = SQI_si_fang_cic_trait_sum
+			value = 500
+		}
+		set_temp_variable = {
+			var = SQI_si_fang_cic_size_multiplier
+			value = size
+		}
+		if = {
+			limit = {
+				SQI_has_amo_upgrade_1_2 = yes
+			}
+			add_to_temp_variable = {
+				var = SQI_si_fang_cic_trait_sum
+				value = 250
+			}
+		}
+		if = {
+			limit = {
+				SQI_has_amo_upgrade_1_4 = yes
+			}
+			add_to_temp_variable = {
+				var = SQI_si_fang_cic_trait_sum
+				value = 250
+			}
+		}
+		multiply_temp_variable = {
+			var = SQI_si_fang_cic_trait_sum
+			value = SQI_si_fang_cic_size_multiplier
+		}
+		add_to_temp_variable = {
+			var = SQI_si_fang_cic_trait_sum
+			value = SQI_si_fang_cic_base
+		}
+		FROM = { add_cic = SQI_si_fang_cic_trait_sum }
+		add_to_variable = { total_campaign_CIC = SQI_si_fang_cic_trait_sum }
+		custom_effect_tooltip = SQI_si_fang_research_cic_tt
+	}
+
+	equipment_type = {
+		motorized_equipment
+		mechanized_equipment
+		railway_gun_equipment
+		train_equipment
+	}
+
+	research_categories = {
+		mio_cat_tech_all_motorized_mechanized
+		train_tech
+	}
+
+	initial_trait = {
+		name = SQI_si_fang_mio_desc
+	}
+
+	trait = {
+		token = amo_upgrade_1
+		name = amo_upgrade_1
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 1 y = 0 }
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = bmz_upgrade_2
+		name = bmz_upgrade_2
+		icon = GFX_KR_generic_mio_trait_icon_railway
+
+		position = { x = 4 y = 0 }
+
+		limit_to_equipment_type = { 
+			railway_gun_equipment
+			train_equipment 
+		}
+
+		equipment_bonus = {
+			build_cost_ic = -0.025
+		}
+
+		on_complete = {
+			FROM = {
+				build_railway = {
+					path = { 1069 10102 12074 1184 }
+				}
+			}
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_3
+		name = amo_upgrade_3
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 7 y = 0 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_1
+		name = amo_upgrade_1_1
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x = -1 y = 2 }
+		relative_position_id = amo_upgrade_1
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		any_parent = { amo_upgrade_1 bmz_upgrade_2 }
+
+		mutually_exclusive = { amo_upgrade_1_2 }
+
+		equipment_bonus = {
+			maximum_speed = 0.2
+			fuel_consumption = 0.1
+		}
+
+		production_bonus = {
+			production_resource_need_factor = 0.1
+		}
+
+		on_complete = {
+			FROM = { add_ideas = SQI_si_fang_cic_1 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_2
+		name = amo_upgrade_1_2
+		icon = GFX_KR_generic_mio_trait_icon_cic
+
+		position = { x = 0 y = 2 }
+		relative_position_id = amo_upgrade_1
+
+		any_parent = { amo_upgrade_1 bmz_upgrade_2 }
+
+		mutually_exclusive = { amo_upgrade_1_1 }
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		on_complete = {
+			custom_effect_tooltip = SQI_si_fang_trait_cic_tt
+			add_to_variable = { CIC_bonus = 250 }
+		}
+	}
+
+	trait = {
+		token = bmz_upgrade_2_2
+		name = bmz_upgrade_2_2
+		icon = GFX_generic_mio_department_icon_tank_general_spg
+
+		position = { x = 3 y = 2 }
+
+		all_parents = { bmz_upgrade_2 }
+
+		limit_to_equipment_type = {
+			railway_gun_equipment
+		}
+
+		equipment_bonus = {
+			railway_gun_attack = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+	trait = {
+		token = bmz_upgrade_2_3
+		name = bmz_upgrade_2_3
+		icon = GFX_KR_generic_mio_trait_icon_railway_gun
+
+		available = {
+			FROM = {
+				owns_state = 597
+				OR = {
+					has_tech = railway_gun
+					has_completed_focus = SQI_pei_bei_zhong_huo_li
+				}
+			}
+		}
+
+		position = { x = 5 y = 2 }
+
+		all_parents = { bmz_upgrade_2 }
+
+		on_complete = {
+			FROM = {
+				create_railway_gun = {
+					name = "云鹏"
+					equipment = railway_gun_equipment_1
+					location = 1069
+				}
+				create_railway_gun = {
+					name = "云鹗"
+					equipment = railway_gun_equipment_1
+					location = 1069
+				}
+			}
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_4
+		name = amo_upgrade_1_4
+		icon = GFX_KR_generic_mio_trait_icon_cic
+
+		position = { x = 0 y = 2 }
+		relative_position_id = amo_upgrade_3
+
+		any_parent = { bmz_upgrade_2 amo_upgrade_3 }
+
+		mutually_exclusive = { amo_upgrade_1_5 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		on_complete = {
+			custom_effect_tooltip = SQI_si_fang_trait_cic_tt
+			add_to_variable = { CIC_bonus = 250 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_5
+		name = amo_upgrade_1_5
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x = 1 y = 2 }
+		relative_position_id = amo_upgrade_3
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		any_parent = { bmz_upgrade_2 amo_upgrade_3 }
+
+		mutually_exclusive = { amo_upgrade_1_4 }
+
+		equipment_bonus = {
+			maximum_speed = 0.2
+			fuel_consumption = 0.1
+		}
+
+		production_bonus = {
+			production_resource_need_factor = 0.1
+		}
+
+		on_complete = {
+			FROM = { add_ideas = SQI_si_fang_cic_2 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_2_1
+		name = amo_upgrade_2_1
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x = 0 y = 1 }
+		relative_position_id = bmz_upgrade_2_2
+
+		any_parent = { amo_upgrade_1_1 amo_upgrade_1_2 }
+
+		limit_to_equipment_type = { 		
+			motorized_equipment
+			mechanized_equipment 
+		}
+
+		equipment_bonus = {
+			fuel_capacity = 1.0
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_2_2
+		name = amo_upgrade_2_2
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 2 y = 1 }
+		relative_position_id = bmz_upgrade_2_2
+
+		any_parent = { amo_upgrade_1_4 amo_upgrade_1_5 }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_3_1
+		name = amo_upgrade_3_1
+		icon = GFX_icon_FNG_ji_che_gong_shi
+
+		special_trait_background = yes
+
+		available = {
+			FROM = {
+				has_idea = SQI_gea_influence_idea3
+			}
+		}
+
+		position = { x = 1 y = 2 }
+		relative_position_id = bmz_upgrade_2_2
+
+		all_parents = { amo_upgrade_2_1 amo_upgrade_2_2 }
+		all_parents = { bmz_upgrade_2_2 }
+		all_parents = { bmz_upgrade_2_3 }
+
+		equipment_bonus = {
+			reliability = 0.1
+			maximum_speed = 0.1
 		}
 	}
 }

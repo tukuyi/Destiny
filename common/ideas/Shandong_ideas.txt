@@ -1143,6 +1143,19 @@ ideas = {
 					production_factory_efficiency_gain_factor = 0.05
 				}
 			}
+		#hidden
+			SQI_si_fang_cic_1 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_si_fang_cic_1" }
+				modifier = {
+					cic_construction_boost_factor = 2.0
+				}
+			}		
+			SQI_si_fang_cic_2 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_si_fang_cic_2" }
+				modifier = {
+					cic_construction_boost_factor = 2.0
+				}
+			}
 	}
 
 	###########
@@ -1153,7 +1166,15 @@ ideas = {
 	industrial_concern = {
 		luda_mining_company = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea luda_mining_company"}
-			allowed = { original_tag = SQI }
+			allowed = { 
+				is_chinese_tag = yes
+			}
+			visible = {
+				owns_state = 597
+			}
+			available = {
+				owns_state = 597
+			}
 			traits = { mining_company }
             modifier = {
 				production_speed_arms_factory_factor = 0.05
@@ -1163,10 +1184,18 @@ ideas = {
 				industry = 0.1
 			}
 		}
-		SQI_schantung_bergbaugesellschaft = {
+		SQI_schantung_bergbaugesellschaft = {#山东铁路矿业公司
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_schantung_bergbaugesellschaft"}
 			picture = GEA_Schantung_Bergbaugesellschaft
-			allowed = { original_tag = SQI }
+			allowed = { 
+				original_tag = SQI
+			}
+			visible = {
+				OR = {
+					owns_state = 744
+					has_idea = SQI_gea_influence_idea2
+				}
+			}
 			available = {
 				OR = {
 					owns_state = 744
@@ -1182,7 +1211,15 @@ ideas = {
 		}
 		qingdao_dian_deng_company = {#青岛电灯厂
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea qingdao_dian_deng_company"}
-			allowed = { original_tag = SQI }
+			allowed = { 
+				is_chinese_tag = yes
+			}
+			visible = {
+				OR = {
+					owns_state = 744
+					has_idea = SQI_gea_influence_idea3
+				}
+			}
 			available = {
 				OR = {
 					owns_state = 744
@@ -1208,7 +1245,7 @@ ideas = {
 		jinan_arsenal = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea jinan_arsenal"}
 			allowed = { 
-				is_Chinese_tag = yes
+				is_chinese_tag = yes
 			}
 			available = { 
 				FROM = { 
@@ -1224,7 +1261,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea jinan_arsenal" }
 			picture = generic_arms_company
 			allowed = { 
-				is_Chinese_tag = yes
+				is_chinese_tag = yes
 			}
 			available = { 
 				FROM = { 
