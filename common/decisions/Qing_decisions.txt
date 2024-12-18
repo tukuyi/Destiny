@@ -2454,7 +2454,7 @@ QIE_zhili_reunite_china_decisions_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision QIE_reach_out_to_hengti target: [From.GetName]"
-			FROM = {
+			HNN = {
 				country_event = {
 					id = qiefor.4
 					days = 1
@@ -2509,7 +2509,7 @@ QIE_zhili_reunite_china_decisions_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision QIE_reach_out_to_hengti target: [From.GetName]"
-			FROM = {
+			SQI = {
 				country_event = {
 					id = qiefor.4
 					days = 1
@@ -2756,7 +2756,7 @@ QIE_zhili_reunite_china_decisions_category = {
 			can_declare_war_on = FROM
 			FROM = {
 				has_country_leader = {
-					name = "宋哲元"
+					name = "屈映光"
 					ruling_only = yes
 				}
 			}
@@ -2767,7 +2767,7 @@ QIE_zhili_reunite_china_decisions_category = {
 			can_declare_war_on = FROM
 			FROM = {
 				has_country_leader = {
-					name = "宋哲元"
+					name = "屈映光"
 					ruling_only = yes
 				}
 			}

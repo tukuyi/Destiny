@@ -124,7 +124,7 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-			factor = 33
+			base = 33
 			modifier = {
 				add = 100
 				has_political_power < 100
@@ -153,7 +153,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				ic_ratio = {
@@ -191,7 +191,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 100
+			base = 40
 		}
 
 		completion_reward = {
@@ -216,7 +216,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				ic_ratio = {
@@ -253,7 +253,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				has_stability < 0.50
@@ -284,15 +284,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jian_qing_nong_ming
 		}
-		prerequisite = {
-			# focus = QIE_leverage_new_pop
-		}
 		x = 0
 		y = 5
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				has_stability < 0.50
@@ -339,7 +336,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				has_army_experience < 1
@@ -376,7 +373,7 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				authoritarian_democrat < 0.50
@@ -823,6 +820,9 @@ focus_tree = {
 		x = 8
 		y = 3
 
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_placateassembly"
@@ -839,6 +839,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = QIE_placateassembly
+
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_request_german_bailout"
@@ -863,6 +867,10 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = QIE_placateassembly
+
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_open_up_to_investment"
@@ -893,6 +901,10 @@ focus_tree = {
 		y = 3
 		relative_position_id = QIE_placateassembly
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_seek_german_RR_capital"
 			add_ideas = QIE_german_railroad_engineers_idea
@@ -922,6 +934,10 @@ focus_tree = {
 		y = 3
 		relative_position_id = QIE_placateassembly
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_seek_german_civ_investments"
 			add_offsite_building = {
@@ -946,6 +962,10 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = QIE_placateassembly
+
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_grant_foreign_licenses"
@@ -979,6 +999,10 @@ focus_tree = {
 
 		relative_position_id = QIE_placateassembly
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_krupp"
 			add_tech_bonus = {
@@ -1004,6 +1028,10 @@ focus_tree = {
 
 		relative_position_id = QIE_placateassembly
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_siemens"
 			add_tech_bonus = {
@@ -1028,6 +1056,10 @@ focus_tree = {
 		y = 4
 
 		relative_position_id = QIE_placateassembly
+
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_IGfarben"
@@ -1064,6 +1096,10 @@ focus_tree = {
 
 		relative_position_id = QIE_placateassembly
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanresearch"
 			add_research_slot = 1
@@ -1085,6 +1121,10 @@ focus_tree = {
 
 		available = {
 			has_country_flag = QIE_ger_mil_support
+		}
+
+		ai_will_do = {
+			base = 40
 		}
 
 		completion_reward = {
@@ -1113,6 +1153,10 @@ focus_tree = {
 
 		relative_position_id = QIE_germanarsenal
 
+		ai_will_do = {
+			base = 40
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germandesigns"
 			add_tech_bonus = {
@@ -1135,6 +1179,10 @@ focus_tree = {
 		y = 1
 
 		relative_position_id = QIE_germanarsenal
+
+		ai_will_do = {
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanradio"
@@ -1343,7 +1391,7 @@ focus_tree = {
 		y = 4
 
 		ai_will_do = {
-			factor = 100
+			base = 25
 			modifier = {
 				add = 100
 				has_political_power < 0
@@ -1438,7 +1486,7 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 100
+			base = 20
 		}
 
 		completion_reward = {
@@ -1462,7 +1510,7 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 25
+			base = 25
 			modifier = {
 				add = 50
 				ic_ratio = {
@@ -1597,7 +1645,7 @@ focus_tree = {
 		x = -2
 		y = 4
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 2
 				date > 1938.1.1
@@ -1607,6 +1655,7 @@ focus_tree = {
 				date > 1939.1.1
 			}
 		}
+
 		relative_position_id = QIE_futureofzhili
 
 		available = {
@@ -1631,7 +1680,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 2
 				date > 1938.1.1
@@ -1750,7 +1799,7 @@ focus_tree = {
 		y = 4
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 2
 				date > 1938.1.1
@@ -1780,7 +1829,11 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 100
+			base = 0
+			modifier = {
+				add = 40
+				date > 1936.10.1
+			}
 		}
 
 		completion_reward = {
@@ -1887,7 +1940,7 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 100
+			base = 20
 		}
 
 		completion_reward = {
@@ -1911,7 +1964,15 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 100
+			base = 0
+			modifier = {
+				add = 40
+				date > 1936.10.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
 		}
 
 		completion_reward = {
@@ -1953,7 +2014,15 @@ focus_tree = {
 		relative_position_id = QIE_futureofzhili
 
 		ai_will_do = {
-			factor = 100
+			base = 0
+			modifier = {
+				add = 40
+				date > 1936.10.1
+			}
+			modifier = {
+				factor = 2
+				date > 1938.1.1
+			}
 		}
 
 		completion_reward = {
@@ -7570,7 +7639,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				has_stability < 0.50
@@ -7603,7 +7672,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
 				add = 100
 				has_stability < 0.50

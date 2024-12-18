@@ -6941,8 +6941,9 @@ country_event = {#回归南京
 
 	option = {
 		name = hungong.27.a
-		puppet = {
-			target = HNN
+		set_autonomy = {
+			target = FROM
+			autonomy_state = kr_governorate
 			end_wars = no
 		}
 	}

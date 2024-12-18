@@ -85,7 +85,7 @@ ideas = {
 		#开局
 			SQI_honored_master = {#上师
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master"}
-				picture = generic_volunteer_expedition_bonus
+				picture = GFX_idea_SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.01
@@ -271,6 +271,15 @@ ideas = {
 					}
 				}
 			}
+			SQI_expanded_beijing_investment = {#柏林投资增加
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_expanded_beijing_investment	" }
+				picture = generic_loans
+				allowed = { always = no }
+				modifier = {
+					industrial_capacity_factory = 0.10
+					production_speed_buildings_factor = 0.10
+				}
+			}
 
 		#军改
 			SQI_german_garrison = {#向德意志学习
@@ -302,7 +311,6 @@ ideas = {
 					war_support_factor = 0.04
 					experience_gain_army = 0.05
 					command_power_gain_mult = 0.05
-					army_conscription_factor = 0.10
 					training_time_army_factor = 0.10
 				}
 				equipment_bonus = {
@@ -327,7 +335,6 @@ ideas = {
 					conscription_factor = 0.03
 					experience_gain_army = 0.05
 					command_power_gain_mult = 0.05
-					army_conscription_factor = 0.10
 					training_time_army_factor = 0.10
 					terrain_penalty_reduction = 0.10
 					acclimatization_hot_climate_gain_factor = 0.10
@@ -348,13 +355,12 @@ ideas = {
 				modifier = {
 					stability_factor = -0.10
 					army_speed_factor = 0.10
+					war_support_factor = 0.10
 					army_attack_factor = 0.05
 					army_defence_factor = 0.05
-					war_support_factor = 0.10
-					conscription_factor = 0.03
+					conscription_factor = 0.05
 					experience_gain_army = 0.05
 					command_power_gain_mult = 0.10
-					army_conscription_factor = 0.10
 					training_time_army_factor = 0.10
 					terrain_penalty_reduction = 0.10
 					acclimatization_hot_climate_gain_factor = 0.10
@@ -712,26 +718,6 @@ ideas = {
 				}
 			}
 
-			SQI_Japanese_military_assistance = { #Japanese Military Assistance
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Japanese_military_assistance"}
-				picture = FNG_xinhai_order
-				allowed = { always = no }
-				modifier = {
-					army_bonus_air_superiority_factor = 0.20
-					experience_gain_air_factor = 0.10
-				}
-			}
-
-			SQI_German_military_assistance = { #German Military Assistance
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_German_military_assistance"}
-				picture = advisors_germany
-				allowed = { always = no }
-				modifier = {
-					special_forces_cap = 0.02
-					training_time_army_factor = -0.05
-				}
-			}
-
 			SQI_controlled_drug_trade = { #Controlled Drug Trade
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_controlled_drug_trade"}
 				picture = SZC_opium_monopoly
@@ -761,18 +747,6 @@ ideas = {
 				modifier = {
 					send_volunteer_size = 2
 					political_power_gain = -0.05
-				}
-			}
-
-			SQI_Legation_military_assistance = { #Legation Military Assistance
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Legation_military_assistance"}
-
-				picture = profits_legation_cities
-				allowed = { always = no }
-				modifier = {
-					command_power_gain_mult = 0.10
-					army_org_Factor = 0.01
-					trade_opinion_factor = 0.2
 				}
 			}
 
@@ -865,8 +839,8 @@ ideas = {
 		#张天然
 			SQI_honored_master_2 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_2"}
-
-				picture = generic_volunteer_expedition_bonus
+				name = SQI_honored_master
+				picture = GFX_idea_SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.01
@@ -877,20 +851,33 @@ ideas = {
 			}
 			SQI_honored_master_3 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_3"}
-
-				picture = generic_volunteer_expedition_bonus
+				name = SQI_honored_master
+				picture = GFX_idea_SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.05
+					army_org_factor = 0.05
 					stability_factor = 0.05
 					stability_weekly = 0.005
-					army_org_factor = 0.05
+					national_populist_drift = 0.10			
+				}
+			}
+			SQI_honored_master_4 = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_4"}
+				name = SQI_honored_master
+				picture = GFX_idea_SQI_honored_master
+				allowed = { always = no }
+				modifier = {
+					conscription = 0.05
+					army_org_factor = 0.10
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					political_power_factor = 0.05
 					national_populist_drift = 0.10			
 				}
 			}
 			SQI_ke_pu_du_wu = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_ke_pu_du_wu"}
-
 				picture = NEE_sell_book_lovecraft
 				allowed = { always = no }
 				modifier = {

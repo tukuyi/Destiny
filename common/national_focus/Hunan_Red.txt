@@ -1255,6 +1255,14 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 4
+					exists = CHI
+				}
+				modifier = {
+					factor = 4
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_he_shu_huan_jiang_ling_dao_us
@@ -1292,6 +1300,14 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 4
+					exists = CHI
+				}
+				modifier = {
+					factor = 4
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_dui_guo_ming_dang_tuo_xie
@@ -1328,6 +1344,14 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 4
+					exists = CHI
+				}
+				modifier = {
+					factor = 4
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_liang_dang_he_zuo
@@ -1354,9 +1378,17 @@ focus_tree = {
 			x = 1
 			y = 3
 			cost = 5
-		
+
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 4
+					exists = CHI
+				}
+				modifier = {
+					factor = 4
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_liang_dang_he_zuo
@@ -1380,6 +1412,10 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 4
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_cong_xin_ru_dang
@@ -9391,7 +9427,7 @@ focus_tree = {
 		y = 1
 	
 		ai_will_do = {
-			factor = 25
+			base = 25
 			modifier = {
 				factor = 2
 				has_war = yes
@@ -9944,9 +9980,19 @@ focus_tree = {
 		ai_will_do = {
 			base = 10
 			modifier = {
-				factor = 20
+				factor = 2
 				has_army_manpower = {
 					size > 60000
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = HNN_nan_zheng
+				GXC = {
+					NOT = {
+						is_puppet_of = ROOT
+						exists = no
+					}
 				}
 			}
 		}
@@ -9990,9 +10036,19 @@ focus_tree = {
 		ai_will_do = {
 			base = 10
 			modifier = {
-				factor = 20
+				factor = 2
 				has_army_manpower = {
 					size > 60000
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = HNN_xi_zheng
+				var:650.owner = {
+					NOT = {
+						is_puppet_of = ROOT
+						exists = no
+					}
 				}
 			}
 		}
@@ -10086,11 +10142,29 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-						base = 10
+			base = 10
 			modifier = {
-				factor = 20
+				factor = 2
 				has_army_manpower = {
 					size > 60000
+				}
+			}
+			modifier = {
+				factor = 2
+				YUN = {
+					OR = {
+						exists = no
+						is_puppet_of = ROOT	
+					}	
+				}
+			}
+			modifier = {
+				factor = 2
+				GXC = {
+					OR = {
+						exists = no
+						is_puppet_of = ROOT	
+					}	
 				}
 			}
 		}

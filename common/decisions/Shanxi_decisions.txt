@@ -4696,8 +4696,11 @@ foreign_politics = {
 		icon = generic_prepare_civil_war
 
 		visible = {
+			tag = SHX
 			has_government = paternal_autocrat
-			NOT = { has_country_flag = QIE_yan_backs_coup }
+			hidden_trigger = {
+				NOT = { has_country_flag = QIE_yan_backs_coup }
+			}
 			is_in_faction = no
 			can_declare_war_on = FROM
 			FROM = {
