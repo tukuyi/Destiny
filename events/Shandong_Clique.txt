@@ -1293,6 +1293,9 @@ country_event = {# Yiguandao Seeks Modern Weaponry
 
 	option = {# Arms for a Good Cause
 		name = shandong.20.a
+		ai_chance = {
+			factor = 40
+		}
 		add_political_power = -20
 		SQI = {
 			add_equipment_to_stockpile = {
@@ -1304,6 +1307,9 @@ country_event = {# Yiguandao Seeks Modern Weaponry
 
 	option = {# We do not support warlords
 		name = shandong.20.b
+		ai_chance = {
+			factor = 10
+		}
 		add_political_power = 10
 	}
 }

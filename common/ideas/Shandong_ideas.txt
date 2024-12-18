@@ -272,6 +272,200 @@ ideas = {
 				}
 			}
 
+		#军改
+			SQI_german_garrison = {#向德意志学习
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_german_garrison"}
+				picture = advisors_germany
+				allowed = { always = no }
+				modifier = {
+					war_support_factor = 0.04
+					experience_gain_army = 0.05
+					command_power_gain_mult = 0.04
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.05
+						hard_attack = 0.05
+						breakthrough = 0.05
+						instant = yes
+					}
+				}
+			}	
+			SQI_german_garrison2 = {#向德意志学习
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_german_garrison2"}
+				picture = advisors_germany
+				name = SQI_german_garrison
+				allowed = { always = no }
+				modifier = {
+					army_speed_factor = 0.05
+					army_attack_factor = 0.05
+					war_support_factor = 0.04
+					experience_gain_army = 0.05
+					command_power_gain_mult = 0.05
+					army_conscription_factor = 0.10
+					training_time_army_factor = 0.10
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.05
+						hard_attack = 0.05
+						breakthrough = 0.05
+						instant = yes
+					}
+				}
+			}	
+			SQI_german_garrison3 = {#向德意志学习
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_german_garrison3"}
+				picture = advisors_germany
+				name = SQI_german_garrison
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.10
+					army_speed_factor = 0.05
+					army_attack_factor = 0.05
+					war_support_factor = 0.05
+					conscription_factor = 0.03
+					experience_gain_army = 0.05
+					command_power_gain_mult = 0.05
+					army_conscription_factor = 0.10
+					training_time_army_factor = 0.10
+					terrain_penalty_reduction = 0.10
+					acclimatization_hot_climate_gain_factor = 0.10
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.05
+						hard_attack = 0.05
+						breakthrough = 0.05
+						instant = yes
+					}
+				}
+			}	
+			SQI_german_garrison4 = {#向德意志学习
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_german_garrison4"}
+				picture = advisors_germany
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.10
+					army_speed_factor = 0.10
+					army_attack_factor = 0.05
+					army_defence_factor = 0.05
+					war_support_factor = 0.10
+					conscription_factor = 0.03
+					experience_gain_army = 0.05
+					command_power_gain_mult = 0.10
+					army_conscription_factor = 0.10
+					training_time_army_factor = 0.10
+					terrain_penalty_reduction = 0.10
+					acclimatization_hot_climate_gain_factor = 0.10
+					acclimatization_cold_climate_gain_factor = 0.10
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.05
+						hard_attack = 0.05
+						breakthrough = 0.05
+						instant = yes
+					}
+					armor = {
+						build_cost_ic = -0.05
+						instant = yes
+					}
+				}
+			}	
+			SQI_invest_arms_industry = {#现代化骑兵
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_invest_arms_industry" }
+				picture = ordnance
+				allowed = { always = no }
+				equipment_bonus = {
+					motorized_equipment = {
+						reliability = 0.10
+						maximum_speed = 0.05
+						build_cost_ic = -0.10
+						instant = yes
+					}
+				}
+				research_bonus = { 
+					motorized_equipment = 0.1 
+				}
+			}
+			SQI_xin_yang_army = {#信仰之军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_xin_yang_army"}
+				picture = advisors_china_qing
+				allowed = { always = no }
+				modifier = {
+					army_org_regain = 0.05
+					army_org_factor = 0.05
+					war_support_factor = 0.10
+					conscription_factor = 0.015
+				}
+			}	
+			SQI_red_spears = { #红枪相助
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_red_spears"}
+				picture = HUN_secret_rearmament
+				allowed = { always = no }
+				modifier = {
+					supply_factor = 0.05
+					surrender_limit = 0.15
+					army_org_factor = -0.05
+					war_support_factor = 0.15
+					conscription_factor = 0.015
+				}
+			}
+			SQI_xin_yang_army2 = {#信仰之军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_xin_yang_army2"}
+				picture = advisors_china_qing
+				name = SQI_xin_yang_army
+				allowed = { always = no }
+				modifier = {
+					army_org_regain = 0.05
+					army_org_factor = 0.05
+					army_speed_factor = 0.10
+					war_support_factor = 0.10
+					conscription_factor = 0.03
+					training_time_army_factor = -0.05
+					army_infantry_attack_factor = 0.10
+					special_forces_attack_factor = 0.10
+				}
+			}
+			SQI_xin_yang_army3 = {#信仰之军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_xin_yang_army3"}
+				picture = advisors_china_qing
+				name = SQI_xin_yang_army
+				allowed = { always = no }
+				modifier = {
+					army_org_regain = 0.05
+					army_org_factor = 0.05
+					army_speed_factor = 0.10
+					war_support_factor = 0.10
+					conscription_factor = 0.05
+					org_loss_when_moving = -0.04
+					minimum_training_level = -0.10
+					supply_consumption_factor = -0.25
+					training_time_army_factor = -0.10
+					army_infantry_attack_factor = 0.10
+					special_forces_attack_factor = 0.10
+				}
+			}
+			SQI_xin_yang_army4 = {#信仰之军
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_xin_yang_army4"}
+				picture = advisors_china_qing
+				allowed = { always = no }
+				modifier = {
+					army_org_regain = 0.10
+					army_org_factor = 0.10
+					army_speed_factor = 0.10
+					war_support_factor = 0.10
+					conscription_factor = 0.10
+					org_loss_when_moving = -0.10
+					minimum_training_level = -0.10
+					supply_consumption_factor = -0.30
+					training_time_army_factor = -0.10
+					army_infantry_attack_factor = 0.10
+					special_forces_attack_factor = 0.10
+				}
+			}
+
 		#德国人的影响力
 			SQI_gea_influence_idea0 = {#德国人的影响力
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_gea_influence_idea0" }
@@ -433,18 +627,6 @@ ideas = {
 					production_speed_buildings_factor = -0.20
 					consumer_goods_factor = 0.40
 				}
-			}
-
-			SQI_red_spears = { #Red Spears
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_red_spears"}
-				allowed = { always = no }
-				modifier = {
-					surrender_limit = 0.15
-					war_support_factor = 0.15
-					army_org_factor = -0.05
-					conscription_factor = 0.015
-				}
-				picture = HUN_secret_rearmament
 			}
 
 			SQI_big_swords = { #Big Swords

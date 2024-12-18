@@ -77,7 +77,7 @@ SQI_siemens_schuckert_organisation = {#青岛飞机制造厂
 			OR = {
 				owns_state = 744
 				is_puppet_of = GER
-				has_idea = SQI_gea_influence_idea2
+				tag = SQI
 			}
 		}
 	}
@@ -634,7 +634,7 @@ SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
 			OR = {
 				owns_state = 744
 				is_puppet_of = GER
-				has_idea = SQI_gea_influence_idea2
+				tag = SQI
 			}
 		}
 	}
@@ -813,6 +813,24 @@ SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
 		on_complete = {
 			custom_effect_tooltip = SQI_si_fang_trait_cic_tt
 			add_to_variable = { CIC_bonus = 250 }
+		}
+	}
+
+	trait = {
+		token = SQI_si_fang_upgrade_1_2_5
+		name = SQI_si_fang_upgrade_1_2_5
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 1 y = 3 }
+
+		visible = {
+			FROM = {
+				has_completed_focus = SQI_zhang_wo_hou_qing_zhu_dong
+			}
+		}
+
+		equipment_bonus = {
+			build_cost_ic = -0.10
 		}
 	}
 

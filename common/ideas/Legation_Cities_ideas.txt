@@ -1346,11 +1346,8 @@ ideas = {
 		}
 		LEC_fire_city4 = {#焕然一新的上海
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_fire_city4"}
-			picture = OTT_Sublime_Porte
+			picture = GFX_idea_OTT_Sublime_Porte_idea_icon
 			allowed = { always = no }
-			available = { 
-				
-			}
             modifier = {
 				political_power_gain = 0.10
 				stability_factor = 0.05

@@ -2807,7 +2807,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_jin_kou_de_guo_tan_ke"
 			add_equipment_to_stockpile = {
-				type = light_tank_equipment_1
+				type = light_tank_chassis
 				amount = 250
 				producer = GER
 			}

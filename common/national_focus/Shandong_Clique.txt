@@ -6021,9 +6021,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_yi_qie_wei_le_jin_da_shuai"
-			add_research_slot_until_three = yes
+			add_research_slot_until_four = yes
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 #军事改革
 	focus = {
@@ -6107,6 +6107,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SQI_seventy_two_cannon_artillery_foundry
 		}
@@ -6138,6 +6139,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SQI_tan_ke_organisation
 		}
@@ -6158,7 +6160,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zhang_wo_hou_qing_zhu_dong"
-
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 500
+			}
+			custom_effect_tooltip = tooltip_white_line
+			mio:SQI_si_fang_ji_che_organisation = {
+				unlock_mio_trait_tooltip = {
+					trait = SQI_si_fang_upgrade_1_2_5
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -6185,7 +6196,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_de_shi_jun_dui"
-
+			SQI_GER_investment_small = yes
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_ideas = SQI_german_garrison
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6204,7 +6222,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_sho_qi_bing"
-
+			add_ideas = SQI_invest_arms_industry
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6224,7 +6242,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_zhang_bai_e_jun"
-
+			add_ideas = SQI_bai_e_jun
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6246,9 +6264,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_ying_xiang_zhu_yi_jiao_yu"
-
+			add_manpower = 50000
+			add_stability = 0.10
+			add_war_support = 0.10
 		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	}	
 
 	focus = {
@@ -6268,7 +6288,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kan_ke_jun_xun"
-
+			swap_ideas = {
+				remove_idea = SQI_german_garrison
+				add_idea = SQI_german_garrison2
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -6290,7 +6319,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_feng_xin_jun_guo_zhu_yi"
-
+			swap_ideas = {
+				remove_idea = SQI_german_garrison2
+				add_idea = SQI_german_garrison3
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -6315,7 +6353,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_yang_zhi_jun"
-
+			SQI_GER_spend_small = yes
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_ideas = SQI_xin_yang_army
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6334,9 +6379,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_wei_tian_shi_er_zhan"
-
+			army_experience = 100
+			add_war_support = 0.05
+			add_ideas = SQI_red_spears
 		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
 	}	
 
 	focus = {
@@ -6353,7 +6400,30 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xin_tu_wu_qi"
-
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+				producer = SQI
+			}
+			custom_effect_tooltip = tooltip_white_line
+			QIE = {
+				country_event = {
+					id = shandong.20
+					days = 5
+				}
+			}
+			FNG = {
+				country_event = {
+					id = shandong.20
+					days = 5
+				}
+			}
+			JAP = {
+				country_event = {
+					id = shandong.20
+					days = 5
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6375,9 +6445,19 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zu_zhi_gan_si_dui"
-
+			swap_ideas = {
+				remove_idea = SQI_xin_yang_army
+				add_idea = SQI_xin_yang_army2
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_war_support = -0.05
 		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_WAR_SUPPORT }
 	}	
 
 	focus = {
@@ -6397,7 +6477,36 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_shou_bian_ming_tuan"
-
+			597 = {
+				create_unit = {
+					division = "name = \"Peasant Militia\" division_template = \"Hongqiang Hui\"  start_experience_factor = 0.0"
+					owner = ROOT
+				}
+			}
+			597 = {
+				create_unit = {
+					division = "name = \"Peasant Militia\" division_template = \"Hongqiang Hui\"  start_experience_factor = 0.0"
+					owner = ROOT
+				}
+			}
+			597 = {
+				create_unit = {
+					division = "name = \"Peasant Militia\" division_template = \"Hongqiang Hui\"  start_experience_factor = 0.0"
+					owner = ROOT
+				}
+			}
+			597 = {
+				create_unit = {
+					division = "name = \"Peasant Militia\" division_template = \"Hongqiang Hui\"  start_experience_factor = 0.0"
+					owner = ROOT
+				}
+			}
+			597 = {
+				create_unit = {
+					division = "name = \"Peasant Militia\" division_template = \"Hongqiang Hui\"  start_experience_factor = 0.0"
+					owner = ROOT
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
@@ -6419,7 +6528,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuang_re_zho_jun"
-
+			swap_ideas = {
+				remove_idea = SQI_xin_yang_army2
+				add_idea = SQI_xin_yang_army3
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -6439,9 +6557,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jun_guan_fan_xiao"
-
+			army_experience = 50
+			navy_experience = 20
+			air_experience = 20
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
 		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_AIRFORCE_BONUS }
 	}	
 
 	focus = {
@@ -6458,9 +6584,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xue_xin_xing_li_lun"
-
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_research_slot_until_four = yes
 		}
-		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
 	}	
 
 	focus = {
@@ -6480,7 +6612,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_gang_tie_zhi_jun"
-
+			swap_ideas = {
+				remove_idea = SQI_german_garrison3
+				add_idea = SQI_german_garrison4
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -6502,7 +6643,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_xue_rou_chang_Cheng"
-
+			swap_ideas = {
+				remove_idea = SQI_xin_yang_army3
+				add_idea = SQI_xin_yang_army4
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
