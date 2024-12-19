@@ -1336,6 +1336,21 @@
  SHX_qi_ye_gai_ge_desc:0 "随着经济的发展，企业改革也陆续提上了日程。现在山西省内的大部分企业均为私营企业，为了扩大政府在经济领域的管控，决定将关键部门企业重新开始国有化。同时，其他的私营企业也开始陆续实行公司制股份制。同时也设立企业监管委员会并对一些有大型商会创立的私营企业进行管控。"
  SHX_mo_shou_cheng_gui:0 "墨守成规的现代化"
  SHX_mo_shou_cheng_gui_desc:0 "随着阎锡山省长在逐步按照自己的想法进行改革后，山西从各个领域开始注入新的活力。同时随着现代化项目的开发以及阎锡山思想的传播，山西也从各个方面开始变得更加繁荣。"
+ 
+ #阎锡山统一后
+ SHX_san_jin_lai:0 "中华之崛起自三晋来"
+ SHX_san_jin_lai_desc:0 " "
+
+ SHX_du_zi_xian_xing:0 "独自前行"
+ SHX_du_zi_xian_xing_desc:0 " "
+ SHX_di_wang_shi_zhong_tong:0 "帝王式总统"
+ SHX_di_wang_shi_zhong_tong_desc:0 " "
+ SHX_ru_jia_fa_tuan_zhu_yi:0 "儒家法团主义"
+ SHX_ru_jia_fa_tuan_zhu_yi_desc:0 " "
+ SHX_zui_gao_wei_yuan_hui:0 "最高经济委员会"
+ SHX_zui_gao_wei_yuan_hui_desc:0 " "
+ SHX_tong_zhi_jing_ji:0 "统制经济"
+ SHX_tong_zhi_jing_ji_desc:0 " "
 
  #冯玉祥
  SHX_feng_yu_xiang:0 "基督将军的归来"

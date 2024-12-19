@@ -705,10 +705,6 @@ focus_tree = {
 		}
 		cancelable = no
 
-		select_effect = {
-
-		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_mai_xiang_gong_he"
 			set_cosmetic_tag = ROC
@@ -742,14 +738,8 @@ focus_tree = {
 		y = 1
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_mai_xiang_gong_he
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -795,17 +785,8 @@ focus_tree = {
 		y = 2
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_zong_zhu_yi_hui
-		}
-		prerequisite = {
-			# focus = SQI_chu_li_shou_bian_bu_dui
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -821,17 +802,8 @@ focus_tree = {
 		y = 2
 		cost = 3
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_zong_zhu_yi_hui
-		}
-		prerequisite = {
-			# focus = SQI_la_long_jiang_nan_cai_tuan
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -852,17 +824,11 @@ focus_tree = {
 		y = 3
 		cost = 3
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_zhu_jie_wen_ti
 		}
 		prerequisite = {
 			focus = SQI_jiao_mie_di_xia_dang
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -952,14 +918,8 @@ focus_tree = {
 		y = 2
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_chu_li_shou_bian_bu_dui
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -981,17 +941,8 @@ focus_tree = {
 		y = 3
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_chou_ban_lu_jun_xue_xiao
-		}
-		prerequisite = {
-			# focus = SQI_jiao_mie_di_xia_dang
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -1021,17 +972,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_mai_xiang_gong_he
 		}
-		select_effect = {
-			 
-		}
-
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_la_long_jiang_nan_cai_tuan"
@@ -1058,14 +1001,8 @@ focus_tree = {
 		y = 2
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_la_long_jiang_nan_cai_tuan
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -1084,17 +1021,8 @@ focus_tree = {
 		y = 3
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_wan_jiu_po_chan_ju_mian
-		}
-		prerequisite = {
-			# focus = SQI_zhu_jie_wen_ti
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -1112,17 +1040,11 @@ focus_tree = {
 		y = 4
 		cost = 5
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_xiu_jian_jiang_nan
 		}
 		prerequisite = {
 			focus = SQI_zheng_he_di_fang_quan_li
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -1162,9 +1084,6 @@ focus_tree = {
 		prerequisite = {
 			focus = SQI_zheng_he_di_fang_quan_li
 		}
-		select_effect = {
-			 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_lian_luo_fang_tian"
@@ -1184,17 +1103,11 @@ focus_tree = {
 		y = 5
 		cost = 2
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = SQI_lian_luo_fang_tian
 		}
 		prerequisite = {
 			focus = SQI_zu_zhi_fan_qing_xuan_chuan
-		}
-		select_effect = {
-			 
 		}
 
 		completion_reward = {
@@ -1238,12 +1151,6 @@ focus_tree = {
 					target = FNG
 					type = annex_everything
 				}
-			}
-			hidden_effect = {
-			# country_event = {
-			# 	id = sqiwan.5
-			# 	days = 5
-			# }
 			}
 		}
 	}
@@ -3823,9 +3730,6 @@ focus_tree = {
 		y = 6
 		cost = 5
 
-		allow_branch = {
-			SQI_GER_influence_active = yes
-		}
 		available = {
 			OR = {
 				SQI = {
@@ -5011,9 +4915,6 @@ focus_tree = {
 		y = 0
 		cost = 5
 
-		allow_branch = {
-			SQI_GER_influence_active = yes
-		}
 		available = {
 			OR = {
 				SQI = {

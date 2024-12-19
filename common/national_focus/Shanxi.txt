@@ -14,7 +14,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 1775 y = 2000 }
+	continuous_focus_position = { x = 3500 y = 1500 }
 
 	focus = {
 		id = SHX_zhao_du_li_de_zui_hou_yi_nian
@@ -3618,6 +3618,141 @@ focus_tree = {
 			}
 		}
 	}
+
+	# focus = {
+	# 	id = SHX_san_jin_lai
+	# 	icon = GFX_goal_chi_one_china_policy_KMT
+	# 	relative_position_id = SHX_shan_xi_wang
+	# 	x = 0
+	# 	y = 8
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	available = {
+	# 		has_country_flag = has_united_china
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_mo_shou_cheng_gui
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_san_jin_lai"
+
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHX_du_zi_xian_xing
+	# 	icon = GFX_goal_TEX_commonsense
+	# 	relative_position_id = SHX_san_jin_lai
+	# 	x = 0
+	# 	y = 1
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	available = {
+			
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_mo_shou_cheng_gui
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_du_zi_xian_xing"
+
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHX_di_wang_shi_zhong_tong
+	# 	icon = GFX_goal_TEX_exalt_humble
+	# 	relative_position_id = SHX_du_zi_xian_xing
+	# 	x = 0
+	# 	y = 1
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_du_zi_xian_xing
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_di_wang_shi_zhong_tong"
+
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHX_ru_jia_fa_tuan_zhu_yi
+	# 	icon = GFX_goal_TEX_universal_jobs_registry
+	# 	relative_position_id = SHX_du_zi_xian_xing
+	# 	x = -1
+	# 	y = 2
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_di_wang_shi_zhong_tong
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_ru_jia_fa_tuan_zhu_yi"
+
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHX_zui_gao_wei_yuan_hui
+	# 	icon = GFX_goal_TEX_end_civilservice
+	# 	relative_position_id = SHX_du_zi_xian_xing
+	# 	x = 1
+	# 	y = 2
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_di_wang_shi_zhong_tong
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_zui_gao_wei_yuan_hui"
+
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHX_tong_zhi_jing_ji
+	# 	icon = GFX_goal_TEX_end_civilservice
+	# 	relative_position_id = SHX_du_zi_xian_xing
+	# 	x = 0
+	# 	y = 3
+	# 	cost = 5
+
+	# 	ai_will_do = {
+	# 		base = 30
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_ru_jia_fa_tuan_zhu_yi
+	# 	}
+	# 	prerequisite = {
+	# 		focus = SHX_zui_gao_wei_yuan_hui
+	# 	}
+
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHX_tong_zhi_jing_ji"
+
+	# 	}
+	# }
 #傅作义
 	focus = {
 		id = SHX_shao_zhuang_pai_shang_tai

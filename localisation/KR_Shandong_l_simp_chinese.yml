@@ -105,8 +105,8 @@
  SQI_government_yiguandao: "新清政府"
  SQI_government_yiguandao_DEF: "新清政府"
 
- SQI_totalist_party:0 "社会主义青年团"
- SQI_totalist_party_long:0 "社会主义青年团(Shehui Zhuyi Qingnian Tuan)\n§g这个社会主义思想体系中的新产物，仅仅靠着泛太工会联盟的出版物便在山东青年中小范围的流传开来。这个团体主要由学生构成，而除非得到外国势力的帮助，否则其不会得到快速的发展。§!"
+ SQI_totalist_party:0 "山东共产党"
+ SQI_totalist_party_long:0 "山东共产党(Communist Party of Shandong)\n§g山东共产党与其他共产主义组织不同，他起源于中国工团党山东支部，1927年革命失败后，中国工团党部分成员返回山东继续组织革命，主要以日照县为根据地活动，发展农民武装，搞农民运动。1932年，他们正式将指导思想从工团主义更迭为共产主义，并在同年六月，以建立“北方苏维埃”为口号发动了组织暴动，成立鲁南革命委员会与中国工农红军鲁南游击纵队，但十月暴动开始后仅维持13天便被平息。山东共产党自此打散做零散组织，分布在全山东，尽管他们在农村的影响力已然被张天然取代，但是谁又能知道，那些所谓的道徒是否实际上其实是一个共产主义者呢？§!"
  SQI_syndicalist_party:0 "反日团结会"
  SQI_syndicalist_party_long:0 "反日团结会(Fanri Tuanjiehui)\n§g这是个国民党山东支部的一个激进派系，他们在青岛已经潜伏数年，就为等一个起义时机。在泛太工会联盟出版的社会主义著作的影响之下，他们只可能在得到外来势力帮助的情况之下才能生存。§!"
  SQI_radical_socialist_party:0 "国民党"
