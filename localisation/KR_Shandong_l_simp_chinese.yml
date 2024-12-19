@@ -446,9 +446,9 @@
  SQI_Zhang_Zongchang:0 "骁威将军，风光万里"
  SQI_Zhang_Zongchang_desc:0 "张宗昌、张天然、屈映光...有太多的人盯着靳云鹗的位置了，他们都想要在这个乱世混出个名堂，但是这些等闲之辈又岂能击败大将军呢？山东只能由骁威将军靳云鹗说了算，没人在能动摇他的地位。"
  SQI_Appointing_Lu_Zhongyi_Leader_Of_The_Yiguandao:0 "让路中节当天师"
- SQI_Appointing_Lu_Zhongyi_Leader_Of_The_Yiguandao_desc:0 "靳云鹗在与一贯道的政治斗争中学到了一些教训，即山东的混乱让很多老百姓开始寻求宗教的安慰，为了切断一贯道与政治的联系，靳云鹗请满怀感激之情的路中节当天师，并让她远离政治。"
+ SQI_Appointing_Lu_Zhongyi_Leader_Of_The_Yiguandao_desc:0 "靳云鹗在与一贯道的政治斗争中学到了一些教训，即山东的混乱让很多老百姓开始寻求宗教的安慰，为了切断一贯道与政治的联系，靳云鹗请满怀感激之情的路中节当天师，并让她远离政治，做好一个吉祥物该做的事情。"
  SQI_Clearing_Out_Mount_Tai_Of_The_Yiguandao:0 "泰山一游"
- SQI_Clearing_Out_Mount_Tai_Of_The_Yiguandao_desc:0 "张天然死后，泰山之上就打成了一锅粥，各路人马都在宣称自己是新天师，想要继承张天然的遗产。主要是那无数的黄金，当然了，既然我们选择支持路中节，那我们就有必要也去要回这一笔财产，他们给也得给，不给也得给。"
+ SQI_Clearing_Out_Mount_Tai_Of_The_Yiguandao_desc:0 "张天然死后，泰山之上就打成了一锅粥，各路人马都在宣称自己是新天师，想要继承张天然的遗产。主要是那无数的黄金，当然了，既然我们选择支持路中节，那我们就有必要也申明我们才是这一笔财产的唯一继承人，而他们给也得给，不给也得给。"
  SQI_Assassinating_Bureaucrats_Threatening_The_Opium_Trade:0 "控制毒品贸易"
  SQI_Assassinating_Bureaucrats_Threatening_The_Opium_Trade_desc:0 "山东的经济糟糕透顶，但是山东的鸦片生意却又是成天到晚火爆得不行，凭借着德国人的港口还能向外输送。但是这样经济来源此前完全不受靳督理的掌控，直到现在他终于能够完全掌握这笔钱了。"
  SQI_Advertising_Shandong_As_A_Model_Province_In_Beijing:0 "山东是个模范省"
@@ -874,6 +874,8 @@
  SQI_unify_the_country_desc:0 "张天然希望完成从孙中山到溥仪的精神谱系建构。其中就包括把国家权力逐步移交给一贯道政府的手中这一步。消除这种对儒家价值的冒犯将会使我国更好的面对大劫的来临。"
 
  SQI_xin_ru_xue:0 "儒学教育"
+ SQI_yi_guan_dao_de_cai_fu:0 "一贯道的财富"
+ SQI_yi_guan_dao_de_cai_fu_desc:0 "道徒们忙忙碌碌一辈子的财富全部上交给了张天然，而现在，最后又全部给靳大帅做了嫁衣。"
  SQI_flee_to_zongchang2:0 "权力稳固"
  SQI_flee_to_zongchang2_desc:0 "山东经年累月的矛盾如疾风暴雨般倾泻而出，而靳云鹗抗住了压力，现在他的敌人们一个个被送上审判席，没有人再能在山东挑战靳云鹗督理的地位。"
  
