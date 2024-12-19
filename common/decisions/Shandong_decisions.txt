@@ -2972,6 +2972,48 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			SQI_GER_spend_small = yes
 		}
 	}
+	SQI_gu_li_guo_huo_not = {#鼓励"国货"
+		icon = GFX_decision_drug
+		available = {
+			has_completed_focus = SQI_Assassinating_Bureaucrats_Threatening_The_Opium_Trade
+		}
+
+		cost = 30
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_gu_li_guo_huo_not"
+			SQI_GER_spend_small = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_gu_li_guo_huo_not"
+			add_stability = -0.04
+			add_political_power = 70
+		}
+	}
 
 	#粮食危机
 	SQI_agricultural_reform_mission_timer = {#解决粮食危机

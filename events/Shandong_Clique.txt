@@ -146,6 +146,22 @@ country_event = {#来来往往
 	}
 }
 
+country_event = {#与刘子山合作
+	id = SQI.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.7" }
+	title = SQI.7.t
+	desc = SQI.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.7.a
+		add_political_power = 40
+		SQI_GER_spend_small = yes
+	}
+}
+
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.2" }

@@ -854,6 +854,20 @@ ideas = {
 					production_factory_efficiency_gain_factor = 0.10
 				}
 			}
+			SQI_Baojia_System = {#保甲制
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_Baojia_System"}
+				allowed = { always = no }
+				picture = chi_army_corruption3
+				modifier = {
+					totalist_drift = -0.05
+					stability_factor = 0.05
+					syndicalist_drift = -0.05
+					war_support_factor = -0.05
+					conscription_factor = 0.10
+					war_stability_factor = -0.05
+					national_populist_drift = -0.05
+				}
+			}
 		#张天然
 			SQI_honored_master_2 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_2"}

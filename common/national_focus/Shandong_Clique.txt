@@ -72,7 +72,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SQI_Song_Zheyuan
-			focus = SQI_Zhang_Zongchang
+			focus = SQI_jin_yun_e_da_huo_quan_sheng
 		}
 
 		available_if_capitulated = yes
@@ -242,7 +242,6 @@ focus_tree = {
 				is_puppet = no
 			}
 		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -336,7 +335,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SQI_Zhang_Tianran
-			focus = SQI_Zhang_Zongchang
+			focus = SQI_jin_yun_e_da_huo_quan_sheng
 		}
 
 		available_if_capitulated = yes
@@ -398,7 +397,7 @@ focus_tree = {
 
 #靳云鹗
 	focus = {
-		id = SQI_Zhang_Zongchang
+		id = SQI_jin_yun_e_da_huo_quan_sheng
 		icon = GFX_goal_SQI_jin_yun_e
 		relative_position_id = SQI_Two_Zhangs_Enter
 		x = 4
@@ -422,7 +421,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SQI_Zhang_Zongchang"
+			log = "[GetDateText]: [Root.GetName]: Focus SQI_jin_yun_e_da_huo_quan_sheng"
 			add_ideas = SQI_flee_to_zongchang
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
@@ -430,13 +429,13 @@ focus_tree = {
 
 	focus = {
 		id = SQI_Appointing_Lu_Zhongyi_Leader_Of_The_Yiguandao
-		icon = GFX_goal_generic_controlled_board	
+		icon = GFX_goal_GUA_Great_Leader_Constitution	
 		relative_position_id = SQI_Two_Zhangs_Enter		
 		x = 4
 		y = 2
 		cost = 3
 
-		prerequisite = { focus = SQI_Zhang_Zongchang }
+		prerequisite = { focus = SQI_jin_yun_e_da_huo_quan_sheng }
 		available = {
 			SQI = {
 				is_puppet = no
@@ -504,12 +503,13 @@ focus_tree = {
 				ideology = national_populist
 				popularity = -0.10
 			}
+			custom_effect_tooltip = tooltip_white_line
 			add_timed_idea = {
 				idea = SQI_yi_guan_dao_de_cai_fu
 				days = 180
 			}
 		}
-		
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
@@ -532,14 +532,21 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_Assassinating_Bureaucrats_Threatening_The_Opium_Trade"
 			add_popularity = {
 				ideology = national_populist
-				popularity = -0.20
+				popularity = -0.10
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.05
 			}
 			increase_ruling_party_popularity_by_5 = yes
 			add_stability = 0.05
-			# kill ministers
 			swap_ideas = {
 				remove_idea = SQI_Rampant_drug_trade
 				add_idea = SQI_controlled_drug_trade
+			}
+			country_event = {
+				id = SQI.7
+				days = 1
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
@@ -560,6 +567,7 @@ focus_tree = {
 				is_puppet = no
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_qing_hui_kong_meng"
 			create_country_leader = {
@@ -569,31 +577,39 @@ focus_tree = {
 				expire = "1.1.1"
 				ideology = neo_confucianism_subtype
 			}
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = SQI_xin_ru_xue
 		}
 	}
 
 	focus = {
 		id = SQI_chong_jian_bao_jia_zhi
-		icon = GFX_goal_COS_War
+		icon = GFX_goal_NFA_protective_inequality
 		relative_position_id = SQI_Two_Zhangs_Enter	
 		x = 3
 		y = 4
 		cost = 3
 
-		prerequisite = { focus = SQI_Clearing_Out_Mount_Tai_Of_The_Yiguandao }
-		prerequisite = { focus = SQI_qing_hui_kong_meng }
+		prerequisite = { 
+			focus = SQI_Clearing_Out_Mount_Tai_Of_The_Yiguandao 
+		}
+		prerequisite = { 
+			focus = SQI_qing_hui_kong_meng 
+		}
 		available_if_capitulated = yes
 		available = {
 			SQI = {
 				is_puppet = no
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chong_jian_bao_jia_zhi"
 			add_stability = 0.05
-			add_ideas = FNG_Baojia_System
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = SQI_Baojia_System
 		}
+		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {
@@ -612,6 +628,7 @@ focus_tree = {
 				is_puppet = no
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_pei_bei_zhong_huo_li"
 			if = {
@@ -630,7 +647,18 @@ focus_tree = {
 				type = artillery_equipment
 				amount = 100
 			}
-			add_ideas = SQI_bai_e_jun
+			if = {
+				limit = { 
+					has_idea = SQI_bai_e_jun
+				}
+				swap_ideas = {
+					remove_idea = SQI_bai_e_jun
+					add_idea = SQI_bai_e_jun2
+				}
+			}
+			else = {
+				add_ideas = SQI_bai_e_jun
+			}
 		}
 	}
 
@@ -5115,7 +5143,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_kuo_zhang_bai_e_jun"
-			add_ideas = SQI_bai_e_jun
+			if = {
+				limit = { 
+					has_idea = SQI_bai_e_jun
+				}
+				swap_ideas = {
+					remove_idea = SQI_bai_e_jun
+					add_idea = SQI_bai_e_jun2
+				}
+			}
+			else = {
+				add_ideas = SQI_bai_e_jun
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}	
