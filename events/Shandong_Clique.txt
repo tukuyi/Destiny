@@ -219,6 +219,29 @@ country_event = {#青岛的洪清帮
 	}
 }
 
+country_event = {#耶稣家庭
+	id = SQI.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.10" }
+	title = SQI.10.t
+	desc = SQI.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.9.a
+		add_stability = 0.02
+		if = {
+			limit = { 
+				has_active_mission = SQI_agricultural_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = SQI_agricultural_reform_mission_timer
+				days = -10
+			}
+		}
+	}
+}
 
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2

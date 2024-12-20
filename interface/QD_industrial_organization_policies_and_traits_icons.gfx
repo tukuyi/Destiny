@@ -4,8 +4,20 @@ spriteTypes = {
 		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/production_output_icon.png"
 	}
 	spriteType = {
+		name = "GFX_KR_generic_mio_trait_icon_manpower"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/manpower_icon.png"
+	}
+	spriteType = {
+		name = "GFX_KR_generic_mio_trait_icon_funds"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/funds_icon.png"
+	}
+	spriteType = {
 		name = "GFX_icon_jinan_arsenal"
 		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/jinan_arsenal.png"
+	}
+	spriteType = {
+		name = "GFX_icon_jinling_arsenal"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/jinling_arsenal.png"
 	}
 	spriteType = {
 		name = "GFX_icon_FNG_ji_che_gong_shi"
