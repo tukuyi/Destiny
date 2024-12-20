@@ -919,22 +919,8 @@ ideas = {
 				}
 			}
 		#鲍里斯
-			SQI_fan_qing_xuan_chuan = {#反清宣传
-				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_fan_qing_xuan_chuan"}
-				picture = LEC_bainian_hate
-				allowed = { always = no }
-				modifier = {
-					social_conservative_drift = -0.02
-				}
-				targeted_modifier = {
-					tag = QIE
-					attack_bonus_against = 0.1
-					defense_bonus_against = 0.1   
-				}
-			}
 			SQI_ge_sa_ke = {#哥萨克的呼唤
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_ge_sa_ke"}
-
 				picture = DKB_cossack_state
 				allowed = { always = no }
 				modifier = {
@@ -945,7 +931,6 @@ ideas = {
 			}
 			SQI_wu_guan = {#武官政府
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_wu_guan"}
-
 				picture = RUS_general_school
 				allowed = { always = no }
 				modifier = {
@@ -956,7 +941,6 @@ ideas = {
 			}
 			SQI_wu_guan2 = {#武官政府
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_wu_guan2"}
-
 				picture = RUS_general_school
 				allowed = { always = no }
 				modifier = {
@@ -969,7 +953,6 @@ ideas = {
 			}
 			SQI_e_yi = {#白人奴隶
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_e_yi"}
-
 				picture = slave_economy
 				allowed = { always = no }
 				modifier = {
@@ -979,7 +962,6 @@ ideas = {
 			}
 			SQI_bai_e_jun = {#白俄军
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_bai_e_jun"}
-
 				picture = YAK_yytachy_idea
 				allowed = { always = no }
 				modifier = {
@@ -998,7 +980,6 @@ ideas = {
 
 			SQI_bai_e_jun2 = {#白俄军
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_bai_e_jun2"}
-
 				picture = slave_economy
 				allowed = { always = no }
 				modifier = {
@@ -1018,7 +999,6 @@ ideas = {
 
 			SQI_guang_fan_de_di_kang = {#广泛的抵抗
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_guang_fan_de_di_kang"}
-
 				picture = MAF_disgruntled_natives
 				allowed = { always = no }
 				modifier = {
@@ -1285,18 +1265,32 @@ ideas = {
 					cic_to_target_factor = 0.10
 				}
 			}
+			SQI_fan_qing_xuan_chuan = {#反清宣传
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_fan_qing_xuan_chuan"}
+				picture = LEC_bainian_hate
+				allowed = { always = no }
+				modifier = {
+					social_conservative_drift = -0.02
+				}
+				targeted_modifier = {
+					tag = QIE
+					attack_bonus_against = 0.1
+					defense_bonus_against = 0.1   
+				}
+			}
 			SQI_fan_qing_xuan_chuan2 = {#反清宣传
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_fan_qing_xuan_chuan2"}
 				picture = LEC_bainian_hate
 				allowed = { always = no }
 				modifier = {
+					supply_factor = 0.04
 					army_org_factor = 0.04
 					war_stability_factor = 0.10
 				}
 				targeted_modifier = {
 					tag = QIE
-					attack_bonus_against = 0.075
-					defense_bonus_against = 0.075   
+					attack_bonus_against = 0.10
+					defense_bonus_against = 0.10   
 				}
 			}
 			SQI_cai_zheng_zhi_chi= {#财政支持
@@ -1324,12 +1318,12 @@ ideas = {
 				allowed = { always = no }
 				picture = CAN_soccred_press_controls_idea
 				modifier = {
+					totalist_drift = -0.03
 					stability_factor = 0.05
 					stability_weekly = 0.005
 					syndicalist_drift = -0.02
 					political_power_cost = 0.05
 					paternal_autocrat_drift = 0.03
-					radical_socialist_drift = -0.02
 					authoritarian_democrat_drift = 0.03
 				}
 			}		

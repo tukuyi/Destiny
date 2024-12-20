@@ -1875,218 +1875,6 @@ war_measures = {
 	}
 }
 
-SQI_ying_xiang = {#山东的影响力博弈
-	SQI_cong_zhi_xi_huo_qu_huo_qi = {#大清
-		icon = generic_prepare_civil_war
-
-		visible = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		available = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = LEP_CP_25
-		
-		days_remove = 30
-		days_re_enable = 30
-
-		modifier = {
-			social_conservative_drift = 0.02
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_cong_zhi_xi_huo_qu_huo_qi"
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.03
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 500
-				producer = QIE
-			}
-			hidden_effect = {
-				QIE = {
-					add_equipment_to_stockpile = {
-						type = infantry_equipment_0
-						amount = -500
-						producer = QIE
-					}
-				}
-			}
-		}
-	}
-
-	SQI_cong_ri_ben_huo_qu_huo_qi = {#日本
-		icon = generic_prepare_civil_war
-
-		visible = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		available = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = LEP_CP_25
-		
-		days_remove = 30
-		days_re_enable = 30
-
-		modifier = {
-			national_populist_drift = 0.02
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_cong_ri_ben_huo_qu_huo_qi"
-			add_popularity = {
-				ideology = national_populist
-				popularity = 0.05
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 700
-				producer = JAP
-			}
-			hidden_effect = {
-				JAP = {
-					add_equipment_to_stockpile = {
-						type = infantry_equipment_0
-						amount = -700
-						producer = QIE
-					}
-				}
-			}
-		}
-	}
-
-	SQI_cong_de_guo_huo_qu_huo_qi = {#德国
-		icon = generic_prepare_civil_war
-
-		visible = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		available = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		custom_cost_trigger = {
-			command_power > 25
-		}
-		custom_cost_text = LEP_CP_25
-		
-		days_remove = 30
-		days_re_enable = 30
-
-		modifier = {
-			market_liberal_drift = 0.05
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_cong_de_guo_huo_qu_huo_qi"
-			add_popularity = {
-				ideology = market_liberal
-				popularity = 0.05
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 700
-				producer = GER
-			}
-			hidden_effect = {
-				GER = {
-					add_equipment_to_stockpile = {
-						type = infantry_equipment_0
-						amount = -700
-						producer = GER
-					}
-				}
-			}
-		}
-	}
-
-	SQI_cong_de_guo_shu_mai_qing_dao = {#德国
-		icon = give_cash
-
-		visible = {
-			has_country_flag = SQI_baie_jue_qi
-			market_liberal > 0.45
-		}
-		available = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		cost = 100
-		days_remove = 30
-		days_re_enable = 30
-
-		modifier = {
-			political_power_cost = -0.20
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_cong_de_guo_shu_mai_qing_dao"
-			transfer_state = 744
-			hidden_effect = {
-				GER = {
-					add_political_power = 100
-				}
-			}
-		}
-	}
-
-	SQI_cong_de_guo_shu_mai_wei_hai_wei = {#德国
-		icon = give_cash
-
-		visible = {
-			has_country_flag = SQI_baie_jue_qi
-			market_liberal > 0.45
-		}
-		available = {
-			has_country_flag = SQI_baie_jue_qi
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		cost = 100
-		days_remove = 30
-		days_re_enable = 30
-
-		modifier = {
-			political_power_cost = -0.20
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_cong_de_guo_shu_mai_wei_hai_wei"
-			transfer_state = 996
-			hidden_effect = {
-				GER = {
-					add_political_power = 100
-				}
-			}
-		}
-	}
-}
-
 SQI_di_guo_de_shi_wu = {#帝国的事务
 	SQI_MON = {
 		icon = generic_flags
@@ -2178,288 +1966,291 @@ SQI_di_guo_de_shi_wu = {#帝国的事务
 	}
 }
 
-SQI_chu_li_nong_chun_wen_ti = {#处理农村问题
-	SQI_jian_zu = {#推行二五减租
-		icon = cash_flow
+SQI_chu_li_nong_chun_wen_ti = {#皖系的糟糕声望
+	SQI_guo_ming_dang_chan_cun = {#国民党残存
+		icon = GFX_decision_lkmt_flag
 
+		allowed = {
+			always = no
+		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Farmer_vote
-					value = 50
-					compare = less_than
-				}
+			NOT = {
+				has_completed_focus = SQI_jiao_mie_di_xia_dang
 			}
 		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
+		cancel_trigger = {
+			NOT = {
+				has_completed_focus = SQI_jiao_mie_di_xia_dang
+			}
 		}
 
-		cost = 10
-		days_remove = 15
-		days_re_enable = 20
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 30
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_jian_zu"
-			custom_effect_tooltip = SQI_farmer_up_Landlord_down
-			add_to_variable = {
-				SQI_Farmer_vote = 5
-			}
-			add_to_variable = {
-				SQI_Landlord_vote = -4
-			}
-			SQI_agriculture_modifer = yes			
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_guo_ming_dang_chan_cun"
+			
 		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_jian_zu"
 
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_guo_ming_dang_chan_cun"
+			add_stability = -0.04
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+			hidden_effect = {
+				activate_mission = SQI_guo_ming_dang_chan_cun
+			}
 		}
 	}
-	SQI_nong_ye_shui = {#降低农业税
-		icon = give_cash
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Landlord_vote
-					value = 50
-					compare = less_than
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
-		}
-
-		cost = 50
-		days_remove = 20
-		days_re_enable = 20
-
-		modifier = {
-			political_power_gain = -0.10
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_nong_ye_shui"
-			custom_effect_tooltip = SQI_Landlord_up
-			add_to_variable = {
-				SQI_Landlord_vote = 4
-			}
-			SQI_agriculture_modifer = yes			
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_nong_ye_shui"
-
-		}
-	}
-	SQI_bu_tie_di_zhu = {#补贴地主
-		icon = give_cash
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Landlord_vote
-					value = 50
-					compare = less_than
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
-		}
-
-		cost = 50
-		days_remove = 20
-		days_re_enable = 20
-
-		modifier = {
-			political_power_gain = -0.10
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_bu_tie_di_zhu"
-			custom_effect_tooltip = SQI_Landlord_up
-			add_to_variable = {
-				SQI_Landlord_vote = 4
-			}
-			SQI_agriculture_modifer = yes			
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_bu_tie_di_zhu"
-
-		}
-	}
-	SQI_jiu_ji_po_chan_nong_ming = {#救济破产农民
-		icon = give_cash
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Farmer_vote
-					value = 50
-					compare = less_than
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
-		}
-
-		cost = 50
-		days_remove = 20
-		days_re_enable = 20
-
-		modifier = {
-			political_power_gain = -0.10
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_jiu_ji_po_chan_nong_ming"
-			custom_effect_tooltip = SQI_farmer_up
-			add_to_variable = {
-				SQI_Farmer_vote = 4
-			}
-			SQI_agriculture_modifer = yes			
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_jiu_ji_po_chan_nong_ming"
-
-		}
-	}
-	SQI_mo_shou_bu_he_zuo = {#没收不合作土地
+	SQI_shan_dong_fan_zu_jie = {#煽动反租界情绪
 		icon = GFX_decision_cat_generic_purge
-
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Landlord_vote
-					value = -50
-					compare = greater_than
-				}
-				check_variable = { 
-					var = SQI_Farmer_vote
-					value = 50
-					compare = less_than
+				tooltip = SQI_can_up_wan
+				check_variable = {
+					SQI_wan_xi_var < 60
 				}
 			}
 		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
+
+		cost = 0
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
 		}
 
-		cost = 10
-		days_remove = 15
-		days_re_enable = 20
-		modifier = {
-			stability_weekly = -0.0050
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 29
+			}
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 10
+				check_variable = {
+					SQI_wan_xi_var < 60
+				}
+			}
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_mo_shou_bu_he_zuo"
-			custom_effect_tooltip = SQI_farmer_up_Landlord_down
-			add_to_variable = {
-				SQI_Farmer_vote = 2
-			}
-			add_to_variable = {
-				SQI_Landlord_vote = -4
-			}
-			SQI_agriculture_modifer = yes			
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_guo_xun_qiu_dai_kuan"
+			increase_ruling_party_popularity_by_3 = yes
 		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_mo_shou_bu_he_zuo"
 
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xiang_de_guo_xun_qiu_dai_kuan"
+			SQI_wan_investment_small = yes
 		}
 	}
-	SQI_xiang_shen_zhi_chun = {#乡绅治村
-		icon = hand_out
-
+	SQI_di_hui_zhi_xi = {#诋毁直系
+		icon = trumpet
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Farmer_vote
-					value = -50
-					compare = greater_than
-				}
-				check_variable = { 
-					var = SQI_Landlord_vote
-					value = 50
-					compare = less_than
+			QIE = {
+				exists = yes
+				NOT = {
+					has_completed_focus = QIE_unrest
 				}
 			}
 		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
+
+		cost = 20
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
 		}
 
-		cost = 10
-		days_remove = 15
-		days_re_enable = 20
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 29
+			}
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 10
+				check_variable = {
+					SQI_wan_xi_var < 60
+				}
+			}
+		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_xiang_shen_zhi_chun"
-			custom_effect_tooltip = SQI_Landlord_up_farmer_down
-			add_to_variable = {
-				SQI_Farmer_vote = -4
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_di_hui_zhi_xi"
+			QIE = {
+				add_opinion_modifier = {
+					target = SQI
+					modifier = KR_disapproves_of_govt
+				}
 			}
-			add_to_variable = {
-				SQI_Landlord_vote = 5
-			}
-			SQI_agriculture_modifer = yes			
 		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_xiang_shen_zhi_chun"
 
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_di_hui_zhi_xi"
+			SQI_wan_investment_small = yes
 		}
 	}
-	SQI_wei_hu_xiang_chun_zhi_an = {#维护乡村治安
-		icon = shield
-
+	SQI_peng_ji_di_zhi = {#抨击帝政
+		icon = trumpet
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = SQI_can_do
-				check_variable = { 
-					var = SQI_Landlord_vote
-					value = 50
-					compare = less_than
-				}
-				check_variable = { 
-					var = SQI_Farmer_vote
-					value = 50
-					compare = less_than
+			QIE = {
+				exists = yes
+				NOT = {
+					has_cosmetic_tag = QIE_ZHL
 				}
 			}
 		}
-		visible = {
-			has_completed_focus = SQI_zheng_liu_xiang_chun_wei_ji
+
+		cost = 20
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
 		}
 
-		cost = 70
-		days_remove = 10
-		days_re_enable = 15
-		modifier = {
-			political_power_cost = -0.10
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 29
+			}
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 10
+				check_variable = {
+					SQI_wan_xi_var < 60
+				}
+			}
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_wei_hu_xiang_chun_zhi_an"
-			custom_effect_tooltip = SQI_Landlord_up_farmer_up
-			add_to_variable = {
-				SQI_Farmer_vote = 5
-			}
-			add_to_variable = {
-				SQI_Landlord_vote = 5
-			}
-			SQI_agriculture_modifer = yes			
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_peng_ji_di_zhi"
 		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision SQI_wei_hu_xiang_chun_zhi_an"
 
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_peng_ji_di_zhi"
+			SQI_wan_investment_small = yes
+		}
+	}
+	SQI_xuan_yang_xian_zheng = {#宣扬宪政
+		icon = decision_election
+		available = {
+			has_completed_focus = SQI_zong_zhu_yi_hui
+		}
+
+		cost = 20
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 29
+			}
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 10
+				check_variable = {
+					SQI_wan_xi_var < 60
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xuan_yang_xian_zheng"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_xuan_yang_xian_zheng"
+			SQI_wan_investment_medium = yes
+		}
+	}
+	SQI_yan_lun_guan_zhi = {#言论管制
+		icon = hand_grab
+		available = {
+			has_completed_focus = SQI_zong_zhu_yi_hui
+		}
+
+		cost = 30
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 29
+			}
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 10
+				check_variable = {
+					SQI_wan_xi_var < 60
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_yan_lun_guan_zhi"
+			SQI_wan_spend_small = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_yan_lun_guan_zhi"
+			SQI_wan_investment_medium = yes
 		}
 	}
 }
@@ -2501,6 +2292,45 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 					activate_mission = SQI_jin_kou_de_guo_shang_ping_mission
 				}
 				SQI_GER_spend_all_time = yes
+			}
+			else_if = {
+				limit = { 
+					check_variable = { SQI_gea_influence_variable > 95 }
+				}
+				activate_mission = SQI_de_yi_zhi_de_da_shou_mission
+			}
+		}
+	}
+	SQI_de_yi_zhi_de_da_shou_mission = {#德意志完全掌握
+		icon = GFX_decision_GEA_colonial_department
+
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				SQI_GER_influence_active = no
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				SQI_GER_influence_active = no
+			}
+		}
+
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_yi_zhi_de_da_shou_mission"
+			
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_yi_zhi_de_da_shou_mission"
+			GER = {
+				puppet = ROOT
 			}
 		}
 	}
@@ -3012,6 +2842,55 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			log = "[GetDateText]: [Root.GetName]: Decision SQI_gu_li_guo_huo_not"
 			add_stability = -0.04
 			add_political_power = 70
+		}
+	}
+	SQI_su_mai_qing_dao = {#赎买青岛
+		icon = give_cash
+		available = {
+			check_variable = { SQI_gea_influence_variable > 40 }
+		}
+		visible = {
+			owns_state = 613
+		}
+
+		cost = 0
+		priority = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_su_mai_qing_dao"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SQI_su_mai_qing_dao"
+			GER = {
+				country_event = {
+					id = sqiwan.4
+					days = 5
+				}
+			}
 		}
 	}
 

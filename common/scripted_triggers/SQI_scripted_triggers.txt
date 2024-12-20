@@ -4,6 +4,7 @@ SQI_GER_influence_active = {
 		has_country_flag = Shandong_not_big
 		NOT = {
 			is_puppet_of = QIE
+			is_puppet_of = GER
 		}
 		NOT = {
 			owns_state = 608

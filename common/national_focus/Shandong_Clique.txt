@@ -540,6 +540,7 @@ focus_tree = {
 			}
 			increase_ruling_party_popularity_by_5 = yes
 			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = SQI_Rampant_drug_trade
 				add_idea = SQI_controlled_drug_trade
@@ -679,6 +680,18 @@ focus_tree = {
 				remove_idea = SQI_flee_to_zongchang
 				add_idea = SQI_flee_to_zongchang2
 			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					NOT = {
+						owns_state = 613
+					}
+				}
+				create_wargoal = {
+					target = var:613.owner
+					type = annex_everything
+				}
+			}
 		}
 	}
 
@@ -727,7 +740,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_mai_xiang_gong_he"
-			set_cosmetic_tag = ROC
+			# set_cosmetic_tag = ROC
 			SQI_agriculture = yes
 			QIE = {
 				add_opinion_modifier = {
@@ -746,6 +759,12 @@ focus_tree = {
 				country_event = {
 					id = sqiwan.3
 					days = 2
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = sqiwan.12
+					days = 20
 				}
 			}
 		}
@@ -791,11 +810,15 @@ focus_tree = {
 				long_name = SQI_paternal_autocrat_party_wan2_long
 				name =  SQI_paternal_autocrat_party_wan2
 			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SQI_decisions_unlocked
 			country_event = {
 				id = sqiwan.2
 				days = 2
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = SQI_jiao_mie_di_xia_dang
@@ -812,6 +835,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jiao_mie_di_xia_dang"
 			add_ideas = SQI_shou_jin_yan_lu
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = SQI_decisions_unlocked
+			country_event = {
+				id = sqiwan.5
+				days = 2
+			}
 		}
 	}
 	focus = {
@@ -828,12 +857,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zhu_jie_wen_ti"
-			GER = {
-				country_event = {
-					id = sqiwan.4
-					days = 5
-				}
-			}
+			add_ideas = free_trade
+			custom_effect_tooltip = tooltip_white_line
+			SQI_wan_investment_medium = yes
+			SQI_GER_investment_medium  = yes
 		}
 	}
 	focus = {
@@ -872,6 +899,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_shou_bian_bu_dui"
 			army_experience = 40.0
 			add_command_power = 40.0
+			custom_effect_tooltip = tooltip_white_line
 			create_corps_commander = {
 				name = "彭雪枫"
 				desc = "POLITICS_ANQ_PENG_XUEFENG_ARMY_DESC"
@@ -913,6 +941,23 @@ focus_tree = {
 				planning_skill = 1
 				logistics_skill = 3
 			}
+			create_corps_commander = {
+				name = "石友三"
+				desc = "POLITICS_LEP_SHI_YOUSAN_DESC"
+				portrait_path = "gfx/leaders/LEP/Portrait_LEP_Shi_Yousan.png"
+				traits = {
+					politically_connected
+					trait_reckless
+					substance_abuser
+					hidden_sympathies
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			custom_effect_tooltip = tooltip_white_line
 			create_navy_leader = {
 				name = "曾以鼎"
 				desc = "POLITICS_zeng_yi_ding_DESC"
@@ -1012,6 +1057,10 @@ focus_tree = {
 				name =  SQI_market_liberal_party_wan
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 	}
 	focus = {
 		id = SQI_wan_jiu_po_chan_ju_mian
@@ -1047,10 +1096,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zheng_liu_xiang_chun_wei_ji"
-			add_political_power = 40
 			add_stability = 0.05
-			custom_effect_tooltip = SQI_close_tooltip
+			add_political_power = 40
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.05
+			}
+			SQI_wan_investment_small = yes
 		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = SQI_zu_zhi_fan_qing_xuan_chuan

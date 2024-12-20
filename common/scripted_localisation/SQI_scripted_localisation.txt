@@ -50,6 +50,16 @@ defined_text = {
 		}
 		localization_key = "SQIhuge"
 	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SQI_gea_influence_variable
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "SQIall"
+	}
 }
 defined_text = {
 	name = SQIGetleadername
@@ -75,19 +85,66 @@ defined_text = {
 		localization_key = "SQIjindashuai"
 	}
 }	
-
-define_text = {
-	name = RUS_MIO_Funds_Requirement_R_and_D
+defined_text = {
+	name = Getshengming
 	text = {
 		trigger = {
-			check_variable = { Funds_Difference > weekly_funds_requirement }
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 10
+				compare = less_than_or_equals
+			} 
 		}
-		localization_key = RUS_MIO_Research_Gain_R_and_D_positive_tt
+		localization_key = "SQIwansmall"
 	}
 	text = {
 		trigger = {
-			check_variable = { Funds_Difference < weekly_funds_requirement }
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 30
+				compare = less_than_or_equals
+			} 
 		}
-		localization_key = RUS_MIO_Research_Gain_R_and_D_negative_tt
+		localization_key = "SQIwanlittle"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 50
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SQIwanbig"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 70
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SQIwanmore"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 90
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "SQIwanhuge"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SQI_wan_xi_var
+				value = 90
+				compare = greater_than
+			}
+		}
+		localization_key = "SQIwanall"
 	}
 }

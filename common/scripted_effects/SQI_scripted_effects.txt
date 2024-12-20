@@ -1,58 +1,68 @@
-SQI_agriculture = {#给农村问题定值
-	add_dynamic_modifier = {
-		modifier = SQI_agriculture_modifier
+#皖系声望	
+	SQI_agriculture = {#给农村问题定值
+		add_dynamic_modifier = {
+			modifier = SQI_agriculture_modifier
+		}
+		hidden_effect = { add_ideas = SQI_agriculture_idea }
+
+		set_variable = { SQI_wan_xi_var = 50 }
+
+		set_temp_variable = { SQI_gea_influence_variable_wan = SQI_gea_influence_variable }
+		divide_temp_variable = { SQI_gea_influence_variable_wan = 2 }
+		add_to_variable = { SQI_wan_xi_var = SQI_gea_influence_variable_wan }
+		
+		activate_mission = SQI_guo_ming_dang_chan_cun
+		SQI_agriculture_clamp = yes
 	}
-	hidden_effect = { add_ideas = SQI_agriculture_idea }
-
-	set_variable = { SQI_Farmer_vote = -40 }#农民支持度
-	set_variable = { SQI_Landlord_vote = 20 }#地主支持度
-
-	set_variable = { HNN_illiteracy_imrovement_rate = 0 }
-	SQI_agriculture_modifer = yes
-}
-
-SQI_agriculture_modifer = {#通过赋值变动来给效果变化
-	set_variable = { SQI_Farmer_vote_var = SQI_Farmer_vote }
-	set_variable = { SQI_Landlord_vote_var = SQI_Landlord_vote }
-
-	set_temp_variable = { SQI_Farmer_vote_factor = SQI_Farmer_vote_var }#-40
-	set_temp_variable = { SQI_Landlord_vote_factor = SQI_Landlord_vote_var }#20
-	set_temp_variable = { SQI_plus_all = SQI_Farmer_vote_factor }
-	set_temp_variable = { SQI_plus_all = SQI_Landlord_vote_var }
-	add_to_variable = { SQI_plus_all = SQI_Landlord_vote_var }#-20
-
-	divide_temp_variable = { SQI_Farmer_vote_factor = 200 }
-	divide_temp_variable = { SQI_Landlord_vote_factor = 200 }
-	
-	set_variable = { SQI.SQI_agriculture_stability = SQI_Farmer_vote_factor }#-0.20
-	set_variable = { SQI.SQI_agriculture_war_support = SQI_Farmer_vote_factor }#-0.20
-	
-	divide_temp_variable = { SQI_Landlord_vote_factor = 2 }
-	set_variable = { SQI.SQI_agriculture_political_power_factor = SQI_Landlord_vote_factor }#0.10
-
-	divide_temp_variable = { SQI_plus_all = 200 }#-0.1
-	set_variable = { SQI.SQI_agriculture_production_max_factor = SQI_plus_all }
-	set_variable = { SQI.SQI_agriculture_production_gain_factor = SQI_plus_all }
-
-	clear_variable = SQI_Farmer_vote_var
-	clear_variable = SQI_Landlord_vote_var
-
-	force_update_dynamic_modifier = yes
-	SQI_agriculture_clamp = yes
-}
-
-SQI_agriculture_clamp = {#确定上下限
-	clamp_variable = {
-		var = SQI_Farmer_vote
-		min = -50
-		max = 50
+	SQI_agriculture_clamp = {#确定上下限
+		clamp_variable = {
+			var = SQI.SQI_wan_xi_var
+			min = 0
+			max = 100
+		}
+		SQI_agriculture_modifer = yes
 	}
-	clamp_variable = {
-		var = SQI_Landlord_vote
-		min = -50
-		max = 50
+	SQI_agriculture_modifer = {#通过赋值变动来给效果变化
+		set_variable = { SQI_wan_xi_var_temp = SQI_wan_xi_var }
+
+		add_to_variable = { SQI_wan_xi_var_temp = -50 }
+		divide_temp_variable = { SQI_wan_xi_var_temp = 200 }
+		
+		set_variable = { SQI.SQI_agriculture_stability = SQI_wan_xi_var_temp }#-0.25
+		set_variable = { SQI.SQI_agriculture_war_support = SQI_wan_xi_var_temp }#-0.25
+		
+		divide_temp_variable = { SQI_wan_xi_var_temp = 2 }
+		set_variable = { SQI.SQI_agriculture_political_power_factor = SQI_wan_xi_var_temp }#-0.125
+		set_variable = { SQI.SQI_agriculture_production_max_factor = SQI_wan_xi_var_temp }
+		set_variable = { SQI.SQI_agriculture_production_gain_factor = SQI_wan_xi_var_temp }
+
+		clear_variable = SQI_wan_xi_var_temp
+
+		force_update_dynamic_modifier = yes
 	}
-}
+
+	SQI_wan_investment_small = {
+		add_to_variable = { SQI_wan_xi_var = 5 }
+		hidden_effect = {
+			SQI_agriculture_clamp = yes
+		}
+		custom_effect_tooltip = SQI_wan_investment_small_tooltip
+	}
+	SQI_wan_investment_medium = {
+		add_to_variable = { SQI_wan_xi_var = 10 }
+		hidden_effect = {
+			SQI_agriculture_clamp = yes
+		}
+		custom_effect_tooltip = SQI_wan_investment_medium_tooltip
+	}
+
+	SQI_wan_spend_small = {
+		set_temp_variable = { SQI_wan_xi_var = -5 }
+		hidden_effect = {
+			SQI_agriculture_clamp = yes
+		}
+		custom_effect_tooltip = SQI_wan_spend_small_tooltip
+	}
 
 #德国的影响力
 	SQI_econ_update = {

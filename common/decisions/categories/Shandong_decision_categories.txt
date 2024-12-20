@@ -53,23 +53,6 @@ SQI_raise_army = {#扩军
 		has_country_flag = SQI_Tianran_beat_Zongchang
 	}
 }
-SQI_ying_xiang = {#山东的影响力
-	icon = GFX_decision_category_military_operation
-	allowed = { original_tag = SQI }
-	visible = {
-		has_country_flag = SQI_baie_jue_qi
-		has_completed_focus = SQI_Two_Zhangs_Enter
-		NOT = { has_country_flag = SQI_puppet }
-		NOT = {
-			OR = {
-				has_completed_focus = SQI_kua_guo_huang_he
-				SQI = {
-					has_war_with = QIE
-				}
-			}
-		}
-	}
-}
 SQI_di_guo_de_shi_wu = {#帝国的事务
 	icon = GFX_decision_category_military_operation
 	allowed = { original_tag = SQI }
@@ -78,8 +61,9 @@ SQI_di_guo_de_shi_wu = {#帝国的事务
 		has_completed_focus = SQI_zui_hou_de_sheng_Li
 	}
 }
-SQI_chu_li_nong_chun_wen_ti = {#处理农村问题
+SQI_chu_li_nong_chun_wen_ti = {#皖系的糟糕声望
 	icon = GFX_decision_agriculture_grain
+	picture = GFX_decision_category_chinese_mass_exodus
 	priority = 60
 
 	allowed = {

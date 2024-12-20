@@ -53,6 +53,16 @@ country_event = {#青岛
 	option = {
 		name = SQI.1.a
 		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = SQI.8
+				days = 5
+			}
+			country_event = {
+				id = SQI.9
+				days = 10
+			}
+		}
 	}
 }
 
@@ -161,6 +171,54 @@ country_event = {#与刘子山合作
 		SQI_GER_spend_small = yes
 	}
 }
+
+country_event = {#万国体育会
+	id = SQI.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.8" }
+	title = SQI.8.t
+	desc = SQI.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.8.a
+		trigger = {
+			is_ai = no
+		}
+		random_list = {
+			50 = {
+				add_political_power = -20
+			}
+			50 = {
+				add_political_power = 50
+			}
+		}
+	}
+
+	option = {
+		name = SQI.8.b
+	}
+}
+
+country_event = {#青岛的洪清帮
+	id = SQI.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.9" }
+	title = SQI.9.t
+	desc = SQI.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.9.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.02
+		}
+	}
+}
+
 
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2
@@ -2684,9 +2742,6 @@ country_event = {#山东的新主人
 				days = 3
 			}
 		}
-		hidden_effect = {
-
-		}
 	}
 
 	option = {#拒绝
@@ -2699,9 +2754,6 @@ country_event = {#山东的新主人
 				id = sqiwr.20
 				days = 3
 			}
-		}
-		hidden_effect = {
-			
 		}
 	}
 }
@@ -4253,7 +4305,9 @@ country_event = {#南京之劫
 	}
 }
 
-#皖系
+########################################
+########-       皖系          -#########
+########################################
 country_event = {#靳云鹗的野心
 	id = sqiwan.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.1" }
@@ -4373,6 +4427,13 @@ country_event = {#靳云鹗的野心
 			planning_skill = 2
 			logistics_skill = 3
 		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = radical_socialist
+				long_name = SQI_radical_socialist_party_wan_long
+				name =  SQI_radical_socialist_party_wan
+			}
+		}
 	}
 }
 
@@ -4465,7 +4526,7 @@ country_event = {#再谈山东问题
 	}
 }
 
-country_event = {#恢复袁世凯名誉
+country_event = {#与国民党握手言和
 	id = sqiwan.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.5" }
 	title = sqiwan.5.t
@@ -4476,7 +4537,20 @@ country_event = {#恢复袁世凯名誉
 
 	option = {
 		name = sqiwan.5.a
-		add_political_power = 100 
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.01
+		}
+		create_country_leader = {
+			name = "汪精卫"
+			picture = "gfx/leaders/SQI/Portrait_Shandong_Fu_Sinian.png"
+			expire = "1.1.1"
+			ideology = radsoc_tridemism_subtype
+		}
 	}
 }
 
@@ -4686,5 +4760,158 @@ country_event = {#奉天人的来信
 			amount = 1500
 			producer = FNG
 		} 
+	}
+}
+
+country_event = {#渔工案
+	id = sqiwan.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.12" }
+	title = sqiwan.12.t
+	desc = sqiwan.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = sqiwan.13
+				days = 20
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.12.a
+		ai_chance = {
+			base = 10
+		}
+		SQI_wan_investment_small = yes
+		GER = {
+			add_opinion_modifier = {
+				target = SQI
+				modifier = KR_disapproves_of_govt
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.12.a
+		ai_chance = {
+			base = 20
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = -0.05
+		}
+		SQI_wan_spend_small = yes
+		SQI_GER_investment_small = yes
+	}
+}
+
+country_event = {#德国水兵殴打车夫
+	id = sqiwan.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.13" }
+	title = sqiwan.12.t
+	desc = sqiwan.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = sqiwan.15
+				days = 20
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.13.a
+		ai_chance = {
+			base = 10
+		}
+		SQI_wan_investment_small = yes
+		GER = {
+			add_opinion_modifier = {
+				target = SQI
+				modifier = KR_disapproves_of_govt
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.13.a
+		ai_chance = {
+			base = 20
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = -0.05
+		}
+		SQI_wan_spend_small = yes
+		SQI_GER_investment_small = yes
+	}
+}
+
+country_event = {#青岛罢工
+	id = sqiwan.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.14" }
+	title = sqiwan.14.t
+	desc = sqiwan.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.14.a
+		ai_chance = {
+			base = 10
+		}
+		SQI_wan_investment_small = yes
+		GER = {
+			add_opinion_modifier = {
+				target = SQI
+				modifier = KR_disapproves_of_govt
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.14.a
+		ai_chance = {
+			base = 20
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = -0.05
+		}
+		SQI_wan_spend_small = yes
+		SQI_GER_investment_small = yes
+	}
+}
+
+country_event = {#青岛隆兴纱厂罢工
+	id = sqiwan.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.15" }
+	title = sqiwan.15.t
+	desc = sqiwan.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = sqiwan.14
+				days = 5
+			}
+		}
+	}
+
+	option = {
+		name = sqiwan.15.a
+		add_stability = -0.01
 	}
 }
