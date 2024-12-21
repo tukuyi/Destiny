@@ -1,5 +1,21 @@
 characters = {
 ################
+###  领导人  ###
+################
+#克希克图
+	SQI_ke_xi_ke_tu = {
+		name = SQI_ke_xi_ke_tu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Portrait_SQI_Ke_xi_ke_tu
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SQI_Ke_xi_ke_tu_DESC
+			ideology = authdem_national_conservative_subtype
+		}
+	}
+################
 ###   元帅   ###
 ################		
 #张宗昌

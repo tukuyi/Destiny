@@ -4635,7 +4635,7 @@ country_event = {#靳云鹗的野心
 		set_country_flag = SQI_choose_wu
 	}
 
-	option = {
+	option = {#皖系
 		name = sqiwan.1.b
 		ai_chance = {
 			factor = 10
@@ -4738,10 +4738,24 @@ country_event = {#靳云鹗的野心
 			logistics_skill = 3
 		}
 		hidden_effect = {
+			SQI_ke_xi_ke_tu = {
+				set_nationality = ROOT
+			}
 			set_party_name = {
 				ideology = radical_socialist
 				long_name = SQI_radical_socialist_party_wan_long
 				name =  SQI_radical_socialist_party_wan
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_claimed_by = CHI
+						is_core_of = CHI	
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = SQI_KMT_strikes_modifier
+				}
 			}
 		}
 	}
@@ -5238,5 +5252,144 @@ country_event = {#保甲制
 	option = {
 		name = sqiwan.16.a
 		add_stability = 0.01
+	}
+}
+
+country_event = {#五峰山
+	id = sqiwan.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.17" }
+	title = sqiwan.17.t
+	desc = sqiwan.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.17.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#靳徐之间
+	id = sqiwan.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.18" }
+	title = sqiwan.18.t
+	desc = sqiwan.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.18.a
+		add_political_power = -10
+	}
+}
+
+country_event = {#段祺瑞的葬礼
+	id = sqiwan.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.19" }
+	title = sqiwan.19.t
+	desc = sqiwan.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.19.a
+		SQI_duan_qi_rui = {
+			retire = yes
+		}
+		promote_character = {
+			character = SQI_jin_yune
+			ideology = pataut_oligarchy_subtype
+		}
+		set_country_leader_ideology = pataut_bonapartism_subtype
+		country_event = {
+			id = sqiwan.20
+			days = 5
+		} 
+	}
+}
+
+country_event = {#靳云鹗的抉择
+	id = sqiwan.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.20" }
+	title = sqiwan.20.t
+	desc = sqiwan.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.20.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.10
+		}
+	}
+
+	option = {
+		name = sqiwan.20.b
+		set_politics = {
+			ruling_party = authoritarian_democrat
+		}
+		promote_character = {
+			character = SQI_ke_xi_ke_tu
+			ideology = authdem_national_conservative_subtype
+		}
+	}
+}
+
+country_event = {#没有异议的国会
+	id = sqiwan.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.21" }
+	title = sqiwan.21.t
+	desc = sqiwan.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.21.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#与胡适之先生的友好会谈
+	id = sqiwan.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.22" }
+	title = sqiwan.22.t
+	desc = sqiwan.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.22.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#总统制国家
+	id = sqiwan.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.23" }
+	title = sqiwan.23.t
+	desc = sqiwan.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.23.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.01
+		}
 	}
 }

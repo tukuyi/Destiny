@@ -1,37 +1,34 @@
 #皖系声望	
-	SQI_agriculture = {#给农村问题定值
+	SQI_agriculture = {#给声誉定值
 		add_dynamic_modifier = {
 			modifier = SQI_agriculture_modifier
 		}
 		hidden_effect = { add_ideas = SQI_agriculture_idea }
 
-		set_variable = { SQI_wan_xi_var = 50 }
+		set_variable = { SQI_wan_xi_var = 20 }
 
 		set_temp_variable = { SQI_gea_influence_variable_wan = SQI_gea_influence_variable }
-		divide_temp_variable = { SQI_gea_influence_variable_wan = 2 }
+		divide_temp_variable = { SQI_gea_influence_variable_wan = -2 }
 		add_to_variable = { SQI_wan_xi_var = SQI_gea_influence_variable_wan }
-		
-		activate_mission = SQI_guo_ming_dang_chan_cun
-		SQI_agriculture_clamp = yes
-	}
-	SQI_agriculture_clamp = {#确定上下限
-		clamp_variable = {
-			var = SQI.SQI_wan_xi_var
-			min = 0
-			max = 100
-		}
+
 		SQI_agriculture_modifer = yes
 	}
 	SQI_agriculture_modifer = {#通过赋值变动来给效果变化
+		clamp_variable = {
+			var = SQI_wan_xi_var
+			min = 0
+			max = 100
+		}
+
 		set_variable = { SQI_wan_xi_var_temp = SQI_wan_xi_var }
 
 		add_to_variable = { SQI_wan_xi_var_temp = -50 }
-		divide_temp_variable = { SQI_wan_xi_var_temp = 200 }
+		divide_variable = { SQI_wan_xi_var_temp = 200 }
 		
 		set_variable = { SQI.SQI_agriculture_stability = SQI_wan_xi_var_temp }#-0.25
 		set_variable = { SQI.SQI_agriculture_war_support = SQI_wan_xi_var_temp }#-0.25
 		
-		divide_temp_variable = { SQI_wan_xi_var_temp = 2 }
+		divide_variable = { SQI_wan_xi_var_temp = 2 }
 		set_variable = { SQI.SQI_agriculture_political_power_factor = SQI_wan_xi_var_temp }#-0.125
 		set_variable = { SQI.SQI_agriculture_production_max_factor = SQI_wan_xi_var_temp }
 		set_variable = { SQI.SQI_agriculture_production_gain_factor = SQI_wan_xi_var_temp }
@@ -44,14 +41,14 @@
 	SQI_wan_investment_small = {
 		add_to_variable = { SQI_wan_xi_var = 5 }
 		hidden_effect = {
-			SQI_agriculture_clamp = yes
+			SQI_agriculture_modifer = yes
 		}
 		custom_effect_tooltip = SQI_wan_investment_small_tooltip
 	}
 	SQI_wan_investment_medium = {
 		add_to_variable = { SQI_wan_xi_var = 10 }
 		hidden_effect = {
-			SQI_agriculture_clamp = yes
+			SQI_agriculture_modifer = yes
 		}
 		custom_effect_tooltip = SQI_wan_investment_medium_tooltip
 	}
@@ -59,7 +56,7 @@
 	SQI_wan_spend_small = {
 		set_temp_variable = { SQI_wan_xi_var = -5 }
 		hidden_effect = {
-			SQI_agriculture_clamp = yes
+			SQI_agriculture_modifer = yes
 		}
 		custom_effect_tooltip = SQI_wan_spend_small_tooltip
 	}

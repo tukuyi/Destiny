@@ -2243,7 +2243,7 @@ country_event = {#KMT controls both provinces
 		create_country_leader = {
 			name = "李宗仁"
 			desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 			expire = "1.1.1"
 			ideology = authdem_tridemism_subtype
 		}
@@ -3840,7 +3840,7 @@ country_event = { #The Ratification of the Constitution
 			create_country_leader = {
 				name = "李宗仁"
 				desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+				picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 				expire = "1.1.1"
 				ideology = junta_subtype
 				traits = { GXC_lingxiu }
@@ -3917,21 +3917,21 @@ country_event = { #otl KMT larp - host the Conference
 		create_country_leader = {
 			name = "李宗仁"
 			desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 			expire = "1.1.1"
 			ideology = authdem_tridemism_subtype
 		}
 		create_country_leader = {
 			name = "李宗仁"
 			desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 			expire = "1.1.1"
 			ideology = junta_subtype
 		}
 		create_country_leader = {
 			name = "李宗仁"
 			desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 			expire = "1.1.1"
 			ideology = national_populist_subtype
 		}
@@ -8399,7 +8399,7 @@ country_event = {#疲倦的总统
 		create_country_leader = {
 			name = "李宗仁"
 			desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 			expire = "1.1.1"
 			traits = {
 				GXC_lingxiu

@@ -11,8 +11,8 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		activate_mission = SQI_de_yi_zhi_de_da_shou_mission
-
+		add_ideas = NFA_veteran_favouritism
+		
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
 		# promote_character = {

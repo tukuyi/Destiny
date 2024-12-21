@@ -198,7 +198,7 @@ setup_rebel_guangxi = {#设置广西
 				create_country_leader = {
 					name = "李宗仁"
 					desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-					picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+					picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 					expire = "1.1.1"
 					ideology = authdem_tridemism_subtype
 				}
@@ -404,7 +404,7 @@ setup_rebel_guangdong = {#广东内战设置
 			create_country_leader = {
 				name = "李宗仁"
 				desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Zongren.png"
+				picture = "gfx/leaders/GXC/Portrait_GXC_Li_Zhong_Ren.png"
 				expire = "1.1.1"
 				ideology = authdem_tridemism_subtype
 			}

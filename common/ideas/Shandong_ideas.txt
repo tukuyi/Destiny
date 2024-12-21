@@ -1304,12 +1304,27 @@ ideas = {
 			SQI_cai_zheng_zhi_chi2 = {#财政支持
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_cai_zheng_zhi_chi2"}
 				allowed = { always = no }
+				name = SQI_cai_zheng_zhi_chi
 				picture = FNG_china_money
 				modifier = {
 					political_power_factor = 0.10
 					paternal_autocrat_drift = 0.03
 					authoritarian_democrat_drift = 0.03
 					production_speed_buildings_factor = 0.10
+					line_change_production_efficiency_factor = 0.10
+				}
+			}	
+			SQI_cai_zheng_zhi_chi3 = {#财政支持
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_cai_zheng_zhi_chi2"}
+				allowed = { always = no }
+				name = SQI_cai_zheng_zhi_chi
+				picture = FNG_china_money
+				modifier = {
+					political_power_factor = 0.10
+					paternal_autocrat_drift = 0.05
+					authoritarian_democrat_drift = 0.05
+					production_speed_buildings_factor = 0.10
+					production_factory_max_efficiency_factor = 0.03
 					line_change_production_efficiency_factor = 0.10
 				}
 			}	
@@ -1336,6 +1351,84 @@ ideas = {
 					global_building_slots_factor = 0.18
 					party_popularity_stability_factor = 0.09
 					production_factory_efficiency_gain_factor = 0.05
+				}
+			}
+			SQI_veteran_favouritism = {#犒劳老兵
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_veteran_favouritism"}
+				picture = army_cooperation
+				allowed = { always = no }
+				modifier = {
+					war_support_factor = 0.05
+					consumer_goods_factor = 0.07
+					command_power_gain_mult = 0.04
+					party_popularity_stability_factor = 0.06
+					production_factory_max_efficiency_factor = 0.03
+				}
+			}
+			SQI_jing_ying_yi_wu_dominance = {#精英的义务
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_jing_ying_yi_wu_dominance"}
+				picture = GER_Apollo
+				allowed = { always = no }
+				modifier = {
+					conscription_factor = 0.04
+					political_power_factor = 0.07
+					command_power_gain_mult = 0.02
+					party_popularity_stability_factor = 0.03
+				}
+			}
+			SQI_military_state = {#军人的责任
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_military_state"}
+				picture = NFA_mil_state
+				allowed = { always = no }
+				modifier = {
+					war_support_factor = 0.10
+					consumer_goods_factor = 0.10
+					command_power_gain_mult = 0.10
+					party_popularity_stability_factor = 0.08
+					production_factory_max_efficiency_factor = 0.06
+				}
+			}
+			SQI_military_state2 = {#军人的责任
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_military_state2"}
+				name = SQI_military_state
+				picture = NFA_mil_state
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.04
+					war_support_factor = 0.15
+					consumer_goods_factor = 0.16
+					command_power_gain_mult = 0.14
+					party_popularity_stability_factor = 0.08
+					production_factory_max_efficiency_factor = 0.09
+				}
+			}
+			SQI_modern_bonapartism_idea = {#东方波拿巴
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_modern_bonapartism_idea"}
+				picture = NFA_modern_bonapartism
+				allowed = { always = no }
+				modifier = {
+					weekly_manpower = 200
+					war_support_factor = 0.08
+					experience_gain_army = 0.06
+					political_power_factor = 0.09
+					command_power_gain_mult = 0.06
+					foreign_subversive_activites = -0.05
+					party_popularity_stability_factor = 0.04
+				}
+			}
+			SQI_modern_bonapartism_idea2 = {#东方波拿巴
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_modern_bonapartism_idea2"}
+				name = SQI_modern_bonapartism_idea
+				picture = NFA_modern_bonapartism
+				allowed = { always = no }
+				modifier = {
+					weekly_manpower = 250
+					war_support_factor = 0.14
+					experience_gain_army = 0.14
+					political_power_factor = 0.13
+					command_power_gain_mult = 0.08
+					foreign_subversive_activites = -0.10
+					party_popularity_stability_factor = 0.06
 				}
 			}
 		#hidden
@@ -1395,6 +1488,8 @@ ideas = {
 				OR = {
 					owns_state = 744
 					has_idea = SQI_gea_influence_idea2
+					has_idea = SQI_gea_influence_idea3
+					has_idea = SQI_gea_influence_idea4
 				}
 			}
 			traits = { industrial_manufacturer }
@@ -1419,6 +1514,7 @@ ideas = {
 				OR = {
 					owns_state = 744
 					has_idea = SQI_gea_influence_idea3
+					has_idea = SQI_gea_influence_idea4
 				}
 			}
 			picture = siemens_schuckert

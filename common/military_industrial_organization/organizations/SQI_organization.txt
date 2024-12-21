@@ -40,6 +40,8 @@ SQI_qing_dao_zao_chuan_chang_organisation = {#青岛造船厂
 			OR = {
 				owns_state = 744
 				has_idea = SQI_gea_influence_idea2
+				has_idea = SQI_gea_influence_idea3
+				has_idea = SQI_gea_influence_idea4
 			}
 		}
 	}
@@ -87,6 +89,8 @@ SQI_siemens_schuckert_organisation = {#青岛飞机制造厂
 				owns_state = 744
 				is_puppet_of = GER
 				has_idea = SQI_gea_influence_idea2
+				has_idea = SQI_gea_influence_idea3
+				has_idea = SQI_gea_influence_idea4
 			}
 		}
 	}
@@ -644,6 +648,8 @@ SQI_si_fang_ji_che_organisation = {#青岛四方机车车辆
 				owns_state = 744
 				is_puppet_of = GER
 				has_idea = SQI_gea_influence_idea2
+				has_idea = SQI_gea_influence_idea3
+				has_idea = SQI_gea_influence_idea4
 			}
 		}
 	}

@@ -1258,6 +1258,13 @@ SHX_add_join_government_decisions = {
 			activate_targeted_decision = { target = SZC decision = SHX_join_government }
 		}
 	}
+	if = { # NPA
+		limit = { 
+			country_exists = NPA 
+			NPA = { china_is_valid_government_to_join = yes }
+		}#needed a check if NPA exists so it wont give errors on scoping to it
+		activate_targeted_decision = { target = NPA decision = SHX_join_government }
+	}
 	else_if = { # check for GXC RKMT second
 		limit = {
 			GXC = {
@@ -1266,13 +1273,6 @@ SHX_add_join_government_decisions = {
 			}
 		}
 		activate_targeted_decision = { target = GXC decision = SHX_join_government }
-	}
-	if = { # NPA
-		limit = { 
-			country_exists = NPA 
-			NPA = { china_is_valid_government_to_join = yes }
-		}#needed a check if NPA exists so it wont give errors on scoping to it
-		activate_targeted_decision = { target = NPA decision = SHX_join_government }
 	}
 }
 

@@ -21,12 +21,22 @@ SQI_zi_yuan_zhong_zheng_modifier = {#资源重镇
 
 SQI_yellow_river_strikes_modifier = {#黄河决堤
 	icon = "GFX_decision_generic_political_rally"
-	enable = { always = yes }
-	
+	enable = { always = yes }	
 	local_supplies = -0.15
 	local_org_regain = -0.15
 	state_resources_factor = -0.30
 	disable_strategic_redeployment = 1
+	local_building_slots_factor = -0.30
+	army_speed_factor_for_controller = -0.15
+}
+
+SQI_KMT_strikes_modifier = {#国民党骚乱
+	icon = "GFX_decision_generic_political_rally"
+	local_supplies = -0.15
+	compliance_gain = -0.20
+	local_org_regain = -0.15
+	resistance_activity = 0.20
+	state_resources_factor = -0.30
 	local_building_slots_factor = -0.30
 	army_speed_factor_for_controller = -0.15
 }

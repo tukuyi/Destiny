@@ -561,7 +561,7 @@ SQI_war_intervention_decisions = {
 		}
 		fire_only_once = yes
 		cost = 30
-		days_remove = 60
+		days_remove = 15
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_create_LSP"
@@ -2253,6 +2253,47 @@ SQI_chu_li_nong_chun_wen_ti = {#皖系的糟糕声望
 			SQI_wan_investment_medium = yes
 		}
 	}
+	SQI_remove_KMT_state_targeted_decision = {#移除国民党抗议
+		icon = GFX_decision_lkmt_flag
+
+		state_target = yes
+		target_root_trigger = {
+			has_completed_focus = SQI_mai_xiang_gong_he
+		}
+		target_array = SQI.controlled_states
+		target_trigger = {
+			FROM = {
+				has_dynamic_modifier = {
+					modifier = SQI_KMT_strikes_modifier
+				}
+			}
+		}
+		highlight_color_while_active = 1
+		on_map_mode = map_and_decisions_view
+
+		icon = oppression
+		cost = 0
+		days_remove = 100
+
+		available = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SHX_peoples_volunteers"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = SQI_KMT_strikes_modifier
+				}
+			}
+		}
+	}
 }
 
 SQI_GER_yin_xiang_li = {#德意志的阴影之下
@@ -2662,6 +2703,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		priority = 50
 		days_remove = 20
 		days_re_enable = 60
+		fire_only_once = no
 
 		ai_will_do = {
 			base = 0
@@ -2726,6 +2768,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		priority = 50
 		days_remove = 100
 		days_re_enable = 60
+		fire_only_once = no
 		modifier = {
 			industrial_capacity_factory = 0.05
 			production_speed_buildings_factor = 0.20
@@ -2759,6 +2802,42 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_de_guo_gong_ye_yuan_zu"
 
+		}
+	}
+	SQI_bribe_lobbyists = {#贿赂东亚理事会成员
+		icon = generic_flags
+
+		cost = 50
+		priority = 50
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_political_power > 49
+			}
+			modifier = {
+				add = 3
+				has_political_power > 99
+			}
+			modifier = {
+				add = 2
+				check_variable = { SQI_gea_influence_variable < 35 }
+				has_political_power > 100
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_bribe_lobbyists"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_bribe_lobbyists"
+			SQI_GER_spend_small = yes
 		}
 	}
 	SQI_gu_li_guo_huo = {#鼓励国货
@@ -2945,7 +3024,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_jiang_di_dian_zu"
 			add_days_mission_timeout = {
-				mission = SHX_agricultural_reform_mission_timer
+				mission = SQI_agricultural_reform_mission_timer
 				days = -75
 			}
 		}
@@ -3010,7 +3089,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_shi_yong_hua_fei"
 			add_days_mission_timeout = {
-				mission = SHX_agricultural_reform_mission_timer
+				mission = SQI_agricultural_reform_mission_timer
 				days = -75
 			}
 		}
@@ -3058,7 +3137,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 				}
 			} 
 			add_days_mission_timeout = {
-				mission = SHX_agricultural_reform_mission_timer
+				mission = SQI_agricultural_reform_mission_timer
 				days = -75
 			}
 		}
@@ -3091,7 +3170,7 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SQI_bao_zhang_tu_rang"
 			add_days_mission_timeout = {
-				mission = SHX_agricultural_reform_mission_timer
+				mission = SQI_agricultural_reform_mission_timer
 				days = -75
 			}
 		}

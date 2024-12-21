@@ -897,6 +897,10 @@ spriteTypes = {
 	}
 ###山东
 	spriteType = {
+		name = "GFX_Portrait_Portrait_SQI_Ke_xi_ke_tu"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_Ke_xi_ke_tu.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SQI_Gao_Zhong_Wu"
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_Gao_Zhong_Wu.png"
 	}
