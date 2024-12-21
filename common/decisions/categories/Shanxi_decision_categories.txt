@@ -49,7 +49,7 @@ SHX_QIE_shanxi_diplomacy_decisions_category = {#我们在山西的利益
 }
 
 SHX_zhi_feng_war = {#迈向统一
-	icon = GFX_decision_category_jap_intervene_in_china
+	icon = GFX_decision_cat_generic_purge
 	picture = GFX_decision_category_SHX_zhi_feng_war
 	priority = 120
 	visible_when_empty = no

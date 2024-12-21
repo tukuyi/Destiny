@@ -607,6 +607,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chong_jian_bao_jia_zhi"
 			add_stability = 0.05
+			country_event = {
+				id = sqiwan.16
+				days = 5
+			}
 			custom_effect_tooltip = tooltip_white_line
 			add_ideas = SQI_Baojia_System
 		}
@@ -3868,12 +3872,20 @@ focus_tree = {
 		select_effect = {
 			hidden_effect = {
 				country_event = {
+					id = SQI.16
+					days = 5
+				}
+				country_event = {
 					id = SQI.4
-					days = 10
+					days = 20
+				}
+				country_event = {
+					id = SQI.11
+					days = 30
 				}
 				country_event = {
 					id = SQI.10
-					days = 40
+					days = 50
 				}
 			}
 		}
@@ -3886,7 +3898,7 @@ focus_tree = {
 				add_idea = SQI_liang_shi_wei_ji_jia_juA
 			}
 			activate_mission = SQI_agricultural_reform_mission_timer
-			custom_effect_tooltip = SHX_QIE_telegram_tooltip
+			custom_effect_tooltip = SQI_decisions_unlocked
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 	}	
@@ -3952,7 +3964,12 @@ focus_tree = {
 			else = {
 				custom_effect_tooltip = SQI_agricultural_reform_mission_timer_tooltip
 			}
-			custom_effect_tooltip = SHX_QIE_telegram_tooltip
+			custom_effect_tooltip = SQI_decisions_unlocked
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = SQI.13
+				days = 10
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}	
@@ -3985,7 +4002,7 @@ focus_tree = {
 					custom_effect_tooltip = SQI_agricultural_reform_mission_timer_tooltip
 				}
 			}
-			custom_effect_tooltip = SHX_QIE_telegram_tooltip
+			custom_effect_tooltip = SQI_decisions_unlocked
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}	
@@ -4096,7 +4113,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jiang_di_gong_chang_men_kan"
-			custom_effect_tooltip = SHX_QIE_telegram_tooltip
+			custom_effect_tooltip = SQI_decisions_unlocked
 			add_ideas = SQI_chantiers_de_la_jeunesse
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -4904,7 +4921,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus SQI_Improve_Jiangxi"
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 8
 					state = 1044
 				}
 				1045 = {
@@ -4979,7 +4996,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus SQI_Improve_Zhejiang"
 				add_resource = {
 					type = chromium
-					amount = 2
+					amount = 4
 					state = 1067
 				}
 				596 = {

@@ -134,6 +134,10 @@ country_event = {
 	id = shandong.1 
 	days = 1 
 }
+country_event = {
+	id = SQI.15
+	days = 225
+}
 
 country_event = { 
 	id = shandong.436 #Tianran's death
