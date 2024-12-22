@@ -227,6 +227,7 @@ recruit_character = SQI_li_lijiu
 recruit_character = SQI_xue_dian
 recruit_character = SQI_lu_yongxiang
 recruit_character = SQI_boris_annenkov
+recruit_character = SQI_ke_xi_ke_tu
 
 SQI_jin_yune = {
 	set_variable = { china_alignment = token:others }
@@ -238,6 +239,9 @@ SQI_zhang_zongchang = {
 }
 SQI_duan_qi_rui = {
 	set_variable = { china_alignment = token:others }
+	retire = yes
+}
+SQI_ke_xi_ke_tu = {
 	retire = yes
 }
 SQI_boris_annenkov = {

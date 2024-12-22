@@ -27,7 +27,7 @@ country_event = {# Start up Event
 			}
 			country_event = {
 				id = SQI.6
-				days = 10
+				days = 15
 			}
 		}
 	}
@@ -60,11 +60,11 @@ country_event = {#青岛
 			}
 			country_event = {
 				id = SQI.9
-				days = 10
+				days = 12
 			}
 			country_event = {
 				id = SQI.17
-				days = 15
+				days = 20
 			}
 			country_event = {
 				id = SQI.14
@@ -4957,7 +4957,7 @@ country_event = {#德国人拒绝了
 		} 
 		create_wargoal = {
 			target = GEA
-			type = independence_wargoal
+			type = annex_everything
 		}
 		GEA = {
 			add_opinion_modifier = {
@@ -5015,10 +5015,7 @@ country_event = {#德国人有条件的赎回
 		}
 		transfer_state = 996
 		transfer_state = 744
-		add_timed_idea = {
-			idea = SQI_shu_mai
-			days = 360
-		}
+		SQI_GER_spend_giga = yes
 		GER = {
 			add_timed_idea = {
 				idea = SQI_china_shu_mai
@@ -5043,7 +5040,7 @@ country_event = {#德国人有条件的赎回
 		}
 		create_wargoal = {
 			target = GEA
-			type = independence_wargoal
+			type = annex_everything
 		}
 	}
 }
@@ -5061,6 +5058,7 @@ country_event = {#德国人同意了
 		name = sqiwan.10.a
 		transfer_state = 996
 		transfer_state = 744
+		SQI_GER_spend_medium = yes
 		add_popularity = {
 			ideology = paternal_autocrat
 			popularity = 0.05
@@ -5389,6 +5387,60 @@ country_event = {#总统制国家
 		name = sqiwan.23.a
 		add_popularity = {
 			ideology = paternal_autocrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#新青年
+	id = sqiwan.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.24" }
+	title = sqiwan.24.t
+	desc = sqiwan.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.24.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#国学的重要性
+	id = sqiwan.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.25" }
+	title = sqiwan.25.t
+	desc = sqiwan.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.25.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#我骄傲，我是中国
+	id = sqiwan.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.26" }
+	title = sqiwan.26.t
+	desc = sqiwan.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.26.a
+		add_popularity = {
+			ideology = authoritarian_democrat
 			popularity = 0.01
 		}
 	}

@@ -1260,7 +1260,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_jiu_wan_xi_kai_xuan
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_jiu_wan_xi_kai_xuan
 		relative_position_id = SQI_mai_xiang_gong_he
 		x = 0
 		y = 7
@@ -1286,7 +1286,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_jiang_li_zhong_cheng
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SHX_kuo_da_dui_de_mao_yi
 		relative_position_id = SQI_jiu_wan_xi_kai_xuan
 		x = -2
 		y = 1
@@ -1309,7 +1309,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_qing_suan_pan_tu
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_qing_suan_pan_tu
 		relative_position_id = SQI_jiu_wan_xi_kai_xuan
 		x = 0
 		y = 1
@@ -1333,7 +1333,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_jiang_shang_jiang_shuai
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_jiang_li_zhong_cheng
 		relative_position_id = SQI_jiu_wan_xi_kai_xuan
 		x = 2
 		y = 1
@@ -1351,7 +1351,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_fang_kaI_shuang_shou
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_fang_kaI_shuang_shou
 		relative_position_id = SQI_jiu_wan_xi_kai_xuan
 		x = -3
 		y = 2
@@ -1381,7 +1381,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_mai_bu_xin_shi_dai
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_mai_bu_xin_shi_dai
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = -2
 		y = 1
@@ -1393,13 +1393,21 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_mai_bu_xin_shi_dai"
-
+			add_political_power = 25
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.01
+			}
+			add_ideas = SQI_the_new_generation
+			hidden_effect = {
+				country_event = { id = sqiwan.24 }
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_que_bao_zong_cheng
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_que_bao_zong_cheng
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 0
 		y = 1
@@ -1411,13 +1419,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_que_bao_zong_cheng"
-
+			add_political_power = 30
+			add_stability = 0.02
+			swap_ideas = {
+				remove_idea = SQI_flee_to_zongchang2
+				add_idea = SQI_flee_to_zongchang3
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_jun_ren_yuan_li
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_jun_ren_yuan_li
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 2
 		y = 1
@@ -1429,13 +1442,35 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_jun_ren_yuan_li"
-
+			add_manpower = 1911
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_zhan_xin_de_bu_dui
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_zhan_xin_de_bu_dui
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 1
 		y = 2
@@ -1453,13 +1488,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zhan_xin_de_bu_dui"
-
+			add_stability = -0.03
+			add_war_support = 0.07
+			add_command_power = 50
+			add_stability = 0.05
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_li_guo_zhi_ben
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_li_guo_zhi_ben
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = -1
 		y = 2
@@ -1477,13 +1519,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_li_guo_zhi_ben"
-
+			add_stability = 0.02
+			swap_ideas = {
+				remove_idea = SQI_xin_ru_xue
+				add_idea = SQI_xin_ru_xue2
+			}
+			hidden_effect = {
+				country_event = { id = sqiwan.25 }
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_gong_gu_xian_fa
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_gong_gu_xian_fa
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 0
 		y = 3
@@ -1498,13 +1547,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_gong_gu_xian_fa"
-
+			swap_ideas = {
+				remove_idea = SQI_flee_to_zongchang3
+				add_idea = SQI_flee_to_zongchang4
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_duo_hui_da_zong_hua_yu
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_NFA_Mass_Politics
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = -1
 		y = 4
@@ -1516,13 +1568,31 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_duo_hui_da_zong_hua_yu"
-
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = SQI_the_new_generation
+				add_idea = SQI_the_new_generation2
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_zhi_chi_ai_guo_gong_ren
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SHX_fa_tuan_jing_ji
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 1
 		y = 4
@@ -1534,13 +1604,35 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_zhi_chi_ai_guo_gong_ren"
-
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = SQI_huo_li_jiao_ao_wen_ding
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_huo_li_jiao_ao_wen_ding
 		relative_position_id = SQI_fang_kaI_shuang_shou
 		x = 0
 		y = 5
@@ -1555,13 +1647,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_huo_li_jiao_ao_wen_ding"
-
+			swap_ideas = {
+				remove_idea = SQI_flee_to_zongchang4
+				add_idea = SQI_flee_to_zongchang5
+			}
+			country_event = { id = sqiwan.26 }
 		}
 	}
 
 	focus = {
 		id = SQI_ji_da_shuai_ru_yao_er_gui
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_ji_da_shuai_ru_yao_er_gui
 		relative_position_id = SQI_jiu_wan_xi_kai_xuan
 		x = 3
 		y = 2
@@ -1591,7 +1687,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_qing_suan_yi_jian_zhe
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_qing_suan_yi_jian_zhe
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = -2
 		y = 1
@@ -1628,7 +1724,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_tao_shuang_jiang_shen
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_tao_shuang_jiang_shen
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 0
 		y = 1
@@ -1659,7 +1755,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_jing_ying_men_de_yi_wu
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_jing_ying_men_de_yi_wu
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 2
 		y = 1
@@ -1684,7 +1780,10 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			add_ideas = SQI_jing_ying_yi_wu_dominance
+			swap_ideas = {
+				remove_idea = SQI_xin_ru_xue
+				add_idea = SQI_jing_ying_yi_wu_dominance
+			}
 			hidden_effect = {
 				country_event = { id = sqiwan.22 }
 			}
@@ -1696,7 +1795,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_e_zhu_yan_hou
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_e_zhu_yan_hou
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = -1
 		y = 2
@@ -1734,7 +1833,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_jun_ren_de_she_hui
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_jun_ren_de_she_hui
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 1
 		y = 2
@@ -1762,7 +1861,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_dong_fang_bo_na_ba
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_dong_fang_bo_na_ba
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 0
 		y = 3
@@ -1785,7 +1884,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_zong_tong_zhi_guo_jia
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_zong_tong_zhi_guo_jia
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = -1
 		y = 4
@@ -1814,7 +1913,7 @@ focus_tree = {
 	
 	focus = {
 		id = SQI_zhun_bei_zhan_zheng
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_zhun_bei_zhan_zheng
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 1
 		y = 4
@@ -1835,7 +1934,7 @@ focus_tree = {
 
 	focus = {
 		id = SQI_deng_ji_zhi_xu_wen_ding
-		icon = GFX_goal_SQI_yi_xue_chi_ru
+		icon = GFX_goal_SQI_deng_ji_zhi_xu_wen_ding
 		relative_position_id = SQI_ji_da_shuai_ru_yao_er_gui
 		x = 0
 		y = 5
@@ -5645,6 +5744,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_chu_li_jun_dui"
+			add_command_power = 50.0
 			army_experience = 50
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
