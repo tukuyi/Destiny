@@ -38,6 +38,7 @@
 		force_update_dynamic_modifier = yes
 	}
 
+#增减皖系名声
 	SQI_wan_investment_small = {
 		add_to_variable = { SQI_wan_xi_var = 5 }
 		hidden_effect = {
@@ -51,6 +52,13 @@
 			SQI_agriculture_modifer = yes
 		}
 		custom_effect_tooltip = SQI_wan_investment_medium_tooltip
+	}
+	SQI_wan_investment_large = {
+		add_to_variable = { SQI_wan_xi_var = 15 }
+		hidden_effect = {
+			SQI_agriculture_modifer = yes
+		}
+		custom_effect_tooltip = SQI_wan_investment_large_tooltip
 	}
 
 	SQI_wan_spend_small = {

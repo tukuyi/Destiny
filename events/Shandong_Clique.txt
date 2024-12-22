@@ -106,9 +106,16 @@ country_event = {#粮食危机已经解除
 	option = {
 		name = SQI.2.a
 		set_country_flag = SQI_agricultural_reform_completed_flag
+		add_stability = 0.10
 		swap_ideas = {
 			remove_idea = SQI_liang_shi_wei_ji_jia_juA
 			add_idea = SQI_liang_shi_wei_ji_jia_juB
+		}
+		if = {
+			limit = { 
+				has_completed_focus = SQI_mai_xiang_gong_he
+			}
+			SQI_wan_investment_medium = yes
 		}
 	}
 }
