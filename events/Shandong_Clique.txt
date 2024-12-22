@@ -4764,6 +4764,10 @@ country_event = {#靳云鹗的野心
 					modifier = SQI_KMT_strikes_modifier
 				}
 			}
+			country_event = {
+				id = sqiwan.27
+				days = 10
+			}
 		}
 	}
 }
@@ -5450,5 +5454,20 @@ country_event = {#我骄傲，我是中国
 			ideology = authoritarian_democrat
 			popularity = 0.01
 		}
+	}
+}
+
+country_event = {#段祺瑞的十年
+	id = sqiwan.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.27" }
+	title = sqiwan.27.t
+	desc = sqiwan.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwan.27.a
+		add_political_power = 2
 	}
 }

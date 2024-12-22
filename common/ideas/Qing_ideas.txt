@@ -2529,6 +2529,39 @@ ideas = {
 				political_power_gain = -0.50
 			}
 		}
+		QIE_flurry_of_investment = {#投资热潮
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_flurry_of_investment" }
+			picture = KTG_Gold_Trade
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.15
+				production_factory_max_efficiency_factor = 0.075
+				production_factory_start_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		QIE_zhili_war_production_idea = {#德国军工生产援助
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_zhili_war_production_idea" }
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				market_liberal_drift = 0.01
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
 #intervention - increased volunteer cap 
 		QIE_intervention_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_intervention_idea"}
@@ -3295,6 +3328,32 @@ ideas = {
 			research_bonus = {
 				electronics = 0.1
 				industry = 0.1
+			}
+		}
+
+		QIE_AOG_bank = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_AOG_bank" }
+			picture = GEA_AOG_BONUS
+			allowed = { original_tag = QIE }
+			available = {
+				has_completed_focus = QIE_open_up_to_investment
+			}
+			visible = {
+				has_dynamic_modifier = { modifier = QIE_german_influence_dynamic_modifier }
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.2
+				extra_trade_to_target_factor = 0.2
+				cic_to_target_factor = 0.05
+			}
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_arms_factory_factor = 0.2
+				production_speed_industrial_complex_factor = 0.2
+			}
+			research_bonus = {
+				industry = 0.2
 			}
 		}
 	}
