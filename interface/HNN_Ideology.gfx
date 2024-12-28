@@ -16,6 +16,22 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/sorelian_marketism_group.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_islamic_communism_subtype"
+		texturefile = "gfx/ideologies/subideologies/islamic_communism_group.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_socdem_islamic_communism_subtype"
+		texturefile = "gfx/ideologies/subideologies/socdem_islamic_communism_group.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_syn_islamic_communism_subtype"
+		texturefile = "gfx/ideologies/subideologies/syn_islamic_communism_group.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_radsoc_islamic_communism_subtype"
+		texturefile = "gfx/ideologies/subideologies/radsoc_islamic_communism_group.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_jun_zheng_ji_quan_subtype"
 		texturefile = "gfx/ideologies/subideologies/jun_zheng_ji_quan_group.png"
 	}

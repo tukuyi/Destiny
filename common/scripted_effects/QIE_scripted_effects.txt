@@ -1436,3 +1436,50 @@ QIE_coucil_of_five_will_end = {#最终序幕
 		} 
 	}
 }
+
+QIE_improve_zhili_monarchy_legitimacy = {#君主制合法性
+	if = {
+		limit = { has_idea = QIE_legitimacy_of_the_monarchy }
+		swap_ideas = {
+			remove_idea = QIE_legitimacy_of_the_monarchy
+			add_idea = QIE_legitimacy_of_the_monarchy_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_legitimacy_of_the_monarchy_1 }
+		swap_ideas = {
+			remove_idea = QIE_legitimacy_of_the_monarchy_1
+			add_idea = QIE_legitimacy_of_the_monarchy_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_legitimacy_of_the_monarchy_2 }
+		swap_ideas = {
+			remove_idea = QIE_legitimacy_of_the_monarchy_2
+			add_idea = QIE_legitimacy_of_the_monarchy_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = QIE_legitimacy_of_the_monarchy_3
+			has_completed_focus = QIE_placateassembly
+		}
+		swap_ideas = {
+			remove_idea = QIE_legitimacy_of_the_monarchy_3
+			add_idea = QIE_legitimacy_of_the_monarchy_cao
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = QIE_legitimacy_of_the_monarchy_3
+			has_completed_focus = QIE_capitalize_politics
+		}
+		swap_ideas = {
+			remove_idea = QIE_legitimacy_of_the_monarchy_3
+			add_idea = QIE_legitimacy_of_the_monarchy_wu
+		}
+	}
+	else = {
+		custom_effect_tooltip = QIE_improve_legitimacy_tt
+	}
+}

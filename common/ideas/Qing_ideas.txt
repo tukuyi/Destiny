@@ -711,7 +711,7 @@ ideas = {
 	country = {
 	#外交
 		QIE_ping_eng_jing_ji = {#平等协议
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire"}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_ping_eng_jing_ji"}
 			allowed = { always = no }
 			picture = equal_opportunity_economy
 			modifier = {
@@ -752,31 +752,7 @@ ideas = {
 				justify_war_goal_time = -0.20
 				production_speed_arms_factory_factor = 0.10
 			}
-		}		
-	#亲皖系
-		QIE_she_lao_bao_zhang = {#劳工保障
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_she_lao_bao_zhang"}
-			allowed = { always = no }
-			picture = RUS_Medical_Followers
-            modifier = {
-				stability_factor = 0.05
-				production_factory_max_efficiency_factor = 0.05
-				production_factory_efficiency_gain_factor = 0.05
-				production_factory_start_efficiency_factor = 0.05
-			}
-		}
-		QIE_liang_shi_bu_tie = {#劳工保障
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_liang_shi_bu_tie"}
-			allowed = { always = no }
-			picture = SCT_farms
-            modifier = {
-				stability_factor = 0.05
-				political_power_factor = -0.02
-				global_building_slots_factor = 0.10
-				production_speed_buildings_factor = 0.10
-				production_speed_industrial_complex_factor = 0.05
-			}
-		}		
+		}				
 	#张荫梧
 		QIE_ge_xin_de_jing_shen = {#革新精神
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_ge_xin_de_jing_shen"}
@@ -1357,7 +1333,7 @@ ideas = {
 		}
 	#于学忠
 		QIE_police_bigger = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire"}
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_police_bigger"}
 			allowed = { always = no }
 			picture = man_low_legitimacy2
 			modifier = {
@@ -2410,7 +2386,7 @@ ideas = {
 			}
 		}	
 	#starting ideas
-		QIE_fractured_empire = {
+		QIE_fractured_empire = {#破碎的帝国
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire"}
 			allowed = { always = no }
 			picture = man_low_legitimacy2
@@ -2418,6 +2394,19 @@ ideas = {
 				stability_factor = -0.10
 				conscription_factor = -0.15
 				consumer_goods_factor = 0.15
+			}
+		}
+		QIE_legitimacy_of_the_monarchy = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy" }
+			picture = man_low_legitimacy
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = -0.01
+				stability_factor = -0.35
+				war_support_factor = -0.25
+				research_speed_factor = -0.05
+				political_power_factor = -0.10
+				cannot_call_allies_or_join_wars = 1
 			}
 		}
 		QIE_big_debt = {
@@ -2428,6 +2417,60 @@ ideas = {
 				political_power_cost = 0.30
 				trade_opinion_factor = -0.50
 				production_speed_buildings_factor = -0.20
+			}
+		}
+	#君主制合法性
+		QIE_legitimacy_of_the_monarchy_1 = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_1" }
+			picture = man_low_legitimacy2
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.15
+				political_power_factor = -0.10
+			}
+		}	
+		QIE_legitimacy_of_the_monarchy_2 = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_2" }
+			picture = man_low_legitimacy3
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+			}
+		}
+		QIE_legitimacy_of_the_monarchy_3 = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_3" }
+			picture = man_low_legitimacy4
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.01
+				stability_factor = -0.05
+				war_support_factor = 0.10
+			}
+		}
+		QIE_legitimacy_of_the_monarchy_cao = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_cao" }
+			picture = man_low_legitimacy5
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.02
+				stability_factor = 0.05
+				war_support_factor = 0.10
+				industrial_capacity_factory = 0.12
+				production_speed_buildings_factor = 0.12
+			}
+		}
+		QIE_legitimacy_of_the_monarchy_wu = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_wu" }
+			picture = man_low_legitimacy5
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = 0.02
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				political_power_gain = 0.10
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 #encouraging domestic production
@@ -2494,17 +2537,51 @@ ideas = {
 				consumer_goods_factor = 0.1
 			}
 		}
-#harmonious balance 
-		QIE_harmonious_balance_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_harmonious_balance_idea"}
+		QIE_seeing_to_rural_reconstruction = {#着手乡村建设
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_seeing_to_rural_reconstruction" }
+			picture = generic_high_literacy
 			allowed = { always = no }
-			picture = man_low_legitimacy5
 			modifier = {
-				stability_weekly = 0.010
-				stability_factor = 0.050
-				war_support_factor = 0.20
-				political_power_gain = 0.10
-				war_stability_factor = 0.20
+				compliance_growth = 0.10
+				research_speed_factor = 0.15
+				consumer_goods_factor = 0.20
+				social_democrat_drift = 0.01
+				global_building_slots_factor = 0.10
+				production_speed_infrastructure_factor = 0.20
+			}
+		}
+		QIE_extol_nationalist_cause = {#歌颂民族主义事业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_extol_nationalist_cause" }
+			picture = generic_phoenix
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = 0.15
+				army_morale_factor = 0.10
+				weekly_casualties_war_support = 0.005
+				national_populist_drift = 0.01
+			}
+		}
+		QIE_she_lao_bao_zhang = {#劳工保障
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_she_lao_bao_zhang"}
+			allowed = { always = no }
+			picture = RUS_Medical_Followers
+            modifier = {
+				stability_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		QIE_liang_shi_bu_tie = {#粮食补贴
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_liang_shi_bu_tie"}
+			allowed = { always = no }
+			picture = SCT_farms
+            modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.02
+				global_building_slots_factor = 0.10
+				production_speed_buildings_factor = 0.10
+				production_speed_industrial_complex_factor = 0.05
 			}
 		}
 #local logistics decreased supply consumption

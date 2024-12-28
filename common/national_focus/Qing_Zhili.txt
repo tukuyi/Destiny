@@ -131,13 +131,19 @@ focus_tree = {
 			}
 		}
 
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_capitalize_politics"
-			QIE = {
-				country_event = {
-					id = qiefocus.3
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = QIE_legitimacy_of_the_monarchy
+					add_idea = QIE_legitimacy_of_the_monarchy_1
 				}
+			}
+			country_event = {
+				id = qiefocus.3
+			}
+			hidden_effect = {
+				QIE_improve_zhili_monarchy_legitimacy = yes
 			}
 		}
 	}
@@ -264,6 +270,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_leverage_new_pop"
 			add_stability = 0.10
 			add_socdem_to_coalition = yes
+			custom_effect_tooltip = tooltip_white_line
+			QIE_improve_zhili_monarchy_legitimacy = yes
+			add_timed_idea = {
+				idea = QIE_seeing_to_rural_reconstruction
+				days = 180
+			}
 			hidden_effect = {
 				country_event = {
 					id = qieflavor.21
@@ -298,16 +310,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_harmonious_balance"
-			add_ideas = {
-				QIE_harmonious_balance_idea
-			}
-			if = {
-				limit = {
-					has_idea = QIE_fractured_empire
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = QIE_legitimacy_of_the_monarchy_3
+					add_idea = QIE_legitimacy_of_the_monarchy_wu
 				}
-				remove_ideas = QIE_fractured_empire
 			}
+			china_add_research_slots = yes
 			hidden_effect = {
+				QIE_improve_zhili_monarchy_legitimacy = yes
 				if = {
 					limit = {
 						NOT = { has_war_with = FNG }
@@ -348,11 +359,17 @@ focus_tree = {
 			army_experience = 20
 			add_war_support = 0.05
 			add_soclib_to_coalition = yes
+			custom_effect_tooltip = tooltip_white_line
+			QIE_improve_zhili_monarchy_legitimacy = yes
+			add_timed_idea = {
+				idea = QIE_extol_nationalist_cause
+				days = 300
+			}
 			hidden_effect = {
 				country_event = {
 					id = qieflavor.22
 					days = 30
-					random = 120
+					random_hours = 120
 				}
 			}
 		}
@@ -391,7 +408,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.23
 					days = 30
-					random = 120
+					random_hours = 120
 				}
 			}
 		}
@@ -827,6 +844,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_placateassembly"
 			unlock_decision_category_tooltip = QIE_meet_assembly_parties_decisions
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = QIE_legitimacy_of_the_monarchy
+					add_idea = QIE_legitimacy_of_the_monarchy_1
+				}
+			}
+			hidden_effect = {
+				QIE_improve_zhili_monarchy_legitimacy = yes
+			}
 		}
 	}
 	focus = {
@@ -891,7 +917,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.25
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -914,7 +940,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_seek_german_RR_capital"
-			add_ideas = QIE_german_railroad_engineers_idea
+			QIE_improve_zhili_monarchy_legitimacy = yes
+			add_timed_idea = {
+				idea = QIE_german_railroad_engineers_idea
+				days = 200
+			}
 			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.03
@@ -923,7 +953,12 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.25
 					days = 90
-					random = 120
+					random_hours = 120
+				}
+				country_event = { 
+					id = qieflavor.26 
+					days = 90 
+					random_days = 120 
 				}
 			}
 		}
@@ -978,6 +1013,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_grant_foreign_licenses"
+			QIE_improve_zhili_monarchy_legitimacy = yes
 			add_timed_idea = {
 				idea = QIE_zhili_war_production_idea
 				days = 365
@@ -1121,7 +1157,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanresearch"
-			add_research_slot = 1
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = QIE_legitimacy_of_the_monarchy_3
+					add_idea = QIE_legitimacy_of_the_monarchy_cao
+				}
+			}
+			china_add_research_slots = yes
+			hidden_effect = {
+				QIE_improve_zhili_monarchy_legitimacy = yes
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1422,6 +1467,11 @@ focus_tree = {
 			remove_ideas = QIE_leadership_crisis_bad
 			country_event = {
 				id = qiefocus.11
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { SHX = { exists = yes } }
+				unlock_decision_tooltip = SHX_QIE_begin_negotiations
 			}
 		}
 	}
@@ -1736,7 +1786,7 @@ focus_tree = {
 					AND = {
 						SQI = {
 							has_country_leader = {
-								name = "宋哲元"
+								name = "屈映光"
 								ruling_only = yes
 							}
 						}

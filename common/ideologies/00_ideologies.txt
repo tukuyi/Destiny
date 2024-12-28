@@ -11,6 +11,7 @@ ideologies = {
 	totalist = {
 		types = {
 			totalist_subtype = {} #generic
+			islamic_communism_subtype = {can_be_randomly_selected = no} #伊斯兰马克思主义
 			jun_zheng_ji_quan_subtype = {can_be_randomly_selected = no} #军政极权主义
 			sorelian_marketism_subtype = {can_be_randomly_selected = no} #市场索雷尔主义
 			natsynd_subtype = {can_be_randomly_selected = no} #National Syndicalism
@@ -125,6 +126,7 @@ ideologies = {
 	syndicalist = {
 		types = {
 			syndicalist_subtype = {} #generic
+			syn_islamic_communism_subtype = {can_be_randomly_selected = no} #伊斯兰马克思主义
 			anarcho_syndicalist_subtype = {can_be_randomly_selected = no} #AnSynd
 			feminist_syndicalist_subtype = {can_be_randomly_selected = no } #Socialist Feminism
 			syn_afrofuture_subtype = {can_be_randomly_selected = no color = { 199 4 138 } } #Afro-Futurism
@@ -202,6 +204,7 @@ ideologies = {
 	radical_socialist = {
 		types = {
 			radical_socialist_subtype = {} #generic
+			radsoc_islamic_communism_subtype = {can_be_randomly_selected = no} #伊斯兰马克思主义
 			radsoc_lu_xun_thought_subtype = {can_be_randomly_selected = no} #无政府君主主义
 			monanarchism_subtype = {can_be_randomly_selected = no} #无政府君主主义
 			anarcho_tridemism_subtype = {can_be_randomly_selected = no} #无政府三民主义
@@ -319,6 +322,7 @@ ideologies = {
 	social_democrat = {
 		types = {
 			social_democrat_subtype = {}
+			socdem_islamic_communism_subtype = {can_be_randomly_selected = no} #伊斯兰共产主义
 			socdem_lianshengism_subtype = {can_be_randomly_selected = no} #联省主义
 			new_democracy_subtype = {can_be_randomly_selected = no} #新民主主义
 			socdem_anarcho_tridemism_subtype = {can_be_randomly_selected = no} #无政府三民主义

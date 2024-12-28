@@ -1488,10 +1488,6 @@ focus_tree = {
 			}
 			set_country_flag = has_united_china
 			if = {
-				limit = { has_idea = QIE_fractured_empire }
-				remove_ideas = QIE_fractured_empire
-			}
-			if = {
 				limit = { 
 					has_completed_focus = QIE_pick_YCP
 				}

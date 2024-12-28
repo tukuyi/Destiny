@@ -219,7 +219,7 @@ set_popularities = {
 }
 
 add_ideas = {
-	QIE_fractured_empire
+	QIE_legitimacy_of_the_monarchy
 	QIE_big_debt
 	QIE_leadership_crisis
 	unequal_treaties

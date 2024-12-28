@@ -6322,13 +6322,12 @@ country_event = {
 				QIE_Jiang_Baili_cos
 				QIE_Wu_Peifu_carm
 			}
-			remove_ideas = QIE_fractured_empire
+			remove_ideas = QIE_legitimacy_of_the_monarchy
 			set_country_flag = Aisin_Gioro_Zaifeng_dead
 			set_country_flag = Aisin_Gioro_Jixing_dead
 			set_country_flag = Aisin_Gioro_Zaixun_dead
 			set_country_flag = Tong_Jixu_dead
 		}
-		remove_ideas = QIE_fractured_empire
 		delete_unit_template_and_units = { division_template = "Manchu Cavalry Division" }
 		delete_unit_template_and_units = { division_template = "Manchu Imperial Guard" }
 		add_political_power = 15
@@ -6775,7 +6774,7 @@ country_event = {#皇帝一鸣惊人
 
 	option = {
 		name = qiecoup.22.a #crush the traitors!
-		remove_ideas = QIE_fractured_empire
+		remove_ideas = QIE_legitimacy_of_the_monarchy
 		clr_country_flag = legation_council_member
 		hidden_effect = {
 			QIE_zhili_clique_flees = yes
@@ -6970,7 +6969,41 @@ country_event = {
 
 	option = {
 		name = qiecoup.24.a #Destroy all those who oppose us!
-		remove_ideas = QIE_fractured_empire
+		remove_ideas = QIE_legitimacy_of_the_monarchy
+		add_political_power = 15
+		country_event = {
+			id = qiecoup.14
+			days = 1
+		}
+		country_event = {
+			id = qiecoup.15
+			days = 2
+		}
+		FNG = { country_event = { id = qiefor.19 } }
+		if = {
+			limit = { has_country_flag = QIE_yan_backs_coup }
+			create_wargoal = {
+				target = SHX
+				type = annex_everything
+			}
+			SHX = {
+				country_event = { id = SHX.manchu.6 days = 1 } #Inform them of the Plot's Failure
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_country_flag = QIE_song_backs_coup
+					has_country_flag = QIE_zhang_backs_coup
+				}
+			}
+			create_wargoal = {
+				target = SQI
+				type = annex_everything
+			}
+		}
+		delete_unit_template_and_units = { division_template = "Manchu Cavalry Division" }
+		delete_unit_template_and_units = { division_template = "Manchu Imperial Guard" }
 		hidden_effect = {
 			set_cosmetic_tag = QIE_ZHL
 			random_other_country = {
@@ -7023,41 +7056,20 @@ country_event = {
 			set_country_flag = Aisin_Gioro_Jixing_dead
 			set_country_flag = Aisin_Gioro_Zaixun_dead
 			set_country_flag = Tong_Jixu_dead
-		}
-		add_political_power = 15
-		country_event = {
-			id = qiecoup.14
-			days = 1
-		}
-		country_event = {
-			id = qiecoup.15
-			days = 2
-		}
-		FNG = { country_event = { id = qiefor.19 } }
-		if = {
-			limit = { has_country_flag = QIE_yan_backs_coup }
-			create_wargoal = {
-				target = SHX
-				type = annex_everything
-			}
-			SHX = {
-				country_event = { id = SHX.manchu.6 days = 1 } #Inform them of the Plot's Failure
-			}
-		}
-		else_if = {
-			limit = {
-				OR = {
-					has_country_flag = QIE_song_backs_coup
-					has_country_flag = QIE_zhang_backs_coup
+			if = {
+				limit = { 
+					SQI = {
+						has_country_leader = {
+							name = "张天然"
+							ruling_only = yes
+						}
+					}
+				}
+				SQI = {
+					country_event = { id = shandong.504 days = 2 }
 				}
 			}
-			create_wargoal = {
-				target = SQI
-				type = annex_everything
-			}
 		}
-		delete_unit_template_and_units = { division_template = "Manchu Cavalry Division" }
-		delete_unit_template_and_units = { division_template = "Manchu Imperial Guard" }
 	}
 }
 
@@ -8913,6 +8925,22 @@ country_event = { #troops appreciate radios
 	option = {
 		name = qieflavor.27.a #nice
 		army_experience = 5
+	}
+}
+
+country_event = { #三弟的墓志铭
+	id = qieflavor.57
+	title = qieflavor.57.t
+	desc = qieflavor.57.d
+	picture = GFX_report_event_QIE_cao_rui
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.57 option qieflavor.57.a"
+		name = qieflavor.57.a 
+		add_political_power = 10
 	}
 }
 

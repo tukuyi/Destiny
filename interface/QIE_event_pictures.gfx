@@ -40,8 +40,12 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_da_xuan.png"
 	}
 	spriteType  = {
-		name = "GFX_report_event_QIE_dang"
-		texturefile = "gfx/event_news_pictures/QIE/QIE_dang.png"
+		name = "GFX_report_event_QIE_da_xuan"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_da_xuan.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_cao_rui"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_cao_rui.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_tong_yi"
