@@ -32,4 +32,14 @@ on_actions = {
 			}
 		}
 	}
+	on_new_term_election = {
+		effect = {
+			### Pacific States of America ###
+			if = {
+				limit = { tag = QIE }
+				country_event = qieroc.31
+				country_event = qieroc.32
+			}
+		}
+	}
 }

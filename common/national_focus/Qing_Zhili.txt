@@ -171,15 +171,47 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_nationalize_germans"
-			add_offsite_building = {
-				type = industrial_complex
-				level = 4
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_military_factory = yes
+			add_one_random_military_factory = yes
+			add_timed_idea = {
+				idea = QIE_nationalised_german_industry
+				days = 200
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_dlc_bba = yes
+				}
+				every_country = {
+					limit = {
+						has_guaranteed = LEC
+					}
+					send_embargo = QIE
+					add_opinion_modifier = { target = ROOT modifier = KR_outraged }
+				}
+				LEC = {
+					send_embargo = QIE
+					add_opinion_modifier = { target = ROOT modifier = KR_hostile }
+				}
+			}
+			else = {
+				every_country = {
+					limit = {
+						has_guaranteed = LEC
+					}
+					add_opinion_modifier = { target = ROOT modifier = KR_outraged }
+				}
+				LEC = {
+					add_opinion_modifier = { target = ROOT modifier = KR_hostile }
+				}
 			}
 			hidden_effect = {
 				country_event = {
 					id = qieflavor.19
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -202,10 +234,22 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_default_debt"
-			remove_ideas = QIE_big_debt
+			custom_effect_tooltip = QIE_debt_default_tt
+			hidden_effect = {
+				remove_ideas = QIE_big_debt
+			}
 			add_timed_idea = {
 				idea = QIE_defaulted_debt
-				days = 180
+				days = 700
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = QIE_populist_support
+				days = 250
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.03
 			}
 			set_country_flag = QIE_on_our_own_military #starts on our own military tree
 		}
@@ -234,12 +278,27 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_salvage_german_industry"
-			add_political_power = 30
 			add_tech_bonus = {
-				name = QIE_salvage_german_industry
-				bonus = 0.75
+				name = QIE_german_designs_chinese_ingenuity
+				bonus = 1
 				uses = 2
 				category = industry
+				category = excavation_tech
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 450
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = GER
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = QIE_iterating_upon_german_designs
+				days = 180
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -280,7 +339,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.21
 					days = 30
-					random = 120
+					random_days = 120
 				}
 			}
 		}
@@ -369,7 +428,7 @@ focus_tree = {
 				country_event = {
 					id = qieflavor.22
 					days = 30
-					random_hours = 120
+					random_days = 120
 				}
 			}
 		}
@@ -400,15 +459,21 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_guardian_of_emperor"
 			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.10
+				ideology = social_conservative
+				popularity = 0.05
+			}
+			add_political_power = 25
+			every_army_leader = {
+				limit = { has_trait = QIE_Monarchist_officer }
+				add_attack = 1
+				gain_xp = 400
 			}
 			add_soccon_to_coalition = yes
 			hidden_effect = {
 				country_event = {
 					id = qieflavor.23
 					days = 30
-					random_hours = 120
+					random_days = 120
 				}
 			}
 		}
@@ -1497,9 +1562,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_lesson_of_intervention"
-			army_experience = 20
-			add_command_power = 30
+			army_experience = 25
 			add_war_support = 0.05
+			add_tech_bonus = {
+				name = QIE_lessons_of_intervention
+				bonus = 0.75
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -3822,30 +3893,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_roc_election
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 		bypass = {
-			has_country_leader = {
-				name = "张君劢"
-				ruling_only = yes
-			}
 			has_government = social_democrat
 		}
 		available = {
-			has_country_leader = {
-				name = "张君劢"
-				ruling_only = yes
-			}
 			has_government = social_democrat
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_min_she_dang"
@@ -3864,19 +3917,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_min_she_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_kan_ding_xian_fa"
@@ -3895,19 +3935,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_min_she_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_he_ping_yu_tong_yi"
@@ -3926,19 +3953,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_he_ping_yu_tong_yi
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_tuan_jie_yu_min_zhu"
@@ -3960,19 +3974,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_kan_ding_xian_fa
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_fei_gong_tuan"
@@ -4006,16 +4007,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_tuan_jie_yu_min_zhu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jiao_yu_bai_tuo_yu_mei"
@@ -4035,19 +4026,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jiao_yu_bai_tuo_yu_mei
 		}
-		prerequisite = {
-			#
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zhong_jiao_kuan_rong"
@@ -4073,19 +4051,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jiao_yu_bai_tuo_yu_mei
 		}
-		prerequisite = {
-			#
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_chuan_tong_bing_fei_cuo_wu"
@@ -4113,30 +4078,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_roc_election
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 		bypass = {
-			has_country_leader = {
-				name = "胡适"
-				ruling_only = yes
-			}
 			has_government = social_liberal
 		}
 		available = {
-			has_country_leader = {
-				name = "胡适"
-				ruling_only = yes
-			}
 			has_government = social_liberal
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jin_bu_dang"
@@ -4155,19 +4102,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jin_bu_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_rong_ren_chu_jin_he_ping"
@@ -4186,19 +4120,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_rong_ren_chu_jin_he_ping
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_he_ping_dai_lai_wen_ding"
@@ -4221,19 +4142,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jin_bu_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zhi_si_chu_jin_gai_ge"
@@ -4252,19 +4160,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_zhi_si_chu_jin_gai_ge
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_gai_ge_dai_lai_wen_ding"
@@ -4281,21 +4176,11 @@ focus_tree = {
 		y = 6
 
 		prerequisite = {
-			focus = QIE_chuan_tong_bing_fei_cuo_wu
-		}
-		prerequisite = {
 			focus = QIE_zhong_jiao_kuan_rong
 		}
 		prerequisite = {
-			 
+			focus = QIE_chuan_tong_bing_fei_cuo_wu
 		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_chuan_tong_bing_fei_cuo_wu"
@@ -4320,16 +4205,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_gai_ge_dai_lai_wen_ding 
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jing_ying_zhi_guo"
@@ -4356,19 +4231,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jing_ying_zhi_guo
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zi_you_de_yan_lun"
@@ -4387,19 +4249,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jing_ying_zhi_guo
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_du_li_de_shi_fa"
@@ -4434,16 +4283,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_zi_you_de_yan_lun
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_tian_fu_ren_quan"
@@ -4462,30 +4301,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_roc_election
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 		bypass = {
-			has_country_leader = {
-				name = "顾维钧"
-				ruling_only = yes
-			}
 			has_government = market_liberal
 		}
 		available = {
-			has_country_leader = {
-				name = "顾维钧"
-				ruling_only = yes
-			}
 			has_government = market_liberal
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xian_zheng_dang_left"
@@ -4812,30 +4633,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_roc_election
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 		bypass = {
-			has_country_leader = {
-				name = "章士钊"
-				ruling_only = yes
-			}
 			has_government = social_conservative
 		}
 		available = {
-			has_country_leader = {
-				name = "章士钊"
-				ruling_only = yes
-			}
 			has_government = social_conservative
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xian_zheng_dang_right"
@@ -5158,30 +4961,12 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_roc_election
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 		bypass = {
-			has_country_leader = {
-				name = "颜惠庆"
-				ruling_only = yes
-			}
 			has_government = authoritarian_democrat
 		}
 		available = {
-			has_country_leader = {
-				name = "颜惠庆"
-				ruling_only = yes
-			}
 			has_government = authoritarian_democrat
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_he_dang"
@@ -5200,19 +4985,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_gong_he_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_gu_gong_he_ming_zhu"
@@ -5231,19 +5003,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_gong_gu_gong_he_ming_zhu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_kai_ban_jing_ying_jiao_yu"
@@ -5268,19 +5027,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_gong_he_dang
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xin_mao_yi_bao_hu"
@@ -5299,19 +5045,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_xin_mao_yi_bao_hu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zheng_dun_ying_hang_ye"
@@ -5339,16 +5072,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_kai_ban_jing_ying_jiao_yu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jian_xing_fa_tuan_zhu_yi"
@@ -5367,19 +5090,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jian_xing_fa_tuan_zhu_yi
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jing_wu_gai_ge"
@@ -5405,19 +5115,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jian_xing_fa_tuan_zhu_yi
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_new_factory"
@@ -5471,16 +5168,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jing_wu_gai_ge
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_shi_jian_yue_fa"
@@ -5578,10 +5265,7 @@ focus_tree = {
 		y = 2
 
 		ai_will_do = {
-			factor = 30
-		}
-		available = {
-			 
+			base = 30
 		}
 		prerequisite = {
 			focus = QIE_chu_li_wai_dong_bei_wen_ti
@@ -5615,14 +5299,8 @@ focus_tree = {
 		x = -5
 		y = 3
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_ti_chu_suo_qiu
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -5670,17 +5348,11 @@ focus_tree = {
 		x = -4
 		y = 4
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_yi_xue_qian_chi
 		}
 		prerequisite = {
 			focus = QIE_du_li_bu_gan_she
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -5795,9 +5467,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_zhi_neng_kao_zi_ji
 		}
-		mutually_exclusive = {
- 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_du_li_bu_gan_she"
@@ -5889,13 +5558,7 @@ focus_tree = {
 			focus = QIE_wm_de_ou_meng_you
 			focus = QIE_xiang_hu_bao_zhang
 		}
-		prerequisite = {
-			
-		}
-		mutually_exclusive = {
-			 
-		}
-
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_lian_he_jun_yan"
 			army_experience = 30 
@@ -5921,12 +5584,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_lian_he_jun_yan
 
-		}
-		prerequisite = {
-			
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -6047,9 +5704,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_jie_chu_xin_peng_you
 		}
-		mutually_exclusive = {
- 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_wu_ke_nai_he_de_xuan_zhe"
@@ -6081,9 +5735,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = QIE_wu_ke_nai_he_de_xuan_zhe
-		}
-		mutually_exclusive = {
- 
 		}
 
 		completion_reward = {
@@ -6162,13 +5813,9 @@ focus_tree = {
 		x = 5
 		y = 2
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_da_yang_jian_de_you_yi
 		}
- 
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_ji_shu_he_zuo"
@@ -6189,13 +5836,10 @@ focus_tree = {
 		x = 5
 		y = 3
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_ji_shu_he_zuo
 		}
- 
+
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_mao_yi_xie_ding"
@@ -6210,6 +5854,224 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = QIE_gong_tuan_dang
+		icon = GFX_goal_QIE_gong_tuan_dang
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = -12
+		y = 8
+
+		bypass = {
+			has_government = syndicalist
+			has_country_flag = QIE_gong_tuan_victory
+		}
+		available = {
+			has_government = syndicalist
+			has_country_flag = QIE_gong_tuan_victory
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_tuan_dang"
+			 
+		}
+	}	
+
+	focus = {
+		id = QIE_tu_di_fa_gai_ge
+		icon = GFX_goal_QIE_tu_di_fa_gai_ge
+		relative_position_id = QIE_gong_tuan_dang
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_gong_tuan_dang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_tu_di_fa_gai_ge"
+			add_popularity = { 
+				ideology = syndicalist 
+				popularity = 0.05 
+			}
+			add_political_power = 70
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_lao_gong_zai_quan
+		icon = GFX_goal_QIE_lao_gong_zai_quan
+		relative_position_id = QIE_gong_tuan_dang
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_gong_tuan_dang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_lao_gong_zai_quan"
+			add_popularity = { 
+				ideology = syndicalist 
+				popularity = 0.05 
+			}
+			add_ideas = QIE_radicalism
+		}
+	}	
+
+	focus = {
+		id = QIE_gong_ren_lian_bang
+		icon = GFX_goal_QIE_gong_ren_lian_bang
+		relative_position_id = QIE_gong_tuan_dang
+		cost = 7.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_tu_di_fa_gai_ge
+		}
+		prerequisite = {
+			focus = QIE_lao_gong_zai_quan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_ren_lian_bang"
+			add_popularity = { 
+				ideology = syndicalist 
+				popularity = 0.05 
+			}
+			swap_ideas = {
+				remove_idea = QIE_radicalism
+				add_idea = QIE_radicalism_idea2
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_min_she_dang_second
+		icon = GFX_goal_QIE_min_she_dang
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = -8
+		y = 8
+
+		bypass = {
+			has_government = social_democrat
+			has_country_flag = QIE_ming_she_second
+		}
+		available = {
+			has_government = social_democrat
+			has_country_flag = QIE_ming_she_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_min_she_dang_second"
+			 
+		}
+	}	
+
+	focus = {
+		id = QIE_jin_bu_dang_second
+		icon = GFX_goal_QIE_jin_bu_dang
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = -4
+		y = 8
+
+		bypass = {
+			has_government = social_liberal
+			has_country_flag = QIE_jin_bu_second
+		}
+		available = {
+			has_government = social_liberal
+			has_country_flag = QIE_jin_bu_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_jin_bu_dang_second"
+			 
+		}
+	}	
+
+	focus = {
+		id = QIE_xian_zheng_dang_left_second_focus
+		icon = GFX_goal_QIE_xian_zheng_dang_left
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = 0
+		y = 8
+
+		bypass = {
+			has_government = market_liberal
+			has_country_flag = QIE_xian_zheng_dang_left_second
+		}
+		available = {
+			has_government = market_liberal
+			has_country_flag = QIE_xian_zheng_dang_left_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_xian_zheng_dang_left_second_focus"
+			 
+		}
+	}	
+
+	focus = {
+		id = QIE_xian_zheng_dang_right_second_focus
+		icon = GFX_goal_QIE_xian_zheng_dang_right
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = 4
+		y = 8
+
+		bypass = {
+			has_government = social_conservative
+			has_country_flag = QIE_xian_zheng_dang_right_second
+		}
+		available = {
+			has_government = social_conservative
+			has_country_flag = QIE_xian_zheng_dang_right_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_xian_zheng_dang_right_second_focus"
+			 
+		}
+	}	
+
+	focus = {
+		id = QIE_gong_he_dang_second_focus
+		icon = GFX_goal_QIE_gong_he_dang
+		relative_position_id = QIE_roc_election
+		cost = 1.00
+		x = 8
+		y = 8
+
+		bypass = {
+			has_government = authoritarian_democrat
+			has_country_flag = QIE_gong_he_dang_second
+		}
+		available = {
+			has_government = authoritarian_democrat
+			has_country_flag = QIE_gong_he_dang_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_he_dang_second"
+			 
+		}
+	}	
 
 #民族主义起义
 	focus = {
@@ -6240,9 +6102,6 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_dian_fu_yi_qie
 		}
@@ -6270,9 +6129,6 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_dian_fu_yi_qie
 		}
@@ -6304,9 +6160,6 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_dian_fu_yi_qie
 		}
@@ -6362,9 +6215,6 @@ focus_tree = {
 		x = -1
 		y = 2
 
-		available = {
-			 
-		}
 		prerequisite = {
 			focus = QIE_shou_wei_jia_guo
 		}

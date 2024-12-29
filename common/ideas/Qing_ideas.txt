@@ -2019,6 +2019,37 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.10
 			}
 		}
+	#中华民国工团党	
+		QIE_radicalism = {#工人权益
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_radicalism"}
+			allowed = {	always = no	}
+			allowed_civil_war = { always = yes }
+			picture = social_planning_1
+			modifier = {
+				local_building_slots = 1
+				consumer_goods_factor = -0.1
+				party_popularity_stability_factor = 0.05
+				production_factory_max_efficiency_factor = -0.08
+				production_factory_start_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = -0.06
+			}
+		}
+		QIE_radicalism_idea2 = {#工人权益
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_radicalism_idea2"}
+			name = QIE_radicalism
+			allowed = {	always = no	}
+			allowed_civil_war = { always = yes }
+			picture = social_planning_3
+			modifier = {
+				local_building_slots = 2
+				monthly_population = 0.05
+				consumer_goods_factor = -0.18
+				party_popularity_stability_factor = 0.2
+				production_factory_max_efficiency_factor = -0.04
+				production_factory_start_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
 	#混乱的蔓延
 		QIE_huan_luan_de_yi_qie = {#混乱蔓延
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_huan_luan_de_yi_qie"}
@@ -2535,6 +2566,39 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.10
 				consumer_goods_factor = 0.1
+			}
+		}
+		QIE_populist_support = {#国耻今方雪！
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_populist_support" }
+			picture = chi_chinese_support
+			allowed = { always = no }
+			modifier = {
+				war_support_weekly = 0.002
+				political_power_gain = 0.10
+			}
+		}
+		QIE_nationalised_german_industry = {#国有化德国工业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_nationalised_german_industry" }
+			picture = GEA_AOG_BONUS
+			allowed = { always = no }
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				production_factory_start_efficiency_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.10
+			}
+		}
+		QIE_iterating_upon_german_designs = {#复现德国设计
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_iterating_upon_german_designs" }
+			picture = generic_research_increase
+			allowed = { always = no }
+			modifier = {
+				research_speed_factor = 0.15
+				industrial_concern_cost_factor = -0.15
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+				}
 			}
 		}
 		QIE_seeing_to_rural_reconstruction = {#着手乡村建设

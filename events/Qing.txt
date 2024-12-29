@@ -10003,9 +10003,6 @@ country_event = {#统一宣言
 			days = 1
 		}
 		add_political_power = 10
-		hidden_effect = {
-			
-		} 
 	}
 }
 
@@ -10048,7 +10045,6 @@ country_event = {#新进步党
 			}
 		}
 	}
-
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -10175,6 +10171,18 @@ country_event = {#工团分子希望参加选举
 			ideology = syndicalist
 			popularity = 0.01
 		}
+		set_party_name = {
+			ideology = syndicalist
+			name = QIE_syndicalist_party_ROC
+			long_name = QIE_syndicalist_party_ROC_long
+		}
+		create_country_leader = {
+			name = "张国焘"
+			desc = "POLITICS_zhang_guo_tao_DESC"
+			picture = "gfx/leaders/SZC/Portrait_SZC_zhang_guo_tao.png"
+			expire = "1.1.1"
+			ideology = yellow_syndicalism_subtype
+		}
 		hidden_effect = {
 			country_event = {
 				id = qieroc.8
@@ -10198,6 +10206,20 @@ country_event = {#大选之日
 	fire_only_once = yes
 	is_triggered_only = yes
 
+	trigger = {
+		NOT = {
+			has_country_flag = QIE_ROC_first_choose_right
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = qieroc.33
+				days = 1100
+			}
+		}
+	}
+
 	option = { 
 		name = qieroc.8.a 
 		set_politics = {
@@ -10213,6 +10235,7 @@ country_event = {#大选之日
 			QIE_Li_ling_shi_sec
 		}
 		hidden_effect = {
+			set_country_flag = QIE_ROC_first_choose_right
 			country_event = {
 				id = qieroc.9
 				days = 30
@@ -10246,6 +10269,7 @@ country_event = {#大选之日
 			QIE_jia_de_sec
 		}
 		hidden_effect = {
+			set_country_flag = QIE_ROC_first_choose_right
 			country_event = {
 				id = qieroc.9
 				days = 30
@@ -10276,6 +10300,7 @@ country_event = {#大选之日
 			QIE_Zhang_Luao_sec_ade
 		}
 		hidden_effect = {
+			set_country_flag = QIE_ROC_first_choose_right
 			create_country_leader = {
 				name = "颜惠庆"
 				desc = "POLITICS_YAN_HUIQING_DESC"
@@ -10302,6 +10327,7 @@ country_event = {#大选之日
 			QIE_Xing_Shilian_sec_sco
 		}
 		hidden_effect = {
+			set_country_flag = QIE_ROC_first_choose_right
 			create_country_leader = {
 				name = "颜惠庆"
 				desc = "POLITICS_YAN_HUIQING_DESC"
@@ -10334,6 +10360,7 @@ country_event = {#大选之日
 			ideology = oligarchy_subtype
 		}
 		hidden_effect = {
+			set_country_flag = QIE_ROC_first_choose_right
 			country_event = {
 				id = qieroc.9
 				days = 30
@@ -10362,9 +10389,6 @@ country_event = {#民主宪政党分裂
 			ideology = social_conservative
 			popularity = -0.02
 		}
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10382,9 +10406,6 @@ country_event = {#工团分子批评大选
 		add_popularity = {
 			ideology = syndicalist
 			popularity = -0.02
-		}
-		hidden_effect = {
-			 
 		}
 	}
 }
@@ -10405,9 +10426,6 @@ country_event = {#胡适博士的新头衔
 			popularity = 0.01
 		}
 		add_political_power = 10
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10429,9 +10447,6 @@ country_event = {#国民党改组
 			expire = "1.1.1"
 			ideology = radical_socialist_subtype
 		}
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10448,9 +10463,6 @@ country_event = {#重新恢复的众议院与参议院
 		name = qieroc.13.a 
 		add_stability = 0.01
 		add_political_power = 20
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10468,9 +10480,6 @@ country_event = {#德式社民主义在中国的实践
 		add_popularity = {
 			ideology = social_democrat
 			popularity = 0.02
-		}
-		hidden_effect = {
-			 
 		}
 	}
 }
@@ -10490,9 +10499,6 @@ country_event = {#精英的新国度
 		add_popularity = {
 			ideology = social_liberal
 			popularity = 0.01
-		}
-		hidden_effect = {
-			 
 		}
 	}
 }
@@ -10517,9 +10523,6 @@ country_event = {#滚动的资金
 		random_owned_state = {
 			add_extra_state_shared_building_slots = 1
 		}
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10537,9 +10540,6 @@ country_event = {#退休的大元帅
 		name = qieroc.17.a 
 		add_stability = 0.01
 		add_political_power = 10
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10555,17 +10555,11 @@ country_event = {#众议院的形式
 	option = { 
 		name = qieroc.18.a 
 		add_political_power = 10
-		hidden_effect = {
-			 
-		}
 	}
 
 	option = { 
 		name = qieroc.18.b
 		add_political_power = 10
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10585,9 +10579,6 @@ country_event = {#宗教
 			ideology = social_democrat
 			popularity = 0.02
 		}
-		hidden_effect = {
-			 
-		}
 	}
 
 	option = { 
@@ -10596,9 +10587,6 @@ country_event = {#宗教
 		add_popularity = {
 			ideology = social_democrat
 			popularity = -0.02
-		}
-		hidden_effect = {
-			 
 		}
 	}
 }
@@ -10615,9 +10603,6 @@ country_event = {#贵族身份
 	option = { 
 		name = qieroc.20.a 
 		add_political_power = 30 
-		hidden_effect = {
-			 
-		}
 	}
 
 	option = { 
@@ -10627,9 +10612,6 @@ country_event = {#贵族身份
 			ideology = social_conservative
 			popularity = 0.02
 		} 
-		hidden_effect = {
-			 
-		}
 	}
 
 	option = { 
@@ -10641,9 +10623,6 @@ country_event = {#贵族身份
 			ideology = authoritarian_democrat
 			popularity = 0.01
 		}
-		hidden_effect = {
-			 
-		}
 	}
 
 	option = { 
@@ -10651,9 +10630,6 @@ country_event = {#贵族身份
 		add_stability = 0.03
 		add_war_support = 0.04
 		add_political_power = -25
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10680,9 +10656,6 @@ country_event = {#新生的公民党
 			name = QIE_paternal_autocrat_party_ROC
 			long_name = QIE_paternal_autocrat_party_ROC_long
 		}
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10702,9 +10675,6 @@ country_event = {#被泼墨的孔庙
 			ideology = social_conservative
 			popularity = -0.01
 		}
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10720,9 +10690,6 @@ country_event = {#广州的新议员
 	option = { 
 		name = qieroc.23.a 
 		add_stability = 0.01
-		hidden_effect = {
-			 
-		}
 	}
 }
 
@@ -10914,6 +10881,407 @@ country_event = {#收回香港
 			ideology = paternal_autocrat
 			popularity = 0.01
 		}
+	}
+}
+
+country_event = {#第二次选举
+	id = qieroc.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.31" }
+	title = qieroc.31.t
+	desc = qieroc.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = QIE
+		NOT = {
+			has_country_flag = QIE_ROC_second_choose_right
+		}
+	}
+
+	option = {#工团党 
+		name = qieroc.31.a 
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = syndicalist
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		set_country_flag = QIE_gong_tuan_victory
+	}
+
+	option = {#民社党 
+		name = qieroc.31.b
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = social_democrat
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		if = {
+			limit = { 
+				has_country_flag = QIE_MSD_zhang_jun_mai
+			}
+			if = {
+				limit = { 
+					has_country_leader = {
+						name = "张君劢"
+						ruling_only = yes
+					}
+				}
+				set_country_leader_portrait = {
+					ideology = socdem_national_socialism_subtype
+					portrait = GFX_Portrait_QIE_Zhang_Jun_Li_old
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "张君劢"
+					desc = "POLITICS_QIE_Zhang_Jun_Li_DESC"
+					picture = "gfx/leaders/QIE/Portrait_QIE_Zhang_Jun_Li.png"
+					expire = "1.1.1"
+					ideology = socdem_national_socialism_subtype
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_flag = QIE_MSD_Zhang_dong_sun
+			}
+			create_country_leader = {
+				name = "张东荪"
+				desc = "POLITICS_QIE_Zhang_dong_sun_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Zhang_dong_sun.png"
+				expire = "1.1.1"
+				ideology = socdem_national_socialism_subtype
+			}
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_zhang_jun_mai_hog
+				QIE_Zhang_Dongsun_for_sco
+				QIE_luo_rong_ji_eco
+				QIE_Li_ling_shi_sec
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_min_she_dang
+				}
+				set_country_flag = QIE_ming_she_second
+			}
+		}
+	}
+
+	option = {#进步党 
+		name = qieroc.31.c
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = social_liberal
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_hu_hsi_hog
+				QIE_zhang_jia_eco
+				QIE_shi_zhao_ji_for
+				QIE_jia_de_sec
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_jin_bu_dang
+				}
+				set_country_flag = QIE_jin_bu_second
+			}
+		}
+	}	
+
+	option = {#宪政左
+		name = qieroc.31.e
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = market_liberal
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_soccon_to_coalition = yes
+			add_ideas = {
+				QIE_gu_wei_jun_hog
+				QIE_Zhang_Liangren_for_mli
+				QIE_Hu_Boyuan_eco_sli
+				QIE_Zhang_Luao_sec_ade
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_xian_zheng_dang_left
+				}
+				set_country_flag = QIE_xian_zheng_dang_left_second
+			}
+		}
+	}		
+
+	option = {#宪政右
+		name = qieroc.31.f
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = social_conservative
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_marlib_to_coalition = yes
+			add_ideas = {
+				QIE_zhang_shi_zhao_hog
+				QIE_Wu_Shaozeng_eco_sco
+				QIE_zhang_zhong_xiang_for
+				QIE_Xing_Shilian_sec_sco
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_xian_zheng_dang_right
+				}
+				set_country_flag = QIE_xian_zheng_dang_right_second
+			}
+		}
+	}			
+
+	option = {#共和党
+		name = qieroc.31.g
+		set_country_flag = QIE_ROC_second_choose_right
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_Yan_Huiqing_hog_ade
+				QIE_song_han_zhang_eco
+				QIE_huang_fu_sec
+				QIE_xu_fu_su_for
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_gong_he_dang
+				}
+				set_country_flag = QIE_gong_he_dang_second
+			}
+		}
+	}		
+}
+
+country_event = {#第三次选举
+	id = qieroc.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.32" }
+	title = qieroc.32.t
+	desc = qieroc.32.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = QIE
+		NOT = {
+			has_country_flag = QIE_ROC_third_choose_right
+		}
+		OR = {
+			has_government = social_democrat
+			has_government = market_liberal
+			has_government = social_liberal
+			has_government = social_conservative
+			has_government = authoritarian_democrat
+		}	
+	}
+
+	option = {#工团党 
+		name = qieroc.32.a 
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = syndicalist
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		set_country_flag = QIE_gong_tuan_victory
+	}
+
+	option = {#民社党 
+		name = qieroc.32.b
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = social_democrat
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_zhang_jun_mai_hog
+				QIE_Zhang_Dongsun_for_sco
+				QIE_luo_rong_ji_eco
+				QIE_Li_ling_shi_sec
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_min_she_dang
+					NOT = {
+						has_country_flag = QIE_ming_she_second
+					}
+				}
+				set_country_flag = QIE_ming_she_second
+			}
+		}
+	}
+
+	option = {#进步党 
+		name = qieroc.32.c
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = social_liberal
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_hu_hsi_hog
+				QIE_zhang_jia_eco
+				QIE_shi_zhao_ji_for
+				QIE_jia_de_sec
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_jin_bu_dang
+					NOT = {
+						has_country_flag = QIE_jin_bu_second
+					}
+				}
+				set_country_flag = QIE_jin_bu_second
+			}
+		}
+	}	
+
+	option = {#宪政左
+		name = qieroc.32.e
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = market_liberal
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_soccon_to_coalition = yes
+			add_ideas = {
+				QIE_gu_wei_jun_hog
+				QIE_Zhang_Liangren_for_mli
+				QIE_Hu_Boyuan_eco_sli
+				QIE_Zhang_Luao_sec_ade
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_xian_zheng_dang_left
+					NOT = {
+						has_country_flag = QIE_xian_zheng_dang_left_second
+					}
+				}
+				set_country_flag = QIE_xian_zheng_dang_left_second
+			}
+		}
+	}		
+
+	option = {#宪政右
+		name = qieroc.32.f
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = social_conservative
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_marlib_to_coalition = yes
+			add_ideas = {
+				QIE_zhang_shi_zhao_hog
+				QIE_Wu_Shaozeng_eco_sco
+				QIE_zhang_zhong_xiang_for
+				QIE_Xing_Shilian_sec_sco
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_xian_zheng_dang_right
+					NOT = {
+						has_country_flag = QIE_xian_zheng_dang_right_second
+					}
+				}
+				set_country_flag = QIE_xian_zheng_dang_right_second
+			}
+		}
+	}			
+
+	option = {#共和党
+		name = qieroc.32.g
+		set_country_flag = QIE_ROC_third_choose_right
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			remove_all_ministers = yes
+			add_ideas = {
+				QIE_Yan_Huiqing_hog_ade
+				QIE_song_han_zhang_eco
+				QIE_huang_fu_sec
+				QIE_xu_fu_su_for
+			}
+			if = {
+				limit = { 
+					has_completed_focus = QIE_gong_he_dang
+					NOT = {
+						has_country_flag = QIE_gong_he_dang_second
+					}
+				}
+				set_country_flag = QIE_gong_he_dang_second
+			}
+		}
+	}		
+}
+
+country_event = {#民社党的候选人
+	id = qieroc.33
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.33" }
+	title = qieroc.33.t
+	desc = {
+		text =  qieroc.33.d.yes
+		trigger = {
+			has_completed_focus = QIE_min_she_dang
+		}
+	}
+	desc = {
+		text =  qieroc.33.d.no
+		trigger = {
+			NOT = {
+				has_completed_focus = QIE_min_she_dang
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = qieroc.33.a 
+		set_country_flag = QIE_MSD_zhang_jun_mai
+	}
+
+	option = { 
+		name = qieroc.33.b
+		set_country_flag = QIE_MSD_Zhang_dong_sun
 	}
 }
 

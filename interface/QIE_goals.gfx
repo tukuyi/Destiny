@@ -4,6 +4,22 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/QIE_wu_pei_fu.png"
 	}
 	spriteType = {
+		name = "GFX_goal_QIE_gong_tuan_dang"
+		texturefile = "gfx/interface/goals/QIE_gong_tuan_dang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_tu_di_fa_gai_ge"
+		texturefile = "gfx/interface/goals/QIE_tu_di_fa_gai_ge.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_lao_gong_zai_quan"
+		texturefile = "gfx/interface/goals/QIE_lao_gong_zai_quan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_gong_ren_lian_bang"
+		texturefile = "gfx/interface/goals/QIE_gong_ren_lian_bang.png"
+	}
+	spriteType = {
 		name = "GFX_goal_QIE_chu_li_fan_dui_pai"
 		texturefile = "gfx/interface/goals/QIE_chu_li_fan_dui_pai.png"
 	}

@@ -1062,6 +1062,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Jun_Li.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_QIE_Zhang_Jun_Li_old"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Jun_Li_old.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Zhang_dong_sun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_dong_sun.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_Zhang_Shi_Jun"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Shi_Jun.png"
 	}
@@ -1162,4 +1170,9 @@ spriteTypes = {
 		name = "GFX_Portrait_QYG_Pan_Han_Nian"
 		texturefile = "gfx/leaders/QYR/Portrait_QYG_Pan_Han_Nian.png"
 	}
+#四川
+	spriteType = {
+		name = "GFX_Portrait_SZC_zhang_guo_tao"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_zhang_guo_tao.png"
+	}	
 }
