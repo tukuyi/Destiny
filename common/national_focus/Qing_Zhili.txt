@@ -3938,6 +3938,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_he_ping_yu_tong_yi"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = QIE_peace_and_union
 		}
 	}
@@ -3956,6 +3961,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_tuan_jie_yu_min_zhu"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = QIE_peace_and_union
 				add_idea = QIE_peace_and_union2
@@ -3977,7 +3987,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_fei_gong_tuan"
-			add_ideas = QIE_da_po_hang_hui_bi_lei
 			add_popularity = {
 				ideology = syndicalist
 				popularity = -0.05
@@ -3986,6 +3995,9 @@ focus_tree = {
 				ideology = totalist
 				popularity = -0.05
 			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = QIE_da_po_hang_hui_bi_lei
+			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = qieroc.14
 				days = 3
@@ -5149,8 +5161,7 @@ focus_tree = {
 						modifier = GXC_state_capitalism_plan
 					}
 				}
-			}
-			custom_effect_tooltip = tooltip_white_line 
+			} 
 		}
 	}
 
@@ -5978,6 +5989,107 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_min_she_dang_second"
 			 
+		}
+	}	
+
+	focus = {
+		id = QIE_gong_gong_gong_cheng
+		icon = GFX_goal_QIE_gong_gong_gong_cheng
+		relative_position_id = QIE_min_she_dang_second
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_min_she_dang_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_gong_gong_cheng"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_da_po_hang_hui_bi_lei
+				add_idea = QIE_da_po_hang_hui_bi_lei2
+			} 
+		}
+	}	
+
+	focus = {
+		id = QIE_xiang_chun_dian_qi_hua
+		icon = GFX_goal_QIE_xiang_chun_dian_qi_hua
+		relative_position_id = QIE_min_she_dang_second
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_min_she_dang_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_xiang_chun_dian_qi_hua"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_quan_xin_guo_du
+		icon = GFX_goal_QIE_quan_xin_guo_du
+		relative_position_id = QIE_min_she_dang_second
+		cost = 10.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_gong_gong_gong_cheng
+		}
+		prerequisite = {
+			focus = QIE_xiang_chun_dian_qi_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_quan_xin_guo_du"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_da_po_hang_hui_bi_lei2
+				add_idea = QIE_da_po_hang_hui_bi_lei3
+			} 
 		}
 	}	
 

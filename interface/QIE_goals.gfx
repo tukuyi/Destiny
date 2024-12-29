@@ -4,6 +4,14 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/QIE_wu_pei_fu.png"
 	}
 	spriteType = {
+		name = "GFX_goal_QIE_quan_xin_guo_du"
+		texturefile = "gfx/interface/goals/QIE_quan_xin_guo_du.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_gong_gong_gong_cheng"
+		texturefile = "gfx/interface/goals/QIE_gong_gong_gong_cheng.png"
+	}
+	spriteType = {
 		name = "GFX_goal_QIE_gong_tuan_dang"
 		texturefile = "gfx/interface/goals/QIE_gong_tuan_dang.png"
 	}
