@@ -4299,6 +4299,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_tian_fu_ren_quan"
 			add_ideas = QIE_gui_ze_de_yi_yi 
+			hidden_effect = {
+				country_event = {
+					id = qieroc.37
+					days = 30
+				}
+			}
 		}
 	}
 
@@ -4337,19 +4343,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_xian_zheng_dang_left
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_shi_ye_shi_wei_yi_chu_lu"
@@ -4613,16 +4606,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_guan_shui_zi_zhu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		available = {
-
-		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_free_dragon"
@@ -4631,6 +4614,12 @@ focus_tree = {
 				remove_idea = QIE_Ricardo_economy
 				add_idea = QIE_Ricardo_economy2
 			} 
+			hidden_effect = {
+				country_event = {
+					id = qieroc.37
+					days = 30
+				}
+			}
 		}
 	}
 
@@ -5162,6 +5151,12 @@ focus_tree = {
 					}
 				}
 			} 
+			hidden_effect = {
+				country_event = {
+					id = qieroc.36
+					days = 30
+				}
+			}
 		}
 	}
 
@@ -6040,7 +6035,7 @@ focus_tree = {
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = infrastructure
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
@@ -6048,7 +6043,15 @@ focus_tree = {
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = infrastructure
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
@@ -6112,7 +6115,89 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jin_bu_dang_second"
-			 
+
+		}
+	}	
+
+	focus = {
+		id = QIE_si_fa_ba_mian_quan
+		icon = GFX_goal_QIE_si_fa_ba_mian_quan
+		relative_position_id = QIE_jin_bu_dang_second
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_jin_bu_dang_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_si_fa_ba_mian_quan"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_bao_rong2
+				add_idea = QIE_bao_rong3
+			} 
+		}
+	}	
+
+	focus = {
+		id = QIE_yi_liao_bao_xian
+		icon = GFX_goal_QIE_yi_liao_bao_xian
+		relative_position_id = QIE_jin_bu_dang_second
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_jin_bu_dang_second
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_yi_liao_bao_xian"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			add_war_support = 0.05
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = USA_progressive_medicare
+				bonus = 1.5
+				uses = 1
+				category = hospital_tech
+			}
+			add_ideas = QIE_public_goods
+		}
+	}	
+
+	focus = {
+		id = QIE_guo_jia_yin_hang
+		icon = GFX_goal_QIE_guo_jia_yin_hang
+		relative_position_id = QIE_jin_bu_dang_second
+		cost = 7.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_yi_liao_bao_xian
+		}
+		prerequisite = {
+			focus = QIE_si_fa_ba_mian_quan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_guo_jia_yin_hang"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = QIE_fdic_idea
 		}
 	}	
 
@@ -6140,6 +6225,84 @@ focus_tree = {
 	}	
 
 	focus = {
+		id = QIE_da_ji_long_duan
+		icon = GFX_goal_QIE_da_ji_long_duan
+		relative_position_id = QIE_xian_zheng_dang_left_second_focus
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_xian_zheng_dang_left_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_da_ji_long_duan"
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_Ricardo_economy2
+				add_idea = QIE_Ricardo_economy3
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_qu_zhong_xin_hua_shi_chang
+		icon = GFX_goal_QIE_qu_zhong_xin_hua_shi_chang
+		relative_position_id = QIE_xian_zheng_dang_left_second_focus
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_xian_zheng_dang_left_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_qu_zhong_xin_hua_shi_chang"
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = QIE_local_budgeting 
+		}
+	}	
+
+	focus = {
+		id = QIE_ke_xue_shui_zhi
+		icon = GFX_RUS_Progressive_Tax
+		relative_position_id = QIE_xian_zheng_dang_left_second_focus
+		cost = 7.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_da_ji_long_duan
+		}
+		prerequisite = {
+			focus = QIE_qu_zhong_xin_hua_shi_chang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_ke_xue_shui_zhi"
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_Ricardo_economy3
+				add_idea = QIE_Ricardo_economy4
+			}
+		}
+	}	
+
+	focus = {
 		id = QIE_xian_zheng_dang_right_second_focus
 		icon = GFX_goal_QIE_xian_zheng_dang_right
 		relative_position_id = QIE_roc_election
@@ -6159,6 +6322,115 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xian_zheng_dang_right_second_focus"
 			 
+		}
+	}	
+
+	focus = {
+		id = QIE_yi_ming_fa_an
+		icon = GFX_goal_QIE_yi_ming_fa_an
+		relative_position_id = QIE_xian_zheng_dang_right_second_focus
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_xian_zheng_dang_right_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_yi_ming_fa_an"
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = QIE_immigration_act_idea
+		}
+	}	
+
+	focus = {
+		id = QIE_ai_gup_zhu_yi_jiao_yi
+		icon = GFX_goal_QIE_ai_gup_zhu_yi_jiao_yi
+		relative_position_id = QIE_xian_zheng_dang_right_second_focus
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_xian_zheng_dang_right_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_ai_gup_zhu_yi_jiao_yi"
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.10
+			}
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_manpower = 2380
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_kuo_da_nong_ye_fu_chi_zheng_che
+		icon = GFX_RUS_Final_Land_Policy_Solution
+		relative_position_id = QIE_xian_zheng_dang_right_second_focus
+		cost = 7.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_yi_ming_fa_an
+		}
+		prerequisite = {
+			focus = QIE_ai_gup_zhu_yi_jiao_yi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_kuo_da_nong_ye_fu_chi_zheng_che"
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_agrarian_paternalism
+				add_idea = QIE_agrarian_paternalism2
+			}
 		}
 	}	
 

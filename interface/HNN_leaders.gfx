@@ -1058,6 +1058,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Pei_Er_Gun.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_QIE_yan_yang_chu"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_yan_yang_chu.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_Zhang_Jun_Li"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Jun_Li.png"
 	}

@@ -1796,11 +1796,41 @@ ideas = {
 			picture = NFA_agrarian_paternalism
 			allowed = { always = no }
             modifier = {
-				political_power_factor = -0.04
 				consumer_goods_factor = -0.07
+				political_power_factor = -0.04
 				industrial_capacity_factory = 0.07
-				production_factory_start_efficiency_factor = 0.06
 				global_building_slots_factor = 0.03
+				production_factory_start_efficiency_factor = 0.06
+			}
+		}
+		QIE_agrarian_paternalism2 = {#侬本思想
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_agrarian_paternalism2"}
+			name = QIE_agrarian_paternalism
+			picture = NFA_agrarian_paternalism
+			allowed = { always = no }
+            modifier = {
+				stability_weekly = 0.005
+				monthly_population = 0.15
+				political_power_gain = 0.08
+				consumer_goods_factor = -0.10
+				political_power_factor = -0.04
+				industrial_capacity_factory = 0.07
+				global_building_slots_factor = 0.03
+				party_popularity_stability_factor = 0.20
+				production_factory_efficiency_gain_factor = -0.02
+				production_factory_start_efficiency_factor = 0.06	
+			}
+		}
+		QIE_immigration_act_idea = {#移民法案
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_immigration_act_idea"}
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_constitutional_guarantees
+			modifier = {
+				local_supplies = 0.05
+				stability_factor = 0.10
+				MONTHLY_POPULATION = -0.05
+				political_power_gain = 0.05
 			}
 		}
 	#宪政党自由派
@@ -1859,6 +1889,55 @@ ideas = {
 				production_factory_start_efficiency_factor = 0.10
 			}
 		}
+		QIE_Ricardo_economy3 = {#李嘉图模式
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_Ricardo_economy3"}
+			allowed = { always = no }
+			name = QIE_Ricardo_economy
+			picture = freetrade
+			modifier = {
+				economy_cost_factor = -0.10
+				consumer_goods_factor = 0.05
+				conversion_cost_mil_to_civ_factor = 0.08
+				repair_speed_industrial_complex_factor = 0.03
+				line_change_production_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.12
+				production_speed_industrial_complex_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		QIE_Ricardo_economy4 = {#李嘉图模式
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_Ricardo_economy4"}
+			allowed = { always = no }
+			name = QIE_Ricardo_economy
+			picture = freetrade
+			modifier = {
+				stability_weekly = 0.003
+				monthly_population = 0.12
+				economy_cost_factor = -0.10
+				consumer_goods_factor = -0.05
+				party_popularity_stability_factor = 0.15
+				conversion_cost_mil_to_civ_factor = 0.08
+				repair_speed_industrial_complex_factor = 0.03
+				line_change_production_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_industrial_complex_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		QIE_local_budgeting = {#经济去中心化
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_local_budgeting"}
+			allowed = {	always = no	}
+			allowed_civil_war = { always = yes }
+			picture = local_budgeting_1
+			modifier = { 
+				local_supplies = 0.05
+				encryption_factor = 0.02
+				resistance_growth = -0.03
+				political_power_gain = -0.01
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
 	#进步党
 		QIE_bao_rong = {#相互包容 
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_bao_rong"}
@@ -1874,6 +1953,7 @@ ideas = {
 		QIE_bao_rong2 = {#相互包容 
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_bao_rong2"}
 			allowed = { always = no }
+			name = QIE_bao_rong
 			picture = peace
 			modifier = {
 				stability_factor = 0.10
@@ -1882,6 +1962,51 @@ ideas = {
 				resistance_growth = -0.10
 				social_liberal_drift = 0.05
 				political_power_factor = 0.10
+			}
+		}
+		QIE_bao_rong3 = {#相互包容 
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_bao_rong3"}
+			allowed = { always = no }
+			name = QIE_bao_rong
+			picture = peace
+			modifier = {
+				stability_factor = 0.10
+				stability_weekly = 0.005
+				compliance_growth = 0.10
+				resistance_growth = -0.10
+				social_liberal_drift = 0.05
+				political_power_gain = 0.06
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.18
+				party_popularity_stability_factor = 0.15
+				production_factory_max_efficiency_factor = 0.08				
+			}
+		}
+		QIE_public_goods = {#国家医疗体系
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_public_goods"}
+			allowed = {	always = no	}
+			allowed_civil_war = { always = yes }
+			picture = American_corporatism
+			modifier = { 
+				local_resources = 0.10
+				monthly_population = 0.05
+				forced_surrender_limit = 0.05
+				party_popularity_stability_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.03
+			}
+			research_bonus = {
+				electronics = 0.05
+			}
+		}
+		QIE_fdic_idea = {#国家银行
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea QIE_fdic_idea"}
+			allowed = { always = no }
+			picture = brain_trust_2
+			modifier = {
+				stability_factor = 0.05
+				mobilization_speed = 0.15
+				research_speed_factor = 0.02
+				consumer_goods_factor = -0.10
 			}
 		}
 		QIE_zhi_shi_de_jia_zhi = {#知识的价值 

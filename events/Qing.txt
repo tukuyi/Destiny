@@ -10214,6 +10214,10 @@ country_event = {#大选之日
 	immediate = {
 		hidden_effect = {
 			country_event = {
+				id = qieroc.34
+				days = 150
+			}
+			country_event = {
 				id = qieroc.33
 				days = 1100
 			}
@@ -10480,6 +10484,12 @@ country_event = {#德式社民主义在中国的实践
 		add_popularity = {
 			ideology = social_democrat
 			popularity = 0.02
+		}
+		hidden_effect = {
+			country_event = {
+				id = qieroc.35
+				days = 60
+			}
 		}
 	}
 }
@@ -10956,6 +10966,18 @@ country_event = {#第二次选举
 				ideology = socdem_national_socialism_subtype
 			}
 		}
+		else_if = {
+			limit = { 
+				has_country_flag = QIE_MSD_yan_yang_chu
+			}
+			create_country_leader = {
+				name = "晏阳初"
+				desc = "POLITICS_QIE_yan_yang_chu_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_yan_yang_chu.png"
+				expire = "1.1.1"
+				ideology = socdem_national_socialism_subtype
+			}
+		}
 		hidden_effect = {
 			remove_all_ministers = yes
 			add_ideas = {
@@ -11282,6 +11304,147 @@ country_event = {#民社党的候选人
 	option = { 
 		name = qieroc.33.b
 		set_country_flag = QIE_MSD_Zhang_dong_sun
+	}
+
+	option = { 
+		name = qieroc.33.c
+		trigger = {
+			NOT = {
+				has_completed_focus = QIE_min_she_dang
+			}
+		}
+		set_country_flag = QIE_MSD_yan_yang_chu
+	}
+}
+
+country_event = {#酒精法
+	id = qieroc.34
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.34" }
+	title = qieroc.34.t
+	desc = qieroc.34.d
+	picture = GFX_report_event_HOL_alcoholism_on_the_rise3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {# 21
+		name = qieroc.34.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 15
+		add_stability = 0.03
+	}
+	option = {# 18
+		name = qieroc.34.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 30
+		add_stability = 0.01
+	}
+	option = {# 16
+		name = qieroc.34.c
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 45
+		add_popularity = { 
+			ideology = authoritarian_democrat 
+			popularity = 0.03 
+		}
+		add_stability = -0.01
+	}
+}
+
+country_event = {#福利改革
+	id = qieroc.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event qieroc.35"}
+	title = qieroc.35.t
+	desc = qieroc.35.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {# Have stronger work requirements
+		name = qieroc.35.a
+		add_political_power = 25
+		random_owned_state = {
+			limit = {
+				industrial_complex > 0
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+
+	option = {# Make it more exclusive
+		name = qieroc.35.b
+		add_stability = 0.02
+		add_political_power = 45
+	}
+}
+
+country_event = {#争夺补助金
+	id = qieroc.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event qieroc.36"}
+	title = qieroc.36.t
+	desc = qieroc.36.d
+	
+	picture = GFX_report_event_BRM_oil_fields
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {# Farms
+		name = qieroc.36.a
+		add_stability = 0.02
+		add_timed_idea = {
+			idea = CAL_business_grants_idea
+			days = 180
+		}
+	}
+	option = {# Small Businesses
+		name = qieroc.36.b
+		add_stability = 0.03
+		add_popularity = { 
+			ideology = authoritarian_democrat 
+			popularity = 0.02 
+		}
+	}
+	option = {# Oil
+		name = qieroc.36.c
+		random_owned_controlled_state = {
+			add_resource = {
+				type = oil
+				amount = 8
+			}
+		}
+	}
+}
+
+country_event = {#重获新生
+	id = qieroc.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event qieroc.37"}
+	title = qieroc.37.t
+	desc = qieroc.37.d
+	picture = GFX_report_event_generic_run_on_the_banks
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {# Thank God for Laissez-Faires
+		name = qieroc.37.a
+		add_stability = 0.12
+		add_political_power = 65
+		add_popularity = { 
+			ideology = market_liberal 
+			popularity = 0.07 
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+		}
 	}
 }
 

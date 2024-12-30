@@ -4,6 +4,34 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/QIE_wu_pei_fu.png"
 	}
 	spriteType = {
+		name = "GFX_goal_QIE_si_fa_ba_mian_quan"
+		texturefile = "gfx/interface/goals/QIE_si_fa_ba_mian_quan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_yi_liao_bao_xian"
+		texturefile = "gfx/interface/goals/QIE_yi_liao_bao_xian.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_guo_jia_yin_hang"
+		texturefile = "gfx/interface/goals/QIE_guo_jia_yin_hang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_da_ji_long_duan"
+		texturefile = "gfx/interface/goals/QIE_da_ji_long_duan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_qu_zhong_xin_hua_shi_chang"
+		texturefile = "gfx/interface/goals/QIE_qu_zhong_xin_hua_shi_chang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_yi_ming_fa_an"
+		texturefile = "gfx/interface/goals/QIE_yi_ming_fa_an.png"
+	}
+	spriteType = {
+		name = "GFX_goal_QIE_ai_gup_zhu_yi_jiao_yi"
+		texturefile = "gfx/interface/goals/QIE_ai_gup_zhu_yi_jiao_yi.png"
+	}
+	spriteType = {
 		name = "GFX_goal_QIE_quan_xin_guo_du"
 		texturefile = "gfx/interface/goals/QIE_quan_xin_guo_du.png"
 	}
