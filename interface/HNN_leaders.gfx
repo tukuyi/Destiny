@@ -1062,6 +1062,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_yan_yang_chu.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_QIE_yu_you_ren"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_yu_you_ren.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_zhang_fo_quan"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_zhang_fo_quan.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_zhang_xiao_ruo"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_zhang_xiao_ruo.png"
 	}

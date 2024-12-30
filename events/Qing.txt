@@ -10225,6 +10225,14 @@ country_event = {#大选之日
 				id = qieroc.38
 				days = 1110
 			}
+			country_event = {
+				id = qieroc.39
+				days = 1115
+			}
+			country_event = {
+				id = qieroc.40
+				days = 1120
+			}
 		}
 	}
 
@@ -11012,26 +11020,26 @@ country_event = {#第二次选举
 		}
 		if = {
 			limit = { 
-				has_country_flag = QIE_XZD_gu_wei_jun
+				has_country_flag = QIE_JBD_hu_shi
 			}
 			create_country_leader = {
-				name = "顾维钧"
-				desc = "POLITICS_GU_WEIJUN_ROC_DESC"
-				picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+				name = "胡适"
+				desc = "POLITICS_HU_SHIH_ROC_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Hu_Shih.png"
 				expire = "1.1.1"
-				ideology = marlib_classical_liberalism_subtype
+				ideology = meritocratic_liberalism_subtype
 			}
 		}
 		else_if = {
 			limit = { 
-				has_country_flag = QIE_XZD_zhang_xiao_ruo
+				has_country_flag = QIE_JBD_zhang_fo_quan
 			}
 			create_country_leader = {
-				name = "张孝若"
-				desc = "POLITICS_zhang_xiao_ruo_DESC"
-				picture = "gfx/leaders/QIE/Portrait_QIE_zhang_xiao_ruo.png"
+				name = "张佛泉"
+				desc = "POLITICS_zhang_fo_quan_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_zhang_fo_quan.png"
 				expire = "1.1.1"
-				ideology = marlib_national_liberalism_subtype
+				ideology = soclib_humanistic_capitalism_subtype
 			}
 		}
 		hidden_effect = {
@@ -11059,6 +11067,30 @@ country_event = {#第二次选举
 			election_frequency = 48
 			elections_allowed = yes
 		}
+		if = {
+			limit = { 
+				has_country_flag = QIE_XZD_gu_wei_jun
+			}
+			create_country_leader = {
+				name = "顾维钧"
+				desc = "POLITICS_GU_WEIJUN_ROC_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+				expire = "1.1.1"
+				ideology = marlib_classical_liberalism_subtype
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_flag = QIE_XZD_zhang_xiao_ruo
+			}
+			create_country_leader = {
+				name = "张孝若"
+				desc = "POLITICS_zhang_xiao_ruo_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_zhang_xiao_ruo.png"
+				expire = "1.1.1"
+				ideology = marlib_national_liberalism_subtype
+			}
+		}
 		hidden_effect = {
 			remove_all_ministers = yes
 			add_soccon_to_coalition = yes
@@ -11084,6 +11116,30 @@ country_event = {#第二次选举
 			ruling_party = social_conservative
 			election_frequency = 48
 			elections_allowed = yes
+		}
+		if = {
+			limit = { 
+				has_country_flag = QIE_XZD_zhang_shi_zhao
+			}
+			create_country_leader = {
+				name = "章士钊"
+				desc = "POLITICS_ZHANG_SHI_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Zhang_Shi_Jun.png"
+				expire = "1.1.1"
+				ideology = neo_confucianism_subtype
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_flag = QIE_XZD_yu_you_ren
+			}
+			create_country_leader = {
+				name = "于右任"
+				desc = "POLITICS_yu_you_ren_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_yu_you_ren.png"
+				expire = "1.1.1"
+				ideology = national_conservative_subtype
+			}
 		}
 		hidden_effect = {
 			remove_all_ministers = yes
@@ -11512,6 +11568,72 @@ country_event = {#宪政党左翼的候选人
 	option = { 
 		name = qieroc.38.b
 		set_country_flag = QIE_XZD_zhang_xiao_ruo
+	}
+}
+
+country_event = {#进步党的候选人
+	id = qieroc.39
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.39" }
+	title = qieroc.39.t
+	desc = {
+		text =  qieroc.39.d.yes
+		trigger = {
+			has_completed_focus = QIE_jin_bu_dang
+		}
+	}
+	desc = {
+		text =  qieroc.39.d.no
+		trigger = {
+			NOT = {
+				has_completed_focus = QIE_jin_bu_dang
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = qieroc.39.a 
+		set_country_flag = QIE_JBD_hu_shi
+	}
+
+	option = { 
+		name = qieroc.39.b
+		set_country_flag = QIE_JBD_zhang_fo_quan
+	}
+}
+
+country_event = {#宪政右的候选人
+	id = qieroc.40
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.40" }
+	title = qieroc.40.t
+	desc = {
+		text =  qieroc.40.d.yes
+		trigger = {
+			has_completed_focus = QIE_xian_zheng_dang_right
+		}
+	}
+	desc = {
+		text =  qieroc.40.d.no
+		trigger = {
+			NOT = {
+				has_completed_focus = QIE_xian_zheng_dang_right
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = qieroc.40.a 
+		set_country_flag = QIE_XZD_zhang_shi_zhao
+	}
+
+	option = { 
+		name = qieroc.40.b
+		set_country_flag = QIE_XZD_yu_you_ren
 	}
 }
 
