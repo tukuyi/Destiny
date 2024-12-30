@@ -10221,6 +10221,10 @@ country_event = {#大选之日
 				id = qieroc.33
 				days = 1100
 			}
+			country_event = {
+				id = qieroc.38
+				days = 1110
+			}
 		}
 	}
 
@@ -11006,6 +11010,30 @@ country_event = {#第二次选举
 			election_frequency = 48
 			elections_allowed = yes
 		}
+		if = {
+			limit = { 
+				has_country_flag = QIE_XZD_gu_wei_jun
+			}
+			create_country_leader = {
+				name = "顾维钧"
+				desc = "POLITICS_GU_WEIJUN_ROC_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+				expire = "1.1.1"
+				ideology = marlib_classical_liberalism_subtype
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_flag = QIE_XZD_zhang_xiao_ruo
+			}
+			create_country_leader = {
+				name = "张孝若"
+				desc = "POLITICS_zhang_xiao_ruo_DESC"
+				picture = "gfx/leaders/QIE/Portrait_QIE_zhang_xiao_ruo.png"
+				expire = "1.1.1"
+				ideology = marlib_national_liberalism_subtype
+			}
+		}
 		hidden_effect = {
 			remove_all_ministers = yes
 			add_ideas = {
@@ -11451,6 +11479,39 @@ country_event = {#重获新生
 		random_owned_state = {
 			add_extra_state_shared_building_slots = 1
 		}
+	}
+}
+
+country_event = {#宪政党左翼的候选人
+	id = qieroc.38
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.38" }
+	title = qieroc.38.t
+	desc = {
+		text =  qieroc.38.d.yes
+		trigger = {
+			has_completed_focus = QIE_xian_zheng_dang_left
+		}
+	}
+	desc = {
+		text =  qieroc.38.d.no
+		trigger = {
+			NOT = {
+				has_completed_focus = QIE_xian_zheng_dang_left
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = qieroc.38.a 
+		set_country_flag = QIE_XZD_gu_wei_jun
+	}
+
+	option = { 
+		name = qieroc.38.b
+		set_country_flag = QIE_XZD_zhang_xiao_ruo
 	}
 }
 

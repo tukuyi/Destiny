@@ -11,8 +11,19 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		add_ideas = NFA_veteran_favouritism
-		
+		set_politics = {
+			ruling_party = market_liberal
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "顾维钧"
+			desc = "POLITICS_GU_WEIJUN_ROC_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+			expire = "1.1.1"
+			ideology = marlib_classical_liberalism_subtype
+		}
+
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
 		# promote_character = {

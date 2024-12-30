@@ -6527,7 +6527,7 @@ focus_tree = {
 	}	
 
 	focus = {
-		id = QIE_an_quan_gai_ge
+		id = QIE_an_quan_gai_ge_fa
 		icon = GFX_goal_QIE_an_quan_gai_ge
 		relative_position_id = QIE_gong_he_dang_second_focus
 		cost = 7.00
@@ -6542,7 +6542,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus QIE_an_quan_gai_ge"
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_an_quan_gai_ge_fa"
 			add_popularity = {
 				ideology = authoritarian_democrat
 				popularity = 0.05
