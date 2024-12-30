@@ -6452,8 +6452,106 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_he_dang_second"
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_gong_he_dang_second_focus"
 			 
+		}
+	}	
+
+	focus = {
+		id = QIE_mei_ti_guan_kong
+		icon = GFX_goal_QIE_mei_ti_guan_kong
+		relative_position_id = QIE_gong_he_dang_second_focus
+		cost = 7.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_gong_he_dang_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_mei_ti_guan_kong"
+			add_political_power = 75
+			add_popularity = { 
+				ideology = authoritarian_democrat 
+				popularity = 0.08 
+			}
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_kuo_da_zong_tong
+		icon = GFX_goal_QIE_kuo_da_zong_tong
+		relative_position_id = QIE_gong_he_dang_second_focus
+		cost = 7.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = QIE_gong_he_dang_second_focus
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_kuo_da_zong_tong"
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			add_political_power = 80
+			add_war_support = 0.05
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_social_democratic_china2
+				add_idea = QIE_social_democratic_china3
+			}
+		}
+	}	
+
+	focus = {
+		id = QIE_an_quan_gai_ge
+		icon = GFX_goal_QIE_an_quan_gai_ge
+		relative_position_id = QIE_gong_he_dang_second_focus
+		cost = 7.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = QIE_kuo_da_zong_tong
+		}
+		prerequisite = {
+			focus = QIE_mei_ti_guan_kong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_an_quan_gai_ge"
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = QIE_social_democratic_china3
+				add_idea = QIE_social_democratic_china4
+			}
 		}
 	}	
 

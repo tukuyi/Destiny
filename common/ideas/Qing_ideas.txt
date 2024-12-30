@@ -1723,6 +1723,7 @@ ideas = {
 		QIE_social_democratic_china2 = {#守护共和制
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_social_democratic_china2"}
 			picture = generic_social_democracy
+			name = QIE_social_democratic_china
 			allowed = { always = no }
 			modifier = {
 				stability_weekly = 0.01
@@ -1730,6 +1731,44 @@ ideas = {
 				political_power_gain = 0.10
 				political_power_factor = 0.10
 				authoritarian_democrat_drift = 0.10
+			}
+		}	
+		QIE_social_democratic_china3 = {#守护共和制
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_social_democratic_china3"}
+			picture = generic_social_democracy
+			name = QIE_social_democratic_china
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				stability_weekly = 0.015
+				encryption_factor = 0.05
+				war_support_weekly = 0.01
+				political_power_gain = 0.12
+				political_power_factor = 0.10
+				justify_war_goal_time = -0.25
+				army_core_defence_factor = 0.05
+				authoritarian_democrat_drift = 0.10
+				recruitable_population_factor = 0.03
+			}
+		}	
+		QIE_social_democratic_china4 = {#守护共和制
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_social_democratic_china4"}
+			picture = generic_social_democracy
+			name = QIE_social_democratic_china
+			allowed = { always = no }
+			modifier = {
+				max_command_power = 75
+				stability_factor = 0.05
+				stability_weekly = 0.02
+				encryption_factor = 0.05
+				war_support_weekly = 0.02
+				political_power_gain = 0.15
+				political_power_factor = 0.10
+				justify_war_goal_time = -0.25
+				army_core_defence_factor = 0.05
+				command_power_gain_mult = 0.005
+				authoritarian_democrat_drift = 0.10
+				recruitable_population_factor = 0.05
 			}
 		}	
 		QIE_corporativism = {#法团主义经济
