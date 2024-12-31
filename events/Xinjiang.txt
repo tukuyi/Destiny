@@ -6,7 +6,6 @@
 
 add_namespace = xin
 add_namespace = xinfd #Focuses and decisions
-add_namespace = xinren
 
 country_event = { #Intro event
 	id = xin.0
@@ -1105,6 +1104,12 @@ country_event = { #Uprisings expand to Kashgar
 		ETS = {
 			change_tag_from = SIK
 		}
+		hidden_effect = {
+			country_event = {
+				id = xinren.2
+				days = 30
+			}
+		}
 	}
 }
 
@@ -1923,30 +1928,5 @@ news_event = {# Xinjiang war
 	
 	option = { #Interesting
 		name = xin.111.a
-	}
-}
-
-########################################
-##########-     红月亮   -##############
-########################################
-country_event = {#击毙赤匪首领！
-	id = xinren.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.1" }
-	title = xinren.1.t
-	desc = xinren.1.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {#Done with events
-		name = xinren.1.a
-		add_stability = -0.01
-		add_manpower = -1000
-		618 = {
-			damage_building = {
-				type = infrastructure
-				damage = 0.4
-			}
-		}
 	}
 }
