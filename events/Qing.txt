@@ -10932,6 +10932,14 @@ country_event = {#第二次选举
 		set_country_flag = QIE_gong_tuan_victory
 		hidden_effect = {
 			remove_all_ministers = yes
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.20
+			}
+			country_event = {
+				id = qieroc.41
+				days = 5
+			}
 		}
 	}
 
@@ -10990,7 +10998,7 @@ country_event = {#第二次选举
 				desc = "POLITICS_QIE_yan_yang_chu_DESC"
 				picture = "gfx/leaders/QIE/Portrait_QIE_yan_yang_chu.png"
 				expire = "1.1.1"
-				ideology = socdem_national_socialism_subtype
+				ideology = socdem_agrarianism_subtype
 			}
 		}
 		hidden_effect = {
@@ -11634,6 +11642,21 @@ country_event = {#宪政右的候选人
 	option = { 
 		name = qieroc.40.b
 		set_country_flag = QIE_XZD_yu_you_ren
+	}
+}
+
+country_event = {#宪政右的候选人
+	id = qieroc.41
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qieroc.41" }
+	title = qieroc.41.t
+	desc = qieroc.41.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = qieroc.41.a 
+		add_stability = -0.01
 	}
 }
 
