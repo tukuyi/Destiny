@@ -15,7 +15,7 @@ focus_tree = {
 	}
 	default = no
 
-	continuous_focus_position = { x = 100 y = 2000 }
+	continuous_focus_position = { x = 2000 y = 1000 }
 
 	focus = {
 		id = ETS_uyghur_revolution
@@ -1055,7 +1055,7 @@ focus_tree = {
 		y = 5
 		cost = 1
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_republic_inequals"
@@ -1710,5 +1710,88 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
+
+#红月亮
+	focus = {
+		id = ETS_guang_zi_bei_lai
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		x = 8
+		y = 12
+		cost = 0
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_guang_zi_bei_lai"
+			custom_effect_tooltip = unlock_focuses
+		}
+	}	
+
+	focus = {
+		id = ETS_hong_se_yi_li
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 0
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = ETS_guang_zi_bei_lai
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_hong_se_yi_li"
+			country_event = {
+				id = xinren.6
+				days = 1
+			}
+		}
+	}	
+
+	focus = {
+		id = ETS_he_ai_de_fu
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = -2
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_hong_se_yi_li
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_he_ai_de_fu"
+			add_country_leader_trait = ETS_tian_shan_de_ying
+		}
+	}	
+
+	focus = {
+		id = ETS_ren_ci_de_zhu
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 2
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_hong_se_yi_li
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ren_ci_de_zhu"
+			add_country_leader_trait = ETS_xin_yang_de_rong_yao
+		}
+	}	
 }
 

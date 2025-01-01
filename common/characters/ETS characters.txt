@@ -1,0 +1,121 @@
+characters = {
+#阿不都克里木·阿巴索夫
+	SIK_Abdukirim_Abbasof = {
+		name = SIK_Abdukirim_Abbasof
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SIK_Abdukirim_Abbasof
+			}
+			army = {
+				small = GFX_Portrait_SIK_Abdukirim_Abbasof
+				large = GFX_Portrait_SIK_Abdukirim_Abbasof
+			}
+		}
+		country_leader = {
+			desc = POLITICS_Abdukirim_Abbasof_DESC
+			ideology = islamic_communism_subtype
+		}
+		field_marshal = {
+			desc = POLITICS_Abdukirim_Abbasof_ARMY_DESC
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#阿合买提江·哈斯木
+	SIK_Ehmetjan_Qasimi = {
+		name = SIK_Ehmetjan_Qasimi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SIK_Ehmetjan_Qasimi
+			}
+			army = {
+				small = GFX_Portrait_SIK_Ehmetjan_Qasimi
+				large = GFX_Portrait_SIK_Ehmetjan_Qasimi
+			}
+		}
+		country_leader = {
+			desc = POLITICS_Ehmetjan_Qasimi_DESC
+			ideology = radsoc_islamic_communism_subtype
+		}
+		field_marshal = {
+			desc = POLITICS_Ehmetjan_Qasimi_ARMY_DESC
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#赛福鼎·艾则孜
+	SIK_Saifuddin_Azizi = {
+		name = SIK_Saifuddin_Azizi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SIK_Saifuddin_Ezezi
+				large = GFX_Portrait_SIK_Saifuddin_Ezezi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Saifuddin_Azizi_DESC
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#艾斯海提·伊斯哈科夫
+	SIK_Asgat_Iskhakov = {
+		name = SIK_Asgat_Iskhakov
+		portraits = {
+			army = {
+				small = GFX_Portrait_SIK_Asgat_Iskhakov
+				large = GFX_Portrait_SIK_Asgat_Iskhakov
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Asgat_Iskhakov_DESC
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#达列力汗·苏古尔巴也夫
+	SIK_Dalelkhan_Sugirbayev = {
+		name = SIK_Dalelkhan_Sugirbayev
+		portraits = {
+			army = {
+				small = GFX_Portrait_SIK_Dalelkhan_Sugirbayev
+				large = GFX_Portrait_SIK_Dalelkhan_Sugirbayev
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Dalelkhan_Sugirbayev_DESC
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}			
+}

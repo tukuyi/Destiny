@@ -2414,6 +2414,123 @@ country_event = {#第二次内战？
 
 	option = {#Done with events
 		name = xinren.3.a
-		
+		hidden_effect = {
+			country_event = {
+				id = xinren.4
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {#民族军入城！
+	id = xinren.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.4" }
+	title = xinren.4.t
+	desc = xinren.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.4.a
+		set_politics = {
+			ruling_party = totalist
+		}
+		SIK_Abdukirim_Abbasof = {
+			set_nationality = ROOT
+		}
+		promote_character = {
+			character = SIK_Abdukirim_Abbasof
+			ideology = islamic_communism_subtype
+		}
+		complete_national_focus = ETS_guang_zi_bei_lai
+		show_unit_leaders_tooltip = SIK_Saifuddin_Azizi
+		show_unit_leaders_tooltip = SIK_Abdukirim_Abbasof
+		show_unit_leaders_tooltip = SIK_Ehmetjan_Qasimi
+		show_unit_leaders_tooltip = SIK_Asgat_Iskhakov
+		show_unit_leaders_tooltip = SIK_Dalelkhan_Sugirbayev
+		hidden_effect = {
+			SIK_Saifuddin_Azizi = {
+				set_nationality = ROOT
+			}
+			SIK_Ehmetjan_Qasimi = {
+				set_nationality = ROOT
+			}
+			SIK_Asgat_Iskhakov = {
+				set_nationality = ROOT
+			}
+			SIK_Dalelkhan_Sugirbayev = {
+				set_nationality = ROOT
+			}
+			country_event = {
+				id = xinren.5
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {#伊犁河的水是什么颜色的？
+	id = xinren.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.5" }
+	title = xinren.5.t
+	desc = xinren.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.5.a
+		add_manpower = -500
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.10
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = -1
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = -1
+		}
+	}
+}
+
+country_event = {#东突厥斯坦人民大会成立！
+	id = xinren.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.6" }
+	title = xinren.6.t
+	desc = xinren.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.6.a
+		set_country_flag = ETS_our_father
+		set_party_name = {
+			ideology = totalist
+			long_name = ETS_red_totalist_party_one_long
+			name = ETS_red_totalist_party_one
+		}
+	}
+
+	option = {
+		name = xinren.6.b
+		set_country_flag = ETS_our_leader
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		promote_character = {
+			character = SIK_Ehmetjan_Qasimi
+			ideology = radsoc_islamic_communism_subtype 
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = ETS_red_radical_socialist_party_one_long
+			name = ETS_red_radical_socialist_party_one
+		}
 	}
 }
