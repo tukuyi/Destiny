@@ -19,6 +19,7 @@ characters = {
 			desc = POLITICS_Abdukirim_Abbasof_ARMY_DESC
 			traits = { 
 				irregulars_officer
+				guerilla_officer
 			}
 			skill = 1
 			attack_skill = 1
@@ -47,6 +48,7 @@ characters = {
 			desc = POLITICS_Ehmetjan_Qasimi_ARMY_DESC
 			traits = { 
 				irregulars_officer
+				guerilla_officer
 			}
 			skill = 1
 			attack_skill = 1
@@ -68,6 +70,7 @@ characters = {
 			desc = POLITICS_Saifuddin_Azizi_DESC
 			traits = { 
 				irregulars_officer
+				guerilla_officer
 			}
 			skill = 1
 			attack_skill = 1
@@ -89,6 +92,7 @@ characters = {
 			desc = POLITICS_Asgat_Iskhakov_DESC
 			traits = { 
 				irregulars_officer
+				guerilla_officer
 			}
 			skill = 1
 			attack_skill = 1
@@ -110,12 +114,59 @@ characters = {
 			desc = POLITICS_Dalelkhan_Sugirbayev_DESC
 			traits = { 
 				irregulars_officer
+				guerilla_officer
 			}
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
+		}
+	}	
+#伊斯哈克伯克·穆努诺夫
+ 	SIK_Isakbek_Mononov = {
+		name = SIK_Isakbek_Mononov
+		portraits = {
+			army = {
+				small = GFX_Portrait_SIK_Isakbek_Mononov
+				large = GFX_Portrait_SIK_Isakbek_Mononov
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_SIK_Isakbek_Mononov_DESC
+			traits = { 
+				career_officer
+				infantry_officer
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#买买提伊敏·伊敏诺夫	
+	SIK_Muhemmet = {
+		name = SIK_Muhemmet
+		portraits = {
+			army = {
+				small = GFX_Portrait_SIK_Muhemmet
+				large = GFX_Portrait_SIK_Muhemmet
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_SIK_Muhemmet_DESC
+			traits = { 
+				career_officer
+				cavalry_officer
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
 		}
 	}			
 }

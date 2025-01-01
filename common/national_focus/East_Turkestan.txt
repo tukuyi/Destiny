@@ -149,7 +149,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 2
-		cost = 7
+		cost = 5
 
 		ai_will_do = {
 			factor = 100
@@ -272,6 +272,11 @@ focus_tree = {
 	focus = {
 		id = ETS_uyghur_independence
 		icon = GFX_CRM_Turkification
+		relative_position_id = ETS_uyghur_revolution
+		x = 0
+		y = 3
+		cost = 1
+
 		prerequisite = {
 			focus = ETS_construct_kashgar_hotan_highway
 		}
@@ -284,10 +289,6 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_hotan_gold
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 0
-		y = 3
-		cost = 2
 
 		available = {
 			NOT = { country_exists = SIK }
@@ -399,10 +400,10 @@ focus_tree = {
 				meta_effect = {
 					text = {
 						set_temp_variable = { ETS_election_year = global.year }
-			if = {
+					if = {
 							limit = { date > [YEAR].1.28 }
 							add_to_temp_variable = { ETS_election_year = 1 }
-				}
+					}
 					set_politics = {
 						ruling_party = authoritarian_democrat
 							last_election = "[YEAR].1.28"
@@ -1775,6 +1776,94 @@ focus_tree = {
 	}	
 
 	focus = {
+		id = ETS_dang_ling_dao_yi_qie
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = -2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_he_ai_de_fu
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_dang_ling_dao_yi_qie"
+			add_ideas = ETS_xian_feng_dang 
+		}
+	}	
+
+	focus = {
+		id = ETS_tu_di_gai_ge
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = -2
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_dang_ling_dao_yi_qie
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_tu_di_gai_ge"
+			add_stability = -0.05
+			add_manpower = -1000 
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
+		}
+	}	
+
+	focus = {
+		id = ETS_cun_jie_zhi_jun
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = -2
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_tu_di_gai_ge
+		}
+		available = {
+			has_completed_focus = ETS_thorough_army_training
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_cun_jie_zhi_jun"
+			swap_ideas = {
+				remove_idea = ETS_military_buff_idea_3
+				add_idea = ETS_military_buff_idea_4
+			}
+		}
+	}	
+
+	focus = {
 		id = ETS_ren_ci_de_zhu
 		icon = GFX_BRY_Every_Hand_A_Rifle
 		relative_position_id = ETS_guang_zi_bei_lai
@@ -1791,6 +1880,166 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_ren_ci_de_zhu"
 			add_country_leader_trait = ETS_xin_yang_de_rong_yao
+		}
+	}	
+
+	focus = {
+		id = ETS_xin_jiao_yi
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 2
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_ren_ci_de_zhu
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xin_jiao_yi"
+			add_ideas = ETS_xin_ping_jiu_jiu 
+		}
+	}	
+
+	focus = {
+		id = ETS_zhong_jiao_ji_gou
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 2
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_ren_ci_de_zhu
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhong_jiao_ji_gou"
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.20
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.05
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = ETS_xin_ping_jiu_jiu
+				add_idea = ETS_xin_ping_jiu_jiu2
+			}
+		}
+	}	
+
+	focus = {
+		id = ETS_xin_yue_zhi_jun
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 2
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_zhong_jiao_ji_gou
+		}
+		available = {
+			has_completed_focus = ETS_thorough_army_training
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xin_yue_zhi_jun"
+			swap_ideas = {
+				remove_idea = ETS_military_buff_idea_2
+				add_idea = ETS_military_buff_idea_3
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_jian_tao_cuo_wu
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 0
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_he_ai_de_fu
+			focus = ETS_ren_ci_de_zhu
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_jian_tao_cuo_wu"
+			custom_effect_tooltip = EST_must_return 
+			hidden_effect = {
+				add_stability = 0.10
+				add_timed_idea = {
+					idea = ETS_bu_chang_zheng_ce
+					days = 90
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}	
+
+	focus = {#樊耀南的残军
+		id = ETS_fan_yao_nan
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 0
+		y = 4
+		cost = 5
+
+		available = {
+			NOT = {
+				has_idea = ETS_bu_chang_zheng_ce
+			}
+		}
+		prerequisite = {
+			focus = ETS_jian_tao_cuo_wu
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_fan_yao_nan"
+			country_event = {
+				id = xinren.7
+				days = 1
+			}
+		}
+	}	
+
+	focus = {
+		id = ETS_wu_fei_qi_zong
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		relative_position_id = ETS_guang_zi_bei_lai
+		x = 0
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_fan_yao_nan
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_wu_fei_qi_zong"
+			swap_ideas = {
+				remove_idea = ETS_min_zu_dai_biao
+				add_idea = ETS_min_zu_dai_biao_da_hui
+			}
 		}
 	}	
 }

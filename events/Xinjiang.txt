@@ -1105,9 +1105,11 @@ country_event = { #Uprisings expand to Kashgar
 			change_tag_from = SIK
 		}
 		hidden_effect = {
-			country_event = {
-				id = xinren.2
-				days = 30
+			ETS = {
+				country_event = {
+					id = xinren.2
+					days = 30
+				}
 			}
 		}
 	}

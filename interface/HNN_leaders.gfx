@@ -1211,5 +1211,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_SIK_Dalelkhan_Sugirbayev"
 		texturefile = "gfx/leaders/SIK/Portrait_SIK_Dalelkhan_Sugirbayev.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SIK_Isakbek_Mononov"
+		texturefile = "gfx/leaders/SIK/Portrait_SIK_Isakbek_Mononov.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SIK_Muhemmet"
+		texturefile = "gfx/leaders/SIK/Portrait_SIK_Muhemmet.png"
 	}	
 }

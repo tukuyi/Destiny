@@ -5045,3 +5045,8 @@ SHX_FU = {
 	color = rgb { 42 96 59 }
 	color_ui = rgb { 42 96 59 }
 }
+#新疆
+ETS_RED = {
+	color = rgb { 222 41 16 }
+	color_ui = rgb { 222 41 16 }
+}

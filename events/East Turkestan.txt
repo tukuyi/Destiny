@@ -526,7 +526,7 @@ country_event = { #night to remember trigger 1
 			popularity = -0.2
 		}
 		hidden_effect = {
-			country_event = { id = ets.18 days = 24 }
+			country_event = { id = ets.18 days = 7 }
 		}
 	}
 }
@@ -574,7 +574,7 @@ country_event = { #night to remember
 	option = { #timur
 		name = ets.20.a
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -627,7 +627,7 @@ country_event = { #night to remember
 	option = { #hotan
 		name = ets.20.b
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -826,7 +826,7 @@ country_event = { #masud attack parade?
 	option = { #attack
 		name = ets.21.a
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				has_game_rule = { rule = ETS_night option = ETS_NIGHT_TIMUR_ELECTION }
@@ -844,7 +844,7 @@ country_event = { #masud attack parade?
 	option = { #no attack
 		name = ets.21.b
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -2371,7 +2371,7 @@ country_event = {#东突厥斯坦民族军响应起义！
 
 	option = {#Done with events
 		name = xinren.2.a
-		EST = {
+		ETS = {
 			transfer_state = 618
 		}
 		set_party_name = {
@@ -2434,6 +2434,7 @@ country_event = {#民族军入城！
 
 	option = {
 		name = xinren.4.a
+		set_cosmetic_tag = ETS_RED
 		set_politics = {
 			ruling_party = totalist
 		}
@@ -2444,12 +2445,22 @@ country_event = {#民族军入城！
 			character = SIK_Abdukirim_Abbasof
 			ideology = islamic_communism_subtype
 		}
+		random_unit_leader = {
+			limit = { has_id = 23550 }			
+			remove_unit_leader = yes
+		}
+		random_unit_leader = {
+			limit = { has_id = 23551 }			
+			remove_unit_leader = yes
+		}
 		complete_national_focus = ETS_guang_zi_bei_lai
 		show_unit_leaders_tooltip = SIK_Saifuddin_Azizi
 		show_unit_leaders_tooltip = SIK_Abdukirim_Abbasof
 		show_unit_leaders_tooltip = SIK_Ehmetjan_Qasimi
 		show_unit_leaders_tooltip = SIK_Asgat_Iskhakov
 		show_unit_leaders_tooltip = SIK_Dalelkhan_Sugirbayev
+		show_unit_leaders_tooltip = SIK_Isakbek_Mononov
+		show_unit_leaders_tooltip = SIK_Muhemmet
 		hidden_effect = {
 			SIK_Saifuddin_Azizi = {
 				set_nationality = ROOT
@@ -2461,6 +2472,12 @@ country_event = {#民族军入城！
 				set_nationality = ROOT
 			}
 			SIK_Dalelkhan_Sugirbayev = {
+				set_nationality = ROOT
+			}
+			SIK_Isakbek_Mononov = {
+				set_nationality = ROOT
+			}
+			SIK_Muhemmet = {
 				set_nationality = ROOT
 			}
 			country_event = {
@@ -2531,6 +2548,49 @@ country_event = {#东突厥斯坦人民大会成立！
 			ideology = radical_socialist
 			long_name = ETS_red_radical_socialist_party_one_long
 			name = ETS_red_radical_socialist_party_one
+		}
+	}
+}
+
+country_event = {#仁慈之君
+	id = xinren.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.7" }
+	title = xinren.7.t
+	desc = xinren.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.7.a
+		create_corps_commander = {
+			name = "樊耀南"
+			portrait_path = "gfx/leaders/SIK/Portrait_SIK_Fan_Yaonan.png"
+			traits = {
+				politically_connected
+				trickster
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		619 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 }

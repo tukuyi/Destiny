@@ -12,7 +12,7 @@ country_event = { #湖南
 	option = { #
 		name = guides.1000.a
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 		country_event = guides.1001
 	}
@@ -20,7 +20,7 @@ country_event = { #湖南
 	option = { #
 		name = guides.1000.b
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -37,7 +37,7 @@ country_event = { #湖南
 	option = { #
 		name = guides.1001.a
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 		country_event = guides.1000
 	}
@@ -45,7 +45,7 @@ country_event = { #湖南
 	option = { #
 		name = guides.1001.b
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -62,7 +62,7 @@ country_event = { #两广
 	option = { #
 		name = guides.1002.a
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 		country_event = guides.13
 	}
@@ -70,7 +70,7 @@ country_event = { #两广
 	option = { #
 		name = guides.1002.b
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 	}
 }
@@ -87,7 +87,24 @@ country_event = { #上海
 	option = { #
 		name = guides.1003.a
 		ai_chance = {
-			factor = 100
+			base = 100
+		}
+	}
+}
+
+country_event = { #东突
+	id = guides.1004
+	immediate = { log = "[GetDateText]: [Root.GetName]: event guides.1004" }
+	title = guides.1004.t
+	desc = guides.1004.d
+	picture = GFX_introduction_main
+
+	is_triggered_only = yes
+
+	option = { #
+		name = guides.1004.a
+		ai_chance = {
+			base = 100
 		}
 	}
 }
