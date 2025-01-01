@@ -13,7 +13,7 @@ characters = {
 		}
 		country_leader = {
 			desc = POLITICS_Abdukirim_Abbasof_DESC
-			ideology = islamic_communism_subtype
+			ideology = authcom_subtype
 		}
 		field_marshal = {
 			desc = POLITICS_Abdukirim_Abbasof_ARMY_DESC

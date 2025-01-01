@@ -2374,6 +2374,10 @@ country_event = {#东突厥斯坦民族军响应起义！
 		ETS = {
 			transfer_state = 618
 		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.10
+		}
 		set_party_name = {
 			ideology = totalist
 			long_name = ETS_red_totalist_party_long
@@ -2443,7 +2447,7 @@ country_event = {#民族军入城！
 		}
 		promote_character = {
 			character = SIK_Abdukirim_Abbasof
-			ideology = islamic_communism_subtype
+			ideology = authcom_subtype
 		}
 		random_unit_leader = {
 			limit = { has_id = 23550 }			
@@ -2479,6 +2483,10 @@ country_event = {#民族军入城！
 			}
 			SIK_Muhemmet = {
 				set_nationality = ROOT
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.10
 			}
 			country_event = {
 				id = xinren.5

@@ -1,0 +1,14 @@
+SpriteTypes = {	
+	spriteType = {
+		name = "GFX_goal_ETS_guang_zi_bei_lai"
+		texturefile = "gfx/interface/goals/ETS_guang_zi_bei_lai.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_he_ai_de_fu"
+		texturefile = "gfx/interface/goals/ETS_he_ai_de_fu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_ren_ci_de_zhu"
+		texturefile = "gfx/interface/goals/ETS_ren_ci_de_zhu.png"
+	}
+}

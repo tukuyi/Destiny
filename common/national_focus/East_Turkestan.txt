@@ -1715,7 +1715,7 @@ focus_tree = {
 #红月亮
 	focus = {
 		id = ETS_guang_zi_bei_lai
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_guang_zi_bei_lai
 		x = 8
 		y = 12
 		cost = 0
@@ -1734,7 +1734,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_hong_se_yi_li
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_AFG_Establish_Peoples_Jirgas
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 0
 		y = 1
@@ -1757,7 +1757,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_he_ai_de_fu
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_he_ai_de_fu
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = -2
 		y = 2
@@ -1865,7 +1865,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ren_ci_de_zhu
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_ren_ci_de_zhu
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 2
 		y = 2
