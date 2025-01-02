@@ -4786,7 +4786,9 @@ focus_tree = {
 
 		available = {
 			GER = {
-				has_idea = GER_black_monday
+				NOT = {
+					has_idea = GER_black_monday
+				}
 			}
 		}
 		prerequisite = {

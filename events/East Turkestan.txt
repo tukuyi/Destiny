@@ -2528,6 +2528,7 @@ country_event = {#东突厥斯坦人民大会成立！
 	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.6" }
 	title = xinren.6.t
 	desc = xinren.6.d
+	picture = GFX_report_event_EST_kai_da_hui
 
 	fire_only_once = yes
 	is_triggered_only = yes

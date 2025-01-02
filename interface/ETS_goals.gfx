@@ -11,4 +11,40 @@ SpriteTypes = {
 		name = "GFX_goal_ETS_ren_ci_de_zhu"
 		texturefile = "gfx/interface/goals/ETS_ren_ci_de_zhu.png"
 	}
+	spriteType = {
+		name = "GFX_goal_ETS_jian_tao_cuo_wu"
+		texturefile = "gfx/interface/goals/ETS_jian_tao_cuo_wu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_fan_yao_nan"
+		texturefile = "gfx/interface/goals/ETS_fan_yao_nan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_xin_jiao_yi"
+		texturefile = "gfx/interface/goals/ETS_xin_jiao_yi.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_dang_ling_dao_yi_qie"
+		texturefile = "gfx/interface/goals/ETS_dang_ling_dao_yi_qie.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_wu_fei_qi_zong"
+		texturefile = "gfx/interface/goals/ETS_wu_fei_qi_zong.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_tu_di_gai_ge"
+		texturefile = "gfx/interface/goals/ETS_tu_di_gai_ge.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_cun_jie_zhi_jun"
+		texturefile = "gfx/interface/goals/ETS_cun_jie_zhi_jun.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_zhong_jiao_ji_gou"
+		texturefile = "gfx/interface/goals/ETS_zhong_jiao_ji_gou.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_xin_yue_zhi_jun"
+		texturefile = "gfx/interface/goals/ETS_xin_yue_zhi_jun.png"
+	}
 }

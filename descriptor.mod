@@ -8,7 +8,7 @@ tags={
 	"Map"
 	"Sound"
 }
-name="KX 湖南拓展"
+name="KX 命运的歧点"
 dependencies={
 	"KaiserreduX"
 	"Kaiserredux汉化"

@@ -1777,7 +1777,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_dang_ling_dao_yi_qie
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_dang_ling_dao_yi_qie
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = -2
 		y = 3
@@ -1797,7 +1797,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_tu_di_gai_ge
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_tu_di_gai_ge
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = -2
 		y = 4
@@ -1839,7 +1839,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_cun_jie_zhi_jun
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_cun_jie_zhi_jun
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = -2
 		y = 5
@@ -1885,7 +1885,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xin_jiao_yi
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_xin_jiao_yi
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 2
 		y = 3
@@ -1905,7 +1905,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_zhong_jiao_ji_gou
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_zhong_jiao_ji_gou
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 2
 		y = 4
@@ -1937,7 +1937,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xin_yue_zhi_jun
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_xin_yue_zhi_jun
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 2
 		y = 5
@@ -1963,7 +1963,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_jian_tao_cuo_wu
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_jian_tao_cuo_wu
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 0
 		y = 3
@@ -1994,7 +1994,7 @@ focus_tree = {
 
 	focus = {#樊耀南的残军
 		id = ETS_fan_yao_nan
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_fan_yao_nan
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 0
 		y = 4
@@ -2022,7 +2022,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_wu_fei_qi_zong
-		icon = GFX_BRY_Every_Hand_A_Rifle
+		icon = GFX_goal_ETS_wu_fei_qi_zong
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 0
 		y = 5
