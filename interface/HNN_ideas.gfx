@@ -554,4 +554,16 @@ spriteTypes = {
 		name = "GFX_idea_Deutsche_East_Asia_Railway"
 		texturefile = "gfx/interface/ideas/GEA/Deutsche_East_Asia_Railway.png"
 	}
+	spriteType = {
+		name = "GFX_idea_ETS_bao_er_han_hog"
+		texturefile = "gfx/interface/ministers/ETS/ETS_bao_er_han.png"
+	}
+	spriteType = {
+		name = "GFX_idea_ETS_sai_fu_ding_for"
+		texturefile = "gfx/interface/ministers/ETS/ETS_sai_fu_ding.png"
+	}
+	spriteType = {
+		name = "GFX_idea_ETS_lu_te_sec"
+		texturefile = "gfx/interface/ministers/ETS/ETS_lu_te.png"
+	}
 }

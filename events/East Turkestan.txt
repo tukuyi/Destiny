@@ -2391,9 +2391,6 @@ country_event = {#东突厥斯坦民族军响应起义！
 				irregular_cavalry = { x = 0 y = 1 }
 				irregular_cavalry = { x = 0 y = 2 }
 			}
-			support = {
-					
-			}
 		}
 		random_owned_controlled_state = {
 			prioritize = { 1708 }
@@ -2483,6 +2480,13 @@ country_event = {#民族军入城！
 			}
 			SIK_Muhemmet = {
 				set_nationality = ROOT
+			}
+			remove_all_ministers = yes
+			add_ideas = {
+				ETS_bao_er_han_hog
+				ETS_Yusuf_Jan_eco_sde
+				ETS_sai_fu_ding_for
+				ETS_lu_te_sec
 			}
 			add_popularity = {
 				ideology = totalist

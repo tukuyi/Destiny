@@ -373,6 +373,11 @@ country_event = {#天喜的故事：其一
 			}
 		}
 	}
+
+	option = {
+		name = SQI.17.b
+		
+	}
 }
 
 country_event = {#天喜的故事：其二

@@ -586,12 +586,28 @@
  SIK_Isakbek_Mononov: "伊斯哈克伯克·穆努诺夫"
  SIK_Muhemmet: "买买提伊敏·伊敏诺夫"
 
+ ETS_bao_er_han_hog: "包尔汉·沙希迪"
+ ETS_sai_fu_ding_for: "赛福鼎·艾则孜"
+ ETS_lu_te_sec: "鲁特甫拉·穆塔里甫"
+
  ETS_our_father: "§Y和蔼的父§!"
  ETS_our_leader: "§Y仁慈的主§!"
  EST_must_return: "§R民主革命党将尽力弥补东突厥斯坦独立运动对他民族同胞的野蛮行径。§!"
+ ALO_get_no_shi: "未失守 £trigger_yes"
+ ALO_get_ye_shi: "已失守 £trigger_no"
+ KYR_get_no_shi: "未失守 £trigger_yes"
+ KYR_get_ye_shi: "已失守 £trigger_no"
+ TRK_get_no_shi: "未失守 £trigger_yes"
+ TRK_get_ye_shi: "已失守 £trigger_no"
+ UZB_get_no_shi: "未失守 £trigger_yes"
+ UZB_get_ye_shi: "已失守 £trigger_no"
 
  ETS_tian_shan_de_ying:0 "天山雄鹰"
  ETS_xin_yang_de_rong_yao:0 "“信仰的荣誉”“§RSalah ad-Din”§!"
+
+ ETS_Central_east_war:0 "大西亚战争"
+ ETS_Central_east_war_desc:0 "原本被世人视作落后，愚昧的代表而向来被理所应当的认为是俄罗斯或者哪个地区强权的中亚各部族如今在我们的带领下重新站上了世界舞台，世人终于记起了这片诞生过贵霜、塞尔柱、花剌子模和帖木儿帝国的沃土。北方的帝国主义重新将目光看向了中亚的戈壁和绿洲，自认为理所应当的可以从骄傲的游牧民手中要回他们吐出来的东西。他们错了：§R真理§!已来临，虚妄已消逝了————虚妄确是将消逝的...\n\n西亚诸国：\n§Y阿拉木图[ALO.GetFlag]§![ALO_get_has_or_no]\n§Y浩罕[KYR.GetFlag]§![KYR_get_has_or_no]\n§Y布哈拉[TRK.GetFlag]§![TRK_get_has_or_no]\n§Y希瓦[UZB.GetFlag]§![UZB_get_has_or_no]"
+ ETS_zhu_dong_chu_ji:0 "主动出击！"
 
  ETS_bu_chang_zheng_ce:0 "民族仇杀补偿标准"
  ETS_min_zu_dai_biao:0 "民族代表法案"
@@ -636,6 +652,16 @@
  ETS_zhong_jiao_ji_gou_desc:0 "民主革命党决定就地对本土的宗教基层机构进行社会主义的改造，当地的宗教法庭，瓦合甫，苏菲教团和马德拉萨，无一例外在革命原则指导下进行了相对应的重塑，原本完善的当地自治体系很快焕然一新，成为了先锋队动员和宣传的工具。"
  ETS_xin_yue_zhi_jun:0 "星月之军"
  ETS_xin_yue_zhi_jun_desc:0 "“为真主的道而战斗的人是正义的。你们应当为受压迫的信士们伸张正义，帮助他们获得自由。战斗是为了驱逐那些不信真主，不允许信士自由践行信仰的人。”"
+
+ ETS_liang_he_zhi_jian:0 "两河之间"
+ ETS_liang_he_zhi_jian_desc:0 "东突厥斯坦如今已经成为各民族的家园，但举目望去，我们的同胞不但还陷于反动派的泥泞，从黑色星期五危机中的俄罗斯帝国又对着他们的“故土”虎视眈眈。民主革命党可能是他们唯一的希望。经过了内战后的重整，我军已经做好了解放自己的同胞兄弟，迎接一切强敌困难的准备。"
+ ETS_yi_jia_ren:0 "一家人吃同一盘饭"
+ ETS_yi_jia_ren_desc:0 "在很久以前，西域民族和蒙古人就一起在一起生活，一起保护风吹草低见牛羊的大草原。在数十年前，蒙人党和民族军就在一起抗击封建统治者的残酷压迫，我们现今不但愈发强大，甚至都回到了自己的故乡...那就让我们再次联合起来，一起保卫来之不易的革命果实！"
+ ETS_fang_fan_xiong_zhua:0 "防范熊爪！"
+ ETS_fang_fan_xiong_zhua_desc:0 "巨熊的威胁已经高悬在我们头上许久，我们将一定要把主要精力放在迎接这个达摩克里斯之剑上。"
+ 
+ ETS_follow_leader:0 "跟随老大哥"
+ ETS_follow_leader_desc:0 "令人意想不到的事情发生了，十月革命过去了二十年不到，居然又一次在俄国重燃，全国上下一片欢庆。现如今，东突厥斯坦各族人民已经处理好了内部事务，准备跟着十月党人的步伐重新登上世界革命的列车。"
 
  xinren.1.t:0 "击毙赤匪首领！"
  xinren.1.d:0 "一直在准噶尔地区活跃的红俄匪帮首领莫斯莫里夫近日在和布克塞尔劫掠时被当地民团俘获后施以私刑处死，其人所领导的“东突厥斯坦民族军”向来在伊犁，塔城，阿山一带兴风作浪，猖獗至极。\n\n其副手伊万·波利诺夫随后带数千部队大规模袭扰我境内，以图报复匪首莫斯莫里夫之死，其兵锋一度曾触迪化城下，所幸我军与哈密军齐心协力，将其全歼于逃窜路上，其继任者阿合买提江与阿巴索夫分兵逃窜，难成大气。"

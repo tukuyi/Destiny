@@ -1368,7 +1368,10 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = SQI_ke_xi_ke_tu
+			has_country_leader = {
+				character = SQI_ke_xi_ke_tu
+				ruling_only = yes
+			}
 		}
 
 		completion_reward = {
@@ -1674,7 +1677,10 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = SQI_jin_yune
+			has_country_leader = {
+				character = SQI_jin_yune
+				ruling_only = yes
+			}
 		}
 
 		completion_reward = {

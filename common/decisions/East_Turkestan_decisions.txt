@@ -696,9 +696,9 @@ ETS_military_operation = {
 
 		highlight_states = {
 			highlight_state_targets = { state = 287 }
-}
+		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ETS_bughra_raise_militia"
@@ -764,9 +764,9 @@ ETS_military_operation = {
 
 		highlight_states = {
 			highlight_state_targets = { state = 619 }
-}
+		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ETS_timur_raise_militia"
@@ -833,7 +833,7 @@ ETS_military_operation = {
 		}
 		target_array = ETS_foreign_country_array_majors_yay
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		cost = 20
 
@@ -887,7 +887,7 @@ ETS_military_operation = {
 			NOT = { has_country_flag = ETS_army_adopt_formation_training }
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		cost = 20
 
@@ -949,7 +949,7 @@ ETS_military_operation = {
 		}
 		target_array = ETS_foreign_country_array_majors_yay
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		cost = 20
 
@@ -1010,7 +1010,7 @@ ETS_military_operation = {
 			NOT = { has_country_flag = ETS_army_combat_techniques_training }
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		cost = 20
 
@@ -1067,7 +1067,15 @@ ETS_military_operation = {
 		cancel_if_not_visible = yes
 		war_with_target_on_remove = yes
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { 
+			base = 10 
+			modifier = {
+				factor = 4
+				SIK = {
+					exists = no
+				}
+			}
+		}
 
 		cancel_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision cancel ETS_war_with_KUM target: [From.GetName]"
@@ -1105,7 +1113,7 @@ ETS_turkic_diplo_decisions = {
 
 		available = {
 			NOT = { has_war_with = FROM }
-	}
+		}
 
 		targets = { TRK UZB KYR ALO AZE OTT }
 		target_trigger = {
@@ -1144,7 +1152,7 @@ ETS_turkic_diplo_decisions = {
 
 		available = {
 			NOT = { has_war_with = FROM }
-	}
+		}
 
 		targets = { OTT }
 		target_root_trigger = { has_country_flag = ETS_otto_reach_out_flag }
@@ -1163,8 +1171,99 @@ ETS_turkic_diplo_decisions = {
 			log = "[GetDateText]: [Root.GetName]: Decision ETS_send_officers_to_train_in_otto_decision target: [From.GetName]"
 			FROM = {
 				country_event = { id = ets.54 days = 1 }
+			}
+		}
+	}
+}
+
+ETS_Central_east_war = {#大西亚战争
+	ETS_zhu_dong_chu_ji = {
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			tag = ETS
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { base = 0 }
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_learn_mineral_processing_local target: [From.GetName]"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_learn_mineral_processing_local target: [From.GetName]"
+			RUS = {
+				declare_war_on = {
+					target = ROOT
+				}
+				declare_war_on = {
+					target = ALO
+				}
+				declare_war_on = {
+					target = TRK
+				}
+				declare_war_on = {
+					target = UZB
+				}
+				declare_war_on = {
+					target = KYR
+				}
+			}
+			if = {
+				limit = { 
+					ALO = {
+						exists = yes
+					}
+				}
+				if = {
+					limit = { 
+						ALO = {
+							OR = {
+								is_puppet_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					ALO = {
+						transfer_state = 588
+						transfer_state = 583
+					}
+				}
+				else = {
+					ETS = {
+						transfer_state = 589
+					}
+					division_template = {
+						name = "起义军"
+						division_names_group = "LEC_GAR_01"
+						regiments = {
+							irregular_cavalry = { x = 0 y = 0 }
+							irregular_cavalry = { x = 0 y = 1 }
+							irregular_cavalry = { x = 0 y = 2 }
+							irregular_cavalry = { x = 0 y = 3 }
+							irregular_cavalry = { x = 0 y = 4 }
+						}
+					}
+					random_owned_controlled_state = {
+						prioritize = { 10550 }
+						limit = { is_in_home_area = yes }
+						create_unit = {
+							division = "division_template = \"起义军\" start_experience_factor = 0.5"
+							owner = PREV
+							count = 4
+						}
+					}
 				}
 			}
 		}
 	}
+}
 

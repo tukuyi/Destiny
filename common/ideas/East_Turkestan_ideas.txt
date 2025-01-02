@@ -1,5 +1,71 @@
 ### East Turkestan ideas
 ideas = {
+	head_of_government = {
+		ETS_bao_er_han_hog = {#包尔汉·沙希迪
+			allowed = { original_tag = ETS }
+			picture = ETS_bao_er_han_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ETS_bao_er_han_hog"
+				
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_old_general
+			}
+		}	
+	}
+	person_of_influence = { 
+		ETS_sai_fu_ding_for = {#赛福鼎·艾则孜
+			allowed = { original_tag = ETS }
+			picture = ETS_sai_fu_ding_for
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = A_Limao_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ETS_sai_fu_ding_for"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		ETS_lu_te_sec = {#鲁特甫拉·穆塔里甫
+			allowed = { original_tag = GXC }
+			picture = ETS_lu_te_sec
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ETS_lu_te_sec"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_compassionate_gentleman
+			}
+		}	
+	}
+
 ### Country Spirits ###
 	country = {# National Spirits
 		#Starting Debuff

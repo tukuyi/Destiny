@@ -2,6 +2,7 @@ is_guides_nation = {
 OR = {
 		tag = HNN
 		tag = SHC
+		tag = ETS
 		
 		tag = USA
 		tag = BUL

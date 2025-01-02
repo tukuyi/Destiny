@@ -1257,7 +1257,9 @@ focus_tree = {
 				base = 15
 				modifier = {
 					factor = 4
-					exists = CHI
+					CHI = {
+						exists = yes
+					}
 				}
 				modifier = {
 					factor = 4
@@ -1302,7 +1304,9 @@ focus_tree = {
 				base = 15
 				modifier = {
 					factor = 4
-					exists = CHI
+					CHI = {
+						exists = yes
+					}
 				}
 				modifier = {
 					factor = 4
@@ -1346,7 +1350,9 @@ focus_tree = {
 				base = 15
 				modifier = {
 					factor = 4
-					exists = CHI
+					CHI = {
+						exists = yes
+					}
 				}
 				modifier = {
 					factor = 4
@@ -1383,7 +1389,9 @@ focus_tree = {
 				base = 15
 				modifier = {
 					factor = 4
-					exists = CHI
+					CHI = {
+						exists = yes
+					}
 				}
 				modifier = {
 					factor = 4

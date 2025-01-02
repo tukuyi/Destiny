@@ -55,15 +55,11 @@ focus_tree = {
 		y = 1
 		cost = 1
 
-		ai_will_do = {
-			factor = 100
-		}
-
 		bypass = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_seek_foreign_support"
@@ -85,11 +81,7 @@ focus_tree = {
 		y = 2
 		cost = 6
 
-		ai_will_do = {
-			factor = 100
-		}
-
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_construct_kashgar_hotan_highway"
@@ -129,7 +121,7 @@ focus_tree = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_emergency_factory_conversion"
@@ -152,7 +144,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 
 		completion_reward = {
@@ -186,7 +178,7 @@ focus_tree = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_army_training"
@@ -205,7 +197,7 @@ focus_tree = {
 		cost = 4
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 
 		completion_reward = {
@@ -231,7 +223,7 @@ focus_tree = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_organize_seized_gold_and_rifle"
@@ -259,7 +251,7 @@ focus_tree = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_hotan_gold"
@@ -295,7 +287,7 @@ focus_tree = {
 			NOT = { country_exists = TAN }
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_uyghur_independence"
@@ -321,7 +313,7 @@ focus_tree = {
 			is_subject = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_a_night_to_remember"
@@ -342,7 +334,7 @@ focus_tree = {
 		y = 5
 		cost = 1
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_timur_win"
@@ -363,7 +355,7 @@ focus_tree = {
 		y = 6
 		cost = 2
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_victory_parade"
@@ -1407,6 +1399,7 @@ focus_tree = {
 			army_experience = 50
 			add_war_support = 0.05
 			add_ideas = ETS_military_buff_idea
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { has_dynamic_modifier = { modifier = ETS_fledgling_military } }
 				remove_dynamic_modifier = { modifier = ETS_fledgling_military }
@@ -1912,7 +1905,7 @@ focus_tree = {
 		cost = 5
 
 		prerequisite = {
-			focus = ETS_ren_ci_de_zhu
+			focus = ETS_xin_jiao_yi
 		}
 
 		ai_will_do = { base = 100 }
@@ -2042,5 +2035,155 @@ focus_tree = {
 			}
 		}
 	}	
+
+#西亚战争
+	focus = {
+		id = ETS_liang_he_zhi_jian
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		x = 20
+		y = 12
+		cost = 5
+
+		available = {
+			OR = {
+				RUS = {
+					has_war_with = ALO
+				}
+				OR = {
+					has_completed_focus = ETS_xin_yue_zhi_jun
+					has_completed_focus = ETS_cun_jie_zhi_jun
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = ETS_follow_leader
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_liang_he_zhi_jian"
+			add_war_support = 0.15
+			create_faction = "中亚苏维埃联盟"
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					ALO = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = ALO
+				}
+			}
+			if = {
+				limit = { 
+					KYR = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = KYR
+				}
+			}
+			if = {
+				limit = { 
+					TRK = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = TRK
+				}
+			}
+			if = {
+				limit = { 
+					UZB = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = UZB
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}	
+	
+	focus = {
+		id = ETS_follow_leader
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 2
+		y = 0
+		cost = 5
+
+		available = {
+			country_exists = RUS
+			RUS = { has_socialist_government = yes }
+		}
+		mutually_exclusive = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_follow_leader"
+			RUS = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = kr_soviet_republic_equal
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_yi_jia_ren
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -6
+		y = 1
+		cost = 5
+
+		available = {
+			country_exists = MON
+			MON = { 
+				has_completed_focus = MON_true_man
+			}
+		}
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_yi_jia_ren"
+			ROOT = {
+				add_to_faction = MON
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 6
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_fang_fan_xiong_zhua"
+			ROOT = {
+				add_to_faction = MON
+			}
+		}
+	}
 }
 
