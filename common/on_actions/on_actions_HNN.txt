@@ -42,4 +42,74 @@ on_actions = {
 			}
 		}
 	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 810 }
+				}
+				if = {
+					limit = { 
+						tag = RUS
+					}
+					ETS = {
+						if = {
+							limit = {
+								has_active_mission = ETS_war_timer
+							}
+							add_days_mission_timeout = {
+								mission = ETS_war_timer
+								days = -50
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = { 
+						OR = {
+							state = 1279
+							state = 405
+							state = 861
+						}
+					}
+				}
+				if = {
+					limit = { 
+						tag = RUS
+					}
+					ETS = {
+						if = {
+							limit = {
+								has_active_mission = ETS_war_timer
+							}
+							add_days_mission_timeout = {
+								mission = ETS_war_timer
+								days = -20
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = { 
+						OR = {
+							state = 619
+							state = 617
+						}
+					}
+				}
+				if = {
+					limit = { 
+						tag = RUS
+					}
+					ETS = {
+						set_country_flag = ETS_war_is_over
+					}
+				}
+			}
+		}
+	}
 }

@@ -593,6 +593,7 @@
  ETS_our_father: "§Y和蔼的父§!"
  ETS_our_leader: "§Y仁慈的主§!"
  EST_must_return: "§R民主革命党将尽力弥补东突厥斯坦独立运动对他民族同胞的野蛮行径。§!"
+ ETS_war_is_over: "§R已经没有战争需要继续了§!"
  ALO_get_no_shi: "未失守 £trigger_yes"
  ALO_get_ye_shi: "已失守 £trigger_no"
  KYR_get_no_shi: "未失守 £trigger_yes"
@@ -608,6 +609,7 @@
  ETS_Central_east_war:0 "大西亚战争"
  ETS_Central_east_war_desc:0 "原本被世人视作落后，愚昧的代表而向来被理所应当的认为是俄罗斯或者哪个地区强权的中亚各部族如今在我们的带领下重新站上了世界舞台，世人终于记起了这片诞生过贵霜、塞尔柱、花剌子模和帖木儿帝国的沃土。北方的帝国主义重新将目光看向了中亚的戈壁和绿洲，自认为理所应当的可以从骄傲的游牧民手中要回他们吐出来的东西。他们错了：§R真理§!已来临，虚妄已消逝了————虚妄确是将消逝的...\n\n西亚诸国：\n§Y阿拉木图[ALO.GetFlag]§![ALO_get_has_or_no]\n§Y浩罕[KYR.GetFlag]§![KYR_get_has_or_no]\n§Y布哈拉[TRK.GetFlag]§![TRK_get_has_or_no]\n§Y希瓦[UZB.GetFlag]§![UZB_get_has_or_no]"
  ETS_zhu_dong_chu_ji:0 "主动出击！"
+ ETS_war_timer:0 "战争！"
 
  ETS_bu_chang_zheng_ce:0 "民族仇杀补偿标准"
  ETS_min_zu_dai_biao:0 "民族代表法案"

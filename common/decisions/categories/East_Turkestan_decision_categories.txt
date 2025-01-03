@@ -54,6 +54,7 @@ ETS_Central_east_war = {
 	}
 	visible = {
 		OR = {
+			# has_war_with = RUS
 			# has_completed_focus = ETS_fang_fan_xiong_zhua
 		}
 	}
