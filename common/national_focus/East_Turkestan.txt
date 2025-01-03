@@ -2166,6 +2166,128 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ETS_wu_si_man
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -4
+		y = 1
+		cost = 5
+
+		available = {
+			ALO = {
+				exists = yes
+				has_socialist_government = no
+			}
+		}
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		bypass = {
+			ALO = {
+				exists = no
+			}
+		}
+		mutually_exclusive = {
+			focus = ETS_ma_bei_shang_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_wu_si_man"
+			if = {
+				limit = { 
+					ALO = {
+						NOT = {
+							is_puppet_of = RUS
+						}
+					}
+				}
+				ETS = {
+					declare_war_on = {
+						target = ALO
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					ALO = {
+						is_puppet_of = RUS
+					}
+				}
+				ROOT = {
+					set_autonomy = {
+						target = ALO
+						autonomous_state = kr_soviet_republic_equal
+					}
+				}
+				ALO = {
+					set_cosmetic_tag = ETS_ALO
+					create_country_leader = {
+						name = "乌斯满"
+						picture = "gfx/leaders/SIK/Portrait_SIK_wu_si_man.png"
+						expire = "1.1.1"
+						ideology = red_junta_subtype
+						trait = {
+							ETS_hong_se_tie_mu_er
+						}
+					}
+					set_politics = {
+						ruling_party = totalist
+					}
+					set_party_name = {
+						ideology = totalist
+						long_name = ETS_ALO_totalist_party_one_long
+						name = ETS_ALO_totalist_party_one
+					}
+					add_ideas = {
+						war_economy
+						all_adults_serve
+					}
+				}
+				RUS = {
+					declare_war_on = {
+						target = THIS
+					}
+				}
+				activate_mission = ETS_war_timer
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_ma_bei_shang_de
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -2
+		y = 1
+		cost = 5
+
+		available = {
+			ALO = {
+				exists = yes
+				has_socialist_government = yes
+			}
+		}
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		bypass = {
+			ALO = {
+				exists = no
+			}
+		}
+		mutually_exclusive = {
+			focus = ETS_wu_si_man
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ma_bei_shang_de"
+
+		}
+	}
+
+	focus = {
 		id = ETS_fang_fan_xiong_zhua
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian

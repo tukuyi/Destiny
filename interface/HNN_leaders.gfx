@@ -1220,4 +1220,8 @@ spriteTypes = {
 		name = "GFX_Portrait_SIK_Muhemmet"
 		texturefile = "gfx/leaders/SIK/Portrait_SIK_Muhemmet.png"
 	}	
+	spriteType = {
+		name = "GFX_Portrait_SIK_wu_si_man"
+		texturefile = "gfx/leaders/SIK/Portrait_SIK_wu_si_man.png"
+	}	
 }

@@ -124,11 +124,21 @@ leader_traits = {
 		stability_factor = 0.10
 		war_support_factor = 0.10
 	}
-	ETS_xin_yang_de_rong_yao= { #信仰的荣誉
+	ETS_xin_yang_de_rong_yao = { #信仰的荣誉
 		random = no
 		monthly_population = 0.05
 		army_core_attack_factor = 0.10
 		army_core_defence_factor = 0.10
+	}
+	ETS_hong_se_tie_mu_er = { #红色帖木儿
+		random = no
+		weekly_manpower = -150
+		army_org_factor = 0.10
+		army_org_regain = -0.10
+		army_speed_factor = 0.10
+		stability_factor = -0.20
+		army_attack_factor = 0.05
+		breakthrough_factor = 0.05
 	}
 }
 	
