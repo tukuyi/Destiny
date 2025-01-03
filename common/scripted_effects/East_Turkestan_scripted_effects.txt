@@ -58,14 +58,14 @@ ETS_central_aisa_war_effect = {
 	if = {
 		limit = { 
 			OR = {
-				635 = {
+				653 = {
 					OR = {
 						is_controlled_by_ROOT_or_ally = yes
-						is_claimed_by = ALO
+						is_controlled_by = ALO
 					}
 				}
 				RUS = {
-					surrender_progress < 0.85
+					surrender_progress > 0.15
 				}
 			}
 		}

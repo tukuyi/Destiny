@@ -1177,29 +1177,26 @@ ETS_turkic_diplo_decisions = {
 }
 
 ETS_Central_east_war = {#大西亚战争
-	ETS_zhu_dong_chu_ji = {#主动出击！
-		icon = generic_prepare_civil_war
+	ETS_zhun_bei_zhaqn_zheng = {#主动出击！
+		icon = GFX_decision_infiltrate_state
 
-		allowed = {
-			tag = ETS
+		visible = {
+			has_stability > 0.20
 		}
-
 		available = {
 			has_war = no
 		}
 
-		ai_will_do = { base = 0 }
-
 		cost = 0
+		priority = 20
 		days_remove = 15
 		fire_only_once = yes
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision ETS_learn_mineral_processing_local target: [From.GetName]"
-
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_learn_mineral_processing_local target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
 			ROOT = {
 				declare_war_on = {
 					target = RUS
@@ -1225,6 +1222,7 @@ ETS_Central_east_war = {#大西亚战争
 					target = UZB
 				}
 			}
+			activate_mission = ETS_war_timer
 			if = {
 				limit = { 
 					ALO = {
@@ -1275,7 +1273,7 @@ ETS_Central_east_war = {#大西亚战争
 	}
 
 	ETS_war_timer = {#战争！
-		icon = generic_prepare_civil_war 
+		icon = GFX_decision_infiltrate_state 
 
 		allowed = {
 			always = no

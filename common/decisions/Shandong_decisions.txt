@@ -2658,10 +2658,6 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 		priority = 35
 		days_mission_timeout = 800
 
-		modifier = {
-			stability_weekly = 0.005
-		}
-
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete SQI_agricultural_reform_mission_timer"
 		}
@@ -3158,7 +3154,6 @@ SQI_chu_li_nong_chun_wen_ti = {#皖系的糟糕声望
 				}
 			}
 		}
-		highlight_color_while_active = 1
 		on_map_mode = map_and_decisions_view
 
 		icon = oppression
