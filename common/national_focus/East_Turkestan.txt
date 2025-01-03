@@ -2042,7 +2042,7 @@ focus_tree = {
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		x = 20
 		y = 12
-		cost = 5
+		cost = 4
 
 		available = {
 			OR = {
@@ -2144,7 +2144,7 @@ focus_tree = {
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -6
 		y = 1
-		cost = 5
+		cost = 4
 
 		available = {
 			country_exists = MON
@@ -2171,7 +2171,7 @@ focus_tree = {
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -4
 		y = 1
-		cost = 5
+		cost = 4
 
 		available = {
 			ALO = {
@@ -2227,7 +2227,7 @@ focus_tree = {
 						picture = "gfx/leaders/SIK/Portrait_SIK_wu_si_man.png"
 						expire = "1.1.1"
 						ideology = red_junta_subtype
-						trait = {
+						traits = {
 							ETS_hong_se_tie_mu_er
 						}
 					}
@@ -2246,7 +2246,7 @@ focus_tree = {
 				}
 				RUS = {
 					declare_war_on = {
-						target = THIS
+						target = ROOT
 					}
 				}
 				activate_mission = ETS_war_timer
@@ -2260,7 +2260,7 @@ focus_tree = {
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -2
 		y = 1
-		cost = 5
+		cost = 4
 
 		available = {
 			ALO = {
@@ -2283,7 +2283,439 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_ma_bei_shang_de"
+			ROOT = {
+				add_to_faction = ALO
+			}
+		}
+	}
 
+	focus = {
+		id = ETS_xin_si_lu
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -3
+		y = 2
+		cost = 4
+
+		available = {
+			OR = {
+				owns_state = 810
+				ALO = {
+					exists = yes
+					OR = {
+						is_puppet_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_wu_si_man
+			focus = ETS_ma_bei_shang_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xin_si_lu"
+			build_railway = {
+				path = { 2015 7949 5016 4682 12099 12526 1840 1591 10547 10619 10550 10680 7784 12635 10584 }
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_you_ji_zhun_bei
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -4
+		y = 3
+		cost = 4
+
+		available = {
+			ALO = {
+				exists = yes
+				OR = {
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_xin_si_lu
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_you_ji_zhun_bei"
+			ALO = {
+				add_ideas = ETS_di_kang_dao_di
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_bian_jing_fang_xian
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -2
+		y = 3
+		cost = 4
+
+		available = {
+			ALO = {
+				exists = yes
+				OR = {
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_xin_si_lu
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_bian_jing_fang_xian"
+			810 = {
+				add_building_construction = {
+					type = bunker
+					province = 4867
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10584
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10218
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 7350
+					level = 2
+					instant_build = yes
+				}
+			}	
+			402 = {
+				add_building_construction = {
+					type = bunker
+					province = 10164
+					level = 2
+					instant_build = yes
+				}
+			}	
+			1208 = {
+				add_building_construction = {
+					type = bunker
+					province = 12128
+					level = 2
+					instant_build = yes
+				}
+			}	
+			406 = {
+				add_building_construction = {
+					type = bunker
+					province = 11537
+					level = 2
+					instant_build = yes
+				}
+			}
+			404 = {
+				add_building_construction = {
+					type = bunker
+					province = 1864
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_tu_jue_yi_jia_qin
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 0
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		mutually_exclusive = {
+			focus = ETS_fen_sui_bai_lei
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_tu_jue_yi_jia_qin"
+			if = {
+				limit = { 
+					KYR = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = KYR
+				}
+			}
+			else = {
+				declare_war_on = {
+					target = KYR
+				}
+			}
+			if = {
+				limit = { 
+					TRK = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = TRK
+				}
+			}
+			else = {
+				declare_war_on = {
+					target = TRK
+				}
+			}
+			if = {
+				limit = { 
+					UZB = {
+						has_socialist_government = yes
+					}
+				}
+				ROOT = {
+					add_to_faction = UZB
+				}
+			}
+			else = {
+				declare_war_on = {
+					target = UZB
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_fen_sui_bai_lei
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 2
+		y = 1
+		cost = 4
+
+		available = {
+			KYR = {
+				has_socialist_government = no
+			}
+			TRK = {
+				has_socialist_government = no
+			}
+			UZB = {
+				has_socialist_government = no
+			}
+		}
+		prerequisite = {
+			focus = ETS_liang_he_zhi_jian
+		}
+		mutually_exclusive = {
+			focus = ETS_tu_jue_yi_jia_qin
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_fen_sui_bai_lei"
+			ROOT = {
+				declare_war_on = {
+					target = KYR
+				}
+				declare_war_on = {
+					target = TRK
+				}
+				declare_war_on = {
+					target = UZB
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = ETS_tu_jue_si_tan_zai_tong_yi
+		}
+	}
+
+	focus = {
+		id = ETS_shan_qu_bao_lei
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 1
+		y = 2
+		cost = 4
+
+		available = {
+			KYR = {
+				has_country_leader = {
+					name = "艾斯海提·伊斯哈科夫 "
+					ruling_only = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_tu_jue_yi_jia_qin
+			focus = ETS_fen_sui_bai_lei
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_shan_qu_bao_lei"
+			1279 = {
+				add_building_construction = {
+					type = bunker
+					province = 14727
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 14728
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 14729
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 14730
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 14731
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 14732
+					level = 1
+					instant_build = yes
+				}
+			}	
+		}
+	}
+
+	focus = {
+		id = ETS_kuo_da_jun_qu_he_zuo
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 2
+		y = 3
+		cost = 4
+
+		available = {
+			has_completed_focus = ETS_fen_sui_bai_lei
+		}
+		prerequisite = {
+			focus = ETS_shan_qu_bao_lei
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_kuo_da_jun_qu_he_zuo"
+			KYR = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				division_template = {
+					name = "起义军"
+					division_names_group = "LEC_GAR_01"
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 14732 }
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "division_template = \"起义军\" start_experience_factor = 0.5"
+						owner = PREV
+						count = 4
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_sha_mo_cheng_shi
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 0
+		y = 3
+		cost = 4
+
+		available = {
+			has_completed_focus = ETS_tu_jue_yi_jia_qin
+		}
+		prerequisite = {
+			focus = ETS_shan_qu_bao_lei
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_sha_mo_cheng_shi"
+			build_railway = {
+				path = { 2015 12768 1766 14741 2058 14740 14731 14732 14735 12430 1919 10671 14725 14721 9605 14750 12161 14722 14718 14717 12465 }
+			}
+			custom_effect_tooltip = tooltip_white_line
+			861 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			1279 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			405 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = KYR
+						is_core_of = TRK
+						is_core_of = UZB
+					}
+					infrastructure > 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
 		}
 	}
 
@@ -2293,7 +2725,7 @@ focus_tree = {
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = 6
 		y = 1
-		cost = 5
+		cost = 4
 
 		prerequisite = {
 			focus = ETS_liang_he_zhi_jian

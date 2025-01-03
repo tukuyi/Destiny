@@ -3,6 +3,210 @@
 ###########################
 # By Von_Laughing and WordZero
 ###########################
+ETS_Central_east_war_cat = {#大西亚战争
+	ETS_zhun_bei_zhaqn_zheng = {#主动出击！
+		icon = GFX_decision_infiltrate_state
+
+		visible = {
+			RUS = {
+				exists = yes
+			}
+		}
+		available = {
+			NOT = {
+				has_war_with = RUS
+			}
+		}
+
+		cost = 0
+		priority = 40
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
+			ROOT = {
+				declare_war_on = {
+					target = RUS
+				}
+			}
+			RUS = {
+				declare_war_on = {
+					target = ALO
+				}
+			}
+			RUS = {
+				declare_war_on = {
+					target = KYR
+				}
+			}
+			RUS = {
+				declare_war_on = {
+					target = TRK
+				}
+			}
+			RUS = {
+				declare_war_on = {
+					target = UZB
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			activate_mission = ETS_war_timer
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					ALO = {
+						exists = yes
+					}
+				}
+				if = {
+					limit = { 
+						ALO = {
+							OR = {
+								is_puppet_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					ALO = {
+						transfer_state = 588
+						transfer_state = 583
+					}
+				}
+				else = {
+					ETS = {
+						transfer_state = 589
+					}
+					division_template = {
+						name = "起义军"
+						division_names_group = "LEC_GAR_01"
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+							cavalry = { x = 0 y = 3 }
+							cavalry = { x = 0 y = 4 }
+						}
+					}
+					random_owned_controlled_state = {
+						prioritize = { 10550 }
+						limit = { is_in_home_area = yes }
+						create_unit = {
+							division = "division_template = \"起义军\" start_experience_factor = 0.5"
+							owner = PREV
+							count = 4
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ETS_bulid_tu_jue_si_tan = {#建立突厥斯坦
+		icon = generic_flags
+
+		available = {
+			KYR = {
+				is_puppet_of = ROOT
+			}
+			TRK = {
+				is_puppet_of = ROOT
+			}
+			UZB = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		cost = 0
+		priority = 30
+		days_remove = 10
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_tu_jue_si_tan"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_tu_jue_si_tan"
+			ROOT = {
+				set_autonomy = {
+					target = KYR
+					autonomous_state = kr_soviet_republic_equal
+				}
+			}
+			KYR = {
+				set_cosmetic_tag = ETS_KYR
+				annex_country = {
+					target = TRK
+				}
+				annex_country = {
+					target = UZB
+				}
+				create_country_leader = {
+					name = "艾斯海提·伊斯哈科夫 "
+					picture = "gfx/leaders/SIK/Portrait_SIK_Asgat_Iskhakov.png"
+					expire = "1.1.1"
+					ideology = red_junta_subtype
+				}
+				set_politics = {
+					ruling_party = totalist
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							OR = {
+								is_core_of = TRK
+								is_core_of = UZB
+							}
+						}
+						add_core_of = KYR
+					}
+					add_ideas = ETS_di_kang_dao_di
+					remove_all_ministers = yes
+					add_ideas = {
+						ETS_bao_er_han_hog
+						ETS_Yusuf_Jan_eco_sde
+						ETS_sai_fu_ding_for
+						ETS_lu_te_sec
+					}
+				}
+			}
+		}
+	}
+
+	ETS_war_timer = {#战争！
+		icon = GFX_decision_infiltrate_state 
+
+		allowed = {
+			always = no
+		}
+		available = {
+			OR = {
+				NOT = {
+					has_war_with = RUS
+				}
+				has_country_flag = ETS_war_is_over
+			}
+		}
+
+		priority = 100 
+		is_good = no
+		days_mission_timeout = 220
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete ETS_war_timer"
+			ETS_central_aisa_war_effect = yes
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout ETS_war_timer"
+			ETS_central_aisa_war_effect = yes
+		}
+	}
+}
 
 ETS_foreign_diplomacy = {
 
@@ -1098,6 +1302,7 @@ ETS_military_operation = {
 		}
 	}
 }
+
 ETS_turkic_diplo_decisions = {
 	ETS_reach_out_to_country_decision = {
 		icon = hol_exchange_intelligence_data
@@ -1176,131 +1381,4 @@ ETS_turkic_diplo_decisions = {
 	}
 }
 
-ETS_Central_east_war = {#大西亚战争
-	ETS_zhun_bei_zhaqn_zheng = {#主动出击！
-		icon = GFX_decision_infiltrate_state
-
-		visible = {
-			has_stability > 0.20
-		}
-		available = {
-			NOT = {
-				has_war_with = RUS
-			}
-		}
-
-		cost = 0
-		priority = 20
-		days_remove = 15
-		fire_only_once = yes
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
-			ROOT = {
-				declare_war_on = {
-					target = RUS
-				}
-			}
-			RUS = {
-				declare_war_on = {
-					target = ALO
-				}
-			}
-			RUS = {
-				declare_war_on = {
-					target = KYR
-				}
-			}
-			RUS = {
-				declare_war_on = {
-					target = TRK
-				}
-			}
-			RUS = {
-				declare_war_on = {
-					target = UZB
-				}
-			}
-			activate_mission = ETS_war_timer
-			if = {
-				limit = { 
-					ALO = {
-						exists = yes
-					}
-				}
-				if = {
-					limit = { 
-						ALO = {
-							OR = {
-								is_puppet_of = ROOT
-								is_in_faction_with = ROOT
-							}
-						}
-					}
-					ALO = {
-						transfer_state = 588
-						transfer_state = 583
-					}
-				}
-				else = {
-					ETS = {
-						transfer_state = 589
-					}
-					division_template = {
-						name = "起义军"
-						division_names_group = "LEC_GAR_01"
-						regiments = {
-							cavalry = { x = 0 y = 0 }
-							cavalry = { x = 0 y = 1 }
-							cavalry = { x = 0 y = 2 }
-							cavalry = { x = 0 y = 3 }
-							cavalry = { x = 0 y = 4 }
-						}
-					}
-					random_owned_controlled_state = {
-						prioritize = { 10550 }
-						limit = { is_in_home_area = yes }
-						create_unit = {
-							division = "division_template = \"起义军\" start_experience_factor = 0.5"
-							owner = PREV
-							count = 4
-						}
-					}
-				}
-			}
-		}
-	}
-
-	ETS_war_timer = {#战争！
-		icon = GFX_decision_infiltrate_state 
-
-		allowed = {
-			always = no
-		}
-		available = {
-			OR = {
-				NOT = {
-					has_war_with = RUS
-				}
-				has_country_flag = ETS_war_is_over
-			}
-		}
-
-		priority = 100 
-		is_good = no
-		days_mission_timeout = 220
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete ETS_war_timer"
-			ETS_central_aisa_war_effect = yes
-		}
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout ETS_war_timer"
-			ETS_central_aisa_war_effect = yes
-		}
-	}
-}
 

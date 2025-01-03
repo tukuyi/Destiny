@@ -471,6 +471,61 @@ ideas = {
 					production_speed_infrastructure_factor = 0.20
 				}
 			}	
+			ETS_tu_jue_si_tan_zai_tong_yi = {#突厥斯坦再统一
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_tu_jue_si_tan_zai_tong_yi"}
+				allowed = { always = no }
+				picture = generic_syndicalist_militia
+				available = {
+					KYR = {
+						exists = yes
+					}
+					TRK = {
+						exists = yes
+					}
+					UZB = {
+						exists = yes
+					}
+				}
+				modifier = {
+					no_supply_grace = 72
+					army_speed_factor = 0.05
+				}
+				targeted_modifier = {
+					tag = KYR
+					attack_bonus_against = 0.05
+				}
+				targeted_modifier = {
+					tag = TRK
+					attack_bonus_against = 0.05
+				}
+				targeted_modifier = {
+					tag = UZB
+					attack_bonus_against = 0.05
+				}
+				on_remove = {
+					add_ideas = ETS_tu_jue_si_tan_tong_yi
+				}
+			}	
+			ETS_tu_jue_si_tan_tong_yi = {#突厥斯坦统一
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_tu_jue_si_tan_tong_yi"}
+				allowed = { always = no }
+				picture = TRK_modernisation
+				modifier = {
+					stability_weekly = 0.005
+				}
+			}
+			#hidden
+			ETS_di_kang_dao_di = {#抵抗到底
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_di_kang_dao_di" }
+				available = {
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+				modifier = {
+					surrender_limit = 1
+				}
+			}		
 	}
 }
 

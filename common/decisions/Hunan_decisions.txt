@@ -777,7 +777,7 @@ HNN_elections_category = {#选举
 	}
 }
 
-HNN_foreign_category = { #中国结盟决议
+HNN_foreign_category = {#中国结盟决议
 	HNN_join_npa = {
 		available = {
 			has_war = no

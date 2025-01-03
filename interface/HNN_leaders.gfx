@@ -953,8 +953,12 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_Jin_Yun_peng.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_SQI_Jin_Yun_peng"
-		texturefile = "gfx/leaders/SQI/Portrait_SQI_Jin_Yun_peng.png"
+		name = "GFX_Portrait_SQI_dai_chun_feng"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_dai_chun_feng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_wang_zhao_ming"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_wang_zhao_ming.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_SQI_xu_shu_zheng"
