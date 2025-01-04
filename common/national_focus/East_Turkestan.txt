@@ -2300,7 +2300,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xin_si_lu
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_xin_si_lu
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -2
 		y = 2

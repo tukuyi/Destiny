@@ -67,4 +67,8 @@ SpriteTypes = {
 		name = "GFX_goal_ETS_ma_bei_shang_de"
 		texturefile = "gfx/interface/goals/ETS_ma_bei_shang_de.png"
 	}
+	spriteType = {
+		name = "GFX_goal_ETS_xin_si_lu"
+		texturefile = "gfx/interface/goals/ETS_xin_si_lu.png"
+	}
 }
