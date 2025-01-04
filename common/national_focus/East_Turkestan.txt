@@ -2142,7 +2142,7 @@ focus_tree = {
 		id = ETS_yi_jia_ren
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -6
+		x = -5
 		y = 1
 		cost = 4
 
@@ -2150,6 +2150,9 @@ focus_tree = {
 			country_exists = MON
 			MON = { 
 				has_completed_focus = MON_true_man
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2169,7 +2172,7 @@ focus_tree = {
 		id = ETS_wu_si_man
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -4
+		x = -3
 		y = 1
 		cost = 4
 
@@ -2177,6 +2180,9 @@ focus_tree = {
 			ALO = {
 				exists = yes
 				has_socialist_government = no
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2245,8 +2251,9 @@ focus_tree = {
 					}
 				}
 				RUS = {
-					declare_war_on = {
-						target = ROOT
+					country_event = {
+						id = xinren.8
+						days = 1
 					}
 				}
 				activate_mission = ETS_war_timer
@@ -2258,7 +2265,7 @@ focus_tree = {
 		id = ETS_ma_bei_shang_de
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -2
+		x = -1
 		y = 1
 		cost = 4
 
@@ -2266,6 +2273,9 @@ focus_tree = {
 			ALO = {
 				exists = yes
 				has_socialist_government = yes
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2293,7 +2303,7 @@ focus_tree = {
 		id = ETS_xin_si_lu
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -3
+		x = -2
 		y = 2
 		cost = 4
 
@@ -2307,6 +2317,9 @@ focus_tree = {
 						is_in_faction_with = ROOT
 					}
 				}
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2327,7 +2340,7 @@ focus_tree = {
 		id = ETS_you_ji_zhun_bei
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -4
+		x = -3
 		y = 3
 		cost = 4
 
@@ -2338,6 +2351,9 @@ focus_tree = {
 					is_puppet_of = ROOT
 					is_in_faction_with = ROOT
 				}
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2357,7 +2373,7 @@ focus_tree = {
 		id = ETS_bian_jing_fang_xian
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = -2
+		x = -1
 		y = 3
 		cost = 4
 
@@ -2368,6 +2384,9 @@ focus_tree = {
 					is_puppet_of = ROOT
 					is_in_faction_with = ROOT
 				}
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2442,10 +2461,15 @@ focus_tree = {
 		id = ETS_tu_jue_yi_jia_qin
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 0
+		x = 1
 		y = 1
 		cost = 4
 
+		available = {
+			NOT = {
+				has_war_with = RUS
+			}
+		}
 		prerequisite = {
 			focus = ETS_liang_he_zhi_jian
 		}
@@ -2508,7 +2532,7 @@ focus_tree = {
 		id = ETS_fen_sui_bai_lei
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 2
+		x = 3
 		y = 1
 		cost = 4
 
@@ -2521,6 +2545,9 @@ focus_tree = {
 			}
 			UZB = {
 				has_socialist_government = no
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2553,7 +2580,7 @@ focus_tree = {
 		id = ETS_shan_qu_bao_lei
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 1
+		x = 2
 		y = 2
 		cost = 4
 
@@ -2563,6 +2590,9 @@ focus_tree = {
 					name = "艾斯海提·伊斯哈科夫 "
 					ruling_only = yes
 				}
+			}
+			NOT = {
+				has_war_with = RUS
 			}
 		}
 		prerequisite = {
@@ -2618,12 +2648,15 @@ focus_tree = {
 		id = ETS_kuo_da_jun_qu_he_zuo
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 2
+		x = 3
 		y = 3
 		cost = 4
 
 		available = {
 			has_completed_focus = ETS_fen_sui_bai_lei
+			NOT = {
+				has_war_with = RUS
+			}
 		}
 		prerequisite = {
 			focus = ETS_shan_qu_bao_lei
@@ -2665,12 +2698,15 @@ focus_tree = {
 		id = ETS_sha_mo_cheng_shi
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 0
+		x = 1
 		y = 3
 		cost = 4
 
 		available = {
 			has_completed_focus = ETS_tu_jue_yi_jia_qin
+			NOT = {
+				has_war_with = RUS
+			}
 		}
 		prerequisite = {
 			focus = ETS_shan_qu_bao_lei
@@ -2720,13 +2756,280 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ETS_san_cheng_zheng
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 0
+		y = 4
+		cost = 0
+
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = ETS_bian_jing_fang_xian
+		}
+		prerequisite = {
+			focus = ETS_you_ji_zhun_bei
+		}
+		prerequisite = {
+			focus = ETS_sha_mo_cheng_shi
+		}
+		prerequisite = {
+			focus = ETS_kuo_da_jun_qu_he_zuo
+		}
+		bypass = {
+			has_war_with = RUS
+		}
+
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_san_cheng_zheng"
+			
+		}
+	}
+
+	focus = {
+		id = ETS_wen_zhu_fang_xian
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 0
+		y = 5
+		cost = 7
+
+		cancelable = no
+		prerequisite = {
+			focus = ETS_san_cheng_zheng
+		}
+		bypass = {
+			has_country_flag = ETS_war_is_over
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_wen_zhu_fang_xian"
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = ETS_di_kang_dao_di
+			}
+			add_ideas = ETS_di_kang_dao_di
+		}
+	}
+
+	focus = {
+		id = ETS_wan_gong_she_diao
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -2
+		y = 6
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_wen_zhu_fang_xian
+		}
+		available = {
+			OR = {
+				has_idea = ETS_military_buff_idea_3
+				has_idea = ETS_military_buff_idea_4
+			}
+		}
+		bypass = {
+			has_country_flag = ETS_war_is_over
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_wan_gong_she_diao"
+			if = {
+				limit = { 
+					has_idea = ETS_military_buff_idea_3
+				}
+				swap_ideas = {
+					remove_idea = ETS_military_buff_idea_3
+					add_idea = ETS_military_buff_idea_3_B
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = ETS_military_buff_idea_4
+				}
+				swap_ideas = {
+					remove_idea = ETS_military_buff_idea_4
+					add_idea = ETS_military_buff_idea_4_B
+				}
+			}
+			add_tech_bonus = {
+				name = ETS_artillery_integration
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_ren_duo_li_liang_da
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 0
+		y = 6
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_wen_zhu_fang_xian
+		}
+		bypass = {
+			has_country_flag = ETS_war_is_over
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ren_duo_li_liang_da"
+			ALO = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				division_template = {
+					name = "起义军"
+					division_names_group = "LEC_GAR_01"
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 10550 }
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "division_template = \"起义军\" start_experience_factor = 0.4"
+						owner = PREV
+						count = 5
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_rdi_guo_fen_chang
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 2
+		y = 6
+		cost = 5
+
+		prerequisite = {
+			focus = ETS_wen_zhu_fang_xian
+		}
+		bypass = {
+			has_country_flag = ETS_war_is_over
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_rdi_guo_fen_chang"
+			add_ideas = ETS_graveyard
+		}
+	}
+
+	focus = {
+		id = ETS_yang_si_tan_bai
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = -1
+		y = 7
+		cost = 2
+
+		prerequisite = {
+			focus = ETS_wan_gong_she_diao
+		}
+		prerequisite = {
+			focus = ETS_ren_duo_li_liang_da
+		}
+		prerequisite = {
+			focus = ETS_rdi_guo_fen_chang
+		}
+		mutually_exclusive = {
+			focus = ETS_jian_shou_fan_ji
+		}
+		available = {
+			OR = {
+				AND = {
+					ALO = {
+						exists = yex
+						has_war_with = RUS
+					}
+					810 = {
+						is_controlled_by = RUS
+					}
+				}
+				ALO = {
+					exists = no
+				}
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_yang_si_tan_bai"
+			add_timed_idea = {
+				idea = ETS_si_zhan_dao_di
+				days = 30
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_jian_shou_fan_ji
+		icon = GFX_goal_ETS_guang_zi_bei_lai
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 1
+		y = 7
+		cost = 2
+
+		prerequisite = {
+			focus = ETS_wan_gong_she_diao
+		}
+		prerequisite = {
+			focus = ETS_ren_duo_li_liang_da
+		}
+		prerequisite = {
+			focus = ETS_rdi_guo_fen_chang
+		}
+		mutually_exclusive = {
+			focus = ETS_yang_si_tan_bai
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_jian_shou_fan_ji"
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_manpower = 10000
+			}
+			add_manpower = 10000
+			add_doctrine_cost_reduction = {
+				name = ETS_doctrine_research
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
 		id = ETS_fang_fan_xiong_zhua
 		icon = GFX_goal_ETS_guang_zi_bei_lai
 		relative_position_id = ETS_liang_he_zhi_jian
-		x = 6
+		x = 5
 		y = 1
 		cost = 4
 
+		available = {
+			NOT = {
+				has_war_with = RUS
+			}
+		}
 		prerequisite = {
 			focus = ETS_liang_he_zhi_jian
 		}
@@ -2734,8 +3037,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_fang_fan_xiong_zhua"
-			ROOT = {
-				add_to_faction = MON
+			division_template = {
+				name = "起义军"
+				division_names_group = "LEC_GAR_01"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 2015 }
+				limit = { is_in_home_area = yes }
+				create_unit = {
+					division = "division_template = \"起义军\" start_experience_factor = 0.4"
+					owner = PREV
+					count = 4
+				}
 			}
 		}
 	}

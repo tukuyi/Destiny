@@ -2607,3 +2607,34 @@ country_event = {#仁慈之君
 		}
 	}
 }
+
+country_event = {#中亚的异动
+	id = xinren.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.8" }
+	title = xinren.8.t
+	desc = xinren.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.8.a
+		ai_chance = {
+			base = 2
+		}
+		declare_war_on = {
+			target = ETS
+		}
+		ETS = {
+			activate_mission = ETS_war_timer
+			complete_national_focus = ETS_san_cheng_zheng
+		}
+	}
+
+	option = {
+		name = xinren.8.b
+		ai_chance = {
+			base = 20
+		}
+	}
+}

@@ -55,6 +55,7 @@ ETS_Central_east_war_cat = {#大西亚战争
 			}
 			custom_effect_tooltip = tooltip_white_line
 			activate_mission = ETS_war_timer
+			complete_national_focus = ETS_san_cheng_zheng
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { 
@@ -174,6 +175,33 @@ ETS_Central_east_war_cat = {#大西亚战争
 						ETS_lu_te_sec
 					}
 				}
+			}
+		}
+	}
+
+	ETS_qian_wang_ao_man = {#前往伊斯坦布尔的使臣
+		icon = generic_flags
+
+		available = {
+			has_war_with = RUS
+		}
+
+		cost = 20
+		priority = 30
+		days_remove = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_ao_man"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_ao_man"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = OTT
 			}
 		}
 	}

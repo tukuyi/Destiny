@@ -55,6 +55,7 @@ ETS_change_popularities = {
 }
 
 ETS_central_aisa_war_effect = {
+	set_country_flag = ETS_war_is_over
 	if = {
 		limit = { 
 			OR = {

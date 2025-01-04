@@ -436,6 +436,34 @@ ideas = {
 					cat_mass_assault_cost_factor = -0.10
 				}
 			}
+			ETS_military_buff_idea_3_B = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_military_buff_idea_3_B"}
+				allowed = { always = no }
+				picture = generic_reserve_divisions
+				name = ETS_military_buff_idea
+				modifier = {
+					attrition = -0.07
+					army_org_regain = 0.04
+					army_org_factor = 0.10
+					surrender_limit = 0.07
+					max_dig_in_factor = 0.07
+					army_attack_factor = 0.06
+					army_morale_factor = 0.06
+					land_reinforce_rate = 0.05
+					dig_in_speed_factor = 0.09
+					army_defence_factor = 0.05
+					breakthrough_factor = 0.03
+					experience_gain_army = 0.050
+					static_anti_air_damage_factor = 0.10
+					cat_mass_assault_cost_factor = -0.10
+					static_anti_air_hit_chance_factor = 0.10
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.10
+					}
+				}
+			}
 			ETS_military_buff_idea_4 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_military_buff_idea_2"}
 				allowed = { always = no }
@@ -457,6 +485,36 @@ ideas = {
 					experience_gain_army = 0.050
 					training_time_army_factor = 0.10
 					recon_factor_while_entrenched = 0.10
+				}
+			}
+			ETS_military_buff_idea_4_B = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_military_buff_idea_4_B"}
+				allowed = { always = no }
+				picture = generic_reserve_divisions
+				name = ETS_military_buff_idea
+				modifier = {
+					attrition = -0.07
+					max_planning = 0.25
+					surrender_limit = 0.07
+					max_dig_in_factor = 0.07
+					decryption_factor = 0.05
+					encryption_factor = 0.05
+					army_attack_factor = 0.08
+					army_morale_factor = 0.06
+					land_reinforce_rate = 0.05
+					dig_in_speed_factor = 0.09
+					army_defence_factor = 0.07
+					combat_width_factor = -0.10
+					experience_gain_army = 0.050
+					training_time_army_factor = 0.10
+					static_anti_air_damage_factor = 0.10
+					recon_factor_while_entrenched = 0.10
+					static_anti_air_hit_chance_factor = 0.10
+				}
+				equipment_bonus = {
+					artillery_equipment = {
+						soft_attack = 0.10
+					}
 				}
 			}
 			ETS_xian_feng_dang = {#各民族的先锋队
@@ -512,6 +570,29 @@ ideas = {
 				picture = TRK_modernisation
 				modifier = {
 					stability_weekly = 0.005
+				}
+			}
+			ETS_graveyard = {#帝国坟场
+				picture = AFG_graveyard
+				allowed = { always = no }
+				modifier = {
+					surrender_limit = 0.025
+					army_core_defence_factor = 0.03
+					resistance_target_on_our_occupied_states = 0.25
+				}
+			}
+			ETS_si_zhan_dao_di = {#死战到底
+				picture = death_men
+				allowed = { always = no }
+				modifier = {
+					no_supply_grace = 240
+					army_speed_factor = 0.20
+					breakthrough_factor = 0.10
+				}
+				targeted_modifier = {
+					tag = RUS
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.075
 				}
 			}
 			#hidden
