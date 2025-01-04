@@ -205,6 +205,83 @@ ETS_Central_east_war_cat = {#大西亚战争
 			}
 		}
 	}
+	ETS_shi_yue_yu_huo = {#十月余火
+		icon = generic_flags
+
+		available = {
+			has_war_with = RUS
+		}
+
+		cost = 20
+		priority = 30
+		days_remove = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_shi_yue_yu_huo"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_shi_yue_yu_huo"
+			add_stability = 0.20
+			add_war_support = 0.20
+			if = {
+				limit = { 
+					SHC = {
+						NOT = {
+							has_country_flag = zong_gong_hui_victory
+						}
+					}
+				}
+				create_field_marshal = {
+					name = "亚历山大·I·切列帕诺夫"
+					desc = "Portrait_Alexander_Ivanovich_Cherepanov_DESC"
+					portrait_path = "gfx/leaders/LEC/Portrait_Alexander_Ivanovich_Cherepanov.png"
+					traits = {  
+						war_hero
+						harsh_leader
+						career_officer
+						infantry_officer
+					}
+					skill = 4
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "尼古拉·古比雪夫"
+					desc = "POLITICS_Nikolay_Kuibyshev_DESC"
+					portrait_path = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
+					traits = {  
+						war_hero
+						career_officer
+						infantry_officer
+					}
+					skill = 3
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "尼古拉·罗申"
+					desc = "POLITICS_Background_Alternate_DESC"
+					portrait_path = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
+					traits = {  
+						career_officer
+						infantry_officer
+					}
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+				}
+			}
+		}
+	}
 
 	ETS_war_timer = {#战争！
 		icon = GFX_decision_infiltrate_state 

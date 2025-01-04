@@ -2039,7 +2039,7 @@ focus_tree = {
 #西亚战争
 	focus = {
 		id = ETS_liang_he_zhi_jian
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_liang_he_zhi_jian
 		x = 20
 		y = 12
 		cost = 4
@@ -2112,7 +2112,7 @@ focus_tree = {
 	
 	focus = {
 		id = ETS_follow_leader
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_follow_leader
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = 2
 		y = 0
@@ -2140,7 +2140,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_yi_jia_ren
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_yi_jia_ren
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -5
 		y = 1
@@ -2170,7 +2170,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_wu_si_man
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_wu_si_man
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -3
 		y = 1
@@ -2256,14 +2256,13 @@ focus_tree = {
 						days = 1
 					}
 				}
-				activate_mission = ETS_war_timer
 			}
 		}
 	}
 
 	focus = {
 		id = ETS_ma_bei_shang_de
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_goal_ETS_ma_bei_shang_de
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -1
 		y = 1
@@ -2757,7 +2756,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_san_cheng_zheng
-		icon = GFX_goal_ETS_guang_zi_bei_lai
+		icon = GFX_DKB_don_guards
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = 0
 		y = 4
@@ -2781,7 +2780,6 @@ focus_tree = {
 		bypass = {
 			has_war_with = RUS
 		}
-
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_san_cheng_zheng"
