@@ -14906,65 +14906,6 @@ SZC_path = {
 	}
 }
 
-ETS_night = {
-	name = "ETS_NIGHT"
-	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
-	option = {
-		name = DEFAULT
-		text = "RULE_OPTION_ETS_NIGHT_RANDOM"
-		desc = "RULE_OPTION_ETS_NIGHT_RANDOM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_TIMUR_ELECTION #AutDem with democratic characteristics
-		text = "RULE_OPTION_ETS_NIGHT_TIMUR_ELECTION"
-		desc = "RULE_OPTION_ETS_NIGHT_TIMUR_ELECTION_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_TIMUR_SHAH #AutDem
-		text = "RULE_OPTION_ETS_NIGHT_TIMUR_SHAH"
-		desc = "RULE_OPTION_ETS_NIGHT_TIMUR_SHAH_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_BUGHRA_ISLAM #Natpop Islam
-		text = "RULE_OPTION_ETS_NIGHT_BUGHRA_ISLAM"
-		desc = "RULE_OPTION_ETS_NIGHT_BUGHRA_ISLAM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_BUGHRA_TURKIC #Natpop Turkic
-		text = "RULE_OPTION_ETS_NIGHT_BUGHRA_TURKIC"
-		desc = "RULE_OPTION_ETS_NIGHT_BUGHRA_TURKIC_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_DEMOCRACY_SOCCON #SocCon
-		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCCON"
-		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCCON_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_DEMOCRACY_AUTDEM #AutDem
-		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_AUTDEM"
-		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_AUTDEM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_DEMOCRACY_SOCDEM #SocDem
-		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCDEM"
-		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCDEM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = ETS_NIGHT_DEMOCRACY_SABRI #AutDem
-		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SABRI"
-		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SABRI_DESC"
-		allow_achievements = yes
-	}
-}
-
 TAN_future = {
 	name = "TAN_FUTURE"
 	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
@@ -16167,6 +16108,71 @@ SHX_path = {#山西
 		name = SHX_STRUGGLE_FU
 		text = "SHX_STRUGGLE_FU"
 		desc = "SHX_STRUGGLE_FU_DESC"
+		allow_achievements = yes
+	}
+}
+
+ETS_night = {
+	name = "ETS_NIGHT"
+	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_ETS_NIGHT_RANDOM"
+		desc = "RULE_OPTION_ETS_NIGHT_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_TIMUR_ELECTION #AutDem with democratic characteristics
+		text = "RULE_OPTION_ETS_NIGHT_TIMUR_ELECTION"
+		desc = "RULE_OPTION_ETS_NIGHT_TIMUR_ELECTION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_TIMUR_SHAH #AutDem
+		text = "RULE_OPTION_ETS_NIGHT_TIMUR_SHAH"
+		desc = "RULE_OPTION_ETS_NIGHT_TIMUR_SHAH_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_BUGHRA_ISLAM #Natpop Islam
+		text = "RULE_OPTION_ETS_NIGHT_BUGHRA_ISLAM"
+		desc = "RULE_OPTION_ETS_NIGHT_BUGHRA_ISLAM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_BUGHRA_TURKIC #Natpop Turkic
+		text = "RULE_OPTION_ETS_NIGHT_BUGHRA_TURKIC"
+		desc = "RULE_OPTION_ETS_NIGHT_BUGHRA_TURKIC_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_DEMOCRACY_SOCCON #SocCon
+		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCCON"
+		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCCON_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_DEMOCRACY_AUTDEM #AutDem
+		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_AUTDEM"
+		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_AUTDEM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_DEMOCRACY_SOCDEM #SocDem
+		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCDEM"
+		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SOCDEM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_NIGHT_DEMOCRACY_SABRI #AutDem
+		text = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SABRI"
+		desc = "RULE_OPTION_ETS_NIGHT_DEMOCRACY_SABRI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ETS_RED_MOON #红月亮
+		text = "RULE_OPTION_ETS_RED_MOON"
+		desc = "RULE_OPTION_ETS_RED_MOON_DESC"
 		allow_achievements = yes
 	}
 }

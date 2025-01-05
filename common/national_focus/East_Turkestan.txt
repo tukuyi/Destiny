@@ -15,7 +15,7 @@ focus_tree = {
 	}
 	default = no
 
-	continuous_focus_position = { x = 2000 y = 1000 }
+	continuous_focus_position = { x = 3000 y = 200 }
 
 	focus = {
 		id = ETS_uyghur_revolution
@@ -398,7 +398,7 @@ focus_tree = {
 					}
 					set_politics = {
 						ruling_party = authoritarian_democrat
-							last_election = "[YEAR].1.28"
+						last_election = "[YEAR].1.28"
 						election_frequency = 48
 						elections_allowed = yes
 					}
@@ -677,17 +677,17 @@ focus_tree = {
 	focus = {
 		id = ETS_bughra_win
 		icon = GFX_goal_ideology_national_populist
-		prerequisite = {
-			focus = ETS_a_night_to_remember
-		}
 		relative_position_id = ETS_uyghur_revolution
-		available = {
-			hidden_trigger = { always = no }
-		}
 		x = 6
 		y = 5
 		cost = 1
 
+		prerequisite = {
+			focus = ETS_a_night_to_remember
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
 		bypass = {
 			is_subject = yes
 			has_dictatorship_government = yes
@@ -704,17 +704,17 @@ focus_tree = {
 	focus = {
 		id = ETS_a_piece_in_the_puzzle
 		icon = GFX_TTR_Islamic_Order
+		relative_position_id = ETS_bughra_win
+		x = 0
+		y = 1
+		cost = 2
+
 		prerequisite = {
 			focus = ETS_bughra_win
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 6
-		y = 6
-		cost = 2
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -725,6 +725,11 @@ focus_tree = {
 	focus = {
 		id = ETS_islam_in_one_country
 		icon = GFX_goal_AFG_islamic_revolution
+		relative_position_id = ETS_bughra_win
+		x = -2
+		y = 2
+		cost = 2
+
 		prerequisite = {
 			focus = ETS_a_piece_in_the_puzzle
 		}
@@ -735,11 +740,6 @@ focus_tree = {
 			has_country_flag = ETS_islamiccountry
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 4
-		y = 7
-		cost = 2
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -751,17 +751,17 @@ focus_tree = {
 	focus = {
 		id = ETS_fight_inauthentic
 		icon = GFX_goal_ETS_authentic_religion
+		relative_position_id = ETS_bughra_win
+		x = -2
+		y = 3
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_islam_in_one_country
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 4
-		y = 8
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -778,17 +778,17 @@ focus_tree = {
 	focus = {
 		id = ETS_all_madrasas
 		icon = GFX_BBR_islamic_education
+		relative_position_id = ETS_bughra_win
+		x = -2
+		y = 4
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_fight_inauthentic
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 4
-		y = 9
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -800,17 +800,17 @@ focus_tree = {
 	focus = {
 		id = ETS_transform_desert
 		icon = GFX_goal_generic_industrial_planning
+		relative_position_id = ETS_bughra_win
+		x = -2
+		y = 5
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_all_madrasas
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 4
-		y = 10
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -827,6 +827,11 @@ focus_tree = {
 	focus = {
 		id = ETS_deal_with_hui
 		icon = GFX_goal_NGR_at_dissent
+		relative_position_id = ETS_bughra_win
+		x = 0
+		y = 3
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_islam_in_one_country
 			focus = ETS_realm_of_turks
@@ -834,11 +839,6 @@ focus_tree = {
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 6
-		y = 8
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -850,17 +850,17 @@ focus_tree = {
 	focus = {
 		id = ETS_turkic_nationalism
 		icon = GFX_goal_NFA_sole_leadership
+		relative_position_id = ETS_bughra_win
+		x = 0
+		y = 4
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_deal_with_hui
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 6
-		y = 9
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -878,17 +878,17 @@ focus_tree = {
 	focus = {
 		id = ETS_hotan_development
 		icon = GFX_goal_NFA_review_economy
+		relative_position_id = ETS_bughra_win
+		x = 0
+		y = 5
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_turkic_nationalism
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 6
-		y = 10
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -916,6 +916,11 @@ focus_tree = {
 	focus = {
 		id = ETS_realm_of_turks
 		icon = GFX_goal_OTT_Muslim_Solidarity
+		relative_position_id = ETS_bughra_win
+		x = 2
+		y = 2
+		cost = 2
+
 		prerequisite = {
 			focus = ETS_a_piece_in_the_puzzle
 		}
@@ -926,11 +931,6 @@ focus_tree = {
 			has_country_flag = ETS_turkiccountry
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 8
-		y = 7
-		cost = 2
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -944,17 +944,17 @@ focus_tree = {
 	focus = {
 		id = ETS_unified_language
 		icon = GFX_goal_CZE_unite_the_right
+		relative_position_id = ETS_bughra_win
+		x = 2
+		y = 3
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_realm_of_turks
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 8
-		y = 8
-		cost = 6
-
 		ai_will_do = {
 			factor = 100
 		}
@@ -969,17 +969,17 @@ focus_tree = {
 	focus = {
 		id = ETS_internationalize_council
 		icon = GFX_goal_authoritarian
+		relative_position_id = ETS_bughra_win
+		x = 2
+		y = 4
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_unified_language
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 8
-		y = 9
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -996,17 +996,17 @@ focus_tree = {
 	focus = {
 		id = ETS_unfied_infrastructure
 		icon = GFX_goal_CRO_sprawling_roads
+		relative_position_id = ETS_bughra_win
+		x = 2
+		y = 5
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_internationalize_council
 		}
 		available = {
 			has_government = national_populist
 		}
-		relative_position_id = ETS_uyghur_revolution
-		x = 8
-		y = 10
-		cost = 6
-
 		ai_will_do = { factor = 100 }
 
 		completion_reward = {
@@ -1463,7 +1463,7 @@ focus_tree = {
 		relative_position_id = ETS_military_modernisation
 		x = 0
 		y = 2
-		cost = 7
+		cost = 5
 		prerequisite = {
 			focus = ETS_expand_districts_system
 			focus = ETS_research_scavenged_weapons
@@ -1483,7 +1483,7 @@ focus_tree = {
 		relative_position_id = ETS_military_modernisation
 		x = 2
 		y = 2
-		cost = 6
+		cost = 5
 		prerequisite = {
 			focus = ETS_expand_districts_system
 		}
@@ -1506,7 +1506,7 @@ focus_tree = {
 		relative_position_id = ETS_military_modernisation
 		x = -2
 		y = 2
-		cost = 7
+		cost = 5
 		prerequisite = {
 			focus = ETS_research_scavenged_weapons
 		}
@@ -1535,7 +1535,7 @@ focus_tree = {
 		relative_position_id = ETS_military_modernisation
 		x = 1
 		y = 3
-		cost = 6
+		cost = 5
 		prerequisite = {
 			focus = ETS_mountainous_officer_training
 		}
@@ -1583,7 +1583,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 23
 		y = 0
-		cost = 6
+		cost = 5
 
 		available = {
 			NOT = { has_war_with = SIK }
@@ -1607,6 +1607,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		cost = 5
+
 		prerequisite = {
 			focus = ETS_connect_to_dihua
 		}
@@ -1630,7 +1631,8 @@ focus_tree = {
 		relative_position_id = ETS_connect_to_dihua
 		x = -1
 		y = 1
-		cost = 6
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_connect_to_dihua
 		}
@@ -1639,8 +1641,27 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_connect_to_the_outer_areas"
-			add_one_random_infrastructure = yes
-			add_one_random_infrastructure = yes
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1650,7 +1671,8 @@ focus_tree = {
 		relative_position_id = ETS_connect_to_dihua
 		x = 1
 		y = 2
-		cost = 7
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_develop_the_cities
 		}
@@ -1659,7 +1681,22 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_refurbish_dihua_industry"
-			add_one_random_civilian_factory = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1669,7 +1706,8 @@ focus_tree = {
 		relative_position_id = ETS_connect_to_dihua
 		x = -1
 		y = 2
-		cost = 8
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_connect_to_the_outer_areas
 		}
@@ -1678,7 +1716,22 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_dzungar_military_factory"
-			add_one_random_military_factory = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1688,7 +1741,8 @@ focus_tree = {
 		relative_position_id = ETS_connect_to_dihua
 		x = 0
 		y = 3
-		cost = 6
+		cost = 5
+
 		prerequisite = {
 			focus = ETS_refurbish_dihua_industry
 			focus = ETS_dzungar_military_factory
@@ -1709,14 +1763,17 @@ focus_tree = {
 	focus = {
 		id = ETS_guang_zi_bei_lai
 		icon = GFX_goal_ETS_guang_zi_bei_lai
-		x = 8
-		y = 12
+		relative_position_id = ETS_uyghur_revolution
+		x = 12
+		y = 5
 		cost = 0
 
+		prerequisite = {
+			focus = ETS_a_night_to_remember
+		}
 		available = {
 			hidden_trigger = { always = no }
 		}
-
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
@@ -1758,6 +1815,9 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ETS_hong_se_yi_li
+		}
+		available = {
+			has_country_flag = ETS_our_father	
 		}
 
 		ai_will_do = { base = 100 }
@@ -1866,6 +1926,9 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ETS_hong_se_yi_li
+		}
+		available = {
+			has_country_flag = ETS_our_leader	
 		}
 
 		ai_will_do = { base = 100 }
@@ -2049,10 +2112,7 @@ focus_tree = {
 				RUS = {
 					has_war_with = ALO
 				}
-				OR = {
-					has_completed_focus = ETS_xin_yue_zhi_jun
-					has_completed_focus = ETS_cun_jie_zhi_jun
-				}
+				has_completed_focus = ETS_jian_tao_cuo_wu
 			}
 		}
 		mutually_exclusive = {
@@ -2119,6 +2179,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
+			has_completed_focus = ETS_guang_zi_bei_lai
 			country_exists = RUS
 			RUS = { has_socialist_government = yes }
 		}
@@ -2144,7 +2205,7 @@ focus_tree = {
 		relative_position_id = ETS_liang_he_zhi_jian
 		x = -5
 		y = 1
-		cost = 4
+		cost = 2
 
 		available = {
 			country_exists = MON
@@ -2178,7 +2239,6 @@ focus_tree = {
 
 		available = {
 			ALO = {
-				exists = yes
 				has_socialist_government = no
 			}
 			NOT = {
@@ -2187,11 +2247,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ETS_liang_he_zhi_jian
-		}
-		bypass = {
-			ALO = {
-				exists = no
-			}
 		}
 		mutually_exclusive = {
 			focus = ETS_ma_bei_shang_de
@@ -2229,7 +2284,7 @@ focus_tree = {
 				ALO = {
 					set_cosmetic_tag = ETS_ALO
 					create_country_leader = {
-						name = "乌斯满"
+						name = "伊斯哈克拜克·木农阿吉"
 						picture = "gfx/leaders/SIK/Portrait_SIK_wu_si_man.png"
 						expire = "1.1.1"
 						ideology = red_junta_subtype
@@ -2237,17 +2292,19 @@ focus_tree = {
 							ETS_hong_se_tie_mu_er
 						}
 					}
-					set_politics = {
-						ruling_party = totalist
-					}
-					set_party_name = {
-						ideology = totalist
-						long_name = ETS_ALO_totalist_party_one_long
-						name = ETS_ALO_totalist_party_one
-					}
-					add_ideas = {
-						war_economy
-						all_adults_serve
+					hidden_effect = {
+						set_politics = {
+							ruling_party = totalist
+						}
+						set_party_name = {
+							ideology = totalist
+							long_name = ETS_ALO_totalist_party_one_long
+							name = ETS_ALO_totalist_party_one
+						}
+						add_ideas = {
+							war_economy
+							all_adults_serve
+						}
 					}
 				}
 				RUS = {
@@ -2256,6 +2313,14 @@ focus_tree = {
 						days = 1
 					}
 				}
+			}
+			else_if = {
+				limit = { 
+					ALO = {
+						exists = no
+					}
+				}
+				transfer_state = 589
 			}
 		}
 	}
@@ -2475,6 +2540,43 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ETS_fen_sui_bai_lei
 		}
+		bypass = {
+			OR = {
+				AND = {
+					UZB = {
+						exists = no
+					} 
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				AND = {
+					UZB = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					TRK = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				AND = {
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					UZB = {
+						is_in_faction_with = ROOT
+					} 	
+				}
+			}
+		}
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
@@ -2492,6 +2594,7 @@ focus_tree = {
 			else = {
 				declare_war_on = {
 					target = KYR
+					type = annex_everything
 				}
 			}
 			if = {
@@ -2507,6 +2610,7 @@ focus_tree = {
 			else = {
 				declare_war_on = {
 					target = TRK
+					type = annex_everything
 				}
 			}
 			if = {
@@ -2522,6 +2626,7 @@ focus_tree = {
 			else = {
 				declare_war_on = {
 					target = UZB
+					type = annex_everything
 				}
 			}
 		}
@@ -2562,12 +2667,15 @@ focus_tree = {
 			ROOT = {
 				declare_war_on = {
 					target = KYR
+					type = annex_everything
 				}
 				declare_war_on = {
 					target = TRK
+					type = annex_everything
 				}
 				declare_war_on = {
 					target = UZB
+					type = annex_everything
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -2584,10 +2692,47 @@ focus_tree = {
 		cost = 4
 
 		available = {
-			KYR = {
-				has_country_leader = {
-					name = "艾斯海提·伊斯哈科夫 "
-					ruling_only = yes
+			OR = {
+				KYR = {
+					has_country_leader = {
+						name = "艾斯海提·伊斯哈科夫 "
+						ruling_only = yes
+					}
+				}
+				OR = {
+					AND = {
+						UZB = {
+							exists = no
+						} 
+						TRK = {
+							exists = no
+						} 
+						KYR = {
+							is_in_faction_with = ROOT
+						} 
+					}
+					AND = {
+						UZB = {
+							exists = no
+						} 
+						KYR = {
+							exists = no
+						} 
+						TRK = {
+							is_in_faction_with = ROOT
+						} 
+					}
+					AND = {
+						TRK = {
+							exists = no
+						} 
+						KYR = {
+							exists = no
+						} 
+						UZB = {
+							is_in_faction_with = ROOT
+						} 	
+					}
 				}
 			}
 			NOT = {
@@ -2755,6 +2900,51 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ETS_liu_you_yu_li
+		icon = GFX_goal_AFG_Saving_Pashtun_From_Ruin
+		relative_position_id = ETS_liang_he_zhi_jian
+		x = 2
+		y = 4
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_bian_jing_fang_xian
+		}
+		prerequisite = {
+			focus = ETS_you_ji_zhun_bei
+		}
+		prerequisite = {
+			focus = ETS_sha_mo_cheng_shi
+		}
+		prerequisite = {
+			focus = ETS_kuo_da_jun_qu_he_zuo
+		}
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_liu_you_yu_li"
+			if = {
+				limit = { 
+					AFG = {
+						has_socialist_government = no
+					}
+				}
+				declare_war_on = {
+					target = AFG
+					type = annex_everything
+				}	
+			}
+			else = {
+				ROOT = {
+					add_to_faction = AFG
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = ETS_san_cheng_zheng
 		icon = GFX_DKB_don_guards
 		relative_position_id = ETS_liang_he_zhi_jian
@@ -2799,8 +2989,10 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_san_cheng_zheng
 		}
-		bypass = {
-			has_country_flag = ETS_war_is_over
+		available = {
+			NOT = {
+				has_country_flag = ETS_war_is_over
+			}
 		}
 
 		completion_reward = {
@@ -2831,9 +3023,9 @@ focus_tree = {
 				has_idea = ETS_military_buff_idea_3
 				has_idea = ETS_military_buff_idea_4
 			}
-		}
-		bypass = {
-			has_country_flag = ETS_war_is_over
+			NOT = {
+				has_country_flag = ETS_war_is_over
+			}
 		}
 
 		completion_reward = {
@@ -2876,8 +3068,10 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_wen_zhu_fang_xian
 		}
-		bypass = {
-			has_country_flag = ETS_war_is_over
+		available = {
+			NOT = {
+				has_country_flag = ETS_war_is_over
+			}
 		}
 
 		completion_reward = {
@@ -2920,8 +3114,10 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_wen_zhu_fang_xian
 		}
-		bypass = {
-			has_country_flag = ETS_war_is_over
+		available = {
+			NOT = {
+				has_country_flag = ETS_war_is_over
+			}
 		}
 
 		completion_reward = {
@@ -2940,12 +3136,10 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ETS_wan_gong_she_diao
+			focus = ETS_rdi_guo_fen_chang
 		}
 		prerequisite = {
 			focus = ETS_ren_duo_li_liang_da
-		}
-		prerequisite = {
-			focus = ETS_rdi_guo_fen_chang
 		}
 		mutually_exclusive = {
 			focus = ETS_jian_shou_fan_ji
@@ -2964,6 +3158,9 @@ focus_tree = {
 				ALO = {
 					exists = no
 				}
+			}
+			NOT = {
+				has_country_flag = ETS_war_is_over
 			}
 		}
 
@@ -2986,12 +3183,15 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ETS_wan_gong_she_diao
+			focus = ETS_rdi_guo_fen_chang
 		}
 		prerequisite = {
 			focus = ETS_ren_duo_li_liang_da
 		}
-		prerequisite = {
-			focus = ETS_rdi_guo_fen_chang
+		available = {
+			NOT = {
+				has_country_flag = ETS_war_is_over
+			}
 		}
 		mutually_exclusive = {
 			focus = ETS_yang_si_tan_bai
@@ -3035,6 +3235,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_fang_fan_xiong_zhua"
+			unlock_decision_tooltip = ETS_zhun_bei_zhaqn_zheng
+			custom_effect_tooltip = tooltip_white_line
 			division_template = {
 				name = "起义军"
 				division_names_group = "LEC_GAR_01"
@@ -3054,6 +3256,355 @@ focus_tree = {
 					count = 4
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		x = 20
+		y = 21
+		cost = 0
+
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = ETS_war_is_over
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xi_ya_zhan_zheng_jie_shu"
+
+		}
+	}
+
+	focus = {
+		id = ETS_zhong_ya_zhi_shang
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
+		x = -7
+		y = 1
+		cost = 0
+
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = ETS_xi_ya_zhan_zheng_jie_shu
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhong_ya_zhi_shang"
+			custom_effect_tooltip = EST_keep_our_self
+			hidden_effect = {
+				add_ideas = ETS_zhong_ya_zhi_shang
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_zhi_mian_shi_bai
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = -3
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhong_ya_zhi_shang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhi_mian_shi_bai"
+			ETS_zhong_ya_zhi_shang_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_quan_mian_zheng_dun
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = -1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhong_ya_zhi_shang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_quan_mian_zheng_dun"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_zhan_hou_zhi_xu
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhong_ya_zhi_shang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhan_hou_zhi_xu"
+			ETS_zhong_ya_zhi_shang_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_sheng_chan_jian_she
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 3
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhong_ya_zhi_shang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_sheng_chan_jian_she"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			increase_ruling_party_popularity_by_10 = yes
+		}
+	}
+
+	focus = {
+		id = ETS_ping_heng_yu_suan
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = -2
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhan_hou_zhi_xu
+		}
+		prerequisite = {
+			focus = ETS_quan_mian_zheng_dun
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ping_heng_yu_suan"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			add_ideas = {
+				export_focus
+				civilian_economy
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_lao_ku_zhe_de_dai_yan
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 0
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhan_hou_zhi_xu
+		}
+		prerequisite = {
+			focus = ETS_quan_mian_zheng_dun
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_lao_ku_zhe_de_dai_yan"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			add_stability = 0.10
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+
+	focus = {
+		id = ETS_fan_tu_jue_he_jie
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 2
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhan_hou_zhi_xu
+		}
+		prerequisite = {
+			focus = ETS_quan_mian_zheng_dun
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_fan_tu_jue_he_jie"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			add_political_power = 100
+			increase_ruling_party_popularity_by_5 = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = ETS_chong_xin_shu_li
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = -3
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhi_mian_shi_bai
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_xin_shu_li"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			add_war_support = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+		}
+	}
+
+	focus = {
+		id = ETS_da_ji_fu_bai
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = -1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_fan_tu_jue_he_jie
+		}
+		prerequisite = {
+			focus = ETS_ping_heng_yu_suan
+		}
+		prerequisite = {
+			focus = ETS_lao_ku_zhe_de_dai_yan
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_da_ji_fu_bai"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			increase_ruling_party_popularity_by_5 = yes
+		}
+	}
+
+	focus = {
+		id = ETS_jun_shi_hua_guo_jia
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_fan_tu_jue_he_jie
+		}
+		prerequisite = {
+			focus = ETS_ping_heng_yu_suan
+		}
+		prerequisite = {
+			focus = ETS_lao_ku_zhe_de_dai_yan
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_jun_shi_hua_guo_jia"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			increase_ruling_party_popularity_by_5 = yes
+		}
+	}
+	
+	focus = {
+		id = ETS_mo_xu_fu_chou
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 3
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_sheng_chan_jian_she
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_mo_xu_fu_chou"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			increase_ruling_party_popularity_by_5 = yes
+		}
+	}
+
+	focus = {
+		id = ETS_zai_wu_1938
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_zhong_ya_zhi_shang
+		x = 0
+		y = 4
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_da_ji_fu_bai
+		}
+		prerequisite = {
+			focus = ETS_mo_xu_fu_chou
+		}
+		prerequisite = {
+			focus = ETS_chong_xin_shu_li
+		}
+		prerequisite = {
+			focus = ETS_jun_shi_hua_guo_jia
+		}
+		available = {
+			RUS = {
+				OR = {
+					has_war_with = GER
+					has_war_with = FRA
+					has_war_with = CAN
+				}
+			}
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zai_wu_1938"
+			ETS_zhong_ya_zhi_shang_effect = yes
+			create_wargoal = {
+				target = RUS
+				type = annex_everything
+			}
+			increase_ruling_party_popularity_by_10 = yes
 		}
 	}
 }

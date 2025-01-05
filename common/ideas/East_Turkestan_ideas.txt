@@ -391,7 +391,7 @@ ideas = {
 			ETS_xin_ping_jiu_jiu = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_min_zu_dai_biao"}
 				allowed = { always = no }
-				picture = idea_SNA_islam
+				picture = GFX_idea_islam
 				modifier = {
 					supply_node_range = 0.20
 					army_core_attack_factor = 0.05
@@ -403,7 +403,7 @@ ideas = {
 			ETS_xin_ping_jiu_jiu2 = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_xin_ping_jiu_jiu2"}
 				allowed = { always = no }
-				picture = idea_SNA_islam
+				picture = GFX_idea_islam
 				name = ETS_xin_ping_jiu_jiu
 				modifier = {
 					supply_node_range = 0.20
@@ -520,7 +520,7 @@ ideas = {
 			ETS_xian_feng_dang = {#各民族的先锋队
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_xian_feng_dang"}
 				allowed = { always = no }
-				picture = idea_AFG_weaponry
+				picture = GFX_idea_AFG_tribal_equipment
 				modifier = {
 					land_reinforce_rate = 0.04
 					political_power_gain = 0.10
@@ -588,6 +588,183 @@ ideas = {
 					no_supply_grace = 240
 					army_speed_factor = 0.20
 					breakthrough_factor = 0.10
+				}
+				targeted_modifier = {
+					tag = RUS
+					attack_bonus_against = 0.05
+					defense_bonus_against = 0.075
+				}
+			}
+			ETS_zhong_ya_zhi_shang = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang"}
+				picture = generic_purge_idea
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.30
+					war_support_factor = -0.30
+					production_factory_efficiency_gain_factor = -0.10
+					production_factory_start_efficiency_factor = -0.10
+				}
+			}
+			ETS_zhong_ya_zhi_shang2 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang2"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang
+				allowed = { always = no }
+				modifier = {
+					stability_factor = -0.15
+					war_support_factor = -0.30
+					production_factory_efficiency_gain_factor = -0.10
+					production_factory_start_efficiency_factor = -0.10
+				}
+			}
+			ETS_zhong_ya_zhi_shang3 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang3"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang
+				allowed = { always = no }
+				modifier = {
+					war_support_factor = -0.15
+					production_factory_efficiency_gain_factor = -0.10
+					production_factory_start_efficiency_factor = -0.10
+				}
+			}			
+			ETS_zhong_ya_zhi_shang4 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang4"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang
+				allowed = { always = no }
+				modifier = {
+					war_support_factor = -0.15
+					political_power_gain = 0.05
+					production_factory_efficiency_gain_factor = -0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}			
+			ETS_zhong_ya_zhi_shang5 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang4"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.05
+					war_support_factor = -0.10
+					political_power_gain = 0.05
+					production_speed_buildings_factor = 0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}		
+			ETS_zhong_ya_zhi_shang6 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang6"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.05
+					war_support_factor = -0.10
+					political_power_gain = 0.10
+					production_speed_buildings_factor = 0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}			
+			ETS_zhong_ya_zhi_shang7 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang7"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.05
+					stability_weekly = 0.010
+					war_support_factor = -0.05
+					political_power_gain = 0.10
+					production_speed_buildings_factor = 0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}
+			ETS_zhong_ya_zhi_shang8 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang8"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.07
+					stability_weekly = 0.010
+					war_support_factor = -0.05
+					political_power_gain = 0.10
+					production_speed_buildings_factor = 0.05
+					party_popularity_stability_factor = 0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}
+			ETS_zhong_ya_zhi_shang9 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang9"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.07
+					stability_weekly = 0.010
+					political_power_gain = 0.10
+					justify_war_goal_time = -0.20
+					production_speed_buildings_factor = 0.05
+					party_popularity_stability_factor = 0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+			}
+			ETS_zhong_ya_zhi_shang10 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang10"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					war_support_factor = 0.05
+					political_power_gain = 0.10
+					political_power_factor = 0.02
+					justify_war_goal_time = -0.20
+					production_speed_buildings_factor = 0.05
+					party_popularity_stability_factor = 0.05
+				}
+			}
+			ETS_zhong_ya_zhi_shang11 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang11"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang6
+				allowed = { always = no }
+				modifier = {
+					supply_factor = 0.10
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					encryption_factor = 0.20
+					war_support_factor = 0.10
+					political_power_gain = 0.10
+					political_power_factor = 0.02
+					justify_war_goal_time = -0.20
+					production_speed_buildings_factor = 0.05
+					party_popularity_stability_factor = 0.05
+					production_factory_max_efficiency_factor = 0.05
+				}
+			}
+			ETS_zhong_ya_zhi_shang12 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang12"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang12
+				allowed = { always = no }
+				modifier = {
+					supply_factor = 0.10
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					encryption_factor = 0.20
+					war_support_factor = 0.15
+					conscription_factor = 0.10
+					war_support_weekly = 0.005
+					political_power_gain = 0.10
+					political_power_factor = 0.02
+					justify_war_goal_time = -0.20
+					production_speed_buildings_factor = 0.10
+					party_popularity_stability_factor = 0.05
+					production_factory_max_efficiency_factor = 0.05
 				}
 				targeted_modifier = {
 					tag = RUS

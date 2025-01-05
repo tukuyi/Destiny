@@ -3606,6 +3606,7 @@ country_event = {#间谍
 					tag = SHX #Has their own BIS party name
 					tag = TIB
 					tag = MON
+					tag = ETS
 				}
 			}
 			set_party_name = {
@@ -3734,6 +3735,7 @@ country_event = {#间谍
 					tag = YUN #Has their own Teke party name
 					tag = TIB
 					tag = MON
+					tag = ETS
 				}
 			}
 			set_party_name = {

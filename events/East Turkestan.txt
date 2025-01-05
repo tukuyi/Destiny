@@ -637,6 +637,7 @@ country_event = { #night to remember
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_AUTDEM }
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_SOCDEM }
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_SABRI }
+					has_game_rule = { rule = ETS_night option = ETS_RED_MOON }
 				}
 			}
 		}
@@ -829,7 +830,10 @@ country_event = { #masud attack parade?
 			base = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = ETS_night option = ETS_NIGHT_TIMUR_ELECTION }
+				OR = {
+					has_game_rule = { rule = ETS_night option = ETS_RED_MOON }
+					has_game_rule = { rule = ETS_night option = ETS_NIGHT_TIMUR_ELECTION }
+				}
 			}
 		}
 
@@ -877,7 +881,10 @@ country_event = { #masud attacks parade
 			base = 20
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = ETS_night option = ETS_NIGHT_TIMUR_SHAH }
+				OR = {
+					has_game_rule = { rule = ETS_night option = ETS_RED_MOON }
+					has_game_rule = { rule = ETS_night option = ETS_NIGHT_TIMUR_SHAH }
+				}
 			}
 		}
 		create_country_leader = {
@@ -900,6 +907,7 @@ country_event = { #masud attacks parade
 			modifier = {
 				factor = 0
 				OR = {
+					has_game_rule = { rule = ETS_night option = ETS_RED_MOON }
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_SOCCON }
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_AUTDEM }
 					has_game_rule = { rule = ETS_night option = ETS_NIGHT_DEMOCRACY_SOCDEM }
@@ -2392,8 +2400,8 @@ country_event = {#东突厥斯坦民族军响应起义！
 				irregular_cavalry = { x = 0 y = 2 }
 			}
 		}
-		random_owned_controlled_state = {
-			prioritize = { 1708 }
+		618 = {
+			prioritize = { 1783 }
 			limit = { is_in_home_area = yes }
 			create_unit = {
 				division = "division_template = \"起义军\" start_experience_factor = 0.5"
@@ -2545,6 +2553,7 @@ country_event = {#东突厥斯坦人民大会成立！
 			long_name = ETS_red_totalist_party_one_long
 			name = ETS_red_totalist_party_one
 		}
+		complete_national_focus = ETS_he_ai_de_fu
 	}
 
 	option = {
@@ -2562,6 +2571,7 @@ country_event = {#东突厥斯坦人民大会成立！
 			long_name = ETS_red_radical_socialist_party_one_long
 			name = ETS_red_radical_socialist_party_one
 		}
+		complete_national_focus = ETS_ren_ci_de_zhu
 	}
 }
 

@@ -1787,6 +1787,8 @@
  RULE_OPTION_NFL_POLITICAL_PATH_CANADIAN_ANNEXATION:0 "£KR_game_rule_flag_CAN 加拿大一体化"
  RULE_OPTION_NFL_POLITICAL_PATH_CANADIAN_ANNEXATION_DESC:0 "在黑色星期一的摧残下濒临破产的纽芬兰政府转眼望向了东方的宗主国，希望实现两国的§B一体化§!，而加拿大人也同意了这一想法，让其成为了加拿大的第十个省。"
 
+
+
 #调整
  QIE_LEP_PATH:0 "£KR_game_rule_flag_QIE 鼠年"
  RULE_OPTION_QIE_DEFAULT:0 "默认"
@@ -1941,3 +1943,6 @@
  SHX_STRUGGLE_FENG_DESC:0 "§g冯玉祥§!将围绕他那民粹主义的国民军，组建一个由民族主义者、社会主义激进分子、心怀不满的知识分子以及其他人组成的革命同盟，以罢黜端坐太原的督理阎锡山。这将不可避免地导致与中央政府的冲突。"  
  SHX_STRUGGLE_FU:0 "£KR_game_rule_flag_SHX_FU  少壮派政变"
  SHX_STRUGGLE_FU_DESC:0 "傅作义把握住了机会，一锤定音。"  
+
+ RULE_OPTION_ETS_RED_MOON:0 "£KR_game_rule_flag_ETS_RED  红月亮"
+ RULE_OPTION_ETS_RED_MOON_DESC:0 "“他在信徒的心降下安宁，以便他们增加信仰，继他们原有的信仰之后。”赤色分子从废土中崛起，他们掀翻了那些王公老爷独裁军阀，东突厥斯坦将自由，全民族的自由。"  

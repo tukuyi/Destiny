@@ -142,6 +142,16 @@ ETS_central_aisa_war_effect = {
 				}
 			}
 		}
+		complete_national_focus = ETS_zhong_ya_zhi_shang
+		if = {
+			limit = { 
+				has_country_leader = {
+					character = SIK_Abdukirim_Abbasof
+					ruling_only = yes
+				}
+			}
+			set_country_leader_ideology = hardliner_bolshevism_subtype
+		}
 		RUS = {
 			white_peace = ETS
 			white_peace = ALO
@@ -157,6 +167,108 @@ ETS_central_aisa_war_effect = {
 			white_peace = KYR
 			white_peace = TRK
 			white_peace = UZB
+		}
+	}
+}
+
+ETS_zhong_ya_zhi_shang_effect = {
+	if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang
+			add_idea = ETS_zhong_ya_zhi_shang2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang2
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang2
+			add_idea = ETS_zhong_ya_zhi_shang3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang3
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang3
+			add_idea = ETS_zhong_ya_zhi_shang4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang4
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang4
+			add_idea = ETS_zhong_ya_zhi_shang5
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang5
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang5
+			add_idea = ETS_zhong_ya_zhi_shang6
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang6
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang6
+			add_idea = ETS_zhong_ya_zhi_shang7
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang7
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang7
+			add_idea = ETS_zhong_ya_zhi_shang8
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang8
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang8
+			add_idea = ETS_zhong_ya_zhi_shang9
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang9
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang9
+			add_idea = ETS_zhong_ya_zhi_shang10
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang10
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang10
+			add_idea = ETS_zhong_ya_zhi_shang11
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang11
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang11
+			add_idea = ETS_zhong_ya_zhi_shang12
 		}
 	}
 }

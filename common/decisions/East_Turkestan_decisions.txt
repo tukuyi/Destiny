@@ -13,6 +13,7 @@ ETS_Central_east_war_cat = {#大西亚战争
 			}
 		}
 		available = {
+			has_completed_focus = ETS_fang_fan_xiong_zhua
 			NOT = {
 				has_war_with = RUS
 			}
@@ -28,29 +29,32 @@ ETS_Central_east_war_cat = {#大西亚战争
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision ETS_zhun_bei_zhaqn_zheng"
-			ROOT = {
-				declare_war_on = {
-					target = RUS
-				}
+			declare_war_on = {
+				target = RUS
+				type = annex_everything
 			}
 			RUS = {
 				declare_war_on = {
 					target = ALO
+					type = annex_everything
 				}
 			}
 			RUS = {
 				declare_war_on = {
 					target = KYR
+					type = annex_everything
 				}
 			}
 			RUS = {
 				declare_war_on = {
 					target = TRK
+					type = annex_everything
 				}
 			}
 			RUS = {
 				declare_war_on = {
 					target = UZB
+					type = annex_everything
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
@@ -180,7 +184,7 @@ ETS_Central_east_war_cat = {#大西亚战争
 	}
 
 	ETS_qian_wang_ao_man = {#前往伊斯坦布尔的使臣
-		icon = generic_flags
+		icon = give_cash
 
 		available = {
 			has_war_with = RUS
@@ -205,8 +209,67 @@ ETS_Central_east_war_cat = {#大西亚战争
 			}
 		}
 	}
+	ETS_qian_wang_de_li = {#前往德里的使臣
+		icon = give_cash
+
+		available = {
+			has_war_with = RUS
+			DEH = {
+				exists = yes
+				is_in_faction_with = CAN
+			}
+		}
+
+		cost = 10
+		priority = 30
+		days_remove = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_de_li"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_de_li"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = CAN
+			}
+		}
+	}
+	ETS_qian_wang_bei_jing = {#前往背景的使臣
+		icon = give_cash
+
+		available = {
+			has_war_with = RUS
+			QIE = {
+				exists = yes
+			}
+		}
+
+		cost = 10
+		priority = 30
+		days_remove = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_bei_jing"
+			
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_qian_wang_bei_jing"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = QIE
+			}
+		}
+	}
 	ETS_shi_yue_yu_huo = {#十月余火
-		icon = generic_flags
+		icon = GFX_decision_category_export_revolution
 
 		available = {
 			has_war_with = RUS
@@ -226,6 +289,31 @@ ETS_Central_east_war_cat = {#大西亚战争
 			log = "[GetDateText]: [Root.GetName]: Decision ETS_shi_yue_yu_huo"
 			add_stability = 0.20
 			add_war_support = 0.20
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					CHI = {
+						exists = yes
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = CHI
+				}
+			}
+			if = {
+				limit = { 
+					HNN = {
+						has_country_flag = HNN_gong_tuan_victory_flag
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = HNN
+				}
+			}
 			if = {
 				limit = { 
 					SHC = {
