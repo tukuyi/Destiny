@@ -123,4 +123,8 @@ SpriteTypes = {
 		name = "GFX_goal_ETS_jian_shou_fan_ji"
 		texturefile = "gfx/interface/goals/ETS_jian_shou_fan_ji.png"
 	}
+	spriteType = {
+		name = "GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu"
+		texturefile = "gfx/interface/goals/ETS_xi_ya_zhan_zheng_jie_shu.png"
+	}
 }

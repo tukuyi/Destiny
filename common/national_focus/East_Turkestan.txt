@@ -3261,7 +3261,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xi_ya_zhan_zheng_jie_shu
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
 		x = 20
 		y = 21
 		cost = 0
