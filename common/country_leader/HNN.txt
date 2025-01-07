@@ -124,6 +124,15 @@ leader_traits = {
 		stability_factor = 0.10
 		war_support_factor = 0.10
 	}
+	ETS_tian_shan_de_ying2 = { #伟大领袖
+		random = no
+		totalist_drift = 0.05
+		weekly_manpower = 200
+		surrender_limit = 0.10
+		stability_factor = 0.10
+		war_support_factor = 0.10
+		party_popularity_stability_factor = 0.50
+	}
 	ETS_xin_yang_de_rong_yao = { #信仰的荣誉
 		random = no
 		monthly_population = 0.05
@@ -131,7 +140,6 @@ leader_traits = {
 		army_core_defence_factor = 0.10
 	}
 	ETS_xin_yang_de_rong_yao2 = { #信仰的荣誉
-		name = ETS_xin_yang_de_rong_yao
 		random = no
 		stability_weekly = 0.005
 		monthly_population = 0.05

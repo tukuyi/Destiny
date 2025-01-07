@@ -310,7 +310,7 @@ ETS_gong_xiang_tian_ci_effect = {
 			add_idea = ETS_gong_xiang_tian_ci2
 		}
 	}
-	if = {
+	else_if = {
 		limit = { 
 			has_idea = ETS_gong_xiang_tian_ci2
 		}
@@ -319,7 +319,7 @@ ETS_gong_xiang_tian_ci_effect = {
 			add_idea = ETS_gong_xiang_tian_ci3
 		}
 	}
-	if = {
+	else_if = {
 		limit = { 
 			has_idea = ETS_gong_xiang_tian_ci3
 		}
@@ -328,7 +328,7 @@ ETS_gong_xiang_tian_ci_effect = {
 			add_idea = ETS_gong_xiang_tian_ci4
 		}
 	}
-	if = {
+	else_if = {
 		limit = { 
 			has_idea = ETS_gong_xiang_tian_ci4
 		}
@@ -336,5 +336,82 @@ ETS_gong_xiang_tian_ci_effect = {
 			remove_idea = ETS_gong_xiang_tian_ci4
 			add_idea = ETS_gong_xiang_tian_ci5
 		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_gong_xiang_tian_ci5
+		}
+		swap_ideas = {
+			remove_idea = ETS_gong_xiang_tian_ci5
+			add_idea = ETS_gong_xiang_tian_ci6
+		}
+	}
+	else = {
+		add_ideas = ETS_gong_xiang_tian_ci
+	}
+}
+
+ETS_xian_dai_hua_da_yue_jin_effect = {
+	add_popularity = {
+		ideology = totalist
+		popularity = 0.05
+	}
+
+	if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin
+			add_idea = ETS_xian_dai_hua_da_yue_jin2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin2
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin2
+			add_idea = ETS_xian_dai_hua_da_yue_jin3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin3
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin3
+			add_idea = ETS_xian_dai_hua_da_yue_jin4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin4
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin4
+			add_idea = ETS_xian_dai_hua_da_yue_jin5
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin5
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin5
+			add_idea = ETS_xian_dai_hua_da_yue_jin6
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_xian_dai_hua_da_yue_jin6
+		}
+		swap_ideas = {
+			remove_idea = ETS_xian_dai_hua_da_yue_jin6
+			add_idea = ETS_xian_dai_hua_da_yue_jin7
+		}
+	}
+	else = {
+		add_ideas = ETS_xian_dai_hua_da_yue_jin
 	}
 }

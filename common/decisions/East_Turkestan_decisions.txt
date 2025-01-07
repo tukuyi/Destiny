@@ -401,6 +401,441 @@ ETS_Central_east_war_cat = {#大西亚战争
 	}
 }
 
+ETS_di_yi_wu_nian_category = {#一五计划
+	ETS_develop_zhun_ga_er_oil_wells = {#开发准噶尔油田
+		icon = oil
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 618
+			}
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			618 = { is_owned_and_controlled_by = ROOT }
+			has_tech = excavation2
+		}
+
+		visible = {
+			618 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 1
+		}
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_develop_zhun_ga_er_oil_wells"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_develop_zhun_ga_er_oil_wells"
+			618 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+		}
+	}
+	ETS_develop_ta_ke_la_ma_oil_wells = {#开发塔克拉玛干油田
+		icon = oil
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1085
+			}
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			1085 = { is_owned_and_controlled_by = ROOT }
+			has_tech = excavation2
+		}
+
+		visible = {
+			1085 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 1
+		}
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_develop_ta_ke_la_ma_oil_wells"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_develop_ta_ke_la_ma_oil_wells"
+			1085 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+			}
+		}
+	}	
+
+	ETS_develop_a_er_tai_shan_steel_mines = {#开采阿尔泰山钢铁
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1083
+			}
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			1083 = { is_owned_and_controlled_by = ROOT }
+			has_tech = excavation2
+		}
+
+		visible = {
+			1083 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_develop_a_er_tai_shan_steel_mines"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_develop_a_er_tai_shan_steel_mines"
+			1083 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ETS_develop_tian_shan_steel_mines = {#开采迪化钢铁
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 617
+			}
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			617 = { is_owned_and_controlled_by = ROOT }
+			has_tech = excavation2
+		}
+
+		visible = {
+			617 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_develop_tian_shan_steel_mines"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_develop_tian_shan_steel_mines"
+			617 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	ETS_develop_kun_lun_shan_steel_mines = {#开采昆仑山钢铁
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 287
+			}
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			287 = { is_owned_and_controlled_by = ROOT }
+			has_tech = excavation2
+		}
+
+		visible = {
+			287 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_develop_kun_lun_shan_steel_mines"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_develop_kun_lun_shan_steel_mines"
+			287 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	ETS_bulid_xin_jiang ={#新疆城市化
+		icon = cement_mixer
+	
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		visible = {
+			OR = {
+				owns_state = 617
+				owns_state = 619
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 619 }
+		}
+	
+		cost = 90
+		days_remove = 70
+		fire_only_once = yes
+	
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_xin_jiang"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_xin_jiang"
+			619 ={
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			617 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+	ETS_bulid_tu_jue_si_tan ={#突厥斯坦城市化
+		icon = cement_mixer
+	
+		available = {
+			owns_state = 407
+			owns_state = 405
+			owns_state = 1279
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 407 }
+		}
+	
+		cost = 90
+		days_remove = 70
+		fire_only_once = yes
+	
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_tu_jue_si_tan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_tu_jue_si_tan"
+			407 ={
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			405 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			1279 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+	ETS_bulid_ha_sha_ke_si_tan ={#哈萨克斯坦城市化
+		icon = cement_mixer
+	
+		available = {
+			owns_state = 810
+			owns_state = 414
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 810 }
+		}
+	
+		cost = 90
+		days_remove = 70
+		fire_only_once = yes
+	
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_ha_sha_ke_si_tan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_bulid_ha_sha_ke_si_tan"
+			810 ={
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			414 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			1279 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}	
+}
+
 ETS_foreign_diplomacy = {
 
 	ETS_foreign_support_send_delgations_RUS = {

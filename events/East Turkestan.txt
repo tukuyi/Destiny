@@ -2401,8 +2401,6 @@ country_event = {#东突厥斯坦民族军响应起义！
 			}
 		}
 		618 = {
-			prioritize = { 1783 }
-			limit = { is_in_home_area = yes }
 			create_unit = {
 				division = "division_template = \"起义军\" start_experience_factor = 0.5"
 				owner = PREV

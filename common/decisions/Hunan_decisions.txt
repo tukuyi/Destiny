@@ -9284,7 +9284,7 @@ HNN_tie_lu_category = {#全国大开发
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 714
+				state = 774
 			}
 		}
 
@@ -9387,7 +9387,7 @@ HNN_tie_lu_category = {#全国大开发
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 714
+				state = 774
 			}
 		}
 

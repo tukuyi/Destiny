@@ -3295,6 +3295,7 @@ focus_tree = {
 			focus = ETS_xi_ya_zhan_zheng_jie_shu
 		}
 		mutually_exclusive = {
+			focus = ETS_pa_mi_er
 			focus = ETS_da_ji_ha_de
 		}
 		ai_will_do = { base = 100 }
@@ -3632,6 +3633,7 @@ focus_tree = {
 			focus = ETS_xi_ya_zhan_zheng_jie_shu
 		}
 		mutually_exclusive = {
+			focus = ETS_pa_mi_er
 			focus = ETS_zhong_ya_zhi_shang
 		}
 		ai_will_do = { base = 100 }
@@ -3743,7 +3745,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_ren_shan_gong_he"
-
+			ETS_gong_xiang_tian_ci_effect= yes
 		}
 	}
 
@@ -3820,7 +3822,30 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_sa_la_ding_zhi_yuan"
-
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -3863,11 +3888,411 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_li_xing_chong_bai
 		}
+		prerequisite = {
+			focus = ETS_bing_fei_yu_yi_hao_qiang
+		}
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_di_shang_tian_guo"
 			ETS_gong_xiang_tian_ci_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_pa_mi_er
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
+		x = 6
+		y = 1
+		cost = 1
+
+		available = {
+			has_country_leader = {
+				character = SIK_Abdukirim_Abbasof
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = ETS_xi_ya_zhan_zheng_jie_shu
+		}
+		mutually_exclusive = {
+			focus = ETS_da_ji_ha_de
+			focus = ETS_zhong_ya_zhi_shang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_pa_mi_er"
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_zhong_gui_yi_tong
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 3
+		y = 1
+		cost = 4
+
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+			OR = {
+				AND = {
+					UZB = {
+						exists = no
+					} 
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				AND = {
+					UZB = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					TRK = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				AND = {
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					UZB = {
+						is_in_faction_with = ROOT
+					} 	
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_pa_mi_er
+			focus = ETS_da_ji_ha_de
+		}
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhong_gui_yi_tong"
+			if = {
+				limit = { 
+					UZB = {
+						exists = no
+					} 
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				annex_country = {
+					target = KYR
+				}
+			}
+			else_if = {
+				limit = { 
+					UZB = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					TRK = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				annex_country = {
+					target = TRK
+				}
+			}
+			else_if = {
+				limit = { 
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+					UZB = {
+						is_in_faction_with = ROOT
+					} 
+				}
+				annex_country = {
+					target = UZB
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			set_cosmetic_tag = ETS_mid_SOV
+		}
+	}
+
+	focus = {
+		id = ETS_ha_sha_ke_da_ju
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 3
+		y = 3
+		cost = 4
+
+		available = {
+			hidden_trigger = {
+				is_ai = no
+			}
+			ALO = {
+				OR = {
+					is_in_faction_with = ROOT
+					is_puppet_of = ROOT
+				}
+			}
+		}
+		prerequisite = {
+			focus = ETS_zhong_gui_yi_tong
+		}
+		ai_will_do = { base = 0 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ha_sha_ke_da_ju"
+			annex_country = {
+				target = ALO
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_di_yi_wu_nian
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = -1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_pa_mi_er
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_di_yi_wu_nian"
+			add_political_power = 100
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = ETS_yi_wu_ji_hua_tt
+		}
+	}
+
+	focus = {
+		id = ETS_ci_she_zheng_zhi_ju
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_pa_mi_er
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ci_she_zheng_zhi_ju"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_chan_chu_fu_xiu_zong_jiao
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 3
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_pa_mi_er
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_chan_chu_fu_xiu_zong_jiao"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_min_zhu_zhuan_zheng
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = -2
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_di_yi_wu_nian
+		}
+		prerequisite = {
+			focus = ETS_ci_she_zheng_zhi_ju
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_min_zhu_zhuan_zheng"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_jie_fang_gong_ren
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 0
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_di_yi_wu_nian
+		}
+		prerequisite = {
+			focus = ETS_ci_she_zheng_zhi_ju
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_jie_fang_gong_ren"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_nong_ye_gong_ye_hua
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 2
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_di_yi_wu_nian
+		}
+		prerequisite = {
+			focus = ETS_ci_she_zheng_zhi_ju
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_nong_ye_gong_ye_hua"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_ge_ming_chong_bai
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = -1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_jie_fang_gong_ren
+		}
+		prerequisite = {
+			focus = ETS_nong_ye_gong_ye_hua
+		}
+		prerequisite = {
+			focus = ETS_min_zhu_zhuan_zheng
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ge_ming_chong_bai"
+			SIK_Abdukirim_Abbasof = {
+				swap_country_leader_traits = {
+					remove = ETS_tian_shan_de_ying
+					add = ETS_tian_shan_de_ying2
+				}
+			}	
+		}
+	}
+
+	focus = {
+		id = ETS_a_la_bo_shao_mang
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_jie_fang_gong_ren
+		}
+		prerequisite = {
+			focus = ETS_nong_ye_gong_ye_hua
+		}
+		prerequisite = {
+			focus = ETS_min_zhu_zhuan_zheng
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_a_la_bo_shao_mang"
+			add_research_slot_until_four = yes
+		}
+	}
+
+	focus = {
+		id = ETS_xian_dai_hua
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 3
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_chan_chu_fu_xiu_zong_jiao
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xian_dai_hua"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
+		}
+	}
+
+	focus = {
+		id = ETS_ge_ming_feng_huo
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_pa_mi_er
+		x = 0
+		y = 4
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_xian_dai_hua
+		}
+		prerequisite = {
+			focus = ETS_ge_ming_chong_bai
+		}
+		prerequisite = {
+			focus = ETS_a_la_bo_shao_mang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ge_ming_feng_huo"
+			ETS_xian_dai_hua_da_yue_jin_effect = yes
 		}
 	}
 }
