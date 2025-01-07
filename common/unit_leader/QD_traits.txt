@@ -1,0 +1,18 @@
+
+leader_traits = {
+	RUS_ice_march_trait = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		non_shared_modifier = {
+			skill_bonus_factor = 0.1
+			experience_gain_factor = -0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		attack_skill_factor = 1
+	}
+}

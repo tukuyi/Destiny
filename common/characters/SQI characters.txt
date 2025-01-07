@@ -491,11 +491,11 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_BORIS_ANNEKOV_DESC
 			traits = { 
-				war_hero
 				brilliant_strategist
 				trait_reckless
 				cavalry_officer
 				cavalry_leader
+				RUS_ice_march_trait
 				winter_specialist
 			}
 			skill = 3

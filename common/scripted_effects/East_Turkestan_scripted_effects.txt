@@ -271,4 +271,48 @@ ETS_zhong_ya_zhi_shang_effect = {
 			add_idea = ETS_zhong_ya_zhi_shang12
 		}
 	}
+	else_if = {
+		limit = { 
+			has_idea = ETS_zhong_ya_zhi_shang12
+		}
+		swap_ideas = {
+			remove_idea = ETS_zhong_ya_zhi_shang12
+			add_idea = ETS_zhong_ya_zhi_shang13
+		}
+	}
+}
+
+ETS_gong_xiang_tian_ci_effect = {
+	if = {
+		limit = { 
+			has_idea = ETS_gong_xiang_tian_ci
+		}
+		swap_ideas = {
+			remove_idea = ETS_gong_xiang_tian_ci
+			add_idea = ETS_gong_xiang_tian_ci2
+		}
+	}
+	if = {
+		limit = { 
+			has_idea = ETS_gong_xiang_tian_ci2
+		}
+		swap_ideas = {
+			remove_idea = ETS_gong_xiang_tian_ci2
+			add_idea = ETS_gong_xiang_tian_ci3
+		}
+	}
+	if = {
+		limit = { 
+			has_idea = ETS_gong_xiang_tian_ci3
+		}
+		swap_ideas = {
+			remove_idea = ETS_gong_xiang_tian_ci3
+			add_idea = ETS_gong_xiang_tian_ci4
+		}
+	}
+
+	add_popularity = {
+		ideology = radical_socialist
+		popularity = 0.05
+	}
 }

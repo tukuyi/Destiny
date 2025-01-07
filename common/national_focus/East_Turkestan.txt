@@ -3609,6 +3609,9 @@ focus_tree = {
 			}
 			increase_ruling_party_popularity_by_10 = yes
 		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
 	}
 
 	focus = {
@@ -3617,10 +3620,13 @@ focus_tree = {
 		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
 		x = 0
 		y = 1
-		cost = 0
+		cost = 1
 
 		available = {
-			always = no
+			has_country_leader = {
+				character = SIK_Ehmetjan_Qasimi
+				ruling_only = yes
+			}
 		}
 		prerequisite = {
 			focus = ETS_xi_ya_zhan_zheng_jie_shu
@@ -3632,7 +3638,112 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_da_ji_ha_de"
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.10
+			}
+		}
+	}
 
+	focus = {
+		id = ETS_zhu_de_ci_yu
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = -3
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_da_ji_ha_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhu_de_ci_yu"
+			ETS_gong_xiang_tian_ci_effect= yes
+		}
+	}
+
+	focus = {
+		id = ETS_bing_fei_yu_yi_hao_qiang
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = -3
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_zhu_de_ci_yu
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_bing_fei_yu_yi_hao_qiang"
+			ETS_gong_xiang_tian_ci_effect= yes
+		}
+	}
+
+	focus = {
+		id = ETS_lao_you_suo_huo
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = -1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_da_ji_ha_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_lao_you_suo_huo"
+			ETS_gong_xiang_tian_ci_effect= yes
+		}
+	}
+
+	focus = {
+		id = ETS_tuan_jie_yi_xin
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 1
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_da_ji_ha_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_tuan_jie_yi_xin"
+			ETS_gong_xiang_tian_ci_effect= yes
+			add_stability = 0.05
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+
+	focus = {
+		id = ETS_hong_se_jing_shu
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 3
+		y = 1
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_da_ji_ha_de
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_hong_se_jing_shu"
+			swap_ideas = {
+				remove_idea = ETS_xin_ping_jiu_jiu2
+				add_idea = ETS_xin_ping_jiu_jiu3
+			}
 		}
 	}
 }

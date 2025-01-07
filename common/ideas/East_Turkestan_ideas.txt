@@ -415,6 +415,23 @@ ideas = {
 					production_speed_buildings_factor = 0.10
 				}
 			}
+			ETS_xin_ping_jiu_jiu3 = {#新瓶装旧酒
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_xin_ping_jiu_jiu3"}
+				allowed = { always = no }
+				picture = GFX_idea_islam
+				name = ETS_xin_ping_jiu_jiu
+				modifier = {
+					supply_node_range = 0.20
+					mobilization_speed = 0.11
+					research_speed_factor = 0.05
+					trade_laws_cost_factor = -0.50
+					army_core_attack_factor = 0.05
+					army_core_defence_factor = 0.05
+					supply_consumption_factor = -0.06
+					production_speed_rail_way_factor = 0.10
+					production_speed_buildings_factor = 0.10
+				}
+			}
 			ETS_military_buff_idea_3 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_military_buff_idea_3"}
 				allowed = { always = no }
@@ -770,6 +787,88 @@ ideas = {
 					tag = RUS
 					attack_bonus_against = 0.05
 					defense_bonus_against = 0.075
+				}
+			}
+			ETS_zhong_ya_zhi_shang13 = {#中亚之殇
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_zhong_ya_zhi_shang13"}
+				picture = generic_purge_idea
+				name = ETS_zhong_ya_zhi_shang12
+				allowed = { always = no }
+				modifier = {
+					supply_factor = 0.10
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					encryption_factor = 0.20
+					war_support_factor = 0.15
+					conscription_factor = 0.10
+					war_support_weekly = 0.005
+					political_power_gain = 0.10
+					political_power_factor = 0.02
+					justify_war_goal_time = -0.20
+					production_speed_buildings_factor = 0.10
+					party_popularity_stability_factor = 0.05
+					production_factory_max_efficiency_factor = 0.05
+				}
+				targeted_modifier = {
+					tag = RUS
+					attack_bonus_against = 0.10
+					defense_bonus_against = 0.10
+				}
+			}
+			ETS_gong_xiang_tian_ci = {#共享天赐
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_gong_xiang_tian_ci"}
+				picture = generic_syndicalist_medal
+				allowed = { always = no }
+				modifier = {
+					local_resources = 0.04
+					consumer_goods_factor = -0.05
+					radical_socialist_drift = 0.02
+					production_factory_efficiency_gain_factor = 0.04
+				}
+			}
+			ETS_gong_xiang_tian_ci2 = {#共享天赐
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_gong_xiang_tian_ci2"}
+				picture = generic_syndicalist_medal
+				name = ETS_gong_xiang_tian_ci
+				allowed = { always = no }
+				modifier = {
+					local_resources = 0.10
+					consumer_goods_factor = -0.10
+					radical_socialist_drift = 0.04
+					production_factory_efficiency_gain_factor = 0.05
+				}
+			}
+			ETS_gong_xiang_tian_ci3 = {#共享天赐
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_gong_xiang_tian_ci3"}
+				picture = generic_syndicalist_medal
+				name = ETS_gong_xiang_tian_ci
+				allowed = { always = no }
+				modifier = {
+					local_manpower = 0.05
+					local_resources = 0.10
+					political_power_gain = 0.10
+					consumer_goods_factor = -0.10
+					radical_socialist_drift = 0.04
+					industrial_capacity_factory = 0.03
+					production_factory_efficiency_gain_factor = 0.05
+				}
+			}
+			ETS_gong_xiang_tian_ci4 = {#共享天赐
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_gong_xiang_tian_ci4"}
+				picture = generic_syndicalist_medal
+				name = ETS_gong_xiang_tian_ci
+				allowed = { always = no }
+				modifier = {
+					local_manpower = 0.05
+					local_resources = 0.10
+					stability_factor = 0.05
+					stability_weekly = 0.005
+					political_power_gain = 0.10
+					consumer_goods_factor = -0.10
+					radical_socialist_drift = 0.04
+					industrial_capacity_factory = 0.03
+					party_popularity_stability_factor = 0.05
+					production_factory_efficiency_gain_factor = 0.07
 				}
 			}
 			#hidden
