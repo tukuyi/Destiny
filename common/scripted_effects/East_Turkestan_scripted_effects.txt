@@ -285,6 +285,24 @@ ETS_zhong_ya_zhi_shang_effect = {
 ETS_gong_xiang_tian_ci_effect = {
 	if = {
 		limit = { 
+			NOT = {
+				has_idea = ETS_gong_xiang_tian_ci4
+			}
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.05
+		}
+	}
+	else = {
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.10
+		}
+	}
+	
+	if = {
+		limit = { 
 			has_idea = ETS_gong_xiang_tian_ci
 		}
 		swap_ideas = {
@@ -310,9 +328,13 @@ ETS_gong_xiang_tian_ci_effect = {
 			add_idea = ETS_gong_xiang_tian_ci4
 		}
 	}
-
-	add_popularity = {
-		ideology = radical_socialist
-		popularity = 0.05
+	if = {
+		limit = { 
+			has_idea = ETS_gong_xiang_tian_ci4
+		}
+		swap_ideas = {
+			remove_idea = ETS_gong_xiang_tian_ci4
+			add_idea = ETS_gong_xiang_tian_ci5
+		}
 	}
 }

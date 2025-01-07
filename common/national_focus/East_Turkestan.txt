@@ -3726,15 +3726,40 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ETS_hong_se_jing_shu
+		id = ETS_ren_shan_gong_he
 		icon = GFX_goal_ETS_fang_fan_xiong_zhua
 		relative_position_id = ETS_da_ji_ha_de
-		x = 3
-		y = 1
+		x = -2
+		y = 2
 		cost = 4
 
 		prerequisite = {
-			focus = ETS_da_ji_ha_de
+			focus = ETS_lao_you_suo_huo
+		}
+		prerequisite = {
+			focus = ETS_tuan_jie_yi_xin
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_ren_shan_gong_he"
+
+		}
+	}
+
+	focus = {
+		id = ETS_hong_se_jing_shu
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 0
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_lao_you_suo_huo
+		}
+		prerequisite = {
+			focus = ETS_tuan_jie_yi_xin
 		}
 		ai_will_do = { base = 100 }
 
@@ -3744,6 +3769,105 @@ focus_tree = {
 				remove_idea = ETS_xin_ping_jiu_jiu2
 				add_idea = ETS_xin_ping_jiu_jiu3
 			}
+		}
+	}
+
+	focus = {
+		id = ETS_xiang_wu_tuo_bang
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 2
+		y = 2
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_lao_you_suo_huo
+		}
+		prerequisite = {
+			focus = ETS_tuan_jie_yi_xin
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_xiang_wu_tuo_bang"
+			SIK_Ehmetjan_Qasimi = {
+				swap_country_leader_traits = {
+					remove = ETS_xin_yang_de_rong_yao
+					add = ETS_xin_yang_de_rong_yao2
+				}
+			}	
+		}
+	}
+
+	focus = {
+		id = ETS_sa_la_ding_zhi_yuan
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = -1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_ren_shan_gong_he
+		}
+		prerequisite = {
+			focus = ETS_hong_se_jing_shu
+		}
+		prerequisite = {
+			focus = ETS_xiang_wu_tuo_bang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_sa_la_ding_zhi_yuan"
+
+		}
+	}
+
+	focus = {
+		id = ETS_li_xing_chong_bai
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 1
+		y = 3
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_ren_shan_gong_he
+		}
+		prerequisite = {
+			focus = ETS_hong_se_jing_shu
+		}
+		prerequisite = {
+			focus = ETS_xiang_wu_tuo_bang
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_li_xing_chong_bai"
+			add_research_slot_until_four = yes
+		}
+	}
+
+	focus = {
+		id = ETS_di_shang_tian_guo
+		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		relative_position_id = ETS_da_ji_ha_de
+		x = 0
+		y = 4
+		cost = 4
+
+		prerequisite = {
+			focus = ETS_sa_la_ding_zhi_yuan
+		}
+		prerequisite = {
+			focus = ETS_li_xing_chong_bai
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_di_shang_tian_guo"
+			ETS_gong_xiang_tian_ci_effect = yes
 		}
 	}
 }

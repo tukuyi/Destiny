@@ -130,6 +130,16 @@ leader_traits = {
 		army_core_attack_factor = 0.10
 		army_core_defence_factor = 0.10
 	}
+	ETS_xin_yang_de_rong_yao2 = { #信仰的荣誉
+		name = ETS_xin_yang_de_rong_yao
+		random = no
+		stability_weekly = 0.005
+		monthly_population = 0.05
+		radical_socialist_drift = 0.05
+		army_core_attack_factor = 0.10
+		army_core_defence_factor = 0.10
+		industrial_capacity_dockyard = 0.05
+	}
 	ETS_hong_se_tie_mu_er = { #红色帖木儿
 		random = no
 		weekly_manpower = -150
