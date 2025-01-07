@@ -173,8 +173,9 @@ characters = {
 		}
 	}			
 ####################
-####  其他月亮  ####
+####     教u    ####
 ####################		
+#努尔·阿合买提江·布格拉
 	ETS_nur_ahmadjan_bughra = {
 		name = ETS_nur_ahmadjan_bughra
 		portraits = {
@@ -184,7 +185,11 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { politically_connected harsh_leader trait_reckless organizer }
+			traits = { 
+				politically_connected 
+				harsh_leader 
+				trait_reckless organizer 
+			}
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -193,6 +198,7 @@ characters = {
 		}
 		# id = 23553
 	}
+#阿不都拉·布格拉	
 	ETS_abdullah_bughra = {
 		name = ETS_abdullah_bughra
 		portraits = {
@@ -202,7 +208,12 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { politically_connected irregulars_officer harsh_leader trait_mountaineer }
+			traits = { 
+				politically_connected 
+				irregulars_officer 
+				harsh_leader 
+				trait_mountaineer 
+			}
 			skill = 2
 			attack_skill = 3
 			defense_skill = 1
@@ -210,5 +221,38 @@ characters = {
 			logistics_skill = 2
 		}
 		# id = 23552
+	}
+#穆罕默德·伊敏·布格拉	
+	ETS_muhammad_amin_bughra = {
+		name = ETS_muhammad_amin_bughra
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_ETS_Muhammad_Amin_Bughra
+			}
+			army = {
+				large = GFX_Portrait_ETS_Muhammad_Amin_Bughra
+				small = GFX_Portrait_ETS_Muhammad_Amin_Bughra
+			}
+		}
+		corps_commander = {
+			traits = { 
+				trait_reckless 
+				politically_connected 
+				harsh_leader 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		country_leader = {
+			desc = POLITICS_MUHAMMAD_AMIN_BUGHRA_DESC
+			ideology = natpop_islamism_subtype
+			traits = {
+				war_industrialist
+			}
+		}
+		#id = 23554
 	}
 }

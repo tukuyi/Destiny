@@ -729,9 +729,8 @@ country_event = { #timur
 		ETS_nur_ahmadjan_bughra = {
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 23554 }			
-			remove_unit_leader = yes
+		ETS_muhammad_amin_bughra = {
+			retire = yes
 		}
 		
 		create_country_leader = {
