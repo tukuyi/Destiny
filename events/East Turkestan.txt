@@ -723,13 +723,11 @@ country_event = { #timur
 	option = {
 		name = ets.201.a
 		add_stability = 0.1
-		random_unit_leader = {
-			limit = { has_id = 23552 }			
-			remove_unit_leader = yes
+		ETS_abdullah_bughra = {
+			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 23553 }			
-			remove_unit_leader = yes
+		ETS_nur_ahmadjan_bughra = {
+			retire = yes
 		}
 		random_unit_leader = {
 			limit = { has_id = 23554 }			

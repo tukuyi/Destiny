@@ -1,4 +1,7 @@
 characters = {
+####################
+####   红月亮  #####
+####################	
 #阿不都克里木·阿巴索夫
 	SIK_Abdukirim_Abbasof = {
 		name = SIK_Abdukirim_Abbasof
@@ -169,4 +172,43 @@ characters = {
 			logistics_skill = 2
 		}
 	}			
+####################
+####  其他月亮  ####
+####################		
+	ETS_nur_ahmadjan_bughra = {
+		name = ETS_nur_ahmadjan_bughra
+		portraits = {
+			army = {
+				small = GFX_Portrait_ETS_Nur_Ahmadjan_Bughra
+				large = GFX_Portrait_ETS_Nur_Ahmadjan_Bughra
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected harsh_leader trait_reckless organizer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		# id = 23553
+	}
+	ETS_abdullah_bughra = {
+		name = ETS_abdullah_bughra
+		portraits = {
+			army = {
+				small = GFX_Portrait_ETS_Abdullah_Bughra
+				large = GFX_Portrait_ETS_Abdullah_Bughra
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected irregulars_officer harsh_leader trait_mountaineer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		# id = 23552
+	}
 }

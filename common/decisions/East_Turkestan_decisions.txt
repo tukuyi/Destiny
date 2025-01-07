@@ -1156,7 +1156,8 @@ ETS_war_economy = {
 			add_to_variable = { ETS_gold_amount = 1.0 }
 		}
 	}
-#Hotan Factory
+	
+	#Hotan Factory
 	ETS_complete_hotan_conversion = {
 		icon = generic_industry
 

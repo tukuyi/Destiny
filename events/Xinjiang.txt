@@ -965,6 +965,7 @@ country_event = { #Uprisings expand to Kashgar
 	picture = GFX_report_event_ETS_founding_nation
 	is_triggered_only = yes
 	fire_only_once = yes
+	
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event xin.34"
 		hidden_effect = {
