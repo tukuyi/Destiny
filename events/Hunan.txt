@@ -6598,9 +6598,7 @@ country_event = {#革命成功
 			HNN_Wan_Xi_Xian = { HNN_recruit_characters_effect = yes }
 			HNN_Tan_zheng = { HNN_recruit_characters_effect = yes }
 			HNN_Chen_Yun = { HNN_recruit_characters_effect = yes }
-			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
 			HNN_tang_shengming = { HNN_recruit_characters_effect = yes }
-			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
 			HNN_peng_dehuai = {
 				promote_leader = yes
 			}
@@ -12444,6 +12442,8 @@ country_event = {#中华人民共和国
 				paternal_autocrat = 3
 				national_populist = 2
 			}
+			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
+			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
 		}
 	}
 }
