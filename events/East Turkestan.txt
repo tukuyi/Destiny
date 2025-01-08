@@ -734,15 +734,6 @@ country_event = { #timur
 		}
 		
 		create_country_leader = {
-			name = "Timur Beg"
-			picture = "gfx/leaders/ETS/Portrait_ETS_Timur_Beg.png"
-			expire = "1.1.1"
-			ideology = oligarchy_subtype
-			traits = {
-				warrior_prince
-			}
-		}
-		create_country_leader = {
 			name = "Abdullah Bughra"
 			picture = "gfx/leaders/ETS/Portrait_ETS_Abdullah_Bughra.png"
 			expire = "1.1.1"
@@ -783,14 +774,12 @@ country_event = { #Bughra
 			ruling_party = national_populist
 		}
 		add_stability = 0.05
-		random_unit_leader = {
-				limit = { has_id = 23550 }			
-				remove_unit_leader = yes
-			}
-		random_unit_leader = {
-				limit = { has_id = 23551 }			
-				remove_unit_leader = yes
-			}
+		ETS_sabit_damulla_abdulbaki = {
+			retire = yes
+		}
+		ETS_timur_beg = {
+			retire = yes
+		}
 		create_country_leader = {
 			name = "Masud Sabri"
 			picture = "gfx/leaders/ETS/Portrait_ETS_Masud_Sabri.png"
@@ -1860,8 +1849,7 @@ country_event = { # trained officers back
 			}
 		}
 		ETS = {
-			random_unit_leader = {
-				limit = { has_id = 23550 }
+			ETS_sabit_damulla_abdulbaki = {
 				set_unit_leader_flag = ETS_original_leader
 				set_nationality = ROOT
 			}
@@ -2449,13 +2437,11 @@ country_event = {#民族军入城！
 			character = SIK_Abdukirim_Abbasof
 			ideology = authcom_subtype
 		}
-		random_unit_leader = {
-			limit = { has_id = 23550 }			
-			remove_unit_leader = yes
+		ETS_sabit_damulla_abdulbaki = {
+			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 23551 }			
-			remove_unit_leader = yes
+		ETS_timur_beg = {
+			retire = yes
 		}
 		complete_national_focus = ETS_guang_zi_bei_lai
 		show_unit_leaders_tooltip = SIK_Saifuddin_Azizi

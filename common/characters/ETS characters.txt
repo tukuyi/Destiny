@@ -173,7 +173,7 @@ characters = {
 		}
 	}			
 ####################
-####     教u    ####
+####   绿月亮  #####
 ####################		
 #努尔·阿合买提江·布格拉
 	ETS_nur_ahmadjan_bughra = {
@@ -254,5 +254,70 @@ characters = {
 			}
 		}
 		#id = 23554
+	}
+####################
+####   蓝月亮  #####
+####################
+#铁木尔伯克
+	ETS_timur_beg = {
+		name = ETS_timur_beg
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_ETS_Timur_Beg
+			}
+			army = {
+				small = GFX_Portrait_ETS_Timur_Beg
+				large = GFX_Portrait_ETS_Timur_Beg
+			}
+		}
+		corps_commander = {
+			traits = { 
+				infantry_officer 
+				politically_connected 
+				trickster 
+				guerilla_fighter 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		country_leader = {
+			ideology = oligarchy_subtype
+			traits = {
+				warrior_prince
+			}
+		}
+		#id = 23551
+	}		
+#沙比提大毛拉·阿不都尔巴克
+	ETS_sabit_damulla_abdulbaki = {
+		name = ETS_sabit_damulla_abdulbaki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_ETS_Sabit_Damulla_Abdulbaki
+			}
+			army = {
+				large = GFX_Portrait_ETS_Sabit_Damulla_Abdulbaki
+				small = GFX_Portrait_ETS_Sabit_Damulla_Abdulbaki
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SABIT_DAMULLA_ABDULBAKI_DESC
+			ideology = junta_subtype
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		field_marshal = {
+			traits = { irregulars_officer trait_reckless war_hero inspirational_leader politically_connected }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		# id = 23550
 	}
 }

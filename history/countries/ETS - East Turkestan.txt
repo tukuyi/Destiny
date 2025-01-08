@@ -52,40 +52,11 @@ set_variable = { ETS_fledgling_military_army_attack_factor = -0.2 }
 set_variable = { ETS_fledgling_military_army_defence_factor = -0.2 }
 set_variable = { ETS_fledgling_military_recon_factor = -0.2 }
 
-create_field_marshal = {
-	name = "Sabit Damulla Abdulbaki"
-	portrait_path = "gfx/leaders/ETS/Portrait_ETS_Sabit_Damulla_Abdulbaki.png"
-	traits = {
-		infantry_officer
-		war_hero
-		inspirational_leader
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 23550
-}
-create_corps_commander = {
-	name = "Timur Beg"
-	portrait_path = "gfx/leaders/ETS/Portrait_ETS_Timur_Beg.png"
-	traits = {
-		politically_connected
-		infantry_officer
-		trickster
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 23551
-}
-
+recruit_character = ETS_sabit_damulla_abdulbaki
 recruit_character = ETS_muhammad_amin_bughra
 recruit_character = ETS_nur_ahmadjan_bughra
 recruit_character = ETS_abdullah_bughra
+recruit_character = ETS_timur_beg
 
 recruit_character = SIK_Abdukirim_Abbasof
 recruit_character = SIK_Saifuddin_Azizi
@@ -153,24 +124,13 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = moderate_authoritarianism_subtype
 }
-create_country_leader = {
-	name = "Timur Beg"
-	picture = "gfx/leaders/ETS/Portrait_ETS_Timur_Beg.png"
-	expire = "1.1.1"
+promote_character = {
+	character = ETS_timur_beg
 	ideology = oligarchy_subtype
-	traits = {
-		warrior_prince
-	}
 }
-create_country_leader = {
-	name = "Sabit Damulla Abdulbaki"
-	desc = "POLITICS_SABIT_DAMULLA_ABDULBAKI_DESC"
-	picture = "gfx/leaders/ETS/Portrait_ETS_Sabit_Damulla_Abdulbaki.png"
-	expire = "1.1.1"
+promote_character = {
+	character = ETS_sabit_damulla_abdulbaki
 	ideology = junta_subtype
-	traits = {
-		tenacious_negotiator
-	}
 }
 promote_character = {
 	character = ETS_muhammad_amin_bughra

@@ -525,10 +525,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_force_sabit_into_retirement"
-			random_unit_leader = {
-					limit = { has_id = 23550 }			
-					remove_unit_leader = yes
-				}
+			ETS_sabit_damulla_abdulbaki = {
+				retire = yes
+			}
 			set_temp_variable = { ETS_change = -5 }
 			ETS_change_popularities = yes
 			add_political_power = 100
@@ -3933,7 +3932,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_zhong_gui_yi_tong
-		icon = GFX_goal_ALO_claims_in_russia
+		icon = GFX_TRK_united_turkestan
 		relative_position_id = ETS_da_ji_ha_de
 		x = 3
 		y = 1
@@ -4042,7 +4041,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ha_sha_ke_da_ju
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_ALO_claims_in_russia
 		relative_position_id = ETS_da_ji_ha_de
 		x = 3
 		y = 3

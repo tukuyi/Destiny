@@ -1190,5 +1190,45 @@ characters = {
 	}		
 ######################
 ###### 科学家  #######
-######################		
+######################
+#王淦昌
+	HNN_wang_gan_chang = {
+		name = HNN_wang_gan_chang
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_wang_gan_chang
+				small = GFX_Portrait_HNN_wang_gan_chang
+			}
+			army = {
+				large = GFX_Portrait_HNN_wang_gan_chang
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_genius }
+			skills = {
+				specialization_nuclear = 2
+			}
+		}
+	}
+#赵九章
+	HNN_zhao_jiu_zhang = {
+		name = HNN_zhao_jiu_zhang
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_zhao_jiu_zhang
+				small = GFX_Portrait_HNN_zhao_jiu_zhang
+			}
+			army = {
+				large = GFX_Portrait_HNN_zhao_jiu_zhang
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_bright scientist_trait_rocketry_specialist }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
 }
