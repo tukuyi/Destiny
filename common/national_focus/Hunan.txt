@@ -1058,33 +1058,6 @@ focus_tree = {
 				}
 				add_compliance = 20
 			}
-			show_unit_leaders_tooltip = GXC_yang_kunru
-			show_unit_leaders_tooltip = GXC_ye_ju
-			show_unit_leaders_tooltip = GXC_hong_zhaolin
-			show_unit_leaders_tooltip = GXC_lin_hu
-			show_unit_leaders_tooltip = GXC_chen_jiongming
-			hidden_effect = {
-				GXC_chen_jiongming = {
-					HNN_recruit_characters_effect = yes
-					hidden_effect = { remove_unit_leader_trait = GXC_guangdong_clique_officer }
-				}
-				GXC_lin_hu = {
-					HNN_recruit_characters_effect = yes
-					hidden_effect = { remove_unit_leader_trait = GXC_guangdong_clique_officer }
-				}
-				GXC_hong_zhaolin = {
-					HNN_recruit_characters_effect = yes
-					hidden_effect = { remove_unit_leader_trait = GXC_guangdong_clique_officer }
-				}
-				GXC_ye_ju = {
-					HNN_recruit_characters_effect = yes
-					hidden_effect = { remove_unit_leader_trait = GXC_guangdong_clique_officer }
-				}
-				GXC_yang_kunru = {
-					HNN_recruit_characters_effect = yes
-					hidden_effect = { remove_unit_leader_trait = GXC_guangdong_clique_officer }
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}

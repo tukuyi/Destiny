@@ -10420,6 +10420,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhong_de_shu_niu"
 			add_ideas = HNN_ping_eng_jing_ji
+			custom_effect_tooltip = tooltip_white_line
 			GER = {
 				add_opinion_modifier = { 
 					target = HNN 
@@ -10663,6 +10664,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_si_jie_de_xin_zhi_xu"
 			add_ideas = HNN_new_order
+			custom_effect_tooltip = tooltip_white_line
 			GER = {
 				add_ideas = HNN_new_order
 			}
