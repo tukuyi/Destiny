@@ -3617,7 +3617,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_da_ji_ha_de
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_da_ji_ha_de
 		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
 		x = 0
 		y = 1
@@ -3649,7 +3649,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_zhu_de_ci_yu
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_zhu_de_ci_yu
 		relative_position_id = ETS_da_ji_ha_de
 		x = -3
 		y = 1
@@ -3668,7 +3668,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_bing_fei_yu_yi_hao_qiang
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_bing_fei_yu_yi_hao_qiang
 		relative_position_id = ETS_da_ji_ha_de
 		x = -3
 		y = 3
@@ -3687,7 +3687,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_lao_you_suo_huo
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_lao_you_suo_huo
 		relative_position_id = ETS_da_ji_ha_de
 		x = -1
 		y = 1
@@ -3706,7 +3706,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_tuan_jie_yi_xin
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_GRU_one_union-3977
 		relative_position_id = ETS_da_ji_ha_de
 		x = 1
 		y = 1
@@ -3729,7 +3729,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ren_shan_gong_he
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_ren_shan_gong_he
 		relative_position_id = ETS_da_ji_ha_de
 		x = -2
 		y = 2
@@ -3751,7 +3751,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_hong_se_jing_shu
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_hong_se_jing_shu
 		relative_position_id = ETS_da_ji_ha_de
 		x = 0
 		y = 2
@@ -3776,7 +3776,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xiang_wu_tuo_bang
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_CSA_union_army
 		relative_position_id = ETS_da_ji_ha_de
 		x = 2
 		y = 2
@@ -3803,7 +3803,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_sa_la_ding_zhi_yuan
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_sa_la_ding_zhi_yuan
 		relative_position_id = ETS_da_ji_ha_de
 		x = -1
 		y = 3
@@ -3851,7 +3851,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_li_xing_chong_bai
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_li_xing_chong_bai
 		relative_position_id = ETS_da_ji_ha_de
 		x = 1
 		y = 3
@@ -3876,7 +3876,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_di_shang_tian_guo
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_di_shang_tian_guo
 		relative_position_id = ETS_da_ji_ha_de
 		x = 0
 		y = 4
@@ -3901,7 +3901,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_pa_mi_er
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_pa_mi_er
 		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
 		x = 6
 		y = 1
@@ -3933,7 +3933,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_zhong_gui_yi_tong
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ALO_claims_in_russia
 		relative_position_id = ETS_da_ji_ha_de
 		x = 3
 		y = 1
@@ -4074,7 +4074,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_di_yi_wu_nian
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_di_yi_wu_nian
 		relative_position_id = ETS_pa_mi_er
 		x = -1
 		y = 1
@@ -4095,7 +4095,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ci_she_zheng_zhi_ju
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_ci_she_zheng_zhi_ju
 		relative_position_id = ETS_pa_mi_er
 		x = 1
 		y = 1
@@ -4114,7 +4114,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_chan_chu_fu_xiu_zong_jiao
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_chan_chu_fu_xiu_zong_jiao
 		relative_position_id = ETS_pa_mi_er
 		x = 3
 		y = 1
@@ -4133,7 +4133,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_min_zhu_zhuan_zheng
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_min_zhu_zhuan_zheng
 		relative_position_id = ETS_pa_mi_er
 		x = -2
 		y = 2
@@ -4155,7 +4155,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_jie_fang_gong_ren
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_jie_fang_gong_ren
 		relative_position_id = ETS_pa_mi_er
 		x = 0
 		y = 2
@@ -4177,7 +4177,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_nong_ye_gong_ye_hua
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_nong_ye_gong_ye_hua
 		relative_position_id = ETS_pa_mi_er
 		x = 2
 		y = 2
@@ -4199,7 +4199,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ge_ming_chong_bai
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_ge_ming_chong_bai
 		relative_position_id = ETS_pa_mi_er
 		x = -1
 		y = 3
@@ -4229,7 +4229,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_a_la_bo_shao_mang
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_a_la_bo_shao_mang
 		relative_position_id = ETS_pa_mi_er
 		x = 1
 		y = 3
@@ -4254,7 +4254,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xian_dai_hua
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_xian_dai_hua
 		relative_position_id = ETS_pa_mi_er
 		x = 3
 		y = 3
@@ -4273,7 +4273,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ge_ming_feng_huo
-		icon = GFX_goal_ETS_fang_fan_xiong_zhua
+		icon = GFX_goal_ETS_ge_ming_feng_huo
 		relative_position_id = ETS_pa_mi_er
 		x = 0
 		y = 4

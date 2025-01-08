@@ -179,4 +179,84 @@ SpriteTypes = {
 		name = "GFX_goal_ETS_zai_wu_1938"
 		texturefile = "gfx/interface/goals/ETS_zai_wu_1938.png"
 	}
+	spriteType = {
+		name = "GFX_goal_ETS_da_ji_ha_de"
+		texturefile = "gfx/interface/goals/ETS_da_ji_ha_de.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_zhu_de_ci_yu"
+		texturefile = "gfx/interface/goals/ETS_zhu_de_ci_yu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_lao_you_suo_huo"
+		texturefile = "gfx/interface/goals/ETS_lao_you_suo_huo.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_ren_shan_gong_he"
+		texturefile = "gfx/interface/goals/ETS_ren_shan_gong_he.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_hong_se_jing_shu"
+		texturefile = "gfx/interface/goals/ETS_hong_se_jing_shu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_bing_fei_yu_yi_hao_qiang"
+		texturefile = "gfx/interface/goals/ETS_bing_fei_yu_yi_hao_qiang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_sa_la_ding_zhi_yuan"
+		texturefile = "gfx/interface/goals/ETS_sa_la_ding_zhi_yuan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_li_xing_chong_bai"
+		texturefile = "gfx/interface/goals/ETS_li_xing_chong_bai.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_di_shang_tian_guo"
+		texturefile = "gfx/interface/goals/ETS_di_shang_tian_guo.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_pa_mi_er"
+		texturefile = "gfx/interface/goals/ETS_pa_mi_er.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_di_yi_wu_nian"
+		texturefile = "gfx/interface/goals/ETS_di_yi_wu_nian.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_ci_she_zheng_zhi_ju"
+		texturefile = "gfx/interface/goals/ETS_ci_she_zheng_zhi_ju.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_chan_chu_fu_xiu_zong_jiao"
+		texturefile = "gfx/interface/goals/ETS_chan_chu_fu_xiu_zong_jiao.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_min_zhu_zhuan_zheng"
+		texturefile = "gfx/interface/goals/ETS_min_zhu_zhuan_zheng.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_jie_fang_gong_ren"
+		texturefile = "gfx/interface/goals/ETS_jie_fang_gong_ren.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_nong_ye_gong_ye_hua"
+		texturefile = "gfx/interface/goals/ETS_nong_ye_gong_ye_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_ge_ming_chong_bai"
+		texturefile = "gfx/interface/goals/ETS_ge_ming_chong_bai.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_a_la_bo_shao_mang"
+		texturefile = "gfx/interface/goals/ETS_a_la_bo_shao_mang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_xian_dai_hua"
+		texturefile = "gfx/interface/goals/ETS_xian_dai_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_ETS_ge_ming_feng_huo"
+		texturefile = "gfx/interface/goals/ETS_ge_ming_feng_huo.png"
+	}
 }
