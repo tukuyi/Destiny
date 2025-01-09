@@ -16,6 +16,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/jinan_arsenal.png"
 	}
 	spriteType = {
+		name = "GFX_icon_HNN_tie"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/HNN_tie.png"
+	}
+	spriteType = {
 		name = "GFX_icon_jinling_arsenal"
 		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/jinling_arsenal.png"
 	}

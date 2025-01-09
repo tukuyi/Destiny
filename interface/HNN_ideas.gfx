@@ -523,6 +523,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/compannies/HNN_tie.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_faw_motors"
+		texturefile = "gfx/interface/compannies/HNN_faw_motors.png"
+	}
+	spriteType = {
 		name = "GFX_idea_SHX_northwestern_industrial_company"
 		texturefile = "gfx/interface/compannies/SHX_northwestern_industrial_company.png"
 	}

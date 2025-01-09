@@ -178,6 +178,14 @@ focus_tree = {
 					}
 				}
 				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
 					add_building_construction = {
 						type = infrastructure
 						level = 2
@@ -257,6 +265,10 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 2.0
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_dong_bi_wu_jiang_ling_dao_us
@@ -275,6 +287,8 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				custom_effect_tooltip = tooltip_white_line
+				add_ideas = unequal_treaties_lesser
 				custom_effect_tooltip = tooltip_white_line
 				country_event = { 
 					id = hungong.145
@@ -295,6 +309,10 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 2.0
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_xin_ding_dan
@@ -316,6 +334,10 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 2.0
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_zheng_fu_gan_YU_shi_chang_jing_ji
@@ -326,6 +348,14 @@ focus_tree = {
 				swap_ideas = {
 					remove_idea = HNN_half_Social_economy0
 					add_idea = HNN_half_Social_economy
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -340,6 +370,10 @@ focus_tree = {
 		
 			ai_will_do = {
 				base = 15
+				modifier = {
+					factor = 2.0
+					has_war = no
+				}
 			}
 			prerequisite = {
 				focus = HNN_jian_li_wu_jia_ju
@@ -350,6 +384,14 @@ focus_tree = {
 				swap_ideas = {
 					remove_idea = HNN_half_Social_economy
 					add_idea = HNN_half_Social_economy2
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -1464,9 +1506,6 @@ focus_tree = {
 			base = 15
 		}
 		available = {
-			# NOT = { 
-			# 	has_country_flag = HNN_tang_victory 
-			# }
 			has_country_flag = HNN_PROC_victory
 			OR = {
 				has_completed_focus = HNN_qian_jin_qian_Jin_qian_jin
@@ -12234,6 +12273,7 @@ focus_tree = {
 			add_political_power = -200
 			mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 2 }
 			mio:HNN_tiema_organisation = { add_mio_size = 2 }
+			mio:HNN_faw_motors_organisation = { add_mio_size = 2 }
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = CN_zhong_ke_yuan
 		}
