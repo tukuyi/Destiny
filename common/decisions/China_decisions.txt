@@ -944,7 +944,16 @@ chinese_unification = {
 						}
 					} 
 				}
-				has_global_flag = china_united
+				OR = {
+					has_global_flag = china_united
+					AND = {
+						OR = {
+							tag = MON
+							tag = TIB
+						}
+						owns_state = 608
+					}
+				}
 				is_neighbor_of = FROM
 				received_expeditionary_forces = { sender = FROM value < 1 }
 			}

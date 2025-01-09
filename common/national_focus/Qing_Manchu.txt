@@ -687,7 +687,7 @@ focus_tree = {
 	focus = {
 		id = QIE_rural_reform
 		icon = GFX_goal_SKM_Dire_Need_Land_Reforms
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_pick_NCERA
 		}
@@ -706,7 +706,7 @@ focus_tree = {
 	focus = {
 		id = QIE_ncera_industry
 		icon = GFX_BBR_industrializing_land
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_pick_NCERA
 		}
@@ -731,7 +731,7 @@ focus_tree = {
 	focus = {
 		id = QIE_kang_youwei
 		icon = GFX_goal_QIE_kang_youwei
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_pick_NCERA
 		}
@@ -758,7 +758,7 @@ focus_tree = {
 	focus = {
 		id = QIE_rural_infastructure
 		icon = GFX_NEE_infrastructure_integration
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_ncera_industry
 		}
@@ -791,7 +791,7 @@ focus_tree = {
 	focus = {
 		id = QIE_benevolent_emperor
 		icon = GFX_goal_AOG_Repair_Emperor
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_kang_youwei
 		}
@@ -809,7 +809,7 @@ focus_tree = {
 	focus = {
 		id = QIE_reform_criminal_justice
 		icon = GFX_USA_nat_justice
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_rural_reform
 		}
@@ -827,7 +827,7 @@ focus_tree = {
 	focus = {
 		id = QIE_rural_loyalty
 		icon = GFX_goal_AUS_Nation_Of_Nature
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_rural_infastructure
 		}
@@ -1085,7 +1085,7 @@ focus_tree = {
 	focus = {
 		id = QIE_appoint_viceroys
 		icon = GFX_goal_FNG_Hongwu
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_pick_MP
 		}
@@ -1095,7 +1095,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_appoint_viceroys"
-			add_stability = 0.075
+			add_political_power = 75
+			add_stability = 0.15
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
@@ -1121,7 +1132,7 @@ focus_tree = {
 	focus = {
 		id = QIE_imperial_arsenals
 		icon = GFX_focus_generic_military_equipment
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_appoint_viceroys
 		}
@@ -1134,7 +1145,35 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_imperial_arsenals"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = recon_tech
+			}
 			1062 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = QIE
+					is_controlled_by = QIE
+					industrial_complex > 0
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -1148,7 +1187,7 @@ focus_tree = {
 	focus = {
 		id = QIE_noble_factories
 		icon = GFX_goal_ANQ_Dalu_Yinhang
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_new_coronation
 		}
@@ -1161,7 +1200,51 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_noble_factories"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
 			608 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = QIE
+					is_controlled_by = QIE
+					industrial_complex > 0
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = QIE
+					is_controlled_by = QIE
+					industrial_complex > 0
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = QIE
+					is_controlled_by = QIE
+					industrial_complex > 0
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1175,7 +1258,7 @@ focus_tree = {
 	focus = {
 		id = QIE_imperial_roads
 		icon = GFX_goal_POL_State_Road_Fund
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_new_coronation
 		}
@@ -1215,7 +1298,7 @@ focus_tree = {
 	focus = {
 		id = QIE_mandate_heaven
 		icon = GFX_goal_QIE_glory
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_noble_factories
 		}
@@ -1228,6 +1311,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_mandate_heaven"
+			add_stability = 0.1
+			add_political_power = 100
 			add_ideas = QIE_mandate_heaven_idea
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1235,7 +1320,7 @@ focus_tree = {
 	focus = {
 		id = QIE_raise_banners
 		icon = GFX_goal_QIE_hail_to_the_qing
-		cost = 8.00
+		cost = 5.00
 		prerequisite = {
 			focus = QIE_imperial_roads
 		}
@@ -1463,7 +1548,7 @@ focus_tree = {
 	focus = {
 		id = QIE_we_win
 		icon = GFX_goal_VIN_dragons_roar_nonaggression_flames_life
-		cost = 8.00
+		cost = 5.00
 		prerequisite = { focus = QIE_false_republic }
 		prerequisite = { focus = QIE_destroy_germany }
 		prerequisite = { focus = QIE_destroy_concessions }
@@ -1703,7 +1788,7 @@ focus_tree = {
 	focus = {
 		id = QIE_best_money_can_buy
 		icon = GFX_goal_KSV_pay_men
-		cost = 8.00
+		cost = 5.00
 		prerequisite = { focus = QIE_uneasy_coalition }
 		x = 2
 		y = 4
@@ -1821,7 +1906,7 @@ focus_tree = {
 	focus = {
 		id = QIE_baron_ungern
 		icon = GFX_goal_MON_baron_of_the_steppes
-		cost = 8.00
+		cost = 5.00
 		prerequisite = { focus = QIE_coup_backer }
 		mutually_exclusive = {
 			focus = QIE_song_zheyuan

@@ -264,9 +264,9 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_ding_dan"
-				add_stability = 0.1
-				add_war_support = 0.1
-				add_political_power = 100
+				add_stability = 0.10
+				add_war_support = 0.10
+				add_political_power = 200
 				602 = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {

@@ -950,6 +950,12 @@ defined_text = {
 		}
 		localization_key = aboriginal_garveyism_subtype 
    	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = syn_gandhism_subtype  
+		}
+		localization_key = syn_gandhism_subtype  
+	}
 
 	text = {
 		trigger = {
@@ -2827,6 +2833,12 @@ defined_text = {
 		}
 		localization_key = humanisme_integral_subtype
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = soccon_tridemism_subtype
+		}
+		localization_key = soccon_tridemism_subtype
+	}
 
 	text = {
 		trigger = {
@@ -3675,7 +3687,13 @@ defined_text = {
 		}
 		localization_key = pataut_tridemism_subtype
 	}
-	
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_security_state_subtype
+		}
+		localization_key =  pataut_security_state_subtype
+	}
+
 	text = {
 		trigger = {
 			has_country_leader_ideology = national_populist_subtype
@@ -4316,6 +4334,8 @@ defined_text = {
 		}
 		localization_key = commie_elfism_subtype
 	}
+}
+
 
 ###新加的
 	text = {

@@ -119,6 +119,8 @@ YUN_TANG_TRINUTARY = {
 			has_country_flag  = YUN_tang_go_big_i_guess
 			TIB = {
 				exists = yes
+				is_subject = no
+				NOT = { is_in_faction_with = YUN }
 			}
 			NOT = {
 				is_in_faction_with = TIB
@@ -2896,6 +2898,7 @@ YUN_faction_joining_stuff = {
 		icon = generic_agreement
 
 		visible = {
+			has_idea = YUN_silkroad_but_opium
 			OR = {
 				is_in_faction = no
 				is_faction_leader = yes
@@ -2937,6 +2940,7 @@ YUN_faction_joining_stuff = {
 		icon = generic_agreement
 
 		visible = {
+			has_idea = YUN_silkroad_but_opium
 			OR = {
 				is_in_faction = no
 				is_faction_leader = yes

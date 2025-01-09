@@ -542,6 +542,37 @@ country_event = {#天喜的故事：如今
 	}
 }
 
+country_event = {#破釜沉舟 
+	id = SQI.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.26" }
+	title = SQI.26.t
+	desc = SQI.26.d
+	picture = GFX_report_event_QIE_soldiers_planning
+
+	is_triggered_only = yes
+
+	option = {
+		name = SQI.26.a
+		ai_chance = { base = 100 }
+		every_state = {
+			limit = { is_core_of = FROM }
+			add_claim_by = ROOT
+		}
+		create_wargoal = {
+			target = QIE
+			type = annex_everything
+		}
+		hidden_effect = {
+			QIE = { country_event = { id = china_events.0 days = 1 } }
+		}
+	}
+
+	option = {
+		name = SQI.26.b
+		ai_chance = { base = 0 }
+	}
+}
+
 country_event = { # Lu Zhongyi Arrives in Jinan
 	id = shandong.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.2" }

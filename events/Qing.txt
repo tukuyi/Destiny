@@ -6934,6 +6934,19 @@ country_event = {#皇帝一鸣惊人
 					expire = "1.1.1"
 					ideology = social_liberal_subtype
 				}
+				if = {
+					limit = { 
+						SQI = {
+							has_country_leader = {
+								name = "靳云鹗"
+								ruling_only = yes
+							}
+						}
+					}
+					SQI = {
+						country_event = { id = SQI.26 days = 2 }
+					}
+				}
 			}
 		}
 	}
