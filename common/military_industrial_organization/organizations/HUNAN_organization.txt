@@ -179,7 +179,8 @@ HNN_tiema_organisation = {#铁马
 		position = { x = 4 y = 2 }
 
 		equipment_bonus = {
-			soft_attack = 0.05
+			soft_attack = 0.10
+			hard_attack = 0.05
 		}
 	}
 

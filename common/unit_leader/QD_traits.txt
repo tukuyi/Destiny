@@ -15,4 +15,20 @@ leader_traits = {
 		}
 		attack_skill_factor = 1
 	}
+	SQI_yue_dui = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		non_shared_modifier = {
+			skill_bonus_factor = 0.1
+			experience_gain_factor = 0.1
+			seawolf_xp_gain_factor = 0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		attack_skill_factor = 1
+	}
 }

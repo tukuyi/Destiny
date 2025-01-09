@@ -905,7 +905,27 @@ spriteTypes = {
 	}
 ###山东
 	spriteType = {
-		name = "GFX_Portrait_Portrait_SQI_Ke_xi_ke_tu"
+		name = "GFX_Portrait_SQI_li_zi"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_li_zi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_mi_xi_qian"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_mi_xi_qian.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_zou_ying"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_zou_ying.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_meng_yi"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_meng_yi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_jie_yue"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_jie_yue.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_Ke_xi_ke_tu"
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_Ke_xi_ke_tu.png"
 	}
 	spriteType = {

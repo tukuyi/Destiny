@@ -7,7 +7,7 @@ characters = {
 		name = SQI_ke_xi_ke_tu
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_Portrait_SQI_Ke_xi_ke_tu
+				large = GFX_Portrait_SQI_Ke_xi_ke_tu
 			}
 		}
 		country_leader = {
@@ -509,6 +509,109 @@ characters = {
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 3
+		}
+	}	
+################
+###   邦邦   ###
+################	
+#渡瀬結月
+	SQI_jie_yue = {
+		name = SQI_jie_yue
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_jie_yue
+				large = GFX_Portrait_SQI_jie_yue
+			}
+		}
+		corps_commander = {
+			traits = { 
+				SQI_yue_dui
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#冈田梦以
+	SQI_meng_yi = {
+		name = SQI_meng_yi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_meng_yi
+				large = GFX_Portrait_SQI_meng_yi
+			}
+		}
+		corps_commander = {
+			traits = { 
+				SQI_yue_dui
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#高尾奏音
+	SQI_zou_ying = {
+		name = SQI_zou_ying
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_zou_ying
+				large = GFX_Portrait_SQI_zou_ying
+			}
+		}
+		corps_commander = {
+			traits = { 
+				SQI_yue_dui
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#米泽茜
+	SQI_mi_xi_qian = {
+		name = SQI_mi_xi_qian
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_mi_xi_qian
+				large = GFX_Portrait_SQI_mi_xi_qian
+			}
+		}
+		corps_commander = {
+			traits = { 
+				SQI_yue_dui
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#佐佐木李子
+	SQI_li_zi = {
+		name = SQI_li_zi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SQI_li_zi
+				large = GFX_Portrait_SQI_li_zi
+			}
+		}
+		corps_commander = {
+			traits = { 
+				SQI_yue_dui
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}	
 }
