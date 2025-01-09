@@ -4545,6 +4545,13 @@ focus_tree = {
 				SQI_over_all_struggle = yes
 			}
 		}
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 5
+				has_idea = SQI_liang_shi_wei_ji_jia_ju
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_make_shandong_great"
@@ -4587,6 +4594,13 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = SQI_make_shandong_great
+		}
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 5
+				has_idea = SQI_liang_shi_wei_ji_jia_ju
+			}
 		}
 
 		select_effect = {

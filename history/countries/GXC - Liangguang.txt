@@ -336,6 +336,12 @@ recruit_character = GXC_luo_zuo_ying
 recruit_character = GXC_xu_chongzhi
 recruit_character = GXC_Li_Ming_Rui
 
+recruit_character = SQI_jie_yue
+recruit_character = SQI_meng_yi
+recruit_character = SQI_zou_ying
+recruit_character = SQI_mi_xi_qian
+recruit_character = SQI_li_zi
+
 GXC_yang_kunru = { set_character_flag = GXC_guangdong_character }
 GXC_chen_jitang = { set_character_flag = GXC_guangdong_character }
 GXC_jiang_guangnai = { set_character_flag = GXC_guangdong_character }
@@ -422,6 +428,22 @@ GXC_bai_chongxi = {
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = GXC_guangxi_character
 	retire = yes  
+}
+
+SQI_li_zi = {
+	retire = yes
+}
+SQI_jie_yue = {
+	retire = yes
+}
+SQI_meng_yi = {
+	retire = yes
+}
+SQI_zou_ying = {
+	retire = yes
+}
+SQI_mi_xi_qian = {
+	retire = yes
 }
 
 #海军

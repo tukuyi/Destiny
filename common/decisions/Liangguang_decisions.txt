@@ -31,7 +31,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -102,7 +102,7 @@ GXC_border_raid_decisions = {#袭击
 		cost = 25
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -176,7 +176,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -248,7 +248,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -320,7 +320,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -394,7 +394,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -466,7 +466,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -538,7 +538,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 31
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -609,7 +609,7 @@ GXC_border_raid_decisions = {#袭击
 		days_re_enable = 60
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -642,7 +642,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			has_completed_focus = GXC_bai_se_huang_jin
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 25
@@ -738,7 +738,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -798,7 +798,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -858,7 +858,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -918,7 +918,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -978,7 +978,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1038,7 +1038,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1098,7 +1098,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1158,7 +1158,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1218,7 +1218,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1278,7 +1278,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1338,7 +1338,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1398,7 +1398,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1458,7 +1458,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1518,7 +1518,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1578,7 +1578,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1638,7 +1638,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1698,7 +1698,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1758,7 +1758,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1818,7 +1818,7 @@ GXC_zou_si_wang_lu = {#发财之路
 		days_re_enable = 50
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -1853,7 +1853,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 100
@@ -1885,7 +1885,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 300
@@ -1907,7 +1907,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			has_country_flag = GXC_up
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 500
@@ -1930,7 +1930,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			has_country_flag = GXC_up2
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 1000
@@ -1953,7 +1953,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			has_country_flag = GXC_up3
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		
 		cost = 2000
@@ -3150,7 +3150,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist > 0.20
@@ -3201,7 +3201,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				authoritarian_democrat > 0.20
@@ -3252,7 +3252,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist < 0.20
@@ -3303,7 +3303,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				authoritarian_democrat < 0.20
@@ -3354,7 +3354,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				market_liberal < 0.20
@@ -3405,7 +3405,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				authoritarian_democrat > 0.20
@@ -3460,7 +3460,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist > 0.20
@@ -3514,7 +3514,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 10
 				has_political_power < 150
@@ -3564,7 +3564,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				authoritarian_democrat < 0.20
@@ -3622,7 +3622,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist < 0.20
@@ -3674,7 +3674,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist < 0.20
@@ -3725,7 +3725,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 5
 				national_populist < 0.20
@@ -3784,7 +3784,7 @@ GXC_shang_tuan_favor_category = {#商人们的恩怨纠葛
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 7
 				market_liberal < 0.20
@@ -3844,7 +3844,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_GEA_secure_border"
@@ -3876,7 +3876,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_INC_secure_border"
@@ -3908,7 +3908,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_YUN_secure_border"
@@ -3940,7 +3940,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_HNN_secure_border"
@@ -3972,7 +3972,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_KMT_secure_border"
@@ -4004,7 +4004,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_LEP_secure_border"
@@ -4036,7 +4036,7 @@ GXC_anti_banditry_decisions = {
 
 		cost = 50
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_LEC_secure_border"
@@ -4104,7 +4104,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		war_with_target_on_remove = yes
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4308,7 +4308,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		war_with_target_on_remove = yes
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4418,7 +4418,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		cancel_if_not_visible = yes
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4527,7 +4527,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		}
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4607,7 +4607,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		}
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4689,7 +4689,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 		}
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				strength_ratio = {
@@ -4838,7 +4838,7 @@ GXC_guangdong_guangxi_war_decisions = {
 
 		cost = 25
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_mobilize_merchant_corps"
@@ -4895,7 +4895,7 @@ GXC_guangdong_guangxi_war_decisions = {
 		cost = 25
 		fire_only_once = yes
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GXC_mobilize_gentry_militia"
@@ -4981,7 +4981,7 @@ prospect_for_resources = {
 			}
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
 	}
 }
 
@@ -5202,7 +5202,7 @@ GXC_balance_of_power_category = {#政治斗争
 		ai_will_do = {
 			base = 100
 			modifier = {
-				factor = 1000
+				base = 1000
 			}
 		}
 		cost = 0
@@ -5577,7 +5577,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 45
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5620,7 +5620,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5679,7 +5679,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5721,7 +5721,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5763,7 +5763,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5809,7 +5809,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5863,7 +5863,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		}
 
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5908,7 +5908,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -5962,7 +5962,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6011,7 +6011,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6065,7 +6065,7 @@ GXC_jie_ji_wen_ti = {#阶级问题
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6110,7 +6110,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 45
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6174,7 +6174,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 100
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6211,7 +6211,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 200
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6251,7 +6251,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 40
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6303,7 +6303,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6450,7 +6450,7 @@ GXC_shi_si_xiang_jian = {#十四项建设
 		days_remove = 30
 		
 		ai_will_do = {
-			factor = 100
+			base = 100
 			modifier = {
 				factor = 0
 				has_political_power < 100
@@ -6475,6 +6475,57 @@ GXC_shi_si_xiang_jian = {#十四项建设
 					level = 2
 					instant_build = yes
 				}
+			}
+		}
+	}
+}
+
+political_actions = {
+	GXC_zu_jian_yi_bei_zi_yue_dui = {#组一辈子的乐队
+		icon = GFX_decision_portraits_picker
+
+		available = {
+			has_country_leader = {
+				name = "陈廉伯"
+				ruling_only = yes
+			}
+		}
+
+		visible = {
+			has_country_leader = {
+				name = "陈廉伯"
+				ruling_only = yes
+			}
+		}
+
+		cost = 100
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_zu_jian_yi_bei_zi_yue_dui"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_zu_jian_yi_bei_zi_yue_dui"
+			SQI_jie_yue = {
+				set_nationality = ROOT
+			}
+			SQI_meng_yi = {
+				set_nationality = ROOT
+			}
+			SQI_zou_ying = {
+				set_nationality = ROOT
+			}
+			SQI_mi_xi_qian = {
+				set_nationality = ROOT
+			}
+			SQI_li_zi = {
+				set_nationality = ROOT
 			}
 		}
 	}
