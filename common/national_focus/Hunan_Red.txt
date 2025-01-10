@@ -10151,8 +10151,10 @@ focus_tree = {
 			base = 20
 		}
 		available = {
-			has_country_flag = HNN_PROC_victory
-			has_country_flag = HNN_tu_gai_jie_shu
+			OR = {
+				has_completed_focus = HNN_dang_de_fa_lv
+				has_completed_focus = HNN_ren_ming_zui_gao_fa_yuan
+			}
 		}
 
 		completion_reward = {
