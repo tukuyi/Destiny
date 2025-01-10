@@ -2502,9 +2502,9 @@ ideas = {
 				surrender_limit = 0.20
 				stability_factor = 0.10
 				political_power_gain = 0.10
+				army_armor_speed_factor = 0.05
 				army_armor_attack_factor = 0.05
 				army_armor_defence_factor = 0.05
-				army_armor_speed_factor = 0.05
 				tank_manufacturer_cost_factor = -0.05
 			}
 			equipment_bonus = {
@@ -2632,9 +2632,9 @@ ideas = {
 				}
 			}
 			modifier = {
+				stability_factor = -0.03
 				research_speed_factor = 0.25
 				political_power_factor = -0.15
-				stability_factor = -0.03
 			}
 			research_bonus = {
 				armor = 0.03
@@ -2664,8 +2664,8 @@ ideas = {
 				has_country_leader = { name = "戴笠" ruling_only = yes }
 			}
 			modifier = {
-				political_power_cost = -0.50
 				political_power_gain = 0.50
+				political_power_cost = -0.50
 				political_power_factor = 0.50
 				consumer_goods_expected_value = -0.05
 				production_speed_buildings_factor = 0.05
@@ -2760,8 +2760,8 @@ ideas = {
 				has_country_leader = { name = "刘少奇" ruling_only = yes }
 			}
 			modifier = {
-				political_power_cost = -0.10
 				political_power_gain = 0.10
+				political_power_cost = -0.10
 				production_factory_max_efficiency_factor = 0.02
 				production_factory_efficiency_gain_factor = 0.02
 			}
@@ -2775,8 +2775,8 @@ ideas = {
 			}
 			modifier = {
 				syndicalist_drift = 0.20
-				political_power_cost = -0.10
 				political_power_gain = 0.10
+				political_power_cost = -0.10
 				political_power_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -3137,14 +3137,14 @@ ideas = {
 			picture = GRU_naval
 			allowed = { always = no }
             modifier = {
-				invasion_preparation = -0.3
-				naval_invasion_capacity	= 4
-				amphibious_invasion = 0.20
 				naval_attrition	= -0.1
-				supply_consumption_factor = -0.1
 				naval_speed_factor = 0.2
-				shore_bombardment_bonus = 0.1
 				navy_anti_air_attack = 0.1
+				amphibious_invasion = 0.20
+				naval_invasion_capacity	= 4
+				invasion_preparation = -0.3
+				shore_bombardment_bonus = 0.1		
+				supply_consumption_factor = -0.1
 			}
 		}
 		HNN_lao_gong_idea = {#中国劳工
@@ -3183,10 +3183,10 @@ ideas = {
 			picture = SCT_farms
 			allowed = { always = no }
 			modifier = {
+				line_change_production_efficiency_factor = 0.05
 				production_factory_max_efficiency_factor = 0.10
 				production_factory_efficiency_gain_factor = 0.10
 				production_factory_start_efficiency_factor = 0.05
-				line_change_production_efficiency_factor = 0.05
 			}
 		}
 		HNN_xin_nong_ming_idea3 = {#新农民
@@ -3196,10 +3196,10 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.20
 				political_power_factor = 0.05
+				line_change_production_efficiency_factor = 0.10
 				production_factory_max_efficiency_factor = 0.10
 				production_factory_efficiency_gain_factor = 0.10
 				production_factory_start_efficiency_factor = 0.10
-				line_change_production_efficiency_factor = 0.10
 			}
 		}
 		HNN_xin_nong_ming_idea4 = {#新农民
@@ -3209,10 +3209,10 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.50
 				political_power_factor = 0.10
+				line_change_production_efficiency_factor = 0.20
 				production_factory_max_efficiency_factor = 0.20
 				production_factory_efficiency_gain_factor = 0.20
 				production_factory_start_efficiency_factor = 0.20
-				line_change_production_efficiency_factor = 0.20
 			}
 		}
 		HNN_blue_tech = {#政治教育
@@ -3293,10 +3293,10 @@ ideas = {
 			name = HNN_american_peoples_navy
 			allowed = { always = no }
             modifier = {
+				navy_org_factor = 0.05
+				navy_max_range_factor = 0.10
 				navy_screen_attack_factor = 0.03
 				navy_screen_defence_factor = 0.03
-				navy_max_range_factor = 0.10
-				navy_org_factor = 0.05
 			}
 		}		
 		HNN_revolutionary_naval_industry_1 = {#革命海军工业
@@ -3401,10 +3401,10 @@ ideas = {
 			name = HNN_continental_marines
 			allowed = { always = no }
             modifier = {
-				invasion_preparation = -0.10
 				special_forces_cap = 0.05
-				special_forces_attack_factor = 0.05
+				invasion_preparation = -0.10
 				extra_marine_supply_grace = 5
+				special_forces_attack_factor = 0.05
 			}
 		} 	
 	#周恩来
@@ -3414,6 +3414,7 @@ ideas = {
 			allowed = { always = no }
 			available = { 
 				OR = {
+					has_country_leader = { name = "陈毅" ruling_only = yes }
 					has_country_leader = { name = "周恩来" ruling_only = yes }
 					has_country_leader = { name = "钱学森" ruling_only = yes }
 					has_country_leader = { name = "郭沫若" ruling_only = yes }
@@ -3433,6 +3434,7 @@ ideas = {
 			allowed = { always = no }
 			available = { 
 				OR = {
+					has_country_leader = { name = "陈毅" ruling_only = yes }
 					has_country_leader = { name = "周恩来" ruling_only = yes }
 					has_country_leader = { name = "钱学森" ruling_only = yes }
 					has_country_leader = { name = "郭沫若" ruling_only = yes }
@@ -4166,9 +4168,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_si_wang_yu_rong_yao"}
 			picture = death_or_glory
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				stability_factor = -0.05
 				army_speed_factor = 0.02
@@ -4183,9 +4182,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_si_wang_yu_rong_yao2"}
 			picture = death_or_glory
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				max_planning = 0.05
 				stability_factor = -0.10
@@ -4236,9 +4232,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_zhang_kong_she_hui"}
 			picture = left_krestostrel_stable
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				stability_factor = -0.10
 				industrial_capacity_factory = 0.10
@@ -4252,9 +4245,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_ge_ming_de_ming_zhu"}
 			picture = communal_democracy
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				conscription = 0.05
 				totalist_drift = 0.05
@@ -4266,9 +4256,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_jing_shen_ge_min"}
 			picture = HNN_read
 			allowed = { always = no }
-			available = { 
-
-			}
 			modifier = {
 				research_speed_factor = 0.10
 			}
@@ -5408,10 +5395,10 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_Learn_Mahatmas_hua_idea"}
 			allowed = { always = no }
 			modifier = {
-				research_speed_factor = 0.1
-				political_power_cost = -0.05
 				stability_factor = 0.04
 				conscription_factor = 0.04
+				research_speed_factor = 0.1
+				political_power_cost = -0.05
 			}
 			picture = TIB_flaming_heart
 		}

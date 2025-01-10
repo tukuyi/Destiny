@@ -4329,7 +4329,7 @@ focus_tree = {
 	focus = {
 		id = HNN_Buddhism
 		icon = GFX_goal_HNN_Buddhism
-		x = -28
+		x = -19
 		y = 10
 		cost = 1
 
@@ -5035,7 +5035,7 @@ focus_tree = {
 	focus = {
 		id = HNN_guo_jia_chong_sheng
 		icon = GFX_goal_HNN_guo_jia_chong_sheng
-		x = -19
+		x = -28
 		y = 10
 		cost = 1
 

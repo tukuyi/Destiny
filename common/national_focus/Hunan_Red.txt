@@ -10152,12 +10152,18 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = HNN_PROC_victory
+			has_country_flag = HNN_tu_gai_jie_shu
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_chong_fan_si_jie_wu_tai"
 			add_political_power = 100
 			set_major = yes
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = hungong.168
+				days = 5
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -10357,6 +10363,16 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_country_leader = { name = "周恩来" ruling_only = yes }
+				}
+				country_event = { 
+					id = hungong.167
+					days = 5
+				}
+			}
 		}
 	}
 
@@ -10383,6 +10399,16 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_guo_ji_he_zuo"
 			INT = {
 				add_to_faction = HNN
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_country_leader = { name = "周恩来" ruling_only = yes }
+				}
+				country_event = { 
+					id = hungong.167
+					days = 5
+				}
 			}
 		}
 	}
@@ -11120,6 +11146,19 @@ focus_tree = {
 			HNN_fcations = yes
 			set_country_flag = ready_to_revolution
 			unlock_decision_category_tooltip = HNN_let_he_in
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					OR = {
+						has_country_leader = { name = "贺龙" ruling_only = yes }
+						has_country_leader = { name = "毛泽东" ruling_only = yes }
+					}
+				}
+				country_event = { 
+					id = hunmao.16
+					days = 5
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }

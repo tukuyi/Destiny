@@ -5511,7 +5511,7 @@ country_event = {#国学的重要性
 	}
 }
 
-country_event = {#我骄傲，我是中国
+country_event = {#我骄傲，我是中国人
 	id = sqiwan.26
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwan.26" }
 	title = sqiwan.26.t
