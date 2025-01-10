@@ -247,7 +247,7 @@ HNN_krupp_tank_organisation = {#克努伯
 #####################
 ### Materiel MIOs ###
 #####################
-HNN_faw_motors_organisation = {
+HNN_faw_motors_organisation = {#一汽
 	name = HNN_faw_motors
 	icon = GFX_idea_HNN_faw_motors
 	include = generic_motorized_mechanized_organization

@@ -57,6 +57,18 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/HNN/HNN_cheng_qian.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_HNN_da_sao_gan_jinpng"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_da_sao_gan_jinpng.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_san_ge_si_jie"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_san_ge_si_jie.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_mao_ze_dong_yu_qing_nian"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_mao_ze_dong_yu_qing_nian.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_KMT_soldiers"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_KMT_soldiers.png"
 	}

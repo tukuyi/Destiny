@@ -10351,6 +10351,7 @@ country_event = {#和平共处五项原则
 country_event = {#打扫干净屋子再请客
 	id = hungong.168
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.168" }
+	picture = GFX_report_event_HNN_da_sao_gan_jinpng
 	title = hungong.168.t
 	desc = hungong.168.d
 
@@ -12215,6 +12216,7 @@ country_event = {#两种矛盾
 country_event = {#青年的特点
 	id = hunmao.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.12" }
+	picture = GFX_report_event_HNN_mao_ze_dong_yu_qing_nian
 	title = hunmao.12.t
 	desc = hunmao.12.d
 
@@ -12297,6 +12299,7 @@ country_event = {#卸下面具
 country_event = {#三个世界
 	id = hunmao.16
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.16" }
+	picture = GFX_report_event_HNN_san_ge_si_jie
 	title = hunmao.16.t
 	desc = hunmao.16.d
 
