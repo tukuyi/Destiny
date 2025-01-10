@@ -37,6 +37,33 @@ chinese_unification = {
 	}
 }
 
+political_actions = {
+	HNN_gao_gang_Portrait_Picker = {
+		icon = GFX_decision_portraits_picker
+		allowed = { 
+			tag = HNN
+		}
+		visible = {
+			has_country_leader = {
+				name = "高岗"
+				ruling_only = yes
+			}
+		}
+
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 1
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_Portrait_Picker"
+			country_event = hungong.169
+		}
+	}
+}
+
 HNN_revolution_category = {#革命之火
 	HNN_revolution = {#革命
 		icon = GFX_decision_category_killlibs

@@ -10976,7 +10976,6 @@ country_event = {#第二次选举
 					}
 				}
 				set_country_leader_portrait = {
-					ideology = socdem_national_socialism_subtype
 					portrait = GFX_Portrait_QIE_Zhang_Jun_Li_old
 				}
 			}

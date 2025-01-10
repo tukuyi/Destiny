@@ -10363,6 +10363,28 @@ country_event = {#打扫干净屋子再请客
 	}
 }
 
+country_event = {#高岗的头像
+	id = hungong.169
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.169" }
+	title = hungong.169.t
+	desc = hungong.169.d
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = hungong.169.a
+		set_country_leader_portrait = {
+			portrait = "gfx/leaders/HNN/Portrait_HNN_Gao_gang.png"
+		}
+	}
+	option = { #yes
+		name = hungong.169.b
+		set_country_leader_portrait = {
+			portrait = "gfx/leaders/HNN/Portrait_HNN_Gao_gang_alt.png"
+		}
+	}
+}
+
 ########################################
 ##########-      中社部    -############
 ########################################
@@ -13224,16 +13246,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 			}
 			HNN_fcations_change = yes 
 		}
-
-		# option = {#赵紫阳
-		# 	name = hungong.54.j
-		# 	trigger = {
-		# 		social_liberal > 0.5
-		# 	}
-		# 	set_politics = {
-		# 		ruling_party = market_liberal
-		# 	}
-		# }
 	}
 
 #工团选举

@@ -1559,7 +1559,7 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_an_emergency_congress
@@ -1583,10 +1583,7 @@ focus_tree = {
 		cost = 3
 	
 		ai_will_do = {
-			factor = 15
-		}
-		available = {
-			 
+			base = 15
 		}
 	
 		prerequisite = {
@@ -1610,10 +1607,7 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
-		}
-		available = {
-			 
+			base = 15
 		}
 	
 		prerequisite = {
@@ -1648,12 +1642,8 @@ focus_tree = {
 		cost = 3
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_an_fu_jun_dui
 		}
@@ -1698,12 +1688,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_an_fu_jun_dui
 		}
@@ -1730,12 +1716,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_chong_sheng_sheng_xian_fa
 		}
@@ -1778,12 +1760,8 @@ focus_tree = {
 		cost = 3
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_jie_san_she_hui_zhu_yi_zheng_dang
 		}
@@ -1835,19 +1813,10 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			NOT = {
-				 
-			}
-		}
-	
 		prerequisite = {
 			focus = HNN_gong_he_yi_zhi
-		}
-		prerequisite = {
-	
 		}
 	
 		completion_reward = {
@@ -1866,12 +1835,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			 
-		}
-	
 		prerequisite = {
 			focus = HNN_Our_Own_Path
 		}
@@ -1899,12 +1864,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_gong_he_yi_zhi
 		}
@@ -1934,12 +1895,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_hu_nan_sheng_de_jing_ji_zheng_che
 		}
@@ -1993,12 +1950,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			
-		}
-	
 		prerequisite = {
 			focus = HNN_chang_jiang_hang_yun
 		}
@@ -2036,12 +1989,8 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-		
-		}
-
 		prerequisite = {
 			focus = HNN_jie_san_she_hui_zhu_yi_zheng_dang
 		}
@@ -2067,14 +2016,8 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
-		available = {
-			NOT = {
-				 
-			}
-		}
-	
 		prerequisite = {
 			focus = HNN_si_fa_du_li
 		}
@@ -2120,10 +2063,7 @@ focus_tree = {
 		cost = 5
 	
 		ai_will_do = {
-			factor = 15
-		}
-		available = {
-			
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_jing_ji_dong_yuan
@@ -3680,7 +3620,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3701,7 +3641,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3726,7 +3666,7 @@ focus_tree = {
 		cost = 3
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3755,7 +3695,7 @@ focus_tree = {
 		cost = 3
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3784,7 +3724,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3814,7 +3754,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3822,6 +3762,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_jun_zhi_jie_duan_ying_ji_fa
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_shu_li_jiang_zhong_zheng_diao_xiang"
 			add_ideas = HNN_zui_yi_di_yi_ci_bei_fa
@@ -3837,7 +3778,7 @@ focus_tree = {
 		cost = 4
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_shu_li_jiang_zhong_zheng_diao_xiang
@@ -3864,7 +3805,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_gai_ge_li_fa_yuan
@@ -3888,7 +3829,7 @@ focus_tree = {
 		cost = 4
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_shu_li_jiang_zhong_zheng_diao_xiang
@@ -3918,7 +3859,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_shu_li_jiang_zhong_zheng_diao_xiang
@@ -3943,7 +3884,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "何键" ruling_only = yes }
@@ -3951,6 +3892,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_jun_zhi_jie_duan_ying_ji_fa
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_he_er_wei_yi"
 			add_ideas = HNN_jun_shi_hua_shi_he
@@ -3966,7 +3908,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_he_er_wei_yi
@@ -3997,7 +3939,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_he_er_wei_yi
@@ -4047,7 +3989,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_jun_huo_bu_tie
@@ -4097,7 +4039,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_da_ya_da_qi_ye
@@ -4167,7 +4109,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_di_san_wei_ge_ming_ling_xiu
@@ -4194,7 +4136,7 @@ focus_tree = {
 		cost = 3
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_mo_shou_di_guo_zhu_yi_cai_chan
@@ -4334,7 +4276,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = HNN_fo_victory_flag
@@ -4376,7 +4318,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_shou_long_zi_jin
@@ -4400,7 +4342,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_Buddhism
@@ -4421,7 +4363,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xiu_gai_sheng_xian
@@ -4449,7 +4391,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = HNN_budd_category_xianfa_flag
@@ -4496,7 +4438,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xiu_gai_sheng_xian
@@ -4528,7 +4470,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = HNN_budd_category_xianfa_flag
@@ -4560,7 +4502,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xin_yi_hui
@@ -4769,7 +4711,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_leader = { name = "正明法师" ruling_only = yes }
@@ -4801,7 +4743,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -4858,7 +4800,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -4886,7 +4828,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -4928,7 +4870,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -4980,7 +4922,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -5007,7 +4949,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
@@ -5040,7 +4982,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5063,7 +5005,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5124,7 +5066,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5165,7 +5107,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5203,7 +5145,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5243,7 +5185,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5275,7 +5217,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5299,7 +5241,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5324,7 +5266,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5400,7 +5342,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5443,7 +5385,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			KOR = {
@@ -5478,7 +5420,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			JAP = {
@@ -5513,7 +5455,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			TRM = {
@@ -5582,7 +5524,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = paternal_autocrat
@@ -5609,7 +5551,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_chong_xin_ji_quan
@@ -5633,7 +5575,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_qiang_zhe_shou_hu_zi_you
@@ -5662,7 +5604,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_qiang_zhe_shou_hu_zi_you
@@ -5689,7 +5631,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			GEA = {
@@ -5736,7 +5678,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			PHI = {
@@ -5783,7 +5725,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			BRM = {
@@ -5853,7 +5795,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -5882,7 +5824,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -5908,7 +5850,7 @@ focus_tree = {
 		cost = 3
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -5941,7 +5883,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -5976,7 +5918,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6002,7 +5944,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6027,7 +5969,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6056,7 +5998,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6085,7 +6027,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6110,7 +6052,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6148,7 +6090,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6176,7 +6118,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6201,7 +6143,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -6227,7 +6169,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		available = {
 			has_government = social_conservative
@@ -9648,7 +9590,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_ran_deng_ji_si
@@ -9748,7 +9690,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_zhao_mu_ge_lao_hui
@@ -9831,7 +9773,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xin_yang_jian_Jun
@@ -9864,7 +9806,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xin_yang_jian_Jun

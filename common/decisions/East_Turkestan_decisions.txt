@@ -695,7 +695,7 @@ ETS_di_yi_wu_nian_category = {#一五计划
 			}
 		}
 	}
-	ETS_bulid_tu_jue_si_tan ={#突厥斯坦城市化
+	ETS_bulid_tu_jue_si_tan_up ={#突厥斯坦城市化
 		icon = cement_mixer
 	
 		available = {

@@ -5202,7 +5202,7 @@ GXC_balance_of_power_category = {#政治斗争
 		ai_will_do = {
 			base = 100
 			modifier = {
-				base = 1000
+				factor = 2
 			}
 		}
 		cost = 0
