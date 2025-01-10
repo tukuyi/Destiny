@@ -4136,7 +4136,7 @@ focus_tree = {
 				}
 			}
 
-			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		}
 
 		focus = {
@@ -4183,6 +4183,10 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+			}
+
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
 			}
 		}
 
@@ -4274,6 +4278,9 @@ focus_tree = {
 					}
 				}
 			}
+			search_filters = {
+				FOCUS_FILTER_STABILITY
+			}
 		}
 
 		focus = {
@@ -4319,6 +4326,10 @@ focus_tree = {
 						days = 20
 					}
 				}
+			}
+			search_filters = {
+				FOCUS_FILTER_STABILITY
+				FOCUS_FILTER_INDUSTRY
 			}
 		}
 
@@ -4455,6 +4466,9 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+			}
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
 			}
 		}
 
@@ -4736,6 +4750,9 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			search_filters = {
+				FOCUS_FILTER_INDUSTRY
 			}
 		}
 

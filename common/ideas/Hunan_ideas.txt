@@ -5989,6 +5989,22 @@ ideas = {
 	#### General ####
 	industrial_concern = {
 
+		HNN_yi_zhong_compny = {#一重集团
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_yi_zhong_compny" }
+			picture = GFX_idea_HNN_yi_zhong
+			allowed = { 
+				original_tag = HNN
+			}
+			available = { 
+				has_country_flag = HNN_PROC_victory	
+			} 
+			traits = { HNN_yi_zhong }
+			research_bonus = {
+				industry = 0.1
+			}
+			ai_will_do = { base = 10 }
+		}
+
 		CN_zhong_ke_yuan = {#中国科学院
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CN_zhong_ke_yuan"}
 			picture = CN_zhong_ke_yuan
