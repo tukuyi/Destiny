@@ -69,6 +69,46 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/HNN/HNN_mao_ze_dong_yu_qing_nian.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_HNN_zhong_ke_yuan"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_zhong_ke_yuan.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_revolution_victory"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_revolution_victory.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_yi_jiang_cun_shui"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_yi_jiang_cun_shui.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_tu_di_gai_ge"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_tu_di_gai_ge.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_jun_shi_guan_zhi"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_jun_shi_guan_zhi.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_wang_zhao_ming"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_wang_zhao_ming.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_hu_han_ming"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_hu_han_ming.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_dai_chun_feng"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_dai_chun_feng.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_tao_yuan_jing_yan"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_tao_yuan_jing_yan.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_zhou_fo_hai"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_zhou_fo_hai.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_KMT_soldiers"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_KMT_soldiers.png"
 	}

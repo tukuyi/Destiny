@@ -6471,6 +6471,7 @@ country_event = {#唐生智之死
 country_event = {#革命成功
 	id = hungong.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.7" }
+	picture = GFX_report_event_HNN_revolution_victory
 	title = hungong.7.t
 	desc = hungong.7.d
 
@@ -6742,7 +6743,7 @@ country_event = {#革命成功
 	}
 }
 
-country_event = { 
+country_event = {#给党内同志的一封信 
 	id = hungong.17
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.17" }
 	title = hungong.17.t
@@ -6757,14 +6758,14 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = {#《一江春水向东流》在湖南上映 
 	id = hungong.18
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.18" }
+	picture = GFX_report_event_HNN_yi_jiang_cun_shui
 	title = hungong.18.t
 	desc = hungong.18.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -6773,7 +6774,7 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = {#改造清理哥老会 
 	id = hungong.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.20" }
 	title = hungong.20.t
@@ -6801,7 +6802,6 @@ country_event = {#鸦片问题
 	desc = hungong.21.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {#禁止
@@ -6835,11 +6835,11 @@ country_event = {#鸦片问题
 country_event = {#革命暴力 
 	id = hungong.22
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.22" }
+	picture = GFX_report_event_HNN_tu_di_gai_ge
 	title = hungong.22.t
 	desc = hungong.22.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {#和平土改
@@ -6901,7 +6901,6 @@ country_event = {#湖南省中央研究院
 	desc = hungong.25.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -6986,7 +6985,6 @@ country_event = {#农民夜校
 	desc = hungong.30.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -7065,7 +7063,6 @@ country_event = {#二十年来革命的教训
 	desc = hungong.34.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -7357,9 +7354,10 @@ country_event = {#钱学森归国
 	}
 }
 
-country_event = {#结束军管
+country_event = {#结束军管？
 	id = hungong.56
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.56" }
+	picture = GFX_report_event_HNN_jun_shi_guan_zhi
 	title = hungong.56.t
 	desc = hungong.56.d
 
@@ -7518,6 +7516,7 @@ country_event = {#事情正在起变化
 country_event = {#001号目标人物 汪兆铭
 	id = hungong.61
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.61" }
+	picture = GFX_report_event_HNN_wang_zhao_ming
 	title = hungong.61.t
 	desc = hungong.61.d
 
@@ -7557,6 +7556,7 @@ country_event = {#001号目标人物 汪兆铭
 country_event = {#009号目标人物 胡汉民
 	id = hungong.62
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.62" }
+	picture = GFX_report_event_HNN_hu_han_ming
 	title = hungong.62.t
 	desc = hungong.62.d
 
@@ -7583,6 +7583,7 @@ country_event = {#009号目标人物 胡汉民
 country_event = {#009号目标人物 胡汉民
 	id = hungong.63
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.63" }
+	picture = GFX_report_event_HNN_hu_han_ming
 	title = hungong.63.t
 	desc = hungong.63.d
 
@@ -7623,6 +7624,7 @@ country_event = {#009号目标人物 胡汉民
 country_event = {#戴春风的加入？
 	id = hungong.64
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.64" }
+	picture = GFX_report_event_HNN_dai_chun_feng
 	title = hungong.64.t
 	desc = hungong.64.d
 
@@ -7658,9 +7660,10 @@ country_event = {#戴春风的加入？
 	}
 }
 
-country_event = {#010号目标人物 周福海
+country_event = {#010号目标人物 周佛海
 	id = hungong.65
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.65" }
+	picture = GFX_report_event_HNN_zhou_fo_hai
 	title = hungong.65.t
 	desc = hungong.65.d
 
@@ -7694,9 +7697,10 @@ country_event = {#010号目标人物 周福海
 	}
 }
 
-country_event = {#010号目标人物 周福海
+country_event = {#010号目标人物 周佛海
 	id = hungong.66
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.66" }
+	picture = GFX_report_event_HNN_zhou_fo_hai
 	title = hungong.66.t
 	desc = hungong.66.d
 
@@ -7737,6 +7741,7 @@ country_event = {#索取资金
 country_event = {#推广桃园经验
 	id = hungong.68
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.68" }
+	picture = GFX_report_event_HNN_tao_yuan_jing_yan
 	title = hungong.68.t
 	desc = hungong.68.d
 
@@ -8001,6 +8006,7 @@ country_event = {#习仲勋的报告
 country_event = {#组建中科院
 	id = hungong.77
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.77" }
+	picture = GFX_report_event_HNN_zhong_ke_yuan
 	title = hungong.77.t
 	desc = hungong.77.d
 
