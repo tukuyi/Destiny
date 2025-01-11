@@ -1,0 +1,145 @@
+focus_tree = {
+	id = GXC_Pepsi
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = KOR
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 1000 y = 0 }
+
+	focus = {
+		id = GXC_xiang_bai_shi_xiang_zhong
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		cost = 2.00
+		x = 0
+		y = 0
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_xiang_bai_shi_xiang_zhong"
+			set_party_name = {
+				ideology = syndicalist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = radical_socialist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = social_democrat
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = social_liberal
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = market_liberal
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = social_conservative
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name = {
+				ideology = national_populist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+		}
+	}
+
+	focus = {
+		id = GXC_jue_fa_shua_guo_shui
+		icon = GFX_goal_GXC_jue_fa_shua_guo_shui
+		relative_position_id = GXC_xiang_bai_shi_xiang_zhong
+		cost = 2.00
+		x = -1
+		y = 1
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GXC_Pepsi_is_all
+				JAP = {
+					is_puppet_of = GXC
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = GXC_xiang_bai_shi_xiang_zhong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_jue_fa_shua_guo_shui"
+			send_embargo = JAP
+			add_ideas = isolation
+		}
+	}
+
+	focus = {
+		id = GXC_jian_she_bai_shi_si_xiang_ta
+		icon = GFX_goal_GXC_jian_she_bai_shi_si_xiang_ta
+		relative_position_id = GXC_xiang_bai_shi_xiang_zhong
+		cost = 2.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = GXC_xiang_bai_shi_xiang_zhong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_jian_she_bai_shi_si_xiang_ta"
+			every_owned_state = {
+				add_dynamic_modifier = {
+					modifier = GXC_jue_fa_shua_guo_shui_state
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GXC_yi_ping_ying_liao
+		icon = GFX_goal_GXC_yi_ping_ying_liao
+		relative_position_id = GXC_xiang_bai_shi_xiang_zhong
+		cost = 100000.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = GXC_jue_fa_shua_guo_shui
+		}
+		prerequisite = {
+			focus = GXC_jian_she_bai_shi_si_xiang_ta
+		}
+		select_effect = {
+			add_stability = 1
+			add_war_support = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_yi_ping_ying_liao"
+			custom_effect_tooltip = GXC_Pepsi_is_rise
+		}
+	}
+}

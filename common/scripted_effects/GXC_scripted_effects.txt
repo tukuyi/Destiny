@@ -627,13 +627,13 @@ GXC_KOR_build = {#大百事民国
 	hidden_effect = {
 		KOR = {
 			set_cosmetic_tag = GXC_KOR
-			load_focus_tree = generic_focus
+			load_focus_tree = GXC_Pepsi
 	
 			create_country_leader = {
 				name = "金日成"
-				picture = "gfx/leaders/KOR/Portrait_KOR_Kim_Il_Sung.png"
+				picture = "gfx/leaders/GXC/Portrait_GXC_kim_il_sung.png"
 				expire = "1.1.1"
-				ideology = juche_subtype
+				ideology = tot_baishi_subtype
 				traits = {}
 			}
 			set_politics = {
@@ -643,6 +643,10 @@ GXC_KOR_build = {#大百事民国
 				ideology = totalist
 				long_name =  GXC_totalist_KOR_long
 				name =  GXC_totalist_KOR
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 1
 			}
 	
 			transfer_state = 525

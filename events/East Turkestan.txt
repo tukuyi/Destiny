@@ -2552,6 +2552,10 @@ country_event = {#东突厥斯坦人民大会成立！
 			long_name = ETS_red_radical_socialist_party_one_long
 			name = ETS_red_radical_socialist_party_one
 		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.20
+		}
 		complete_national_focus = ETS_ren_ci_de_zhu
 	}
 }

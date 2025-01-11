@@ -931,4 +931,20 @@ SpriteTypes = {
 		name = "GFX_goal_GXC_ji_shu_guan_liao"
 		texturefile = "gfx/interface/goals/GXC_ji_shu_guan_liao.png"
 	}
+	spriteType = {
+		name = "GFX_goal_GXC_xiang_bai_shi_xiang_zhong"
+		texturefile = "gfx/interface/goals/GXC_xiang_bai_shi_xiang_zhong.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GXC_jue_fa_shua_guo_shui"
+		texturefile = "gfx/interface/goals/GXC_jue_fa_shua_guo_shui.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GXC_jian_she_bai_shi_si_xiang_ta"
+		texturefile = "gfx/interface/goals/GXC_jian_she_bai_shi_si_xiang_ta.png"
+	}
+	spriteType = {
+		name = "GFX_goal_GXC_yi_ping_ying_liao"
+		texturefile = "gfx/interface/goals/GXC_yi_ping_ying_liao.png"
+	}
 }

@@ -4344,6 +4344,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = tot_baishi_subtype
+		}
+		localization_key = tot_baishi_subtype
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = islamic_communism_subtype
 		}
 		localization_key = islamic_communism_subtype

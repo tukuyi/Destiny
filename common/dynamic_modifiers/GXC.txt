@@ -6,3 +6,17 @@ GXC_people_modifier = { #扫盲
 	consumer_goods_factor = GXC_people_consumer_goods_factor
 	production_factory_max_efficiency_factor = GXC_people_production_support
 }
+
+GXC_jue_fa_shua_guo_shui_state = {#百事思想塔
+	icon = GFX_modifiers_state_bai_shi
+	
+	enable = {
+		always = yes
+	}
+	local_manpower = 0.30
+	mobilization_speed = 0.20
+	local_building_slots_factor = 0.10
+	recruitable_population_factor = 0.20
+	army_speed_factor_for_controller = 0.20
+	state_production_speed_buildings_factor = 0.20
+}

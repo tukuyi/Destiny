@@ -551,14 +551,25 @@ ideas = {
 				allowed = { always = no }
 				picture = generic_syndicalist_militia
 				available = {
-					KYR = {
-						exists = yes
-					}
-					TRK = {
-						exists = yes
-					}
-					UZB = {
-						exists = yes
+					OR = {
+						AND = {
+							KYR = {
+								exists = yes
+								has_war_with = ROOT
+							}
+						}
+						AND = {
+							TRK = {
+								exists = yes
+								has_war_with = ROOT
+							}
+						}
+						AND = {
+							UZB = {
+								exists = yes
+								has_war_with = ROOT
+							}
+						}
 					}
 				}
 				modifier = {

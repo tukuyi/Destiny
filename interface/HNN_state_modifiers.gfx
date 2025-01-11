@@ -3,4 +3,8 @@ spriteTypes = {
 		name = "GFX_modifiers_state_socialism"
 		texturefile = "gfx/interface/state_modifiers/state_socialism.png"
 	}
+	SpriteType = {
+		name = "GFX_modifiers_state_bai_shi"
+		texturefile = "gfx/interface/state_modifiers/state_bai_shi.png"
+	}
 }

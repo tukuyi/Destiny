@@ -3725,6 +3725,19 @@
  GXC_jin_tian_mei_de_chi:0 "但不是今天"
  GXC_jin_tian_mei_de_chi_desc:0 " "
 
+ GXC_Pepsi:0 "大百事民国国策树"
+ GXC_xiang_bai_shi_xiang_zhong:0 "向百事效忠"
+ GXC_xiang_bai_shi_xiang_zhong_desc:0 "百事可乐是人民的饮料，它的每一滴都来自劳动人民的劳作。人民群众是革命和建设的主人，也是推动革命和建设的力量。人是自己命运的主人，而百事可乐就是人民群众掌握自己命运的体现，即，人民的，就是百事的；百事的，还是百事的。"
+ GXC_jue_fa_shua_guo_shui:0 "§R绝罚刷锅水！§!"
+ GXC_jue_fa_shua_guo_shui_desc:0 "这个世界上有太多的其他饮料了，他们中的绝大多数都是资本阶级的腐化享受，是资产阶级精心酿造的打向无产阶级的弹药。我们劳动人民一定要擦亮眼睛看清这一切。而在这些资产阶级的贪腐享受中最核心的就是可口可乐这种魔鬼的造物，对于无产阶级的百事斗士们而言简直是难以下咽，是最肮脏的刷锅水。"
+ GXC_jian_she_bai_shi_si_xiang_ta:0 "修建百事思想塔"
+ GXC_jian_she_bai_shi_si_xiang_ta_desc:0 "为了庆祝人民的伟大胜利，我们将在平壤打造一座前所未有的丰碑，一座硕大的百事可乐高塔将屹立于大地之上，人民万岁，百事万岁！"
+ GXC_yi_ping_ying_liao:0 "一瓶饮料，一个国家，一位领袖！"
+ GXC_yi_ping_ying_liao_desc:0 "百事思想放光芒，金达莱花向太阳。金日成元帅，您是百事朝鲜的缔造者，是二十世纪最最伟大的太阳，给与人民力量，给与人民希望，是我们最最最敬爱的慈父，您是如此关爱我们这些无知的孩子，金日成元帅，人民永远的父亲。"
+ GXC_Pepsi_is_all:0 "§R魔鬼的酒酿存在于人世间§!"
+ GXC_Pepsi_is_rise:0 "§R平壤升起了金太阳§!"
+ GXC_jue_fa_shua_guo_shui_state:0 "百事思想塔"
+
 #百色起义
  GXC_BAI: "广西起义军"
  GXC_BAI_ADJ: "广西起义军"

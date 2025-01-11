@@ -11,6 +11,7 @@ ideologies = {
 	totalist = {
 		types = {
 			totalist_subtype = {} #generic
+			tot_baishi_subtype = {can_be_randomly_selected = no} #百事思想
 			islamic_communism_subtype = {can_be_randomly_selected = no} #伊斯兰马克思主义
 			jun_zheng_ji_quan_subtype = {can_be_randomly_selected = no} #军政极权主义
 			sorelian_marketism_subtype = {can_be_randomly_selected = no} #市场索雷尔主义

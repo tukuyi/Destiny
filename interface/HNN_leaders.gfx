@@ -744,6 +744,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/GXC/portrait_GXC_chen_jiongming_army.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_GXC_kim_il_sung"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_kim_il_sung.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_GXC_chen_lianbo_army"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_lianbo_army.png"
 	}
