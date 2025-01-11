@@ -105,6 +105,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/HNN/HNN_tao_yuan_jing_yan.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_HNN_xi_zhong_xun_speak"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_xi_zhong_xun_speak.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_shi_chuan_xiang"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_shi_chuan_xiang.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_zhou_fo_hai"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_zhou_fo_hai.png"
 	}

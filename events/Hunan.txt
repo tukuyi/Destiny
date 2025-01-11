@@ -7988,6 +7988,7 @@ country_event = {#五反运动
 country_event = {#习仲勋的报告
 	id = hungong.76
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.76" }
+	picture = GFX_report_event_HNN_xi_zhong_xun_speak
 	title = hungong.76.t
 	desc = hungong.76.d
 
@@ -8255,6 +8256,7 @@ country_event = {#反对贪污蜕化反对官僚主义
 country_event = {#劳动英雄时传祥
 	id = hungong.83
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.83" }
+	picture = GFX_report_event_HNN_shi_chuan_xiang
 	title = hungong.83.t
 	desc = hungong.83.d
 
