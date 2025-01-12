@@ -54,8 +54,10 @@ ETS_change_popularities = {
 	}
 }
 
-ETS_central_aisa_war_effect = {
+ETS_central_aisa_war_effect = {#中亚战争
 	set_country_flag = ETS_war_is_over
+	mark_focus_tree_layout_dirty = yes
+	
 	if = {
 		limit = { 
 			OR = {
