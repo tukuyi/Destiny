@@ -336,6 +336,10 @@ spriteTypes = {
 		name = "GFX_Portrait_HNN_zhao_jiu_zhang"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_zhao_jiu_zhang.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_guo_yong_huai"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_guo_yong_huai.png"
+	}
 ###奉天	
 	spriteType = {
 		name = "GFX_Portrait_FNG_FNG_guo_enlin"

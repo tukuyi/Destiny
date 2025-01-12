@@ -5991,7 +5991,7 @@ ideas = {
 
 		HNN_yi_zhong_compny = {#一重集团
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_yi_zhong_compny" }
-			picture = GFX_idea_HNN_yi_zhong
+			picture = HNN_yi_zhong
 			allowed = { 
 				original_tag = HNN
 			}

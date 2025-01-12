@@ -151,6 +151,7 @@ recruit_character = HNN_Chen_Yun
 recruit_character = HNN_Hua_Guofeng
 recruit_character = HNN_wang_gan_chang
 recruit_character = HNN_zhao_jiu_zhang
+recruit_character = HNN_guo_yong_huai
 
 ###
 # create_corps_commander = {
@@ -368,6 +369,9 @@ HNN_Hua_Guofeng = {
 	retire = yes
 }
 HNN_zhao_jiu_zhang = {
+	retire = yes
+}
+HNN_guo_yong_huai = {
 	retire = yes
 }
 HNN_tang_shengming = { #Appears in KMT Content

@@ -1231,4 +1231,24 @@ characters = {
 			}
 		}
 	}
+#郭永怀
+	HNN_guo_yong_huai = {
+		name = HNN_guo_yong_huai
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_guo_yong_huai
+				small = GFX_Portrait_HNN_guo_yong_huai
+			}
+			army = {
+				large = GFX_Portrait_HNN_guo_yong_huai
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_brilliant_theorist scientist_trait_jet_expert }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
 }

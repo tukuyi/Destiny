@@ -12527,6 +12527,7 @@ country_event = {#中华人民共和国
 			}
 			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
 			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
+			HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
 		}
 	}
 }
@@ -12877,6 +12878,7 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 	country_event = {#第一次政治协商会议：闭幕式
 		id = hungong.54
 		immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.54" }
+		picture = GFX_report_event_HNN_zheng_xie
 		title = hungong.54.t
 		desc = hungong.54.d
 
