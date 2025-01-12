@@ -2451,6 +2451,7 @@ country_event = {#民族军入城！
 		show_unit_leaders_tooltip = SIK_Dalelkhan_Sugirbayev
 		show_unit_leaders_tooltip = SIK_Isakbek_Mononov
 		show_unit_leaders_tooltip = SIK_Muhemmet
+		show_unit_leaders_tooltip = ETS_Omer_Qasimi
 		hidden_effect = {
 			SIK_Saifuddin_Azizi = {
 				set_nationality = ROOT
@@ -2465,6 +2466,9 @@ country_event = {#民族军入城！
 				set_nationality = ROOT
 			}
 			SIK_Isakbek_Mononov = {
+				set_nationality = ROOT
+			}
+			ETS_Omer_Qasimi = {
 				set_nationality = ROOT
 			}
 			SIK_Muhemmet = {

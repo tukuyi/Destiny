@@ -6492,6 +6492,7 @@ country_event = {#革命成功
 		}
 		set_country_flag = HNN_gong_tuan_victory_flag
 		load_focus_tree = { tree = Hunan_Red }
+		mark_focus_tree_layout_dirty = yes
 		create_country_leader = {
 			name = "湖南代表大会"
 			desc = "POLITICS_KONG_LINGYI_DESC"

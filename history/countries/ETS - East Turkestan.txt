@@ -65,6 +65,7 @@ recruit_character = SIK_Asgat_Iskhakov
 recruit_character = SIK_Dalelkhan_Sugirbayev
 recruit_character = SIK_Isakbek_Mononov
 recruit_character = SIK_Muhemmet
+recruit_character = ETS_Omer_Qasimi
 
 SIK_Abdukirim_Abbasof = {
 	retire = yes
@@ -85,6 +86,9 @@ SIK_Isakbek_Mononov = {
 	retire = yes
 }
 SIK_Muhemmet = {
+	retire = yes
+}
+ETS_Omer_Qasimi = {
 	retire = yes
 }
 

@@ -1288,4 +1288,8 @@ spriteTypes = {
 		name = "GFX_Portrait_ETS_Sabit_Damulla_Abdulbaki"
 		texturefile = "gfx/leaders/ETS/Portrait_ETS_Sabit_Damulla_Abdulbaki.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_ETS_Qasimi"
+		texturefile = "gfx/leaders/ETS/Portrait_SIK_Qasimi.png"
+	}	
 }
