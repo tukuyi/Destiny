@@ -1680,6 +1680,7 @@ country_event = {#上海工人的胜利-湖南
 country_event = {#俄国难民
 	id = Shcgong.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcgong.8" }
+	picture = GFX_report_event_SHC_bai_e_nan_ming
 	title = Shcgong.8.t
 	desc = Shcgong.8.d
 
@@ -1701,6 +1702,7 @@ country_event = {#俄国难民
 country_event = {#难民问题
 	id = Shcgong.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcgong.9" }
+	picture = GFX_report_event_SHC_nan_min_wen_ti
 	title = Shcgong.9.t
 	desc = Shcgong.9.d
 

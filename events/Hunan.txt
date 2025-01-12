@@ -198,7 +198,6 @@ country_event = { #推翻省议会
 	desc = hnn.4.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -322,7 +321,6 @@ country_event = { #The Xiangjiang Incident
 	desc = hnn.55.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = { #Arrest them and get it over with.
@@ -349,7 +347,6 @@ country_event = { #Massive Opium Smuggling Ring Discovered
 	desc = hnn.56.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	immediate = {
@@ -378,7 +375,6 @@ country_event = { #Yiguandao Rally
 	desc = hnn.57.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = { #What are they even doing?
@@ -1617,7 +1613,7 @@ country_event = { #A Day in Changsha, flavor event
 }
 
 ###新事件
-country_event = {#南京 
+country_event = {#南京
 	id = hnn.112
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.112" }
 	title = hnn.112.t
@@ -1640,7 +1636,7 @@ country_event = {#南京
 	}
 }
 
-country_event = {#北京 
+country_event = {#北京
 	id = hnn.113
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.113" }
 	title = hnn.113.t
@@ -1718,7 +1714,7 @@ country_event = {#王老五
 	}
 }
 
-country_event = {#夺下北京 
+country_event = {#夺下北京
 	id = hnn.133
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.133" }
 	title = hnn.133.t
@@ -1930,7 +1926,6 @@ country_event = {#租界问题
 		}
 	}
 }
-
 country_event = {#租界问题
 	id = hnn.114
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.114" }
@@ -1967,7 +1962,6 @@ country_event = {#租界问题
 		}
 	}
 }
-
 country_event = {#使馆城市
 	id = hnn.115
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.115" }
@@ -1990,7 +1984,6 @@ country_event = {#使馆城市
 		HNN = { country_event = hnn.118 }
 	}
 }
-
 country_event = {#徳属东亚和葡萄牙
 	id = hnn.116
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.116" }
@@ -2013,7 +2006,6 @@ country_event = {#徳属东亚和葡萄牙
 		HNN = { country_event = hnn.118 }
 	}
 }
-
 country_event = {#徳属东亚和葡萄牙
 	id = hnn.135
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.116" }
@@ -2036,7 +2028,6 @@ country_event = {#徳属东亚和葡萄牙
 		HNN = { country_event = hnn.118 }
 	}
 }
-
 country_event = {#使馆城市同意
 	id = hnn.117
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.117" }
@@ -2057,7 +2048,6 @@ country_event = {#使馆城市同意
 		}
 	}
 }
-
 country_event = {#要求被否定
 	id = hnn.118
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.118" }
@@ -2076,7 +2066,6 @@ country_event = {#要求被否定
 		}
 	}
 }
-
 country_event = {#葡萄牙同意
 	id = hnn.119
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.119" }
@@ -2093,7 +2082,6 @@ country_event = {#葡萄牙同意
 		transfer_state = 729
 	}
 }
-
 country_event = {#德国同意
 	id = hnn.120
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.120" }
@@ -2114,7 +2102,6 @@ country_event = {#德国同意
 		transfer_state = 728
 	}
 }
-
 country_event = {#德国是否选择和平
 	id = hnn.121
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.121" }
@@ -2146,7 +2133,6 @@ country_event = {#德国是否选择和平
 		add_political_power = -50
 	}
 }
-
 country_event = {#与德国和平
 	id = hnn.122
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.122" }
@@ -2174,7 +2160,6 @@ country_event = {#与德国和平
 		add_political_power = -50
 	}
 }
-
 country_event = {#葡萄牙是否选择和平
 	id = hnn.123
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.123" }
@@ -2202,7 +2187,6 @@ country_event = {#葡萄牙是否选择和平
 		add_political_power = -50
 	}
 }
-
 country_event = {#与葡萄牙和平
 	id = hnn.124
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.124" }
@@ -2440,7 +2424,6 @@ country_event = {#社会救助
 ########################################
 ##########-     汤芗铭   -##############
 ########################################
-
 country_event = {#大战
 	id = hnnzhili.1
 	title = hnnzhili.1.t

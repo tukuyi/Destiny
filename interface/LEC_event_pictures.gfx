@@ -36,4 +36,12 @@ spriteTypes = {
 		name = "GFX_report_event_LEC_jian_shi"
 		texturefile = "gfx/event_news_pictures/LEC/LEC_jian_shi.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_bai_e_nan_ming"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_bai_e_nan_ming.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_nan_ming_wen_ti"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_nan_ming_wen_ti.png"
+	}
 }

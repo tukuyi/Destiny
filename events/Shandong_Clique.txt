@@ -140,6 +140,7 @@ country_event = {#农村匪患
 country_event = {#崂山汽水厂
 	id = SQI.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.5" }
+	picture = GFX_report_event_SQI_lao_shan_qi_shui
 	title = SQI.5.t
 	desc = SQI.5.d
 

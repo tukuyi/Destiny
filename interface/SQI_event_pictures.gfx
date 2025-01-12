@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType  = {
+		name = "GFX_report_event_SQI_lao_shan_qi_shui"
+		texturefile = "gfx/event_news_pictures/SQI/SQI_lao_shan_qi_shui.png"
+	}
+}
