@@ -11352,6 +11352,27 @@ country_event = {#万岁老大个
 	}
 }
 
+country_event = {#甘红血染
+	id = lngst.50
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.50" }
+	title = lngst.50.t
+	desc = lngst.50.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.50.a
+		KOR = {
+			add_manpower = -1
+			add_popularity = {
+				ideology = totalist
+				popularity = -0.01
+			}
+		}
+	}
+}
+
 ########################################
 ########-       百色起义     -##########
 ########################################

@@ -93,6 +93,25 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GXC_jue_fa_shua_guo_shui"
 			send_embargo = JAP
 			add_ideas = isolation
+			if = {
+				limit = { 
+					KOR = {
+						is_ai = no
+					}
+				}
+				country_event = { 
+					id = lngst.50
+					days = 10
+				}
+			}
+			else = {
+				GXC = {
+					country_event = { 
+						id = lngst.50
+						days = 10
+					}
+				}
+			}
 		}
 	}
 
