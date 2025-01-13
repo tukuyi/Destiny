@@ -666,13 +666,13 @@ GXC_JAP_build = {#大可口帝国
 	hidden_effect = {
 		JAP = {
 			set_cosmetic_tag = GXC_JAP
-			load_focus_tree = generic_focus
+			load_focus_tree = GXC_Coke
 
 			create_country_leader = {
 				name = "岸信介"
 				picture = "gfx/leaders/JAP/Portrait_JAP_Nobusuke_Kishi.png"
 				expire = "1.1.1"
-				ideology = monopolized_anarchism_subtype
+				ideology = Coca_Cola_Monarchy
 				traits = {}
 			}
 			set_politics = {
@@ -682,6 +682,10 @@ GXC_JAP_build = {#大可口帝国
 				ideology = national_populist
 				long_name =  GXC_national_populist_KOR_long
 				name =  GXC_national_populist_KOR
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 1
 			}
 
 			transfer_state = 528

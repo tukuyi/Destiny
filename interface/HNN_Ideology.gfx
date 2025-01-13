@@ -116,6 +116,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/Yiguandao.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_Coca_Cola_Monarchy"
+		texturefile = "gfx/ideologies/subideologies/Coca_Cola_Monarchy.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_lixing_group_subtype"
 		texturefile = "gfx/ideologies/subideologies/lixing_group.png"
 	}

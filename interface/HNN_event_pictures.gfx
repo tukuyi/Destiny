@@ -296,6 +296,10 @@ spriteTypes = {
 		name = "GFX_report_event_HNN_san_fan"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_san_fan.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_rong_yi_ren"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_rong_yi_ren.png"
+	}
 	#新闻
 	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna"

@@ -8196,6 +8196,7 @@ country_event = {#向邓主席提些意见
 country_event = {#荣毅仁入党
 	id = hungong.81
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.81" }
+	picture = GFX_report_event_HNN_rong_yi_ren
 	title = hungong.81.t
 	desc = hungong.81.d
 

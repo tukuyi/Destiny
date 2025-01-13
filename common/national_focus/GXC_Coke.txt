@@ -1,0 +1,102 @@
+focus_tree = {
+	id = GXC_Coke
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = JAP
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 1000 y = 0 }
+
+	focus = {
+		id = GXC_jia_mian_xin_tian_huang
+		icon = GFX_goal_GXC_jia_mian_xin_tian_huang
+		cost = 2.00
+		x = 0
+		y = 0
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_jia_mian_xin_tian_huang"
+			if = {
+				limit = { 
+					JAP = {
+						is_ai = no
+					}
+				}
+				country_event = { 
+					id = lngst.51
+					days = 10
+				}
+			}
+			else = {
+				GXC = {
+					country_event = { 
+						id = lngst.51
+						days = 10
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GXC_huang_xin_guo_ming
+		icon = GFX_goal_GXC_huang_xin_guo_ming
+		relative_position_id = GXC_jia_mian_xin_tian_huang
+		cost = 2.00
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = GXC_jia_mian_xin_tian_huang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_huang_xin_guo_ming"
+			add_ideas = coco_cola_is_all
+		}
+	}
+
+	focus = {
+		id = GXC_ke_le_xian_bing
+		icon = GFX_goal_GXC_ke_le_xian_bing
+		relative_position_id = GXC_jia_mian_xin_tian_huang
+		cost = 2.00
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = GXC_jia_mian_xin_tian_huang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_ke_le_xian_bing"
+			add_stability = 1
+			add_war_support = 1
+		}
+	}
+
+	focus = {
+		id = GXC_ba_hong_yi_yu
+		icon = GFX_goal_GXC_ba_hong_yi_yu
+		relative_position_id = GXC_jia_mian_xin_tian_huang
+		cost = 100000.00
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = GXC_ke_le_xian_bing
+		}
+		prerequisite = {
+			focus = GXC_huang_xin_guo_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GXC_ba_hong_yi_yu"
+			custom_effect_tooltip = GXC_coco_cola_is_all
+		}
+	}
+}

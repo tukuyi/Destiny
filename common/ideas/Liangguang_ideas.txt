@@ -3499,6 +3499,17 @@ ideas = {
 				production_lack_of_resource_penalty_factor = -0.15
 			}
 		}	
+		coco_cola_is_all = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea coco_cola_is_all"}
+			allowed = {	always = no	}
+			modifier = {
+				production_speed_buildings_factor = 1
+				production_speed_arms_factory_factor = 1
+				production_factory_efficiency_gain_factor = 1
+				production_factory_start_efficiency_factor = 1
+				production_speed_industrial_complex_factor = 1
+			}
+		}
 	#陈廉伯-军事
 		GXC_sheng_ming_ye_shi = {#生命也是一种货币
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GXC_sheng_ming_ye_shi"}

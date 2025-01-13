@@ -11373,6 +11373,26 @@ country_event = {#甘红血染
 	}
 }
 
+country_event = {#可乐天皇
+	id = lngst.51
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.51" }
+	title = lngst.51.t
+	desc = lngst.51.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.51.a
+		JAP = {
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.01
+			}
+		}
+	}
+}
+
 ########################################
 ########-       百色起义     -##########
 ########################################

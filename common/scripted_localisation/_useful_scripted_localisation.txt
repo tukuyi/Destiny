@@ -4518,6 +4518,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = Coca_Cola_Monarchy
+		}
+		localization_key = Coca_Cola_Monarchy
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = lixing_group_subtype
 		}
 		localization_key = lixing_group_subtype
