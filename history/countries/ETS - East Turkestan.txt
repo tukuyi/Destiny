@@ -38,6 +38,7 @@ add_ideas = {
 	extensive_conscription
 	isolation
 	ETS_amateur_bureaucrats
+	
 	ETS_Sabit_Damulla_Abdulbaki_hog_pau
 	ETS_Tawfiq_Bay_for_pau
 	ETS_Yunus_Hajji_eco_pau
