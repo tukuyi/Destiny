@@ -55,6 +55,13 @@ is_possible_united_front_member = {
 				}
 			}
 		}
+		AND = {
+			tag = ETS
+			OR = {
+				has_government = totalist
+				has_government = radical_socialist
+			}
+		}
 	}
 }
 
