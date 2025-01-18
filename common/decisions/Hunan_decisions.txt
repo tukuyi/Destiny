@@ -62,6 +62,327 @@ political_actions = {
 			country_event = hungong.169
 		}
 	}
+	MON_bulid_yi_er = {
+		icon = GFX_decision_portraits_picker
+		allowed = { 
+			tag = MON
+		}
+		visible = {
+			has_completed_focus = MON_ilkhanate
+		}
+		available = {
+			is_subject = no
+			266 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			OR = {
+				is_in_faction_with = TRK
+				NOT = { country_exists = TRK }
+			}
+		}
+
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 1
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_Portrait_Picker"
+			custom_effect_tooltip = MON_restore_ilkhanate
+			hidden_effect = {
+				if = {
+					limit = {
+						TRK = { exists = no }
+					}
+					set_temp_variable = { tag_to_release = TRK }
+					release_targeted_tag = yes
+					puppet_released_tag = yes
+				}
+			}
+			
+			hidden_effect = {
+				every_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = PER
+								is_claimed_by = TRK
+								is_claimed_by = AFG
+								is_claimed_by = AZE
+								is_core_of = PER
+								is_core_of = TRK
+								is_core_of = AFG
+								is_core_of = AZE
+								state = 444
+								state = 442
+								state = 445
+								state = 1219
+								state = 584
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					add_core_of = TRK
+				}
+				every_owned_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = PER
+								is_claimed_by = TRK
+								is_claimed_by = AFG
+								is_claimed_by = AZE
+								is_core_of = PER
+								is_core_of = TRK
+								is_core_of = AFG
+								is_core_of = AZE
+								state = 444
+								state = 442
+								state = 445
+								state = 1219
+								state = 584
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					TRK = {
+						transfer_state = PREV
+					}
+				}
+				TRK = {
+					set_cosmetic_tag = TRK_ILK
+					add_ideas = MON_scourge_of_the_steppes
+					set_politics = {
+						ruling_party = paternal_autocrat
+					}
+				}
+			}
+		}
+	}
+	MON_bulid_jin_zhang = {
+		icon = GFX_decision_portraits_picker
+		allowed = { 
+			tag = MON
+		}
+		visible = {
+			has_completed_focus = MON_ilkhanate
+		}
+		available = {
+			is_subject = no
+			195 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			619 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			1263 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			OR = {
+				is_in_faction_with = DKB
+				NOT = { country_exists = DKB }
+			}
+			OR = {
+				is_in_faction_with = RUS
+				NOT = { country_exists = RUS }
+			}
+			OR = {
+				is_in_faction_with = KUB
+				NOT = { country_exists = KUB }
+			}
+			OR = {
+				is_in_faction_with = MTR
+				NOT = { country_exists = MTR }
+			}
+			OR = {
+				is_in_faction_with = GEO
+				NOT = { country_exists = GEO }
+			}
+			OR = {
+				is_in_faction_with = RUS
+				NOT = { country_exists = RUS }
+			}
+		}
+		
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 1
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MON_bulid_jin_zhang"
+			custom_effect_tooltip = MON_restore_jin_zhang
+			hidden_effect = {
+				if = {
+					limit = {
+						DKB = { exists = no }
+					}
+					set_temp_variable = { tag_to_release = DKB }
+					release_targeted_tag = yes
+					puppet_released_tag = yes
+				}
+			}
+	
+			hidden_effect = {
+				every_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = TTR
+								is_claimed_by = KUB
+								is_claimed_by = MTR
+								is_claimed_by = GEO
+								is_claimed_by = RUS
+								is_core_of = TTR
+								is_core_of = KUB
+								is_core_of = MTR
+								is_core_of = GEO
+								is_core_of = RUS
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					add_core_of = DKB
+				}
+				every_owned_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = TTR
+								is_claimed_by = KUB
+								is_claimed_by = MTR
+								is_claimed_by = GEO
+								is_claimed_by = RUS
+								is_core_of = TTR
+								is_core_of = KUB
+								is_core_of = MTR
+								is_core_of = GEO
+								is_core_of = RUS
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					DKB = {
+						transfer_state = PREV
+					}
+				}
+				DKB = {
+					set_cosmetic_tag = TTR_GHD
+					add_ideas = MON_scourge_of_the_steppes
+					set_politics = {
+						ruling_party = paternal_autocrat
+					}
+				}
+			}
+		}
+	}
+	MON_bulid_cha_he_tai = {
+		icon = GFX_decision_portraits_picker
+		allowed = { 
+			tag = MON
+		}
+		visible = {
+			has_completed_focus = MON_ilkhanate
+		}
+		available = {
+			is_subject = no
+			407 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			619 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			1083 = {
+				is_owned_by_ROOT_or_subject = yes
+			}
+			OR = {
+				is_in_faction_with = TAN
+				NOT = { country_exists = TAN }
+			}
+			OR = {
+				is_in_faction_with = SIK
+				NOT = { country_exists = SIK }
+			}
+			OR = {
+				is_in_faction_with = ALO
+				NOT = { country_exists = ALO }
+			}
+		}
+		
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 1
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MON_bulid_cha_he_tai"
+			custom_effect_tooltip = MON_restore_cha_he_tai
+			hidden_effect = {
+				if = {
+					limit = {
+						TAN = { exists = no }
+					}
+					set_temp_variable = { tag_to_release = TAN }
+					release_targeted_tag = yes
+					puppet_released_tag = yes
+				}
+			}
+	
+			hidden_effect = {
+				every_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = ETS
+								is_claimed_by = KYR
+								is_claimed_by = SIK
+								is_claimed_by = ALO
+								is_core_of = ETS
+								is_core_of = KYR
+								is_core_of = SIK
+								is_core_of = ALO
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					add_core_of = TAN
+				}
+				every_owned_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = ETS
+								is_claimed_by = KYR
+								is_claimed_by = SIK
+								is_claimed_by = ALO
+								is_core_of = ETS
+								is_core_of = KYR
+								is_core_of = SIK
+								is_core_of = ALO
+							}
+							NOT = { is_core_of = MON }
+						}
+					}
+					TAN = {
+						transfer_state = PREV
+					}
+				}
+				TAN = {
+					set_cosmetic_tag = TAN_CHAGATAI
+					add_ideas = MON_scourge_of_the_steppes
+					set_politics = {
+						ruling_party = paternal_autocrat
+					}
+				}
+			}
+		}
+	}
 }
 
 HNN_revolution_category = {#革命之火

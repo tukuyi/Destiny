@@ -11,16 +11,6 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		create_country_leader = {
-			name = "高岗"
-			desc = "POLITICS_HNN_GAO_GANG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Gao_gang.png"
-			expire = "1965.1.1"
-			ideology = centralized_syndicalism_subtype
-		}
-		set_politics = {
-			ruling_party = syndicalist
-		}
 		
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all

@@ -96,6 +96,15 @@
  TIB_ADJ:0 "西藏"
  TIB_DEF:0 "西藏"
 
+ MON_bulid_yi_er: "重建伊尔汗国"
+ MON_bulid_jin_zhang: "重建金帐汗国"
+ MON_bulid_cha_he_tai: "重建察合台汗国"
+ MON_restore_jin_zhang:0 "§O我们将在俄罗斯重建金帐汗国傀儡§!"
+ MON_restore_cha_he_tai:0 "§O我们将在中亚重建察合台汗国傀儡§!"
+ MON_restore_sida:0 "§O我们将在重建四大汗国傀儡§!"
+ MON_ilkhanate_four: "重建大汗国"
+ MON_ilkhanate_four_desc:0 "和前人一样，我们也可以考虑在波斯建立一个附属国，他们可以更好地利用当地领土，减轻我们肩上繁重的行政负担。"
+
  RUS_ice_march_trait: "白军传承"
  RUS_ice_march_trait_desc: "§L这位领导人乃是俄罗斯内战的老兵与英雄，曾同布党红色分子浴血奋战。如果哪一天俄罗斯大地上再次出现社会主义，那么他必将起身与之抗争。§!"
  SQI_yue_dui: "姆吉卡"
