@@ -1154,6 +1154,7 @@ ETS_war_economy = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout ETS_weekly_hotan_gold"
 			custom_effect_tooltip = ETS_gold_hotan_weekly_tt
 			add_to_variable = { ETS_gold_amount = 1.0 }
+			add_political_power = 25
 		}
 	}
 	
