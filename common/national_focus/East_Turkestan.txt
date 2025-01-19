@@ -4300,7 +4300,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_zhua_zhu_shi_ji
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_generic_intense_warfare
 		x = 35
 		y = 12
 		cost = 2
@@ -4318,7 +4318,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_xiang_bei_er_wang
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_SOV_leningrad
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = -2
 		y = 1
@@ -4344,7 +4344,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_chong_fan_zhong_hua
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_chi_one_china_policy_KMT
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = 2
 		y = 1

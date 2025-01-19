@@ -11376,6 +11376,7 @@ country_event = {#甘红血染
 country_event = {#可乐天皇
 	id = lngst.51
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.51" }
+	picture = GFX_report_event_GXC_coco_cola
 	title = lngst.51.t
 	desc = lngst.51.d
 

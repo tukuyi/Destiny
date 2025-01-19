@@ -47,4 +47,8 @@ spriteTypes = {
 		name = "GFX_report_event_GXC_kekokele_flag"
 		texturefile = "gfx/event_news_pictures/GXC/GXC_kekokele_flag.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_GXC_coco_cola"
+		texturefile = "gfx/event_news_pictures/GXC/GXC_coco_cola.png"
+	}
 }
