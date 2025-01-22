@@ -5055,3 +5055,7 @@ ETS_RED = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }
 }
+ETS_PRC = {
+	color = rgb { 222 41 16 }
+	color_ui = rgb { 222 41 16 }
+}

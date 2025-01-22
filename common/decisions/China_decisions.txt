@@ -595,6 +595,13 @@ chinese_unification = {
 					}
 				}
 			}
+			else_if = {
+				limit = {#红月亮 
+					tag = ETS
+					has_completed_focus = ETS_guang_zi_bei_lai
+				}
+				set_cosmetic_tag = ETS_PRC
+			}
 			else = {
 				set_cosmetic_tag = ROC
 			}

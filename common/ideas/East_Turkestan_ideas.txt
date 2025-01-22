@@ -388,6 +388,21 @@ ideas = {
 					production_factory_efficiency_gain_factor = 0.04
 				}
 			}	
+			ETS_min_zu_dai_biao_da_hui2 = {#中华民族
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_min_zu_dai_biao_da_hui2"}
+				allowed = { always = no }
+				picture = ALB_flowers_socialism
+				modifier = {
+					local_resources = 0.20
+					stability_factor = 0.10
+					stability_weekly = 0.010
+					war_support_factor = 0.05
+					monthly_population = 0.02
+					conscription_factor = 0.20
+					production_speed_buildings_factor = 0.10
+					production_factory_efficiency_gain_factor = 0.05
+				}
+			}	
 			ETS_xin_ping_jiu_jiu = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_min_zu_dai_biao"}
 				allowed = { always = no }

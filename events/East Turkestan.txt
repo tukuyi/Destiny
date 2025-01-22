@@ -1908,7 +1908,7 @@ country_event = { #free elections
 	option = {
 		name = ets.101.a
 		ai_chance = {
-			factor = 3
+			base = 3
 			modifier = {
 				factor = 0
 				OR = {
@@ -1939,7 +1939,7 @@ country_event = { #free elections
 	option = {
 		name = ets.101.b
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -1969,7 +1969,7 @@ country_event = { #free elections
 	option = {
 		name = ets.101.c
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -2008,6 +2008,9 @@ country_event = { #we ate china what do
 	trigger = {
 		tag = ETS
 		owns_state = 608
+		NOT = {
+			has_completed_focus = ETS_guang_zi_bei_lai
+		}
 	}
 
 	option = {

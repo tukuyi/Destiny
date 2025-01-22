@@ -4312,7 +4312,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_zhua_zhu_shi_ji"
-
+			add_war_support = 0.05
 		}
 	}
 
@@ -4338,7 +4338,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_xiang_bei_er_wang"
-
+			army_experience = 50.0
+			add_command_power = 50
 		}
 	}
 
@@ -4360,7 +4361,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_fan_zhong_hua"
-
+			army_experience = 15.0
+			add_command_power = 20
+			set_potential_national_government = yes
 		}
 	}
 
@@ -4645,11 +4648,11 @@ focus_tree = {
 
 	focus = {
 		id = ETS_ran_qi_feng_huo
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_BBR_red_militia_justice
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = 0
 		y = 3
-		cost = 3
+		cost = 2
 
 		prerequisite = {
 			focus = ETS_fang_yu_bian_jing
@@ -4673,7 +4676,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_chong_jian_su_wei_ai
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_SOV_totalist_propaganda
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = 0
 		y = 4
@@ -4693,12 +4696,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_jian_su_wei_ai"
 			set_cosmetic_tag = LEC_SOV
+			hidden_effect = {
+				GER_remove_from_mitteleuropa = yes
+			}
 		}
 	}
 
 	focus = {
 		id = ETS_tu_xi_meng_gu_ren
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_MON_anti_chinese_thought
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = 3
 		y = 2
@@ -4729,7 +4735,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_chong_gou_zhong_hua_ming_zu
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_ALB_Nationalization
 		relative_position_id = ETS_tu_xi_meng_gu_ren
 		x = -1
 		y = 1
@@ -4746,22 +4752,31 @@ focus_tree = {
 					is_in_faction_with = ROOT
 				}
 			}
+			OR = {
+				owns_state = 322
+				owns_state = 325
+				owns_state = 604
+				owns_state = 605
+			}
 		}
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_gou_zhong_hua_ming_zu"
-			
+			swap_ideas = {
+				remove_idea = ETS_min_zu_dai_biao_da_hui
+				add_idea = ETS_min_zu_dai_biao_da_hui2
+			}
 		}
 	}
 
 	focus = {
 		id = ETS_jin_ju_nan_fang
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_MON_bring_down_the_yunnan_warlords
 		relative_position_id = ETS_tu_xi_meng_gu_ren
 		x = 1
 		y = 1
-		cost = 2
+		cost = 3
 
 		prerequisite = {
 			focus = ETS_tu_xi_meng_gu_ren
@@ -4788,6 +4803,13 @@ focus_tree = {
 					is_in_faction_with = ROOT
 				}
 			}
+			YUN = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
 		}
 		ai_will_do = { base = 100 }
 
@@ -4805,16 +4827,20 @@ focus_tree = {
 				target = SZC
 				type = annex_everything
 			}
+			create_wargoal = {
+				target = YUN
+				type = annex_everything
+			}
 		}
 	}
 
 	focus = {
 		id = ETS_di_san_ci_guo_ge_ming
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_MEX_Red_Redder_Revolution
 		relative_position_id = ETS_tu_xi_meng_gu_ren
 		x = 0
 		y = 2
-		cost = 5
+		cost = 3
 
 		prerequisite = {
 			focus = ETS_jin_ju_nan_fang
@@ -4873,11 +4899,11 @@ focus_tree = {
 
 	focus = {
 		id = ETS_bei_jin_bei_jin
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_FRA_red_terror
 		relative_position_id = ETS_tu_xi_meng_gu_ren
 		x = 0
 		y = 3
-		cost = 5
+		cost = 2
 
 		prerequisite = {
 			focus = ETS_di_san_ci_guo_ge_ming
@@ -4889,6 +4915,28 @@ focus_tree = {
 			declare_war_on = {
 				target = QIE
 				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_duo_hui_zu_jie
+		icon = GFX_goal_mass_concentration_of_army
+		relative_position_id = ETS_tu_xi_meng_gu_ren
+		x = 0
+		y = 4
+		cost = 3
+
+		prerequisite = {
+			focus = ETS_bei_jin_bei_jin
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_duo_hui_zu_jie"
+			country_event = {
+				id = hnn.114
+				days = 5
 			}
 		}
 	}
@@ -4945,7 +4993,7 @@ focus_tree = {
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = 0
 		y = 3
-		cost = 2
+		cost = 3
 
 		prerequisite = {
 			focus = ETS_da_tong_hai_xia
@@ -4960,6 +5008,81 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_jie_ao_si_man_ba_quan"
 			create_wargoal = {
 				target = TUR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ETS_chong_fan_gao_jia_suo
+		icon = GFX_RUS_caucasus
+		relative_position_id = ETS_zhua_zhu_shi_ji
+		x = 1
+		y = 4
+		cost = 3
+
+		prerequisite = {
+			focus = ETS_chong_jie_ao_si_man_ba_quan
+		}
+		bypass = {
+			DKB = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			KUB = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			MTR = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			GEO = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			AZE = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus ETS_chong_fan_gao_jia_suo"
+			create_wargoal = {
+				target = DKB
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = KUB
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = MTR
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = GEO
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = AZE
 				type = annex_everything
 			}
 		}

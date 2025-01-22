@@ -6,12 +6,12 @@ ETS_Central_east_war_cat = {
 		original_tag = ETS
 	}
 
-	# visible = {
-	# 	OR = {
-	# 		# has_war_with = RUS
-	# 		# has_completed_focus = ETS_fang_fan_xiong_zhua
-	# 	}
-	# }
+	visible = {
+		OR = {
+			has_war_with = RUS
+			has_completed_focus = ETS_fang_fan_xiong_zhua
+		}
+	}
 }
 
 ETS_di_yi_wu_nian_category = {#一五计划
