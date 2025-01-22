@@ -4366,7 +4366,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_di_ren_de_di_ren
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_generic_world_diplomacy
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = -5
 		y = 2
@@ -4485,7 +4485,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_jia_ru_zhong_ou
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_BAN_army_for_strong
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = -3
 		y = 2
@@ -4494,10 +4494,14 @@ focus_tree = {
 		prerequisite = {
 			focus = ETS_xiang_bei_er_wang
 		}
+		available = {
+			has_political_power > 200
+		}
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_jia_ru_zhong_ou"
+			add_political_power = -200
 			army_experience = 50.0
 			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
@@ -4521,7 +4525,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_yuan_dong_meng_you
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_focus_ALO_TRM
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = 0
 		y = 1
@@ -4553,7 +4557,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_fang_yu_tian_ji
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_CZE_air_industry
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = -2
 		y = 2
@@ -4566,6 +4570,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_fang_yu_tian_ji"
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe
+				amount = 150
+				producer = GER
+			}
 			every_owned_state = {
 				limit = {
 					is_in_home_area = yes
@@ -4581,7 +4590,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_wei_xom_uamh_er_zhan
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_GUA_People_Army
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = 0
 		y = 2
@@ -4607,7 +4616,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_fang_yu_bian_jing
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_generic_mountain_artillery
 		relative_position_id = ETS_jia_ru_zhong_ou
 		x = 2
 		y = 2
@@ -4886,7 +4895,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_nian_sui_wen_sha
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_DEH_integrate_PRF
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = -1
 		y = 2
@@ -4909,7 +4918,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_da_tong_hai_xia
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_focus_rus_persia
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = 1
 		y = 2
@@ -4932,7 +4941,7 @@ focus_tree = {
 
 	focus = {
 		id = ETS_chong_jie_ao_si_man_ba_quan
-		icon = GFX_goal_ETS_xi_ya_zhan_zheng_jie_shu
+		icon = GFX_goal_ottoman
 		relative_position_id = ETS_zhua_zhu_shi_ji
 		x = 0
 		y = 3
