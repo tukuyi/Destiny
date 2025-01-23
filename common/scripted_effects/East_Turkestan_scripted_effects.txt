@@ -83,6 +83,10 @@ ETS_central_aisa_war_effect = {#中亚战争
 			annex_country = {
 				target = ALO
 			}
+			country_event = {
+				id = xinren.15
+				days = 5
+			}
 		}
 	}
 	else_if = {

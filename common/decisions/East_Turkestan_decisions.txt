@@ -107,6 +107,12 @@ ETS_Central_east_war_cat = {#大西亚战争
 					}
 				}
 			}
+			hidden_effect = {
+				country_event = {
+					id = xinren.14
+					days = 4
+				}
+			}
 		}
 	}
 

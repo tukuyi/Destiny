@@ -63,6 +63,19 @@ on_actions = {
 							}
 						}
 					}
+					if = {
+						limit = { 
+							ETS = {
+								has_completed_focus = ETS_wu_si_man
+							}
+						}
+						ETS = {
+							country_event = {
+								id = xinren.11
+								days = 5
+							}
+						}
+					}
 				}
 			}
 			if = {
@@ -88,6 +101,10 @@ on_actions = {
 								mission = ETS_war_timer
 								days = -20
 							}
+						}
+						country_event = {
+							id = xinren.13
+							days = 5
 						}
 					}
 				}

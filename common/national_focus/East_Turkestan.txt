@@ -1955,6 +1955,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_xin_jiao_yi"
 			add_ideas = ETS_xin_ping_jiu_jiu 
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = xinren.10
+				days = 6
+			}
 		}
 	}	
 
@@ -2035,6 +2040,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_jian_tao_cuo_wu"
 			custom_effect_tooltip = EST_must_return 
 			hidden_effect = {
+				country_event = {
+					id = xinren.12
+					days = 6
+				}
 				add_stability = 0.10
 				add_timed_idea = {
 					idea = ETS_bu_chang_zheng_ce
