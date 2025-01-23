@@ -15825,9 +15825,27 @@ country_event = {#新领袖
 			elections_allowed = no
 		}
 	}
+
+	option = {#胡风
+		name = lecgong.18.b
+		set_country_flag = QD_LEADER_GUI_VISIBLE
+		set_country_flag = SHC_wo_men_de_xin_ling_xiu
+		
+		create_country_leader = {
+			name = "马三立"
+			picture = "gfx/leaders/LEC/Portrait_LEC_hu_feng.png"
+			expire = "1.1.1"
+			ideology = radical_progressivism_subtype
+			traits = {  }
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+	}
 	
 	option = {
-		name = lecgong.18.b
+		name = lecgong.18.c
 		hidden_effect = {
 			country_event = lecgong.9
 		}	
