@@ -4306,7 +4306,7 @@ focus_tree = {
 		cost = 2
 
 		allow_branch = {
-			# has_country_flag = ETS_war_is_over
+			has_country_flag = ETS_war_is_over
 		}
 		ai_will_do = { base = 100 }
 
