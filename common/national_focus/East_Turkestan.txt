@@ -3716,6 +3716,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_lao_you_suo_huo"
 			ETS_gong_xiang_tian_ci_effect= yes
+			country_event = {
+				id = xinren.27
+				days = 6
+			}
 		}
 	}
 
@@ -3736,6 +3740,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_tuan_jie_yi_xin"
 			ETS_gong_xiang_tian_ci_effect= yes
 			add_stability = 0.05
+			country_event = {
+				id = xinren.28
+				days = 6
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_STABILITY

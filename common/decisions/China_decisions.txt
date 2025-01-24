@@ -449,6 +449,12 @@ chinese_unification = {
 						country_event = { id = lngkmt.70 days = 3 }
 					}
 				}
+				else_if = {#百色
+					limit = { 
+						GXC_has_baise_goverment = yes 
+					}
+					set_cosmetic_tag = HNN_PROC
+				}
 				else_if = {
 					limit = {
 						is_ruled_by_left_kmt = yes
@@ -460,12 +466,6 @@ chinese_unification = {
 						is_ruled_by_right_kmt = yes
 					}
 					set_cosmetic_tag = GXC_united_china_right_kuomintang
-				}
-				else_if = {#百色
-					limit = { 
-						GXC_has_baise_goverment = yes 
-					}
-					set_cosmetic_tag = HNN_PROC
 				}
 				if = {
 					limit = { is_ruled_by_left_kmt = yes }
