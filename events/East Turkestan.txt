@@ -490,7 +490,14 @@ country_event = { #Uyghur Declaration
 			add_idea = ETS_amateur_bureaucrats_2
 		}
 		hidden_effect = {
-			country_event = { id = ets.17 days = 10 }
+			country_event = { 
+				id = ets.17 
+				days = 10 
+			}
+			country_event = {
+				id = xinren.18
+				days = 20
+			}
 			add_state_core = 897
 		}
 	}
@@ -2353,6 +2360,12 @@ country_event = {#击毙赤匪首领！
 				damage = 0.4
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = xinren.17
+				days = 15
+			}
+		}
 	}
 }
 
@@ -2393,6 +2406,12 @@ country_event = {#东突厥斯坦民族军响应起义！
 				division = "division_template = \"起义军\" start_experience_factor = 0.5"
 				owner = PREV
 				count = 3
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = xinren.9
+				days = 7
 			}
 		}
 	}
@@ -2492,6 +2511,7 @@ country_event = {#民族军入城！
 				id = xinren.5
 				days = 5
 			}
+
 		}
 	}
 }
@@ -2543,7 +2563,10 @@ country_event = {#东突厥斯坦人民大会成立！
 		}
 		complete_national_focus = ETS_he_ai_de_fu
 		hidden_effect = {
-
+			country_event = {
+				id = xinren.20
+				days = 5
+			}
 		}
 	}
 
@@ -2569,7 +2592,7 @@ country_event = {#东突厥斯坦人民大会成立！
 		complete_national_focus = ETS_ren_ci_de_zhu
 		hidden_effect = {
 			country_event = {
-				id = xinren.9
+				id = xinren.23
 				days = 15
 			}
 		}
@@ -2764,5 +2787,202 @@ country_event = {#村支书讲话
 	option = {
 		name = xinren.15.a
 		add_stability = 0.01
+	}
+}
+
+country_event = {#毅然和爱然
+	id = xinren.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.16" }
+	title = xinren.16.t
+	desc = xinren.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.16.a
+	}
+}
+
+country_event = {#情丝不断
+	id = xinren.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.17" }
+	title = xinren.17.t
+	desc = xinren.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.17.a
+		hidden_effect = {
+			country_event = {
+				id = xinren.16
+				days = 15
+			}
+		}
+	}
+}
+
+country_event = {#重逢
+	id = xinren.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.18" }
+	title = xinren.18.t
+	desc = xinren.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.18.a
+		hidden_effect = {
+			country_event = {
+				id = xinren.19
+				days = 17
+			}
+		}
+	}
+}
+
+country_event = {#但那道鸿沟依旧
+	id = xinren.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.19" }
+	title = xinren.19.t
+	desc = xinren.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.19.a
+	}
+}
+
+country_event = {#然后再无填满之日
+	id = xinren.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.20" }
+	title = xinren.20.t
+	desc = xinren.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.20.a
+		country_event = {
+			id = xinren.21
+		}
+	}
+
+	option = {
+		name = xinren.20.b
+		hidden_effect = {
+			country_event = {
+				id = xinren.22
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {#遗书
+	id = xinren.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.21" }
+	title = xinren.21.t
+	desc = xinren.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.21.a
+		hidden_effect = {
+			country_event = {
+				id = xinren.22
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {#离恨空随江水长
+	id = xinren.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.22" }
+	title = xinren.22.t
+	desc = xinren.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.22.a
+	}
+}
+
+country_event = {#跨越天山的誓言
+	id = xinren.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.23" }
+	title = xinren.23.t
+	desc = xinren.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.23.a
+	}
+}
+
+country_event = {#奉至仁至慈的真主之名
+	id = xinren.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.24" }
+	title = xinren.24.t
+	desc = xinren.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.24.a
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#奉至仁至慈的真主之名
+	id = xinren.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.25" }
+	title = xinren.25.t
+	desc = xinren.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.25.a
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#奉至仁至慈的真主之名
+	id = xinren.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.26" }
+	title = xinren.26.t
+	desc = xinren.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.26.a
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.01
+		}
 	}
 }

@@ -3693,6 +3693,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_bing_fei_yu_yi_hao_qiang"
 			ETS_gong_xiang_tian_ci_effect= yes
+			country_event = {
+				id = xinren.24
+				days = 6
+			}
 		}
 	}
 
@@ -3782,6 +3786,10 @@ focus_tree = {
 				remove_idea = ETS_xin_ping_jiu_jiu2
 				add_idea = ETS_xin_ping_jiu_jiu3
 			}
+			country_event = {
+				id = xinren.25
+				days = 6
+			}
 		}
 	}
 
@@ -3833,6 +3841,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_sa_la_ding_zhi_yuan"
+			country_event = {
+				id = xinren.26
+				days = 6
+			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
