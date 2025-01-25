@@ -3022,3 +3022,19 @@ country_event = {#奉至仁至慈的真主之名
 		}
 	}
 }
+
+country_event = {#神明，由人打造
+	id = xinren.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.29" }
+	title = xinren.29.t
+	desc = xinren.29.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.29.a
+		add_political_power = 20
+		add_stability = 0.01
+	}
+}

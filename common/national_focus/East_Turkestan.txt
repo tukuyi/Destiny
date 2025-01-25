@@ -4255,6 +4255,10 @@ focus_tree = {
 					add = ETS_tian_shan_de_ying2
 				}
 			}	
+			country_event = {
+				id = xinren.29
+				days = 6
+			}
 		}
 	}
 
