@@ -2817,6 +2817,9 @@ focus_tree = {
 			NOT = {
 				has_war_with = RUS
 			}
+			KYR = {
+				is_puppet_of = ROOT
+			}
 		}
 		prerequisite = {
 			focus = ETS_shan_qu_bao_lei
