@@ -1626,6 +1626,7 @@ ETS_military_operation = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove ETS_timur_raise_militia"
 			custom_effect_tooltip = ETS_timur_raise_militia_tt
 			hidden_effect = {
+				army_experience = 20
 				619 = {
 					create_unit = {
 						division = "name = \"Timur's Militia\" division_template = \"Timur's Militia\" start_experience_factor = 0.0 start_equipment_factor = 1.0"

@@ -9821,6 +9821,17 @@ focus_tree = {
 				}
 			}
 			modifier = {
+				factor = 0
+				OR = {
+					YUN = {
+						exists = no
+					}
+					GXC = {
+						exists = no
+					}
+				}
+			}
+			modifier = {
 				factor = 2
 				YUN = {
 					OR = {

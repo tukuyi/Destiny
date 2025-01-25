@@ -79,7 +79,7 @@ focus_tree = {
 		relative_position_id = ETS_uyghur_revolution
 		x = -3
 		y = 2
-		cost = 6
+		cost = 5
 
 		ai_will_do = { base = 100 }
 
@@ -137,7 +137,6 @@ focus_tree = {
 		relative_position_id = ETS_uyghur_revolution
 		available = {
 			is_subject = no
-			has_country_flag = ETS_hotan_conversion_completed
 		}
 		x = -1
 		y = 2
@@ -1797,6 +1796,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_hong_se_yi_li"
+			remove_ideas = ETS_amateur_bureaucrats_2
 			country_event = {
 				id = xinren.6
 				days = 1
@@ -2027,7 +2027,7 @@ focus_tree = {
 		relative_position_id = ETS_guang_zi_bei_lai
 		x = 0
 		y = 3
-		cost = 5
+		cost = 3
 
 		prerequisite = {
 			focus = ETS_he_ai_de_fu
@@ -2247,6 +2247,7 @@ focus_tree = {
 
 		available = {
 			ALO = {
+				exists = yes
 				has_socialist_government = no
 			}
 			NOT = {
@@ -2274,6 +2275,7 @@ focus_tree = {
 				ETS = {
 					declare_war_on = {
 						target = ALO
+						type = annex_everything
 					}
 				}
 			}
@@ -4068,6 +4070,18 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			set_cosmetic_tag = ETS_mid_SOV
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = KYR
+							is_core_of = TRK
+							is_core_of = UZB
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -4099,6 +4113,14 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_ha_sha_ke_da_ju"
 			annex_country = {
 				target = ALO
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = ALO
+					}
+					add_core_of = ROOT
+				}
 			}
 		}
 	}
@@ -4225,6 +4247,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_nong_ye_gong_ye_hua"
 			ETS_xian_dai_hua_da_yue_jin_effect = yes
+			country_event = {
+				id = xinren.31
+				days = 6
+			}
 		}
 	}
 
@@ -4303,6 +4329,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ETS_xian_dai_hua"
 			ETS_xian_dai_hua_da_yue_jin_effect = yes
+			country_event = {
+				id = xinren.30
+				days = 6
+			}
 		}
 	}
 
@@ -4339,7 +4369,26 @@ focus_tree = {
 		cost = 2
 
 		allow_branch = {
-			has_country_flag = ETS_war_is_over
+			OR = {
+				has_country_flag = ETS_war_is_over
+				AND = {
+					NOT = {
+						has_country_flag = ETS_war_is_over
+					}
+					ALO = {
+						exists = no
+					}
+					UZB = {
+						exists = no
+					} 
+					TRK = {
+						exists = no
+					} 
+					KYR = {
+						exists = no
+					} 
+				}
+			}
 		}
 		ai_will_do = { base = 100 }
 
@@ -4791,6 +4840,7 @@ focus_tree = {
 				owns_state = 604
 				owns_state = 605
 			}
+			has_idea = ETS_min_zu_dai_biao_da_hui
 		}
 		ai_will_do = { base = 100 }
 

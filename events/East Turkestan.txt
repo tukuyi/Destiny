@@ -3038,3 +3038,34 @@ country_event = {#神明，由人打造
 		add_stability = 0.01
 	}
 }
+
+country_event = {#不过平常
+	id = xinren.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.30" }
+	title = xinren.30.t
+	desc = xinren.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.30.a
+		add_political_power = 20
+		add_stability = 0.01
+	}
+}
+country_event = {#春种
+	id = xinren.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event xinren.31" }
+	title = xinren.31.t
+	desc = xinren.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xinren.31.a
+		add_political_power = 20
+		add_stability = 0.01
+	}
+}

@@ -406,7 +406,7 @@ ideas = {
 			ETS_xin_ping_jiu_jiu = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_min_zu_dai_biao"}
 				allowed = { always = no }
-				picture = GFX_idea_islam
+				picture = islam
 				modifier = {
 					supply_node_range = 0.20
 					army_core_attack_factor = 0.05
@@ -418,7 +418,7 @@ ideas = {
 			ETS_xin_ping_jiu_jiu2 = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_xin_ping_jiu_jiu2"}
 				allowed = { always = no }
-				picture = GFX_idea_islam
+				picture = islam
 				name = ETS_xin_ping_jiu_jiu
 				modifier = {
 					supply_node_range = 0.20
@@ -433,7 +433,7 @@ ideas = {
 			ETS_xin_ping_jiu_jiu3 = {#新瓶装旧酒
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea ETS_xin_ping_jiu_jiu3"}
 				allowed = { always = no }
-				picture = GFX_idea_islam
+				picture = islam
 				name = ETS_xin_ping_jiu_jiu
 				modifier = {
 					supply_node_range = 0.20
