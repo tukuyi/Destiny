@@ -2268,7 +2268,10 @@ focus_tree = {
 				limit = { 
 					ALO = {
 						NOT = {
-							is_puppet_of = RUS
+							OR = {
+								is_puppet_of = RUS
+								is_in_faction_with = RUS
+							}
 						}
 					}
 				}
@@ -2282,7 +2285,10 @@ focus_tree = {
 			else_if = {
 				limit = { 
 					ALO = {
-						is_puppet_of = RUS
+						OR = {
+							is_puppet_of = RUS
+							is_in_faction_with = RUS
+						}
 					}
 				}
 				ROOT = {
