@@ -274,6 +274,46 @@ ETS_Central_east_war_cat = {#大西亚战争
 			}
 		}
 	}
+	ETS_fa_dong_ren_ming = {#发动人民
+		icon = GFX_decision_category_export_revolution
+
+		available = {
+			has_war_with = RUS
+		}
+
+		cost = 20
+		priority = 30
+		days_remove = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_fa_dong_ren_ming"
+			add_stability = -0.10
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ETS_fa_dong_ren_ming"
+			division_template = {
+				name = "起义军"
+				division_names_group = "LEC_GAR_01"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 2015 }
+				limit = { is_in_home_area = yes }
+				create_unit = {
+					division = "division_template = \"起义军\" start_experience_factor = 0.4"
+					owner = PREV
+					count = 4
+				}
+			}
+		}
+	}
 	ETS_shi_yue_yu_huo = {#十月余火
 		icon = GFX_decision_category_export_revolution
 

@@ -3308,10 +3308,10 @@ focus_tree = {
 		relative_position_id = ETS_xi_ya_zhan_zheng_jie_shu
 		x = -8
 		y = 1
-		cost = 0
+		cost = 1
 
 		available = {
-			always = no
+			has_country_flag = ETS_OUR_LOSS
 		}
 		prerequisite = {
 			focus = ETS_xi_ya_zhan_zheng_jie_shu
@@ -3650,6 +3650,9 @@ focus_tree = {
 				character = SIK_Ehmetjan_Qasimi
 				ruling_only = yes
 			}
+			NOT = {
+				has_country_flag = ETS_OUR_LOSS
+			}
 		}
 		prerequisite = {
 			focus = ETS_xi_ya_zhan_zheng_jie_shu
@@ -3953,6 +3956,9 @@ focus_tree = {
 			has_country_leader = {
 				character = SIK_Abdukirim_Abbasof
 				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = ETS_OUR_LOSS
 			}
 		}
 		prerequisite = {

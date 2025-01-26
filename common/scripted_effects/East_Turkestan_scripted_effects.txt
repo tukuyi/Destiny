@@ -63,8 +63,10 @@ ETS_central_aisa_war_effect = {#中亚战争
 			OR = {
 				653 = {
 					OR = {
+						is_controlled_by_ROOT_or_subject = yes
 						is_controlled_by_ROOT_or_ally = yes
 						is_controlled_by = ALO
+						is_controlled_by = ROOT
 					}
 				}
 				RUS = {
@@ -92,9 +94,13 @@ ETS_central_aisa_war_effect = {#中亚战争
 	else_if = {
 		limit = { 
 			810 = {
-				is_controlled_by = RUS
+				OR = {
+					is_owned_and_controlled_by = RUS
+					is_controlled_by = RUS
+				}
 			}
 		}
+		set_country_flag = ETS_OUR_LOSS
 		RUS = {
 			annex_country = {
 				target = ALO
@@ -112,13 +118,13 @@ ETS_central_aisa_war_effect = {#中亚战争
 				}
 			}
 		}
-		if = {
+		else_if = {
 			limit = { 
 				1279 = {
-					is_controlled_by = RUS
+					is_controlled_by = ETS
 				}
 			}
-			RUS = {
+			ETS = {
 				annex_country = {
 					target = KYR
 				}
@@ -136,6 +142,18 @@ ETS_central_aisa_war_effect = {#中亚战争
 				}
 			}
 		}
+		else_if = {
+			limit = { 
+				405 = {
+					is_controlled_by = ETS
+				}
+			}
+			ETS = {
+				annex_country = {
+					target = TRK
+				}
+			}
+		}
 		if = {
 			limit = { 
 				861 = {
@@ -148,7 +166,18 @@ ETS_central_aisa_war_effect = {#中亚战争
 				}
 			}
 		}
-		complete_national_focus = ETS_zhong_ya_zhi_shang
+		else_if = {
+			limit = { 
+				861 = {
+					is_controlled_by = ETS
+				}
+			}
+			ETS = {
+				annex_country = {
+					target = UZB
+				}
+			}
+		}
 		if = {
 			limit = { 
 				has_country_leader = {
