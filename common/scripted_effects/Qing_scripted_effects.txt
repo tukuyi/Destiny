@@ -240,6 +240,7 @@ QIE_kill_manchus = {
 					is_character = QIE_aisin_gioro_zaitao
 					is_character = QIE_aisin_gioro_pujie
 					is_character = QIE_aisin_gioro_xiqia
+					is_character = QIE_aisin_gioro_jixing
 				}
 			}
 			remove_unit_leader = yes
@@ -252,6 +253,7 @@ QIE_kill_manchus = {
 					is_character = QIE_aisin_gioro_zaitao
 					is_character = QIE_aisin_gioro_pujie
 					is_character = QIE_aisin_gioro_xiqia
+					is_character = QIE_aisin_gioro_jixing
 				}
 			}
 			set_nationality = NSW
@@ -266,6 +268,7 @@ QIE_tranfer_manchus_to_PREV = {
 				is_character = QIE_aisin_gioro_zaitao
 				is_character = QIE_aisin_gioro_pujie
 				is_character = QIE_aisin_gioro_xiqia
+				is_character = QIE_aisin_gioro_jixing
 			}
 		}
 		set_nationality = PREV

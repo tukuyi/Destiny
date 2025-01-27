@@ -226,31 +226,8 @@ focus_tree = {
 			QIE_aisin_gioro_zaitao = {
 				promote_leader = yes
 			}
-			create_corps_commander = {
-				name = "爱新觉罗·溥侊"
-				portrait_path = "gfx/leaders/QIE/Portrait_QIE_Pugong.png"
-				traits = {
-					cavalry_officer
-					politically_connected
-				}
-				skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 4
-			}
-			create_corps_commander = {
-				name = "爱新觉罗·载泽"
-				portrait_path = "gfx/leaders/QIE/Portrait_QIE_Zaize.png"
-				traits = {
-					cavalry_officer
-					politically_connected
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 4
+			QIE_Pugong = {
+				set_nationality = ROOT
 			}
 			create_navy_leader = {
 				name = "爱新觉罗·载洵"

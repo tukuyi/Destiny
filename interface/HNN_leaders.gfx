@@ -1218,6 +1218,18 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Yu_xue_zhong.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_QIE_Pugong"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Pugong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Li_Jichen"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Li_Jichen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Jixing"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Jixing.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_Wang_Lingyun"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wang_Lingyun.png"
 	}

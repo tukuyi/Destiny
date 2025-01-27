@@ -332,6 +332,7 @@ recruit_character = QIE_lu_xiangting
 recruit_character = QIE_xiao_yaonan
 recruit_character = QIE_li_bingzhi
 recruit_character = QIE_aisin_gioro_xiqia
+recruit_character = QIE_aisin_gioro_jixing
 recruit_character = QIE_zhang_shaozeng
 recruit_character = QIE_Cao_Shijie
 recruit_character = QIE_ha_hanzhang
@@ -348,6 +349,8 @@ recruit_character = QIE_wei_yisan
 recruit_character = QIE_guo_jijiao
 recruit_character = QIE_du_xijun
 recruit_character = QIE_Wang_Lingyun
+recruit_character = QIE_li_jichen
+recruit_character = QIE_Pugong
 
 QIE_wu_peifu = { set_variable = { china_alignment = token:northern_zhili } }
 
@@ -379,6 +382,10 @@ QIE_du_xijun = {
 QIE_Wang_Lingyun = {
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_Pugong = {
+	set_character_flag = CHN_original_unit_leader
 	retire = yes
 }
 

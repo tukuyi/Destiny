@@ -696,6 +696,31 @@ characters = {
 			logistics_skill = 2
 		}
 	}		
+#李济臣
+	QIE_li_jichen = {
+		name = QIE_li_jichen
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_Li_Jichen
+				large = GFX_Portrait_QIE_Li_Jichen
+			}
+		}
+		corps_commander = {
+			desc = QIE_li_jichen_commander_desc
+			traits = { 
+				QIE_Zhili_officer 
+				career_officer 
+				politically_connected 
+				media_personality 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
 ################
 ###   满洲   ###
 ################
@@ -800,5 +825,51 @@ characters = {
 			logistics_skill = 1
 		}
 		# id = 1183
+	}	
+#爱新觉罗·吉兴
+	QIE_aisin_gioro_jixing = {
+		name = QIE_aisin_gioro_jixing
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_Jixing
+				large = GFX_Portrait_QIE_Jixing
+			}
+		}
+		corps_commander = {
+			desc = QIE_aisin_gioro_jixing_commander_desc
+			traits = { 
+				QIE_Monarchist_officer 
+				career_officer 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#爱新觉罗·溥侊
+	QIE_Pugong = {
+		name = QIE_Pugong
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_Pugong
+				large = GFX_Portrait_QIE_Pugong
+			}
+		}
+		corps_commander = {
+			traits = {
+				QIE_Monarchist_officer
+				cavalry_officer
+				politically_connected
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
 	}	
 }
