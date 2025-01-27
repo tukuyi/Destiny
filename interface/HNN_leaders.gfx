@@ -1070,8 +1070,84 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Yu_Feng.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_QIE_wang_huaiqing"
-		texturefile = "gfx/leaders/QIE/Portrait_QIE_wang_huaiqing.png"
+		name = "GFX_Portrait_QIE_Wu_Peifu_AMRY"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wu_Peifu_AMRY.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Qin_Dechun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Qin_Dechun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Peng_Shouxin"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Peng_Shouxin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Li_Shuchun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Li_Shuchun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Ha_Hanzhang"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Ha_Hanzhang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Cao_Shijie"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Cao_Shijie.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Zhang_Shaozeng"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Shaozeng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Xiqia"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Xiqia.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Li_Bingzhi"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Li_Bingzhi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Xiao_Yaonan"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Xiao_Yaonan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Lu_Xiangting"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Lu_Xiangting.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Zhang_Qihuang"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zhang_Qihuang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Gobulo_Runqi"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Gobulo_Runqi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Wang_Chengbin"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wang_Chengbin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Liu_Menggeng"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Liu_Menggeng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Cai_Chengxun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Cai_Chengxun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Pujie"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Pujie"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Zaitao"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Zaitao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Jiang_Baili"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Jiang_Baili.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_QIE_jiang_baili_civilian"
@@ -1142,6 +1218,34 @@ spriteTypes = {
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Yu_xue_zhong.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_QIE_Wang_Lingyun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wang_Lingyun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Du_Xijun"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Du_Xijun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Guo_Jijiao"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Guo_Jijiao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Wei_Yisan"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wei_Yisan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_wang_huaiqing"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_wang_huaiqing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_zhang_yinwu"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_zhang_yinwu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_liu_zhenhua"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_liu_zhenhua.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_Huang_yan_pei"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Huang_yan_pei.png"
 	}
@@ -1188,6 +1292,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_QIE_Wu_Peifu_CIV"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Wu_Peifu_CIV.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Tang_Zaili"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Tang_Zaili.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Xing_Shilian"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Xing_Shilian.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Xiong_Bingqi"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Xiong_Bingqi.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_QIE_aisin_gioro_puyi_FRA"

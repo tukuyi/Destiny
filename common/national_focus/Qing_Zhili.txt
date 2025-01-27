@@ -678,10 +678,10 @@ focus_tree = {
 			every_army_leader = {
 				limit = {
 					OR = {
-						has_id = 1178
-						has_id = 1174
-						has_id = 1173
-						has_id = 1185
+						is_character = QIE_Gobulo_Runqi
+						is_character = QIE_aisin_gioro_pujie
+						is_character = QIE_aisin_gioro_zaitao
+						is_character = QIE_Cao_Shijie
 					}
 				}
 				add_attack = 1

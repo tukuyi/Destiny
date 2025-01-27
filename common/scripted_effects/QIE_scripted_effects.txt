@@ -1,19 +1,56 @@
-QIE_zhili_comeback = {#直系
-	every_other_country = {
-		every_unit_leader = {
-			limit = {
-				OR = {
-					has_id = 1171 #Jiang Baili
-					has_id = 1172 #Wang Huaiqing
-					has_id = 1179 #Zhang Qihuang
-					has_id = 1181 #Xiao Yaonan
-					has_id = 1184 #Zhang Shaozeng
-					has_id = 1176 #Liu Menggeng
-					has_id = 1175 #Cai Chengxun
-					has_id = 1185 #Cao Shijie
-				}
+
+QIE_recruit_characters_effect = {#重新招募
+	if = {
+		limit = {
+			NOT = {
+				THIS = { has_character_flag = is_dead }
+				QIE = { has_character = PREV }
 			}
-			set_nationality = ROOT
+		}
+		if = {
+			limit = { THIS = { is_army_leader = yes } }
+			demote_to_general = yes
+			remove_trait = { trait = recently_promoted }
+		}
+		set_nationality = QIE
+	}
+}
+
+QIE_zhili_comeback = {#直系
+	show_unit_leaders_tooltip = QIE_wang_huaiqing
+	show_unit_leaders_tooltip = QIE_jiang_bai_li
+	show_unit_leaders_tooltip = QIE_cai_chengxun
+	show_unit_leaders_tooltip = QIE_liu_menggeng
+	show_unit_leaders_tooltip = QIE_zhang_qihuang
+	show_unit_leaders_tooltip = QIE_xiao_yaonan
+	show_unit_leaders_tooltip = QIE_zhang_shaozeng
+	show_unit_leaders_tooltip = QIE_Cao_Shijie
+	hidden_effect = {
+		event_target:original_da_qing = {
+			QIE_wang_huaiqing = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_jiang_bai_li = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_cai_chengxun = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_liu_menggeng = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_zhang_qihuang = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_xiao_yaonan = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_zhang_shaozeng = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_Cao_Shijie = {
+				QIE_recruit_characters_effect = yes
+			}
 		}
 	}
 }

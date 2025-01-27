@@ -74,8 +74,8 @@ characters = {
 			}
 			skill = 5
 			attack_skill = 5
-			defense_skill = 2
-			planning_skill = 3
+			defense_skill = 4
+			planning_skill = 4
 			logistics_skill = 3
 			# id = 63103091009
 		}

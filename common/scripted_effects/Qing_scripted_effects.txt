@@ -38,14 +38,14 @@ QIE_zhili_clique_flees = {
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 1171 #Jiang Baili
-					has_id = 1172 #Wang Huaiqing
-					has_id = 1179 #Zhang Qihuang
-					has_id = 1181 #Xiao Yaonan
-					has_id = 1184 #Zhang Shaozeng
-					has_id = 1176 #Liu Menggeng
-					has_id = 1175 #Cai Chengxun
-					has_id = 1185 #Cao Shijie
+					is_character = QIE_jiang_bai_li
+					is_character = QIE_wang_huaiqing
+					is_character = QIE_zhang_qihuang
+					is_character = QIE_xiao_yaonan
+					is_character = QIE_zhang_shaozeng
+					is_character = QIE_liu_menggeng
+					is_character = QIE_cai_chengxun
+					is_character = QIE_Cao_Shijie
 				}
 			}
 			set_nationality = NSW
@@ -65,13 +65,15 @@ QIE_zhili_clique_flees = {
 				}
 			}
 			random_unit_leader = {
-				limit = { has_id = 1171 } #Jiang Baili
+				limit = { #Jiang Baili 
+					is_character = QIE_jiang_bai_li
+				} 
 				add_unit_leader_trait = GXC_guangdong_clique_officer
 				set_nationality = GXC
 				unit_leader_event = qieflavor.14
 			}
 			random_unit_leader = {
-				limit = { has_id = 1179 } #Zhang Qihuang
+				limit = { is_character = QIE_zhang_qihuang }
 				add_unit_leader_trait = GXC_guangxi_clique_officer
 				set_nationality = GXC
 				unit_leader_event = qieflavor.14
@@ -89,7 +91,9 @@ QIE_zhili_clique_flees = {
 				}
 				ROOT = {
 					random_unit_leader = {
-						limit = { has_id = 1171 } #Jiang Baili
+						limit = { #Jiang Baili
+							is_character = QIE_jiang_bai_li
+						} 
 						add_unit_leader_trait = GXC_guangdong_clique_officer
 						set_nationality = PREV.PREV
 						unit_leader_event = qieflavor.14
@@ -107,7 +111,7 @@ QIE_zhili_clique_flees = {
 				}
 				ROOT = {
 					random_unit_leader = {
-						limit = { has_id = 1179 } #Zhang Qihuang
+						limit = { is_character = QIE_zhang_qihuang }
 						add_unit_leader_trait = GXC_guangxi_clique_officer
 						set_nationality = PREV.PREV
 						unit_leader_event = qieflavor.14
@@ -116,16 +120,18 @@ QIE_zhili_clique_flees = {
 			}
 			### if the target is invalid, goes into hiding instead
 			if = {
-				limit = { has_unit_leader = 1171 } #Jiang Baili
+				limit = { has_character = QIE_jiang_bai_li } #Jiang Baili
 				random_unit_leader = {
-					limit = { has_id = 1171 }
+					limit = { #Jiang Baili
+						is_character = QIE_jiang_bai_li
+					} 
 					set_nationality = NSW
 				}
 			}
 			if = {
-				limit = { has_unit_leader = 1179 } #Zhang Qihuang
+				limit = { has_character = QIE_zhang_qihuang } #Zhang Qihuang
 				random_unit_leader = {
-					limit = { has_id = 1179 }
+					limit = { is_character = QIE_zhang_qihuang }
 					set_nationality = NSW
 				}
 			}
@@ -136,14 +142,14 @@ QIE_zhili_clique_flees = {
 				SZC = { SZC_has_officer_government = no }
 			}
 			random_unit_leader = {
-				limit = { has_id = 1181 } #Xiao Yaonan
+				limit = { is_character = QIE_xiao_yaonan } #Xiao Yaonan
 				set_nationality = SZC
 				unit_leader_event = qieflavor.14
 			}
 		}
 		else = {
 			random_unit_leader = {
-				limit = { has_id = 1181 } #Xiao Yaonan
+				limit = { is_character = QIE_xiao_yaonan } #Xiao Yaonan
 				set_nationality = NSW
 			}
 		}
@@ -187,8 +193,8 @@ QIE_zhili_clique_flees = {
 			every_unit_leader = {
 				limit = {
 					OR = {
-						has_id = 1172 #Wang Huaiqing
-						has_id = 1184 #Zhang Shaozeng
+						is_character = QIE_wang_huaiqing
+						is_character = QIE_zhang_shaozeng
 					}
 				}
 				set_nationality = SHX
@@ -199,8 +205,8 @@ QIE_zhili_clique_flees = {
 			every_unit_leader = {
 				limit = {
 					OR = {
-						has_id = 1172 #Wang Huaiqing
-						has_id = 1184 #Zhang Shaozeng
+						is_character = QIE_wang_huaiqing
+						is_character = QIE_zhang_shaozeng
 					}
 				}
 				set_nationality = NSW
@@ -210,16 +216,16 @@ QIE_zhili_clique_flees = {
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 1175 #Cai Chengxun
-					has_id = 1176 #Liu Menggeng
+					is_character = QIE_cai_chengxun
+					is_character = QIE_liu_menggeng
 				}
 			}
 			set_nationality = FNG
 			unit_leader_event = qieflavor.14
 		}
 		### Cai Shijie flees to HNN
-		random_unit_leader = {
-			limit = { has_id = 1185 } #Cai Shijie
+		QIE_Cao_Shijie = {
+			limit = { is_character = QIE_Cao_Shijie } #Cai Shijie
 			set_nationality = HNN
 			unit_leader_event = qieflavor.14
 		}
@@ -231,9 +237,9 @@ QIE_kill_manchus = {
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 1173 #Aisin_Gioro_Zaitao
-					has_id = 1174 #Aisin_Gioro_Pujie
-					has_id = 1183 #Aisin_Gioro_Xiqia
+					is_character = QIE_aisin_gioro_zaitao
+					is_character = QIE_aisin_gioro_pujie
+					is_character = QIE_aisin_gioro_xiqia
 				}
 			}
 			remove_unit_leader = yes
@@ -243,9 +249,9 @@ QIE_kill_manchus = {
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 1173 #Aisin_Gioro_Zaitao
-					has_id = 1174 #Aisin_Gioro_Pujie
-					has_id = 1183 #Aisin_Gioro_Xiqia
+					is_character = QIE_aisin_gioro_zaitao
+					is_character = QIE_aisin_gioro_pujie
+					is_character = QIE_aisin_gioro_xiqia
 				}
 			}
 			set_nationality = NSW
@@ -257,9 +263,9 @@ QIE_tranfer_manchus_to_PREV = {
 	every_unit_leader = {
 		limit = {
 			OR = {
-				has_id = 1173 #Aisin_Gioro_Zaitao
-				has_id = 1174 #Aisin_Gioro_Pujie
-				has_id = 1183 #Aisin_Gioro_Xiqia
+				is_character = QIE_aisin_gioro_zaitao
+				is_character = QIE_aisin_gioro_pujie
+				is_character = QIE_aisin_gioro_xiqia
 			}
 		}
 		set_nationality = PREV

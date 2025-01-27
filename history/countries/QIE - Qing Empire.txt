@@ -13,6 +13,8 @@ add_to_faction = SQI
 add_to_faction = SIK
 add_to_faction = LEP
 
+save_global_event_target_as = original_da_qing
+
 if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
@@ -305,11 +307,8 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = authdem_warlordism_subtype
 }
-create_country_leader = {
-	name = "吴佩孚"
-	desc = "POLITICS_WU_PEIFU_DESC"
-	picture = "gfx/leaders/QIE/Portrait_QIE_Wu_Peifu.png"
-	expire = "1.1.1"
+promote_character = {
+	character = QIE_wu_peifu
 	ideology = pataut_warlordism_subtype
 }
 create_country_leader = {
@@ -319,435 +318,140 @@ create_country_leader = {
 	ideology = occultism_subtype
 }
 
-# recruit_character = QIE_wang_huaiqing
+recruit_character = QIE_wu_peifu
+recruit_character = QIE_wang_huaiqing
+recruit_character = QIE_jiang_bai_li
+recruit_character = QIE_aisin_gioro_zaitao	
+recruit_character = QIE_aisin_gioro_pujie
+recruit_character = QIE_cai_chengxun
+recruit_character = QIE_liu_menggeng
+recruit_character = QIE_wang_chengbin
+recruit_character = QIE_Gobulo_Runqi
+recruit_character = QIE_zhang_qihuang
+recruit_character = QIE_lu_xiangting
+recruit_character = QIE_xiao_yaonan
+recruit_character = QIE_li_bingzhi
+recruit_character = QIE_aisin_gioro_xiqia
+recruit_character = QIE_zhang_shaozeng
+recruit_character = QIE_Cao_Shijie
+recruit_character = QIE_ha_hanzhang
+recruit_character = QIE_li_shuchun
+recruit_character = QIE_peng_shouxin
+recruit_character = QIE_qin_dechun
+recruit_character = QIE_tang_zaili
+recruit_character = QIE_xing_shilian
+recruit_character = QIE_xiong_bingqi
+recruit_character = QIE_yu_xuezhong
+recruit_character = QIE_liu_zhenhua
+recruit_character = QIE_zhang_yinwu
+recruit_character = QIE_wei_yisan
+recruit_character = QIE_guo_jijiao
+recruit_character = QIE_du_xijun
+recruit_character = QIE_Wang_Lingyun
+
+QIE_wu_peifu = { set_variable = { china_alignment = token:northern_zhili } }
+
+QIE_li_shuchun = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_qin_dechun = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_wei_yisan = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_guo_jijiao = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_du_xijun = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
+QIE_Wang_Lingyun = {
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = QIE_zhili_leader
+	retire = yes
+}
 
 ### Field Marshals
 
-create_field_marshal = {
-	name = "吴佩孚"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wu_Peifu.png"
-	desc = "QIE_WU_PEIFU_ARMY_DESC"
-	traits = {
-		old_guard
-		politically_connected
-		brilliant_strategist
-		war_hero
-	}
-	skill = 3
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 1170
-}
+# create_field_marshal = {
+# 	name = "吴佩孚"
+# 	id = 1170
+# }
 
-create_field_marshal = {
-	name = "蒋百里 "
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Jiang_Baili.png"
-	desc = "QIE_JIANG_BAILI_ARMY_DESC"
-	traits = {
-		old_guard
-		offensive_doctrine
-		politically_connected
-		inflexible_strategist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 1
-	logistics_skill = 1
-	id = 1171
-}
+# create_field_marshal = {
+# 	name = "蒋百里 "
+# 	id = 1171
+# }
 
 ### Generals
 
-create_corps_commander = {
-	name = "王怀庆"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wang_Huaiqing.png"
-	desc = "QIE_WANG_HUAIQING_ARMY_DESC"
-	traits = {
-		substance_abuser
-		trickster
-		infantry_leader
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 1172
-}
-create_corps_commander = {
-	name = "爱新觉罗·载涛"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Zaitao.png"
-	desc = "QIE_ZAITAO_ARMY_DESC"
-	traits = {
-		politically_connected
-		cavalry_officer
-	}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 1173
-}
-create_corps_commander = {
-	name = "爱新觉罗·溥杰"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
-	desc = "QIE_PUJIE_ARMY_DESC"
-	traits = {
-		politically_connected
-		trait_reckless
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 1174
-}
-create_corps_commander = {
-	name = "蔡成勋"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Cai_Chengxun.png"
-	desc = "QIE_CAI_CHENGXUN_ARMY_DESC"
-	traits = {
-		politically_connected
-		guerilla_fighter
-		career_officer
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 1
-	id = 1175
-}
-create_corps_commander = {
-	name = "刘梦庚"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Liu_Menggeng.png"
-	desc = "QIE_LIU_MENGGENG_ARMY_DESC"
-	traits = {
-		career_officer
-		trait_cautious
-		infantry_officer
-	}
-	skill = 3
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 4
-	id = 1176
-}
-create_corps_commander = {
-	name = "王承斌"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wang_Chengbin.png"
-	desc = "QIE_WANG_CHENGBIN_ARMY_DESC"
-	traits = {
-		politically_connected
-		career_officer
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-	id = 1177
-}
-create_corps_commander = {
-	name = "郭布罗·润麒"
-	desc = "QIE_GOBULO_RUNQI_ARMY_DESC"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Gobulo_Runqi.png"
-	traits = {
-		politically_connected
-		armor_officer
-		media_personality
-		trait_reckless
-	}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 1178
-}
-create_corps_commander = {
-	name = "张其锽"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Zhang_Qihuang.png"
-	desc = "QIE_ZHANG_QIHUANG_ARMY_DESC"
-	traits = {
-		substance_abuser
-		politically_connected
-		cavalry_officer
-	}
-	skill = 3
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 3
-	id  = 1179
-}
-create_corps_commander = {
-	name = "卢香亭"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Lu_Xiangting.png"
-	desc = "QIE_LU_XIANGTING_ARMY_DESC"
-	traits = {
-		politically_connected
-		infantry_officer
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-	id = 1180
-}
-create_corps_commander = {
-	name = "萧耀南"
-	desc = "QIE_XIAO_YAONAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Xiao_Yaonan.png"
-	traits = {
-		politically_connected
-		war_hero
-		substance_abuser
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 2
-	id = 1181
-}
-create_corps_commander = {
-	name = "李炳之"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Li_Bingzhi.png"
-	desc = "QIE_LI_BINGZHI_ARMY_DESC"
-	traits = {
-		career_officer
-		politically_connected
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 3
-	id = 1182
-}
-create_corps_commander = {
-	name = "爱新觉罗·熙洽"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Xiqia.png"
-	desc = "QIE_XIQIA_ARMY_DESC"
-	traits = {
-		cavalry_officer
-		politically_connected
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 4
-	id = 1183
-}
-create_corps_commander = {
-	name = "张绍曾"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Zhang_Shaozeng.png"
-	desc = "QIE_ZHANG_SHAOZENG_ARMY_DESC"
-	traits ={
-		politically_connected
-		artillery_officer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 3
-	id = 1184
-}
-create_corps_commander = {
-	name = "曹士杰"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Cao_Shijie.png"
-	desc = "QIE_CAO_SHIJIE_ARMY_DESC"
-	traits = {
-		politically_connected
-		career_officer
-		substance_abuser
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 1
-	id = 1185
-}
-create_corps_commander = {
-	name = "哈汉章"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Ha_Hanzhang.png"
-	desc = "QIE_HA_HANZHANG_ARMY_DESC"
-	traits = {
-		hidden_sympathies
-		career_officer
-		infantry_officer
-		skilled_staffer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 1
-	id = 11850
-}
-create_corps_commander = {
-	name = "李树春"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Li_Shuchun.png"
-	desc = "QIE_LI_SHUCHUN_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		career_officer
-		infantry_officer
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 11851
-}
-create_corps_commander = {
-	name = "彭寿莘"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Peng_Shouxin.png"
-	desc = "QIE_PENG_SHOUXIN_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		career_officer
-		war_hero
-		harsh_leader
-		infantry_officer
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 2
-	id = 11853
-}
-create_corps_commander = {
-	name = "秦德纯"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Qin_Dechun.png"
-	desc = "QIE_QIN_DECHUN_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		career_officer
-		infantry_officer
-		trait_reckless
-		organizer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 11854
-}
-create_corps_commander = {
-	name = "唐在礼"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Tang_Zaili.png"
-	desc = "QIE_TANG_ZAILI_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		career_officer
-		artillery_officer
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-	id = 11855
-}
-create_corps_commander = {
-	name = "邢士廉"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Xing_Shilian.png"
-	desc = "QIE_XIN_SHILIAN_ARMY_DESC"
-	traits = {
-		hidden_sympathies
-		career_officer
-		cavalry_officer
-		urban_assault_specialist
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 4
-	logistics_skill = 1
-	id = 11857
-}
-create_corps_commander = {
-	name = "熊炳琦"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Xiong_Bingqi.png"
-	desc = "QIE_XIONG_BINGQI_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		artillery_officer
-		politically_connected
-		skilled_staffer
-		organizer
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 2
-	id = 11858
-}
-create_corps_commander = {
-	name = "于学忠"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Yu_Xuezhong.png"
-	desc = "QIE_YU_XUEZHONG_ARMY_DESC"
-	traits = {
-		QIE_Zhili_officer
-		career_officer
-		infantry_officer
-		inflexible_strategist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 1
-	logistics_skill = 1
-	id = 11859
-}
-create_corps_commander = {
-	name = "刘镇华"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_liu_zhenhua.png"
-	desc = "QIE_LIU_ZHENHUA_ARMY_DESC"
-	traits = {  
-		irregulars_officer 
-		harsh_leader 
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 3
-	id = 63103091006
-}
-create_corps_commander = {
-	name = "张荫梧"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_zhang_yinwu.png"
-	desc = "QIE_ZHANG_YINWU_ARMY_DESC"
-	traits = { 
-		career_officer 
-		infantry_officer 
-		trickster 
-		guerilla_fighter 
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 1
-	id = 63103091008
-}
+# create_corps_commander = {
+# 	name = "王怀庆"
+# 	id = 1172
+# }
+# create_corps_commander = {
+# 	name = "爱新觉罗·载涛"
+# 	id = 1173
+# }
+# create_corps_commander = {
+# 	name = "爱新觉罗·溥杰"
+# 	id = 1174
+# }
+# create_corps_commander = {
+# 	name = "蔡成勋"
+# 	id = 1175
+# }
+# create_corps_commander = {
+# 	name = "刘梦庚"
+# 	id = 1176
+# }
+# create_corps_commander = {
+# 	name = "王承斌"
+# 	id = 1177
+# }
+# create_corps_commander = {
+# 	name = "郭布罗·润麒"
+# 	id = 1178
+# }
+# create_corps_commander = {
+# 	name = "张其锽"
+# 	id  = 1179
+# }
+# create_corps_commander = {
+# 	name = "卢香亭"
+# 	id = 1180
+# }
+# create_corps_commander = {
+# 	name = "萧耀南"
+# 	id = 1181
+# }
+# create_corps_commander = {
+# 	name = "李炳之"
+# 	id = 1182
+# }
+# create_corps_commander = {
+# 	name = "爱新觉罗·熙洽"
+# 	id = 1183
+# }
+# create_corps_commander = {
+# 	name = "张绍曾"
+# 	id = 1184
+# }
+# create_corps_commander = {
+# 	name = "曹士杰"
+# 	id = 1185
+# }
 ### Admirals ###
 create_navy_leader = {
 	name = "吴纫礼"

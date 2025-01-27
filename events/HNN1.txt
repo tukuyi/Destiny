@@ -12,7 +12,15 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		add_ideas = ETS_xin_ping_jiu_jiu2
+		QIE_kill_manchus = yes	
+
+		# eval_effect ETS = {
+		# 	ETS_central_aisa_war_effect = yes
+		# }
+
+		# eval_effect ETS = {
+		# 	activate_mission = ETS_war_timer
+		# }
 		
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
