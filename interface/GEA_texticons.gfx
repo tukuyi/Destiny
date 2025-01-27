@@ -1,6 +1,6 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_GER_economy"
+		name = "GFX_GER_economy_icon"
 		texturefile = "gfx/texticons/GER_economy.png"
 		legacy_lazy_load = no
 	}

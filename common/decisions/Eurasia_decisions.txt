@@ -2457,7 +2457,7 @@ RUS_Alliance_decisions = {
 				country_event = {
 					id = eurasiafor.50
 					days = 3
-					random = 72
+					random_hours = 72
 				}
 			}
 		}
@@ -2519,7 +2519,7 @@ RUS_Foreign_Policy_decisions = {
 				country_event = {
 					id = eurasiafor.53
 					days = 15
-					random = 72
+					random_hours = 72
 				}
 			}
 		}

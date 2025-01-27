@@ -1,8 +1,61 @@
 ###########################
 # ETS Decisions
 ###########################
-# By Von_Laughing and WordZero
+# By 彭湃
 ###########################
+FRA_phalanstere_category = {
+	FRA_Develop_ETS = {
+		icon = generic_construction
+
+		allowed = { tag = INT }
+
+		available = {
+			NOT = { has_global_flag = FRA_ongoing_phalanstere_development }
+		}
+
+		visible = {
+			FRA_phalanstere_target = yes
+			has_global_flag = FRA_created_phalanstere
+		}
+
+		targets = { ETS }
+		target_root_trigger = { has_global_flag = FRA_created_phalanstere }
+		target_trigger = {
+			FRA_phalanstere_target = yes
+		}
+
+		cost = 50
+		days_remove = 50
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision FRA_Develop_Caribbean target: [From.GetName]"
+			set_global_flag = { flag = FRA_ongoing_phalanstere_development days = @FRA_phalantere_decision_time value = 1 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Develop_Caribbean target: [From.GetName]"
+			FROM = {
+				FRA_phalanstere_opinion = yes
+				FRA_phalanstere_development_in_capital = yes
+				add_tech_bonus = {
+					name = FRA_Develop_Caribbean
+					bonus = 1
+					uses = 1
+					category = industry
+				}
+				FRA_phalanstere_tech_sharing = yes
+				FRA_phalanstere_resources_central_america = yes
+			}
+		}
+	}
+}
+
 ETS_Central_east_war_cat = {#大西亚战争
 	ETS_zhun_bei_zhaqn_zheng = {#主动出击！
 		icon = GFX_decision_infiltrate_state

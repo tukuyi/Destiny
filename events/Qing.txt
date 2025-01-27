@@ -9506,16 +9506,7 @@ country_event = {#就任讲话
 
 	option = { 
 		name = qiewpf.1.a 
-		# create_country_leader = {
-		# 	name = "吴佩孚"
-		# 	desc = "POLITICS_WU_PEIFU_F_DESC"
-		# 	picture = "gfx/leaders/QIE/Portrait_QIE_Wu_Peifu_CIV.png"
-		# 	expire = "1.1.1"
-		# 	ideology = authdem_mercenary_democracy_subtype
-		# }
-		set_country_leader_ideology = {
-			ideology = authdem_mercenary_democracy_subtype
-		}
+		set_country_leader_ideology = authdem_mercenary_democracy_subtype
 		add_ideas = QIE_Wu_pei_fu_hog
 		set_politics = { ruling_party = authoritarian_democrat }
 		add_ideas = QIE_ilegitimate_republic_idea

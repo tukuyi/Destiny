@@ -14,9 +14,18 @@ country_event = {#测试事件
 
 		QIE_kill_manchus = yes	
 
-		# eval_effect ETS = {
-		# 	ETS_central_aisa_war_effect = yes
-		# }
+		eval_effect SIK = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = KYR
+						is_core_of = TRK
+						is_core_of = UZB
+					}
+				}
+				add_core_of = ROOT
+			}
+		}
 
 		# eval_effect ETS = {
 		# 	activate_mission = ETS_war_timer

@@ -2116,6 +2116,7 @@ focus_tree = {
 		cost = 4
 
 		available = {
+			has_socialist_government = yes
 			OR = {
 				RUS = {
 					has_war_with = ALO
