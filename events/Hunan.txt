@@ -1997,13 +1997,13 @@ country_event = {#徳属东亚和葡萄牙
 	option = { #同意
 		name = hnn.116.a
 		ai_chance = { factor = 95 }
-		HNN = { country_event = hnn.119 }
+		FROM = { country_event = hnn.119 }
 	}
 
 	option = {#拒绝
 		name = hnn.116.b
 		ai_chance = { factor = 5 }
-		HNN = { country_event = hnn.118 }
+		FROM = { country_event = hnn.118 }
 	}
 }
 country_event = {#徳属东亚和葡萄牙
@@ -2019,13 +2019,13 @@ country_event = {#徳属东亚和葡萄牙
 	option = { #同意
 		name = hnn.116.a
 		ai_chance = { factor = 95 }
-		HNN = { country_event = hnn.120 }
+		FROM = { country_event = hnn.120 }
     }
 
 	option = {#拒绝
 		name = hnn.116.b
 		ai_chance = { factor = 5 }
-		HNN = { country_event = hnn.118 }
+		FROM = { country_event = hnn.118 }
 	}
 }
 country_event = {#使馆城市同意
@@ -2040,7 +2040,7 @@ country_event = {#使馆城市同意
 
 	option = { #同意
 		name = hnn.117.a
-		HNN = {
+		ROOT = {
 			annex_country = {
 				target = FROM
 				transfer_troops = no
@@ -2073,7 +2073,6 @@ country_event = {#葡萄牙同意
 	desc = hnn.119.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = { #同意
@@ -6478,7 +6477,7 @@ country_event = {#革命成功
 		mark_focus_tree_layout_dirty = yes
 		create_country_leader = {
 			name = "湖南代表大会"
-			desc = "POLITICS_KONG_LINGYI_DESC"
+			desc = "POLITICS_DAI_BIAO_DA_HUI_DESC"
 			picture = "gfx/leaders/HNN/Portrait_RUS_Workers.png"
 			expire = "1965.1.1"
 			ideology = syndicalist_subtype

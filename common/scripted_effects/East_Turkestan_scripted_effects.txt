@@ -58,7 +58,7 @@ ETS_central_aisa_war_effect = {#中亚战争
 	set_country_flag = ETS_war_is_over
 	mark_focus_tree_layout_dirty = yes
 	
-	if = {
+	if = {#大胜
 		limit = { 
 			OR = {
 				653 = {
@@ -91,7 +91,7 @@ ETS_central_aisa_war_effect = {#中亚战争
 			}
 		}
 	}
-	else_if = {
+	else_if = {#胜利
 		limit = { 
 			810 = {
 				OR = {
@@ -100,92 +100,68 @@ ETS_central_aisa_war_effect = {#中亚战争
 				}
 			}
 		}
-		set_country_flag = ETS_OUR_LOSS
 		RUS = {
 			annex_country = {
 				target = ALO
 			}
 		}
-		if = {
+		if = {#战败
 			limit = { 
-				1279 = {
-					is_controlled_by = RUS
+				# 判断是否控制任意两个关键地块
+				OR = {
+					AND = { 
+						1279 = { is_controlled_by = RUS }  # KYR地块
+						405 = { is_controlled_by = RUS }   # TRK地块
+					}
+					AND = {
+						1279 = { is_controlled_by = RUS }  # KYR地块
+						861 = { is_controlled_by = RUS }   # UZB地块
+					}
+					AND = {
+						405 = { is_controlled_by = RUS }   # TRK地块
+						861 = { is_controlled_by = RUS }   # UZB地块
+					}
 				}
 			}
+			set_country_flag = ETS_OUR_LOSS
+			# 吞并全部三个国家（无论是否控制）
 			RUS = {
-				annex_country = {
-					target = KYR
+				annex_country = KYR
+				annex_country = TRK
+				annex_country = UZB
+			}
+			if = {
+				limit = { 
+					has_country_leader = {
+						character = SIK_Abdukirim_Abbasof
+						ruling_only = yes
+					}
 				}
+				set_country_leader_ideology = hardliner_bolshevism_subtype
 			}
 		}
-		else_if = {
-			limit = { 
-				1279 = {
-					is_controlled_by = ETS
-				}
+		else = {
+			if = {
+				limit = { 1279 = { is_controlled_by = RUS } }  # KYR地块
+				RUS = { annex_country = KYR }
 			}
-			ETS = {
-				annex_country = {
-					target = KYR
-				}
+			else = {
+				ETS = { annex_country = KYR }  # 未被RUS控制则ETS吞并
 			}
-		}
-		if = {
-			limit = { 
-				405 = {
-					is_controlled_by = RUS
-				}
+			if = {
+				limit = { 405 = { is_controlled_by = RUS } }   # TRK地块
+				RUS = { annex_country = TRK }
 			}
-			RUS = {
-				annex_country = {
-					target = TRK
-				}
+			else = {
+				ETS = { annex_country = TRK }
 			}
-		}
-		else_if = {
-			limit = { 
-				405 = {
-					is_controlled_by = ETS
-				}
+			if = {
+				limit = { 861 = { is_controlled_by = RUS } }   # UZB地块
+				RUS = { annex_country = UZB }
 			}
-			ETS = {
-				annex_country = {
-					target = TRK
-				}
-			}
-		}
-		if = {
-			limit = { 
-				861 = {
-					is_controlled_by = RUS
-				}
-			}
-			RUS = {
-				annex_country = {
-					target = UZB
-				}
-			}
-		}
-		else_if = {
-			limit = { 
-				861 = {
-					is_controlled_by = ETS
-				}
-			}
-			ETS = {
-				annex_country = {
-					target = UZB
-				}
-			}
-		}
-		if = {
-			limit = { 
-				has_country_leader = {
-					character = SIK_Abdukirim_Abbasof
-					ruling_only = yes
-				}
-			}
-			set_country_leader_ideology = hardliner_bolshevism_subtype
+			else = {
+				ETS = { annex_country = UZB }
+			}	
 		}
 		RUS = {
 			white_peace = ETS

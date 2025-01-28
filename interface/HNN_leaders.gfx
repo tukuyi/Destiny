@@ -57,11 +57,11 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Hu_Yao_Bang.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_HNN_Gao_gang.png"
+		name = "GFX_Portrait_HNN_Gao_gang"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Gao_gang.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_HNN_Gao_gang_alt.png"
+		name = "GFX_Portrait_HNN_Gao_gang_alt"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Gao_gang_alt.png"
 	}
 	spriteType = {
