@@ -2935,8 +2935,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ETS_sha_mo_cheng_shi
-		}
-		prerequisite = {
 			focus = ETS_kuo_da_jun_qu_he_zuo
 		}
 		available = {
