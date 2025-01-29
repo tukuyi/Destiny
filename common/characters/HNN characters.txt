@@ -838,7 +838,7 @@ characters = {
 		name = HNN_Chen_Yun
 		portraits = {
 			army = {
-				small = GFX_Portrait_HNN_Chen_Yun
+				small = GFX_idea_HNN_Chen_Yun_hog
 				large = GFX_Portrait_HNN_Chen_Yun
 			}
 		}
@@ -1186,6 +1186,36 @@ characters = {
 			defense_skill = 1
 			maneuvering_skill = 1
 			coordination_skill = 1
+		}
+	}		
+######################
+####   三期普渡  #####
+######################
+#石顶武
+	HNN_Shi_Dingwu = { 
+		name = HNN_Shi_Dingwu
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Shi_Dingwu
+				large = GFX_Portrait_HNN_Shi_Dingwu
+			}
+			civilian = {
+				large = GFX_Portrait_HNN_Shi_Dingwu
+			}
+		}
+		country_leader = {
+			desc = Portrait_HNN_Shi_Dingwu_DESC
+			ideology = Yiguandao_subtype
+		}
+		corps_commander = {
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}		
 ######################

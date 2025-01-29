@@ -10157,6 +10157,7 @@ country_event = {#大选之日
 	}
 	immediate = {
 		hidden_effect = {
+			set_country_flag = QIE_has_first_choose
 			country_event = {
 				id = qieroc.34
 				days = 150
@@ -10860,6 +10861,7 @@ country_event = {#第二次选举
 	fire_only_once = yes
 	trigger = {
 		tag = QIE
+		has_country_flag = QIE_has_first_choose
 		NOT = {
 			has_country_flag = QIE_ROC_second_choose_right
 		}
@@ -11146,6 +11148,7 @@ country_event = {#第三次选举
 	fire_only_once = yes
 	trigger = {
 		tag = QIE
+		has_country_flag = QIE_ROC_second_choose_right
 		NOT = {
 			has_country_flag = QIE_ROC_third_choose_right
 		}

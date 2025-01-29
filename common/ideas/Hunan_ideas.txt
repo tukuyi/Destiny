@@ -47,29 +47,6 @@ ideas = {
 				hog_old_general
 			}
 		}
-		HNN_Tang_Shenming_hog = {#唐生明
-			allowed = { original_tag = HNN }
-			picture = HNN_Tang_Shenming_hog
-			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
-			}
-			visible = {
-				NOT = { has_country_flag = Dong_Biwu_dead }
-			}
-			cancel_if_invalid = no
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Tang_Shenming_hog"
-				
-			}
-			traits = {
-				head_of_government
-				totalist
-				hog_old_general
-			}
-		}
 		HNN_Hu_Hanming_hog = {#胡汉民
 			allowed = { original_tag = HNN }
 			picture = HNN_Hu_Hanming_hog
@@ -193,9 +170,6 @@ ideas = {
 					tooltip = head_of_gov_available
 					always = no
 				}
-			}
-			visible = {
-				
 			}
 			cancel_if_invalid = no
 			on_add = {

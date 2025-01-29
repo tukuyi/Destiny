@@ -6159,25 +6159,15 @@ country_event = {#长沙会战
 			long_name = HNN_national_populist_party_long
 			name = HNN_national_populist_party
 		}
-		create_country_leader = {
-			name = "石顶武"
-			desc = "Portrait_HNN_Shi_Dingwu_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Shi_Dingwu.png"
-			expire = "1965.1.1"
+		HNN_Shi_Dingwu = {
+			HNN_recruit_characters_effect = yes
+		}
+		promote_character = {
+			character = HNN_Shi_Dingwu
 			ideology = Yiguandao_subtype
 		}
 		HNN_tang_xiangming = {
 			demote_to_general = yes
-		}
-		create_field_marshal = {
-			name = "石顶武"
-			picture = "gfx/leaders/HNN/Portrait_HNN_shi_dingwu_army.png"
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			traits = { }
 		}
 		add_stability = -0.05
 		set_cosmetic_tag = HNN_FJ

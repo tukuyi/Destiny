@@ -152,6 +152,7 @@ recruit_character = HNN_Hua_Guofeng
 recruit_character = HNN_wang_gan_chang
 recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
+recruit_character = HNN_Shi_Dingwu
 
 ###
 # create_corps_commander = {
@@ -213,11 +214,15 @@ HNN_zhao_hengti = {
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = HNN_fed_loyalist_flag
 }
+HNN_Shi_Dingwu = {
+	set_variable = { china_alignment = token:others }
+	retire = yes
+}
 HNN_song_xilian = {
 	set_character_flag = CHI_RCF_military_loyalist_flag
 	set_character_flag = HNN_KMT_loyalist_flag
 	set_character_flag = CHN_original_unit_leader
-	retire = yes #In Exile
+	retire = yes 
 }
 HNN_li_pinxian = {
 	set_character_flag = CHN_original_unit_leader
@@ -480,11 +485,4 @@ create_country_leader = {
 	picture = "gfx/leaders/HNN/Portrait_HNN_tang_xiangming.png"
 	expire = "1965.1.1"
 	ideology = kleptocracy_subtype
-}
-create_country_leader = {
-	name = "石顶武"
-	desc = "Portrait_HNN_Shi_Dingwu_DESC"
-	picture = "gfx/leaders/HNN/Portrait_HNN_Shi_Dingwu.png"
-	expire = "1965.1.1"
-	ideology = Yiguandao_subtype
 }
