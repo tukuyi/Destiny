@@ -556,14 +556,15 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_TANG_SHENGMING_ARMY_DESC
 			traits = { 
+				infantry_officer
 				career_officer 
 				trait_reckless 
 				trickster 
 			}
-			skill = 1
-			attack_skill = 1
+			skill = 2
+			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 1
 		}
 	}
@@ -594,6 +595,7 @@ characters = {
 				commando 
 				war_hero 
 				brilliant_strategist 
+				harsh_leader
 			}
 			skill = 3
 			attack_skill = 2
@@ -860,6 +862,7 @@ characters = {
 			desc = POLITICS_HNN_Chen_Yun_ARMY_DESC
 			traits = {
 				irregulars_officer
+				organisational_leader
 				politically_connected
 			}
 			skill = 2
@@ -948,12 +951,13 @@ characters = {
 			traits = { 
 				irregulars_officer
 				guerilla_officer
+				trait_reckless
 			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 1
-			logistics_skill = 2
+			logistics_skill = 1
 		}
 	}	
 ######################
