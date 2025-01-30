@@ -685,6 +685,13 @@ characters = {
 				small = GFX_Portrait_HNN_Chen_Yi
 				large = GFX_Portrait_HNN_Chen_Yi
 			}
+			civilian = {
+				large = GFX_Portrait_HNN_Chen_Yi_CIV
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_Chen_Yi_DESC
+			ideology = technocracy_subtype
 		}
 		corps_commander = {
 			desc = ARMY_HNN_Chen_Yi_ARMY_DESC
@@ -841,6 +848,13 @@ characters = {
 				small = GFX_idea_HNN_Chen_Yun_hog
 				large = GFX_Portrait_HNN_Chen_Yun
 			}
+			civilian = {
+				large = GFX_Portrait_HNN_chen_yun_CIV
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_CHEN_YUN_DESC
+			ideology = bukharinist_subtype
 		}
 		corps_commander = {
 			desc = POLITICS_HNN_Chen_Yun_ARMY_DESC
@@ -919,6 +933,27 @@ characters = {
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
+		}
+	}	
+#许世友
+    HNN_Xu_Si_You = {
+		name = HNN_Xu_Si_You
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Xu_Si_You
+				large = GFX_Portrait_HNN_Xu_Si_You
+			}
+		}
+		corps_commander = {
+			traits = { 
+				irregulars_officer
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
 		}
 	}	
 ######################

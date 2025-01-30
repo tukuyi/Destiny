@@ -6494,6 +6494,7 @@ country_event = {#革命成功
 		show_unit_leaders_tooltip = HNN_Yuan_Wen_Cai
 		show_unit_leaders_tooltip = HNN_Long_Chao_Qing
 		show_unit_leaders_tooltip = HNN_Wan_Xi_Xian
+		show_unit_leaders_tooltip = HNN_Xu_Si_You
 		show_unit_leaders_tooltip = HNN_Tan_zheng
 		show_unit_leaders_tooltip = HNN_Chen_Yun
 		show_unit_leaders_tooltip = HNN_tang_shengming
@@ -6570,6 +6571,7 @@ country_event = {#革命成功
 			HNN_Yuan_Wen_Cai = { HNN_recruit_characters_effect = yes }
 			HNN_Long_Chao_Qing = { HNN_recruit_characters_effect = yes }
 			HNN_Wan_Xi_Xian = { HNN_recruit_characters_effect = yes }
+			HNN_Xu_Si_You = { HNN_recruit_characters_effect = yes }
 			HNN_Tan_zheng = { HNN_recruit_characters_effect = yes }
 			HNN_Chen_Yun = { HNN_recruit_characters_effect = yes }
 			HNN_tang_shengming = { HNN_recruit_characters_effect = yes }
@@ -8064,15 +8066,9 @@ country_event = {#放权
 		trigger = {
 			has_country_flag = chen_victory
 		}
-		create_country_leader = {
-			name = "陈毅"
-			desc = "POLITICS_HNN_Chen_Yi_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Chen_Yi.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = HNN_Chen_Yi
 			ideology = technocracy_subtype
-			traits = {  
-
-			}
 		}
 		set_party_name = {
 			ideology = totalist
@@ -13045,11 +13041,8 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 					}
 				}
 			}
-			create_country_leader = {
-				name = "陈云"
-				desc = "POLITICS_HNN_CHEN_YUN_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Chen_Yun.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = HNN_Chen_Yun
 				ideology = bukharinist_subtype
 			}
 			set_politics = {

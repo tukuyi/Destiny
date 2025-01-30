@@ -17,6 +17,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_Yi.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_Chen_Yi_CIV"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_Yi_CIV.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_lu_dangping"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_lu_dangping.png"
 	}
@@ -73,8 +77,16 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_Yun.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_HNN_Chen_San_Li"
-		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_San_Li.png"
+		name = "GFX_Portrait_HNN_Chen_Yun"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_Yun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_chen_yun_CIV"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_chen_yun_CIV.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_Xu_Si_You"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Xu_Si_You.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_HNN_Lu_Di_Ping"
