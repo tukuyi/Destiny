@@ -19,6 +19,10 @@ country_event = {#测试事件
 				ruling_party = radical_socialist
 				elections_allowed = no
 			}
+			promote_character = {
+				character = HNN_Qian_Xuesen
+				ideology = utopian_technocracy_subtype
+			}
 		}
 
 		# eval_effect ETS = {

@@ -151,6 +151,7 @@ recruit_character = HNN_Tan_zheng
 recruit_character = HNN_Chen_Yun 
 recruit_character = HNN_Hua_Guofeng
 recruit_character = HNN_wang_gan_chang
+recruit_character = HNN_Qian_Xuesen
 recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
 recruit_character = HNN_Shi_Dingwu
@@ -372,6 +373,9 @@ HNN_Chen_Yun = {
 	retire = yes
 }
 HNN_wang_gan_chang = {
+	retire = yes
+}
+HNN_Qian_Xuesen = {
 	retire = yes
 }
 HNN_Hua_Guofeng = {

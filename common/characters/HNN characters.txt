@@ -1280,6 +1280,29 @@ characters = {
 			}
 		}
 	}
+#钱学森
+	HNN_Qian_Xuesen = {
+		name = HNN_Qian_Xuesen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Qian_Xuesen
+				small = GFX_Portrait_HNN_Qian_Xuesen
+			}
+			army = {
+				large = GFX_Portrait_HNN_Qian_Xuesen_sic
+			}
+		}
+		country_leader = {
+			desc = HNN_Qian_Xue_DESC
+			ideology = utopian_technocracy_subtype
+		}
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_genius scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_nuclear = 3
+			}
+		}
+	}	
 #赵九章
 	HNN_zhao_jiu_zhang = {
 		name = HNN_zhao_jiu_zhang
