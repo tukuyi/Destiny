@@ -6495,6 +6495,7 @@ country_event = {#革命成功
 		show_unit_leaders_tooltip = HNN_Long_Chao_Qing
 		show_unit_leaders_tooltip = HNN_Wan_Xi_Xian
 		show_unit_leaders_tooltip = HNN_Xu_Si_You
+		show_unit_leaders_tooltip = HNN_geng_biao
 		show_unit_leaders_tooltip = HNN_Tan_zheng
 		show_unit_leaders_tooltip = HNN_Chen_Yun
 		show_unit_leaders_tooltip = HNN_tang_shengming
@@ -6572,6 +6573,7 @@ country_event = {#革命成功
 			HNN_Long_Chao_Qing = { HNN_recruit_characters_effect = yes }
 			HNN_Wan_Xi_Xian = { HNN_recruit_characters_effect = yes }
 			HNN_Xu_Si_You = { HNN_recruit_characters_effect = yes }
+			HNN_geng_biao = { HNN_recruit_characters_effect = yes }
 			HNN_Tan_zheng = { HNN_recruit_characters_effect = yes }
 			HNN_Chen_Yun = { HNN_recruit_characters_effect = yes }
 			HNN_tang_shengming = { HNN_recruit_characters_effect = yes }
@@ -10964,7 +10966,7 @@ country_event = {#叶剑英的胜利
 		create_country_leader = {
 			name = "叶剑英"
 			desc = "POLITICS_HNN_YE_JIAN_YING_DESC"
-			picture = "gfx/leaders/GXC/Portrait_GXC_Ye_Jianying_LKMT.png"
+			picture = "gfx/leaders/HNN/Portrait_HNN_ye_jianying_generalissimo.png"
 			expire = "1965.1.1"
 			ideology = red_tinted_autocracy_subtype
 		}

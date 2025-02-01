@@ -960,6 +960,27 @@ characters = {
 			logistics_skill = 1
 		}
 	}	
+#耿飚
+    HNN_geng_biao = {
+		name = HNN_geng_biao
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_geng_biao
+				large = GFX_Portrait_HNN_geng_biao
+			}
+		}
+		corps_commander = {
+			traits = { 
+				irregulars_officer
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
 ######################
 ####### RKMT  ########
 ######################	
@@ -1289,7 +1310,7 @@ characters = {
 				small = GFX_Portrait_HNN_Qian_Xuesen
 			}
 			army = {
-				large = GFX_Portrait_HNN_Qian_Xuesen_sic
+				large = GFX_Portrait_HNN_Qian_Xue_sen_sic
 			}
 		}
 		country_leader = {
