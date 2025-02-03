@@ -15945,7 +15945,7 @@ HNN_path = {#湖南
 		desc = "RULE_OPTION_HNN_HJ_DESC"
 		allow_achievements = yes
 	}
-	option = {#顾净源
+	option = {#顾净缘
 		name = HNN_GJY
 		text = "RULE_OPTION_HNN_GJY"
 		desc = "RULE_OPTION_HNN_GJY_DESC"

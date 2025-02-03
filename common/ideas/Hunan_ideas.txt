@@ -5400,6 +5400,46 @@ ideas = {
 			}
 			picture = TIB_flaming_heart
 		}
+		HNN_fo_revolution_idea = {#佛法革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_fo_revolution_idea"}
+			allowed = { always = no }
+			picture = TIB_flaming_heart
+			modifier = {
+				local_supplies = 0.05
+				stability_weekly = 0.05
+				stability_factor = 0.10
+				war_support_factor = 0.05
+				conscription_factor = 0.05
+				research_speed_factor = 0.1
+				political_power_cost = -0.05
+				radical_socialist_drift = 0.05
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		HNN_military_contracts = {#军事合同
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_military_contracts" }
+			picture = generic_artillery_regiments
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.05
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
 		HNN_wan_mo = {#金刚伏魔
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_wan_mo"}
 			allowed = { always = no }
@@ -5442,11 +5482,27 @@ ideas = {
 		HNN_nu_li = {#奴隶制
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_nu_li"}
 			allowed = { always = no }
-			modifier = {
-				production_speed_buildings_factor = 0.05
-				stability_factor = -0.05
-			}
 			picture = HNN_nu_li
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+			
+		}
+		HNN_nu_li2 = {#奴隶制
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_nu_li2"}
+			allowed = { always = no }
+			name = HNN_nu_li
+			picture = HNN_nu_li
+			modifier = {
+				weekly_manpower = -200
+				stability_factor = -0.10
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+
+			}
+			
 		}
 		HNN_ji_guan_tong_zhi = {#技官辅政
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_ji_guan_tong_zhi"}

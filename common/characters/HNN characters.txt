@@ -657,6 +657,19 @@ characters = {
 			ideology = radsoc_tridemism_subtype
 		}
 	}	
+#习仲勋
+	HNN_Xi_Zhong_Xun = {
+		name = HNN_Xi_Zhong_Xun
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Xi_Zhong_Xun
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_Xi_Zhongxun_DESC
+			ideology = soclib_liberal_socialism_subtype
+		}
+	}	
 #滕代远
 	HNN_Teng_Daiyuan = {
 		name = HNN_Teng_Daiyuan
@@ -1278,6 +1291,22 @@ characters = {
 			logistics_skill = 1
 		}
 	}		
+######################
+####     佛教    #####
+######################
+#释太虚
+	HNN_Shi_tai_xu = { 
+		name = HNN_Shi_tai_xu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_shi_tai_xu
+			}
+		}
+		country_leader = {
+			desc = Portrait_HNN_Shi_tai_xu_DESC
+			ideology = buddhist_anarchist_subtype
+		}
+	}	
 ######################
 ###### 科学家  #######
 ######################

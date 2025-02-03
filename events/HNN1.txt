@@ -12,18 +12,18 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		QIE_kill_manchus = yes	
+		# QIE_kill_manchus = yes	
 
-		eval_effect HNN = {
-			set_politics = {
-				ruling_party = radical_socialist
-				elections_allowed = no
-			}
-			promote_character = {
-				character = HNN_Qian_Xuesen
-				ideology = utopian_technocracy_subtype
-			}
-		}
+		# eval_effect HNN = {
+		# 	set_politics = {
+		# 		ruling_party = radical_socialist
+		# 		elections_allowed = no
+		# 	}
+		# 	promote_character = {
+		# 		character = HNN_Qian_Xuesen
+		# 		ideology = utopian_technocracy_subtype
+		# 	}
+		# }
 
 		# eval_effect ETS = {
 		# 	activate_mission = ETS_war_timer
@@ -41,7 +41,7 @@ country_event = {#测试事件
 		# set_country_flag = SHX_feng_victory_over_yan
 		# clr_country_flag = SHX_feng_victory_over_yan
 		# set_politics = {
-		# 	ruling_party = authoritarian_democrat
+		# 	ruling_party = radical_socialist
 		# 	elections_allowed = no
 		# }
 	}

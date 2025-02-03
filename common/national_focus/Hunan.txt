@@ -4276,7 +4276,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			base = 15
+			base = 40
 		}
 		available = {
 			has_country_flag = HNN_fo_victory_flag
@@ -4297,7 +4297,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			base = 15
+			base = 40
 		}
 		prerequisite = {
 			focus = HNN_Buddhism
@@ -4318,7 +4318,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			base = 15
+			base = 40
 		}
 		prerequisite = {
 			focus = HNN_shou_long_zi_jin
@@ -4342,7 +4342,7 @@ focus_tree = {
 		cost = 1
 
 		ai_will_do = {
-			base = 15
+			base = 40
 		}
 		prerequisite = {
 			focus = HNN_Buddhism
@@ -4358,20 +4358,24 @@ focus_tree = {
 		id = HNN_tou_zi_fo_jiao_jiao_yu
 		icon = GFX_goal_HNN_tou_zi_fo_jiao_jiao_yu
 		relative_position_id = HNN_Buddhism
-		x = -3
-		y = 3
+		x = -2
+		y = 2
 		cost = 5
 
 		ai_will_do = {
 			base = 15
 		}
 		prerequisite = {
-			focus = HNN_xiu_gai_sheng_xian
+			focus = HNN_shou_long_zi_jin
+		}
+		prerequisite = {
+			focus = HNN_la_long_hao_qiang
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_tou_zi_fo_jiao_jiao_yu"
 			add_research_slot = 1
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = HNN_Learn_Mahatmas_idea
 			hidden_effect = {
 				country_event = {
@@ -4399,7 +4403,6 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_xiu_gai_sheng_xian
 		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_yi_hui"
 			1013 = {
@@ -4428,12 +4431,12 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = HNN_qu_she_hui_zhu_yi
 		icon = GFX_goal_USA_antileftist_action
 		relative_position_id = HNN_Buddhism
-		x = 3
+		x = -3
 		y = 3
 		cost = 5
 
@@ -4441,7 +4444,7 @@ focus_tree = {
 			base = 15
 		}
 		prerequisite = {
-			focus = HNN_xiu_gai_sheng_xian
+			focus = HNN_tou_zi_fo_jiao_jiao_yu
 		}
 
 		completion_reward = {
@@ -4478,6 +4481,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_xiu_gai_sheng_xian
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_new_goverment"
 			add_stability = 0.1
@@ -4502,7 +4506,10 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
+		}
+		available = {
+			
 		}
 		prerequisite = {
 			focus = HNN_xin_yi_hui
@@ -4532,13 +4539,14 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
+		}
+		available = {
+			
 		}
 		prerequisite = {
-			focus = HNN_tou_zi_fo_jiao_jiao_yu
 			focus = HNN_xin_yi_hui
 		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_tui_dong_fo_jiao_hua"
 			add_popularity = {
@@ -4561,10 +4569,9 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
 		prerequisite = {
-			focus = HNN_qu_she_hui_zhu_yi
 			focus = HNN_new_goverment
 		}
 
@@ -4583,13 +4590,14 @@ focus_tree = {
 		id = HNN_qing_xi_zuo_pai
 		icon = GFX_goal_HNN_qing_xi_zuo_pai
 		relative_position_id = HNN_Buddhism
-		x = 4
+		x = -4
 		y = 4
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
+
 		prerequisite = {
 			focus = HNN_qu_she_hui_zhu_yi
 		}
@@ -4604,15 +4612,18 @@ focus_tree = {
 		id = HNN_cheng_li_seng_lv_jun
 		icon = GFX_goal_generic_army_junta
 		relative_position_id = HNN_Buddhism
-		x = -4
-		y = 4
+		x = 2
+		y = 2
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
 		prerequisite = {
-			focus = HNN_tou_zi_fo_jiao_jiao_yu
+			focus = HNN_shou_long_zi_jin
+		}
+		prerequisite = {
+			focus = HNN_la_long_hao_qiang
 		}
 
 		completion_reward = {
@@ -4634,6 +4645,59 @@ focus_tree = {
 	}
 
 	focus = {
+		id = HNN_jin_kou_xian_dai_wu_qi
+		icon = GFX_goal_SKM_Modern_Artillery
+		relative_position_id = HNN_Buddhism
+		x = 3
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = HNN_cheng_li_seng_lv_jun
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_jin_kou_xian_dai_wu_qi"
+			add_ideas = HNN_military_contracts
+		}
+	}
+
+	focus = {
+		id = HNN_fei_xiang_xi_tian
+		icon = GFX_goal_SKM_Sikkim_Air_Service
+		relative_position_id = HNN_Buddhism
+		x = 4
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = HNN_jin_kou_xian_dai_wu_qi
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fei_xiang_xi_tian"
+			air_experience = 40.0
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe
+				amount = 65
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = HNN_xin_shi_dai_de_fo_jiao
 		icon = GFX_goal_TIB_Open_Portal_Shambhala_World
 		relative_position_id = HNN_Buddhism
@@ -4642,18 +4706,15 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
-		prerequisite = {
-			focus = HNN_cheng_li_seng_lv_jun
-		}
+
 		prerequisite = {
 			focus = HNN_tui_dong_fo_jiao_hua
 		}
 		prerequisite = {
 			focus = HNN_deng_ji_zhi
 		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_shi_dai_de_fo_jiao"
 			swap_ideas = {
@@ -4672,18 +4733,15 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
-		prerequisite = {
-			focus = HNN_qing_xi_zuo_pai
-		}
+
 		prerequisite = {
 			focus = HNN_fo_tan_xia_xiang
 		}
 		prerequisite = {
 			focus = HNN_deng_ji_zhi
 		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_mi_he_mao_dun"
 			add_political_power = 100
@@ -4691,7 +4749,7 @@ focus_tree = {
 			add_war_support = 0.1
 			add_popularity = {
 				ideology = paternal_autocrat
-				popularity = 0.10
+				popularity = 0.1
 			}
 			hidden_effect = {
 				country_event = {
@@ -4708,13 +4766,13 @@ focus_tree = {
 		relative_position_id = HNN_Buddhism
 		x = 0
 		y = 6
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
-			base = 15
+			factor = 15
 		}
 		available = {
-			has_country_leader = { name = "正明法师" ruling_only = yes }
+			owns_state = 608
 		}
 		prerequisite = {
 			focus = HNN_mi_he_mao_dun
@@ -4722,9 +4780,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_xin_shi_dai_de_fo_jiao
 		}
-		bypass = {
-			has_country_flag = SHI_zhao_kong_victory
-		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fo_jiao_tu_de_wei_lai"
 			country_event = {
@@ -4735,24 +4791,60 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = HNN_yu_ji_guan_men_he_zuo
-		icon = GFX_goal_HNN_yu_ji_guan_men_he_zuo
-		relative_position_id = HNN_Buddhism
-		x = 0
-		y = 7
-		cost = 5
+		id = HNN_ya_li_an_jue_qi
+		icon = GFX_goal_HNN_ya_li_an_jue_qi
+		x = -21
+		y = 18
+		cost = 2
 
-		ai_will_do = {
-			base = 15
-		}
 		available = {
 			has_country_flag = SHI_zhao_kong_victory
 		}
-		prerequisite = {
-			focus = HNN_fo_jiao_tu_de_wei_lai
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fo_jiao_tu_de_wei_lai"
+			country_event = { 
+				id = hunfo.14
+				days = 2
+			}
 		}
-		allow_branch = {
-			has_country_flag = SHI_zhao_kong_victory
+	}
+
+	focus = {
+		id = HNN_guo_jia_she_hui_zhu_yi_jing_ji
+		icon = GFX_goal_HNN_guo_jia_she_hui_zhu_yi_jing_ji
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = HNN_ya_li_an_jue_qi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_guo_jia_she_hui_zhu_yi_jing_ji"
+			add_political_power = 100
+			add_ideas = HNN_guo_jia_she_hui_jing_ji
+		}
+	}
+
+	focus = {
+		id = HNN_yu_ji_guan_men_he_zuo
+		icon = GFX_goal_HNN_yu_ji_guan_men_he_zuo
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = -1
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = HNN_guo_jia_she_hui_zhu_yi_jing_ji
 		}
 
 		completion_reward = {
@@ -4765,17 +4857,17 @@ focus_tree = {
 				uses = 2
 				category = industry
 			}
-			add_pataut_to_coalition = yes
 			add_popularity = {
 				ideology = national_populist
 				popularity = 0.10
 			}
+			custom_effect_tooltip = tooltip_white_line
+			add_pataut_to_coalition = yes
 			create_country_leader = {
 				name = "赫尔曼·沃斯"
 				picture = "gfx/leaders/TIB/Portrait_TIB_Ernst_Schafer.png"
 				expire = "1.1.1"
 				ideology = right_technocracy_subtype
-				traits = {}
 			}
 			set_party_name = {
 				ideology = paternal_autocrat
@@ -4792,52 +4884,18 @@ focus_tree = {
 	}
 
 	focus = {
-		id = HNN_guo_jia_she_hui_zhu_yi_jing_ji
-		icon = GFX_goal_HNN_guo_jia_she_hui_zhu_yi_jing_ji
-		relative_position_id = HNN_Buddhism
-		x = -2
-		y = 7
-		cost = 5
-
-		ai_will_do = {
-			base = 15
-		}
-		available = {
-			has_country_flag = SHI_zhao_kong_victory
-		}
-		prerequisite = {
-			focus = HNN_fo_jiao_tu_de_wei_lai
-		}
-		allow_branch = {
-			has_country_flag = SHI_zhao_kong_victory
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_guo_jia_she_hui_zhu_yi_jing_ji"
-			add_political_power = 100
-			add_ideas = HNN_guo_jia_she_hui_jing_ji
-		}
-	}
-
-	focus = {
 		id = HNN_yao_shen_zhi_xue_huo_ban
 		icon = GFX_goal_HNN_yao_shen_zhi_xue_huo_ban
-		relative_position_id = HNN_Buddhism
-		x = 2
-		y = 7
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = 1
+		y = 1
 		cost = 5
 
 		ai_will_do = {
-			base = 15
-		}
-		available = {
-			has_country_flag = SHI_zhao_kong_victory
+			factor = 15
 		}
 		prerequisite = {
-			focus = HNN_fo_jiao_tu_de_wei_lai
-		}
-		allow_branch = {
-			has_country_flag = SHI_zhao_kong_victory
+			focus = HNN_ya_li_an_jue_qi
 		}
 
 		completion_reward = {
@@ -4862,21 +4920,39 @@ focus_tree = {
 	}
 
 	focus = {
-		id = HNN_ya_li_an_ming_zhu_jue_xin
-		icon = GFX_goal_HNN_ya_li_an_ming_zhu_jue_xin
-		relative_position_id = HNN_Buddhism
-		x = -1
-		y = 8
+		id = HNN_tan_jiu_ren_ti_ao_mi
+		icon = GFX_goal_HNN_tan_jiu_ren_ti_ao_mi
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = 1
+		y = 2
 		cost = 5
 
 		ai_will_do = {
 			base = 15
 		}
-		available = {
-			has_country_flag = SHI_zhao_kong_victory
+		prerequisite = {
+			focus = HNN_yao_shen_zhi_xue_huo_ban
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_tan_jiu_ren_ti_ao_mi"
+			add_ideas = HNN_jing_shen_si_jie
+		}
+	}
+
+	focus = {
+		id = HNN_ya_li_an_ming_zhu_jue_xin
+		icon = GFX_goal_HNN_ya_li_an_ming_zhu_jue_xin
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = 0
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
 		}
 		prerequisite = {
-			focus = HNN_guo_jia_she_hui_zhu_yi_jing_ji
+			focus = HNN_tan_jiu_ren_ti_ao_mi
 		}
 		prerequisite = {
 			focus = HNN_yu_ji_guan_men_he_zuo
@@ -4914,51 +4990,52 @@ focus_tree = {
 	}
 
 	focus = {
-		id = HNN_tan_jiu_ren_ti_ao_mi
-		icon = GFX_goal_HNN_tan_jiu_ren_ti_ao_mi
-		relative_position_id = HNN_Buddhism
-		x = 1
-		y = 8
+		id = HNN_ta_meng_yi_you_zhi_wei
+		icon = GFX_goal_HNN_ta_meng_yi_you_zhi_wei
+		relative_position_id = HNN_ya_li_an_jue_qi
+		x = 0
+		y = 4
 		cost = 5
 
 		ai_will_do = {
 			base = 15
 		}
-		available = {
-			has_country_flag = SHI_zhao_kong_victory
-		}
 		prerequisite = {
-			focus = HNN_yu_ji_guan_men_he_zuo
-		}
-		prerequisite = {
-			focus = HNN_yao_shen_zhi_xue_huo_ban
+			focus = HNN_ya_li_an_ming_zhu_jue_xin
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_tan_jiu_ren_ti_ao_mi"
-			add_ideas = HNN_jing_shen_si_jie
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_ta_meng_yi_you_zhi_wei"
+			if = {
+				limit = { 
+					NOT = {
+						has_idea = HNN_nu_li
+					}
+				}
+				add_ideas = HNN_nu_li
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = HNN_nu_li
+					add_idea = HNN_nu_li2
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = HNN_wo_men_de_sheng_cun_kong_jian
 		icon = GFX_goal_HNN_wo_men_de_sheng_cun_kong_jian
-		relative_position_id = HNN_Buddhism
+		relative_position_id = HNN_ya_li_an_jue_qi
 		x = 0
-		y = 9
+		y = 5
 		cost = 5
 
 		ai_will_do = {
 			base = 15
 		}
-		available = {
-			has_country_flag = SHI_zhao_kong_victory
-		}
 		prerequisite = {
-			focus = HNN_ya_li_an_ming_zhu_jue_xin
-		}
-		prerequisite = {
-			focus = HNN_tan_jiu_ren_ti_ao_mi
+			focus = HNN_ta_meng_yi_you_zhi_wei
 		}
 
 		completion_reward = {
@@ -4973,6 +5050,161 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = HNN_ren_jian_fo_jiao
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		x = -16
+		y = 18
+		cost = 2
+
+		available = {
+			has_country_flag = SHI_tai_xu_victory
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_ren_jian_fo_jiao"
+			country_event = { 
+				id = hunfo.21
+				days = 2
+			}
+		}
+	}
+
+	focus = {
+		id = HNN_bo_ai_si_ren
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = 1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_ren_jian_fo_jiao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_bo_ai_si_ren"
+
+		}
+	}
+
+	focus = {
+		id = HNN_xiu_wu_jie_xing_shi_shan
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = -1
+		y = 1
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_ren_jian_fo_jiao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_xiu_wu_jie_xing_shi_shan"
+
+		}
+	}
+
+	focus = {
+		id = HNN_san_zhong_fo_jiao_ge_ming
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = 0
+		y = 2
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_xiu_wu_jie_xing_shi_shan
+		}
+		prerequisite = {
+			focus = HNN_bo_ai_si_ren
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_san_zhong_fo_jiao_ge_ming"
+			swap_ideas = {
+				remove_idea = HNN_Practical_Idealism_idea
+				add_idea = HNN_fo_revolution_idea
+			}
+		}
+	}
+
+	focus = {
+		id = HNN_fu_xiao_yu_da
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = -1
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_san_zhong_fo_jiao_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fu_xiao_yu_da"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_xin_xue_yuan
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = 1
+		y = 3
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_san_zhong_fo_jiao_ge_ming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_xue_yuan"
+
+		}
+	}
+	
+	focus = {
+		id = HNN_fa_ji_shi_li
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = 0
+		y = 4
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_xin_xue_yuan
+		}
+		prerequisite = {
+			focus = HNN_fu_xiao_yu_da
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fa_ji_shi_li"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_fo_Xue_ji_hui_xue
+		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		relative_position_id = HNN_ren_jian_fo_jiao
+		x = 0
+		y = 5
+		cost = 5
+
+		prerequisite = {
+			focus = HNN_fa_ji_shi_li
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fo_Xue_ji_hui_xue"
+
+		}
+	}	
 ###大宋
 	focus = {
 		id = HNN_guo_jia_chong_sheng
@@ -8033,6 +8265,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8239,6 +8472,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8294,6 +8528,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8344,6 +8579,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8418,6 +8654,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8504,6 +8741,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8594,6 +8832,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -8675,6 +8914,7 @@ focus_tree = {
 					has_completed_focus = HNN_Buddhism
 				}
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 		}
 		prerequisite = {

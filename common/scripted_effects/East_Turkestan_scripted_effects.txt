@@ -126,9 +126,15 @@ ETS_central_aisa_war_effect = {#中亚战争
 			set_country_flag = ETS_OUR_LOSS
 			# 吞并全部三个国家（无论是否控制）
 			RUS = {
-				annex_country = KYR
-				annex_country = TRK
-				annex_country = UZB
+				annex_country = {
+					target = KYR
+				}
+				annex_country = {
+					target = TRK
+				}
+				annex_country = {
+					target = UZB
+				}
 			}
 			if = {
 				limit = { 
@@ -142,25 +148,55 @@ ETS_central_aisa_war_effect = {#中亚战争
 		}
 		else = {
 			if = {
-				limit = { 1279 = { is_controlled_by = RUS } }  # KYR地块
-				RUS = { annex_country = KYR }
+				limit = { 
+					1279 = { is_controlled_by = RUS } 
+				}  # KYR地块
+				RUS = { 
+					annex_country = {
+						target = KYR
+					}
+				}
 			}
 			else = {
-				ETS = { annex_country = KYR }  # 未被RUS控制则ETS吞并
+				ETS = { 
+					annex_country = {
+						target = KYR
+					}
+				}  # 未被RUS控制则ETS吞并
 			}
 			if = {
-				limit = { 405 = { is_controlled_by = RUS } }   # TRK地块
-				RUS = { annex_country = TRK }
+				limit = { 
+					405 = { is_controlled_by = RUS } 
+				}   # TRK地块
+				RUS = { 
+					annex_country = {
+						target = TRK
+					}
+				}
 			}
 			else = {
-				ETS = { annex_country = TRK }
+				ETS = { 
+					annex_country = {
+						target = TRK
+					}
+				}
 			}
 			if = {
-				limit = { 861 = { is_controlled_by = RUS } }   # UZB地块
-				RUS = { annex_country = UZB }
+				limit = { 
+					861 = { is_controlled_by = RUS } 
+				}   # UZB地块
+				RUS = { 
+					annex_country = {
+						target = UZB
+					}
+				}
 			}
 			else = {
-				ETS = { annex_country = UZB }
+				ETS = { 
+					annex_country = {
+						target = UZB
+					}
+				}
 			}	
 		}
 		RUS = {

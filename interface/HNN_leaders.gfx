@@ -181,6 +181,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Qian_Xue_sen_sic.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_shi_tai_xu"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_shi_tai_xu.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_Guo_Mo_Ruo"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Guo_Mo_Ruo.png"
 	}

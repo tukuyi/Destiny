@@ -61,7 +61,7 @@ H_to_china = {#对全中国的宣战借口
 	}
 }
 
-G_China = {
+G_China = {#
 	transfer_state = 613
 	transfer_state = 610
 	transfer_state = 716
@@ -219,7 +219,7 @@ G_China = {
 	597 = { add_core_of = QIE }
 }
 
-H_in_china = {
+H_in_china = {#全国核心
 	every_state = {
 		limit = {
 			OR = {
@@ -318,5 +318,268 @@ add_research_slot_until_five = {
 			idea = generic_research_advances
 			days = 730
 		}
+	}
+}
+
+China_build_ROC = {#成立民国
+	if = {
+		limit = {#马家军
+			tag = XSM
+		}
+		country_event = {
+			id = mac.20000
+			days = 1
+		}
+	}
+	else_if = {#TAN
+		limit = {
+			tag = TAN
+			has_country_leader = {
+				name = "Ma Zhongying"
+				ruling_only = yes
+			}  
+		}
+		country_event = {
+			id = kumul.200
+			days = 1
+		}
+	}
+	else_if = {#HHN 湖南
+		limit = {
+			tag = HNN
+		}
+		if = {
+			limit = { 
+				has_country_leader = {
+					name = "唐生智"
+					ruling_only = yes
+				}  
+			}
+			set_cosmetic_tag = HNN_Budina
+			country_event = { 
+				id = hunbao.12
+				days = 3 
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					has_country_leader = {
+						name = "程潜"
+						ruling_only = yes
+					} 
+					has_completed_focus = HNN_Our_Own_Path
+				}
+			}
+			set_cosmetic_tag = HNN_ROC
+			country_event = { 
+				id = hunbao.12
+				days = 3 
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					name = "石顶武"
+					ruling_only = yes
+				}  
+			}
+			set_cosmetic_tag = HNN_DFO
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					name = "正明法师"
+					ruling_only = yes
+				}  
+			}
+			set_cosmetic_tag = HNN_FJZ
+		}
+	}
+	else_if = {#GXC 广东
+		limit = {
+			OR = {
+				is_ruled_by_left_kmt = yes
+				is_ruled_by_right_kmt = yes
+				GXC_has_RKMT_government = yes	
+				GXC_has_baise_goverment = yes
+			}
+		}
+		if = {
+			limit = {#李宗仁
+				OR = {
+					has_cosmetic_tag = GXC_Guangxi
+					GXC_has_RKMT_government = yes	
+				}
+			}
+			set_cosmetic_tag = GXC_united_china_kuomintang_guangxi
+			hidden_effect = {
+				country_event = { id = lngkmt.70 days = 3 }
+			}
+		}
+		else_if = {#国左
+			limit = { 
+				has_cosmetic_tag = GXC_government_left_kmt 
+			}
+			set_cosmetic_tag = GXC_united_china_kuomintang
+			hidden_effect = {
+				country_event = { id = lngkmt.70 days = 3 }
+			}
+		}
+		else_if = {#百色
+			limit = { 
+				GXC_has_baise_goverment = yes 
+			}
+			set_cosmetic_tag = HNN_PROC
+		}
+		else_if = {
+			limit = {
+				is_ruled_by_left_kmt = yes
+			}
+			set_cosmetic_tag = GXC_united_china_kuomintang
+		}
+		else_if = {
+			limit = {
+				is_ruled_by_right_kmt = yes
+			}
+			set_cosmetic_tag = GXC_united_china_right_kuomintang
+		}
+		if = {
+			limit = { is_ruled_by_left_kmt = yes }
+			log = "KR_Event_Logging;CHINA UNITED BY Left-KMT;[GetDateText]"
+			hidden_effect = { news_event = china_events.308 }
+		}
+		else = {
+			log = "KR_Event_Logging;CHINA UNITED BY Right-KMT;[GetDateText]"
+			set_capital = { state = 613 }
+			hidden_effect = { news_event = china_events.309 }
+		}
+		if = {
+			limit = { 
+				GXC_has_baise_goverment = no
+			}
+			if = {
+				limit = {
+					NOT = {
+						original_tag = CHI
+						GXC_has_RKMT_government = yes
+					}
+				}
+				add_ideas = GXC_kmt_demobilisation
+				add_ideas = GXC_economic_instability
+				if = {
+					limit = { 
+						GXC_has_LKMT_government = yes 
+					}
+					remove_ideas = GXC_RKMT_appeased_merchants
+				}
+				else = {
+					add_ideas = KR_RKMT_popular_support_1
+				}
+				custom_effect_tooltip = enables_new_focus_branches
+				set_capital = { state = 613 }
+			}
+		}
+		else_if = {
+			limit = { tag = CHI }
+			mark_focus_tree_layout_dirty = yes
+			country_event = CHI.lategame.200 #The White Sun Rises
+			effect_tooltip = {
+				add_ideas = CHI_calls_for_congress_idea
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_ruled_by_right_kmt = yes
+				}
+			}
+			hidden_effect = {
+				country_event = china_events.300
+			}
+		}
+	}
+	else_if = {#SHC 上海
+		limit = { 
+			tag = SHC
+		}
+		if = {
+			limit = { 
+				has_country_leader = {
+					name = "维克托·沙逊"
+					ruling_only = yes
+				}
+			}
+			set_cosmetic_tag = SHC_YTC
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					name = "帕维尔·米夫"
+					ruling_only = yes
+				}
+			}
+			set_cosmetic_tag = LEC_PRC
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					name = "何东"
+					ruling_only = yes
+				}
+			}
+			set_cosmetic_tag = LEC_HD_Z
+			hidden_effect = {
+				country_event = {
+					id = leche.14
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_completed_focus = LEC_shang_di_de_huai_bao
+			}
+			set_cosmetic_tag = LEC_TZ_T
+			hidden_effect = {
+				country_event = {
+					id = lecjidu.8
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_completed_focus = SHC_jing_cha_sha_chu_cong_wei
+				NOT = {
+					has_country_flag = han_jian_victory
+				}
+			}
+			set_cosmetic_tag = LEC_HD_Z
+			hidden_effect = {
+				country_event = {
+					id = Shcjingcha.13
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					has_completed_focus = LEC_lu_xun_zhu_xi
+					has_completed_focus = LEC_qing_xi_cheng_shi_xi_jun
+				}
+			}
+			country_event = {
+				id = lecgong.14
+			}
+		}
+	}
+	else_if = {#ETS 红月亮 
+		limit = {
+			tag = ETS
+			has_completed_focus = ETS_guang_zi_bei_lai
+		}
+		set_cosmetic_tag = ETS_PRC
+	}
+	else = {
+		set_cosmetic_tag = ROC
 	}
 }

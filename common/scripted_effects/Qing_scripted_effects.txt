@@ -225,7 +225,6 @@ QIE_zhili_clique_flees = {
 		}
 		### Cai Shijie flees to HNN
 		QIE_Cao_Shijie = {
-			limit = { is_character = QIE_Cao_Shijie } #Cai Shijie
 			set_nationality = HNN
 			unit_leader_event = qieflavor.14
 		}

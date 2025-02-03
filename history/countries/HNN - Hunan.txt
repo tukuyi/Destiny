@@ -132,6 +132,7 @@ recruit_character = HNN_lu_dangping
 recruit_character = HNN_liu_xing
 recruit_character = HNN_mao_ze_dong
 recruit_character = HNN_He_Su_Heng
+recruit_character = HNN_Xi_Zhong_Xun
 recruit_character = HNN_Dong_Bi_Wu
 recruit_character = HNN_yang_jie
 recruit_character = HNN_tang_shengzhi
@@ -156,6 +157,7 @@ recruit_character = HNN_Qian_Xuesen
 recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
 recruit_character = HNN_Shi_Dingwu
+recruit_character = HNN_Shi_tai_xu
 
 ###
 # create_corps_commander = {
@@ -330,11 +332,17 @@ HNN_He_Su_Heng = {
 	set_variable = { china_alignment = token:Syndicalists }
 	retire = yes
 }
+HNN_Xi_Zhong_Xun = {
+	retire = yes
+}
 HNN_Dong_Bi_Wu = {
 	set_variable = { china_alignment = token:Syndicalists }
 	retire = yes
 }
 HNN_Teng_Daiyuan = {
+	retire = yes
+}
+HNN_Shi_tai_xu = {
 	retire = yes
 }
 GXC_Wan_Dan_Ping = {

@@ -66,7 +66,10 @@ leader_traits = {
 		experience_loss_factor = -0.10
 		ai_focus_aggressive_factor = 0.5
 	}
-
+	HNN_Shi_Zhao_Kong_la_ma = {#达赖喇嘛
+		random = no
+		national_populist_drift = 0.10
+	}
 	HNN_old_guard_revolutionary = { #Cheng Qian
 		random = no
 		experience_gain_factor = 0.05

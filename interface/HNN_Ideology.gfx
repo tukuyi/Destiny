@@ -168,6 +168,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/monanarchism_group.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_buddhist_anarchist_subtype"
+		texturefile = "gfx/ideologies/subideologies/buddhist_anarchist_subtype.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_tot_baishi_subtype"
 		texturefile = "gfx/ideologies/subideologies/tot_baishi.png"
 	}

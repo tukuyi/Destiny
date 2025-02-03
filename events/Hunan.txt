@@ -3956,7 +3956,6 @@ country_event = {#顾伯叙入湖南
 	desc = hunfo.2.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -4083,6 +4082,17 @@ country_event = {#逼宫
 				long_name = HNN_paternal_autocrat1_party_long
 				name = HNN_paternal_autocrat1_party
 			}
+			HNN_Shi_tai_xu = { HNN_recruit_characters_effect = yes }
+			HNN_Xu_Si_You = { HNN_recruit_characters_effect = yes }
+			promote_character = {
+				character = HNN_Shi_tai_xu
+				ideology = buddhist_anarchist_subtype
+			}
+			set_party_name ={
+				ideology = radical_socialist
+				long_name = HNN_radical_socialist_party_FJR_long
+				name = HNN_radical_socialist_party_FJR
+			}
 			TIB = {
 				country_event = { #西藏
 					id = hunfo.5
@@ -4146,7 +4156,312 @@ country_event = {#顾伯叙入湖南
 		}
 	}
 }
-country_event = {###双修法
+country_event = {#我们的未来 
+	id = hunfo.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.6" }
+	title = hunfo.6.t
+	desc = hunfo.6.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunfo.6.a
+		add_political_power = 50
+		hidden_effect = {
+			country_event = {
+				id = hunfo.12
+				days = 2
+			}
+		}
+	}
+
+	option = {
+		name = hunfo.6.b
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		set_country_flag = SHI_tai_xu_victory
+	}
+
+	# option = {#中国
+	# 	name = hunfo.6.b
+	# 	set_cosmetic_tag = HNN_FJZ
+	# 	hidden_effect = {
+	# 		every_state = {#两广
+	# 			limit = { is_core_of = GXC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = GXC
+	# 		}
+	# 		every_state = {#云南
+	# 			limit = { is_core_of = YUN }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = YUN
+	# 		}
+	# 		every_state = {#四川
+	# 			limit = { is_core_of = SZC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SZC
+	# 		}
+	# 		every_state = {#国民党
+	# 			limit = { is_core_of = CHI }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = CHI
+	# 		}
+	# 		every_state = {#山东
+	# 			limit = { is_core_of = SQI }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SQI
+	# 		}
+	# 		every_state = {#大清
+	# 			limit = { is_core_of = QIE }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = QIE
+	# 		}
+	# 		every_state = {#使馆城市
+	# 			limit = { is_core_of = LEC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = LEC
+	# 		}
+	# 		every_state = {#奉天
+	# 			limit = { is_core_of = FNG }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = FNG
+	# 		}
+	# 		every_state = {#西藏
+	# 			limit = { is_core_of = TIB }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = TIB
+	# 		}
+	# 		every_state = {#晋系
+	# 			limit = { is_core_of = SHX }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SHX
+	# 		}
+	# 		every_state = {#马家军
+	# 			limit = { is_core_of = XSM }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = XSM
+	# 		}
+	# 		every_state = {#蒙古
+	# 			limit = { is_core_of = MON }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = MON
+	# 		}
+	# 		every_state = {#新疆
+	# 			limit = { is_core_of = SIK }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SIK
+	# 		}
+	# 		every_state = {#新疆
+	# 			limit = { is_core_of = TAN }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = TAN
+	# 		}
+	# 	}
+	# }
+
+	# option = {#印度
+	# 	name = hunfo.6.c
+	# 	set_cosmetic_tag = HNN_FJD
+	# 	hidden_effect = {
+	# 		every_state = {#两广
+	# 			limit = { is_core_of = GXC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = GXC
+	# 		}
+	# 		every_state = {#云南
+	# 			limit = { is_core_of = YUN }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = YUN
+	# 		}
+	# 		every_state = {#四川
+	# 			limit = { is_core_of = SZC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SZC
+	# 		}
+	# 		every_state = {#西藏
+	# 			limit = { is_core_of = TIB }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = TIB
+	# 		}
+	# 		every_state = {#锡金
+	# 			limit = { is_core_of = SKM }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SKM
+	# 		}
+	# 		every_state = {#不丹
+	# 			limit = { is_core_of = BHU }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = BHU
+	# 		}
+	# 		every_state = {#尼泊尔
+	# 			limit = { is_core_of = NEP }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = NEP
+	# 		}
+	# 		every_state = {#印度
+	# 			limit = { is_core_of = BHC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = BHC
+	# 		}
+	# 		every_state = {#印度
+	# 			limit = { is_core_of = PRF }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = PRF
+	# 		}
+	# 		every_state = {#印度
+	# 			limit = { is_core_of = MAD }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = MAD
+	# 		}
+	# 		every_state = {#缅甸
+	# 			limit = { is_core_of = BRM }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = BRM
+	# 		}
+	# 	}
+	# }
+
+	# option = {#日本
+	# 	name = hunfo.6.e
+	# 	set_cosmetic_tag = HNN_FJX
+	# 	hidden_effect = {
+	# 		every_state = {#两广
+	# 			limit = { is_core_of = GXC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = GXC
+	# 		}
+	# 		every_state = {#使馆城市
+	# 			limit = { is_core_of = LEC }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = LEC
+	# 		}
+	# 		every_state = {#国民党
+	# 			limit = { is_core_of = CHI }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = CHI
+	# 		}
+	# 		every_state = {#山东
+	# 			limit = { is_core_of = SQI }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = SQI
+	# 		}
+	# 		every_state = {#大清
+	# 			limit = { is_core_of = QIE }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = QIE
+	# 		}
+	# 		every_state = {#奉天
+	# 			limit = { is_core_of = FNG }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = FNG
+	# 		}
+	# 		every_state = {#日本
+	# 			limit = { is_core_of = JAP }
+	# 			add_core_of = HNN
+	# 		}
+	# 		create_wargoal = {
+	# 			type = annex_everything
+	# 			target = JAP
+	# 		}
+	# 	}
+	# }
+}
+country_event = {#双修法
 	id = hunfo.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.7" }
 	picture = GFX_report_event_HNN_shuang_xiu_fa
@@ -4166,7 +4481,7 @@ country_event = {###双修法
 		add_ideas = HNN_shuang_xiu
 	}
 }
-country_event = {###法器
+country_event = {#法器
 	id = hunfo.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.8" }
 	title = hunfo.8.t
@@ -4219,7 +4534,11 @@ country_event = {#一位奇异的高僧
 
 	trigger = {
 		tag = HNN
-		owns_state = 743
+		OR = {
+			owns_state = 743
+			is_neighbor_of = LEC
+			is_neighbor_of = SHC
+		}
 		has_country_flag = HNN_fo_victory_flag
 	}
 	fire_only_once = yes
@@ -4248,22 +4567,11 @@ country_event = {#一些奇怪的货物
 	desc = hunfo.11.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
 		name = hunfo.11.a
 		add_political_power = -10
-		hidden_effect = {
-			country_event = { 
-				id = hunfo.12
-				days = 35
-			}
-		}
-	}
-	option = {
-		name = hunfo.11.b
-		add_stability = 0.02
 	}
 }
 country_event = {#雅利安
@@ -4273,7 +4581,6 @@ country_event = {#雅利安
 	desc = hunfo.12.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -4298,12 +4605,6 @@ country_event = {#雅利安
 		}
 		set_country_flag = SHI_zhao_kong_victory
 		set_cosmetic_tag = HNN_FJR
-		hidden_effect = {
-			country_event = { 
-				id = hunfo.14
-				days = 20
-			}
-		}
 	}
 }
 country_event = {#生存空间
@@ -4313,21 +4614,20 @@ country_event = {#生存空间
 	desc = hunfo.13.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
 		name = hunfo.13.a
 		every_state = {
-			add_core_of = HNN
+			add_core_of = ROOT
 		}	
 		every_country = {
 			limit = {
 				NOT = {
-				tag = HNN
+					tag = ROOT
 				}
 			}
-			HNN = {
+			ROOT = {
 				create_wargoal = {
 					type = annex_everything
 					target = PREV
@@ -4343,22 +4643,12 @@ country_event = {#达赖喇嘛
 	desc = hunfo.14.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
 		name = hunfo.14.a
 		set_country_flag = la_ma
-		create_country_leader = {
-			name = "第十四世达赖喇嘛"
-			desc = "POLITICS_HNN_SHI_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Shi_Zhao_Kong.png"
-			expire = "1965.1.1"
-			ideology = ariosophy_subtype
-			traits = {
-				NFA_cult_of_personality
-			}
-		}
+		add_country_leader_trait = HNN_Shi_Zhao_Kong_la_ma
 	}
 }
 country_event = {#佛家三清
@@ -4466,7 +4756,7 @@ country_event = {#换装
 		}
 	}
 }
-country_event = {#秘教伙伴
+country_event = {#雅利安佛教国的未来
 	id = hunfo.17
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.17" }
 	title = hunfo.17.t
@@ -4537,7 +4827,6 @@ country_event = {#秘教伙伴
 	desc = hunfo.18.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -4583,6 +4872,20 @@ country_event = {#柳幸福的一天
 
 	option = {
 		name = hunfo.20.a
+		add_political_power = 10
+	}
+}
+country_event = {#广颂佛法
+	id = hunfo.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.21" }
+	title = hunfo.21.t
+	desc = hunfo.21.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunfo.21.a
 		add_political_power = 10
 	}
 }
@@ -11943,6 +12246,7 @@ country_event = {#龙与鹰的邪恶同盟
 		}
 	}
 }
+
 ########################################
 ##########-       猫猫     -############
 ########################################
@@ -11967,7 +12271,6 @@ country_event = {#荒唐的决定
 		}
 	}
 }
-
 country_event = {#毛菩萨？
 	id = hunmao.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.2" }
@@ -11982,7 +12285,6 @@ country_event = {#毛菩萨？
 		add_stability = 0.01
 	}
 }
-
 country_event = {#炮打司令部——我的一张大字报
 	id = hunmao.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.3" }
@@ -12003,7 +12305,6 @@ country_event = {#炮打司令部——我的一张大字报
 		}
 	}
 }
-
 country_event = {#向首都进军
 	id = hunmao.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.4" }
@@ -12052,7 +12353,6 @@ country_event = {#向首都进军
 		}
 	}
 }
-
 country_event = {#反对官僚主义
 	id = hunmao.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.5" }
@@ -12071,7 +12371,6 @@ country_event = {#反对官僚主义
 		}
 	}
 }
-
 country_event = {#农民运动问题
 	id = hunmao.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.6" }
@@ -12090,7 +12389,6 @@ country_event = {#农民运动问题
 		}
 	}
 }
-
 country_event = {#介绍一个合作社
 	id = hunmao.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.7" }
@@ -12113,7 +12411,6 @@ country_event = {#介绍一个合作社
 		}
 	}
 }
-
 country_event = {#宣扬社会主义
 	id = hunmao.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.8" }
@@ -12132,7 +12429,6 @@ country_event = {#宣扬社会主义
 		}
 	}
 }
-
 country_event = {#个人崇拜
 	id = hunmao.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.9" }
@@ -12151,7 +12447,6 @@ country_event = {#个人崇拜
 		}
 	}
 }
-
 country_event = {#重工业和轻工业、农业的关系
 	id = hunmao.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.10" }
@@ -12170,7 +12465,6 @@ country_event = {#重工业和轻工业、农业的关系
 		}
 	}
 }
-
 country_event = {#两种矛盾
 	id = hunmao.11
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.11" }
@@ -12189,7 +12483,6 @@ country_event = {#两种矛盾
 		}
 	}
 }
-
 country_event = {#青年的特点
 	id = hunmao.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.12" }
@@ -12209,7 +12502,6 @@ country_event = {#青年的特点
 		}
 	}
 }
-
 country_event = {#关于领导方法的若干问题
 	id = hunmao.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.13" }
@@ -12229,7 +12521,6 @@ country_event = {#关于领导方法的若干问题
 		}
 	}
 }
-
 country_event = {#农民协会
 	id = hunmao.14
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.14" }
@@ -12249,7 +12540,6 @@ country_event = {#农民协会
 		}
 	}
 }
-
 country_event = {#卸下面具
 	id = hunmao.15
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.15" }
@@ -12272,7 +12562,6 @@ country_event = {#卸下面具
 		}
 	}
 }
-
 country_event = {#三个世界
 	id = hunmao.16
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.16" }
@@ -12293,6 +12582,9 @@ country_event = {#三个世界
 	}
 }
 
+########################################
+##########-       其他     -############
+########################################
 country_event = {#中华人民共和国
 	id = hungong.29
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.29" }
@@ -12367,6 +12659,12 @@ country_event = {#中华人民共和国
 			}
 		}
 		hidden_effect = {
+			HNN_Xi_Zhong_Xun = {
+				HNN_recruit_characters_effect = yes
+			}
+			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
+			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
+			HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
 			country_event = { 
 				id = hungong.37
 				days = 10
@@ -12396,11 +12694,8 @@ country_event = {#中华人民共和国
 				expire = "1965.1.1"
 				ideology = socdem_democratic_socialism_subtype
 			}
-			create_country_leader = {
-				name = "习仲勋"
-				desc = "POLITICS_HNN_Xi_Zhongxun_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Xi_Zhong_Xun.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = HNN_Xi_Zhong_Xun
 				ideology = soclib_liberal_socialism_subtype
 			}
 			create_country_leader = {
@@ -12493,13 +12788,9 @@ country_event = {#中华人民共和国
 				paternal_autocrat = 3
 				national_populist = 2
 			}
-			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
-			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
-			HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
 		}
 	}
 }
-
 country_event = {#中华人民共和国第一次人民代表大会开幕式
 	id = hungong.38
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.38" }
@@ -14001,299 +14292,6 @@ country_event = {###国民党左派革命失败
 					}
 					set_nationality = ROOT
 				}
-			}
-		}
-	}
-}
-
-country_event = {#我们的未来 
-	id = hunfo.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunfo.6" }
-	title = hunfo.6.t
-	desc = hunfo.6.d
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = hunfo.6.a
-		add_political_power = 50
-	}
-
-	option = {#中国
-		name = hunfo.6.b
-		set_cosmetic_tag = HNN_FJZ
-		hidden_effect = {
-			every_state = {#两广
-				limit = { is_core_of = GXC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = GXC
-			}
-			every_state = {#云南
-				limit = { is_core_of = YUN }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = YUN
-			}
-			every_state = {#四川
-				limit = { is_core_of = SZC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SZC
-			}
-			every_state = {#国民党
-				limit = { is_core_of = CHI }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CHI
-			}
-			every_state = {#山东
-				limit = { is_core_of = SQI }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SQI
-			}
-			every_state = {#大清
-				limit = { is_core_of = QIE }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = QIE
-			}
-			every_state = {#使馆城市
-				limit = { is_core_of = LEC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = LEC
-			}
-			every_state = {#奉天
-				limit = { is_core_of = FNG }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = FNG
-			}
-			every_state = {#西藏
-				limit = { is_core_of = TIB }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TIB
-			}
-			every_state = {#晋系
-				limit = { is_core_of = SHX }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SHX
-			}
-			every_state = {#马家军
-				limit = { is_core_of = XSM }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = XSM
-			}
-			every_state = {#蒙古
-				limit = { is_core_of = MON }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = MON
-			}
-			every_state = {#新疆
-				limit = { is_core_of = SIK }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SIK
-			}
-			every_state = {#新疆
-				limit = { is_core_of = TAN }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TAN
-			}
-		}
-	}
-
-	option = {#印度
-		name = hunfo.6.c
-		set_cosmetic_tag = HNN_FJD
-		hidden_effect = {
-			every_state = {#两广
-				limit = { is_core_of = GXC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = GXC
-			}
-			every_state = {#云南
-				limit = { is_core_of = YUN }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = YUN
-			}
-			every_state = {#四川
-				limit = { is_core_of = SZC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SZC
-			}
-			every_state = {#西藏
-				limit = { is_core_of = TIB }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TIB
-			}
-			every_state = {#锡金
-				limit = { is_core_of = SKM }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SKM
-			}
-			every_state = {#不丹
-				limit = { is_core_of = BHU }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = BHU
-			}
-			every_state = {#尼泊尔
-				limit = { is_core_of = NEP }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = NEP
-			}
-			every_state = {#印度
-				limit = { is_core_of = BHC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = BHC
-			}
-			every_state = {#印度
-				limit = { is_core_of = PRF }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = PRF
-			}
-			every_state = {#印度
-				limit = { is_core_of = MAD }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = MAD
-			}
-			every_state = {#缅甸
-				limit = { is_core_of = BRM }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = BRM
-			}
-		}
-	}
-
-	option = {#日本
-		name = hunfo.6.e
-		set_cosmetic_tag = HNN_FJX
-		hidden_effect = {
-			every_state = {#两广
-				limit = { is_core_of = GXC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = GXC
-			}
-			every_state = {#使馆城市
-				limit = { is_core_of = LEC }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = LEC
-			}
-			every_state = {#国民党
-				limit = { is_core_of = CHI }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CHI
-			}
-			every_state = {#山东
-				limit = { is_core_of = SQI }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SQI
-			}
-			every_state = {#大清
-				limit = { is_core_of = QIE }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = QIE
-			}
-			every_state = {#奉天
-				limit = { is_core_of = FNG }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = FNG
-			}
-			every_state = {#日本
-				limit = { is_core_of = JAP }
-				add_core_of = HNN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = JAP
 			}
 		}
 	}

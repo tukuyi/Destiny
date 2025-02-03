@@ -4590,6 +4590,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = buddhist_anarchist_subtype
+		}
+		localization_key = buddhist_anarchist_subtype
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = soccon_tridemism_subtype
 		}
 		localization_key = soccon_tridemism_subtype
