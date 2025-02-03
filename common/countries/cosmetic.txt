@@ -4518,6 +4518,10 @@ HNN_FJZ = {
 	color = rgb { 111 107 170 }
 	color_ui = rgb { 111 107 170 }
 }
+HNN_BDF = {
+	color = rgb { 111 107 170 }
+	color_ui = rgb { 111 107 170 }
+}
 HNN_FJD = {
 	color = rgb { 111 107 170 }
 	color_ui = rgb { 111 107 170 }

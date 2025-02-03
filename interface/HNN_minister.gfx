@@ -24,6 +24,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/HNN/HNN_shi_ding_wu.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_shi_tai_xu_hog"
+		texturefile = "gfx/interface/ministers/HNN/HNN_shi_tai_xu.png"
+	}
+	spriteType = {
 		name = "GFX_idea_GXC_sheng_hong_ying_hog"
 		texturefile = "gfx/interface/ministers/GXC/GXC_sheng_hong_ying.png"
 	}

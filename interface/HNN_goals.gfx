@@ -8,6 +8,42 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/HNN_jie_fang_fu_nu.png"
 	}
 	spriteType = {
+		name = "GFX_goal_HNN_su_ben_zu_yuan"
+		texturefile = "gfx/interface/goals/HNN_su_ben_zu_yuan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_fu_xiao_yu_da"
+		texturefile = "gfx/interface/goals/HNN_fu_xiao_yu_da.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_xi_na_ri_ben"
+		texturefile = "gfx/interface/goals/HNN_xi_na_ri_ben.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_chong_hui_zang_qu"
+		texturefile = "gfx/interface/goals/HNN_chong_hui_zang_qu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_yuan_bo_fo_fa"
+		texturefile = "gfx/interface/goals/HNN_yuan_bo_fo_fa.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_fo_Xue_ji_hui_xue"
+		texturefile = "gfx/interface/goals/HNN_fo_Xue_ji_hui_xue.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_fa_ji_shi_li"
+		texturefile = "gfx/interface/goals/HNN_fa_ji_shi_li.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_san_zhong_fo_jiao_ge_ming"
+		texturefile = "gfx/interface/goals/HNN_san_zhong_fo_jiao_ge_ming.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_xiu_wu_jie_xing_shi_shan"
+		texturefile = "gfx/interface/goals/HNN_xiu_wu_jie_xing_shi_shan.png"
+	}
+	spriteType = {
 		name = "GFX_goal_HNN_liang_tiao_tui_zou_lu"
 		texturefile = "gfx/interface/goals/HNN_liang_tiao_tui_zou_lu.png"
 	}

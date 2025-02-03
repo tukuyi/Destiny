@@ -4506,10 +4506,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
-		}
-		available = {
-			
+			base = 15
 		}
 		prerequisite = {
 			focus = HNN_xin_yi_hui
@@ -4517,6 +4514,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_new_goverment
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_deng_ji_zhi"
 			add_country_leader_trait = NFA_cult_of_personality
@@ -4793,7 +4791,7 @@ focus_tree = {
 	focus = {
 		id = HNN_ya_li_an_jue_qi
 		icon = GFX_goal_HNN_ya_li_an_jue_qi
-		x = -21
+		x = -22
 		y = 18
 		cost = 2
 
@@ -5037,12 +5035,36 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_ta_meng_yi_you_zhi_wei
 		}
+		available = {
+			JAP = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+			DEH = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+			PRF = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_wo_men_de_sheng_cun_kong_jian"
 			add_popularity = {
 				ideology = national_populist
-				popularity = 0.10
+				popularity = 1
+			}
+			swap_ideas = {
+				remove_idea = HNN_jing_shen_si_jie
+				add_idea = HNN_jing_shen_si_jieB
 			}
 			country_event = { 
 				id = hunfo.13
@@ -5053,7 +5075,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_ren_jian_fo_jiao
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_ZAM_reforms_support
 		x = -16
 		y = 18
 		cost = 2
@@ -5073,7 +5095,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_bo_ai_si_ren
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_CAN_Universal_Healthcare
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = 1
 		y = 1
@@ -5085,13 +5107,26 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_bo_ai_si_ren"
-
+			swap_ideas = {
+				remove_idea = HNN_one_zong_jiao_idea
+				add_idea = HNN_one_zong_jiao_idea2
+			}
+			if = {
+				limit = { 
+					has_idea = HNN_fa_qi
+				}
+				remove_ideas = HNN_fa_qi
+			}
+			country_event = { 
+				id = hunfo.22
+				days = 2
+			}
 		}
 	}
 
 	focus = {
 		id = HNN_xiu_wu_jie_xing_shi_shan
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_HNN_xiu_wu_jie_xing_shi_shan
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = -1
 		y = 1
@@ -5103,13 +5138,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xiu_wu_jie_xing_shi_shan"
-
+			if = {
+				limit = { 
+					has_idea = HNN_nu_li
+				}
+				swap_ideas = {
+					remove_idea = HNN_nu_li
+					add_idea = TEX_we_live_in_a_red_society
+				}
+			}
+			else = {
+				add_ideas = TEX_we_live_in_a_red_society
+			}
 		}
 	}
 
 	focus = {
 		id = HNN_san_zhong_fo_jiao_ge_ming
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_HNN_san_zhong_fo_jiao_ge_ming
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = 0
 		y = 2
@@ -5133,7 +5179,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_fu_xiao_yu_da
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_HNN_fu_xiao_yu_da
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = -1
 		y = 3
@@ -5145,13 +5191,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fu_xiao_yu_da"
-
+			country_event = { 
+				id = hunfo.23
+				days = 2
+			}
+			add_research_slot_until_five = yes
 		}
 	}	
 
 	focus = {
 		id = HNN_xin_xue_yuan
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_TEX_rural_schools
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = 1
 		y = 3
@@ -5163,13 +5213,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_xue_yuan"
-
+			swap_ideas = {
+				remove_idea = HNN_deng_ji_zhi_idea
+				add_idea = HNN_deng_ji_zhi_idea2
+			}
 		}
 	}
 	
 	focus = {
 		id = HNN_fa_ji_shi_li
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_HNN_fa_ji_shi_li
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = 0
 		y = 4
@@ -5184,13 +5237,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fa_ji_shi_li"
-
+			swap_ideas = {
+				remove_idea = HNN_fo_revolution_idea
+				add_idea = HNN_fo_revolution_idea2
+			}
+			country_event = { 
+				id = hunfo.24
+				days = 2
+			}
 		}
 	}	
 
 	focus = {
 		id = HNN_fo_Xue_ji_hui_xue
-		icon = GFX_goal_TIB_By_Will_Tibets_True_King
+		icon = GFX_goal_HNN_fo_Xue_ji_hui_xue
 		relative_position_id = HNN_ren_jian_fo_jiao
 		x = 0
 		y = 5
@@ -5202,9 +5262,172 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fo_Xue_ji_hui_xue"
-
+			swap_ideas = {
+				remove_idea = HNN_fo_revolution_idea2
+				add_idea = HNN_fo_revolution_idea3
+			}
+			country_event = { 
+				id = hunfo.25
+				days = 2
+			}
 		}
 	}	
+
+	focus = {
+		id = HNN_yuan_bo_fo_fa
+		icon = GFX_goal_HNN_yuan_bo_fo_fa
+		relative_position_id = HNN_fo_jiao_tu_de_wei_lai
+		x = 0
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_ya_li_an_jue_qi
+			focus = HNN_ren_jian_fo_jiao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_yuan_bo_fo_fa"
+			add_war_support = 0.05
+			if = {
+				limit = { 
+					has_country_flag = SHI_tai_xu_victory
+				}
+				country_event = { 
+					id = hunfo.26
+					days = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HNN_chong_hui_zang_qu
+		icon = GFX_goal_HNN_chong_hui_zang_qu
+		relative_position_id = HNN_fo_jiao_tu_de_wei_lai
+		x = 0
+		y = 4
+		cost = 3
+
+		prerequisite = {
+			focus = HNN_yuan_bo_fo_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_chong_hui_zang_qu"
+			every_state = {
+				limit = { 
+					OR = {
+						is_core_of = TIB 
+						is_core_of = SIK 
+						is_core_of = BHU 
+						is_core_of = NEP 
+					}
+				}
+				add_core_of = ROOT
+			}
+			create_wargoal = {
+				target = TIB
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = SIK
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = BHU
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = NEP
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = HNN_xi_na_ri_ben
+		icon = GFX_goal_HNN_xi_na_ri_ben
+		relative_position_id = HNN_fo_jiao_tu_de_wei_lai
+		x = 0
+		y = 5
+		cost = 3
+
+		prerequisite = {
+			focus = HNN_chong_hui_zang_qu
+		}
+		available = {
+			TIB = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_xi_na_ri_ben"
+			every_state = {#日本
+				limit = { is_core_of = JAP }
+				add_core_of = ROOT
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JAP
+			}
+		}
+	}
+
+	focus = {
+		id = HNN_su_ben_zu_yuan
+		icon = GFX_goal_HNN_su_ben_zu_yuan
+		relative_position_id = HNN_fo_jiao_tu_de_wei_lai
+		x = 0
+		y = 6
+		cost = 3
+
+		prerequisite = {
+			focus = HNN_xi_na_ri_ben
+		}
+		available = {
+			JAP = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_su_ben_zu_yuan"
+			every_state = {#印度
+				limit = {
+					OR = {
+						is_core_of = BHC 
+						is_core_of = PRF
+						is_core_of = MAD
+						is_core_of = DEH
+					} 
+				}
+				add_core_of = HNN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BHC
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PRF
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DEH
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MAD
+			}
+		}
+	}
 ###大宋
 	focus = {
 		id = HNN_guo_jia_chong_sheng

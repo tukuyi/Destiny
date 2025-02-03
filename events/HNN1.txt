@@ -11,7 +11,7 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-
+		set_cosmetic_tag = HNN_FJZ
 		# QIE_kill_manchus = yes	
 
 		# eval_effect HNN = {

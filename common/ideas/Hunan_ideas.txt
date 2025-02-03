@@ -412,6 +412,26 @@ ideas = {
 				hog_local_tyrant
 			}
 		}
+		HNN_shi_tai_xu_hog = {#太虚
+			allowed = { original_tag = HNN }
+			picture = HNN_shi_ding_wu_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_ding_wu_hog"
+				
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_spiritual_leader
+			}
+		}
 		HNN_qian_xue_sheng_hog = {#钱学森
 			allowed = { original_tag = HNN }
 			picture = HNN_qian_xue_sheng_hog
@@ -605,7 +625,27 @@ ideas = {
 				radical_socialist
 				eco_teleological_planner
 			}
-		}		
+		}	
+		HNN_shi_yin_shun_eco = {#印顺法师
+			allowed = { original_tag = HNN }
+			picture = HNN_shi_yin_shun_eco
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_yin_shun_eco"
+				
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_peoples_economist
+			}
+		}	
 		HNN_Shang_Kun_sec = {#杨尚昆
 			allowed = { original_tag = HNN }
 			picture = HNN_Shang_Kun_sec
@@ -3617,7 +3657,7 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				min_export = -0.20
-				conscription = -0.25
+				conscription = -0.15
 				army_org_regain = 0.20
 				army_org_factor = 0.20
 				max_dig_in_factor = 0.25
@@ -5376,7 +5416,7 @@ ideas = {
 			}
 			picture = TIB_flaming_heart
 		}
-		HNN_one_zong_jiao_idea = {
+		HNN_one_zong_jiao_idea = {#和谐社会
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_one_zong_jiao_idea"}
 			allowed = { always = no }
 			modifier = {
@@ -5384,6 +5424,21 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.1
 			}
 			picture = SKM_elite_nobles
+		}
+		HNN_one_zong_jiao_idea2 = {#和谐社会
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_one_zong_jiao_idea2"}
+			allowed = { always = no }
+			name = HNN_one_zong_jiao_idea
+			picture = SKM_elite_nobles
+			modifier = {
+				stability_factor = 0.05
+				army_morale_factor = 0.05 
+				political_power_cost = -0.05
+				industrial_capacity_factory = 0.04
+				production_speed_buildings_factor = 0.02
+				production_speed_buildings_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
 		}
 		HNN_Practical_Idealism_idea = {#新时代佛教
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_Practical_Idealism_idea"}
@@ -5415,6 +5470,51 @@ ideas = {
 				radical_socialist_drift = 0.05
 				consumer_goods_expected_value = -0.05
 				production_speed_buildings_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		HNN_fo_revolution_idea2 = {#佛法革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_fo_revolution_idea2"}
+			allowed = { always = no }
+			picture = TIB_flaming_heart
+			name = HNN_fo_revolution_idea
+			modifier = {
+				local_supplies = 0.10
+				army_org_factor	= 0.05
+				stability_weekly = 0.05
+				stability_factor = 0.10
+				war_support_factor = 0.07
+				conscription_factor = 0.05
+				research_speed_factor = 0.10
+				political_power_cost = -0.10
+				radical_socialist_drift = 0.10
+				global_building_slots_factor = 0.10
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.09
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		HNN_fo_revolution_idea3 = {#佛法革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_fo_revolution_idea3"}
+			allowed = { always = no }
+			picture = TIB_flaming_heart
+			name = HNN_fo_revolution_idea
+			modifier = {
+				local_supplies = 0.10
+				army_org_factor	= 0.06
+				stability_weekly = 0.07
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				conscription_factor = 0.10
+				research_speed_factor = 0.10
+				political_power_cost = -0.10
+				radical_socialist_drift = 0.10
+				license_armor_purchase_cost = -0.05
+				global_building_slots_factor = 0.10
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
 				production_factory_start_efficiency_factor = 0.10
 			}
 		}
@@ -5456,11 +5556,24 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_deng_ji_zhi_idea"}
 			allowed = { always = no }
 			modifier = {
+				stability_factor = -0.05
 				paternal_autocrat_drift = 0.01
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1  
 			}
 			picture = bloated_bureaucracy
+		}
+		HNN_deng_ji_zhi_idea2 = {#博爱世人
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_deng_ji_zhi_idea2"}
+			allowed = { always = no }
+			picture = TEX_radtradgang
+			modifier = {
+				stability_factor = 0.05
+				local_resources_factor = 0.10
+				radical_socialist_drift = 0.10
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10  
+			}
 		}
 		HNN_shuang_xiu = {#双修法
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_shuang_xiu"}
