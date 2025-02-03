@@ -1,0 +1,27 @@
+characters = {
+################
+###   将领   ###
+################	
+#何世礼
+	SHC_robbie_hoshailai = {
+		name = SHC_robbie_hoshailai
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_robbie_hoshailai
+				large = GFX_Portrait_SHC_robbie_hoshailai
+			}
+		}
+		field_marshal = {
+			traits = { 
+				organizer 
+				career_officer
+				infantry_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+}

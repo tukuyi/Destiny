@@ -287,7 +287,6 @@ chinese_unification = {
 				}
 				NOT = {
 					OR = {
-						has_country_flag = HNN_fo_victory_flag
 						has_country_flag = HNN_gong_tuan_victory_flag
 						has_country_leader = { name = "长沙王" ruling_only = yes }
 						has_country_leader = { name = "光武帝" ruling_only = yes }

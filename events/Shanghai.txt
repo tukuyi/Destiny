@@ -762,6 +762,9 @@ country_event = {
 			id = shche.7
 			days = 1
 		}
+		SHC_robbie_hoshailai = {
+			set_nationality = ROOT
+		}
 		hidden_effect = {
 			create_country_leader = {
 				name = "何东"

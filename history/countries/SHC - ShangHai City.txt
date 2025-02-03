@@ -228,3 +228,9 @@ create_country_leader = {
 		 
 	}
 }
+
+recruit_character = SHC_robbie_hoshailai
+
+SHC_robbie_hoshailai = {
+	retire = yes
+}
