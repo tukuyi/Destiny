@@ -3985,18 +3985,80 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = QIE_flying_too_close_to_the_sun
+		icon = GFX_goal_generic_police_state
+		relative_position_id = QIE_wu_constitution
+		cost = 5
+		x = -1
+		y = 1
+
+		prerequisite = { focus = QIE_wu_constitution }
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_flying_too_close_to_the_sun"
+			if = {
+				limit = { has_dlc_lar = no }
+				add_political_power = 50
+				add_ideas = QIE_public_safety_bureau
+			}
+			else_if = {
+				limit = { has_intelligence_agency = no }
+				create_intelligence_agency = yes
+				upgrade_intelligence_agency = upgrade_anti_partisan
+			}
+			else_if = {
+				limit = { NOT = { has_done_agency_upgrade = upgrade_form_department } }
+				upgrade_intelligence_agency = upgrade_form_department
+			}
+			else_if = {
+				limit = { NOT = { has_done_agency_upgrade = upgrade_psycho_warfare } }
+				upgrade_intelligence_agency = upgrade_psycho_warfare
+			}
+			else = { add_political_power = 50 }
+			add_tech_bonus = {
+				name = QIE_flying_too_close_to_the_sun
+				bonus = 2
+				uses = 1
+				category = military_police_tech
+			}
+			hidden_effect = {
+				country_event = { id = qieflavor.105 days = 7 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+	focus = {
 		id = QIE_debt_issue
 		icon = GFX_HUN_revive_military_funding
-		cost = 4.00
-		prerequisite = {
-			focus = QIE_wu_constitution
-		}
-		x = 0
-		y = 1
 		relative_position_id = QIE_wu_constitution
+		cost = 4.00
+		x = 1
+		y = 1
 
 		ai_will_do = {
-			factor = 100
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_wu_constitution
 		}
 
 		completion_reward = {
@@ -4004,14 +4066,27 @@ focus_tree = {
 			country_event = {
 				id = qiefocus.10 # debt issue AND legitimacy
 			}
+			add_timed_idea = {
+				idea = QIE_dealing_with_dishonesty
+				days = 100
+			}
+			add_political_power = 35
+			add_stability = -0.08
 		}
 	}
 	focus = {
 		id = QIE_president_hu
 		icon = GFX_goal_QIE_president_hu
-		cost = 1.00
+		relative_position_id = QIE_wu_constitution
+		cost = 2.00
+		x = -2
+		y = 2
+
 		prerequisite = {
 			focus = QIE_debt_issue
+		}
+		prerequisite = {
+			focus = QIE_flying_too_close_to_the_sun
 		}
 		mutually_exclusive = {
 			focus = QIE_president_koo
@@ -4022,26 +4097,42 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		x = -2
-		y = 2
-		relative_position_id = QIE_wu_constitution
 
 		ai_will_do = {
-			factor = 100
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_president_hu"
-			add_political_power = 100
+			add_political_power = 50
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.04
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
 		id = QIE_president_koo
 		icon = GFX_goal_QIE_president_koo
-		cost = 1.00
+		relative_position_id = QIE_wu_constitution
+		cost = 2.00
+		x = 2
+		y = 2
+
 		prerequisite = {
 			focus = QIE_debt_issue
+		}
+		prerequisite = {
+			focus = QIE_flying_too_close_to_the_sun
 		}
 		mutually_exclusive = {
 			focus = QIE_president_hu
@@ -4052,26 +4143,44 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		x = 2
-		y = 2
-		relative_position_id = QIE_wu_constitution
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_president_koo"
-			add_stability = 0.075
+			add_stability = 0.05
+			608 = { 
+				add_dynamic_modifier = { 
+					modifier = QIE_beiyang_patronage_dynamic_modifier 
+				} 
+			}
+			hidden_effect = {
+				country_event = { id = qieflavor.112 days = 3 }
+				country_event = { id = qieflavor.104 days = 14 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 	focus = {
 		id = QIE_pragmatism
 		icon = GFX_focus_HKG_Pragmatism
+		relative_position_id = QIE_wu_constitution
 		cost = 5.00
+		x = -3
+		y = 3
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
 		prerequisite = {
 			focus = QIE_president_hu
 		}
-		x = -3
-		y = 3
-		relative_position_id = QIE_wu_constitution
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_pragmatism"
@@ -4102,6 +4211,9 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_debt_issue
 		}
+		prerequisite = {
+			focus = QIE_flying_too_close_to_the_sun
+		}
 		x = 1
 		y = 3
 		relative_position_id = QIE_wu_constitution
@@ -4113,6 +4225,10 @@ focus_tree = {
 				popularity = -0.15
 			}
 			add_stability = -0.05
+			add_timed_idea = {
+				idea = QIE_revival_of_new_nationalism
+				days = 100
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -4147,13 +4263,17 @@ focus_tree = {
 	focus = {
 		id = QIE_deligitimize_oppo
 		icon = GFX_oppose_radicals
+		relative_position_id = QIE_wu_constitution
 		cost = 3.50
+		x = -1
+		y = 3
+
 		prerequisite = {
 			focus = QIE_debt_issue
 		}
-		x = -1
-		y = 3
-		relative_position_id = QIE_wu_constitution
+		prerequisite = {
+			focus = QIE_flying_too_close_to_the_sun
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_deligitimize_oppo"
@@ -4167,27 +4287,37 @@ focus_tree = {
 					id = qieroc.1
 					days = 5
 				}
+				country_event = {
+					id = qieflavor.102
+					days = 15
+				}
 			}
 		}
 	}
 	focus = {
 		id = QIE_placate_intellectuals
 		icon = GFX_goal_ANQ_convince_intellectuals
+		relative_position_id = QIE_wu_constitution
 		cost = 5.00
+		x = 3
+		y = 4
+
 		prerequisite = {
 			focus = QIE_deligitimize_oppo
 		}
 		prerequisite = {
 			focus = QIE_eradicate_manchu
 		}
-		x = 3
-		y = 4
-		relative_position_id = QIE_wu_constitution
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_placate_intellectuals"
-			add_political_power = 50
-			add_stability = 0.10
+			china_add_research_slots = yes
+			custom_effect_tooltip = tooltip_white_line
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			add_soclib_to_coalition = yes
 
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -4195,19 +4325,37 @@ focus_tree = {
 	focus = {
 		id = QIE_rebuild_arsenals
 		icon = GFX_goal_FNG_chinese_flying_corps
-		cost = 3.00
+		relative_position_id = QIE_wu_constitution
+		cost = 4.00
+		x = -1
+		y = 4
+
 		prerequisite = {
 			focus = QIE_deligitimize_oppo
 		}
 		prerequisite = {
 			focus = QIE_eradicate_manchu
 		}
-		x = -1
-		y = 4
-		relative_position_id = QIE_wu_constitution
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_rebuild_arsenals"
+			add_timed_idea = {
+				idea = QIE_mass_nationalisation_of_noble_estates
+				days = 200
+			}
+			custom_effect_tooltip = tooltip_white_line
 			1062 = {
 				if = {
 					limit = {
@@ -4240,45 +4388,42 @@ focus_tree = {
 	focus = {
 		id = QIE_rebuild_domestic_ind
 		icon = GFX_goal_SRD_rebuild_piedmont
-		cost = 3.00
+		relative_position_id = QIE_wu_constitution
+		cost = 4.00
+		x = 1
+		y = 4
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_deligitimize_oppo
 		}
 		prerequisite = {
 			focus = QIE_eradicate_manchu
 		}
-		x = 1
-		y = 4
-		relative_position_id = QIE_wu_constitution
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_rebuild_domestic_ind"
-			608 = {
-				if = {
-					limit = {
-						is_owned_by = QIE
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_military_factory = yes
+			add_one_random_military_factory = yes
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = QIE_support_of_the_bankers
+				days = 210
 			}
-			607 = {
-				if = {
-					limit = {
-						is_owned_by = QIE
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -4362,9 +4507,6 @@ focus_tree = {
 				}
 			}
 		}
-		select_effect = {
-			
-		}
 		mutually_exclusive = {
 			focus = QIE_wu_constitution
 		}
@@ -4380,6 +4522,10 @@ focus_tree = {
 				days = 10
 			}
 			hidden_effect = {
+				country_event = { 
+					id = qieflavor.105 
+					days = 30 
+				}
 				GXC = {
 					country_event = {
 						id = qiewpf.15

@@ -8600,9 +8600,9 @@ country_event = { #chinese lindbergh event
 		name = qieflavor.9.a #great!
 		add_political_power = 10
 		add_ace = {
-			name = "Sun"
-			surname = "Tonggang"
-			callsign = "Lindbergh of the East"
+			name = "孙"
+			surname = "桐岗"
+			callsign = "东方的林德伯格"
 			type = fighter_genius
 		}
 	}
@@ -8935,6 +8935,121 @@ country_event = { #三弟的墓志铭
 		log = "[GetLogInfo]: event qieflavor.57 option qieflavor.57.a"
 		name = qieflavor.57.a 
 		add_political_power = 10
+	}
+}
+
+country_event = { #Regrets From and Old Correspondence
+	id = qieflavor.102
+	title = qieflavor.102.t
+	desc = qieflavor.102.d
+	picture = GFX_report_event_QIE_li_dazhao_old
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.102 option qieflavor.102.a"
+		name = qieflavor.102.a 
+	}
+}
+
+country_event = { #第一夫人，国际名媛
+	id = qieflavor.104
+	title = qieflavor.104.t
+	desc = qieflavor.104.d
+	picture = GFX_report_event_QIE_madame_koo_1943
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.104 option qieflavor.104.a"
+		name = qieflavor.104.a 
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#儒雅的秀才将军
+	id = qieflavor.105
+	title = qieflavor.105.t
+	desc = qieflavor.105.d
+	picture = GFX_report_event_QIE_wu_peifu_li_dazhao
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.105 option qieflavor.105.a"
+		name = qieflavor.105.a #The Traditional Warlord, or the Revolutionary Statesman?
+		country_event = { id = qieflavor.106 days = 10 }
+	}
+}
+
+country_event = { #国家多灾多难的统一之路
+	id = qieflavor.106
+	title = qieflavor.106.t
+	desc = qieflavor.106.d
+	picture = GFX_report_event_QIE_wu_1926_2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.106 option qieflavor.106.a"
+		name = qieflavor.106.a #The mistakes of the past continue to haunt the present.
+		add_political_power = 15
+		country_event = { id = qieflavor.108 days = 10 }
+	}
+}
+
+country_event = { #新时代儒家
+	id = qieflavor.108
+	title = qieflavor.108.t
+	desc = qieflavor.108.d
+	picture = GFX_report_event_QIE_wu_1926
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.108 option qieflavor.108.a"
+		name = qieflavor.108.a #A moderniser, and a traditionalist?
+		add_political_power = 10
+		country_event = { id = qieflavor.109 days = 10 }
+	}
+}
+
+country_event = { #民主原则
+	id = qieflavor.109
+	title = qieflavor.109.t
+	desc = qieflavor.109.d
+	picture = GFX_report_event_QIE_wu_old_1
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.109 option qieflavor.109.a"
+		name = qieflavor.109.a #Wu Peifu Thought? Interesting...
+		add_political_power = 5
+	}
+}
+
+country_event = { #不欢而聚
+	id = qieflavor.112
+	title = qieflavor.112.t
+	desc = qieflavor.112.d
+	picture = GFX_report_event_QIE_wellington_koo_figure
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qieflavor.112 option qieflavor.112.a"
+		name = qieflavor.112.a #Loss of faith is hard to bear.
 	}
 }
 

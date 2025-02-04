@@ -1174,7 +1174,7 @@ HNN_foreign_category = {#中国结盟决议
 			is_in_faction = no
 		}
 		ai_will_do = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 10
 				event_target:current_china_leader = {

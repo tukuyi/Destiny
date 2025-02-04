@@ -1,7 +1,7 @@
-﻿QYG_GAR_01 = {
-	name = "琼崖根据地革命武装"
+﻿HNN_RAD_01 = {
+	name = "三省根据地革命武装"
 
-	for_countries = { QYG }
+	for_countries = { HNN }
 
 	can_use = { always = yes }
 

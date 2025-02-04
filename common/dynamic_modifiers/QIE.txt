@@ -6,3 +6,12 @@ QIE_hubei_generals_dynamic_modifier = {#湖北将军团
 	local_factories = 0.25
 	state_resource_steel = 4
 }
+QIE_beiyang_patronage_dynamic_modifier = {
+	icon = "GFX_decision_generic_fundraising"
+	local_org_regain = 0.25
+	local_supplies = 0.25
+	local_building_slots_factor = 0.25
+	local_factories = 0.25
+	local_intel_to_enemies = -0.25
+	enemy_intel_network_gain_factor_over_occupied_tag = -0.25
+}

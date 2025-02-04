@@ -93,6 +93,7 @@ HNN_education_clamp = {#确定上下限
 		max = 95
 	}
 }
+
 HNN_setup_three = {#为三巨头定值
 	set_variable = { HNN_triumvirs_LIN = ROOT.has_war_support }#彪子
 	if = {
@@ -410,6 +411,7 @@ HNN_three_end = {#这仨终于完了
 		}
 	}
 }
+
 HNN_down_popularity = {#CPC支持率下降
 	if = {
 		limit = { 
@@ -457,6 +459,7 @@ HNN_down_popularity = {#CPC支持率下降
 		}
 	}
 }
+
 HNN_tu_di_gai_ge = {#土改BUFF
 	if = {
 		limit = { 
@@ -513,7 +516,12 @@ HNN_tu_gaI_jie_sh = {#土地改革结束
 		if = {
 			limit = { 
 				NOT = {
-					has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
+					OR = {
+						has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
+						has_country_leader = { name = "陈毅" ruling_only = yes }
+						has_country_leader = { name = "郭沫若" ruling_only = yes }
+						has_country_leader = { name = "钱学森" ruling_only = yes }
+					}
 				}
 			}
 			country_event = { 
@@ -571,6 +579,7 @@ HNN_tu_gaI_jie_sh = {#土地改革结束
 		add_political_power = HNN_tu_gai_bonus
 	}
 }
+
 HNN_da_hui_zhi_ci_du = {#各派系支持度
 	set_variable = {#极权派 
 		HNN_ji_quan = 0
@@ -658,6 +667,144 @@ HNN_southern_political_council_effect = {
 	}
 }
 
+HNN_revolution_victory = {#工团上台初始设定
+	remove_ideas = {
+		HNN_fire_repubilc
+		HNN_intense_agricultural_imbalance
+		HNN_stabilising_industrial_sector
+		HNN_independent_industrial_sector
+		HNN_developing_industrial_sector
+		HNN_self_sufficient_industry
+		HNN_export_oriented_industry
+		HNN_perilous_industrial_sector
+		HNN_embers_of_agricultural_redistribution
+		HNN_careful_agricultural_reform
+		HNN_peasant_councils
+		HNN_derelict_industrial_sector
+		HNN_catastrophic_agricultural_crisis
+		HNN_balancing_the_books_idea
+		HNN_renewed_agricultural_balance
+		HNN_weak_military
+		HNN_a_democratic_province
+		HNN_a_democratic_province_2
+		HNN_a_democratic_province_3
+		HNN_the_western_diarchy
+		HNN_the_western_diarchy_2
+		HNN_turbulent_intelligentsia
+		HNN_intellectual_hub
+		HNN_peasant_support_weak
+		HNN_peasant_support_growing
+		HNN_peasant_support_strong
+		HNN_bolstered_intellectual_hub
+		HNN_basic_welfare
+		HNN_robust_academic_infrastructure
+		HNN_rights_guaranteed
+		HNN_peace_with_the_unions
+		HNN_legislative_debates
+		HNN_bill_of_rights
+		HNN_democratic_traditions
+		HNN_diarchy_influence_curbbed
+		HNN_democratic_stronghold
+		HNN_alliance_with_the_diarchy
+		HNN_alliance_with_the_diarchy2
+	}
+
+	retire_character = HNN_tang_xiangming
+	retire_character = HNN_yuan_zuming
+	retire_character = HNN_chen_quzhen
+	retire_character = HNN_tian_yingzhao
+	retire_character = HNN_ye_kaixin
+	retire_character = HNN_zhao_hengti
+
+	HNN_peng_dehuai = {
+		promote_leader = yes
+	}
+	HNN_he_long = {
+		promote_leader = yes
+	}
+
+	HNN_He_Su_Heng = { HNN_recruit_characters_effect = yes }
+	HNN_Dong_Bi_Wu = { HNN_recruit_characters_effect = yes }
+	HNN_he_long = { HNN_recruit_characters_effect = yes }
+	HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
+	HNN_Teng_Daiyuan = { HNN_recruit_characters_effect = yes }
+	GXC_Wan_Dan_Ping = { HNN_recruit_characters_effect = yes }
+	HNN_Chen_Yi = { HNN_recruit_characters_effect = yes }
+	HNN_Xiao_Ke = { HNN_recruit_characters_effect = yes }
+	HNN_wang_zhen = { HNN_recruit_characters_effect = yes }
+	HNN_Tan_Zhen_Lin = { HNN_recruit_characters_effect = yes }
+	HNN_Yuan_Wen_Cai = { HNN_recruit_characters_effect = yes }
+	HNN_Long_Chao_Qing = { HNN_recruit_characters_effect = yes }
+	HNN_Wan_Xi_Xian = { HNN_recruit_characters_effect = yes }
+	HNN_Xu_Si_You = { HNN_recruit_characters_effect = yes }
+	HNN_geng_biao = { HNN_recruit_characters_effect = yes }
+	HNN_Tan_zheng = { HNN_recruit_characters_effect = yes }
+	HNN_Chen_Yun = { HNN_recruit_characters_effect = yes }
+	HNN_tang_shengming = { HNN_recruit_characters_effect = yes }
+
+	set_party_name = {
+		ideology = totalist
+		long_name =  HNN_totalist_party1_long
+		name =  HNN_totalist_party1
+	}
+	set_party_name = {
+		ideology = radical_socialist
+		long_name =  HNN_radical_socialist_party1_long
+		name =  HNN_radical_socialist_party1
+	}
+	set_party_name = {
+		ideology = syndicalist
+		long_name =  HNN_syndicalist_party1_long
+		name =  HNN_syndicalist_party1
+	}
+	set_party_name = {
+		ideology = social_democrat
+		long_name =  HNN_social_democrat_party1_long
+		name =  HNN_social_democrat_party1
+	}
+	set_party_name = {
+		ideology = social_liberal
+		long_name =  HNN_social_liberal_party1_long
+		name =  HNN_social_liberal_party1
+	}
+	set_party_name = {
+		ideology = market_liberal
+		long_name =  HNN_market_liberal_party1_long
+		name =  HNN_market_liberal_party1
+	}
+	set_party_name = {
+		ideology = social_conservative
+		long_name =  HNN_social_conservative_party1_long
+		name =  HNN_social_conservative_party1
+	}
+	set_party_name = {
+		ideology = authoritarian_democrat
+		long_name =  HNN_authoritarian_democrat_party1_long
+		name =  HNN_authoritarian_democrat_party1
+	}
+	set_party_name = {
+		ideology = paternal_autocrat
+		long_name =  HNN_paternal_autocrat_party1_long
+		name =  HNN_paternal_autocrat_party1
+	}
+
+	add_popularity = {
+		ideology = syndicalist
+		popularity = 0.1
+	}
+	add_popularity = {
+		ideology = authoritarian_democrat
+		popularity = -0.1
+	}
+	add_popularity = {
+		ideology = authoritarian_democrat
+		popularity = -0.10
+	}
+	add_popularity = {
+		ideology = paternal_autocrat
+		popularity = -0.10
+	}
+}
 ###选举
 HNN_election_update_percentage_effect = {
 	clamp_variable = { var = hnn_tan_popularity min = 0 max = 15 }

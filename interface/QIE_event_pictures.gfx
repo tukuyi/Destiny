@@ -16,6 +16,30 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_puyi_and_reginald_johnston.png"
 	}	
 	spriteType  = {
+		name = "GFX_report_event_QIE_madame_koo_1943"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_madame_koo_1943.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_wellington_koo_figure"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wellington_koo_figure.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_wu_1926"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_wu_1926"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_wu_old_1"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_old_1.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_wu_1926_2"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926_2.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_QIE_huang_fu"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_huang_fu.png"
 	}	

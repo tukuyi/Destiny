@@ -1624,6 +1624,78 @@ ideas = {
 				generate_wargoal_tension = -0.40
 				generate_wargoal_tension_against = 0.40
 			}
+		}	
+	#北洋ROC线统一前
+		QIE_pragmatism_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_pragmatism_idea"}
+			allowed = { always = no }
+			picture = war_of_words
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+			}
+		}
+		QIE_diplomatic_genius_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_diplomatic_genius_idea"}
+			allowed = { always = no }
+			picture = jap_supremacy_of_will
+			modifier = {
+				trade_opinion_factor = 0.20
+				faction_trade_opinion_factor = 0.10
+			}
+		}
+		QIE_support_of_the_bankers = {#银行家解囊
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_support_of_the_bankers" }
+			picture = FNG_china_money
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.10
+				production_speed_industrial_complex_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+		QIE_mass_nationalisation_of_noble_estates = {#大规模国有化勋贵产业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_mass_nationalisation_of_noble_estates" }
+			picture = PER_Corruption
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.25
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+		QIE_revival_of_new_nationalism = {#新民族主义复兴
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_revival_of_new_nationalism" }
+			picture = generic_phoenix
+			allowed = { always = no }
+			modifier = {
+				war_support_weekly = 0.005
+				experience_gain_navy = 0.10
+				experience_gain_army = 0.10
+				experience_gain_air = 0.10
+				mobilization_speed = 0.10
+			}
+		}
+		QIE_public_safety_bureau = {#北京市公安局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_public_safety_bureau" }
+			picture = generic_secret_police
+			research_bonus = {
+				decryption_tech = 0.10
+				encryption_tech = 0.10
+			}
+			modifier = {
+				resistance_growth = -0.15
+			}
+		}
+		QIE_dealing_with_dishonesty = {#处理贪官污吏
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_dealing_with_dishonesty" }
+			picture = generic_broken_champagne
+			allowed = { always = no }
+			modifier = {
+				war_support_weekly = 0.0075
+				stability_weekly = -0.0075
+				industrial_capacity_factory = 0.07
+				research_speed_factor = 0.07
+			}
 		}
 	#吴佩孚
 		QIE_shou_jin_yan_lu = {#管制言路
@@ -3273,26 +3345,6 @@ ideas = {
 				planning_speed = -0.05
 				army_org_Factor  = -0.05
 				army_morale_factor = -0.05
-			}
-		}
-#Pragmatism - Hu Shih
-		QIE_pragmatism_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_pragmatism_idea"}
-			allowed = { always = no }
-			picture = war_of_words
-			modifier = {
-				political_power_gain = 0.10
-				stability_factor = 0.05
-			}
-		}
-#Diplomatic Genius - weligton Koo 
-		QIE_diplomatic_genius_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_diplomatic_genius_idea"}
-			allowed = { always = no }
-			picture = jap_supremacy_of_will
-			modifier = {
-				trade_opinion_factor = 0.20
-				faction_trade_opinion_factor = 0.10
 			}
 		}
 #integrating province - anytime you annex someone you get this idea for a while 
