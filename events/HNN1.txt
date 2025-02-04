@@ -13,10 +13,10 @@ country_event = {#测试事件
 		name = hnn.100000.a
 
 		eval_effect QIE = {
-			1048 = {
-				prioritize_state = yes
-			}
+			QIE_zhili_clique_flees = yes
 		}
+
+		# hnnzhili.1
 
 		# eval_effect ETS = {
 		# 	activate_mission = ETS_war_timer

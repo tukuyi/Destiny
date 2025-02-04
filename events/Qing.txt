@@ -89,9 +89,6 @@ country_event = { # death of wang chengbin
 			remove_idea = QIE_leadership_crisis
 			add_idea = QIE_leadership_crisis_bad
 		}
-		QIE_wang_chengbin = {
-			retire = yes
-		}
 	}
 }
 
@@ -5626,6 +5623,44 @@ country_event = {
 	}
 }
 
+country_event = { #汤芗铭被击退
+	id = qiefor.141
+	title = qiefor.141.t
+	desc = qiefor.141.d
+
+	picture = GFX_report_event_HNN_tang_xiangming_civilian
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # He can repay his failures with his service
+		log = "[GetLogInfo]: event qiefor.141 option qiefor.141.a"
+		name = qiefor.141.a
+		add_political_power = -15
+		HNN = {
+			HNN_tang_xiangming = {
+				set_nationality = QIE
+				add_trait = {
+					trait = QIE_Zhili_officer
+				}
+				remove_trait = { trait = politically_connected }
+			}
+		}
+		if = {
+			limit = { HNN = { has_character = SQI_lu_jin } }
+			HNN = {
+				SQI_lu_jin = { set_character_flag = QIE_zhili_leader }
+				SQI_lu_jin = { set_nationality = QIE }
+			}
+		}
+	}
+	option = { # We have no need for him
+		log = "[GetLogInfo]: event qiefor.141 option qiefor.141.b"
+		name = qiefor.141.b
+		ai_chance = { base = 0 }
+	}
+}
+
 ######
 #COUP#
 ######
@@ -6673,7 +6708,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = {#
 	id = qiecoup.21 #Puyi flees the room and guards rush in to arrest them!
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiecoup.21" }
 	title = qiecoup.21.t
@@ -6795,21 +6830,30 @@ country_event = {#皇帝一鸣惊人
 
 	option = {
 		name = qiecoup.22.a #crush the traitors!
-		remove_ideas = QIE_legitimacy_of_the_monarchy
+		remove_idea = QIE_legitimacy_of_the_monarchy
 		clr_country_flag = legation_council_member
 		hidden_effect = {
 			QIE_zhili_clique_flees = yes
-			create_corps_commander = {
-				name = "佟济煦"
-				portrait_path = "gfx/leaders/QIE/Portrait_QIE_Tong_Jixu.png"
-				desc = "QIE_TONG_JIXU_ARMY_DESC"
-				traits = { media_personality organizer }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			QIE_Tong_Jixu = {
+				set_nationality = ROOT
 			}
+			every_army_leader = {
+				limit = { has_trait = hidden_sympathies }
+				remove_trait = { trait = hidden_sympathies }
+			}
+			QIE_lu_xiangting = {
+				add_trait = {
+					trait = hidden_sympathies
+				}
+				remove_trait = { trait = QIE_Zhili_officer }
+			}
+			QIE_yu_xuezhong = {
+				add_trait = {
+					trait = hidden_sympathies
+				}
+				remove_trait = { trait = QIE_Zhili_officer }
+			}
+
 			LEP = {
 				if = {
 					limit = { has_cosmetic_tag = LEP_NAN }
@@ -6821,6 +6865,7 @@ country_event = {#皇帝一鸣惊人
 					set_cosmetic_tag = LEP_REP
 				}
 			}
+
 			set_politics = {
 				ruling_party = social_conservative
 			}
@@ -6866,10 +6911,22 @@ country_event = {#皇帝一鸣惊人
 					promote_leader = yes
 				}
 			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = QIE_authoritarian_democrat_coup_party_long
+				name = QIE_authoritarian_democrat_coup_party
+			}
+			set_party_name = {
+				ideology = social_liberal
+				long_name = QIE_social_liberal_coup_party_long
+				name = QIE_social_liberal_coup_party
+			}
+
 			if = {
 				limit = { has_country_flag = QIE_song_backs_coup }
 				set_country_leader_ideology = neo_confucianism_subtype
 			}
+
 			remove_all_ministers = yes
 			add_ideas = {
 				QIE_Aisin_Gioro_Pujie_hog_sco
@@ -6878,6 +6935,7 @@ country_event = {#皇帝一鸣惊人
 				QIE_Kunggur_Guanglu_sec_sco
 				QIE_Aisin_Gioro_Jixing_cos
 			}
+
 			set_popularities = {
 				totalist = 0
 				radical_socialist = 0
@@ -6967,29 +7025,17 @@ country_event = {#皇帝一鸣惊人
 					hours = 3
 				}
 			}
-			hidden_effect = {
-				set_party_name = {
-					ideology = authoritarian_democrat
-					long_name = QIE_authoritarian_democrat_coup_party_long
-					name = QIE_authoritarian_democrat_coup_party
-				}
-				set_party_name = {
-					ideology = social_liberal
-					long_name = QIE_social_liberal_coup_party_long
-					name = QIE_social_liberal_coup_party
-				}
-				if = {
-					limit = { 
-						SQI = {
-							has_country_leader = {
-								name = "靳云鹗"
-								ruling_only = yes
-							}
+			if = {
+				limit = { 
+					SQI = {
+						has_country_leader = {
+							name = "靳云鹗"
+							ruling_only = yes
 						}
 					}
-					SQI = {
-						country_event = { id = SQI.26 days = 2 }
-					}
+				}
+				SQI = {
+					country_event = { id = SQI.26 days = 2 }
 				}
 			}
 		}
@@ -7751,20 +7797,8 @@ country_event = {
 		name = qiefocus.14.a #flavor
 		add_political_power = 10
 		hidden_effect = {
-			create_corps_commander = {
-				name = "佟济煦"
-				portrait_path = "gfx/leaders/QIE/Portrait_QIE_Tong_Jixu.png"
-				desc = "QIE_TONG_JIXU_ARMY_DESC"
-				traits = {
-					QIE_Monarchist_officer
-					media_personality
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 1
-				id = 11856
+			QIE_Tong_Jixu = {
+				set_nationality = ROOT
 			}
 		}
 		country_event = {
@@ -8671,12 +8705,11 @@ country_event = { #puppet president playing cards
 	}
 }
 
-country_event = {
+unit_leader_event = {
 	id = qieflavor.14
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qieflavor.14" }
 	title = qieflavor.14.t
 	desc = qieflavor.14.d
-	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -13239,6 +13272,28 @@ country_event = {#人心惶惶
 			ideology = social_conservative
 			popularity = 0.03
 		}
+		hidden_effect = {
+			if = {
+				limit = { has_character = QIE_yu_xuezhong }
+				QIE_yu_xuezhong = {
+					set_nationality = FNG
+					unit_leader_event = qieflavor.14
+				}
+			}
+			if = {
+				limit = { has_character = QIE_lu_xiangting }
+				if = {
+					limit = { country_exists = LEP }
+					QIE_lu_xiangting = {
+						set_nationality = LEP
+						unit_leader_event = qieflavor.14
+					}
+				}
+				else = {
+					QIE_lu_xiangting = { retire = yes }
+				}
+			}
+		}
 	}
 
 	option = { 
@@ -13436,9 +13491,6 @@ country_event = {#新总统
 		country_event = {
 			id = qiepan.52
 			days = 5
-		}
-		hidden_effect = {
-			 
 		}
 	}
 

@@ -716,6 +716,47 @@ HNN_revolution_victory = {#工团上台初始设定
 	retire_character = HNN_ye_kaixin
 	retire_character = HNN_zhao_hengti
 
+	if = {
+		limit = { has_character = SQI_lu_jin }
+		retire_character = SQI_lu_jin
+	}
+	if = {
+		limit = { has_character = SQI_zhang_jingyao }
+		retire_character = SQI_zhang_jingyao
+	}
+	if = {
+		limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+		QIE = { country_event = { id = qiefor.141 days = 3 } }
+	}
+	else_if = {
+		limit = { SZC = { is_ruled_by_pro_zhili = yes } }
+		random_unit_leader = {
+			limit = { is_character = HNN_tang_xiangming }
+			set_nationality = SZC
+			unit_leader_event = qieflavor.14
+		}
+		if = {
+			limit = { 
+				has_character = SQI_lu_jin 
+			}
+			random_unit_leader = {
+				limit = { is_character = SQI_lu_jin }
+				set_nationality = SZC
+				unit_leader_event = qieflavor.14
+			}
+		}
+		if = {
+			limit = { 
+				has_character = SQI_lu_jin 
+			}
+			random_unit_leader = {
+				limit = { is_character = SQI_lu_jin }
+				set_nationality = SZC
+				unit_leader_event = qieflavor.14
+			}
+		}
+	}
+
 	HNN_peng_dehuai = {
 		promote_leader = yes
 	}

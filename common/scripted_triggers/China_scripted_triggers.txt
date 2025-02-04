@@ -592,13 +592,6 @@ is_ruled_by_federalists = {#是联省派
 					}
 				}
 				AND = {
-					tag = SHX
-					OR = {
-						has_country_flag = SHX_alliance_GXC
-						has_country_flag = SHX_alliance_SZC
-					}
-				}
-				AND = {
 					tag = XSM
 					has_government = social_conservative
 				}
@@ -609,9 +602,12 @@ is_ruled_by_federalists = {#是联省派
 				AND = {
 					tag = HNN
 					OR ={
-						has_country_leader = {
-							name = "谭延闿"
-							ruling_only = yes
+						AND = {
+							has_country_leader = {
+								name = "谭延闿"
+								ruling_only = yes
+							}
+							has_government = social_liberal
 						}
 						has_country_leader = {
 							name = "赵恒惕"

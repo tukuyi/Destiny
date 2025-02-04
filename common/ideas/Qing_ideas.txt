@@ -797,7 +797,59 @@ ideas = {
 				justify_war_goal_time = -0.20
 				production_speed_arms_factory_factor = 0.10
 			}
-		}				
+		}
+	#满贼军改
+		QIE_revival_of_the_new_army_level1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_revival_of_the_new_army_level1" }
+			picture = advisors_china_qing
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.05
+				modifier_army_sub_unit_irregular_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.05
+				land_doctrine_cost_factor = 0.05
+			}
+		}
+		QIE_revival_of_the_new_army_level2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_revival_of_the_new_army_level2" }
+			picture = advisors_china_qing
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.05
+				modifier_army_sub_unit_irregular_infantry_attack_factor = 0.10
+				modifier_army_sub_unit_irregular_infantry_defence_factor = 0.10
+				modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.10
+			}
+		}
+		QIE_revival_of_the_new_army_level3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_revival_of_the_new_army_level3" }
+			picture = advisors_china_qing
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.1
+				modifier_army_sub_unit_irregular_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_irregular_infantry_defence_factor = 0.15
+				modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.15
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				cas_damage_reduction = 0.05
+			}
+		}
+		QIE_revival_of_the_new_army_level4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_revival_of_the_new_army_level4" }
+			picture = advisors_china_qing
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.15
+				modifier_army_sub_unit_irregular_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_irregular_infantry_defence_factor = 0.15
+				modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.15
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				cas_damage_reduction = 0.10
+			}
+		}					
 	#张荫梧
 		QIE_ge_xin_de_jing_shen = {#革新精神
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_ge_xin_de_jing_shen"}
@@ -2787,6 +2839,37 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.05
 			}
 		}
+		#Manchu Fractured Empire
+		QIE_fractured_empire0 = {#破碎的帝国
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire0" }
+			name = QIE_fractured_empire_manchu
+			picture = man_low_legitimacy
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = -0.25
+				political_power_factor = -0.15
+			}
+		}
+		QIE_fractured_empire2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire2" }
+			name = QIE_fractured_empire_manchu
+			picture = man_low_legitimacy2
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = -0.15
+				political_power_factor = -0.05
+			}
+		}
+		QIE_fractured_empire3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire3" }
+			name = QIE_fractured_empire_manchu
+			picture = man_low_legitimacy3
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = -0.1
+				political_power_factor = -0.025
+			}
+		}
 	#encouraging domestic production
 		QIE_encourage_dom_production = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_encourage_dom_production"}
@@ -3505,9 +3588,8 @@ ideas = {
 			allowed = { always = no }
 			picture = generic_manpower_bonus
 			modifier = {
-				resistance_target_on_our_occupied_states = 0.05
-				army_core_defence_factor = 0.05
-				conscription = 0.005
+				dig_in_speed_factor = 0.10
+				resistance_damage_to_garrison_on_our_occupied_states = 0.20
 			}
 		}
 #Baojia System

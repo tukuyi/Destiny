@@ -2441,6 +2441,9 @@ focus_tree = {
 					add_idea = QIE_formation_of_a_militaristic_state_people_level1
 				}
 			}
+			hidden_effect = {
+				QIE_upgrade_military_spirit_jiang_effect = yes
+			}
 		}
 	}
 	focus = {
@@ -2478,6 +2481,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = QIE_highlighting_our_goals_tt
 			hidden_effect = {
+				QIE_upgrade_military_spirit_jiang_effect = yes
 				QIE = {
 					every_character = { #不是 every_army_leader，因为这会导致检查 AI 生成的 genericos 并记录吴佩孚检查的 is_character 错误
 						random_select_amount = 3
@@ -2949,6 +2953,9 @@ focus_tree = {
 					add_idea = QIE_in_the_footsteps_of_giants_level1
 				}
 			}
+			hidden_effect = {
+				QIE_upgrade_military_spirit_germany_effect = yes
+			}
 		}
 	}
 	focus = {
@@ -3025,6 +3032,9 @@ focus_tree = {
 					add_idea = QIE_in_the_footsteps_of_giants_level2
 				}
 			}
+			hidden_effect = {
+				QIE_upgrade_military_spirit_germany_effect = yes
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -3090,6 +3100,9 @@ focus_tree = {
 						add_idea = QIE_formation_of_a_militaristic_state_people_level3
 					}
 				}
+				hidden_effect = {
+					QIE_upgrade_military_spirit_jiang_effect = yes
+				}
 			}
 			else_if = {
 				limit = { has_completed_focus = QIE_symphony_of_military_and_industry }
@@ -3098,6 +3111,9 @@ focus_tree = {
 						remove_idea = QIE_in_the_footsteps_of_giants_level2
 						add_idea = QIE_in_the_footsteps_of_giants_level3
 					}
+				}
+				hidden_effect = {
+					QIE_upgrade_military_spirit_germany_effect = yes
 				}
 			}
 			else = {
@@ -3116,6 +3132,7 @@ focus_tree = {
 					}
 				}
 			}
+
 		}
 	}
 	focus = {
@@ -3713,9 +3730,50 @@ focus_tree = {
 			if = {
 				limit = { has_idea = QIE_fractured_empire }
 				remove_ideas = QIE_fractured_empire
-				else_if = {
-					limit = { has_idea = QIE_ilegitimate_republic_idea }
-					remove_ideas = QIE_ilegitimate_republic_idea
+			}
+			else_if = {
+				limit = { has_idea = QIE_ilegitimate_republic_idea }
+				remove_ideas = QIE_ilegitimate_republic_idea
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_completed_focus = QIE_on_national_defense }
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = QIE_formation_of_a_militaristic_state_people_level3
+						add_idea = QIE_formation_of_a_militaristic_state_people_level4
+					}
+				}
+				hidden_effect = {
+					QIE_upgrade_military_spirit_jiang_effect = yes
+				}
+			}
+			else_if = {
+				limit = { has_completed_focus = QIE_symphony_of_military_and_industry }
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = QIE_in_the_footsteps_of_giants_level3
+						add_idea = QIE_in_the_footsteps_of_giants_level4
+					}
+				}
+				hidden_effect = {
+					QIE_upgrade_military_spirit_germany_effect = yes
+				}
+			}
+			else = {
+				custom_effect_tooltip = QIE_chosen_jiang_plan_tt
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = QIE_formation_of_a_militaristic_state_people_level3
+						add_idea = QIE_formation_of_a_militaristic_state_people_level4
+					}
+				}
+				custom_effect_tooltip = QIE_chosen_germany_plan_tt
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = QIE_in_the_footsteps_of_giants_level3
+						add_idea = QIE_in_the_footsteps_of_giants_level4
+					}
 				}
 			}
 		}

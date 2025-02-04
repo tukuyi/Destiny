@@ -28,235 +28,262 @@ QIE_remove_peking_commission = {
 	remove_dynamic_modifier = { modifier = QIE_german_influence_dynamic_modifier }
 }
 
-QIE_zhili_clique_flees = {
-	### if SZC is Authdem, move all Zhili generals into hiding
-	### 他们将逃亡四川
-	if = {
-		limit = {
-			SZC = { has_government = authoritarian_democrat }
-		}
-		every_unit_leader = {
-			limit = {
-				OR = {
-					is_character = QIE_jiang_bai_li
-					is_character = QIE_wang_huaiqing
-					is_character = QIE_zhang_qihuang
-					is_character = QIE_xiao_yaonan
-					is_character = QIE_zhang_shaozeng
-					is_character = QIE_liu_menggeng
-					is_character = QIE_cai_chengxun
-					is_character = QIE_Cao_Shijie
-				}
-			}
-			set_nationality = NSW
-		}
-		### then trigger the Zhili Remnant switch
-		SZC = {
-			country_event = { id = sichuan.264 days = 20 random_hours = 480 }
-		}
-	}
-	### if SZC is not AuthDem, scatter the generals
-	else = {
-		### Jiang Baili flees to Guangdong, Zhang Qihuang to Guangxi
+QIE_zhili_clique_flees = {#直系大逃亡
+	custom_effect_tooltip = QIE_zhili_clique_flees_tt
+	hidden_effect = {
+		### 逃亡四川
 		if = {
 			limit = {
-				NOT = {
-					GXC = { has_country_flag = GXC_had_civil_war }
+				SZC = {
+					SZC_has_armament_government = yes
+					NOT = { has_idea = SZC_civil_war_idea }
 				}
 			}
-			random_unit_leader = {
-				limit = { #Jiang Baili 
-					is_character = QIE_jiang_bai_li
-				} 
-				add_unit_leader_trait = GXC_guangdong_clique_officer
-				set_nationality = GXC
-				unit_leader_event = qieflavor.14
-			}
-			random_unit_leader = {
-				limit = { is_character = QIE_zhang_qihuang }
-				add_unit_leader_trait = GXC_guangxi_clique_officer
-				set_nationality = GXC
-				unit_leader_event = qieflavor.14
-			}
-		}
-		else = {
-			random_other_country = {
-				limit = {
-					OR = {
-						tag = GXC
-						tag = PRC
-					}
-					GXC_has_guangdong_government = yes
-					GXC_has_KMT_government = no
-				}
-				ROOT = {
-					random_unit_leader = {
-						limit = { #Jiang Baili
-							is_character = QIE_jiang_bai_li
-						} 
-						add_unit_leader_trait = GXC_guangdong_clique_officer
-						set_nationality = PREV.PREV
-						unit_leader_event = qieflavor.14
-					}
-				}
-			}
-			random_other_country = {
-				limit = {
-					OR = {
-						tag = GXC
-						tag = PRC
-					}
-					GXC_has_guangxi_government = yes
-					GXC_has_KMT_government = no
-				}
-				ROOT = {
-					random_unit_leader = {
-						limit = { is_character = QIE_zhang_qihuang }
-						add_unit_leader_trait = GXC_guangxi_clique_officer
-						set_nationality = PREV.PREV
-						unit_leader_event = qieflavor.14
-					}
-				}
-			}
-			### if the target is invalid, goes into hiding instead
-			if = {
-				limit = { has_character = QIE_jiang_bai_li } #Jiang Baili
-				random_unit_leader = {
-					limit = { #Jiang Baili
-						is_character = QIE_jiang_bai_li
-					} 
-					set_nationality = NSW
-				}
-			}
-			if = {
-				limit = { has_character = QIE_zhang_qihuang } #Zhang Qihuang
-				random_unit_leader = {
-					limit = { is_character = QIE_zhang_qihuang }
-					set_nationality = NSW
-				}
-			}
-		}
-		### Xiao Yaonan flees to non-KMT Sichuan or goes into hiding
-		if = {
-			limit = {
-				SZC = { SZC_has_officer_government = no }
-			}
-			random_unit_leader = {
-				limit = { is_character = QIE_xiao_yaonan } #Xiao Yaonan
-				set_nationality = SZC
-				unit_leader_event = qieflavor.14
-			}
-		}
-		else = {
-			random_unit_leader = {
-				limit = { is_character = QIE_xiao_yaonan } #Xiao Yaonan
-				set_nationality = NSW
-			}
-		}
-		### SZC's generals flee to LEP or go into hiding
-		if = {
-			limit = { country_exists = LEP }
 			every_unit_leader = {
-				limit = {
-					OR = {
-						has_id = 1129 #Yang Sen
-						has_id = 1130 #Liu Cunhou
-						has_id = 1131 #Fan Shaozeng
-						has_id = 1133 #He Guoguang
+				limit = { 
+					has_trait = QIE_Zhili_officer
+					NOT = {
+						is_character = QIE_lu_xiangting
+					}
+					NOT = {
+						is_character = QIE_yu_xuezhong
 					}
 				}
-				set_nationality = LEP
-				if = {
-					limit = { has_id = 1129 } #Yang Sen
+				set_nationality = XXA
+			}
+			### then trigger the Zhili Remnant switch
+			SZC = {
+				country_event = { id = sichuan.264 days = 20 random_hours = 480 }
+			}
+		}
+		### 逃亡湖南
+		else_if = {
+			limit = {
+				HNN = {
+					has_country_leader = { 
+						name = "汤芗铭" ruling_only = yes 
+					} 
+				}
+			}
+			every_unit_leader = {
+				limit = { 
+					has_trait = QIE_Zhili_officer
+					NOT = {
+						is_character = QIE_lu_xiangting
+					}
+					NOT = {
+						is_character = QIE_yu_xuezhong
+					}
+				}
+				remove_trait = { trait = politically_connected }
+				set_nationality = XXA
+			}
+			HNN = {
+				country_event = { id = hnnzhili.18 }
+			}
+		}
+		###哪儿都去不了
+		else = {
+			### 
+			if = {
+				limit = { HNN = { is_ruled_by_federalists = yes } }
+				random_unit_leader = {
+					limit = { is_character = QIE_jiang_bai_li }
+					set_nationality = HNN
 					unit_leader_event = qieflavor.14
 				}
 			}
-		}
-		else = {
-			every_unit_leader = {
+			else_if = {
 				limit = {
-					OR = {
-						has_id = 1129 #Yang Sen
-						has_id = 1130 #Liu Cunhou
-						has_id = 1131 #Fan Shaozeng
-						has_id = 1133 #He Guoguang
+					NOT = { has_global_flag = GXC_had_civil_war }
+				}
+				random_unit_leader = {
+					limit = { is_character = QIE_jiang_bai_li }
+					add_unit_leader_trait = GXC_guangdong_clique_officer
+					set_nationality = GXC
+					unit_leader_event = qieflavor.14
+				}
+			}
+			else = {
+				random_country_with_original_tag = {
+					original_tag_to_check = GXC
+					limit = {
+						GXC_has_guangdong_government = yes
+						GXC_has_KMT_government = no
+					}
+					ROOT = {
+						random_unit_leader = {
+							limit = { is_character = QIE_jiang_bai_li }
+							add_unit_leader_trait = GXC_guangdong_clique_officer
+							set_nationality = PREV.PREV
+							unit_leader_event = qieflavor.14
+						}
 					}
 				}
-				set_nationality = NSW
+				### 如果目标无效，则隐藏起来
+				random_unit_leader = {
+					limit = { is_character = QIE_jiang_bai_li }
+					retire = yes
+				}
 			}
-		}
-		### Wang Huaiqing and Zhang Shaozeng flee to non-backer SHX or go into hiding
-		if = {
-			limit = {
-				NOT = { has_country_flag = QIE_yan_backs_coup }
-			}
-			every_unit_leader = {
+			### 张其煌去广西
+			if = {
 				limit = {
-					OR = {
-						is_character = QIE_wang_huaiqing
-						is_character = QIE_zhang_shaozeng
+					NOT = { has_global_flag = GXC_had_civil_war }
+				}
+				random_unit_leader = {
+					limit = { is_character = QIE_zhang_qihuang }
+					add_unit_leader_trait = GXC_guangxi_clique_officer
+					set_nationality = GXC
+					unit_leader_event = qieflavor.14
+				}
+			}
+			else = {
+				random_country_with_original_tag = {
+					original_tag_to_check = GXC
+					limit = {
+						GXC_has_guangxi_government = yes
+						GXC_has_KMT_government = no
+					}
+					ROOT = {
+						random_unit_leader = {
+							limit = { is_character = QIE_zhang_qihuang }
+							add_unit_leader_trait = GXC_guangxi_clique_officer
+							set_nationality = PREV.PREV
+							unit_leader_event = qieflavor.14
+						}
 					}
 				}
-				set_nationality = SHX
+				### 如果目标无效，则隐藏起来
+				random_unit_leader = {
+					limit = { is_character = QIE_zhang_qihuang }
+					retire = yes
+				}
+			}
+			### Xiao Yaonan flees to non-KMT Sichuan or goes into hiding
+			if = {
+				limit = { has_character = QIE_xiao_yaonan }
+				if = {
+					limit = { SZC = { SZC_has_officer_government = no } }
+					QIE_xiao_yaonan = {
+						set_nationality = SZC
+						unit_leader_event = qieflavor.14
+					}
+				}
+				else = {
+					QIE_xiao_yaonan = { retire = yes }
+				}
+			}
+			### 四川的将军们逃往 LEP 或躲藏起来
+			# if = {
+			# 	limit = { country_exists = LEP }
+			# 	every_unit_leader = {
+			# 		limit = { has_character_flag = SZC_armament_leader }
+			# 		set_nationality = LEP
+			# 		if = {
+			# 			limit = { is_character = SZC_yang_sen }
+			# 			unit_leader_event = qieflavor.14
+			# 		}
+			# 	}
+			# }
+			# else = {
+			# 	every_unit_leader = {
+			# 		limit = { has_character_flag = SZC_armament_leader }
+			# 		retire = yes
+			# 	}
+			# }
+			### 汤芗铭流亡宁系
+			if = {
+				limit = { has_character = HNN_tang_xiangming }
+				if = {
+					limit = { country_exists = LEP }
+					HNN_tang_xiangming = {
+						set_nationality = LEP
+						unit_leader_event = qieflavor.14
+					}
+				}
+				else = {
+					HNN_tang_xiangming = { retire = yes }
+				}
+			}
+			### 唐在礼逃去宁系
+			if = {
+				limit = { has_character = QIE_tang_zaili }
+				if = {
+					limit = { country_exists = LEP }
+					QIE_tang_zaili = {
+						set_nationality = LEP
+						unit_leader_event = qieflavor.14
+					}
+				}
+				else = {
+					QIE_tang_zaili = { retire = yes }
+				}
+			}
+			### Wang Chengbin flees to FNG, otherwise retire
+			if = {
+				limit = { has_character = QIE_wang_chengbin }
+				if = {
+					limit = { country_exists = FNG }
+					QIE_wang_chengbin = {
+						set_nationality = FNG
+						unit_leader_event = qieflavor.14
+					}
+				}
+				else = {
+					QIE_wang_chengbin = { retire = yes }
+				}
+			}
+			### Wang Huaiqing, Liu Zhenhua and Wei Yisan flee to non-backer SHX or go into hiding
+			if = {
+				limit = {
+					NOT = { has_country_flag = QIE_yan_backs_coup }
+				}
+				every_character = {
+					limit = {
+						OR = {
+							is_character = QIE_wang_huaiqing
+							is_character = QIE_liu_zhenhua
+							is_character = QIE_wei_yisan
+						}
+					}
+					set_nationality = SHX
+					unit_leader_event = qieflavor.14
+				}
+			}
+			else = {
+				every_unit_leader = {
+					limit = {
+						OR = {
+							is_character = QIE_wang_huaiqing
+							is_character = QIE_liu_zhenhua
+							is_character = QIE_wei_yisan
+						}
+					}
+					retire = yes
+				}
+			}
+			### Cai Chengxun and Liu Menggeng flee to FNG
+			every_character = {
+				limit = {
+					OR = {
+						is_character = QIE_cai_chengxun
+						is_character = QIE_liu_menggeng
+					}
+				}
+				set_nationality = FNG
 				unit_leader_event = qieflavor.14
 			}
-		}
-		else = {
-			every_unit_leader = {
-				limit = {
-					OR = {
-						is_character = QIE_wang_huaiqing
-						is_character = QIE_zhang_shaozeng
-					}
-				}
-				set_nationality = NSW
-			}
-		}
-		### Cai Chengxun and Liu Menggeng flee to FNG
-		every_unit_leader = {
-			limit = {
-				OR = {
-					is_character = QIE_cai_chengxun
-					is_character = QIE_liu_menggeng
-				}
-			}
-			set_nationality = FNG
-			unit_leader_event = qieflavor.14
-		}
-		### Cai Shijie flees to HNN
-		QIE_Cao_Shijie = {
-			set_nationality = HNN
-			unit_leader_event = qieflavor.14
 		}
 	}
 }
 
 QIE_kill_manchus = {
-	effect_tooltip = {
-		every_unit_leader = {
-			limit = {
-				OR = {
-					is_character = QIE_aisin_gioro_zaitao
-					is_character = QIE_aisin_gioro_pujie
-					is_character = QIE_aisin_gioro_xiqia
-					is_character = QIE_aisin_gioro_jixing
-				}
-			}
-			remove_unit_leader = yes
+	every_unit_leader = {
+		limit = {
+			has_trait = QIE_Monarchist_officer
 		}
-	}
-	hidden_effect = {
-		every_unit_leader = {
-			limit = {
-				OR = {
-					is_character = QIE_aisin_gioro_zaitao
-					is_character = QIE_aisin_gioro_pujie
-					is_character = QIE_aisin_gioro_xiqia
-					is_character = QIE_aisin_gioro_jixing
-				}
-			}
-			set_nationality = NSW
-		}
+		retire = yes
 	}
 }
 
@@ -310,6 +337,7 @@ QIEYGD_MORE_POWAH = {
 		}
 	}
 }
+
 QIE_import_krupp_steel_effect = {#添加工厂
 	custom_effect_tooltip = QIE_import_krupp_steel_effect_tt
 	set_temp_variable = { QIE_import_krupp_steel_var = party_popularity@market_liberal }
@@ -483,6 +511,7 @@ QIE_import_krupp_steel_effect = {#添加工厂
 		}
 	}
 }
+
 QIE_unlock_german_companies_effect = {#解锁生产商
 	custom_effect_tooltip = tooltip_white_line
 	add_one_random_civilian_factory = yes
@@ -514,3 +543,124 @@ QIE_unlock_german_companies_effect = {#解锁生产商
 		mio:QIE_blohm_voss_organisation = { add_mio_size = 2 }
 	}
 }
+
+QIE_upgrade_military_spirit_manchu_effect = {#军改
+	if = {
+		limit = { has_idea = QIE_stalled_80_division_reform_plan }
+		swap_ideas = {
+			remove_idea = QIE_stalled_80_division_reform_plan
+			add_idea = QIE_revival_of_the_new_army_level1
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_revival_of_the_new_army_level1 }
+		swap_ideas = {
+			remove_idea = QIE_revival_of_the_new_army_level1
+			add_idea = QIE_revival_of_the_new_army_level2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_revival_of_the_new_army_level2 }
+		swap_ideas = {
+			remove_idea = QIE_revival_of_the_new_army_level2
+			add_idea = QIE_revival_of_the_new_army_level3
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_revival_of_the_new_army_level3 }
+		swap_ideas = {
+			remove_idea = QIE_revival_of_the_new_army_level3
+			add_idea = QIE_revival_of_the_new_army_level4
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_revival_of_the_new_army_level4 } #Fallback
+		every_unit_leader = {
+			gain_xp = 200
+		}
+	}
+	else = {
+		custom_effect_tooltip = QIE_upgrade_military_spirit_manchu_tt
+	}
+}
+
+QIE_upgrade_military_spirit_germany_effect = {#刘梦庚军改
+	if = {
+		limit = { has_idea = QIE_stalled_80_division_reform_plan }
+		swap_ideas = {
+			remove_idea = QIE_stalled_80_division_reform_plan
+			add_idea = QIE_in_the_footsteps_of_giants_level1
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_in_the_footsteps_of_giants_level1 }
+		swap_ideas = {
+			remove_idea = QIE_in_the_footsteps_of_giants_level1
+			add_idea = QIE_in_the_footsteps_of_giants_level2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_in_the_footsteps_of_giants_level2 }
+		swap_ideas = {
+			remove_idea = QIE_in_the_footsteps_of_giants_level2
+			add_idea = QIE_in_the_footsteps_of_giants_level3
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_in_the_footsteps_of_giants_level3 }
+		swap_ideas = {
+			remove_idea = QIE_in_the_footsteps_of_giants_level3
+			add_idea = QIE_in_the_footsteps_of_giants_level4
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_in_the_footsteps_of_giants_level4 } #Fallback
+		every_unit_leader = {
+			gain_xp = 200
+		}
+	}
+	else = {
+		custom_effect_tooltip = QIE_upgrade_military_spirit_germany_tt
+	}
+}
+
+QIE_upgrade_military_spirit_jiang_effect = {#蒋百里军改
+	if = {
+		limit = { has_idea = QIE_stalled_80_division_reform_plan }
+		swap_ideas = {
+			remove_idea = QIE_stalled_80_division_reform_plan
+			add_idea = QIE_formation_of_a_militaristic_state_people_level1
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_formation_of_a_militaristic_state_people_level1 }
+		swap_ideas = {
+			remove_idea = QIE_formation_of_a_militaristic_state_people_level1
+			add_idea = QIE_formation_of_a_militaristic_state_people_level2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_formation_of_a_militaristic_state_people_level2 }
+		swap_ideas = {
+			remove_idea = QIE_formation_of_a_militaristic_state_people_level2
+			add_idea = 	QIE_formation_of_a_militaristic_state_people_level3
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_formation_of_a_militaristic_state_people_level3 }
+		swap_ideas = {
+			remove_idea = QIE_formation_of_a_militaristic_state_people_level3
+			add_idea = 	QIE_formation_of_a_militaristic_state_people_level4
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_formation_of_a_militaristic_state_people_level4 } #Fallback
+		every_unit_leader = {
+			gain_xp = 200
+		}
+	}
+	else = {
+		custom_effect_tooltip = QIE_upgrade_military_spirit_jiang_tt
+	}
+}
+

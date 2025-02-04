@@ -1520,3 +1520,27 @@ QIE_improve_zhili_monarchy_legitimacy = {#君主制合法性
 		custom_effect_tooltip = QIE_improve_legitimacy_tt
 	}
 }
+
+QIE_reduce_fractured_empire = {#君主制合法性 - 满洲
+	if = {
+		limit = { has_idea = QIE_fractured_empire0 }
+		swap_ideas = {
+			remove_idea = QIE_fractured_empire0
+			add_idea = QIE_fractured_empire2
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_fractured_empire2 }
+		swap_ideas = {
+			remove_idea = QIE_fractured_empire2
+			add_idea = QIE_fractured_empire3
+		}
+	}
+	else_if = {
+		limit = { has_idea = QIE_fractured_empire3 }
+		remove_ideas = QIE_fractured_empire3
+	}
+	else = {
+		add_stability = 0.025
+	}
+}

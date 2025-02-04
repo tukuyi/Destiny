@@ -779,6 +779,28 @@ characters = {
 		}
 		# id = 1173
 	}
+#佟济煦
+	QIE_Tong_Jixu = {
+		name = QIE_Tong_Jixu
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_Tong_Jixu
+				large = GFX_Portrait_QIE_Tong_Jixu
+			}
+		}
+		corps_commander = {
+			traits = { 
+				QIE_Monarchist_officer
+				media_personality 
+				organizer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
 #爱新觉罗·溥杰
 	QIE_aisin_gioro_pujie = {
 		name = QIE_aisin_gioro_pujie
