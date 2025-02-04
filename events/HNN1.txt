@@ -12,16 +12,11 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		# eval_effect HNN = {
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
+		eval_effect QIE = {
+			1048 = {
+				prioritize_state = yes
 			}
-		# 	promote_character = {
-		# 		character = HNN_Qian_Xuesen
-		# 		ideology = utopian_technocracy_subtype
-		# 	}
-		# }
+		}
 
 		# eval_effect ETS = {
 		# 	activate_mission = ETS_war_timer

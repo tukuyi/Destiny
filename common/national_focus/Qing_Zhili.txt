@@ -1361,6 +1361,7 @@ focus_tree = {
 			activate_targeted_decision = { target = FROM decision = QIE_placate_YCP }
 			activate_targeted_decision = { target = FROM decision = QIE_placate_NCERA }
 			hidden_effect = {
+				set_country_leader_ideology = oligarchy_subtype
 				QIE_improve_zhili_monarchy_legitimacy = yes
 				country_event = { id = qieflavor.57 days = 9 }
 			}
@@ -1557,15 +1558,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_grant_foreign_licenses"
 			QIE_improve_zhili_monarchy_legitimacy = yes
-			add_timed_idea = {
-				idea = QIE_zhili_war_production_idea
-				days = 365
-			}
-			add_one_random_military_factory = yes
-			add_one_random_military_factory = yes
 			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.01
+			}
+			add_one_random_military_factory = yes
+			add_one_random_military_factory = yes
+			add_timed_idea = {
+				idea = QIE_zhili_war_production_idea
+				days = 365
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2892,6 +2893,11 @@ focus_tree = {
 				uses = 1
 				category = support_tech
 			}
+			custom_effect_tooltip = tooltip_white_line
+			mio:QIE_gongxian_arsenal_organisation = {
+				add_mio_size = 3
+				add_mio_funds = 500
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2936,7 +2942,7 @@ focus_tree = {
 			set_country_flag = liumenggeng2_incomplete
 			set_country_flag = liumenggeng3_incomplete
 			activate_mission = QIE_liu_plan_mission
-			custom_effect_tooltip = QIE_liu_menggeng_plan_tooltip
+			custom_effect_tooltip = tooltip_white_line
 			effect_tooltip = {
 				swap_ideas = {
 					remove_idea = QIE_stalled_80_division_reform_plan
@@ -3023,7 +3029,6 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_WAR_SUPPORT
-			FOCUS_FILTER_ANNEXATION
 		}
 	}
 	focus = {
@@ -3054,6 +3059,10 @@ focus_tree = {
 			focus = QIE_hubeigenerals
 		}
 
+		available = {
+			has_global_flag = LEP_league_war_over
+		}
+
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -3066,28 +3075,12 @@ focus_tree = {
 			}
 		}
 
-		available = {
-			date > 1938.1.1
-			NOT = {
-				count_triggers = {
-					amount = 2
-					country_exists = ANQ
-					country_exists = CHI
-					country_exists = LEP
-				}
-			}
-		}
-
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_destroy_isolated_warlords"
 			add_political_power = 100
 			add_war_support = 0.10
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = QIE_destroy_isolated_warlords_tooltip #KMT, HNN, YUN, SCZ
-			create_wargoal = {
-				target = FNG
-				type = annex_everything
-			}
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { has_completed_focus = QIE_on_national_defense }
@@ -3156,6 +3149,9 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_fallout_of_northwest_conflict"
 			custom_effect_tooltip = QIE_fallout_of_northwest_conflict_tooltip
 			# MAC, KUM(?), MON (?)
+		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
 		}
 	}
 	focus = {

@@ -348,6 +348,9 @@ recruit_character = QIE_li_jichen
 recruit_character = QIE_Pugong
 
 QIE_wu_peifu = { set_variable = { china_alignment = token:northern_zhili } }
+QIE_aisin_gioro_puyi = {
+	set_variable = { china_alignment = token:northern_zhili }
+}
 
 QIE_li_shuchun = {
 	set_character_flag = CHN_original_unit_leader

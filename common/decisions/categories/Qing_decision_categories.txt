@@ -4,10 +4,7 @@
 
 QIE_meet_assembly_parties_decisions = {
 	icon = political_actions
-	allowed = { tag = QIE }
-	visible = {
-		has_completed_focus = QIE_placateassembly
-	}
+	allowed = { always = no }
 }
 
 QIE_hire_mercenaries_decisions = {
