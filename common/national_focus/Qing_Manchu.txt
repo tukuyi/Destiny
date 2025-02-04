@@ -1992,7 +1992,6 @@ focus_tree = {
 					add_idea = QIE_revival_of_the_new_army_level4
 				}
 			}
-			custom_effect_tooltip = tooltip_white_line
 			hidden_effect = {
 				remove_ideas = QIE_imperial_propaganda_idea
 				remove_ideas = QIE_rural_defense_idea
