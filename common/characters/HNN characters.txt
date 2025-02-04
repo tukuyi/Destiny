@@ -749,6 +749,16 @@ characters = {
 				small = GFX_Portrait_HNN_Mao_zedong_army
 				large = GFX_Portrait_HNN_Mao_zedong_army
 			}
+			civilian = {
+				large = GFX_Portrait_HNN_Mao_zedong_army
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_MAO_ZHE_DONG_DESC
+			ideology = mao_ze_dong_thought_subtype
+			traits = {
+				HNN_jiao_yuan
+			}
 		}
 		corps_commander = {
 			desc = POLITICS_HNN_mao_ze_dong_ARMY_DESC

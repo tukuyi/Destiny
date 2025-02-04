@@ -247,10 +247,6 @@ chinese_unification = {
 							has_war_with = ROOT
 							has_capitulated = no
 						}
-						# AND = {
-						# 	has_wargoal_against = ROOT
-						# 	can_declare_war_on = ROOT
-						# }
 					}
 				}
 			}
@@ -302,7 +298,6 @@ chinese_unification = {
 						has_completed_focus = GXC_xu_ri_dong_sheng
 						has_completed_focus = GXC_lun_de_zi_jin_bu_zai_shou_xian
 						has_completed_focus = GXC_ying_zi_xi_lai
-						has_country_leader = { name = "彭湃" ruling_only = yes }
 					}
 				}
 			}

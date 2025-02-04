@@ -30,4 +30,17 @@ leader_traits = {
 		}
 		attack_skill_factor = 1
 	}
+	master_of_ordnance = {#炮兵专家
+		type = corps_commander
+
+		trait_type = personality_trait
+
+		modifier = {
+			army_artillery_attack_factor = 0.15
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
 }

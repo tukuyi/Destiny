@@ -124,10 +124,14 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-			base = 33
+			base = 100
 			modifier = {
-				add = 100
-				has_political_power < 100
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
 			}
 		}
 
@@ -144,28 +148,44 @@ focus_tree = {
 			}
 			hidden_effect = {
 				QIE_improve_zhili_monarchy_legitimacy = yes
+				if = {
+					limit = { has_template = "Manchu Cavalry Division" }
+					set_division_template_lock = {
+						division_template = "Manchu Cavalry Division"
+						is_locked = no
+					}
+				}
+				if = {
+					limit = { has_template = "Manchu Imperial Guard" }
+					set_division_template_lock = {
+						division_template = "Manchu Imperial Guard"
+						is_locked = no
+					}
+				}
 			}
 		}
 	}
 	focus = {
 		id = QIE_nationalize_germans
 		icon = GFX_goal_ZAM_expel_germans
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
+		x = -1
+		y = 2
+
 		prerequisite = {
 			focus = QIE_default_debt
 		}
-		x = -1
-		y = 2
-		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			base = 40
+			base = 100
 			modifier = {
-				add = 100
-				ic_ratio = {
-					tag = FNG
-					ratio < 0.75
-				}
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
 			}
 		}
 
@@ -229,7 +249,15 @@ focus_tree = {
 		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		completion_reward = {
@@ -257,23 +285,25 @@ focus_tree = {
 	focus = {
 		id = QIE_salvage_german_industry
 		icon = GFX_goal_CZE_german_concession
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
-		prerequisite = {
-			focus = QIE_default_debt
-		}
 		x = 1
 		y = 2
-		relative_position_id = QIE_capitalize_politics
 
 		ai_will_do = {
-			base = 40
+			base = 100
 			modifier = {
-				add = 100
-				ic_ratio = {
-					tag = FNG
-					ratio < 0.75
-				}
+				factor = 0.5
+				has_war = yes
 			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_default_debt
 		}
 
 		completion_reward = {
@@ -306,23 +336,28 @@ focus_tree = {
 	focus = {
 		id = QIE_leverage_new_pop
 		icon = GFX_goal_QIE_ncera
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
+		x = -2
+		y = 3
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_nationalize_germans
 		}
 		prerequisite = {
 			focus = QIE_salvage_german_industry
-		}
-		x = -2
-		y = 3
-		relative_position_id = QIE_capitalize_politics
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				has_stability < 0.50
-			}
 		}
 
 		completion_reward = {
@@ -346,25 +381,100 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 	focus = {
+		id = QIE_lao_gong_bao_zhang
+		icon = GFX_MAF_workplace_regulations
+		relative_position_id = QIE_capitalize_politics
+		cost = 5.00
+		x = -1
+		y = 4
+
+		prerequisite = {
+			focus = QIE_guardian_of_emperor
+		}
+		prerequisite = {
+			focus = QIE_baoding_zhili_cooperation
+		}
+		prerequisite = {
+			focus = QIE_leverage_new_pop
+		}
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_lao_gong_bao_zhang"
+			add_ideas = QIE_she_lao_bao_zhang 
+		}
+	}		
+	focus = {
+		id = QIE_jian_qing_nong_ming
+		icon = GFX_goal_BUL_mechanize_farming
+		relative_position_id = QIE_capitalize_politics
+		cost = 5.00
+		x = 1
+		y = 4
+
+		prerequisite = {
+			focus = QIE_guardian_of_emperor
+		}
+		prerequisite = {
+			focus = QIE_baoding_zhili_cooperation
+		}
+		prerequisite = {
+			focus = QIE_leverage_new_pop
+		}
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_jian_qing_nong_ming"
+			add_ideas = QIE_liang_shi_bu_tie 
+		}
+	}	
+	focus = {
 		id = QIE_harmonious_balance
 		icon = GFX_goal_QIE_forbiddenpalace
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
+		x = 0
+		y = 5
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_lao_gong_bao_zhang
 		}
 		prerequisite = {
 			focus = QIE_jian_qing_nong_ming
-		}
-		x = 0
-		y = 5
-		relative_position_id = QIE_capitalize_politics
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				has_stability < 0.50
-			}
 		}
 
 		completion_reward = {
@@ -385,7 +495,7 @@ focus_tree = {
 					country_event = {
 						id = qieflavor.24
 						days = 30
-						random = 120
+						random_days = 120
 					}
 				}
 			}
@@ -394,23 +504,28 @@ focus_tree = {
 	focus = {
 		id = QIE_baoding_zhili_cooperation
 		icon = GFX_goal_QIE_ycp
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
+		x = 0
+		y = 3
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_salvage_german_industry
 		}
 		prerequisite = {
 			focus = QIE_nationalize_germans
-		}
-		x = 0
-		y = 3
-		relative_position_id = QIE_capitalize_politics
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				has_army_experience < 1
-			}
 		}
 
 		completion_reward = {
@@ -432,43 +547,52 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS }
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_ARMY_XP
+		}
 	}
 	focus = {
 		id = QIE_guardian_of_emperor
 		icon = GFX_goal_QIE_manchu_symbol
+		relative_position_id = QIE_capitalize_politics
 		cost = 5.00
+		x = 2
+		y = 3
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_salvage_german_industry
 		}
 		prerequisite = {
 			focus = QIE_nationalize_germans
 		}
-		x = 2
-		y = 3
-		relative_position_id = QIE_capitalize_politics
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				authoritarian_democrat < 0.50
-			}
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_guardian_of_emperor"
+			add_political_power = 25
 			add_popularity = {
 				ideology = social_conservative
 				popularity = 0.05
 			}
-			add_political_power = 25
+			add_soccon_to_coalition = yes
+			custom_effect_tooltip = tooltip_white_line
 			every_army_leader = {
 				limit = { has_trait = QIE_Monarchist_officer }
 				add_attack = 1
 				gain_xp = 400
 			}
-			add_soccon_to_coalition = yes
 			hidden_effect = {
 				country_event = {
 					id = qieflavor.23
@@ -496,16 +620,28 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			factor = 90
+			base = 100
 			modifier = {
-				add = 100
-				has_army_experience < 1
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
 			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_on_our_own"
 			army_experience = 35
+			every_army_leader = {
+				limit = {
+					NOT = { is_character = QIE_wu_peifu }
+					NOT = { has_trait = QIE_Monarchist_officer }
+				}
+				random_select_amount = 5
+				add_defense = 1
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -522,10 +658,14 @@ focus_tree = {
 		relative_position_id = QIE_on_our_own
 
 		ai_will_do = {
-			factor = 90
+			base = 100
 			modifier = {
-				add = 100
-				has_army_experience > 10
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
 			}
 		}
 
@@ -533,10 +673,22 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_supportcompanies"
 			army_experience = 25
 			add_tech_bonus = {
-				name = QIE_supportcompanies
-				bonus = 1
-				uses = 1
+				name = QIE_understanding_our_backyard
+				bonus = 0.75
+				uses = 2
 				category = support_tech
+				category = mountaineers_tech
+			}
+			every_army_leader = {
+				limit = {
+					skill < 3
+					NOT = { is_character = QIE_wu_peifu }
+					NOT = { has_trait = QIE_Monarchist_officer }
+				}
+				random_select_amount = 2
+				add_trait = {
+					trait = trait_mountaineer
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -544,48 +696,106 @@ focus_tree = {
 	focus = {
 		id = QIE_reorganize_divisions
 		icon = GFX_goal_QIE_reorganize_warlord_divisions
+		relative_position_id = QIE_on_our_own
 		cost = 3.00
+		x = 4
+		y = 1
+
 		prerequisite = {
 			focus = QIE_on_our_own
 			focus = QIE_germanarsenal
 		}
-		x = 4
-		y = 1
-
-		relative_position_id = QIE_on_our_own
 
 		ai_will_do = {
-			factor = 90
+			base = 100
 			modifier = {
-				add = 100
-				has_army_experience > 10
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
 			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_reorganize_divisions"
 			country_event = qiefocus.28
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = QIE_gain_zhili_infantry_division_template
+			division_template = {
+				name = "Zhili Infantry Brigade"
+				template_counter = 58
+				division_names_group = "QIE_INF_01"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = QIE_consolidate_zhili_infantry_divisions
+			hidden_effect = {
+				delete_unit_template_and_units = { division_template = "Zhili Infantry Division" disband = yes }
+				random_controlled_state = {
+					prioritize = { 607 608 1059 1060 1061 1062 1063 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					create_unit = {
+						division = "name = \"Xingguo jun Di 1 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Xingguo jun Di 2 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
 		}
 	}
 	focus = {
 		id = QIE_zhili_flood_dams
 		icon = GFX_goal_AUS_tauernkraftwerk_hydro_power
+		relative_position_id = QIE_on_our_own
 		cost = 3.00
-		prerequisite = {
-			focus = QIE_reorganize_divisions
-		}
-
 		x = 4
 		y = 2
 
-		relative_position_id = QIE_on_our_own
-
 		ai_will_do = {
-			factor = 33
+			base = 40
 			modifier = {
-				add = 100
+				factor = 2
 				has_war = yes
 			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_reorganize_divisions
 		}
 
 		completion_reward = {
@@ -596,30 +806,62 @@ focus_tree = {
 	focus = {
 		id = QIE_studywars
 		icon = GFX_goal_SKM_Modern_Artillery
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_on_our_own
-		}
 		x = 0
 		y = 1
-		relative_position_id = QIE_on_our_own
 
 		ai_will_do = {
-			factor = 33
+			base = 100
 			modifier = {
-				add = 100
+				factor = 2
 				has_war = yes
 			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_on_our_own
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_studywars"
 			army_experience = 25
+			every_army_leader = {
+				limit = {
+					OR = {
+						has_trait = artillery_officer
+						has_trait = artillery_specialist
+						has_trait = artillery_expert
+					}
+					NOT = { is_character = QIE_wu_peifu }
+					NOT = { has_trait = QIE_Monarchist_officer }
+				}
+				random_select_amount = 2
+				add_unit_leader_trait = master_of_ordnance
+			}
+			every_army_leader = {
+				limit = {
+					attack_skill_level > 2
+					NOT = {
+						has_trait = artillery_officer
+						has_trait = artillery_expert
+						has_trait = artillery_specialist
+						is_character = QIE_wu_peifu
+						has_trait = QIE_Monarchist_officer
+					}
+				}
+				random_select_amount = 4
+				add_attack = 1
+				add_trait = { trait = artillery_specialist }
+			}
 			add_tech_bonus = {
-				name = QIE_studywars
+				name = QIE_king_of_the_battlefield
 				bonus = 1
 				uses = 2
-				category = artillery
+				category = mio_cat_all_artillery_equipment
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH }
@@ -627,65 +869,97 @@ focus_tree = {
 	focus = {
 		id = QIE_locallogistics
 		icon = GFX_goal_ATH_logistics
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_on_our_own
-		}
 		x = -2
 		y = 1
 
-		relative_position_id = QIE_on_our_own
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_on_our_own
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_locallogistics"
 			add_ideas = QIE_local_logistics
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 20
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 200
+			}
+			custom_effect_tooltip = tooltip_white_line
+			every_army_leader = {
+				add_logistics = 1
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 	focus = {
 		id = QIE_work_with_manchu
-		icon = GFX_goal_QIE_modernize_monarchy
+		icon = GFX_goal_ALB_People_Army
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
+		x = -1
+		y = 2
+
 		prerequisite = {
 			focus = QIE_locallogistics
 			focus = QIE_studywars
 			focus = QIE_supportcompanies
 		}
-		x = -1
-		y = 2
-
-		available = {
-			has_country_leader = {
-				name = "溥仪"
-				ruling_only = yes
-			}
-		}
-
 		mutually_exclusive = {
 			focus = QIE_hire_republican_officers
 		}
 
-		relative_position_id = QIE_on_our_own
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_work_with_manchu"
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
+				name = QIE_placing_faith_in_the_underdogs
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			every_army_leader = {
 				limit = {
-					OR = {
-						is_character = QIE_Gobulo_Runqi
-						is_character = QIE_aisin_gioro_pujie
-						is_character = QIE_aisin_gioro_zaitao
-						is_character = QIE_Cao_Shijie
-					}
+					NOT = { has_trait = QIE_Monarchist_officer }
+					skill < 3
 				}
+				random_select_amount = 3
 				add_attack = 1
-				add_defense = 1
+				add_planning = 1
+				add_max_trait = 1
+			}
+			QIE_wang_chengbin = {
+				add_attack = 1
+				add_max_trait = 1
+				gain_xp = 500
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -693,135 +967,237 @@ focus_tree = {
 	focus = {
 		id = QIE_hire_republican_officers
 		icon = GFX_goal_chinese_instructors
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_locallogistics
-			focus = QIE_studywars
-			focus = QIE_supportcompanies
-		}
 		x = 1
 		y = 2
-
-		available = {
-			NOT = {
-				has_country_leader = {
-					name = "溥仪"
-					ruling_only = yes
-				}
-			}
-		}
 
 		mutually_exclusive = {
 			focus = QIE_work_with_manchu
 		}
 
-		relative_position_id = QIE_on_our_own
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_locallogistics
+			focus = QIE_studywars
+			focus = QIE_supportcompanies
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_hire_republican_officers"
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
+				name = QIE_emulating_the_jade_marshal
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
-			army_experience = 10
+			every_army_leader = {
+				limit = {
+					OR = {
+						is_character = QIE_zhang_qihuang
+						is_character = QIE_li_bingzhi
+						is_character = QIE_yu_xuezhong
+						is_character = QIE_wei_yisan
+					}
+				}
+				gain_xp = 500
+				add_temporary_buff_to_units = {
+					combat_offense = 0.1
+					org_damage_multiplier = -0.25
+					days = 120
+				}
+			}
+			QIE_wang_chengbin = {
+				add_timed_unit_leader_trait = {
+					trait = disgruntled
+					days = 120
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = QIE_buyforeignguns
 		icon = GFX_goal_CZE_imperial_arms
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
+		x = -3
+		y = 3
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 		prerequisite = {
 			focus = QIE_hire_republican_officers
 			focus = QIE_work_with_manchu
 		}
-		x = -3
-		y = 3
-
-		relative_position_id = QIE_on_our_own
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_buyforeignguns"
 			custom_effect_tooltip = QIE_buyforeignguns_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 100
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = RUS
+			}
+			add_tech_bonus = {
+				name = QIE_rolling_the_dice_on_the_markets
+				bonus = 0.50
+				uses = 2
+				category = support_tech
+			}
 		}
 	}
 	focus = {
 		id = QIE_zhili_mercs
 		icon = GFX_goal_KSV_fortune_and_adventure
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
+		x = 3
+		y = 3
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 		prerequisite = {
 			focus = QIE_hire_republican_officers
 			focus = QIE_work_with_manchu
 		}
-		x = 3
-		y = 3
-
-		relative_position_id = QIE_on_our_own
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zhili_mercs"
 			custom_effect_tooltip = QIE_zhili_mercs_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = QIE_foreign_advisory_training
+				days = 200
+			}
 		}
 	}
 	focus = {
 		id = QIE_stealplanedesigns
 		icon = GFX_goal_taking_to_sky
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
+		x = -1
+		y = 3
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_hire_republican_officers
 			focus = QIE_work_with_manchu
 		}
-		x = -1
-		y = 3
-
-		relative_position_id = QIE_on_our_own
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_stealplanedesigns"
 			add_tech_bonus = {
-				name = QIE_stealplanedesigns
-				bonus = 1
+				name = QIE_the_baoding_clique_and_the_third_avenue
+				bonus = 0.75
 				uses = 2
-				category = light_fighter
-				category = tactical_bomber
+				category = light_air
 			}
+			add_tech_bonus = {
+				name = QIE_the_baoding_clique_and_the_third_avenue
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+			set_technology = { engines_1 = 1 }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = QIE_expatairtraining
 		icon = GFX_goal_KSV_rule_from_the_air
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_stealplanedesigns
-		}
 		x = -1
 		y = 4
 
-		relative_position_id = QIE_on_our_own
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_stealplanedesigns
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_expatairtraining"
 			air_experience = 25
 			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
+				name = QIE_expat_air_training_scheme
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = air_doctrine
 			}
+			1062 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_rule = { can_generate_female_aces = yes }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
 	}
 	focus = {
 		id = QIE_siciliyships
 		icon = GFX_goal_NIC_buy_ship
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_hire_republican_officers
-			focus = QIE_work_with_manchu
-		}
 		x = 1
 		y = 3
 
@@ -830,66 +1206,134 @@ focus_tree = {
 				country_exists = SWE
 			}
 		}
-
-		relative_position_id = QIE_on_our_own
+		prerequisite = {
+			focus = QIE_hire_republican_officers
+			focus = QIE_work_with_manchu
+		}
+		ai_will_do = {
+			base = 0.75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_siciliyships"
-
 			custom_effect_tooltip = QIE_sicilyships_tt
 			custom_effect_tooltip = QIE_sic_ships_warning
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = QIE_utilising_european_dockyards
+				bonus = 0.75
+				uses = 2
+				category = mio_cat_tech_all_destroyer_and_modules
+			}
+			add_timed_idea = {
+				idea = QIE_embers_of_a_new_beiyang
+				days = 365
+			}
 		}
 	}
 	focus = {
 		id = QIE_chinesenavalacademy
 		icon = GFX_goal_generic_naval_command
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_siciliyships
-		}
 		x = 1
 		y = 4
 
-		relative_position_id = QIE_on_our_own
+		ai_will_do = {
+			base = 0.75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_siciliyships
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_chinesenavalacademy"
+			navy_experience = 25
 			add_doctrine_cost_reduction = {
 				name = naval_doc_bonus
 				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
 			}
-			navy_experience = 25
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = { QIE_the_beiyang_navy }
+			custom_effect_tooltip = tooltip_white_line
+			mio:QIE_china_navigation_company_organisation = {
+				add_mio_size = 1
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = QIE_expand_peking_uni
 		icon = GFX_goal_generic_red_university
+		relative_position_id = QIE_on_our_own
 		cost = 6.00
+		x = 0
+		y = 5
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 		prerequisite = {
 			focus = QIE_chinesenavalacademy
 		}
 		prerequisite = {
 			focus = QIE_expatairtraining
 		}
-		x = 0
-		y = 5
-
-		relative_position_id = QIE_on_our_own
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_expand_peking_uni"
-			add_research_slot = 1
+			china_add_research_slots = yes
+			add_ideas = QIE_baoding_military_academy
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
-#pro_LEP mini political tree 
+
+#亲宁系
 	focus = {
 		id = QIE_placateassembly
 		icon = GFX_goal_NFA_Assembly_Under_Check
-		cost = 6.00
+		cost = 5.00
+		x = 8
+		y = 3
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_emergencysession
 		}
@@ -898,12 +1342,6 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = QIE_capitalize_politics
-		}
-		x = 8
-		y = 3
-
-		ai_will_do = {
-			base = 40
 		}
 
 		completion_reward = {
@@ -917,22 +1355,32 @@ focus_tree = {
 			}
 			hidden_effect = {
 				QIE_improve_zhili_monarchy_legitimacy = yes
+				country_event = { id = qieflavor.57 days = 9 }
 			}
 		}
 	}
 	focus = {
 		id = QIE_request_german_bailout
 		icon = GFX_GER_use_the_wealth_of_the_junkers-32619
+		relative_position_id = QIE_placateassembly
 		cost = 5.00
-		prerequisite = {
-			focus = QIE_placateassembly
-		}
 		x = 0
 		y = 1
-		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_placateassembly
 		}
 
 		completion_reward = {
@@ -951,16 +1399,25 @@ focus_tree = {
 	focus = {
 		id = QIE_open_up_to_investment
 		icon = GFX_goal_FIU_Induct_International_Investors_Inventors
+		relative_position_id = QIE_placateassembly
 		cost = 5.00
-		prerequisite = {
-			focus = QIE_request_german_bailout
-		}
 		x = 0
 		y = 2
-		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_request_german_bailout
 		}
 
 		completion_reward = {
@@ -984,6 +1441,7 @@ focus_tree = {
 					days = 30
 					random_days = 120
 				}
+				add_ideas = QIE_AOG_bank
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -991,16 +1449,25 @@ focus_tree = {
 	focus = {
 		id = QIE_seek_german_RR_capital
 		icon = GFX_thenorthernraillink
+		relative_position_id = QIE_placateassembly
 		cost = 5.00
-		prerequisite = {
-			focus = QIE_open_up_to_investment
-		}
 		x = -2
 		y = 3
-		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_open_up_to_investment
 		}
 
 		completion_reward = {
@@ -1015,11 +1482,6 @@ focus_tree = {
 				popularity = 0.03
 			}
 			hidden_effect = {
-				country_event = {
-					id = qieflavor.25
-					days = 90
-					random_hours = 120
-				}
 				country_event = { 
 					id = qieflavor.26 
 					days = 90 
@@ -1057,6 +1519,7 @@ focus_tree = {
 				uses = 1
 				category = industry
 			}
+			QIE_unlock_german_companies_effect = yes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1073,7 +1536,15 @@ focus_tree = {
 		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 50
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		completion_reward = {
@@ -1095,7 +1566,7 @@ focus_tree = {
 
 
 	focus = {
-		id = QIE_krupp
+		id = QIE_import_krupp_steel
 		icon = GFX_goal_LEP_krupp_industial
 		cost = 5.00
 		prerequisite = {
@@ -1109,13 +1580,21 @@ focus_tree = {
 		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus QIE_krupp"
+			log = "[GetDateText]: [Root.GetName]: Focus QIE_import_krupp_steel"
 			add_tech_bonus = {
-				name = QIE_krupp
+				name = QIE_import_krupp_steel
 				bonus = 0.75
 				uses = 2
 				category = industry
@@ -1139,7 +1618,15 @@ focus_tree = {
 		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		completion_reward = {
@@ -1153,6 +1640,14 @@ focus_tree = {
 			add_timed_idea = {
 				idea = QIE_zhili_war_production_idea
 				days = 365
+			}
+			custom_effect_tooltip = tooltip_white_line
+			608 = { prioritize_state = yes }
+			add_one_random_radar_station = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			hidden_effect = {
+				country_event = { id = qieflavor.27 days = 90 random_days = 120 }
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1202,22 +1697,31 @@ focus_tree = {
 		id = QIE_germanresearch
 		icon = GFX_goal_GER_Elite_Prussian_Schools
 		cost = 5.00
-		prerequisite = {
-			focus = QIE_krupp
-		}
-		prerequisite = {
-			focus = QIE_siemens
-		}
-		prerequisite = {
-			focus = QIE_IGfarben
-		}
 		x = 0
 		y = 5
 
 		relative_position_id = QIE_placateassembly
 
 		ai_will_do = {
-			base = 40
+			base = 100
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+
+		prerequisite = {
+			focus = QIE_import_krupp_steel
+		}
+		prerequisite = {
+			focus = QIE_siemens
+		}
+		prerequisite = {
+			focus = QIE_IGfarben
 		}
 
 		completion_reward = {
@@ -1247,13 +1751,20 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = QIE_on_our_own
 		}
-
 		available = {
 			has_country_flag = QIE_ger_mil_support
 		}
 
 		ai_will_do = {
-			base = 40
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
 		}
 
 		completion_reward = {
@@ -1262,10 +1773,12 @@ focus_tree = {
 			air_experience = 10
 			navy_experience = 10
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
+				name = QIE_the_eagle_and_the_dragon
 				cost_reduction = 0.5
-				uses = 1
+				uses = 3
 				category = land_doctrine
+				category = air_doctrine
+				category = naval_doctrine
 			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
@@ -1273,53 +1786,94 @@ focus_tree = {
 	focus = {
 		id = QIE_germandesigns
 		icon = GFX_goal_Krupp_Artillery
+		relative_position_id = QIE_germanarsenal
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_germanarsenal
-		}
 		x = 1
 		y = 1
 
-		relative_position_id = QIE_germanarsenal
-
 		ai_will_do = {
-			base = 40
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_germanarsenal
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germandesigns"
 			add_tech_bonus = {
-				name = QIE_germandesigns
-				bonus = 1
+				name = QIE_leaning_upon_the_juggernaut
+				bonus = 0.75
 				uses = 2
 				category = infantry_weapons
+				category = artillery
 			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = GER
+			}
+			air_experience = 20
+			navy_experience = 20
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = QIE_germanradio
 		icon = GFX_goal_generic_infantry_radio
+		relative_position_id = QIE_germanarsenal
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_germanarsenal
-		}
 		x = -1
 		y = 1
 
-		relative_position_id = QIE_germanarsenal
-
 		ai_will_do = {
-			base = 40
+			base = 75
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_germanarsenal
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanradio"
-			add_tech_bonus = {
-				name = QIE_germanradio
-				bonus = 1
-				uses = 2
-				category = support_tech
+			if = {
+				limit = { NOT = { has_tech = tech_signal_company } }
+				set_technology = { tech_signal_company = 1 }
+				add_tech_bonus = {
+					name = QIE_chinese_auftragstaktik
+					bonus = 0.75
+					uses = 1
+					category = support_tech
+					category = signal_company_tech
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = QIE_chinese_auftragstaktik
+					bonus = 0.75
+					uses = 2
+					category = support_tech
+					category = signal_company_tech
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = GER
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -1328,14 +1882,25 @@ focus_tree = {
 	focus = {
 		id = QIE_kriegsmarine
 		icon = GFX_MAF_continue_heydrich_reforms
+		relative_position_id = QIE_germanarsenal
 		cost = 6.00
-		prerequisite = {
-			focus = QIE_buymauser
-		}
 		x = -2
 		y = 3
 
-		relative_position_id = QIE_germanarsenal
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+		prerequisite = {
+			focus = QIE_buymauser
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_kriegsmarine"
@@ -1366,18 +1931,110 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_luftwaffe"
 			custom_effect_tooltip = QIE_license_luftwaffe_tooltip
-			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
+			set_rule = { can_generate_female_aces = yes }
+			custom_effect_tooltip = tooltip_white_line
+			add_timed_idea = {
+				idea = QIE_national_aviation_programme
+				days = 365
 			}
-			add_tech_bonus = {
-				name = QIE_luftwaffe2
-				bonus = 1
-				uses = 1
-				category = cas_bomber
-				category = tactical_bomber
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_bba = yes }
+				if = {
+					limit = { NOT = { has_tech = iw_small_airframe } }
+					set_technology = { iw_small_airframe = 1 }
+				}
+				hidden_effect = {
+					if = {
+						limit = { NOT = { has_tech = early_bombs } }
+						set_technology = { early_bombs = 1 }
+					}
+					if = {
+						limit = { NOT = { has_tech = aa_lmg } }
+						set_technology = { aa_lmg = 1 }
+					}
+					if = {
+						limit = { NOT = { has_tech = engines_1 } }
+						set_technology = { engines_1 = 1 }
+					}
+				}
+				create_equipment_variant = {
+					name = "K-47" #German Fighter Used by China
+					type = small_plane_airframe_0
+					modules = {
+						fixed_main_weapon_slot = light_mg_2x
+						engine_type_slot = engine_1_1x
+						special_type_slot_1 = empty
+					}
+				}
+				create_equipment_variant = {
+					name = "Nieuport-Delage NiD .29" #French Fighter Used by China
+					type = small_plane_airframe_1
+					parent_version = 0
+					modules = {
+						fixed_main_weapon_slot = light_mg_4x
+						fixed_auxiliary_weapon_slot_1 = light_mg_4x
+						engine_type_slot = engine_2_1x
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_tech = fighter1 } }
+					set_technology = { fighter1 = 1 }
+				}
+				create_equipment_variant = {
+					name = "K-47" #German Fighter Used by China
+					type = fighter_equipment_1
+					parent_version = 0
+					upgrades = {
+						plane_gun_upgrade = 2
+						plane_engine_upgrade = 1
+					}
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_bba = yes }
+				if = {
+					limit = { NOT = { has_tech = basic_small_airframe } }
+					set_technology = { basic_small_airframe = 1 }
+				}
+				create_equipment_variant = {
+					name = "Henschel Hs 123" #German CAS used by China
+					type = small_plane_cas_airframe_0
+					parent_version = 0
+					modules = {
+						fixed_main_weapon_slot = bomb_locks
+						engine_type_slot = engine_1_1x
+					}
+					obsolete = yes
+				}
+				create_equipment_variant = {
+					name = "Curtiss A-12" #American CAS used by China
+					type = small_plane_cas_airframe_1
+					parent_version = 0
+					modules = {
+						fixed_main_weapon_slot = bomb_locks
+						fixed_auxiliary_weapon_slot_1 = bomb_locks
+						engine_type_slot = engine_2_1x
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_tech = CAS1 } }
+					set_technology = { CAS1 = 1 }
+				}
+				create_equipment_variant = {
+					name = "Henschel Hs 123" #German CAS used in China
+					type = CAS_equipment_1
+					parent_version = 0
+					upgrades = {
+						plane_cas_upgrade = 2
+						plane_engine_upgrade = 2
+					}
+				}
 			}
 			hidden_effect = {
 				set_country_flag = QIE_can_buy_german_airplanes
@@ -1399,6 +2056,53 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_motorized_armor"
 			custom_effect_tooltip = QIE_motorized_armor_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_bba = no }
+				add_tech_bonus = {
+					name = QIE_the_chinese_armoured_corps
+					bonus = 0.5
+					uses = 1
+					category = armor
+				}
+				if = {
+					limit = { NOT = { has_tech = gwtank } }
+					set_technology = { gwtank = 1 }
+				}
+			}
+			else = {
+				mio:QIE_wusong_locomotive_works_organisation = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 2
+				}
+				if = {
+					limit = { NOT = { has_tech = gwtank_chassis } }
+					if = {
+						limit = { NOT = { has_tech = engine_tech_1 } }
+						set_technology = { engine_tech_1 = 1 }
+					}
+					set_technology = { gwtank_chassis = 1 }
+				}
+				else = {
+					add_tech_bonus = {
+						name = QIE_the_chinese_armoured_corps
+						bonus = 0.5
+						uses = 1
+						category = mio_cat_tech_all_armor_and_modules
+					}
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			random_army_leader = {
+				limit = {
+					NOT = { is_character = QIE_wu_peifu }
+					NOT = { is_character = QIE_zhang_qihuang }
+					NOT = { is_character = QIE_li_bingzhi }
+					NOT = { is_character = QIE_lu_xiangting }
+					NOT = { has_trait = QIE_Monarchist_officer }
+				}
+				add_trait = { trait = panzer_leader }
+			}
 			hidden_effect = {
 				set_country_flag = QIE_can_buy_german_tanks
 			}
@@ -1407,33 +2111,82 @@ focus_tree = {
 	focus = {
 		id = QIE_buymauser
 		icon = GFX_goal_GER_Mauser_Werke_Contracts
+		relative_position_id = QIE_germanarsenal
 		cost = 6.00
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 		prerequisite = {
 			focus = QIE_germandesigns
 		}
 		prerequisite = {
 			focus = QIE_germanradio
 		}
-		x = 0
-		y = 2
-
-		relative_position_id = QIE_germanarsenal
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_buymauser"
 			custom_effect_tooltip = QIE_buymauser_tt
-			add_tech_bonus = {
-				name = QIE_germandesigns
-				bonus = 1
-				uses = 1
-				category = infantry_weapons
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = QIE_chinese_soldiers_german_weapons_reduced_cost_tt
+				hidden_effect = {
+					add_timed_idea = {
+						idea = QIE_chinese_soldiers_german_weapons_idea
+						days = 365
+					}
+				}
+			}
+			else = {
+				every_military_industrial_organization = {
+					limit = {
+						OR = {
+							is_military_industrial_organization = QIE_krupp_organisation
+							is_military_industrial_organization = QIE_opel_organisation
+							is_military_industrial_organization = QIE_henschel_organisation
+							is_military_industrial_organization = QIE_focke_wulf_organisation
+							is_military_industrial_organization = QIE_junkers_organisation
+							is_military_industrial_organization = QIE_blohm_voss_organisation
+						}
+					}
+					add_mio_funds_gain_factor = 0.2
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			every_army_leader = {
+				limit = {
+					defense_skill_level < 3
+					NOT = { is_character = QIE_wu_peifu }
+					NOT = { is_character = QIE_zhang_qihuang }
+					NOT = { is_character = QIE_li_bingzhi }
+					NOT = { is_character = QIE_lu_xiangting }
+					NOT = { has_trait = QIE_Monarchist_officer }
+				}
+				random_select_amount = 4
+				add_defense = 1
+				gain_xp = 500
 			}
 		}
 	}
 	focus = {
 		id = QIE_germanattache
 		icon = GFX_goal_GER_Heil_Im_Dir_Siegerkranza
+		relative_position_id = QIE_germanarsenal
 		cost = 6.00
+		x = -1
+		y = 4
+
 		prerequisite = {
 			focus = QIE_motorized_armor
 		}
@@ -1448,18 +2201,26 @@ focus_tree = {
 				controls_state = 608
 			}
 		}
-
-		x = -1
-		y = 4
-		relative_position_id = QIE_germanarsenal
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_germanattache"
 			custom_effect_tooltip = QIE_german_attache_arrived
+			china_add_research_slots = yes
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
+				name = QIE_extend_the_80_division_plan
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -1470,7 +2231,23 @@ focus_tree = {
 	focus = {
 		id = QIE_future_relationship
 		icon = GFX_goal_AUS_Pan_German_Odes
+		relative_position_id = QIE_germanarsenal
 		cost = 2.00
+		x = 1
+		y = 4
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+		}
+
 		prerequisite = {
 			focus = QIE_motorized_armor
 		}
@@ -1488,14 +2265,17 @@ focus_tree = {
 			}
 			GER = { is_faction_leader = yes }
 		}
-		x = 1
-		y = 4
-		relative_position_id = QIE_germanarsenal
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_future_relationship"
 			country_event = {
 				id = qiefocus.25
+			}
+			QIE = {
+				activate_targeted_decision = { 
+					target = GER 
+					decision = GER_sino_german_cooperation 
+				}
 			}
 		}
 	}
@@ -1508,31 +2288,32 @@ focus_tree = {
 		id = QIE_futureofzhili
 		icon = GFX_goal_SZC_zhili_army
 		cost = 3.00
-		prerequisite = {
-			focus = QIE_capitalize_politics
-			focus = QIE_placateassembly
-			focus = QIE_unrest
-		}
-		available = {
-			has_war = no
-		}
 		x = 15
 		y = 4
 
 		ai_will_do = {
-			base = 25
+			base = 125
 			modifier = {
 				add = 100
 				has_political_power < 0
 			}
 		}
+		available = {
+			has_war = no
+		}
+		prerequisite = {
+			focus = QIE_capitalize_politics
+			focus = QIE_placateassembly
+			focus = QIE_unrest
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_futureofzhili"
-			remove_ideas = QIE_leadership_crisis_bad
 			country_event = {
 				id = qiefocus.11
 			}
+			army_experience = 100
+			remove_ideas = QIE_leadership_crisis_bad
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { SHX = { exists = yes } }
@@ -1545,19 +2326,20 @@ focus_tree = {
 		id = QIE_lesson_of_intervention
 		icon = GFX_goal_LEP_southern_school
 		cost = 4.00
-		prerequisite = {
-			focus = QIE_placateassembly
-			focus = QIE_capitalize_politics
-		}
 		x = 5
 		y = 4
 
 		ai_will_do = {
-			factor = 15
+			base = 75
 			modifier = {
-				add = 50
-				has_army_experience < 1
+				factor = 0.75
+				has_war = yes
 			}
+		}
+
+		prerequisite = {
+			focus = QIE_placateassembly
+			focus = QIE_capitalize_politics
 		}
 
 		completion_reward = {
@@ -2234,7 +3016,7 @@ focus_tree = {
 							country_event = {
 								id = qiefor.24
 								days = 20
-								random = 25
+								random_days = 25
 							}
 						}
 					}
@@ -3407,7 +4189,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_zhong_ti_xi_yong"
 			add_tech_bonus = {
-				name = QIE_krupp
+				name = QIE_import_krupp_steel
 				bonus = 0.75
 				uses = 2
 				category = industry
@@ -8018,71 +8800,5 @@ focus_tree = {
 				add_idea = QIE_tu_sha_si2
 			} 
 		}
-	}
-	#亲皖系
-	focus = {
-		id = QIE_lao_gong_bao_zhang
-		icon = GFX_MAF_workplace_regulations
-		relative_position_id = QIE_capitalize_politics
-		cost = 5.00
-		x = -1
-		y = 4
-
-		prerequisite = {
-			focus = QIE_guardian_of_emperor
-		}
-		prerequisite = {
-			focus = QIE_baoding_zhili_cooperation
-		}
-		prerequisite = {
-			focus = QIE_leverage_new_pop
-		}
-
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				has_stability < 0.50
-			}
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus QIE_lao_gong_bao_zhang"
-			add_ideas = QIE_she_lao_bao_zhang 
-		}
-	}		
-
-	focus = {
-		id = QIE_jian_qing_nong_ming
-		icon = GFX_goal_BUL_mechanize_farming
-		relative_position_id = QIE_capitalize_politics
-		cost = 5.00
-		x = 1
-		y = 4
-
-		prerequisite = {
-			focus = QIE_guardian_of_emperor
-		}
-		prerequisite = {
-			focus = QIE_baoding_zhili_cooperation
-		}
-		prerequisite = {
-			focus = QIE_leverage_new_pop
-		}
-
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 100
-				has_stability < 0.50
-			}
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus QIE_jian_qing_nong_ming"
-			add_ideas = QIE_liang_shi_bu_tie 
-		}
-	}		
+	}	
 }

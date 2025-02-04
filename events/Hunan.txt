@@ -12155,15 +12155,9 @@ country_event = {#向首都进军
 	option = { #yes
 		name = hunmao.4.a
 		complete_national_focus = HNN_mao_zhe_dong_zhu_xi
-		create_country_leader = {
-			name = "毛泽东"
-			desc = "POLITICS_HNN_MAO_ZHE_DONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Mao_zedong.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = HNN_mao_ze_dong
 			ideology = mao_ze_dong_thought_subtype
-			traits = {
-				HNN_jiao_yuan
-			}
 		}
 		set_politics = {
 			ruling_party = radical_socialist

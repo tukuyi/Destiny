@@ -2704,14 +2704,14 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.05
 			}
 		}
-#encouraging domestic production
+	#encouraging domestic production
 		QIE_encourage_dom_production = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_encourage_dom_production"}
 			allowed = { always = no }
 			picture = KTG_Mitteleuropean_Industrial_Support
 			modifier = { consumer_goods_factor = 0.20 }
 		}
-#black monday - minor hit
+	#black monday - minor hit
 
 		QIE_black_monday = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_black_monday"}
@@ -2721,8 +2721,73 @@ ideas = {
 				consumer_goods_factor = 0.20
 			}
 		}
-#zhili leadership crisis 
-
+	#zhili leadership crisis 
+		QIE_embers_of_a_new_beiyang = {#新北洋的余火
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_embers_of_a_new_beiyang" }
+			picture = liberty_ships_focus
+			allowed = { always = no }
+			modifier = {
+				production_speed_dockyard_factor = 1.5
+			}
+		}
+		QIE_the_beiyang_navy = {#北洋水师
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_the_beiyang_navy" }
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			modifier = {
+				refit_speed = 0.15
+				naval_coordination = 0.1
+				naval_night_attack = 0.1
+				navy_fuel_consumption_factor = -0.25
+			}
+		}
+		QIE_foreign_advisory_training = {#外国顾问的训导
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_foreign_advisory_training" }
+			picture = generic_officer
+			allowed = { always = no }
+			modifier = {
+				experience_gain_navy = 0.15
+				experience_gain_air = 0.15
+				experience_gain_army = 0.15
+				experience_gain_factor = 0.10
+			}
+		}
+		QIE_national_aviation_programme = {#国家航空计划
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_national_aviation_programme" }
+			picture = generic_air_payment
+			allowed = { always = no }
+			equipment_bonus = {
+				mio_cat_eq_only_light_fighter_no_cv = {
+					instant = yes
+					build_cost_ic = -0.10
+				}
+				small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = -0.10
+				}
+				mio_cat_eq_only_tactical_bomber = {
+					instant = yes
+					build_cost_ic = -0.10
+				}
+			}
+		}
+		QIE_chinese_soldiers_german_weapons_idea = {#中国士兵，德国武器
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_chinese_soldiers_german_weapons_idea" }
+			picture = GER_imperial_pride
+			allowed = { always = no }
+			modifier = {
+				materiel_manufacturer_cost_factor = -0.67
+			}
+		}
+		QIE_baoding_military_academy = {#保定军校
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_baoding_military_academy" }
+			picture = SZC_baoding_influence
+			allowed = { always = no }
+			modifier = {
+				skill_bonus_factor = 0.15
+				experience_loss_factor = -0.25
+			}
+		}
 		QIE_leadership_crisis = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_leadership_crisis"}
 			allowed = { always = no }
@@ -3687,9 +3752,6 @@ ideas = {
 			allowed = { original_tag = QIE }
 			available = {
 				has_completed_focus = QIE_open_up_to_investment
-			}
-			visible = {
-				has_dynamic_modifier = { modifier = QIE_german_influence_dynamic_modifier }
 			}
 			targeted_modifier = {
 				tag = GER

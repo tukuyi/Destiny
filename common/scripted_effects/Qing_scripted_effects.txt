@@ -310,7 +310,7 @@ QIEYGD_MORE_POWAH = {
 		}
 	}
 }
-QIE_import_krupp_steel_effect = {
+QIE_import_krupp_steel_effect = {#添加工厂
 	custom_effect_tooltip = QIE_import_krupp_steel_effect_tt
 	set_temp_variable = { QIE_import_krupp_steel_var = party_popularity@market_liberal }
 	multiply_temp_variable = { QIE_import_krupp_steel_var = 10 } #Party Pop ranges from 0-1. Multiply it by ten so range is 0-10
@@ -481,5 +481,36 @@ QIE_import_krupp_steel_effect = {
 				instant_build = yes
 			}
 		}
+	}
+}
+QIE_unlock_german_companies_effect = {#解锁生产商
+	custom_effect_tooltip = tooltip_white_line
+	add_one_random_civilian_factory = yes
+	add_one_random_civilian_factory = yes
+	custom_effect_tooltip = tooltip_white_line
+	if = {
+		limit = { has_dlc_aat = no }
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = QIE_krupp
+		show_ideas_tooltip = QIE_opel
+		show_ideas_tooltip = QIE_henschel
+		show_ideas_tooltip = QIE_focke_wulf
+		show_ideas_tooltip = QIE_junkers
+		show_ideas_tooltip = QIE_blohm_voss
+	}
+	else = {
+		custom_effect_tooltip = available_mio_tt
+		show_mio_tooltip = QIE_krupp_organisation
+		show_mio_tooltip = QIE_opel_organisation
+		show_mio_tooltip = QIE_henschel_organisation
+		show_mio_tooltip = QIE_focke_wulf_organisation
+		show_mio_tooltip = QIE_junkers_organisation
+		show_mio_tooltip = QIE_blohm_voss_organisation
+		mio:QIE_krupp_organisation = { add_mio_size = 2 }
+		mio:QIE_opel_organisation = { add_mio_size = 2 }
+		mio:QIE_henschel_organisation = { add_mio_size = 2 }
+		mio:QIE_focke_wulf_organisation = { add_mio_size = 2 }
+		mio:QIE_junkers_organisation = { add_mio_size = 2 }
+		mio:QIE_blohm_voss_organisation = { add_mio_size = 2 }
 	}
 }
