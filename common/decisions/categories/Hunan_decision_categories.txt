@@ -87,6 +87,9 @@ HNN_bei_zhan_category = {#我们的统一战争
 	}
 	visible = {
 		is_subject = no
+		NOT = {
+			has_country_flag = HNN_PROC_victory
+		}
 	}
 }
 

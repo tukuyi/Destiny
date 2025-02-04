@@ -124,7 +124,6 @@ QIE_zhili_reunite_china_decisions_category = {
 	visible = {
 		OR = {
 			has_completed_focus = QIE_destroy_isolated_warlords
-			has_completed_focus = QIE_rebuild_alliance
 			has_completed_focus = QIE_fallout_of_northwest_conflict
 		}
 		is_subject = no

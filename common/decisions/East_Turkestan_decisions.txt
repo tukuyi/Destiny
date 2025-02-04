@@ -3,6 +3,9 @@
 ###########################
 # By 彭湃
 ###########################
+
+@FRA_phalantere_decision_time = 50
+
 FRA_phalanstere_category = {
 	FRA_Develop_ETS = {
 		icon = generic_construction
@@ -35,7 +38,11 @@ FRA_phalanstere_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision FRA_Develop_Caribbean target: [From.GetName]"
-			set_global_flag = { flag = FRA_ongoing_phalanstere_development days = @FRA_phalantere_decision_time value = 1 }
+			set_global_flag = { 
+				flag = FRA_ongoing_phalanstere_development 
+				days = @FRA_phalantere_decision_time 
+				value = 1 
+			}
 		}
 
 		remove_effect = {

@@ -8497,6 +8497,13 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
+			every_army_leader = {
+				limit = { 
+					skill < 3	
+				}
+				add_attack = 1
+				gain_xp = 400
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
@@ -8766,6 +8773,23 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
+			custom_effect_tooltip = tooltip_white_line
+			every_army_leader = {
+				limit = {
+					has_trait = irregulars_officer
+				}
+				random_select_amount = 4
+				add_unit_leader_trait = career_officer
+			}
+			random_army_leader = {
+				limit = {
+					NOT = { is_character = HNN_mao_ze_dong }
+					NOT = { is_character = HNN_peng_dehuai }
+					NOT = { is_character = HNN_Hua_Guofeng }
+				}
+				add_trait = { trait = panzer_leader }
+			}
+
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
@@ -8834,6 +8858,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_air_frcoe"
 			air_experience = 50.0
+			set_rule = { can_generate_female_aces = yes }
 		}
 
 		search_filters = { FOCUS_FILTER_AIR_XP }
@@ -12340,9 +12365,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_hou_zi_yan"
 			add_political_power = -200
+			custom_effect_tooltip = tooltip_white_line
 			mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 2 }
 			mio:HNN_tiema_organisation = { add_mio_size = 2 }
 			mio:HNN_faw_motors_organisation = { add_mio_size = 2 }
+			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = CN_zhong_ke_yuan
 		}

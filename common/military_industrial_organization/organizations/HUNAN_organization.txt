@@ -253,6 +253,10 @@ HNN_faw_motors_organisation = {#一汽
 	include = generic_motorized_mechanized_organization
 	allowed = { 
 		original_tag = HNN 
-		has_country_flag = HNN_PROC_victory
+	}
+	available = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
 	}
 }

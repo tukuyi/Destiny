@@ -1,0 +1,8 @@
+QIE_hubei_generals_dynamic_modifier = {#湖北将军团
+	icon = "GFX_decision_factories"
+	local_supplies = 0.25
+	state_production_speed_buildings_factor = 0.25
+	local_building_slots_factor = 0.25
+	local_factories = 0.25
+	state_resource_steel = 4
+}

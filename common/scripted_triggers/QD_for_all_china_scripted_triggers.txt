@@ -1,0 +1,41 @@
+has_compele_china = {#全国大开发
+	if = {
+		limit = { 
+			tag = HNN
+		}
+		has_completed_focus = HNN_gong_ye_hua
+	}
+	else_if = {
+		limit = { 
+			tag = GXC
+		}
+		has_completed_focus = GXC_martial_law
+	}
+}
+
+has_compele_china2 = {#全国大开发
+	if = {
+		limit = { 
+			tag = HNN
+		}
+		has_completed_focus = HNN_hou_cai_kuang
+	}
+	else_if = {
+		limit = { 
+			tag = GXC
+		}
+		has_completed_focus = GXC_shi_si_xiang_jian_she
+	}
+}
+
+china_proper_not_united = { #中国标签的一些逻辑，他们应该在攻击奉天之前先统一中国本土
+	any_of_scopes = {
+		array = global.china_tags_array
+		exists = yes
+		NOT = { is_ally_with = ROOT }
+		NOT = { is_ally_with = FNG }
+		NOT = { original_tag = XSM }
+		NOT = { original_tag = SIK }
+		NOT = { original_tag = KUM }
+	}
+}

@@ -224,6 +224,7 @@ add_ideas = {
 	QIE_legitimacy_of_the_monarchy
 	QIE_big_debt
 	QIE_leadership_crisis
+	QIE_stalled_80_division_reform_plan
 	unequal_treaties
 
 	QIE_Cao_Kun_hog_ade
@@ -259,26 +260,26 @@ country_event = {
 country_event = {
 	id = qiedom.18 #mining conflicts
 	days = 14
-	random = 96
+	random_hours = 96
 }
 country_event = {
 	id = qiedom.4 #death of wang chengbin
 	days = 31
-	random = 72
+	random_hours = 72
 }
 country_event = {
 	id = qieflavor.11 #sarcophogus
 	days = 1096
-	random = 1440
+	random_hours = 1440
 }
 
 set_country_flag = germany_support
 set_country_flag = legation_council_member
 
-create_country_leader = {
-	name = "Y.C. James Yen"
-	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
-	expire = "1.1.1"
+recruit_character = QIE_aisin_gioro_puyi
+
+promote_character = {
+	character = QIE_aisin_gioro_puyi
 	ideology = socdem_warlordism_subtype
 }
 create_country_leader = {
@@ -293,23 +294,17 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = marlib_warlordism_subtype
 }
-create_country_leader = {
-	name = "溥仪"
-	desc = "POLITICS_PUYI_RESTORED_DESC"
-	picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
-	expire = "1.1.1"
+promote_character = {
+	character = QIE_aisin_gioro_puyi
 	ideology = soccon_oligarchy_subtype
 }
-create_country_leader = {
-	name = "溥仪"
-	desc = "POLITICS_PUYI_PUPPET_DESC"
-	picture = "gfx/leaders/QIE/Portrait_QIE_aisin_gioro_puyi_civilian.png"
-	expire = "1.1.1"
-	ideology = authdem_warlordism_subtype
+promote_character = {
+	character = QIE_aisin_gioro_puyi
+	ideology = pataut_warlordism_subtype
 }
 promote_character = {
 	character = QIE_wu_peifu
-	ideology = pataut_warlordism_subtype
+	ideology = authdem_warlordism_subtype
 }
 create_country_leader = {
 	name = "张天然"

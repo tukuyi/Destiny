@@ -709,6 +709,51 @@ ideas = {
 	}
 
 	country = {
+	#开局精神
+		QIE_fractured_empire = {#破碎的帝国
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire"}
+			allowed = { always = no }
+			picture = man_low_legitimacy2
+			modifier = {
+				stability_factor = -0.10
+				conscription_factor = -0.15
+				consumer_goods_factor = 0.15
+			}
+		}
+		QIE_legitimacy_of_the_monarchy = {#君主制的合法性
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy" }
+			picture = man_low_legitimacy
+			allowed = { always = no }
+			modifier = {
+				compliance_gain = -0.01
+				stability_factor = -0.35
+				war_support_factor = -0.25
+				research_speed_factor = -0.05
+				political_power_factor = -0.10
+				cannot_call_allies_or_join_wars = 1
+			}
+		}
+		QIE_big_debt = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_big_debt"}
+			allowed = { always = no }
+			picture = chi_hyper_inflation5
+			modifier = {
+				political_power_cost = 0.30
+				trade_opinion_factor = -0.50
+				production_speed_buildings_factor = -0.20
+			}
+		}
+		QIE_stalled_80_division_reform_plan = {#停滞的“80师改革计划”
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_stalled_80_division_reform_plan" }
+			picture = SHX_beijing_influence
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.10
+				army_org_regain = -0.05
+				land_doctrine_cost_factor = 0.10
+				promote_cost_factor = -0.25
+			}
+		}
 	#外交
 		QIE_ping_eng_jing_ji = {#平等协议
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_ping_eng_jing_ji"}
@@ -2616,40 +2661,6 @@ ideas = {
 				experience_gain_army_factor = 0.10
 			}
 		}	
-	#starting ideas
-		QIE_fractured_empire = {#破碎的帝国
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_fractured_empire"}
-			allowed = { always = no }
-			picture = man_low_legitimacy2
-			modifier = {
-				stability_factor = -0.10
-				conscription_factor = -0.15
-				consumer_goods_factor = 0.15
-			}
-		}
-		QIE_legitimacy_of_the_monarchy = {#君主制的合法性
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy" }
-			picture = man_low_legitimacy
-			allowed = { always = no }
-			modifier = {
-				compliance_gain = -0.01
-				stability_factor = -0.35
-				war_support_factor = -0.25
-				research_speed_factor = -0.05
-				political_power_factor = -0.10
-				cannot_call_allies_or_join_wars = 1
-			}
-		}
-		QIE_big_debt = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_big_debt"}
-			allowed = { always = no }
-			picture = chi_hyper_inflation5
-			modifier = {
-				political_power_cost = 0.30
-				trade_opinion_factor = -0.50
-				production_speed_buildings_factor = -0.20
-			}
-		}
 	#君主制合法性
 		QIE_legitimacy_of_the_monarchy_1 = {#君主制的合法性
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_legitimacy_of_the_monarchy_1" }
@@ -2712,7 +2723,6 @@ ideas = {
 			modifier = { consumer_goods_factor = 0.20 }
 		}
 	#black monday - minor hit
-
 		QIE_black_monday = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_black_monday"}
 			allowed = { always = no }
@@ -2788,7 +2798,67 @@ ideas = {
 				experience_loss_factor = -0.25
 			}
 		}
-		QIE_leadership_crisis = {
+		QIE_renovated_baoding_arsenal_idea = {#复兴保定兵工厂
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_renovated_baoding_arsenal_idea" }
+			picture = man_five_year_plan_industry
+			allowed = { always = no }
+			modifier = {
+				production_factory_start_efficiency_factor = 0.07
+				line_change_production_efficiency_factor = 0.07
+			}
+		}
+		QIE_in_the_footsteps_of_giants_level1 = {#追随巨人脚步
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_in_the_footsteps_of_giants_level1" }
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.05
+				org_loss_when_moving = -0.05
+				land_doctrine_cost_factor = 0.05
+			}
+		}
+		QIE_in_the_footsteps_of_giants_level2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_in_the_footsteps_of_giants_level1" }
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.05
+				org_loss_when_moving = -0.05
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					soft_attack = 0.05
+					instant = yes
+				}
+				armor = {
+					soft_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+		QIE_in_the_footsteps_of_giants_level3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_in_the_footsteps_of_giants_level1" }
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.10
+				org_loss_when_moving = -0.10
+				army_attack_factor = 0.075
+				max_dig_in_factor = 0.05
+			}
+		}
+		QIE_in_the_footsteps_of_giants_level4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_in_the_footsteps_of_giants_level1" }
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.10
+				org_loss_when_moving = -0.10
+				army_attack_factor = 0.10
+				max_dig_in_factor = 0.10
+			}
+		}
+		QIE_leadership_crisis = {#直系的领导层危机
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_leadership_crisis"}
 			allowed = { always = no }
 			picture = prc_low_popular_support
@@ -2802,7 +2872,55 @@ ideas = {
 				army_org_factor = -0.20
 			}
 		}
-#outraged parties - attack Anqing
+		QIE_formation_of_a_militaristic_state_people_level1 = {#构建“军国民”
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_formation_of_a_militaristic_state_people_level1" }
+			picture = advisors_china_beiyang_zhili
+			allowed = { always = no }
+			modifier = {
+				skill_bonus_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				land_doctrine_cost_factor = 0.05
+			}
+		}
+		QIE_formation_of_a_militaristic_state_people_level2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_formation_of_a_militaristic_state_people_level2" }
+			picture = advisors_china_beiyang_zhili
+			allowed = { always = no }
+			modifier = {
+				skill_bonus_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				army_org_regain = 0.05
+			}
+		}
+		QIE_formation_of_a_militaristic_state_people_level3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_formation_of_a_militaristic_state_people_level3" }
+			picture = advisors_china_beiyang_zhili
+			allowed = { always = no }
+			modifier = {
+				skill_bonus_factor = 0.15
+				army_infantry_attack_factor = 0.075
+				army_infantry_defence_factor = 0.075
+				army_org_regain = 0.10
+				conversion_cost_civ_to_mil_factor = -0.10
+				required_garrison_factor = -0.10
+			}
+		}
+		QIE_formation_of_a_militaristic_state_people_level4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_formation_of_a_militaristic_state_people_level4" }
+			picture = advisors_china_beiyang_zhili
+			allowed = { always = no }
+			modifier = {
+				skill_bonus_factor = 0.20
+				army_infantry_attack_factor = 0.10
+				army_infantry_defence_factor = 0.10
+				army_org_regain = 0.10
+				conversion_cost_civ_to_mil_factor = -0.15
+				required_garrison_factor = -0.15
+			}
+		}
+	#outraged parties - attack Anqing
 
 		QIE_outraged_parties = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_outraged_parties"}
@@ -2812,7 +2930,7 @@ ideas = {
 				political_power_gain = -0.15
 			}
 		}
-#popular warlord - attack Nanjing
+	#popular warlord - attack Nanjing
 
 		QIE_popular_warlord_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_popular_warlord_idea"}
@@ -2823,7 +2941,7 @@ ideas = {
 				war_support_factor = 0.10
 			}
 		}
-#defaulted on debt oof 
+	#defaulted on debt oof 
 		QIE_defaulted_debt = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_defaulted_debt"}
 			allowed = { always = no }
@@ -2894,7 +3012,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_she_lao_bao_zhang"}
 			allowed = { always = no }
 			picture = RUS_Medical_Followers
-            modifier = {
+			modifier = {
 				stability_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -2905,12 +3023,130 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_liang_shi_bu_tie"}
 			allowed = { always = no }
 			picture = SCT_farms
-            modifier = {
+			modifier = {
 				stability_factor = 0.05
 				political_power_factor = -0.02
 				global_building_slots_factor = 0.10
 				production_speed_buildings_factor = 0.10
 				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		QIE_kailuan_mining_bureau_idea = {#开滦矿务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_kailuan_mining_bureau_idea" }
+			picture = generic_exploit_mines
+			allowed = { always = no }
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.10
+				local_resources_factor = 0.10
+			}
+		}
+		QIE_daye_hanyang_rapid_development_scheme = {#大冶-汉阳快速发展计划
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_daye_hanyang_rapid_development_scheme" }
+			picture = generic_loans
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+	#QIE 与其他中国派系开战后的定时BUFF
+		QIE_attack_fed_GXC_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_fed_GXC_idea" }
+			picture = GXC_liangguang_broken
+			allowed = { always = no }
+			available = { GXC = { exists = yes } }
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_fed_SZC_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_fed_SZC_idea" }
+			picture = SZC_internal_divisions
+			allowed = { always = no }
+			available = { SZC = { exists = yes } }
+			targeted_modifier = {
+				tag = SZC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_fed_HNN_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_fed_HNN_idea" }
+			picture = HNN_hopes_dashed
+			allowed = { always = no }
+			available = { HNN = { exists = yes } }
+			targeted_modifier = {
+				tag = HNN
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_fed_YUN_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_fed_YUN_idea" }
+			picture = YUN_Tang_Jiyao_idea
+			allowed = { always = no }
+			available = { YUN = { exists = yes } }
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_FNG_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_FNG_idea" }
+			picture = FNG_dominant_mantetsu
+			allowed = { always = no }
+			available = { FNG = { exists = yes } }
+			targeted_modifier = {
+				tag = FNG
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_kmt_CHI_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_kmt_CHI_idea" }
+			picture = CHI_demobilised_nra
+			allowed = { always = no }
+			available = { CHI = { exists = yes } }
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_kmt_GXC_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_kmt_GXC_idea" }
+			picture = GXC_liangguang_broken
+			allowed = { always = no }
+			available = { GXC = { exists = yes } }
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_kmt_HNN_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_kmt_HNN_idea" }
+			picture = HNN_hopes_dashed
+			allowed = { always = no }
+			available = { HNN = { exists = yes } }
+			targeted_modifier = {
+				tag = HNN
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		QIE_attack_kmt_YUN_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_kmt_YUN_idea" }
+			picture = CHI_demobilised_nra
+			allowed = { always = no }
+			available = { YUN = { exists = yes } }
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
 			}
 		}
 #local logistics decreased supply consumption
@@ -3345,16 +3581,6 @@ ideas = {
 				army_defence_factor = 0.1
 			}
 		}
-		QIE_commisars_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_commisars_idea"}
-			allowed = { always = no }
-			picture = generic_intel_bonus
-			modifier = {
-				political_power_gain = -0.1
-				army_core_attack_factor = 0.08
-				army_core_defence_factor = 0.08
-			}
-		}
 		QIE_baron_ungern_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_zhang_tianran_idea"}
 			allowed = { always = no }
@@ -3724,12 +3950,36 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea kaiping_mines"}
 			allowed = { original_tag = QIE }
 			traits = { industrial_manufacturer }
+			visible = { 
+				NOT = { has_completed_focus = QIE_expandmines } 
+			}
 			modifier = {
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
 			}
 			research_bonus = {
 				industry = 0.1
+			}
+		}
+		kaiping_mines_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea kaiping_mines" }
+			allowed = {
+				original_tag = QIE
+			}
+			picture = kaiping_mines
+			visible = {
+				if = {
+					limit = { tag = QIE }
+					has_completed_focus = QIE_expandmines
+				}
+			}
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+			}
+			research_bonus = {
+				industry = 0.15
 			}
 		}
 

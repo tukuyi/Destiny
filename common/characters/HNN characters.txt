@@ -763,18 +763,21 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_mao_ze_dong_ARMY_DESC
 			traits = { 
-				politically_connected 
-				guerilla_officer 
-				brilliant_strategist
-				irregulars_officer
-				militias_officer
+				ranger
+				war_hero
 				expert_delegator
+				guerilla_officer 
+				militias_officer
+				trait_mountaineer
+				irregulars_officer
+				brilliant_strategist
+				politically_connected 
 			}
-			skill = 2
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 5
-			logistics_skill = 1
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 6
+			logistics_skill = 4
 		}
 	}		
 #王震

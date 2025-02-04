@@ -213,14 +213,7 @@ chinese_unification = {
 			OR = {
 				is_han_chinese_tag = yes
 				tag = TAN
-				AND = {
-					tag = ETS 
-					OR = {
-						has_government = totalist
-						has_government = syndicalist
-						has_government = radical_socialist
-					}
-				}
+				tag = ETS
 			}
 			NOT = {
 				tag = QYG
@@ -321,6 +314,14 @@ chinese_unification = {
 						has_completed_focus = LEC_zhong_cheng_de_shang_hai
 						has_country_leader = { name = "彭述之" ruling_only = yes }
 					}
+				}
+			}
+			else_if = {
+				limit = { tag = ETS }
+				OR = {
+					has_government = totalist
+					has_government = syndicalist
+					has_government = radical_socialist
 				}
 			}
 		}

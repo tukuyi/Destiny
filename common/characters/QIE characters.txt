@@ -724,6 +724,36 @@ characters = {
 ################
 ###   满洲   ###
 ################
+#爱新觉罗·溥仪
+	QIE_aisin_gioro_puyi = {
+		name = QIE_aisin_gioro_puyi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QIE_aisin_gioro_puyi_civilian
+			}
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = socdem_warlordism_subtype
+			traits = {
+				QIE_restored_emperor
+			}
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = soccon_oligarchy_subtype
+			traits = {
+				QIE_restored_emperor
+			}
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_leader_desc
+			ideology = authdem_warlordism_subtype
+			traits = {
+				QIE_puppet_emperor
+			}
+		}
+	}
 #爱新觉罗·载涛
 	QIE_aisin_gioro_zaitao = {
 		name = QIE_aisin_gioro_zaitao

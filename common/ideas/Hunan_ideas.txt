@@ -5419,11 +5419,11 @@ ideas = {
 		HNN_one_zong_jiao_idea = {#和谐社会
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_one_zong_jiao_idea"}
 			allowed = { always = no }
+			picture = SKM_elite_nobles
 			modifier = {
 				production_speed_buildings_factor = 0.1
 				production_factory_max_efficiency_factor = 0.1
 			}
-			picture = SKM_elite_nobles
 		}
 		HNN_one_zong_jiao_idea2 = {#和谐社会
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_one_zong_jiao_idea2"}
@@ -5435,7 +5435,6 @@ ideas = {
 				army_morale_factor = 0.05 
 				political_power_cost = -0.05
 				industrial_capacity_factory = 0.04
-				production_speed_buildings_factor = 0.02
 				production_speed_buildings_factor = 0.1
 				production_factory_max_efficiency_factor = 0.1
 			}

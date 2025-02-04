@@ -11,66 +11,12 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		custom_effect_tooltip = tooltip_white_line
-		custom_effect_tooltip = QIE_gain_zhili_infantry_division_template
-		division_template = {
-			name = "Zhili Infantry Brigade"
-			template_counter = 58
-			division_names_group = "QIE_INF_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 0 y = 3 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-				infantry = { x = 1 y = 2 }
-				infantry = { x = 1 y = 3 }
-				infantry = { x = 2 y = 0 }
-				infantry = { x = 2 y = 1 }
-			}
-			support = {
-				engineer = { x = 0 y = 0 }
-				artillery = { x = 0 y = 1 }
-			}
-		}
-		custom_effect_tooltip = tooltip_white_line
-		custom_effect_tooltip = QIE_consolidate_zhili_infantry_divisions
-		hidden_effect = {
-			delete_unit_template_and_units = { division_template = "Zhili Infantry Division" disband = yes }
-			random_controlled_state = {
-				prioritize = { 607 608 1059 1060 1061 1062 1063 }
-				limit = { valid_state_for_spawning_friendly_unit = yes }
-				create_unit = {
-					division = "name = \"Xingguo jun Di 1 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"Xingguo jun Di 2 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"Xingguo jun Di 3 Shi\" division_template = \"Zhili Infantry Brigade\" start_equipment_factor = 1.0 start_experience_factor = 0.3"
-					owner = ROOT
-				}
-			}
-		}
-		
-		# QIE_kill_manchus = yes	
 
 		# eval_effect HNN = {
-		# 	set_politics = {
-		# 		ruling_party = radical_socialist
-		# 		elections_allowed = no
-		# 	}
+			set_politics = {
+				ruling_party = authoritarian_democrat
+				elections_allowed = no
+			}
 		# 	promote_character = {
 		# 		character = HNN_Qian_Xuesen
 		# 		ideology = utopian_technocracy_subtype
