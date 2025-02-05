@@ -37,6 +37,7 @@ on_actions = {
 			### Pacific States of America ###
 			if = {
 				limit = { tag = QIE }
+				country_event = qieroc.8
 				country_event = qieroc.31
 				country_event = qieroc.32
 			}

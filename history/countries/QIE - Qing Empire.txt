@@ -4,14 +4,27 @@ oob = "QIE"
 set_naval_oob= "QIE_naval"
 starting_train_buffer = 1.5
 
-create_faction = Qing_faction
-add_to_faction = XSM
-add_to_faction = SHX
-add_to_faction = SZC
-add_to_faction = YUN
-add_to_faction = SQI
-add_to_faction = SIK
-add_to_faction = LEP
+# create_faction = Qing_faction
+# add_to_faction = XSM
+# add_to_faction = SHX
+# add_to_faction = SZC
+# add_to_faction = YUN
+# add_to_faction = SQI
+# add_to_faction = SIK
+# add_to_faction = LEP
+
+set_autonomy = {
+	target = TAN
+	autonomy_state = associated_governorate
+}
+set_autonomy = {
+	target = SZC
+	autonomy_state = associated_governorate
+}
+set_autonomy = {
+	target = XSM
+	autonomy_state = associated_governorate
+}
 
 save_global_event_target_as = original_da_qing
 

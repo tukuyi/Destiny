@@ -6,10 +6,17 @@ characters = {
 	HNN_tang_xiangming = {
 		name = HNN_tang_xiangming
 		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_tang_xiangming
+			}
 			army = {
 				small = GFX_Portrait_HNN_tang_xiangming
 				large = GFX_Portrait_HNN_tang_xiangming
 			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_tang_xiangming_DESC
+			ideology = kleptocracy_subtype
 		}
 		field_marshal = {
 			desc = ARMY_tang_xiangming_ARMY_DESC

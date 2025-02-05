@@ -1,6 +1,13 @@
 ﻿capital = 597
 OOB = "SQI"
 
+QIE = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = associated_governorate
+	}
+}
+
 set_technology = {
 	irregular_infantry_tech = 1
 	basic_train = 1

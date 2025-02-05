@@ -5,6 +5,13 @@ set_research_slots = 2
 
 save_global_event_target_as = original_shanxi
 
+QIE = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = associated_governorate
+	}
+}
+
 set_technology = {
 	basic_train = 1
 	### Infantry ###

@@ -15,6 +15,14 @@ add_ideas = {
 }
 set_country_flag = YUN_sinicization_for_yall
 set_research_slots = 2
+
+QIE = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = associated_governorate
+	}
+}
+
 set_technology = {
 	### Infantry ###
 	basic_train = 1

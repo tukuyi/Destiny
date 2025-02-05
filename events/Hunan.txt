@@ -2477,13 +2477,15 @@ country_event = {#大战
 				name = HNN_radical_socialist_eight
 				long_name = HNN_radical_socialist_eight_long 
 			}
-			create_country_leader = {
-				name = "汤芗铭"
-				desc = "POLITICS_HNN_tang_xiangming_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_tang_xiangming.png"
-				expire = "1965.1.1"
-				ideology = authdem_lianshengism_subtype
-			}	
+			HNN_tang_xiangming = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_HNN_tang_xiangming_DESC
+						ideology = authdem_lianshengism_subtype
+					}
+					promote_leader = yes
+				}
+			}
 			remove_ideas = {
 				HNN_a_democratic_province_2
 				HNN_a_democratic_province_3

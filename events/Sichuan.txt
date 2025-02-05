@@ -6672,7 +6672,7 @@ country_event = { #Jiang Baili Arrives in Sichuan
 		QIE = {
 			QIE_wang_chengbin = {
 				set_nationality = ROOT
-				promote_to_field_marshal = yes
+				promote_leader = yes
 			}
 			QIE_jiang_bai_li = { set_nationality = ROOT }
 			QIE_zhang_qihuang = { set_nationality = ROOT }

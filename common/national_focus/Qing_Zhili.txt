@@ -1651,7 +1651,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			608 = { prioritize_state = yes }
-			add_one_random_radar_station = yes
 			add_one_random_civilian_factory = yes
 			add_one_random_civilian_factory = yes
 			hidden_effect = {
@@ -3093,7 +3092,7 @@ focus_tree = {
 			custom_effect_tooltip = QIE_destroy_isolated_warlords_tooltip #KMT, HNN, YUN, SCZ
 			custom_effect_tooltip = tooltip_white_line
 			if = {
-				limit = { has_completed_focus = QIE_on_national_defense }
+				limit = { has_completed_focus = QIE_jiangbailiplan }
 				effect_tooltip = {
 					swap_ideas = {
 						remove_idea = QIE_formation_of_a_militaristic_state_people_level2
@@ -3105,7 +3104,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { has_completed_focus = QIE_symphony_of_military_and_industry }
+				limit = { has_completed_focus = QIE_liumenggengplan }
 				effect_tooltip = {
 					swap_ideas = {
 						remove_idea = QIE_in_the_footsteps_of_giants_level2
@@ -3254,16 +3253,13 @@ focus_tree = {
 		ai_will_do = {
 			base = 100
 			modifier = {
-				factor = 0
-				modifier = {
-					factor = 0.5
-					has_war = yes
-				}
-				modifier = {
-					factor = 2
-					has_war = no
-				}
-			}	
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = no
+			}
 		}
 
 		will_lead_to_war_with = GXC
@@ -3425,8 +3421,12 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
+					has_civil_war = yes
+					any_claim = yes
+					alliance_strength_ratio < 1.25
+					surrender_progress > 0.05
+					has_country_flag = imminent_war
 					has_country_flag = china_attack_decision_one_month_cooldown
-					country_is_in_dangerous_war = yes
 					var:716.owner = { default_attack_AI_trigger = yes }
 					china_proper_not_united = yes
 				}
@@ -3737,7 +3737,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			if = {
-				limit = { has_completed_focus = QIE_on_national_defense }
+				limit = { has_completed_focus = QIE_jiangbailiplan }
 				effect_tooltip = {
 					swap_ideas = {
 						remove_idea = QIE_formation_of_a_militaristic_state_people_level3
@@ -3749,7 +3749,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { has_completed_focus = QIE_symphony_of_military_and_industry }
+				limit = { has_completed_focus = QIE_liumenggengplan }
 				effect_tooltip = {
 					swap_ideas = {
 						remove_idea = QIE_in_the_footsteps_of_giants_level3

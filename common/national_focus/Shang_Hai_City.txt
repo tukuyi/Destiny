@@ -1929,7 +1929,6 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_shang_hai_zhi_shen"
 			set_technology = {
 				radio_detection = 1
-				decimetric_radar = 1
 			}
 			custom_effect_tooltip = tooltip_white_line
 			743 = {

@@ -2536,16 +2536,13 @@ focus_tree = {
 			show_unit_leaders_tooltip = GXC_lu_yuguang
 			hidden_effect = {
 				event_target:original_liangguang = {
-					if = {
-						limit = { has_character = GXC_ma_ji }
-						GXC_ma_ji = {
-							HNN_recruit_characters_effect = yes
-							hidden_effect = { remove_unit_leader_trait = GXC_guangxi_clique_officer }
-						}
-						GXC_lu_yuguang = {
-							HNN_recruit_characters_effect = yes
-							hidden_effect = { remove_unit_leader_trait = GXC_guangxi_clique_officer }
-						}
+					GXC_ma_ji = {
+						HNN_recruit_characters_effect = yes
+						hidden_effect = { remove_unit_leader_trait = GXC_guangxi_clique_officer }
+					}
+					GXC_lu_yuguang = {
+						HNN_recruit_characters_effect = yes
+						hidden_effect = { remove_unit_leader_trait = GXC_guangxi_clique_officer }
 					}
 				}
 			}

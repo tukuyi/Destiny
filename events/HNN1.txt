@@ -12,9 +12,17 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		eval_effect QIE = {
-			QIE_zhili_clique_flees = yes
-		}
+		# eval_effect QIE = {
+		# 	every_other_country = {
+		# 		limit = { is_puppet_of = QIE }
+		# 		ROOT = {
+		# 			set_autonomy = {
+		# 				target = PREV
+		# 				autonomy_state = autonomy_free
+		# 			}
+		# 		}
+		# 	}
+		# }
 
 		# hnnzhili.1
 

@@ -413,11 +413,11 @@ country_event = { # Anqing Refuses Further Cooperation
 				}
 			}
 			QIE = {
-				country_event = {
-					id = qielepcollapse.4
-					hours = 12
+				set_autonomy = {
+					target = ANQ
+					autonomy_state = associated_governorate
 				}
-				add_to_faction = ANQ
+				country_event = { id = qielepcollapse.4 hours = 12 }
 			}
 			FNG = {
 				country_event = {
@@ -441,9 +441,6 @@ country_event = { # Anqing Refuses Further Cooperation
 		name = lepcollapse.11.a
 		add_political_power = -30
 		add_stability = -0.03
-		ANQ = {
-			set_country_flag = choice_made
-		}
 	}
 
 	option = { #Let us join Governor Chen!
@@ -454,7 +451,6 @@ country_event = { # Anqing Refuses Further Cooperation
 			add_political_power = -30
 			add_stability = -0.03
 			ANQ = {
-				set_country_flag = choice_made
 				change_tag_from = LEP
 			}
 		}
@@ -666,34 +662,7 @@ country_event = { # Riots reach the Marshal's Palace
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event lepcollapse.16"
 		hidden_effect = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = LEP
-						tag = YUN
-						tag = SHX
-						tag = XSM
-						tag = SZC
-						tag = LEC
-						tag = GEA
-						tag = QIE
-						tag = ANQ
-						tag = FNG
-						tag = JAP
-						tag = TRM
-						tag = SQI
-						tag = SIK
-						tag = TAN
-						tag = TIB
-						tag = MON
-						tag = SZC
-					}
-				}
-				news_event = { # The Illusion Shatters
-					id = lepcollapse.17
-					days = 1
-				}
-			}
+			QIE = { country_event = { id = lepcollapse.17 days = 1 } }
 			YUN = { country_event = { id = yun.54 days = 12 } }
 			QYG = {
 				country_event = {
@@ -743,53 +712,99 @@ country_event = { # Riots reach the Marshal's Palace
 	}
 }
 
-news_event = {# The Illusion Shatters
+country_event = {
 	id = lepcollapse.17
 	title = lepcollapse.17.t
-	desc = {
-		text = lepcollapse.17.d
-		trigger = {
-			tag = LEP
-			tag = YUN
-			tag = SHX
-			tag = XSM
-			tag = SZC
-			tag = LEC
-			tag = GEA
+	desc = lepcollapse.17.d
+	picture = GFX_news_event_QIE_illusion_shatters
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_subject_country = {
+				set_country_flag = { flag = QIE_was_puppet days = 20 value = 1 }
+				overlord = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+				leave_faction = yes #sanity check
+				peace_out_non_neighbours_after_leaving_faction = yes #sanity check
+			}
+			every_state = {
+				limit = {
+					is_core_china = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { owner = { is_subject_of = ROOT } }
+				}
+				add_claim_by = ROOT
+			}
+			dismantle_faction = yes #should never happen... but just in case
+			LEP = {
+				set_country_flag = LEP_collapsed
+				set_global_flag = LEP_collapse
+				country_event = {
+					id = lepcollapse.18
+					days = 2
+				}
+				add_named_threat = {
+					threat = 2
+					name = LEP_collapse_threat
+				}
+			}
+			SZC = { country_event = { id = sichuan.7 days = 10 } }
+			XSM = { country_event = { id = mac.5 days = 2 } }
+			news_event = lepcollapse.1700
 		}
 	}
-	desc = {
-		text = lepcollapse.17.d_qie
-		trigger = {
-			tag = QIE
-		}
-	}
-	desc = {
-		text = lepcollapse.17.d_anq
-		trigger = {
-			tag = ANQ
-		}
-	}
-	desc = {
-		text = lepcollapse.17.d_fng
-		trigger = {
-			tag = FNG
-		}
-	}
-	desc = {
-		text = lepcollapse.17.d_jap
-		trigger = {
-			OR = {
-				tag = JAP
-				tag = TRM
+
+	option = { #Terrible news
+		log = "[GetLogInfo]: event lepcollapse.17 option lepcollapse.17.a"
+		name = lepcollapse.17.a
+		effect_tooltip = {
+			every_other_country = {
+				limit = { has_country_flag = QIE_was_puppet }
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			dismantle_faction = yes
+			add_named_threat = {
+				threat = 2
+				name = LEP_collapse_threat
 			}
 		}
 	}
+}
+
+news_event = {# The Illusion Shatters
+	id = lepcollapse.1700
+	immediate = { log = "[GetLogInfo]: event lepcollapse.1700" }
+	title = lepcollapse.17.t
 	desc = {
-		text = lepcollapse.17.d_sqi
-		trigger = {
-			tag = SQI
-		}
+		text = lepcollapse.17.d_qie
+		trigger = { tag = QIE }
+	}
+	desc = {
+		text = lepcollapse.17.d_fng
+		trigger = { tag = FNG }
+	}
+	desc = {
+		text = lepcollapse.17.d_anq
+		trigger = { tag = ANQ }
+	}
+	desc = {
+		text = lepcollapse.17.d_shd
+		trigger = { tag = SHD }
+	}
+	desc = {
+		text = lepcollapse.17.d_szc
+		trigger = { tag = SZC }
 	}
 	desc = {
 		text = lepcollapse.17.d_sik
@@ -802,48 +817,53 @@ news_event = {# The Illusion Shatters
 	}
 	desc = {
 		text = lepcollapse.17.d_tib
-		trigger = {
-			tag = TIB
-		}
+		trigger = { tag = TIB }
 	}
 	desc = {
 		text = lepcollapse.17.d_mon
-		trigger = {
-			tag = MON
-		}
+		trigger = { tag = MON }
 	}
 	desc = {
-		text = lepcollapse.17.d_szc
+		text = lepcollapse.17.d_jap
+		trigger = { tag = JAP }
+	}
+	desc = {
+		text = lepcollapse.17.d
 		trigger = {
-			tag = SZC
+			NOT = {
+				tag = QIE
+				tag = FNG
+				tag = ANQ
+				tag = SHD
+				tag = SZC
+				tag = SIK
+				tag = TAN
+				tag = TIB
+				tag = MON
+				tag = JAP
+			}
 		}
 	}
+
 	picture = GFX_news_event_QIE_illusion_shatters
 
+	trigger = {
+		wants_world_news = yes
+	}
+
+	major = yes
+	fire_for_sender = no
 	is_triggered_only = yes
 
-	immediate = {
-		log = "[GetDateText]: [Root.GetName]: event lepcollapse.17"
-		hidden_effect = {
-			if = {
-				limit = { tag = QIE }
-				dismantle_faction = yes
-			}
-			else_if = {
-				limit = { tag = LEP }
-				set_global_flag = LEP_collapse
-				set_country_flag = LEP_collapsed
-				country_event = {
-					id = lepcollapse.18
-					days = 2
-				}
-			}
-			else_if = {
-				limit = { tag = SZC }
-				country_event = {
-					id = sichuan.7
-					days = 10
-				}
+	show_major = {
+		OR = {
+			has_global_flag = NEWS_ALL
+			is_tag_in_china_area = yes
+			original_tag = JAP
+			original_tag = GEA
+			any_home_area_neighbor_country = {
+				is_tag_in_china_area = yes
+				is_owner_neighbor_of = ROOT
 			}
 		}
 	}
@@ -852,23 +872,17 @@ news_event = {# The Illusion Shatters
 		name = lepcollapse.17.a
 		trigger = {
 			OR = {
-				tag = QIE
 				tag = LEP
-				tag = XSM
 				tag = SZC
 				tag = LEC
 				tag = GEA
+				tag = XSM
 			}
 		}
-		hidden_effect = {
-			if = {
-				limit = {
-					tag = XSM
-				}
-				country_event = {
-					id = mac.5
-					days = 2
-				}
+		effect_tooltip = {
+			add_named_threat = {
+				threat = 2
+				name = LEP_collapse_threat
 			}
 		}
 	}
@@ -881,21 +895,31 @@ news_event = {# The Illusion Shatters
 				tag = JAP
 			}
 		}
+		effect_tooltip = {
+			add_named_threat = {
+				threat = 2
+				name = LEP_collapse_threat
+			}
+		}
 	}
 
 	option = { #Interesting
 		name = lepcollapse.17.c
 		trigger = {
-			OR = {
-				tag = ANQ
-				tag = SQI
-				tag = SHX
-				tag = SIK
-				tag = TAN
-				tag = TIB
-				tag = YUN
-				tag = MON
-				tag = TRM
+			NOT = {
+				tag = LEP
+				tag = XSM
+				tag = SZC
+				tag = LEC
+				tag = GEA
+				tag = FNG
+				tag = JAP
+			}
+		}
+		effect_tooltip = {
+			add_named_threat = {
+				threat = 2
+				name = LEP_collapse_threat
 			}
 		}
 	}

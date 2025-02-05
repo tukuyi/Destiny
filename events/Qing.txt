@@ -6418,7 +6418,7 @@ country_event = {
 		LEC = {
 			random_unit_leader = {
 				limit = { 
-					has_character = QIE_Gobulo_Runqi 
+					is_character = QIE_Gobulo_Runqi 
 				}
 				unit_leader_event = qieflavor.14
 			}
@@ -6830,7 +6830,7 @@ country_event = {#皇帝一鸣惊人
 
 	option = {
 		name = qiecoup.22.a #crush the traitors!
-		remove_idea = QIE_legitimacy_of_the_monarchy
+		remove_ideas = QIE_legitimacy_of_the_monarchy
 		clr_country_flag = legation_council_member
 		hidden_effect = {
 			QIE_zhili_clique_flees = yes
@@ -10355,7 +10355,6 @@ country_event = {#大选之日
 	}
 	immediate = {
 		hidden_effect = {
-			set_country_flag = QIE_has_first_choose
 			country_event = {
 				id = qieroc.34
 				days = 150
@@ -10381,6 +10380,7 @@ country_event = {#大选之日
 
 	option = { 
 		name = qieroc.8.a 
+		set_country_flag = QIE_has_first_choose
 		set_politics = {
 			ruling_party = social_democrat
 			election_frequency = 48
@@ -10415,6 +10415,7 @@ country_event = {#大选之日
 
 	option = { 
 		name = qieroc.8.b 
+		set_country_flag = QIE_has_first_choose
 		set_politics = {
 			ruling_party = social_liberal
 			election_frequency = 48
@@ -10445,6 +10446,7 @@ country_event = {#大选之日
 
 	option = { 
 		name = qieroc.8.c 
+		set_country_flag = QIE_has_first_choose
 		set_politics = {
 			ruling_party = market_liberal
 			election_frequency = 48
@@ -10472,6 +10474,7 @@ country_event = {#大选之日
 
 	option = { 
 		name = qieroc.8.e
+		set_country_flag = QIE_has_first_choose
 		set_politics = {
 			ruling_party = social_conservative
 			election_frequency = 48
@@ -10499,6 +10502,7 @@ country_event = {#大选之日
 
 	option = { 
 		name = qieroc.8.f 
+		set_country_flag = QIE_has_first_choose
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			election_frequency = 48
@@ -11059,9 +11063,17 @@ country_event = {#第二次选举
 	fire_only_once = yes
 	trigger = {
 		tag = QIE
+		date > 1940.1.1
 		has_country_flag = QIE_has_first_choose
 		NOT = {
 			has_country_flag = QIE_ROC_second_choose_right
+		}
+		OR = {
+			has_completed_focus = QIE_li_jia_tu
+			has_completed_focus = QIE_nong_ye_wei_ben
+			has_completed_focus = QIE_jing_ying_zhi_guo
+			has_completed_focus = QIE_jiao_yu_bai_tuo_yu_mei
+			has_completed_focus = QIE_jian_xing_fa_tuan_zhu_yi
 		}
 	}
 
@@ -11357,6 +11369,13 @@ country_event = {#第三次选举
 			has_government = social_conservative
 			has_government = authoritarian_democrat
 		}	
+		OR = {
+			has_completed_focus = QIE_li_jia_tu
+			has_completed_focus = QIE_nong_ye_wei_ben
+			has_completed_focus = QIE_jing_ying_zhi_guo
+			has_completed_focus = QIE_jiao_yu_bai_tuo_yu_mei
+			has_completed_focus = QIE_jian_xing_fa_tuan_zhu_yi
+		}
 	}
 
 	option = {#工团党 
