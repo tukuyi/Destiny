@@ -511,6 +511,33 @@ characters = {
 			logistics_skill = 3
 		}
 	}	
+#康斯坦丁·彼得罗维奇·涅恰耶夫
+	SQI_Konstantin_Nechaev = {
+		name = SQI_Konstantin_Nechaev
+		portraits = {
+			army = {
+				small = GFX_Portrait_RUS_Konstantin_Nechaev
+				large = GFX_Portrait_RUS_Konstantin_Nechaev
+			}
+			civilian = {
+				large = GFX_Portrait_RUS_Konstantin_Nechaev
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_RUS_Konstantin_Nechaev_DESC
+			traits = { 
+				trait_engineer
+				career_officer
+				media_personality
+				RUS_ice_march_trait
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}		
 ################
 ###   邦邦   ###
 ################	

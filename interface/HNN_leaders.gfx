@@ -957,6 +957,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_li_zi.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_RUS_Konstantin_Nechaev"
+		texturefile = "gfx/leaders/SQI/Portrait_RUS_Konstantin_Nechaev.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SQI_mi_xi_qian"
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_mi_xi_qian.png"
 	}

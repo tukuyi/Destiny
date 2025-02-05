@@ -41,10 +41,6 @@ country_event = { #开局
 				days = 3 
 			}
 			country_event = { 
-				id = hnn.97
-				days = 7
-			}
-			country_event = { 
 				id = CHI.midgame.814
 				days = 60 
 			}

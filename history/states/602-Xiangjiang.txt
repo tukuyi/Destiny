@@ -9,12 +9,11 @@ state = { #Xiangjiang
 	}
 
 	history = {
-		owner = LEP
+		owner = HNN
 		add_core_of = HNN
 		add_claim_by = LEP
 		add_claim_by = QIE
 		add_claim_by = FNG
-		set_demilitarized_zone = yes
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1

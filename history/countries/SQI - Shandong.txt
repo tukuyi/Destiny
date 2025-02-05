@@ -227,6 +227,7 @@ recruit_character = SQI_li_lijiu
 recruit_character = SQI_xue_dian
 recruit_character = SQI_lu_yongxiang
 recruit_character = SQI_boris_annenkov
+recruit_character = SQI_Konstantin_Nechaev
 recruit_character = SQI_ke_xi_ke_tu
 
 SQI_jin_yune = {
@@ -257,6 +258,9 @@ SQI_li_lijiu = {
 }
 SQI_xue_dian = { 
 	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+SQI_Konstantin_Nechaev = {
 	retire = yes
 }
 ### Admirals ###

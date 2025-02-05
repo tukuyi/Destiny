@@ -8620,7 +8620,7 @@ country_event = {
 	}
 }
 
-country_event = { #chinese lindbergh event
+country_event = { #东方的林德伯格
 	id = qieflavor.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qieflavor.9" }
 	title = qieflavor.9.t
@@ -8637,6 +8637,12 @@ country_event = { #chinese lindbergh event
 			name = "孙"
 			surname = "桐岗"
 			callsign = "东方的林德伯格"
+			type = fighter_genius
+		}
+		add_ace = {
+			name = "惠长"
+			surname = "张"
+			callsign = "中国的林德伯格"
 			type = fighter_genius
 		}
 	}
@@ -13342,28 +13348,34 @@ country_event = {#真正的阴谋团体
 			keep_completed = yes 
 		}
 		set_country_flag = QIE_coup_failed
-		add_political_power = -100
-		add_stability = -0.05
-		promote_character = {
-			character = QIE_yu_xuezhong
-			ideology = pataut_national_conservative_subtype
+		hidden_effect = {
+			every_army_leader = {
+				limit = { has_trait = hidden_sympathies }
+				remove_trait = { trait = hidden_sympathies }
+			}
+			add_political_power = -100
+			add_stability = -0.05
+			promote_character = {
+				character = QIE_yu_xuezhong
+				ideology = pataut_national_conservative_subtype
+			}
+			set_politics = {
+				ruling_party = paternal_autocrat
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				name = QIE_paternal_autocrat_party_MZ
+				long_name = QIE_paternal_autocrat_party_MZ_long
+			}
+			QIE_Gobulo_Runqi = {
+				set_nationality = LEC
+			}
+			QIE_kill_manchus = yes
+			QIE_yu_xuezhong = {
+				promote_leader = yes
+			}
+			dismantle_faction = yes
 		}
-		set_politics = {
-			ruling_party = paternal_autocrat
-		}
-		set_party_name = {
-			ideology = paternal_autocrat
-			name = QIE_paternal_autocrat_party_MZ
-			long_name = QIE_paternal_autocrat_party_MZ_long
-		}
-		QIE_Gobulo_Runqi = {
-			set_nationality = LEC
-		}
-		QIE_kill_manchus = yes
-		QIE_yu_xuezhong = {
-			promote_leader = yes
-		}
-		dismantle_faction = yes
 	}
 }
 

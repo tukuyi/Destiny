@@ -7768,7 +7768,7 @@ focus_tree = {
 			}
 			value = GFX_goal_mass_concentration_of_army
 		}
-		cost = 2
+		cost = 6
 		dynamic = yes
 
 		x = 18
@@ -7784,7 +7784,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_our_provincial_army"
-			army_experience = 20
+			army_experience = 40
 			add_doctrine_cost_reduction = {
 				name = HNN_our_provincial_army
 				cost_reduction = 0.75
