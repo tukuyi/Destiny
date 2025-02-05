@@ -300,28 +300,6 @@ focus_tree = {
 					end_wars = no
 				}
 			}
-			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = { 
-					has_country_leader = { name = "维克托·沙逊" ruling_only = yes }
-				}
-				create_country_leader = {
-					name = "维克托·沙逊"
-					desc = "Sha_Xun_DESC"
-					picture = "gfx/leaders/LEC/Portrait_LEC_Sha_Xun.png"
-					expire = "1.1.1"
-					ideology = british_israelism_subtype
-				}
-				set_party_name = {
-					ideology = national_populist
-					long_name = LEC_social_conservative_party_HD_long
-					name = LEC_social_conservative_party_HD
-				}
-				set_politics = {
-					ruling_party = national_populist
-					elections_allowed = no
-				}
-			}
 			hidden_effect = {
 				country_event = {
 					days = 10

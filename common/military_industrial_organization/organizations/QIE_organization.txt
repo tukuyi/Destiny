@@ -26,10 +26,16 @@ QIE_henschel_organisation = {
 	name = henschel
 	icon = GFX_idea_henschel
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {
@@ -71,10 +77,16 @@ QIE_blohm_voss_organisation = {
 	name = blohm_voss
 	icon = GFX_idea_blohm_und_voss
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {
@@ -138,10 +150,16 @@ QIE_focke_wulf_organisation = {
 	name = focke_wulf
 	icon = GFX_idea_focke_wulf
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {
@@ -162,10 +180,16 @@ QIE_junkers_organisation = {
 	name = junkers
 	icon = GFX_idea_junkers
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {
@@ -206,10 +230,16 @@ QIE_krupp_organisation = {
 	name = krupp
 	icon = GFX_idea_krupp
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {
@@ -230,10 +260,16 @@ QIE_opel_organisation = {
 	name = opel
 	icon = GFX_idea_opel
 	allowed = {
-		original_tag = QIE
+		OR = {
+			original_tag = QIE
+			original_tag = SZC
+		}
 	}
 	available = {
-		FROM = { has_completed_focus = QIE_seek_german_civ_investments }
+		OR = {
+			QIE = { has_completed_focus = QIE_seek_german_civ_investments }
+			SZC = { has_completed_focus = SZC_Contact_An_Old_Ally }
+		}
 		GER = { NOT = { has_war_with = FROM } }
 	}
 	on_design_team_assigned_to_tech = {

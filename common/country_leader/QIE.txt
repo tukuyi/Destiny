@@ -46,4 +46,27 @@ leader_traits = {
 		political_power_factor = 0.05
 		army_core_defence_factor = 0.05
 	}
+	QIE_the_diplomat = { #Yan Huiqing
+		random = no
+		political_power_gain = 0.10
+		required_garrison_factor = -0.10
+	}
+	QIE_the_diplomat_2 = { #Yan Huiqing
+		random = no
+		stability_factor = 0.05
+		political_power_gain = 0.10
+		required_garrison_factor = -0.15
+	}
+	QIE_marshal_of_tianjin = { #Wang Chengbin
+		random = no
+		ai_focus_aggressive_factor = 0.25
+		war_support_factor = 0.10
+		breakthrough_factor = 0.05
+	}
+	QIE_marshal_of_tianjin_2 = { #Wang Chengbin
+		random = no
+		ai_focus_aggressive_factor = 0.25
+		war_support_factor = 0.15
+		breakthrough_factor = 0.10
+	}
 }

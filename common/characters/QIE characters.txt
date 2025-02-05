@@ -1,4 +1,23 @@
 characters = {
+################
+###  领导人  ###
+################
+#颜惠庆
+	QIE_yan_huiqing = {
+		name = QIE_yan_huiqing
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_Yan_Huiqing
+			}
+		}
+		country_leader = {
+			desc = POLITICS_QIE_YAN_HUIQING_DESC
+			ideology = oligarchy_subtype
+			traits = {
+				QIE_the_diplomat
+			}
+		}
+	}
 #江亢虎
 	QIE_jiang_kang_hu = {
 		name = QIE_jiang_kang_hu
@@ -256,6 +275,13 @@ characters = {
 				small = GFX_Portrait_QIE_Wang_Chengbin
 				large = GFX_Portrait_QIE_Wang_Chengbin
 			}
+			civilian = {
+				large = GFX_Portrait_QIE_Wang_Chengbin
+			}
+		}
+		country_leader = {
+			desc = QIE_wang_chengbin_leader_desc
+			ideology = kleptocracy_subtype
 		}
 		corps_commander = {
 			desc = QIE_WANG_CHENGBIN_ARMY_DESC

@@ -716,7 +716,7 @@ country_event = {
 	id = lepcollapse.17
 	title = lepcollapse.17.t
 	desc = lepcollapse.17.d
-	picture = GFX_news_event_QIE_illusion_shatters
+	picture = GFX_report_event_CHI_official_announcement
 
 	is_triggered_only = yes
 

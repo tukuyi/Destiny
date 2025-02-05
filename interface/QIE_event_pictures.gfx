@@ -36,6 +36,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_old_1.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_QIE_dang"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_dang.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_qie_wang_chengbin_2"
+		texturefile = "gfx/event_news_pictures/QIE/qie_wang_chengbin_2.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_QIE_wu_1926_2"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926_2.png"
 	}

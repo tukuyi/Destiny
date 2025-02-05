@@ -6658,7 +6658,7 @@ country_event = { #Jiang Baili Arrives in Sichuan
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sichuan.264" }
 	title = sichuan.264.t
 	desc = sichuan.264.d
-	picture = GFX_report_event_QIE_jiang_baili
+	picture = GFX_report_event_QIE_wang_chengbin_2
 
 	trigger = {
 		SZC_has_armament_government = yes
@@ -6668,7 +6668,7 @@ country_event = { #Jiang Baili Arrives in Sichuan
 
 	option = {
 		name = sichuan.264.a
-		add_political_power = 200
+		custom_effect_tooltip = SZC_zhili_remnant_tooltip
 		QIE = {
 			QIE_wang_chengbin = {
 				set_nationality = ROOT
@@ -6678,6 +6678,7 @@ country_event = { #Jiang Baili Arrives in Sichuan
 			QIE_zhang_qihuang = { set_nationality = ROOT }
 			QIE_peng_shouxin = { set_nationality = ROOT }
 			QIE_xiao_yaonan = { set_nationality = ROOT }
+			QIE_yan_huiqing = { set_nationality = ROOT }
 		}
 		if = {
 			limit = { is_subject = yes }
@@ -6707,8 +6708,7 @@ country_event = { #Jiang Baili Arrives in Sichuan
 		trigger = {
 			is_ai = no
 		}
-		add_stability = -0.2
-		add_political_power = -200
+		custom_effect_tooltip = SZC_zhili_remnant_reject_tooltip
 	}
 }
 
@@ -6755,11 +6755,12 @@ country_event = { #Growing Rifts
 
 	option = {
 		name = sichuan.266.a
+		add_ideas = SZC_legitimacy_of_the_republic
 		add_political_power = -5
 	}
 }
 
-country_event = { #The Civilian Wing Dominant
+country_event = { #外交元老掌舵
 	id = sichuan.267
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sichuan.267" }
 	title = sichuan.267.t
@@ -6779,22 +6780,24 @@ country_event = { #The Civilian Wing Dominant
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
 		}
-		create_country_leader = {
-			name = "Yan Huiqing"
-			desc = "POLITICS_UPC_YAN_HUIQING_DESC"
-			picture = "gfx/leaders/QIE/Portrait_QIE_Yan_Huiqing.png"
-			expire = "1865.1.1"
-			ideology = authdem_warlordism_subtype
+		promote_character = {
+			character = QIE_yan_huiqing
+			ideology = oligarchy_subtype
+		}
+		add_pataut_to_coalition = yes
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.10
 		}
 	}
 }
 
-country_event = { #The Military Retains Control
+country_event = { #津派接班人崛起
 	id = sichuan.268
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sichuan.268" }
 	title = sichuan.268.t
 	desc = sichuan.268.d
-	picture = GFX_report_event_GXC_federalist_troops_rally
+	picture = GFX_report_event_qie_wang_chengbin_2
 
 	trigger = {
 		SZC_zhili_in_exile = yes
@@ -6809,12 +6812,15 @@ country_event = { #The Military Retains Control
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		create_country_leader = {
-			name = "Jiang Baili"
-			desc = "QIE_JIANG_BAILI_ARMY_DESC"
-			picture = "gfx/leaders/QIE/Portrait_QIE_Jiang_Baili.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
+		promote_character = QIE_wang_chengbin
+		add_authdem_to_coalition = yes
+		hidden_effect = {
+			QIE_wang_chengbin = {
+				if = {
+					limit = { has_ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
+				}
+			}
 		}
 	}
 }
@@ -6834,64 +6840,25 @@ country_event = { #Modernising the Zhili Officer Corps
 
 	option = {
 		name = sichuan.269.a
-		create_corps_commander = {
-			name = "Wang Lingyun"
-			portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wang_Lingyun.png"
-			desc = "QIE_WANG_LINGYUN_ARMY_DESC"
-			traits = {
-				organizer
-				trait_engineer
-				infantry_officer
+		event_target:original_da_qing = {
+			QIE_Wang_Lingyun = {
+				QIE_recruit_characters_effect = yes
 			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-		}
-		create_corps_commander = {
-			name = "Du Xijun"
-			portrait_path = "gfx/leaders/QIE/Portrait_QIE_Du_Xijun.png"
-			desc = "QIE_DU_XIJUN_ARMY_DESC"
-			traits = {
-				politically_connected
-				infantry_officer
+			QIE_du_xijun = {
+				QIE_recruit_characters_effect = yes
 			}
-			skill = 1
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-		}
-		create_corps_commander = {
-			name = "Guo Jijiao"
-			portrait_path = "gfx/leaders/QIE/Portrait_QIE_Guo_Jijiao.png"
-			desc = "QIE_GUO_JIJIAO_ARMY_DESC"
-			traits = {
-				artillery_officer
-				organizer
-				trait_engineer
+			QIE_guo_jijiao = {
+				QIE_recruit_characters_effect = yes
 			}
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-		}
-		create_corps_commander = {
-			name = "Wei Yisan"
-			portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wei_Yisan.png"
-			desc = "QIE_WEI_YISAN_ARMY_DESC"
-			traits = {
-				politically_connected
-				career_officer
-				artillery_officer
+			QIE_wei_yisan = {
+				QIE_recruit_characters_effect = yes
 			}
-			skill = 1
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+			QIE_li_shuchun = {
+				QIE_recruit_characters_effect = yes
+			}
+			QIE_qin_dechun = {
+				QIE_recruit_characters_effect = yes
+			}
 		}
 	}
 }

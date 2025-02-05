@@ -12,23 +12,17 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 
-		# eval_effect QIE = {
-		# 	every_other_country = {
-		# 		limit = { is_puppet_of = QIE }
-		# 		ROOT = {
-		# 			set_autonomy = {
-		# 				target = PREV
-		# 				autonomy_state = autonomy_free
-		# 			}
-		# 		}
-		# 	}
-		# }
-
-		# hnnzhili.1
-
-		# eval_effect ETS = {
-		# 	activate_mission = ETS_war_timer
-		# }
+		eval_effect QIE = {
+			if = {
+				limit = { 
+					NOT = {
+						has_country_flag = wu_intervenes_proANQ
+						has_country_flag = QIE_manchu_restoration
+					}
+				}
+				add_political_power = 100
+			}
+		}
 		
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all

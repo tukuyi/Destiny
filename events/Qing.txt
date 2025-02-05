@@ -10403,11 +10403,8 @@ country_event = {#大选之日
 				id = qieroc.11
 				days = 50
 			}
-			create_country_leader = {
-				name = "颜惠庆"
-				desc = "POLITICS_YAN_HUIQING_DESC"
-				picture = "gfx/leaders/QIE/portrait_QIE_Yan_Huiqing.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = QIE_yan_huiqing
 				ideology = oligarchy_subtype
 			}
 		}
@@ -10434,11 +10431,8 @@ country_event = {#大选之日
 				id = qieroc.9
 				days = 30
 			}
-			create_country_leader = {
-				name = "颜惠庆"
-				desc = "POLITICS_YAN_HUIQING_DESC"
-				picture = "gfx/leaders/QIE/portrait_QIE_Yan_Huiqing.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = QIE_yan_huiqing
 				ideology = oligarchy_subtype
 			}
 		}
@@ -10462,11 +10456,8 @@ country_event = {#大选之日
 		}
 		hidden_effect = {
 			set_country_flag = QIE_ROC_first_choose_right
-			create_country_leader = {
-				name = "颜惠庆"
-				desc = "POLITICS_YAN_HUIQING_DESC"
-				picture = "gfx/leaders/QIE/portrait_QIE_Yan_Huiqing.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = QIE_yan_huiqing
 				ideology = oligarchy_subtype
 			}
 		}
@@ -10490,11 +10481,8 @@ country_event = {#大选之日
 		}
 		hidden_effect = {
 			set_country_flag = QIE_ROC_first_choose_right
-			create_country_leader = {
-				name = "颜惠庆"
-				desc = "POLITICS_YAN_HUIQING_DESC"
-				picture = "gfx/leaders/QIE/portrait_QIE_Yan_Huiqing.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = QIE_yan_huiqing
 				ideology = oligarchy_subtype
 			}
 		}
@@ -10515,11 +10503,8 @@ country_event = {#大选之日
 			QIE_huang_fu_sec
 			QIE_xu_fu_su_for
 		}
-		create_country_leader = {
-			name = "颜惠庆"
-			desc = "POLITICS_YAN_HUIQING_DESC"
-			picture = "gfx/leaders/QIE/portrait_QIE_Yan_Huiqing.png"
-			expire = "1.1.1"
+		promote_character = {
+			character = QIE_yan_huiqing
 			ideology = oligarchy_subtype
 		}
 		hidden_effect = {

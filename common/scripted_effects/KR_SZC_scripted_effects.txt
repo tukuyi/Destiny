@@ -1,0 +1,65 @@
+SZC_improve_zhili_republic_legitimacy = {
+	if = {
+		limit = { has_idea = SZC_legitimacy_of_the_republic }
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic
+			add_idea = SZC_legitimacy_of_the_republic_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SZC_legitimacy_of_the_republic_1 }
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_1
+			add_idea = SZC_legitimacy_of_the_republic_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SZC_legitimacy_of_the_republic_2 }
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_2
+			add_idea = SZC_legitimacy_of_the_republic_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = SZC_legitimacy_of_the_republic_3
+			has_completed_focus = SZC_Embrace_The_Civilian_Wing
+		}
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_3
+			add_idea = SZC_legitimacy_of_the_republic_4_civilian
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = SZC_legitimacy_of_the_republic_3
+			has_completed_focus = SZC_Continue_Military_Primacy
+		}
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_3
+			add_idea = SZC_legitimacy_of_the_republic_4_military
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = SZC_legitimacy_of_the_republic_4_civilian
+		}
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_4_civilian
+			add_idea = SZC_legitimacy_of_the_republic_5_civilian
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = SZC_legitimacy_of_the_republic_4_military
+		}
+		swap_ideas = {
+			remove_idea = SZC_legitimacy_of_the_republic_4_military
+			add_idea = SZC_legitimacy_of_the_republic_5_military
+		}
+	}
+	else = {
+		custom_effect_tooltip = SZC_improve_legitimacy_tt
+	}
+}
+

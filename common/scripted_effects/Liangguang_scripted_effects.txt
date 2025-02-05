@@ -84,6 +84,64 @@ GXC_move_old_guangxi_clique_characters = {
 	}
 }
 
+GXC_old_guangxi_clique_flees = {
+	hidden_effect = {
+		event_target:original_liangguang = {
+			GXC_ma_ji = {
+				demote_leader = yes
+				retire = yes
+			}
+			GXC_lu_yuguang = {
+				demote_leader = yes
+				retire = yes
+			}
+		}
+		if = {
+			limit = {
+				QIE = {
+					exists = yes
+					NOT = {
+						has_global_flag = QIE_manchu_restoration
+						has_country_flag = refused_old_guangxi_leaders
+					}
+				}
+			}
+			QIE = { country_event = lngcivilwar.18 }
+		}
+		else_if = {
+			limit = {
+				SQI = {
+					exists = yes
+					has_country_leader = {
+						name = "靳云鹗"
+						ruling_only = yes
+					}
+					NOT = { has_country_flag = refused_old_guangxi_leaders }
+				}
+			}
+			SQI = { country_event = lngcivilwar.18 }
+		}
+		else_if = {
+			limit = {
+				LEP = {
+					exists = yes
+					NOT = { has_country_flag = refused_old_guangxi_leaders }
+				}
+			}
+			LEP = { country_event = lngcivilwar.18 }
+		}
+		else_if = {
+			limit = {
+				ANQ = {
+					exists = yes
+					NOT = { has_country_flag = refused_old_guangxi_leaders }
+				}
+			}
+			ANQ = { country_event = lngcivilwar.18 }
+		}
+	}	
+}
+
 #scope is destination
 GXC_move_federalist_generals = {
 	event_target:original_liangguang = {
@@ -761,63 +819,6 @@ GXC_new_guangxi_clique_flees = {
 			}
 		}
 	}
-}
-GXC_old_guangxi_clique_flees = {
-	hidden_effect = {
-		event_target:original_liangguang = {
-			GXC_ma_ji = {
-				demote_leader = yes
-				retire = yes
-			}
-			GXC_lu_yuguang = {
-				demote_leader = yes
-				retire = yes
-			}
-		}
-		if = {
-			limit = {
-				QIE = {
-					exists = yes
-					NOT = {
-						has_global_flag = QIE_manchu_restoration
-						has_country_flag = refused_old_guangxi_leaders
-					}
-				}
-			}
-			QIE = { country_event = lngcivilwar.18 }
-		}
-		else_if = {
-			limit = {
-				SQI = {
-					exists = yes
-					has_country_leader = {
-						name = "靳云鹗"
-						ruling_only = yes
-					}
-					NOT = { has_country_flag = refused_old_guangxi_leaders }
-				}
-			}
-			SQI = { country_event = lngcivilwar.18 }
-		}
-		else_if = {
-			limit = {
-				LEP = {
-					exists = yes
-					NOT = { has_country_flag = refused_old_guangxi_leaders }
-				}
-			}
-			LEP = { country_event = lngcivilwar.18 }
-		}
-		else_if = {
-			limit = {
-				ANQ = {
-					exists = yes
-					NOT = { has_country_flag = refused_old_guangxi_leaders }
-				}
-			}
-			ANQ = { country_event = lngcivilwar.18 }
-		}
-	}	
 }
 
 GXC_federalists_flee = {
