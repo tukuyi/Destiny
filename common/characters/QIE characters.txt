@@ -762,6 +762,7 @@ characters = {
 			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
 			ideology = socdem_warlordism_subtype
 			traits = {
+				CHN_restorationist_aligned
 				QIE_restored_emperor
 			}
 		}
@@ -769,6 +770,7 @@ characters = {
 			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
 			ideology = soccon_oligarchy_subtype
 			traits = {
+				CHN_restorationist_aligned
 				QIE_restored_emperor
 			}
 		}
@@ -776,6 +778,7 @@ characters = {
 			desc = QIE_aisin_gioro_puyi_leader_desc
 			ideology = authdem_warlordism_subtype
 			traits = {
+				CHN_northern_zhili_aligned
 				QIE_puppet_emperor
 			}
 		}

@@ -10471,7 +10471,9 @@ country_event = {#许世友案
 
 	option = { #yes
 		name = hunqingxi.1.a
-		add_manpower = -1
+		HNN_Xu_Si_You = {
+			retire = yes
+		}
 		add_stability = -0.01
 		add_popularity = {
 			ideology = authoritarian_democrat
@@ -12444,9 +12446,8 @@ country_event = {#中华人民共和国
 			}
 		}
 		hidden_effect = {
-			HNN_Xi_Zhong_Xun = {
-				HNN_recruit_characters_effect = yes
-			}
+			HNN_Xi_Zhong_Xun = { HNN_recruit_characters_effect = yes }
+			HNN_Lin_Bo_Qu = { HNN_recruit_characters_effect = yes }
 			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
 			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
 			HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
@@ -13250,11 +13251,8 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 					}
 				}
 			}
-			create_country_leader = {
-				name = "林伯渠"
-				desc = "POLITICS_HNN_LIN_Bo_Qu_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Lin_Bo_Qu.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = HNN_Lin_Bo_Qu
 				ideology = agrarian_syndicalism_subtype
 			}
 			set_politics = {

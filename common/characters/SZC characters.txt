@@ -2,6 +2,33 @@ characters = {
 ########################
 ###       其他       ###
 ########################
+#error
+	SZC_Post_An = {
+		name = SZC_Post_An
+		portraits = {
+			army = {
+				large = GFX_Portrait_SZC_Post_An
+				small = GFX_Portrait_SZC_Post_An
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_Post_An
+			}
+		}
+		country_leader = {
+			desc = SZC_Post_An_leader_desc
+			ideology = anarcho_bolshevism_subtype
+		}
+		field_marshal = {
+			traits = { 
+
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
 #熊克武
 	SZC_xiong_kewu = {
 		name = SZC_xiong_kewu

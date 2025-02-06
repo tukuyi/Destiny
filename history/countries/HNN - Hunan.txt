@@ -159,52 +159,8 @@ recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
 recruit_character = HNN_Shi_Dingwu
 recruit_character = HNN_Shi_tai_xu
+recruit_character = HNN_Lin_Bo_Qu
 
-###
-# create_corps_commander = {
-# 	name = "唐生明"
-# 	id = 1407
-# }
-
-# create_corps_commander = {
-# 	name = "叶开鑫"
-# 	id = 5064
-# }
-
-# create_field_marshal = {
-# 	name = "赵恒惕"
-# 	id = 1406
-# }
-
-# create_corps_commander = {
-# 	name = "彭德怀"
-# 	id = 2011407
-# }
-
-# create_corps_commander = {
-# 	name = "何键"
-# 	id = 1408
-# }
-
-# create_corps_commander = {
-# 	name = "宋希濂"
-# 	id = 5061
-# }
-
-# create_corps_commander = {
-# 	name = "贺龙"
-# 	id = 5062
-# }
-
-# create_corps_commander = {
-# 	name = "滕代远"
-# 	id = 5063
-# }
-
-# create_field_marshal = {
-# 	name = "唐生智"
-# 	id = 1409
-# }
 HNN_chen_quzhen = { 
 	set_variable = { china_alignment = token:northern_zhili }
 	set_character_flag = CHN_original_unit_leader 
@@ -334,6 +290,9 @@ HNN_He_Su_Heng = {
 	retire = yes
 }
 HNN_Xi_Zhong_Xun = {
+	retire = yes
+}
+HNN_Lin_Bo_Qu = {
 	retire = yes
 }
 HNN_Dong_Bi_Wu = {

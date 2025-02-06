@@ -685,6 +685,19 @@ characters = {
 			ideology = soclib_liberal_socialism_subtype
 		}
 	}	
+#林伯渠
+	HNN_Lin_Bo_Qu = {
+		name = HNN_Lin_Bo_Qu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Lin_Bo_Qu
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_LIN_Bo_Qu_DESC
+			ideology = agrarian_syndicalism_subtype
+		}
+	}	
 #滕代远
 	HNN_Teng_Daiyuan = {
 		name = HNN_Teng_Daiyuan
