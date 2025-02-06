@@ -7917,8 +7917,8 @@ country_event = { #The Kuomintang National Congress
 				factor = 2
 				OR = {
 					has_country_leader = { name = "冯玉祥" ruling_only = yes } #RCA more relevant in SHX
-					has_country_leader = { name = "Lu Chao" ruling_only = yes } #Minor RCA ties
-					has_country_leader = { name = "Tang Shengzi" ruling_only = yes } #Minor RCA ties
+					has_country_leader = { name = "吕超" ruling_only = yes } #Minor RCA ties
+					has_country_leader = { name = "唐生智" ruling_only = yes } #Minor RCA ties
 				}
 			}
 			modifier = {
@@ -15466,7 +15466,7 @@ country_event = { #Reactionaries in the Army
 					has_id = 5062
 					has_id = 5063
 
-					has_id = 1141
+					is_character = SZC_lu_chao
 
 					has_id = 5007
 					has_id = 5003

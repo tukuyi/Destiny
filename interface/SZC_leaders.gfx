@@ -1,0 +1,78 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_Portrait_SZC_zhang_guo_tao"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_zhang_guo_tao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_xiong_kewu"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_xiong_kewu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_lu_chao"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_lu_chao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_liu_bocheng"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_bocheng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_pan_wenhua"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_pan_wenhua.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_liu_xiang"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_xiang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_tang_shizun"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_tang_shizun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_guo_xunqi"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_guo_xunqi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_tian_songyao"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_tian_songyao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_wang_zuanxu"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_wang_zuanxu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_li_jiayu"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_li_jiayu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_liu_wenhui"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_wenhui.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_deng_xihou"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_deng_xihou.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_zhou_daogang"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_zhou_daogang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_he_guoguang"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_he_guoguang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_wang_lingji"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_wang_lingji.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_fan_shaozeng"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_fan_shaozeng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_liu_cunhou"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_cunhou.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_yang_sen"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_yang_sen.png"
+	}
+}

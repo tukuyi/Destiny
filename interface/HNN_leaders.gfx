@@ -1405,11 +1405,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_QYG_Pan_Han_Nian"
 		texturefile = "gfx/leaders/QYR/Portrait_QYG_Pan_Han_Nian.png"
-	}
-#四川
-	spriteType = {
-		name = "GFX_Portrait_SZC_zhang_guo_tao"
-		texturefile = "gfx/leaders/SZC/Portrait_SZC_zhang_guo_tao.png"
 	}	
 #新疆	
 	spriteType = {

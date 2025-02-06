@@ -8054,7 +8054,7 @@ focus_tree = {
 		icon = GFX_goal_Focus_Military_Mobilisation
 		relative_position_id = SZC_Shining_Republic
 		cost = 7
-		x = -3
+		x = -5
 		y = 1
 		
 		available = {
@@ -8176,7 +8176,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_public_housing
 		relative_position_id = SZC_Shining_Republic
 		cost = 7
-		x = -1
+		x = -3
 		y = 1
 
 		available = {
@@ -8339,15 +8339,20 @@ focus_tree = {
 	focus = {
 		id = SZC_One_China_One_Government
 		icon = GFX_focus_chi_one_china_policy
+		relative_position_id = SZC_Shining_Republic
+		cost = 5
+		x = 0
+		y = 1
+		
 		prerequisite = {
 			focus = SZC_Shining_Republic
 		}
-		relative_position_id = SZC_Shining_Republic
-		x = 1
-		y = 3
-		cost = 5
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SZC_One_China_One_Government"
+			add_political_power = 50
+			add_war_support = 0.10
+			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = SZC_One_Government_tooltip
 		}
 	}

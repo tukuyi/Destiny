@@ -649,6 +649,9 @@ characters = {
 		country_leader = {
 			desc = POLITICS_HNN_DONG_BIWU_DESC
 			ideology = liberalized_syndicalism_subtype
+			traits = {
+				CHN_Syndicalists_aligned
+			}
 		}
 	}
 #何叔衡
@@ -662,6 +665,9 @@ characters = {
 		country_leader = {
 			desc = POLITICS_HNN_HE_SUHENG_DESC
 			ideology = radsoc_tridemism_subtype
+			traits = {
+				CHN_Syndicalists_aligned
+			}
 		}
 	}	
 #习仲勋
@@ -844,6 +850,7 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_TAN_ZHEN_ARMY_DESC
 			traits = {
+				rising_star
 				irregulars_officer
 				politically_connected
 			}
@@ -917,6 +924,7 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_YUAN_WEN_CAI_ARMY_DESC
 			traits = { 
+				rising_star
 				irregulars_officer
 				guerilla_officer
 			}

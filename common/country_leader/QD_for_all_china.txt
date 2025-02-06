@@ -1,0 +1,39 @@
+leader_traits = {
+	CHN_anguojun_aligned = {
+		random = no
+	}
+	CHN_beiyang_aligned = {
+		random = no
+	}
+	CHN_geacps_aligned = {
+		random = no
+	}
+	CHN_federalist_aligned = {
+		random = no
+	}
+	CHN_left_kuomintang_aligned = {
+		random = no
+	}
+	CHN_non_aligned = {
+		random = no
+	}
+	CHN_northern_zhili_aligned = {
+		random = no
+	}
+	CHN_restorationist_aligned = {
+		random = no
+	}
+	CHN_right_kuomintang_aligned = {
+		random = no
+	}
+	CHN_southern_republican_aligned = {
+		random = no
+	}
+	CHN_southern_zhili_aligned = {
+		random = no
+	}
+	CHN_Syndicalists_aligned = {
+		random = no
+	}
+}
+	

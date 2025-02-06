@@ -74,18 +74,19 @@ QIE_basheng_comeback = {#孙传芳部
 	}
 }
 
-QIE_sichuan_comeback = {#四川刘厚存部
-	SZC = {
-		every_unit_leader = {
-			limit = {
-				OR = {
-					has_id = 1129 #Yang Sen
-					has_id = 1130 #Liu Cunhou
-					has_id = 1131 #Fan Shaozeng
-					has_id = 1133 #He Guoguang
-				}
-			}
-			set_nationality = ROOT
+QIE_sichuan_comeback = {#四川杨森部
+	event_target:original_sichuan = {
+		SZC_he_guoguang = {
+			QIE_recruit_characters_effect = yes
+		}
+		SZC_fan_shaozeng = {
+			QIE_recruit_characters_effect = yes
+		}
+		SZC_liu_cunhou = {
+			QIE_recruit_characters_effect = yes
+		}
+		SZC_yang_sen = {
+			QIE_recruit_characters_effect = yes
 		}
 	}
 }

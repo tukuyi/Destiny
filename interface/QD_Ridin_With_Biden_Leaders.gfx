@@ -7,4 +7,19 @@ spriteTypes = {
 		name = "GFX_trait_SQI_yue_dui"
 		texturefile = "gfx/interface/traits/trait_SQI_yue_dui.png"
 	}
+	spriteType = {
+		name = "GFX_trait_rising_star"
+		texturefile = "gfx/interface/traits/trait_gifted_officer.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_trait_master_of_ordnance"
+		texturefile = "gfx/interface/traits/trait_master_of_ordnance.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_trait_light_infantry_officer"
+		texturefile = "gfx/interface/traits/trait_light_infantry_officer.png"
+		legacy_lazy_load = no
+	}
 }

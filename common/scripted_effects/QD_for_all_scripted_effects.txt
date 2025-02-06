@@ -585,6 +585,19 @@ China_build_ROC = {#成立民国
 }
 
 #移除角色意识形态
+remove_all_country_leader_roles = {#移除所有
+	remove_country_leader_role_totalist = yes
+	remove_country_leader_role_syndicalist = yes
+	remove_country_leader_role_radical_socialist = yes
+	remove_country_leader_role_social_democrat = yes
+	remove_country_leader_role_social_liberal = yes
+	remove_country_leader_role_market_liberal = yes
+	remove_country_leader_role_social_conservative = yes
+	remove_country_leader_role_authoritarian_democrat = yes
+	remove_country_leader_role_paternal_autocrat = yes
+	remove_country_leader_role_national_populist = yes
+}
+
 remove_country_leader_role_totalist = {
 	if = {
 		limit = { has_ideology_group = totalist }

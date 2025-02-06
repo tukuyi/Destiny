@@ -59,7 +59,7 @@ chinese_unification = {
 					has_focus_tree = Sichuan_Clique_Zhili
 					has_focus_tree = Sichuan_Clique_Federalist
 					has_country_leader = {
-						name = "Liu Xiang"
+						name = "刘湘"
 						ruling_only = yes
 					}
 				}

@@ -175,23 +175,23 @@ QIE_zhili_clique_flees = {#直系大逃亡
 				}
 			}
 			### 四川的将军们逃往 LEP 或躲藏起来
-			# if = {
-			# 	limit = { country_exists = LEP }
-			# 	every_unit_leader = {
-			# 		limit = { has_character_flag = SZC_armament_leader }
-			# 		set_nationality = LEP
-			# 		if = {
-			# 			limit = { is_character = SZC_yang_sen }
-			# 			unit_leader_event = qieflavor.14
-			# 		}
-			# 	}
-			# }
-			# else = {
-			# 	every_unit_leader = {
-			# 		limit = { has_character_flag = SZC_armament_leader }
-			# 		retire = yes
-			# 	}
-			# }
+			if = {
+				limit = { country_exists = LEP }
+				every_unit_leader = {
+					limit = { has_character_flag = SZC_armament_leader }
+					set_nationality = LEP
+					if = {
+						limit = { is_character = SZC_yang_sen }
+						unit_leader_event = qieflavor.14
+					}
+				}
+			}
+			else = {
+				every_unit_leader = {
+					limit = { has_character_flag = SZC_armament_leader }
+					retire = yes
+				}
+			}
 			### 汤芗铭流亡宁系
 			if = {
 				limit = { has_character = HNN_tang_xiangming }

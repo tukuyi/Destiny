@@ -1796,7 +1796,7 @@ shared_focus = {
 			limit = {
 				SZC = {
 					has_country_leader = {
-						name = "Xiong Kewu"
+						name = "熊克武"
 						ruling_only = yes
 					}
 					is_subject = no
@@ -5375,7 +5375,7 @@ shared_focus = {
 						limit = {
 							NOT = {
 								THIS = { has_character_flag = is_dead }
-								QIE = { has_character = PREV }
+								ROOT = { has_character = PREV }
 							}
 						}
 						if = {
@@ -5383,7 +5383,7 @@ shared_focus = {
 							demote_to_general = yes
 							remove_trait = { trait = recently_promoted }
 						}
-						set_nationality = QIE
+						set_nationality = ROOT
 					}
 				}
 			}
@@ -5391,12 +5391,7 @@ shared_focus = {
 		if = {
 			limit = { NOT = { country_exists = SZC } }
 			SZC = {
-				random_unit_leader = {
-					limit = { has_id = 1132 }
-					if = {
-						limit = { is_field_marshal = yes }
-						demote_leader = yes
-					}
+				SZC_wang_lingji = {
 					set_nationality = ROOT
 				}
 			}

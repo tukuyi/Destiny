@@ -1,0 +1,499 @@
+characters = {
+########################
+###       其他       ###
+########################
+#熊克武
+	SZC_xiong_kewu = {
+		name = SZC_xiong_kewu
+		portraits = {
+			army = {
+				large = GFX_Portrait_SZC_xiong_kewu
+				small = GFX_Portrait_SZC_xiong_kewu
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_xiong_kewu
+			}
+		}
+		country_leader = {
+			desc = SZC_xiong_kewu_leader_desc
+			ideology = soclib_lianshengism_subtype
+			traits = { CHN_federalist_aligned }
+		}
+		corps_commander = {
+			desc = SZC_xiong_kewu_army_chief_desc
+			traits = { 
+				war_hero 
+				politically_connected 
+				infantry_officer 
+				infantry_leader 
+				infantry_expert 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#呂超
+	SZC_lu_chao = {
+		name = SZC_lu_chao
+		portraits = {
+			army = {
+				large = GFX_Portrait_SZC_lu_chao
+				small = GFX_Portrait_SZC_lu_chao
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_lu_chao
+			}
+		}
+		country_leader = {
+			desc = SZC_lu_chao_leader_desc
+			ideology = socdem_tridemism_subtype
+			traits = { CHN_southern_republican_aligned }
+		}
+		corps_commander = {
+			desc = SZC_lu_chao_army_chief_desc
+			traits = { 
+				politically_connected 
+				organizer 
+				skilled_staffer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		# id = 1141
+	}	
+#劉伯承
+	SZC_liu_bocheng = {
+		name = SZC_liu_bocheng
+		portraits = {
+			army = {
+				large = GFX_Portrait_SZC_liu_bocheng
+				small = GFX_Portrait_SZC_liu_bocheng
+			}
+		}
+		corps_commander = {
+			desc = SZC_liu_bocheng_high_command_desc
+			traits = { 
+				light_infantry_officer 
+				trickster 
+				trait_reckless 
+				irregulars_officer 
+				rising_star 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			# id = 1145
+		}
+	}	
+########################
+###      实业团      ###
+########################	
+#劉湘
+	SZC_liu_xiang = {
+		name = SZC_liu_xiang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_liu_xiang
+				large = GFX_Portrait_SZC_liu_xiang
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_liu_xiang
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SZC_LIU_XIANG_DESC
+			ideology = pataut_warlordism_subtype
+			traits = { CHN_non_aligned }
+		}
+		field_marshal = {
+			desc = POLITICS_SZC_LIU_XIANG_ARMY_DESC
+			traits = { 
+				harsh_leader 
+				infantry_officer 
+				infantry_leader 
+				trickster 
+				fast_planner 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#潘文華
+	SZC_pan_wenhua = {
+		name = SZC_pan_wenhua
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_pan_wenhua
+				large = GFX_Portrait_SZC_pan_wenhua
+			}
+		}
+		corps_commander = {
+			desc = SZC_pan_wenhua_high_command_desc
+			traits = { 
+				trait_cautious 
+				light_infantry_officer 
+				trait_mountaineer 
+				rising_star 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			# id = 1139
+		}
+	}
+#唐式遵
+	SZC_tang_shizun = {
+		name = SZC_tang_shizun
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_tang_shizun
+				large = GFX_Portrait_SZC_tang_shizun
+			}
+		}
+		corps_commander = {
+			desc = SZC_tang_shizun_commander_desc
+			traits = { 
+				trickster 
+				infantry_officer 
+				skilled_staffer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#郭勛祺
+	SZC_guo_xunqi = { 
+		name = SZC_guo_xunqi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_guo_xunqi
+				large = GFX_Portrait_SZC_guo_xunqi
+			}
+		}
+		corps_commander = {
+			desc = SZC_guo_xunqi_high_command_desc
+			traits = { 
+				politically_connected 
+				hill_fighter 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+########################
+###      保定系      ###
+########################
+#鄧錫侯
+	SZC_deng_xihou = {
+		name = SZC_deng_xihou
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_deng_xihou
+				large = GFX_Portrait_SZC_deng_xihou
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SZC_DENG_XIHOU_DESC
+			ideology = soccon_warlordism_subtype
+			traits = { CHN_southern_republican_aligned }
+		}
+		corps_commander = {
+			desc = SZC_deng_xihou_commander_desc
+			traits = { 
+				war_hero 
+				politically_connected 
+				infantry_leader 
+				infantry_expert 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#劉文輝
+	SZC_liu_wenhui = {
+		name = SZC_liu_wenhui
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_liu_wenhui
+				large = GFX_Portrait_SZC_liu_wenhui
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SZC_LIU_WENHUI_DESC
+			ideology = marlib_warlordism_subtype
+			traits = { CHN_southern_republican_aligned }
+		}
+		corps_commander = {
+			desc = POLITICS_SZC_LIU_WENHUI_ARMY_DESC
+			traits = { 
+				career_officer 
+				artillery_officer 
+				artillery_specialist 
+				artillery_expert 
+				politically_connected 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+#田頌堯
+	SZC_tian_songyao = {
+		name = SZC_tian_songyao
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_tian_songyao
+				large = GFX_Portrait_SZC_tian_songyao
+			}
+		}
+		corps_commander = {
+			desc = SZC_tian_songyao_high_command_desc
+			traits = { 
+				career_officer 
+				politically_connected 
+				cavalry_officer 
+				rising_star 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#王纘緒
+	SZC_wang_zuanxu = {
+		name = SZC_wang_zuanxu
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_wang_zuanxu
+				large = GFX_Portrait_SZC_wang_zuanxu
+			}
+		}
+		corps_commander = {
+			desc = SZC_wang_zuanxu_army_chief_desc
+			traits = { 
+				artillery_officer 
+				artillery_specialist 
+				politically_connected 
+				trait_reckless 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}	
+#李家鈺
+	SZC_li_jiayu = {
+		name = SZC_li_jiayu
+		portraits = {
+			army = {
+				large = GFX_Portrait_SZC_li_jiayu
+				small = GFX_Portrait_SZC_li_jiayu
+			}
+		}
+		corps_commander = {
+			desc = SZC_li_jiayu_high_command_desc
+			traits = { 
+				infantry_officer 
+				war_hero 
+				trait_reckless 
+				infantry_leader 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+########################
+###    武备系/直系   ###
+########################
+#楊森
+	SZC_yang_sen = {
+		name = SZC_yang_sen
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_yang_sen
+				large = GFX_Portrait_SZC_yang_sen
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SZC_YANG_SEN_DESC
+			ideology = authdem_warlordism_subtype
+			traits = { CHN_northern_zhili_aligned }
+		}
+		field_marshal = {
+			desc = POLITICS_SZC_YANG_SEN_ARMY_DESC
+			traits = { 
+				career_officer 
+				organizer 
+				inflexible_strategist 
+				infantry_officer 
+				infantry_leader 
+				politically_connected 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#劉存厚
+	SZC_liu_cunhou = {
+		name = SZC_liu_cunhou
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_liu_cunhou
+				large = GFX_Portrait_SZC_liu_cunhou
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_liu_cunhou
+			}
+		}
+		country_leader = {
+			desc = POLITICS_SZC_LIU_CUNHOU_DESC
+			ideology = authdem_warlordism_subtype
+			traits = { CHN_northern_zhili_aligned }
+		}
+		corps_commander = {
+			desc = POLITICS_SZC_LIU_CUNHOU_ARMY_DESC
+			traits = { 
+				war_hero 
+				infantry_officer 
+				infantry_leader 
+				politically_connected 
+				trickster 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+#周道剛
+	SZC_zhou_daogang = {
+		name = SZC_zhou_daogang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_zhou_daogang
+				large = GFX_Portrait_SZC_zhou_daogang
+			}
+		}
+		corps_commander = {
+			desc = SZC_zhou_daogang_commander_desc
+			traits = { 
+				career_officer 
+				trait_reckless 
+				infantry_officer 
+				infantry_leader 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+#賀國光
+	SZC_he_guoguang = {
+		name = SZC_he_guoguang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_he_guoguang
+				large = GFX_Portrait_SZC_he_guoguang
+			}
+		}
+		corps_commander = {
+			desc = SZC_he_guoguang_commander_desc
+			traits = { 
+				career_officer 
+				trait_cautious 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#王陵基
+	SZC_wang_lingji = {
+		name = SZC_wang_lingji
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_wang_lingji
+				large = GFX_Portrait_SZC_wang_lingji
+			}
+		}
+		corps_commander = {
+			desc = SZC_wang_lingji_army_chief_desc
+			traits = { 
+				brilliant_strategist 
+				infantry_officer 
+				infantry_leader 
+				media_personality 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}	
+#范紹增
+	SZC_fan_shaozeng = {
+		name = SZC_fan_shaozeng
+		portraits = {
+			army = {
+				small = GFX_Portrait_SZC_fan_shaozeng
+				large = GFX_Portrait_SZC_fan_shaozeng
+			}
+		}
+		corps_commander = {
+			desc = SZC_fan_shaozeng_commander_desc
+			traits = { 
+				light_infantry_officer 
+				trait_reckless 
+				commando 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+}
