@@ -613,10 +613,6 @@ is_ruled_by_federalists = {#是联省派
 							name = "赵恒惕"
 							ruling_only = yes
 						}
-						has_country_leader = {
-							name = "陈渠珍"
-							ruling_only = yes
-						}
 					}
 				}
 				AND = {

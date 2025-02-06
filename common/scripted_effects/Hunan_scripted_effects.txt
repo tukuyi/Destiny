@@ -507,6 +507,7 @@ HNN_tu_gaI_jie_sh = {#土地改革结束
 		}
 		set_country_flag = HNN_tu_gai_jie_shu
 	}
+
 	if = {
 		limit = { 
 			check_variable = { HNN_tu_gai < 15 } 
@@ -516,12 +517,7 @@ HNN_tu_gaI_jie_sh = {#土地改革结束
 		if = {
 			limit = { 
 				NOT = {
-					OR = {
-						has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
-						has_country_leader = { name = "陈毅" ruling_only = yes }
-						has_country_leader = { name = "郭沫若" ruling_only = yes }
-						has_country_leader = { name = "钱学森" ruling_only = yes }
-					}
+					has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
 				}
 			}
 			country_event = { 
@@ -675,7 +671,7 @@ HNN_southern_political_council_effect = {
 }
 
 HNN_revolution_victory = {#工团上台初始设定
-	remove_ideas = {
+	remove_ideas = {#移除精神
 		HNN_fire_repubilc
 		HNN_intense_agricultural_imbalance
 		HNN_stabilising_industrial_sector
@@ -852,7 +848,19 @@ HNN_revolution_victory = {#工团上台初始设定
 		ideology = paternal_autocrat
 		popularity = -0.10
 	}
+
+	diplomatic_relation = {
+		country = GXC
+		relation = non_aggression_pact
+		active = no
+	}
+	diplomatic_relation = {
+		country = QIE
+		relation = non_aggression_pact
+		active = no
+	}
 }
+
 ###选举
 HNN_election_update_percentage_effect = {
 	clamp_variable = { var = hnn_tan_popularity min = 0 max = 15 }
@@ -985,6 +993,7 @@ HNN_calculate_winner_effect = {#选举结束
 		country_event = { id = hnnelection.9 days = 2 }
 	}
 }
+
 HNN_calculate_new_opposition_strength = {#反对派强度
 	set_temp_variable = { HNN_opposition_calculation = HNN_opposition_strength }
 	add_to_temp_variable = { HNN_opposition_calculation = 10 }
@@ -1066,6 +1075,7 @@ HNN_improve_legitimacy_effect = {#合法性
 		add_stability = 0.05
 	}
 }
+
 HNN_merge_kmt_spirits_tang = {#合并精神-唐生智
 	if = {
 		limit = {
@@ -1326,6 +1336,7 @@ HNN_merge_kmt_spirits_dong = {#合并精神-董必武
 	}
 	add_ideas = HNN_hunan_syndicalist2
 }
+
 HNN_fcations = {#阵营
 	if = {
 		limit = { 

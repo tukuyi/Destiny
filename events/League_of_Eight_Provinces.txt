@@ -1211,6 +1211,19 @@ country_event = { #Liangguang Secedes!
 				autonomy_state = autonomy_free
 			}
 
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = GXC
+				target = call_allies
+				value = 99999
+			}
+			add_ai_strategy = {
+				type = diplo_action_acceptance
+				id = GXC
+				target = join_allies
+				value = 99999
+			}
+
 			if = {
 				limit = { has_template = "Polizeitruppe Liangguang" }
 				delete_unit_template_and_units = { division_template = "Polizeitruppe Liangguang" }
@@ -1269,10 +1282,25 @@ country_event = { #Hunan Secedes
 				target = HNN
 				autonomy_state = autonomy_free
 			}
+
 			country_event = {
 				id = lepcollapse.23
 				days = 2
 			}
+
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = HNN
+				target = call_allies
+				value = 99999
+			}
+			add_ai_strategy = {
+				type = diplo_action_acceptance
+				id = HNN
+				target = join_allies
+				value = 99999
+			}
+
 			HNN = {
 				purge_LEP_templates = yes
 				country_event = {

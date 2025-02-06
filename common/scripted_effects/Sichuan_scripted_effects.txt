@@ -364,12 +364,10 @@ SZC_officer_department_wins_civil_war = {
 
 SZC_armament_department_flees = {
 	SZC_yang_sen = {
-		remove_all_country_leader_roles = yes
 		demote_leader = yes
 		retire = yes
 	}
 	SZC_liu_cunhou = {
-		remove_all_country_leader_roles = yes
 		retire = yes
 	}
 	SZC_fan_shaozeng = { retire = yes }
@@ -392,7 +390,6 @@ SZC_armament_department_flees = {
 
 SZC_baoding_department_flees = {
 	SZC_deng_xihou = {
-		remove_all_country_leader_roles = yes
 		demote_leader = yes
 		retire = yes
 	}
@@ -408,7 +405,6 @@ SZC_baoding_department_flees = {
 
 SZC_liu_wenhui_flees = {
 	SZC_liu_wenhui = {
-		remove_all_country_leader_roles = yes
 		retire = yes
 	}
 	if = {
@@ -438,7 +434,6 @@ SZC_liu_wenhui_flees = {
 
 SZC_industrial_corps_flees = {
 	SZC_liu_xiang = {
-		remove_all_country_leader_roles = yes
 		demote_leader = yes
 		retire = yes
 	}
@@ -506,12 +501,10 @@ SZC_move_officer_generals = {
 
 SZC_officer_department_flees = {
 	SZC_xiong_kewu = {
-		remove_all_country_leader_roles = yes
 		demote_leader = yes
 		retire = yes
 	}
 	SZC_lu_chao = {
-		remove_all_country_leader_roles = yes
 		demote_leader = yes
 		retire = yes
 	}

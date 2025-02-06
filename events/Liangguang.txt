@@ -4535,11 +4535,13 @@ country_event = {#广州自立
 				target = GXC
 				modifier = GXC_pan_tu
 			}
-			GXC_chen_mingshu = {
-				set_nationality = CHI 
-			}
-			GXC_ye_jianying = {
-				set_nationality = CHI 
+			GXC = {
+				GXC_chen_mingshu = {
+					set_nationality = CHI 
+				}
+				GXC_ye_jianying = {
+					set_nationality = CHI 
+				}
 			}
 		}
 	}
@@ -4638,11 +4640,13 @@ country_event = {#广州自立
 				target = GXC
 				modifier = GXC_pan_tu
 			}
-			GXC_chen_mingshu = {
-				set_nationality = CHI 
-			}
-			GXC_ye_jianying = {
-				set_nationality = CHI 
+			GXC = {
+				GXC_chen_mingshu = {
+					set_nationality = CHI 
+				}
+				GXC_ye_jianying = {
+					set_nationality = CHI 
+				}
 			}
 		}
 	}
@@ -4685,11 +4689,13 @@ country_event = {#广州自立
 				target = GXC
 				modifier = GXC_pan_tu
 			}
-			GXC_chen_mingshu = {
-				set_nationality = CHI 
-			}
-			GXC_ye_jianying = {
-				set_nationality = CHI 
+			GXC = {
+				GXC_chen_mingshu = {
+					set_nationality = CHI 
+				}
+				GXC_ye_jianying = {
+					set_nationality = CHI 
+				}
 			}
 		}
 	}

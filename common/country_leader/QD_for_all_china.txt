@@ -35,5 +35,8 @@ leader_traits = {
 	CHN_Syndicalists_aligned = {
 		random = no
 	}
+	CHN_others_aligned = {
+		random = no
+	}
 }
 	

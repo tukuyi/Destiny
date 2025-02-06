@@ -219,7 +219,7 @@ characters = {
 			traits = { CHN_southern_republican_aligned }
 		}
 		corps_commander = {
-			desc = SZC_deng_xihou_commander_desc
+			desc = POLITICS_SZC_DENG_XIHOU_ARMY_DESC
 			traits = { 
 				war_hero 
 				politically_connected 

@@ -4657,16 +4657,23 @@ country_event = { #hunan breaks free, explain how zhao hengti is split between G
 
 	option = { #interesting
 		name = qiefor.104.a
-		diplomatic_relation = {
-			country = HNN
-			relation = non_aggression_pact
-			active = yes
-		}
-		HNN = {
+		if = {
+			limit = { 
+				NOT = {
+					has_non_aggression_pact_with = HNN
+				}
+			}
 			diplomatic_relation = {
-				country = QIE
+				country = HNN
 				relation = non_aggression_pact
 				active = yes
+			}
+			HNN = {
+				diplomatic_relation = {
+					country = QIE
+					relation = non_aggression_pact
+					active = yes
+				}
 			}
 		}
 	}
@@ -6875,9 +6882,6 @@ country_event = {#皇帝一鸣惊人
 				set_portraits = {
 					civilian = { large = GFX_Portrait_QIE_aisin_gioro_puyi_uniform }
 				}
-				remove_country_leader_role_authoritarian_democrat = yes
-				remove_country_leader_role_paternal_autocrat = yes
-				remove_country_leader_role_national_populist = yes
 				add_country_leader_role = {
 					country_leader = {
 						desc = QIE_aisin_gioro_puyi_manchu_leader_desc
@@ -8004,7 +8008,6 @@ country_event = {
 			}
 		}
 		QIE_aisin_gioro_puyi = {
-			remove_country_leader_role_authoritarian_democrat = yes
 			add_country_leader_role = {
 				country_leader = {
 					desc = QIE_aisin_gioro_puyi_manchu_leader_desc
@@ -8136,7 +8139,6 @@ country_event = {
 		}
 		set_country_flag = QD_LEADER_GUI_VISIBLE
 		QIE_aisin_gioro_puyi = {
-			remove_country_leader_role_paternal_autocrat = yes
 			add_country_leader_role = {
 				country_leader = {
 					desc = QIE_aisin_gioro_puyi_manchu_leader_desc
@@ -11867,7 +11869,6 @@ country_event = { #
 			ruling_party = paternal_autocrat
 		}
 		QIE_aisin_gioro_puyi = {
-			remove_country_leader_role_paternal_autocrat = yes
 			add_country_leader_role = {
 				country_leader = {
 					desc = QIE_aisin_gioro_puyi_manchu_leader_desc
@@ -11897,7 +11898,6 @@ country_event = { #
 			ruling_party = paternal_autocrat
 		}
 		QIE_aisin_gioro_puyi = {
-			remove_country_leader_role_paternal_autocrat = yes
 			add_country_leader_role = {
 				country_leader = {
 					desc = QIE_aisin_gioro_puyi_manchu_leader_desc
@@ -11927,7 +11927,6 @@ country_event = { #
 			ruling_party = authoritarian_democrat
 		}
 		QIE_aisin_gioro_puyi = {
-			remove_country_leader_role_authoritarian_democrat = yes
 			add_country_leader_role = {
 				country_leader = {
 					desc = QIE_aisin_gioro_puyi_manchu_leader_desc

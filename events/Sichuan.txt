@@ -7412,7 +7412,6 @@ country_event = { #The Diarchy/Returning Control
 					long_name = SZC_Tian_Clique_party_long
 				}
 				SZC_tian_songyao = {
-					remove_all_country_leader_roles = yes
 					add_country_leader_role = {
 						country_leader = {
 							desc = SZC_tian_songyao_leader_desc
@@ -7946,7 +7945,6 @@ country_event = { #The Xikang Rout
 			set_nationality = ROOT
 			hidden_effect = {
 				remove_unit_leader_trait = GXC_guangdong_clique_officer
-				remove_all_country_leader_roles = yes
 				add_country_leader_role = {
 					country_leader = {
 						desc = SZC_deng_xihou_leader_desc

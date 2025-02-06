@@ -7842,7 +7842,6 @@ focus_tree = {
 				add_ideas = HNN_hunanese_high_command_KMT_dummy
 			}
 			hidden_effect = {
-				scoped_play_song = "I_have_a_gun"
 				add_dynamic_modifier = { modifier = HNN_the_revolutionary_model }
 				add_dynamic_modifier = { modifier = HNN_hunanese_high_command_KMT }
 				add_to_variable = { HNN_hunanese_high_command_KMT_combat_width_factor = -0.05 }

@@ -1,7 +1,7 @@
 characters = {
-################
-####  直系 #####
-################	
+######################
+####     直系    #####
+######################	
 #汤芗铭
 	HNN_tang_xiangming = {
 		name = HNN_tang_xiangming
@@ -17,6 +17,7 @@ characters = {
 		country_leader = {
 			desc = POLITICS_HNN_tang_xiangming_DESC
 			ideology = kleptocracy_subtype
+			traits = { CHN_northern_zhili_aligned }
 		}
 		field_marshal = {
 			desc = ARMY_tang_xiangming_ARMY_DESC
@@ -48,6 +49,7 @@ characters = {
 		country_leader = {
 			desc = ARMY_CHEN_QU_DESC
 			ideology = authdem_lianshengism_subtype
+			traits = { CHN_northern_zhili_aligned }
 		}
 		corps_commander = {
 			desc = HNN_chen_quzhen_commander_desc
@@ -204,7 +206,7 @@ characters = {
 		}
 	}	
 ######################
-#### Federalists #####
+####    联省派   #####
 ######################	
 #赵恒惕
 	HNN_zhao_hengti = {
@@ -1024,7 +1026,33 @@ characters = {
 	}		
 ######################
 ####### RKMT  ########
-######################	
+######################
+#程潛
+	HNN_cheng_qian = { #starts in exile
+		name = HNN_cheng_qian
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_cheng_qian
+				large = GFX_Portrait_HNN_cheng_qian
+			}
+		}
+		corps_commander = {
+			desc = HNN_cheng_qian_commander_desc
+			traits = { 
+				politically_connected 
+				artillery_officer 
+				war_hero 
+				artillery_specialist 
+				artillery_expert 
+				organisational_leader 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
 #刘建绪
 	HNN_liu_jianxu = {
 		name = HNN_liu_jianxu
@@ -1070,32 +1098,6 @@ characters = {
 			defense_skill = 2
 			planning_skill = 4
 			logistics_skill = 3
-		}
-	}
-#程潛
-	HNN_cheng_qian = { #starts in exile
-		name = HNN_cheng_qian
-		portraits = {
-			army = {
-				small = GFX_Portrait_HNN_cheng_qian
-				large = GFX_Portrait_HNN_cheng_qian
-			}
-		}
-		corps_commander = {
-			desc = HNN_cheng_qian_commander_desc
-			traits = { 
-				politically_connected 
-				artillery_officer 
-				war_hero 
-				artillery_specialist 
-				artillery_expert 
-				organisational_leader 
-			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
 		}
 	}
 #何鍵
@@ -1307,6 +1309,9 @@ characters = {
 		country_leader = {
 			desc = Portrait_HNN_Shi_Dingwu_DESC
 			ideology = Yiguandao_subtype
+			traits = {
+				CHN_others_aligned
+			}
 		}
 		corps_commander = {
 			traits = { 

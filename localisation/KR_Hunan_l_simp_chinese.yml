@@ -535,7 +535,7 @@
  HNN_pearl_river_to_yangtze_tt:0 "§L为了更好地帮助过境湖南的货物运输，我们将建设从§Y长沙§!到§Y北京§!，以及从§Y常德§!到§Y武汉§!的铁路。§!"
  HNN_vital_economic_linchpin_tt:0 "§L我国经济相关的国家精神将整合为一个§Y全新的国家精神！§!§!"
  HNN_industrial_reform_complete_tt:0 "§L我们现在可以选取§Y“[HNN_fostering_national_reconstruction_loc]”§!并推进湖南工业树§!"
- HNN_clearing_house_tt:0 "§L我们采纳新军事学说的工作势必十分艰巨，但其最终将会使我们获得§Y50§!£GFX_army_experience §!作为回报§!"
+ HNN_clearing_house_tt:0 "§L我们采纳新军事学说的工作势必十分艰巨，但其最终将会使我们获得§!§Y50§!£GFX_army_experience §L作为回报§!"
 
  modifier_army_sub_unit_irregular_max_org_factor_tooltip:0 "$modifier_army_sub_unit_irregular_infantry_max_org_factor$：$RIGHT|+=%2$"
  modifier_army_sub_unit_irregular_attack_factor_tooltip:0 "$modifier_army_sub_unit_irregular_infantry_attack_factor$：$RIGHT|+=%2$"

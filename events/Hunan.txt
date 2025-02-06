@@ -6719,6 +6719,18 @@ country_event = {#革命成功
 					}
 				}
 			}
+			SZC = {
+				country_event = {#绑架刘伯承（ 
+					id = hungong.170
+					days = 2
+				}
+			}
+			GXC = {
+				country_event = {#绑架刘伯承（ 
+					id = hungong.170
+					days = 2
+				}
+			}
 		}
 	}
 
@@ -10419,6 +10431,28 @@ country_event = {#高岗的头像
 		name = hungong.169.b
 		set_country_leader_portrait = {
 			portrait = "gfx/leaders/HNN/Portrait_HNN_Gao_gang_alt.png"
+		}
+	}
+}
+
+country_event = {#刘伯承
+	id = hungong.170
+
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event hungong.170 option 1"
+		if = {
+			limit = { 
+				has_character = SZC_liu_bocheng
+			}
+			SZC_liu_bocheng = {
+				remove_trait = {
+					trait = GXC_guangdong_clique_officer
+				}
+				set_nationality = FROM
+			}
 		}
 	}
 }
