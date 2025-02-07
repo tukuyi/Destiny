@@ -72,4 +72,84 @@ spriteTypes = {
 		name = "GFX_Portrait_YUN_Zhang_Zheng_Han"
 		texturefile = "gfx/leaders/YUN/Portrait_YUN_Zhang_Zheng_Han.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_he_yingqin"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_he_yingqin_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Sun_Yuanliang"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Sun_Yuanliang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Lu_Han"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Lu_Han.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Zheng_Zhesheng"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Zheng_Zhesheng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_zhou_baozhong"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_zhou_baozhong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Zhang_Lingfu"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Zhang_Lingfu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Fan_Shisheng"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Fan_Shisheng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_zhu_de"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_zhu_de.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Zhu_Peide"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_Peide.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_tang_huaiyuan"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_tang_huaiyuan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Luo_Binghui"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Luo_Binghui.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Jin_Handing"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Jin_Handing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Hu_Ruoyu"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Hu_Ruoyu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_tang_ji_yu"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_tang_ji_yu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Chen_Cheng"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Chen_Cheng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_long_yun_army"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_long_yun_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_leader_Long_Yun"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_leader_Long_Yun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_tang_jiyao_army"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_tang_jiyao_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_tang_jiyao_civilian"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_tang_jiyao_civilian.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Yunnan_Tang_King"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Tang_King.png"
+	}
 }

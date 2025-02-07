@@ -587,7 +587,7 @@ is_ruled_by_federalists = {#是联省派
 				AND = {
 					tag = YUN
 					has_country_leader = {
-						name = "Tang Jiyao"
+						name = "唐继尧"
 						ruling_only = yes
 					}
 				}

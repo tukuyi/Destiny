@@ -17,7 +17,7 @@ YUN_SAVE_YOURSELF_TANG = {
 		visible = {
 			tag = YUN
 			has_country_leader = {
-				name = "Tang Jiyao"
+				name = "唐继尧"
 				ruling_only = yes
 			}
 		}
@@ -26,7 +26,7 @@ YUN_SAVE_YOURSELF_TANG = {
 				has_completed_focus = YUN_purge_high_command
 				NOT = {
 					has_country_leader = {
-						name = "Tang Jiyao"
+						name = "唐继尧"
 						ruling_only = yes
 					}
 				}
@@ -70,14 +70,14 @@ YUN_SAVE_YOURSELF_TANG = {
 		visible = {
 			tag = YUN
 			has_country_leader = {
-				name = "Tang Jiyao"
+				name = "唐继尧"
 				ruling_only = yes
 			}
 		}
 		cancel_trigger = {
 			NOT = {
 				has_country_leader = {
-					name = "Tang Jiyao"
+					name = "唐继尧"
 					ruling_only = yes
 				}
 			}
@@ -2727,7 +2727,7 @@ YUN_faction_joining_stuff = {
 			is_subject = no
 			has_government = paternal_autocrat
 			has_country_leader = {
-				name = "Tang Jiyao"
+				name = "唐继尧"
 				ruling_only = yes
 			}
 			QIE = {

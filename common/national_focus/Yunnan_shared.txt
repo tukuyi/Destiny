@@ -3346,7 +3346,7 @@ shared_focus = {
 	cost = 7.2
 	available = {
 		has_country_leader = {
-			name = "Long Yun"
+			name = "龙云"
 			ruling_only = yes
 		}
 	}
@@ -3586,7 +3586,7 @@ shared_focus = {
 	available = {
 		OR = {
 			has_country_leader = {
-				name = "Zhu Peide"
+				name = "朱培德"
 				ruling_only = yes
 			}
 			has_country_flag = Zhu_De_READY
@@ -3689,7 +3689,7 @@ shared_focus = {
 		set_country_flag = YUN_sinicization_for_yall
 		if = {
 			limit = {
-				has_country_leader = { name = "Long Yun" ruling_only = yes }
+				has_country_leader = { name = "龙云" ruling_only = yes }
 			}
 			country_event = {
 				id = yunhui.1

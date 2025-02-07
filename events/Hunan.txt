@@ -2683,6 +2683,19 @@ country_event = {#汤芗铭输了
 		show_unit_leaders_tooltip = HNN_cheng_qian
 		show_unit_leaders_tooltip = HNN_peng_dehuai
 		show_unit_leaders_tooltip = HNN_he_long
+		HNN_Tan_Yan_Kai = {
+			add_corps_commander_role = {
+				traits = { 
+					infantry_officer 
+					career_officer 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
 		hidden_effect = {
 			country_event = { id = hunbao.14 }
 			HNN_he_long = { HNN_recruit_characters_effect = yes }
@@ -3186,16 +3199,12 @@ country_event = {#汤芗铭的胜利
 
 	option = {
 		name = hnnwar.4.a
-		every_other_country = {
-			every_unit_leader = {
-				limit = {
-					OR = {
-						has_id = 2202
-						has_id = 1409
-					}
-				}
-				set_nationality = CHI
-			}
+		HNN = {
+			HNN_cheng_qian = { set_nationality = ROOT }
+			HNN_tang_shengzhi = { set_nationality = ROOT }
+			HNN_li_pinxian = { set_nationality = ROOT }
+			HNN_song_xilian = { set_nationality = ROOT }
+			HNN_yang_jie = { set_nationality = ROOT }
 		}
 	}
 }
@@ -10690,6 +10699,9 @@ country_event = {#习仲勋案
 	option = {#
 		name = hunqingxi.11.a
 		add_stability = -0.01
+		HNN_Xi_Zhong_Xun = {
+			retire = yes
+		}
 		add_popularity = {
 			ideology = social_liberal
 			popularity = -0.05
@@ -10710,14 +10722,12 @@ country_event = {#朱德案
 	option = {#
 		name = hunqingxi.12.a
 		add_stability = -0.01
-		add_manpower = -1
+		YUN_zhu_de = {
+			retire = yes
+		}
 		add_popularity = {
 			ideology = social_democrat
 			popularity = -0.05
-		}
-		random_unit_leader = {
-			limit = { has_id = 5007 }
-			remove_unit_leader = yes
 		}
 	}
 }

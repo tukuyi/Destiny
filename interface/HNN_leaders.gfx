@@ -5,8 +5,8 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_wang_zhen.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_CHI_Xiao_Ke"
-		texturefile = "gfx/leaders/HNN/Portrait_CHI_Xiao_Ke.png"
+		name = "GFX_Portrait_HNN_Xiao_Ke"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Xiao_Ke.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_HNN_Hua_Guofeng"

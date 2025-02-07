@@ -3,6 +3,7 @@ OR = {
 		tag = HNN
 		tag = SHC
 		tag = ETS
+		tag = SZC
 		
 		tag = USA
 		tag = BUL

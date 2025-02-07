@@ -229,7 +229,7 @@ FNG_can_attend_unification_conference = {
 		AND = {
 			tag = YUN
 			has_country_leader = {
-				name = "Long Yun"
+				name = "龙云"
 				ruling_only = yes
 			}
 		}

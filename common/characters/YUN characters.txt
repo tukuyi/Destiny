@@ -1,0 +1,539 @@
+characters = {
+################
+###   将领   ###
+################
+#唐繼堯
+	YUN_tang_jiyao = {
+		name = YUN_tang_jiyao
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_YUN_tang_jiyao_civilian
+			}
+			army = {
+				small = GFX_Portrait_YUN_tang_jiyao_army
+				large = GFX_Portrait_YUN_tang_jiyao_army
+			}
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_TANG_JIYAO_DESC
+			ideology = authoritarian_democrat_subtype
+			traits = { CHN_others_aligned }
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_TANG_JIYAO_DESC
+			ideology = pataut_warlordism_subtype
+			traits = { CHN_others_aligned }
+		}
+		field_marshal = {
+			desc = POLITICS_YUNNAN_TANG_JIYAO_ARMY_DESC
+			traits = { 
+				politically_connected
+				trait_reckless 
+				organizer 
+				career_officer 
+				skilled_staffer 
+				expert_improviser 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#龍雲
+	YUN_long_yun = {
+		name = YUN_long_yun
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Yunnan_leader_Long_Yun
+			}
+			army = {
+				small = GFX_Portrait_Yunnan_long_yun_army
+				large = GFX_Portrait_Yunnan_long_yun_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_LONG_YUN_ARMY_DESC
+			traits = { 
+				infantry_officer 
+				career_officer 
+				politically_connected 
+				organizer 
+				trait_engineer 
+				inflexible_strategist 
+				hidden_sympathies 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#朱德
+	YUN_zhu_de = {
+		name = YUN_zhu_de
+		portraits = {
+			army = {
+				large = GFX_Portrait_YUN_zhu_de
+				small = GFX_Portrait_YUN_zhu_de
+			}
+			civilian = {
+				large = GFX_Portrait_YUN_zhu_de
+			}
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_ZHU_DE_DESC
+			ideology = socdem_tridemism_subtype
+			traits = { CHN_left_kuomintang_aligned }
+		}
+		field_marshal = {
+			desc = POLITICS_YUNNAN_ZHU_DE_ARMY_DESC
+			traits = { 
+				CHI_left_kmt_officer 
+				career_officer 
+				inflexible_strategist 
+				politically_connected 
+				organizer 
+				irregulars_officer 
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 5
+			logistics_skill = 3
+		}
+	}
+#朱培德
+	YUN_zhu_peide = {
+		name = YUN_zhu_peide
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Zhu_Peide
+				large = GFX_Portrait_Yunnan_Zhu_Peide
+			}
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_ZHU_PEIDE_DESC
+			ideology = soclib_tridemism_subtype
+			traits = { CHN_right_kuomintang_aligned }
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_ZHU_PEIDE_DESC
+			ideology = soccon_tridemism_subtype
+			traits = { CHN_right_kuomintang_aligned }
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_ZHU_PEIDE_DESC
+			ideology = authdem_tridemism_subtype
+			traits = { CHN_right_kuomintang_aligned }
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_ZHU_PEIDE_DESC
+			ideology = pataut_tridemism_subtype
+			traits = { CHN_right_kuomintang_aligned }
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_ZHU_PEIDE_ARMY_DESC
+			skill = 3
+			traits = { 
+				infantry_officer 
+				infantry_leader 
+				war_hero 
+				politically_connected 
+				hidden_sympathies 
+				GXC_rkmt_officer 
+			}
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}	
+#胡若愚
+	YUN_hu_ruoyu = {
+		name = YUN_hu_ruoyu
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Hu_Ruoyu
+				large = GFX_Portrait_Yunnan_Hu_Ruoyu
+			}
+			civilian = {
+				large = GFX_Portrait_Yunnan_Hu_Ruoyu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_HU_RUOYU_ARMY_DESC
+			traits = { 
+				career_officer 
+				politically_connected
+				infantry_officer
+				trait_mountaineer 
+				hidden_sympathies
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#盧漢
+	YUN_lu_han = {
+		name = YUN_lu_han
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Lu_Han
+				large = GFX_Portrait_Yunnan_Lu_Han
+			}
+			civilian = {
+				large = GFX_Portrait_Yunnan_Lu_Han
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_LU_HAN_ARMY_DESC
+			traits = { 
+				career_officer 
+				light_infantry_officer 
+				politically_connected 
+				hidden_sympathies 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#范石生
+	YUN_fan_shisheng = {
+		name = YUN_fan_shisheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Fan_Shisheng
+				large = GFX_Portrait_Yunnan_Fan_Shisheng
+			}
+		}
+		corps_commander = {
+			desc = YUN_fan_shisheng_high_command_desc
+			traits = { 
+				career_officer
+				infantry_officer 
+				trait_engineer 
+				trait_mountaineer 
+				GXC_rkmt_officer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}	
+#何應欽
+	YUN_he_yingqin = {
+		name = YUN_he_yingqin
+		portraits = {
+			army = {
+				small = GFX_Portrait_YUN_he_yingqin
+				large = GFX_Portrait_YUN_he_yingqin
+			}
+		}
+		corps_commander = {
+			desc = YUN_he_yingqin_sic_desc
+			traits = { 
+				war_hero 
+				skilled_staffer 
+				infantry_officer 
+				organizer 
+				GXC_rkmt_officer 
+				hidden_sympathies 
+				brilliant_strategist 
+				politically_connected 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#金漢鼎
+	YUN_jin_handing = {
+		name = YUN_jin_handing
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Jin_Handing
+				large = GFX_Portrait_Yunnan_Jin_Handing
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_JIN_HANDING_ARMY_DESC
+			traits = { 
+				trait_cautious 
+				career_officer 
+				GXC_rkmt_officer 
+				trickster 
+				infantry_leader 
+				commando 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#陈诚
+	YUN_chen_cheng = {
+		name = YUN_chen_cheng
+		portraits = {
+			army = {
+				large = GFX_Portrait_Yunnan_Chen_Cheng
+				small = GFX_Portrait_Yunnan_Chen_Cheng
+			}
+		}
+		corps_commander = {
+			desc = YUN_chen_cheng_high_command_desc
+			traits = { 
+				GXC_rkmt_officer 
+				expert_delegator 
+				harsh_leader 
+				artillery_officer 
+				trait_engineer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#唐淮源
+	YUN_tang_huaiyuan = {
+		name = YUN_tang_huaiyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_YUN_tang_huaiyuan
+				large = GFX_Portrait_YUN_tang_huaiyuan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_TANG_HUAIYUAN_ARMY_DESC
+			traits = { 
+				infantry_officer 
+				career_officer 
+				trait_reckless 
+				irregulars_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
+#孫元良
+	YUN_sun_yuanliang = {
+		name = YUN_sun_yuanliang
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Sun_Yuanliang
+				large = GFX_Portrait_Yunnan_Sun_Yuanliang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_SUN_YUANLIANG_ARMY_DESC
+			traits = { 
+				career_officer 
+				artillery_officer
+				artillery_specialist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#曾澤生
+	YUN_zeng_zesheng = {
+		name = YUN_zeng_zesheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Zheng_Zhesheng
+				large = GFX_Portrait_Yunnan_Zheng_Zhesheng
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_ZENG_ZESHENG_ARMY_DESC
+			traits = { 
+				trait_cautious 
+				politically_connected 
+				irregulars_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#張靈甫
+	YUN_zhang_lingfu = {
+		name = YUN_zhang_lingfu
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Zhang_Lingfu
+				large = GFX_Portrait_Yunnan_Zhang_Lingfu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_ZHANG_LINGFU_ARMY_DESC
+			traits = { 
+				career_officer 
+				harsh_leader 
+				brilliant_strategist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#羅炳輝
+	YUN_luo_binghui = {
+		name = YUN_luo_binghui
+		portraits = {
+			army = {
+				small = GFX_Portrait_Yunnan_Luo_Binghui
+				large = GFX_Portrait_Yunnan_Luo_Binghui
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_LUO_BINGHUI_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_leader 
+				commando 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#唐继虞
+	YUN_tang_jiyu = {
+		name = YUN_tang_jiyu
+		portraits = {
+			army = {
+				small = GFX_Portrait_YUN_tang_ji_yu
+				large = GFX_Portrait_YUN_tang_ji_yu
+			}
+		}
+		corps_commander = {
+			desc = YUN_tang_jiyu_commander_desc
+			traits = { 
+				career_officer 
+				politically_connected 
+				light_infantry_officer 
+				trait_cautious 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#周保中
+	YUN_zhou_baozhong = {
+		name = YUN_zhou_baozhong
+		portraits = {
+			army = {
+				small = GFX_Portrait_YUN_zhou_baozhong
+				large = GFX_Portrait_YUN_zhou_baozhong
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUNNAN_ZHOU_BAOZHONG_ARMY_DESC
+			traits = { 
+				politically_connected 
+				irregulars_officer 
+				skilled_staffer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#李弥
+	YUN_Li_Mi = {
+		name = YUN_Li_Mi
+		portraits = {
+			army = {
+				large = GFX_Portrait_YUN_Li_Mi
+				small = GFX_Portrait_YUN_Li_Mi
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				infantry_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#安恩溥
+	YUN_An_En_Bo = {
+		name = YUN_An_En_Bo
+		portraits = {
+			army = {
+				large = GFX_Portrait_YUN_An_En_Bo
+				small = GFX_Portrait_YUN_An_En_Bo
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				infantry_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#孙渡
+	YUN_sun_du = {
+		name = YUN_sun_du
+		portraits = {
+			army = {
+				large = GFX_Portrait_YUN_Sun_Du
+				small = GFX_Portrait_YUN_Sun_Du
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				infantry_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+}

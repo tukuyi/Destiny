@@ -109,6 +109,23 @@ country_event = { #东突
 	}
 }
 
+country_event = { #四川
+	id = guides.1005
+	immediate = { log = "[GetDateText]: [Root.GetName]: event guides.1005" }
+	title = guides.1005.t
+	desc = guides.1005.d
+	picture = GFX_introduction_main
+
+	is_triggered_only = yes
+
+	option = { #
+		name = guides.1005.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
 country_event = { #USA Guides Event
 	id = guides.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event guides.1" }

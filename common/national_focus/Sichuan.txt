@@ -6708,7 +6708,7 @@ focus_tree = {
 			if = {
 				limit = {
 					YUN = {
-						has_country_leader = { name = "Tang Jiyao" ruling_only = yes }
+						has_country_leader = { name = "唐继尧" ruling_only = yes }
 					}
 				}
 				YUN = {
@@ -6721,8 +6721,11 @@ focus_tree = {
 						exists = yes
 						is_in_faction = no
 						OR = {
-							has_country_leader = { name = "Zhao Hengti" ruling_only = yes }
-							has_country_leader = { name = "Tang Shengzhi" ruling_only = yes }
+							has_country_leader = { name = "赵恒惕" ruling_only = yes }
+							AND = {
+								has_country_leader = { name = "谭延闿" ruling_only = yes }
+								has_government = social_liberal
+							}
 						}
 					}
 				}

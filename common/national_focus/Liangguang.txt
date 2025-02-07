@@ -1754,7 +1754,7 @@ shared_focus = {
 				YUN = {
 					exists = yes
 					has_country_leader = {
-						name = "Tang Jiyao"
+						name = "唐继尧"
 						ruling_only = yes
 					}
 					NOT = {

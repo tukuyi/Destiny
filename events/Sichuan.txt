@@ -5486,7 +5486,7 @@ country_event = { #Refugees From Sichuan (QIE/HNN/XSM/YUN)
 		text = sichuan.169.d.YUN_Tang
 		trigger = {
 			tag = YUN
-			has_country_leader = { name = "Tang Jiyao" ruling_only = yes }
+			has_country_leader = { name = "唐继尧" ruling_only = yes }
 		}
 	}
 	desc = {
@@ -5494,7 +5494,7 @@ country_event = { #Refugees From Sichuan (QIE/HNN/XSM/YUN)
 		trigger = {
 			tag = YUN
 			NOT = {
-				has_country_leader = { name = "Tang Jiyao" ruling_only = yes }
+				has_country_leader = { name = "唐继尧" ruling_only = yes }
 			}
 		}
 	}

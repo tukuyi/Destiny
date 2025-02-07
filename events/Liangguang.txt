@@ -3332,12 +3332,9 @@ country_event = {#appointing a premier (a very meaningless event)
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { has_unit_leader = 5006 } }
+				limit = { NOT = { has_character = YUN_zhu_peide } }
 				YUN = {
-					random_unit_leader = {
-						limit = { has_id = 5006 }
-						set_nationality = ROOT 
-					}
+					YUN_zhu_peide = { set_nationality = ROOT }
 				}
 			}
 		}
@@ -3710,16 +3707,23 @@ country_event = {#Recruiting Yunnan NRA
 		}
 		else = {
 			YUN = {
+				YUN_zhu_peide = { YUN_general_joins_ROOT = yes }
+				YUN_he_yingqin = { YUN_general_joins_ROOT = yes }
+				YUN_chen_cheng = { YUN_general_joins_ROOT = yes }
+				if = {
+					limit = { has_character = HNN_cheng_qian }
+					HNN_cheng_qian = { YUN_general_joins_ROOT = yes }
+					HNN_yang_jie = { YUN_general_joins_ROOT = yes }
+					HNN_song_xilian = { YUN_general_joins_ROOT = yes }
+				}
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 5006
-							has_id = 5015
 							has_id = 5071
 						}
 					}
+					YUN_general_joins_ROOT = yes 
 				}
-				YUN_general_joins_ROOT = yes 
 			}
 		}
 	}
@@ -3739,29 +3743,40 @@ country_event = {#Recruiting Yunnan NRA
 						CHI_recruit_general_effect = yes 
 					}
 				}
-				every_unit_leader = {
-					limit = {
-						OR = {
-							has_id = 5008
-							has_id = 5003
-							has_id = 5004
-						}
-					}
-					CHI_recruit_general_effect = yes 
+				YUN_luo_binghui = { CHI_recruit_general_effect = yes }
+				if = {
+					limit = { has_character = HNN_cheng_qian }
+					HNN_cheng_qian = { CHI_recruit_general_effect = yes }
+					HNN_yang_jie = { CHI_recruit_general_effect = yes }
+					HNN_song_xilian = { CHI_recruit_general_effect = yes }
 				}
 			}
 		}
+		else_if = {
+			limit = { tag = HNN }
+			YUN = {
+				YUN_luo_binghui = { CHI_recruit_general_effect = yes }
+			}
+		}
 		else = {
+			YUN_zhu_peide = { YUN_general_joins_ROOT = yes }
+			YUN_he_yingqin = { YUN_general_joins_ROOT = yes }
+			YUN_chen_cheng = { YUN_general_joins_ROOT = yes }
+			YUN_fan_shisheng = { YUN_general_joins_ROOT = yes }
+			YUN_jin_handing = { YUN_general_joins_ROOT = yes }
+			YUN_luo_binghui = { YUN_general_joins_ROOT = yes }
+			if = {
+				limit = { has_character = HNN_cheng_qian }
+				HNN_cheng_qian = { YUN_general_joins_ROOT = yes }
+				HNN_yang_jie = { YUN_general_joins_ROOT = yes }
+				HNN_song_xilian = { YUN_general_joins_ROOT = yes }
+			}
+
 			YUN = {
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 5006
-							has_id = 5015
 							has_id = 5071
-							has_id = 5008
-							has_id = 5003
-							has_id = 5004
 						}
 					}
 				}

@@ -771,12 +771,14 @@ characters = {
 		corps_commander = {
 			desc = ARMY_HNN_Chen_Yi_ARMY_DESC
 			traits = { 
-				irregulars_officer
+				light_infantry_officer 
+				trickster 
+				trait_engineer
 			}
 			skill = 2
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
 			logistics_skill = 2
 		}
 	}		
@@ -785,8 +787,8 @@ characters = {
 		name = HNN_Xiao_Ke
 		portraits = {
 			army = {
-				small = GFX_Portrait_CHI_Xiao_Ke
-				large = GFX_Portrait_CHI_Xiao_Ke
+				small = GFX_Portrait_HNN_Xiao_Ke
+				large = GFX_Portrait_HNN_Xiao_Ke
 			}
 		}
 		corps_commander = {
@@ -1101,6 +1103,10 @@ characters = {
 	HNN_Tan_Yan_Kai = {
 		name = HNN_Tan_Yan_Kai
 		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Tan_Yan_Kai_KMT
+				large = GFX_Portrait_HNN_Tan_Yan_Kai_KMT
+			}
 			civilian = {
 				large = GFX_Portrait_HNN_Tan_Yan_Kai
 			}
@@ -1367,7 +1373,7 @@ characters = {
 		}
 	}	
 ######################
-####### NAVY  ########
+####     NAVY    #####
 ######################	
 #杨宣诚
 	HNN_yang_xuancheng = {

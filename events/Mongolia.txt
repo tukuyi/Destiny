@@ -2268,7 +2268,7 @@ country_event = { # Puppet Yunnan
 		set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
 
 		create_country_leader = {
-			name = "Long Yun"
+			name = "龙云"
 			desc = ""
 			picture = "gfx/leaders/Yun/Portrait_Yunnan_Long_Yun.png"
 			expire = "1.1.1"

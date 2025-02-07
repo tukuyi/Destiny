@@ -91,7 +91,7 @@ chinese_unification = {
 				limit = { tag = YUN }
 				NOT = {
 					has_country_leader = {
-						name = "Zhu Peide"
+						name = "朱培德"
 						ruling_only = yes
 					}
 					has_country_flag = YUN_larp
@@ -1599,7 +1599,7 @@ political_actions = {
 					ruling_only = yes
 				}
 				has_country_leader = {
-					name = "Zhu Peide"
+					name = "朱培德"
 					ruling_only = yes
 				}
 			}

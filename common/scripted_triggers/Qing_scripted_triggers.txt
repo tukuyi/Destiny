@@ -38,7 +38,7 @@ QIE_federalists_exists = {#存在联省派
 				NOT = { 
 					YUN = { 
 						has_country_leader = {
-							name = "Tang Jiyao"
+							name = "唐继尧"
 							ruling_only = yes
 						}
 					} 

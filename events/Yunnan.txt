@@ -38,10 +38,28 @@ country_event = {# Long Yun Takes Over!
 	fire_only_once = yes
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			YUN_long_yun = { set_nationality = ROOT }
+			YUN_hu_ruoyu = { set_nationality = ROOT }
+			YUN_lu_han = { set_nationality = ROOT }
+		}
+	}
+
 	option = {# Long Live Long Yun!
 		name = yun.2.a
 		add_stability = -0.10
 		add_ideas = YUN_chaos_army
+		every_character = {
+			limit = {
+				OR = {
+					is_character = YUN_tang_jiyao
+					is_character = YUN_tang_jiyu
+					has_character_flag = SZC_officer_leader
+				}
+			}
+			retire = yes
+		}
 		hidden_effect = {
 			clr_country_flag = YUN_sinicization_for_yall
 			clr_country_flag = YUN_TT_time_has_run_out
@@ -102,10 +120,6 @@ country_event = {# Long Yun Takes Over!
 					}
 				}
 			}
-			random_unit_leader = {
-				limit = { has_id = 5000 }
-				set_nationality = NSW
-			}
 			603 = { set_demilitarized_zone = yes }
 			816 = { set_demilitarized_zone = yes }
 			1051 = { set_demilitarized_zone = yes }
@@ -154,18 +168,59 @@ country_event = {# Long Yun Takes Over!
 				name = YUN_Zhu_Peide_takes_over_party
 			}
 		}
-		create_country_leader = {
-			name = "Long Yun"
-			desc = "POLITICS_YUNNAN_LONG_YUN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_leader_Long_Yun.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
-		}
 		if = {
 			limit = { is_in_faction = yes }
 			leave_faction = yes
 		}
 		news_event = { id = yun.600 days = 1 }
+		hidden_effect = {
+			YUN_long_yun = {
+				if = {
+					limit = { has_ideology = pataut_warlordism_subtype }
+					promote_character = pataut_warlordism_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_YUNNAN_LONG_YUN_DESC
+							ideology = pataut_warlordism_subtype
+							traits = { CHN_non_aligned }
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			YUN_hu_ruoyu = {
+				if = {
+					limit = { has_ideology = pataut_warlordism_subtype }
+					promote_character = pataut_warlordism_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_YUNNAN_HU_RUOYU_DESC
+							ideology = pataut_warlordism_subtype
+							traits = { CHN_non_aligned }
+						}
+					}
+				}
+			}
+			YUN_lu_han = {
+				if = {
+					limit = { has_ideology = paternal_autocrat_subtype }
+					promote_character = paternal_autocrat_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_YUNNAN_LU_HAN_DESC
+							ideology = paternal_autocrat_subtype
+							traits = { CHN_non_aligned }
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -2037,6 +2092,10 @@ country_event = {# Long Yun Secures Yunnan!
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	immediate = {
+		hidden_effect = { YUN_long_yun = { set_nationality = ROOT } }
+	}
+
 	option = {
 		name = yun.27.a
 		add_stability = 0.20
@@ -2050,22 +2109,25 @@ country_event = {# Long Yun Secures Yunnan!
 				YUN_Lu_Chongren_eco_ade
 				YUN_Zhang_Yaozeng_sec_ade
 			}
-			NSW = {
-				every_unit_leader = {
-					limit = {
-						has_id = 5001
-					}
-					remove_unit_leader_trait = hidden_sympathies
-					promote_leader = yes
-					set_nationality = YUN
-				}
+			retire_character = YUN_hu_ruoyu
+			retire_character = YUN_lu_han
+			YUN_long_yun = {
+				promote_leader = yes
 			}
 			news_event = { id = yun.601 days = 1 }
+			if = {
+				limit = { 
+					HNN = {
+						has_country_flag = HNN_gong_tuan_victory_flag
+					}
+				}
+				YUN_zhu_de_tao_wang_hu_nan = yes
+			}
 		}
 	}
 }
 
-country_event = {# Zhu Peide Secures Yunnan!
+country_event = {# 朱培德平定云南！
 	id = yun.28
 	immediate = { log = "[GetDateText]: [Root.GetName]: event yun.28" }
 	title = yun.28.t
@@ -2078,6 +2140,15 @@ country_event = {# Zhu Peide Secures Yunnan!
 	option = {
 		name = yun.28.a
 		add_stability = 0.20
+		retire_character = YUN_lu_han
+		retire_character = YUN_hu_ruoyu
+		retire_character = YUN_long_yun
+		YUN_zhu_peide = {
+			promote_leader = yes
+		}
+		YUN_chen_cheng = {
+			set_nationality = ROOT
+		}
 		hidden_effect = {
 			load_oob = YUN_ZHU_PEIDE
 			end_of_yunnan_civil_war = yes
@@ -2087,23 +2158,6 @@ country_event = {# Zhu Peide Secures Yunnan!
 				YUN_Zhang_Weihan_for_sli
 				YUN_Xin_Shuzhi_eco_sli
 				YUN_Lu_Dao_sec_sli
-			}
-		}
-		NSW = {
-			every_unit_leader = {
-				limit = {
-					has_id = 5006
-				}
-				remove_unit_leader_trait = hidden_sympathies
-				promote_leader = yes
-				set_nationality = YUN
-			}
-			every_unit_leader = {
-				limit = {
-					has_id = 5015
-				}
-				remove_unit_leader_trait = hidden_sympathies
-				set_nationality = YUN
 			}
 		}
 		news_event = { id = yun.602 days = 1 }
@@ -2142,12 +2196,16 @@ country_event = {#Zhu De intervenes the Yunnan Academy!
 			long_name = YUN_Zhu_De_takes_over_party_long
 			name = YUN_Long_Zhu_De_takes_over_party
 		}
-		random_unit_leader = {
-			limit = { has_id = 5007 }
-			promote_leader = yes
-		}
 		hidden_effect = {
+			YUN_zhu_de = {
+				set_nationality = PREV
+				promote_character = socdem_tridemism_subtype
+			}
 			country_event = { id = yun.30 days = 7 }
+			retire_character = YUN_hu_ruoyu
+			retire_character = YUN_lu_han
+			retire_character = YUN_he_yingqin
+			retire_character = YUN_long_yun
 		}
 	}
 }
@@ -2211,7 +2269,6 @@ country_event = {# Lu Han Takes Over!
 
 	is_triggered_only = yes
 
-
 	option = {
 		name = yun.32.a
 		add_stability = -0.10
@@ -2219,13 +2276,7 @@ country_event = {# Lu Han Takes Over!
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		create_country_leader = {
-			name = "Lu Han"
-			desc = "POLITICS_YUNNAN_LU_HAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Lu_Han.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
-		}
+		promote_character = YUN_lu_han
 		add_popularity = {
 			ideology = paternal_autocrat
 			popularity = 0.01
@@ -2296,7 +2347,7 @@ country_event = {# Lu Han Takes Over!
 	}
 }
 
-country_event = {# Hu Ruoyu takes over!
+country_event = {#胡若愚夺权！
 	id = yun.33
 	immediate = { log = "[GetDateText]: [Root.GetName]: event yun.33" }
 	title = yun.33.t
@@ -2313,13 +2364,7 @@ country_event = {# Hu Ruoyu takes over!
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		create_country_leader = {
-			name = "Hu Ruoyu"
-			desc = "POLITICS_YUNNAN_HU_RUOYU_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Hu_Ruoyu.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
-		}
+		promote_character = YUN_hu_ruoyu
 
 		add_popularity = {
 			ideology = paternal_autocrat
@@ -2392,7 +2437,7 @@ country_event = {# Hu Ruoyu takes over!
 	}
 }
 
-country_event = {# Zhu Peide takes over
+country_event = {# 朱培德夺权！
 	id = yun.34
 	immediate = { log = "[GetDateText]: [Root.GetName]: event yun.34" }
 	title = yun.34.t
@@ -2405,6 +2450,21 @@ country_event = {# Zhu Peide takes over
 	option = {
 		name = yun.34.a
 		add_stability = -0.10
+		YUN_zhu_peide = {
+			if = {
+				limit = { has_ideology = pataut_tridemism_subtype }
+				promote_character = pataut_tridemism_subtype
+			}
+			else = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = pataut_tridemism_subtype
+						traits = { CHN_right_kuomintang_aligned }
+					}
+					promote_leader = yes
+				}
+			}
+		}
 		set_politics = {
 			ruling_party = social_liberal
 			elections_allowed = no
@@ -2414,6 +2474,9 @@ country_event = {# Zhu Peide takes over
 			popularity = 0.05
 		}
 		hidden_effect = {
+			YUN_chen_cheng = {
+				set_nationality = ROOT
+			}
 			if = {
 				limit = {
 					has_stability > -0.50
@@ -2471,14 +2534,6 @@ country_event = {# Zhu Peide takes over
 			603 = {
 				set_demilitarized_zone = yes
 			}
-			
-			create_country_leader = {
-				name = "Zhu Peide"
-				desc = "POLITICS_YUNNAN_ZHU_PEIDE_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_Peide.png"
-				expire = "1.1.1"
-				ideology = soclib_tridemism_subtype
-			}
 		}
 	}
 }
@@ -2500,13 +2555,7 @@ country_event = {# Long Yun Retakes Kunming
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		create_country_leader = {
-			name = "Long Yun"
-			desc = "POLITICS_YUNNAN_LONG_YUN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_leader_Long_Yun.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
-		}
+		promote_character = YUN_long_yun
 		add_popularity = {
 			ideology = paternal_autocrat
 			popularity = 0.01
@@ -2702,10 +2751,35 @@ country_event = {#Long Yun takes over with no issues like a chad
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	immediate = {
+		hidden_effect = { YUN_long_yun = { set_nationality = ROOT } }
+	}
+
 	option = {
 		name = yun.42.a
 		add_stability = 0.25
 		remove_ideas = YUN_Tangs_rule
+		retire_character = YUN_tang_jiyu
+		retire_character = YUN_tang_jiyao
+		if = {
+			limit = { has_character = YUN_long_yun }
+			YUN_long_yun = {
+				if = {
+					limit = { has_ideology = pataut_warlordism_subtype }
+					promote_character = pataut_warlordism_subtype
+				}
+				else = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_YUNNAN_LONG_YUN_DESC
+							ideology = pataut_warlordism_subtype
+							traits = { CHN_non_aligned }
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
 		hidden_effect = {
 			load_focus_tree = { tree = YUN_Swapped_tree }
 			set_country_flag = YUN_YUN_TOOK_OVER
@@ -2744,13 +2818,6 @@ country_event = {#Long Yun takes over with no issues like a chad
 			remove_all_ministers = yes
 			set_country_flag = Tang_Jiyu_dead
 			set_country_flag = Tang_Shaoxiang_dead
-		}
-		create_country_leader = {
-			name = "Long Yun"
-			desc = "POLITICS_YUNNAN_LONG_YUN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_leader_Long_Yun.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
@@ -4040,6 +4107,10 @@ country_event = {#Long Yun takes out the L-KMT
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	immediate = {
+		hidden_effect = { YUN_long_yun = { set_nationality = ROOT } }
+	}
+
 	option = {
 		name = yun.74.a
 		add_stability = 0.25
@@ -4056,18 +4127,20 @@ country_event = {#Long Yun takes out the L-KMT
 			delete_unit_template_and_units = { division_template = "Loyalists of Zhu De" }
 			load_oob = YUN_LONG_YUN
 			remove_all_ministers = yes
-			every_unit_leader = {
-				limit = { has_id = 5007 } #Zhu De
-				demote_leader = yes
-				set_nationality = NSW
-			}
-			NSW = {
-				every_unit_leader = {
-					limit = { has_id = 5001 } #Long Yun
-					remove_unit_leader_trait = hidden_sympathies
-					promote_leader = yes
-					set_nationality = YUN
+			remove_unit_leader_role = { character = YUN_zhu_de }
+			YUN_long_yun = {
+				hidden_effect = {
+					set_nationality = ROOT
 				}
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_YUNNAN_LONG_YUN_DESC
+						ideology = pataut_warlordism_subtype
+						traits = { CHN_non_aligned }
+					}
+					promote_leader = yes #promote his HoS
+				}
+				promote_leader = yes #promote him to FM
 			}
 			set_politics = {
 				ruling_party = paternal_autocrat
@@ -4083,13 +4156,6 @@ country_event = {#Long Yun takes out the L-KMT
 			ideology = paternal_autocrat
 			long_name = YUN_Long_Yun_takes_over_party_long
 			name = YUN_Long_Yun_takes_over_party
-		}
-		create_country_leader = {
-			name = "Long Yun"
-			desc = "POLITICS_YUNNAN_LONG_YUN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_leader_Long_Yun.png"
-			expire = "1.1.1"
-			ideology = pataut_warlordism_subtype
 		}
 		add_ideas = {
 			YUN_Zhang_Chong_hog_pau
@@ -4233,9 +4299,26 @@ country_event = {#Zhu De's Takeover: The Zhu Peide Proposal
 				}
 			}
 		}
+		YUN_zhu_peide = {
+			if = {
+				limit = { has_ideology = pataut_tridemism_subtype }
+				promote_character = pataut_tridemism_subtype
+			}
+			else = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = pataut_tridemism_subtype
+						traits = { CHN_right_kuomintang_aligned }
+					}
+					promote_leader = yes
+				}
+			}
+		}
 		set_politics = {
-			ruling_party = social_liberal
+			ruling_party = paternal_autocrat
 			elections_allowed = no
+			name = YUN_Zhu_Peide_takes_over_party
+			long_name = YUN_Zhu_Peide_takes_over_party_long
 		}
 		add_ideas = {
 			YUN_He_Yingqin_hog_sli
@@ -4244,22 +4327,16 @@ country_event = {#Zhu De's Takeover: The Zhu Peide Proposal
 			YUN_Lu_Dao_sec_sli
 		}
 		add_popularity = {
-			ideology = social_liberal
+			ideology = paternal_autocrat
 			popularity = 0.20
 		}
 
+		add_socdem_to_coalition = yes
+
 		add_stability = 0.10
-		
-		hidden_effect = {
-			create_country_leader = {
-				name = "Zhu Peide"
-				desc = "POLITICS_YUNNAN_ZHU_PEIDE_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_Peide.png"
-				expire = "1.1.1"
-				ideology = soclib_tridemism_subtype
-			}
-		}
+		YUN_he_yingqin = { set_nationality = ROOT }
 	}
+
 	option = {#Fuck off
 		name = yun.90.b
 		ai_chance = {
@@ -4318,6 +4395,7 @@ country_event = {#Zhu De's stays in power: Zhang Bojun or Zhu De
 			ideology = social_democrat
 			popularity = 0.15
 		}
+		retire_character = YUN_zhu_peide
 	}
 }
 
@@ -4645,7 +4723,7 @@ country_event = {#Sichuan wants to surrender
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Tang Jiyao"
+						name = "唐继尧"
 						ruling_only = yes
 					}
 					NOT = {
@@ -6134,7 +6212,7 @@ country_event = {#Fund another movie?
 
 	trigger = {
 		has_country_leader = {
-			name = "Tang Jiyao"
+			name = "唐继尧"
 			ruling_only = yes
 		}
 	}
@@ -6162,7 +6240,7 @@ country_event = {#Movie releases
 	fire_only_once = yes
 	trigger = {
 		has_country_leader = {
-			name = "Tang Jiyao"
+			name = "唐继尧"
 			ruling_only = yes
 		}
 	}
@@ -6184,7 +6262,7 @@ country_event = {#Prostitute Scandal
 	fire_only_once = yes
 	trigger = {
 		has_country_leader = {
-			name = "Tang Jiyao"
+			name = "唐继尧"
 			ruling_only = yes
 		}
 	}
@@ -7465,13 +7543,13 @@ country_event = {#The Future
 				OR = {
 					GXC = {
 						has_country_leader = {
-							name = "Chen Jiongming"
+							name = "陈炯明"
 							ruling_only = yes
 						}
 					}
 					SZC = {
 						has_country_leader = {
-							name = "Chen Jiongming"
+							name = "陈炯明"
 							ruling_only = yes
 						}
 					}
@@ -7480,11 +7558,8 @@ country_event = {#The Future
 			}
 		}
 		set_country_flag = YUN_federalists_chosen
-		create_country_leader = {
-			name = "Tang Jiyao"
-			desc = "POLITICS_YUNNAN_TANG_JIYAO_DESC"
-			picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Jiyao.png"
-			expire = "1.1.1"
+		promote_character = {
+			character = YUN_tang_jiyao
 			ideology = authdem_warlordism_subtype
 		}
 		set_party_name = {
@@ -8636,25 +8711,29 @@ country_event = {#Tang larp?
 			}
 			remove_ideas = YUN_Tangs_rule_isolation
 			remove_ideas = YUN_democratic_fortress_Tang
-			create_country_leader = {
-				name = "Tang Jiyao"
-				desc = "POLITICS_YUNNAN_TANG_KING_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_King.png"
-				expire = "1.1.1"
-				traits = {   }
-				ideology = absolute_monarchy_subtype
-			}
-			create_country_leader = {
-				name = "Tang Jiyao"
-				desc = "POLITICS_YUNNAN_TANG_KING_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_King.png"
-				expire = "1.1.1"
-				traits = {   }
-				ideology = oligarchy_subtype
+			YUN_tang_jiyao = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_YUNNAN_TANG_KING_DESC
+						ideology = absolute_monarchy_subtype
+						traits = { taoism_gang }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_YUNNAN_TANG_KING_DESC
+						ideology = oligarchy_subtype
+						traits = { taoism_gang }
+					}
+					promote_leader = yes
+				}
 			}
 			if = {
-				limit = { has_country_leader = { name = "Tang Jiyao" ruling_only = yes } }
-				set_country_leader_portrait = { portrait = "gfx/leaders/YUN/Portrait_Yunnan_Tang_King.png" }
+				limit = { has_country_leader = { name = "唐继尧" ruling_only = yes } }
+				set_country_leader_portrait = { 
+					portrait = GFX_Portrait_Yunnan_Tang_King 
+				}
 			}
 			every_state = {
 				limit = {
@@ -8694,7 +8773,7 @@ country_event = {#Empire Time
 			desc = "POLITICS_YUNNAN_TANG_EMPEROR_DESC"
 			picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Emperor.png"
 			expire = "1.1.1"
-			traits = {   }
+			traits = { taoism_gang }
 			ideology = absolute_monarchy_subtype
 		}
 		hidden_effect = {
@@ -8707,7 +8786,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_TANG_EMPEROR_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Emperor.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { taoism_gang }
 				ideology = oligarchy_subtype
 			}
 			random_other_country = { news_event = { id = worldnews.1246 } }
@@ -8961,21 +9040,8 @@ country_event = {#Empire Time
 		name = yun_tanglarp.17.a
 		add_political_power = 25
 		set_country_flag = YUN_tangs_cousin_is_prince
-		create_field_marshal = { #Auto-Generated
-			name = "Tang Jiyu"
-			portrait_path = "gfx/leaders/YUN/Portrait_YUN_Tang_Jiyu.png"
-			traits = {
-				politically_connected
-				offensive_doctrine
-				infantry_officer
-				substance_abuser
-			}
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 1
-			id = 99922
+		YUN_tang_jiyu = {
+			promote_leader = yes
 		}
 	}
 }
@@ -8994,12 +9060,24 @@ country_event = {#Empire Time
 		random_unit_leader = { limit = { has_id = 7249 } remove_unit_leader = yes }
 		#kill_ideology_leader = social_democrat
 		#kill_ideology_leader = social_liberal
-		random_unit_leader = { limit = { has_id = 5001 } remove_unit_leader = yes }
-		random_unit_leader = { limit = { has_id = 5002 } remove_unit_leader = yes }
-		random_unit_leader = { limit = { has_id = 5004 } remove_unit_leader = yes }
-		random_unit_leader = { limit = { has_id = 5006 } remove_unit_leader = yes }
-		random_unit_leader = { limit = { has_id = 5013 } remove_unit_leader = yes }
-		random_unit_leader = { limit = { has_id = 5015 } remove_unit_leader = yes }
+		YUN_long_yun = {
+			retire = yes
+		}
+		YUN_hu_ruoyu = {
+			retire = yes
+		}
+		YUN_lu_han = {
+			retire = yes
+		}
+		YUN_he_yingqin = {
+			retire = yes
+		}
+		YUN_zhu_peide = {
+			retire = yes
+		}
+		YUN_luo_binghui = {
+			retire = yes
+		}
 		add_command_power = -20
 	}
 	option = { #nice
@@ -9050,31 +9128,32 @@ country_event = {#Empire Time
 	option = { #nice
 		name = yun_tanglarp.20.b
 		create_country_leader = {
-				name = "Grand Council of the Great Secretariat of Tang"
-				desc = "POLITICS_YUNNAN_REGENCY_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Regency_Council.png"
-				expire = "1.1.1"
-				traits = { provisional_congress }
-				ideology = absolute_monarchy_subtype
-				female = yes
-			}
-			create_country_leader = {
-				name = "Grand Council of the Great Secretariat of Tang"
-				desc = "POLITICS_YUNNAN_REGENCY_DESC"
-				picture = "gfx/leaders/YUN/Portrait_Yunnan_Regency_Council.png"
-				expire = "1.1.1"
-				traits = { provisional_congress }
-				ideology = oligarchy_subtype
-				female = yes
-			}
-		random_unit_leader = {
-			limit = { has_id = 5000 }			
-			remove_unit_leader = yes
+			name = "Grand Council of the Great Secretariat of Tang"
+			desc = "POLITICS_YUNNAN_REGENCY_DESC"
+			picture = "gfx/leaders/YUN/Portrait_Yunnan_Regency_Council.png"
+			expire = "1.1.1"
+			traits = { provisional_congress }
+			ideology = absolute_monarchy_subtype
+			female = yes
 		}
-		hidden_effect = { country_event = {
-			id = yun_tanglarp.24 
-			days = 14
-		}}
+		create_country_leader = {
+			name = "Grand Council of the Great Secretariat of Tang"
+			desc = "POLITICS_YUNNAN_REGENCY_DESC"
+			picture = "gfx/leaders/YUN/Portrait_Yunnan_Regency_Council.png"
+			expire = "1.1.1"
+			traits = { provisional_congress }
+			ideology = oligarchy_subtype
+			female = yes
+		}
+		YUN_tang_jiyao = {
+			retire = yes
+		}
+		hidden_effect = { 
+			country_event = {
+				id = yun_tanglarp.24 
+				days = 14
+			}
+		}
 	}
 }
 
@@ -9299,7 +9378,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTRESS_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Lili.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { wu_zetianlarp }
 				ideology = absolute_monarchy_subtype
 				female = yes
 			}
@@ -9308,7 +9387,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTRESS_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Li_Lili.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { wu_zetianlarp }
 				ideology = oligarchy_subtype
 				female = yes
 			}
@@ -9330,7 +9409,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_MONGOL_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Genepil.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { khutulunlarp }
 				female = yes
 				ideology = absolute_monarchy_subtype
 			}
@@ -9343,7 +9422,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_MONGOL_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Genepil.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { khutulunlarp }
 				female = yes
 				ideology = oligarchy_subtype
 			}
@@ -9358,7 +9437,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_LI_TANGLARP_DESC"
 				picture = "gfx/leaders/YUN/Portrait_YUN_Tang_Jiyu.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { marshallemp }
 				ideology = absolute_monarchy_subtype
 			}
 			country_event = {
@@ -9370,7 +9449,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_LI_TANGLARP_DESC"
 				picture = "gfx/leaders/YUN/Portrait_YUN_Tang_Jiyu.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { marshallemp }
 				ideology = oligarchy_subtype
 			}
 		}
@@ -9394,7 +9473,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_POET_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Eileen.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { poetlarp }
 				female = yes
 				ideology = absolute_monarchy_subtype
 			}
@@ -9407,7 +9486,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_POET_WIFU_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Eileen.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { poetlarp }
 				female = yes
 				ideology = oligarchy_subtype
 			}
@@ -9421,7 +9500,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTUAL_SON_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Shaoxiang.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { actualsonarp }
 				ideology = absolute_monarchy_subtype
 			}
 			country_event = {
@@ -9437,7 +9516,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTUAL_SON_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Shaoxiang.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { actualsonarp }
 				ideology = oligarchy_subtype
 			}
 		}
@@ -9450,7 +9529,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTUAL_NEICE_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Shi_Lixia.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { doctorlarp }
 				female = yes
 				ideology = absolute_monarchy_subtype
 			}
@@ -9467,7 +9546,7 @@ country_event = {#Empire Time
 				desc = "POLITICS_YUNNAN_ACTUAL_NEICE_DESC"
 				picture = "gfx/leaders/YUN/Portrait_Yunnan_Shi_Lixia.png"
 				expire = "1.1.1"
-				traits = {   }
+				traits = { doctorlarp }
 				female = yes
 				ideology = oligarchy_subtype
 			}
@@ -10408,35 +10487,31 @@ country_event = {#完全胜利
 		set_capital = { state = 816 }
 		set_party_name = {
 			ideology = national_populist
-			long_name =  YUN_national_populist_hui_party_long
-			name =  YUN_national_populist_hui_party
+			long_name = YUN_national_populist_hui_party_long
+			name = YUN_national_populist_hui_party
 		}
 		set_party_name = {
 			ideology = syndicalist
-			long_name =  YUN_syndicalist_hui_party_long
-			name =  YUN_syndicalist_hui_party
+			long_name = YUN_syndicalist_hui_party_long
+			name = YUN_syndicalist_hui_party
 		}
 		set_party_name = {
 			ideology = radical_socialist
-			long_name =  YUN_radical_socialist_hui_party_long
-			name =  YUN_radical_socialist_hui_party
+			long_name = YUN_radical_socialist_hui_party_long
+			name = YUN_radical_socialist_hui_party
 		}
 		set_party_name = {
 			ideology = totalist
-			long_name =  YUN_totalist_hui_party_long
-			name =  YUN_totalist_hui_party
+			long_name = YUN_totalist_hui_party_long
+			name = YUN_totalist_hui_party
 		}
-		random_unit_leader = {
-			limit = { has_id = 5001 }
-			remove_unit_leader = yes
+		YUN_long_yun = {
+			retire = yes
 		}
 		remove_ideas = YUN_continue_sinicization
 		remove_ideas = YUN_continue_sinicization2
 		remove_ideas = YUN_Long_Yun1
 		add_manpower = -1
-		hidden_effect = {
-
-		}
 	}
 }
 
@@ -11704,9 +11779,8 @@ country_event = {#讨唐
 		clr_country_flag = YUN_larp
 		set_country_flag = YUN_bai_zhu_victory
 		set_cosmetic_tag = YUN_BAI
-		random_unit_leader = {
-			limit = { has_id = 5000 }
-			remove_unit_leader = yes
+		YUN_tang_jiyao = {
+			retire = yes
 		}
 		create_country_leader = {
 			name = "YUN_BAI_Yan_zi_zen"
