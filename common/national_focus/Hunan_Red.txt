@@ -8781,6 +8781,23 @@ focus_tree = {
 				random_select_amount = 4
 				add_unit_leader_trait = career_officer
 			}
+			every_army_leader = {
+				limit = {
+					NOT = { is_character = HNN_mao_ze_dong }
+					NOT = { is_character = HNN_peng_dehuai }
+					NOT = { is_character = HNN_Hua_Guofeng }
+				}
+				random_select_amount = 2
+				add_trait = { trait = trait_engineer }
+			}
+			random_army_leader = {
+				limit = {
+					NOT = { is_character = HNN_mao_ze_dong }
+					NOT = { is_character = HNN_peng_dehuai }
+					NOT = { is_character = HNN_Hua_Guofeng }
+				}
+				add_trait = { trait = cavalry_leader }
+			}
 			random_army_leader = {
 				limit = {
 					NOT = { is_character = HNN_mao_ze_dong }
@@ -8789,7 +8806,6 @@ focus_tree = {
 				}
 				add_trait = { trait = panzer_leader }
 			}
-
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
@@ -10205,6 +10221,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_completed_focus = HNN_dang_de_fa_lv
+				has_completed_focus = HNN_wei_chi_jun_shi_guan_li
 				has_completed_focus = HNN_ren_ming_zui_gao_fa_yuan
 			}
 		}

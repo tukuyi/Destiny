@@ -302,7 +302,6 @@ chinese_unification = {
 					OR = {
 						has_government = national_populist #一贯道
 						has_country_flag = SQI_baie_jue_qi #白俄
-						# has_country_flag = SQI_choose_wan #旧皖系
 					}
 				}
 			}
@@ -337,11 +336,6 @@ chinese_unification = {
 			set_country_flag = has_united_china
 			set_global_flag = china_united
 			China_build_ROC = yes
-			set_capital = { state = 608 }
-			add_timed_idea = {
-				idea = unite_china_justification_idea
-				days = 150
-			}
 			hidden_effect = {
 				news_event = {
 					id = worldnews.413

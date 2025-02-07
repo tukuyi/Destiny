@@ -1232,6 +1232,9 @@ country_event = { #Liangguang Secedes!
 			GXC = {
 				transfer_state = 592 #Guangzhou
 				transfer_state = 728 #Guangzhouwan
+				set_capital = {
+					state = 592
+				}
 				if = {
 					limit = { has_template = "Bubing Zhen" }
 					delete_unit_template_and_units = { division_template = "Bubing Zhen" }

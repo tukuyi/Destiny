@@ -582,6 +582,12 @@ China_build_ROC = {#成立民国
 	else = {
 		set_cosmetic_tag = ROC
 	}
+	custom_effect_tooltip = tooltip_white_line
+	set_capital = { state = 608 }
+	add_timed_idea = {
+		idea = unite_china_justification_idea
+		days = 150
+	}
 }
 
 

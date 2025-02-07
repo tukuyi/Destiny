@@ -821,32 +821,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 3
 		}
-	}		
-#宛旦平
-	GXC_Wan_Dan_Ping = {
-		name = GXC_Wan_Dan_Ping
-		portraits = {
-			army = {
-				small = GFX_Portrait_GXC_Wan_Dan_Ping
-				large = GFX_Portrait_GXC_Wan_Dan_Ping
-			}
-		}
-		corps_commander = {
-			desc = POLITICS_GXC_Wan_Dan_Ping_DESC
-			traits = {
-				ranger
-				career_officer
-				guerilla_fighter
-				infantry_officer 
-				guerilla_officer
-			}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 1
-		}
-	}		
+	}			
 #邓垦
 	GXC_deng_ken = {
 		name = GXC_deng_ken

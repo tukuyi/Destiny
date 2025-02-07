@@ -184,14 +184,6 @@ create_country_leader = {
 	ideology = radical_socialist_subtype
 }
 promote_character = {
-	character = SZC_lu_chao
-	ideology = socdem_tridemism_subtype
-}
-promote_character = {
-	character = SZC_xiong_kewu
-	ideology = soclib_lianshengism_subtype
-}
-promote_character = {
 	character = SZC_liu_wenhui
 	ideology = marlib_warlordism_subtype
 }

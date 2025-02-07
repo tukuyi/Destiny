@@ -290,6 +290,7 @@ set_country_flag = germany_support
 set_country_flag = legation_council_member
 
 recruit_character = QIE_aisin_gioro_puyi
+recruit_character = QIE_wu_peifu
 
 promote_character = {
 	character = QIE_aisin_gioro_puyi
@@ -326,7 +327,6 @@ create_country_leader = {
 	ideology = occultism_subtype
 }
 
-recruit_character = QIE_wu_peifu
 recruit_character = QIE_wang_huaiqing
 recruit_character = QIE_jiang_bai_li
 recruit_character = QIE_yan_huiqing

@@ -24,8 +24,17 @@ add_namespace = lnggxgt #广西工团
 country_event = {
 	id = lng.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lng.1" }
+	title = lng.1.t
+	desc = lng.1.d
+	picture = GFX_report_event_GXC_guangzhou_government_gate
+
+	is_triggered_only = yes
+
 	immediate = { 
 		hidden_effect = {
+			white_peace = ANQ
+			white_peace = CHI
+			white_peace = SQI
 			country_event = { id = lngkmt.19 days = 349 } #Status of Temples in Guangdong
 			country_event = { id = lngkmt.20 days = 600 } #The Opium Dens of Guangzhou
 			country_event = { id = lngkmt.21 days = 180 } #Chinese High Tea
@@ -33,11 +42,6 @@ country_event = {
 			country_event = { id = lngRkmt.93 days = 60 } #桂林山水
 		}
 	}
-	title = lng.1.t
-	desc = lng.1.d
-	picture = GFX_report_event_GXC_guangzhou_government_gate
-
-	is_triggered_only = yes
 
 	option = {
 		name = lng.1.a

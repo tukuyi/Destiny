@@ -339,10 +339,10 @@
 		show_unit_leaders_tooltip = HNN_mao_ze_dong
 		show_unit_leaders_tooltip = HNN_he_long
 		show_unit_leaders_tooltip = HNN_peng_dehuai
-		show_unit_leaders_tooltip = GXC_Wan_Dan_Ping
+		show_unit_leaders_tooltip = HNN_Wan_Dan_Ping
 		hidden_effect = {
 			event_target:original_hunan = {
-				GXC_Wan_Dan_Ping = {
+				HNN_Wan_Dan_Ping = {
 					QYG_recruit_characters_effect = yes
 				}
 				HNN_peng_dehuai = {
@@ -372,10 +372,10 @@
 	# 	show_unit_leaders_tooltip = HNN_mao_ze_dong
 	# 	show_unit_leaders_tooltip = HNN_he_long
 	# 	show_unit_leaders_tooltip = HNN_peng_dehuai
-	# 	show_unit_leaders_tooltip = GXC_Wan_Dan_Ping
+	# 	show_unit_leaders_tooltip = HNN_Wan_Dan_Ping
 	# 	hidden_effect = {
 	# 		event_target:original_qiong_ya = {
-	# 			GXC_Wan_Dan_Ping = {
+	# 			HNN_Wan_Dan_Ping = {
 	# 				QYG_recruit_characters_effect = yes
 	# 			}
 	# 			HNN_peng_dehuai = {

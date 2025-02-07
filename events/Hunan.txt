@@ -35,7 +35,16 @@ country_event = { #开局
 
 	option = {
 		name = hnn.1.a
+		effect_tooltip = {
+			set_autonomy = {
+				target = HNN
+				autonomy_state = autonomy_free
+			}
+		}
 		hidden_effect = {
+			white_peace = ANQ
+			white_peace = CHI
+			white_peace = SQI
 			country_event = { 
 				id = hnn.2 
 				days = 3 
@@ -1618,7 +1627,9 @@ country_event = {#南京
 	trigger = {
 		tag = HNN
 		owns_state = 613
-		Not = {has_country_flag = HNN_fo_victory_flag}
+		Not = {
+			has_country_flag = HNN_fo_victory_flag
+		}
 	}
 
 	fire_only_once = yes
@@ -1639,7 +1650,6 @@ country_event = {#北京
 	desc = hnn.113.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -2661,7 +2671,7 @@ country_event = {#汤芗铭输了
 		}
 	}
 
-	option = { #Hopefully the last we see of him
+	option = {
 		log = "[GetLogInfo]: event hnnzhili.3 option hnnzhili.3.a"
 		name = hnnzhili.3.a
 		show_unit_leaders_tooltip = HNN_li_pinxian
@@ -2684,6 +2694,14 @@ country_event = {#汤芗铭输了
 			HNN_Zhang_Zhen = { HNN_recruit_characters_effect = yes }
 			HNN_Wen_Chao_Ji = { HNN_recruit_characters_effect = yes }
 			HNN_li_pinxian = { HNN_recruit_characters_effect = yes }
+			promote_character = {
+				character = HNN_tang_shengzhi
+				ideology = socdem_agrarianism_subtype
+			}
+			promote_character = {
+				character = HNN_cheng_qian
+				ideology = authdem_tridemism_subtype
+			}
 		}
 	}
 }
@@ -4943,13 +4961,10 @@ country_event = {#右派合作者
 	option = {#谭延闿
 		name = hunbao.1.c
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
-		create_country_leader = {
-			name = "谭延闿"
-			desc = "POLITICS_HNN_Tan_Yan_Kai_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Tan_Yan_Kai_KMT.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = HNN_Tan_Yan_Kai
 			ideology = national_conservative_subtype
 		}
 		set_politics = {
@@ -12451,6 +12466,8 @@ country_event = {#中华人民共和国
 			HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
 			HNN_wang_gan_chang = { HNN_recruit_characters_effect = yes }
 			HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
+			HNN_luo_pei_lin = { HNN_recruit_characters_effect = yes }
+			HNN_Hu_Yao_Bang = { HNN_recruit_characters_effect = yes }
 			country_event = { 
 				id = hungong.37
 				days = 10
@@ -12473,11 +12490,8 @@ country_event = {#中华人民共和国
 				expire = "1965.1.1"
 				ideology = moderate_socialist_subtype
 			}
-			create_country_leader = {
-				name = "胡耀邦"
-				desc = "POLITICS_HNN_HU_YAOBANG_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Hu_Yao_Bang.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = HNN_Hu_Yao_Bang
 				ideology = socdem_democratic_socialism_subtype
 			}
 			promote_character = {
@@ -12585,7 +12599,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 	desc = hungong.38.d
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -13870,7 +13883,7 @@ country_event = {#选举结果
 	}
 }
 
-country_event = { 
+country_event = {#唐生智的葬礼 
 	id = hungong.14
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.14" }
 	title = hungong.14.t

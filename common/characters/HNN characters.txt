@@ -223,6 +223,9 @@ characters = {
 		country_leader = {
 			desc = POLITICS_HNN_ZHAO_HENGTI_DESC
 			ideology = soccon_lianshengism_subtype
+			traits = {
+				CHN_federalist_aligned
+			}
 		}
 		field_marshal = {
 			desc = POLITICS_HNN_ZHAO_HENGTI_ARMY_DESC
@@ -434,6 +437,42 @@ characters = {
 ######################
 ####### LKMT  ########
 ######################	
+#唐生智
+	HNN_tang_shengzhi = {
+		name = HNN_tang_shengzhi
+		portraits = {
+			army = {
+				large = GFX_Portrait_Hunan_Tang_Shengzhi
+				small = GFX_Portrait_Hunan_Tang_Shengzhi
+			}
+			civilian = {
+				large = GFX_Portrait_Hunan_Tang_Shengzhi
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_TANG_SHENGZHI_DESC
+			ideology = socdem_agrarianism_subtype
+			traits = {
+				CHN_left_kuomintang_aligned
+			}
+		}
+		corps_commander = {
+			desc = HNN_tang_shengzhi_commander_desc
+			traits = { 
+				career_officer 
+				infantry_officer 
+				trait_engineer 
+				trait_reckless 
+				inspirational_leader 
+				war_hero 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
 #李品仙
 	HNN_li_pinxian = {
 		name = HNN_li_pinxian
@@ -527,32 +566,6 @@ characters = {
 			logistics_skill = 1
 		}
 	}
-#唐生智
-	HNN_tang_shengzhi = {
-		name = HNN_tang_shengzhi
-		portraits = {
-			army = {
-				large = GFX_Portrait_Hunan_Tang_Shengzhi
-				small = GFX_Portrait_Hunan_Tang_Shengzhi
-			}
-		}
-		corps_commander = {
-			desc = HNN_tang_shengzhi_commander_desc
-			traits = { 
-				career_officer 
-				infantry_officer 
-				trait_engineer 
-				trait_reckless 
-				inspirational_leader 
-				war_hero 
-			}
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 3
-		}
-	}
 #唐生明
 	HNN_tang_shengming = {
 		name = HNN_tang_shengming
@@ -592,10 +605,16 @@ characters = {
 		country_leader = {
 			desc = POLITICS_HNN_PENG_DEHUAI_DESC
 			ideology = syndie_social_democrat_subtype
+			traits = {
+				CHN_left_kuomintang_aligned
+			}
 		}
 		country_leader = {
 			desc = POLITICS_HNN_PENG_DEHUAI_DESC
 			ideology = syn_red_junta_subtype
+			traits = {
+				CHN_Syndicalists_aligned
+			}
 		}
 		corps_commander = {
 			desc = POLITICS_HNN_PENG_DEHUAI_ARMY_DESC
@@ -698,6 +717,19 @@ characters = {
 			ideology = agrarian_syndicalism_subtype
 		}
 	}	
+#胡耀邦
+	HNN_Hu_Yao_Bang = {
+		name = HNN_Hu_Yao_Bang
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Hu_Yao_Bang
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_HU_YAOBANG_DESC
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}		
 #滕代远
 	HNN_Teng_Daiyuan = {
 		name = HNN_Teng_Daiyuan
@@ -713,11 +745,11 @@ characters = {
 				politically_connected 
 				guerilla_officer 
 			}
-			skill = 3
+			skill = 2
 			attack_skill = 2
-			defense_skill = 3
+			defense_skill = 1
 			planning_skill = 2
-			logistics_skill = 3
+			logistics_skill = 1
 		}
 	}	
 #陈毅
@@ -741,11 +773,11 @@ characters = {
 			traits = { 
 				irregulars_officer
 			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
 			planning_skill = 2
-			logistics_skill = 3
+			logistics_skill = 2
 		}
 	}		
 #萧克
@@ -762,11 +794,11 @@ characters = {
 			traits = { 
 				irregulars_officer
 			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}		
 #毛泽东	
@@ -939,7 +971,7 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_YUAN_WEN_CAI_ARMY_DESC
 			traits = { 
-				rising_star
+				disgruntled
 				irregulars_officer
 				guerilla_officer
 			}
@@ -1036,10 +1068,58 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 1
 		}
-	}		
+	}	
+#宛旦平
+	HNN_Wan_Dan_Ping = {
+		name = HNN_Wan_Dan_Ping
+		portraits = {
+			army = {
+				small = GFX_Portrait_GXC_Wan_Dan_Ping
+				large = GFX_Portrait_GXC_Wan_Dan_Ping
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_HNN_Wan_Dan_Ping_DESC
+			traits = {
+				ranger
+				rising_star
+				guerilla_fighter
+				infantry_officer 
+				guerilla_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}			
 ######################
 ####### RKMT  ########
 ######################
+#谭延闿
+	HNN_Tan_Yan_Kai = {
+		name = HNN_Tan_Yan_Kai
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Tan_Yan_Kai
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_Tan_Yan_Kai_DESC
+			ideology = soclib_tridemism_subtype
+			traits = {
+				CHN_federalist_aligned
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_Tan_Yan_Kai_kmt_DESC
+			ideology = national_conservative_subtype
+			traits = {
+				CHN_right_kuomintang_aligned
+			}
+		}
+	}
 #程潛
 	HNN_cheng_qian = { #starts in exile
 		name = HNN_cheng_qian
@@ -1048,6 +1128,14 @@ characters = {
 				small = GFX_Portrait_HNN_cheng_qian
 				large = GFX_Portrait_HNN_cheng_qian
 			}
+			civilian = {
+				large = GFX_Portrait_HNN_cheng_qian
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_CHENG_QIAN_DESC
+			ideology = authdem_tridemism_subtype
+			traits = { CHN_right_kuomintang_aligned }
 		}
 		corps_commander = {
 			desc = HNN_cheng_qian_commander_desc
@@ -1439,4 +1527,24 @@ characters = {
 			}
 		}
 	}
+#罗沛霖
+	HNN_luo_pei_lin = {
+		name = HNN_luo_pei_lin
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_luo_pei_lin
+				small = GFX_Portrait_HNN_luo_pei_lin
+			}
+			army = {
+				large = GFX_Portrait_HNN_luo_pei_lin
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_resourceful }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}	
 }

@@ -142,7 +142,7 @@ recruit_character = HNN_song_xilian
 recruit_character = HNN_Zhang_Zhen
 recruit_character = HNN_Wen_Chao_Ji
 recruit_character = HNN_li_pinxian
-recruit_character = GXC_Wan_Dan_Ping
+recruit_character = HNN_Wan_Dan_Ping
 recruit_character = HNN_wang_zhen
 recruit_character = HNN_Tan_Zhen_Lin
 recruit_character = HNN_Yuan_Wen_Cai
@@ -153,13 +153,17 @@ recruit_character = HNN_geng_biao
 recruit_character = HNN_Tan_zheng
 recruit_character = HNN_Chen_Yun 
 recruit_character = HNN_Hua_Guofeng
+recruit_character = HNN_Shi_Dingwu
+recruit_character = HNN_Shi_tai_xu
+recruit_character = HNN_Lin_Bo_Qu
+recruit_character = HNN_Hu_Yao_Bang
+recruit_character = HNN_Tan_Yan_Kai
+
 recruit_character = HNN_wang_gan_chang
 recruit_character = HNN_Qian_Xuesen
 recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
-recruit_character = HNN_Shi_Dingwu
-recruit_character = HNN_Shi_tai_xu
-recruit_character = HNN_Lin_Bo_Qu
+recruit_character = HNN_luo_pei_lin
 
 HNN_chen_quzhen = { 
 	set_variable = { china_alignment = token:northern_zhili }
@@ -285,80 +289,6 @@ HNN_peng_dehuai = {
 	set_character_flag = CHI_PAC_military_loyalist_flag
 	retire = yes
 }
-HNN_He_Su_Heng = {
-	set_variable = { china_alignment = token:Syndicalists }
-	retire = yes
-}
-HNN_Xi_Zhong_Xun = {
-	retire = yes
-}
-HNN_Lin_Bo_Qu = {
-	retire = yes
-}
-HNN_Dong_Bi_Wu = {
-	set_variable = { china_alignment = token:Syndicalists }
-	retire = yes
-}
-HNN_Teng_Daiyuan = {
-	retire = yes
-}
-HNN_Shi_tai_xu = {
-	retire = yes
-}
-GXC_Wan_Dan_Ping = {
-	retire = yes
-}
-HNN_Chen_Yi = {
-	retire = yes
-}
-HNN_Xiao_Ke = {
-	retire = yes
-}
-HNN_mao_ze_dong = {
-	retire = yes
-}
-HNN_wang_zhen = {
-	retire = yes
-}
-HNN_Tan_Zhen_Lin = {
-	retire = yes
-}
-HNN_Yuan_Wen_Cai = {
-	retire = yes
-}
-HNN_Long_Chao_Qing = {
-	retire = yes
-}
-HNN_Wan_Xi_Xian = {
-	retire = yes
-}
-HNN_Xu_Si_You = {
-	retire = yes
-}
-HNN_geng_biao = {
-	retire = yes
-}
-HNN_Tan_zheng = {
-	retire = yes
-}
-HNN_Chen_Yun = {
-	retire = yes
-}
-HNN_wang_gan_chang = {
-	retire = yes
-}
-HNN_Qian_Xuesen = {
-	retire = yes
-}
-HNN_Hua_Guofeng = {
-	retire = yes
-}
-HNN_zhao_jiu_zhang = {
-	retire = yes
-}
-HNN_guo_yong_huai = {
-	retire = yes
-}
 HNN_tang_shengming = { #Appears in KMT Content
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = HNN_KMT_loyalist_flag
@@ -410,6 +340,88 @@ HNN_dai_jitao = { #Appears in Zhili Content
 	set_character_flag = HNN_zhili_loyalist_flag
 	retire = yes
 }
+HNN_Chen_Yi = {
+    set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_syn_loyalist_flag
+	retire = yes
+}
+HNN_He_Su_Heng = {
+	set_variable = { china_alignment = token:Syndicalists }
+	retire = yes
+}
+HNN_Xi_Zhong_Xun = {
+	retire = yes
+}
+HNN_Lin_Bo_Qu = {
+	retire = yes
+}
+HNN_Dong_Bi_Wu = {
+	set_variable = { china_alignment = token:Syndicalists }
+	retire = yes
+}
+HNN_Teng_Daiyuan = {
+	retire = yes
+}
+HNN_Shi_tai_xu = {
+	retire = yes
+}
+HNN_Wan_Dan_Ping = {
+	retire = yes
+}
+HNN_Hu_Yao_Bang = {
+	retire = yes
+}
+HNN_Xiao_Ke = {
+	retire = yes
+}
+HNN_mao_ze_dong = {
+	retire = yes
+}
+HNN_wang_zhen = {
+	retire = yes
+}
+HNN_Tan_Zhen_Lin = {
+	retire = yes
+}
+HNN_Yuan_Wen_Cai = {
+	retire = yes
+}
+HNN_Long_Chao_Qing = {
+	retire = yes
+}
+HNN_Wan_Xi_Xian = {
+	retire = yes
+}
+HNN_Xu_Si_You = {
+	retire = yes
+}
+HNN_geng_biao = {
+	retire = yes
+}
+HNN_Tan_zheng = {
+	retire = yes
+}
+HNN_Chen_Yun = {
+	retire = yes
+}
+HNN_wang_gan_chang = {
+	retire = yes
+}
+HNN_Qian_Xuesen = {
+	retire = yes
+}
+HNN_Hua_Guofeng = {
+	retire = yes
+}
+HNN_zhao_jiu_zhang = {
+	retire = yes
+}
+HNN_guo_yong_huai = {
+	retire = yes
+}
+HNN_luo_pei_lin = {
+	retire = yes
+}
 
 create_country_leader = {
 	name = "任弼时 "
@@ -432,32 +444,19 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = radical_socialist_subtype
 }
-create_country_leader = {
-	name = "唐生智"
-	desc = "POLITICS_HNN_TANG_SHENGZHI_DESC"
-	picture = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengzhi.png"
-	expire = "1965.1.1"
-	ideology = socdem_agrarianism_subtype
-}
-create_country_leader = {
-	name = "谭延闿"
-	desc = "POLITICS_HNN_Tan_Yan_Kai_DESC"
-	picture = "gfx/leaders/HNN/Portrait_HNN_Tan_Yan_Kai.png"
-	expire = "1965.1.1"
+promote_character = {
+	character = HNN_Tan_Yan_Kai
 	ideology = soclib_tridemism_subtype
+}
+promote_character = {
+	character = HNN_zhao_hengti
+	ideology = soccon_lianshengism_subtype
 }
 create_country_leader = {
 	name = "刘廷芳"
 	picture = "gfx/leaders/Generic/Portrait_Asia_Generic_new_1.png"
 	expire = "1965.1.1"
 	ideology = marlib_warlordism_subtype
-}
-create_country_leader = {
-	name = "程潜"
-	desc = "POLITICS_HNN_CHENG_QIAN_DESC"
-	picture = "gfx/leaders/CHI/Portrait_CHI_Cheng_Qian.png"
-	expire = "1965.1.1"
-	ideology = authdem_tridemism_subtype
 }
 promote_character = {
 	character = HNN_tang_xiangming

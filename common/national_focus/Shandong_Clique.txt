@@ -743,11 +743,23 @@ focus_tree = {
 		available = {
 			has_country_flag = SQI_choose_wan
 		}
+		select_effect = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_owned_by = ROOT
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
 		cancelable = no
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SQI_mai_xiang_gong_he"
-			# set_cosmetic_tag = ROC
 			SQI_agriculture = yes
 			activate_mission = SQI_guo_ming_dang_chan_cun
 			QIE = {
