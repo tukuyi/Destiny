@@ -314,18 +314,6 @@ create_field_marshal = {
 	logistics_skill = 2
 	id = 2297
 }
-create_field_marshal = {
-	name = "Cheng Qian"
-	desc = "POLITICS_CHI_CHENG_QIAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Cheng_Qian_KMT.png"
-	traits = { CHI_left_kmt_officer old_guard politically_connected career_officer war_hero artillery_officer }
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-	id = 2202
-}
 ### Corps Commanders ###
 create_corps_commander = {
 	name = "Hu Zongnan "

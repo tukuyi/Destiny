@@ -531,8 +531,8 @@ characters = {
 		name = GXC_ye_jianying
 		portraits = {
 			army = {
-				small = GFX_Portrait_GXC_ye_jianying_kuomintang
-				large = GFX_Portrait_GXC_ye_jianying_kuomintang
+				small = GFX_Portrait_GXC_ye_jianying_army
+				large = GFX_Portrait_GXC_ye_jianying_army
 			}
 		}
 		corps_commander = {

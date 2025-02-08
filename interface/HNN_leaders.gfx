@@ -868,8 +868,16 @@ spriteTypes = {
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_ye_jianying_kuomintang.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_GXC_ye_jianying_army"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_ye_jianying_army.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_GXC_liu_fei_army"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_liu_fei_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_liu_fei_kuomintang"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_liu_fei_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_hong_zhaolin"
@@ -878,6 +886,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_GXC_chen_jitang_army"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_jitang_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_chen_jitang_kuomintang"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_jitang_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_li_zongren_kuomintang"
@@ -890,6 +902,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_GXC_jiang_guangnai_army"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_jiang_guangnai_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_jiang_guangnai_kuomintang"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_jiang_guangnai_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_zhang_gan"
@@ -906,6 +922,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_GXC_cai_tingkai_army"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_cai_tingkai_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_cai_tingkai_kuomintang"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_cai_tingkai_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_ye_ju"

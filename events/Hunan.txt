@@ -2219,844 +2219,6 @@ country_event = {#与葡萄牙和平
 }
 
 ########################################
-##########-     陈渠珍   -##############
-########################################
-country_event = {#《艽野尘梦》再版
-	id = hunxiangxi.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.1" }
-	title = hunxiangxi.1.t
-	desc = hunxiangxi.1.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.1.a
-		add_political_power = 10 
-	}
-}
-country_event = {#湖南的局势-大清
-	id = hunxiangxi.2
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.2" }
-	title = hunxiangxi.2.t
-	desc = hunxiangxi.2.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.2.a
-		add_political_power = -5 
-	}
-}
-country_event = {#湖南的局势-四川
-	id = hunxiangxi.3
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.3" }
-	title = hunxiangxi.3.t
-	desc = hunxiangxi.3.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.3.a
-		add_stability = -0.01 
-	}
-}
-country_event = {#湖南的新政策
-	id = hunxiangxi.4
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.4" }
-	title = hunxiangxi.4.t
-	desc = hunxiangxi.4.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.4.a
-		add_war_support = -0.01	 
-	}
-}
-country_event = {#重塑军纪
-	id = hunxiangxi.5
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.5" }
-	title = hunxiangxi.5.t
-	desc = hunxiangxi.5.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.5.a
-		add_stability = 0.01 
-	}
-}
-country_event = {#湖南大学的新校长
-	id = hunxiangxi.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.6" }
-	title = hunxiangxi.6.t
-	desc = hunxiangxi.6.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.6.a
-		add_stability = 0.01 
-	}
-}
-country_event = {#不合作，就关闭
-	id = hunxiangxi.7
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.7" }
-	title = hunxiangxi.7.t
-	desc = hunxiangxi.7.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.7.a
-		add_ideas = HNN_fu_cong_de_fo_jiao 
-	}
-
-	option = {
-		name = hunxiangxi.7.b
-		add_manpower = -20
-		add_ideas = HNN_yi_tong_de_fo_jiao 
-	}	
-}
-country_event = {#消除工团党影响
-	id = hunxiangxi.8
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.8" }
-	title = hunxiangxi.8.t
-	desc = hunxiangxi.8.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.8.a
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.01
-		}
-		hidden_effect = {
-			country_event = { 
-				id = hunxiangxi.9
-				days = 40
-			}
-		}
-	}
-}
-country_event = {#长沙支部被捣毁
-	id = hunxiangxi.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.9" }
-	title = hunxiangxi.9.t
-	desc = hunxiangxi.9.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.9.a
-		add_popularity = {
-			ideology = syndicalist
-			popularity = -0.01
-		} 
-	}
-}
-country_event = {#取缔一切秘密结社
-	id = hunxiangxi.10
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.10" }
-	title = hunxiangxi.10.t
-	desc = hunxiangxi.10.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.10.a
-		add_stability = 0.01 
-	}
-}
-country_event = {#鸦片税
-	id = hunxiangxi.11
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.11" }
-	title = hunxiangxi.11.t
-	desc = hunxiangxi.11.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.11.a
-		add_political_power = 20
-		add_stability = -0.01 
-	}
-}
-country_event = {#清剿山贼
-	id = hunxiangxi.12
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.12" }
-	title = hunxiangxi.12.t
-	desc = hunxiangxi.12.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.12.a
-		add_popularity = {
-			ideology = authoritarian_democrat
-			popularity = 0.01
-		} 
-	}
-}
-country_event = {#社会救助
-	id = hunxiangxi.13
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.13" }
-	title = hunxiangxi.13.t
-	desc = hunxiangxi.13.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hunxiangxi.13.a
-		add_stability = 0.01
-	}
-}
-
-########################################
-##########-     汤芗铭   -##############
-########################################
-country_event = {#大战
-	id = hnnzhili.1
-	title = hnnzhili.1.t
-	desc = hnnzhili.1.d
-	picture = GFX_report_event_HNN_new_army_soldiers
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #汤芗铭胜利
-		log = "[GetLogInfo]: event hnnzhili.1 option hnnzhili.1.a"
-		name = hnnzhili.1.a
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_TSZ
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_ZJP
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_CQ
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_HJ
-					}
-				}
-			}
-		}
-		add_popularity = {
-			ideology = paternal_autocrat
-			popularity = 0.10
-		}
-		hidden_effect = {
-			retire_character = HNN_ye_kaixin
-			retire_character = HNN_zhao_hengti
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name =  HNN_paternal_autocrat_party_long
-				name =  HNN_paternal_autocrat_party
-			}
-			set_party_name = { 
-				ideology = social_democrat 
-				name = HNN_ncera 
-				long_name = HNN_ncera_long 
-			}
-			set_party_name = { 
-				ideology = radical_socialist 
-				name = HNN_radical_socialist_eight
-				long_name = HNN_radical_socialist_eight_long 
-			}
-			HNN_tang_xiangming = {
-				add_country_leader_role = {
-					country_leader = {
-						desc = POLITICS_HNN_tang_xiangming_DESC
-						ideology = authdem_lianshengism_subtype
-					}
-					promote_leader = yes
-				}
-			}
-			remove_ideas = {
-				HNN_a_democratic_province_2
-				HNN_a_democratic_province_3
-				HNN_peasant_support_weak
-				HNN_peasant_support_growing
-				HNN_peasant_support_strong
-				HNN_bolstered_intellectual_hub
-				HNN_basic_welfare
-				HNN_robust_academic_infrastructure
-				HNN_rights_guaranteed
-				HNN_peace_with_the_unions
-				HNN_legislative_debates
-				HNN_bill_of_rights
-				HNN_democratic_traditions
-				HNN_diarchy_influence_curbbed
-				HNN_democratic_stronghold
-			}
-			country_event = hnnzhili.2
-			if = {
-				limit = { 
-					CHI = {
-						exists = yes
-					}
-				}
-				CHI = {
-					country_event = hnnwar.4
-				}
-			}
-			if = {
-				limit = {
-					is_subject = yes
-					has_global_flag = QIE_manchu_restoration 
-				}
-				overlord = { 
-					country_event = hnnwar.5 
-				}
-			}
-			else = {
-				GXC = { country_event = { id = hnnwar.6 hours = 6 } }
-				SZC = { country_event = { id = hnnwar.6 hours = 6 } }
-			}
-			if = {
-				limit = { 
-					NOT = { 
-						has_global_flag = QIE_manchu_restoration 
-					} 
-				}
-				QIE = { country_event = { id = qiefor.113 days = 3 } }
-			}
-			else_if = {
-				limit = { 
-					SZC = { 
-						has_government = authoritarian_democrat
-					} 
-				}
-				SZC = { 
-					country_event = { 
-						id = qiefor.113 
-						days = 3 
-					} 
-				}
-			}
-		}
-	}
-	option = { #国民党胜利
-		log = "[GetLogInfo]: event hnnzhili.1 option hnnzhili.1.b"
-		name = hnnzhili.1.b
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_TANG
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_SDW
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_GJY
-					}
-				}
-			}
-		}
-		custom_effect_tooltip = HNN_tang_loses_tt
-		hidden_effect = {
-			country_event = hnnzhili.3
-			HNN_tang_xiangming = {
-				demote_to_general = yes
-			}
-			retire_character = HNN_tang_xiangming
-			retire_character = HNN_ye_kaixin
-			retire_character = HNN_zhao_hengti
-			if = {
-				limit = { has_character = SQI_lu_jin }
-				retire_character = SQI_lu_jin
-			}
-			if = {
-				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-				QIE = { country_event = { id = qiefor.141 days = 3 } }
-			}
-			else_if = {
-				limit = { SZC = { is_ruled_by_pro_zhili = yes } }
-				random_unit_leader = {
-					limit = { is_character = HNN_tang_xiangming }
-					set_nationality = SZC
-					unit_leader_event = qieflavor.14
-				}
-				if = {
-					limit = { has_character = SQI_lu_jin }
-					random_unit_leader = {
-						limit = { is_character = SQI_lu_jin }
-						set_nationality = SZC
-						unit_leader_event = qieflavor.14
-					}
-				}
-			}
-		}
-	}
-}
-country_event = {#长沙城的老主人
-	id = hnnzhili.2
-	title = hnnzhili.2.t
-	desc = hnnzhili.2.d
-
-	picture = GFX_report_event_HNN_admiral_tang_solo
-	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			set_country_flag = HNN_political_stability
-			swap_ideas = {
-				remove_idea = HNN_the_western_diarchy
-				add_idea = HNN_the_western_diarchy_2
-			}
-		}
-	}
-
-	option = { # Now to take the rest
-		log = "[GetLogInfo]: event hnnzhili.2 option hnnzhili.2.a"
-		name = hnnzhili.2.a
-		complete_national_focus = HNN_all_under_the_governor
-		remove_ideas = HNN_a_democratic_province
-		add_timed_idea = {
-			idea = HNN_constitutional_hopes_dashed
-			days = 365
-		}
-		hidden_effect = {
-			diplomatic_relation = {
-				country = GXC
-				relation = non_aggression_pact
-				active = no
-			}
-			country_event = { id = hnnzhili.4 days = 3 }
-		}
-	}
-}
-country_event = {#汤芗铭输了
-	id = hnnzhili.3
-	title = hnnzhili.3.t
-	desc = hnnzhili.3.d
-	picture = GFX_report_event_HNN_song_xilian_planning
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			set_country_flag = HNN_political_stability
-		}
-	}
-
-	option = {
-		log = "[GetLogInfo]: event hnnzhili.3 option hnnzhili.3.a"
-		name = hnnzhili.3.a
-		show_unit_leaders_tooltip = HNN_li_pinxian
-		show_unit_leaders_tooltip = HNN_yang_jie
-		show_unit_leaders_tooltip = HNN_tang_shengzhi
-		show_unit_leaders_tooltip = HNN_song_xilian
-		show_unit_leaders_tooltip = HNN_Zhang_Zhen
-		show_unit_leaders_tooltip = HNN_Wen_Chao_Ji
-		show_unit_leaders_tooltip = HNN_cheng_qian
-		show_unit_leaders_tooltip = HNN_peng_dehuai
-		show_unit_leaders_tooltip = HNN_he_long
-		HNN_Tan_Yan_Kai = {
-			add_corps_commander_role = {
-				desc = POLITICS_HNN_Tan_Yan_Kai_ARMY_DESC
-				traits = { 
-					infantry_officer 
-					career_officer 
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-		}
-		hidden_effect = {
-			country_event = { id = hunbao.14 }
-			HNN_he_long = { HNN_recruit_characters_effect = yes }
-			HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
-			HNN_yang_jie = { HNN_recruit_characters_effect = yes }
-			HNN_tang_shengzhi = { HNN_recruit_characters_effect = yes }
-			HNN_cheng_qian = { HNN_recruit_characters_effect = yes }
-			HNN_song_xilian = { HNN_recruit_characters_effect = yes }
-			HNN_Zhang_Zhen = { HNN_recruit_characters_effect = yes }
-			HNN_Wen_Chao_Ji = { HNN_recruit_characters_effect = yes }
-			HNN_li_pinxian = { HNN_recruit_characters_effect = yes }
-			promote_character = {
-				character = HNN_tang_shengzhi
-				ideology = socdem_agrarianism_subtype
-			}
-			promote_character = {
-				character = HNN_cheng_qian
-				ideology = authdem_tridemism_subtype
-			}
-		}
-	}
-}
-country_event = {#湖南恢复秩序
-	id = hnnzhili.4
-	title = hnnzhili.4.t
-	desc = hnnzhili.4.d
-
-	picture = GFX_report_event_HNN_admiral_tang
-	is_triggered_only = yes
-
-	option = { # All under the Governor
-		log = "[GetLogInfo]: event hnnzhili.4 option hnnzhili.4.a"
-		name = hnnzhili.4.a
-		add_ideas = HNN_lingering_kmt_insurgents
-		swap_ideas = {
-			remove_idea = HNN_intellectual_hub
-			add_idea = HNN_turbulent_intelligentsia
-		}
-		hidden_effect = { 
-			country_event = { 
-				id = hnnzhili.5 
-				days = 3 
-			} 
-		}
-	}
-}
-country_event = {#确保黔东
-	id = hnnzhili.5
-	title = hnnzhili.5.t
-	desc = hnnzhili.5.d
-	picture = GFX_report_event_HNN_old_guizhou_clique
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = { # It's good that he can see reason
-		log = "[GetLogInfo]: event hnnzhili.5 option hnnzhili.5.a"
-		name = hnnzhili.5.a
-		add_popularity = { 
-			ideology = national_populist 
-			popularity = 0.02 
-		}
-		custom_effect_tooltip = tooltip_white_line
-		complete_national_focus = HNN_strongarm_the_assembly
-	}
-}
-country_event = {#防务专署
-	id = hnnzhili.6
-	title = hnnzhili.6.t
-	desc = hnnzhili.6.d
-	picture = GFX_report_event_HNN_tang_xiangming_young
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = { # For a safe and secure society
-		log = "[GetLogInfo]: event hnnzhili.6 option hnnzhili.6.a"
-		name = hnnzhili.6.a
-	}
-}
-country_event = {#围剿国民党
-	id = hnnzhili.7
-	title = hnnzhili.7.t
-	desc = hnnzhili.7.d
-
-	picture = GFX_report_event_CHI_warlord_battle
-	is_triggered_only = yes
-
-	option = { # Let's hope they stay down this time
-		log = "[GetLogInfo]: event hnnzhili.7 option hnnzhili.7.a"
-		name = hnnzhili.7.a
-		set_party_name = { 
-			ideology = authoritarian_democrat 
-			name = HNN_harmony_association 
-			long_name = HNN_harmony_association_long 
-		}
-	}
-}
-country_event = {#为海岸的豪赌
-	id = hnnzhili.8
-	title = hnnzhili.8.t
-	desc = hnnzhili.8.d
-	picture = GFX_report_event_QIE_soldiers_planning
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { # Send the Petition
-		log = "[GetLogInfo]: event hnnzhili.8 option hnnzhili.8.a"
-		name = hnnzhili.8.a
-		save_event_target_as = HNN_attack_GXC
-		if = {
-			limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-			QIE = { country_event = { id = hnnzhili.9 days = 3 } }
-		}
-		else_if = {
-			limit = { SZC = { has_government = authoritarian_democrat  } }
-			SZC = { country_event = { id = hnnzhili.9 days = 3 } }
-		}
-	}
-}
-country_event = {#长沙呈来请愿
-	id = hnnzhili.9
-	title = hnnzhili.9.t
-	desc = hnnzhili.9.d
-	picture = GFX_report_event_QIE_warlord_soldiers
-
-	is_triggered_only = yes
-
-	option = { # Accept the Petition
-		log = "[GetLogInfo]: event hnnzhili.9 option hnnzhili.9.a"
-		name = hnnzhili.9.a
-		if = {
-			limit = {
-				has_event_target = HNN_attack_GXC
-			}
-			GXC = { HNN_political_council_claim_effect = yes }
-		}
-		else_if = {
-			limit = {
-				has_event_target = HNN_attack_SZC
-			}
-			SZC = { HNN_political_council_claim_effect = yes }
-		}
-		else_if = {
-			limit = {
-				has_event_target = HNN_attack_YUN
-			}
-			SZC = { HNN_political_council_claim_effect = yes }
-		}
-		HNN = { country_event = { id = hnnzhili.10 days = 3 } }
-	}
-
-	option = { # Reject the Petition
-		log = "[GetLogInfo]: event hnnzhili.9 option hnnzhili.9.b"
-		name = hnnzhili.9.b
-		ai_chance = {
-			modifier = {
-				factor = 0
-				HNN = { is_ai = no }
-			}
-		}
-		HNN = { country_event = { id = hnnzhili.11 days = 4 } }
-	}
-}
-country_event = {#请愿得到批准！
-	id = hnnzhili.10
-	title = hnnzhili.10.t
-	desc = hnnzhili.10.d
-
-	picture = GFX_report_event_QIE_soldiers_planning
-	is_triggered_only = yes
-
-	option = { # We March South at Once!
-		log = "[GetLogInfo]: event hnnzhili.10 option hnnzhili.10.a"
-		name = hnnzhili.10.a
-		if = {
-			limit = {
-				has_event_target = HNN_attack_GXC
-			}
-			declare_war_on = { target = GXC type = annex_everything }
-			if = {
-				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-				QIE = { declare_war_on = { target = GXC type = annex_everything } }
-			}
-			else_if = {
-				limit = { SZC = { SZC_zhili_in_exile = yes } }
-				SZC = { declare_war_on = { target = GXC type = annex_everything } }
-			}
-		}
-		else_if = {
-			limit = { has_event_target = HNN_attack_SZC }
-			declare_war_on = { target = SZC type = annex_everything }
-			QIE = { declare_war_on = { target = SZC type = annex_everything } }
-		}
-		else = {
-			declare_war_on = { target = YUN type = annex_everything }
-			if = {
-				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
-				QIE = { declare_war_on = { target = YUN type = annex_everything } }
-			}
-			else_if = {
-				limit = { SZC = { SZC_zhili_in_exile = yes } }
-				SZC = { declare_war_on = { target = YUN type = annex_everything } }
-			}
-		}
-	}
-}
-country_event = {#请愿遭到驳回！
-	id = hnnzhili.11
-	title = hnnzhili.11.t
-	desc = hnnzhili.11.d
-
-	picture = GFX_report_event_QIE_warlord_soldiers
-	is_triggered_only = yes
-
-	option = { #Disappointing, but we must accept it
-		log = "[GetLogInfo]: event hnnzhili.11 option hnnzhili.11.a"
-		name = hnnzhili.11.a
-		add_timed_idea = {
-			idea = HNN_consolidating_power
-			days = 100
-		}
-	}
-}
-country_event = {#贵州的朋友
-	id = hnnzhili.12
-	title = hnnzhili.12.t
-	desc = hnnzhili.12.d
-	picture = GFX_report_event_HNN_yuan_zuming_figure
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { # To a long and fruitful partnership!
-		log = "[GetLogInfo]: event hnnzhili.12 option hnnzhili.12.a"
-		name = hnnzhili.12.a
-		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
-		add_popularity = { ideology = national_populist popularity = 0.05 }
-		603 = { add_core_of = HNN }
-		1051 = { add_core_of = HNN }
-	}
-}
-country_event = {#联省分子逃离
-	id = hnnzhili.13
-	title = hnnzhili.13.t
-	desc = hnnzhili.13.d
-	picture = GFX_report_event_CHI_riot_police
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { # We have no room for traitors
-		log = "[GetLogInfo]: event hnnzhili.13 option hnnzhili.13.a"
-		name = hnnzhili.13.a
-		add_popularity = {
-			ideology = authoritarian_democrat
-			popularity = 0.10
-		}
-	}
-}
-country_event = {#铁蹄
-	id = hnnzhili.14
-	title = hnnzhili.14.t
-	desc = hnnzhili.14.d
-	picture = GFX_report_event_FNG_prisoner
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { # Traitors and Cowards
-		log = "[GetLogInfo]: event hnnzhili.14 option hnnzhili.14.a"
-		name = hnnzhili.14.a
-		set_party_name = {
-			ideology = totalist
-			long_name = SHC_totalist_party_PLE_long
-			name = SHC_totalist_party_PLE
-		}
-		set_party_name = {
-			ideology = syndicalist
-			long_name = SHC_syndicalist_party_PLE_long
-			name = SHC_syndicalist_party_PLE
-		}
-	}
-}
-country_event = {#新的选举？
-	id = hnnzhili.15
-	title = hnnzhili.15.t
-	desc = hnnzhili.15.d
-
-	picture = GFX_report_event_HNN_tang_xiangming_civilian
-	is_triggered_only = yes
-
-	option = { # New elections for a new age.
-		log = "[GetLogInfo]: event hnnzhili.15 option hnnzhili.15.a"
-		name = hnnzhili.15.a
-	}
-}
-country_event = {#湖南的总司令
-	id = hnnzhili.16
-	title = hnnzhili.16.t
-	desc = hnnzhili.16.d
-
-	picture = GFX_report_event_HNN_admiral_tang_regal
-	is_triggered_only = yes
-
-	option = { # The Commander-in-Chief brings order, not freedom.
-		log = "[GetLogInfo]: event hnnzhili.16 option hnnzhili.16.a"
-		name = hnnzhili.16.a
-	}
-}
-country_event = {#开办农务学堂
-	id = hnnzhili.17
-	title = hnnzhili.17.t
-	desc = hnnzhili.17.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event hnnzhili.17 option hnnzhili.17.a"
-		name = hnnzhili.17.a
-		add_stability = 0.01
-		if = {
-			limit = {
-				has_active_mission = HNN_agricultural_reform_mission_timer
-			}
-			add_days_mission_timeout = {
-				mission = HNN_agricultural_reform_mission_timer
-				days = -20
-			}
-		}
-	}
-}
-country_event = { #Hidden event to move remnants
-	id = hnnzhili.18
-	hidden = yes
-
-	trigger = {
-		has_country_leader = { 
-			name = "汤芗铭" ruling_only = yes 
-		} 
-		XXA = { any_character = { has_character_flag = QIE_zhili_leader } }
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		log = "[GetLogInfo]: event hnnzhili.18 option 1"
-		XXA = {
-			random_character = {
-				limit = { has_trait = QIE_Zhili_officer }
-				set_nationality = HNN
-			}
-		}
-		country_event = { id = hnnzhili.18 days = 20 random_hours = 480 }
-	}
-}
-
-########################################
 ##########-     国民党入侵   -##########
 ########################################
 country_event = {#唐生智返回
@@ -3201,11 +2363,13 @@ country_event = {#汤芗铭的胜利
 	option = {
 		name = hnnwar.4.a
 		HNN = {
-			HNN_cheng_qian = { set_nationality = ROOT }
 			HNN_tang_shengzhi = { set_nationality = ROOT }
+			HNN_he_long = { set_nationality = ROOT }
+			HNN_tao_guang = { set_nationality = ROOT }
 			HNN_li_pinxian = { set_nationality = ROOT }
-			HNN_song_xilian = { set_nationality = ROOT }
-			HNN_yang_jie = { set_nationality = ROOT }
+			HNN_peng_dehuai = { set_nationality = ROOT }
+			HNN_gong_hao = { set_nationality = ROOT }
+			HNN_liu_xing = { set_nationality = ROOT }
 		}
 	}
 }
@@ -3967,6 +3131,850 @@ country_event = {#省宪日
 		log = "[GetLogInfo]: event hnntanyankai.9 option hnntanyankai.9.a"
 		name = hnntanyankai.9.a
 		add_political_power = 5
+	}
+}
+
+########################################
+##########-     陈渠珍   -##############
+########################################
+country_event = {#《艽野尘梦》再版
+	id = hunxiangxi.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.1" }
+	title = hunxiangxi.1.t
+	desc = hunxiangxi.1.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.1.a
+		add_political_power = 10 
+	}
+}
+country_event = {#湖南的局势-大清
+	id = hunxiangxi.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.2" }
+	title = hunxiangxi.2.t
+	desc = hunxiangxi.2.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.2.a
+		add_political_power = -5 
+	}
+}
+country_event = {#湖南的局势-四川
+	id = hunxiangxi.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.3" }
+	title = hunxiangxi.3.t
+	desc = hunxiangxi.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.3.a
+		add_stability = -0.01 
+	}
+}
+country_event = {#湖南的新政策
+	id = hunxiangxi.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.4" }
+	title = hunxiangxi.4.t
+	desc = hunxiangxi.4.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.4.a
+		add_war_support = -0.01	 
+	}
+}
+country_event = {#重塑军纪
+	id = hunxiangxi.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.5" }
+	title = hunxiangxi.5.t
+	desc = hunxiangxi.5.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.5.a
+		add_stability = 0.01 
+	}
+}
+country_event = {#湖南大学的新校长
+	id = hunxiangxi.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.6" }
+	title = hunxiangxi.6.t
+	desc = hunxiangxi.6.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.6.a
+		add_stability = 0.01 
+	}
+}
+country_event = {#不合作，就关闭
+	id = hunxiangxi.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.7" }
+	title = hunxiangxi.7.t
+	desc = hunxiangxi.7.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.7.a
+		add_ideas = HNN_fu_cong_de_fo_jiao 
+	}
+
+	option = {
+		name = hunxiangxi.7.b
+		add_manpower = -20
+		add_ideas = HNN_yi_tong_de_fo_jiao 
+	}	
+}
+country_event = {#消除工团党影响
+	id = hunxiangxi.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.8" }
+	title = hunxiangxi.8.t
+	desc = hunxiangxi.8.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.8.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
+		}
+		hidden_effect = {
+			country_event = { 
+				id = hunxiangxi.9
+				days = 40
+			}
+		}
+	}
+}
+country_event = {#长沙支部被捣毁
+	id = hunxiangxi.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.9" }
+	title = hunxiangxi.9.t
+	desc = hunxiangxi.9.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.9.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.01
+		} 
+	}
+}
+country_event = {#取缔一切秘密结社
+	id = hunxiangxi.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.10" }
+	title = hunxiangxi.10.t
+	desc = hunxiangxi.10.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.10.a
+		add_stability = 0.01 
+	}
+}
+country_event = {#鸦片税
+	id = hunxiangxi.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.11" }
+	title = hunxiangxi.11.t
+	desc = hunxiangxi.11.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.11.a
+		add_political_power = 20
+		add_stability = -0.01 
+	}
+}
+country_event = {#清剿山贼
+	id = hunxiangxi.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.12" }
+	title = hunxiangxi.12.t
+	desc = hunxiangxi.12.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.12.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.01
+		} 
+	}
+}
+country_event = {#社会救助
+	id = hunxiangxi.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunxiangxi.13" }
+	title = hunxiangxi.13.t
+	desc = hunxiangxi.13.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hunxiangxi.13.a
+		add_stability = 0.01
+	}
+}
+
+########################################
+##########-     汤芗铭   -##############
+########################################
+country_event = {#大战
+	id = hnnzhili.1
+	title = hnnzhili.1.t
+	desc = hnnzhili.1.d
+	picture = GFX_report_event_HNN_new_army_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #汤芗铭胜利
+		log = "[GetLogInfo]: event hnnzhili.1 option hnnzhili.1.a"
+		name = hnnzhili.1.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_TSZ
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_ZJP
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_CQ
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_HJ
+					}
+				}
+			}
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.10
+		}
+		hidden_effect = {
+			retire_character = HNN_ye_kaixin
+			retire_character = HNN_zhao_hengti
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name =  HNN_paternal_autocrat_party_long
+				name =  HNN_paternal_autocrat_party
+			}
+			set_party_name = { 
+				ideology = social_democrat 
+				name = HNN_ncera 
+				long_name = HNN_ncera_long 
+			}
+			set_party_name = { 
+				ideology = radical_socialist 
+				name = HNN_radical_socialist_eight
+				long_name = HNN_radical_socialist_eight_long 
+			}
+			HNN_tang_xiangming = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_HNN_tang_xiangming_DESC
+						ideology = authdem_lianshengism_subtype
+					}
+					promote_leader = yes
+				}
+			}
+			remove_ideas = {
+				HNN_a_democratic_province_2
+				HNN_a_democratic_province_3
+				HNN_peasant_support_weak
+				HNN_peasant_support_growing
+				HNN_peasant_support_strong
+				HNN_bolstered_intellectual_hub
+				HNN_basic_welfare
+				HNN_robust_academic_infrastructure
+				HNN_rights_guaranteed
+				HNN_peace_with_the_unions
+				HNN_legislative_debates
+				HNN_bill_of_rights
+				HNN_democratic_traditions
+				HNN_diarchy_influence_curbbed
+				HNN_democratic_stronghold
+			}
+			country_event = hnnzhili.2
+			if = {#CHI的反应
+				limit = { 
+					CHI = {
+						exists = yes
+					}
+				}
+				CHI = {
+					country_event = hnnwar.4
+				}
+			}
+			if = {#宣统维新QIE的反应
+				limit = {
+					is_subject = yes
+					has_global_flag = QIE_manchu_restoration 
+				}
+				overlord = { 
+					country_event = hnnwar.5 
+				}
+			}
+			else = {
+				GXC = { country_event = { id = hnnwar.6 hours = 6 } }
+				SZC = { country_event = { id = hnnwar.6 hours = 6 } }
+			}
+			if = {#直系QIE的反应
+				limit = { 
+					NOT = { 
+						has_global_flag = QIE_manchu_restoration 
+					} 
+				}
+				QIE = { country_event = { id = qiefor.113 days = 3 } }
+			}
+			else_if = {
+				limit = { 
+					SZC = { 
+						has_government = authoritarian_democrat
+					} 
+				}
+				SZC = { 
+					country_event = { 
+						id = qiefor.113 
+						days = 3 
+					} 
+				}
+			}
+			YUN = {
+				country_event = { 
+					id = hunbao.27 
+					days = 2 
+				}
+			}
+		}
+	}
+	option = { #国民党胜利
+		log = "[GetLogInfo]: event hnnzhili.1 option hnnzhili.1.b"
+		name = hnnzhili.1.b
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_TANG
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_SDW
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_GJY
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = HNN_tang_loses_tt
+		hidden_effect = {
+			country_event = hnnzhili.3
+			HNN_tang_xiangming = {
+				demote_to_general = yes
+			}
+			retire_character = HNN_tang_xiangming
+			retire_character = HNN_ye_kaixin
+			retire_character = HNN_zhao_hengti
+			if = {
+				limit = { has_character = SQI_lu_jin }
+				retire_character = SQI_lu_jin
+			}
+			if = {
+				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+				QIE = { country_event = { id = qiefor.141 days = 3 } }
+			}
+			else_if = {
+				limit = { SZC = { is_ruled_by_pro_zhili = yes } }
+				random_unit_leader = {
+					limit = { is_character = HNN_tang_xiangming }
+					set_nationality = SZC
+					unit_leader_event = qieflavor.14
+				}
+				if = {
+					limit = { has_character = SQI_lu_jin }
+					random_unit_leader = {
+						limit = { is_character = SQI_lu_jin }
+						set_nationality = SZC
+						unit_leader_event = qieflavor.14
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {#长沙城的老主人
+	id = hnnzhili.2
+	title = hnnzhili.2.t
+	desc = hnnzhili.2.d
+
+	picture = GFX_report_event_HNN_admiral_tang_solo
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = HNN_political_stability
+			swap_ideas = {
+				remove_idea = HNN_the_western_diarchy
+				add_idea = HNN_the_western_diarchy_2
+			}
+		}
+	}
+
+	option = { # Now to take the rest
+		log = "[GetLogInfo]: event hnnzhili.2 option hnnzhili.2.a"
+		name = hnnzhili.2.a
+		complete_national_focus = HNN_all_under_the_governor
+		remove_ideas = HNN_a_democratic_province
+		add_timed_idea = {
+			idea = HNN_constitutional_hopes_dashed
+			days = 365
+		}
+		hidden_effect = {
+			diplomatic_relation = {
+				country = GXC
+				relation = non_aggression_pact
+				active = no
+			}
+			country_event = { id = hnnzhili.4 days = 3 }
+		}
+	}
+}
+country_event = {#汤芗铭输了
+	id = hnnzhili.3
+	title = hnnzhili.3.t
+	desc = hnnzhili.3.d
+	picture = GFX_report_event_HNN_song_xilian_planning
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = HNN_political_stability
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event hnnzhili.3 option hnnzhili.3.a"
+		name = hnnzhili.3.a
+		show_unit_leaders_tooltip = HNN_li_pinxian
+		show_unit_leaders_tooltip = HNN_yang_jie
+		show_unit_leaders_tooltip = HNN_tang_shengzhi
+		show_unit_leaders_tooltip = HNN_song_xilian
+		show_unit_leaders_tooltip = HNN_Zhang_Zhen
+		show_unit_leaders_tooltip = HNN_Wen_Chao_Ji
+		show_unit_leaders_tooltip = HNN_cheng_qian
+		show_unit_leaders_tooltip = HNN_peng_dehuai
+		show_unit_leaders_tooltip = HNN_he_long
+		HNN_Tan_Yan_Kai = {
+			add_corps_commander_role = {
+				desc = POLITICS_HNN_Tan_Yan_Kai_ARMY_DESC
+				traits = { 
+					infantry_officer 
+					career_officer 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		hidden_effect = {
+			country_event = { id = hunbao.14 }
+			HNN_he_long = { HNN_recruit_characters_effect = yes }
+			HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
+			HNN_yang_jie = { HNN_recruit_characters_effect = yes }
+			HNN_tang_shengzhi = { HNN_recruit_characters_effect = yes }
+			HNN_cheng_qian = { HNN_recruit_characters_effect = yes }
+			HNN_song_xilian = { HNN_recruit_characters_effect = yes }
+			HNN_Zhang_Zhen = { HNN_recruit_characters_effect = yes }
+			HNN_Wen_Chao_Ji = { HNN_recruit_characters_effect = yes }
+			HNN_li_pinxian = { HNN_recruit_characters_effect = yes }
+			promote_character = {
+				character = HNN_tang_shengzhi
+				ideology = socdem_agrarianism_subtype
+			}
+			promote_character = {
+				character = HNN_cheng_qian
+				ideology = authdem_tridemism_subtype
+			}
+		}
+	}
+}
+country_event = {#湖南恢复秩序
+	id = hnnzhili.4
+	title = hnnzhili.4.t
+	desc = hnnzhili.4.d
+
+	picture = GFX_report_event_HNN_admiral_tang
+	is_triggered_only = yes
+
+	option = { # All under the Governor
+		log = "[GetLogInfo]: event hnnzhili.4 option hnnzhili.4.a"
+		name = hnnzhili.4.a
+		add_ideas = HNN_lingering_kmt_insurgents
+		swap_ideas = {
+			remove_idea = HNN_intellectual_hub
+			add_idea = HNN_turbulent_intelligentsia
+		}
+		hidden_effect = { 
+			country_event = { 
+				id = hnnzhili.5 
+				days = 3 
+			} 
+		}
+	}
+}
+country_event = {#确保黔东
+	id = hnnzhili.5
+	title = hnnzhili.5.t
+	desc = hnnzhili.5.d
+	picture = GFX_report_event_HNN_old_guizhou_clique
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # It's good that he can see reason
+		log = "[GetLogInfo]: event hnnzhili.5 option hnnzhili.5.a"
+		name = hnnzhili.5.a
+		add_popularity = { 
+			ideology = national_populist 
+			popularity = 0.02 
+		}
+		custom_effect_tooltip = tooltip_white_line
+		complete_national_focus = HNN_strongarm_the_assembly
+	}
+}
+country_event = {#防务专署
+	id = hnnzhili.6
+	title = hnnzhili.6.t
+	desc = hnnzhili.6.d
+	picture = GFX_report_event_HNN_tang_xiangming_young
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # For a safe and secure society
+		log = "[GetLogInfo]: event hnnzhili.6 option hnnzhili.6.a"
+		name = hnnzhili.6.a
+	}
+}
+country_event = {#围剿国民党
+	id = hnnzhili.7
+	title = hnnzhili.7.t
+	desc = hnnzhili.7.d
+
+	picture = GFX_report_event_CHI_warlord_battle
+	is_triggered_only = yes
+
+	option = { # Let's hope they stay down this time
+		log = "[GetLogInfo]: event hnnzhili.7 option hnnzhili.7.a"
+		name = hnnzhili.7.a
+		set_party_name = { 
+			ideology = authoritarian_democrat 
+			name = HNN_harmony_association 
+			long_name = HNN_harmony_association_long 
+		}
+	}
+}
+country_event = {#为海岸的豪赌
+	id = hnnzhili.8
+	title = hnnzhili.8.t
+	desc = hnnzhili.8.d
+	picture = GFX_report_event_QIE_soldiers_planning
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # Send the Petition
+		log = "[GetLogInfo]: event hnnzhili.8 option hnnzhili.8.a"
+		name = hnnzhili.8.a
+		save_event_target_as = HNN_attack_GXC
+		if = {
+			limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+			QIE = { country_event = { id = hnnzhili.9 days = 3 } }
+		}
+		else_if = {
+			limit = { SZC = { has_government = authoritarian_democrat  } }
+			SZC = { country_event = { id = hnnzhili.9 days = 3 } }
+		}
+	}
+}
+country_event = {#长沙呈来请愿
+	id = hnnzhili.9
+	title = hnnzhili.9.t
+	desc = hnnzhili.9.d
+	picture = GFX_report_event_QIE_warlord_soldiers
+
+	is_triggered_only = yes
+
+	option = { # Accept the Petition
+		log = "[GetLogInfo]: event hnnzhili.9 option hnnzhili.9.a"
+		name = hnnzhili.9.a
+		if = {
+			limit = {
+				has_event_target = HNN_attack_GXC
+			}
+			GXC = { HNN_political_council_claim_effect = yes }
+		}
+		else_if = {
+			limit = {
+				has_event_target = HNN_attack_SZC
+			}
+			SZC = { HNN_political_council_claim_effect = yes }
+		}
+		else_if = {
+			limit = {
+				has_event_target = HNN_attack_YUN
+			}
+			SZC = { HNN_political_council_claim_effect = yes }
+		}
+		HNN = { country_event = { id = hnnzhili.10 days = 3 } }
+	}
+
+	option = { # Reject the Petition
+		log = "[GetLogInfo]: event hnnzhili.9 option hnnzhili.9.b"
+		name = hnnzhili.9.b
+		ai_chance = {
+			modifier = {
+				factor = 0
+				HNN = { is_ai = no }
+			}
+		}
+		HNN = { country_event = { id = hnnzhili.11 days = 4 } }
+	}
+}
+country_event = {#请愿得到批准！
+	id = hnnzhili.10
+	title = hnnzhili.10.t
+	desc = hnnzhili.10.d
+
+	picture = GFX_report_event_QIE_soldiers_planning
+	is_triggered_only = yes
+
+	option = { # We March South at Once!
+		log = "[GetLogInfo]: event hnnzhili.10 option hnnzhili.10.a"
+		name = hnnzhili.10.a
+		if = {
+			limit = {
+				has_event_target = HNN_attack_GXC
+			}
+			declare_war_on = { target = GXC type = annex_everything }
+			if = {
+				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+				QIE = { declare_war_on = { target = GXC type = annex_everything } }
+			}
+			else_if = {
+				limit = { SZC = { SZC_zhili_in_exile = yes } }
+				SZC = { declare_war_on = { target = GXC type = annex_everything } }
+			}
+		}
+		else_if = {
+			limit = { has_event_target = HNN_attack_SZC }
+			declare_war_on = { target = SZC type = annex_everything }
+			QIE = { declare_war_on = { target = SZC type = annex_everything } }
+		}
+		else = {
+			declare_war_on = { target = YUN type = annex_everything }
+			if = {
+				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+				QIE = { declare_war_on = { target = YUN type = annex_everything } }
+			}
+			else_if = {
+				limit = { SZC = { SZC_zhili_in_exile = yes } }
+				SZC = { declare_war_on = { target = YUN type = annex_everything } }
+			}
+		}
+	}
+}
+country_event = {#请愿遭到驳回！
+	id = hnnzhili.11
+	title = hnnzhili.11.t
+	desc = hnnzhili.11.d
+
+	picture = GFX_report_event_QIE_warlord_soldiers
+	is_triggered_only = yes
+
+	option = { #Disappointing, but we must accept it
+		log = "[GetLogInfo]: event hnnzhili.11 option hnnzhili.11.a"
+		name = hnnzhili.11.a
+		add_timed_idea = {
+			idea = HNN_consolidating_power
+			days = 100
+		}
+	}
+}
+country_event = {#贵州的朋友
+	id = hnnzhili.12
+	title = hnnzhili.12.t
+	desc = hnnzhili.12.d
+	picture = GFX_report_event_HNN_yuan_zuming_figure
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # To a long and fruitful partnership!
+		log = "[GetLogInfo]: event hnnzhili.12 option hnnzhili.12.a"
+		name = hnnzhili.12.a
+		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+		add_popularity = { ideology = national_populist popularity = 0.05 }
+		603 = { add_core_of = HNN }
+		1051 = { add_core_of = HNN }
+	}
+}
+country_event = {#联省分子逃离
+	id = hnnzhili.13
+	title = hnnzhili.13.t
+	desc = hnnzhili.13.d
+	picture = GFX_report_event_CHI_riot_police
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # We have no room for traitors
+		log = "[GetLogInfo]: event hnnzhili.13 option hnnzhili.13.a"
+		name = hnnzhili.13.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.10
+		}
+	}
+}
+country_event = {#铁蹄
+	id = hnnzhili.14
+	title = hnnzhili.14.t
+	desc = hnnzhili.14.d
+	picture = GFX_report_event_FNG_prisoner
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # Traitors and Cowards
+		log = "[GetLogInfo]: event hnnzhili.14 option hnnzhili.14.a"
+		name = hnnzhili.14.a
+		set_party_name = {
+			ideology = totalist
+			long_name = SHC_totalist_party_PLE_long
+			name = SHC_totalist_party_PLE
+		}
+		set_party_name = {
+			ideology = syndicalist
+			long_name = SHC_syndicalist_party_PLE_long
+			name = SHC_syndicalist_party_PLE
+		}
+	}
+}
+country_event = {#新的选举？
+	id = hnnzhili.15
+	title = hnnzhili.15.t
+	desc = hnnzhili.15.d
+
+	picture = GFX_report_event_HNN_tang_xiangming_civilian
+	is_triggered_only = yes
+
+	option = { # New elections for a new age.
+		log = "[GetLogInfo]: event hnnzhili.15 option hnnzhili.15.a"
+		name = hnnzhili.15.a
+	}
+}
+country_event = {#湖南的总司令
+	id = hnnzhili.16
+	title = hnnzhili.16.t
+	desc = hnnzhili.16.d
+
+	picture = GFX_report_event_HNN_admiral_tang_regal
+	is_triggered_only = yes
+
+	option = { # The Commander-in-Chief brings order, not freedom.
+		log = "[GetLogInfo]: event hnnzhili.16 option hnnzhili.16.a"
+		name = hnnzhili.16.a
+	}
+}
+country_event = {#开办农务学堂
+	id = hnnzhili.17
+	title = hnnzhili.17.t
+	desc = hnnzhili.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event hnnzhili.17 option hnnzhili.17.a"
+		name = hnnzhili.17.a
+		add_stability = 0.01
+		if = {
+			limit = {
+				has_active_mission = HNN_agricultural_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = HNN_agricultural_reform_mission_timer
+				days = -20
+			}
+		}
+	}
+}
+country_event = { #Hidden event to move remnants
+	id = hnnzhili.18
+	hidden = yes
+
+	trigger = {
+		has_country_leader = { 
+			name = "汤芗铭" ruling_only = yes 
+		} 
+		XXA = { any_character = { has_character_flag = QIE_zhili_leader } }
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event hnnzhili.18 option 1"
+		XXA = {
+			random_character = {
+				limit = { has_trait = QIE_Zhili_officer }
+				set_nationality = HNN
+			}
+		}
+		country_event = { id = hnnzhili.18 days = 20 random_hours = 480 }
 	}
 }
 
@@ -5839,6 +5847,37 @@ country_event = {#国民革命的未来
 			expire = "1965.1.1"
 			ideology = socdem_tridemism_subtype
 		}
+	}
+}
+country_event = {#程潜逃回昆明
+	id = hunbao.27
+	title = hunbao.27.t
+	desc = hunbao.27.d
+
+	picture = GFX_report_event_HNN_cheng_he_bai
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event hunbao.27 option hunbao.27.a"
+		name = hunbao.27.a
+		add_political_power = -15
+		HNN = {
+			HNN_cheng_qian = {
+				remove_country_leader_role = { ideology = authdem_tridemism_subtype }
+				set_nationality = ROOT
+			}
+			HNN_liu_jianxu = { set_nationality = ROOT }
+			HNN_song_xilian = { set_nationality = ROOT }
+			HNN_yang_jie = { set_nationality = ROOT }
+			HNN_Wen_Chao_Ji = { set_nationality = ROOT }
+			HNN_Zhang_Zhen = { set_nationality = ROOT }
+			HNN_li_minghao = { set_nationality = ROOT }
+		}
+	}
+	option = {
+		log = "[GetLogInfo]: event hunbao.27 option hunbao.27.b"
+		name = hunbao.27.b
+		ai_chance = { base = 0 }
 	}
 }
 country_event = {#湖南的谈判申请
@@ -14071,7 +14110,6 @@ country_event = {###国民党左派革命失败
 							has_id = 2297  
 							has_id = 2299  
 							has_id = 2207  
-							has_id = 2202  
 							has_id = 2298 
 							has_id = 2295  
 							has_id = 2294  

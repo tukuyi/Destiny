@@ -128,7 +128,10 @@ ideas = {
 			picture = HNN_Chen_Yun_hog
 			cost = 150
 			available = {
-				has_country_leader = { name = "陈云" ruling_only = yes }
+				OR = {
+					has_government = radical_socialist
+					has_country_leader = { name = "陈云" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_character = HNN_Chen_Yun
@@ -151,7 +154,10 @@ ideas = {
 			picture = HNN_Zhou_En_Lai_for
 			cost = 150
 			available = {
-				has_country_leader = { name = "周恩来" ruling_only = yes }
+				OR = {
+					has_government = radical_socialist
+					has_country_leader = { name = "周恩来" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
@@ -197,7 +203,10 @@ ideas = {
 			picture = HNN_Gao_Gang_hog
 			cost = 150
 			available = {
-				has_country_leader = { name = "高岗" ruling_only = yes }
+				OR = {
+					has_government = syndicalist
+					has_country_leader = { name = "高岗" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
@@ -220,7 +229,10 @@ ideas = {
 			picture = HNN_Liu_Shaoqi_hog
 			cost = 150
 			available = {
-				has_country_leader = { name = "刘少奇" ruling_only = yes }
+				OR = {
+					has_government = syndicalist
+					has_country_leader = { name = "刘少奇" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
@@ -241,8 +253,13 @@ ideas = {
 		HNN_XI_Zhong_Xun_hog = {#习仲勋
 			allowed = { original_tag = HNN }
 			picture = HNN_XI_Zhong_Xun_hog
+			cost = 150
 			available = {
-				has_country_leader = { name = "习仲勋" ruling_only = yes }
+				OR = {
+					has_government = social_democrat
+					has_government = social_liberal
+					has_country_leader = { name = "习仲勋" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
@@ -250,7 +267,6 @@ ideas = {
 					has_completed_focus = HNN_su_fan_zhi_ye
 				}
 			}
-			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_XI_Zhong_Xun_hog"
 				
@@ -264,8 +280,13 @@ ideas = {
 		HNN_Hu_Yao_Bang_hog = {#胡耀邦
 			allowed = { original_tag = HNN }
 			picture = HNN_Hu_Yao_Bang_hog
+			cost = 150
 			available = {
-				has_country_leader = { name = "胡耀邦" ruling_only = yes }
+				OR = {
+					has_government = social_democrat
+					has_government = social_liberal
+					has_country_leader = { name = "胡耀邦" ruling_only = yes }
+				}
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
@@ -273,7 +294,6 @@ ideas = {
 					has_completed_focus = HNN_su_fan_zhi_ye
 				}
 			}
-			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Hu_Yao_Bang_hog"
 				
@@ -407,7 +427,7 @@ ideas = {
 		}
 		HNN_shi_tai_xu_hog = {#太虚
 			allowed = { original_tag = HNN }
-			picture = HNN_shi_ding_wu_hog
+			picture = HNN_shi_tai_xu_hog
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = head_of_gov_available
@@ -510,8 +530,8 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				paternal_autocrat
-				for_iron_fisted_brute
+				totalist
+				for_master_diplomat
 			}
 		}	
 		HNN_Zhou_En_Lai_for = {#周恩来
@@ -833,7 +853,7 @@ ideas = {
 		}
 		HNN_shi_tai_xu_sec = {#太虚
 			allowed = { original_tag = HNN }
-			picture = HNN_shi_ding_wu_hog
+			picture = HNN_shi_tai_xu_hog
 			cost = 100
 			available = {
 				NOT = {

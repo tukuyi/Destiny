@@ -8,12 +8,20 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SHX/Portrait_SHX_shang_zhen_army.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_SHX_shang_zhen_kuomintang"
+		texturefile = "gfx/leaders/SHX/Portrait_SHX_shang_zhen_kuomintang.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SHX_xu_yongchang"
 		texturefile = "gfx/leaders/SHX/Portrait_SHX_xu_yongchang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_SHX_fu_zuoyi_army"
 		texturefile = "gfx/leaders/SHX/Portrait_SHX_fu_zuoyi_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHX_fu_zuoyi_kuomintang"
+		texturefile = "gfx/leaders/SHX/Portrait_SHX_fu_zuoyi_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_SHX_wang_jingguo"

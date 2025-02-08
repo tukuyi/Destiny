@@ -7916,15 +7916,14 @@ country_event = { #The Kuomintang National Congress
 			modifier = {
 				factor = 2
 				OR = {
-					has_country_leader = { name = "冯玉祥" ruling_only = yes } #RCA more relevant in SHX
-					has_country_leader = { name = "吕超" ruling_only = yes } #Minor RCA ties
-					has_country_leader = { name = "唐生智" ruling_only = yes } #Minor RCA ties
+					has_country_leader = { character = SHX_feng_yuxiang } #RCA more relevant in SHX
+					has_country_leader = { character = SZC_lu_chao } #Minor RCA ties
 				}
 			}
 			modifier = {
 				factor = 3
 				OR = {
-					has_country_leader = { name = "朱德" ruling_only = yes } #Has ties with both Political Department and PAC
+					has_country_leader = { character = YUN_zhu_de } #Has ties with both Political Department and PAC
 				}
 			}
 			modifier = {
@@ -7954,9 +7953,10 @@ country_event = { #The Kuomintang National Congress
 			modifier = {
 				factor = 3
 				OR = {
-					has_country_leader = { name = "陈铭枢" ruling_only = yes } #Has ties with PAC
-					has_country_leader = { name = "朱德" ruling_only = yes  } #Has ties with both Political Department and PAC
-					has_country_leader = { name = "程潜" ruling_only = yes  } #Has ties with RF
+					has_country_leader = { character = GXC_chen_mingshu } #Has ties with PAC
+					has_country_leader = { character = YUN_zhu_de } #Has ties with both Political Department and PAC
+					has_country_leader = { character = HNN_cheng_qian } #Has ties with RCF
+					has_country_leader = { character = HNN_tang_shengzhi } #Ties with the PAC
 				}
 			}
 			modifier = {
@@ -13376,15 +13376,24 @@ country_event = {
 							OR = {
 								exists = no
 								tag = CHI
+								NOT = { has_character = GXC_li_zongren }
 							}
 						}
-						GXC = { CHI_recruit_li_zongren_effect = yes }
-						create_country_leader = {
-							name = "Li Zongren"
-							desc = "POLITICS_GXC_LI_ZONGREN_DESC"
-							picture = "gfx/leaders/YUN/Portrait_GXC_Li_Zongren_LKMT.png"
-							expire = "1.1.1"
-							ideology = pataut_warlordism_subtype
+						GXC_li_zongren = {
+							CHI_recruit_li_zongren_effect = yes
+							if = {
+								limit = { has_ideology = pataut_tridemism_subtype }
+								promote_character = pataut_tridemism_subtype
+							}
+							else = {
+								add_country_leader_role = {
+									country_leader = {
+										desc = "POLITICS_GXC_LI_ZONGREN_DESC" 
+										ideology = pataut_tridemism_subtype 
+									}
+									promote_leader = yes
+								}
+							}
 						}
 					}
 					if = {
@@ -13392,20 +13401,24 @@ country_event = {
 							OR = {
 								exists = no
 								tag = CHI
-								NOT = { has_unit_leader = 1147 } #Check to see if he's been retired
+								NOT = { has_character = SHX_feng_yuxiang } #Check to see if he's been retired
 							}
 						}
-						SHX = { 
-							random_unit_leader = { 
-								limit = { has_id = 1147 }
-								CHI_recruit_general_effect = yes
+						SHX_feng_yuxiang = {
+							CHI_recruit_general_effect = yes
+							if = {
+								limit = { has_ideology = national_populist_subtype }
+								promote_character = national_populist_subtype
 							}
-						}
-						create_country_leader = {
-							name = "冯玉祥"
-							picture = "gfx/leaders/SHX/Portrait_Shanxi_Feng_Yuxiang.png"
-							expire = "1.1.1"
-							ideology = national_populist_subtype
+							else = {
+								add_country_leader_role = {
+									country_leader = {
+										ideology = national_populist_subtype
+										traits = { CHN_southern_republican_aligned }
+									}
+									promote_leader = yes
+								}
+							}
 						}
 					}
 				}
@@ -15457,14 +15470,14 @@ country_event = { #Reactionaries in the Army
 
 					has_id = 2272
 
-					has_id = 1120
-					has_id = 5058
-					has_id = 5055
-					has_id = 5054
+					is_character = GXC_chen_mingshu
+					is_character = GXC_cai_tingkai
+					is_character = GXC_ye_jianying
+					is_character = GXC_liu_fei
 					
-					has_id = 5061
-					has_id = 5062
-					has_id = 5063
+					is_character = HNN_song_xilian
+					is_character = HNN_he_long
+					is_character = HNN_Teng_Daiyuan
 
 					is_character = SZC_lu_chao
 

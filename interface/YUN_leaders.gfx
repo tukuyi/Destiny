@@ -37,6 +37,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/YUN/Portrait_YUN_Ma_Ben_Zai.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_YUN_he_yingqin_kuomintang"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_he_yingqin_kuomintang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_YUN_zhu_peide_kuomintang"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_zhu_peide_kuomintang.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_YUN_Jiang"
 		texturefile = "gfx/leaders/YUN/Portrait_YUN_Jiang.png"
 	}

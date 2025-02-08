@@ -3975,14 +3975,11 @@ country_event = { #otl KMT larp - host the Conference
 			ideology = syndicalist_subtype
 		}
 		if = {
-			limit = { CHI = { has_unit_leader = 2202 } }
-			CHI = {
-				random_unit_leader = {
-					limit = { has_id = 2202 }
-					set_nationality = ROOT 
-				}
-			}
-		}	
+			limit = { CHI = { has_character = HNN_cheng_qian } }
+			HNN_cheng_qian = { set_nationality = ROOT }
+			HNN_song_xilian = { set_nationality = ROOT }
+			HNN_yang_jie = { set_nationality = ROOT }
+		}
 		hidden_effect = {
 			country_event = { id = lngkmt.51 days = 2 }
 		}
