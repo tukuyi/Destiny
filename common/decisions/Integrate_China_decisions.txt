@@ -547,10 +547,7 @@ integrate_china = {#整合
 			has_full_control_of_state = 1047
 			if = {
 				limit = { tag = ANQ }
-				custom_trigger_tooltip = {
-					tooltip = anq_has_governors_focus_tt
-					has_completed_focus = ANQ_invite_back_governors
-				}
+				has_completed_focus = ANQ_invite_back_governors
 			}
 		}
 		cost = kr_china_provinceintegration_cost_large?100
@@ -595,10 +592,7 @@ integrate_china = {#整合
 			has_full_control_of_state = 1045
 			if = {
 				limit = { tag = ANQ }
-				custom_trigger_tooltip = {
-					tooltip = anq_has_governors_focus_tt
-					has_completed_focus = ANQ_invite_back_governors
-				}
+				has_completed_focus = ANQ_invite_back_governors
 			}
 		}
 		cost = kr_china_provinceintegration_cost_small?50
@@ -734,7 +728,7 @@ integrate_china = {#整合
 			remove_cores_of_dead_tags = yes
 		}
 		ai_will_do = {
-			factor = 1
+			base = 30
 		}
 	}
 

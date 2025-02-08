@@ -40,6 +40,13 @@ HNN_revolution_victory = {#工团上台初始设定
 		HNN_alliance_with_the_diarchy2
 	}
 
+	add_ideas = HNN_militia_idea
+
+	add_timed_idea = {
+		idea = HNN_she_hui_zhu_yi_yu_wen
+		days = 100
+	}
+
 	retire_character = HNN_tang_xiangming
 	retire_character = HNN_yuan_zuming
 	retire_character = HNN_chen_quzhen

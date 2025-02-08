@@ -68,7 +68,7 @@ political_actions = {
 			tag = MON
 		}
 		visible = {
-			has_completed_focus = MON_ilkhanate
+			has_completed_focus = MON_ilkhanate_four
 		}
 		available = {
 			is_subject = no
@@ -167,7 +167,7 @@ political_actions = {
 			tag = MON
 		}
 		visible = {
-			has_completed_focus = MON_ilkhanate
+			has_completed_focus = MON_ilkhanate_four
 		}
 		available = {
 			is_subject = no
@@ -286,7 +286,7 @@ political_actions = {
 			tag = MON
 		}
 		visible = {
-			has_completed_focus = MON_ilkhanate
+			has_completed_focus = MON_ilkhanate_four
 		}
 		available = {
 			is_subject = no
@@ -5613,7 +5613,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 			else_if = {
 				limit = { 
-					has_country_leader = { name = "赵紫阳" ruling_only = yes }
+					has_country_leader = { name = "胡耀邦" ruling_only = yes }
 				}
 				add_political_power = 10
 				custom_effect_tooltip = HNN_increase_opium_profit_2

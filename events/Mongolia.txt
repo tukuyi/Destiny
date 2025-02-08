@@ -13108,8 +13108,8 @@ country_event = { # Mongolia Chinese Puppet Unfuck
 		is_subject = yes
 		overlord = { is_chinese_tag = yes }
 		OR = {
-		has_country_leader = { name = "Roman von Ungern-Sternberg" ruling_only = yes }
-		has_country_leader = { name = "Genghis Khan II" ruling_only = yes }
+			has_country_leader = { name = "Roman von Ungern-Sternberg" ruling_only = yes }
+			has_country_leader = { name = "Genghis Khan II" ruling_only = yes }
 		}
 	}
     fire_only_once = yes

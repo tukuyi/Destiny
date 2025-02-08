@@ -24,6 +24,29 @@ ideas = {
 				hog_anarhist
 			}
 		}
+		GXC_Hu_Hanming_hog = {#胡汉民
+			allowed = { original_tag = GXC }
+			picture = GXC_Hu_Hanming_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Dong_Biwu_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GXC_Hu_Hanming_hog"
+				
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_influential_intellectual
+			}
+		}
 		GXC_chen_hao_ren_hog = {#陈豪人
 			allowed = { original_tag = GXC }
 			picture = GXC_chen_hao_ren_hog

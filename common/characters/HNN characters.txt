@@ -92,21 +92,6 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = HNN_tian_yingzhao_advisor
-			desc = HNN_tian_yingzhao_advisor_desc
-			traits = { hog_old_general }
-			cost = 150
-			on_add = {
-				ROOT = {
-					if = {
-						limit = { original_tag = HNN }
-						custom_effect_tooltip = HNN_tian_yingzhao_add_tooltip
-					}
-				}
-			}
-		}
 	}	
 #袁祖銘
 	HNN_yuan_zuming = {
@@ -769,7 +754,7 @@ characters = {
 			ideology = technocracy_subtype
 		}
 		corps_commander = {
-			desc = ARMY_HNN_Chen_Yi_ARMY_DESC
+			desc = POLITICS_ARMY_HNN_Chen_Yi_ARMY_DESC
 			traits = { 
 				light_infantry_officer 
 				trickster 
@@ -792,7 +777,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			desc = ARMY_HNN_Xiao_Ke_ARMY_DESC
+			desc = POLITICS_ARMY_HNN_Xiao_Ke_ARMY_DESC
 			traits = { 
 				irregulars_officer
 			}
@@ -803,7 +788,7 @@ characters = {
 			logistics_skill = 1
 		}
 	}		
-#毛泽东	
+#毛泽东
 	HNN_mao_ze_dong = {
 		name = HNN_mao_ze_dong
 		portraits = {

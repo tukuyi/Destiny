@@ -2685,6 +2685,7 @@ country_event = {#汤芗铭输了
 		show_unit_leaders_tooltip = HNN_he_long
 		HNN_Tan_Yan_Kai = {
 			add_corps_commander_role = {
+				desc = POLITICS_HNN_Tan_Yan_Kai_ARMY_DESC
 				traits = { 
 					infantry_officer 
 					career_officer 
@@ -6693,7 +6694,6 @@ country_event = {#革命成功
 				}
 			}
 		}
-		set_country_flag = HNN_gong_tuan_victory_flag
 		load_focus_tree = { tree = Hunan_Red }
 		mark_focus_tree_layout_dirty = yes
 		create_country_leader = {
@@ -6715,16 +6715,10 @@ country_event = {#革命成功
 		}
 		leave_faction = yes
 		hidden_effect = {
+			set_country_flag = HNN_gong_tuan_victory_flag
 			add_stability = -0.40
 			add_war_support = -0.30
 			load_oob = HNN_red_first
-			add_ideas = {
-				HNN_militia_idea
-			}
-			add_timed_idea = {
-				idea = HNN_she_hui_zhu_yi_yu_wen
-				days = 100
-			}
 			HNN_revolution_victory = yes
 			country_event = { 
 				id = hungong.39

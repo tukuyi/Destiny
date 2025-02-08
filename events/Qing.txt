@@ -9104,15 +9104,6 @@ country_event = { #xianyu start
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	#trigger = {
-	#	date > 1937.1.1
-	#	tag = QIE
-	#	has_country_leader = {
-	#		name = "Puyi"
-	#		ruling_only = yes
-	#	}
-	#}
-
 	option = {
 		name = qieflavor.100.a #intruiguing
 		##FUTURE EFFECTS BASED ON QIE PATH

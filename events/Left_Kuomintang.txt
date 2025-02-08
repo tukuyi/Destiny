@@ -6983,7 +6983,7 @@ country_event = { #Fate of Puyi
 	desc = CHI.lategame.065.d
 
 	is_triggered_only = yes
-	trigger = { QIE = { has_country_leader = { name = "Puyi" ruling_only = yes } } }
+	trigger = { QIE = { has_country_leader = { name = "溥仪" ruling_only = yes } } }
 
 	option = { #Exile
 		name = CHI.lategame.065.a
@@ -7954,9 +7954,9 @@ country_event = { #The Kuomintang National Congress
 			modifier = {
 				factor = 3
 				OR = {
-					has_country_leader = { name = "Chen Mingshu" ruling_only = yes } #Has ties with PAC
+					has_country_leader = { name = "陈铭枢" ruling_only = yes } #Has ties with PAC
 					has_country_leader = { name = "朱德" ruling_only = yes  } #Has ties with both Political Department and PAC
-					has_country_leader = { name = "Cheng Qian" ruling_only = yes  } #Has ties with RF
+					has_country_leader = { name = "程潜" ruling_only = yes  } #Has ties with RF
 				}
 			}
 			modifier = {
@@ -9596,7 +9596,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
+				has_country_leader = { name = "陈铭枢" ruling_only = yes }
 			}
 			modifier = {
 				factor = 1000
@@ -9633,7 +9633,7 @@ country_event = {
 			base = 25
 			modifier = {
 				factor = 2
-				has_country_leader = { name = "Chen Qian" ruling_only = yes }
+				has_country_leader = { name = "程潜" ruling_only = yes }
 			}
 			modifier = {
 				factor = 2

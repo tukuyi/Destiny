@@ -5818,7 +5818,7 @@ country_event = {#首届选举
 			ruling_party = social_conservative
 		}
 		add_ideas = {
-			HNN_Hu_Hanming_hog
+			GXC_Hu_Hanming_hog
 			GXC_gu_ying_fen_for
 			GXC_li_xiao_sheng_sec
 		}

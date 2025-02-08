@@ -73,56 +73,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/LEC/LEC_zhao_si_yan.png"
 	}
 	spriteType = {
-		name = "GFX_idea_HNN_Chen_Yi_for"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Chen_Yi.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Zhou_En_Lai_for"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Zhou_En_Lai.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Geng_Biao_for"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Geng_Biao.png"
-	}
-	spriteType = {
 		name = "GFX_idea_LEC_tian_han_eco"
 		texturefile = "gfx/interface/ministers/LEC/LEC_tian_han.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Li_Xian_Nian_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Li_Xian_Nian.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_shi_yin_shun_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_shi_yin_shun.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Li_Fu_Chun_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Li_Fu_Chun.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_hua_luo_geng_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_hua_luo_geng.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Rong_Yi_Ren_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Rong_Yi_Ren.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Mao_Ze_Dong_eco"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Mao_Ze_Dong.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_he_shi_li_sec"
-		texturefile = "gfx/interface/ministers/LEC/LEC_he_shi_li.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Shang_Kun_sec"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Shang_Kun.png"
-	}
-	spriteType = {
-		name = "GFX_idea_HNN_Qiu_Hui_Zuo_sec"
-		texturefile = "gfx/interface/ministers/HNN/HNN_Qiu_Hui_Zuo.png"
 	}
 	spriteType = {
 		name = "GFX_idea_LEC_wang_shou_hua_hog"

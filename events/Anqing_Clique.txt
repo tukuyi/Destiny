@@ -5754,7 +5754,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 		trigger = {
 			QIE = {
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				NOT = { has_country_flag = QIE_manchu_restoration }
@@ -5766,7 +5766,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 		trigger = {
 			QIE = {
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				has_country_flag = QIE_manchu_restoration
@@ -5779,7 +5779,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 			QIE = {
 				NOT = {
 					has_country_leader = {
-						name = "Puyi"
+						name = "溥仪"
 						ruling_only = yes
 					}
 				}
@@ -5795,7 +5795,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 		trigger = {
 			QIE = {
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				NOT = { has_country_flag = QIE_manchu_restoration }
@@ -5854,7 +5854,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 		trigger = {
 			QIE = {
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				has_country_flag = QIE_manchu_restoration
@@ -5887,7 +5887,7 @@ country_event = { # anti concessionist opinion of qing (pro-fengtian)
 			QIE = {
 				NOT = {
 					has_country_leader = {
-						name = "Puyi"
+						name = "溥仪"
 						ruling_only = yes
 					}
 				}
@@ -5917,7 +5917,7 @@ country_event = { # anti-concessions for reclamation
 		trigger = {
 			QIE = {
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				has_country_flag = QIE_manchu_restoration
@@ -5959,7 +5959,7 @@ country_event = { # anti-concessions against reclamation
 			QIE = {
 				NOT = {
 					has_country_leader = {
-						name = "Puyi"
+						name = "溥仪"
 						ruling_only = yes
 					}
 				}

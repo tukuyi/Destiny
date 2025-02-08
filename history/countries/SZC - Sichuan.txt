@@ -19,6 +19,13 @@ set_technology = {
 set_country_flag = KX_no_naval_tech_decision_enable
 save_global_event_target_as = original_sichuan
 
+QIE = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = associated_governorate
+	}
+}
+
 ### Politics ###
 set_politics = {
 	ruling_party = authoritarian_democrat

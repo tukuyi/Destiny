@@ -18,10 +18,6 @@ set_autonomy = {
 	autonomy_state = associated_governorate
 }
 set_autonomy = {
-	target = SZC
-	autonomy_state = associated_governorate
-}
-set_autonomy = {
 	target = XSM
 	autonomy_state = associated_governorate
 }
