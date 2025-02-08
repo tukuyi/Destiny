@@ -2201,6 +2201,9 @@ country_event = {#Zhu De intervenes the Yunnan Academy!
 				set_nationality = PREV
 				promote_character = socdem_tridemism_subtype
 			}
+			YUN_Ma_Ben_Zai = {
+				set_nationality = PREV
+			}
 			country_event = { id = yun.30 days = 7 }
 			retire_character = YUN_hu_ruoyu
 			retire_character = YUN_lu_han
@@ -4048,6 +4051,14 @@ country_event = {#Purge High Command
 				id = yun.2
 				days = 14
 			}
+			if = {
+				limit = { 
+					HNN = {
+						has_country_flag = HNN_gong_tuan_victory_flag
+					}
+				}
+				YUN_zhu_de_tao_wang_hu_nan = yes
+			}
 		}
 	}
 }
@@ -4380,6 +4391,7 @@ country_event = {#Zhu De's stays in power: Zhang Bojun or Zhu De
 		set_country_flag = Zhu_De_READY
 		add_stability = -0.10
 	}
+	
 	option = {#Zhang Bojun takes over
 		name = yun.91.b
 		ai_chance = { factor = 50 }
@@ -10470,9 +10482,6 @@ country_event = {#完全胜利
 			name = "马坚"
 			desc = "POLITICS_YUNNAN_MA_JIAN_ARMY_DESC"
 			portrait_path = "gfx/leaders/YUN/Portrait_YUN_Ma_Jian.png"
-			traits = {
-				
-			}
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1

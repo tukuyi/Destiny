@@ -259,6 +259,9 @@ YUN_zhu_de_tao_wang_hu_nan = {#朱德外逃
 		demote_leader = yes
 		set_nationality = HNN
 	}
+	YUN_Ma_Ben_Zai = {
+		set_nationality = HNN
+	}
 	YUN_luo_binghui = {
 		set_nationality = HNN
 	}

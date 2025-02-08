@@ -4498,7 +4498,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 				is_subject = no
 				NOT = {
 					has_country_leader = {
-						name = "Puyi"
+						name = "溥仪"
 						ruling_only = yes
 					}
 				}
@@ -4519,7 +4519,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 				is_subject = no
 				NOT = {
 					has_country_leader = {
-						name = "Puyi"
+						name = "溥仪"
 						ruling_only = yes
 					}
 				}
@@ -4580,7 +4580,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 			FROM = {
 				is_subject = no
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 			}
@@ -4600,7 +4600,7 @@ GXC_UPC_reunification_decisions = {#联省运动
 			FROM = {
 				is_subject = no
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 			}

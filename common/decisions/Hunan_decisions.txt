@@ -3346,7 +3346,8 @@ HNN_defence_commission_category = {#防务专署
 		visible = {
 			HNN = { 
 				has_country_leader = { 
-					name = "汤芗铭" ruling_only = yes 
+					name = "汤芗铭" 
+					ruling_only = yes 
 				} 
 			}
 			has_completed_focus = HNN_establish_the_defence_commission
@@ -3354,7 +3355,8 @@ HNN_defence_commission_category = {#防务专署
 		cancel_trigger = { 
 			NOT = { 
 				has_country_leader = { 
-					name = "汤芗铭" ruling_only = yes 
+					name = "汤芗铭" 
+					ruling_only = yes 
 				} 
 			} 
 		}

@@ -8582,9 +8582,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_da_zong_tong_xuan_ju
 		}
-		prerequisite = {
-		 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xiang_jiang_jun_zhi_li"
@@ -8927,9 +8924,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_da_zong_tong_xuan_ju
 		}
-		prerequisite = {
-		 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_ju_wai_zhe"
@@ -9264,15 +9258,6 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-		 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_ta_zi_di_yu_lai"
@@ -9296,17 +9281,9 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		allow_branch = {
- 
-		}
+
 		prerequisite = {
 			focus = QIE_ta_zi_di_yu_lai
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-		 
 		}
 
 		completion_reward = {
@@ -9329,18 +9306,10 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		allow_branch = {
- 
-		}
+
 		prerequisite = {
 			focus = QIE_suo_guo_zhi_chu
 			focus = QIE_han_ren_Jiang_shan
-		}
-		prerequisite = {
-			
-		}
-		prerequisite = {
-		 
 		}
 
 		completion_reward = {
@@ -9399,17 +9368,12 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		allow_branch = {
- 
-		}
+
 		prerequisite = {
 			focus = QIE_suo_guo_zhi_chu
 		}
 		prerequisite = {
 			focus = QIE_tu_sha_yi_qie
-		}
-		prerequisite = {
-		 
 		}
 
 		completion_reward = {
@@ -9435,17 +9399,9 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		allow_branch = {
- 
-		}
+
 		prerequisite = {
 			focus = QIE_ta_zi_di_yu_lai
-		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-		 
 		}
 
 		completion_reward = {
@@ -9468,17 +9424,11 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
-		allow_branch = {
- 
-		}
 		prerequisite = {
 			focus = QIE_han_ren_Jiang_shan
 		}
 		prerequisite = {
 			focus = QIE_tu_sha_yi_qie 
-		}
-		prerequisite = {
-		 
 		}
 
 		completion_reward = {

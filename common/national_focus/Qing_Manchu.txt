@@ -3890,9 +3890,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_kai_fa_zi_yuan
 		}
-		prerequisite = {
-			 
-		}
 
 		available = {
 			has_country_leader = { 
@@ -3906,10 +3903,7 @@ focus_tree = {
 				ruling_only = yes 
 			}
 		}
-		
-		mutually_exclusive = {
-			 
-		}
+
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_chen_qi_tian_zong_li"
@@ -4168,12 +4162,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_quan_ming_ge_ming
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 
 		available = {
 			has_country_leader = { 
@@ -4186,9 +4174,6 @@ focus_tree = {
 				name = "李璜" 
 				ruling_only = yes 
 			}
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -4429,12 +4414,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_fu_yu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 
 		available = {
 			has_country_leader = { 
@@ -4447,9 +4426,6 @@ focus_tree = {
 				name = "曾琦" 
 				ruling_only = yes 
 			}
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -4705,12 +4681,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_quan_ming_ge_ming
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 
 		available = {
 			has_country_leader = { 
@@ -4723,9 +4693,6 @@ focus_tree = {
 				name = "左舜生" 
 				ruling_only = yes 
 			}
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {
@@ -4993,12 +4960,6 @@ focus_tree = {
 		prerequisite = {
 			focus = QIE_fu_yu
 		}
-		prerequisite = {
-			 
-		}
-		prerequisite = {
-			 
-		}
 
 		available = {
 			has_country_leader = { 
@@ -5011,9 +4972,6 @@ focus_tree = {
 				name = "张荫梧" 
 				ruling_only = yes 
 			}
-		}
-		mutually_exclusive = {
-			 
 		}
 
 		completion_reward = {

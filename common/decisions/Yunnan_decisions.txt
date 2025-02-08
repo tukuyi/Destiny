@@ -2749,7 +2749,7 @@ YUN_faction_joining_stuff = {
 				limit = {
 					NOT = {
 						has_country_leader = {
-							name = "Puyi"
+							name = "溥仪"
 							ruling_only = yes
 						}
 					}

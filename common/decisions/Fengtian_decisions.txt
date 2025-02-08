@@ -2764,7 +2764,7 @@ FNG_foreign_policy = { #The Road to Reclamation
 		available = {
 			has_completed_focus = FNG_Open_the_Propaganda_Front
 			QIE = {
-				has_country_leader = { name = "Puyi" ruling_only = yes }
+				has_country_leader = { name = "溥仪" ruling_only = yes }
 			}
 		}
 

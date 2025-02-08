@@ -1805,7 +1805,7 @@ focus_tree = {
 			QIE = {
 				exists = yes
 				has_country_leader = {
-					name = "Puyi"
+					name = "溥仪"
 					ruling_only = yes
 				}
 				NOT = {

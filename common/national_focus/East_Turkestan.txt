@@ -633,7 +633,7 @@ focus_tree = {
 		}
 		available = {
 			has_government = authoritarian_democrat
-			has_country_leader = { name = "Timur Beg" ruling_only = yes }
+			has_country_leader = { name = "铁木尔伯克" ruling_only = yes }
 		}
 		relative_position_id = ETS_uyghur_revolution
 		x = -4

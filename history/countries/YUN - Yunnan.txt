@@ -130,6 +130,7 @@ recruit_character = YUN_jin_handing
 recruit_character = YUN_tang_jiyu
 recruit_character = YUN_chen_cheng
 recruit_character = YUN_tang_jiyao
+recruit_character = YUN_Ma_Ben_Zai
 
 YUN_tang_jiyao = {
 	set_variable = { china_alignment = token:federalists }
@@ -141,6 +142,10 @@ YUN_zhu_peide = {
 }
 YUN_zhu_de = {
 	set_variable = { china_alignment = token:left_kuomintang }
+	set_character_flag = CHN_original_unit_leader
+	retire = yes
+}
+YUN_Ma_Ben_Zai = {
 	set_character_flag = CHN_original_unit_leader
 	retire = yes
 }

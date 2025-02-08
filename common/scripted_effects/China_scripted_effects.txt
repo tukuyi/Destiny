@@ -816,13 +816,13 @@ china_puppet_setup = {
 					limit = { 
 						NOT = { 
 							has_country_leader = {
-								name = "Yan Huiqing"
+								name = "颜惠庆"
 								ruling_only = yes
 							}
 						}
 					}
 					create_country_leader = {
-						name = "Yan Huiqing"
+						name = "颜惠庆"
 						picture = "gfx/leaders/QIE/Portrait_QIE_Yan_Huiqing.png"
 						expire = "1.1.1"
 						ideology = authoritarian_democrat_subtype
@@ -1324,14 +1324,14 @@ china_generic_set_government_cosmetic_effect = {
 	else_if = {
 		limit = { original_tag = SZC }
 		if = {
-			limit = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } }
+			limit = { has_country_leader = { name = "陈炯明" ruling_only = yes } }
 			set_cosmetic_tag = SZC_Federal
 		}
 		else_if = {
 			limit = {
 				OR = {
-					has_country_leader = { name = "Yan Huiqing" ruling_only = yes }
-					has_country_leader = { name = "Jiang Baili" ruling_only = yes }
+					has_country_leader = { name = "颜惠庆" ruling_only = yes }
+					has_country_leader = { name = "王承斌" ruling_only = yes }
 				}
 			}
 			set_cosmetic_tag = SZC_Zhili

@@ -426,6 +426,28 @@ characters = {
 			logistics_skill = 1
 		}
 	}	
+#马本斋
+	YUN_Ma_Ben_Zai = {
+		name = YUN_Ma_Ben_Zai
+		portraits = {
+			army = {
+				small = GFX_Portrait_YUN_Ma_Ben_Zai
+				large = GFX_Portrait_YUN_Ma_Ben_Zai
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_YUN_Ma_Ben_Zai_ARMY_DESC
+			traits = { 
+				career_officer 
+				infantry_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
 #唐继虞
 	YUN_tang_jiyu = {
 		name = YUN_tang_jiyu

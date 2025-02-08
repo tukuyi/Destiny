@@ -259,10 +259,10 @@
 		}
 		
 		bypass = {
-		NOT = {
-		has_country_leader = {
-			name = "溥仪"
-			ruling_only = yes
+			NOT = {
+				has_country_leader = {
+					name = "溥仪"
+					ruling_only = yes
 				}
 			}
 		}
@@ -799,10 +799,10 @@
 			add_war_support = 0.30
 			add_stability = 0.30
 			if = {
-			limit = {
-			has_country_leader = { name = "溥仪" ruling_only = yes }
-			}
-			set_cosmetic_tag = QIE_unified
+				limit = {
+					has_country_leader = { name = "溥仪" ruling_only = yes }
+				}
+				set_cosmetic_tag = QIE_unified
 			}
 			country_event = qieflavor.200
 			
