@@ -558,7 +558,7 @@ country_event = { #chen tiaoyuan asks for help
 	}
 }
 
-country_event = { #qi asks wu (if wu said no to chen), triggered from qielepcollapse.5
+country_event = { #齐燮元大帅的请求
 	id = qielepcollapse.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qielepcollapse.8" }
 	title = qielepcollapse.8.t
@@ -649,6 +649,7 @@ country_event = { #qi asks wu (if wu said no to chen), triggered from qielepcoll
 				id = qielepcollapse.21 #widespread protests break out
 				days = 10
 			}
+			ANQ = { country_event = { id = lep.215 days = 15 } }
 		}
 	}
 }
@@ -873,6 +874,7 @@ country_event = { #Qing pro LEP
 				limit = { is_ai = yes }
 				news_event = { id = worldnews.230 hours = 2 }
 			}
+			LEP = { country_event = { id = lep.215 days = 5 } }
 		}
 		add_ideas = QIE_intervention_idea
 		add_war_support = 0.02
@@ -1250,7 +1252,6 @@ country_event = { #we backed LEP and they lose
 	desc = qielepcollapse.30.d
 
 	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = { #damn
@@ -1262,6 +1263,9 @@ country_event = { #we backed LEP and they lose
 			type = infantry_equipment
 			amount = 500
 			producer = LEP
+		}
+		hidden_effect = {
+			country_event = { id = qiefor.154 days = 7 }
 		}
 	}
 }
@@ -5665,6 +5669,183 @@ country_event = { #汤芗铭被击退
 		log = "[GetLogInfo]: event qiefor.141 option qiefor.141.b"
 		name = qiefor.141.b
 		ai_chance = { base = 0 }
+	}
+}
+
+country_event = { #南方舰队北上！
+	id = qiefor.153
+	title = qiefor.153.t
+	desc = qiefor.153.d
+
+	picture = GFX_report_event_QIE_yang_shuzhuang
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_dlc_mtg = no }
+				if = {
+					limit = { NOT = { has_tech = basic_light_cruiser } }
+					set_technology = { basic_light_cruiser = 1 popup = no }
+				}
+				create_equipment_variant = {
+					name = "宁海"
+					type = light_cruiser_2
+					upgrades = {
+						ship_reliability_upgrade = 2
+						ship_engine_upgrade = 2
+						ship_armor_upgrade = 2
+						ship_gun_upgrade = 2
+					}
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_destroyer } }
+					set_technology = { basic_destroyer = 1 popup = no }
+				}
+				create_equipment_variant = {
+					type = destroyer_2
+					name = "威胜"
+					upgrades = {
+						ship_torpedo_upgrade = 2
+						destroyer_engine_upgrade = 2
+						ship_ASW_upgrade = 2
+						ship_anti_air_upgrade = 2
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_tech = basic_ship_hull_light } }
+					set_technology = { basic_ship_hull_light = 1 popup = no }
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_ship_hull_cruiser } }
+					set_technology = { basic_ship_hull_cruiser = 1 popup = no }
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_light_battery } }
+					set_technology = { basic_light_battery = 1 popup = no }
+				}
+				create_equipment_variant = {
+					name = "宁海"
+					type = ship_hull_cruiser_2
+					name_group = CHYN_CL_HISTORICAL
+					parent_version = 0
+					allow_without_tech = yes
+					modules = {
+						fixed_ship_battery_slot = ship_light_battery_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = empty
+						fixed_ship_secondaries_slot = ship_secondaries_1
+						front_1_custom_slot = ship_anti_air_1
+						mid_1_custom_slot = ship_airplane_launcher_1
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = empty
+					}
+					design_team = mio:CHN_naval_industry_organisation
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_ship_hull_cruiser } }
+					set_technology = { basic_ship_hull_cruiser = 1 popup = no }
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_ship_hull_cruiser } }
+					set_technology = { basic_ship_hull_cruiser = 1 popup = no }
+				}
+				create_equipment_variant = {
+					name = "威胜"
+					type = ship_hull_light_2
+					allow_without_tech = yes
+					name_group = CHYN_DD_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_torpedo_slot = ship_torpedo_1
+						fixed_ship_engine_slot = light_ship_engine_1
+						mid_1_custom_slot = ship_anti_air_1
+						rear_1_custom_slot = ship_torpedo_1
+					}
+					design_team = mio:CHN_naval_industry_organisation
+				}
+			}
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event qiefor.153 option qiefor.153.a"
+		name = qiefor.153.a #First step to bridging the divide.
+		effect_tooltip = { LEP = { LEP_wu_zhennan = { set_nationality = ROOT } } }
+		LEP = {
+			LEP_wu_zhennan = { QIE_recruit_characters_effect = yes }
+		}
+		if = {
+			limit = { has_dlc_mtg = no }
+			create_ship = { type = light_cruiser_2 equipment_variant = "宁海" name = "宁海" }
+			create_ship = { type = destroyer_2 equipment_variant = "威胜" name = "威胜" }
+			create_ship = { type = destroyer_2 equipment_variant = "威胜" name = "德胜" }
+		}
+		else = {
+			create_ship = { type = ship_hull_cruiser_2 equipment_variant = "宁海" name = "宁海" }
+			create_ship = { type = ship_hull_light_2 equipment_variant = "威胜" name = "威胜" }
+			create_ship = { type = ship_hull_light_2 equipment_variant = "威胜" name = "德胜" }
+		}
+	}
+}
+
+country_event = { #笑面虎的小跟班
+	id = qiefor.154
+	title = qiefor.154.t
+	desc = qiefor.154.d
+	picture = GFX_report_event_LEP_sun_old_3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event qiefor.154 option qiefor.154.a"
+		name = qiefor.154.a #To be clear, you answer to US now.
+		ai_chance = { base = 100 }
+		effect_tooltip = {
+			LEP_liu_zongji = { set_nationality = ROOT }
+			LEP_meng_zhaoyue = { set_nationality = ROOT }
+			LEP_xie_hongxun = { set_nationality = ROOT }
+		}
+		add_political_power = 15
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.02
+		}
+		hidden_effect = {
+			LEP = {
+				every_character = {
+					limit = {
+						is_character = LEP_liu_zongji
+						is_character = LEP_meng_zhaoyue
+						is_character = LEP_xie_hongxun
+					}
+					QIE_recruit_characters_effect = yes
+					demote_to_general = yes
+					add_trait = { trait = QIE_Zhili_officer }
+					set_character_flag = QIE_zhili_leader
+				}
+			}
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event qiefor.154 option qiefor.154.b"
+		name = qiefor.154.b #And let Sun's rot infiltrate our command too?
+		ai_chance = { base = 0 }
+		add_stability = 0.03
+		add_war_support = 0.02
 	}
 }
 
@@ -13482,14 +13663,6 @@ country_event = {#新总统
 			popularity = 0.02
 		}
 		QIE_zhili_comeback = yes
-		if = {
-			limit = { 
-				LEP = {
-					exists = no
-				}
-			}
-			QIE_basheng_comeback = yes
-		}
 		remove_all_ministers = yes
 		add_ideas = {
 			QIE_yu_Xue_zhong_hog
@@ -13522,15 +13695,6 @@ country_event = {#新总统
 			ideology = national_populist
 			name = QIE_national_populist_party_MZ
 			long_name = QIE_national_populist_party_MZ_long
-		}
-		QIE_zhili_comeback = yes
-		if = {
-			limit = { 
-				LEP = {
-					exists = no
-				}
-			}
-			QIE_basheng_comeback = yes
 		}
 		remove_all_ministers = yes
 		add_ideas = {

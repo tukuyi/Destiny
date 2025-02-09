@@ -1504,4 +1504,8 @@ spriteTypes = {
 		name = "GFX_Portrait_CHI_Qiu_Qingquan"
 		texturefile = "gfx/leaders/CHI/Portrait_CHI_Qiu_Qingquan.png"
 	}	
+	spriteType = {
+		name = "GFX_Portrait_CHI_Gui_Yongqing"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_Gui_Yongqing.png"
+	}
 }

@@ -308,6 +308,14 @@ spriteTypes = {
 		name = "GFX_report_event_HNN_rong_yi_ren"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_rong_yi_ren.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_LEP_fang_benren_1"
+		texturefile = "gfx/event_news_pictures/LEP/LEP_fang_benren_1.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_LEP_sun_old_3"
+		texturefile = "gfx/event_news_pictures/LEP/LEP_sun_old_3.png"
+	}
 	#新闻
 	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna"

@@ -1,0 +1,690 @@
+characters = {
+####################
+###    领导人    ###
+####################
+#孫傳芳
+	LEP_sun_chuanfang = {
+		name = LEP_sun_chuanfang
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_sun_chuanfang
+				large = GFX_Portrait_LEP_sun_chuanfang
+			}
+		}
+		country_leader = {
+			desc = LEP_sun_chuanfang_leader_desc
+			ideology = kleptocracy_subtype
+			traits = { CHN_southern_zhili_aligned LEP_the_smiling_tiger }
+		}
+		field_marshal = {
+			desc = POLITICS_LEP_SUN_CHUANFANG_ARMY_DESC
+			traits = { 
+				politically_connected 
+				war_hero 
+				trait_cautious 
+				infantry_officer 
+				brilliant_strategist 
+				organizer 
+				fast_planner 
+				skilled_staffer 
+				expert_delegator 
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+#齊燮元
+	LEP_qi_xieyuan = {
+		name = LEP_qi_xieyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_qi_xieyuan
+				large = GFX_Portrait_LEP_qi_xieyuan
+			}
+			civilian = {
+				large = GFX_Portrait_LEP_Qi_Xieyuan_civ
+			}
+		}
+		country_leader = {
+			desc = LEP_qi_xieyuan_leader_desc
+			ideology = authoritarian_democrat_subtype
+			traits = { CHN_southern_zhili_aligned }
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_QI_XIEYUAN_ARMY_DESC
+			traits = { 
+				politically_connected 
+				career_officer 
+				artillery_officer 
+				infantry_leader 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+####################
+###     将领     ###
+####################
+#鄭俊彥
+	LEP_zheng_junyan = {
+		name = LEP_zheng_junyan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_zheng_junyan
+				large = GFX_Portrait_LEP_zheng_junyan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_ZHENG_JUNYAN_DESC
+			traits = { 
+				career_officer 
+				skilled_staffer 
+				trait_cautious 
+				organizer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#周蔭人
+	LEP_zhou_yinren = {
+		name = LEP_zhou_yinren
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_zhou_yinren
+				large = GFX_Portrait_LEP_zhou_yinren
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_ZHOU_YINREN_DESC
+			traits = { 
+				career_officer 
+				trait_cautious 
+				organizer 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#陳儀
+	LEP_chen_yi = {
+		name = LEP_chen_yi
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_Chen_Yi
+				large = GFX_Portrait_LEP_Chen_Yi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_CHEN_YI_DESC
+			traits = { 
+				politically_connected 
+				career_officer 
+				trait_reckless 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#上官雲相
+	LEP_shangguan_yunxiang = {
+		name = LEP_shangguan_yunxiang
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_shangguan_yunxiang
+				large = GFX_Portrait_LEP_shangguan_yunxiang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_SHANGGUAN_YUNXIANG_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				trickster 
+				harsh_leader 
+				brilliant_strategist 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#鄧如琢
+	LEP_deng_ruzhuo = {
+		name = LEP_deng_ruzhuo
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_deng_ruzhuo
+				large = GFX_Portrait_LEP_deng_ruzhuo
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_DENG_RUZUO_DESC
+			traits = { 
+				war_hero 
+				infantry_officer 
+				trait_reckless 
+				harsh_leader 
+				politically_connected 
+				urban_assault_specialist 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#湯恩伯
+	LEP_tang_enbo = {
+		name = LEP_tang_enbo
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_tang_enbo_army
+				large = GFX_Portrait_LEP_tang_enbo_army
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_TANG_ENBO_DESC
+			traits = { 
+				infantry_officer 
+				trait_cautious 
+				career_officer 
+				rising_star 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#石友三
+	LEP_shi_yousan = {
+		name = LEP_shi_yousan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_shi_yousan
+				large = GFX_Portrait_LEP_shi_yousan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_SHI_YOUSAN_DESC
+			traits = { 
+				politically_connected 
+				trait_reckless 
+				substance_abuser 
+				hidden_sympathies 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#劉宗紀
+	LEP_liu_zongji = {
+		name = LEP_liu_zongji
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_liu_zongji
+				large = GFX_Portrait_LEP_liu_zongji
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_LEP_LIU_ZONGJI_DESC
+			traits = { 
+				career_officer 
+				trait_cautious 
+				infantry_officer 
+				organizer 
+				thorough_planner 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#馬玉仁
+	LEP_ma_yuren = {
+		name = LEP_ma_yuren
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_ma_yuren
+				large = GFX_Portrait_LEP_ma_yuren
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_MA_YUREN_DESC
+			traits = { 
+				trait_reckless 
+				politically_connected 
+				trickster 
+				ambusher 
+				irregulars_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#葛敬恩
+	LEP_ge_jingen = { #Tie him to Chen Yi, he would join Chen Yi together to ANQ in event lepcollaspe.24
+		name = LEP_ge_jingen
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_ge_jingen
+				large = GFX_Portrait_LEP_ge_jingen
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_GE_JINGEN_DESC
+			traits = { 
+				hidden_sympathies 
+				war_hero 
+				trait_reckless 
+				career_officer 
+				urban_assault_specialist 
+				organizer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}	
+#孟昭月
+	LEP_meng_zhaoyue = {
+		name = LEP_meng_zhaoyue
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_meng_zhaoyue
+				large = GFX_Portrait_LEP_meng_zhaoyue
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_MENG_ZHAOYUE_DESC
+			traits = { 
+				engineer_officer 
+				trait_cautious 
+				trait_engineer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#錢宗澤
+	LEP_qian_zongze = {
+		name = LEP_qian_zongze
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_qian_zongze
+				large = GFX_Portrait_LEP_qian_zongze
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_QIAN_ZONGZE_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+#钱卓伦
+	LEP_Qian_Zhuoren = {
+		name = LEP_Qian_Zhuoren
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_Qian_Zhuoren
+				large = GFX_Portrait_LEP_Qian_Zhuoren
+			}
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_QIAN_ZHUOREN_DESC
+			traits = {
+				trait_engineer
+				war_hero
+				career_officer
+				armor_officer
+				trait_reckless
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#汪鎬基
+	LEP_wang_haoji = {
+		name = LEP_wang_haoji
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_wang_haoji
+				large = GFX_Portrait_LEP_wang_haoji
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_WANG_HAOJI_DESC
+			traits = { 
+				trait_reckless 
+				career_officer 
+				cavalry_officer 
+				cavalry_leader 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#謝鴻勛
+	LEP_xie_hongxun = {
+		name = LEP_xie_hongxun
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_xie_hongxun
+				large = GFX_Portrait_LEP_xie_hongxun
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_XIE_HONGXUN_DESC
+			traits = { 
+				career_officer 
+				war_hero 
+				infantry_officer 
+				infantry_leader 
+				infantry_expert 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#方本仁
+	LEP_fang_benren = {
+		name = LEP_fang_benren
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_fang_benren
+				large = GFX_Portrait_LEP_fang_benren
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_FANG_BENREN_DESC
+			traits = { 
+				cavalry_officer 
+				career_officer 
+				organizer 
+				trait_reckless 
+				hill_fighter 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+#林蔚
+	LEP_lin_wei = { #Tie him to Chen Yi, he should be added via an event to the tag which Chen Yi decided to be loyal to.
+		name = LEP_lin_wei
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_lin_wei
+				large = GFX_Portrait_LEP_lin_wei
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_LIN_WEI_DESC
+			traits = { 
+				career_officer 
+				engineer_officer 
+				trait_cautious 
+				skilled_staffer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#李忍濤
+	LEP_li_rentao = {
+		name = LEP_li_rentao
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_li_rentao
+				large = GFX_Portrait_LEP_li_rentao
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_LI_RENTAO_DESC
+			traits = { 
+				harsh_leader 
+				career_officer 
+				infantry_officer 
+				organizer 
+				commando 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#徐培根
+	LEP_xu_peigen = {
+		name = LEP_xu_peigen
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_xu_peigen
+				large = GFX_Portrait_LEP_xu_peigen
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_LEP_XU_PEIGEN_DESC
+			traits = { 
+				career_officer 
+				infantry_officer 
+				organizer 
+				skilled_staffer 
+				rising_star 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+#周鳳岐
+	LEP_zhou_fengqi = {
+		name = LEP_zhou_fengqi
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_zhou_fengqi
+				large = GFX_Portrait_LEP_zhou_fengqi
+			}
+		}
+		corps_commander = {
+			desc = LEP_zhou_fengqi_commander_desc
+			traits = { 
+				career_officer 
+				trait_reckless 
+				organizer 
+				harsh_leader 
+			}
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#郭懺
+	LEP_guo_chan = {
+		name = LEP_guo_chan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_guo_chan
+				large = GFX_Portrait_LEP_guo_chan
+			}
+		}
+		corps_commander = {
+			desc = LEP_guo_chan_commander_desc
+			traits = { 
+				career_officer 
+				trait_reckless 
+				artillery_officer 
+				artillery_specialist 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#周碞
+	LEP_zhou_yan = {
+		name = LEP_zhou_yan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_zhou_yan
+				large = GFX_Portrait_LEP_zhou_yan
+			}
+		}
+		corps_commander = {
+			desc = LEP_zhou_yan_high_command_desc
+			traits = { 
+				career_officer 
+				war_hero 
+				artillery_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+####################
+###   海军将领   ###
+####################
+#李世甲
+	LEP_li_shijia = {
+		name = LEP_li_shijia
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_li_shijia
+				large = GFX_Portrait_LEP_li_shijia
+			}
+		}
+		navy_leader = {
+			desc = POLITICS_LEP_LI_SHIJIA_DESC
+			traits = { 
+				navy_career_officer 
+				seawolf 
+				inshore_fighter 
+				bold 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+#吳振南
+	LEP_wu_zhennan = {
+		name = LEP_wu_zhennan
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_wu_zhennan
+				large = GFX_Portrait_LEP_wu_zhennan
+			}
+		}
+		navy_leader = {
+			desc = LEP_wu_zhennan_navy_chief_desc
+			traits = { 
+				navy_career_officer 
+				gunnery_expert 
+				ironside
+				chief_engineer 
+				gentlemanly 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+#杨树庄
+	LEP_Yang_Shuzhuang = {
+		name = LEP_Yang_Shuzhuang
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEP_Yang_Shuzhuang
+				large = GFX_Portrait_LEP_Yang_Shuzhuang
+			}
+		}
+		navy_leader = {
+			desc = LEP_YANG_SHUZHUANG_DESC
+			traits = {
+				navy_career_officer
+				torpedo_expert
+				ground_pounder
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}	
+}

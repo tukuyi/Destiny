@@ -1230,6 +1230,7 @@ country_event = { #The matter of Jiangsu
 			value = 10
 		}
 		anq_recalculate_chens_credibility = yes
+		LEP = { LEP_zheng_junyan = { ANQ_recruit_character_effect = yes } }
 	}
 	option = {
 		name = anq.26.b
@@ -1265,6 +1266,7 @@ country_event = { #Confirmation of Ma Yuren
 			set_country_flag = jiangsu_governor_installed
 		}
 		add_stability = 0.03
+		LEP = { LEP_ma_yuren = { set_nationality = ANQ } }
 	}
 }
 
@@ -1331,6 +1333,7 @@ country_event = { #Deng Ruzhou requests an audience
 		}
 		anq_recalculate_chens_credibility = yes
 		set_country_flag = deng_time
+		LEP = { LEP_deng_ruzhuo = { set_nationality = ANQ } }
 	}
 	option = {
 		name = anq.29.b

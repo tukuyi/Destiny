@@ -196,25 +196,22 @@ set_variable = {
 country_event = { id = lepcollapse.1 days = 3 } # Sun Chuanfang meets with the governors
 country_event = { id = lep.1 days = 1 }
 
+recruit_character = LEP_Qian_Zhuoren
+recruit_character = LEP_sun_chuanfang
+
 create_country_leader = {
 	name = "Board of Directors"
 	picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
 	expire = "1.1.1"
 	ideology = free_market_capitalist_subtype
 }
-create_country_leader = {
-	name = "Qian Zhuoren"
-	desc = "POLITICS_LEP_QIAN_ZHUOREN_DESC"
-	picture = "gfx/leaders/LEP/Portrait_LEP_Qian_Zhuoren.png"
-	expire = "1.1.1"
+promote_character = {
+	character = LEP_Qian_Zhuoren
 	ideology = authoritarian_democrat_subtype
 }
-create_country_leader = {
-	name = "Sun Chuanfang"
-	desc = "POLITICS_LEP_SUN_CHUANFANG_DESC"
-	picture = "gfx/leaders/LEP/Portrait_LEP_Sun_Chuanfang.png"
-	expire = "1.1.1"
-	ideology = pataut_warlordism_subtype
+promote_character = {
+	character = LEP_sun_chuanfang
+	ideology = kleptocracy_subtype
 }
 create_country_leader = {
 	name = "Zhang Tianran"
@@ -223,515 +220,63 @@ create_country_leader = {
 	ideology = national_populist_subtype
 }
 
-### Field Marshals ###
 
-create_field_marshal = {
-	name = "Sun Chuanfang"
-	desc = "POLITICS_LEP_SUN_CHUANFANG_ARMY_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Sun_Chuanfang.png"
-	traits = {
-		old_guard
-		politically_connected
-		substance_abuser
-		trait_cautious
-		fast_planner
-	}
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
 
-	id = 1099
+
+
+recruit_character = LEP_qi_xieyuan
+recruit_character = LEP_zheng_junyan
+recruit_character = LEP_shangguan_yunxiang
+recruit_character = LEP_chen_yi
+recruit_character = LEP_tang_enbo
+recruit_character = LEP_shi_yousan
+recruit_character = LEP_deng_ruzhuo
+recruit_character = LEP_ge_jingen
+recruit_character = LEP_liu_zongji
+recruit_character = LEP_ma_yuren
+recruit_character = LEP_meng_zhaoyue
+recruit_character = LEP_qian_zongze
+recruit_character = LEP_wang_haoji
+recruit_character = LEP_xie_hongxun
+recruit_character = LEP_zhou_fengqi
+recruit_character = LEP_zhou_yinren
+
+LEP_qi_xieyuan = { set_variable = { china_alignment = token:southern_zhili } }
+LEP_sun_chuanfang = { set_variable = { china_alignment = token:southern_zhili } }
+
+recruit_character = LEP_zhou_yan
+recruit_character = LEP_guo_chan
+recruit_character = LEP_xu_peigen
+recruit_character = LEP_li_rentao
+recruit_character = LEP_lin_wei
+recruit_character = LEP_fang_benren
+
+LEP_lin_wei = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
+}
+LEP_zhou_yan = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
+}
+LEP_guo_chan = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
+}
+LEP_xu_peigen = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
+}
+LEP_li_rentao = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
+}
+LEP_fang_benren = {
+	set_character_flag = CHI_original_unit_leader
+	retire = yes
 }
 
-### Corps Commanders
-
-create_corps_commander = { # Nanjing
-	name = "Qi Xieyuan"
-	desc = "POLITICS_LEP_QI_XIEYUAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Qi_Xieyuan.png"
-	traits = {
-		politically_connected
-		career_officer
-		artillery_officer
-		infantry_leader
-	}
-	skill = 3
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-
-	id = 1111
-}
-
-create_corps_commander = { # Zhejiang Province
-	name = "Chen Yi"
-	desc = "POLITICS_LEP_CHEN_YI_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Chen_Yi.png"
-	traits = {
-		politically_connected
-		career_officer
-		trait_reckless
-		artillery_officer
-		artillery_specialist
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 1
-
-	id = 1112
-}
-
-create_corps_commander = { # Jiangsu Province
-	name = "Zheng Junyan"
-	desc = "POLITICS_LEP_ZHENG_JUNYAN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Zheng_Junyan.png"
-	traits = {
-		skilled_staffer
-		trait_cautious
-		substance_abuser
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-
-	id = 1113
-}
-
-create_corps_commander = { # Jiangxi Province
-	name = "Deng Ruzuo"
-	desc = "POLITICS_LEP_DENG_RUZUO_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Deng_Ruzuo.png"
-	traits = {
-		war_hero
-		infantry_officer
-		trait_reckless
-		harsh_leader
-		politically_connected
-		urban_assault_specialist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-
-	id = 1114
-}
-
-create_corps_commander = { # Fujian Province
-	name = "Zhou Yinren"
-	desc = "POLITICS_LEP_ZHOU_YINREN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Zhou_Yinren.png"
-	traits = {
-		politically_connected
-		career_officer
-		artillery_officer
-		artillery_specialist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-
-	id = 1115
-}
-
-create_corps_commander = {
-	name = "Shangguan Yunxiang"
-	desc = "POLITICS_LEP_SHANGGUAN_YUNXIANG_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Shangguan_Yunxiang.png"
-	traits = {
-		career_officer
-		infantry_officer
-		trickster
-		harsh_leader
-		brilliant_strategist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-
-	id = 1505
-}
-
-create_corps_commander = {
-	name = "Zhou Fengqi"
-	desc = "POLITICS_LEP_ZHOU_FENGQI_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Zhou_Fengqi.png"
-	traits = {
-		career_officer
-		harsh_leader
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Tang Enbo"
-	desc = "POLITICS_LEP_TANG_ENBO_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Tang_Enbo.png"
-	traits = {
-		infantry_officer
-		trait_cautious
-		career_officer
-		skilled_staffer
-	}
-	skill = 3
-	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 2
-	id = 5056
-}
-
-create_corps_commander = {
-	name = "Shi Yousan"
-	desc = "POLITICS_LEP_SHI_YOUSAN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Shi_Yousan.png"
-	traits = {
-		politically_connected
-		trait_reckless
-		substance_abuser
-		hidden_sympathies
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-	id = 1098
-}
-
-create_corps_commander = {
-	name = "Qian Zhuoren"
-	desc = "POLITICS_LEP_QIAN_ZHUOREN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Qian_Zhuoren.png"
-	traits = {
-		career_officer
-		organizer
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 2
-	id = 10980
-}
-
-create_corps_commander = {
-	name = "Gui Yongqing"
-	desc = "POLITICS_LEP_GUI_YONGQING_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Gui_Yongqing.png"
-	traits = {
-		naval_liason
-		naval_invader
-		trait_reckless
-		career_officer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 2
-	id = 10982
-}
-
-create_corps_commander = {
-	name = "Fang Benren"
-	desc = "POLITICS_LEP_FANG_BENREN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Fang_Benren.png"
-	traits = {
-		cavalry_officer
-		career_officer
-		organizer
-		trait_reckless
-		hill_fighter
-	}
-	skill = 3
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 4
-	logistics_skill = 3
-	id = 10983
-}
-
-create_corps_commander = {
-	name = "Ge Jing'en"
-	desc = "POLITICS_LEP_GE_JINGEN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Ge_Jingen.png"
-	traits = {
-		war_hero
-		trait_reckless
-		career_officer
-		urban_assault_specialist
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 1
-	id = 10984
-}
-
-create_corps_commander = {
-	name = "Guo Chan"
-	desc = "POLITICS_LEP_GUO_CHAN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Guo_Chan.png"
-	traits = {
-		career_officer
-		trait_reckless
-		artillery_officer
-		artillery_specialist
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 10985
-}
-
-create_corps_commander = {
-	name = "Li Rentao"
-	desc = "POLITICS_LEP_LI_RENTAO_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Li_Rentao.png"
-	traits = {
-		harsh_leader
-		career_officer
-		infantry_officer
-		commando
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-	id = 10986
-}
-
-create_corps_commander = {
-	name = "Lin Wei"
-	desc = "POLITICS_LEP_LIN_WEI_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Lin_Wei.png"
-	traits = {
-		career_officer
-		engineer_officer
-		trait_cautious
-		skilled_staffer
-	}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 1
-	id = 10987
-}
-
-create_corps_commander = {
-	name = "Liu Zongji"
-	desc = "POLITICS_LEP_LIU_ZONGJI_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Liu_Zongji.png"
-	traits = {
-		career_officer
-		trait_cautious
-		organizer
-		thorough_planner
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 2
-	id = 10988
-}
-
-create_corps_commander = {
-	name = "Ma Yuren"
-	desc = "POLITICS_LEP_MA_YUREN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Ma_Yuren.png"
-	traits = {
-		trait_reckless
-		politically_connected
-		trickster
-		ambusher
-		irregulars_officer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 10989
-}
-
-create_corps_commander = {
-	name = "Meng Zhaoyue"
-	desc = "POLITICS_LEP_MENG_ZHAOYUE_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Meng_Zhaoyue.png"
-	traits = {
-		engineer_officer
-		trait_cautious
-		trait_engineer
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 1
-	id = 10990
-}
-
-create_corps_commander = {
-	name = "Qian Zongze"
-	desc = "POLITICS_LEP_QIAN_ZONGZE_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Qian_Zongze.png"
-	traits = {
-		career_officer
-		infantry_officer
-		organizer
-		substance_abuser
-	}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 2
-	id = 10991
-}
-
-create_corps_commander = {
-	name = "Wang Haoji"
-	desc = "POLITICS_LEP_WANG_HAOJI_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Wang_Haoji.png"
-	traits = {
-		trait_reckless
-		career_officer
-		cavalry_officer
-		cavalry_leader
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 1
-	id = 10992
-}
-
-create_corps_commander = {
-	name = "Xie Hongxun"
-	desc = "POLITICS_LEP_XIE_HONGXUN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Xie_Hongxun.png"
-	traits = {
-		career_officer
-		war_hero
-		infantry_officer
-		infantry_leader
-		infantry_expert
-	}
-	skill = 3
-	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 2
-	id = 10993
-}
-
-create_corps_commander = {
-	name = "Xu Peigen"
-	desc = "POLITICS_LEP_XU_PEIGEN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Xu_Peigen.png"
-	traits = {
-		career_officer
-		infantry_officer
-		organizer
-		skilled_staffer
-		organisational_leader
-	}
-	skill = 2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 3
-	id = 10994
-}
-
-create_corps_commander = {
-	name = "Zhou Yan"
-	desc = "POLITICS_LEP_ZHOU_YAN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Zhou_Yan.png"
-	traits = {
-		career_officer
-		war_hero
-		artillery_officer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 3
-	id = 10995
-}
-
-create_navy_leader = {
-	name = "Li Shijia"
-	desc = "POLITICS_LEP_LI_SHIJIA_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Li_Shijia.png"
-	traits = {
-		navy_career_officer
-		seawolf
-		inshore_fighter
-		bold
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	maneuvering_skill = 1
-	coordination_skill = 1
-}
-
-create_navy_leader = {
-	name = "Wu Zhennan"
-	desc = "POLITICS_LEP_WU_ZHENNAN_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Wu_Zhennan.png"
-	traits = {
-		navy_career_officer
-		gunnery_expert
-		ironside
-		chief_engineer
-		gentlemanly
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	maneuvering_skill = 2
-	coordination_skill = 1
-}
-
-create_navy_leader = {
-	name = "Yang Shuzhuang"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Yang_Shuzhuang.png"
-	desc = "LEP_YANG_SHUZHUANG_DESC"
-	traits = {
-		navy_career_officer
-		torpedo_expert
-		ground_pounder
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	maneuvering_skill = 1
-	coordination_skill = 2
-}
+#navy
+recruit_character = LEP_li_shijia
+recruit_character = LEP_wu_zhennan
+recruit_character = LEP_Yang_Shuzhuang

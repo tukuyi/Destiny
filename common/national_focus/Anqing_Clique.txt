@@ -2119,6 +2119,20 @@ focus_tree = {
 			ANQ_chen_anbao = {
 				set_nationality = ROOT
 			}
+			LEP = {
+				LEP_zhou_fengqi = {
+					set_nationality = ROOT
+				}
+				LEP_guo_chan = {
+					set_nationality = ROOT
+				}
+				LEP_zhou_yan = {
+					set_nationality = ROOT
+				}
+				LEP_lin_wei = {
+					set_nationality = ROOT
+				}
+			}
 			custom_effect_tooltip = anq_can_integrate_tt
 			remove_ideas = ANQ_idea_institutional_chaos2
 			hidden_effect = {
@@ -3239,6 +3253,26 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus ANQ_air_naval_command"
 			navy_experience = 25
 			air_experience = 25
+			LEP = {
+				character_list_tooltip = {
+					limit = {
+						OR = {
+							# LEP = { LEP_chen_qixia = { is_character = PREV.PREV } }
+							LEP = { LEP_li_shijia = { is_character = PREV.PREV } }
+							LEP = { LEP_wu_zhennan = { is_character = PREV.PREV } }
+							LEP = { LEP_Yang_Shuzhuang = { is_character = PREV.PREV } }
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				LEP = {
+					# LEP_chen_qixia = { set_nationality = ROOT }
+					LEP_li_shijia = { set_nationality = ROOT }
+					LEP_wu_zhennan = { set_nationality = ROOT }
+					LEP_Yang_Shuzhuang = { set_nationality = ROOT }
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_AIRFORCE_BONUS }
 	}

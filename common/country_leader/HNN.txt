@@ -161,5 +161,11 @@ leader_traits = {
 		army_attack_factor = 0.05
 		breakthrough_factor = 0.05
 	}
+	LEP_the_smiling_tiger = { #笑面虎
+		random = no
+		political_power_factor = 0.10
+		war_support_factor = 0.05
+		army_org_factor = 0.10
+	}
 }
 	

@@ -2510,8 +2510,16 @@ country_event = {
 		add_popularity = { ideology = social_conservative popularity = 0.02 }
 		add_popularity = { ideology = authoritarian_democrat popularity = 0.01 }
 		add_popularity = { ideology = paternal_autocrat popularity = 0.01 }
-		LEP = {
-			CHI_recruit_tang_enbo_effect = yes
+		if = {
+			limit = { LEP = { has_character = LEP_tang_enbo } }
+			LEP = {
+				CHI_recruit_tang_enbo_effect = yes
+			}
+		}
+		else = {
+			ANQ = {
+				CHI_recruit_tang_enbo_effect = yes
+			}
 		}
 		ANQ = {
 			CHI_recruit_peng_xuefeng_effect = yes

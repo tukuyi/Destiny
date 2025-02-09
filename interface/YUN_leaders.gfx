@@ -94,7 +94,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Portrait_Yunnan_Zheng_Zhesheng"
-		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Zheng_Zhesheng.png"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_Zhen_Ze_Sheng.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_YUN_zhou_baozhong"

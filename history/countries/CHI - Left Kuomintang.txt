@@ -912,6 +912,7 @@ random_unit_leader = {#让关向应别去奉天
 }
 
 recruit_character = CHI_Qiu_Qingquan
+recruit_character = CHI_Gui_Yongqing
 
 recruit_character = CHI_peng_xuefeng # on start fills slot in ANQ but will be recruited after
 

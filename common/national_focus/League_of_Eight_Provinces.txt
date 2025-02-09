@@ -647,13 +647,17 @@ focus_tree = {
 	focus = {
 		id = LEP_zhili_consolidation
 		icon = GFX_goal_LEP_generic_flag
+		relative_position_id = LEP_redoubts_for_revenue
+		cost = 2
 		x = -7
 		y = 1
-		cost = 2
-		ai_will_do = { factor = 200 }
-		relative_position_id = LEP_redoubts_for_revenue
+
+		ai_will_do = { base = 20 }
 		prerequisite = { focus = LEP_redoubts_for_revenue }
-		available = { NOT = { has_country_flag = LEP_AOG_rule } }
+		available = { 
+			NOT = { has_country_flag = LEP_AOG_rule } 
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_appoint_civilian_magistrates"
 			add_political_power = 50
@@ -664,6 +668,13 @@ focus_tree = {
 					popularity = 0.65
 				}
 				else = { add_popularity = { ideology = paternal_autocrat popularity = 0.10 } }
+			}
+			show_unit_leaders_tooltip = LEP_zhou_yan
+			LEP_zhou_yan = {
+				set_nationality = ROOT
+			}
+			LEP_guo_chan = {
+				set_nationality = ROOT
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -2684,19 +2695,30 @@ focus_tree = {
 	focus = {
 		id = LEP_modernize_jinling_academy
 		icon = GFX_goal_KEN_officer_corps
+		relative_position_id = LEP_nanjing_army
+		cost = 5
 		x = 0
 		y = 2
-		cost = 5
-		ai_will_do = { factor = 30 }
-		relative_position_id = LEP_nanjing_army
+
+		ai_will_do = { base = 30 }
 		prerequisite = { focus = LEP_german_rifles }
 		prerequisite = { focus = LEP_nanjing_air_corps }
 		prerequisite = { focus = LEP_german_instructors }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_modernize_jinling_academy"
 			swap_ideas = {
 				remove_idea = AOG_falkenhausen_plan
 				add_idea = AOG_falkenhausen_plan2
+			}
+			LEP_li_rentao = { 
+				set_nationality = ROOT
+			}
+			LEP_xu_peigen = { 
+				set_nationality = ROOT 
+			}
+			LEP_lin_wei = { 
+				set_nationality = ROOT 
 			}
 			every_army_leader = { add_planning = 1 }
 			add_doctrine_cost_reduction = {

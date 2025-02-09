@@ -3509,10 +3509,14 @@ CHI_recruit_ye_jianying_effect = {
 	}
 }
 CHI_recruit_tang_enbo_effect = {
-	random_unit_leader = {
-		limit = { has_id = 5056 }
-		CHI_recruit_general_effect = yes
-		set_leader_portrait = GFX_Portrait_LEP_Tang_Enbo_LKMT
+	LEP = {
+		LEP_tang_enbo = {
+			#NOTE: MUST RECRUIT FIRST, THEN DO PORTRAIT SWAP - OTHERWISE WILL NOT WORK
+			CHI_recruit_general_effect = yes
+			set_portraits = {
+				army = { large = GFX_Portrait_LEP_tang_enbo_kuomintang }
+			}
+		}
 	}
 }
 CHI_recruit_peng_xuefeng_effect = {

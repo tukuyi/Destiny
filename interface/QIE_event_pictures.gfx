@@ -24,16 +24,16 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_wellington_koo_figure.png"
 	}
 	spriteType  = {
-		name = "GFX_report_event_QIE_wu_1926"
-		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926.png"
+		name = "GFX_report_event_QIE_yang_shuzhuang"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_yang_shuzhuang.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_wu_1926"
-		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_1926.png"
+		texturefile = "gfx/event_news_pictures/QIE/qie_wu_1926.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_wu_old_1"
-		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_old_1.png"
+		texturefile = "gfx/event_news_pictures/QIE/qie_wu_old_1.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_dang"

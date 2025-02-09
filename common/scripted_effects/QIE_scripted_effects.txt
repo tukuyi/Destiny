@@ -55,25 +55,6 @@ QIE_zhili_comeback = {#直系
 	}
 }
 
-QIE_basheng_comeback = {#孙传芳部
-	LEP = {
-		every_unit_leader = {
-			limit = {
-				OR = {
-					has_id = 1112 #陈仪
-					has_id = 1113 #郑俊彦
-					has_id = 1114 #邓如琢
-					has_id = 1115 #周荫人
-					has_id = 1505 #上官云相
-					has_id = 5056 #汤恩伯
-					has_id = 1098 #石友三
-				}
-			}
-			set_nationality = ROOT
-		}
-	}
-}
-
 QIE_sichuan_comeback = {#四川杨森部
 	event_target:original_sichuan = {
 		SZC_he_guoguang = {

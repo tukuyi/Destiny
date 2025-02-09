@@ -2,6 +2,29 @@ characters = {
 ################
 ###   将领   ###
 ################
+#桂永清
+	CHI_Gui_Yongqing = {
+		name = CHI_Gui_Yongqing
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_Gui_Yongqing
+				large = GFX_Portrait_CHI_Gui_Yongqing
+			}
+		}
+		corps_commander = {
+			traits = {
+				naval_liason
+				naval_invader
+				trait_reckless
+				career_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
 #邱清泉
 	CHI_Qiu_Qingquan = {
 		name = CHI_Qiu_Qingquan

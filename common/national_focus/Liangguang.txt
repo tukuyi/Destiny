@@ -5352,18 +5352,29 @@ shared_focus = {
 		if = {
 			limit = { NOT = { country_exists = LEP } }
 			LEP = {
-				every_unit_leader = {
-					limit = {
-						OR = {
-							has_id = 5056
-							has_id = 1098
+				custom_effect_tooltip = characters_will_be_recruited
+				if = {
+					limit = { has_character = LEP_tang_enbo }
+					character_list_tooltip = {
+						limit = {
+							is_character = LEP_tang_enbo
+							is_character = LEP_shi_yousan
 						}
 					}
-					if = {
-						limit = { is_field_marshal = yes }
-						demote_leader = yes
+					hidden_effect = {
+						LEP_tang_enbo = { set_nationality = ROOT demote_to_general = yes }
+						LEP_shi_yousan = { set_nationality = ROOT demote_to_general = yes }
 					}
-					set_nationality = ROOT
+				}
+				else = {
+					character_list_tooltip = {
+						limit = {
+							is_character = LEP_shi_yousan
+						}
+					}
+				}
+				hidden_effect = {
+					LEP_shi_yousan = { set_nationality = ROOT demote_to_general = yes }
 				}
 			}
 		}
@@ -5384,6 +5395,7 @@ shared_focus = {
 				}
 			}
 		}
+
 		if = {
 			limit = { NOT = { country_exists = SHX } }
 			SHX = {
@@ -5777,6 +5789,58 @@ shared_focus = {
 				random_navy_leader = {
 					limit = { has_trait = old_guard_navy }
 					set_nationality = ROOT
+				}
+			}
+		}
+
+		if = {
+			limit = { NOT = { country_exists = LEP } }
+			LEP = {
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						is_character = LEP_wu_zhennan
+						is_character = LEP_Yang_Shuzhuang
+						is_character = LEP_li_shijia
+					}
+				}
+				hidden_effect = {
+					LEP_wu_zhennan = { set_nationality = ROOT }
+					LEP_Yang_Shuzhuang = { set_nationality = ROOT }
+					LEP_li_shijia = { set_nationality = ROOT }
+				}
+			}
+		}
+		else_if = {
+			limit = { QIE = { has_character = LEP_wu_zhennan } }
+			QIE = {
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = { is_character = LEP_wu_zhennan }
+				}
+				hidden_effect = {
+					LEP_wu_zhennan = { set_nationality = ROOT }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ANQ = { has_character = LEP_wu_zhennan }
+				NOT = { country_exists = ANQ }
+			}
+			ANQ = {
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						is_character = LEP_wu_zhennan
+						is_character = LEP_Yang_Shuzhuang
+						is_character = LEP_li_shijia
+					}
+				}
+				hidden_effect = {
+					LEP_wu_zhennan = { set_nationality = ROOT }
+					LEP_Yang_Shuzhuang = { set_nationality = ROOT }
+					LEP_li_shijia = { set_nationality = ROOT }
 				}
 			}
 		}

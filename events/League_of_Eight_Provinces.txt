@@ -556,7 +556,7 @@ country_event = { # Dissension in the Ranks
 	}
 }
 
-country_event = { # A Heinous Crime
+country_event = { #可憎的暴行
 	id = lepcollapse.14
 	title = lepcollapse.14.t
 	desc = lepcollapse.14.d
@@ -583,14 +583,9 @@ country_event = { # A Heinous Crime
 					days = 4
 				}
 			}
-			random_unit_leader = {
-				limit = {
-					has_id = 1099 # Sun Chuanfang
-				}
-				retire = yes
-			}
+			retire_character = LEP_sun_chuanfang
 			create_country_leader = {
-				name = "League Council"
+				name = "紧急委员会"
 				desc = ""
 				picture = "gfx/leaders/LEP/Portrait_LEP_Council.png"
 				expire = "1.1.1"
@@ -638,15 +633,6 @@ country_event = { # Spreading Insubordination
 					hours = 10
 				}
 			}
-			#every_unit_leader = {
-			#	limit = {
-			#		has_id = 1114 # Jiangxi/Deng Ruzhou
-			#	}
-			#	set_nationality = KOR
-			#}
-			#delete_unit_template_and_units = {
-			#	division_template = "Jiangxi Bubing Zhen"
-			#}
 			if = {
 				limit = { has_template = "Jiangsu Bubing Xie" }
 				delete_unit_template_and_units = { division_template = "Jiangsu Bubing Xie" }
@@ -1087,21 +1073,19 @@ country_event = { # General Qi Assumes Control
 		hidden_effect = {
 			country_event = worldtension.26
 			retire_country_leader = yes #Sun Chuanfang
-			create_country_leader = {
-				name = "Qi Xieyuan"
-				desc = "POLITICS_LEP_QI_XIEYUAN_DESC"
-				picture = "gfx/leaders/LEP/Portrait_LEP_Qi_Xieyuan.png"
-				expire = "1.1.1"
-				ideology = pataut_warlordism_subtype
+			LEP_qi_xieyuan = {
+				promote_leader = yes
+				add_country_leader_role = {
+					country_leader = {
+						desc = LEP_qi_xieyuan_leader_desc
+						ideology = pataut_warlordism_subtype
+						traits = { CHN_southern_zhili_aligned }
+					}
+					promote_leader = yes
+				}
 			}
 			set_country_flag = LEP_qi_takes_control
 			add_ideas = LEP_Tian_Wenbing_hog_pau
-			random_unit_leader = {
-				limit = {
-					has_id = 1111 # Qi Xieyuan
-				}
-				promote_leader = yes
-			}
 		}
 		swap_ideas = {
 			remove_idea = LEP_Crippled_Industry1
@@ -1410,28 +1394,17 @@ country_event = { #General Shangguan Rises is Zhejiang/General Chen Rises in Zhe
 	option = {
 		name = lepcollapse.24.a
 		if = {
-			limit = {
+			limit = { 
 				ANQ = { has_country_flag = ANQ_is_profengtian }
 			}
-			random_unit_leader = {
-				limit = {
-					has_id = 1112 # Chen Yi
-					has_id = 10984 # Ge Jing'en
-					has_id = 10987 # Lin Wei
-				}
-				set_nationality = ANQ
-			}
+			LEP = { LEP_chen_yi = { set_nationality = ANQ } }
+			LEP = { LEP_ge_jingen = { set_nationality = ANQ } }
+			LEP = { LEP_tang_enbo = { set_nationality = ANQ } }
 			set_country_flag = LEP_chen_yi_gone
-			set_country_flag = Lin_Wei_dead
 			set_country_flag = Ge_Jingen_dead
 		}
 		else = {
-			random_unit_leader = {
-				limit = {
-					has_id = 1505 # Shangguang Yunxiang
-				}
-				set_nationality = ANQ
-			}
+			LEP = { LEP_shangguan_yunxiang = { set_nationality = ANQ } }
 			set_country_flag = LEP_shangguang_yunxiang_gone
 		}
 	}
@@ -1490,6 +1463,13 @@ country_event = { # LEP collapse - LEP dead
 			LEP_remove_collapse_dm = yes
 			clr_country_flag = LEP_league_war_flag
 		}		
+		QIE = {
+			if = {
+				limit = { has_country_flag = wu_intervenes_proLEP }
+				country_event = { id = qielepcollapse.30 days = 2 hours = 6 }
+				country_event = { id = qiefor.153 days = 7 }
+			}
+		}
 	}
 }
 
@@ -1768,208 +1748,206 @@ unit_leader_event = {#马登瀛逃出乱局
 
 #LEP Collapse Decision/Mission Events
 
-country_event = { #Jiangxi Governor/Deng Ruzhou is rescued
+unit_leader_event = { #Jiangxi Governor/Deng Ruzhou is rescued
 	id = lepcollapse.101
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.101" }
 	title = lepcollapse.101.t
 	desc = lepcollapse.101.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.101 option lepcollapse.101.a"
 		name = lepcollapse.101.a
 		add_political_power = 25
 	}
 }
 
-country_event = { #Jiangxi Governor/Deng Ruzhou Escapes
+unit_leader_event = { #邓如琢督理逃出生天！
 	id = lepcollapse.102
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.102" }
 	title = lepcollapse.102.t
 	desc = lepcollapse.102.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.102 option lepcollapse.102.a"
 		name = lepcollapse.102.a
 		add_political_power = 25
 	}
 }
 
-country_event = { #Jiangsu Governor/Zheng Junyuan is rescued
+unit_leader_event = { #郑俊彦将军获救！
 	id = lepcollapse.103
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.103" }
 	title = lepcollapse.103.t
 	desc = lepcollapse.103.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.103 option lepcollapse.103.a"
 		name = lepcollapse.103.a
 		add_political_power = 25
 	}
 }
 
-country_event = { #Jiangsu Governor/Zheng Junyuan Escapes
+unit_leader_event = { #郑俊彦将军逃出生天！
 	id = lepcollapse.104
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.104" }
 	title = lepcollapse.104.t
 	desc = lepcollapse.104.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.104 option lepcollapse.104.a"
 		name = lepcollapse.104.a
 		add_political_power = 25
 	}
 }
 
-country_event = { #Zhejiang Governor/Chen Yi is rescued
+unit_leader_event = { #陈仪督理逃出生天！
 	id = lepcollapse.105
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.105" }
 	title = lepcollapse.105.t
 	desc = lepcollapse.105.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.105 option lepcollapse.105.a"
 		name = lepcollapse.105.a
 		add_political_power = 25
 	}
 }
 
-country_event = { #Zhejiang Governor/Chen Yi Escapes
+unit_leader_event = { #陈仪督理逃出生天！
 	id = lepcollapse.106
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.106" }
 	title = lepcollapse.106.t
 	desc = lepcollapse.106.d
 
-	picture = GFX_report_event_CHI_warlords
-
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.106 option lepcollapse.106.a"
 		name = lepcollapse.106.a
-		add_political_power = 25
+		add_political_power = -15
+		ROOT = {
+			gain_xp = 500
+			add_timed_unit_leader_trait = {
+				trait = wounded
+				days = 80
+			}
+		}
 	}
 }
 
-country_event = { #Zhejiang Governor/Shangguan Yunxiang is rescued
+unit_leader_event = { #上官云相督理获救！
 	id = lepcollapse.107
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.107" }
 	title = lepcollapse.107.t
 	desc = lepcollapse.107.d
 
-	picture = GFX_report_event_CHI_warlords
-
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.107 option lepcollapse.107.a"
 		name = lepcollapse.107.a
-		add_political_power = 25
+		add_political_power = -15
+		ROOT = {
+			gain_xp = 500
+			add_timed_unit_leader_trait = {
+				trait = wounded
+				days = 80
+			}
+		}
 	}
 }
 
-country_event = { #Zhejiang Governor/Shangguan Yunxiang Escapes
+unit_leader_event = { #上官云相督理逃出生天！
 	id = lepcollapse.108
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.108" }
 	title = lepcollapse.108.t
 	desc = lepcollapse.108.d
 
-	picture = GFX_report_event_CHI_warlords
-
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.108 option lepcollapse.108.a"
 		name = lepcollapse.108.a
-		add_political_power = 25
+		add_political_power = -15
+		ROOT = {
+			gain_xp = 500
+			add_timed_unit_leader_trait = {
+				trait = wounded
+				days = 80
+			}
+		}
 	}
 }
 
-country_event = { #Jiangxi Governor/Deng Ruzhou dies
+unit_leader_event = { #邓如琢督理丧命！
 	id = lepcollapse.109
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.109" }
 	title = lepcollapse.109.t
 	desc = lepcollapse.109.d
 
-	picture = GFX_report_event_CHI_warlords
-
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.109 option lepcollapse.109.a"
 		name = lepcollapse.109.a
-		set_country_flag = LEP_deng_ruzhou_dies
+		retire_character = LEP_deng_ruzhuo
 	}
 }
 
-country_event = { #Jiangsu Governor/Zheng Junyuan dies
+unit_leader_event = { #郑俊彦将军丧命！
 	id = lepcollapse.110
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.110" }
 	title = lepcollapse.110.t
 	desc = lepcollapse.110.d
-
-	picture = GFX_report_event_CHI_warlords
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.110 option lepcollapse.110.a"
 		name = lepcollapse.110.a
 	}
 }
 
-country_event = { #Zhejiang Governor/Chen Yi dies
+unit_leader_event = { #陈仪督理丧命！
 	id = lepcollapse.111
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.111" }
 	title = lepcollapse.111.t
 	desc = lepcollapse.111.d
 
-	picture = GFX_report_event_CHI_warlords
-
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.111 option lepcollapse.111.a"
 		name = lepcollapse.111.a
-		set_country_flag = LEP_chen_yi_dies
+		retire_character = LEP_chen_yi
 	}
 }
 
-country_event = { #Zhejiang Governor/Shangguan Yunxiang dies
+
+unit_leader_event = { #上官云相督理丧命！
 	id = lepcollapse.112
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lepcollapse.112" }
 	title = lepcollapse.112.t
 	desc = lepcollapse.112.d
 
-	picture = GFX_report_event_CHI_warlords
-
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
+		log = "[GetLogInfo]: event lepcollapse.112 option lepcollapse.112.a"
 		name = lepcollapse.112.a
-		set_country_flag = LEP_shangguan_yunxiang_dies
+		retire_character = LEP_shangguan_yunxiang
 	}
 }
+
+##################################################################### Sun Investigation
 
 country_event = { #GEA gives us back our ports
 	id = lepcollapse.201
@@ -4408,6 +4386,27 @@ country_event = { #Heads up to Fengtian of LEP intervention to support QIE
 	}
 }
 
+country_event = { #方本仁来信
+	id = lep.215
+	title = lep.215.t
+	desc = lep.215.d
+	picture = GFX_report_event_LEP_fang_benren_1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #Of course we can strike an accord!
+		log = "[GetLogInfo]: event lep.215 option lep.215.a"
+		name = lep.215.a
+		LEP = { LEP_fang_benren = { set_nationality = PREV.PREV } }
+		add_command_power = 25
+		add_manpower = 10000
+	}
+	option = { #Your petty baggage has no place in the League.
+		log = "[GetLogInfo]: event lep.215 option lep.215.b"
+		name = lep.215.b
+	}
+}
+
 country_event = { # meeting with the nanking kommission
 	id = lepaog.1
 	title = lepaog.1.t
@@ -5873,9 +5872,8 @@ country_event = { # von falkenhausen becomes the boss
 			ruling_party = market_liberal
 			elections_allowed = no
 		}
-		every_army_leader = {
-			limit = { has_id = 1111 }
-			remove_unit_leader = yes
+		LEP_qi_xieyuan = {
+			retire = yes
 		}
 		hidden_effect = {
 			remove_ideas_with_trait = head_of_government
@@ -6012,15 +6010,14 @@ country_event = { # AOG military purge?
 		name = lepaog.62.a
 		ai_chance = { factor = 15 }
 		add_stability = 0.05
-		every_army_leader = {
-			limit = {
-				OR = {
-					has_id = 1113
-					has_id = 1114
-					has_id = 1098
-				}
-			}
-			remove_unit_leader = yes
+		LEP_shi_yousan = {
+			retire = yes
+		}
+		LEP_deng_ruzhuo = {
+			retire = yes
+		}
+		LEP_zheng_junyan = {
+			retire = yes
 		}
 	}
 	option = { # no

@@ -89,6 +89,9 @@
  COUNTRY_integrated_governorate_DEF: "$NONIDEOLOGYDEF$"
  cannot_change_autonomy_manually: "§R无法手动改变自治等级§!"
 
+ CHI_Gui_Yongqing: "桂永清"
+ CHI_Qiu_Qingquan: "邱清泉"
+
  ANQ: "安徽"
  ANQ_ADJ: "安徽"
  ANQ_DEF: "安徽"
