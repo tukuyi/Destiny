@@ -452,16 +452,11 @@ ideas = {
 	}
 
 	person_of_influence = {
+	#外交部长	
 		HNN_li_jiannong_for = {#李剑农
 			allowed = { original_tag = HNN }
 			picture = HNN_li_jiannong_for
 			cost = 100
-			available = {
-
-			}
-			visible = {
-				
-			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_li_jiannong_for"
 				
@@ -581,7 +576,113 @@ ideas = {
 				for_ideological_crusader
 			}
 		}		
-	
+		HNN_Guan_Kong_for_sde = {#观空法师
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Guan_Kong_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_biased_intellectual
+			}
+		}
+		HNN_Liu_Wendao_for_sli = {#刘文岛
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Wendao_for_sli"
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_biased_intellectual
+			}
+		}
+		HNN_Huang_Shiheng_for_sco = {#黄士衡
+			allowed = { original_tag = HNN }
+			cost = 100
+			available = {
+				NOT = {
+					has_government = totalist
+					has_government = paternal_autocrat
+					has_government = national_populist
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Huang_Shiheng_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_apologetic_clerk
+			}
+		}
+		HNN_Luo_Shujia_for_sco = {#罗树甲
+			allowed = { original_tag = HNN }
+			cost = 100
+			available = {
+				NOT = {
+					has_government = totalist
+					has_government = paternal_autocrat
+					has_government = national_populist
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Luo_Shujia_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_iron_fisted_brute
+			}
+		}
+		HNN_Wang_Dongyuan_for_sco = {#王东原
+			allowed = { original_tag = HNN }
+			cost = 100
+			available = {
+				NOT = {
+					has_government = totalist
+					has_government = paternal_autocrat
+					has_government = national_populist
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Wang_Dongyuan_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		HNN_Liu_Yuezhi_for_ade = {#刘岳峙
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Yuezhi_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_ideological_crusader
+			}
+		}
+		HNN_Zhang_Renmin_for_ade = {#张任民
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhang_Renmin_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_great_compromiser
+			}
+		}
+
+	#经济部长
 		HNN_shi_yin_shun_eco = {#印顺法师
 			allowed = { original_tag = HNN }
 			picture = HNN_shi_yin_shun_eco
@@ -770,7 +871,154 @@ ideas = {
 				eco_industrialiser
 			}
 		}		
+		HNN_Cao_Dianqiu_eco_sde = {#曹典球
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Cao_Dianqiu_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_resource_industrialist
+			}
+		}
+		HNN_Fan_Xudong_eco_sde = {#范旭东
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Fan_Xudong_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_industrial_chemist
+			}
+		}
+		HNN_He_Haoruo_eco_sli = {#何浩若
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Haoruo_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_laissez_faire_capitalist
+			}
+		}
+		HNN_Ren_Kainan_eco_sli = {#任凯南
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Ren_Kainan_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_reformer
+			}
+		}
+		HNN_He_Lian_eco_mli = {#何廉
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Lian_eco_mli"
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_mixed_economy
+			}
+		}
+		HNN_Liu_Tingfang_eco_mli = {#刘廷芳
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Tingfang_eco_mli"
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_bank_president
+			}
+		}
+		HNN_Hu_Shuhua_eco_sco = {#胡庶华
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Hu_Shuhua_eco_sco"
+				custom_effect_tooltip = HNN_hu_shuhua_add_tooltip
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_industrial_chemist
+			}
+		}
+		HNN_Lai_Lian_eco_sco = {#赖琏
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Lai_Lian_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_theoretical_scientist
+			}
+		}
+		HNN_Peng_Guojun_eco_sco = {#彭国钧
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Peng_Guojun_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_administrative_genius
+			}
+		}
+		HNN_Lu_Diping_eco_ade = {#鲁涤平
+			allowed = { original_tag = HNN }
+			ost = 100
+			available = {
+				OR = {
+					has_country_leader = { name = "谭延闿" ruling_only = yes }
+					has_completed_focus = HNN_victory_of_the_united_front
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Lu_Diping_eco_ade"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_corrupt_kleptocrat
+			}
+		}
+		HNN_Tang_Youren_eco_ade = {#唐有壬
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Tang_Youren_eco_ade"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_bank_president
+			}
+		}
 
+
+	#内政部长	
 		HNN_huang_gonglue_sec = {#黄公略
 			allowed = { original_tag = HNN }
 			picture = HNN_huang_gonglue_sec
@@ -908,5 +1156,93 @@ ideas = {
 				sec_secret_police_chief
 			}
 		}		
+		HNN_Cao_Bowen_sec_sde = {#曹伯闻
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Cao_Bowen_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_health_and_safety
+			}
+		}
+		HNN_Chou_Ao_sec_sde = {#仇鳌
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chou_Ao_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_man_of_the_people
+			}
+		}
+		HNN_Ming_Zhen_sec_sde = {#明真法师
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Ming_Zhen_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_compassionate_gentleman
+			}
+		}
+		HNN_Long_Bojian_sec_sli = {#龙伯坚
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Long_Bojian_sec_sli"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_health_and_safety
+			}
+		}
+		HNN_Yi_Peiji_sec_sco = {#易培基
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Yi_Peiji_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_compassionate_gentleman
+			}
+		}
+		HNN_Wang_Zhi_sec_ade = {#王之
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Wang_Zhi_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_secret_police_chief
+			}
+		}
+		HNN_Xu_Kexiang_sec_ade = {#许克祥
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Xu_Kexiang_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_prince_of_terror
+			}
+		}
 	}	
+
+	chief_of_army = {
+
+	}
 }

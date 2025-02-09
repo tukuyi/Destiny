@@ -2031,7 +2031,7 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		}
 	}
 
-	HNN_cheap_credit = { #Both programs
+	HNN_cheap_credit = { #廉价信贷
 		visible = {
 			has_completed_focus = HNN_balancing_the_books
 			has_active_mission = HNN_agricultural_reform_mission_timer
@@ -2071,7 +2071,18 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 				}
 			}
 			add_manpower = 2500
-			add_war_support = 0.04
+			if = {
+				limit = {
+					has_idea = HNN_Lu_Diping_eco_ade
+				}
+				add_political_power = 20
+				add_war_support = 0.04
+				custom_effect_tooltip = HNN_lu_diping_is_helpful_tooltip
+			}
+			else = {
+				add_war_support = 0.025
+				custom_effect_tooltip = HNN_lu_diping_helpful_tooltip
+			}
 		}
 	}
 	HNN_maintaining_proper_irrigation = {
@@ -2310,7 +2321,7 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		}
 	}
 
-	HNN_economic_controls_board = {
+	HNN_economic_controls_board = {#建立经济管制局
 		visible = {
 			has_completed_focus = HNN_nationalising_critical_industries
 			has_active_mission = HNN_industrial_reform_mission_timer
@@ -2338,14 +2349,37 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_economic_controls_board"
-			add_days_mission_timeout = {
-				mission = HNN_industrial_reform_mission_timer
-				days = -55
+			if = {
+				limit = {
+					has_idea = HNN_Hu_Shuhua_eco_sco
+				}
+				if = {
+					limit = {
+						has_active_mission = HNN_industrial_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_industrial_reform_mission_timer
+						days = -75
+					}
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_industrial_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_industrial_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_helpful_tooltip
 			}
 			add_political_power = 20
 		}
 	}
-	HNN_zhuzhou_industrial_zone = {
+	HNN_zhuzhou_industrial_zone = {#株洲工业区
 		visible = {
 			has_completed_focus = HNN_nationalising_critical_industries
 			has_active_mission = HNN_industrial_reform_mission_timer
@@ -2370,9 +2404,33 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_zhuzhou_industrial_zone"
-			add_days_mission_timeout = {
-				mission = HNN_industrial_reform_mission_timer
-				days = -55
+			if = {
+				limit = {
+					has_idea = HNN_Hu_Shuhua_eco_sco
+				}
+				if = {
+					limit = {
+						has_active_mission = HNN_industrial_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_industrial_reform_mission_timer
+						days = -75
+					}
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_industrial_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_industrial_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_resource = {
 				type = steel

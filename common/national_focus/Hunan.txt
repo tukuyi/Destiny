@@ -6805,10 +6805,28 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_facilitating_investments"
-			add_offsite_building = {
-				type = industrial_complex
-				level = 2
+			if = {
+				limit = {
+					has_idea = HNN_Hu_Shuhua_eco_sco
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_is_helpful_tooltip
 			}
+			else = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				custom_effect_tooltip = HNN_hu_shuhua_helpful_tooltip
+			}
+
 			add_tech_bonus = {
 				name = HNN_facilitating_investments
 				bonus = 0.5
@@ -6844,7 +6862,18 @@ focus_tree = {
 		prerequisite = { focus = HNN_facilitating_investments }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_opening_our_doors"
-			add_stability = -0.07
+			if = {
+				limit = {
+					has_idea = HNN_Hu_Shuhua_eco_sco
+				}
+				add_stability = -0.05
+				custom_effect_tooltip = HNN_hu_shuhua_is_helpful_tooltip
+			}
+			else = {
+				add_stability = -0.10
+				custom_effect_tooltip = HNN_hu_shuhua_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			add_timed_idea = {
 				idea = HNN_open_for_business
 				days = 280
@@ -7313,7 +7342,18 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_negotiating_with_the_landowners"
 			add_stability = 0.05
-			add_political_power = 40
+			if = {
+				limit = {
+					has_idea = HNN_Lu_Diping_eco_ade
+				}
+				add_political_power = 60
+				custom_effect_tooltip = HNN_lu_diping_is_helpful_tooltip
+			}
+			else = {
+				add_political_power = 30
+				custom_effect_tooltip = HNN_lu_diping_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			swap_ideas = {
 				remove_idea = HNN_renewed_agricultural_balance
 				add_idea = HNN_careful_agricultural_reform
