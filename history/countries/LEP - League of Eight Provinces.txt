@@ -221,9 +221,6 @@ create_country_leader = {
 }
 
 
-
-
-
 recruit_character = LEP_qi_xieyuan
 recruit_character = LEP_zheng_junyan
 recruit_character = LEP_shangguan_yunxiang
