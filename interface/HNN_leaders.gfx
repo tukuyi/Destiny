@@ -372,6 +372,10 @@ spriteTypes = {
 		name = "GFX_Portrait_HNN_guo_yong_huai"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_guo_yong_huai.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_Huang_ke_cheng"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Huang_ke_cheng.png"
+	}
 ###奉天	
 	spriteType = {
 		name = "GFX_Portrait_FNG_FNG_guo_enlin"
@@ -1490,5 +1494,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_ETS_Qasimi"
 		texturefile = "gfx/leaders/ETS/Portrait_SIK_Qasimi.png"
+	}	
+#国左
+	spriteType = {
+		name = "GFX_Portrait_CHI_peng_xuefeng"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_peng_xuefeng.png"
 	}	
 }

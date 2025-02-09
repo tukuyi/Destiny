@@ -2121,7 +2121,12 @@ country_event = {# Long Yun Secures Yunnan!
 						has_country_flag = HNN_gong_tuan_victory_flag
 					}
 				}
-				YUN_zhu_de_tao_wang_hu_nan = yes
+				HNN = {
+					country_event = { 
+						id = hungong.171
+						days = 2
+					}
+				}
 			}
 		}
 	}
@@ -4057,7 +4062,12 @@ country_event = {#Purge High Command
 						has_country_flag = HNN_gong_tuan_victory_flag
 					}
 				}
-				YUN_zhu_de_tao_wang_hu_nan = yes
+				HNN = {
+					country_event = { 
+						id = hungong.171
+						days = 2
+					}
+				}
 			}
 		}
 	}

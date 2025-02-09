@@ -177,4 +177,30 @@ on_actions = {
 			}
 		}
 	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = { 
+					FROM = { tag = ANQ }
+				}
+				LEP = {
+					ANQ = {
+						ANQ_Li_Shengchun = {
+							set_nationality = ROOT
+						}
+					}
+				}
+				CHI = {
+					ANQ = {
+						ANQ_shi_zhongcheng = {
+							set_nationality = CHI
+							set_portraits = {
+								army = { large = GFX_Portrait_ANQ_shi_zhongcheng_kuomintang }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

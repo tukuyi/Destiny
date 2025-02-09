@@ -5368,64 +5368,80 @@ shared_focus = {
 			}
 		}
 		if = {
+			limit = {
+				NOT = { country_exists = ANQ }
+				ANQ = { has_character = LEP_tang_enbo }
+			}
+			ANQ = {
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						is_character = LEP_tang_enbo
+					}
+				}
+				hidden_effect = {
+					LEP_tang_enbo = { set_nationality = ROOT demote_to_general = yes }
+				}
+			}
+		}
+		if = {
 			limit = { NOT = { country_exists = SHX } }
 			SHX = {
-				SHX_shang_zhen = {
-					if = {
-						limit = {
-							NOT = {
-								THIS = { has_character_flag = is_dead }
-								ROOT = { has_character = PREV }
-							}
-						}
-						if = {
-							limit = { THIS = { is_army_leader = yes } }
-							demote_to_general = yes
-							remove_trait = { trait = recently_promoted }
-						}
-						set_nationality = ROOT
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						is_character = SHX_shang_zhen
 					}
+				}
+				hidden_effect = {
+					SHX_shang_zhen = { set_nationality = ROOT demote_to_general = yes }
 				}
 			}
 		}
 		if = {
 			limit = { NOT = { country_exists = SZC } }
 			SZC = {
-				SZC_wang_lingji = {
-					set_nationality = ROOT
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						OR = {
+							is_character = SZC_tang_shizun
+							is_character = SZC_wang_lingji
+						}
+					}
+				}
+				hidden_effect = {
+					SZC_tang_shizun = { set_nationality = ROOT demote_to_general = yes }
+					SZC_wang_lingji = { set_nationality = ROOT demote_to_general = yes }
 				}
 			}
 		}
 		if = {
 			limit = { NOT = { country_exists = SQI } }
-			event_target:original_shandong = {
-				if = {
-					limit = { has_character = SQI_xu_yuanquan }
-					SQI_xu_yuanquan = {
-						if = {
-							limit = { is_field_marshal = yes }
-							demote_leader = yes
-						}
-						set_nationality = ROOT
+			SQI = {
+				custom_effect_tooltip = characters_will_be_recruited
+				character_list_tooltip = {
+					limit = {
+						is_character = SQI_xu_yuanquan
 					}
+				}
+				hidden_effect = {
+					SQI_xu_yuanquan = { set_nationality = ROOT demote_to_general = yes }
 				}
 			}
 		}
 		if = {
 			limit = {
 				NOT = { country_exists = CHI }
+				CHI = { has_character = ANQ_sun_liren }
 			}
-			CHI = {
-				random_unit_leader = {
-					limit = { has_id = 2272 }
-					set_leader_portrait = GFX_Portrait_ANQ_Sun_Liren
-					if = {
-						limit = { is_field_marshal = yes }
-						demote_leader = yes
-					}
-					set_nationality = ROOT
+			ANQ_sun_liren = {
+				set_portraits = {
+					army = { large = GFX_Portrait_ANQ_sun_liren_army }
 				}
+				demote_to_general = yes
 			}
+			CHI = { ANQ_sun_liren = { set_nationality = ROOT } }
 		}
 		add_stability = -0.1
 		add_political_power = -50

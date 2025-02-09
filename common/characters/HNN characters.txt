@@ -1003,16 +1003,17 @@ characters = {
 		corps_commander = {
 			desc = POLITICS_HNN_WAN_XI_XIAN_ARMY_DESC
 			traits = { 
-				irregulars_officer
 				guerilla_officer
+				irregulars_officer
+				expert_improviser
 			}
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
 			planning_skill = 1
-			logistics_skill = 1
+			logistics_skill = 2
 		}
-	}	
+	}
 #许世友
     HNN_Xu_Si_You = {
 		name = HNN_Xu_Si_You
@@ -1035,6 +1036,29 @@ characters = {
 			logistics_skill = 1
 		}
 	}	
+#黄克诚
+	HNN_Huang_ke_cheng = {
+		name = HNN_Huang_ke_cheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Huang_ke_cheng
+				large = GFX_Portrait_HNN_Huang_ke_cheng
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_HNN_Huang_ke_cheng_ARMY_DESC
+			traits = { 
+				irregulars_officer
+				guerilla_officer
+				trait_reckless
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}		
 #耿飚
     HNN_geng_biao = {
 		name = HNN_geng_biao

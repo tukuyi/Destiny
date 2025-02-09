@@ -626,18 +626,6 @@ create_corps_commander = {
 	id = 3005
 }
 create_corps_commander = {
-	name = "孙立人"
-	desc = "POLITICS_CHI_SUN_LIREN_ARMY_DESC"
-	portrait_path = "gfx/leaders/ANQ/Portrait_ANQ_Sun_Liren.png"
-	traits = { brilliant_strategist career_officer organizer urban_assault_specialist }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2	
-	id = 2272
-}
-create_corps_commander = {
 	name = "周恩来"
 	desc = "POLITICS_CHI_ZHOU_ENLAI_ARMY_DESC"
 	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhou_Enlai_Army.png"
@@ -829,11 +817,6 @@ random_unit_leader = {
 	limit = { has_id = 2203 }
 	set_unit_leader_flag = CHI_RF_military_loyalist_flag
 }
-random_unit_leader = {
-	limit = { has_id = 2272 }
-	set_unit_leader_flag = CHI_original_unit_leader
-	set_nationality = ANQ
-}
 #LCS
 random_unit_leader = {
 	limit = { has_id = 2279 }
@@ -926,4 +909,11 @@ random_unit_leader = {
 random_unit_leader = {#让关向应别去奉天
 	limit = { has_id = 5066 }
 	set_nationality = XXA
+}
+
+recruit_character = CHI_peng_xuefeng # on start fills slot in ANQ but will be recruited after
+
+CHI_peng_xuefeng = {
+	set_character_flag = CHN_original_unit_leader
+	set_nationality = ANQ
 }

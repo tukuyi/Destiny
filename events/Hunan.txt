@@ -10514,6 +10514,24 @@ country_event = {#刘伯承
 	}
 }
 
+country_event = {#雨落之后，云水相逢
+	id = hungong.171
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.171" }
+	picture = GFX_news_event_YUN_zhu_de_takes_over
+	title = hungong.171.t
+	desc = hungong.171.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #yes
+		name = hungong.171.a
+		YUN = {
+			YUN_zhu_de_tao_wang_hu_nan = yes
+		}
+	}
+}
+
 ########################################
 ##########-      中社部    -############
 ########################################
@@ -14122,7 +14140,6 @@ country_event = {###国民党左派革命失败
 							has_id = 2284
 							has_id = 2283  
 							has_id = 2282  
-							has_id = 2272
 							has_id = 5059  
 							has_id = 5071  
 							has_id = 2277 

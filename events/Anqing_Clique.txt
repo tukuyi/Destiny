@@ -256,12 +256,6 @@ country_event = { #Japan has pledged support, attack now
 				long_name = anq_influencepartyname_projapan
 			}
 			hidden_effect = {
-				if = {	
-					limit = { has_country_leader = { name = "Chen Tiaoyuan" ruling_only = yes } }
-					set_country_leader_portrait = {
-						portrait = "gfx/leaders/ANQ/Portrait_ANQ_Chen_Double.png"
-					}
-				}
 				add_popularity = {
 					ideology = market_liberal #add japanese/fengtian influence
 					popularity = 0.01
@@ -396,7 +390,7 @@ country_event = { #Qing pledges support (or abandoned), attack now
 		LEP = {
 			country_event = lepcollapse.20 #chen declares war event
 			load_oob = "LEP_collapse_LY"
-			load_oob = "LEP_collapse_nanjing"
+			# load_oob = "LEP_collapse_nanjing"
 		}
 		hidden_effect = { 
 			if = {
@@ -2924,12 +2918,28 @@ country_event = { # Puppet for pro-japan ANQ
 			ANQ_add_fengtian_spirit = yes
 		}
 		hidden_effect = {
-			random_unit_leader = {
-				limit = {
-					has_id = 1506 # Liu Heding
+			ANQ = {
+				ANQ_liu_heding = {
+					promote_leader = yes
+					set_nationality = SQI
+					# set_variable = { china_alignment = ANQ.country_leader:china_alignment }
+					add_country_leader_role = {
+						country_leader = {
+							ideology = authdem_warlordism_subtype
+							desc = POLITICS_SQI_LIU_HEDING_ARMY_DESC
+							traits = { CHN_anguojun_aligned }
+						}
+						promote_leader = yes
+					}
+					add_country_leader_role = {
+						country_leader = {
+							ideology = pataut_warlordism_subtype
+							desc = POLITICS_SQI_LIU_HEDING_ARMY_DESC
+							traits = { CHN_anguojun_aligned }
+						}
+						promote_leader = yes
+					}
 				}
-				set_nationality = SQI
-				promote_leader = yes
 			}
 			SQI = {
 				transfer_state = 597
@@ -2938,20 +2948,6 @@ country_event = { # Puppet for pro-japan ANQ
 				add_state_core = 597
 				add_state_core = 1065
 				add_state_core = 1064
-				create_country_leader = {
-					name = "Liu Heding"
-					desc = "POLITICS_SQI_LIU_HEDING_ARMY_DESC"
-					picture = "gfx/leaders/ANQ/Portrait_ANQ_Liu_Heding.png"
-					expire = "1.1.1"
-					ideology = pataut_warlordism_subtype
-				}
-				create_country_leader = {
-					name = "Liu Heding"
-					desc = "POLITICS_SQI_LIU_HEDING_ARMY_DESC"
-					picture = "gfx/leaders/ANQ/Portrait_ANQ_Liu_Heding.png"
-					expire = "1.1.1"
-					ideology = authdem_warlordism_subtype
-				}
 				set_politics = {
 					ruling_party = authoritarian_democrat
 				}
@@ -2965,6 +2961,7 @@ country_event = { # Puppet for pro-japan ANQ
 					name = sqi_pat_aut_liu_heding_puppet
 					long_name = sqi_pat_aut_liu_heding_puppet
 				}
+				add_pataut_to_coalition = yes
 				set_country_flag = SQI_projapan_anqing_puppet
 				set_country_flag = SQI_puppet
 				set_popularities = {

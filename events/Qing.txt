@@ -6952,6 +6952,8 @@ country_event = {#皇帝一鸣惊人
 				paternal_autocrat = 0
 				national_populist = 2
 			}
+			QIE_ma_dengying_flees_effect = yes
+			QIE_sun_liren_flees_effect = yes
 			set_country_flag = Jiang_Baili_dead
 			set_country_flag = Wu_Peifu_dead
 			every_owned_state = {
@@ -7005,6 +7007,7 @@ country_event = {#皇帝一鸣惊人
 				}
 				SQI = { country_event = qiecoup.23 } #the coup succeeds! time to intervene
 			}
+
 			QIE_aisin_gioro_pujie = {
 				promote_leader = yes
 			}

@@ -1,0 +1,20 @@
+characters = {
+################
+###   将领   ###
+################
+#彭雪楓
+	CHI_peng_xuefeng = {
+		name = CHI_peng_xuefeng
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_peng_xuefeng
+				large = GFX_Portrait_CHI_peng_xuefeng
+			}
+		}
+		#country leader roles for use in Anqing as socialist placeholder
+		country_leader = { ideology = totalist_subtype }
+		country_leader = { ideology = syndicalist_subtype }
+		country_leader = { ideology = radical_socialist_subtype }
+		###gets his commnder leader role after being recuited by LKMT
+	}
+}

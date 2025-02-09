@@ -262,6 +262,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_default_debt"
+			if = {
+				limit = { has_character = ANQ_ma_dengying }
+				retire_character = ANQ_ma_dengying
+			}
+			if = {
+				limit = { has_character = ANQ_sun_liren }
+				retire_character = ANQ_sun_liren
+			}
 			custom_effect_tooltip = QIE_debt_default_tt
 			hidden_effect = {
 				remove_ideas = QIE_big_debt

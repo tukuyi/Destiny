@@ -15468,7 +15468,7 @@ country_event = { #Reactionaries in the Army
 					has_trait = CHI_left_kmt_officer
 					has_trait = SHX_gmj_officer
 
-					has_id = 2272
+					is_character = ANQ_sun_liren
 
 					is_character = GXC_chen_mingshu
 					is_character = GXC_cai_tingkai

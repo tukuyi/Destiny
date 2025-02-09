@@ -1,0 +1,337 @@
+characters = {
+#陳調元
+	ANQ_chen_tiaoyuan = {
+		name = ANQ_chen_tiaoyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_chen_tiaoyuan
+				large = GFX_Portrait_ANQ_chen_tiaoyuan
+			}
+		}
+		corps_commander = { #promoted to marshal upon ANQ spawn
+			desc = POLITICS_ANQ_CHEN_TIAOYUAN_ARMY_DESC
+			traits = { 
+				politically_connected 
+				career_officer 
+				harsh_leader 
+				trait_reckless 
+				trickster 
+				expert_improviser 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+################
+###   将领   ###
+################
+#孫立人
+	ANQ_sun_liren = {
+		name = ANQ_sun_liren
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_sun_liren_army
+				large = GFX_Portrait_ANQ_sun_liren_army
+			}
+		}
+		corps_commander = {
+			traits = { 
+				brilliant_strategist 
+				engineer_officer 
+				career_officer 
+				organizer 
+				rising_star 
+			}
+			desc = ANQ_sun_liren_high_command_desc
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#陳安寶
+	ANQ_chen_anbao = {
+		name = ANQ_chen_anbao
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_chen_anbao
+				large = GFX_Portrait_ANQ_chen_anbao
+			}
+		}
+		corps_commander = {
+			desc = ANQ_chen_anbao_commander_desc
+			traits = { 
+				harsh_leader 
+				career_officer 
+				infantry_officer 
+				trait_reckless 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#曹萬順
+	ANQ_cao_wanshun = {
+		name = ANQ_cao_wanshun
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_cao_wanshun
+				large = GFX_Portrait_ANQ_cao_wanshun
+			}
+		}
+		corps_commander = {
+			desc = ANQ_cao_wanshun_commander_desc
+			traits = { 
+				career_officer 
+				harsh_leader 
+				infantry_officer 
+				trait_reckless 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#高世讀
+	ANQ_gao_shidu = {
+		name = ANQ_gao_shidu
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_gao_shidu
+				large = GFX_Portrait_ANQ_gao_shidu
+			}
+		}
+		corps_commander = {
+			desc = ANQ_gao_shidu_sic_desc
+			traits = { 
+				war_hero 
+				trait_cautious 
+				career_officer 
+				organizer 
+				old_guard 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#劉鳳圖
+	ANQ_liu_fengtu = {
+		name = ANQ_liu_fengtu
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_liu_fengtu
+				large = GFX_Portrait_ANQ_liu_fengtu
+			}
+		}
+		corps_commander = {
+			desc = ANQ_liu_fengtu_high_command_desc
+			traits = { 
+				career_officer 
+				artillery_officer 
+				organizer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#孫棨
+	ANQ_sun_qi = {
+		name = ANQ_sun_qi
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_sun_qi
+				large = GFX_Portrait_ANQ_sun_qi
+			}
+		}
+		corps_commander = {
+			desc = ANQ_sun_qi_sic_desc
+			traits = { 
+				career_officer 
+				politically_connected 
+				infantry_officer ranger 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+#阮肇昌
+	ANQ_ruan_zhaochang = {
+		name = ANQ_ruan_zhaochang
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_ruan_zhaochang
+				large = GFX_Portrait_ANQ_ruan_zhaochang
+			}
+		}
+		corps_commander = {
+			desc = ANQ_ruan_zhaochang_army_chief_desc
+			traits = { 
+				career_officer 
+				infantry_officer 
+				trait_reckless 
+				organizer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#劉和鼎
+	ANQ_liu_heding = {
+		name = ANQ_liu_heding
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_liu_heding
+				large = GFX_Portrait_ANQ_liu_heding
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ANQ_LIU_HEDING_ARMY_DESC
+			traits = { 
+				career_officer
+				trait_reckless 
+				infantry_officer 
+				hill_fighter 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#丁翰東
+	ANQ_ding_handong = {
+		name = ANQ_ding_handong
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_ding_handong
+				large = GFX_Portrait_ANQ_ding_handong
+			}
+		}
+		corps_commander = {
+			desc = ANQ_ding_handong_commander_desc
+			traits = { 
+				career_officer 
+				trickster 
+				trait_cautious 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#施中誠
+	ANQ_shi_zhongcheng = {
+		name = ANQ_shi_zhongcheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_shi_zhongcheng
+				large = GFX_Portrait_ANQ_shi_zhongcheng
+			}
+		}
+		corps_commander = {
+			desc = ANQ_shi_zhongcheng_high_command_desc
+			traits = { 
+				infantry_officer 
+				career_officer 
+				organizer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#馬登瀛
+	ANQ_ma_dengying = {
+		name = ANQ_ma_dengying
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_ma_dengying
+				large = GFX_Portrait_ANQ_ma_dengying
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ANQ_MA_DENGYING_ARMY_DESC
+			traits = { 
+				media_personality 
+				career_officer 
+				politically_connected 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
+#李生春
+	ANQ_Li_Shengchun = {
+		name = ANQ_Li_Shengchun
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_Li_Shengchun
+				large = GFX_Portrait_ANQ_Li_Shengchun
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer
+				substance_abuser
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#张中立
+	ANQ_Zhang_Zhongli = {
+		name = ANQ_Zhang_Zhongli
+		portraits = {
+			army = {
+				small = GFX_Portrait_ANQ_Zhang_Zhongli
+				large = GFX_Portrait_ANQ_Zhang_Zhongli
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_ANQ_ZHANG_ZHONGLI_ARMY_DESC
+			traits = {
+				infantry_officer
+				substance_abuser
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+}

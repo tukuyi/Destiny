@@ -1,0 +1,66 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_Portrait_ANQ_Li_Shengchun"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_Li_Shengchun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_shi_zhongcheng"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_shi_zhongcheng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_shi_zhongcheng_kuomintang"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_shi_zhongcheng_kuomintang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_liu_heding"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_liu_heding.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_Zhang_Zhongli"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_Zhang_Zhongli.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_ma_dengying"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_ma_dengying.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_ding_handong"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_ding_handong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_ruan_zhaochang"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_ruan_zhaochang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_sun_qi"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_sun_qi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_gao_shidu"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_gao_shidu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_liu_fengtu"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_liu_fengtu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_cao_wanshun"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_cao_wanshun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_chen_anbao"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_chen_anbao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_sun_liren_kuomintang"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_sun_liren_kuomintang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_sun_liren_army"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_sun_liren_army.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ANQ_chen_tiaoyuan"
+		texturefile = "gfx/leaders/ANQ/Portrait_ANQ_chen_tiaoyuan.png"
+	}
+}
