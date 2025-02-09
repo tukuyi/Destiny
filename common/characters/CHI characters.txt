@@ -2,6 +2,30 @@ characters = {
 ################
 ###   将领   ###
 ################
+#邱清泉
+	CHI_Qiu_Qingquan = {
+		name = CHI_Qiu_Qingquan
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_Qiu_Qingquan
+				large = GFX_Portrait_CHI_Qiu_Qingquan
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_engineer
+				war_hero
+				career_officer
+				armor_officer
+				trait_reckless
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
 #彭雪楓
 	CHI_peng_xuefeng = {
 		name = CHI_peng_xuefeng

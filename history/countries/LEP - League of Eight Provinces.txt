@@ -432,25 +432,6 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-	name = "Qiu Qingquan"
-	desc = "POLITICS_LEP_QI_XIEYUAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Qiu_Qingquan.png"
-	traits = {
-		trait_engineer
-		war_hero
-		career_officer
-		armor_officer
-		trait_reckless
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-	id = 10981
-}
-
-create_corps_commander = {
 	name = "Gui Yongqing"
 	desc = "POLITICS_LEP_GUI_YONGQING_DESC"
 	portrait_path = "gfx/leaders/LEP/Portrait_LEP_Gui_Yongqing.png"
