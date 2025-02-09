@@ -12,7 +12,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			desc = LEP_sun_chuanfang_leader_desc
+			desc = POLITICS_LEP_SUN_CHUANFANG_DESC
 			ideology = kleptocracy_subtype
 			traits = { CHN_southern_zhili_aligned LEP_the_smiling_tiger }
 		}
@@ -551,7 +551,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			desc = LEP_zhou_fengqi_commander_desc
+			desc = POLITICS_LEP_ZHOU_FENGQI_DESC
 			traits = { 
 				career_officer 
 				trait_reckless 

@@ -111,4 +111,8 @@ spriteTypes = {
 		name = "GFX_Portrait_LEP_sun_chuanfang"
 		texturefile = "gfx/leaders/LEP/Portrait_LEP_sun_chuanfang.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_LEP_shi_yousan"
+		texturefile = "gfx/leaders/LEP/Portrait_LEP_shi_yousan.png"
+	}
 }
