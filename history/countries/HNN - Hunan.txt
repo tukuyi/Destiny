@@ -94,9 +94,7 @@ add_ideas = {
 	unequal_treaties
 
 	HNN_tan_yan_kai_hog
-	HNN_Huang_Shiheng_for_sco
-	HNN_Hu_Shuhua_eco_sco
-	HNN_Yi_Peiji_sec_sco
+
 }
 
 #新增

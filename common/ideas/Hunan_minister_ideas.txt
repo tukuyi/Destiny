@@ -612,6 +612,11 @@ ideas = {
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Huang_Shiheng_for_sco"
+				on_add = {
+					ROOT = {
+						custom_effect_tooltip = HNN_huang_shiheng_add_tooltip
+					}
+				}
 			}
 			traits = {
 				foreign_minister
@@ -679,6 +684,56 @@ ideas = {
 				foreign_minister
 				authoritarian_democrat
 				for_great_compromiser
+			}
+		}
+		HNN_wang_tianpei_for = {#王天培
+			allowed = { original_tag = HNN }
+			picture = HNN_wang_tianpei_for
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_wang_tianpei_for"
+				ROOT = {
+					custom_effect_tooltip = HNN_wang_tianpei_add_tooltip
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				KR_republican_firebrand
+			}
+		}
+		HNN_zhao_junmai_for = {#赵君迈
+			allowed = { original_tag = HNN }
+			picture = HNN_zhao_junmai_for
+			cost = 100
+			available = {
+				OR = {
+					HNN_lian_sheng_goverment = yes
+					has_completed_focus = HNN_guo_jia_chong_sheng
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhao_junmai_for"
+				ROOT = {
+					custom_effect_tooltip = HNN_zhong_boyi_add_tooltip
+				}
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				hog_happy_amateur
 			}
 		}
 
@@ -936,6 +991,25 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Tingfang_eco_mli"
+				ROOT = {
+					custom_effect_tooltip = HNN_qian_yongming_add_tooltip
+				}
+			}
+			available = {
+				OR = {
+					AND = {
+						has_country_leader = { name = "谭延闿" ruling_only = yes }
+						has_government = social_liberal
+					}
+					has_country_leader = { name = "陈渠珍" ruling_only = yes }
+					has_country_leader = { name = "赵恒惕" ruling_only = yes }
+					has_completed_focus = HNN_cooperating_with_dangwai
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
 			}
 			traits = {
 				economy_minister
@@ -948,12 +1022,39 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Hu_Shuhua_eco_sco"
-				custom_effect_tooltip = HNN_hu_shuhua_add_tooltip
+				ROOT = {
+					custom_effect_tooltip = HNN_hu_shuhua_add_tooltip
+				}
 			}
 			traits = {
 				economy_minister
 				social_conservative
 				eco_industrial_chemist
+			}
+		}
+		HNN_zhong_boyi_eco = {#钟伯毅
+			allowed = { original_tag = HNN }
+			picture = HNN_zhong_boyi_eco
+			cost = 100
+			available = {
+				HNN_lian_sheng_goverment = yes
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhong_boyi_eco"
+				ROOT = {
+					custom_effect_tooltip = HNN_zhong_boyi_add_tooltip
+				}
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_traditionalist_economist
 			}
 		}
 		HNN_Lai_Lian_eco_sco = {#赖琏
@@ -982,7 +1083,7 @@ ideas = {
 		}
 		HNN_Lu_Diping_eco_ade = {#鲁涤平
 			allowed = { original_tag = HNN }
-			ost = 100
+			cost = 100
 			available = {
 				OR = {
 					has_country_leader = { name = "谭延闿" ruling_only = yes }
@@ -997,6 +1098,9 @@ ideas = {
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Lu_Diping_eco_ade"
+				ROOT = {
+					custom_effect_tooltip = HNN_lu_diping_add_tooltip
+				}
 			}
 			traits = {
 				economy_minister
@@ -1016,7 +1120,27 @@ ideas = {
 				eco_bank_president
 			}
 		}
-
+		HNN_hu_ying_eco = {#胡瑛
+			allowed = { original_tag = HNN }
+			picture = HNN_hu_ying_eco
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_hu_ying_eco"
+				ROOT = {
+					custom_effect_tooltip = HNN_hu_ying_add_tooltip
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_resource_industrialist
+			}
+		}
 
 	#内政部长	
 		HNN_huang_gonglue_sec = {#黄公略
@@ -1217,15 +1341,48 @@ ideas = {
 			}
 		}
 		HNN_Wang_Zhi_sec_ade = {#王之
-			allowed = { original_tag = HNN }
-			cost = 100
+			allowed = { 
+				has_dlc_lar = yes
+				original_tag = HNN 
+			}
+			cost = 150
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Wang_Zhi_sec_ade"
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
 			}
 			traits = {
 				security_minister
 				authoritarian_democrat
-				sec_secret_police_chief
+				KR_head_of_intelligence
+			}
+		}
+		HNN_ye_dehui_sec = {#叶德辉
+			allowed = { original_tag = HNN }
+			picture = HNN_ye_dehui_sec
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_ye_dehui_sec"
+				ROOT = {
+					custom_effect_tooltip = HNN_ye_dehui_add_tooltip
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_completed_focus = HNN_consolidate_the_province
+				}
+			}
+			traits = {
+				security_minister
+				social_conservative
+				KR_regional_traditionalist_leader
 			}
 		}
 		HNN_Xu_Kexiang_sec_ade = {#许克祥
@@ -1240,9 +1397,124 @@ ideas = {
 				sec_prince_of_terror
 			}
 		}
+		HNN_lu_dangping_sec = {#鲁荡平
+			allowed = { original_tag = HNN }
+			picture = HNN_lu_dangping_sec
+			cost = 100
+			available = {
+				OR = {
+					has_country_leader = { name = "谭延闿" ruling_only = yes }
+					has_completed_focus = HNN_victory_of_the_united_front
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_lu_dangping_sec"
+
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_reformed_justice
+			}
+		}
+		HNN_Zhang_Huizan_sec = {#张辉瓒
+			allowed = { 
+				original_tag = HNN 
+			}
+			picture = HNN_Zhang_Huizan_sec
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhang_Huizan_sec"
+				ROOT = {
+					custom_effect_tooltip = HNN_zhang_huizan_add_tooltip
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_secret_police_chief
+			}
+		}
+		HNN_zhou_shizhao_sec = {#周世钊
+			allowed = { 
+				original_tag = HNN 
+			}
+			picture = HNN_zhou_shizhao_sec
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhou_shizhao_sec"
+				ROOT = {
+					custom_effect_tooltip = HNN_zhou_shizhao_add_tooltip
+				}
+			}
+			available = {
+				NOT = {
+					has_country_leader = { name = "赵恒惕" ruling_only = yes }
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				}
+			}
+			traits = {
+				security_minister
+				social_liberal
+				KR_political_specialist
+			}
+		}
 	}	
 
 	chief_of_army = {
+
+	}
+
+	chief_of_air_force = { ### 空军 ###
+		HNN_Liu_Zhesheng_cair = {#柳哲生
+			allowed = { original_tag = HNN }
+			available = { 
+
+			}
+			visible = {
+				NOT = { has_country_flag = Liu_Zhesheng_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Zhesheng_cair"
+			}
+			traits = {
+				chief_of_air_force
+				cair_vertical_envelopment_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		HNN_Shi_Bangfan_cair = {#石邦藩
+			allowed = { original_tag = HNN }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Shi_Bangfan_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Shi_Bangfan_cair"
+			}
+			traits = {
+				chief_of_air_force
+				cair_air_superiority_doctrine
+			}
+			cancel_if_invalid = yes
+		}
 
 	}
 }

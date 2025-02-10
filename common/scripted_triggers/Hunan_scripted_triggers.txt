@@ -8,3 +8,17 @@ uses_governorate_autonomy_state = {
 	overlord = { is_chinese_tag = yes }
 	is_chinese_tag = yes
 }
+HNN_lian_sheng_goverment = {
+	custom_trigger_tooltip = {
+		tooltip = HNN_lian_sheng_goverment_tooltip
+		OR = {
+			AND = {
+				has_country_leader = { name = "谭延闿" ruling_only = yes }
+				has_government = social_liberal
+			}
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+			has_country_leader = { name = "赵恒惕" ruling_only = yes }
+			has_completed_focus = HNN_Buddhism
+		}
+	}
+}

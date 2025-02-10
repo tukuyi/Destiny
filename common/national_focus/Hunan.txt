@@ -158,9 +158,23 @@ focus_tree = {
 				ideology = market_liberal
 				popularity = -0.02
 			}
-			add_timed_idea = {
-				idea = HNN_consolidating_our_rule
-				days = 300
+			if = {
+				limit = {
+					has_idea = HNN_Zhang_Huizan_sec
+				}
+				add_timed_idea = {
+					idea = HNN_consolidating_our_rule
+					days = 360
+				}
+				custom_effect_tooltip = HNN_zhang_huizan_is_helpful_tooltip
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_consolidating_our_rule
+					days = 250
+				}
+				custom_effect_tooltip = HNN_zhang_huizan_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
@@ -462,7 +476,24 @@ focus_tree = {
 			remove_ideas = {
 				HNN_the_western_diarchy_3
 			}
-			add_political_power = 40
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_idea = HNN_wang_tianpei_for
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -750
+				}
+				custom_effect_tooltip = HNN_wang_tianpei_is_helpful_tooltip
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -1000
+				}
+				custom_effect_tooltip = HNN_wang_tianpei_helpful_tooltip
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
@@ -552,6 +583,23 @@ focus_tree = {
 					uses = 1
 					category = support_tech
 				}
+			}
+			if = {
+				limit = {
+					has_idea = HNN_Zhang_Huizan_sec
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_passive_defense } }
+					upgrade_intelligence_agency = upgrade_passive_defense
+				}
+				else = {
+					add_political_power = 20
+				}
+				custom_effect_tooltip = HNN_zhang_huizan_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhang_huizan_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			hidden_effect = {
 				country_event = {
@@ -673,16 +721,40 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_developing_national_consciousness"
 			add_political_power = 60
-			add_stability = 0.05
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.03
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				add_stability = 0.05
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
 			}
-			add_tech_bonus = {
-				name = HNN_developing_national_consciousness
-				bonus = 0.5
-				uses = 1
-				category = cat_production
+			else = {
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_idea = HNN_Liu_Tingfang_eco_mli
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				add_tech_bonus = {
+					name = HNN_developing_national_consciousness
+					bonus = 0.5
+					uses = 1
+					category = cat_production
+				}
+				custom_effect_tooltip = HNN_qian_yongming_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_qian_yongming_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			activate_targeted_decision = { target = 602 decision = HNN_expand_local_elections_decision }
 			activate_targeted_decision = { target = 1013 decision = HNN_expand_local_elections_decision }
@@ -1270,9 +1342,25 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_providing_universal_literacy"
 			custom_effect_tooltip = HNN_providing_universal_literacy_tt
-			add_timed_idea = {
-				idea = HNN_universal_education_efforts
-				days = 325
+			if = {
+				limit = {
+					has_idea = HNN_Huang_Shiheng_for_sco
+				}
+				add_timed_idea = {
+					idea = HNN_universal_education_efforts
+					days = 300
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = HNN_huang_shiheng_is_helpful_tooltip
+
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_universal_education_efforts
+					days = 350
+				}
+				custom_effect_tooltip = HNN_huang_shiheng_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_tech_bonus = {
 				name = HNN_providing_universal_literacy
@@ -1322,6 +1410,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_the_magistrate_problem"
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
+				}
+				add_political_power = 30
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
+			}
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = HNN_tang_influence_higher_tt
 			effect_tooltip = {
@@ -2431,9 +2529,19 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_ensure_rural_loyalty"
 			add_ideas = HNN_rural_loyalty_ensured
-			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.03
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
+				}
+				add_stability = 0.06
+				add_popularity = {
+					ideology = paternal_autocrat
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
 			}
 			country_event = { 
 				id = hnnzhili.17 
@@ -2631,6 +2739,17 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_bolster_loyal_intellectuals"
 			china_add_research_slots = yes
 			remove_ideas = HNN_turbulent_intelligentsia
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					HNN_hu_ying = { is_political_advisor = yes }
+				}
+				add_political_power = 35
+				custom_effect_tooltip = HNN_hu_ying_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_hu_ying_helpful_tooltip
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2861,7 +2980,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_form_a_grand_coalition"
-			add_stability = 0.05
 			swap_ideas = {
 				remove_idea = HNN_a_democratic_province
 				add_idea = HNN_a_democratic_province_2
@@ -2874,9 +2992,21 @@ focus_tree = {
 				ideology = market_liberal
 				popularity = 0.05
 			}
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.05
+			if = {
+				limit = {
+					has_idea = HNN_Liu_Tingfang_eco_mli
+				}
+				add_stability = 0.15
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_qian_yongming_is_helpful_tooltip
+			}
+			else = {
+				add_stability = 0.10
+				custom_effect_tooltip = HNN_qian_yongming_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_marlib_to_coalition = yes
 			add_soccon_to_coalition = yes
@@ -2982,6 +3112,17 @@ focus_tree = {
 				add_ideas = HNN_building_federalism_at_home
 			}
 			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_idea = HNN_zhong_boyi_eco
+				}
+				add_war_support = 0.03
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			swap_ideas = {
 				remove_idea = HNN_a_democratic_province_2
 				add_idea = HNN_a_democratic_province_3
@@ -3032,9 +3173,31 @@ focus_tree = {
 			add_political_power = 50
 			add_stability = 0.10
 			add_war_support = 0.10
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.05
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				add_to_variable = { HNN_opposition_strength = -20 }
+				clamp_variable = {
+					var = HNN_opposition_strength
+					min = 0
+					max = 100
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
+			}
+			else = {
+				add_to_variable = { HNN_opposition_strength = -20 }
+				clamp_variable = {
+					var = HNN_opposition_strength
+					min = 0
+					max = 100
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -3276,6 +3439,21 @@ focus_tree = {
 				remove_idea = HNN_bolstered_intellectual_hub
 				add_idea = HNN_robust_academic_infrastructure
 			}
+			if = {
+				limit = {
+					has_idea = HNN_Huang_Shiheng_for_sco
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = industry
+					name = HNN_improve_rural_schooling
+				}
+				custom_effect_tooltip = HNN_huang_shiheng_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_huang_shiheng_helpful_tooltip
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -3400,13 +3578,23 @@ focus_tree = {
 				remove_idea = HNN_peasant_support_growing
 				add_idea = HNN_peasant_support_strong
 			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type =  industrial_complex
-					level = 1
-					instant_build = yes
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
 				}
+				random_owned_state = {
+					prioritize = { 1013 } #Changde
+					add_extra_state_shared_building_slots = 2
+				}
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				random_owned_state = {
+					prioritize = { 1013 } #Changde
+					add_extra_state_shared_building_slots = 1
+				}
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_to_variable = { HNN_opposition_strength = -20 }
 			clamp_variable = {
@@ -3447,6 +3635,38 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_encourage_legislative_debates"
 			add_ideas = HNN_legislative_debates
+			if = {
+				limit = {
+					has_idea = HNN_Liu_Tingfang_eco_mli
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.05
+				}
+				custom_effect_tooltip = HNN_qian_yongming_is_helpful_tooltip
+			}
+			else = {
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_qian_yongming_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -3478,6 +3698,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_rights_of_man"
+			if = {
+				limit = {
+					has_idea = HNN_zhong_boyi_eco
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.07
+				}
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.05
+				}
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			swap_ideas = {
 				remove_idea = HNN_rights_guaranteed
 				add_idea = HNN_bill_of_rights
@@ -3523,6 +3761,28 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			country_event = { id = hnntanyankai.8 days = 1 }
 			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_idea = HNN_wang_tianpei_for
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 100
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 100
+				}
+				custom_effect_tooltip = HNN_wang_tianpei_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_wang_tianpei_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
@@ -3558,6 +3818,35 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_foster_democratic_traditions"
 			custom_effect_tooltip = HNN_foster_democratic_traditions_tt
+			if = {
+				limit = {
+					has_idea = HNN_Liu_Tingfang_eco_mli
+				}
+				add_stability = 0.05
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_qian_yongming_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_qian_yongming_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				add_war_support = 0.03
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+			}
 			hidden_effect = {
 				add_ideas = HNN_democratic_traditions
 				remove_ideas = {
@@ -3593,6 +3882,18 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_the_democratic_stronghold"
 			custom_effect_tooltip = HNN_the_democratic_stronghold_tt
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_idea = HNN_zhong_boyi_eco
+				}
+				add_one_random_infrastructure = yes
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			country_event = { id = hnntanyankai.7 days = 1 }
 			hidden_effect = {
 				add_ideas = HNN_democratic_stronghold
@@ -6826,12 +7127,20 @@ focus_tree = {
 				}
 				custom_effect_tooltip = HNN_hu_shuhua_helpful_tooltip
 			}
-
-			add_tech_bonus = {
-				name = HNN_facilitating_investments
-				bonus = 0.5
-				uses = 1
-				category = excavation_tech
+			if = {
+				limit = {
+					has_idea = HNN_hu_ying_eco
+				}
+				add_tech_bonus = {
+					name = HNN_facilitating_investments
+					bonus = 0.5
+					uses = 1
+					category = excavation_tech
+				}
+				custom_effect_tooltip = HNN_hu_ying_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_hu_ying_helpful_tooltip
 			}
 			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
@@ -7050,10 +7359,22 @@ focus_tree = {
 		prerequisite = { focus = HNN_fostering_national_reconstruction }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_utilising_changsha_unions"
-			602 = {
-				add_extra_state_shared_building_slots = 1
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				602 = {
+					add_extra_state_shared_building_slots = 2
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
 			}
-			custom_effect_tooltip = tooltip_white_line
+			else = {
+				602 = {
+					add_extra_state_shared_building_slots = 1
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			add_political_power = 20
 			add_popularity = {
 				ideology = syndicalist
@@ -7238,7 +7559,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_mobilising_the_masses"
-			add_stability = 0.03
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
+				}
+				add_stability = 0.03
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			add_popularity = {
 				ideology = radical_socialist
 				popularity = 0.05
@@ -7341,7 +7672,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_negotiating_with_the_landowners"
-			add_stability = 0.05
+			if = {
+				limit = {
+					has_idea = HNN_zhong_boyi_eco
+				}
+				set_temp_variable = { ideology_change_var = 0.05 }
+				change_ruling_party_popularity = yes
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
+				set_temp_variable = { ideology_change_var = 0.03 }
+				change_ruling_party_popularity = yes
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			if = {
 				limit = {
 					has_idea = HNN_Lu_Diping_eco_ade
@@ -7446,13 +7790,40 @@ focus_tree = {
 		prerequisite = { focus = HNN_negotiating_with_the_landowners }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_for_our_mutual_benefit"
-			add_stability = 0.05
-			add_war_support = 0.05
-			add_tech_bonus = {
-				name = HNN_for_our_mutual_benefit
-				bonus = 0.5
-				uses = 2
-				category = construction_tech
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
+				}
+				add_stability = 0.05
+				add_war_support = 0.03
+				set_temp_variable = { ideology_change_var = 0.03 }
+				change_ruling_party_popularity = yes
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				add_stability = 0.05
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
+			}
+			if = {
+				limit = {
+					has_idea = HNN_zhou_shizhao_sec
+				}
+				add_tech_bonus = {
+					name = HNN_for_our_mutual_benefit
+					bonus = 0.75
+					uses = 2
+					category = construction_tech
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_is_helpful_tooltip
+			}
+			else = {
+				add_tech_bonus = {
+					name = HNN_for_our_mutual_benefit
+					bonus = 0.5
+					uses = 1
+					category = construction_tech
+				}
+				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
 			}
 			add_one_random_military_factory = yes
 			custom_effect_tooltip = HNN_unlock_further_agricultural_decisions
@@ -7480,15 +7851,39 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_enhance_tea_manufacturing"
 			if = {
-				limit = { NOT = { has_tech = motorised_infantry } }
-				hidden_effect = { set_technology = { tech_trucks = 1 popup = no } }
-				set_technology = { motorised_infantry = 1 }
+				limit = {
+					has_idea = HNN_zhong_boyi_eco
+				}
+				if = {
+					limit = { NOT = { has_tech = motorised_infantry } }
+					hidden_effect = { set_technology = { tech_trucks = 1 popup = no } }
+					set_technology = { motorised_infantry = 1 }
+					add_tech_bonus = {
+						name = HNN_enhance_tea_manufacturing
+						bonus = 0.25
+						uses = 1
+						category = motorized_equipment
+					}
+				}
+				else = {
+					add_tech_bonus = {
+						name = HNN_enhance_tea_manufacturing
+						bonus = 0.75
+						uses = 2
+						category = motorized_equipment
+					}
+				}
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
 				add_tech_bonus = {
 					name = HNN_enhance_tea_manufacturing
 					bonus = 0.25
 					uses = 1
 					category = motorized_equipment
 				}
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
 			}
 			602 = {
 				add_extra_state_shared_building_slots = 1
@@ -7597,6 +7992,31 @@ focus_tree = {
 			add_timed_idea = {
 				idea = HNN_balancing_the_books_idea
 				days = 180
+			}
+			if = {
+				limit = {
+					has_idea = HNN_zhong_boyi_eco
+				}
+				add_political_power = 20
+				custom_effect_tooltip = HNN_zhong_boyi_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_idea = HNN_Liu_Tingfang_eco_mli
+				}
+				add_stability = 0.05
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_qian_yongming_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_qian_yongming_helpful_tooltip
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
