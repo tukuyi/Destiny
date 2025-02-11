@@ -4686,6 +4686,10 @@ GXC_german = {
 	color_ui = rgb { 70 79 73 }
 }
 ###两广
+GXC_fire = {
+	color = rgb { 0 0 0 }
+	color_ui = rgb { 0 0 0 }
+}
 GXC_BAI = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }

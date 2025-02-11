@@ -17,6 +17,9 @@ characters = {
 		country_leader = {
 			desc = SZC_Post_An_leader_desc
 			ideology = anarcho_bolshevism_subtype
+			traits = {
+				GXC_free_fire_yi_qie
+			}
 		}
 		field_marshal = {
 			traits = { 

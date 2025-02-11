@@ -9688,7 +9688,7 @@ focus_tree = {
 		id = HNN_xi_zheng
 		icon = GFX_goal_CHI_plan_western
 		relative_position_id = HNN_chong_fan_zhong_guo_zheng_zhi_wu_tai
-		cost = 1
+		cost = 2
 		x = -1
 		y = 1
 
@@ -9718,10 +9718,24 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xi_zheng"
-			create_wargoal = {
-				type = annex_everything
-				target = var:650.owner
-		 	}
+			if = {#四川
+				limit = {
+					OR = {
+						can_declare_war_on = SZC
+						has_war_with = SZC
+					}
+				}
+				add_timed_idea = {
+					idea = HNN_attack_fed_SZC_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = SZC
+					}
+					activate_targeted_decision = { target = SZC decision = china_attack_decision }
+				}
+			}
 			if = {
 				limit = { 
 					NOT = {
@@ -9729,11 +9743,21 @@ focus_tree = {
 							is_puppet_of = HNN
 						}
 					}
+					OR = {
+						can_declare_war_on = YUN
+						has_war_with = YUN
+					}
 				}
-				create_wargoal = {
-					type = annex_everything
-					target = var:325.owner
-				 }
+				add_timed_idea = {
+					idea = HNN_attack_fed_YUN_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = YUN
+					}
+					activate_targeted_decision = { target = YUN decision = china_attack_decision }
+				}
 			}
 		}
 
@@ -9744,7 +9768,7 @@ focus_tree = {
 		id = HNN_nan_zheng
 		icon = GFX_YUN_Goal_Secure_Southern_China
 		relative_position_id = HNN_chong_fan_zhong_guo_zheng_zhi_wu_tai
-		cost = 1
+		cost = 2
 		x = 1
 		y = 1
 
@@ -9779,14 +9803,31 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_nan_zheng"
-			create_wargoal = {
-				type = annex_everything
-				target = var:592.owner
-		 	}
-			 create_wargoal = {
-				type = annex_everything
-				target = var:594.owner
-		 	}
+			if = {
+				limit = { 
+					has_global_flag = GXC_civil_war_over
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = var:592.owner
+				 }
+				 create_wargoal = {
+					type = annex_everything
+					target = var:594.owner
+				 }
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_attack_fed_GXC_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = GXC
+					}
+					activate_targeted_decision = { target = GXC decision = china_attack_decision }
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9811,24 +9852,14 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = { 
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
-				CHI = {
-					exists = no 
-				}
+			CHI = {
+				exists = no 
 			}
 		}
 
 		bypass = {
-			if = {
-				limit = { 
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
-				CHI = {
-					exists = yes
-				}
+			CHI = {
+				exists = yes
 			}
 		}
 
@@ -10093,14 +10124,8 @@ focus_tree = {
 			base = 15
 		}
 		available = {
-			OR = {
-				has_country_flag = HNN_PROC_victory
-				has_country_flag = HNN_ROC_victory
-			}
+			has_country_flag = HNN_PROC_victory
 			owns_state = 716
-		}
-		allow_branch = {
-			# has_country_flag = HNN_PROC_victory
 		}
 		prerequisite = {
 			focus = HNN_cheng_jie_bu_zong_de_sheng_fen
@@ -10137,10 +10162,7 @@ focus_tree = {
 			base = 20
 		}
 		available = {
-			OR = {
-				has_country_flag = HNN_PROC_victory
-				has_country_flag = HNN_ROC_victory
-			}
+			has_country_flag = HNN_PROC_victory
 			owns_state = 716
 		}
 		prerequisite = {
@@ -10178,10 +10200,7 @@ focus_tree = {
 			base = 20
 		}
 		available = {
-			OR = {
-				has_country_flag = HNN_PROC_victory
-				has_country_flag = HNN_ROC_victory
-			}
+			has_country_flag = HNN_PROC_victory
 			owns_state = 716
 		}
 		prerequisite = {

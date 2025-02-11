@@ -95,6 +95,7 @@ recruit_character = SZC_liu_cunhou
 recruit_character = SZC_fan_shaozeng
 recruit_character = SZC_yang_sen
 recruit_character = SZC_Deng_Xiao_Ping
+recruit_character = SZC_Post_An
 
 SZC_yang_sen = {
 	set_variable = { china_alignment = token:northern_zhili }
@@ -171,7 +172,9 @@ SZC_liu_cunhou = {
 SZC_Deng_Xiao_Ping = {
 	retire = yes
 }
-
+SZC_Post_An = {
+	retire = yes
+}
 
 ### Country Leaders ###
 create_country_leader = {

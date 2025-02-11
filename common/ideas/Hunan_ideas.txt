@@ -381,6 +381,39 @@ ideas = {
 				production_lack_of_resource_penalty_factor = -0.10
 			}
 		}
+		HNN_attack_fed_SZC_idea = {#推翻四川反革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_attack_fed_SZC_idea" }
+			picture = HNN_attack_fed_SZC
+			allowed = { always = no }
+			available = { SZC = { exists = yes } }
+			targeted_modifier = {
+				tag = SZC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		HNN_attack_fed_YUN_idea = {#推翻云南反革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_attack_fed_YUN_idea" }
+			picture = HNN_attack_fed_YUN
+			allowed = { always = no }
+			available = { YUN = { exists = yes } }
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		HNN_attack_fed_GXC_idea = {#推翻两广反革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea QIE_attack_fed_GXC_idea" }
+			picture = HNN_attack_fed_GXC
+			allowed = { always = no }
+			available = { GXC = { exists = yes } }
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
 	#军队
 		HNN_mass_conscription_idea = {#舆论宣传
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_mass_conscription_idea"}

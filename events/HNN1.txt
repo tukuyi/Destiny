@@ -11,18 +11,15 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect CHI = {
-		# 	if = {
-		# 		limit = { 
-		# 			has_character = GXC_chen_mingshu
-		# 		}
-		# 		GXC_chen_mingshu = {
-		# 			set_nationality = GXC 
-		# 		}
+		# eval_effect SZC = {
+		# 	SZC_Post_An = {
+		# 		set_nationality = SZC
+		# 	}
+		# 	promote_character = {
+		# 		character = SZC_Post_An
+		# 		ideology = anarcho_bolshevism_subtype
 		# 	}
 		# }
-
-		CHI_recruit_PAC_generals_effect = yes
 
 		# if = {
 		# 	limit = { 
@@ -51,5 +48,20 @@ country_event = {#测试事件
 		# 	ruling_party = radical_socialist
 		# 	elections_allowed = no
 		# }
+	}
+}
+
+country_event = {#点火事件
+	id = hnn.fire
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.fire" }
+	title = hnn.fire.t 
+	desc = hnn.fire.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = hnn.fire.a
+		set_country_flag = GXC_fire_everything_flag
 	}
 }

@@ -424,4 +424,146 @@ characters = {
 			logistics_skill = 2
 		}
 	}		
+#杜聿明
+	CHI_du_yuming = { #Recruit from completion of the modern army focus tree
+		name = CHI_du_yuming
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_du_yuming
+				small = GFX_Portrait_CHI_du_yuming
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_DU_YUMING_ARMY_DESC
+			traits = { 
+				inflexible_strategist 
+				armor_officer 
+				career_officer 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+#邓文仪
+	CHI_deng_wenyi = {
+		name = CHI_deng_wenyi
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_Deng_Wenyi
+				small = GFX_Portrait_CHI_Deng_Wenyi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_DENG_WENYI_ARMY_DESC
+			traits = { 
+				career_officer 
+				organizer 
+				trait_cautious 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#贺衷寒
+	CHI_he_zhonghan = {
+		name = CHI_he_zhonghan
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_He_Zhonghan
+				small = GFX_Portrait_CHI_He_Zhonghan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_HE_ZHONGHAN_ARMY_DESC
+			traits = { 
+				career_officer
+				CHI_left_kmt_officer 
+				media_personality 
+				harsh_leader 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+####################
+###   海军将领   ###
+####################
+#李之龙
+	CHI_li_zhilong = {
+		name = CHI_li_zhilong
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_li_zhilong
+				large = GFX_Portrait_CHI_li_zhilong
+			}
+		}
+		navy_leader = {
+			desc = POLITICS_CHI_LI_ZHILONG_NAVY_DESC
+			traits = { 
+				navy_career_officer 
+				blockade_runner 
+				CHI_left_kmt_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+#陈绍宽
+	CHI_chen_shaokuan = {
+		name = CHI_chen_shaokuan
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_Chen_Shaokuan
+				small = GFX_Portrait_CHI_Chen_Shaokuan
+			}
+		}
+		navy_leader = {
+			desc = CHI_chen_shaokuan_admiral_desc
+			traits = { 
+				navy_career_officer 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 3
+		}
+	}
+#陈季良	
+	CHI_chen_jiliang = {
+		name = CHI_chen_jiliang
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_Chen_Jiliang
+				large = GFX_Portrait_CHI_Chen_Jiliang
+			}
+		}
+		navy_leader = {
+			traits = { 
+				navy_career_officer 
+				CHI_left_kmt_officer 
+			}
+			desc = POLITICS_CHI_CHEN_JILIANG_NAVY_DESC
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
 }

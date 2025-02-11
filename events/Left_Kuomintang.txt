@@ -619,11 +619,13 @@ country_event = { # Return of the Central Committee - fired by completing captur
 					limit = {
 						OR = {
 							has_id = 2299
-							has_id = 2279
 						}
 					}
 					set_nationality = INT
 				}
+			}
+			CHI_li_zhilong = {
+				set_nationality = INT
 			}
 			CHI_zhang_zhizhong = {
 				set_nationality = INT
@@ -679,8 +681,7 @@ country_event = { # Return of the Central Committee - fired by completing captur
 		}
 		remove_country_leader_trait = CHI_exiled_chairman
 		INT = {
-			random_unit_leader = {
-				limit = { has_id = 2279 }
+			CHI_li_zhilong = {
 				CHI_recruit_general_effect = yes 
 			}
 			CHI_zhang_zhizhong = {
@@ -698,12 +699,10 @@ country_event = { # Return of the Central Committee - fired by completing captur
 			}
 		}
 		LEP = {
-			random_unit_leader = {
-				limit = { has_id = 2278 }
+			CHI_chen_shaokuan = {
 				CHI_recruit_general_effect = yes 
 			}
-			random_unit_leader = {
-				limit = { has_id = 2277 }
+			CHI_chen_jiliang = {
 				CHI_recruit_general_effect = yes 
 			}
 		}
@@ -8420,12 +8419,10 @@ country_event = { #Exorcising the Shadow
 			limit = { has_id = 2299 }
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2298 }
+		CHI_he_zhonghan = {
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2287 }
+		CHI_deng_wenyi = {
 			retire = yes
 		}
 		CHI_purge_CRS_advisors_effect = yes
@@ -8501,12 +8498,10 @@ country_event = { #The Red Squad's Triumph
 			limit = { has_id = 2299 }
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2298 }
+		CHI_he_zhonghan = {
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2287 }
+		CHI_deng_wenyi = {
 			retire = yes
 		}
 		set_country_flag = Dai_Chunfeng_dead
@@ -8525,12 +8520,10 @@ country_event = { #The Red Squad's Triumph
 			limit = { has_id = 2299 }
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2298 }
+		CHI_he_zhonghan = {
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2287 }
+		CHI_deng_wenyi = {
 			retire = yes
 		}
 		CHI_purge_CRS_advisors_effect = yes
@@ -14899,11 +14892,8 @@ country_event = { #Commissions in a Changing Army
 		CHI_wang_yaowu = {
 			CHI_recruit_general_effect = yes 
 		}
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2283 }
-				CHI_recruit_general_effect = yes
-			}
+		CHI_du_yuming = {
+			CHI_recruit_general_effect = yes 
 		}
 		clr_country_flag = Zhou_Zhirou_dead
 	}

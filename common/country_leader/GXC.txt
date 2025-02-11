@@ -37,4 +37,9 @@ leader_traits = {
 		stability_weekly = 0.010
 		national_populist_drift = 0.05	
 	}
+	GXC_free_fire_yi_qie = {
+		random = no
+		stability_factor = -1
+		totalist_drift = 1
+	}
 }

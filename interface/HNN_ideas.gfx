@@ -394,6 +394,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/HNN/death_or_glory.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_attack_fed_SZC"
+		texturefile = "gfx/interface/ideas/HNN/HNN_attack_fed_SZC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_attack_fed_GXC"
+		texturefile = "gfx/interface/ideas/HNN/HNN_attack_fed_GXC.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_attack_fed_YUN"
+		texturefile = "gfx/interface/ideas/HNN/HNN_attack_fed_YUN.png"
+	}
+	spriteType = {
 		name = "GFX_idea_HNN_ren_da_fa_yuan"
 		texturefile = "gfx/interface/ideas/HNN/HNN_ren_da_fa_yuan.png"
 	}

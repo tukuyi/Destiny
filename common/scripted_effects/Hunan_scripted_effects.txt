@@ -94,6 +94,7 @@ HNN_revolution_victory = {#工团上台初始设定
 			}
 		}
 	}
+	QIE_ma_dengying_flees_effect = yes
 
 	if = {
 		limit = { 

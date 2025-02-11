@@ -10435,7 +10435,6 @@ country_event = {#刘伯承
 country_event = {#雨落之后，云水相逢
 	id = hungong.171
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.171" }
-	picture = GFX_news_event_YUN_zhu_de_takes_over
 	title = hungong.171.t
 	desc = hungong.171.d
 
@@ -10453,7 +10452,6 @@ country_event = {#雨落之后，云水相逢
 country_event = {#兜兜转转
 	id = hungong.172
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.172" }
-	picture = GFX_news_event_YUN_zhu_de_takes_over
 	title = hungong.172.t
 	desc = hungong.172.d
 
@@ -13845,7 +13843,6 @@ country_event = {
 	}
 
 	is_triggered_only = yes
-
 	fire_only_once = yes
 
 	option = {
@@ -13951,6 +13948,14 @@ country_event = {###国民党左派革命失败
 					set_nationality = ROOT
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
+				CHI_chen_shaokuan = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_li_zhilong = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
 			}
 			if = {#彭雪枫
 				limit = { 
@@ -13971,17 +13976,37 @@ country_event = {###国民党左派革命失败
 					}
 				}
 			}
-			every_other_country = {
-				every_unit_leader = {
-					limit = {
-						OR = {
-							has_id = 2207  
-							has_id = 2204   
-							has_id = 2279  
-							has_id = 2278 
-						}
+			if = {
+				limit = { 
+					CHI_peng_xuefeng = {
+						is_unit_leader = no
 					}
-					set_nationality = ROOT
+				}
+				CHI_peng_xuefeng = {
+					add_corps_commander_role = {
+						desc = CHI_peng_xuefeng_high_command_desc
+						traits = { 
+							harsh_leader 
+							commando 
+							trait_reckless 
+							irregulars_officer 
+						}
+						skill = 1
+						attack_skill = 1
+						defense_skill = 1
+						planning_skill = 1
+						logistics_skill = 1
+					}
+				}
+			}
+			CHI = {
+				random_unit_leader = {
+					limit = { has_id = 2207 }
+					set_nationality = ROOT 
+				}
+				random_unit_leader = {
+					limit = { has_id = 2204 }
+					set_nationality = ROOT 
 				}
 			}
 			create_corps_commander = {
@@ -14064,6 +14089,18 @@ country_event = {###国民党左派革命失败
 				CHI_zhang_zhizhong = {
 					set_nationality = ROOT
 				}
+				CHI_du_yuming = {
+					set_nationality = ROOT
+				}
+				CHI_chen_jiliang = {
+					set_nationality = ROOT
+				}
+				CHI_deng_wenyi = {
+					set_nationality = ROOT
+				}
+				CHI_he_zhonghan = {
+					set_nationality = ROOT
+				}
 			}
 			every_other_country = {
 				every_unit_leader = {
@@ -14071,15 +14108,11 @@ country_event = {###国民党左派革命失败
 						OR = {
 							has_id = 2297  
 							has_id = 2299  
-							has_id = 2207  
-							has_id = 2298   
+							has_id = 2207     
 							has_id = 2204
-							has_id = 2287  
-							has_id = 2203 
-							has_id = 2283  
+							has_id = 2203  
 							has_id = 5059  
 							has_id = 5071  
-							has_id = 2277 
 						}
 					}
 					set_nationality = ROOT

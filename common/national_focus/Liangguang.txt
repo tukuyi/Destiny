@@ -4774,8 +4774,7 @@ shared_focus = {
 					limit = { has_id = 2299 }
 					set_nationality = GXC 
 				}
-				random_unit_leader = {
-					limit = { has_id = 2298 }
+				CHI_he_zhonghan = {
 					set_nationality = GXC 
 				}
 				CHI_zhang_zhizhong = {
@@ -4788,8 +4787,7 @@ shared_focus = {
 					limit = { has_id = 2203 }
 					set_nationality = GXC 
 				}
-				random_unit_leader = {
-					limit = { has_id = 2283 }
+				CHI_du_yuming = {
 					set_nationality = GXC 
 				}
 				random_unit_leader = {

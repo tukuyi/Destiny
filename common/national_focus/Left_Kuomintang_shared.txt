@@ -1098,15 +1098,11 @@ focus_tree = {
 			CHI_nie_rongzhen = {
 				CHI_recruit_general_effect = yes
 			}
-			XXA = {
-				random_unit_leader = {
-					limit = { has_id = 2298 }
-					CHI_recruit_general_effect = yes
-				}
-				random_unit_leader = {
-					limit = { has_id = 2287 }
-					CHI_recruit_general_effect = yes
-				}
+			CHI_deng_wenyi = {
+				CHI_recruit_general_effect = yes
+			}
+			CHI_he_zhonghan = {
+				CHI_recruit_general_effect = yes
 			}
 			country_event = { id = CHI.midgame.203 } #Triumph of the Young Guard
 		}
@@ -1238,11 +1234,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CHI_mechanised_units"
-			XXA = {
-				random_unit_leader = { 
-					limit = { has_id = 2283 }
-					CHI_recruit_general_effect = yes 
-				}
+			CHI_du_yuming = {
+				CHI_recruit_general_effect = yes 
 			}
 			custom_effect_tooltip = will_become_available_as_cos
 			show_ideas_tooltip = CHI_Du_Yuming_cos
@@ -4480,19 +4473,13 @@ focus_tree = {
 				category = cat_mechanized_equipment
 			}
 			if = {
-				limit = { NOT = { has_unit_leader = 2283 } }
-				XXA = {
-					random_unit_leader = {
-						limit = { has_id = 2283 }
-						CHI_recruit_general_effect = yes 
-					}
-				}
+				limit = { NOT = { has_character = CHI_du_yuming } }
+				CHI_du_yuming = { CHI_recruit_general_effect = yes }
 				custom_effect_tooltip = available_theorist
 				show_ideas_tooltip = CHI_Du_Yuming_cos
 			}
 			else = {
-				random_unit_leader = {
-					limit = { has_id = 2283 }
+				CHI_du_yuming = {
 					gain_xp = 500
 				}
 			}

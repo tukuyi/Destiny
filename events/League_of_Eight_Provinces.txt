@@ -1072,12 +1072,12 @@ country_event = { # General Qi Assumes Control
 		}
 		hidden_effect = {
 			country_event = worldtension.26
-			retire_country_leader = yes #Sun Chuanfang
+			# retire_country_leader = yes #Sun Chuanfang
 			LEP_qi_xieyuan = {
 				promote_leader = yes
 				add_country_leader_role = {
 					country_leader = {
-						desc = LEP_qi_xieyuan_leader_desc
+						desc = POLITICS_LEP_QI_XIEYUAN_DESC
 						ideology = pataut_warlordism_subtype
 						traits = { CHN_southern_zhili_aligned }
 					}

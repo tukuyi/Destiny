@@ -1745,11 +1745,6 @@ country_event = {#Chen gunned down; which Chen becomes the new Big Chen?
 				tree = KR_Guangdong_Merchants 
 				keep_completed = yes 
 			} #pls don't break
-			XXA = {
-				GXC_chen_lianbo = {
-					set_nationality = ROOT
-				}
-			}
 			country_event = { 
 				id = lngst.1 
 				days = 5
@@ -6037,6 +6032,21 @@ country_event = {#首届选举第二页
 				id = lngRkmt.112
 				days = 70
 			}
+			if = {
+				limit = { 
+					NOT = {
+						has_character = CHI_he_zhonghan
+					}
+				}
+				event_target:original_left_guo_ming_dang = {
+					CHI_deng_wenyi = {
+						set_nationality = ROOT
+					}
+					CHI_he_zhonghan = {
+						set_nationality = ROOT
+					}
+				}
+			}
 		}
 	}
 
@@ -8231,6 +8241,7 @@ country_event = {#他们拒绝了
 		}
 	}
 }
+
 ########################################
 ########-        军政府      -##########
 ########################################
@@ -10584,11 +10595,11 @@ country_event = {#中华企业国
 		}
 		#北京
 		608 = {
-			is_owned_by = HNN
+			is_owned_by = ROOT
 		}
 		#南京
 		613 = {
-			is_owned_by = HNN
+			is_owned_by = ROOT
 		}
 		#沈阳
 		716 = {

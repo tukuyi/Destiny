@@ -75,4 +75,32 @@ spriteTypes = {
 		name = "GFX_Portrait_CHI_du_yuming"
 		texturefile = "gfx/leaders/CHI/Portrait_CHI_du_yuming.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_Chen_Shaokuan"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_Chen_Shaokuan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_chen_shaoyu"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_chen_shaoyu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_Chen_Jiliang"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_Chen_Jiliang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_li_zhilong"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_li_zhilong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_Deng_Wenyi"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_Deng_Wenyi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_He_Zhonghan"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_He_Zhonghan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_hu_zongnan"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_hu_zongnan.png"
+	}
 }
