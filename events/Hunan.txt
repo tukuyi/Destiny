@@ -13901,6 +13901,9 @@ country_event = {###国民党左派革命失败
 					set_nationality = ROOT
 					remove_unit_leader_trait = CHI_left_kmt_officer
 					set_portraits = {
+						army = {
+							large = GFX_Portrait_HNN_lin_biao_cpc
+						}
 						civilian = {
 							large = GFX_Portrait_HNN_lin_biao
 						}
@@ -13914,30 +13917,65 @@ country_event = {###国民党左派革命失败
 				}
 				CHI_xu_xiangqian = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_xu_xiang_qian 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_su_yu = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_su_yu 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_zhang_yunyi = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_zhang_yun_yi 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_nie_rongzhen = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_nie_rong_zhen 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_chen_geng = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_Chen_geng 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_luo_ronghuan = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_luo_rong_huan 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_xiao_jinguang = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_xiao_jing_guang 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_dai_anlan = {
@@ -13946,6 +13984,11 @@ country_event = {###国民党左派革命失败
 				}
 				CHI_ye_ting = {
 					set_nationality = ROOT
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_HNN_ye_ting 
+						}
+					}
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
 				CHI_chen_shaokuan = {
@@ -13968,37 +14011,71 @@ country_event = {###国民党左派革命失败
 						set_nationality = ROOT
 					}
 				}
+				if = {#彭雪枫
+					limit = { 
+						CHI_peng_xuefeng = {
+							is_unit_leader = no
+						}
+					}
+					CHI_peng_xuefeng = {
+						set_portraits = {
+							army = { 
+								large = GFX_Portrait_HNN_peng_xue_feng
+							}
+						}
+						add_corps_commander_role = {
+							desc = CHI_peng_xuefeng_high_command_desc
+							traits = { 
+								harsh_leader 
+								commando 
+								trait_reckless 
+								irregulars_officer 
+							}
+							skill = 1
+							attack_skill = 1
+							defense_skill = 1
+							planning_skill = 1
+							logistics_skill = 1
+						}
+					}
+				}
+				else = {
+					CHI_peng_xuefeng = {
+						set_portraits = {
+							army = { 
+								large = GFX_Portrait_HNN_peng_xue_feng
+							}
+						}
+					}
+				}
 			}
 			else = {
 				ANQ = {
 					CHI_peng_xuefeng = {
 						set_nationality = ROOT
-					}
-				}
-			}
-			if = {
-				limit = { 
-					CHI_peng_xuefeng = {
-						is_unit_leader = no
-					}
-				}
-				CHI_peng_xuefeng = {
-					add_corps_commander_role = {
-						desc = CHI_peng_xuefeng_high_command_desc
-						traits = { 
-							harsh_leader 
-							commando 
-							trait_reckless 
-							irregulars_officer 
+						set_portraits = {
+							army = { 
+								large = GFX_Portrait_HNN_peng_xue_feng
+							}
 						}
-						skill = 1
-						attack_skill = 1
-						defense_skill = 1
-						planning_skill = 1
-						logistics_skill = 1
+						add_corps_commander_role = {
+							desc = CHI_peng_xuefeng_high_command_desc
+							traits = { 
+								harsh_leader 
+								commando 
+								trait_reckless 
+								irregulars_officer 
+							}
+							skill = 1
+							attack_skill = 1
+							defense_skill = 1
+							planning_skill = 1
+							logistics_skill = 1
+						}
 					}
 				}
 			}
+
 			CHI = {
 				random_unit_leader = {
 					limit = { has_id = 2207 }

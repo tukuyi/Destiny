@@ -245,6 +245,46 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_long_yunfei.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_su_yu"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_su_yu.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_peng_xue_feng"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_peng_xue_feng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_nie_rong_zhen"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_nie_rong_zhen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_Chen_geng"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_geng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_luo_rong_huan"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_luo_rong_huan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_lin_biao_cpc"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_lin_biao_cpc.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_xiao_jing_guang"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_xiao_jing_guang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_ye_ting"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_ye_ting.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_xu_xiang_qian"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_xu_xiang_qian.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_zhang_yun_yi"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_zhang_yun_yi.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Hunan_Peng_De"
 		texturefile = "gfx/leaders/HNN/Portrait_Hunan_Peng_De.png"
 	}

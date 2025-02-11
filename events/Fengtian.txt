@@ -4826,7 +4826,7 @@ country_event = { #The Grand Marshal's Proclamation
 
 }
 
-country_event = { #Fires if reclamation war with Qing is not started by focus
+country_event = { #复国战争！ Fires if reclamation war with Qing is not started by focus
 	id = fengtian.102
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.102" }
 	title = fengtian.102.t

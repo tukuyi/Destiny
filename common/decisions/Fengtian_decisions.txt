@@ -1411,7 +1411,7 @@ FNG_army_decisions = {
 			set_country_flag = FNG_troops_not_allowed_to_raid_occupation
 		}
 	}
-	FNG_Rebuild_the_Second_Army = {
+	FNG_Rebuild_the_Second_Army = {#重建奉军第二军
 		icon = GFX_decision_soldierly_discipline
 
 		allowed = { 
@@ -2132,7 +2132,7 @@ FNG_internal_conference = {#统一大会
 	}
 }
 
-FNG_Preparing_For_The_Princes_Visit = {
+FNG_Preparing_For_The_Princes_Visit = {#为亲王的访问做准备
 	FNG_increase_security_in_shenyang = {
 		icon = GFX_decision_generic_prepare_civil_war
 		available = {
@@ -2524,7 +2524,7 @@ FNG_railways = {
 	}
 }
 
-FNG_foreign_policy = { #The Road to Reclamation
+FNG_foreign_policy = { #走向复国之路
 	FNG_attack_chinese_tag = { #Attack neighboring rival tags
 		icon = GFX_decision_generic_industry
 		visible = {
@@ -2999,7 +2999,7 @@ FNG_foreign_policy = { #The Road to Reclamation
 	#		FNG_CAPOP = yes
 	#	}
 	#}
-	FNG_Escalate_the_Propaganda_War = {
+	FNG_Escalate_the_Propaganda_War = {#升级宣传战
 		icon = GFX_decision_generic_nationalism
 
 		visible = {
@@ -3031,7 +3031,7 @@ FNG_foreign_policy = { #The Road to Reclamation
 		}
 	}
 
-	FNG_The_Grand_Marshals_Proclamation = {
+	FNG_The_Grand_Marshals_Proclamation = {#大帅的宣言
 		icon = GFX_decision_generic_army_support
 
 		visible = {
@@ -3113,158 +3113,6 @@ FNG_foreign_policy = { #The Road to Reclamation
 			set_country_flag = FNG_preparing_war_of_national_reclamation
 			unlock_decision_tooltip = FNG_The_Yanshan_Plan
 			unlock_decision_tooltip = FNG_Shanhaiguan_Infiltration
-		}
-	}
-	FNG_Begin_the_War_of_National_Reclamation = { #Begin the Reclamation War
-		icon = GFX_decision_generic_prepare_civil_war
-
-		visible = {
-			has_country_flag = FNG_preparing_war_of_national_reclamation
-			can_declare_war_on = FROM
-			FROM = {
-				is_chinese_tag = yes
-				owns_state = 608
-			}
-			owns_state = 716
-		}
-
-		fire_only_once = yes
-
-		targets = { 608.OWNER }
-		target_root_trigger = { has_country_flag = FNG_preparing_war_of_national_reclamation }
-		target_trigger = {
-			can_declare_war_on = FROM
-			FROM = { is_chinese_tag = yes }
-		}
-
-		cost = 0
-		days_remove = 30
-		war_with_target_on_remove = yes
-
-		ai_will_do = {
-			factor = -40
-			modifier = {
-				add = 25
-				SQI = { is_ruled_by_pro_fengtian = yes }
-			}
-			modifier = {
-				add = 25
-				ANQ = { is_ruled_by_pro_fengtian = yes }
-			}
-			modifier = {
-				add = 25
-				SHX = { is_ruled_by_pro_fengtian = yes }
-			}
-			modifier = {
-				add = 25
-				SZC = {
-					is_in_faction = no
-					SZC_has_industrial_government = yes
-				}
-			}
-			modifier = {
-				add = 10
-				date > 1938.1.1
-			}
-			modifier = {
-				add = 10
-				date > 1938.4.1
-			}
-			modifier = {
-				add = 10
-				date > 1938.7.1
-			}
-			modifier = {
-				add = 30
-				date > 1938.10.1
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision FNG_Begin_the_War_of_National_Reclamation"
-			hidden_effect = {
-				for_each_scope_loop = {
-					array = global.china_tags_array
-					if = {
-						limit = { is_ally_of_ROOT = yes }
-						set_country_flag = FNG_AI_strategy_against_FROM
-						add_ai_strategy = {
-							type = prepare_for_war
-							id = FROM
-							value = 1000
-						}
-					}
-					if = {
-						limit = { is_ally_with = FROM }
-						set_country_flag = FNG_AI_strategy_against_ROOT
-						add_ai_strategy = {
-							type = prepare_for_war
-							id = ROOT
-							value = 1000
-						}
-					}
-				}
-				ANQ = {
-					if = { #inform ANQ of start reclamation, allow to join war
-						limit = {
-							exists = yes
-							has_country_flag = ANQ_is_profengtian
-							has_country_flag = ANQ_commits_reclamation
-						}
-						set_country_flag = ANQ_start_reclamation_war
-					}
-				}
-				FROM = {
-					country_event = fengtian.255 #Heads up to war declaration targets
-					set_country_flag = FNG_reclamation_war_target
-					if = {
-						limit = {
-							is_subject = yes
-						}
-						overlord = {
-							country_event = {
-								id = fengtian.256
-							}
-						}
-					}
-				}
-			}
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove FNG_Begin_the_War_of_National_Reclamation"
-			custom_effect_tooltip = FNG_declare_reclamation_war
-			hidden_effect = {
-				for_each_scope_loop = {
-					array = global.china_tags_array
-					if = {
-						limit = { has_country_flag = FNG_AI_strategy_against_FROM }
-						clr_country_flag = FNG_AI_strategy_against_FROM
-						add_ai_strategy = {
-							type = prepare_for_war
-							id = FROM
-							value = -1000
-						}
-					}
-					if = {
-						limit = { has_country_flag = FNG_AI_strategy_against_ROOT }
-						clr_country_flag = FNG_AI_strategy_against_ROOT
-						add_ai_strategy = {
-							type = prepare_for_war
-							id = ROOT
-							value = -1000
-						}
-					}
-				}
-				declare_war_on = {
-					target = FROM
-					type = annex_everything
-				}
-			}
-			set_country_flag = FNG_begun_national_reclamation_war
-			FROM = {
-				clr_country_flag = FNG_reclamation_war_target
-			}
 		}
 	}
 	FNG_Ask_Japan_for_Aid = {
@@ -3618,7 +3466,7 @@ FNG_foreign_policy = { #The Road to Reclamation
 }
 
 #comission navy from JAP
-FNG_Commission_Japanese_Ships = {
+FNG_Commission_Japanese_Ships = {#订购日制舰艇
 	FNG_JAP_destroyers = {
 		icon = generic_naval
 

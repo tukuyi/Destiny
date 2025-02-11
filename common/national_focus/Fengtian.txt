@@ -150,17 +150,19 @@ focus_tree = {
 	focus = {
 		id = FNG_Open_the_Propaganda_Front
 		icon = GFX_goal_ANQ_promote_nationalist_thought
+		relative_position_id = FNG_Fuguo_Qiangbing
 		cost = 5
+		x = 2
+		y = 1
+		
 		prerequisite = { focus = FNG_Fuguo_Qiangbing }
 		available = { has_country_flag = FNG_regionalists_suppressed }
-		x = 0
-		y = 1
-		relative_position_id = FNG_Fuguo_Qiangbing
+
 		ai_will_do = { factor = 60 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Open_the_Propaganda_Front"
-			custom_effect_tooltip = FNG_leads_to_reclamation_war
-			add_political_power = 100
+			add_war_support = 0.05
+			add_political_power = 50
 			unlock_decision_tooltip = FNG_Denounce_Qing_Monarchism
 			unlock_decision_tooltip = FNG_Denounce_German_Imperialism
 			unlock_decision_tooltip = FNG_National_Irredentism
@@ -900,14 +902,114 @@ focus_tree = {
 	# thing
 
 	focus = {
+		id = FNG_Begin_the_War_of_National_Reclamation
+		icon = GFX_goal_FNG_Reclamation_War
+		cost = 6
+
+		relative_position_id = FNG_Fuguo_Qiangbing
+		x = 0
+		y = 2
+
+		available = {
+			date > 1937.1.1 #Shanxi winning the Central Plains War won't cause FNG to go to war with QIE in 1936
+			is_subject = no
+			can_declare_war_on = 608.owner
+			NOT = { has_non_aggression_pact_with = 608.owner }
+			if = {
+				limit = { has_non_aggression_pact_with = CHI }
+				NOT = { has_non_aggression_pact_with = CHI }
+			}
+			OR = {
+				has_country_flag = FNG_preparing_war_of_national_reclamation
+				is_in_faction_with = JAP
+				var:608.owner = { enemies_strength_ratio > 1.2 }
+				var:608.owner = { surrender_progress > 0.1 }
+			}
+		}
+		bypass = {
+			OR = {
+				is_subject = yes
+				owns_state = 608
+				has_war_with_wargoal_against = 608.owner
+				var:608.owner = { has_war_with_wargoal_against = ROOT }
+			}
+		}
+
+		prerequisite = {
+			focus = FNG_Fuguo_Qiangbing
+		}
+
+		continue_if_invalid = yes
+		cancel = {
+			OR = {
+				is_subject = yes
+				NOT = { can_declare_war_on = 608.owner }
+				has_non_aggression_pact_with = 608.owner
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_civil_war = yes
+					any_claim = yes
+					alliance_strength_ratio < 1.25
+					surrender_progress > 0.05
+					has_country_flag = imminent_war
+				}
+			}
+			modifier = {
+				factor = 0
+				date < 1939.1.1 #Attack if after 1939
+				is_in_faction = no #Attack if in Co-Prosperity Sphere
+				var:608.owner = { default_attack_AI_trigger = yes } #Attack if stronger than Beijing's owner
+				#Attack if distracted in the south, SHX and SHD are absent to prevent super early Manchu Coup caused wars
+				NOT = { var:608.owner = { has_war_with = ANQ } }
+				NOT = { var:608.owner = { has_war_with = CHI } }
+				NOT = { var:608.owner = { has_war_with = GXC } }
+				NOT = { var:608.owner = { has_war_with = HNN } }
+				NOT = { var:608.owner = { has_war_with = LEP } }
+				NOT = { var:608.owner = { has_war_with = SZC } }
+				NOT = { var:608.owner = { has_war_with = YUN } }
+			}
+		}
+
+		will_lead_to_war_with = QIE
+		will_lead_to_war_with = CHI
+		will_lead_to_war_with = GXC
+		will_lead_to_war_with = SHX
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FNG_Begin_the_War_of_National_Reclamation"
+			FNG_zhifeng_war_threat = yes
+			create_wargoal = {
+				target = 608.owner
+				type = annex_everything
+			}
+			custom_effect_tooltip = tooltip_white_line
+			set_country_flag = FNG_begun_national_reclamation_war
+			set_country_flag = { flag = FNG_war_began_three_months days = 90 value = 1 }
+			set_country_flag = { flag = FNG_war_began_one_year days = 365 value = 1 }
+		}
+	}
+
+	focus = {
 		id = FNG_From_Beijing_to_the_Begonia_Leaf
 		icon = GFX_goal_beijing_begonia
+		relative_position_id = FNG_Fuguo_Qiangbing
 		cost = 8
-		available = { owns_state = 608 }
 		x = 0
-		y = 1
-		relative_position_id = FNG_Open_the_Propaganda_Front
+		y = 3
+
+		available = { owns_state = 608 }
+		prerequisite = {
+			focus = FNG_Begin_the_War_of_National_Reclamation
+		}
+
 		ai_will_do = { factor = 100 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_From_Beijing_to_the_Begonia_Leaf"
 			custom_effect_tooltip = FNG_move_capital_to_beijing
@@ -5045,232 +5147,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 	#Negotiated Unification
-	
-	#Fed Coalition
-	focus = {
-		id = FNG_Building_the_Road_to_Federalism
-		icon = GFX_goal_china_negotiations
-		cost = 8
-		available = {
-			#has_country_flag = FNG_zuolin_bonapartism
-			has_country_flag = FNG_conference_federalist_support
-			has_completed_focus = FNG_The_Ultimatum
-		}
-		allow_branch = {
-			OR = {
-				has_completed_focus = FNG_Redefine_Provincial_Obligations
-				NOT = { has_completed_focus = FNG_Preservation_of_the_Xinhai_Order }
-			}
-		}
-		x = 0
-		y = 1
-		offset = {
-			x = 35
-			y = -10
-			trigger = { NOT = { has_completed_focus = FNG_Preservation_of_the_Xinhai_Order } }
-		}
-		relative_position_id = FNG_The_Ultimatum
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Building_the_Road_to_Federalism"
-			custom_effect_tooltip = FNG_no_more_bickering_an_shiet_lah
-			set_country_flag = FNG_no_more_bickering_an_shiet_lah_flag
-			clr_country_flag = FNG_communications_clique_active
-			clr_country_flag = FNG_recovery_league_active
-			clr_country_flag = FNG_zhang_clique_active
-			create_country_leader = {
-				name = "张作霖"
-				desc = "POLITICS_ZHANG_ZUOLIN_DESC"
-				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin.png"
-				expire = "1.1.1"
-				ideology = soccon_generic_national_democracy_subtype
-			}
-			hidden_effect = {
-				set_temp_variable = { temp = party_popularity@paternal_autocrat }
-				multiply_temp_variable = { temp = 0.5 }
-				add_popularity = { ideology = paternal_autocrat popularity = -1 }
-				add_popularity = { ideology = social_conservative popularity = ZCPOP }
-				add_popularity = { ideology = paternal_autocrat popularity = ZCPOP }
-				set_temp_variable = { temp = party_popularity@authoritarian_democrat }
-				multiply_temp_variable = { temp = 0.5 }
-				add_popularity = { ideology = authoritarian_democrat popularity = -1 }
-				add_popularity = { ideology = social_conservative popularity = ZCPOP }
-				add_popularity = { ideology = authoritarian_democrat popularity = ZCPOP }
-				set_party_name = {
-					ideology = social_conservative
-					long_name = FNG_fed_coalition_long
-					name = FNG_fed_coalition
-				}
-				set_politics = { ruling_party = social_conservative }
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = FNG_Land_to_the_Tiller
-		icon = GFX_goal_ALB_Albanian_Farmers
-		cost = 8
-		prerequisite = { focus = FNG_Building_the_Road_to_Federalism }
-		x = 0
-		y = 2
-		relative_position_id = FNG_Building_the_Road_to_Federalism
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Land_to_the_Tiller"
-			add_offsite_building = {
-				type = industrial_complex
-				level = 4
-			}
-			swap_ideas = {
-				remove_idea = FNG_Worker_Loyalty
-				add_idea = FNG_Land_to_the_Tiller_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Federalist_Literacy_Campaign
-		icon = GFX_goal_CRO_education_number_one
-		cost = 8
-		prerequisite = { focus = FNG_Building_the_Road_to_Federalism }
-		x = -1
-		y = 1
-		relative_position_id = FNG_Building_the_Road_to_Federalism
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Federalist_Literacy_Campaign"
-			add_ideas = FNG_literacy_campaigns_idea
-			FNG_increase_legitimacy = yes
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_School_is_Cool
-		icon = GFX_fund_black_education
-		cost = 8
-		prerequisite = { focus = FNG_Federalist_Literacy_Campaign }
-		x = -1
-		y = 1
-		relative_position_id = FNG_Federalist_Literacy_Campaign
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_School_is_Cool"
-			add_research_slot = 1
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Balans
-		icon = GFX_goal_ANQ_centralization
-		cost = 8
-		prerequisite = { focus = FNG_Building_the_Road_to_Federalism }
-		x = 1
-		y = 1
-		relative_position_id = FNG_Building_the_Road_to_Federalism
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Balans"
-			swap_ideas = {
-				remove_idea = FNG_Feddie_Fengtian
-				add_idea = FNG_Feddie_Fengtian2
-			}
-			add_political_power = 50
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Civilian_Recruitment
-		icon = GFX_RUS_Fighting_Reactionaries
-		cost = 8
-		prerequisite = { focus = FNG_Balans }
-		x = 1
-		y = 1
-		relative_position_id = FNG_Balans
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Civilian_Recruitment"
-			swap_ideas = {
-				remove_idea = FNG_Feddie_Fengtian2
-				add_idea = FNG_Feddie_Fengtian3
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Patriots
-		icon = GFX_goal_ANQ_promote_nationalist_thought
-		cost = 8
-		prerequisite = { focus = FNG_Land_to_the_Tiller }
-		prerequisite = { focus = FNG_School_is_Cool }
-		x = 1
-		y = 1
-		relative_position_id = FNG_School_is_Cool
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Patriots"
-			swap_ideas = {
-				remove_idea = FNG_literacy_campaigns_idea
-				add_idea = FNG_patriot_education_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Fed_Healthcare
-		icon = GFX_goal_healthcare
-		cost = 8
-		prerequisite = { focus = FNG_Land_to_the_Tiller }
-		prerequisite = { focus = FNG_Civilian_Recruitment }
-		x = -1
-		y = 1
-		relative_position_id = FNG_Civilian_Recruitment
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Fed_Healthcare"
-			swap_ideas = {
-				remove_idea = FNG_Feddie_Fengtian3
-				add_idea = FNG_Feddie_Fengtian4
-			}
-			add_tech_bonus = {
-				name = FNG_Fed_Healthcare
-				bonus = 1
-				uses = 2
-				category = hospital_tech
-			}
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-	focus = {
-		id = FNG_Twin_Dragons_Taming_the_Water
-		icon = GFX_goal_QIE_zhili_unite_china
-		cost = 8
-		prerequisite = { focus = FNG_Patriots }
-		prerequisite = { focus = FNG_Fed_Healthcare }
-		x = 0
-		y = 4
-		relative_position_id = FNG_Building_the_Road_to_Federalism
-		ai_will_do = { factor = 80 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_Twin_Dragons_Taming_the_Water"
-			effect_tooltip = {
-				swap_ideas = {
-					remove_idea = FNG_Feddie_Fengtian4
-					add_idea = FNG_Twin_Dragons_Taming_the_Water_idea_fake
-				}
-			}
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = FNG_Feddie_Fengtian4
-					add_idea = FNG_Twin_Dragons_Taming_the_Water_idea
-				}
-				remove_ideas = FNG_Land_to_the_Tiller_idea
-				remove_ideas = FNG_patriot_education_idea
-			}
-			add_political_power = 100
-			add_popularity = { ideology = social_conservative popularity = 0.10 }
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
+
 	#Tripartite
 	focus = {
 		id = FNG_tongmenghui

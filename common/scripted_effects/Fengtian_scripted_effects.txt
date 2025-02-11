@@ -796,3 +796,37 @@ FNG_improve_army_problem_effect = {
 		}
 	}
 }
+
+FNG_zhifeng_war_threat = {#直奉战争的威胁度
+	if = {
+		limit = {
+			has_global_flag = QIE_manchu_restoration
+			QIE = { owns_state = 608 }
+		}
+		add_named_threat = {
+			threat = 5
+			name = FNG_manchu_fengtian_war
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				QIE = { owns_state = 608 }
+				SZC = {
+					owns_state = 608
+					SZC_zhili_in_exile = yes
+				}
+			}
+		}
+		add_named_threat = {
+			threat = 5
+			name = FNG_fifth_zhili_fengtian_war
+		}
+	}
+	else = {
+		add_named_threat = {
+			threat = 5
+			name = FNG_war_of_national_reclamation
+		}
+	}
+}
