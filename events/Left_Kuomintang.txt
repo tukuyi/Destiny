@@ -618,14 +618,21 @@ country_event = { # Return of the Central Committee - fired by completing captur
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 2295
-							has_id = 2280
 							has_id = 2299
 							has_id = 2279
 						}
 					}
 					set_nationality = INT
 				}
+			}
+			CHI_zhang_zhizhong = {
+				set_nationality = INT
+			}
+			CHI_zhou_enlai = {
+				set_nationality = INT
+			}
+			CHI_bai_wenwei = {
+				set_nationality = INT
 			}
 		}
 	}
@@ -676,12 +683,13 @@ country_event = { # Return of the Central Committee - fired by completing captur
 				limit = { has_id = 2279 }
 				CHI_recruit_general_effect = yes 
 			}
-			random_unit_leader = {
-				limit = { has_id = 2295 }
+			CHI_zhang_zhizhong = {
 				CHI_recruit_general_effect = yes 
 			}
-			random_unit_leader = {
-				limit = { has_id = 2280 }
+			CHI_zhou_enlai = {
+				CHI_recruit_general_effect = yes 
+			}
+			CHI_bai_wenwei = {
 				CHI_recruit_general_effect = yes 
 			}
 			random_unit_leader = {
@@ -2881,19 +2889,14 @@ country_event = {
 
 	option = {
 		name = CHI.midgame.200.a
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2294 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2292 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2291 }
-				CHI_recruit_general_effect = yes 
-			}
+		CHI_chen_geng = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_xiao_jinguang = {
+			CHI_recruit_general_effect = yes 
+		}
+		CHI_huang_qixiang = {
+			CHI_recruit_general_effect = yes 
 		}
 	}
 }
@@ -3012,11 +3015,8 @@ country_event = { #Triumph of the Young Guard
 		add_political_power = -50
 		CHI_RCA_medium_effect = yes
 		CHI_CRS_medium_effect = yes
-		XXA = {
-			random_unit_leader = { 
-				limit = { has_id = 2289 }
-				CHI_recruit_general_effect = yes 
-			}
+		CHI_lin_biao = {
+			CHI_recruit_general_effect = yes 
 		}
 	}
 	option = { #Too woke for us
@@ -3937,7 +3937,7 @@ unit_leader_event = {
 	}
 	title = {
 		text = CHI.midgame.213.t.zhou
-		trigger = { THIS = { has_id = 2280 } }
+		trigger = { THIS = { is_character = CHI_zhou_enlai } }
 	}
 	title = {
 		text = CHI.midgame.213.t.hu
@@ -3949,7 +3949,7 @@ unit_leader_event = {
 	}
 	title = {
 		text = CHI.midgame.213.t.xiao
-		trigger = { THIS = { has_id = 2291 } }
+		trigger = { THIS = { is_character = CHI_xiao_jinguang } }
 	}
 
 	desc = {
@@ -3958,7 +3958,7 @@ unit_leader_event = {
 	}
 	desc = {
 		text = CHI.midgame.213.d.zhou
-		trigger = { THIS = { has_id = 2280 } }
+		trigger = { THIS = { is_character = CHI_zhou_enlai } }
 	}
 	desc = {
 		text = CHI.midgame.213.d.hu
@@ -3970,7 +3970,7 @@ unit_leader_event = {
 	}
 	desc = {
 		text = CHI.midgame.213.d.xiao
-		trigger = { THIS = { has_id = 2291 } }
+		trigger = { THIS = { is_character = CHI_xiao_jinguang } }
 	}
 
 	is_triggered_only = yes #fired by on_event related to general promotions.
@@ -3978,10 +3978,10 @@ unit_leader_event = {
 		THIS = {
 			OR = {
 				has_id = 2207
-				has_id = 2280
+				is_character = CHI_zhou_enlai
 				has_id = 2299
 				has_id = 2204
-				has_id = 2291
+				is_character = CHI_xiao_jinguang
 			}
 		}
 		CHI = { has_power_balance = { id = CHI_power_balance } }
@@ -3996,7 +3996,7 @@ unit_leader_event = {
 	}
 	option = {
 		name = CHI.midgame.213.b #A young face for a new NRA.
-		trigger = { THIS = { has_id = 2280 } }
+		trigger = { THIS = { is_character = CHI_zhou_enlai } }
 		CHI_RCA_medium_effect = yes
 		custom_effect_tooltip = CHI_champion_effect_tt
 	}
@@ -4014,7 +4014,7 @@ unit_leader_event = {
 	}
 	option = {
 		name = CHI.midgame.213.e #Someone to fight for the proletariat.
-		trigger = { THIS = { has_id = 2291 } }
+		trigger = { THIS = { is_character = CHI_xiao_jinguang } }
 		CHI_LCS_medium_effect = yes
 		CHI_CSP_ORT_effect = yes
 		custom_effect_tooltip = CHI_champion_effect_tt
@@ -4925,21 +4925,13 @@ country_event = {
 		name = CHI.midgame.603.a #
 		CHI_RCA_medium_effect = yes
 		if = {
-			limit = { CHI = { has_unit_leader = 2285 } }
-			random_unit_leader = {
-				limit = { has_id = 2285 }
+			limit = { CHI = { has_character = CHI_nie_rongzhen } }
+			CHI_nie_rongzhen = {
 				gain_xp = 500
 				add_random_trait = { politically_connected war_hero }
 			}
 		}
-		else = { 
-			XXA = {
-				random_unit_leader = {
-					limit = { has_id = 2285 }
-					CHI_recruit_general_effect = yes 
-				} 
-			}
-		}
+		else = { CHI_nie_rongzhen = { CHI_recruit_general_effect = yes } }
 	}
 }
 
@@ -9099,8 +9091,7 @@ country_event = {  #Fall of the Chairman
 		set_country_flag = Wang_Jingwei_dead
 		effect_tooltip = { retire_country_leader = yes }
 		set_country_flag = Wang_Faqin_dead
-		random_unit_leader = {
-			limit = { has_id = 2280 }
+		CHI_zhou_enlai = {
 			retire = yes
 		}
 		add_popularity = { ideology = radical_socialist popularity = 0.05 }
@@ -9117,8 +9108,7 @@ country_event = {  #Fall of the Chairman
 		set_country_flag = Wang_Jingwei_dead
 		effect_tooltip = { kill_country_leader = yes }
 		set_country_flag = Wang_Faqin_dead
-		random_unit_leader = {
-			limit = { has_id = 2280 }
+		CHI_zhou_enlai = {
 			retire = yes
 		}
 		add_popularity = { ideology = totalist popularity = 0.05 }
@@ -13072,17 +13062,15 @@ country_event = { #Loyalty Tests in a New Army
 			}
 		}
 		CHI_recruit_LCS_generals_effect = yes
+		CHI_lin_biao = {
+			CHI_recruit_general_effect = yes 
+		}
+		CHI_dai_anlan = {
+			CHI_recruit_general_effect = yes
+		}
 		XXA = {
 			random_unit_leader = {
-				limit = { has_id = 2282 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
 				limit = { has_id = 3005 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2289 }
 				CHI_recruit_general_effect = yes
 			}
 		}
@@ -13097,23 +13085,17 @@ country_event = { #Loyalty Tests in a New Army
 				social_democrat > 0.25
 			}
 		}
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2296 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2290 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2286 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2284 }
-				CHI_recruit_general_effect = yes
-			}
+		CHI_xu_xiangqian = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_su_yu = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_ye_ting = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_zhang_yunyi = {
+			CHI_recruit_general_effect = yes
 		}
 		add_popularity = { ideology = radical_socialist popularity = 0.05 }
 	}
@@ -14898,19 +14880,14 @@ country_event = { #Commissions in a Changing Army
 		add_popularity = { ideology = totalist popularity = 0.03 }
 		add_popularity = { ideology = radical_socialist popularity = 0.02 }
 		add_stability = -0.05
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2295 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2292 }
-				CHI_recruit_general_effect = yes
-			}
-			random_unit_leader = {
-				limit = { has_id = 2285 }
-				CHI_recruit_general_effect = yes
-			}
+		CHI_nie_rongzhen = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_chen_geng = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_zhang_zhizhong = {
+			CHI_recruit_general_effect = yes
 		}
 	}
 	option = { #Reconciling the NRA will heal the nation.
@@ -14919,11 +14896,10 @@ country_event = { #Commissions in a Changing Army
 		add_popularity = { ideology = paternal_autocrat popularity = 0.03 }
 		add_popularity = { ideology = social_democrat popularity = 0.02 }
 		add_war_support = -0.05
+		CHI_wang_yaowu = {
+			CHI_recruit_general_effect = yes 
+		}
 		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2288 }
-				CHI_recruit_general_effect = yes
-			}
 			random_unit_leader = {
 				limit = { has_id = 2283 }
 				CHI_recruit_general_effect = yes
@@ -15069,12 +15045,11 @@ unit_leader_event = {
 	is_triggered_only = yes #fired by on_event related to general promotions.
 	trigger = {
 		THIS = {
-			has_id = 2289
+			is_character = CHI_lin_biao
 		}
 		has_government = totalist
 		OR = {
-			any_unit_leader = {
-				has_id = 2289
+			CHI_lin_biao = {
 				is_unit_leader = yes
 				skill > 4
 			}
@@ -15219,38 +15194,30 @@ country_event = { #The Nanjing Trials
 		name = CHI.endgame.841.a
 		ai_chance = { base = 30 }
 		add_popularity = { ideology = social_democrat popularity = 0.1 }
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2296 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2290 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2286 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2284 }
-				CHI_recruit_general_effect = yes 
-			}
+		CHI_xu_xiangqian = {
+			CHI_recruit_general_effect = yes 
+		}
+		CHI_su_yu = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_ye_ting = {
+			CHI_recruit_general_effect = yes
+		}
+		CHI_zhang_yunyi = {
+			CHI_recruit_general_effect = yes
 		}
 	}
 	option = {
 		name = CHI.endgame.841.b
 		ai_chance = { base = 30 }
 		add_popularity = { ideology = totalist popularity = 0.1 }
+		CHI_lin_biao = {
+			CHI_recruit_general_effect = yes 
+		}
+		CHI_dai_anlan = {
+			CHI_recruit_general_effect = yes
+		}
 		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2289 }
-				CHI_recruit_general_effect = yes 
-			}
-			random_unit_leader = {
-				limit = { has_id = 2282 }
-				CHI_recruit_general_effect = yes 
-			}
 			random_unit_leader = {
 				limit = { has_id = 3005 }
 				CHI_recruit_general_effect = yes 

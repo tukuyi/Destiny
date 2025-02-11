@@ -289,6 +289,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Mao_zedong_army.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_CHI_Zhou_Enlai_CPC"
+		texturefile = "gfx/leaders/HNN/Portrait_CHI_Zhou_Enlai_CPC.png"
+	}	
+	spriteType = {
 		name = "GFX_Portrait_HNN_Yang_xuan_cheng"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Yang_xuan_cheng.png"
 	}
@@ -1495,17 +1499,4 @@ spriteTypes = {
 		name = "GFX_Portrait_ETS_Qasimi"
 		texturefile = "gfx/leaders/ETS/Portrait_SIK_Qasimi.png"
 	}	
-#国左
-	spriteType = {
-		name = "GFX_Portrait_CHI_peng_xuefeng"
-		texturefile = "gfx/leaders/CHI/Portrait_CHI_peng_xuefeng.png"
-	}	
-	spriteType = {
-		name = "GFX_Portrait_CHI_Qiu_Qingquan"
-		texturefile = "gfx/leaders/CHI/Portrait_CHI_Qiu_Qingquan.png"
-	}	
-	spriteType = {
-		name = "GFX_Portrait_CHI_Gui_Yongqing"
-		texturefile = "gfx/leaders/CHI/Portrait_CHI_Gui_Yongqing.png"
-	}
 }

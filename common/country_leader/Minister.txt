@@ -1,3 +1,11 @@
+@tier1_cp_cap_increase = 10
+@tier2_cp_cap_increase = 20
+@tier3_cp_cap_increase = 30
+
+@chief_experience_gain_low = 0.20
+@chief_experience_gain_medium = 0.30
+@chief_experience_gain_high = 0.40
+
 leader_traits = {
 	QYG_nong_ye_da_wang = {
 		random = no
@@ -36,6 +44,212 @@ leader_traits = {
 		economy_cost_factor = -0.33
 
 		ai_will_do = { factor = 1 }
+	}
+	KR_air_chief_reform_2 = {  #空军改革\n（大师） Rate at which air experience is gained increases by 10%
+		sprite = 1
+		experience_gain_air = @chief_experience_gain_medium
+		experience_gain_air_factor = 0.10
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0.1
+				has_deployed_air_force_size = { size < 200 }
+			}
+		}
+	}
+	KR_army_chief_organisational_2 = { #陆军组织\n（大师） Ground units get 8 more Organisation
+		sprite = 5
+		army_org_factor = 0.08
+		experience_gain_army = @chief_experience_gain_medium
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = { base = 5.5 }
+	}
+
+	#陆军重组
+	KR_MHC_army_regrouping_1 = {
+		sprite = 5
+		land_reinforce_rate = 0.03
+		org_loss_when_moving = -0.05
+
+		command_cap_increase = @tier1_cp_cap_increase
+
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	KR_MHC_army_regrouping_2 = {
+		sprite = 5
+		land_reinforce_rate = 0.06
+		org_loss_when_moving = -0.1
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	KR_MHC_army_regrouping_3 = {
+		sprite = 5
+		land_reinforce_rate = 0.09
+		org_loss_when_moving = -0.15
+
+		command_cap_increase = @tier3_cp_cap_increase
+
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	#堑壕作战
+	KR_MHC_entrenchment_1 = { # Ground units entrench n% faster
+		sprite = 9
+		dig_in_speed_factor = 0.15
+		land_bunker_effectiveness_factor = 0.05
+		coastal_bunker_effectiveness_factor = 0.05
+
+		command_cap_increase = @tier1_cp_cap_increase
+
+		ai_will_do = {
+			base = 0.5
+		}
+	}
+
+	KR_MHC_entrenchment_2 = { # Ground units entrench 8% faster
+		sprite = 9
+		dig_in_speed_factor = 0.3
+		land_bunker_effectiveness_factor = 0.1
+		coastal_bunker_effectiveness_factor = 0.1
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = {
+			base = 0.5
+		}
+	}
+
+	KR_MHC_entrenchment_3 = { # Ground units entrench 12% faster
+		sprite = 9
+		dig_in_speed_factor = 0.45
+		land_bunker_effectiveness_factor = 0.15
+		coastal_bunker_effectiveness_factor = 0.15
+
+		command_cap_increase = @tier3_cp_cap_increase
+
+		ai_will_do = {
+			base = 0.5
+		}
+	}
+
+	#陆军机动
+	KR_army_chief_manoeuvre_1 = { # Ground units move 5% faster
+		sprite = 5
+		army_speed_factor = 0.05
+		experience_gain_army = @chief_experience_gain_low
+
+		command_cap_increase = @tier1_cp_cap_increase
+
+		ai_will_do = { factor = 5 }
+	}
+
+	KR_army_chief_manoeuvre_2 = { # Ground units move 10% faster
+		sprite = 5
+		army_speed_factor = 0.1
+		experience_gain_army = @chief_experience_gain_medium
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = { factor = 5.5 }
+	}
+
+	KR_army_chief_manoeuvre_3 = { # Ground units move 15% faster
+		sprite = 5
+		army_speed_factor = 0.15
+		experience_gain_army = @chief_experience_gain_high
+
+		command_cap_increase = @tier3_cp_cap_increase
+
+		ai_will_do = { factor = 2 }
+	}
+
+	#炮兵部队
+	KR_MHC_artillery_1 = { # +4 artillery efficiency
+		sprite = 16
+		army_artillery_attack_factor = 0.1
+		army_artillery_defence_factor = 0.05
+
+		command_cap_increase = @tier1_cp_cap_increase
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	KR_MHC_artillery_2 = { # +8 artillery efficiency
+		sprite = 16
+		army_artillery_attack_factor = 0.15
+		army_artillery_defence_factor = 0.1
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	KR_MHC_artillery_3 = { # +12 artillery efficiency
+		sprite = 16
+		army_artillery_attack_factor = 0.2
+		army_artillery_defence_factor = 0.15
+
+		command_cap_increase = @tier3_cp_cap_increase
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	#步兵部队
+	KR_MHC_infantry_1 = { # +4 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.05
+		army_infantry_defence_factor = 0.1
+
+		command_cap_increase = @tier1_cp_cap_increase
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	KR_MHC_infantry_2 = { # +8 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.1
+		army_infantry_defence_factor = 0.15
+
+		command_cap_increase = @tier2_cp_cap_increase
+
+		ai_will_do = {
+			factor = 4
+		}
+	}
+
+	KR_MHC_infantry_3 = { # +12 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.15
+		army_infantry_defence_factor = 0.2
+
+		command_cap_increase = @tier3_cp_cap_increase
+
+		ai_will_do = {
+			factor = 6
+		}
 	}
 }
 	

@@ -2512,8 +2512,12 @@ focus_tree = {
 					remove_idea = HNN_si_xiang_ji_ben_yuan_ze
 					add_idea = HNN_si_xiang_ji_ben_yuan_ze2
 				}
-				set_country_leader_portrait = {
-					portrait = "gfx/leaders/HNN/Portrait_HNN_Deng_Xiao_Ping_leader.png"
+				SZC_Deng_Xiao_Ping = {
+					set_portraits = {
+						civilian = {
+							large = GFX_Portrait_HNN_Deng_Xiao_Ping_leader
+						}
+					}
 				}
 				country_event = { 
 					id = hungong.112

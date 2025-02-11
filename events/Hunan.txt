@@ -217,15 +217,8 @@ country_event = { #推翻省议会
 			popularity = 0.18
 		}
 		hidden_effect = {
-			remove_all_ministers = yes
 			activate_mission = HNN_revolution
 			activate_mission = HNN_yi_guan_dao
-			add_ideas = {
-				HNN_tang_xiangming_hog
-				HNN_Luo_Shujia_for_sco
-				HNN_Lu_Diping_eco_ade
-				HNN_Wang_Zhi_sec_ade
-			}
 			country_event = { 
 				id = hnnwar.1 
 				days = 5 
@@ -2840,13 +2833,6 @@ country_event = { #赵恒惕胜选
 				id = hungong.1
 				days = 4
 			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Zhao_Hengti_hog_sco
-				HNN_Huang_Shiheng_for_sco
-				HNN_Hu_Shuhua_eco_sco
-				HNN_Yi_Peiji_sec_sco
-			}
 			QIE = {
 				country_event = {
 					id = qiefor.110
@@ -2925,13 +2911,6 @@ country_event = { #陈渠珍胜选
 			}
 			HNN_long_yunfei = { HNN_recruit_characters_effect = yes }
 			HNN_dai_jitao = { HNN_recruit_characters_effect = yes }
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Chen_Quzhen_hog_pau
-				HNN_Liu_Yuezhi_for_ade
-				HNN_Lu_Diping_eco_ade
-				HNN_Wang_Zhi_sec_ade
-			}
 			QIE = {
 				country_event = { 
 					id = hunxiangxi.2
@@ -4143,13 +4122,6 @@ country_event = {#逼宫
 		}
 		set_cosmetic_tag = HNN_FJ
 		set_country_flag = HNN_fo_victory_flag
-		remove_all_ministers = yes
-		add_ideas = {
-			HNN_Chen_Quzhen_hog_pau
-			HNN_Guan_Kong_for_sde
-			HNN_Ming_Zhen_sec_sde
-			HNN_Tang_Youren_eco_ade
-		}
 		hidden_effect = {
 			create_country_leader = {
 				name = "正明法师"
@@ -4944,15 +4916,6 @@ country_event = {#右派合作者
 			name = HNN_social_conservative1 
 			long_name = HNN_social_conservative1_long 
 		}
-		hidden_effect = {
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_chen_san_li_hog
-				HNN_Liu_Wendao_for_sli
-				HNN_Lu_Diping_eco_ade
-				HNN_Long_Bojian_sec_sli
-			}
-		}
 	}
 	option = {#鲁涤平
 		name = hunbao.1.b
@@ -4966,15 +4929,6 @@ country_event = {#右派合作者
 		set_politics = {
 			ruling_party = social_conservative
 		}
-		hidden_effect = {
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Tang_Shengzhi_hog_sde
-				HNN_Liu_Wendao_for_sli
-				HNN_Lu_Diping_eco_ade
-				HNN_Long_Bojian_sec_sli
-			}
-		}
 	}
 	option = {#谭延闿
 		name = hunbao.1.c
@@ -4987,15 +4941,6 @@ country_event = {#右派合作者
 		}
 		set_politics = {
 			ruling_party = social_conservative
-		}
-		hidden_effect = {
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_tan_yan_kai_hog
-				HNN_Liu_Wendao_for_sli
-				HNN_Lu_Diping_eco_ade
-				HNN_Long_Bojian_sec_sli
-			}
 		}
 	}
 }
@@ -5472,15 +5417,6 @@ country_event = {#统一战线不统一
 			ideology = social_democrat
 			popularity = 0.06
 		}
-		hidden_effect = {
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Tang_Shengzhi_hog_sde
-				HNN_Guan_Kong_for_sde
-				HNN_Cao_Dianqiu_eco_sde
-				HNN_Cao_Bowen_sec_sde
-			}
-		}
 	}
 
 	option = {#程潜
@@ -5516,15 +5452,6 @@ country_event = {#统一战线不统一
 		add_popularity = {
 			ideology = authoritarian_democrat
 			popularity = 0.06
-		}
-		hidden_effect = {
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Cheng_Qian_hog_sli
-				HNN_Liu_Wendao_for_sli
-				HNN_He_Haoruo_eco_sli
-				HNN_Long_Bojian_sec_sli
-			}
 		}
 	}
 
@@ -6442,13 +6369,6 @@ country_event = {#长沙会战
 		}
 		add_stability = -0.05
 		set_cosmetic_tag = HNN_FJ
-		remove_all_ministers = yes
-		add_ideas = {
-			HNN_shi_ding_wu_hog
-			HNN_Guan_Kong_for_sde
-			HNN_Ming_Zhen_sec_sde
-			HNN_Tang_Youren_eco_ade
-		}
 		remove_ideas = {
 			HNN_constitutional_hopes_dashed
 			HNN_turbulent_intelligentsia
@@ -6743,11 +6663,6 @@ country_event = {#革命成功
 			ideology = syndicalist_subtype
 		}
 		remove_all_ministers = yes
-		add_ideas = {
-			HNN_Fan_Xudong_eco_sde
-			HNN_Cao_Bowen_sec_sde
-			CHI_Dong_Biwu_sec_syn
-		}
 		set_cosmetic_tag = HNN_GT
 		set_politics = {
 			ruling_party = syndicalist
@@ -6763,6 +6678,11 @@ country_event = {#革命成功
 				id = hungong.39
 				days = 10
 			}
+			country_event = { 
+				id = hungong.172
+				days = 40
+			}
+
 			if = {
 				limit = { 
 					QYG = {
@@ -6776,12 +6696,15 @@ country_event = {#革命成功
 					}
 				}
 			}
+
+
 			SZC = {
 				country_event = {#绑架刘伯承（ 
 					id = hungong.170
 					days = 2
 				}
 			}
+
 			GXC = {
 				country_event = {#绑架刘伯承（ 
 					id = hungong.170
@@ -7491,14 +7414,7 @@ country_event = {#结束军管？
 			long_name = HNN_syndicalist_party_proc_P_long
 			name = HNN_syndicalist_party_proc_P
 		}
-		remove_all_ministers = yes
 		HNN_fcations_change = yes 
-		add_ideas = {
-			HNN_Pong_Dehuai_hog
-			HNN_Zhou_En_Lai_for
-			HNN_Shang_Kun_sec
-			HNN_Li_Fu_Chun_eco
-		}
 		hidden_effect = {
 			set_country_leader_description = {
 				desc = "POLITICS_HNN_PENG_DEHUAI_TONG_YI_DESC"
@@ -8211,13 +8127,15 @@ country_event = {#放权
 
 	option = {#周恩来
 		name = hungong.78.e
-		create_country_leader = {
-			name = "周恩来"
-			desc = "POLITICS_HNN_ZHOU_ENLAI_DESC"
-			picture = "gfx/leaders/HNN/Portrait_CHI_Zhou_Enlai_CIV.png"
-			expire = "1965.1.1"
-			ideology = technocratic_socialism_subtype
-			traits = { LEC_ming_yu_ling_xiu }
+		CHI_zhou_enlai = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+					ideology = technocratic_socialism_subtype
+					traits = { LEC_ming_yu_ling_xiu }
+				}
+				promote_leader = yes
+			}
 		}
 		set_party_name = {
 			ideology = totalist
@@ -10532,6 +10450,26 @@ country_event = {#雨落之后，云水相逢
 	}
 }
 
+country_event = {#兜兜转转
+	id = hungong.172
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.172" }
+	picture = GFX_news_event_YUN_zhu_de_takes_over
+	title = hungong.172.t
+	desc = hungong.172.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #yes
+		name = hungong.172.a
+		SZC = {
+			SZC_Deng_Xiao_Ping = {
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
 ########################################
 ##########-      中社部    -############
 ########################################
@@ -11095,11 +11033,8 @@ country_event = {#林彪的胜利
 
 	option = { #yes
 		name = hunarmy.5.a
-		create_country_leader = {
-			name = "林彪"
-			desc = "POLITICS_HNN_LIN_BIAO_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_lin_biao.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = CHI_lin_biao
 			ideology = jun_zheng_ji_quan_subtype
 		}
 		set_politics = {
@@ -11112,14 +11047,7 @@ country_event = {#林彪的胜利
 		}
 		set_cosmetic_tag = HNN_PROC_L
 		set_country_flag = HNN_three_gays_ended
-		remove_all_ministers = yes
 		HNN_fcations_change = yes 
-		add_ideas = {
-			HNN_Lin_Biao_hog
-			CHI_Chian_Ching_Kuo_eco_tot
-			HNN_Qiu_Hui_Zuo_sec
-			HNN_Chen_Yi_for
-		}
 	}
 }
 
@@ -11152,14 +11080,7 @@ country_event = {#叶剑英的胜利
 			name =  HNN_paternal_autocrat_party_proc_Y
 		}
 		set_country_flag = HNN_three_gays_ended
-		remove_all_ministers = yes
 		HNN_fcations_change = yes 
-		add_ideas = {
-			HNN_Ye_Jian_Ying_hog
-			HNN_Rong_Yi_Ren_eco
-			HNN_Shang_Kun_sec
-			HNN_Geng_Biao_for
-		}
 	}
 }
 
@@ -11356,14 +11277,7 @@ country_event = {#贺龙的胜利
 			name =  HNN_radical_socialist_party_proc_H
 		}
 		set_country_flag = HNN_three_gays_ended
-		remove_all_ministers = yes
 		HNN_fcations_change = yes 
-		add_ideas = {
-			HNN_He_Long_hog
-			HNN_Mao_Ze_Dong_eco
-			HNN_Shang_Kun_sec
-			HNN_Zhou_En_Lai_for
-		}
 	}
 }
 
@@ -12198,13 +12112,6 @@ country_event = {#向首都进军
 			long_name =  HNN_radical_socialist_party_proc_M_long
 			name =  HNN_radical_socialist_party_proc_M
 		}
-		remove_all_ministers = yes
-		add_ideas = {
-			HNN_Mao_Ze_Dong_hog
-			HNN_Chen_Yi_for
-			HNN_Li_Fu_Chun_eco
-			HNN_Shang_Kun_sec
-		}
 		HNN_fcations_change = yes 
 		hidden_effect = {
 			set_cosmetic_tag = HNN_PROC_M
@@ -12537,18 +12444,22 @@ country_event = {#中华人民共和国
 				id = hungong.55
 				days = 180
 			}
-			create_country_leader = {
-				name = "邓小平"
-				desc = "POLITICS_HNN_DENG_XIAOPING_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Deng_Xiao_Ping_civ.png"
-				expire = "1965.1.1"
-				ideology = sorelian_marketism_subtype
+			SZC_Deng_Xiao_Ping = {
+				set_portraits = {
+					civilian = {
+						large = GFX_Portrait_HNN_Deng_Xiao_Ping_civ
+					}
+				}
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_HNN_DENG_XIAOPING_DESC
+						ideology = sorelian_marketism_subtype
+					}
+					promote_leader = yes
+				}
 			}
-			create_country_leader = {
-				name = "周恩来"
-				desc = "POLITICS_HNN_ZHOU_ENLAI_DESC"
-				picture = "gfx/leaders/HNN/Portrait_CHI_Zhou_Enlai.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = CHI_zhou_enlai
 				ideology = moderate_socialist_subtype
 			}
 			promote_character = {
@@ -13032,13 +12943,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 				ideology = totalist
 				popularity = 0.50
 			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Den_Xiao_Ping_hog
-				HNN_Chen_Yi_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Xian_Nian_eco
-			}
 			HNN_fcations_change = yes 
 		}
 
@@ -13076,13 +12980,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 			add_popularity = {
 				ideology = syndicalist
 				popularity = 0.50
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Liu_Shaoqi_hog
-				HNN_Zhou_En_Lai_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Fu_Chun_eco
 			}
 			HNN_fcations_change = yes 
 		}
@@ -13122,13 +13019,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 				ideology = syndicalist
 				popularity = 0.50
 			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Gao_Gang_hog
-				HNN_Zhou_En_Lai_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Fu_Chun_eco
-			}
 			HNN_fcations_change = yes 
 		}
 
@@ -13159,13 +13049,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 			add_popularity = {
 				ideology = radical_socialist
 				popularity = 0.50
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Zhou_En_Lai_hog
-				HNN_Chen_Yi_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Fu_Chun_eco
 			}
 			HNN_fcations_change = yes 
 		}
@@ -13202,13 +13085,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 				ideology = radical_socialist
 				popularity = 0.50
 			}
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Chen_Yun_hog
-				HNN_Chen_Yi_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Fu_Chun_eco
-			}
 			HNN_fcations_change = yes 
 		}
 
@@ -13241,13 +13117,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 				popularity = 0.50
 			}
 			set_cosmetic_tag = HNN_PROC_X
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_XI_Zhong_Xun_hog
-				HNN_Zhou_En_Lai_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Fu_Chun_eco
-			}
 			HNN_fcations_change = yes 
 		}
 
@@ -13364,13 +13233,6 @@ country_event = {#中华人民共和国第一次人民代表大会开幕式
 				popularity = 0.50
 			}
 			set_cosmetic_tag = HNN_PROC_X
-			remove_all_ministers = yes
-			add_ideas = {
-				HNN_Hu_Yao_Bang_hog
-				HNN_Chen_Yi_for
-				HNN_Shang_Kun_sec
-				HNN_Li_Xian_Nian_eco
-			}
 			HNN_fcations_change = yes 
 		}
 	}
@@ -14010,46 +13872,117 @@ country_event = {###国民党左派革命失败
 	option = {
 		name = hungong.16.a
 		custom_effect_tooltip = HNN_shibaidegeming_tooltip
-		add_popularity = {
-			ideology = social_democrat
-			popularity = 0.02
-		}
 		hidden_effect = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.02
+			}
 			country_event = { 
 				id = hungong.32
 				days = 2
+			}
+			CHI = {
+				CHI_zhou_enlai = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+					set_portraits = {
+						army = { 
+							large = GFX_Portrait_CHI_Zhou_Enlai_CPC 
+						}
+						civilian = {
+							large = GFX_Portrait_CHI_Zhou_Enlai_CIV
+						}
+					}
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+							ideology = moderate_socialist_subtype
+						}
+					}
+				}
+				CHI_lin_biao = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+					set_portraits = {
+						civilian = {
+							large = GFX_Portrait_HNN_lin_biao
+						}
+					}
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_LIN_BIAO_DESC
+							ideology = jun_zheng_ji_quan_subtype
+						}
+					}
+				}
+				CHI_xu_xiangqian = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_su_yu = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_zhang_yunyi = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_nie_rongzhen = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_chen_geng = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_luo_ronghuan = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_xiao_jinguang = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_dai_anlan = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+				CHI_ye_ting = {
+					set_nationality = ROOT
+					remove_unit_leader_trait = CHI_left_kmt_officer
+				}
+			}
+			if = {#彭雪枫
+				limit = { 
+					CHI = {
+						has_character = CHI_peng_xuefeng
+					}
+				}
+				CHI = {
+					CHI_peng_xuefeng = {
+						set_nationality = ROOT
+					}
+				}
+			}
+			else = {
+				ANQ = {
+					CHI_peng_xuefeng = {
+						set_nationality = ROOT
+					}
+				}
 			}
 			every_other_country = {
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 2296  
 							has_id = 2207  
-							has_id = 5066  
-							has_id = 2204  
-							has_id = 2286 
-							has_id = 2285  
-							has_id = 2292  
-							has_id = 2289 
-							has_id = 2290
-							has_id = 2280  
+							has_id = 2204   
 							has_id = 2279  
 							has_id = 2278 
 						}
 					}
 					set_nationality = ROOT
 				}
-			}
-			create_corps_commander = {
-				name = "邓小平 "
-				desc = "POLITICS_HNN_DENG_XIAO_PING_ARMY_DESC"
-				portrait_path = "gfx/leaders/HNN/Portrait_HNN_Deng_Xiao_Ping.png"
-				traits = { skilled_staffer }
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 3
-				logistics_skill = 2
 			}
 			create_corps_commander = {
 				name = "高岗"
@@ -14100,15 +14033,15 @@ country_event = {###国民党左派革命失败
 		}
 		if = {
 			limit = { 
-				tag = HNN
-			}
-			has_completed_focus = HNN_victory_of_the_united_front
-		}
-		if = {
-			limit = { 
 				tag = GXC
 			}
 			GXC_has_RKMT_government = yes
+		}
+		else_if = {
+			limit = { 
+				tag = HNN
+			}
+			has_completed_focus = HNN_victory_of_the_united_front
 		}
 		CHI = {
 			exists = no 
@@ -14121,6 +14054,17 @@ country_event = {###国民党左派革命失败
 		name = hunbao.8.a
 		custom_effect_tooltip = HNN_shibaidegeming_tooltip
 		hidden_effect = {
+			CHI = {
+				CHI_wang_yaowu = {
+					set_nationality = ROOT
+				}
+				CHI_huang_qixiang = {
+					set_nationality = ROOT
+				}
+				CHI_zhang_zhizhong = {
+					set_nationality = ROOT
+				}
+			}
 			every_other_country = {
 				every_unit_leader = {
 					limit = {
@@ -14128,18 +14072,11 @@ country_event = {###国民党左派革命失败
 							has_id = 2297  
 							has_id = 2299  
 							has_id = 2207  
-							has_id = 2298 
-							has_id = 2295  
-							has_id = 2294  
-							has_id = 5066 
+							has_id = 2298   
 							has_id = 2204
 							has_id = 2287  
-							has_id = 2291  
-							has_id = 2288  
 							has_id = 2203 
-							has_id = 2284
 							has_id = 2283  
-							has_id = 2282  
 							has_id = 5059  
 							has_id = 5071  
 							has_id = 2277 

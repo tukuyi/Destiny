@@ -329,7 +329,88 @@ ideas = {
 				hog_scholar
 			}
 		}		
+
 	#other	
+		HNN_Tang_Shengzhi_hog_sde = {#唐生智
+			allowed = { original_tag = HNN }
+			cost = 150
+			available = {
+				has_completed_focus = HNN_victory_of_the_united_front
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Tang_Shengzhi_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_reformist_soldier
+			}
+		}
+		HNN_Cheng_Qian_hog_sli = {#程潜
+			allowed = { original_tag = HNN }
+			cost = 150
+			available = {
+				has_completed_focus = HNN_victory_of_the_united_front
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Cheng_Qian_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_pragmatic_statesman
+			}
+		}
+		HNN_Zhao_Hengti_hog_sco = {#赵恒惕
+			allowed = { original_tag = HNN }
+			cost = 150
+			available = {
+				has_character = HNN_zhao_hengti
+				OR = {
+					HNN_lian_sheng_goverment = yes
+					has_completed_focus = HNN_guo_jia_chong_sheng
+				}
+			}
+			visible = {
+				has_character = HNN_zhao_hengti
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhao_Hengti_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_old_general
+			}
+		}
+		HNN_Chen_Quzhen_hog_pau = {#陈渠珍
+			allowed = { original_tag = HNN }
+			cost = 150
+			available = {
+				has_character = HNN_chen_quzhen
+			}
+			visible = {
+				has_character = HNN_chen_quzhen
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chen_Quzhen_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_happy_amateur
+			}
+		}
 		HNN_tan_yan_kai_hog = {#谭延闿
 			allowed = { original_tag = HNN }
 			picture = HNN_tan_yankai_hog
@@ -367,9 +448,7 @@ ideas = {
 				has_completed_focus = HNN_victory_of_the_united_front
 			}
 			visible = {
-				NOT = {
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
+				has_completed_focus = HNN_victory_of_the_united_front
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_chen_san_li_hog"
@@ -403,18 +482,13 @@ ideas = {
 		HNN_shi_ding_wu_hog = {#石顶武
 			allowed = { original_tag = HNN }
 			picture = HNN_shi_ding_wu_hog
+			cost = 150
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
 			visible = {
-				NOT = {
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
-			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_ding_wu_hog"
 				
@@ -428,16 +502,12 @@ ideas = {
 		HNN_shi_tai_xu_hog = {#太虚
 			allowed = { original_tag = HNN }
 			picture = HNN_shi_tai_xu_hog
+			cost = 150
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
+				has_completed_focus = HNN_Buddhism
 			}
 			visible = {
-				NOT = {
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
+				has_completed_focus = HNN_Buddhism
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_ding_wu_hog"
@@ -572,20 +642,28 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				paternal_autocrat
+				radical_socialist
 				for_ideological_crusader
 			}
 		}		
-		HNN_Guan_Kong_for_sde = {#观空法师
+		HNN_song_xilian_for = {#宋希濂
 			allowed = { original_tag = HNN }
+			picture = HNN_song_xilian_for
 			cost = 100
+			available = {
+				has_character = HNN_song_xilian
+			}
+			visible = {
+				has_character = HNN_song_xilian
+			}
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Guan_Kong_for_sde"
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_song_xilian_for"
+				custom_effect_tooltip = HNN_song_xilian_add_tooltip
 			}
 			traits = {
 				foreign_minister
 				social_democrat
-				for_biased_intellectual
+				for_ideological_crusader
 			}
 		}
 		HNN_Liu_Wendao_for_sli = {#刘文岛
@@ -612,10 +690,8 @@ ideas = {
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Huang_Shiheng_for_sco"
-				on_add = {
-					ROOT = {
-						custom_effect_tooltip = HNN_huang_shiheng_add_tooltip
-					}
+				ROOT = {
+					custom_effect_tooltip = HNN_huang_shiheng_add_tooltip
 				}
 			}
 			traits = {
@@ -736,6 +812,18 @@ ideas = {
 				hog_happy_amateur
 			}
 		}
+		HNN_Guan_Kong_for_sde = {#观空法师
+			allowed = { original_tag = HNN }
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Guan_Kong_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_biased_intellectual
+			}
+		}
 
 	#经济部长
 		HNN_shi_yin_shun_eco = {#印顺法师
@@ -778,11 +866,12 @@ ideas = {
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Mao_Ze_Dong_eco"
+				custom_effect_tooltip = HNN_mao_ze_dong_add_tooltip
 			}
 			traits = {
 				economy_minister
 				radical_socialist
-				eco_efficient_director
+				hog_the_peasant_marshal
 			}
 		}
 		HNN_Chen_Yun_eco = {#陈云
@@ -876,7 +965,7 @@ ideas = {
 				has_country_flag = HNN_PROC_victory
 			}
 			visible = {
-				has_country_flag = HNN_gong_tuan_victory_flag
+				has_country_flag = HNN_PROC_victory
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhao_zi_yang_eco"
@@ -997,12 +1086,7 @@ ideas = {
 			}
 			available = {
 				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
+					HNN_lian_sheng_goverment = yes
 					has_completed_focus = HNN_cooperating_with_dangwai
 				}
 			}
@@ -1088,6 +1172,9 @@ ideas = {
 				OR = {
 					has_country_leader = { name = "谭延闿" ruling_only = yes }
 					has_completed_focus = HNN_victory_of_the_united_front
+				}
+				NOT = {
+					has_country_leader = { name = "鲁涤平" ruling_only = yes }
 				}
 			}
 			visible = {
@@ -1280,30 +1367,6 @@ ideas = {
 				sec_secret_police_chief
 			}
 		}		
-		HNN_Cao_Bowen_sec_sde = {#曹伯闻
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Cao_Bowen_sec_sde"
-			}
-			traits = {
-				security_minister
-				social_democrat
-				sec_health_and_safety
-			}
-		}
-		HNN_Chou_Ao_sec_sde = {#仇鳌
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chou_Ao_sec_sde"
-			}
-			traits = {
-				security_minister
-				social_democrat
-				sec_man_of_the_people
-			}
-		}
 		HNN_Ming_Zhen_sec_sde = {#明真法师
 			allowed = { original_tag = HNN }
 			cost = 100
@@ -1326,18 +1389,6 @@ ideas = {
 				security_minister
 				social_liberal
 				sec_health_and_safety
-			}
-		}
-		HNN_Yi_Peiji_sec_sco = {#易培基
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Yi_Peiji_sec_sco"
-			}
-			traits = {
-				security_minister
-				social_conservative
-				sec_compassionate_gentleman
 			}
 		}
 		HNN_Wang_Zhi_sec_ade = {#王之
@@ -1390,6 +1441,11 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Xu_Kexiang_sec_ade"
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
 			}
 			traits = {
 				security_minister
@@ -1477,44 +1533,156 @@ ideas = {
 		}
 	}	
 
-	chief_of_army = {
+	chief_of_staff = {
+		HNN_yang_jie_cos = {#杨杰
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_yang_jie
+			}
+			visible = {
+				has_character = HNN_yang_jie
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_yang_jie_cos"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_grand_battleplan
+			}
+			cancel_if_invalid = yes
+		}
+	}
+
+	chief_of_army = { ### 陆军 ###
+		HNN_li_minghao_carm = {#李明灝
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_li_minghao
+			}
+			visible = {
+				has_character = HNN_li_minghao
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_li_minghao_carm"
+			}
+			traits = {
+				chief_of_army
+				KR_army_chief_organisational_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_liu_xing_carm = {#刘兴
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_liu_xing
+			}
+			visible = {
+				has_character = HNN_liu_xing
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_liu_xing_carm"
+			}
+			traits = {
+				chief_of_army
+				KR_MHC_army_regrouping_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_Pong_Dehuai_carm = {#彭德怀
+			allowed = { original_tag = HNN }
+			picture = HNN_Pong_Dehuai_hog
+			available = {
+				has_character = HNN_peng_dehuai
+			}
+			visible = {
+				has_character = HNN_peng_dehuai
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Pong_Dehuai_carm"
+				
+			}
+			traits = {
+				chief_of_army
+				KR_MHC_entrenchment_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_He_Long_carm = {#贺龙
+			allowed = { original_tag = HNN }
+			picture = HNN_He_Long_hog
+			available = {
+				has_character = HNN_he_long
+			}
+			visible = {
+				has_character = HNN_he_long
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Long_carm"
+				
+			}
+			traits = {
+				chief_of_army
+				KR_army_chief_manoeuvre_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_teng_daiyuan_carm = {#滕代远
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_Teng_Daiyuan
+			}
+			visible = {
+				has_character = HNN_Teng_Daiyuan
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_teng_daiyuan_carm"
+			}
+			traits = {
+				chief_of_army
+				KR_MHC_artillery_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_wang_zhen_carm = {#王震
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_wang_zhen
+			}
+			visible = {
+				has_character = HNN_wang_zhen
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_wang_zhen_carm"
+			}
+			traits = {
+				chief_of_army
+				KR_MHC_infantry_2
+			}
+			cancel_if_invalid = yes
+		}
+	}
+
+	chief_of_navy = { ### 海军 ###
 
 	}
 
 	chief_of_air_force = { ### 空军 ###
-		HNN_Liu_Zhesheng_cair = {#柳哲生
+		HNN_tang_duo_cair = {#唐铎
 			allowed = { original_tag = HNN }
-			available = { 
-
-			}
 			visible = {
-				NOT = { has_country_flag = Liu_Zhesheng_dead }
+				OR = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+					has_completed_focus = HNN_victory_of_the_united_front
+				}
 			}
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Zhesheng_cair"
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_tang_duo_cair"
 			}
 			traits = {
 				chief_of_air_force
-				cair_vertical_envelopment_doctrine
+				KR_air_chief_reform_2
 			}
 			cancel_if_invalid = yes
 		}
-
-		HNN_Shi_Bangfan_cair = {#石邦藩
-			allowed = { original_tag = HNN }
-			available = { }
-			visible = {
-				NOT = { has_country_flag = Shi_Bangfan_dead }
-			}
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Shi_Bangfan_cair"
-			}
-			traits = {
-				chief_of_air_force
-				cair_air_superiority_doctrine
-			}
-			cancel_if_invalid = yes
-		}
-
 	}
 }

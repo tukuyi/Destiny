@@ -18,7 +18,6 @@ HNN_lian_sheng_goverment = {
 			}
 			has_country_leader = { name = "陈渠珍" ruling_only = yes }
 			has_country_leader = { name = "赵恒惕" ruling_only = yes }
-			has_completed_focus = HNN_Buddhism
 		}
 	}
 }

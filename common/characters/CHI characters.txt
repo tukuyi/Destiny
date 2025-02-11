@@ -1,7 +1,310 @@
 characters = {
-################
-###   将领   ###
-################
+####################
+###   工团将领   ###
+####################
+#周恩来
+	CHI_zhou_enlai = {
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_zhou_enlai
+				small = GFX_Portrait_CHI_zhou_enlai
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_ZHOU_ENLAI_ARMY_DESC
+			traits = { 
+				CHI_left_kmt_officer 
+				career_officer 
+				skilled_staffer 
+				war_hero 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#萧劲光
+	CHI_xiao_jinguang = {
+		name = CHI_xiao_jinguang
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_xiao_jinguang
+				small = GFX_Portrait_CHI_xiao_jinguang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_XIAO_JINGGUANG_ARMY_DESC
+			traits = { 
+				war_hero 
+				light_infantry_officer 
+				organizer 
+				CHI_left_kmt_officer 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#罗荣恒
+	CHI_luo_ronghuan = {
+		name = CHI_luo_ronghuan
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_luo_ronghuan
+				small = GFX_Portrait_CHI_luo_ronghuan
+			}
+		}
+		corps_commander = {
+			desc = CHI_luo_ronghuan_commander_desc
+			traits = { 
+				CHI_left_kmt_officer 
+				light_infantry_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#陈赓
+	CHI_chen_geng = {
+		name = CHI_chen_geng
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_chen_geng
+				small = GFX_Portrait_CHI_chen_geng
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_CHEN_GENG_ARMY_DESC
+			traits = { 
+				career_officer 
+				CHI_left_kmt_officer 
+				infantry_officer 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#林彪
+	CHI_lin_biao = {
+		name = CHI_lin_biao
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_lin_biao
+				large = GFX_Portrait_CHI_lin_biao
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_LIN_BIAO_ARMY_DESC
+			traits = { 
+				brilliant_strategist 
+				light_infantry_officer 
+				rising_star 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#聂荣臻	
+	CHI_nie_rongzhen = { #Recruit from completion of encirclement tactics
+		name = CHI_nie_rongzhen
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_nie_rongzhen
+				small = GFX_Portrait_CHI_nie_rongzhen
+			}
+		}
+		corps_commander = {
+			desc = CHI_nie_rongzhen_commander_desc
+			traits = { 
+				light_infantry_officer 
+				CHI_left_kmt_officer 
+				media_personality 
+				trickster 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+#张云逸	
+	CHI_zhang_yunyi = {
+		name = CHI_zhang_yunyi
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_zhang_yunyi
+				small = GFX_Portrait_CHI_zhang_yunyi
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_ZHANG_YUNYI_ARMY_DESC
+			traits = { 
+				CHI_left_kmt_officer 
+				light_infantry_officer 
+				trait_cautious 
+				commando 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#叶挺
+	CHI_ye_ting = {
+		name = CHI_ye_ting
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_ye_ting
+				small = GFX_Portrait_CHI_ye_ting
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_YE_TING_ARMY_DESC
+			traits = { 
+				light_infantry_officer 
+				urban_assault_specialist 
+				commando 
+				CHI_left_kmt_officer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
+#徐向前
+	CHI_xu_xiangqian = {
+		name = CHI_xu_xiangqian
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_xu_xiangqian
+				large = GFX_Portrait_CHI_xu_xiangqian
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_XU_XIANGQIAN_ARMY_DESC
+			traits = { 
+				light_infantry_officer 
+				rising_star 
+				ranger 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#粟裕
+	CHI_su_yu = {
+		name = CHI_su_yu
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_su_yu
+				small = GFX_Portrait_CHI_su_yu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_SU_YU_ARMY_DESC
+			traits = { 
+				light_infantry_officer 
+				trickster 
+				guerilla_fighter 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+#彭雪楓
+	CHI_peng_xuefeng = {
+		name = CHI_peng_xuefeng
+		portraits = {
+			army = {
+				small = GFX_Portrait_CHI_peng_xuefeng
+				large = GFX_Portrait_CHI_peng_xuefeng
+			}
+		}
+		#country leader roles for use in Anqing as socialist placeholder
+		country_leader = { ideology = totalist_subtype }
+		country_leader = { ideology = syndicalist_subtype }
+		country_leader = { ideology = radical_socialist_subtype }
+		###gets his commnder leader role after being recuited by LKMT
+	}	
+####################
+###   国党将领   ###
+####################
+#张治中
+	CHI_zhang_zhizhong = {
+		name = CHI_zhang_zhizhong
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_Zhang_Zhizhong
+				small = GFX_Portrait_CHI_Zhang_Zhizhong
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_ZHANG_ZHIZHONG_ARMY_DESC
+			traits = { 
+				CHI_left_kmt_officer 
+				infantry_expert 
+				infantry_leader 
+				career_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+#黄琪翔
+	CHI_huang_qixiang = {
+		name = CHI_huang_qixiang
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_Huang_Qixiang
+				small = GFX_Portrait_CHI_Huang_Qixiang
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_HUANG_QIXIANG_ARMY_DESC
+			traits = { 
+				light_infantry_officer 
+				artillery_officer 
+				CHI_left_kmt_officer 
+				commando 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
 #桂永清
 	CHI_Gui_Yongqing = {
 		name = CHI_Gui_Yongqing
@@ -49,19 +352,76 @@ characters = {
 			logistics_skill = 2
 		}
 	}
-#彭雪楓
-	CHI_peng_xuefeng = {
-		name = CHI_peng_xuefeng
+#柏文蔚
+	CHI_bai_wenwei = {
+		name = CHI_bai_wenwei
 		portraits = {
 			army = {
-				small = GFX_Portrait_CHI_peng_xuefeng
-				large = GFX_Portrait_CHI_peng_xuefeng
+				large = GFX_Portrait_CHI_bai_wenwei
+				small = GFX_Portrait_CHI_bai_wenwei
 			}
 		}
-		#country leader roles for use in Anqing as socialist placeholder
-		country_leader = { ideology = totalist_subtype }
-		country_leader = { ideology = syndicalist_subtype }
-		country_leader = { ideology = radical_socialist_subtype }
-		###gets his commnder leader role after being recuited by LKMT
+		corps_commander = {
+			desc = POLITICS_CHI_BAI_WENWAI_ARMY_DESC
+			traits = { 
+				CHI_left_kmt_officer 
+				old_guard 
+				career_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#戴安澜
+	CHI_dai_anlan = {
+		name = CHI_dai_anlan
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_dai_anlan
+				small = GFX_Portrait_CHI_dai_anlan
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_DAI_ANLAN_ARMY_DESC
+			traits = { 
+				trait_reckless 
+				armor_officer 
+				career_officer 
+				brilliant_strategist 
+				CHI_left_kmt_officer 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
 	}
+#王耀武
+	CHI_wang_yaowu = {
+		name = CHI_wang_yaowu
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_wang_yaowu
+				small = GFX_Portrait_CHI_wang_yaowu
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_WANG_YAOWU_ARMY_DESC
+			traits = { 
+				inflexible_strategist 
+				light_infantry_officer 
+				CHI_left_kmt_officer 
+				infantry_officer 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}		
 }

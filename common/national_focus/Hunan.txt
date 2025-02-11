@@ -801,7 +801,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_establishment_of_youth_orgs"
-			add_war_support = 0.05
+			if = {
+				limit = {
+					has_idea = HNN_song_xilian_for
+				}
+				add_war_support = 0.05
+				custom_effect_tooltip = HNN_song_xilian_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_song_xilian_helpful_tooltip
+			}
 			add_ideas = HNN_nationalist_youth_organisations
 			HNN_improve_legitimacy_effect = yes
 		}
@@ -8191,14 +8200,7 @@ focus_tree = {
 		}
 		icon = {
 			trigger = { 
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-				}
+				HNN_lian_sheng_goverment = yes
 			}
 			value = GFX_goal_GXC_new_model_army
 		}
@@ -8212,14 +8214,7 @@ focus_tree = {
 			trigger = {
 				NOT = {
 					has_country_leader = { name = "汤芗铭" ruling_only = yes }
-					OR = {
-						AND = {
-							has_country_leader = { name = "谭延闿" ruling_only = yes }
-							has_government = social_liberal
-						}
-						has_country_leader = { name = "陈渠珍" ruling_only = yes }
-						has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					}
+					HNN_lian_sheng_goverment = yes
 					has_completed_focus = HNN_victory_of_the_united_front	
 				}
 			}
@@ -8891,12 +8886,7 @@ focus_tree = {
 		icon = {
 			trigger = { 
 				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
+					HNN_lian_sheng_goverment = yes
 					has_completed_focus = HNN_Buddhism
 				}
 			}
@@ -8905,14 +8895,7 @@ focus_tree = {
 		icon = {
 			trigger = {
 				NOT = {
-					OR = {
-						AND = {
-							has_country_leader = { name = "谭延闿" ruling_only = yes }
-							has_government = social_liberal
-						}
-						has_country_leader = { name = "陈渠珍" ruling_only = yes }
-						has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					}
+					HNN_lian_sheng_goverment = yes
 				}
 			}
 			value = GFX_goal_China_Beiyang_Army
@@ -9023,15 +9006,9 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
@@ -9083,15 +9060,9 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
+				has_country_leader = { name = "石顶武" ruling_only = yes }
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
@@ -9141,17 +9112,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9197,17 +9161,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9248,17 +9205,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9323,17 +9273,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9410,17 +9353,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9501,17 +9437,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {
@@ -9583,17 +9512,10 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
-				has_country_leader = { name = "汤芗铭" ruling_only = yes }
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "石顶武" ruling_only = yes }
+				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 		}
 		prerequisite = {

@@ -120,6 +120,24 @@ characters = {
 			# id = 1145
 		}
 	}	
+#邓小平
+	SZC_Deng_Xiao_Ping = {
+		name = SZC_Deng_Xiao_Ping
+		portraits = {
+			army = {
+				large = GFX_Portrait_HNN_Deng_Xiao_Ping
+				small = GFX_Portrait_HNN_Deng_Xiao_Ping
+			}
+		}
+		corps_commander = {
+			traits = { skilled_staffer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
 ########################
 ###      实业团      ###
 ########################	

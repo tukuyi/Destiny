@@ -5395,12 +5395,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			increase_ruling_party_popularity_by_5 = yes
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -50
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}
@@ -5437,12 +5455,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			add_manpower = 200
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -50
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}
@@ -5477,12 +5513,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			add_political_power = 40
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -55
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -55
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}
@@ -5515,13 +5569,32 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_zu_zhi_he_zuo_he"
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -60
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
 			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
+			}
+			custom_effect_tooltip = tooltip_white_line
 			602 = {
 				add_extra_state_shared_building_slots = 1
 			}
@@ -5592,12 +5665,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			add_political_power = 100
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = 30
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}
@@ -5628,12 +5719,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_zheng_dun_dang_nei"
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -30
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}
@@ -5707,12 +5816,30 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革 - 湖南
 			increase_ruling_party_popularity_by_5 = yes
 			if = {
 				limit = {
-					has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					has_idea = HNN_Mao_Ze_Dong_eco
 				}
-				add_days_mission_timeout = {
-					mission = HNN_syn_agricultural_reform_mission_timer
-					days = -50
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_mao_ze_dong_is_helpful_tooltip
+			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_syn_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_syn_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_mao_ze_dong_helpful_tooltip
 			}
 		}
 	}

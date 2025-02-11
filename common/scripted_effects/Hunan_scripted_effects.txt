@@ -95,12 +95,44 @@ HNN_revolution_victory = {#工团上台初始设定
 		}
 	}
 
-	HNN_peng_dehuai = {
-		promote_leader = yes
+	if = {
+		limit = { 
+			NOT = {
+				has_character = HNN_peng_dehuai
+			}
+		}
+		CHI = {
+			HNN_peng_dehuai = {
+				set_nationality = ROOT
+				promote_leader = yes
+			}
+		}
 	}
-	HNN_he_long = {
-		promote_leader = yes
+	else = {
+		HNN_he_long = {
+			promote_leader = yes
+		}
 	}
+	
+	if = {
+		limit = { 
+			NOT = {
+				has_character = HNN_he_long
+			}
+		}
+		CHI = {
+			HNN_he_long = {
+				set_nationality = ROOT
+				promote_leader = yes
+			}
+		}
+	}
+	else = {
+		HNN_he_long = {
+			promote_leader = yes
+		}
+	}
+
 
 	HNN_He_Su_Heng = { HNN_recruit_characters_effect = yes }
 	HNN_Dong_Bi_Wu = { HNN_recruit_characters_effect = yes }

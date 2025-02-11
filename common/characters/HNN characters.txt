@@ -1024,6 +1024,7 @@ characters = {
 			}
 		}
 		corps_commander = {
+			desc = POLITICS_HNN_XU_SI_YOU_ARMY_DESC
 			traits = { 
 				irregulars_officer
 				guerilla_officer
@@ -1069,6 +1070,7 @@ characters = {
 			}
 		}
 		corps_commander = {
+			desc = POLITICS_HNN_GENG_BIAO_ARMY_DESC
 			traits = { 
 				irregulars_officer
 				guerilla_officer

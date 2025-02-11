@@ -351,44 +351,7 @@ create_corps_commander = {
 	logistics_skill = 2
 	id = 2298
 }
-create_corps_commander = {
-	name = "Ye Ting"
-	desc = "POLITICS_CHI_YE_TING_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Ye_Ting.png"
-	traits = { irregulars_officer urban_assault_specialist commando CHI_left_kmt_officer }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-	id = 2296
-}
 
-create_corps_commander = {
-	name = "Zhang Zhizhong"
-	desc = "POLITICS_CHI_ZHANG_ZHIZHONG_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhang_Zhizhong.png"
-	traits = { CHI_left_kmt_officer infantry_expert infantry_leader career_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-	id = 2295
-}
-
-create_corps_commander = {
-	name = "Huang Qixiang"
-	desc = "POLITICS_CHI_HUANG_QIXIANG_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Huang_Qixiang.png"
-	traits = { irregulars_officer artillery_officer CHI_left_kmt_officer commando }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-	id = 2294
-}
 
 create_corps_commander = {
 	name = "Guan Xiangying"
@@ -428,84 +391,6 @@ create_corps_commander = {
 	logistics_skill = 2
 	id = 2287
 }
-
-create_corps_commander = {
-	name = "Su Yu"
-	desc = "POLITICS_CHI_SU_YU_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Su_Yu.png"
-	traits = { irregulars_officer trickster guerilla_officer CHI_left_kmt_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 2286
-}
-
-create_corps_commander = {
-	name = "Nie Rongzhen"
-	desc = "POLITICS_CHI_NIE_RONGZHEN_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Nie_Rongzhen.png"
-	traits = { irregulars_officer CHI_left_kmt_officer trickster }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-	id = 2285
-}
-
-create_corps_commander = {
-	name = "Chen Geng"
-	desc = "POLITICS_CHI_CHEN_GENG_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Chen_Geng.png"
-	traits = { career_officer CHI_left_kmt_officer infantry_officer trickster }
-	skill = 2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 1
-	id = 2292
-}
-
-create_corps_commander = {
-	name = "萧劲光"
-	desc = "POLITICS_CHI_XIAO_JINGGUANG_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Xiao_Jingguang.png"
-	traits = { media_personality irregulars_officer organizer CHI_left_kmt_officer }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 2291
-}
-
-create_corps_commander = {
-	name = "林彪"
-	desc = "POLITICS_CHI_LIN_BIAO_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Lin_Biao.png"
-	traits = { brilliant_strategist irregulars_officer trait_mountaineer CHI_left_kmt_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-	id = 2289
-}
-create_corps_commander = {
-	name = "王耀武"
-	desc = "POLITICS_CHI_WANG_YAOWU_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Wang_Yaowu_KR.png"
-	traits = { inflexible_strategist irregulars_officer CHI_left_kmt_officer infantry_officer }
-	skill = 2
-	attack_skill = 1
-	defense_skill = 3
-	planning_skill = 1
-	logistics_skill = 2
-	id = 2288
-}
-
 create_corps_commander = {
 	name = "薛岳"
 	desc = "POLITICS_CHI_XUE_YUE_ARMY_DESC"
@@ -520,30 +405,6 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-	name = "徐向前"
-	desc = "POLITICS_CHI_XU_XIANGQIAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Xu_Xiangqian.png"
-	traits = { irregulars_officer brilliant_strategist ranger CHI_left_kmt_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-	id = 2290
-}
-create_corps_commander = {
-	name = "张云逸"
-	desc = "POLITICS_CHI_ZHANG_YUNYI_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhang_Yunyi.png"
-	traits = { CHI_left_kmt_officer irregulars_officer trait_cautious commando }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 2284
-}
-create_corps_commander = {
 	name = "杜聿明"
 	desc = "POLITICS_CHI_DU_YUMING_ARMY_DESC"
 	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Du_Yuming_KX.png"
@@ -554,18 +415,6 @@ create_corps_commander = {
 	planning_skill = 2
 	logistics_skill = 1
 	id = 2283
-}
-create_corps_commander = {
-	name = "戴安澜"
-	desc = "POLITICS_CHI_DAI_ANLAN_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Dai_Anlan.png"
-	traits = { trait_reckless armor_officer career_officer brilliant_strategist CHI_left_kmt_officer }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-	id = 2282
 }
 create_corps_commander = {
 	name = "蒋经国"
@@ -591,17 +440,6 @@ create_corps_commander = {
 	id = 3002
 }
 create_corps_commander = {
-	name = "Bai Wenwai"
-	desc = "POLITICS_CHI_BAI_WENWAI_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Bai_Wenwai.png"
-	traits = { CHI_left_kmt_officer old_guard career_officer }
-	skill = 2
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 2
-}
-create_corps_commander = {
 	name = "陈立夫"
 	desc = "POLITICS_CHI_CHEN_LIFU_ARMY_DESC"
 	portrait_path = "gfx/leaders/CHI/Portrait_KMT_Chen_Lifu.png"
@@ -624,18 +462,6 @@ create_corps_commander = {
 	planning_skill = 1
 	logistics_skill = 1
 	id = 3005
-}
-create_corps_commander = {
-	name = "周恩来"
-	desc = "POLITICS_CHI_ZHOU_ENLAI_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhou_Enlai_Army.png"
-	traits = { CHI_left_kmt_officer career_officer skilled_staffer media_personality }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 2280
 }
 create_corps_commander = {
 	name = "Kim Wonbong "
@@ -740,63 +566,14 @@ if = {
 }
 #Unit Leader Loyalty Stuff
 
-#RCA
-random_unit_leader = {
-	limit = { has_id = 2295 }
-	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2280 }
-	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2292 }
-	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2285 }
-	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
+
+
 #CHI_chen_changzu = { set_character_flag = CHI_RCA_military_loyalist_flag }
 #PAC
 random_unit_leader = {
 	limit = { has_id = 2207 }
 	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
 	set_unit_leader_flag = CHI_original_unit_leader
-}
-random_unit_leader = {
-	limit = { has_id = 2296 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	set_unit_leader_flag = CHI_original_unit_leader
-}
-random_unit_leader = {
-	limit = { has_id = 2294 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2290 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2288 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2286 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2284 }
-	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
 }
 random_unit_leader = {
 	limit = { has_id = 2283 }
@@ -823,11 +600,6 @@ random_unit_leader = {
 	set_unit_leader_flag = CHI_LCS_military_loyalist_flag
 	CHI_setup_hide_commander_effect = yes
 }
-random_unit_leader = {
-	limit = { has_id = 2291 }
-	set_unit_leader_flag = CHI_LCS_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
 #CRS
 random_unit_leader = {
 	limit = { has_id = 2299 }
@@ -840,17 +612,7 @@ random_unit_leader = {
 	CHI_setup_hide_commander_effect = yes
 }
 random_unit_leader = {
-	limit = { has_id = 2289 }
-	set_unit_leader_flag = CHI_CRS_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
 	limit = { has_id = 2287 }
-	set_unit_leader_flag = CHI_CRS_military_loyalist_flag
-	CHI_setup_hide_commander_effect = yes
-}
-random_unit_leader = {
-	limit = { has_id = 2282 }
 	set_unit_leader_flag = CHI_CRS_military_loyalist_flag
 	CHI_setup_hide_commander_effect = yes
 }
@@ -913,6 +675,91 @@ random_unit_leader = {#让关向应别去奉天
 
 recruit_character = CHI_Qiu_Qingquan
 recruit_character = CHI_Gui_Yongqing
+
+recruit_character = CHI_chen_geng
+recruit_character = CHI_bai_wenwei
+recruit_character = CHI_zhou_enlai
+recruit_character = CHI_nie_rongzhen
+recruit_character = CHI_zhang_zhizhong
+
+recruit_character = CHI_su_yu
+recruit_character = CHI_ye_ting
+recruit_character = CHI_huang_qixiang
+recruit_character = CHI_wang_yaowu
+recruit_character = CHI_xu_xiangqian
+recruit_character = CHI_zhang_yunyi
+
+recruit_character = CHI_lin_biao
+recruit_character = CHI_dai_anlan
+
+recruit_character = CHI_xiao_jinguang
+
+recruit_character = CHI_luo_ronghuan
+
+#RCA
+CHI_zhou_enlai = {
+	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_nie_rongzhen = {
+	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_chen_geng = {
+	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_bai_wenwei = {
+	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_zhang_zhizhong = {
+	set_unit_leader_flag = CHI_RCA_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+
+CHI_xu_xiangqian = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_su_yu = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_ye_ting = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	set_unit_leader_flag = CHI_original_unit_leader
+}
+CHI_zhang_yunyi = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_wang_yaowu = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_huang_qixiang = {
+	set_unit_leader_flag = CHI_PAC_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+
+CHI_lin_biao = {
+	set_unit_leader_flag = CHI_CRS_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+CHI_dai_anlan = {
+	set_unit_leader_flag = CHI_CRS_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+
+CHI_xiao_jinguang = {
+	set_unit_leader_flag = CHI_LCS_military_loyalist_flag
+	CHI_setup_hide_commander_effect = yes
+}
+
+CHI_luo_ronghuan = {
+	CHI_setup_hide_commander_effect = yes
+}
 
 recruit_character = CHI_peng_xuefeng # on start fills slot in ANQ but will be recruited after
 
