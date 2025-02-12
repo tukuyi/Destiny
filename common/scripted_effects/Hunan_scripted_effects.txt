@@ -104,6 +104,9 @@ HNN_revolution_victory = {#工团上台初始设定
 			NOT = {
 				has_character = HNN_peng_dehuai
 			}
+			CHI = {
+				has_character = HNN_peng_dehuai
+			}
 		}
 		CHI = {
 			HNN_peng_dehuai = {
@@ -113,7 +116,7 @@ HNN_revolution_victory = {#工团上台初始设定
 		}
 	}
 	else = {
-		HNN_he_long = {
+		HNN_peng_dehuai = {
 			promote_leader = yes
 		}
 	}
@@ -121,6 +124,9 @@ HNN_revolution_victory = {#工团上台初始设定
 	if = {
 		limit = { 
 			NOT = {
+				has_character = HNN_he_long
+			}
+			CHI = {
 				has_character = HNN_he_long
 			}
 		}
