@@ -2751,7 +2751,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
-					HNN_hu_ying = { is_political_advisor = yes }
+					has_idea = HNN_hu_ying_eco
 				}
 				add_political_power = 35
 				custom_effect_tooltip = HNN_hu_ying_is_helpful_tooltip

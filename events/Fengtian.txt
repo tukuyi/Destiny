@@ -12425,8 +12425,8 @@ country_event = { #FNG demands integration
 	}
 }
 
-country_event = {
-	id = fengtian.285 #deciding the ultimatum
+country_event = {#决定我们的条件
+	id = fengtian.285 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.285" }
 	title = fengtian.285.t
 	desc = fengtian.285.d
@@ -13199,7 +13199,7 @@ country_event = { #Japan Accepts Our Demands
 	}
 }
 
-country_event = { #Zuolin Plans To Retire
+country_event = { #张作霖考虑退休让位
 	id = fengtian.287
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.287" }
 	title = fengtian.287.t
@@ -13221,7 +13221,7 @@ country_event = { #Zuolin Plans To Retire
 			country_event = {
 				id = fengtian.288
 				days = 5
-				random = 120
+				random_hours = 120
 			}
 		}
 	}
@@ -13235,13 +13235,13 @@ country_event = { #Zuolin Plans To Retire
 			country_event = {
 				id = fengtian.288
 				days = 5
-				random = 120
+				random_hours = 120
 			}
 		}
 	}
 }
 
-country_event = { #The Shikan Clique Protests!
+country_event = { #士官派抗议
 	id = fengtian.288
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.288" }
 	title = fengtian.288.t
@@ -13278,14 +13278,14 @@ country_event = { #The Shikan Clique Protests!
 				country_event = {
 					id = fengtian.289
 					days = 5
-					random = 120
+					random_hours = 120
 				}
 			}
 		}
 	}
 }
 
-country_event = { #A Sinister Plot
+country_event = { #险恶阴谋
 	id = fengtian.289
 	title = fengtian.289.t
 	desc = {
@@ -13314,7 +13314,7 @@ country_event = { #A Sinister Plot
 				country_event = {
 					id = fengtian.290
 					days = 5
-					random = 120
+					random_hours = 120
 				}
 			}
 		}
@@ -13323,7 +13323,7 @@ country_event = { #A Sinister Plot
 	option = {
 		name = fengtian.289.a #yes
 		ai_chance = {
-			factor = 60
+			base = 60
 			modifier = {
 				factor = 0 
 				has_game_rule = { rule = FNG_jap_path option = FNG_ASSERTIVENESS }
@@ -13340,12 +13340,12 @@ country_event = { #A Sinister Plot
 	option = {
 		name = fengtian.289.b #no
 		ai_chance = {
-			factor = 40
+			base = 20
 		}
 	}
 }
 
-country_event = { #Ambush in Shenyang
+country_event = { #沈阳的袭击！
 	id = fengtian.290
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.290" }
 	title = fengtian.290.t
@@ -13388,18 +13388,13 @@ country_event = { #Ambush in Shenyang
 			FNG_zhang_zuolin = {
 				retire = yes
 			}
-			promote_character = {
-				character = FNG_zhang_xueliang
-				ideology = authoritarian_democrat_subtype
-			}
-			promote_character = {
-				character = FNG_zhang_xueliang
-				ideology = paternal_autocrat_subtype
+			FNG_zhang_xueliang = {
+				retire = yes
 			}
 			country_event = {
 				id = fengtian.291
 				hours = 8
-				random = 16
+				random_hours = 16
 			}
 		}
 	}
@@ -13430,13 +13425,13 @@ country_event = { #Ambush in Shenyang
 			country_event = {
 				id = fengtian.298
 				hours = 8
-				random = 16
+				random_hours = 16
 			}
 		}
 	}
 }
 
-country_event = { # The Zhaode Dajie Incident - Zuolin Dies
+country_event = { #昭德大街事变
 	id = fengtian.291
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.291" }
 	title = fengtian.291.t
@@ -13449,39 +13444,6 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 	}
 
 	is_triggered_only = yes
-
-	option = {
-		name = fengtian.291.a #Xueliang Rallies the Loyalists
-		ai_chance = {
-			factor = 1
-			modifier = {
-				set_temp_variable = { FNG_xueliang_chance_1 = ROOT.party_popularity@paternal_autocrat }
-				multiply_temp_variable = { FNG_xueliang_chance_1 = 10 }
-				add = FNG_xueliang_chance_1
-			}
-			modifier = {
-				add = FNG.FNG_legitimacy_level
-			}
-			modifier = {
-				add = -1
-				has_country_flag = FNG_japan_supports_assassination
-			}
-			modifier = {
-				factor = 0 
-				has_game_rule = { rule = FNG_jap_path option = FNG_OBEDIENCE }
-			}
-		}
-		add_stability = -0.2
-		set_country_flag = Zhang_Zuolin_dead
-		set_country_flag = FNG_yuting_lost
-		hidden_effect = {
-			country_event = {
-				id = fengtian.292
-				days = 1
-				random = 24
-			}
-		}
-	}
 
 	option = {
 		name = fengtian.291.b #The Kwantung Army Helps Yuting
@@ -13510,7 +13472,7 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 			country_event = {
 				id = fengtian.299
 				days = 1
-				random = 24
+				random_hours = 24
 			}
 		}
 	}
@@ -13542,38 +13504,7 @@ country_event = { # The Zhaode Dajie Incident - Zuolin Dies
 			country_event = {
 				id = fengtian.299
 				days = 1
-				random = 24
-			}
-		}
-	}
-}
-
-country_event = { #Xueliang Rallies The Government
-	id = fengtian.292
-	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.292" }
-	title = fengtian.292.t
-	desc = fengtian.292.d
-	picture = GFX_report_event_FNG_army1
-
-	trigger = {
-		FNG_JAP_hostile = no
-		NOT = { has_global_flag = JAP_Fading_Sun }
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = fengtian.292.a
-		add_stability = 0.1
-		FNG_zhang_xueliang = {
-			promote_leader = yes
-		}
-		complete_national_focus = FNG_The_Question_of_the_Presidency
-		hidden_effect = {
-			country_event = {
-				id = fngsystem.17
-				days = 2
-				random = 72
+				random_hours = 24
 			}
 		}
 	}
@@ -13810,7 +13741,7 @@ country_event = { #Fengtian Denounces Us!
 	}
 }
 
-country_event = { #The Zhaode Dajie Incident
+country_event = { #昭德大街事变
 	id = fengtian.298
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.298" }
 	title = fengtian.298.t
@@ -13845,7 +13776,7 @@ country_event = { #The Zhaode Dajie Incident
 	}
 }
 
-country_event = { #Yuting Takes Over
+country_event = { #杨宇霆夺权
 	id = fengtian.299
 	immediate = { log = "[GetDateText]: [Root.GetName]: event fengtian.299" }
 	title = fengtian.299.t
@@ -13904,10 +13835,6 @@ country_event = { #Yuting Takes Over
 			limit = { has_war = yes }
 			JAP = {
 				country_event = {
-					id = fengtian.301
-					hours = 8
-				}
-				country_event = {
 					id = fengtian.300
 					days = 5
 				}
@@ -13922,14 +13849,9 @@ country_event = { #Yuting Takes Over
 			}
 		}
 		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
 			remove_ideas = FNG_Assertive_Governance
 			default_party_popularity_PP_gain = yes
-			if = {
-				limit = { has_character = FNG_zhang_xueliang }
-				FNG_zhang_xueliang = {
-					retire = yes
-				}
-			}
 			if = {
 				limit = { has_unit_leader = 11111 }
 				random_unit_leader = {
@@ -13964,19 +13886,10 @@ country_event = { #Yuting Takes Over
 			add_dynamic_modifier = { modifier = JAP_asian_economic_sphere_member }
 			JAP_recalculate_economic_integration = yes
 			FNG_recalculate_mantetsu_effects = yes
-			unlock_national_focus = FNG_The_Question_of_the_Presidency
 			country_event = { #Restoring Order to Manchuria
 				id = fengtian.308
 				days = 2
 			}
-			country_event = { #Monarchists in the concordia association
-				id = fengtian.310
-				days = 37
-			}
-			#country_event = {
-			#	id = fngrebels.1
-			#	days = 10
-			#}
 		}
 		hidden_effect = { country_event = fngsystem.1000 }
 	}
@@ -14208,7 +14121,7 @@ country_event = { #A Meeting with Merchants
 	}
 }
 
-country_event = { #Restoring Order to Manchuria
+country_event = { #恢复满洲的秩序
 	id = fengtian.308
 	title = fengtian.308.t
 	desc = fengtian.308.d
@@ -14287,7 +14200,7 @@ country_event = {
 	}
 }
 
-country_event = { #Monarchists in Concordia
+country_event = { #保皇情绪在协和会崛起
 	id = fengtian.310
 	title = fengtian.310.t
 	desc = fengtian.310.d
@@ -14372,7 +14285,7 @@ country_event = { #reeeee
 	}
 }
 
-country_event = { #Debate over who to enthrone
+country_event = { #谁将登上龙椅？
 	id = fengtian.312
 	title = fengtian.312.t
 	desc = fengtian.312.d
@@ -14468,7 +14381,7 @@ country_event = { #Debate over who to enthrone
 	}
 }
 
-country_event = { #Debate over who to entrone, Japanese
+country_event = { #和人皇帝
 	id = fengtian.314
 	title = fengtian.314.t
 	desc = fengtian.314.d
@@ -14540,7 +14453,7 @@ country_event = { #Debate over who to entrone, Japanese
 	}
 }
 
-country_event = { #Coronation
+country_event = { #龙椅再兴
 	id = fengtian.315
 	title = fengtian.315.t
 	immediate = {
@@ -15338,7 +15251,7 @@ country_event = { #Sadde
 	}
 }
 
-country_event = { #Crown Zuolin?
+country_event = { #新帝国？
 	id = fngnap.1
 	title = fngnap.1.t
 	desc = fngnap.1.d
@@ -15367,7 +15280,7 @@ country_event = { #Crown Zuolin?
 	}
 }
 
-country_event = { #Crown Zuolin, intermission?
+country_event = { #帝国全民公决
 	id = fngnap.2
 	title = fngnap.2.t
 	desc = fngnap.2.d
@@ -15385,7 +15298,7 @@ country_event = { #Crown Zuolin, intermission?
 	}
 }
 
-country_event = { #Zhuolin referendum victory, common Zhuolin W
+country_event = { #天命重归
 	id = fngnap.3
 	title = fngnap.3.t
 	desc = fngnap.3.d
@@ -15402,7 +15315,7 @@ country_event = { #Zhuolin referendum victory, common Zhuolin W
 	}
 }
 
-country_event = { #Crown Zuolin, common Mandate W
+country_event = { #张作霖，中华皇帝！
 	id = fngnap.4
 	title = fngnap.4.t
 	desc = fngnap.4.d
@@ -18393,5 +18306,49 @@ country_event = { #METH
 		FNG_zhang_jinghui = {
 			retire = yes
 		}
+	}
+}
+
+country_event = { #张作霖辞职
+	id = fngshaos.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fngshaos.2" }
+	title = fngshaos.2.t
+	desc = fngshaos.2.d
+
+	picture = GFX_report_event_FNG_old_out
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = fngshaos.2.a
+		promote_character = {
+			character = FNG_zhang_xueliang
+			ideology = junta_subtype
+		}
+		hidden_effect = {
+			promote_character = {
+				character = FNG_zhang_xueliang
+				ideology = national_democracy_subtype
+			}
+			add_trait = {
+				character = FNG_zhang_xueliang
+				ideology = national_democracy_subtype
+				trait = FNG_light_in_the_north
+			}
+			add_trait = {
+				character = FNG_zhang_xueliang
+				ideology = junta_subtype
+				trait = FNG_light_in_the_north
+			}
+		}
+	}
+
+	option = {
+		name = fngshaos.2.b
+		trigger = {
+			is_ai = no
+		}
+		add_stability = 0.02
 	}
 }

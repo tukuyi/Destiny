@@ -1996,7 +1996,7 @@ CHI_recruit_RF_generals_effect = {
 			limit = {
 				ANQ_sun_liren = { has_character_flag = CHI_RF_military_loyalist_flag }
 			}
-			ANQ_sun_liren = { CHI_recruit_character_effect = yes }
+			ANQ_sun_liren = { CHI_recruit_general_effect = yes }
 		}
 	}
 }

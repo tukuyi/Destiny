@@ -96,6 +96,9 @@ HNN_revolution_victory = {#工团上台初始设定
 	}
 	QIE_ma_dengying_flees_effect = yes
 
+	HNN_he_long = { HNN_recruit_characters_effect = yes }
+	HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
+
 	if = {
 		limit = { 
 			NOT = {
@@ -137,8 +140,6 @@ HNN_revolution_victory = {#工团上台初始设定
 
 	HNN_He_Su_Heng = { HNN_recruit_characters_effect = yes }
 	HNN_Dong_Bi_Wu = { HNN_recruit_characters_effect = yes }
-	HNN_he_long = { HNN_recruit_characters_effect = yes }
-	HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
 	HNN_Teng_Daiyuan = { HNN_recruit_characters_effect = yes }
 	HNN_Wan_Dan_Ping = { HNN_recruit_characters_effect = yes }
 	HNN_Chen_Yi = { HNN_recruit_characters_effect = yes }

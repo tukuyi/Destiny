@@ -15,6 +15,7 @@ characters = {
 			desc = POLITICS_ZHANG_ZUOLIN_DESC
 			ideology = authdem_warlordism_subtype
 			traits = {
+				CHN_anguojun_aligned
 				FNG_old_marshal
 			}
 		}
@@ -58,12 +59,12 @@ characters = {
 		country_leader = {
 			desc = FNG_zhang_xueliang_leader_desc
 			ideology = national_democracy_subtype
-			traits = { FNG_young_marshal }
+			traits = { CHN_anguojun_aligned FNG_young_marshal }
 		}
 		country_leader = {
 			desc = FNG_zhang_xueliang_leader_desc
 			ideology = junta_subtype
-			traits = { FNG_young_marshal }
+			traits = { CHN_anguojun_aligned FNG_young_marshal }
 		}
 		corps_commander = {
 			desc = POLITICS_ZHANG_XUELIANG_ARMY_DESC

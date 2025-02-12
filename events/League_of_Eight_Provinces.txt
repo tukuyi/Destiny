@@ -1587,7 +1587,6 @@ country_event = { # LEP collapse - ANQ dead
 					}
 					ANQ = {
 						ANQ_ma_dengying = {
-							remove_second_in_command_role = yes
 							set_nationality = PREV.PREV
 							unit_leader_event = lepcollapse.37
 						}

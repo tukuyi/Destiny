@@ -7,11 +7,9 @@
 FNG_grand_marshals_favor_category = {
 	icon = power_struggle
 	picture = GFX_decision_cat_picture_chi_political_support
-	visible_when_empty = yes
 	priority = 500
 	allowed = {
-		tag = FNG
-		NOT = { tag = RGC }
+		always = no
 	}
 	visible = {
 		NOT = { tag = RGC }

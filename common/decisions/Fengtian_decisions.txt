@@ -748,7 +748,7 @@ political_actions = {
 	}
 }
 
-FNG_grand_marshals_favor_category = {
+FNG_grand_marshals_favor_category = {#大元帅的恩宠
 
 	FNG_favor_recovery_league = {
 		icon = GFX_decision_eng_trade_unions_support
@@ -2015,16 +2015,6 @@ FNG_internal_conference = {#统一大会
 					set_temp_variable = { FNG_federalists_active = 1 }
 				}
 				set_variable = { FNG_legitimacy_level = 1 }
-				if = {
-					limit = {
-						OR = {
-							check_variable = { FNG_possible_participants > 2 }
-							check_variable = { FNG_federalists_active > 0 }
-						}
-					}
-					country_event = fngconf.1
-				}
-				else = { country_event = fngconf.75 }
 			}
 		}
 		timeout_effect = {
@@ -2066,16 +2056,6 @@ FNG_internal_conference = {#统一大会
 				set_temp_variable = { FNG_federalists_active = 1 }
 			}
 			set_variable = { FNG_legitimacy_level = 1 }
-			if = {
-				limit = {
-					OR = {
-						check_variable = { FNG_possible_participants > 2 }
-						check_variable = { FNG_federalists_active > 0 }
-					}
-				}
-				country_event = fngconf.1
-			}
-			else = { country_event = fngconf.75 }
 		}
 	}
 	FNG_End_Of_The_Conference = {

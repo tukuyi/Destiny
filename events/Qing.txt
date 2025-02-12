@@ -5747,7 +5747,6 @@ country_event = { #南方舰队北上！
 						mid_2_custom_slot = empty
 						rear_1_custom_slot = empty
 					}
-					design_team = mio:CHN_naval_industry_organisation
 				}
 				if = {
 					limit = { NOT = { has_tech = basic_ship_hull_cruiser } }
@@ -5773,7 +5772,6 @@ country_event = { #南方舰队北上！
 						mid_1_custom_slot = ship_anti_air_1
 						rear_1_custom_slot = ship_torpedo_1
 					}
-					design_team = mio:CHN_naval_industry_organisation
 				}
 			}
 		}

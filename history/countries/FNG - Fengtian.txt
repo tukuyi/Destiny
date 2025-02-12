@@ -138,19 +138,19 @@ country_event = { # The Asia Express
 country_event = { # Minister Event System
 	id = fngsystem.0
 	days = 60
-	random = 150
+	random_hours = 150
 }
 
 country_event = { # Honghuzi Attacks in Heilongjiang
 	id = fengtian.117
 	days = 365
-	random = 3600
+	random_hours = 3600
 }
 
 country_event = { # Shenyang Conference Starter Event
 	id = fngshen.0
 	days = 440
-	random = 360
+	random_hours = 360
 }
 
 country_event = { # The Founding of the Jilin Film Association
@@ -166,7 +166,7 @@ country_event = { # Prince Kan'in Kotohito Visits Fengtian
 country_event = { # Seditious Articles Proliferate
 	id = fengtian.116
 	days = 1463
-	random = 1560
+	random_hours = 1560
 }
 
 QIE = {
@@ -223,9 +223,9 @@ set_popularities = {
 	syndicalist = 0
 	social_democrat = 0
 	social_liberal = 0
-	market_liberal = 14
-	social_conservative = 18
-	authoritarian_democrat = 40
+	market_liberal = 20
+	social_conservative = 14
+	authoritarian_democrat = 38
 	paternal_autocrat = 28
 	national_populist = 0
 }
