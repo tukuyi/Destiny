@@ -2422,6 +2422,7 @@ focus_tree = {
 				has_country_flag = wu_intervenes_proLEP
 			}
 		}
+
 		prerequisite = {
 			focus = QIE_futureofzhili
 		}
@@ -2934,6 +2935,7 @@ focus_tree = {
 				has_country_flag = wu_intervenes_proLEP
 			}
 		}
+		
 		prerequisite = {
 			focus = QIE_futureofzhili
 		}

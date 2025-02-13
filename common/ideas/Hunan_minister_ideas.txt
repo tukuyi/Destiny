@@ -666,18 +666,6 @@ ideas = {
 				for_ideological_crusader
 			}
 		}
-		HNN_Liu_Wendao_for_sli = {#刘文岛
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Wendao_for_sli"
-			}
-			traits = {
-				foreign_minister
-				social_liberal
-				for_biased_intellectual
-			}
-		}
 		HNN_Huang_Shiheng_for_sco = {#黄士衡
 			allowed = { original_tag = HNN }
 			cost = 100
@@ -810,6 +798,28 @@ ideas = {
 				foreign_minister
 				social_conservative
 				hog_happy_amateur
+			}
+		}
+		HNN_tian_yingzhao_for = {#黄公略
+			allowed = { original_tag = HNN }
+			picture = HNN_tian_yingzhao_for
+			cost = 100
+			available = {
+				has_character = HNN_tian_yingzhao
+			}
+			visible = {
+				has_character = HNN_tian_yingzhao
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_tian_yingzhao_for"
+				ROOT = {
+					custom_effect_tooltip = HNN_tian_yingzhao_add_tooltip
+				}
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				hog_old_general
 			}
 		}
 		HNN_Guan_Kong_for_sde = {#观空法师
@@ -1037,42 +1047,6 @@ ideas = {
 				economy_minister
 				social_democrat
 				eco_industrial_chemist
-			}
-		}
-		HNN_He_Haoruo_eco_sli = {#何浩若
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Haoruo_eco_sli"
-			}
-			traits = {
-				economy_minister
-				social_liberal
-				eco_laissez_faire_capitalist
-			}
-		}
-		HNN_Ren_Kainan_eco_sli = {#任凯南
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Ren_Kainan_eco_sli"
-			}
-			traits = {
-				economy_minister
-				social_liberal
-				eco_reformer
-			}
-		}
-		HNN_He_Lian_eco_mli = {#何廉
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Lian_eco_mli"
-			}
-			traits = {
-				economy_minister
-				market_liberal
-				eco_mixed_economy
 			}
 		}
 		HNN_Liu_Tingfang_eco_mli = {#刘廷芳
@@ -1554,6 +1528,23 @@ ideas = {
 	}
 
 	chief_of_army = { ### 陆军 ###
+		HNN_long_yunfei_carm = {#龙云飞
+			allowed = { original_tag = HNN }
+			available = { 
+				has_character = HNN_long_yunfei
+			}
+			visible = {
+				has_character = HNN_long_yunfei
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_long_yunfei_carm"
+			}
+			traits = {
+				chief_of_army
+				KR_MHC_infantry_1
+			}
+			cancel_if_invalid = yes
+		}
 		HNN_li_minghao_carm = {#李明灝
 			allowed = { original_tag = HNN }
 			available = { 

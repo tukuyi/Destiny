@@ -2004,6 +2004,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 		}
 	}
 	GXC_chong_jian_ri_ben_flag = {#日本
+		icon = GFX_decision_global_trade
 		available = {
 			has_country_flag = JAP_coco
 		}
@@ -3131,7 +3132,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 	GXC_fire_everything = {#焚毁一切
 		icon = GFX_decision_global_trade
 		available = {
-			
+	
 		}
 		visible = {
 			has_country_flag = GXC_fire_everything_flag
@@ -3143,17 +3144,77 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GXC_fire_everything"
-			SZC = {
-				transfer_state = 650
-				set_cosmetic_tag = GXC_fire
-				SZC_Post_An = {
-					set_nationality = SZC
-				}
-				promote_character = {
-					character = SZC_Post_An
-					ideology = anarcho_bolshevism_subtype
-				}
-				hidden_effect = {
+			650 = {
+				set_demilitarized_zone = yes
+			}
+			hidden_effect = {
+				SZC = {
+					transfer_state = 650
+					set_cosmetic_tag = GXC_fire
+					SZC_Post_An = {
+						set_nationality = SZC
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = syndicalist_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = radical_liberalism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = socdem_anarcho_tridemism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = soclib_aboriginal_garveyism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = marlib_authoritarian_liberalism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = soccon_bonapartism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = authdem_agrarianism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = pataut_belgicism_subtype
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							country_leader = { 
+								ideology = natpop_agrarianism_subtype
+							}
+							promote_leader = yes
+						}
+					}
+					promote_character = {
+						character = SZC_Post_An
+						ideology = anarcho_bolshevism_subtype
+					}
+					SZC = {
+						GXC_remove_all_idea_for_fire = yes
+					}
 					set_politics = {
 						ruling_party = totalist
 						elections_allowed = no
@@ -3220,6 +3281,10 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 						long_name = GXC_fire_party_long
 						name = GXC_fire_party
 					}
+				}	
+				country_event = {
+					id = qiewpf.1
+					days = 3
 				}
 			}
 		}
@@ -4494,7 +4559,8 @@ GXC_UPC_reunification_decisions = {#联省运动
 			can_declare_war_on = FROM
 			FROM = {
 				is_subject = no
-				NOT = { has_decision = FNG_Begin_the_War_of_National_Reclamation }
+				NOT = { 
+					has_completed_focus = FNG_Begin_the_War_of_National_Reclamation }
 			}
 		}
 
@@ -4507,7 +4573,9 @@ GXC_UPC_reunification_decisions = {#联省运动
 			can_declare_war_on = FROM
 			FROM = {
 				is_subject = no
-				NOT = { has_decision = FNG_Begin_the_War_of_National_Reclamation }
+				NOT = { 
+					has_completed_focus = FNG_Begin_the_War_of_National_Reclamation 
+				}
 			}
 		}
 

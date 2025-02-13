@@ -4872,7 +4872,7 @@ country_event = {#何键政变
 		}
 	}
 }
-country_event = {#四维八德 
+country_event = {#四维八德
 	id = hunKMT.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunKMT.3" }
 	title = hunKMT.3.t
@@ -4889,7 +4889,7 @@ country_event = {#四维八德
 		}
 	}
 }
-country_event = {#右派合作者 
+country_event = {#右派合作者
 	id = hunbao.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunbao.1" }
 	title = hunbao.1.t
@@ -5239,11 +5239,8 @@ country_event = {#海军上将的困兽之斗
 				active = no
 			}
 			set_cosmetic_tag = HNN_KMT
-			create_country_leader = {
-				name = "谭延闿"
-				desc = "POLITICS_HNN_Tan_Yan_Kai_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Tan_Yan_Kai_KMT.png"
-				expire = "1965.1.1"
+			promote_character = {
+				character = HNN_Tan_Yan_Kai
 				ideology = national_conservative_subtype
 			}
 			set_party_name = { 
@@ -9941,11 +9938,11 @@ country_event = {#重新合并
 					transfer_troops = yes
 				}
 			}
-			annex_country = {
-				target = SHC
-				transfer_troops = yes
-			}
 			hidden_effect = {
+				annex_country = {
+					target = SHC
+					transfer_troops = yes
+				}
 				create_corps_commander = {
 					name = "饶漱石"
 					portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
@@ -9979,11 +9976,11 @@ country_event = {#时机已到？
 					transfer_troops = yes
 				}
 			}
-			annex_country = {
-				target = SHC
-				transfer_troops = yes
-			}
 			hidden_effect = {
+				annex_country = {
+					target = SHC
+					transfer_troops = yes
+				}
 				create_corps_commander = {
 					name = "饶漱石"
 					portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
@@ -12475,12 +12472,19 @@ country_event = {#中华人民共和国
 				expire = "1965.1.1"
 				ideology = marlib_centrist_subtype
 			}
-			create_country_leader = {
-				name = "王震"
-				desc = "POLITICS_HNN_WANG_ZHEN_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_wang_zhen.png"
-				expire = "1965.1.1"
-				ideology = national_security_state_subtype
+			HNN_wang_zhen = {
+				set_portraits = {
+					civilian = {
+						large = GFX_Portrait_HNN_wang_zhen
+					}
+				}
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_HNN_WANG_ZHEN_DESC
+						ideology = national_security_state_subtype
+					}
+					promote_leader = yes
+				}
 			}
 			create_country_leader = {
 				name = "阎锡山"
@@ -13630,20 +13634,7 @@ country_event = {#选举结果
 	id = hungong.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.13" }
 	title = hungong.13.t
-	desc = {
-		text = hungong.13.d.jiesu
-		trigger = {
-			NOT={
-				has_country_flag = HNN_zheng_bian
-			}
-		}
-	}
-	desc = {
-		text = hungong.13.d.zhengbian
-		trigger = {
-			has_country_flag = HNN_zheng_bian
-		}
-	}
+	desc = hungong.13.d.jiesu
 
 	immediate = {
 		hidden_effect = {
@@ -13767,9 +13758,6 @@ country_event = {#选举结果
 			AND = {
 				has_country_flag = HNN_tuoxie_KMT
 				has_country_flag = HNN_wenguan_economic
-				NOT={
-					has_country_flag = HNN_zheng_bian
-				}
 			}
 		}
 		set_country_flag = HNN_he_victory
@@ -13779,27 +13767,6 @@ country_event = {#选举结果
 		}
 		set_politics = {
 			ruling_party = radical_socialist
-		}
-	}
-	option = {#唐生明
-		name = hungong.13.e
-		trigger = {
-			has_country_flag = HNN_zheng_bian
-		}
-		set_country_flag = HNN_tang_victory
-		set_cosmetic_tag = HNN_GTA
-		create_country_leader = {
-			name = "唐生明"
-			desc = "POLITICS_HNN_TANG_SHENGMING_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengming.png"
-			expire = "1965.1.1"
-			ideology = authcom_subtype
-		}
-		set_politics = {
-			ruling_party = totalist
-		}
-		hidden_effect = {
-
 		}
 	}
 }

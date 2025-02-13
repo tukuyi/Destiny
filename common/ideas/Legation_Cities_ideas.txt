@@ -1632,19 +1632,19 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
+				weekly_manpower = 1000
+				surrender_limit = 0.40
 				stability_factor = 0.20
 				stability_weekly = 0.050
-				weekly_manpower = 1000
-				stability_weekly_factor = 0.050
-				surrender_limit = 0.40
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.20
-				party_popularity_stability_factor = 0.20
 				consumer_goods_factor = -0.20
-				production_factory_efficiency_gain_factor = 0.10
 				justify_war_goal_time = -0.20
+				stability_weekly_factor = 0.050
 				offensive_war_stability_factor = 0.20
 				defensive_war_stability_factor = 0.20
+				party_popularity_stability_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.10
 			}
 		}
 		LEC_tian_zhu_jiao_gong_hui = {#天主教工会
@@ -1655,9 +1655,9 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
-				consumer_goods_factor = -0.10
 				political_power_gain = 0.10
 				political_power_cost = -0.10
+				consumer_goods_factor = -0.10
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
@@ -1669,11 +1669,11 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
-				consumer_goods_factor = -0.10
 				political_power_gain = 0.10
 				political_power_cost = -0.10
-				production_factory_efficiency_gain_factor = 0.10
+				consumer_goods_factor = -0.10
 				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
 				production_factory_start_efficiency_factor = 0.10
 			}
 		}
@@ -1701,8 +1701,8 @@ ideas = {
             modifier = {
 				industrial_capacity_factory = 0.10
 				production_speed_buildings_factor = 0.10
-				production_speed_industrial_complex_factor = 0.10
 				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -1728,10 +1728,10 @@ ideas = {
             modifier = {
 				stability_factor = 0.10
 				monthly_population = 0.10
-				authoritarian_democrat_drift = 0.10
 				social_conservative_drift = 0.10
-				operation_boost_resistance_outcome = 0.10
+				authoritarian_democrat_drift = 0.10
 				operation_boost_resistance_cost = -0.10
+				operation_boost_resistance_outcome = 0.10
 			}
 		}
 	###资本家

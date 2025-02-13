@@ -4,7 +4,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/HNN/HNN_chen_quzhen.png"
 	}
 	spriteType = {
-		name = "GFX_portrait_HNN_tian_yingzhao_army_small"
+		name = "GFX_idea_HNN_tian_yingzhao_for"
 		texturefile = "gfx/interface/ministers/HNN/HNN_tian_yingzhao.png"
 	}
 	spriteType = {
@@ -166,6 +166,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_HNN_teng_daiyuan_carm"
 		texturefile = "gfx/interface/ministers/HNN/HNN_teng_daiyuan.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_long_yunfei_carm"
+		texturefile = "gfx/interface/ministers/HNN/HNN_long_yunfei.png"
 	}
 	spriteType = {
 		name = "GFX_idea_HNN_wang_zhen_carm"

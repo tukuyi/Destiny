@@ -105,7 +105,7 @@ focus_tree = {
 				country_event = {
 					id = fengtian.4
 					days = 5
-					random = 125
+					random_hours = 125
 				}
 			}
 			hidden_effect = {
@@ -237,7 +237,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = FNG_yangyu_zuo_wei_le_xi_wei
-				market_liberal > 0.3
+				market_liberal > 0.4
 			}
 		} 
 		prerequisite = {
@@ -247,7 +247,13 @@ focus_tree = {
 			focus = FNG_zhua_lao_jiang_shen
 		}
 
-		ai_will_do = { base = 60 }
+		ai_will_do = { 
+			base = 60 
+			modifier = {
+				factor = 1.5
+				market_liberal > 0.4
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_ni_hong"
@@ -1125,11 +1131,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FNG_Toward_Japan
 		}
-		allow_branch = {
-			NOT = {
-				has_global_flag = FNG_projapan
-			}
-		}
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
@@ -1647,7 +1648,7 @@ focus_tree = {
 		ai_will_do = { factor = 80 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Redefine_Provincial_Obligations"
-			add_idea = FNG_Negotiated_Provincial_Revenues
+			add_ideas = FNG_Negotiated_Provincial_Revenues
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
 	}
@@ -2018,17 +2019,6 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = FNG_From_Beijing_to_the_Begonia_Leaf
-		offset = {
-			x = -4
-			y = 0
-			trigger = {
-				OR = {
-					has_global_flag = MON_FNG_new_mandate_enforced
-					has_global_flag = FNG_projapan
-					has_country_flag = FNG_yuting_lost
-				}
-			}
-		}
 		ai_will_do = { factor = 80 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Unification_through_Subjugation"
@@ -2693,13 +2683,6 @@ focus_tree = {
 		cost = 2
 		x = 5
 		y = 4
-		offset = {
-			x = -5
-			y = 0
-			trigger = { 
-				has_global_flag = FNG_projapan
-			}
-		}
 		
 		available = {
 			OR = {

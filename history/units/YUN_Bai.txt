@@ -25,21 +25,21 @@ units = {
 	division = {
 		name = "Bai Zu Di 1 Lü"
 		location = 1319
-		division_template = "Bai Zu Lü"
+		division_template = "Bai Zu Lv"	
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
 	}
 	division = {
 		name = "Bai Zu Di 2 Lü"
 		location = 1319
-		division_template = "Bai Zu Lü"
+		division_template = "Bai Zu Lv"	
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
 	division = {
 		name = "Bai Zu Di 3 Lü"
 		location = 1319
-		division_template = "Bai Zu Lü"
+		division_template = "Bai Zu Lv"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.2
 	}
@@ -47,7 +47,7 @@ units = {
 	division = {
 		name = "Bai Zu Di 4 Lü"
 		location = 1319
-		division_template = "Bai Zu Lü"
+		division_template = "Bai Zu Lv"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.2
 	}
@@ -55,7 +55,7 @@ units = {
 	division = {
 		name = "Bai Zu Di 5 Lü"
 		location = 1319
-		division_template = "Bai Zu Lü"
+		division_template = "Bai Zu Lv"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.2
 	}

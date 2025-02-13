@@ -1701,11 +1701,14 @@ focus_tree = {
 		ai_will_do = { base = 20 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_shang_hai_qi_shi_tuan"
-			add_manpower = 10000
-			add_ideas = LEC_qi_shi_tuan
-			country_event = {
-				days = 5
-				id = lecjidu.3
+			custom_effect_tooltip = LEC_shang_hai_qi_shi_tuan_tooltip
+			hidden_effect = {
+				load_oob = "SHC_rider"
+				add_ideas = LEC_qi_shi_tuan
+				country_event = {
+					days = 5
+					id = lecjidu.3
+				}
 			}
 		}
 	}

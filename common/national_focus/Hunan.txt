@@ -2320,6 +2320,22 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_speak_with_the_diarchy"
+			if = {
+				limit = {
+					has_idea = HNN_tian_yingzhao_for
+				}
+				add_stability = 0.03
+				add_war_support = 0.03
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 100
+				}
+				custom_effect_tooltip = HNN_tian_yingzhao_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_tian_yingzhao_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
 			swap_ideas = {
 				remove_idea = HNN_the_western_diarchy_2
 				add_idea = HNN_alliance_with_the_diarchy
@@ -7255,9 +7271,22 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_rewards_for_arms_manufacturers"
-			add_timed_idea = {
-				idea = HNN_subsidised_military_industry
-				days = 160
+			if = {
+				limit = {
+					has_idea = HNN_tian_yingzhao_for
+				}
+				add_timed_idea = {
+					idea = HNN_subsidised_military_industry
+					days = 200
+				}
+				custom_effect_tooltip = HNN_tian_yingzhao_is_helpful_tooltip
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_subsidised_military_industry
+					days = 120
+				}
+				custom_effect_tooltip = HNN_tian_yingzhao_helpful_tooltip
 			}
 			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
