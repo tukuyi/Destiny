@@ -1,8 +1,4 @@
-﻿######################
-# 上海 History File#
-# By Drozdovite		 #
-######################
-capital = 743
+﻿capital = 743
 
 OOB = "LEC"
 
@@ -227,6 +223,20 @@ create_country_leader = {
 	traits = {
 		 
 	}
+}
+
+recruit_character = SHC_Sun_Fuyuan
+recruit_character = SHC_Rao_Shu_Shi
+recruit_character = SHC_Zhou_Yang
+
+SHC_Sun_Fuyuan = {
+	retire = yes
+}
+SHC_Rao_Shu_Shi = {
+	retire = yes
+}
+SHC_Zhou_Yang = {
+	retire = yes
 }
 
 recruit_character = SHC_robbie_hoshailai

@@ -587,10 +587,6 @@ spriteTypes = {
 	}	
 ###上海
 	spriteType = {
-		name = "GFX_Portrait_SHC_robbie_hoshailai"
-		texturefile = "gfx/leaders/SHC/Portrait_SHC_robbie_hoshailai.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_Sha_Xun"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Sha_Xun.png"
 	}
@@ -643,10 +639,6 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_ma_san_li.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_Sun_Fuyuan"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Sun_Fuyuan.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_liu_qi"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_liu_qi.png"
 	}
@@ -665,10 +657,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_Zhang_Chunqiao"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhang_Chunqiao.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Zhou_Yang"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhou_Yang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_Xudatong"
@@ -749,10 +737,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_li_chu_wen"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_li_chu_wen.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_hu_feng"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_hu_feng.png"
 	}
 ###广东
 	spriteType = {

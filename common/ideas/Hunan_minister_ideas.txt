@@ -1651,6 +1651,22 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
+		HNN_Lin_Biao_carm = {#林彪
+			name = HNN_Lin_Biao_carm
+			allowed = { original_tag = HNN }
+			visible = {
+				has_character = CHI_lin_biao
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Lin_Biao_carm"
+			}
+			traits = {
+				chief_of_army
+				army_infantry_2
+				army_chief_organizational_3
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_navy = { ### 海军 ###

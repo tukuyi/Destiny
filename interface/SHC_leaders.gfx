@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_Portrait_SHC_Sun_Fuyuan"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Sun_Fuyuan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_robbie_hoshailai"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_robbie_hoshailai.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Rao_Shu_Shi"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Rao_Shu_Shi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Zhou_Yang"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Zhou_Yang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_hu_feng"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_hu_feng.png"
+	}
+}

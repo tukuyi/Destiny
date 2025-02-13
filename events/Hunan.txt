@@ -6603,7 +6603,7 @@ country_event = {
 	}
 }
 
-country_event = {#唐生智之死 
+country_event = {#唐生智之死
 	id = hungong.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.6" }
 	title = hungong.6.t
@@ -6784,7 +6784,7 @@ country_event = {#给党内同志的一封信
 	}
 }
 
-country_event = {#《一江春水向东流》在湖南上映 
+country_event = {#《一江春水向东流》在湖南上映
 	id = hungong.18
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.18" }
 	picture = GFX_report_event_HNN_yi_jiang_cun_shui
@@ -6800,7 +6800,7 @@ country_event = {#《一江春水向东流》在湖南上映
 	}
 }
 
-country_event = {#改造清理哥老会 
+country_event = {#改造清理哥老会
 	id = hungong.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.20" }
 	title = hungong.20.t
@@ -9829,12 +9829,13 @@ country_event = {#布尔什维主义的延续
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = { #yes
+	option = { 
 		name = hungong.143.a
 		add_popularity = {
 			ideology = syndicalist
 			popularity = 0.05
 		}
+		add_tot_to_coalition = yes
 	}
 }
 
@@ -9847,13 +9848,17 @@ country_event = {#三座大山
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = { #yes
+	option = { 
 		name = hungong.144.a
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.05
-		}
+		add_radsoc_to_coalition = yes
+		add_socdem_to_coalition = yes
 		add_soclib_to_coalition = yes
+		hidden_effect = {
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.05
+			}
+		}
 	}
 }
 
@@ -9943,15 +9948,13 @@ country_event = {#重新合并
 					target = SHC
 					transfer_troops = yes
 				}
-				create_corps_commander = {
-					name = "饶漱石"
-					portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-					traits = {  }
-					skill = 1
-					attack_skill = 1
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
+				SHC = {
+					SHC_Sun_Fuyuan = {
+						set_nationality = ROOT
+					}
+					SHC_Rao_Shu_Shi = {
+						set_nationality = ROOT
+					}
 				}
 			}
 		}
@@ -9981,15 +9984,13 @@ country_event = {#时机已到？
 					target = SHC
 					transfer_troops = yes
 				}
-				create_corps_commander = {
-					name = "饶漱石"
-					portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-					traits = {  }
-					skill = 1
-					attack_skill = 1
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
+				SHC = {
+					SHC_Sun_Fuyuan = {
+						set_nationality = ROOT
+					}
+					SHC_Rao_Shu_Shi = {
+						set_nationality = ROOT
+					}
 				}
 			}
 		}
@@ -10461,6 +10462,24 @@ country_event = {#兜兜转转
 			SZC_Deng_Xiao_Ping = {
 				set_nationality = ROOT
 			}
+		}
+	}
+}
+
+country_event = {#群众的语言
+	id = hungong.173
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.173" }
+	title = hungong.173.t
+	desc = hungong.173.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #yes
+		name = hungong.173.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.01
 		}
 	}
 }
@@ -13683,12 +13702,23 @@ country_event = {#选举结果
 				name =  HNN_totalist_party_dbw
 			}
 			set_party_name = {
+				ideology = syndicalist
+				long_name =  HNN_syndicalist_party_dbw_long
+				name =  HNN_syndicalist_party_dbw
+			}
+			set_party_name = {
+				ideology = radical_socialist
+				long_name =  HNN_radical_socialist_party_dbw_long
+				name =  HNN_radical_socialist_party_dbw
+			}
+			set_party_name = {
 				ideology = social_democrat
-				long_name =  HNN_social_democrat_party2_long
-				name =  HNN_social_democrat_party2
+				long_name =  HNN_social_democrat_party_dbw_long
+				name =  HNN_social_democrat_party_dbw
 			}
 		}
 	}
+
 	option = {#彭德怀
 		name = hungong.13.b
 		trigger = {
@@ -13752,6 +13782,7 @@ country_event = {#选举结果
 			}
 		}
 	}
+
 	option = {#何叔衡 
 		name = hungong.13.c
 		trigger = {
@@ -14077,13 +14108,13 @@ country_event = {###国民党左派革命失败
 			}
 			set_party_name = {
 				ideology = radical_socialist
-				long_name =  HNN_radical_socialist_party_dbw_long
-				name =  HNN_radical_socialist_party_dbw
+				long_name = HNN_radical_socialist_party_kmt_long
+				name = HNN_radical_socialist_party_kmt
 			}
 			set_party_name = {
 				ideology = social_democrat
-				long_name =  HNN_social_democrat_party_dbw_long
-				name =  HNN_social_democrat_party_dbw
+				long_name = HNN_social_democrat_party_kmt_long
+				name = HNN_social_democrat_party_kmt
 			}
 		}
 	}

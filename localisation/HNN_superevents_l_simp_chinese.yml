@@ -46,7 +46,7 @@
  GFX_SPEVNT_XH_Reunification:0 "第二次辛亥革命"
  GFX_SPEVNT_XH_Reunification_TEXT:0 "驱逐鞑虏，恢复中华，创立民国，平均地权。————\n§Y孙中山§!"
  GFX_SPEVNT_XH_Reunification_REMARK:0 "振臂高唱，国土重光"
- GFX_SPEVNT_XH_Reunification_DESC:0 "在宣统维新后不久,直系将领于学忠趁着北京局势混乱,发动政变推翻宣统皇帝,再造共和,于学忠将军向世人承诺,他将发扬辛亥革命精神,再造共和,将中国从外国殖民中拯救出来。并实现在辛亥革命期间,未能完成的任务。"
+ GFX_SPEVNT_XH_Reunification_DESC:0 "在宣统维新后不久，直系将领于学忠趁着北京局势混乱，发动政变推翻宣统皇帝，再造共和，于学忠将军向世人承诺，他将发扬辛亥革命精神，再造共和，将中国从外国殖民中拯救出来。并实现在辛亥革命期间，未能完成的任务。"
  GFX_SPEVNT_EG_Reunification:0 "流亡者归来"
  GFX_SPEVNT_EG_Reunification_TEXT:0 "大海不会干涸，人民不会迷路。————\n§Y俄国谚语§!"
  GFX_SPEVNT_EG_Reunification_REMARK:0 "是时候复仇了"
@@ -140,6 +140,8 @@
  light_infantry_officer_desc: "§L不对称作战和敌后破坏行动的专家。§!"
  RUS_ice_march_trait: "白军传承"
  RUS_ice_march_trait_desc: "§L这位领导人乃是俄罗斯内战的老兵与英雄，曾同布党红色分子浴血奋战。如果哪一天俄罗斯大地上再次出现社会主义，那么他必将起身与之抗争。§!"
+ RUS_red_army_trait: "红军老兵"
+ RUS_red_army_trait_desc: "§L这位领导人乃是俄罗斯内战的老兵与英雄，曾同白军反动分子苦战到底。他们对社会主义理想高度忠诚，心怀革命席卷祖国的渺茫希望。面对殊死的斗争，他绝不会让战友的牺牲付诸东流！§!"
  SQI_yue_dui: "姆吉卡"
  SQI_yue_dui_desc: "§L这位领导人乃是女人中的女人，乐手中的乐手，女桐中的支配者，乐队中的统治者。§!"
 

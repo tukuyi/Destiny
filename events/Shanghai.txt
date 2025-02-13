@@ -58,29 +58,6 @@ country_event = {
 			LEC_zhao_si_yan_for
 			LEC_tian_han_eco
 		}
-		division_template = { #Guangxi Army
-			name = "工人纠察队"
-			division_names_group = "LEC_GAR_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-			}
-			support = {
-					
-			}
-		}
-		random_owned_controlled_state = {
-			prioritize = { 743 }
-			limit = { is_in_home_area = yes }
-			create_unit = {
-				division = "division_template = \"工人纠察队\" start_experience_factor = 0.5"
-				owner = PREV
-				count = 3
-			}
-		}
 		hidden_effect = {
 			country_event = {
 				id = lecgong.1
@@ -94,6 +71,7 @@ country_event = {
 				id = Shcgong.26
 				days = 25
 			}
+			load_oob = SHC_Revolutionary_Militia
 			if = {
 				limit = { 
 					QYG = {
@@ -159,11 +137,12 @@ country_event = {
 				traits = {  
 					war_hero
 					harsh_leader
+					RUS_red_army_trait
 					career_officer
 					infantry_officer
 				}
-				skill = 4
-				attack_skill = 3
+				skill = 3
+				attack_skill = 2
 				defense_skill = 3
 				planning_skill = 3
 				logistics_skill = 3
@@ -174,53 +153,36 @@ country_event = {
 				portrait_path = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
 				traits = {  
 					war_hero
+					RUS_red_army_trait
 					career_officer
 					infantry_officer
 				}
-				skill = 3
+				skill = 2
 				attack_skill = 3
 				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
 			}
 			create_corps_commander = {
 				name = "尼古拉·罗申"
 				desc = "POLITICS_Background_Alternate_DESC"
 				portrait_path = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
 				traits = {  
+					RUS_red_army_trait
 					career_officer
 					infantry_officer
-				}
-				skill = 3
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
-			}
-			create_corps_commander = {
-				name = "孙富元"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Sun_Fuyuan.png"
-				traits = {  
-					trait_cautious
-					irregulars_officer
 				}
 				skill = 2
 				attack_skill = 2
 				defense_skill = 2
 				planning_skill = 1
-				logistics_skill = 2
+				logistics_skill = 3
 			}
-			create_corps_commander = {
-				name = "饶漱石"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-				traits = { 
-					irregulars_officer
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Sun_Fuyuan = {
+				set_nationality = ROOT
+			}
+			SHC_Rao_Shu_Shi = {
+				set_nationality = ROOT
 			}
 			create_corps_commander = {
 				name = "王亚樵"
@@ -250,7 +212,9 @@ country_event = {
 			create_corps_commander = {
 				name = "彭述之"
 				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
-				traits = {  }
+				traits = {  
+					urban_assault_specialist
+				}
 				skill = 1
 				attack_skill = 1
 				defense_skill = 1
@@ -260,7 +224,10 @@ country_event = {
 			create_corps_commander = {
 				name = "张溶"
 				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
-				traits = {  }
+				traits = {  
+					trickster
+					urban_assault_specialist
+				}
 				skill = 1
 				attack_skill = 1
 				defense_skill = 1
@@ -297,15 +264,8 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_corps_commander = {
-				name = "周扬"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhou_Yang.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Zhou_Yang = {
+				set_nationality = ROOT
 			}
 			create_corps_commander = {
 				name = "赵世炎"
@@ -390,29 +350,6 @@ country_event = {
 			LEC_zhao_si_yan_for
 			LEC_tian_han_eco
 		}
-		division_template = { #Guangxi Army
-			name = "工人纠察队"
-			division_names_group = "LEC_GAR_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-			}
-			support = {
-					
-			}
-		}
-		random_owned_controlled_state = {
-			prioritize = { 743 }
-			limit = { is_in_home_area = yes }
-			create_unit = {
-				division = "division_template = \"工人纠察队\" start_experience_factor = 0.5"
-				owner = PREV
-				count = 3
-			}
-		}
 		add_timed_idea = {
 			idea = SHC_di_xia_she_hui_de_fan_pu
 			days = 180
@@ -434,6 +371,7 @@ country_event = {
 				id = Shcgong.26
 				days = 25
 			}
+			load_oob = SHC_Revolutionary_Militia
 			if = {
 				limit = { 
 					QYG = {
@@ -502,8 +440,8 @@ country_event = {
 					career_officer
 					infantry_officer
 				}
-				skill = 4
-				attack_skill = 3
+				skill = 3
+				attack_skill = 2
 				defense_skill = 3
 				planning_skill = 3
 				logistics_skill = 3
@@ -517,11 +455,11 @@ country_event = {
 					career_officer
 					infantry_officer
 				}
-				skill = 3
+				skill = 2
 				attack_skill = 3
 				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
 			}
 			create_corps_commander = {
 				name = "尼古拉·罗申"
@@ -534,33 +472,14 @@ country_event = {
 				skill = 2
 				attack_skill = 2
 				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 2
-			}
-			create_corps_commander = {
-				name = "孙富元"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Sun_Fuyuan.png"
-				traits = {  
-					trait_cautious
-					irregulars_officer
-				}
-				skill = 2
-				attack_skill = 2
-				defense_skill = 2
 				planning_skill = 1
-				logistics_skill = 2
+				logistics_skill = 3
 			}
-			create_corps_commander = {
-				name = "饶漱石"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-				traits = { 
-					irregulars_officer
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Sun_Fuyuan = {
+				set_nationality = ROOT
+			}
+			SHC_Rao_Shu_Shi = {
+				set_nationality = ROOT
 			}
 			create_corps_commander = {
 				name = "王亚樵"
@@ -636,15 +555,8 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_corps_commander = {
-				name = "周扬"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhou_Yang.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Zhou_Yang = {
+				set_nationality = ROOT
 			}
 			create_corps_commander = {
 				name = "赵世炎"
@@ -1608,15 +1520,13 @@ country_event = {#上海同志的来信
 			}
 		}
 		hidden_effect = {
-			create_corps_commander = {
-				name = "饶漱石"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC = {
+				SHC_Sun_Fuyuan = {
+					set_nationality = ROOT
+				}
+				SHC_Rao_Shu_Shi = {
+					set_nationality = ROOT
+				}
 			}
 		}
 	}

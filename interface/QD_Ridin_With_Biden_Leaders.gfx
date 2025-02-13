@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/traits/trait_RUS_ice_march.png"
 	}
 	spriteType = {
+		name = "GFX_trait_RUS_red_army_trait"
+		texturefile = "gfx/interface/traits/trait_INT_russian_exile.png"
+	}
+	spriteType = {
 		name = "GFX_trait_SQI_yue_dui"
 		texturefile = "gfx/interface/traits/trait_SQI_yue_dui.png"
 	}

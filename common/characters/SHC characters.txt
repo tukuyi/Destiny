@@ -1,7 +1,69 @@
 characters = {
-################
-###   将领   ###
-################	
+####################
+###   工团将领   ###
+####################
+#孙富元
+	SHC_Sun_Fuyuan = {
+		name = SHC_Sun_Fuyuan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Sun_Fuyuan
+				large = GFX_Portrait_SHC_Sun_Fuyuan
+			}
+		}
+		corps_commander = {
+			traits = {  
+				RUS_red_army_trait
+				trait_cautious
+				irregulars_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+#饶漱石
+	SHC_Rao_Shu_Shi = {
+		name = SHC_Rao_Shu_Shi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Rao_Shu_Shi
+				large = GFX_Portrait_SHC_Rao_Shu_Shi
+			}
+		}
+		corps_commander = {
+			traits = { 
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#周扬
+	SHC_Zhou_Yang = {
+		name = SHC_Zhou_Yang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Zhou_Yang
+				large = GFX_Portrait_SHC_Zhou_Yang
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+####################
+###   何东将领   ###
+####################
 #何世礼
 	SHC_robbie_hoshailai = {
 		name = SHC_robbie_hoshailai
