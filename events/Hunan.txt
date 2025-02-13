@@ -5742,7 +5742,7 @@ country_event = {#国民革命的未来
 	
 	option = {#唐生明
 		name = hunbao.26.a
-		ai_chance = { factor = 20 }
+		ai_chance = { base = 20 }
 		create_country_leader = {
 			name = "唐生明"
 			desc = "POLITICS_HNN_TANG_SHENGMING_DESC"
@@ -5754,7 +5754,7 @@ country_event = {#国民革命的未来
 
 	option = {#彭德怀
 		name = hunbao.26.b
-		ai_chance = { factor = 10 }
+		ai_chance = { base = 10 }
 		promote_character = {
 			character = HNN_peng_dehuai
 			ideology = syndie_social_democrat_subtype
@@ -5763,13 +5763,15 @@ country_event = {#国民革命的未来
 	
 	option = {#贺龙
 		name = hunbao.26.c
-		ai_chance = { factor = 10 }
-		create_country_leader = {
-			name = "贺龙"
-			desc = "POLITICS_HNN_HE_LONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
-			expire = "1965.1.1"
-			ideology = socdem_tridemism_subtype
+		ai_chance = { base = 10 }
+		HNN_he_long = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HNN_HE_LONG_DESC
+					ideology = socdem_tridemism_subtype
+				}
+				promote_leader = yes
+			}
 		}
 	}
 }
@@ -6597,33 +6599,8 @@ country_event = {
 	option = {
 		name = hungong.5.a
 		country_event = { 
-			id = hungong.6
-			days = 2
-		}
-	}
-}
-
-country_event = {#唐生智之死
-	id = hungong.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.6" }
-	title = hungong.6.t
-	desc = hungong.6.d
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = hungong.6.a
-		country_event = { 
 			id = hungong.7
-			days = 10
-		}
-		hidden_effect ={
-			country_event = { 
-				id = hungong.14
-				days = 30
-			}
+			days = 9
 		}
 	}
 }
@@ -11275,12 +11252,14 @@ country_event = {#贺龙的胜利
 
 	option = { #yes
 		name = hunarmy.15.a
-		create_country_leader = {
-			name = "贺龙"
-			desc = "POLITICS_HNN_HE_LONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
-			expire = "1965.1.1"
-			ideology = radsoc_popular_patriotism_subtype
+		HNN_he_long = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HNN_HE_LONG_DESC
+					ideology = radsoc_popular_patriotism_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = radical_socialist
@@ -11306,12 +11285,14 @@ country_event = {#怎么办？
 
 	option = { #yes
 		name = hunarmy.16.a
-		create_country_leader = {
-			name = "贺龙 "
-			desc = "POLITICS_HNN_HE_LONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
-			expire = "1965.1.1"
-			ideology = centralized_syndicalism_subtype
+		HNN_he_long = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HNN_HE_LONG_DESC
+					ideology = centralized_syndicalism_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = syndicalist
@@ -11328,12 +11309,14 @@ country_event = {#怎么办？
 
 	option = { #yes
 		name = hunarmy.16.b
-		create_country_leader = {
-			name = "贺龙 "
-			desc = "POLITICS_HNN_HE_LONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
-			expire = "1965.1.1"
-			ideology = liberalized_syndicalism_subtype
+		HNN_he_long = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HNN_HE_LONG_DESC
+					ideology = liberalized_syndicalism_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = syndicalist
@@ -13799,24 +13782,6 @@ country_event = {#选举结果
 		set_politics = {
 			ruling_party = radical_socialist
 		}
-	}
-}
-
-country_event = {#唐生智的葬礼 
-	id = hungong.14
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.14" }
-	title = hungong.14.t
-	desc = hungong.14.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		has_country_flag = HNN_gong_tuan_victory_flag
-	}
-
-	option = {
-		name = hungong.14.a
 	}
 }
 

@@ -625,6 +625,9 @@ characters = {
 				small = GFX_Portrait_Hunan_He_Long
 				large = GFX_Portrait_Hunan_He_Long
 			}
+			civilian = {
+				large = GFX_Portrait_Hunan_He_Long
+			}
 		}
 		corps_commander = {
 			desc = HNN_he_long_commander_desc
