@@ -124,6 +124,9 @@ country_event = {
 			create_field_marshal = {
 				name = "汪寿华"
 				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
+				traits = { 
+
+				}
 				skill = 1
 				attack_skill = 1
 				defense_skill = 1
@@ -182,18 +185,8 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_corps_commander = {
-				name = "张溶"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
-				traits = {  
-					trickster
-					urban_assault_specialist
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Kang_Sheng = {
+				set_nationality = ROOT
 			}
 			SHC_Tian_Han = {
 				set_nationality = ROOT
@@ -390,15 +383,8 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_corps_commander = {
-				name = "张溶"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Kang_Sheng = {
+				set_nationality = ROOT
 			}
 			create_corps_commander = {
 				name = "王亚樵"

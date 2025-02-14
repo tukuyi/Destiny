@@ -1541,6 +1541,22 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
+		HNN_su_yu_cos = {#粟裕
+			allowed = { original_tag = CHI }
+			picture = HNN_su_yu_cos
+			visible = {
+				has_character = CHI_su_yu
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_su_yu_cos"
+
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_mass_assault
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_army = { ### 陆军 ###
@@ -1670,6 +1686,7 @@ ideas = {
 		HNN_Lin_Biao_carm = {#林彪
 			name = HNN_Lin_Biao_carm
 			allowed = { original_tag = HNN }
+			picture = HNN_Lin_Biao_hog
 			visible = {
 				has_character = CHI_lin_biao
 			}

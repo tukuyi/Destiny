@@ -7889,12 +7889,14 @@ country_event = {#党内最大的右派分子
 	option = {#
 		name = hungong.72.a
 		add_ideas = LEC_kang_sheng_hog
-		create_country_leader = {
-			name = "康生"
-			desc = "Kang_Shen_DESC"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
-			expire = "1.1.1"
-			ideology = socialist_security_state_subtype
+		SHC_Kang_Sheng = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = Kang_Shen_DESC
+					ideology = socialist_security_state_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		HNN_fcations_change = yes 
 		set_party_name = {
@@ -8133,12 +8135,14 @@ country_event = {#肃反之夜
 
 	option = {#康生
 		name = hungong.79.a
-		create_country_leader = {
-			name = "康生"
-			desc = "Kang_Shen_DESC"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
-			expire = "1.1.1"
-			ideology = socialist_security_state_subtype
+		SHC_Kang_Sheng = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = Kang_Shen_DESC
+					ideology = socialist_security_state_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_party_name = {
 			ideology = totalist
@@ -9929,6 +9933,9 @@ country_event = {#重新合并
 					SHC_Sun_Fuyuan = {
 						set_nationality = ROOT
 					}
+					SHC_Kang_Sheng = {
+						set_nationality = ROOT
+					}
 					SHC_Nikolay_Kuibyshev = {
 						set_nationality = ROOT
 					}
@@ -9972,6 +9979,9 @@ country_event = {#时机已到？
 				}
 				SHC = {
 					SHC_Sun_Fuyuan = {
+						set_nationality = ROOT
+					}
+					SHC_Kang_Sheng = {
 						set_nationality = ROOT
 					}
 					SHC_Nikolay_Kuibyshev = {
@@ -10483,7 +10493,7 @@ country_event = {#上海
 	id = hungong.174
 
 	hidden = yes
-	is_triggered_only = yes
+
 	trigger = {
 		tag = HNN
 		has_country_flag = HNN_gong_tuan_victory_flag
@@ -10496,6 +10506,9 @@ country_event = {#上海
 	option = {
 		log = "[GetLogInfo]: event hungong.174 option 1"
 		SHC = {
+			SHC_Kang_Sheng = {
+				set_nationality = ROOT
+			}
 			SHC_Sun_Fuyuan = {
 				set_nationality = ROOT
 			}

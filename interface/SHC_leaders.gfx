@@ -51,4 +51,8 @@ spriteTypes = {
 		name = "GFX_Portrait_Alexander_Ivanovich_Cherepanov"
 		texturefile = "gfx/leaders/SHC/Portrait_Alexander_Ivanovich_Cherepanov.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Kang_Sheng"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Kang_Sheng.png"
+	}
 }

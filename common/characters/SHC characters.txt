@@ -234,7 +234,28 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 		}
-	}		
+	}	
+#康生
+	SHC_Kang_Sheng = {
+		name = SHC_Kang_Sheng
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Kang_Sheng
+				large = GFX_Portrait_SHC_Kang_Sheng
+			}
+		}
+		corps_commander = {
+			traits = {  
+				trickster
+				urban_assault_specialist
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}			
 ####################
 ###   何东将领   ###
 ####################

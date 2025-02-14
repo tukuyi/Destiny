@@ -234,9 +234,14 @@ recruit_character = SHC_Zhang_Chunqiao
 recruit_character = SHC_rou_shi
 recruit_character = SHC_Tian_Han
 recruit_character = SHC_Mao_Dun
+recruit_character = SHC_Kang_Sheng
 recruit_character = SHC_Nikolay_Kuibyshev
 recruit_character = SHC_Background_Alternate
+recruit_character = SHC_Alexander_Ivanovich_Cherepanov
 
+SHC_Alexander_Ivanovich_Cherepanov = {
+	retire = yes
+}
 SHC_Background_Alternate = {
 	retire = yes
 }
@@ -268,6 +273,9 @@ SHC_Tian_Han = {
 	retire = yes
 }
 SHC_Mao_Dun = {
+	retire = yes
+}
+SHC_Kang_Sheng = {
 	retire = yes
 }
 
