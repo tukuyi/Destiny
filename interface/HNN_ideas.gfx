@@ -57,62 +57,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/HNN/HNN_Hu_Yao_Bang.png"
 	}
 	spriteType = {
-		name = "GFX_idea_LEC_Robert_Hotung_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_Robert_Hotung.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_he_fu_eco"
-		texturefile = "gfx/interface/ministers/LEC/LEC_he_fu.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_he_gan_tang_for"
-		texturefile = "gfx/interface/ministers/LEC/LEC_he_gan_tang.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_zhao_si_yan_for"
-		texturefile = "gfx/interface/ministers/LEC/LEC_zhao_si_yan.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_tian_han_eco"
-		texturefile = "gfx/interface/ministers/LEC/LEC_tian_han.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_wang_shou_hua_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_wang_shou_hua.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_mei_jiu_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_mei_jiu.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_peng_shu_zhi_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_peng_shu_zhi.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_lu_xun_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_lu_xun.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_rao_shu_shi_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_rao_shu_shi.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_kang_sheng_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_kang_sheng.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_zhou_yang_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_zhou_yang.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_hui_ji_liang_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_hui_ji_liang.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_yu_bing_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_yu_bing.png"
-	}
-	spriteType = {
 		name = "GFX_idea_GXC_peng_pai_hog"
 		texturefile = "gfx/interface/ministers/GXC/GXC_peng_pai.png"
 	}
@@ -127,46 +71,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_GXC_chen_hao_ren_hog"
 		texturefile = "gfx/interface/ministers/GXC/GXC_chen_hao_ren.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_su_xi_wen_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_su_xi_wen.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_yuan_liang_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_yuan_liang.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_sha_he_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_sha_he.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_mi_fu_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_mi_fu.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_wang_min_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_wang_min.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_zhang_wen_tian_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_zhang_wen_tian.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_liu_ren_jing_hog"
-		texturefile = "gfx/interface/ministers/LEC/LEC_liu_ren_jing.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_wang_ming_eco"
-		texturefile = "gfx/interface/ministers/LEC/LEC_wang_ming.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_zheng_chao_ling_eco"
-		texturefile = "gfx/interface/ministers/LEC/LEC_zheng_chao_ling.png"
-	}
-	spriteType = {
-		name = "GFX_idea_LEC_bo_gu_for"
-		texturefile = "gfx/interface/ministers/LEC/LEC_bo_gu.png"
 	}
 	spriteType = {
 		name = "GFX_idea_SQI_bao_li_si_hog"

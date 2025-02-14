@@ -2772,7 +2772,6 @@ focus_tree = {
 			JAP = {	is_faction_leader = yes }
 		}
 		bypass = {
-			has_completed_focus = FNG_Eliminate_Internal_Dissent
 			OR = {
 				is_subject_of = JAP
 				is_in_faction_with = JAP

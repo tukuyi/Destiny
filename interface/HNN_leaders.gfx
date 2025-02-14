@@ -105,10 +105,6 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Lu_Di_Ping.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_HNN_Hu_Han_Ming"
-		texturefile = "gfx/leaders/HNN/Portrait_HNN_Hu_Han_Ming.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_HNN_Tan_Zhen_Lin"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Tan_Zhen_Lin.png"
 	}
@@ -651,44 +647,12 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_Tian_Han"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Tian_Han.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Zhang_Chunqiao"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhang_Chunqiao.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_Xudatong"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Xudatong.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_Rao_Shu_Shi"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_rou_shi"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_rou_shi.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_Background_Alternate"
-		texturefile = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_Nikolay_Kuibyshev"
-		texturefile = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_Alexander_Ivanovich_Cherepanov"
-		texturefile = "gfx/leaders/LEC/Portrait_Alexander_Ivanovich_Cherepanov.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_Wang_Shou_Hua"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Zhao_Shi_Yan"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_He_Dong"
@@ -715,10 +679,6 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Hou_Shao_Qiu.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_Mao_Dun"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Mao_Dun.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_yuan_liang"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_yuan_liang.png"
 	}
@@ -739,6 +699,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_li_chu_wen.png"
 	}
 ###广东
+	spriteType = {
+		name = "GFX_Portrait_GXC_Hu_Han_Ming"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_Hu_Han_Ming.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_fan_zheng_jiu_shi_zhe"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_fan_zheng_jiu_shi_zhe.png"
+	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_Peng_Pai"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_Peng_Pai.png"

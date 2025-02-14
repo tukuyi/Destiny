@@ -786,16 +786,13 @@ bitmapfonts = {
 		V = { 187 0 0 } # Totalist Dark Red
 		M = { 243 65 126 } # SocDem Magenta
 		r = { 255 0 0 } # 100% Red
-		k = { 104 124 134 }
 		
 		l = { 255 170 0 } 	# SocLib Orange
 		m = { 245 217 0 }	# MarkLib Yellow
 		c = { 75 97 209 }	# Conservative Blue (Savoy blue, for dark backgrounds)
 		P = { 112 110 125 }	# PatAut Dark Grey
 		n = { 65 125 85 }	# NatPop Green
-		f = { 78 74 143 }	# Faded blue
 		h = { 138 30 94 }	# Frontfighters
-		s = { 0 149 253 }	# Light blue
 
 		a = { 189 113 33 }	# Anguojun
 		j = { 252 201 185 }	# GEACPS

@@ -1,0 +1,401 @@
+ideas = {
+	head_of_government = {
+		LEC_kang_sheng_hog = {#康生
+			allowed = { original_tag = SHC }
+			picture = LEC_kang_sheng_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Dong_Biwu_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_kang_sheng_hog"
+				
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		LEC_lu_xun_hog = {#鲁迅
+			allowed = { original_tag = SHC }
+			picture = LEC_lu_xun_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_lu_xun_hog"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_backroom_backstabber
+			}
+		}
+		LEC_peng_shu_zhi_hog = {#彭述之
+			allowed = { original_tag = SHC }
+			picture = LEC_peng_shu_zhi_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_peng_shu_zhi_hog"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_anti_establishment_maverick
+			}
+		}
+		LEC_mi_fu_hog = {#帕维尔·米夫
+			allowed = { original_tag = SHC }
+			picture = LEC_mi_fu_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_mi_fu_hog"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_vanguardist_worker
+			}
+		}
+		LEC_wang_shou_hua_hog = {#汪寿华
+			allowed = { original_tag = SHC }
+			picture = LEC_wang_shou_hua_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_shou_hua_hog"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_ambitious_union_boss
+			}
+		}
+		LEC_wang_min_hog = {#王明
+			allowed = { original_tag = SHC }
+			picture = LEC_wang_min_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_min_hog"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_hooded_chairman
+			}
+		}
+		LEC_zhang_wen_tian_hog = {#张闻天
+			allowed = { original_tag = SHC }
+			picture = LEC_zhang_wen_tian_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhang_wen_tian_hog"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_pragmatic_statesman
+			}
+		}
+		LEC_liu_ren_jing_hog = {#刘仁静
+			allowed = { original_tag = SHC }
+			picture = LEC_liu_ren_jing_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_liu_ren_jing_hog"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_influential_intellectual
+			}
+		}
+		
+	}
+
+	person_of_influence = {
+	#左联
+		LEC_bo_gu_for = {#博古
+			allowed = { original_tag = SHC }
+			picture = LEC_bo_gu_for
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_bo_gu_for"
+				
+			}
+			traits = {
+				left_writer
+				totalist
+				for_ideological_crusader
+			}
+		}
+		LEC_zhao_si_yan_for = {#赵世炎
+			allowed = { original_tag = SHC }
+			picture = LEC_zhao_si_yan_for
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhao_si_yan_for"
+				
+			}
+			traits = {
+				left_writer
+				syndicalist
+				for_ideological_crusader
+			}
+		}
+		LEC_mei_jiu_for = {#景梅九
+			allowed = { original_tag = SHC }
+			picture = LEC_mei_jiu_hog
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_mei_jiu_for"
+			}
+			traits = {
+				left_writer
+				syndicalist
+				hog_backroom_backstabber
+			}
+		}
+		LEC_rao_shu_shi_for = {#饶漱石
+			allowed = { original_tag = LEC }
+			picture = LEC_rao_shu_shi_hog
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_rao_shu_shi_for"
+			}
+			traits = {
+				left_writer
+				syndicalist
+				hog_reformist_soldier
+			}
+		}
+		LEC_wang_ming_eco = {#王明
+			allowed = { original_tag = SHC }
+			picture = LEC_wang_ming_eco
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_ming_eco"
+			}
+			traits = {
+				left_writer
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		LEC_zheng_chao_ling_eco = {#郑超麟
+			allowed = { original_tag = SHC }
+			picture = LEC_zheng_chao_ling_eco
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zheng_chao_ling_eco"
+			}
+			traits = {
+				left_writer
+				syndicalist
+				eco_planned_economy_proponent
+			}
+		}
+		LEC_tian_han_eco = {#田汉
+			allowed = { original_tag = SHC }
+			picture = LEC_tian_han_eco
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_tian_han_eco"
+			}
+			traits = {
+				left_writer
+				social_liberal
+				sec_compassionate_gentleman
+			}
+		}
+		LEC_mao_dun_for = {#茅盾
+			allowed = { original_tag = SHC }
+			picture = LEC_mao_dun_for
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_mao_dun_for"
+			}
+			traits = {
+				left_writer
+				social_liberal
+				for_biased_intellectual
+			}
+		}
+		LEC_zhou_yang_hog = {#周扬
+			allowed = { original_tag = SHC }
+			picture = LEC_zhou_yang_hog
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhou_yang_hog"
+				
+			}
+			traits = {
+				left_writer
+				totalist
+				hog_flamboyant_tough_guy
+			}
+		}
+		LEC_rou_shi_for = {#柔石
+			allowed = { original_tag = SHC }
+			picture = LEC_rou_shi_for
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_rou_shi_for"
+				
+			}
+			traits = {
+				left_writer
+				social_liberal
+				sec_man_of_the_people
+			}	
+		}
+		LEC_hu_feng_for = {#胡风
+			allowed = { original_tag = SHC }
+			picture = LEC_hu_feng_for
+			cost = 100
+			available = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_hu_feng_for"
+				
+			}
+			traits = {
+				left_writer
+				social_democrat
+				lama_natural_philosopher
+			}
+		}			
+	#外交部长	
+
+	#经济部长
+		
+	#内政部长	
+		
+	}	
+
+	chief_of_staff = {
+
+	}
+
+	chief_of_army = { ### 陆军 ###
+
+	}
+
+	chief_of_navy = { ### 海军 ###
+
+	}
+
+	chief_of_air_force = { ### 空军 ###
+
+	}
+}

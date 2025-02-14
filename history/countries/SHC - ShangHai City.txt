@@ -228,7 +228,21 @@ create_country_leader = {
 recruit_character = SHC_Sun_Fuyuan
 recruit_character = SHC_Rao_Shu_Shi
 recruit_character = SHC_Zhou_Yang
+recruit_character = SHC_Zhao_Shi_Yan
+recruit_character = SHC_hu_feng
+recruit_character = SHC_Zhang_Chunqiao
+recruit_character = SHC_rou_shi
+recruit_character = SHC_Tian_Han
+recruit_character = SHC_Mao_Dun
+recruit_character = SHC_Nikolay_Kuibyshev
+recruit_character = SHC_Background_Alternate
 
+SHC_Background_Alternate = {
+	retire = yes
+}
+SHC_Nikolay_Kuibyshev = {
+	retire = yes
+}
 SHC_Sun_Fuyuan = {
 	retire = yes
 }
@@ -236,6 +250,24 @@ SHC_Rao_Shu_Shi = {
 	retire = yes
 }
 SHC_Zhou_Yang = {
+	retire = yes
+}
+SHC_Zhao_Shi_Yan = {
+	retire = yes
+}
+SHC_hu_feng = {
+	retire = yes
+}
+SHC_Zhang_Chunqiao = {
+	retire = yes
+}
+SHC_rou_shi = {
+	retire = yes
+}
+SHC_Tian_Han = {
+	retire = yes
+}
+SHC_Mao_Dun = {
 	retire = yes
 }
 

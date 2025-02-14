@@ -481,12 +481,13 @@ chinese_united_front_ceasefire = {
 	}
 }
 
-set_potential_national_government = {#枣核时间
+set_potential_national_government = {#宣布统一、枣核时间
 	if = {
 		limit = {
 			NOT = { has_country_flag = china_is_potential_government }
 		}
 		set_country_flag = china_is_potential_government
+
 		every_state = {
 			limit = {
 				is_core_china = yes
@@ -503,6 +504,7 @@ set_potential_national_government = {#枣核时间
 			add_to_array = { PREV.china_government_ambitions = THIS }
 			set_variable = { ambition_area_@PREV = 1 }
 		}
+
 		hidden_effect = {
 			every_state = {
 				limit = {

@@ -9929,6 +9929,15 @@ country_event = {#重新合并
 					SHC_Sun_Fuyuan = {
 						set_nationality = ROOT
 					}
+					SHC_Nikolay_Kuibyshev = {
+						set_nationality = ROOT
+					}
+					SHC_Background_Alternate = {
+						set_nationality = ROOT
+					}
+					SHC_Alexander_Ivanovich_Cherepanov = {
+						set_nationality = ROOT
+					}
 					SHC_Rao_Shu_Shi = {
 						set_nationality = ROOT
 					}
@@ -9963,6 +9972,15 @@ country_event = {#时机已到？
 				}
 				SHC = {
 					SHC_Sun_Fuyuan = {
+						set_nationality = ROOT
+					}
+					SHC_Nikolay_Kuibyshev = {
+						set_nationality = ROOT
+					}
+					SHC_Alexander_Ivanovich_Cherepanov = {
+						set_nationality = ROOT
+					}
+					SHC_Background_Alternate = {
 						set_nationality = ROOT
 					}
 					SHC_Rao_Shu_Shi = {
@@ -10457,6 +10475,42 @@ country_event = {#群众的语言
 		add_popularity = {
 			ideology = syndicalist
 			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#上海
+	id = hungong.174
+
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = HNN
+		has_country_flag = HNN_gong_tuan_victory_flag
+		is_neighbor_of = LEC
+		SHC = {
+			exists = no
+		}
+	}
+
+	option = {
+		log = "[GetLogInfo]: event hungong.174 option 1"
+		SHC = {
+			SHC_Sun_Fuyuan = {
+				set_nationality = ROOT
+			}
+			SHC_Nikolay_Kuibyshev = {
+				set_nationality = ROOT
+			}
+			SHC_Background_Alternate = {
+				set_nationality = ROOT
+			}
+			SHC_Alexander_Ivanovich_Cherepanov = {
+				set_nationality = ROOT
+			}
+			SHC_Rao_Shu_Shi = {
+				set_nationality = ROOT
+			}
 		}
 	}
 }

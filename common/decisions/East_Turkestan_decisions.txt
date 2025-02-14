@@ -428,50 +428,16 @@ ETS_Central_east_war_cat = {#大西亚战争
 						}
 					}
 				}
-				create_field_marshal = {
-					name = "亚历山大·I·切列帕诺夫"
-					desc = "Portrait_Alexander_Ivanovich_Cherepanov_DESC"
-					portrait_path = "gfx/leaders/LEC/Portrait_Alexander_Ivanovich_Cherepanov.png"
-					traits = {  
-						war_hero
-						harsh_leader
-						career_officer
-						infantry_officer
+				SHC = {
+					SHC_Nikolay_Kuibyshev = {
+						set_nationality = ROOT
 					}
-					skill = 4
-					attack_skill = 3
-					defense_skill = 3
-					planning_skill = 3
-					logistics_skill = 3
-				}
-				create_corps_commander = {
-					name = "尼古拉·古比雪夫"
-					desc = "POLITICS_Nikolay_Kuibyshev_DESC"
-					portrait_path = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
-					traits = {  
-						war_hero
-						career_officer
-						infantry_officer
+					SHC_Background_Alternate = {
+						set_nationality = ROOT
 					}
-					skill = 3
-					attack_skill = 3
-					defense_skill = 2
-					planning_skill = 3
-					logistics_skill = 3
-				}
-				create_corps_commander = {
-					name = "尼古拉·罗申"
-					desc = "POLITICS_Background_Alternate_DESC"
-					portrait_path = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
-					traits = {  
-						career_officer
-						infantry_officer
+					SHC_Alexander_Ivanovich_Cherepanov = {
+						set_nationality = ROOT
 					}
-					skill = 2
-					attack_skill = 2
-					defense_skill = 2
-					planning_skill = 3
-					logistics_skill = 2
 				}
 			}
 		}

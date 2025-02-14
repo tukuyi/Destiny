@@ -4762,6 +4762,10 @@ GXC_BRA = {
 	color = rgb { 238 253 25 }
 	color_ui = rgb { 238 253 25 }
 }
+GXC_PRF = {
+	color = rgb { 238 253 25 }
+	color_ui = rgb { 238 253 25 }
+}
 GXC_TEX = {
 	color = rgb { 238 253 25 }
 	color_ui = rgb { 238 253 25 }

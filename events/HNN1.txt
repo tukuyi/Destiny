@@ -11,8 +11,13 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect SHC = {
-		# 	load_oob = "SHC_rider"
+		# eval_effect PRF = {
+		# 	create_country_leader = {
+		# 		name = "纺织机"
+		# 		picture = "gfx/leaders/GXC/Portrait_GXC_fan_zheng_jiu_shi_zhe.png"
+		# 		expire = "1.1.1"
+		# 		ideology = pataut_ancap_subtype
+		# 	}
 		# }
 
 		# if = {
@@ -61,16 +66,16 @@ country_event = {#点火事件
 }
 
 country_event = {#火焰依旧
-	id = hnn.fire.and
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.fire.and" }
-	title = hnn.fire.and.t 
-	desc = hnn.fire.and.d
+	id = hnn.fire.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.fire.1" }
+	title = hnn.fire.1.t 
+	desc = hnn.fire.1.d
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = { #同意
-		name = hnn.fire.and.a
+		name = hnn.fire.1.a
 		SZC = {
 			add_manpower = -10000
 		}

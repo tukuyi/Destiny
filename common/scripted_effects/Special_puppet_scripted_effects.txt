@@ -2327,6 +2327,50 @@
 		}
 	}
 
+	GXC_PRF_build = {#印度
+		release = PRF
+		puppet = PRF
+		set_autonomy = {
+			target = PRF
+			autonomy_state = autonomous_rich_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			PRF = {
+				set_cosmetic_tag = GXC_PRF
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "纺织机"
+					picture = "gfx/leaders/GXC/Portrait_GXC_fan_zheng_jiu_shi_zhe.png"
+					expire = "1.1.1"
+					ideology = pataut_ancap_subtype
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = PRF_paternal_autocrat_crusader_party_long
+					name = PRF_paternal_autocrat_crusader_party
+				}
+		
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = PRF
+							is_core_of = BHC
+							is_core_of = DEH
+							is_core_of = MAD
+						}
+					}
+					transfer_state_to = PRF
+					add_core_of = PRF
+				}
+			}		
+		}
+	}
+
 	GXC_remove_all_idea_for_fire = {#移除一切国家精神 WIP
 		remove_all_ministers = yes
 		remove_ideas = {

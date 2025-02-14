@@ -7,6 +7,8 @@
 @chief_experience_gain_high = 0.40
 
 leader_traits = {
+	left_writer = {}
+
 	QYG_nong_ye_da_wang = {
 		random = no
 		war_support_factor = 0.03

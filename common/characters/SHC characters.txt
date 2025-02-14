@@ -2,6 +2,78 @@ characters = {
 ####################
 ###   工团将领   ###
 ####################
+#亚历山大·I·切列帕诺夫
+	SHC_Alexander_Ivanovich_Cherepanov = {
+		name = SHC_Alexander_Ivanovich_Cherepanov
+		portraits = {
+			army = {
+				small = GFX_Portrait_Alexander_Ivanovich_Cherepanov
+				large = GFX_Portrait_Alexander_Ivanovich_Cherepanov
+			}
+		}
+		field_marshal = {
+			desc = Portrait_Alexander_Ivanovich_Cherepanov_DESC
+			traits = {  
+				war_hero
+				harsh_leader
+				RUS_red_army_trait
+				career_officer
+				infantry_officer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+#尼古拉·罗申
+	SHC_Background_Alternate = {
+		name = SHC_Background_Alternate
+		portraits = {
+			army = {
+				small = GFX_Portrait_Background_Alternate
+				large = GFX_Portrait_Background_Alternate
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Background_Alternate_DESC
+			traits = {  
+				RUS_red_army_trait
+				career_officer
+				infantry_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+#尼古拉·古比雪夫
+	SHC_Nikolay_Kuibyshev = {
+		name = SHC_Nikolay_Kuibyshev
+		portraits = {
+			army = {
+				small = GFX_Portrait_Nikolay_Kuibyshev
+				large = GFX_Portrait_Nikolay_Kuibyshev
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Nikolay_Kuibyshev_DESC
+			traits = {  
+				war_hero
+				RUS_red_army_trait
+				career_officer
+				infantry_officer
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
 #孙富元
 	SHC_Sun_Fuyuan = {
 		name = SHC_Sun_Fuyuan
@@ -61,6 +133,108 @@ characters = {
 			logistics_skill = 1
 		}
 	}	
+#赵世炎
+	SHC_Zhao_Shi_Yan = {
+		name = SHC_Zhao_Shi_Yan
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Zhao_Shi_Yan
+				large = GFX_Portrait_SHC_Zhao_Shi_Yan
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#胡风
+	SHC_hu_feng = {
+		name = SHC_hu_feng
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_hu_feng
+				large = GFX_Portrait_SHC_hu_feng
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#张春桥
+	SHC_Zhang_Chunqiao = {
+		name = SHC_Zhang_Chunqiao
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Zhang_Chunqiao
+				large = GFX_Portrait_SHC_Zhang_Chunqiao
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#柔石
+	SHC_rou_shi = {
+		name = SHC_rou_shi
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_rou_shi
+				large = GFX_Portrait_SHC_rou_shi
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
+#田汉
+	SHC_Tian_Han = {
+		name = SHC_Tian_Han
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Tian_Han
+				large = GFX_Portrait_SHC_Tian_Han
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}	
+#茅盾
+	SHC_Mao_Dun = {
+		name = SHC_Mao_Dun
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Mao_Dun
+				large = GFX_Portrait_SHC_Mao_Dun
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
 ####################
 ###   何东将领   ###
 ####################

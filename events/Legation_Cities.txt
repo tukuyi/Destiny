@@ -15553,9 +15553,6 @@ country_event = {#文化大革命
 			ideology = social_liberal
 			popularity = 0.10
 		}
-		hidden_effect = {
-			
-		}
 	}
 
 }
@@ -15567,7 +15564,6 @@ country_event = {#新领袖
 	desc = lecgong.9.d
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = {
 		name = lecgong.9.a
@@ -15679,11 +15675,6 @@ country_event = {#新领袖
 			ruling_party = syndicalist
 			elections_allowed = no
 		}
-		remove_ideas = LEC_lu_xun_hog
-		add_ideas = LEC_mei_jiu_hog
-		hidden_effect = {
-			
-		}
 	}
 
 	option = {
@@ -15747,13 +15738,16 @@ country_event = {#新领袖
 		name = lecgong.17.c
 		set_country_flag = QD_LEADER_GUI_VISIBLE
 		set_country_flag = SHC_wo_men_de_xin_ling_xiu
-		
-		create_country_leader = {
-			name = "赵世炎"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
-			expire = "1.1.1"
-			ideology = socdem_left_nationalism_subtype
-			traits = {  }
+		SHC_Zhao_Shi_Yan = {
+			add_country_leader_role = {
+				country_leader = { 
+					ideology = socdem_left_nationalism_subtype
+					traits = {
+						CHN_Syndicalists_aligned
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = social_democrat
@@ -15765,13 +15759,16 @@ country_event = {#新领袖
 		name = lecgong.17.e
 		set_country_flag = QD_LEADER_GUI_VISIBLE
 		set_country_flag = SHC_wo_men_de_xin_ling_xiu
-		
-		create_country_leader = {
-			name = "茅盾"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Mao_Dun.png"
-			expire = "1.1.1"
-			ideology = radical_liberalism_subtype
-			traits = {  }
+		SHC_Mao_Dun = {
+			add_country_leader_role = {
+				country_leader = { 
+					ideology = radical_liberalism_subtype
+					traits = {
+						CHN_Syndicalists_aligned
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = social_liberal
@@ -15787,12 +15784,16 @@ country_event = {#新领袖
 	option = {#柔石
 		name = lecgong.17.f
 		set_country_flag = LEC_wo_men_de_xin_ling_xiu_flag
-		create_country_leader = {
-			name = "柔石"
-			picture = "gfx/leaders/LEC/Portrait_LEC_rou_shi.png"
-			expire = "1.1.1"
-			ideology = radsoc_lu_xun_thought_subtype
-			traits = {  }
+		SHC_rou_shi = {
+			add_country_leader_role = {
+				country_leader = { 
+					ideology = radsoc_lu_xun_thought_subtype
+					traits = {
+						CHN_Syndicalists_aligned
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = radical_socialist
@@ -15838,13 +15839,16 @@ country_event = {#新领袖
 		name = lecgong.18.b
 		set_country_flag = QD_LEADER_GUI_VISIBLE
 		set_country_flag = SHC_wo_men_de_xin_ling_xiu
-		
-		create_country_leader = {
-			name = "胡风"
-			picture = "gfx/leaders/SHC/Portrait_SHC_hu_feng.png"
-			expire = "1.1.1"
-			ideology = radical_progressivism_subtype
-			traits = {  }
+		SHC_hu_feng = {
+			add_country_leader_role = {
+				country_leader = { 
+					ideology = radical_progressivism_subtype
+					traits = {
+						CHN_Syndicalists_aligned
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = radical_socialist

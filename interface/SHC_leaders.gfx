@@ -19,4 +19,36 @@ spriteTypes = {
 		name = "GFX_Portrait_SHC_hu_feng"
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_hu_feng.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Zhao_Shi_Yan"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Zhao_Shi_Yan.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Zhang_Chunqiao"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Zhang_Chunqiao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_rou_shi"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_rou_shi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Tian_Han"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Tian_Han.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Mao_Dun"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Mao_Dun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Nikolay_Kuibyshev"
+		texturefile = "gfx/leaders/SHC/Portrait_Nikolay_Kuibyshev.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Background_Alternate"
+		texturefile = "gfx/leaders/SHC/Portrait_Background_Alternate.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Alexander_Ivanovich_Cherepanov"
+		texturefile = "gfx/leaders/SHC/Portrait_Alexander_Ivanovich_Cherepanov.png"
+	}
 }

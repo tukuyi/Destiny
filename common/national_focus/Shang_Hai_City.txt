@@ -8460,7 +8460,7 @@ focus_tree = {
 			if = {
 				limit = { has_dlc_aat = yes }
 				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = SHC_nagoya_arsenal
+				show_mio_tooltip = SHC_nagoya_arsenal_organisation
 			}
 			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {

@@ -2145,8 +2145,8 @@ ideas = {
 			allowed = { always = no }
 			targeted_modifier = {
 				tag = chi
-				attack_bonus_against = 1
-				defense_bonus_against = 1
+				attack_bonus_against = 0.40
+				defense_bonus_against = 0.40
 				breakthrough_bonus_against = 0.5
 			}
 		}

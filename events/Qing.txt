@@ -6597,46 +6597,25 @@ country_event = {
 		name = qiecoup.14.a #only purge the manchu, the rest can be rehabilitatied
 		QIE_Gobulo_Runqi = {
 			set_nationality = LEC
+			unit_leader_event = qieflavor.14
 		}
 		QIE_kill_manchus = yes
 		army_experience = -10
 		add_stability = -0.03
-		LEC = {
-			random_unit_leader = {
-				limit = { 
-					is_character = QIE_Gobulo_Runqi 
-				}
-				unit_leader_event = qieflavor.14
-			}
-		}
 	}
 	option = {
 		name = qiecoup.14.b #purge them all!
 		QIE_Gobulo_Runqi = {
 			set_nationality = LEC
+			unit_leader_event = qieflavor.14
 		}
 		QIE_lu_xiangting = {
 			set_nationality = LEP
+			unit_leader_event = qieflavor.14
 		}
 		QIE_kill_manchus = yes
 		army_experience = -20
 		add_stability = 0.05
-		LEC = {
-			random_unit_leader = {
-				limit = { 
-					has_character = QIE_Gobulo_Runqi 
-				}
-				unit_leader_event = qieflavor.14
-			}
-		}
-		LEP = {
-			random_unit_leader = {
-				limit = { 
-					has_character = QIE_lu_xiangting
-				}
-				unit_leader_event = qieflavor.14
-			}
-		}
 	}
 }
 

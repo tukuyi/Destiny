@@ -3959,7 +3959,7 @@ country_event = { #otl KMT larp - host the Conference
 			create_country_leader = {
 				name = "胡汉民"
 				desc = "POLITICS_HNN_HU_HANMING_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Hu_Han_Ming.png"
+				picture = "gfx/leaders/GXC/Portrait_GXC_Hu_Han_Ming.png"
 				expire = "1965.1.1"
 				ideology = soccon_tridemism_subtype
 			}
@@ -4829,7 +4829,7 @@ country_event = {#胡汉民抵达香港
 		create_country_leader = {
 			name = "胡汉民"
 			desc = "POLITICS_HNN_HU_HANMING_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Hu_Han_Ming.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Hu_Han_Ming.png"
 			expire = "1965.1.1"
 			ideology = soccon_tridemism_subtype
 		}
@@ -5818,7 +5818,7 @@ country_event = {#首届选举
 			create_country_leader = {
 				name = "胡汉民"
 				desc = "POLITICS_HNN_HU_HANMING_DESC"
-				picture = "gfx/leaders/HNN/Portrait_HNN_Hu_Han_Ming.png"
+				picture = "gfx/leaders/GXC/Portrait_GXC_Hu_Han_Ming.png"
 				expire = "1965.1.1"
 				ideology = soccon_tridemism_subtype
 			}

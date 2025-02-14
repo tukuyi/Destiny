@@ -607,8 +607,15 @@ ANQ_recruit_character_effect = {
 	}
 }
 
+CSP_set_leader_effect = {#工团领导人
+	#CSP
+	custom_effect_tooltip = CSP_set_leader_tt
+	save_global_event_target_as = CSP_leader
+}
 
-
-
-
+NZH_set_leader_effect = {
+	#Northern Zhili
+	custom_effect_tooltip = NZH_set_leader_tt
+	save_global_event_target_as = NZH_leader
+}
 

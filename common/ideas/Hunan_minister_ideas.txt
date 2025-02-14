@@ -1245,6 +1245,22 @@ ideas = {
 				sec_socialist_novelist
 			}
 		}
+		HNN_shen_cong_wen_sec = {#沈从文
+			allowed = { original_tag = HNN }
+			picture = HNN_shen_cong_wen_sec
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_shen_cong_wen_sec"
+				ROOT = {
+					custom_effect_tooltip = HNN_shen_cong_wen_add_tooltip
+				}
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_socialist_novelist
+			}
+		}
 		HNN_ren_bishi_sec = {#任弼时
 			allowed = { original_tag = HNN }
 			picture = HNN_ren_bishi_sec

@@ -130,53 +130,14 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_field_marshal = {
-				name = "亚历山大·I·切列帕诺夫"
-				desc = "Portrait_Alexander_Ivanovich_Cherepanov_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Alexander_Ivanovich_Cherepanov.png"
-				traits = {  
-					war_hero
-					harsh_leader
-					RUS_red_army_trait
-					career_officer
-					infantry_officer
-				}
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 3
+			SHC_Alexander_Ivanovich_Cherepanov = {
+				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "尼古拉·古比雪夫"
-				desc = "POLITICS_Nikolay_Kuibyshev_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
-				traits = {  
-					war_hero
-					RUS_red_army_trait
-					career_officer
-					infantry_officer
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
+			SHC_Nikolay_Kuibyshev = {
+				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "尼古拉·罗申"
-				desc = "POLITICS_Background_Alternate_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
-				traits = {  
-					RUS_red_army_trait
-					career_officer
-					infantry_officer
-				}
-				skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 1
-				logistics_skill = 3
+			SHC_Background_Alternate = {
+				set_nationality = ROOT
 			}
 			SHC_Sun_Fuyuan = {
 				set_nationality = ROOT
@@ -234,48 +195,26 @@ country_event = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_corps_commander = {
-				name = "田汉"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Tian_Han.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Tian_Han = {
+				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "茅盾"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Mao_Dun.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Mao_Dun = {
+				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "张春桥"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhang_Chunqiao.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_rou_shi = {
+				set_nationality = ROOT
+			}
+			SHC_Zhang_Chunqiao = {
+				set_nationality = ROOT
 			}
 			SHC_Zhou_Yang = {
 				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "赵世炎"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Zhao_Shi_Yan = {
+				set_nationality = ROOT
+			}
+			SHC_hu_feng = {
+				set_nationality = ROOT
 			}
 		}
 	}
@@ -424,81 +363,17 @@ country_event = {
 			create_field_marshal = {
 				name = "汪寿华"
 				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
+				traits = {  }
 				skill = 1
 				attack_skill = 1
 				defense_skill = 1
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			create_field_marshal = {
-				name = "亚历山大·I·切列帕诺夫"
-				desc = "Portrait_Alexander_Ivanovich_Cherepanov_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Alexander_Ivanovich_Cherepanov.png"
-				traits = {  
-					war_hero
-					harsh_leader
-					career_officer
-					infantry_officer
-				}
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 3
-			}
-			create_corps_commander = {
-				name = "尼古拉·古比雪夫"
-				desc = "POLITICS_Nikolay_Kuibyshev_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Nikolay_Kuibyshev.png"
-				traits = {  
-					war_hero
-					career_officer
-					infantry_officer
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
-			}
-			create_corps_commander = {
-				name = "尼古拉·罗申"
-				desc = "POLITICS_Background_Alternate_DESC"
-				portrait_path = "gfx/leaders/LEC/Portrait_Background_Alternate.png"
-				traits = {  
-					career_officer
-					infantry_officer
-				}
-				skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 1
-				logistics_skill = 3
-			}
-			SHC_Sun_Fuyuan = {
-				set_nationality = ROOT
-			}
-			SHC_Rao_Shu_Shi = {
-				set_nationality = ROOT
-			}
-			create_corps_commander = {
-				name = "王亚樵"
-				portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
-				traits = { 
-					fast_planner
-					offensive_doctrine
-					irregulars_officer
-					urban_assault_specialist
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2
-			}
 			create_corps_commander = {
 				name = "鲁迅"
 				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
+				traits = {  }
 				skill = 1
 				attack_skill = 1
 				defense_skill = 1
@@ -526,47 +401,55 @@ country_event = {
 				logistics_skill = 1
 			}
 			create_corps_commander = {
-				name = "田汉"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Tian_Han.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
+				name = "王亚樵"
+				portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
+				traits = { 
+					fast_planner
+					offensive_doctrine
+					irregulars_officer
+					urban_assault_specialist
+				}
+				skill = 2
+				attack_skill = 3
 				defense_skill = 1
 				planning_skill = 1
-				logistics_skill = 1
+				logistics_skill = 2
 			}
-			create_corps_commander = {
-				name = "茅盾"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Mao_Dun.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Alexander_Ivanovich_Cherepanov = {
+				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "张春桥"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhang_Chunqiao.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Nikolay_Kuibyshev = {
+				set_nationality = ROOT
+			}
+			SHC_Background_Alternate = {
+				set_nationality = ROOT
+			}
+			SHC_Sun_Fuyuan = {
+				set_nationality = ROOT
+			}
+			SHC_Rao_Shu_Shi = {
+				set_nationality = ROOT
+			}
+			SHC_Tian_Han = {
+				set_nationality = ROOT
+			}
+			SHC_Mao_Dun = {
+				set_nationality = ROOT
+			}
+			SHC_rou_shi = {
+				set_nationality = ROOT
+			}
+			SHC_Zhang_Chunqiao = {
+				set_nationality = ROOT
 			}
 			SHC_Zhou_Yang = {
 				set_nationality = ROOT
 			}
-			create_corps_commander = {
-				name = "赵世炎"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			SHC_Zhao_Shi_Yan = {
+				set_nationality = ROOT
+			}
+			SHC_hu_feng = {
+				set_nationality = ROOT
 			}
 		}
 	}

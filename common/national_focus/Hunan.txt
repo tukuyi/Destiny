@@ -21,7 +21,7 @@ focus_tree = {
 		icon = GFX_goal_chi_military_regime
 		cost = 0
 
-		x = 32
+		x = 29
 		y = 0
 
 		ai_will_do = { base = 15 }
@@ -1661,7 +1661,7 @@ focus_tree = {
 	focus = {
 		id = HNN_Our_Own_Path
 		icon = GFX_goal_ideology_social_liberal
-		x = 32
+		x = 29
 		y = 6
 		cost = 5
 	
@@ -3938,7 +3938,7 @@ focus_tree = {
 	focus = {
 		id = HNN_cheng_qian_zhu_chi_yi_qie
 		icon = GFX_goal_HNN_cheng_qian_zhu_chi_yi_qie
-		x = 20
+		x = 17
 		y = 0
 		cost = 1
 
@@ -4480,7 +4480,7 @@ focus_tree = {
 				days = 4
 			}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = "§Y‘礼’是规规矩矩的态度；‘义’是正正当当的行为；‘廉’是清清白白的辨别；‘耻’是切切实实的觉悟。§!"
+			custom_effect_tooltip = "‘礼’是规规矩矩的态度；‘义’是正正当当的行为；‘廉’是清清白白的辨别；‘耻’是切切实实的觉悟。"
 		}
 	}
 
@@ -4554,7 +4554,7 @@ focus_tree = {
 				target = var:745.owner
 		 	}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = "§Y一寸山河一寸血，十万青年十万军！§!"
+			custom_effect_tooltip = "一寸山河一寸血，十万青年十万军！"
 			hidden_effect = {
 				remove_ideas = {
 					HNN_popular_support_3
@@ -10192,6 +10192,17 @@ focus_tree = {
 				add_idea = HNN_a_democratic_province_2
 			}
 			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					has_idea = HNN_shen_cong_wen_sec
+				}
+				add_political_power = 35
+				custom_effect_tooltip =  HNN_shen_cong_wen_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_shen_cong_wen_helpful_tooltip
+			}
+			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -10241,6 +10252,20 @@ focus_tree = {
 				remove_idea = HNN_jiu_zhu_nong_chun
 				add_idea = HNN_jiu_zhu_nong_chun2
 			} 
+			if = {
+				limit = {
+					has_idea = HNN_ye_dehui_sec
+				}
+				add_stability = 0.06
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.03
+				}
+				custom_effect_tooltip = HNN_ye_dehui_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
+			}
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
