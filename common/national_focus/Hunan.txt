@@ -2322,6 +2322,24 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_speak_with_the_diarchy"
 			if = {
 				limit = {
+					has_idea = HNN_shi_qi_gui_sec
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 100
+				}
+				custom_effect_tooltip = HNN_chen_quzhen_is_helpful_tooltip
+			}
+			else = {
+				custom_effect_tooltip = HNN_chen_quzhen_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
 					has_idea = HNN_tian_yingzhao_for
 				}
 				add_stability = 0.03
@@ -7566,6 +7584,12 @@ focus_tree = {
 				add_idea = HNN_renewed_agricultural_balance
 			}
 			country_event = { id = hnn.5 }
+			hidden_effect = {
+				country_event = { 
+					id = hnn.13
+					days = 75
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

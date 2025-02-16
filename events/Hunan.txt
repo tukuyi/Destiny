@@ -312,6 +312,70 @@ country_event = { #国民革命军之真魂
 	}
 }
 
+country_event = { #石启贵的上书
+	id = hnn.13
+	title = hnn.13.t
+	desc = hnn.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes 
+
+	trigger = {
+		OR = {
+			HNN_lian_sheng_goverment = yes
+			has_completed_focus = HNN_victory_of_the_united_front
+		}
+	}
+
+	option = { 
+		log = "[GetLogInfo]: event hnn.13 option hnn.13.a"
+		name = hnn.13.a
+		add_political_power = -50
+		if = {
+			limit = {
+				has_active_mission = HNN_agricultural_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = HNN_agricultural_reform_mission_timer
+				days = -20
+			}
+		}
+		if = {
+			limit = {
+				has_active_mission = HNN_industrial_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = HNN_industrial_reform_mission_timer
+				days = -20
+			}
+		}
+	}
+
+	option = { 
+		log = "[GetLogInfo]: event hnn.13 option hnn.13.b"
+		name = hnn.13.b
+		add_political_power = 40
+		if = {
+			limit = {
+				has_active_mission = HNN_agricultural_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = HNN_agricultural_reform_mission_timer
+				days = 15
+			}
+		}
+		if = {
+			limit = {
+				has_active_mission = HNN_industrial_reform_mission_timer
+			}
+			add_days_mission_timeout = {
+				mission = HNN_industrial_reform_mission_timer
+				days = 15
+			}
+		}
+	}
+}
+
 country_event = { #The Xiangjiang Incident
 	id = hnn.55
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.55" }
@@ -10528,6 +10592,21 @@ country_event = {#上海
 	}
 }
 
+unit_leader_event = { #懒得个
+	id = hungong.175
+	title = hungong.175.t
+	desc = hungong.175.d
+
+	is_triggered_only = yes 
+	fire_only_once = yes
+
+	option = { 
+		log = "[GetLogInfo]: event hungong.175 option hungong.175.a"
+		name = hungong.175.a
+		army_experience = 10
+	}
+}
+
 ########################################
 ##########-      中社部    -############
 ########################################
@@ -12071,9 +12150,6 @@ country_event = {#一场审判
 	option = { #yes
 		name = hunarmy.48.a
 		add_political_power = 10
-		hidden_effect = {
-			
-		}
 	}
 }
 
@@ -12087,9 +12163,25 @@ country_event = {#龙与鹰的邪恶同盟
 	is_triggered_only = yes
 
 	option = { #yes
-		name = hunarmy.48.a
-		hidden_effect = {
-			
+		name = hunarmy.49.a
+	}
+}
+
+country_event = {#命运的歧点
+	id = hunarmy.50
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hunarmy.50" }
+	title = hunarmy.50.t
+	desc = hunarmy.50.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes
+		name = hunarmy.50.a
+		leave_faction = yes
+		declare_war_on = {
+			target = GER
+			type = annex_everything
 		}
 	}
 }

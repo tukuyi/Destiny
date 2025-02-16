@@ -1245,6 +1245,22 @@ ideas = {
 				sec_socialist_novelist
 			}
 		}
+		HNN_shi_qi_gui_sec = {#石启贵
+			allowed = { original_tag = HNN }
+			picture = HNN_shi_qi_gui_sec
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_qi_gui_sec"
+				ROOT = {
+					custom_effect_tooltip = HNN_chen_quzhen_effect
+				}
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
 		HNN_shen_cong_wen_sec = {#沈从文
 			allowed = { original_tag = HNN }
 			picture = HNN_shen_cong_wen_sec
@@ -1680,6 +1696,24 @@ ideas = {
 			traits = {
 				chief_of_army
 				KR_MHC_infantry_2
+			}
+			cancel_if_invalid = yes
+		}
+		HNN_geng_biao_carm = {#耿飙
+			allowed = { original_tag = HNN }
+			picture = HNN_Geng_Biao_for
+			available = { 
+				has_character = HNN_geng_biao
+			}
+			visible = {
+				has_character = HNN_geng_biao
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_geng_biao_carm"
+			}
+			traits = {
+				chief_of_army
+				army_chief_entrenchment_2
 			}
 			cancel_if_invalid = yes
 		}

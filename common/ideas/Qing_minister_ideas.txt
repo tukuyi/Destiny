@@ -1,0 +1,73 @@
+ideas = {
+	head_of_government = {
+
+	}
+
+	person_of_influence = {
+	#外交部长	
+
+
+	#经济部长
+	QIE_wang_kemin_eco = {#王克敏
+		allowed = { original_tag = QIE }
+		picture = QIE_wang_kemin_eco
+		cost = 100
+		visible = {
+			NOT = { has_country_flag = QIE_wang_kemin_eco_2_flag }
+		}
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea QIE_wang_kemin_eco"
+			ROOT = {
+				hidden_effect = {
+					country_event = qieflavor.58
+				}
+			}
+		}
+		traits = {
+			economy_minister
+			authoritarian_democrat
+			eco_bank_president
+		}
+	}
+	QIE_wang_kemin_eco_2 = {#王克敏
+		allowed = { original_tag = QIE }
+		picture = QIE_wang_kemin_eco
+		cost = 100
+		visible = {
+			has_country_flag = QIE_wang_kemin_eco_2_flag
+		}
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea QIE_wang_kemin_eco"
+			ROOT = {
+				hidden_effect = {
+					country_event = qieflavor.58
+				}
+			}
+		}
+		traits = {
+			economy_minister
+			authoritarian_democrat
+			KR_conductor_of_the_banking_clans
+		}
+	}
+
+	#内政部长	
+
+	}	
+
+	chief_of_staff = {
+
+	}
+
+	chief_of_army = { ### 陆军 ###
+
+	}
+
+	chief_of_navy = { ### 海军 ###
+
+	}
+
+	chief_of_air_force = { ### 空军 ###
+
+	}
+}

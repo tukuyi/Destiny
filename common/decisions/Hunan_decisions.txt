@@ -2110,13 +2110,32 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_cheap_credit"
 			if = {
 				limit = {
-					has_active_mission = HNN_agricultural_reform_mission_timer
+					has_idea = HNN_shi_qi_gui_sec
 				}
-				add_days_mission_timeout = {
-					mission = HNN_agricultural_reform_mission_timer
-					days = -50
+				if = {
+					limit = {
+						has_active_mission = HNN_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_agricultural_reform_mission_timer
+						days = -75
+					}
 				}
+				custom_effect_tooltip = HNN_chen_quzhen_is_helpful_tooltip
 			}
+			else = {
+				if = {
+					limit = {
+						has_active_mission = HNN_agricultural_reform_mission_timer
+					}
+					add_days_mission_timeout = {
+						mission = HNN_agricultural_reform_mission_timer
+						days = -50
+					}
+				}
+				custom_effect_tooltip = HNN_chen_quzhen_helpful_tooltip
+			}
+			custom_effect_tooltip = tooltip_white_line
 			add_manpower = 2500
 			if = {
 				limit = {
@@ -2584,7 +2603,7 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 			}
 		}
 	}
-	HNN_influx_of_capital = {
+	HNN_influx_of_capital = {#资本涌入
 		visible = {
 			has_completed_focus = HNN_opening_our_doors
 			has_active_mission = HNN_industrial_reform_mission_timer

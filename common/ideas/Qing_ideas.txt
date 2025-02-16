@@ -243,9 +243,9 @@ ideas = {
 				hog_influential_intellectual
 			}
 		}			
-		QIE_chang_yan_sheng = {#常燕生
+		QIE_chang_yan_sheng_hog = {#常燕生
 			allowed = { original_tag = QIE }
-			picture = QIE_chang_yan_sheng
+			picture = QIE_chang_yan_sheng_hog
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = head_of_gov_available
@@ -254,7 +254,7 @@ ideas = {
 			}
 			cancel_if_invalid = no
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea QIE_chang_yan_sheng"
+				log = "[GetDateText]: [Root.GetName]: add idea QIE_chang_yan_sheng_hog"
 				
 			}
 			traits = {

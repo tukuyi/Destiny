@@ -1,5 +1,4 @@
 spriteTypes = {	
-	#政治顾问
 	spriteType = {
 		name = "GFX_idea_QIE_Wu_pei_fu_hog"
 		texturefile = "gfx/interface/ministers/QIE/QIE_Wu_pei_fu.png"
@@ -113,6 +112,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_QIE_song_han_zhang_eco"
 		texturefile = "gfx/interface/ministers/QIE/QIE_song_han_zhang.png"
+	}
+	spriteType = {
+		name = "GFX_idea_QIE_wang_kemin_eco"
+		texturefile = "gfx/interface/ministers/QIE/QIE_wang_kemin.png"
 	}
 
 	spriteType = {

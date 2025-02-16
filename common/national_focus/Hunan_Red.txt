@@ -8821,6 +8821,14 @@ focus_tree = {
 				}
 				add_trait = { trait = panzer_leader }
 			}
+			hidden_effect = {
+				HNN_geng_biao = { 
+					unit_leader_event = { 
+						id = hungong.175
+						days = 30
+					} 
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
@@ -10858,9 +10866,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zui_hou_yi_zhan"
-			leave_faction = yes
-			declare_war_on = {
-				target = GER
+			country_event = { 
+				id = hunarmy.50
+				days = 2
 			}
 		}
 	}	

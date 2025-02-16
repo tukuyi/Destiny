@@ -619,3 +619,90 @@ NZH_set_leader_effect = {
 	save_global_event_target_as = NZH_leader
 }
 
+set_potential_national_government = {#宣布统一、枣核时间
+	if = {
+		limit = {
+			NOT = { has_country_flag = china_is_potential_government }
+		}
+		set_country_flag = china_is_potential_government
+
+		every_state = {
+			limit = {
+				is_core_china = yes
+				is_claim_or_core_of_PREV = no
+				NOT = {
+					has_variable = ambition_area_@PREV
+					owner = {
+						is_subject_of = PREV.PREV
+						china_is_governorate = yes
+					}
+				}
+			}
+			add_claim_by = PREV
+			add_to_array = { PREV.china_government_ambitions = THIS }
+			set_variable = { ambition_area_@PREV = 1 }
+		}
+
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_china_claim_area = yes
+					is_claim_or_core_of_PREV = no
+					NOT = { has_variable = ambition_area_@PREV }
+				}
+				add_to_array = { PREV.china_government_ambitions = THIS }
+				set_variable = { ambition_area_@PREV = 1 }
+			}
+			CHI_warn_of_rkmt_government_effect = yes #If its a RKMT leader, effect will fire an event for CHI
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = can_assume_national_leadership }
+		}
+		set_country_flag = can_assume_national_leadership
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = china_integration_unlocked }
+		}
+		set_country_flag = china_integration_unlocked
+		custom_effect_tooltip = GXC_integrate_provinces_tt
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_provinceintegration_cost_small }
+		}
+		set_variable = { kr_china_provinceintegration_cost_small = 30 }
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_provinceintegration_cost_medium }
+		}
+		set_variable = { kr_china_provinceintegration_cost_medium = 50 }
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_provinceintegration_cost_large }
+		}
+		set_variable = { kr_china_provinceintegration_cost_large = 70 }
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_provinceintegration_speed }
+		}
+		set_variable = { kr_china_provinceintegration_speed = 70 }
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_concessionintegration_cost }
+		}
+		set_variable = { kr_china_concessionintegration_cost = 15 }
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = kr_china_concessionintegration_speed }
+		}
+		set_variable = { kr_china_concessionintegration_speed = 40 }
+	}		
+}

@@ -1440,6 +1440,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_open_up_to_investment"
 			china_add_research_slots = yes
 			add_stability = -0.05
+			custom_effect_tooltip = QIE_wang_kemin_improved
+			custom_effect_tooltip = tooltip_white_line
 			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.08
@@ -1458,6 +1460,12 @@ focus_tree = {
 					random_days = 120
 				}
 				add_ideas = QIE_AOG_bank
+				set_country_flag = QIE_wang_kemin_eco_2_flag
+				if = {
+					limit = { has_idea = QIE_wang_kemin_eco }
+					hidden_effect = { remove_ideas = QIE_wang_kemin_eco }
+					add_ideas = QIE_wang_kemin_eco_2
+				}	
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -4480,6 +4488,8 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_rebuild_domestic_ind"
+			custom_effect_tooltip = QIE_wang_kemin_improved
+			custom_effect_tooltip = tooltip_white_line
 			add_one_random_civilian_factory = yes
 			add_one_random_civilian_factory = yes
 			add_one_random_military_factory = yes
@@ -4489,7 +4499,14 @@ focus_tree = {
 				idea = QIE_support_of_the_bankers
 				days = 210
 			}
-			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				set_country_flag = QIE_wang_kemin_eco_2_flag
+				if = {
+					limit = { has_idea = QIE_wang_kemin_eco }
+					hidden_effect = { remove_ideas = QIE_wang_kemin_eco }
+					add_ideas = QIE_wang_kemin_eco_2
+				}	
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}

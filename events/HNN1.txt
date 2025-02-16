@@ -20,6 +20,13 @@ country_event = {#测试事件
 		# 	}
 		# }
 
+		set_country_flag = QIE_wang_kemin_eco_2_flag
+		if = {
+			limit = { has_idea = QIE_wang_kemin_eco }
+			hidden_effect = { remove_ideas = QIE_wang_kemin_eco }
+			add_ideas = QIE_wang_kemin_eco_2
+		}	
+
 		# if = {
 		# 	limit = { 
 		# 		has_government = totalist

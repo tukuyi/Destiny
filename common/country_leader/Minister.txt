@@ -9,6 +9,16 @@
 leader_traits = {
 	left_writer = {}
 
+	KR_conductor_of_the_banking_clans = {#银行界红人
+		sprite = 13
+		random = no
+		political_power_factor = 0.10
+		consumer_goods_factor = -0.10
+		production_speed_buildings_factor = 0.10
+
+		ai_will_do = { factor = 2 }
+	}
+
 	QYG_nong_ye_da_wang = {
 		random = no
 		war_support_factor = 0.03
