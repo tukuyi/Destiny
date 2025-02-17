@@ -3,6 +3,7 @@
 ####By Drozdovite###
 ####################
 ##Political Tree
+
 shared_focus = { 
 	id = YUN_the_master_of_the_east_continent
 	icon = GFX_Goal_YUN_The_Master_of_the_East_Continent
@@ -6852,12 +6853,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_hui_ming_duo_quan
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_yu_shaoshu_mingzhude_hezuo"
 		set_party_name = {
@@ -6892,12 +6891,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_hui_ming_duo_quan
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_da_ya_fo_jiao"
 		add_stability = -0.05
@@ -6921,12 +6918,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_yu_shaoshu_mingzhude_hezuo
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_hui_ming_hero"
 		add_ideas = YUN_wang_xi_rongyao
@@ -6945,12 +6940,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_da_ya_fo_jiao
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_xun_zhap_ma_ling"
 		custom_effect_tooltip = YUN_xun_zhap_ma_ling_tt		
@@ -6972,15 +6965,13 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_yu_shaoshu_mingzhude_hezuo
 	}
 	prerequisite = {
 		focus = YUN_da_ya_fo_jiao
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_hui_ming_zhi_guo"
 		add_ideas = YUN_hui_ming_zhiguo
@@ -6999,12 +6990,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_hui_ming_zhi_guo
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_xun_qiu_xie_yue_guo_zhi_chi"
 		country_event = yunhui.6
@@ -7023,12 +7012,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_hui_ming_zhi_guo
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_zhao_kai_hui_ming_da_hui"
 		country_event = { 
@@ -7050,12 +7037,10 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_xun_qiu_xie_yue_guo_zhi_chi
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_xun_lian_xi_nan_jin_wei_dui"
 		add_research_slot = 1
@@ -7081,9 +7066,6 @@ shared_focus = {
 
 	ai_will_do = {
 		base = 75
-	}
-	available = {
-		
 	}
 	prerequisite = {
 		focus = YUN_zhao_kai_hui_ming_da_hui
@@ -7142,9 +7124,6 @@ shared_focus = {
 	ai_will_do = {
 		base = 75
 	}
-	available = {
-		
-	}
 	prerequisite = {
 		focus = YUN_zhao_kai_hui_ming_da_hui
 	}
@@ -7170,9 +7149,6 @@ shared_focus = {
 
 	ai_will_do = {
 		base = 75
-	}
-	available = {
-		
 	}
 	prerequisite = {
 		focus = YUN_xun_lian_xi_nan_jin_wei_dui

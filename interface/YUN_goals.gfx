@@ -56,16 +56,8 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/YUN_xi_nan_ju_mang.png"
 	}
 	spriteType = {
-		name = "GFX_goal_YUN_zhen_zhu_fei_zhu"
-		texturefile = "gfx/interface/goals/YUN_zhen_zhu_fei_zhu.png"
-	}
-	spriteType = {
 		name = "GFX_goal_YUN_gu_lan_jing_de_xin_li_jie"
 		texturefile = "gfx/interface/goals/YUN_gu_lan_jing_de_xin_li_jie.png"
-	}
-	spriteType = {
-		name = "GFX_goal_YUN_fang_song_guan_zhi"
-		texturefile = "gfx/interface/goals/YUN_fang_song_guan_zhi.png"
 	}
 	spriteType = {
 		name = "GFX_goal_YUN_mao_da_guo_fan"
@@ -76,28 +68,12 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/YUN_mao_tou_jin.png"
 	}
 	spriteType = {
-		name = "GFX_goal_YUN_mao_dou_fo"
-		texturefile = "gfx/interface/goals/YUN_mao_dou_fo.png"
-	}
-	spriteType = {
 		name = "GFX_goal_YUN_mao_yi_shu"
 		texturefile = "gfx/interface/goals/YUN_mao_yi_shu.png"
 	}
 	spriteType = {
-		name = "GFX_goal_YUN_mao_shi_fang"
-		texturefile = "gfx/interface/goals/YUN_mao_shi_fang.png"
-	}
-	spriteType = {
-		name = "GFX_goal_YUN_mao_ge_he"
-		texturefile = "gfx/interface/goals/YUN_mao_ge_he.png"
-	}
-	spriteType = {
 		name = "GFX_goal_YUN_mao_wu_gong_he"
 		texturefile = "gfx/interface/goals/YUN_mao_wu_gong_he.png"
-	}
-	spriteType = {
-		name = "GFX_goal_YUN_mao_fang_jia"
-		texturefile = "gfx/interface/goals/YUN_mao_fang_jia.png"
 	}
 	spriteType = {
 		name = "GFX_goal_YUN_Yan_1"

@@ -4920,14 +4920,6 @@ YUN_MG = {
 	color = rgb { 0 155 57 }
 	color_ui = rgb { 0 155 57 }
 }
-YUN_MHM = {
-	color = rgb { 178 0 0 }
-	color_ui = rgb { 178 0 0 }
-}
-YUN_MHM_Q = {
-	color = rgb { 178 0 0 }
-	color_ui = rgb { 178 0 0 }
-}
 #大清
 QIE_RUS = {
 	color = rgb { 141 212 232 }

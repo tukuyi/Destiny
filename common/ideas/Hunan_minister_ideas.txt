@@ -1208,9 +1208,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_huang_gonglue_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				OR = {
 					has_completed_focus = HNN_victory_of_the_united_front
@@ -1573,6 +1570,24 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
+		HNN_huang_gong_lue_cos = {#黄公略
+			allowed = { original_tag = HNN }
+			picture = HNN_huang_gonglue_sec
+			visible = {
+				OR = {
+					has_completed_focus = HNN_victory_of_the_united_front
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_huang_gong_lue_cos"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_insurgent_war
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_army = { ### 陆军 ###
@@ -1713,7 +1728,7 @@ ideas = {
 			}
 			traits = {
 				chief_of_army
-				army_chief_entrenchment_2
+				army_chief_maneuver_2
 			}
 			cancel_if_invalid = yes
 		}

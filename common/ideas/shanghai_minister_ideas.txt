@@ -1,5 +1,6 @@
 ideas = {
 	head_of_government = {
+	#左臂	
 		LEC_kang_sheng_hog = {#康生
 			allowed = { original_tag = SHC }
 			picture = LEC_kang_sheng_hog
