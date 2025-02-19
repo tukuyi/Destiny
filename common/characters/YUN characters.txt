@@ -1,5 +1,25 @@
 characters = {
 ################
+###   白族   ###
+################	
+	YUN_Yan_zi_zen = {#严子珍
+		name = YUN_Yan_zi_zen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_YUN_Yan_PM
+			}
+			army = {
+				small = GFX_Portrait_YUN_Yan_PM
+				large = GFX_Portrait_YUN_Yan_PM
+			}
+		}
+		country_leader = {
+			desc = POLITICS_YUNNAN_YAN_DESC
+			ideology = oligarchy_subtype
+			traits = { CHN_non_aligned }
+		}
+	}	
+################
 ###   将领   ###
 ################
 #唐繼堯

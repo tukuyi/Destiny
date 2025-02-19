@@ -6540,7 +6540,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_yi_tong_zhong_hua"
 			add_political_power = 50
 			custom_effect_tooltip = tooltip_white_line
-			H_to_china = yes
+			set_potential_national_government = yes
+			hidden_effect = {
+				H_to_china = yes
+			}
 		}
 	}		
 

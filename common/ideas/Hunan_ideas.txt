@@ -282,7 +282,7 @@ ideas = {
 				can_not_declare_war = yes
 			}
 		}
-		HNN_the_western_diarchy = {
+		HNN_the_western_diarchy = {#自治的湘西
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_the_western_diarchy" }
 			picture = big_entente_idea
 			allowed = { always = no }
@@ -290,6 +290,17 @@ ideas = {
 				planning_speed = -0.05
 				land_doctrine_cost_factor = 0.10
 				paternal_autocrat_drift = 0.02
+			}
+			on_remove = {
+				if = {
+					limit = {
+						has_active_mission = HNN_shen_bing_revolution
+					}
+					add_days_mission_timeout = {
+						mission = HNN_shen_bing_revolution
+						days = 50
+					}
+				}
 			}
 		}	
 		HNN_intellectual_hub = {
@@ -420,6 +431,8 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				conscription = 0.05
+				modifier_army_sub_unit_irregular_infantry_speed_factor = 0.10
+				modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.10
 			}
 			picture = MON_conscript_conquered
 		}
@@ -5403,6 +5416,8 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				weekly_manpower = 200
+				army_attack_factor = 0.10
+				army_defence_factor = 0.05
 				experience_gain_army = 0.05
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.05

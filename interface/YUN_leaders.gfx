@@ -53,8 +53,8 @@ spriteTypes = {
 		texturefile = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_YUN_Yan"
-		texturefile = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
+		name = "GFX_Portrait_YUN_Yan_PM"
+		texturefile = "gfx/leaders/YUN/Portrait_YUN_Yan_PM.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_YUN_An_En_Bo"

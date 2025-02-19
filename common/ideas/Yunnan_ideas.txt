@@ -154,6 +154,162 @@ ideas = {
 
 	country = {
 	###白族
+		YUN_bao_jin_an_ming = {#保境安民
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_bao_jin_an_ming"}
+			picture = YUN_bao_jin_an_ming
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.05
+				compliance_growth = 0.10
+				war_support_factor = 0.05
+				resistance_growth = -0.10
+				political_power_cost = 0.05
+				war_stability_factor = 0.05
+				local_resources_factor = 0.10
+			}
+		}
+		YUN_bao_jin_an_ming_B = {#保境安民
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_bao_jin_an_ming_B"}
+			picture = YUN_bao_jin_an_ming
+			name = YUN_bao_jin_an_ming
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.07
+				compliance_growth = 0.10
+				war_support_factor = 0.07
+				resistance_growth = -0.10
+				political_power_cost = 0.07
+				war_stability_factor = 0.05
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.10
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+		YUN_bao_jin_an_ming_C = {#保境安民
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_bao_jin_an_ming_C"}
+			picture = YUN_bao_jin_an_ming_C
+			name = YUN_bao_jin_an_ming
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				compliance_growth = 0.10
+				war_support_factor = 0.10
+				resistance_growth = -0.10
+				political_power_cost = 0.10
+				war_stability_factor = 0.05
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.10
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		YUN_gong_he_xian_zhang = {#共和宪章
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_gong_he_xian_zhang"}
+			picture = YUN_qu_feng_jian4
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				political_power_gain = -1.00
+				authoritarian_democrat_drift = 0.05
+				authoritarian_democrat_acceptance = 0.05
+			}
+		}
+		YUN_gong_he_xian_zhang_B = {#共和宪章
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_gong_he_xian_zhang_B"}
+			picture = YUN_qu_feng_jian4
+			name = YUN_gong_he_xian_zhang
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				political_power_gain = -0.50
+				authoritarian_democrat_drift = 0.05
+				authoritarian_democrat_acceptance = 0.05
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		YUN_gong_he_xian_zhang_C = {#共和宪章
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_gong_he_xian_zhang_C"}
+			picture = YUN_qu_feng_jian4
+			name = YUN_gong_he_xian_zhang
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.15
+				non_core_manpower = 0.10
+				war_support_factor = 0.15
+				political_power_gain = -0.20
+				authoritarian_democrat_drift = 0.10
+				authoritarian_democrat_acceptance = 0.10
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		YUN_gong_he_xian_zhang_E = {#共和宪章
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_gong_he_xian_zhang_E"}
+			picture = YUN_qu_feng_jian4
+			name = YUN_gong_he_xian_zhang
+			allowed = { always = no }
+            modifier = {
+				stability_weekly = 0.05
+				stability_factor = 0.15
+				non_core_manpower = 0.10
+				war_support_factor = 0.15
+				political_power_gain = -0.20
+				consumer_goods_factor = -0.15
+				repair_speed_arms_factory_factor = 0.05
+				authoritarian_democrat_acceptance = 0.10
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		YUN_gong_he_xian_zhang_D = {#共和宪章
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_gong_he_xian_zhang_D"}
+			picture = YUN_gong_he_xian_zhang_D
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.05
+				non_core_manpower = 0.10
+				war_support_factor = 0.15
+				embargo_cost_factor = -0.05
+				intelligence_agency_defense = 1
+				authoritarian_democrat_drift = 0.10
+				authoritarian_democrat_acceptance = 0.10
+				party_popularity_stability_factor = 0.20
+				root_out_resistance_effectiveness_factor = 0.20
+			}
+		}
+		YUN_zai_zao_dian_jun = {#再造滇军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_zai_zao_dian_jun"}
+			picture = YUN_xi_nan_zhi_zuo_suo
+			allowed = { always = no }
+            modifier = {
+				army_org_factor = 0.10
+				army_attack_factor = 0.05
+				army_morale_factor = 0.10
+				experience_gain_army = 0.05
+			}
+		}
+		YUN_zai_zao_dian_jun_B = {#再造滇军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_zai_zao_dian_jun_B"}
+			picture = YUN_xi_nan_zhi_zuo_suo
+			name = YUN_zai_zao_dian_jun
+			allowed = { always = no }
+            modifier = {
+				planning_speed = 0.10
+				pocket_penalty = -0.04
+				army_org_factor = 0.10
+				army_speed_factor = 0.05
+				land_night_attack = 0.10
+				army_attack_factor = 0.05
+				army_morale_factor = 0.10
+				experience_gain_army = 0.05
+			}
+		}
+
 		YUN_qu_feng_jian = {#去封建化
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_qu_feng_jian"}
 			picture = YUN_qu_feng_jian
@@ -1534,6 +1690,11 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_Kuomintang1"}
 			picture = YUN_KMT_idea
 			allowed = { always = no }
+			available = {
+				NOT = {
+					has_completed_focus = YUN_Yan_1
+				}
+			}
             modifier = {
 				political_power_gain = 0.05
 				training_time_army_factor = -0.05

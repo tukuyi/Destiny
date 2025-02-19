@@ -50,6 +50,14 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/YUN/YUN_maou_feng_jian2.png"
 	}
 	spriteType = {
+		name = "GFX_idea_YUN_bao_jin_an_ming"
+		texturefile = "gfx/interface/ideas/YUN/YUN_bao_jin_an_ming.png"
+	}
+	spriteType = {
+		name = "GFX_idea_YUN_bao_jin_an_ming_C"
+		texturefile = "gfx/interface/ideas/YUN/YUN_bao_jin_an_ming_C.png"
+	}
+	spriteType = {
 		name = "GFX_idea_YUN_qu_feng_jian3"
 		texturefile = "gfx/interface/ideas/YUN/YUN_qu_feng_jian3.png"
 	}
@@ -110,20 +118,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/YUN/YUN_wu_zu.png"
 	}
 	spriteType = {
-		name = "GFX_idea_YUN_tou_jin"
-		texturefile = "gfx/interface/ideas/YUN/YUN_tou_jin.png"
-	}
-	spriteType = {
-		name = "GFX_idea_YUN_sx_jiefang"
-		texturefile = "gfx/interface/ideas/YUN/YUN_sx_jiefang.png"
-	}
-	spriteType = {
-		name = "GFX_idea_YUN_he_jie"
-		texturefile = "gfx/interface/ideas/YUN/YUN_he_jie.png"
-	}
-	spriteType = {
-		name = "GFX_idea_YUN_Yi_sheng"
-		texturefile = "gfx/interface/ideas/YUN/YUN_Yi_sheng.png"
+		name = "GFX_idea_YUN_gong_he_xian_zhang_D"
+		texturefile = "gfx/interface/ideas/YUN/YUN_gong_he_xian_zhang_D.png"
 	}
 	spriteType = {
 		name = "GFX_idea_YUN_zui_zheng_tong"

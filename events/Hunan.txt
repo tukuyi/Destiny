@@ -6784,6 +6784,7 @@ country_event = {#革命成功
 			}
 		}
 		hidden_effect = {
+			activate_mission = HNN_shen_bing_revolution
 			if = {
 				limit = { 
 					has_country_leader = { name = "赵恒惕" ruling_only = yes }

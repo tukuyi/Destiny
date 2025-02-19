@@ -3608,6 +3608,12 @@ shared_focus = {
 			new_guangxi_clique_leaves_hiding = yes
 			country_event = lngcivilwar.24
 		}
+		hidden_effect = {
+			country_event = {
+				id = yunyan.1
+				days = 5
+			}
+		}
 	}
 	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
 }
@@ -3615,6 +3621,9 @@ shared_focus = {
 	id = YUN_the_Society_of_Bamboo_King
 	icon = GFX_YUN_Goal_Bamboo_King_Society
 	cost = 7.2
+	x = 22
+	y = 2
+
 	prerequisite = {
 		focus = YUN_Long
 		focus = YUN_NRA_prevailed
@@ -3622,6 +3631,12 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = YUN_Sinitic_Dominance
 	}
+	available = {
+		NOT  = {
+			has_country_flag = YUN_bai_zhu_victory
+		}
+	}
+
 	ai_will_do = {
 		base = 25
 		modifier = {
@@ -3632,8 +3647,7 @@ shared_focus = {
 			}
 		}
 	}
-	x = 22
-	y = 2
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_the_Society_of_Bamboo_King"
 		country_event = yun.45
@@ -3644,14 +3658,22 @@ shared_focus = {
 	id = YUN_Dian_Identity
 	icon = GFX_YUN_Goal_Dian_Identity
 	cost = 7.2
+	x = 22
+	y = 3
+
 	prerequisite = {
 		focus = YUN_the_Society_of_Bamboo_King
 	}
+	available = {
+		NOT  = {
+			has_country_flag = YUN_bai_zhu_victory
+		}
+	}
+
 	ai_will_do = {
 		factor = 25
 	}
-	x = 22
-	y = 3
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Dian_Identity"
 		swap_ideas = {
@@ -3665,10 +3687,22 @@ shared_focus = {
 	id = YUN_Sinitic_Dominance
 	icon = GFX_goal_FNG_China_Reach
 	cost = 7.2
+	x = 24
+	y = 2
+
 	prerequisite = {
 		focus = YUN_NRA_prevailed
 		focus = YUN_Long
 	}
+	mutually_exclusive = {
+		focus = YUN_the_Society_of_Bamboo_King
+	}
+	available = {
+		NOT  = {
+			has_country_flag = YUN_bai_zhu_victory
+		}
+	}
+
 	ai_will_do = {
 		base = 50
 		modifier = {
@@ -3679,11 +3713,7 @@ shared_focus = {
 			}
 		}
 	}
-	mutually_exclusive = {
-		focus = YUN_the_Society_of_Bamboo_King
-	}
-	x = 24
-	y = 2
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Sinitic_Dominance"
 		country_event = yun.46
@@ -3703,6 +3733,9 @@ shared_focus = {
 	id = YUN_Restore_political_stability
 	icon = GFX_goal_generic_stable_government
 	cost = 7.2
+	x = 24
+	y = 3
+
 	prerequisite = {
 		focus = YUN_Sinitic_Dominance
 	}
@@ -3711,11 +3744,11 @@ shared_focus = {
 			has_country_flag = YUN_bai_zhu_victory
 		}
 	}
+
 	ai_will_do = {
 		factor = 50
 	}
-	x = 24
-	y = 3
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Restore_political_stability"
 		swap_ideas = {
@@ -6272,18 +6305,20 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_1"
-		add_stability = 0.10
-		add_war_support = 0.10	
-		add_country_leader_trait = YUN_wu_mian_zhi_wang
+		add_ideas = YUN_bao_jin_an_ming
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.10
+		}
 	}
 }
 
 shared_focus = {
 	id = YUN_Yan_2
-	icon = GFX_goal_YUN_Yan_2
+	icon = GFX_YUN_Goal_Bamboo_King_Society
 	relative_position_id = YUN_Yan_1
 	
-	x = 0
+	x = -1
 	y = 1
 	cost = 5
 
@@ -6298,50 +6333,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_2"
-		add_soccon_to_coalition = yes
-		add_authdem_to_coalition = yes
-		add_marlib_to_coalition = yes
-		set_party_name = {
-			ideology = social_conservative
-			long_name =  YUN_social_conservative_party_BAI_long
-			name =  YUN_social_conservative_party_BAI
-		}
-		set_party_name = {
-			ideology = authoritarian_democrat
-			long_name =  YUN_authoritarian_democrat_party_BAI_long
-			name =  YUN_authoritarian_democrat_party_BAI
-		}
-		set_party_name = {
-			ideology = market_liberal
-			long_name =  YUN_market_liberal_party_BAI_long
-			name =  YUN_market_liberal_party_BAI
-		}
-		set_party_name = {
-			ideology = social_democrat
-			long_name =  YUN_social_democrat_party_BAI_long
-			name =  YUN_social_democrat_party_BAI
-		}
-		create_country_leader = {
-			name = "尹辅臣"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = social_conservative_subtype
-		}
-		create_country_leader = {
-			name = "杨品相"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = authoritarian_democrat_subtype
-		}
-		create_country_leader = {
-			name = "董澄农"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = market_liberal_subtype
-		}
+		country_event = yun.45
 	}
 }
 
@@ -6350,7 +6342,7 @@ shared_focus = {
 	icon = GFX_goal_YUN_Yan_3
 	relative_position_id = YUN_Yan_1
 	
-	x = 2
+	x = 1
 	y = 1
 	cost = 5
 
@@ -6365,15 +6357,32 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_3"
-		add_manpower = -500
-		add_popularity = {
-			ideology = social_liberal
-			popularity = 0.05
+		325 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
 		}
-		swap_ruler_traits = {
-			remove = YUN_wu_mian_zhi_wang
-			add = YUN_wu_mian_zhi_wang_1
-		} 
+		816 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
 	}
 }
 
@@ -6382,8 +6391,8 @@ shared_focus = {
 	icon = GFX_goal_YUN_Yan_4
 	relative_position_id = YUN_Yan_1
 	
-	x = -2
-	y = 1
+	x = 0
+	y = 2
 	cost = 5
 
 	ai_will_do = {
@@ -6393,34 +6402,15 @@ shared_focus = {
 		has_country_flag = YUN_bai_zhu_victory
 	}
 	prerequisite = {
-		focus = YUN_Yan_1
+		focus = YUN_Yan_3
 	}
+	prerequisite = {
+		focus = YUN_Yan_2
+	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_4"
-		add_manpower = -200
-		add_equipment_to_stockpile = {
-			type = infantry_equipment_0
-			amount = 1000
-			producer = YUN
-		}
-		random_unit_leader = {
-			limit = { 
-				has_id = 3002 
-			}
-			remove_unit_leader = yes
-		}	
-		random_unit_leader = {
-			limit = { 
-				has_id = 5071 
-			}
-			remove_unit_leader = yes
-		}	
-		random_unit_leader = {
-			limit = { 
-				has_id = 99922 
-			}
-			remove_unit_leader = yes
-		}	
+		add_ideas = YUN_gong_he_xian_zhang
 	}
 }
 
@@ -6429,8 +6419,8 @@ shared_focus = {
 	icon = GFX_goal_YUN_Yan_5
 	relative_position_id = YUN_Yan_1
 	
-	x = -3
-	y = 2
+	x = -1
+	y = 3
 	cost = 5.00
 
 	ai_will_do = {
@@ -6442,11 +6432,28 @@ shared_focus = {
 	prerequisite = {
 		focus = YUN_Yan_4
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_5"
-		custom_effect_tooltip = YUN_bai_zu_tt	
+		swap_ideas = {
+			remove_idea = YUN_gong_he_xian_zhang
+			add_idea = YUN_gong_he_xian_zhang_B
+		}
+		add_marlib_to_coalition = yes
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.05
+		}
 		hidden_effect = {
-			load_oob = "YUN_Ma_Militia"	
+			set_party_name = {
+				ideology = market_liberal
+				long_name = YUN_market_liberal_party
+				name = YUN_market_liberal_party_long
+			}
 		}
 	}
 }
@@ -6456,8 +6463,8 @@ shared_focus = {
 	icon = GFX_goal_YUN_Yan_6
 	relative_position_id = YUN_Yan_1
 	
-	x = -1
-	y = 2
+	x = 1
+	y = 3
 	cost = 5
 
 	ai_will_do = {
@@ -6469,41 +6476,13 @@ shared_focus = {
 	prerequisite = {
 		focus = YUN_Yan_4
 	}
-	prerequisite = {
-		focus = YUN_Yan_2
-	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_6"
-		random_owned_state = {
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = industrial_complex
-				level = 3
-				instant_build = yes
-			}
+		swap_ideas = {
+			remove_idea = YUN_bao_jin_an_ming
+			add_idea = YUN_bao_jin_an_ming_B
 		}
-		random_owned_state = {
-			add_extra_state_shared_building_slots = 4
-			add_building_construction = {
-				type = arms_factory
-				level = 4
-				instant_build = yes
-			}
-		}	
-		random_owned_state = {
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}
-		}	
-		random_owned_state = {
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}
-		}	
 	}
 }
 
@@ -6512,125 +6491,7 @@ shared_focus = {
 	icon = GFX_goal_YUN_Yan_7
 	relative_position_id = YUN_Yan_1
 	
-	x = 1
-	y = 2
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-	}
-	prerequisite = {
-		focus = YUN_Yan_2
-	}
-	prerequisite = {
-		focus = YUN_Yan_3
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_7"
-		add_stability = 0.10
-		add_ideas = YUN_qu_feng_jian		
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_8
-	icon = GFX_goal_YUN_Yan_8
-	relative_position_id = YUN_Yan_1
-	
-	x = 3
-	y = 2
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-	}
-	prerequisite = {
-		focus = YUN_Yan_3
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_8"
-		add_ideas = YUN_jun_shou		
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_9
-	icon = GFX_goal_YUN_Yan_9
-	relative_position_id = YUN_Yan_1
-	
-	x = 0
-	y = 3
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-			#昆明
-		owns_state = 325
-			#广州
-		owns_state = 592
-			#北京
-		owns_state = 608
-			#南京
-		owns_state = 613
-			#重庆
-		owns_state = 650
-			#沈阳
-		#owns_state = 716
-	}
-	prerequisite = {
-		focus = YUN_Yan_6
-	}
-	prerequisite = {
-		focus = YUN_Yan_7
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_9"
-		add_stability = 0.05
-		if = {
-			limit = {
-				has_completed_focus = YUN_Yan_5
-				NOT = {
-					has_completed_focus = YUN_Yan_8
-				}
-			}
-			swap_ideas = {
-				remove_idea = YUN_qu_feng_jian
-				add_idea = YUN_qu_feng_jian2
-			}
-		}
-		else_if = {
-			limit = {
-				has_completed_focus = YUN_Yan_8
-				NOT = {
-					has_completed_focus = YUN_Yan_5
-				}
-			}
-			swap_ideas = {
-				remove_idea = YUN_qu_feng_jian
-				add_idea = YUN_qu_feng_jian3
-			}
-		}
-		else = {
-			add_political_power = 50
-		}
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_10
-	icon = GFX_goal_YUN_Yan_10
-	relative_position_id = YUN_Yan_1
-	
-	x = -1
+	x = -2
 	y = 4
 	cost = 5
 
@@ -6641,11 +6502,129 @@ shared_focus = {
 		has_country_flag = YUN_bai_zhu_victory
 	}
 	prerequisite = {
+		focus = YUN_Yan_5
+	}
+	prerequisite = {
+		focus = YUN_Yan_6
+	}
+
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_7"
+		swap_ideas = {
+			remove_idea = YUN_bao_jin_an_ming_B
+			add_idea = YUN_bao_jin_an_ming_C
+		}
+	}
+}
+
+shared_focus = {
+	id = YUN_Yan_8
+	icon = GFX_goal_YUN_Yan_8
+	relative_position_id = YUN_Yan_1
+	
+	x = 0
+	y = 4
+	cost = 5
+
+	ai_will_do = {
+		base = 75
+	}
+	available = {
+		has_country_flag = YUN_bai_zhu_victory
+	}
+	prerequisite = {
+		focus = YUN_Yan_5
+	}
+	prerequisite = {
+		focus = YUN_Yan_6
+	}
+
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_8"
+		if = {
+			limit = { 
+				has_idea = YUN_zai_zao_dian_jun
+			}
+			swap_ideas = {
+				remove_idea = YUN_zai_zao_dian_jun
+				add_idea = YUN_zai_zao_dian_jun_B
+			}
+		}
+		else = {
+			add_ideas = YUN_zai_zao_dian_jun		
+		}
+		army_experience = 50
+	}
+}
+
+shared_focus = {
+	id = YUN_Yan_9
+	icon = GFX_MAG_Rapid_Germanization
+	relative_position_id = YUN_Yan_1
+	
+	x = 2
+	y = 4
+	cost = 5
+
+	ai_will_do = {
+		base = 75
+	}
+	prerequisite = {
+		focus = YUN_Yan_5
+	}
+	prerequisite = {
+		focus = YUN_Yan_6
+	}
+
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_9"
+		if = {
+			limit = { 
+				has_idea = YUN_zai_zao_dian_jun
+			}
+			swap_ideas = {
+				remove_idea = YUN_zai_zao_dian_jun
+				add_idea = YUN_zai_zao_dian_jun_B
+			}
+		}
+		else = {
+			add_ideas = YUN_zai_zao_dian_jun		
+		}
+		army_experience = 50
+	}
+}
+
+shared_focus = {
+	id = YUN_Yan_10
+	icon = GFX_goal_YUN_Yan_10
+	relative_position_id = YUN_Yan_1
+	
+	x = 0
+	y = 5
+	cost = 5
+
+	ai_will_do = {
+		base = 75
+	}
+	available = {
+		has_country_flag = YUN_bai_zhu_victory
+	}
+	prerequisite = {
+		focus = YUN_Yan_7
+	}
+	prerequisite = {
+		focus = YUN_Yan_8
+	}
+	prerequisite = {
 		focus = YUN_Yan_9
 	}
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_10"
-		add_ideas = YUN_ping_min_gong_ye
+		swap_ideas = {
+			remove_idea = YUN_gong_he_xian_zhang_B
+			add_idea = YUN_gong_he_xian_zhang_C
+		}
 	}
 }
 
@@ -6655,127 +6634,6 @@ shared_focus = {
 	relative_position_id = YUN_Yan_1
 	
 	x = 1
-	y = 4
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-	}
-	prerequisite = {
-		focus = YUN_Yan_9
-	}
-
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_11"
-		add_ideas = YUN_shang_dao_jing_ji
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_12
-	icon = GFX_goal_YUN_Yan_12
-	relative_position_id = YUN_Yan_1
-	
-	x = -2
-	y = 5
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-	}
-	prerequisite = {
-		focus = YUN_Yan_10
-	}
-	prerequisite = {
-		focus = YUN_Yan_11
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_12"
-		country_event = {
-			id = yunyan.11
-			days = 2
-		}		
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_13
-	icon = GFX_goal_YUN_Yan_13
-	relative_position_id = YUN_Yan_1
-	
-	x = 0
-	y = 5
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-		OR = {
-			owns_state = 608
-			QIE = {
-				exists = no
-			}
-		}
-	}
-	prerequisite = {
-		focus = YUN_Yan_11
-	}
-	prerequisite = {
-		focus = YUN_Yan_10
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_13"
-		country_event = {
-			id = yunyan.4
-			days = 2
-		}		
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_14
-	icon = GFX_goal_YUN_Yan_14
-	relative_position_id = YUN_Yan_1
-	
-	x = 2
-	y = 5
-	cost = 5
-
-	ai_will_do = {
-		base = 75
-	}
-	available = {
-		has_country_flag = YUN_bai_zhu_victory
-	}
-	prerequisite = {
-		focus = YUN_Yan_10
-	}
-	prerequisite = {
-		focus = YUN_Yan_11
-	}
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_14"
-		country_event = {
-			id = yunyan.17
-			days = 2
-		}			
-	}
-}
-
-shared_focus = {
-	id = YUN_Yan_15
-	icon = GFX_goal_YUN_Yan_15
-	relative_position_id = YUN_Yan_1
-	
-	x = 0
 	y = 6
 	cost = 5
 
@@ -6786,37 +6644,56 @@ shared_focus = {
 		has_country_flag = YUN_bai_zhu_victory
 	}
 	prerequisite = {
+		focus = YUN_Yan_10
+	}
+	mutually_exclusive = {
 		focus = YUN_Yan_12
 	}
-	prerequisite = {
-		focus = YUN_Yan_13
-	}
-	prerequisite = {
-		focus = YUN_Yan_14
-	}
+
 	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_15"
-		add_political_power = 50
-		if = {
-			limit = {
-				has_idea = YUN_qu_feng_jian3
-			}
-			swap_ideas = {
-				remove_idea = YUN_qu_feng_jian3
-				add_idea = YUN_qu_feng_jian4
-			}
-		}	
-		else_if = {
-			limit = { 
-				has_idea = YUN_qu_feng_jian2
-			}
-			swap_ideas = {
-				remove_idea = YUN_qu_feng_jian2
-				add_idea = YUN_qu_feng_jian5
-			}
-		}	
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_11"
+		swap_ideas = {
+			remove_idea = YUN_gong_he_xian_zhang_C
+			add_idea = YUN_gong_he_xian_zhang_E
+		}
 	}
 }
+
+shared_focus = {
+	id = YUN_Yan_12
+	icon = GFX_goal_YUN_Yan_12
+	relative_position_id = YUN_Yan_1
+	
+	x = -1
+	y = 6
+	cost = 5
+
+	ai_will_do = {
+		base = 75
+	}
+	available = {
+		has_country_flag = YUN_bai_zhu_victory
+	}
+	prerequisite = {
+		focus = YUN_Yan_10
+	}
+	mutually_exclusive = {
+		focus = YUN_Yan_11
+	}
+
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_12"
+		swap_ideas = {
+			remove_idea = YUN_gong_he_xian_zhang_C
+			add_idea = YUN_gong_he_xian_zhang_D
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.10
+		}
+	}
+}
+
 
 #回民
 shared_focus = {

@@ -847,15 +847,18 @@ focus_tree = {
 			id = HNN_you_ji_hua_de_jing_ji
 			icon = GFX_goal_HNN_you_ji_hua_de_jing_ji
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
-			x = -1
-			y = 2
+			x = -2
+			y = 1
 			cost = 5
 		
 			ai_will_do = {
 				base = 15
 			}
 			prerequisite = {
-				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
+				focus = HNN_peng_de_huai_jiang_ling_dao_us
+			}
+			available = {
+				has_completed_focus = HNN_jun_shi_hua_zheng_fu_bu_meng
 			}
 		
 			completion_reward = {
@@ -874,7 +877,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_nong_chun_he_zuo_she
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = -1
-			y = 3
+			y = 2
 			cost = 5
 		
 			ai_will_do = {
@@ -882,6 +885,9 @@ focus_tree = {
 			}
 			prerequisite = {
 				focus = HNN_you_ji_hua_de_jing_ji
+			}
+			prerequisite = {
+				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
 			}
 		
 			completion_reward = {
@@ -906,7 +912,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_ji_xie_hua_nong_ju
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = -1
-			y = 4
+			y = 3
 			cost = 5
 		
 			ai_will_do = {
@@ -946,7 +952,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_kuo_zhan_jiao_yu
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = -3
-			y = 3
+			y = 2
 			cost = 5
 		
 			ai_will_do = {
@@ -978,7 +984,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_jun_dui_chun_jie_hua
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = -3
-			y = 4
+			y = 3
 			cost = 5
 		
 			ai_will_do = {
@@ -1005,7 +1011,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_shi_shi_qiu_shi
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = -2
-			y = 5
+			y = 4
 			cost = 5
 		
 			ai_will_do = {
@@ -1038,15 +1044,18 @@ focus_tree = {
 			id = HNN_si_xiang_ying_ling
 			icon = GFX_goal_HNN_si_xiang_ying_ling
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
-			x = 1
-			y = 2
+			x = 2
+			y = 1
 			cost = 5
 		
 			ai_will_do = {
 				base = 15
 			}
 			prerequisite = {
-				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
+				focus = HNN_peng_de_huai_jiang_ling_dao_us
+			}
+			available = {
+				has_completed_focus = HNN_jun_shi_hua_zheng_fu_bu_meng
 			}
 		
 			completion_reward = {
@@ -1065,7 +1074,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_fa_zhan_zhong_gong_ye
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 1
-			y = 3
+			y = 2
 			cost = 5
 		
 			ai_will_do = {
@@ -1073,6 +1082,9 @@ focus_tree = {
 			}
 			prerequisite = {
 				focus = HNN_si_xiang_ying_ling
+			}
+			prerequisite = {
+				focus = HNN_jun_shi_hua_zheng_fu_bu_meng
 			}
 		
 			completion_reward = {
@@ -1099,7 +1111,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_bu_tie_you_zhi_qi_ye
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 1
-			y = 4
+			y = 3
 			cost = 5
 		
 			ai_will_do = {
@@ -1138,7 +1150,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_jun_shi_hua_qing_nan_tuan
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 3
-			y = 3
+			y = 2
 			cost = 5
 		
 			ai_will_do = {
@@ -1164,7 +1176,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_kuo_bian_chi_wei_dui
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 3
-			y = 4
+			y = 3
 			cost = 5
 		
 			ai_will_do = {
@@ -1188,7 +1200,7 @@ focus_tree = {
 			icon = GFX_goal_HNN_wu_chan_jie_ji_da_ge_ming
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 0
-			y = 5
+			y = 4
 			cost = 5
 		
 			ai_will_do = {
@@ -1223,7 +1235,7 @@ focus_tree = {
 			icon = GFX_goal_SER_Unity_or_death
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 2
-			y = 5
+			y = 4
 			cost = 5
 		
 			ai_will_do = {
@@ -1250,7 +1262,7 @@ focus_tree = {
 			icon = GFX_goal_GUA_October_Revolution
 			relative_position_id = HNN_peng_de_huai_jiang_ling_dao_us
 			x = 0
-			y = 6
+			y = 5
 			cost = 5
 		
 			ai_will_do = {

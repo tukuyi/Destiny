@@ -395,6 +395,12 @@ China_build_ROC = {#成立民国
 			}
 			set_cosmetic_tag = HNN_FJZ
 		}
+		else_if = {
+			limit = { 
+				has_country_flag = HNN_shen_bing_victory 
+			}
+			set_cosmetic_tag = HNN_PROC_H
+		}
 	}
 	else_if = {#GXC 广东
 		limit = {
@@ -578,6 +584,13 @@ China_build_ROC = {#成立民国
 			has_completed_focus = ETS_guang_zi_bei_lai
 		}
 		set_cosmetic_tag = ETS_PRC
+	}
+	else_if = {#YUN 云南 
+		limit = {
+			tag = YUN
+			has_country_flag = YUN_bai_zhu_victory
+		}
+		set_cosmetic_tag = YUN_BAI_ROC
 	}
 	else = {
 		set_cosmetic_tag = ROC

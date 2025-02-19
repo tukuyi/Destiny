@@ -13,7 +13,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 5800 y = 2000 }
+	continuous_focus_position = { x = 4800 y = 1200 }
 
 ###国民党
 	focus = {
@@ -6994,8 +6994,8 @@ focus_tree = {
 		icon = GFX_goal_KTG_Jungle_Railroad
 		cost = 4
 
-		x = 3
-		y = 10
+		x = 26
+		y = 13
 
 		ai_will_do = { base = 300 }
 
@@ -7567,8 +7567,8 @@ focus_tree = {
 		icon = GFX_goal_ANQ_rural_outreach
 		cost = 4
 
-		x = -3
-		y = 10
+		x = 20
+		y = 13
 
 		ai_will_do = { base = 300 }
 
@@ -7582,6 +7582,17 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = HNN_catastrophic_agricultural_crisis
 				add_idea = HNN_renewed_agricultural_balance
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
 			}
 			country_event = { id = hnn.5 }
 			hidden_effect = {
@@ -7635,6 +7646,17 @@ focus_tree = {
 			add_popularity = {
 				ideology = radical_socialist
 				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
 			}
 			swap_ideas = {
 				remove_idea = HNN_renewed_agricultural_balance
@@ -7760,6 +7782,17 @@ focus_tree = {
 				custom_effect_tooltip = HNN_lu_diping_helpful_tooltip
 				custom_effect_tooltip = tooltip_white_line
 			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
+			}
 			swap_ideas = {
 				remove_idea = HNN_renewed_agricultural_balance
 				add_idea = HNN_careful_agricultural_reform
@@ -7796,6 +7829,17 @@ focus_tree = {
 				uses = 1
 				category = cat_production
 			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
+			}
 			add_one_random_civilian_factory = yes
 			custom_effect_tooltip = HNN_unlock_further_agricultural_decisions
 		}
@@ -7827,6 +7871,17 @@ focus_tree = {
 			add_timed_idea = {
 				idea = HNN_peasant_councils
 				days = 120
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_one_random_military_factory = yes
 		}
@@ -7886,6 +7941,28 @@ focus_tree = {
 					category = construction_tech
 				}
 				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
+				custom_effect_tooltip = tooltip_white_line
 			}
 			add_one_random_military_factory = yes
 			custom_effect_tooltip = HNN_unlock_further_agricultural_decisions
@@ -8276,7 +8353,7 @@ focus_tree = {
 		cost = 6
 		dynamic = yes
 
-		x = 18
+		x = 8
 		y = 10
 
 		ai_will_do = {
@@ -8327,7 +8404,10 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = HNN_political_stability
-			has_completed_focus = HNN_victory_of_the_united_front
+			OR = {
+				has_completed_focus = HNN_victory_of_the_united_front
+				has_country_flag = HNN_shen_bing_victory
+			}
 		}
 		prerequisite = {
 			focus = HNN_our_provincial_army
@@ -8376,7 +8456,10 @@ focus_tree = {
 			}
 		}
 		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
+			OR = {
+				has_completed_focus = HNN_victory_of_the_united_front
+				has_country_flag = HNN_shen_bing_victory
+			}
 		}
 		prerequisite = {
 			focus = HNN_following_in_great_footsteps
@@ -8453,9 +8536,6 @@ focus_tree = {
 				add = 40
 			}
 		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
-		}
 		prerequisite = {
 			focus = HNN_arise_hunans_peasantry
 		}
@@ -8523,7 +8603,10 @@ focus_tree = {
 			}
 		}
 		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
+			OR = {
+				has_completed_focus = HNN_victory_of_the_united_front
+				has_country_flag = HNN_shen_bing_victory
+			}
 		}
 		prerequisite = {
 			focus = HNN_following_in_great_footsteps
@@ -8569,7 +8652,10 @@ focus_tree = {
 			}
 		}
 		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
+			OR = {
+				has_completed_focus = HNN_victory_of_the_united_front
+				has_country_flag = HNN_shen_bing_victory
+			}
 		}
 		prerequisite = {
 			focus = HNN_following_in_great_footsteps
@@ -8612,9 +8698,6 @@ focus_tree = {
 				has_war = yes
 				add = 40
 			}
-		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
 		}
 		prerequisite = {
 			focus = HNN_disciplined_and_motivated
@@ -8663,7 +8746,10 @@ focus_tree = {
 			}
 		}
 		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
+			OR = {
+				has_completed_focus = HNN_victory_of_the_united_front
+				has_country_flag = HNN_shen_bing_victory
+			}
 		}
 		prerequisite = {
 			focus = HNN_disciplined_and_motivated
@@ -8712,9 +8798,6 @@ focus_tree = {
 				add = 40
 			}
 		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
-		}
 		prerequisite = {
 			focus = HNN_modernised_cavalry_command
 		}
@@ -8760,9 +8843,6 @@ focus_tree = {
 				add = 40
 			}
 		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
-		}
 		prerequisite = {
 			focus = HNN_disintegrating_their_walls
 		}
@@ -8807,9 +8887,6 @@ focus_tree = {
 				has_war = yes
 				add = 40
 			}
-		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
 		}
 		prerequisite = {
 			focus = HNN_disintegrating_their_walls
@@ -8893,9 +8970,6 @@ focus_tree = {
 				has_war = yes
 				add = 40
 			}
-		}
-		available = {
-			has_completed_focus = HNN_victory_of_the_united_front
 		}
 		prerequisite = {
 			focus = HNN_luring_the_enemy_in_deep
@@ -10485,7 +10559,7 @@ focus_tree = {
 		icon = GFX_goal_HNN_ran_deng_ji_si
 		x = -11
 		y = 10
-		cost = 1
+		cost = 2
 
 		ai_will_do = {
 			base = 15
@@ -10517,11 +10591,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_san_qi_pu_du"
+			add_ideas = HNN_long_hui_yi_hui
+			custom_effect_tooltip = tooltip_white_line
 			country_event = {#三期普渡
 				id = hunsanqipudu.1
 				days = 2
 			}	
-			add_ideas = HNN_long_hui_yi_hui
 		}
 	}	
 
@@ -10544,7 +10619,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fa_dong_qun_zong"
 			add_ideas = HNN_mass_conscription_idea
 			hidden_effect = {
-				country_event = {#
+				country_event = {
 					id = hunsanqipudu.8
 					days = 30
 				}	
@@ -10643,15 +10718,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus HNN_pu_du_zong_sheng"
-			country_event = {#
-				id = hunsanqipudu.4
-				days = 2
-			}			
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_pu_du_zong_sheng"		
 			swap_ideas = {
 				remove_idea = HNN_long_hui_yi_hui
 				add_idea = HNN_long_hui_er_hui
 			} 
+			country_event = {
+				id = hunsanqipudu.4
+				days = 2
+			}	
 		}
 	}		
 
@@ -10708,8 +10783,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_long_duan_shi_jing_quan"
 			add_stability = 0.05
 			add_war_support = 0.05
-			add_research_slot = 1 
-			country_event = {#
+			custom_effect_tooltip = tooltip_white_line
+			add_research_slot_until_five = yes
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
 				id = hunsanqipudu.5
 				days = 2
 			}
@@ -10824,5 +10901,284 @@ focus_tree = {
 				days = 2
 			}
 		}
+	}	
+#红色神兵
+	focus = {
+		id = HNN_hong_se_shen_bing
+		icon = GFX_goal_HNN_hong_se_shen_bing
+		x = -4
+		y = 10
+		cost = 2
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_hong_se_shen_bing"
+
+		}
 	}		
+	
+	focus = {
+		id = HNN_fen_hui_di_qi
+		icon = GFX_goal_HNN_fen_hui_di_qi
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 0
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_hong_se_shen_bing
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_fen_hui_di_qi"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_zheng_bian_yi_qie_li_liang
+		icon = GFX_goal_HNN_zheng_bian_yi_qie_li_liang
+		relative_position_id = HNN_hong_se_shen_bing
+		x = -1
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_fen_hui_di_qi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_zheng_bian_yi_qie_li_liang"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_zhu_mie_wan_mo
+		icon = GFX_goal_HNN_zhu_mie_wan_mo
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 1
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_fen_hui_di_qi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhu_mie_wan_mo"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_lem_shui_pao_cha
+		icon = GFX_goal_HNN_lem_shui_pao_cha
+		relative_position_id = HNN_hong_se_shen_bing
+		x = -2
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_zhu_mie_wan_mo
+		}
+		prerequisite = {
+			focus = HNN_zheng_bian_yi_qie_li_liang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_lem_shui_pao_cha"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_ge_ming_jiu_dei
+		icon = GFX_goal_HNN_ge_ming_jiu_dei
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 2
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_zhu_mie_wan_mo
+		}
+		prerequisite = {
+			focus = HNN_zheng_bian_yi_qie_li_liang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_jiu_dei"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_shen_bing_dang_yuan
+		icon = GFX_goal_HNN_shen_bing_dang_yuan
+		relative_position_id = HNN_hong_se_shen_bing
+		x = -1
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_lem_shui_pao_cha
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_shen_bing_dang_yuan"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_xin_yang_gai_zao
+		icon = GFX_goal_HNN_xin_yang_gai_zao
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 1
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_ge_ming_jiu_dei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_yang_gai_zao"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_zheng_zhi_su_fan
+		icon = GFX_goal_HNN_zheng_zhi_su_fan
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 0
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_zhu_mie_wan_mo
+		}
+		prerequisite = {
+			focus = HNN_zheng_bian_yi_qie_li_liang
+		}
+		available = {
+			has_completed_focus = HNN_shen_bing_dang_yuan
+			has_completed_focus = HNN_xin_yang_gai_zao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_zheng_zhi_su_fan"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_tian_ye_hong_lai
+		icon = GFX_goal_HNN_tian_ye_hong_lai
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 0
+		y = 5
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_zheng_zhi_su_fan
+		}
+		prerequisite = {
+			focus = HNN_xin_yang_gai_zao
+		}
+		prerequisite = {
+			focus = HNN_shen_bing_dang_yuan
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_tian_ye_hong_lai"
+
+		}
+	}	
+
+	focus = {
+		id = HNN_jiu_si_le_xin_ye_hong
+		icon = GFX_goal_HNN_jiu_si_le_xin_ye_hong
+		relative_position_id = HNN_hong_se_shen_bing
+		x = 0
+		y = 6
+		cost = 5
+
+		ai_will_do = {
+			base = 15
+		}
+		available = {
+			has_country_flag = HNN_shen_bing_victory
+		}
+		prerequisite = {
+			focus = HNN_tian_ye_hong_lai
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_tian_ye_hong_lai"
+
+		}
+	}
 }

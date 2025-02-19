@@ -1484,7 +1484,7 @@ country_event = {#俄国难民
 country_event = {#难民问题
 	id = Shcgong.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcgong.9" }
-	picture = GFX_report_event_SHC_nan_min_wen_ti
+	picture = GFX_report_event_SHC_nan_ming_wen_ti
 	title = Shcgong.9.t
 	desc = Shcgong.9.d
 
@@ -2215,6 +2215,7 @@ country_event = {#自由王国
 		}
 	}
 }
+
 ########################################
 ##########-      教会      -############
 ########################################

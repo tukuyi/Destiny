@@ -4438,6 +4438,10 @@ HNN_PROC = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }
 }
+HNN_PROC_H = {
+	color = rgb { 222 41 16 }
+	color_ui = rgb { 222 41 16 }
+}
 HNN_PROC_M = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }
@@ -4919,6 +4923,10 @@ YUN_TIB = {
 YUN_MG = {
 	color = rgb { 0 155 57 }
 	color_ui = rgb { 0 155 57 }
+}
+YUN_BAI_ROC = {
+	color = rgb { 222 20 16 }
+	color_ui = rgb { 222 20 16 }
 }
 #大清
 QIE_RUS = {

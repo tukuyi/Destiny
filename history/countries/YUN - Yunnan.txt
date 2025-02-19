@@ -153,6 +153,12 @@ YUN_chen_cheng = {
 	retire = yes
 }
 
+recruit_character = YUN_Yan_zi_zen
+
+YUN_Yan_zi_zen = {
+	retire = yes
+}
+
 create_country_leader = {
 	name = "Wang Fusheng"
 	desc = "POLITICS_YUNNAN_WANG_FUSHENG_DESC"

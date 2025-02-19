@@ -33,6 +33,7 @@ focus_tree = {
 	shared_focus = YUN_initial_stabilization
 	shared_focus = YUN_the_mountain_economy
 	shared_focus = YUN_hui_ming_duo_quan
+	shared_focus = YUN_Yan_1
 }
 
 focus_tree = {

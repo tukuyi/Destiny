@@ -1,0 +1,65 @@
+Shang_hai_war_to_other = {
+	allowed = {
+		original_tag = SHC
+	}
+	enable = {
+		OR = {
+			AND = {
+				CHI = {
+					exists = yes
+				}
+				has_wargoal_against = CHI
+			}
+			AND = {
+				LEP = {
+					exists = yes
+				}
+				has_wargoal_against = LEP
+			}
+			has_wargoal_against = QIE
+			has_wargoal_against = FNG
+		}
+	}
+	abort = {
+		has_war = no
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = CHI
+		value = 0
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = LEP
+		value = 0
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = FNG
+		value = 0
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = QIE
+		value = 0
+	}
+}
+
+shang_hai_dont_declare_multiple_wars = {
+	allowed = {
+		original_tag = SHC
+	}
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = avoid_starting_wars
+		value = -300
+	}
+}

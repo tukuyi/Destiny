@@ -10968,6 +10968,7 @@ country_event = {#打下蒙古
 
 	trigger = {
 		tag = YUN
+		has_country_flag = YUN_hui_victory
 		owns_state = 330
 		MON = {
 			exists = no 
@@ -11687,59 +11688,42 @@ country_event = {#打平-缅甸
 	}
 }
 
-#白族
+########################################
+##########-       白族     -############
+########################################
 country_event = {#过渡
 	id = yunyan.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.1" }
-	picture = GFX_news_event_YUN_Nice_Tang
 	title = yunyan.1.t 
-	desc = {
-		text = yunyan.1.d.chongqing
-		trigger = {
-			owns_state = 605
-		}
-	}
+	desc = yunyan.1.d
 
-	desc = {
-		text = yunyan.1.d.guangzhou
-		trigger = {
-			owns_state = 592
-		}
-	}
-
-	desc = {
-		text = yunyan.1.d.changsha
-		trigger = {
-			owns_state = 602
-		}
-	}
-
-	trigger = {
-		tag = YUN
-		has_country_flag = YUN_larp
-		OR = {
-			owns_state = 592
-			owns_state = 605
-			owns_state = 602
-		}
-	}
-
+	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
 		name = yunyan.1.a
+		add_political_power = 5
+	}
+
+	option = {
+		name = yunyan.1.b
+		trigger = {
+			is_ai = no
+		}
+		add_stability = 0.01
 		hidden_effect = {
 			country_event = {
 				id = yunyan.2
-				days = 30
+				days = 5
 			}
 		}
 	}
 }
 
-country_event = {#国库告急
+country_event = {#鸿门宴
 	id = yunyan.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.2" }
+	picture = GFX_news_event_YUN_yan_zi_zeng
 	title = yunyan.2.t 
 	desc = yunyan.2.d
 
@@ -11748,38 +11732,36 @@ country_event = {#国库告急
 	
 	option = {
 		name = yunyan.2.a
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = YUN_path
-					option = YUN_larp_rule
-				}
-			}
+		YUN_zhu_peide = {
+			retire = yes
 		}
-		add_stability = -0.20
-		hidden_effect = {
-			country_event = {
-				id = yunyan.3
-				days = 30
-			}
-		}
-	}
 
-	option = {
-		name = yunyan.2.b
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = YUN_path
-					option = YUN_bai_rule
-				}
+		YUN_Yan_zi_zen = {
+			set_nationality = ROOT
+			promote_character = yes
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name =  YUN_authoritarian_democrat_party_BAI_long
+			name =  YUN_authoritarian_democrat_party_BAI
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		set_country_flag = YUN_bai_zhu_victory
+		remove_all_ministers = yes
+		add_ideas = {
+			YUN_Yan_Zi_hog
+			YUN_Bao_Chen_for
+			YUN_Yan_Chen_sec
+			YUN_Dong_Nong_eco
+		}
+		hidden_effect = {
+			set_capital = {
+				state = 816
 			}
 		}
-		add_political_power = 10
 	}
 }
 
@@ -11796,34 +11778,13 @@ country_event = {#讨唐
 	option = {
 		name = yunyan.3.a
 		clr_country_flag = YUN_larp
-		set_country_flag = YUN_bai_zhu_victory
+		
 		set_cosmetic_tag = YUN_BAI
 		YUN_tang_jiyao = {
 			retire = yes
 		}
-		create_country_leader = {
-			name = "YUN_BAI_Yan_zi_zen"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = soclib_humanistic_capitalism_subtype
-		}
-		set_party_name = {
-			ideology = social_liberal
-			long_name =  YUN_social_liberal_party_BAI_long
-			name =  YUN_social_liberal_party_BAI
-		}
-		set_politics = {
-			ruling_party = social_liberal
-			elections_allowed = no
-		}
-		remove_all_ministers = yes
-		add_ideas = {
-			YUN_Yan_Zi_hog
-			YUN_Bao_Chen_for
-			YUN_Yan_Chen_sec
-			YUN_Dong_Nong_eco
-		}
+
+
 	}
 }
 
@@ -12024,235 +11985,6 @@ country_event = {#溥仪回信.2
 
 	option = {#
 		name = yunyan.10.b
-		add_political_power = -100
-	}
-}
-
-country_event = {#国民党政策
-	id = yunyan.11
-	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.11" }
-	title = yunyan.11.t 
-	desc = yunyan.11.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {
-		name = yunyan.11.a
-		trigger = {
-			has_completed_focus = YUN_Yan_5
-			NOT = {
-				has_completed_focus = YUN_Yan_8
-			}
-		}
-		add_equipment_to_stockpile = {
-			type = infantry_equipment_0
-			amount = -1200
-			producer = YUN
-		}
-		country_event = {
-			id = yunyan.12
-			days = 3
-		}
-	}
-
-	option = {
-		name = yunyan.11.b
-		trigger = {
-			has_completed_focus = YUN_Yan_8
-			NOT = {
-				has_completed_focus = YUN_Yan_5
-			}
-			FRA = {
-				exists = yes
-			}
-		}
-		add_command_power = -20
-		country_event = {
-			id = yunyan.13
-			days = 3
-		}
-	}
-
-	option = {
-		name = yunyan.11.c
-		trigger = {
-			has_completed_focus = YUN_Yan_8
-			NOT = {
-				has_completed_focus = YUN_Yan_5
-			}
-			FRA = {
-				exists = no
-			}
-		}
-		add_command_power = -20
-		country_event = {
-			id = yunyan.14
-			days = 3
-		}
-	}
-
-	option = {
-		name = yunyan.11.e
-		add_political_power = -100
-	}
-}
-
-country_event = {#一触即溃
-	id = yunyan.12
-	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.12" }
-	title = yunyan.12.t 
-	desc = yunyan.12.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#
-		name = yunyan.12.a
-		add_manpower = -1200
-		add_command_power = -20
-		add_ideas = YUN_wen_ding_de_zheng_fu
-	}
-}
-
-country_event = {#致汪兆铭
-	id = yunyan.13
-	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.13" }
-	title = yunyan.13.t 
-	desc = yunyan.13.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#
-		name = yunyan.13.a
-		country_event = {
-			id = yunyan.14
-			days = 3
-		}
-	}
-
-	option = {#
-		name = yunyan.13.b
-		country_event = {
-			id = yunyan.15
-			days = 3
-		}
-	}
-}
-
-country_event = {#香山会议
-	id = yunyan.14
-	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.14" }
-	title = yunyan.14.t 
-	desc = yunyan.14.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#
-		name = yunyan.14.a
-		trigger = {
-			has_completed_focus = YUN_Yan_8
-			NOT = {
-				has_completed_focus = YUN_Yan_5
-			}
-		}
-		add_political_power = 75
-		add_ideas = YUN_wen_ding_de_zheng_fu
-		set_party_name = {
-			ideology = social_democrat
-			long_name =  YUN_social_democrat_party_BAI_long
-			name =  YUN_social_democrat_party_BAI
-		}
-		create_country_leader = {
-			name = "宋庆龄"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = social_democrat_subtype
-		}
-		set_party_name = {
-			ideology = radical_socialist
-			long_name =  YUN_radical_socialist_party_BAI_long
-			name =  YUN_radical_socialist_party_BAI
-		}
-		create_country_leader = {
-			name = "汪兆铭"
-			desc = "POLITICS_YUNNAN_YAN_DESC"
-			picture = "gfx/leaders/YUN/Portrait_YUN_Yan.png"
-			expire = "1.1.1"
-			ideology = radical_socialist_subtype
-		}
-	}
-
-	option = {#
-		name = yunyan.14.b
-		trigger = {
-			OR = {
-				AND = {
-					has_completed_focus = YUN_Yan_5
-					has_completed_focus = YUN_Yan_8
-				}
-				NOT = {
-					has_completed_focus = YUN_Yan_5
-					has_completed_focus = YUN_Yan_8
-				}
-			}
-		}
-		add_political_power = -25
-		add_ideas = YUN_wen_ding_de_zheng_fu
-		add_popularity = {
-			ideology = social_democrat
-			popularity = 0.10
-		}
-		add_popularity = {
-			ideology = radical_socialist
-			popularity = 0.10
-		}
-		add_stability = 0.10
-	}
-
-	option = {#
-		name = yunyan.14.c
-		trigger = {
-			has_completed_focus = YUN_Yan_5
-			NOT = {
-				has_completed_focus = YUN_Yan_8
-			}
-		}
-		add_political_power = -100
-		country_event = {
-			id = yunyan.15
-			days = 3
-		}
-	}
-}
-
-country_event = {#致汪兆铭
-	id = yunyan.15
-	immediate = { log = "[GetDateText]: [Root.GetName]: event yunyan.15" }
-	title = yunyan.15.t 
-	desc = yunyan.15.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#
-		name = yunyan.15.a
-		add_equipment_to_stockpile = {
-			type = infantry_equipment_0
-			amount = -1200
-			producer = YUN
-		}
-		country_event = {
-			id = yunyan.12
-			days = 3
-		}
-	}
-
-	option = {#
-		name = yunyan.15.b
 		add_political_power = -100
 	}
 }

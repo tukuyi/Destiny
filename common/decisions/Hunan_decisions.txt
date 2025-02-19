@@ -480,6 +480,36 @@ HNN_revolution_category = {#革命之火
 			}
 		}
 	}
+	HNN_shen_bing_revolution = {#神兵起义
+		icon = GFX_decision_category_killlibs
+		allowed = { always = no }
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		cancel_trigger = {
+			has_country_flag = HNN_finished_agricultural_reforms
+		}
+
+		modifier = {
+			weekly_manpower = -500
+			stability_weekly = -0.05
+			stability_factor = -0.10
+		}
+		days_mission_timeout = 120
+		is_good = yes
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_shen_bing_revolution"
+			
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout HNN_shen_bing_revolution target: [From.GetName]"
+
+		}
+	}	
 }
 
 HNN_elections_category = {#选举
@@ -1676,7 +1706,7 @@ HNN_foreign_category = {#中国结盟决议
 }
 
 HNN_financial_recovery_category = {#我们的黑色星期一困境
-	HNN_agricultural_reform_mission_timer = { #Agriculture Timer
+	HNN_agricultural_reform_mission_timer = { #农村改革
 		allowed = {
 			always = no
 		}
@@ -1750,16 +1780,28 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cancel_if_not_visible = no
 		ai_will_do = { factor = 25 }
 		cost = 50
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_maintain_order_in_countryside"
-		}
 		days_remove = 60
+
 		modifier = {
 			command_power_gain = -0.2
 			stability_weekly = 0.0050
 			weekly_manpower = -500
 			civilian_factory_use = 1
 		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_maintain_order_in_countryside"
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
+		}
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_maintain_order_in_countryside"
 			add_manpower = 200
@@ -1794,14 +1836,26 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cancel_if_not_visible = no
 		ai_will_do = { factor = 25 }
 		cost = 50
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_emphasising_cooperation"
-		}
 		days_remove = 60
+		
 		modifier = {
 			political_power_gain = -0.10
 			civilian_factory_use = 1
 		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_emphasising_cooperation"
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
+		}
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_emphasising_cooperation"
 			if = {
