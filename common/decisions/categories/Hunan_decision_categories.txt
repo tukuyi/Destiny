@@ -53,7 +53,7 @@ HNN_revolution_category = {#革命之火
 	icon = GFX_decision_cat_caf_rebelion
 	priority = 110
 
-	allowed = { always = no }
+	allowed = { original_tag = HNN }
 }
 
 HNN_financial_recovery_category = {#我们的黑色星期一困境

@@ -11,21 +11,12 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect PRF = {
-		# 	create_country_leader = {
-		# 		name = "纺织机"
-		# 		picture = "gfx/leaders/GXC/Portrait_GXC_fan_zheng_jiu_shi_zhe.png"
-		# 		expire = "1.1.1"
-		# 		ideology = pataut_ancap_subtype
+		# eval_effect HNN = {
+		# 	add_days_mission_timeout = {
+		# 		mission = HNN_shen_bing_revolution
+		# 		days = -70
 		# 	}
 		# }
-
-		set_country_flag = QIE_wang_kemin_eco_2_flag
-		if = {
-			limit = { has_idea = QIE_wang_kemin_eco }
-			hidden_effect = { remove_ideas = QIE_wang_kemin_eco }
-			add_ideas = QIE_wang_kemin_eco_2
-		}	
 
 		# if = {
 		# 	limit = { 

@@ -255,8 +255,8 @@ ideas = {
 			name = YUN_gong_he_xian_zhang
 			allowed = { always = no }
             modifier = {
-				stability_weekly = 0.05
 				stability_factor = 0.15
+				stability_weekly = 0.10
 				non_core_manpower = 0.10
 				war_support_factor = 0.15
 				political_power_gain = -0.20
@@ -1989,7 +1989,7 @@ ideas = {
 
 			allowed = { always = no }
             modifier = {
-				stability_weekly = -0.05
+				stability_weekly = -0.005
 				political_power_gain = -0.50
 			}
 		}
@@ -2036,7 +2036,7 @@ ideas = {
 
 			allowed = { always = no }
             modifier = {
-				stability_weekly = -0.05
+				stability_weekly = -0.005
 				political_power_gain = -0.50
 			}
 		}

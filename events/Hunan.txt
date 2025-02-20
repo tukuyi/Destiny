@@ -19,6 +19,7 @@ add_namespace = hnnzhili
 add_namespace = hnnwar
 add_namespace = hnnelection
 add_namespace = hnntanyankai
+add_namespace = hnnshenbing
 
 ########################################
 ########-       开局          -#########
@@ -6576,6 +6577,359 @@ country_event = {#柳幸福的一天
 }
 
 ########################################
+##########-      神兵      -############
+########################################
+country_event = {#湘西暴动
+	id = hnnshenbing.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.1" }
+	title = hnnshenbing.1.t
+	desc = hnnshenbing.1.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.1.a
+		custom_effect_tooltip = HNN_shen_bing_victory_tt
+		hidden_effect = {
+			set_cosmetic_tag = HNN_GT
+			set_politics = {
+				ruling_party = totalist
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.40
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.10
+			}
+			add_ideas = HNN_sabotaged_industry
+			add_natpop_to_coalition = yes
+			set_country_flag = HNN_shen_bing_victory
+			if = {
+				limit = { 
+					CHI = {
+						has_character = HNN_he_long
+					}
+				}
+				HNN_he_long = {
+					set_nationality = ROOT
+					promote_leader = yes
+					set_portraits = {
+						civilian = {
+							large = GFX_Portrait_Hunan_He_Long_shen_bing
+						}
+					}
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_HE_LONG_SHEN_BING_DESC
+							ideology = comrades_coast_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				HNN_he_long = {
+					set_nationality = ROOT
+					promote_leader = yes
+					set_portraits = {
+						civilian = {
+							large = GFX_Portrait_Hunan_He_Long_shen_bing
+						}
+					}
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_HE_LONG_SHEN_BING_DESC
+							ideology = comrades_coast_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			HNN_geng_biao = { HNN_recruit_characters_effect = yes }
+			HNN_Xu_Si_You = { HNN_recruit_characters_effect = yes }
+			HNN_geng_biao = { HNN_recruit_characters_effect = yes }
+			HNN_Yuan_Wen_Cai = { HNN_recruit_characters_effect = yes }
+			set_party_name = {
+				ideology = totalist
+				long_name = HNN_totalist_party_shen_long_long
+				name = HNN_totalist_party_shen_long
+			}
+			set_party_name = {
+				ideology = national_populist
+				long_name = HNN_national_populist_party_shen_long_long
+				name = HNN_national_populist_party_shen_long
+			}
+
+			retire_character = HNN_tang_xiangming
+			retire_character = HNN_yuan_zuming
+			retire_character = HNN_chen_quzhen
+			retire_character = HNN_tian_yingzhao
+			retire_character = HNN_ye_kaixin
+			retire_character = HNN_zhao_hengti
+		
+			if = {
+				limit = { has_character = SQI_lu_jin }
+				retire_character = SQI_lu_jin
+			}
+			if = {
+				limit = { has_character = SQI_zhang_jingyao }
+				retire_character = SQI_zhang_jingyao
+			}
+			if = {
+				limit = { NOT = { has_global_flag = QIE_manchu_restoration } }
+				QIE = { country_event = { id = qiefor.141 days = 3 } }
+			}
+			else_if = {
+				limit = { SZC = { is_ruled_by_pro_zhili = yes } }
+				random_unit_leader = {
+					limit = { is_character = HNN_tang_xiangming }
+					set_nationality = SZC
+					unit_leader_event = qieflavor.14
+				}
+				if = {
+					limit = { 
+						has_character = SQI_lu_jin 
+					}
+					random_unit_leader = {
+						limit = { is_character = SQI_lu_jin }
+						set_nationality = SZC
+						unit_leader_event = qieflavor.14
+					}
+				}
+				if = {
+					limit = { 
+						has_character = SQI_lu_jin 
+					}
+					random_unit_leader = {
+						limit = { is_character = SQI_lu_jin }
+						set_nationality = SZC
+						unit_leader_event = qieflavor.14
+					}
+				}
+			}
+			QIE_ma_dengying_flees_effect = yes
+
+			set_party_name ={
+				ideology = paternal_autocrat
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+		}
+	}
+}
+country_event = {#神兵
+	id = hnnshenbing.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.2" }
+	title = hnnshenbing.2.t
+	desc = hnnshenbing.2.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.2.a
+		add_stability = -0.01
+		add_political_power = 10
+		hidden_effect = {
+			country_event = { 
+				id = hnnshenbing.3
+				days = 15
+			}
+			country_event = { 
+				id = hnnshenbing.4
+				days = 25
+			}
+		}
+	}
+}
+country_event = {#花萼山抗税
+	id = hnnshenbing.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.3" }
+	title = hnnshenbing.3.t
+	desc = hnnshenbing.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.3.a
+		ai_chance = {
+			base = 5
+		}
+		if = {
+			limit = {
+				has_active_mission = HNN_shen_bing_revolution
+			}
+			add_days_mission_timeout = {
+				mission = HNN_shen_bing_revolution
+				days = -10
+			}
+		}
+	}
+
+	option = {
+		name = hnnshenbing.3.b
+		ai_chance = {
+			base = 20
+		}
+		if = {
+			limit = {
+				has_active_mission = HNN_shen_bing_revolution
+			}
+			add_days_mission_timeout = {
+				mission = HNN_shen_bing_revolution
+				days = 10
+			}
+		}
+	}
+}
+country_event = {#高罗神兵
+	id = hnnshenbing.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.4" }
+	title = hnnshenbing.4.t
+	desc = hnnshenbing.4.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.4.a
+		add_stability = 0.01
+		if = {
+			limit = {
+				has_active_mission = HNN_shen_bing_revolution
+			}
+			add_days_mission_timeout = {
+				mission = HNN_shen_bing_revolution
+				days = 5
+			}
+		}
+	}
+}
+country_event = {#审判
+	id = hnnshenbing.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.5" }
+	title = hnnshenbing.5.t
+	desc = hnnshenbing.5.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.5.a
+		remove_authdem_from_coalition = yes
+		remove_natpop_from_coalition = yes
+		HNN_he_long = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_Hunan_He_Long_victory
+				}
+			}
+			add_country_leader_role = {
+				country_leader = {
+					desc = POLITICS_HNN_HE_LONG_SHEN_BING_DESC
+					ideology = authcom_subtype
+				}
+				promote_leader = yes
+			}
+		}
+		hidden_effect = {
+			HNN_long_yunfei = {
+				retire = yes
+			}
+			remove_ideas = HNN_sabotaged_industry
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.5
+			}
+			set_party_name = {
+				ideology = totalist
+				long_name = HNN_totalist_party_shen_long_vic_long
+				name = HNN_totalist_party_shen_long_vic
+			}
+			set_party_name ={
+				ideology = authoritarian_democrat
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+			set_party_name ={
+				ideology = national_populist
+				long_name = SHC_totalist_party_PLE_long
+				name = SHC_totalist_party_PLE
+			}
+		}
+	}
+}
+country_event = {#高罗神兵
+	id = hnnshenbing.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.6" }
+	title = hnnshenbing.6.t
+	desc = hnnshenbing.6.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.6.a
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.01
+		}
+		hidden_effect = {
+			country_event = { 
+				id = hnnshenbing.7
+				days = 15
+			}
+		}
+	}
+}
+country_event = {#从来没有什么救世主
+	id = hnnshenbing.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.7" }
+	title = hnnshenbing.7.t
+	desc = hnnshenbing.7.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.7.a
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.01
+		}
+	}
+}
+country_event = {#农会纲领
+	id = hnnshenbing.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnnshenbing.8" }
+	title = hnnshenbing.8.t
+	desc = hnnshenbing.8.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hnnshenbing.8.a
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.01
+		}
+	}
+}
+
+########################################
 ##########-      工团      -############
 ########################################
 country_event = { 
@@ -6785,6 +7139,10 @@ country_event = {#革命成功
 		}
 		hidden_effect = {
 			activate_mission = HNN_shen_bing_revolution
+			country_event = { 
+				id = hnnshenbing.2
+				days = 5
+			}
 			if = {
 				limit = { 
 					has_country_leader = { name = "赵恒惕" ruling_only = yes }

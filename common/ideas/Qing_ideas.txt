@@ -1058,8 +1058,8 @@ ideas = {
 			picture = GXC_federal_authority_5
 			modifier = {
 				surrender_limit = 0.20
-				stability_weekly = 0.05
 				stability_factor = 0.10
+				stability_weekly = 0.005
 				war_support_factor = -0.05
 				war_stability_factor = 0.05
 				social_conservative_drift = 0.02
@@ -1071,8 +1071,8 @@ ideas = {
 			picture = generic_leadership_via_unions
             modifier = {
 				surrender_limit = 0.20
-				stability_weekly = 0.05
 				stability_factor = -0.05
+				stability_weekly = 0.005
 				war_support_factor = 0.10
 				social_conservative_drift = 0.02
 			}
@@ -3497,7 +3497,7 @@ ideas = {
 				political_power_gain = 0.2
 				party_popularity_stability_factor = 0.1
 				war_stability_factor = 0.15
-				stability_weekly = 0.05
+				stability_weekly = 0.005
 				army_attack_factor = 0.05
 			}
 		}

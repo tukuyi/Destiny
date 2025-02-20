@@ -7868,10 +7868,12 @@ focus_tree = {
 			1013 = { increase_state_category_by_one_level = yes }
 			1052 = { increase_state_category_by_one_level = yes }
 			602 = { increase_state_category_by_one_level = yes }
+			custom_effect_tooltip = tooltip_white_line
 			add_timed_idea = {
 				idea = HNN_peasant_councils
 				days = 120
 			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
 					has_active_mission = HNN_shen_bing_revolution
@@ -7921,6 +7923,7 @@ focus_tree = {
 				add_stability = 0.05
 				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
 			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
 					has_idea = HNN_zhou_shizhao_sec
@@ -7942,6 +7945,7 @@ focus_tree = {
 				}
 				custom_effect_tooltip = HNN_zhou_shizhao_helpful_tooltip
 			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
 					has_active_mission = HNN_shen_bing_revolution
@@ -10919,7 +10923,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_hong_se_shen_bing"
-
+			add_country_leader_trait = HNN_huo_long 
 		}
 	}		
 	
@@ -10943,7 +10947,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fen_hui_di_qi"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_agricultural_reform_mission_timer
+				}
+				add_days_mission_timeout = {
+					mission = HNN_agricultural_reform_mission_timer
+					days = -50
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_war_support = 0.05
+			add_ideas = HNN_revolution_in_the_countryside_he_idea
 		}
 	}	
 
@@ -10967,7 +10982,35 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zheng_bian_yi_qie_li_liang"
-
+			HNN_long_yunfei = { HNN_recruit_characters_effect = yes }
+			HNN_dai_jitao = { HNN_recruit_characters_effect = yes }
+			HNN_jiang_chuou = { HNN_recruit_characters_effect = yes }
+			HNN_tao_zhiyue = { HNN_recruit_characters_effect = yes }
+			HNN_gong_xian = { HNN_recruit_characters_effect = yes }
+			HNN_Xia_Dou_Ying = { HNN_recruit_characters_effect = yes }
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_authdem_to_coalition = yes
+			hidden_effect = {
+				set_party_name ={
+					ideology = authoritarian_democrat
+					long_name = HNN_paternal_autocrat2_party_long
+					name = HNN_paternal_autocrat2_party
+				}
+			}
 		}
 	}	
 
@@ -10991,7 +11034,72 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhu_mie_wan_mo"
-
+			if = {#四川
+				limit = {
+					OR = {
+						can_declare_war_on = SZC
+						has_war_with = SZC
+					}
+				}
+				add_timed_idea = {
+					idea = HNN_attack_fed_SZC_idea
+					days = 360
+				}
+				if = {
+					limit = {
+						can_declare_war_on = SZC
+					}
+					activate_targeted_decision = { target = SZC decision = china_attack_decision }
+				}
+			}
+			if = {
+				limit = { 
+					NOT = {
+						YUN = {
+							is_puppet_of = HNN
+						}
+					}
+					OR = {
+						can_declare_war_on = YUN
+						has_war_with = YUN
+					}
+				}
+				add_timed_idea = {
+					idea = HNN_attack_fed_YUN_idea
+					days = 360
+				}
+				if = {
+					limit = {
+						can_declare_war_on = YUN
+					}
+					activate_targeted_decision = { target = YUN decision = china_attack_decision }
+				}
+			}
+			if = {
+				limit = { 
+					has_global_flag = GXC_civil_war_over
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = var:592.owner
+				 }
+				 create_wargoal = {
+					type = annex_everything
+					target = var:594.owner
+				 }
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_attack_fed_GXC_idea
+					days = 360
+				}
+				if = {
+					limit = {
+						can_declare_war_on = GXC
+					}
+					activate_targeted_decision = { target = GXC decision = china_attack_decision }
+				}
+			}
 		}
 	}	
 
@@ -11018,7 +11126,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_lem_shui_pao_cha"
-
+			swap_ideas = {
+				remove_idea = HNN_revolution_in_the_countryside_he_idea
+				add_idea = HNN_revolution_in_the_countryside_he_idea_B
+			}
+			country_event = { 
+				id = hnnshenbing.8
+				days = 3
+			}
 		}
 	}	
 
@@ -11045,7 +11160,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_ge_ming_jiu_dei"
-
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.05
+			}
+			add_country_leader_trait = HNN_he_qing_tian 
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = hnnshenbing.6
+				days = 3
+			}
 		}
 	}	
 
@@ -11069,7 +11193,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_shen_bing_dang_yuan"
-
+			swap_ideas = {
+				remove_idea = HNN_revolution_in_the_countryside_he_idea_B
+				add_idea = HNN_revolution_in_the_countryside_he_idea_C
+			}
 		}
 	}	
 
@@ -11093,7 +11220,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_yang_gai_zao"
-
+			add_ideas = HNN_chu_mo_dang_kou
 		}
 	}	
 
@@ -11103,7 +11230,7 @@ focus_tree = {
 		relative_position_id = HNN_hong_se_shen_bing
 		x = 0
 		y = 3
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			base = 15
@@ -11124,7 +11251,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zheng_zhi_su_fan"
-
+			country_event = { 
+				id = hnnshenbing.5
+				days = 3
+			}
 		}
 	}	
 
@@ -11154,7 +11284,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_tian_ye_hong_lai"
-
+			swap_ideas = {
+				remove_idea = HNN_chu_mo_dang_kou
+				add_idea = HNN_chu_mo_dang_kou_B
+			}
 		}
 	}	
 
@@ -11178,7 +11311,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_tian_ye_hong_lai"
-
+			swap_ideas = {
+				remove_idea = HNN_chu_mo_dang_kou_B
+				add_idea = HNN_chu_mo_dang_kou_C
+			}
 		}
 	}
 }

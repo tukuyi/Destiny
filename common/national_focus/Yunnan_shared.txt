@@ -6334,6 +6334,15 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_Yan_2"
 		country_event = yun.45
+		custom_effect_tooltip = tooltip_white_line
+		add_soccon_to_coalition = yes
+		hidden_effect = {
+			set_party_name = {
+				ideology = social_conservative
+				long_name = YUN_social_conservative_bai_party
+				name = YUN_social_conservative_bai_party_long
+			}
+		}
 	}
 }
 
@@ -6482,6 +6491,11 @@ shared_focus = {
 		swap_ideas = {
 			remove_idea = YUN_bao_jin_an_ming
 			add_idea = YUN_bao_jin_an_ming_B
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 2000
+			producer = YUN
 		}
 	}
 }

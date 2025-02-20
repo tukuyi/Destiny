@@ -489,14 +489,13 @@ HNN_revolution_category = {#革命之火
 		}
 
 		cancel_trigger = {
-			has_country_flag = HNN_finished_agricultural_reforms
+			OR = {
+				has_country_flag = HNN_finished_agricultural_reforms
+				has_country_flag = HNN_gong_tuan_victory_flag
+				has_country_leader = { name = "石顶武" ruling_only = yes }
+			}
 		}
 
-		modifier = {
-			weekly_manpower = -500
-			stability_weekly = -0.05
-			stability_factor = -0.10
-		}
 		days_mission_timeout = 120
 		is_good = yes
 
@@ -507,9 +506,55 @@ HNN_revolution_category = {#革命之火
 
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout HNN_shen_bing_revolution target: [From.GetName]"
-
+			country_event = { 
+				id = hnnshenbing.1
+				days = 3
+			}
 		}
 	}	
+	HNN_zu_zhi_wei_jiao = {#组织围剿
+		icon = GFX_decision_hand_grab
+
+		visible = {
+			has_active_mission = HNN_shen_bing_revolution
+		}
+
+		ai_will_do = { factor = 25 }
+		cost = 40
+		days_remove = 30
+		days_re_enable = 60
+
+		modifier = {
+			political_power_gain = 0.10
+			war_support_weekly = 0.0075
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_strike_against_landowners"
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 10
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_strike_against_landowners"
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 25
+				}
+			}
+		}
+	}
 }
 
 HNN_elections_category = {#选举
@@ -1904,14 +1949,26 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cancel_if_not_visible = no
 		ai_will_do = { factor = 25 }
 		cost = 50
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_limited_redistribution"
-		}
 		days_remove = 100
+
 		modifier = {
 			political_power_gain = -0.1
 			stability_weekly = -0.005
 		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_limited_redistribution"
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 30
+				}
+			}
+		}
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_limited_redistribution"
 			if = {
@@ -1947,7 +2004,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_strike_against_landowners"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 60
 		modifier = {
@@ -1990,7 +2055,6 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 				amount = -500
 				producer = HNN
 			}
-			custom_effect_tooltip = tooltip_white_line
 		}
 	}
 	HNN_supporting_non_compliance = {#支持不合作运动
@@ -2010,7 +2074,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_supporting_non_compliance"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 60
 		modifier = {
@@ -2058,7 +2130,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_reducing_gentry_control"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 60
 		modifier = {
@@ -2095,7 +2175,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_seizing_estates"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 100
 		modifier = {
@@ -2152,7 +2240,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_cheap_credit"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 60
 		modifier = {
@@ -2221,7 +2317,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_maintaining_proper_irrigation"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 30
 		modifier = {
@@ -2258,7 +2362,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 50
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_modernising_our_communication"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 30
 		modifier = {
@@ -2315,7 +2427,15 @@ HNN_financial_recovery_category = {#我们的黑色星期一困境
 		cost = 75
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_kaili_to_changsha"
-
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 20
+				}
+			}
 		}
 		days_remove = 60
 		modifier = {
@@ -2830,6 +2950,9 @@ HNN_democratic_reform_category = {#捍卫湖南民主
 			has_completed_focus = HNN_undermine_the_diarchs
 			has_completed_focus = HNN_court_the_unions
 		}
+		cancel_trigger = {
+			has_country_leader = { name = "贺龙" ruling_only = yes }
+		}
 		selectable_mission = yes
 		is_good = yes
 		days_mission_timeout = 600
@@ -2858,6 +2981,9 @@ HNN_democratic_reform_category = {#捍卫湖南民主
 	HNN_opposition_growing = {#反民主反对派日渐壮大
 		available = {
 			always = no
+		}
+		cancel_trigger = {
+			has_country_leader = { name = "贺龙" ruling_only = yes }
 		}
 		allowed = { always = no }
 		is_good = no
@@ -3816,6 +3942,7 @@ HNN_defence_commission_category = {#防务专署
 			}
 			has_completed_focus = HNN_establish_the_defence_commission
 		}
+
 
 		ai_will_do = { factor = 15 }
 

@@ -980,9 +980,9 @@ ideas = {
 				
 			}
             modifier = {
-				political_power_gain = -0.50
-				stability_weekly = -0.05
+				stability_weekly = -0.01
 				stability_factor = -0.10
+				political_power_gain = -0.50
 				production_factory_max_efficiency_factor = -0.2
 				production_speed_buildings_factor = -0.2
 			}
@@ -1286,12 +1286,12 @@ ideas = {
 			}
             modifier = {
 				stability_factor = 0.10
-				stability_weekly = 0.050
 				weekly_manpower = 1000
-				stability_weekly_factor = 0.050
 				surrender_limit = 0.10
+				stability_weekly = 0.005
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.20
+				stability_weekly_factor = 0.050
 				party_popularity_stability_factor = 0.20
 			}
 		}
@@ -1306,7 +1306,7 @@ ideas = {
 				weekly_manpower = 1000
 				surrender_limit = 0.40
 				stability_factor = 0.20
-				stability_weekly = 0.050
+				stability_weekly = 0.005
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.20
 				consumer_goods_factor = -0.20
@@ -2632,7 +2632,7 @@ ideas = {
             modifier = {
 				refit_ic_cost = -0.25
 				army_org_factor = -0.025
-				stability_weekly = -0.05
+				stability_weekly = -0.010
 				conscription_factor = -0.03
 				political_power_gain = 0.50
 				consumer_goods_factor = -0.20

@@ -85,7 +85,7 @@ ideas = {
 		#开局
 			SQI_honored_master = {#上师
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master"}
-				picture = GFX_idea_SQI_honored_master
+				picture = SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.01
@@ -121,7 +121,7 @@ ideas = {
 				picture = generic_destruction
 				allowed = { always = no }
 				modifier = {
-					stability_weekly = -0.05
+					stability_weekly = -0.01
 					stability_factor = -0.30
 					monthly_population = -0.10
 					political_power_gain = -0.10
@@ -1002,10 +1002,10 @@ ideas = {
 				picture = MAF_disgruntled_natives
 				allowed = { always = no }
 				modifier = {
-					stability_factor = -0.20
-					stability_weekly = -0.05
-					resistance_activity = 0.20
 					compliance_gain = -0.20
+					stability_factor = -0.20
+					stability_weekly = -0.01
+					resistance_activity = 0.20
 				}
 			}
 
@@ -1121,7 +1121,7 @@ ideas = {
 				allowed = { always = no }
 				modifier = {
 					stability_factor = 0.10
-					stability_weekly = 0.05
+					stability_weekly = 0.005
 					war_stability_factor = 0.05
 					social_conservative_drift = 0.05
 				}
@@ -1174,7 +1174,7 @@ ideas = {
 				allowed = { always = no }
 				modifier = {
 					stability_factor = 0.05
-					stability_weekly = 0.05
+					stability_weekly = 0.005
 					war_stability_factor = 0.05
 					justify_war_goal_time = -0.10
 					national_populist_drift = 0.05
@@ -1188,7 +1188,7 @@ ideas = {
 				allowed = { always = no }
 				modifier = {
 					stability_factor = 0.05
-					stability_weekly = 0.05
+					stability_weekly = 0.010
 					annex_cost_factor = -0.20
 					war_stability_factor = 0.05
 					research_speed_factor = 0.10

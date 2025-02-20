@@ -297,6 +297,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Hunan_He_Long_shen_bing"
+		texturefile = "gfx/leaders/HNN/Portrait_Hunan_He_Long_shen_bing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hunan_He_Long_victory"
+		texturefile = "gfx/leaders/HNN/Portrait_Hunan_He_Long_victory.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Hunan_He_Jian"
 		texturefile = "gfx/leaders/HNN/Portrait_Hunan_He_Jian.png"
 	}
