@@ -7589,7 +7589,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -7653,7 +7653,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -7788,7 +7788,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -7835,7 +7835,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -7878,7 +7878,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -7948,18 +7948,7 @@ focus_tree = {
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
-					days = 20
-				}
-				custom_effect_tooltip = HNN_shen_bing_revolution_tt
-				custom_effect_tooltip = tooltip_white_line
-			}
-			if = {
-				limit = {
-					has_active_mission = HNN_shen_bing_revolution
-				}
-				add_days_mission_timeout = {
-					mission = HNN_shen_bing_revolution
-					days = 20
+					days = 30
 				}
 				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
@@ -8022,6 +8011,17 @@ focus_tree = {
 					category = motorized_equipment
 				}
 				custom_effect_tooltip = HNN_zhong_boyi_helpful_tooltip
+				custom_effect_tooltip = tooltip_white_line
+			}
+			if = {
+				limit = {
+					has_active_mission = HNN_shen_bing_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_shen_bing_revolution
+					days = 30
+				}
+				custom_effect_tooltip = HNN_shen_bing_revolution_tt
 				custom_effect_tooltip = tooltip_white_line
 			}
 			602 = {
