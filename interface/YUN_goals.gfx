@@ -60,20 +60,12 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/YUN_gu_lan_jing_de_xin_li_jie.png"
 	}
 	spriteType = {
-		name = "GFX_goal_YUN_mao_da_guo_fan"
-		texturefile = "gfx/interface/goals/YUN_mao_da_guo_fan.png"
-	}
-	spriteType = {
 		name = "GFX_goal_YUN_mao_tou_jin"
 		texturefile = "gfx/interface/goals/YUN_mao_tou_jin.png"
 	}
 	spriteType = {
 		name = "GFX_goal_YUN_mao_yi_shu"
 		texturefile = "gfx/interface/goals/YUN_mao_yi_shu.png"
-	}
-	spriteType = {
-		name = "GFX_goal_YUN_mao_wu_gong_he"
-		texturefile = "gfx/interface/goals/YUN_mao_wu_gong_he.png"
 	}
 	spriteType = {
 		name = "GFX_goal_YUN_Yan_1"

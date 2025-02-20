@@ -10919,7 +10919,10 @@ country_event = {#上海
 
 	trigger = {
 		tag = HNN
-		has_country_flag = HNN_gong_tuan_victory_flag
+		OR = {
+			has_country_flag = HNN_gong_tuan_victory_flag
+			has_country_flag = HNN_shen_bing_victory
+		}
 		is_neighbor_of = LEC
 		SHC = {
 			exists = no
