@@ -425,6 +425,17 @@ ideas = {
 				defense_bonus_against = 0.10
 			}
 		}
+		HNN_attack_fed_QIE_idea = {#推翻满清
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_attack_fed_QIE_idea" }
+			picture = HNN_attack_fed_QIE
+			allowed = { always = no }
+			available = { GXC = { exists = yes } }
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
 	#军队
 		HNN_mass_conscription_idea = {#舆论宣传
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_mass_conscription_idea"}

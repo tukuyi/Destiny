@@ -9773,7 +9773,8 @@ focus_tree = {
 					activate_targeted_decision = { target = SZC decision = china_attack_decision }
 				}
 			}
-			if = {
+			custom_effect_tooltip = tooltip_white_line
+			if = {#云南
 				limit = { 
 					NOT = {
 						YUN = {
@@ -9847,11 +9848,11 @@ focus_tree = {
 				create_wargoal = {
 					type = annex_everything
 					target = var:592.owner
-				 }
-				 create_wargoal = {
+				}
+				create_wargoal = {
 					type = annex_everything
 					target = var:594.owner
-				 }
+				}
 			}
 			else = {
 				add_timed_idea = {
@@ -9969,10 +9970,29 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_bei_fa"
-			create_wargoal = {
-				type = annex_everything
-				target = var:608.owner
-		 	}
+			if = {
+				limit = { 
+					QIE = {
+						exists = no
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = var:608.owner
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = HNN_attack_fed_QIE_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = QIE
+					}
+					activate_targeted_decision = { target = QIE decision = china_attack_decision }
+				}
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = var:1072.owner

@@ -212,6 +212,7 @@ ideas = {
 				has_country_flag = HNN_PROC_victory
 				NOT = {
 					has_completed_focus = HNN_su_fan_zhi_ye
+					has_country_flag = HNN_gao_gang_dead
 				}
 			}
 			on_add = {
@@ -238,6 +239,7 @@ ideas = {
 				has_country_flag = HNN_PROC_victory
 				NOT = {
 					has_completed_focus = HNN_su_fan_zhi_ye
+					has_country_flag = HNN_liu_shao_qi_dead
 				}
 			}
 			on_add = {
@@ -522,6 +524,108 @@ ideas = {
 	}
 
 	person_of_influence = {
+	#极权派
+		HNN_chen_bo_da_sec = {#陈伯达
+			allowed = { original_tag = HNN }
+			picture = HNN_chen_bo_da_sec
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_chen_bo_da_sec"
+				ROOT = {
+					add_popularity = {
+						ideology = totalist
+						popularity = 0.02
+					}
+				}
+			}
+			traits = {
+				tot_right
+				totalist
+				CHI_pen_of_the_chairman_1
+			}
+		}
+
+	#技官派	
+		HNN_guo_moruo_for = {#郭沫若
+			allowed = { original_tag = HNN }
+			picture = HNN_guo_moruo_for
+			cost = 100
+			available = {
+				NOT = {
+					has_country_leader = { name = "郭沫若" ruling_only = yes }
+				}
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_guo_moruo_for"
+				ROOT = {
+					add_popularity = {
+						ideology = radical_socialist
+						popularity = 0.02
+					}
+				}
+			}
+			traits = {
+				tech_right
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+
+	#市场派
+		HNN_zhao_zi_yang_eco = {#赵紫阳
+			allowed = { original_tag = HNN }
+			picture = HNN_zhao_zi_yang_eco
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhao_zi_yang_eco"
+				ROOT = {
+					add_popularity = {
+						ideology = market_liberal
+						popularity = 0.02
+					}
+				}
+			}
+			traits = {
+				market_right
+				radical_socialist
+				eco_mixed_economy
+			}
+		}	
+		HNN_Bo_Yi_Bo_eco = {#薄一波
+			allowed = { original_tag = HNN }
+			picture = HNN_Bo_Yi_Bo_eco
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Bo_Yi_Bo_eco"
+			}
+			traits = {
+				market_right
+				syndicalist
+				eco_technocrat
+			}
+		}
+
 	#外交部长	
 		HNN_li_jiannong_for = {#李剑农
 			allowed = { original_tag = HNN }
@@ -623,29 +727,7 @@ ideas = {
 				radical_socialist
 				for_apologetic_clerk
 			}
-		}	
-		HNN_guo_moruo_for = {#郭沫若
-			allowed = { original_tag = HNN }
-			picture = HNN_guo_moruo_for
-			cost = 100
-			available = {
-				NOT = {
-					has_country_leader = { name = "郭沫若" ruling_only = yes }
-				}
-			}
-			visible = {
-				has_country_flag = HNN_PROC_victory
-			}
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_guo_moruo_for"
-				
-			}
-			traits = {
-				foreign_minister
-				radical_socialist
-				for_ideological_crusader
-			}
-		}		
+		}			
 		HNN_song_xilian_for = {#宋希濂
 			allowed = { original_tag = HNN }
 			picture = HNN_song_xilian_for
@@ -717,6 +799,11 @@ ideas = {
 					has_government = national_populist
 				}
 			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Wang_Dongyuan_for_sco"
 			}
@@ -732,6 +819,11 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Yuezhi_for_ade"
 			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
+			}
 			traits = {
 				foreign_minister
 				authoritarian_democrat
@@ -743,6 +835,11 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhang_Renmin_for_ade"
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
 			}
 			traits = {
 				foreign_minister
@@ -966,46 +1063,7 @@ ideas = {
 				radical_socialist
 				eco_teleological_planner
 			}
-		}	
-		HNN_zhao_zi_yang_eco = {#赵紫阳
-			allowed = { original_tag = HNN }
-			picture = HNN_zhao_zi_yang_eco
-			cost = 100
-			available = {
-				has_country_flag = HNN_PROC_victory
-			}
-			visible = {
-				has_country_flag = HNN_PROC_victory
-			}
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_zhao_zi_yang_eco"
-				
-			}
-			traits = {
-				economy_minister
-				radical_socialist
-				eco_mixed_economy
-			}
-		}
-		HNN_Bo_Yi_Bo_eco = {#薄一波
-			allowed = { original_tag = HNN }
-			picture = HNN_Bo_Yi_Bo_eco
-			cost = 100
-			available = {
-				has_country_flag = HNN_PROC_victory
-			}
-			visible = {
-				has_country_flag = HNN_PROC_victory
-			}
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Bo_Yi_Bo_eco"
-			}
-			traits = {
-				economy_minister
-				syndicalist
-				eco_technocrat
-			}
-		}	
+		}		
 		HNN_Rong_Yi_Ren_eco = {#荣毅仁
 			allowed = { original_tag = HNN }
 			picture = HNN_Rong_Yi_Ren_eco
@@ -1082,6 +1140,11 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Hu_Shuhua_eco_sco"
 				ROOT = {
 					custom_effect_tooltip = HNN_hu_shuhua_add_tooltip
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
 				}
 			}
 			traits = {
@@ -1174,6 +1237,11 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Tang_Youren_eco_ade"
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_gong_tuan_victory_flag
+				}
 			}
 			traits = {
 				economy_minister
@@ -1752,7 +1820,21 @@ ideas = {
 	}
 
 	chief_of_navy = { ### 海军 ###
-
+		HNN_ma_long_cnav = {#马龙
+			allowed = { original_tag = HNN }
+			picture = HNN_ma_long_cnav
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_ma_long_cnav"
+			}
+			traits = {
+				chief_of_navy
+				navy_screen_1
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_air_force = { ### 空军 ###

@@ -163,14 +163,25 @@ ideas = {
 	person_of_influence = {
 	#左联
 		LEC_bo_gu_for = {#博古
-			allowed = { original_tag = SHC }
+			allowed = { 
+				OR = {
+					tag = SHC
+					tag = HNN
+				}
+			}
 			picture = LEC_bo_gu_for
 			cost = 100
 			available = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			visible = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_bo_gu_for"
@@ -183,14 +194,25 @@ ideas = {
 			}
 		}
 		LEC_zhao_si_yan_for = {#赵世炎
-			allowed = { original_tag = SHC }
+			allowed = { 
+				OR = {
+					tag = SHC
+					tag = HNN
+				}
+			}
 			picture = LEC_zhao_si_yan_for
 			cost = 100
 			available = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			visible = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhao_si_yan_for"
@@ -222,14 +244,25 @@ ideas = {
 			}
 		}
 		LEC_rao_shu_shi_for = {#饶漱石
-			allowed = { original_tag = LEC }
+			allowed = { 
+				OR = {
+					tag = SHC
+					tag = HNN
+				}
+			}
 			picture = LEC_rao_shu_shi_hog
 			cost = 100
 			available = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			visible = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_rao_shu_shi_for"
@@ -241,14 +274,25 @@ ideas = {
 			}
 		}
 		LEC_wang_ming_eco = {#王明
-			allowed = { original_tag = SHC }
+			allowed = { 
+				OR = {
+					tag = SHC
+					tag = HNN
+				}
+			}
 			picture = LEC_wang_ming_eco
 			cost = 100
 			available = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			visible = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_ming_eco"
@@ -317,14 +361,25 @@ ideas = {
 			}
 		}
 		LEC_zhou_yang_hog = {#周扬
-			allowed = { original_tag = SHC }
+			allowed = { 
+				OR = {
+					tag = SHC
+					tag = HNN
+				}
+			}
 			picture = LEC_zhou_yang_hog
 			cost = 100
 			available = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			visible = {
-				has_country_flag = zong_gong_hui_victory
+				OR = {
+					has_country_flag = HNN_PROC_victory
+					has_country_flag = zong_gong_hui_victory
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhou_yang_hog"

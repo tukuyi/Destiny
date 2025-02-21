@@ -10989,9 +10989,26 @@ focus_tree = {
 			HNN_gong_xian = { HNN_recruit_characters_effect = yes }
 			HNN_Xia_Dou_Ying = { HNN_recruit_characters_effect = yes }
 			custom_effect_tooltip = tooltip_white_line
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 2000
+			if = {
+				limit = {
+					has_idea = HNN_shi_qi_gui_sec
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 100
+				}
+				custom_effect_tooltip = HNN_chen_quzhen_is_helpful_tooltip
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1500
+				}
+				custom_effect_tooltip = HNN_chen_quzhen_helpful_tooltip
 			}
 			custom_effect_tooltip = tooltip_white_line
 			random_owned_controlled_state = {

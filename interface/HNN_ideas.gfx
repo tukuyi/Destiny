@@ -310,6 +310,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/HNN/HNN_attack_fed_YUN.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_attack_fed_QIE"
+		texturefile = "gfx/interface/ideas/HNN/HNN_attack_fed_QIE.png"
+	}
+	spriteType = {
 		name = "GFX_idea_HNN_ren_da_fa_yuan"
 		texturefile = "gfx/interface/ideas/HNN/HNN_ren_da_fa_yuan.png"
 	}

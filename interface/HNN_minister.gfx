@@ -112,6 +112,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/LEC/LEC_he_shi_li.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_chen_bo_da_sec"
+		texturefile = "gfx/interface/ministers/HNN/HNN_chen_bo_da.png"
+	}
+	spriteType = {
 		name = "GFX_idea_HNN_Shang_Kun_sec"
 		texturefile = "gfx/interface/ministers/HNN/HNN_Shang_Kun.png"
 	}
@@ -190,5 +194,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_HNN_tang_duo_cair"
 		texturefile = "gfx/interface/ministers/HNN/HNN_tang_duo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_ma_long_cnav"
+		texturefile = "gfx/interface/ministers/HNN/HNN_ma_long.png"
 	}
 }

@@ -8727,6 +8727,7 @@ country_event = {#006号目标人物 刘少奇
 			ideology = totalist
 			popularity = 0.01
 		}
+		set_country_flag = HNN_liu_shao_qi_dead
 	}
 }
 
@@ -9356,6 +9357,7 @@ country_event = {#高岗自杀
 		name = hungong.107.a
 		add_manpower = -1
 		add_stability = -0.01
+		set_country_flag = HNN_gao_gang_dead
 	}
 }
 
