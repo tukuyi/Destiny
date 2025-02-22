@@ -1411,7 +1411,29 @@ characters = {
 			maneuvering_skill = 1
 			coordination_skill = 1
 		}
-	}		
+	}	
+#马龙
+	HNN_ma_long = {
+		name = HNN_ma_long
+		portraits = {
+			army = {
+				large = GFX_Portrait_HNN_ma_long
+				small = GFX_Portrait_HNN_ma_long
+			}
+		}
+		navy_leader = {
+			traits = { 
+				navy_career_officer 
+				blockade_runner
+				gunnery_expert 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}	
 ######################
 ####   三期普渡  #####
 ######################

@@ -2199,7 +2199,7 @@ country_event = {#Zhu De intervenes the Yunnan Academy!
 		set_party_name = {
 			ideology = social_democrat
 			long_name = YUN_Zhu_De_takes_over_party_long
-			name = YUN_Long_Zhu_De_takes_over_party
+			name = YUN_Zhu_De_takes_over_party
 		}
 		hidden_effect = {
 			YUN_zhu_de = {

@@ -9,8 +9,11 @@
 leader_traits = {
 	left_writer = {}
 	market_right = {}
+	syn_right = {}
 	tot_right = {}
 	tech_right = {}
+	red_army_right = {}
+	nong_ming_right = {}
 
 	KR_conductor_of_the_banking_clans = {#银行界红人
 		sprite = 13
@@ -20,6 +23,13 @@ leader_traits = {
 		production_speed_buildings_factor = 0.10
 
 		ai_will_do = { factor = 2 }
+	}
+	KR_red_eminence = { #红衣主教
+		sprite = 13
+		random = no
+		civilian_intel_to_others = -15.0
+		min_export = -0.1
+		political_power_factor = 0.1
 	}
 
 	QYG_nong_ye_da_wang = {

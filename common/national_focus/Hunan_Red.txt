@@ -2149,7 +2149,7 @@ focus_tree = {
 				custom_effect_tooltip = HNN_teng_tooltip
 				custom_effect_tooltip = HNN_liao_tooltip
 				custom_effect_tooltip = HNN_wang_tooltip
-				custom_effect_tooltip = HNN_huang_tooltip
+				custom_effect_tooltip = HNN_huang_yong_tooltip
 				custom_effect_tooltip = HNN_zhang_tooltip
 				custom_effect_tooltip = HNN_xu_tooltip
 				custom_effect_tooltip = HNN_Wu_tooltip
@@ -2351,8 +2351,21 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_quan_li_jing_shou"
 				add_political_power = 100
 				add_command_power = 50
-				army_experience = 100
-				add_stability = 0.10
+				custom_effect_tooltip = tooltip_white_line
+				if = {
+					limit = {
+						has_idea = HNN_Shang_Kun_sec
+					}
+					add_stability = 0.10
+					army_experience = 100
+					mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 1 }
+					custom_effect_tooltip = HNN_yang_shang_kun_is_helpful_tooltip
+				}
+				else = {
+					add_stability = 0.05
+					army_experience = 50
+					custom_effect_tooltip = HNN_yang_shang_kun_helpful_tooltip
+				}
 				custom_effect_tooltip = tooltip_white_line
 				add_popularity = {
 					ideology = totalist
@@ -2486,13 +2499,30 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
+				if = {
+					limit = {
+						has_idea = HNN_Rong_Yi_Ren_eco
 					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+					custom_effect_tooltip = HNN_rong_yi_ren_is_helpful_tooltip
+				}
+				else = {
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					custom_effect_tooltip = HNN_rong_yi_ren_helpful_tooltip
 				}
 				custom_effect_tooltip = tooltip_white_line
 				country_event = { 
@@ -2529,7 +2559,7 @@ focus_tree = {
 
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_liang_ge_bai_nian"
-				add_country_leader_trait = NFA_cult_of_personality
+				add_country_leader_trait = HNN_zong_she_ji_shi
 				custom_effect_tooltip = tooltip_white_line
 				add_equipment_to_stockpile = {
 					type = light_tank_chassis
@@ -4479,9 +4509,24 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_zhi_wei_shi"
 				add_soclib_to_coalition = yes
 				add_socdem_to_coalition = yes
-				add_popularity = {
-					ideology = radical_socialist
-					popularity = 0.05
+				custom_effect_tooltip = tooltip_white_line
+				if = {
+					limit = {
+						has_idea = HNN_guo_moruo_for
+					}
+					add_popularity = {
+						ideology = radical_socialist
+						popularity = 0.10
+					}
+					custom_effect_tooltip = HNN_guo_mo_ruo_is_helpful_tooltip
+				}
+				else = {
+					add_popularity = {
+						ideology = radical_socialist
+						popularity = 0.05
+					}
+					custom_effect_tooltip = HNN_guo_mo_ruo_helpful_tooltip
+					custom_effect_tooltip = tooltip_white_line
 				}
 				add_popularity = {
 					ideology = national_populist
@@ -4491,6 +4536,7 @@ focus_tree = {
 					ideology = paternal_autocrat
 					popularity = -0.10
 				}
+				custom_effect_tooltip = tooltip_white_line
 				random_owned_state = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
@@ -9921,7 +9967,7 @@ focus_tree = {
 		id = HNN_bei_fa
 		icon = GFX_goal_AOG_55_days_in_Peking
 		relative_position_id = HNN_chong_fan_zhong_guo_zheng_zhi_wu_tai
-		cost = 1
+		cost = 3
 		x = 0
 		y = 3
 

@@ -1,9 +1,13 @@
 ﻿l_simp_chinese:
- left_writer: "§r泛左联成员§!"
+ left_writer: "§R泛左联成员§!"
  market_right: "§m市场派§!"
- tot_right: "§R极权派§!"
+ tot_right: "§r极权派§!"
+ syn_right: "§j正统派§!"
  tech_right: "§l技官派§!"
+ red_army_right: "§a红军§!"
+ nong_ming_right: "§R农民派§!"
 
+ KR_red_eminence: "红衣主教"
  KR_regional_traditionalist_leader: "地区传统派领袖"
  KR_head_of_intelligence: "间谍首脑"
  KR_republican_firebrand: "共和派鼓动者"

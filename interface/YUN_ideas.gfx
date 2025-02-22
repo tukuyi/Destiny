@@ -1,14 +1,6 @@
 spriteTypes = {	
 	###顾问
 	spriteType = {
-		name = "GFX_idea_YUN_A_Limao_hog"
-		texturefile = "gfx/interface/ministers/YUN/YUN_A_Limao.png"
-	}
-	spriteType = {
-		name = "GFX_idea_YUN_Xiao_mao_hog"
-		texturefile = "gfx/interface/ministers/YUN/YUN_Xiao_mao.png"
-	}
-	spriteType = {
 		name = "GFX_idea_YUN_Zhong_Zheng_hog"
 		texturefile = "gfx/interface/ministers/YUN/YUN_Zhong_Zheng.png"
 	}

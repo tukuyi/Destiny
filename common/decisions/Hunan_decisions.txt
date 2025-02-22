@@ -10035,15 +10035,29 @@ HNN_tie_lu_category = {#全国大开发
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_chuan_zang_tien_lu"
-			add_manpower = -200
+			add_manpower = -2000
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_chuan_zang_tien_lu"
-			add_manpower = 200
-			build_railway = {
-				level = 2
-				start_province = 6999
-				target_province = 5033
+			add_manpower = 2000
+			if = {
+				limit = {
+					has_idea = HNN_rang_ming_de_sec
+				}
+				build_railway = {
+					level = 3
+					start_province = 6999
+					target_province = 5033
+				}
+				custom_effect_tooltip = HNN_rang_ming_de_is_helpful_tooltip
+			}
+			else = {
+				build_railway = {
+					level = 2
+					start_province = 6999
+					target_province = 5033
+				}
+				custom_effect_tooltip = HNN_rang_ming_de_helpful_tooltip
 			}
 		}
 	}
@@ -10684,7 +10698,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 885 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -10755,7 +10769,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 886 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -10816,7 +10830,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 716 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -10883,7 +10897,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 608 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11000,7 +11014,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1072 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11061,7 +11075,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1059 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11122,7 +11136,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 597 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11215,7 +11229,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 613 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11308,7 +11322,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 596 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11421,7 +11435,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1048 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11482,7 +11496,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 602 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11543,7 +11557,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 622 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 60
 		days_re_enable = 60
 	
@@ -11594,7 +11608,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1044 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11655,7 +11669,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1046 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11748,7 +11762,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 592 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -11867,7 +11881,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 594 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 
@@ -11984,7 +11998,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 325 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12055,7 +12069,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 650 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12136,7 +12150,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 283 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12197,7 +12211,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 604 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12248,7 +12262,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 322 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12309,7 +12323,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 617 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12400,7 +12414,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 617 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	
@@ -12471,7 +12485,7 @@ HNN_tie_lu_category = {#全国大开发
 			highlight_state_targets = { state = 1084 }
 		}
 	
-		cost = 100
+		cost = china_build_all_country_time
 		days_remove = 50
 		days_re_enable = 60
 	

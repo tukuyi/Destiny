@@ -56,6 +56,8 @@ save_global_event_target_as = original_hunan
 set_research_slots = 2
 set_convoys = 10
 
+set_variable = { china_build_all_country_time = 100 }
+
 LEP = {
 	set_autonomy = {
 		target = ROOT
@@ -463,4 +465,10 @@ create_country_leader = {
 promote_character = {
 	character = HNN_tang_xiangming
 	ideology = kleptocracy_subtype
+}
+
+recruit_character = HNN_ma_long
+
+HNN_ma_long = {
+	retire = yes
 }

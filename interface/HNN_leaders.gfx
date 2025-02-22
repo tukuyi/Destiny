@@ -289,6 +289,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Deng_Xiao_Ping_civ.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_ma_long"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_ma_long.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_liu_jianxu"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_liu_jianxu.png"
 	}
@@ -649,10 +653,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_Peng_Shu_Zhi"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Kang_Sheng"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_Xudatong"

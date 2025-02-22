@@ -45,6 +45,13 @@ leader_traits = {
 		radical_socialist_drift = 0.01
 		war_support_factor = 0.05				
 	}
+	HNN_zong_she_ji_shi = {#革命的总设计师
+		random = no
+		stability_factor = 0.07
+		war_support_factor = 0.07
+		political_power_factor = 0.04
+		command_power_gain_mult = 0.03
+	}
 	HNN_zhuan_shi = {
 		random = no
 		political_power_gain = 0.05

@@ -245,24 +245,15 @@ ideas = {
 		}
 		LEC_rao_shu_shi_for = {#饶漱石
 			allowed = { 
-				OR = {
-					tag = SHC
-					tag = HNN
-				}
+				original_tag = SHC
 			}
 			picture = LEC_rao_shu_shi_hog
 			cost = 100
 			available = {
-				OR = {
-					has_country_flag = HNN_PROC_victory
-					has_country_flag = zong_gong_hui_victory
-				}
+				has_country_flag = zong_gong_hui_victory
 			}
 			visible = {
-				OR = {
-					has_country_flag = HNN_PROC_victory
-					has_country_flag = zong_gong_hui_victory
-				}
+				has_country_flag = zong_gong_hui_victory
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_rao_shu_shi_for"
