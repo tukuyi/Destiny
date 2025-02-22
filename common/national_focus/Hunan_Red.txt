@@ -2399,11 +2399,19 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_she_hui_zhu_yi_jiao_yu"
 				add_research_slot_until_five = yes
 				custom_effect_tooltip = tooltip_white_line
+				show_ideas_tooltip = HNN_hu_qiao_mu_eco_2
+				custom_effect_tooltip = tooltip_white_line
 				add_popularity = {
 					ideology = totalist
 					popularity = 0.10
 				}
 				hidden_effect = {
+					set_country_flag = HNN_hu_qiao_mu_eco_2_up
+					if = {
+						limit = { has_idea = HNN_hu_qiao_mu_eco }
+						hidden_effect = { remove_ideas = HNN_hu_qiao_mu_eco }
+						add_ideas = HNN_hu_qiao_mu_eco_2
+					}	
 					country_event = { 
 						id = hungong.103
 						days = 60
@@ -12713,7 +12721,7 @@ focus_tree = {
 	
 	focus = {
 		id = HNN_shi_zi_ben
-		icon = GFX_GRU_syndicalist_education-3980
+		icon = GFX_goal_HNN_shi_zi_ben
 		relative_position_id = HNN_sao_mao
 		x = -1
 		y = 1

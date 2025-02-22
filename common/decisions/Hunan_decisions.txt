@@ -6407,7 +6407,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 	
-		cost = 10
+		cost = 15
 		days_remove = 15
 		days_re_enable = 30
 	
@@ -6416,7 +6416,18 @@ HNN_tu_di_gai_ge_category = {#土地改革
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_yu_fu_nong_he_zuo"
-			add_political_power = 50
+			if = {
+				limit = {
+					has_idea = HNN_zhao_zi_yang_eco
+				}
+				add_political_power = 60
+				custom_effect_tooltip = HNN_zhao_zi_yang_is_helpful_tooltip
+			}
+			else = {
+				add_political_power = 40
+				custom_effect_tooltip = HNN_zhao_zi_yang_helpful_tooltip
+			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { 
 					has_government = totalist

@@ -26,6 +26,15 @@ HNN_peoples_commune = {#人民公社
 	state_production_speed_buildings_factor = 0.02
 }
 
+HNN_industrial_region = {#最高经济委员会工业区域
+	icon = GFX_modifiers_generic_military_industry
+	state_production_speed_buildings_factor = 0.1
+	local_building_slots = 1
+	remove_trigger = {
+		NOT = { is_owned_by = HNN }
+	}
+}
+
 HNN_educational_modifier = { #扫盲
 	enable = { always = yes }
 	

@@ -8336,7 +8336,7 @@ focus_tree = {
 			trigger = { 
 				HNN_lian_sheng_goverment = yes
 			}
-			value = GFX_goal_GXC_new_model_army
+			value = GFX_goal_HNN_our_provincial_army
 		}
 		icon = {
 			trigger = { 

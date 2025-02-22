@@ -11,12 +11,11 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect HNN = {
-		# 	add_days_mission_timeout = {
-		# 		mission = HNN_shen_bing_revolution
-		# 		days = -70
-		# 	}
-		# }
+		eval_effect HNN = {
+			743 = {
+				add_dynamic_modifier = { modifier = HNN_industrial_region }
+			}
+		}
 
 		# if = {
 		# 	limit = { 
