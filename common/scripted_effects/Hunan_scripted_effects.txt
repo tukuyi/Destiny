@@ -40,6 +40,13 @@ HNN_revolution_victory = {#工团上台初始设定
 		HNN_alliance_with_the_diarchy2
 	}
 
+	add_stability = -0.40
+	add_war_support = -0.30
+
+	set_country_flag = HNN_gong_tuan_victory_flag
+
+	load_oob = HNN_red_first
+
 	add_ideas = HNN_militia_idea
 
 	add_timed_idea = {

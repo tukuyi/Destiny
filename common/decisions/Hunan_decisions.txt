@@ -4934,7 +4934,7 @@ HNN_da_song_wang_chao ={#大宋的天命扩张
 }
 
 HNN_gong_tuan_dang_dou_zheng_category = {
-	
+
 }
 
 HNN_big_clean_category = {#大清洗
@@ -10024,15 +10024,12 @@ HNN_dyrektoria_uprising = {#三头同盟
 HNN_tie_lu_category = {#全国大开发
 	HNN_chuan_zang_tien_lu = {#川藏铁路
 		icon = cement_mixer
-
+		allowed = {
+			always = no
+		}
 		available = {
 			owns_state = 650
 			owns_state = 322
-		}
-		visible = {
-			owns_state = 650
-			owns_state = 322
-			has_completed_focus = HNN_xian_xiu_lu
 		}
 		ai_will_do = {
 			factor = 15
@@ -10079,15 +10076,12 @@ HNN_tie_lu_category = {#全国大开发
 	}
 	HNN_chang_kun_tien_lu = {#长昆铁路
 		icon = cement_mixer
-
+		allowed = {
+			always = no
+		}
 		available = {
 			owns_state = 602
 			owns_state = 325
-		}
-		visible = {
-			owns_state = 602
-			owns_state = 325
-			has_completed_focus = HNN_xian_xiu_lu
 		}
 		ai_will_do = {
 			factor = 15
@@ -10120,15 +10114,12 @@ HNN_tie_lu_category = {#全国大开发
 	}
 	HNN_guang_kun_tien_lu = {#广昆铁路
 		icon = cement_mixer
-
+		allowed = {
+			always = no
+		}
 		available = {
 			owns_state = 592
 			owns_state = 325
-		}
-		visible = {
-			owns_state = 592
-			owns_state = 325
-			has_completed_focus = HNN_xian_xiu_lu
 		}
 		ai_will_do = {
 			factor = 15
@@ -10603,7 +10594,9 @@ HNN_tie_lu_category = {#全国大开发
 
 	HNN_develop_tan_zhou_xiang_jiao = {#建设儋州橡胶园
 		icon = rubber
-
+		allowed = {
+			always = no
+		}
 		highlight_states = {
 			highlight_state_targets = {
 				state = 591
@@ -10614,14 +10607,6 @@ HNN_tie_lu_category = {#全国大开发
 			num_of_civilian_factories_available_for_projects > 2
 			591 = { is_owned_and_controlled_by = ROOT }
 			has_tech = excavation3
-		}
-
-		visible = {
-			591 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = CAN_chromium_mines_developed }
-			}
-			has_completed_focus = HNN_xin_neng_yuan_xin
 		}
 
 		fire_only_once = yes
@@ -10652,7 +10637,9 @@ HNN_tie_lu_category = {#全国大开发
 	}
 	HNN_develop_xi_shuang_ban_na_xiang_jiao = {#建设西双版纳橡胶园
 		icon = rubber
-
+		allowed = {
+			always = no
+		}
 		highlight_states = {
 			highlight_state_targets = {
 				state = 325
@@ -10663,14 +10650,6 @@ HNN_tie_lu_category = {#全国大开发
 			num_of_civilian_factories_available_for_projects > 2
 			325 = { is_owned_and_controlled_by = ROOT }
 			has_tech = excavation3
-		}
-
-		visible = {
-			325 = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = CAN_chromium_mines_developed }
-			}
-			has_completed_focus = HNN_xin_neng_yuan_xin
 		}
 
 		fire_only_once = yes

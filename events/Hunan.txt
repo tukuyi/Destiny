@@ -7061,11 +7061,8 @@ country_event = {#革命成功
 		}
 		leave_faction = yes
 		hidden_effect = {
-			set_country_flag = HNN_gong_tuan_victory_flag
-			add_stability = -0.40
-			add_war_support = -0.30
-			load_oob = HNN_red_first
 			HNN_revolution_victory = yes
+
 			country_event = { 
 				id = hungong.39
 				days = 10
@@ -7317,21 +7314,6 @@ country_event = {#齐白石的画展
 	option = {
 		name = hungong.24.a
 		add_stability = 0.01
-	}
-}
-
-country_event = {#湖南省中央研究院
-	id = hungong.25
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.25" }
-	title = hungong.25.t
-	desc = hungong.25.d
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = hungong.25.a
-		
 	}
 }
 
@@ -10918,7 +10900,7 @@ country_event = {#上海
 	id = hungong.174
 
 	hidden = yes
-
+	fire_only_once = yes
 	trigger = {
 		tag = HNN
 		OR = {

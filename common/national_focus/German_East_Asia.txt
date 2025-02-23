@@ -1004,6 +1004,31 @@ focus_tree = {
 		}
 	} 
 	focus = {
+		id = GEA_german_army_tradition
+		icon = GFX_GER_restructure_the_oberste_heeresleitung-32626
+		relative_position_id = GEA_meet_violence_with_violence
+        cost = 5
+		x = -1
+		y = 3
+		mutually_exclusive = {focus = GEA_widespread_recruitment}
+		prerequisite = {focus = GEA_german_rearmament}
+		prerequisite = {focus = GEA_support_agent focus = GEA_support_police}
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			has_country_flag = GEA_Heye_Appointed
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_army_tradition"
+			swap_ideas = {
+				remove_idea = GEA_rearmament
+				add_idea = GEA_rearmament1
+			}
+		}
+	} 
+	focus = {
 		id = GEA_open_labor_camps
 		icon = GFX_GEA_open_labor_camps
 		relative_position_id = GEA_german_army_tradition
@@ -1213,31 +1238,6 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = military_police_tech
-			}
-		}
-	} 
-    focus = {
-		id = GEA_german_army_tradition
-		icon = GFX_GER_restructure_the_oberste_heeresleitung-32626
-		relative_position_id = GEA_meet_violence_with_violence
-        cost = 5
-		x = -1
-		y = 3
-		mutually_exclusive = {focus = GEA_widespread_recruitment}
-		prerequisite = {focus = GEA_german_rearmament}
-		prerequisite = {focus = GEA_support_agent focus = GEA_support_police}
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-			has_country_flag = GEA_Heye_Appointed
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_army_tradition"
-			swap_ideas = {
-				remove_idea = GEA_rearmament
-				add_idea = GEA_rearmament1
 			}
 		}
 	} 
@@ -6095,6 +6095,25 @@ focus = {
 	}
 }
 focus = {
+	id = GEA_foundation_of_naval_tactics
+	icon = GFX_goal_USA_new_admirals
+	cost = 5
+	x = 9
+	y = 1
+	ai_will_do = {factor = 30}
+	prerequisite = {focus = GEA_expansion_of_Singaporez_port}
+	prerequisite = {focus = GEA_navy_cartelisation}
+	relative_position_id = GEA_expansion_of_Singaporez_port
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus GEA_foundation_of_naval_tactics"
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = naval_doctrine
+		}
+	}
+}
+focus = {
 	id = GEA_East_Asian_Naval_Air_Force
 	icon = GFX_goal_CZE_air_is_sea
 	cost = 5
@@ -6224,25 +6243,6 @@ focus = {
 				instant_build = yes 
 				province = 12299
 			}
-		}
-	}
-}
-focus = {
-	id = GEA_foundation_of_naval_tactics
-	icon = GFX_goal_USA_new_admirals
-	cost = 5
-	x = 9
-	y = 1
-	ai_will_do = {factor = 30}
-	prerequisite = {focus = GEA_expansion_of_Singaporez_port}
-	prerequisite = {focus = GEA_navy_cartelisation}
-	relative_position_id = GEA_expansion_of_Singaporez_port
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus GEA_foundation_of_naval_tactics"
-		add_doctrine_cost_reduction = {
-			cost_reduction = 0.5
-			uses = 1
-			category = naval_doctrine
 		}
 	}
 }

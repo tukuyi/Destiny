@@ -12565,7 +12565,9 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xian_xiu_lu"
 			add_political_power = 50
-			unlock_decision_category_tooltip = HNN_tie_lu_category
+			activate_targeted_decision = { target = FROM decision = HNN_chuan_zang_tien_lu }
+			activate_targeted_decision = { target = FROM decision = HNN_chang_kun_tien_lu }
+			activate_targeted_decision = { target = FROM decision = HNN_guang_kun_tien_lu }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -12611,8 +12613,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_neng_yuan_xin"
-			custom_effect_tooltip = HNN_develop_tan_zhou_xiang_jiao_tooltip
-			custom_effect_tooltip = HNN_develop_xi_shuang_ban_na_xiang_jiao_tooltip
 			random_owned_state = {
 				add_building_construction = {
 					type = synthetic_refinery
@@ -12641,6 +12641,9 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
+			activate_targeted_decision = { target = FROM decision = HNN_develop_tan_zhou_xiang_jiao }
+			activate_targeted_decision = { target = FROM decision = HNN_develop_xi_shuang_ban_na_xiang_jiao }
 		}
 	}
 

@@ -20,10 +20,10 @@ HNN_peoples_commune = {#人民公社
 		always = yes
 	}
 	mobilization_speed = 0.1
-	local_building_slots = -1
+	local_building_slots = 1
 	state_resources_factor = -0.05
 	recruitable_population_factor = 0.05
-	state_production_speed_buildings_factor = 0.02
+	state_production_speed_buildings_factor = 0.05
 }
 
 HNN_industrial_region = {#最高经济委员会工业区域
@@ -31,7 +31,9 @@ HNN_industrial_region = {#最高经济委员会工业区域
 	state_production_speed_buildings_factor = 0.1
 	local_building_slots = 1
 	remove_trigger = {
-		NOT = { is_owned_by = HNN }
+		NOT = { 
+			is_owned_by = HNN 
+		}
 	}
 }
 

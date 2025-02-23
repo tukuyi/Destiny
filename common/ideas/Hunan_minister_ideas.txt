@@ -1283,6 +1283,7 @@ ideas = {
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_liu_bocheng_eco"
+				army_experience = 20
 			}
 			traits = {
 				red_army_right
