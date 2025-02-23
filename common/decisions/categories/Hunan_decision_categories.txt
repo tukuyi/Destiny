@@ -161,6 +161,19 @@ HNN_tu_di_gai_ge_hunan_category = {#土地改革-湖南
 	}
 }
 
+HNN_gong_tuan_dang_dou_zheng_category = {#工团党内的政治斗争
+	icon = GFX_decision_agriculture_grain
+	priority = 120
+	# visible_when_empty = yes
+
+	allowed = {
+		tag = HNN
+	}
+	visible = {
+		has_country_flag = HNN_zheng_xie_over
+	}
+}
+
 HNN_tu_di_gai_ge_category = {#土地改革
 	icon = GFX_decision_agriculture_grain
 	allowed = { original_tag = HNN }

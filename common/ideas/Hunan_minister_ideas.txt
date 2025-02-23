@@ -629,7 +629,7 @@ ideas = {
 			traits = {
 				tot_right
 				paternal_autocrat
-				eco_industrialiser
+				eco_vernacular_industrialiser
 			}
 		}	
 		HNN_hu_qiao_mu_eco = {#胡乔木
@@ -793,6 +793,56 @@ ideas = {
 				syn_right
 				syndicalist
 				hog_reformist_soldier
+			}
+		}
+		HNN_xie_jue_zai_eco = {#谢觉哉
+			allowed = { 
+				original_tag = HNN
+			}
+			picture = HNN_xie_jue_zai_eco
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_xie_jue_zai_eco"
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.02
+				}
+			}
+			traits = {
+				syn_right
+				syndicalist
+				sec_reformed_justice
+			}
+		}
+		HNN_li_lisan_eco = {#李立三
+			allowed = { 
+				original_tag = HNN
+			}
+			picture = HNN_li_lisan_eco
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_li_lisan_eco"
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.02
+				}
+			}
+			traits = {
+				syn_right
+				syndicalist
+				hog_ambitious_union_boss
 			}
 		}
 		HNN_ren_bishi_sec_2 = {#任弼时
@@ -1093,6 +1143,29 @@ ideas = {
 				eco_ambitious_engineer
 			}
 		}
+		HNN_hou_de_bang_eco = {#侯徳榜
+			allowed = { original_tag = HNN }
+			picture = HNN_hou_de_bang_eco
+			cost = 100
+			available = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_hou_de_bang_eco"
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 0.02
+				}
+			}
+			traits = {
+				tech_right
+				radical_socialist
+				eco_industrial_chemist
+			}
+		}
 
 	#市场派
 		HNN_zhao_zi_yang_eco = {#赵紫阳
@@ -1198,6 +1271,25 @@ ideas = {
 		}	
 
     #红军
+		HNN_liu_bocheng_eco = {#刘伯承
+			allowed = { original_tag = HNN }
+			picture = HNN_liu_bocheng_eco
+			cost = 100
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_liu_bocheng_eco"
+			}
+			traits = {
+				red_army_right
+				syndicalist
+				eco_army_reform_committee
+			}
+		}
 		HNN_liu_hua_qing_eco = {#刘华清
 			allowed = { original_tag = HNN }
 			picture = HNN_liu_hua_qing_eco
@@ -1699,23 +1791,6 @@ ideas = {
 				eco_resource_industrialist
 			}
 		}
-		HNN_Fan_Xudong_eco_sde = {#范旭东
-			allowed = { original_tag = HNN }
-			cost = 100
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea HNN_Fan_Xudong_eco_sde"
-			}
-			visible = {
-				NOT = {
-					has_country_flag = HNN_gong_tuan_victory_flag
-				}
-			}
-			traits = {
-				economy_minister
-				social_democrat
-				eco_industrial_chemist
-			}
-		}
 		HNN_Liu_Tingfang_eco_mli = {#刘廷芳
 			allowed = { original_tag = HNN }
 			cost = 100
@@ -2035,6 +2110,11 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Ming_Zhen_sec_sde"
 			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_PROC_victory
+				}
+			}
 			traits = {
 				security_minister
 				social_democrat
@@ -2046,6 +2126,11 @@ ideas = {
 			cost = 100
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Long_Bojian_sec_sli"
+			}
+			visible = {
+				NOT = {
+					has_country_flag = HNN_PROC_victory
+				}
 			}
 			traits = {
 				security_minister

@@ -100,6 +100,22 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/HNN/HNN_peng_chong.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_xie_jue_zai_eco"
+		texturefile = "gfx/interface/ministers/HNN/HNN_xie_jue_zai.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_hou_de_bang_eco"
+		texturefile = "gfx/interface/ministers/HNN/HNN_hou_de_bang.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_liu_bocheng_eco"
+		texturefile = "gfx/interface/ministers/HNN/HNN_liu_bocheng.png"
+	}
+	spriteType = {
+		name = "GFX_idea_HNN_li_lisan_eco"
+		texturefile = "gfx/interface/ministers/HNN/HNN_li_lisan.png"
+	}
+	spriteType = {
 		name = "GFX_idea_HNN_liu_hua_qing_eco"
 		texturefile = "gfx/interface/ministers/HNN/HNN_liu_hua_qing.png"
 	}

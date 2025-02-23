@@ -2080,7 +2080,7 @@ focus_tree = {
 		id = HNN_su_fan_zhi_ye
 		icon = GFX_goal_ZAM_punishment_camps
 		relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-		x = -23
+		x = -24
 		y = 5
 		cost = 2
 
@@ -3436,9 +3436,9 @@ focus_tree = {
 		focus = {
 			id = HNN_chen_yi_zhu_xi
 			icon = GFX_goal_HNN_chen_yi_zhu_xi
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = -6
-			y = 11
+			relative_position_id = HNN_qian_xue_sheng_zhu_xi
+			x = 4
+			y = 0
 			cost = 5
 		
 			ai_will_do = {
@@ -3536,9 +3536,9 @@ focus_tree = {
 		focus = {
 			id = HNN_guo_mo_ruo_zhu_xi
 			icon = GFX_goal_HNN_guo_mo_ruo_zhu_xi
-			relative_position_id = HNN_zhong_hua_ren_ming_gong_he_guo_di_yi_ci_ren_ming_dai_biao_da_hui
-			x = -2
-			y = 11
+			relative_position_id = HNN_qian_xue_sheng_zhu_xi
+			x = 8
+			y = 0
 			cost = 5
 		
 			ai_will_do = {
@@ -12749,7 +12749,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_han_zi_gai_ge
-		icon = GFX_goal_VIN_quadrilingual_education
+		icon = GFX_goal_HNN_han_zi_gai_ge
 		relative_position_id = HNN_sao_mao
 		x = 1
 		y = 1

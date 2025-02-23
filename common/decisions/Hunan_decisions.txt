@@ -4933,6 +4933,10 @@ HNN_da_song_wang_chao ={#大宋的天命扩张
 	}
 }
 
+HNN_gong_tuan_dang_dou_zheng_category = {
+	
+}
+
 HNN_big_clean_category = {#大清洗
 	HNN_kill_xi_zhong_xun = {#习仲勋
 		icon = investigation
@@ -6525,6 +6529,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_da_dao_fu_nong"
 			add_political_power = 50
+			add_stability = -0.04
 			add_popularity = {
 				ideology = syndicalist
 				popularity = 0.03
