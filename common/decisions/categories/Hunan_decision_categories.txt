@@ -93,23 +93,6 @@ HNN_bei_zhan_category = {#我们的统一战争
 	}
 }
 
-HNN_duo_hui_shi_he = {
-	icon = GFX_decision_category_border_conflicts
-
-	picture = GFX_decision_cat_picture_chi_political_support
-
-	allowed = {
-		original_tag = HNN
-	}
-
-	visible = {
-		tag = HNN
-		NOT = {
-			owns_state = 1409
-		}
-	}
-}
-
 HNN_da_song_wang_chao = {
 	icon = GFX_decision_category_border_conflicts
 

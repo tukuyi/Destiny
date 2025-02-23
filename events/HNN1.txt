@@ -11,14 +11,9 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect HNN = {
-		# 	743 = {
-		# 		add_dynamic_modifier = { modifier = HNN_industrial_region }
-		# 	}
+		# eval_effect NZH = {
+		# 	add_political_power = 10
 		# }
-
-		activate_targeted_decision = { target = FROM decision = HNN_develop_tan_zhou_xiang_jiao }
-		activate_targeted_decision = { target = FROM decision = HNN_develop_xi_shuang_ban_na_xiang_jiao }
 
 		# if = {
 		# 	limit = { 

@@ -153,13 +153,44 @@ defined_text = {
 	text = {
 		trigger = {
 			has_global_flag = QIE_manchu_restoration
-			SZC = {
-				has_government = authoritarian_democrat
-			}
+			SZC = { china_is_aligned_with_zhili = yes }
 		}
 		localization_key = HNN_zhili_home_base_sichuan
 	}
+	text = {
+		trigger = {
+			has_global_flag = QIE_manchu_restoration
+			SZC = { china_is_aligned_with_zhili = no }
+			country_exists = LEP
+		}
+		localization_key = HNN_zhili_home_base_nanjing
+	}
+	text = {
+		trigger = {
+			has_global_flag = QIE_manchu_restoration
+			SZC = {
+				china_is_aligned_with_zhili = no
+			}
+			NOT = { country_exists = LEP }
+			SHX = { china_is_potential_government = yes }
+		}
+		localization_key = HNN_zhili_home_base_shanxi
+	}
 }
+
+defined_text = {
+	name = HNN_tang_xiangming_title
+	text = {
+		trigger = {
+			HNN = { has_cosmetic_tag = HNN_SCPC }
+		}
+		localization_key = HNN_inspector_general_tang
+	}
+	text = {
+		localization_key = HNN_governor_tang
+	}
+}
+
 
 defined_text = {
 	name = HNN_opposition_strength_variable_loc

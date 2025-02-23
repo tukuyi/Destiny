@@ -6998,6 +6998,8 @@ country_event = {#皇帝一鸣惊人
 		remove_ideas = QIE_legitimacy_of_the_monarchy
 		clr_country_flag = legation_council_member
 		hidden_effect = {
+			clear_global_event_target = NZH_leader
+			
 			QIE_zhili_clique_flees = yes
 			QIE_Tong_Jixu = {
 				set_nationality = ROOT

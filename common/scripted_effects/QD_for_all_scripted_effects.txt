@@ -248,6 +248,23 @@ H_in_china = {#全国核心
 	}
 }
 
+ANQ_recruit_character_effect = {#新皖系抓人
+	if = {
+		limit = {
+			NOT = {
+				THIS = { has_character_flag = is_dead }
+				ANQ = { has_character = PREV }
+			}
+		}
+		if = {
+			limit = { THIS = { is_army_leader = yes } }
+			demote_to_general = yes
+			remove_trait = { trait = recently_promoted }
+		}
+		set_nationality = ANQ
+	}
+}
+
 china_add_research_slots = {
 	if = {
 		limit = { has_global_flag = china_united }
@@ -603,30 +620,13 @@ China_build_ROC = {#成立民国
 	}
 }
 
-ANQ_recruit_character_effect = {
-	if = {
-		limit = {
-			NOT = {
-				THIS = { has_character_flag = is_dead }
-				ANQ = { has_character = PREV }
-			}
-		}
-		if = {
-			limit = { THIS = { is_army_leader = yes } }
-			demote_to_general = yes
-			remove_trait = { trait = recently_promoted }
-		}
-		set_nationality = ANQ
-	}
-}
-
 CSP_set_leader_effect = {#工团领导人
 	#CSP
 	custom_effect_tooltip = CSP_set_leader_tt
 	save_global_event_target_as = CSP_leader
 }
 
-NZH_set_leader_effect = {
+NZH_set_leader_effect = {#北直系领导人
 	#Northern Zhili
 	custom_effect_tooltip = NZH_set_leader_tt
 	save_global_event_target_as = NZH_leader
@@ -638,6 +638,25 @@ set_potential_national_government = {#宣布统一、枣核时间
 			NOT = { has_country_flag = china_is_potential_government }
 		}
 		set_country_flag = china_is_potential_government
+
+		if = {
+			limit = {
+				check_variable = { country_leader:china_alignment = token:northern_zhili }
+				NOT = {#Zhang Tianran will not be zhili aligned if they are able to make a government 
+					has_country_leader = {
+						name = "张天然"
+						ruling_only = yes
+					}
+				} 
+			}
+			NZH_set_leader_effect = yes
+		}
+		else_if = {
+			limit = {
+				check_variable = { country_leader:china_alignment = token:Syndicalists }
+			}
+			CSP_set_leader_effect = yes
+		}
 
 		every_state = {
 			limit = {
@@ -669,6 +688,7 @@ set_potential_national_government = {#宣布统一、枣核时间
 			CHI_warn_of_rkmt_government_effect = yes #If its a RKMT leader, effect will fire an event for CHI
 		}
 	}
+
 	if = {
 		limit = {
 			NOT = { has_country_flag = can_assume_national_leadership }
@@ -682,6 +702,7 @@ set_potential_national_government = {#宣布统一、枣核时间
 		set_country_flag = china_integration_unlocked
 		custom_effect_tooltip = GXC_integrate_provinces_tt
 	}
+
 	if = {
 		limit = {
 			NOT = { has_variable = kr_china_provinceintegration_cost_small }

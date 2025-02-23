@@ -2,6 +2,75 @@
 @china_attack_decision_cost = 20
 @china_attack_decision_time = 30
 
+foreign_politics = {
+	northwest_conflict_surrender = {#向敌人投降
+		icon = generic_break_treaty
+		allowed = {
+			OR = {
+				original_tag = XSM
+				original_tag = TIB
+				original_tag = MON
+			}
+		}
+
+		available = {
+			if = {
+				limit = {
+					original_tag = TIB
+					MON = { has_country_flag = MON_defeated_in_northwest_war_flag }
+					XSM = { is_ai = yes }
+					TIB = { is_ai = yes }
+					MON = { is_ai = yes }
+				}
+				surrender_progress > 0.15
+			}
+			else = {
+				surrender_progress > 0.4
+			}
+		}
+
+		visible = {
+			has_global_flag = northwest_conflict_begun
+			NOT = { has_global_flag = northwest_conflict_ended }
+			OR = {
+				has_war_with = XSM
+				has_war_with = TIB
+				has_war_with = MON
+			}
+			is_subject = no
+			is_in_faction = no
+			has_civil_war = no
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = { factor = 100 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete northwest_conflict_surrender"
+			if = {
+				limit = {
+					original_tag = XSM
+				}
+				log = "KR_Event_Logging;MA LOSES NORTHWESTERN WAR;[GetDateText]"
+				every_enemy_country = {
+					limit = {
+						OR = {
+							tag = TIB
+							tag = MON
+						}
+						is_valid_peace_target = yes
+					}
+					country_event = { id = mac.226 }
+				}
+			}
+			else = {
+				log = "KR_Event_Logging;MA WINS NORTHWESTERN WAR;[GetDateText]"
+				XSM = { country_event = mac.230 }
+			}
+		}
+	}
+}
 
 chinese_unification = {
 	assume_chinese_leadership = {#宣称国家领导权
@@ -121,6 +190,30 @@ chinese_unification = {
 			OR = {
 				owns_state = 608 #Beijing
 				china_stronger_than_existing_governments = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_leader = {
+							name = "张天然"
+							ruling_only = yes
+						}
+						check_variable = { country_leader:china_alignment = token:northern_zhili }
+					}
+				}
+				OR = {
+					NOT = { 
+						QIE = { 
+							has_country_leader = { 
+								character = QIE_aisin_gioro_puyi 
+							} 
+						} 
+					}
+					NOT = { country_exists = QIE }
+				}
+			}
+			else = {
+				CHN_no_aligned_unifier_exists_trigger = yes
 			}
 		}
 
@@ -1499,70 +1592,123 @@ chinese_unification = {
 		}
 	}
 
-	northwest_conflict_surrender = {#向敌人投降
-		icon = generic_break_treaty
+	### Subject Offering Submission ###
+	CHN_join_NZH_decision = {#加入北直系
+		icon = GFX_decision_eng_trade_unions_support
 		allowed = {
+			#Can't do always no because otherwise won't be able to check dynamically if new governments spawn.
 			OR = {
-				original_tag = XSM
-				original_tag = TIB
-				original_tag = MON
+				tag = HNN
+				tag = SHX
 			}
 		}
-
 		available = {
-			if = {
-				limit = {
-					original_tag = TIB
-					MON = { has_country_flag = MON_defeated_in_northwest_war_flag }
-					XSM = { is_ai = yes }
-					TIB = { is_ai = yes }
-					MON = { is_ai = yes }
-				}
-				surrender_progress > 0.15
+			at_peace_or_same_enemies_as_FROM = yes
+			FROM = {
+				china_is_valid_government_to_join = yes
 			}
-			else = {
-				surrender_progress > 0.4
-			}
-		}
-
-		visible = {
-			has_global_flag = northwest_conflict_begun
-			NOT = { has_global_flag = northwest_conflict_ended }
 			OR = {
-				has_war_with = XSM
-				has_war_with = TIB
-				has_war_with = MON
+				is_neighbor_of = FROM
+				any_subject_country = { is_neighbor_of = FROM }
+				FROM = { any_subject_country = { is_neighbor_of = ROOT } }
 			}
+		}
+		visible = {
+			china_is_potential_government = no
 			is_subject = no
-			is_in_faction = no
-			has_civil_war = no
+			country_exists = NZH
+
+			if = {
+				limit = { tag = HNN }
+				OR = {
+					has_completed_focus = HNN_xiang_xi_wang_de_sheng_li
+					has_completed_focus = HNN_strongarm_the_assembly
+					GXC = {
+						NOT = {
+							has_country_leader = {
+								name = "陈炯明"
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_leader = { character = HNN_zhao_hengti }
+					}
+					FROM = { original_tag = QIE } #Zhao should only be able to ally the Zhili in Beijing
+				}
+			}
+			else_if = {
+				limit = { tag = SHX }
+				NZH = { NOT = { original_tag = QIE } } #SHX has special content for joining QIE
+				has_completed_focus = SHX_beyond_borders
+			}
 		}
 
+		targets = { NZH }
+		target_trigger = { FROM = { tag = NZH } }
+		target_non_existing = yes
 		fire_only_once = yes
+		cost = 0
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = {
+			base = 10
+		}
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete northwest_conflict_surrender"
-			if = {
-				limit = {
-					original_tag = XSM
-				}
-				log = "KR_Event_Logging;MA LOSES NORTHWESTERN WAR;[GetDateText]"
-				every_enemy_country = {
-					limit = {
-						OR = {
-							tag = TIB
-							tag = MON
-						}
-						is_valid_peace_target = yes
-					}
-					country_event = { id = mac.226 }
-				}
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHN_join_NZH_decision target: [From.GetName]"
+			FROM = {
+				country_event = china_events.4
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = { china_puppet_ROOT_effect = yes }
 			}
-			else = {
-				log = "KR_Event_Logging;MA WINS NORTHWESTERN WAR;[GetDateText]"
-				XSM = { country_event = mac.230 }
+		}
+	}
+
+	CHN_join_CSP_decision = {#加入工团党
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = {
+			#Can't do always no because otherwise won't be able to check dynamically if new governments spawn.
+			OR = {
+				tag = HNN
+				tag = GXC
+				tag = SHC
+			}
+		}
+		available = {
+			at_peace_or_same_enemies_as_FROM = yes
+			FROM = {
+				china_is_valid_government_to_join = yes
+			}
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = { is_neighbor_of = FROM }
+				FROM = { any_subject_country = { is_neighbor_of = ROOT } }
+			}
+		}
+		visible = {
+			china_is_potential_government = no
+			is_subject = no
+			country_exists = CSP
+
+			china_is_aligned_with_gong_tuan_dang = yes
+		}
+
+		targets = { CSP }
+		target_trigger = { FROM = { tag = CSP } }
+		target_non_existing = yes
+		fire_only_once = yes
+		cost = 0
+
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHN_join_CSP_decision target: [From.GetName]"
+			FROM = {
+				country_event = china_events.4
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = { china_puppet_ROOT_effect = yes }
 			}
 		}
 	}

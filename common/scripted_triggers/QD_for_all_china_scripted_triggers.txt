@@ -39,3 +39,64 @@ china_proper_not_united = { #中国标签的一些逻辑，他们应该在攻击
 		NOT = { original_tag = KUM }
 	}
 }
+
+CHN_no_aligned_unifier_exists_trigger = {#统一全国的前置要求
+	#要么杀了老大，要么等他们死
+	if = {#北直系
+		limit = { check_variable = { country_leader:china_alignment = token:northern_zhili } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_NZH_tt
+			OR = {
+				NOT = { country_exists = NZH }
+				tag = NZH
+			}
+		}
+	}
+	else_if = {#工团党
+		limit = { check_variable = { country_leader:china_alignment = token:Syndicalists } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_CSP_tt
+			OR = {
+				NOT = { country_exists = CSP }
+				tag = CSP
+			}
+		}
+	}
+}
+
+china_is_aligned_with_northern_zhili = {#南直系
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_northern_zhili
+		OR = {
+			check_variable = { country_leader:china_alignment = token:northern_zhili }
+			check_variable = { country_leader:china_alignment = token:beiyang }
+		}
+	}
+}
+
+china_is_aligned_with_southern_zhili = {#北直系
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_southern_zhili
+		OR = {
+			check_variable = { country_leader:china_alignment = token:southern_zhili }
+			check_variable = { country_leader:china_alignment = token:beiyang }
+		}
+	}
+}
+
+china_is_aligned_with_zhili = {#直系
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_zhili
+		OR = {
+			china_is_aligned_with_northern_zhili = yes
+			china_is_aligned_with_southern_zhili = yes
+		}
+	}
+}
+
+china_is_aligned_with_gong_tuan_dang = {#工团党
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_gong_tuan
+		check_variable = { country_leader:china_alignment = token:Syndicalists }
+	}
+}

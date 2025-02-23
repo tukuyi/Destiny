@@ -40,6 +40,8 @@ HNN_revolution_victory = {#工团上台初始设定
 		HNN_alliance_with_the_diarchy2
 	}
 
+	CSP_set_leader_effect = yes
+
 	add_stability = -0.40
 	add_war_support = -0.30
 
@@ -1048,7 +1050,7 @@ HNN_political_council_claim_effect = {
 		}
 	}
 }
-HNN_southern_political_council_effect = {
+HNN_southern_political_council_effect = {#西南政务委员会
 	add_state_core = 592
 	set_capital = {
 		state = 592 #Guangzhou

@@ -284,7 +284,6 @@
  HNN_tian_yingzhao_commander_desc:0 "§Y指挥官介绍\n生于：§!§g1876年；大清帝国、湖南省凤凰县\n§Y派系：§!§P湘西军阀§!\n§Y军旅生涯：§!$HNN_tian_yingzhao_bio$"
  HNN_tian_yingzhao_for_desc:0 "§Y顾问介绍\n生于：§!§g1876年；大清帝国、湖南省凤凰县\n§Y派系：§!§P湘西军阀§!\n§Y政治生涯：§!$HNN_tian_yingzhao_bio$"
 
- HNN_duo_hui_shi_he:0 "夺回施鹤"
  HNN_zai_ci_tu_xi:0 "发动突袭"
  HNN_zai_ci_tu_xi_desc:0 "§G在八省混战中川系军阀借着我们陷入混乱之时对施鹤发动突袭夺取了这块地区，我们也尝试反击但是最终失败。如今我们决定再次发动突袭，势必要夺回这块区域！§!"
 
@@ -4590,9 +4589,14 @@
  HNN_establish_the_defence_commission_tt:0 "我们将建立防务专署，以解锁一系列有利于湖南防务的§C新决议§!。"
  HNN_zhili_home_base_qing:0 "[QIE.Capital.GetCapitalVictoryPointName]"
  HNN_zhili_home_base_sichuan:0 "[SZC.Capital.GetCapitalVictoryPointName]"
+ HNN_zhili_home_base_nanjing: "[LEP.Capital.GetCapitalVictoryPointName]"
+ HNN_zhili_home_base_shanxi: "[SHX.Capital.GetCapitalVictoryPointName]"
+ HNN_inspector_general_tang: "巡阅使"
+ HNN_governor_tang: "督理"
+ HNN_inspector_general: "湘粤桂巡阅使"
 
- HNN_attack_SZC:0 "进攻[FROM.GetNameDef]"
- HNN_attack_YUN:0 "进攻[FROM.GetNameDef]"
+ HNN_attack_SZC: "将[FROM.GetNameDef]并入西南政务委员会"
+ HNN_attack_YUN: "将[FROM.GetNameDef]并入西南政务委员会"
 
  HNN_defence_commission_category:0 "防务专署"
  HNN_defence_commission_category_desc:0 "湖南省防务专署，简称防署，是一个法外政府机构，可以授予督理统筹“一切关乎湖南防务之事宜”的§P特别权力§!。这些权力允许我们绕过省议会，颁布必要措施，为全省而非个别公民服务。随着防务专署的权力扩张，我们可以解锁更多的§C决议§!。这些决议都有一定代价，但也会为我们的政府带来各种各样的益处，我们应当明智地使用这些决议。"
@@ -4726,6 +4730,9 @@
  hnnzhili.17.t:0 "开办农务学堂"
  hnnzhili.17.d:0 "农务学堂最早是由袁世凯在保定设立的农务局下辖的一个新式机构，其目的是培养现代农业人才，让中国的传统农业走向现代化。但是这些机构最终也只是局限于直隶一带。而且还伴随着护法战争、多次直奉战争和国民党的北伐战争而导致多数机构都轰然倒塌，再也没有得到重视。汤芗铭在最初二次主持湖南之时就想着将这些机构重新引进湖南，来控制不为他所用的湖南乡村地区。不过由于湖南局势复杂最终只是在长沙周边的几个县略有推进，湖南更多的乡村地区最终被一贯道们所渗透。\n\n直到现在，赵恒惕等人已经命丧黄泉，国民党人的二次入侵也已经被驱逐，汤芗铭和陈渠珍等人达成了新的协定，是时候重新控制广袤的乡村地区，将邪教徒们赶出去了。引进新作物，开办新学堂，培养一批速成的可用的农业人才。重新组织保安团，去驱赶那些传教的邪教徒。"
  hnnzhili.17.a:0 "湖南地上地下只能有一个统治者"
+ hnnzhili.19.t: "成立西南政务委员会"
+ hnnzhili.19.d: "在与[HNN_zhili_home_base]的一系列商谈后，汤芗铭已宣布西南政务委员会正式成立。经由[HNN_zhili_home_base]批准，他本人已从湖南督理升任湘粤桂巡阅使一职，这使他得以直接彻底地掌控湖南、广东、广西三省大小军务，乃至建立起事实上的控制。\n\n就湖南省内而言，此事并未引起多大变化。然而在粤桂二省，这意味着新军对大城市的占领即将结束，两广将恢复些许正常的样子。\n\n在广西，汤巡阅使已决定与当地势力展开合作，对象包括前旧桂系成员、地方军阀以及诸如刘震寰这样的各界人士。种种手段，只为在这个动荡好斗的省份建立起像样的秩序。\n\n而广东似乎需要一些更温和的方式。陈炯明统治时，广东经历了与赵恒惕治下的湖南类似的问题，这让汤芗铭意识到自己不可重蹈覆辙。他派哥哥汤化龙南下与广东省议会磋商，对双方而言幸运的是，汤化龙成功地与省内诸势力达成了妥协，不管是借助对商团的威逼利诱，还是通过与士绅、保守派互相勾兑。他还动用自己在帝国宪政会中的人脉，拉拢了不少温和派甚至部分左派。在成功协调起一个有效的议会联盟之后，汤化龙返回长沙并将这一好消息告诉给他的弟弟。\n\n随着两广局势尽在掌控，汤芗铭已树立起一个强大的华南集团，同时享受着[HNN_zhili_home_base]准许的自治。汤巡阅使在战场内外都已大获全胜，并凭借功劳和才干收获奖赏。"
+ hnnzhili.19.a: "向湘粤桂巡阅使汤芗铭致敬！"
 
 #谭延闿
  HNN_a_democratic_province_2:0 "省宪的遗产"

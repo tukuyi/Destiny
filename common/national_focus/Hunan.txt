@@ -2523,16 +2523,16 @@ focus_tree = {
 				expire = "1965.1.1"
 				ideology = natpop_roerichism_subtype
 			}
-			set_party_name = {
-				ideology = national_populist
-				long_name =  HNN_national_populist_old_party_long
-				name =  HNN_national_populist_old_party
-			}
 			add_natpop_to_coalition = yes
 			country_event = hnnzhili.12
 			custom_effect_tooltip = tooltip_white_line
 			show_unit_leaders_tooltip = HNN_zhou_xicheng
 			hidden_effect = {
+				set_party_name = {
+					ideology = national_populist
+					long_name =  HNN_national_populist_old_party_long
+					name =  HNN_national_populist_old_party
+				}
 				HNN_zhou_xicheng = { HNN_recruit_characters_effect = yes }
 			}
 		}
@@ -2572,6 +2572,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_ensure_rural_loyalty"
 			add_ideas = HNN_rural_loyalty_ensured
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
 					has_idea = HNN_ye_dehui_sec
@@ -2586,6 +2587,7 @@ focus_tree = {
 			else = {
 				custom_effect_tooltip = HNN_ye_dehui_helpful_tooltip
 			}
+			custom_effect_tooltip = tooltip_white_line
 			country_event = { 
 				id = hnnzhili.17 
 				days = 1 
@@ -2642,9 +2644,7 @@ focus_tree = {
 				limit = {
 					is_subject = no
 				}
-				NOT = {
-					has_global_flag = china_united
-				}
+				CHN_no_aligned_unifier_exists_trigger = yes
 			}
 		}
 		prerequisite = {
@@ -2659,13 +2659,16 @@ focus_tree = {
 					china_is_potential_government = no
 				}
 				set_potential_national_government = yes
+				custom_effect_tooltip = tooltip_white_line
 				china_enable_all_demand_submission_decisions = yes
 				# zhili_china_enable_alliance_decisions = yes
 			}
 			else_if = {
 				limit = { is_subject = yes }
 				custom_effect_tooltip = HNN_southwest_china_political_council_tt
+				custom_effect_tooltip = tooltip_white_line
 				HNN_southern_political_council_effect = yes
+				country_event = hnnzhili.19
 			}
 			every_state = {
 				limit = {
@@ -2823,6 +2826,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_wipe_out_socialists"
 			custom_effect_tooltip = HNN_wipe_out_socialists.tt
+			custom_effect_tooltip = tooltip_white_line
 			country_event = { id = hnnzhili.14 days = 1 }
 			hidden_effect = {
 				remove_ideas = {

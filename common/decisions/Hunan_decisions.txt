@@ -516,7 +516,11 @@ HNN_revolution_category = {#革命之火
 		icon = GFX_decision_hand_grab
 
 		visible = {
-			has_active_mission = HNN_shen_bing_revolution
+			OR = {
+				has_active_mission = HNN_revolution
+				has_active_mission = HNN_yi_guan_dao
+				has_active_mission = HNN_shen_bing_revolution
+			}
 		}
 
 		ai_will_do = { factor = 25 }
@@ -540,6 +544,25 @@ HNN_revolution_category = {#革命之火
 					days = 10
 				}
 			}
+			else_if = {
+				limit = { 
+					has_active_mission = HNN_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_revolution
+					days = 10
+				}
+			}
+
+			if = {
+				limit = { 
+					has_active_mission = HNN_yi_guan_dao
+				}
+				add_days_mission_timeout = {
+					mission = HNN_yi_guan_dao
+					days = 10
+				}
+			}
 		}
 
 		remove_effect = {
@@ -550,6 +573,25 @@ HNN_revolution_category = {#革命之火
 				}
 				add_days_mission_timeout = {
 					mission = HNN_shen_bing_revolution
+					days = 25
+				}
+			}
+			else_if = {
+				limit = { 
+					has_active_mission = HNN_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_revolution
+					days = 25
+				}
+			}
+			
+			if = {
+				limit = { 
+					has_active_mission = HNN_yi_guan_dao
+				}
+				add_days_mission_timeout = {
+					mission = HNN_yi_guan_dao
 					days = 25
 				}
 			}
@@ -1200,6 +1242,163 @@ HNN_elections_category = {#选举
 	}
 }
 
+chinese_unification = {
+	HNN_zai_ci_tu_xi = {#夺回施鹤
+		icon = GFX_decision_generic_ignite_civil_war
+
+		allowed = {
+			original_tag = HNN
+		}
+		available = {
+			NOT = {
+				owns_state = 1049
+			}
+		}
+		visible = {
+			NOT = {
+				owns_state = 1049
+			}
+		}
+		ai_will_do = {
+			base = 15
+		}
+
+		war_with_on_complete = SZC
+
+		cost = 25
+		days_remove = 10
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_zai_ci_tu_xi"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_zai_ci_tu_xi"
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 1013
+					num_provinces = 4
+					on_win = hnn.127
+					on_lose = hnn.128
+					on_cancel = hnn.129
+				}
+
+				defender = {
+					state = 1049
+					num_provinces = 5
+					on_win = hnn.130
+					on_lose = hnn.131
+					on_cancel = hnn.132
+				}
+			}
+		}
+	}
+
+	HNN_attack_SZC = {#进攻四川
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no } #activated by effect
+
+		available = {
+			NOT = { has_rule = can_not_declare_war } #united front
+			NOT = { has_non_aggression_pact_with = FROM }
+			NOT = { overlord = { has_non_aggression_pact_with = FROM } }
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.overlord }
+				NOT = { overlord = { has_non_aggression_pact_with = FROM.overlord } }
+			}
+		}
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+		}
+
+		cost = 20
+		days_remove = 30
+		war_with_target_on_remove = yes
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_attack_SZC target: [From.GetName]"
+
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_attack_SZC target: [From.GetName]"
+			
+			# FROM = { incoming_war_notification_effect = yes }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_attack_SZC target: [From.GetName]"
+			save_event_target_as = HNN_attack_SZC
+			overlord = { country_event = hnnzhili.9 }
+		}
+	}
+
+	HNN_attack_YUN = {#进攻云南
+		icon = generic_prepare_civil_war
+
+		allowed = { always = no } #activated by effect
+
+		available = {
+			NOT = { has_rule = can_not_declare_war } #united front
+			NOT = { has_non_aggression_pact_with = FROM }
+			NOT = { overlord = { has_non_aggression_pact_with = FROM } }
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.overlord }
+				NOT = { overlord = { has_non_aggression_pact_with = FROM.overlord } }
+			}
+		}
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+		}
+
+		cost = 20
+		days_remove = 30
+		war_with_target_on_remove = yes
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_attack_YUN target: [From.GetName]"
+
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_attack_YUN target: [From.GetName]"
+
+			# FROM = { incoming_war_notification_effect = yes }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_attack_YUN target: [From.GetName]"
+			save_event_target_as = HNN_attack_YUN
+			overlord = { country_event = hnnzhili.9 }
+		}
+	}
+}
+
 HNN_foreign_category = {#中国结盟决议
 	HNN_join_npa = {
 		available = {
@@ -1229,44 +1428,6 @@ HNN_foreign_category = {#中国结盟决议
 					id = hnn.66
 					days = 1
 				}
-			}
-		}
-	}
-
-	HNN_join_zhili = { #cannot join exiled Zhili because of animosities
-		available = {
-			has_war = no
-		}
-		visible = {
-			QIE = {
-				is_ruled_by_pro_zhili = yes
-				is_faction_leader = yes
-			}
-			OR = {
-				has_completed_focus = HNN_all_under_the_governor
-				is_ruled_by_pro_zhili = yes
-			}
-			is_in_faction = no
-		}
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 10
-				event_target:current_china_leader = {
-					tag = QIE
-				}
-			}
-		}
-
-		fire_only_once = yes
-		cost = 0
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_join_zhili"
-			QIE = {
-				country_event = china_events.4
-				custom_effect_tooltip = if_they_accept
-				effect_tooltip = { china_puppet_ROOT_effect = yes }
 			}
 		}
 	}
@@ -1643,109 +1804,6 @@ HNN_foreign_category = {#中国结盟决议
 					days = 1
 				}
 			}
-		}
-	}
-
-	HNN_attack_SZC = {
-		icon = generic_prepare_civil_war
-
-		allowed = { always = no } #activated by effect
-
-		available = {
-			NOT = { has_rule = can_not_declare_war } #united front
-			NOT = { has_non_aggression_pact_with = FROM }
-			NOT = { overlord = { has_non_aggression_pact_with = FROM } }
-			if = {
-				limit = { FROM = { is_subject = yes } }
-				NOT = { has_non_aggression_pact_with = FROM.overlord }
-				NOT = { overlord = { has_non_aggression_pact_with = FROM.overlord } }
-			}
-		}
-
-		visible = {
-			can_declare_war_on = FROM
-		}
-
-		cancel_trigger = {
-			NOT = { can_declare_war_on = FROM }
-		}
-
-		cost = 20
-		days_remove = 30
-		war_with_target_on_remove = yes
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_attack_SZC target: [From.GetName]"
-
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_attack_SZC target: [From.GetName]"
-			
-			# FROM = { incoming_war_notification_effect = yes }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_attack_SZC target: [From.GetName]"
-			save_event_target_as = HNN_attack_SZC
-			overlord = { country_event = hnn.zhili.9 }
-		}
-	}
-
-	HNN_attack_YUN = {
-		icon = generic_prepare_civil_war
-
-		allowed = { always = no } #activated by effect
-
-		available = {
-			NOT = { has_rule = can_not_declare_war } #united front
-			NOT = { has_non_aggression_pact_with = FROM }
-			NOT = { overlord = { has_non_aggression_pact_with = FROM } }
-			if = {
-				limit = { FROM = { is_subject = yes } }
-				NOT = { has_non_aggression_pact_with = FROM.overlord }
-				NOT = { overlord = { has_non_aggression_pact_with = FROM.overlord } }
-			}
-		}
-
-		visible = {
-			can_declare_war_on = FROM
-		}
-
-		cancel_trigger = {
-			NOT = { can_declare_war_on = FROM }
-		}
-
-		cost = 20
-		days_remove = 30
-		war_with_target_on_remove = yes
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 100
-
-		}
-
-		cancel_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision cancel HNN_attack_YUN target: [From.GetName]"
-
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_attack_YUN target: [From.GetName]"
-
-			# FROM = { incoming_war_notification_effect = yes }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_attack_YUN target: [From.GetName]"
-			save_event_target_as = HNN_attack_YUN
-			overlord = { country_event = hnn.zhili.9 }
 		}
 	}
 }
@@ -4086,60 +4144,6 @@ HNN_defence_commission_category = {#防务专署
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.10
-			}
-		}
-	}
-}
-
-HNN_duo_hui_shi_he ={#边界战争
-	HNN_zai_ci_tu_xi = {#夺回施鹤
-		icon = GFX_decision_generic_ignite_civil_war
-
-		allowed = {
-			original_tag = HNN
-		}
-		available = {
-			NOT = {
-				owns_state = 1049
-			}
-		}
-		visible = {
-			NOT = {
-				owns_state = 1049
-			}
-		}
-		ai_will_do = {
-			base = 15
-		}
-
-		war_with_on_complete = SZC
-
-		cost = 25
-		days_remove = 10
-		fire_only_once = yes
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_zai_ci_tu_xi"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_zai_ci_tu_xi"
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 1013
-					num_provinces = 4
-					on_win = hnn.127
-					on_lose = hnn.128
-					on_cancel = hnn.129
-				}
-
-				defender = {
-					state = 1049
-					num_provinces = 5
-					on_win = hnn.130
-					on_lose = hnn.131
-					on_cancel = hnn.132
-				}
 			}
 		}
 	}

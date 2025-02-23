@@ -4021,6 +4021,21 @@ country_event = { #Hidden event to move remnants
 		country_event = { id = hnnzhili.18 days = 20 random_hours = 480 }
 	}
 }
+country_event = { #成立西南政务委员会
+	id = hnnzhili.19
+	title = hnnzhili.19.t
+	desc = hnnzhili.19.d
+
+	picture = GFX_report_event_CHN_china_five_colour_confrence
+	is_triggered_only = yes
+
+	option = { # To the Inspector-General of Xiang-Yue-Gui, to Tang Xiangming!
+		log = "[GetLogInfo]: event hnnzhili.19 option hnnzhili.19.a"
+		name = hnnzhili.19.a
+		add_country_leader_trait = HNN_inspector_general
+	}
+}
+
 
 ########################################
 ##########-     佛教     -##############

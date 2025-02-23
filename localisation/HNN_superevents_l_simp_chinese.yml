@@ -67,15 +67,36 @@
  left_kuomintang: "§k国民党左派§!"
  right_kuomintang: "§c国民党右派§!"
  chinese_southern_republican: "§G南方共和派§!"
- Syndicalists: "§R工团党/共产党§!"
+ Syndicalists: "§R工团党§!"
  geacps: "§j共荣圈§!"
  others: "§g其他主张§!"
+
+ CHN_No_Other_AGJ_tt: "§Y没有其他势力宣称§a安国军§!的领导权。§!"
+ CHN_No_Other_RGC_tt: "§Y没有其他势力宣称§j共荣圈中国军阀§!的领导权。§!"
+ CHN_No_Other_UPC_tt: "§Y没有其他势力宣称§f联省派§!的领导权。§!"
+ CHN_No_Other_LKT_tt: "§Y没有其他势力宣称§k国民党左派§!的领导权。§!"
+ CHN_No_Other_NZH_tt: "§Y没有其他势力宣称§z北直系§!的领导权。§!"
+ CHN_No_Other_CSP_tt: "§Y没有其他势力宣称§R工团党§!的领导权。§!"
+ CHN_No_Other_MCU_tt: "§Y没有其他势力宣称§q复辟派§!的领导权。§!"
+ CHN_No_Other_RKT_tt: "§Y没有其他势力宣称§c国民党右派§!的领导权。§!"
+ CHN_No_Other_SZH_tt: "§Y没有其他势力宣称§m南直系§!领导权。§!"
 
  CSP_set_leader_tt: "§r我们将宣称工团党和国家的领导权。§!"
  NZH_set_leader_tt: "§z我们将宣称北直系和全国的领导权。§!"
 
+ china_is_aligned_with_northern_zhili: "由§z亲北直系§!政权统治"
+ china_is_aligned_with_northern_zhili_NOT: "§R未§!由§z亲北直系§!政权统治"
+ china_is_aligned_with_southern_zhili: "由§m亲南直系§!政权统治"
+ china_is_aligned_with_southern_zhili_NOT: "§R未§!由§m亲南直系§!政权统治"
+ china_is_aligned_with_zhili: "由§L亲直系§!政权统治"
+ china_is_aligned_with_zhili_NOT: "§R未§!由§L亲直系§!政权统治"
+ china_is_aligned_with_gong_tuan: "由§R亲工团党§!政权统治"
+ china_is_aligned_with_gong_tuan_NOT: "§R未§!由§R亲工团党§!政权统治"
+
  CHN_join_NZH_decision: "加入[NZH.GetName]"
  CHN_join_NZH_decision_desc: "自从直系在1927年取得胜利之后，他们一直主宰着中国政坛，并经受住了来自北洋内部政治风波、南方革命派和北方竞争对手的考验。尽管他们的霸权最近受到了挑战，但他们必将取得胜利，并维护中国的道德和政治秩序。"
+ CHN_join_CSP_decision: "加入[CSP.GetName]"
+ CHN_join_CSP_decision_desc: "真正属于无产阶级普罗大众的革命已经到来，我们必须遵从中央的指示，共同扫除军阀反动残余与带着革命假面的国民党反动分子，革命万岁！中国社会主义万岁！中国工团党万岁！无产阶级万岁！"
 
  northwest_conflict_surrender: "向敌人投降"
 

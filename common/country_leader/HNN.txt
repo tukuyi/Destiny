@@ -52,6 +52,10 @@ leader_traits = {
 		political_power_factor = 0.04
 		command_power_gain_mult = 0.03
 	}
+	HNN_inspector_general = { #Tang Xiangming, Inspector-General
+		random = no
+		required_garrison_factor = -0.15
+	}
 	HNN_zhuan_shi = {
 		random = no
 		political_power_gain = 0.05
