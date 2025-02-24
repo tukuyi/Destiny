@@ -1,7 +1,10 @@
 ### Syndicalist china
-CSP = {
+CSP = {#工团
 	global_event_target = CSP_leader
 }
-NZH = {
+NZH = {#北直系
 	global_event_target = NZH_leader
+}
+SZH = {#南直系
+	global_event_target = SZH_leader
 }

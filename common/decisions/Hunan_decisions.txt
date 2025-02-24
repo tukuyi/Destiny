@@ -433,6 +433,9 @@ HNN_revolution_category = {#革命之火
 				id = hungong.7
 				days = 1 
 			}
+			hidden_effect = {
+				china_break_puppet_effect = yes
+			}
 		}
 	}	
 	HNN_yi_guan_dao = {#三期普渡

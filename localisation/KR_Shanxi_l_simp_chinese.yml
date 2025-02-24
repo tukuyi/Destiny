@@ -314,6 +314,8 @@
  SHX_shan_dong_jun_dui:0 "煽动军队"
  SHX_li_yong_zhi_xi:0 "寻求北京支援"
  SHX_kong_he_fan_dui_pai:0 "恐吓反对派"
+ SHX_an_fu_jun_dui:0 "安抚军队"
+
  #教育
  Feng_taking_SHX_education_for_all: "重视基础教育"
  Feng_taking_increase_school_taxes: "增加办学税"

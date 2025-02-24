@@ -661,6 +661,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_appoint_civilian_magistrates"
 			add_political_power = 50
+			custom_effect_tooltip = LEP_marshal_stands_triumphant_tt
 			if = {
 				limit = { paternal_autocrat < 0.55 }
 				set_political_party = {
@@ -669,7 +670,6 @@ focus_tree = {
 				}
 				else = { add_popularity = { ideology = paternal_autocrat popularity = 0.10 } }
 			}
-			show_unit_leaders_tooltip = LEP_zhou_yan
 			LEP_zhou_yan = {
 				set_nationality = ROOT
 			}

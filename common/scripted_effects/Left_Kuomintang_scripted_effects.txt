@@ -1623,7 +1623,7 @@ CHI_betrayal_uprising_effect = {
 				limit = {
 					OR = {
 						is_ally_of_PREV = yes
-						has_autonomy_state = kr_governorate
+						has_autonomy_state = governorate
 					}
 					is_chinese_tag = yes
 				}

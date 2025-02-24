@@ -12,6 +12,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_Wu_pei_fu.png"
 	}	
 	spriteType  = {
+		name = "GFX_report_event_QIE_wu_peifu_li_dazhao"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_wu_peifu_li_dazhao.png"
+	}	
+	spriteType  = {
+		name = "GFX_report_event_QIE_li_dazhao_old"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_li_dazhao_old.png"
+	}	
+	spriteType  = {
 		name = "GFX_report_event_QIE_puyi_and_reginald_johnston"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_puyi_and_reginald_johnston.png"
 	}	
@@ -86,6 +94,10 @@ spriteTypes = {
 	spriteType  = {
 		name = "GFX_report_event_QIE_cao_rui"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_cao_rui.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_generic_beijing_map"
+		texturefile = "gfx/event_news_pictures/QIE/generic_beijing_map.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_tong_yi"

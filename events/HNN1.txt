@@ -11,8 +11,13 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect NZH = {
-		# 	add_political_power = 10
+		# eval_effect HNN = {
+		# 	NZH = {
+		# 		activate_targeted_decision = { 
+		# 			target = FROM` 
+		# 			decision = china_integrate_subjects 
+		# 		}
+		# 	}
 		# }
 
 		# if = {

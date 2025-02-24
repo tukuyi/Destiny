@@ -1,4 +1,9 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			LEP = { save_global_event_target_as = SZH_leader }
+		}
+	}
 	on_daily_HNN = {
 		effect = {
 			if = {

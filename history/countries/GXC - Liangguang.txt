@@ -358,12 +358,17 @@ GXC_Chen_Hao_Ren = {
 	set_character_flag = GXC_guangxi_character 
 	retire = yes
 }
-GXC_He_Si_Cang = { 
+GXC_Li_Ming_Rui = { 
+	set_variable = { china_alignment = token:Syndicalists }
 	set_character_flag = GXC_guangxi_character 
 	retire = yes
 }
 GXC_Wei_Guo_Qing = { 
 	set_variable = { china_alignment = token:Syndicalists }
+	set_character_flag = GXC_guangxi_character 
+	retire = yes
+}
+GXC_He_Si_Cang = { 
 	set_character_flag = GXC_guangxi_character 
 	retire = yes
 }
@@ -380,11 +385,6 @@ GXC_deng_ken = {
 	retire = yes
 }
 GXC_Yu_zuo_yu = { 
-	set_character_flag = GXC_guangxi_character 
-	retire = yes
-}
-GXC_Li_Ming_Rui = { 
-	set_variable = { china_alignment = token:Syndicalists }
 	set_character_flag = GXC_guangxi_character 
 	retire = yes
 }

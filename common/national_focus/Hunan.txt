@@ -2245,7 +2245,8 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
+
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_strongarm_the_assembly
@@ -2281,7 +2282,8 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { base = 100 }
+
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_strongarm_the_assembly
@@ -2291,6 +2293,25 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_establish_the_defence_commission"
 			add_ideas = HNN_defence_commission
 			country_event = hnnzhili.6
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_active_mission = HNN_revolution
+				}
+				add_days_mission_timeout = {
+					mission = HNN_revolution
+					days = 25
+				}
+			}
+			if = {
+				limit = { 
+					has_active_mission = HNN_yi_guan_dao
+				}
+				add_days_mission_timeout = {
+					mission = HNN_yi_guan_dao
+					days = 25
+				}
+			}
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = HNN_establish_the_defence_commission_tt
 		}
@@ -2307,12 +2328,20 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 75
+			base = 50
 			modifier = {
 				has_war = no
 				factor = 1.25
 			}
+			modifier = {
+				OR = {
+					has_active_mission = HNN_revolution
+					has_active_mission = HNN_yi_guan_dao
+				}
+				factor = 1.25
+			}
 		}
+
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_declare_martial_law
@@ -2377,12 +2406,20 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 200
+			base = 50
 			modifier = {
 				has_war = no
 				factor = 1.25
 			}
+			modifier = {
+				OR = {
+					has_active_mission = HNN_revolution
+					has_active_mission = HNN_yi_guan_dao
+				}
+				factor = 1.25
+			}
 		}
+
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_declare_martial_law
@@ -2548,7 +2585,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 200
+			base = 40
 			modifier = {
 				has_war = no
 				factor = 1.25
@@ -2559,6 +2596,13 @@ focus_tree = {
 					rule = HNN_path
 					option = HNN_TANG
 				}
+			}
+			modifier = {
+				OR = {
+					has_active_mission = HNN_revolution
+					has_active_mission = HNN_yi_guan_dao
+				}
+				factor = 4
 			}
 		}
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
@@ -2610,7 +2654,15 @@ focus_tree = {
 				has_war = no
 				factor = 1.25
 			}
+			modifier = {
+				OR = {
+					has_active_mission = HNN_revolution
+					has_active_mission = HNN_yi_guan_dao
+				}
+				factor = 4
+			}
 		}
+
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_crush_the_kmt
@@ -2814,7 +2866,15 @@ focus_tree = {
 				has_war = no
 				factor = 1.25
 			}
+			modifier = {
+				OR = {
+					has_active_mission = HNN_revolution
+					has_active_mission = HNN_yi_guan_dao
+				}
+				factor = 4
+			}
 		}
+		
 		available = { has_country_leader = { name = "汤芗铭" ruling_only = yes } }
 		prerequisite = {
 			focus = HNN_ensure_rural_loyalty
@@ -7001,7 +7061,7 @@ focus_tree = {
 		x = 26
 		y = 13
 
-		ai_will_do = { base = 300 }
+		ai_will_do = { base = 30 }
 
 		available = {
 			has_country_flag = HNN_hit_by_black_monday
@@ -7029,7 +7089,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 100
+			base = 40
 			modifier = {
 				has_war = yes
 				factor = 0.75
@@ -7574,7 +7634,7 @@ focus_tree = {
 		x = 20
 		y = 13
 
-		ai_will_do = { base = 300 }
+		ai_will_do = { base = 40 }
 
 		available = {
 			has_country_flag = HNN_hit_by_black_monday
@@ -7618,7 +7678,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 100
+			base = 40
 			modifier = {
 				has_war = yes
 				factor = 0.75
@@ -7742,7 +7802,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 100
+			base = 40
 			modifier = {
 				has_war = yes
 				factor = 0.75
@@ -8122,7 +8182,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			base = 90
+			base = 40
 			modifier = {
 				has_war = yes
 				factor = 0.8

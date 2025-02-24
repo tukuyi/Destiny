@@ -6452,6 +6452,9 @@ country_event = {#长沙会战
 			HNN_constitutional_hopes_dashed
 			HNN_turbulent_intelligentsia
 		}	
+		hidden_effect = {
+			china_break_puppet_effect = yes
+		}
 	}	
 }
 country_event = {#会道门盟约
@@ -7365,7 +7368,7 @@ country_event = {#回归南京
 		name = hungong.27.a
 		set_autonomy = {
 			target = FROM
-			autonomy_state = kr_governorate
+			autonomy_state = governorate
 			end_wars = no
 		}
 	}

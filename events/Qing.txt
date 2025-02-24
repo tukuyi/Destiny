@@ -12194,7 +12194,7 @@ country_event = { #北洋政府中的国民党
 	is_triggered_only = yes
 
 	option = {
-		name = qieflavor.56.a #You are a strange one, Huang Fu.
+		name = qieflavor.305.a #You are a strange one, Huang Fu.
 		add_popularity = {
 			ideology = market_liberal
 			popularity = 0.02

@@ -852,7 +852,7 @@ china_puppet_ROOT_effect = {
 					var:new_overlord = {
 						set_autonomy = {
 							target = PREV
-							autonomy_state = kr_governorate
+							autonomy_state = associated_governorate
 							end_wars = no
 						}
 					}
@@ -868,12 +868,13 @@ china_puppet_ROOT_effect = {
 				}
 				restore_previous_government_type = yes
 				china_kmt_set_cosmetic_effect = yes
+				china_submission_mandatory_loyalty_timer_effect = yes
 			}
 		}
 	}
 	set_autonomy = {
 		target = ROOT
-		autonomy_state = kr_governorate
+		autonomy_state = associated_governorate
 		end_wars = no
 	}
 	hidden_effect = {
@@ -893,6 +894,7 @@ china_puppet_ROOT_effect = {
 				remove_wargoal = { target = PREV type = all }
 			}
 			china_kmt_set_cosmetic_effect = yes
+			china_submission_mandatory_loyalty_timer_effect = yes
 		}
 	}
 }
@@ -909,7 +911,7 @@ china_puppet_PREV_effect = {
 					var:new_overlord = {
 						set_autonomy = {
 							target = PREV
-							autonomy_state = kr_governorate
+							autonomy_state = associated_governorate
 							end_wars = no
 						}
 					}
@@ -925,12 +927,13 @@ china_puppet_PREV_effect = {
 				}
 				restore_previous_government_type = yes
 				china_kmt_set_cosmetic_effect = yes
+				china_submission_mandatory_loyalty_timer_effect = yes
 			}
 		}
 	}
 	set_autonomy = {
 		target = PREV
-		autonomy_state = kr_governorate
+		autonomy_state = associated_governorate
 		end_wars = no
 	}
 	hidden_effect = {
@@ -950,6 +953,7 @@ china_puppet_PREV_effect = {
 				remove_wargoal = { target = PREV type = all }
 			}
 			china_kmt_set_cosmetic_effect = yes
+			china_submission_mandatory_loyalty_timer_effect = yes
 		}
 	}
 }
@@ -965,7 +969,7 @@ china_puppet_FROM_effect = {
 					var:new_overlord = {
 						set_autonomy = {
 							target = PREV
-							autonomy_state = kr_governorate
+							autonomy_state = associated_governorate
 							end_wars = no
 						}
 					}
@@ -981,13 +985,14 @@ china_puppet_FROM_effect = {
 				}
 				restore_previous_government_type = yes
 				china_kmt_set_cosmetic_effect = yes
+				china_submission_mandatory_loyalty_timer_effect = yes
 			}
 			get_current_government_type = yes
 		}
 	}
 	set_autonomy = {
 		target = FROM
-		autonomy_state = kr_governorate
+		autonomy_state = associated_governorate
 		end_wars = no
 	}
 	hidden_effect = {
@@ -999,15 +1004,47 @@ china_puppet_FROM_effect = {
 				remove_claim_by = PREV.PREV
 			}
 			china_kmt_set_cosmetic_effect = yes
+			china_submission_mandatory_loyalty_timer_effect = yes
 		}
 	}
 }
 
 china_puppet_TARGET_effect = {
+	hidden_effect = {
+		set_temp_variable = { new_overlord = THIS }
+		var:target = {
+			every_subject_country = {
+				get_current_government_type = yes
+				if = {
+					limit = { is_chinese_tag = yes }
+					var:new_overlord = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = associated_governorate
+							end_wars = no
+						}
+					}
+				}
+				else = {
+					var:new_overlord = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = default_puppet
+							end_wars = no
+						}
+					}
+				}
+				restore_previous_government_type = yes
+				china_kmt_set_cosmetic_effect = yes
+				china_submission_mandatory_loyalty_timer_effect = yes
+			}
+			get_current_government_type = yes
+		}
+	}
 	hidden_effect = { var:target = { get_current_government_type = yes } }
 	set_autonomy = {
 		target = var:target
-		autonomy_state = kr_governorate
+		autonomy_state = associated_governorate
 		end_wars = no
 	}
 	hidden_effect = {
@@ -1019,6 +1056,7 @@ china_puppet_TARGET_effect = {
 				remove_claim_by = PREV.PREV
 			}
 			china_kmt_set_cosmetic_effect = yes
+			china_submission_mandatory_loyalty_timer_effect = yes
 		}
 	}
 }
@@ -1158,6 +1196,10 @@ china_break_puppet_effect = {
 				NOT = { is_core_of = var:former_overlord }
 			}
 			add_claim_by = var:former_overlord
+		}
+		if = {
+			limit = { has_cosmetic_tag = SHX_NCPC_KMT }
+			set_cosmetic_tag = SHX_NCPC
 		}
 		if = {
 			limit = {

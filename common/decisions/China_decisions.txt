@@ -764,58 +764,31 @@ chinese_unification = {
 		}
 	}
 
-	china_integrate_subjects = {
+	china_integrate_subjects = {#推动整合
 		icon = eng_trade_unions_support
 
 		available = {
 			NOT = { has_war_together_with = FROM }
 			NOT = { has_rule = can_not_declare_war } #united front
 			if = {
-				limit = { 
-					FROM = { 
-						OR = {
-							has_autonomy_state = associated_governorate
-							has_autonomy_state = autonomous_governorate
-							has_autonomy_state = kr_governorate
-							has_autonomy_state = integrated_governorate
-						}
-					} 
+				limit = { FROM = { has_autonomy_state = integrated_governorate } }
+				has_global_flag = china_united
+				china_is_potential_government = yes
+				is_owner_neighbor_of = FROM
+			}
+		}
+
+		visible = {
+			if = {
+				limit = {
+					original_tag = SIK
 				}
-				OR = {
-					has_global_flag = china_united
-					AND = {
-						OR = {
-							tag = MON
-							tag = TIB
-						}
-						owns_state = 608
-					}
-				}
-				is_neighbor_of = FROM
-				received_expeditionary_forces = { sender = FROM value < 1 }
+				NOT = { FROM = { tag = TAN } }
 			}
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { has_subject = FROM }
-				if = {
-					limit = { 
-						FROM = { 
-							OR = {
-								has_autonomy_state = associated_governorate
-								has_autonomy_state = autonomous_governorate
-								has_autonomy_state = kr_governorate
-								has_autonomy_state = integrated_governorate
-							}
-						} 
-					}
-					received_expeditionary_forces = { sender = FROM value > 0 }
-				}
-				else = {
-					hidden_trigger = { always = no }
-				}
-			}
+			NOT = { has_subject = FROM }
 		}
 
 		target_array = global.china_tags_array
@@ -869,7 +842,34 @@ chinese_unification = {
 			}
 			effect_tooltip = {
 				add_collaboration = { target = FROM value = 0.05 }
-				china_integrate_TARGET_effect = yes
+				if = {
+					limit = { FROM = { has_autonomy_state = integrated_governorate } }
+					china_integrate_TARGET_effect = yes
+				}
+				else_if = {
+					limit = { FROM = { has_autonomy_state = governorate } }
+					set_autonomy = {
+						target = FROM
+						autonomy_state = integrated_governorate
+						end_wars = no
+					}
+				}
+				else_if = {
+					limit = { FROM = { has_autonomy_state = autonomous_governorate } }
+					set_autonomy = {
+						target = FROM
+						autonomy_state = governorate
+						end_wars = no
+					}
+				}
+				else_if = {
+					limit = { FROM = { has_autonomy_state = associated_governorate } }
+					set_autonomy = {
+						target = FROM
+						autonomy_state = autonomous_governorate
+						end_wars = no
+					}
+				}
 			}
 		}
 	}
@@ -945,6 +945,89 @@ chinese_unification = {
 
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout china_integration_timer target: [From.GetName]"
+		}
+	}
+
+	china_break_free = {#对抗你的领袖
+		icon = eng_trade_unions_demand
+
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = china_half_strength_of_overlord_tt
+				overlord = { strength_ratio = { tag = ROOT ratio < 2 } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = china_has_been_365_days_tt
+				NOT = { has_country_flag = china_submission_mandatory_loyalty_timer_flag }
+			}
+		}
+
+		visible = {
+			OR = {
+				has_autonomy_state = associated_governorate
+				has_autonomy_state = autonomous_governorate
+				has_autonomy_state = governorate
+				has_autonomy_state = integrated_governorate
+			}
+			date > 1936.3.1
+			if = {
+				limit = { original_tag = TAN }
+				overlord = { NOT = { original_tag = SIK } } #Kumul breaks away via event
+			}
+			if = {
+				limit = { overlord = { has_country_leader = { character = QIE_aisin_gioro_puyi } } }
+				NOT = { check_variable = { country_leader:china_alignment = token:manchu_qing } } #Monarchist Shandong supports the monarchy and wouldn't revolt if a puppet
+			}
+		}
+
+		cost = 50
+		fire_only_once = yes
+
+		ai_will_do = { factor = 0 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete china_break_free target: [From.GetName]"
+			if = {
+				limit = { overlord = { china_compatible_alignment_to_PREV = yes } }
+				add_stability = -0.15
+				add_political_power = -50
+				#if = {
+				#	limit = { overlord = { china_same_alignment_as_PREV = yes } }
+				#	var:country_leader = { clear_variable = china_alignment }
+				#}
+			}
+			set_country_flag = china_revolted_against_@var:overlord
+			create_wargoal = {
+				target = overlord
+				type = topple_government
+			}
+			custom_effect_tooltip = tooltip_white_line
+			overlord = {
+				if = {
+					limit = { is_in_array = { china_possible_allies_array = ROOT } }
+					remove_from_array = { china_possible_allies_array = ROOT }
+				}
+				if = {
+					limit = { is_in_array = { china_possible_allies_array_northwest = ROOT } }
+					remove_from_array = { china_possible_allies_array_northwest = ROOT }
+				}
+				effect_tooltip = {
+					create_wargoal = {
+						target = ROOT
+						type = annex_everything
+					}
+				}
+				if = {
+					limit = { NOT = { any_other_country = { has_country_flag = china_revolted_against_@FROM } } }
+					country_event = china_events.13
+				}
+				else = {
+					country_event = china_events.15
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			china_break_puppet_effect = yes
 		}
 	}
 	
@@ -1657,6 +1740,55 @@ chinese_unification = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete CHN_join_NZH_decision target: [From.GetName]"
+			FROM = {
+				country_event = china_events.4
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = { china_puppet_ROOT_effect = yes }
+			}
+		}
+	}
+
+	CHN_join_SZH_decision = {#加入南直系
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = {
+			#Can't do always no because otherwise won't be able to check dynamically if new governments spawn.
+			tag = HNN
+		}
+		available = {
+			at_peace_or_same_enemies_as_FROM = yes
+			FROM = {
+				china_is_valid_government_to_join = yes
+			}
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = { is_neighbor_of = FROM }
+				FROM = { any_subject_country = { is_neighbor_of = ROOT } }
+			}
+		}
+		visible = {
+			china_is_potential_government = no
+			is_subject = no
+			country_exists = SZH
+
+			if = {
+				limit = { tag = HNN }
+				NOT = { country_exists = NZH }
+				OR = {
+					has_completed_focus = HNN_strongarm_the_assembly
+					has_completed_focus = HNN_strongarm_the_assembly
+				}
+			}
+		}
+
+		targets = { SZH }
+		target_trigger = { FROM = { tag = SZH } }
+		target_non_existing = yes
+		fire_only_once = yes
+		cost = 0
+
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHN_join_SZH_decision target: [From.GetName]"
 			FROM = {
 				country_event = china_events.4
 				custom_effect_tooltip = if_they_accept

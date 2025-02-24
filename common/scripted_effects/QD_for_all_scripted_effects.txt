@@ -632,6 +632,12 @@ NZH_set_leader_effect = {#北直系领导人
 	save_global_event_target_as = NZH_leader
 }
 
+SZH_set_leader_effect = {#南直系领导人
+	#Southern Zhili
+	custom_effect_tooltip = SZH_set_leader_tt
+	save_global_event_target_as = SZH_leader
+}
+
 set_potential_national_government = {#宣布统一、枣核时间
 	if = {
 		limit = {
@@ -656,6 +662,12 @@ set_potential_national_government = {#宣布统一、枣核时间
 				check_variable = { country_leader:china_alignment = token:Syndicalists }
 			}
 			CSP_set_leader_effect = yes
+		}
+		else_if = {
+			limit = {
+				check_variable = { country_leader:china_alignment = token:southern_zhili }
+			}
+			SZH_set_leader_effect = yes
 		}
 
 		every_state = {
@@ -739,4 +751,12 @@ set_potential_national_government = {#宣布统一、枣核时间
 		}
 		set_variable = { kr_china_concessionintegration_speed = 40 }
 	}		
+}
+
+china_submission_mandatory_loyalty_timer_effect = {#设置365天的傀儡标准
+	set_country_flag = {
+		flag = china_submission_mandatory_loyalty_timer_flag
+		days = 365
+		value = 1 #Has to be 1 or else will break
+	}
 }

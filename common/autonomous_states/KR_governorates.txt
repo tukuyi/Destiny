@@ -36,7 +36,7 @@ autonomy_state = {#合作省
 	allowed_levels_filter = {
 		associated_governorate
 		autonomous_governorate
-		kr_governorate
+		governorate
 		integrated_governorate
 	}
 
@@ -97,7 +97,7 @@ autonomy_state = {#自治省
 	allowed_levels_filter = {
 		associated_governorate
 		autonomous_governorate
-		kr_governorate
+		governorate
 		integrated_governorate
 	}
 
@@ -117,7 +117,7 @@ autonomy_state = {#自治省
 }
 
 autonomy_state = {#系属省
-	id = kr_governorate
+	id = governorate
 
 	is_puppet = yes
 	use_overlord_color = yes
@@ -161,7 +161,7 @@ autonomy_state = {#系属省
 	allowed_levels_filter = {
 		associated_governorate
 		autonomous_governorate
-		kr_governorate
+		governorate
 		integrated_governorate
 	}
 
@@ -225,7 +225,7 @@ autonomy_state = {#整合省
 	allowed_levels_filter = {
 		associated_governorate
 		autonomous_governorate
-		kr_governorate
+		governorate
 		integrated_governorate
 	}
 

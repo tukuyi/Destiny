@@ -13104,7 +13104,7 @@ country_event = { # Mongolia Chinese Puppet Unfuck
 	hidden = yes
 	trigger = {
 		tag = MON
-		has_autonomy_state = kr_governorate
+		has_autonomy_state = governorate
 		is_subject = yes
 		overlord = { is_chinese_tag = yes }
 		OR = {

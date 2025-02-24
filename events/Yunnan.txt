@@ -4810,7 +4810,7 @@ country_event = {#Yunnan wrecked us lmao
 		FROM = {
 			set_autonomy = {
 				target = ROOT
-				autonomy_state = kr_governorate
+				autonomy_state = governorate
 			}
 			SZC_is_puppeted = yes
 		}

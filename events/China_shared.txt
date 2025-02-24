@@ -816,9 +816,34 @@ country_event = { #Overlord increases integration
 		name = china_events.11.a
 		hidden_effect = { overlord = { country_event = china_events.12 } }
 		effect_tooltip = {
-			overlord = {
-				add_collaboration = { target = ROOT value = 0.05 }
+			add_collaboration = { target = FROM value = 0.05 }
+			if = {
+				limit = { FROM = { has_autonomy_state = integrated_governorate } }
 				china_integrate_TARGET_effect = yes
+			}
+			else_if = {
+				limit = { FROM = { has_autonomy_state = governorate } }
+				set_autonomy = {
+					target = FROM
+					autonomy_state = integrated_governorate
+					end_wars = no
+				}
+			}
+			else_if = {
+				limit = { FROM = { has_autonomy_state = autonomous_governorate } }
+				set_autonomy = {
+					target = FROM
+					autonomy_state = governorate
+					end_wars = no
+				}
+			}
+			else_if = {
+				limit = { FROM = { has_autonomy_state = associated_governorate } }
+				set_autonomy = {
+					target = FROM
+					autonomy_state = autonomous_governorate
+					end_wars = no
+				}
 			}
 		}
 	}
@@ -842,7 +867,37 @@ country_event = { #Increased Integration of FROM
 		log = "[GetLogInfo]: event china_events.12 option china_events.12.a"
 		name = china_events.12.a
 		add_collaboration = { target = FROM value = 0.05 }
-		china_integrate_TARGET_effect = yes
+		if = {
+			limit = { FROM = { has_autonomy_state = integrated_governorate } }
+			china_integrate_TARGET_effect = yes
+		}
+		else = {
+			FROM = { get_current_government_type = yes }
+			if = {
+				limit = { FROM = { has_autonomy_state = governorate } }
+				set_autonomy = {
+					target = FROM
+					autonomy_state = integrated_governorate
+					end_wars = no
+				}
+			}
+			else_if = {
+				limit = { FROM = { has_autonomy_state = autonomous_governorate } }
+				set_autonomy = {
+					target = FROM
+					autonomy_state = governorate
+					end_wars = no
+				}
+			}
+			else = {
+				set_autonomy = {
+					target = FROM
+					autonomy_state = autonomous_governorate
+					end_wars = no
+				}
+			}
+			FROM = { restore_previous_government_type = yes }
+		}
 	}
 }
 
@@ -873,7 +928,7 @@ country_event = { #Clique refused integration
 				OR = {
 					has_autonomy_state = associated_governorate
 					has_autonomy_state = autonomous_governorate
-					has_autonomy_state = kr_governorate
+					has_autonomy_state = governorate
 					has_autonomy_state = integrated_governorate
 				}
 			}
