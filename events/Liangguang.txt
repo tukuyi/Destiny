@@ -11427,6 +11427,128 @@ country_event = {#可乐天皇
 	}
 }
 
+country_event = {#幸运大转盘
+	id = lngst.52
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.52" }
+	title = lngst.52.t
+	desc = lngst.52.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.52.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.53
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.53" }
+	title = lngst.53.t
+	desc = lngst.53.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.53.a
+		every_army_leader = {
+			random_select_amount = 1
+			gain_xp = 1000
+		}
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.54
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.54" }
+	title = lngst.54.t
+	desc = lngst.54.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.54.a
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.55
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.55" }
+	title = lngst.55.t
+	desc = lngst.55.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.55.a
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.56
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.56" }
+	title = lngst.56.t
+	desc = lngst.56.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.56.a
+		add_political_power = 50
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.57
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.57" }
+	title = lngst.57.t
+	desc = lngst.57.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.57.a
+		add_political_power = 100
+	}
+}
+
+country_event = {#幸运大转盘
+	id = lngst.58
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.58" }
+	title = lngst.58.t
+	desc = lngst.58.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {# 
+		name = lngst.58.a
+		add_political_power = -50
+	}
+}
+
 ########################################
 ########-       百色起义     -##########
 ########################################

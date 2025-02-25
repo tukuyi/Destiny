@@ -532,8 +532,8 @@ HNN_revolution_category = {#革命之火
 		days_re_enable = 60
 
 		modifier = {
-			political_power_gain = 0.10
-			war_support_weekly = 0.0075
+			political_power_gain = -0.10
+			war_support_weekly = -0.0075
 		}
 
 		complete_effect = {
@@ -10715,43 +10715,139 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_hei_long_jiang"
 			random_list = {
 				20 = {
-					885 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							885 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							885 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							885 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					717 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							717 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							717 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							717 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					883 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							883 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							883 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							883 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					884 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							884 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							884 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							884 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -10786,33 +10882,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_ji_lin"
 			random_list = {
 				20 = {
-					886 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							886 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							886 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							886 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					715 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							715 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							715 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							715 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					328 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							328 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							328 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							328 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -10847,13 +11015,37 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_liao_ling"
 			random_list = {
 				20 = {
-					716 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							716 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							716 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							716 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -10863,23 +11055,71 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 610
 						}
 					}
-					610 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							610 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							610 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							610 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					745 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							745 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							745 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							745 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -10914,33 +11154,125 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_he_bei"
 			random_list = {
 				20 = {
-					614 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							614 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							614 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							614 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					611 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							611 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							611 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							611 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					608 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						1 = {
+							608 ={
+								add_extra_state_shared_building_slots = 5
+								add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							608 ={
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+									type = industrial_complex
+									level = 4
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							608 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						45 = {
+							608 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						20 = {
+							608 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -10950,53 +11282,173 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 609
 						}
 					}
-					609 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							609 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							609 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							609 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1063 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1063 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1063 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1063 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1062 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1062 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1062 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1062 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1061 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1061 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1061 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1061 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1060 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1060 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1060 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1060 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11031,33 +11483,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_shan_xi"
 			random_list = {
 				20 = {
-					615 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							615 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							615 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							615 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1072 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1072 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1072 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1072 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1015 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1015 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1015 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1015 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11092,33 +11616,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_he_nan"
 			random_list = {
 				20 = {
-					1059 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1059 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1059 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1059 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1058 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1058 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1058 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1058 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					607 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							607 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							607 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							607 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11153,33 +11749,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_shan_dong"
 			random_list = {
 				20 = {
-					597 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							597 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							597 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							597 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1064 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1064 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1064 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1064 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1065 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1065 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1065 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1065 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11189,13 +11857,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 744
 						}
 					}
-					744 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							744 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							744 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							744 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11205,13 +11897,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 996
 						}
 					}
-					996 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							996 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							996 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							996 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11246,33 +11962,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_jiang_su"
 			random_list = {
 				20 = {
-					1047 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1047 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1047 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1047 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					598 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							598 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							598 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							598 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					613 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							613 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							613 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							613 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11282,13 +12070,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 1075
 						}
 					}
-					1075 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1075 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1075 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1075 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11298,13 +12110,57 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 743
 						}
 					}
-					743 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						1 = {
+							743 ={
+								add_extra_state_shared_building_slots = 5
+								add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							743 ={
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+									type = industrial_complex
+									level = 4
+									instant_build = yes
+								}	
+							}
+						}
+						15 = {
+							743 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						45 = {
+							743 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							743 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11339,53 +12195,173 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_zhe_jiang"
 			random_list = {
 				20 = {
-					1014 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1014 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1014 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1014 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					596 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							596 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							596 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							596 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1067 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1067 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1067 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1067 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1068 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1068 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1068 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1068 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1069 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							1069 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1069 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							1069 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11395,13 +12371,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 803
 						}
 					}
-					803 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							803 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							803 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							803 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11411,13 +12411,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 746
 						}
 					}
-					746 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						15 = {
+							746 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							746 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						5 = {
+							746 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11452,33 +12476,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_hu_bei"
 			random_list = {
 				20 = {
-					1048 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1048 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1048 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1048 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					620 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							620 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							620 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							620 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1049 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11513,33 +12609,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_hu_nan"
 			random_list = {
 				20 = {
-					602 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							602 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							602 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							602 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1013 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1013 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1013 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1013 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1065 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1049 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11574,23 +12742,71 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_san_xi"
 			random_list = {
 				20 = {
-					622 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							622 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							622 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							622 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					799 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							799 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							799 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							799 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11625,33 +12841,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_jiang_xi"
 			random_list = {
 				20 = {
-					1044 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1044 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1044 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1044 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1045 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1045 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1045 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1045 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					600 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							600 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							600 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							600 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11686,33 +12974,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_fu_jian"
 			random_list = {
 				20 = {
-					595 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							595 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							595 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							595 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1066 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1066 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1066 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1066 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1046 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1046 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1046 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1046 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11722,13 +13082,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 747
 						}
 					}
-					747 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							747 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							747 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							747 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11738,13 +13122,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 802
 						}
 					}
-					802 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							802 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							802 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							802 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11779,43 +13187,139 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_guang_dong"
 			random_list = {
 				20 = {
-					1012 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1012 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1012 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1012 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					800 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							800 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							800 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							800 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					593 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							593 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							593 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							593 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					592 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							592 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							592 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							592 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11825,13 +13329,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 729
 						}
 					}
-					729 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							729 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							729 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							729 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11841,13 +13369,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 326
 						}
 					}
-					326 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							326 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							326 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							326 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11857,13 +13409,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 801
 						}
 					}
-					801 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							801 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							801 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							801 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -11898,73 +13474,241 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_guang_xi"
 			random_list = {
 				20 = {
-					594 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							594 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							594 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							594 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					599 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							599 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							599 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							599 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1055 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1055 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1055 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1055 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1053 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1053 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1053 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1053 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1054 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1054 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1054 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1054 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1056 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1056 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1056 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1056 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					591 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							591 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							591 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							591 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
@@ -11974,13 +13718,37 @@ HNN_tie_lu_category = {#全国大开发
 							owns_state = 728
 						}
 					}
-					728 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							728 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							728 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							728 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12015,43 +13783,139 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_yun_gui"
 			random_list = {
 				20 = {
-					603 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							603 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							603 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							603 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1051 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							1051 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							1051 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1051 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					325 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							325 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							325 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							325 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					816 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							816 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							816 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							816 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12086,53 +13950,203 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_yun_gui"
 			random_list = {
 				20 = {
-					650 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						1 = {
+							650 ={
+								add_extra_state_shared_building_slots = 6
+								add_building_construction = {
+									type = industrial_complex
+									level = 6
+									instant_build = yes
+								}	
+							}
+						}
+						3 = {
+							650 ={
+								add_extra_state_shared_building_slots = 5
+								add_building_construction = {
+									type = industrial_complex
+									level = 5
+									instant_build = yes
+								}	
+							}
+						}
+						6 = {
+							650 ={
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+									type = industrial_complex
+									level = 4
+									instant_build = yes
+								}	
+							}
+						}
+						15 = {
+							650 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						60 = {
+							650 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						20 = {
+							650 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					661 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							661 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							661 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							661 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					605 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							605 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							605 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							605 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					601 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							601 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							601 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							601 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					788 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							788 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							788 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							788 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12167,33 +14181,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_gan_su"
 			random_list = {
 				20 = {
-					283 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							283 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							283 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							283 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					348 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							348 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							348 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							348 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					774 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							774 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							774 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							774 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12228,23 +14314,71 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_gan_su"
 			random_list = {
 				20 = {
-					353 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							353 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							353 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							353 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					604 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						10 = {
+							604 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						40 = {
+							604 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							604 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12279,33 +14413,105 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_xi_zang"
 			random_list = {
 				20 = {
-					693 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							693 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							693 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							693 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					748 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							748 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							748 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							748 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					322 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							322 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							322 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							322 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12340,63 +14546,207 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_xin_jiang"
 			random_list = {
 				20 = {
-					1083 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							1083 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1083 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							1083 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					617 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							617 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							617 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							617 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					618 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							618 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							618 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							618 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					619 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							619 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							619 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							619 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					287 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							287 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							287 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							287 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					897 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							897 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							897 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							897 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12431,43 +14781,139 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_nei_meng_gu"
 			random_list = {
 				20 = {
-					616 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							616 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							616 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							616 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					621 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							621 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							621 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							621 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					330 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							330 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							330 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							330 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					612 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							612 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							612 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							612 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}
@@ -12502,53 +14948,173 @@ HNN_tie_lu_category = {#全国大开发
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_bulid_wai_meng_gu"
 			random_list = {
 				20 = {
-					1084 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							1084 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1084 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							1084 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					329 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							329 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							329 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							329 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					811 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							811 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							811 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							811 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					1293 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							1293 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							1293 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							1293 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 				20 = {
-					654 ={
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}	
+					random_list = {
+						2 = {
+							654 ={
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}	
+							}
+						}
+						10 = {
+							654 ={
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}	
+							}
+						}
+						50 = {
+							654 ={
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}	
+							}
+						}
 					}
 				}
 			}

@@ -4385,6 +4385,159 @@ country_event = { #Heads up to Fengtian of LEP intervention to support QIE
 	}
 }
 
+country_event = { #收复失省
+	id = lep.211
+	title = lep.211.t
+	desc = lep.211.d
+
+	picture = GFX_report_event_LEP_qi_xieyuan
+	is_triggered_only = yes
+
+	option = { #Surely Beijing will accept...
+		log = "[GetLogInfo]: event lep.211 option lep.211.a"
+		name = lep.211.a
+		overlord = { country_event = { id = lep.212 days = 3 } }
+	}
+}
+
+country_event = { #南直系要扩张？
+	id = lep.212
+	title = lep.212.t
+	desc = lep.212.d
+
+	picture = GFX_report_event_LEP_qi_xieyuan_4
+	is_triggered_only = yes
+
+	option = { #The bastard is too troublesome, toss him a bone.
+		log = "[GetLogInfo]: event lep.212 option lep.212.a"
+		name = lep.212.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				add = -40
+				LEP = { is_ai = no }
+			}
+		}
+		custom_effect_tooltip = LEP_war_for_the_southwest_tt
+		LEP = { country_event = { id = lep.213 days = 3 } }
+	}
+
+	option = { #And play us like Sun in 1929?
+		log = "[GetLogInfo]: event lep.212 option lep.212.b"
+		name = lep.212.b
+		ai_chance = {
+			base = 40
+		}
+		custom_effect_tooltip = LEP_deny_league_marshal_tt
+		LEP = { country_event = { id = lep.214 days = 3 } }
+	}
+}
+
+country_event = { #联帅春风得意
+	id = lep.213
+	title = lep.213.t
+	desc = lep.213.d
+
+	picture = GFX_report_event_LEP_qi_xieyuan_dress_uniform
+	is_triggered_only = yes
+
+	option = { #We told them we'd be back...
+		log = "[GetLogInfo]: event lep.213 option lep.213.a"
+		name = lep.213.a
+		if = {
+			limit = {
+				can_declare_war_on = 602.owner
+				NOT = { is_ally_with = 602.owner }
+			}
+			declare_war_on = { target = 602.owner type = annex_everything }
+			QIE = { declare_war_on = { target = 602.owner type = annex_everything } }
+		}
+		if = {
+			limit = {
+				can_declare_war_on = 592.owner
+				NOT = { is_ally_with = 592.owner }
+			}
+			declare_war_on = { target = 592.owner type = annex_everything }
+			QIE = { declare_war_on = { target = 592.owner type = annex_everything } }
+		}
+	}
+}
+
+country_event = { #北直系的背叛
+	id = lep.214
+	title = lep.214.t
+	desc = lep.214.d
+
+	picture = GFX_report_event_QIE_wu_desk
+	is_triggered_only = yes
+
+	option = { #I've killed Sun, what's one more Marshal?
+		log = "[GetLogInfo]: event lep.214 option lep.214.a"
+		name = lep.214.a
+		ai_chance = {
+			base = 75
+		}
+		set_country_flag = china_revolted_against_@var:overlord
+		create_wargoal = {
+			target = overlord
+			type = topple_government
+		}
+		custom_effect_tooltip = tooltip_white_line
+		overlord = {
+			if = {
+				limit = { is_in_array = { china_possible_allies_array = ROOT } }
+				remove_from_array = { china_possible_allies_array = ROOT }
+			}
+			if = {
+				limit = { is_in_array = { china_possible_allies_array_northwest = ROOT } }
+				remove_from_array = { china_possible_allies_array_northwest = ROOT }
+			}
+			effect_tooltip = {
+				create_wargoal = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { NOT = { any_other_country = { has_country_flag = china_revolted_against_@FROM } } }
+				country_event = china_events.13
+			}
+			else = {
+				country_event = china_events.15
+			}
+		}
+		custom_effect_tooltip = tooltip_white_line
+		china_break_puppet_effect = yes
+		custom_effect_tooltip = tooltip_white_line
+		uncomplete_national_focus = {
+			focus = LEP_two_marshals_under_the_sky
+		}
+		hidden_effect = {
+			uncomplete_national_focus = {
+				focus = LEP_joint_training_with_beijing
+				uncomplete_children = yes
+			}
+			uncomplete_national_focus = {
+				focus = LEP_end_southern_intransigence
+			}
+		}
+		complete_national_focus = LEP_go_our_own_way
+	}
+	option = { #Damn the Marshals! Damn the cabinet! Damn it all!
+		log = "[GetLogInfo]: event lep.214 option lep.214.b"
+		name = lep.214.b
+		ai_chance = {
+			base = 25
+		}
+		add_political_power = 50
+		add_war_support = 0.05
+		add_opinion_modifier = {
+			target = QIE
+			modifier = KR_diplomatic_row
+		}
+	}
+}
+
 country_event = { #方本仁来信
 	id = lep.215
 	title = lep.215.t
@@ -4405,6 +4558,24 @@ country_event = { #方本仁来信
 		name = lep.215.b
 	}
 }
+
+country_event = { #饱受诟病的玉帅
+	id = lep.217
+	title = lep.217.t
+	desc = lep.217.d
+	picture = GFX_report_event_LEP_fang_benren_3
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { #Off to obscurity then!
+		log = "[GetLogInfo]: event lep.217 option lep.217.a"
+		name = lep.217.a
+		add_political_power = -35
+		add_manpower = -10000
+		retire_character = LEP_fang_benren
+	}
+}
+
 
 country_event = { # meeting with the nanking kommission
 	id = lepaog.1

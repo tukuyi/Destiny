@@ -194,28 +194,6 @@ ideas = {
 				research_speed_factor = 0.05
 			}
 		}
-		HNN_imported_fighters = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_imported_fighters"}
-			picture = generic_air_bonus
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = 0.1
-			}
-		}
-		HNN_domestic_air_production = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_domestic_air_production"}
-			picture = generic_air_bonus
-			allowed = { always = no }
-			modifier = {
-				production_speed_air_base_factor = 0.15
-			}
-			equipment_bonus = {
-				small_plane_airframe = {
-					instant = yes
-					build_cost_ic = -0.05
-				}
-			}
-		}
 		HNN_subsidizedmilitaryindustry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_subsidizedmilitaryindustry"}
 			picture = state_economy
@@ -4085,14 +4063,6 @@ ideas = {
 				training_time_factor = 0.15
 				supply_consumption_factor = 0.15
 				required_garrison_factor = 0.33
-			}
-		}
-		HNN_imported_fighters_ger = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_imported_fighters_ger"}
-			picture = generic_air_bonus
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = -0.1
 			}
 		}
 		HNN_strengthened_assembly1 = {

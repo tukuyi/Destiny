@@ -4614,65 +4614,535 @@ focus_tree = {
 	focus = {
 		id = LEP_go_our_own_way
 		icon = GFX_goal_AOG_Surpass_Jade_Marshalls_Folly
-		x = 37
-		y = 9
+		x = 35
+		y = 8
 		cost = 5
-		ai_will_do = { factor = 50 }
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				add = 25
+				QIE = {
+					exists = yes
+					is_subject = no
+					has_country_flag = wu_intervenes_proANQ
+				}
+			}
+			modifier = {
+				factor = 0
+				QIE = {
+					exists = yes
+					is_subject = no
+					has_country_flag = wu_intervenes_proLEP
+				}
+			}
+		}
+
 		available = {
-			has_completed_focus = LEP_pacification_commissioner_qi
-			has_global_flag = LEP_victory
-			NOT = { QIE = { has_country_flag = wu_intervenes_proLEP } }
-			owns_state = 602
-			owns_state = 593
+			is_subject = no
+			NOT = {
+				has_idea = LEP_Chaotic_Order5
+			}
+			CHN_no_aligned_unifier_exists_trigger = yes
 		}
 		bypass = {
-			has_completed_focus = LEP_zhili_consolidation
+			china_is_potential_government = yes
 		}
+
 		allow_branch = { NOT = { has_country_flag = LEP_AOG_rule } }
+
+		mutually_exclusive = { focus = LEP_two_marshals_under_the_sky }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_go_our_own_way"
 			set_potential_national_government = yes
-			if = {
-				limit = { QIE = { NOT = { owns_state = 608 } } }
-				create_wargoal = {
-					type = annex_everything
-					target = 608.owner
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = LEP_two_marshals_under_the_sky
+		icon = {
+			trigger = {
+				QIE = { is_monarchy = yes }
+				NOT = { has_global_flag = QIE_manchu_restoration }
+			}
+			value = GFX_goal_ANQ_stand_with_qing
+		}
+		icon = {
+			value = GFX_goal_beijing_begonia
+		}
+		dynamic = yes
+		cost = 4
+
+		relative_position_id = LEP_go_our_own_way
+		x = -2
+		y = 0
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				add = -25
+				QIE = {
+					exists = yes
+					is_subject = no
+					has_country_flag = wu_intervenes_proANQ
 				}
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = QIE
+			modifier = {
+				factor = 0
+				has_country_flag = china_refused_alliance_QIE
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = SQI
+			modifier = {
+				factor = 0
+				NOT = {
+					QIE = {
+						exists = yes
+						is_subject = no
+						has_country_flag = wu_intervenes_proLEP
+					}
+				}
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = SHX
+		}
+		
+		available = {
+			has_global_flag = LEP_victory
+			NOT = {
+				has_idea = LEP_Chaotic_Order5
+			}
+			QIE = { 
+				exists = yes 
+				OR = {
+					china_is_aligned_with_zhili = yes
+					hidden_trigger = {
+						is_ruled_by_pro_zhili = yes
+					}
+				}
+			}
+			NOT = { has_war_with = QIE }
+			set_temp_variable = { target = QIE }
+			at_peace_or_same_enemies_as_TARGET = yes
+		}
+
+		allow_branch = { NOT = { has_country_flag = LEP_AOG_rule } }
+
+		mutually_exclusive = { focus = LEP_go_our_own_way }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_two_marshals_under_the_sky"
+			QIE = {
+				country_event = china_events.4
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = { china_puppet_ROOT_effect = yes }
+			}
+			if = {
+				limit = { has_character = LEP_fang_benren }
+				custom_effect_tooltip = LEP_fang_benren_will_be_upset
+				hidden_effect = { country_event = { id = lep.217 days = 6 } }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = LEP_joint_training_with_beijing
+		icon = {
+			trigger = {
+				QIE = { is_monarchy = yes }
+				NOT = { has_global_flag = QIE_manchu_restoration }
+			}
+			value = GFX_goal_QIE_hail_to_the_qing
+		}
+		icon = {
+			value = GFX_goal_QIE_reorganise_warlord_divisions
+		}
+		dynamic = yes
+		cost = 5
+
+		relative_position_id = LEP_two_marshals_under_the_sky
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		prerequisite = { focus = LEP_two_marshals_under_the_sky }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_joint_training_with_beijing"
+			add_timed_idea = {
+				idea = LEP_joint_training_with_beijing_idea
+				days = 200
+			}
+			custom_effect_tooltip = tooltip_white_line
+			QIE = {
+				add_timed_idea = {
+					idea = LEP_joint_training_with_beijing_idea
+					days = 200
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
+
+	focus = {
+		id = LEP_foster_economic_cooperation
+		icon = GFX_goal_ANQ_Caifa_Contracts
+		cost = 5
+
+		relative_position_id = LEP_joint_training_with_beijing
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		prerequisite = { focus = LEP_joint_training_with_beijing }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_foster_economic_cooperation"
+			add_ideas = LEP_open_door_policy_with_beijing
+			custom_effect_tooltip = tooltip_white_line
+			add_opinion_modifier = {
+				target = QIE
+				modifier = KR_close_allies
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = LEP_negotiate_with_the_nationalistic_elite
+		icon = GFX_goal_ANQ_convince_intellectuals
+		cost = 5
+
+		relative_position_id = LEP_two_marshals_under_the_sky
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		prerequisite = {
+			focus = LEP_go_our_own_way
+			focus = LEP_two_marshals_under_the_sky
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_negotiate_with_the_nationalistic_elite"
+			add_stability = 0.05
+			add_political_power = 50
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			add_soclib_to_coalition = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = LEP_end_southern_intransigence
+		icon = GFX_YUN_Goal_Secure_Southern_China
+		cost = 5
+
+		relative_position_id = LEP_negotiate_with_the_nationalistic_elite
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		will_lead_to_war_with = HNN
+		will_lead_to_war_with = GXC
+		prerequisite = { focus = LEP_negotiate_with_the_nationalistic_elite }
+		bypass = {
+			is_subject_of = QIE
+			OR = {
+				has_war_with = HNN
+				HNN = { is_subject_of = QIE }
+				HNN = { exists = no }
+			}
+			OR = {
+				has_war_with = GXC
+				GXC = { is_subject_of = QIE }
+				GXC = { exists = no }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_end_southern_intransigence"
+			if = {
+				limit = { is_subject = yes }
+				country_event = lep.211
+			}
+			else = {
+				custom_effect_tooltip = LEP_southern_china_submission_tt
+				if = {
+					limit = {
+						country_exists = HNN
+						NOT = { is_ally_with = HNN }
+					}
+					add_to_array = { ROOT.china_possible_targets_array = HNN }
+					add_to_array = { china_possible_allies_array = HNN }
+					effect_tooltip = { activate_targeted_decision = { target = HNN decision = china_demand_submission } }
+				}
+				if = {
+					limit = {
+						country_exists = GXC
+						NOT = { is_ally_with = GXC }
+					}
+					add_to_array = { ROOT.china_possible_targets_array = GXC }
+					add_to_array = { china_possible_allies_array = GXC }
+					effect_tooltip = { activate_targeted_decision = { target = GXC decision = china_demand_submission } }
+				}
+				if = {
+					limit = {
+						country_exists = SZC
+						NOT = { is_ally_with = SZC }
+					}
+					add_to_array = { ROOT.china_possible_targets_array = SZC }
+					add_to_array = { china_possible_allies_array = SZC }
+					effect_tooltip = { activate_targeted_decision = { target = SZC decision = china_demand_submission } }
+				}
+				if = {
+					limit = {
+						country_exists = YUN
+						NOT = { is_ally_with = YUN }
+					}
+					add_to_array = { ROOT.china_possible_targets_array = YUN }
+					add_to_array = { china_possible_allies_array = YUN }
+					effect_tooltip = { activate_targeted_decision = { target = YUN decision = china_demand_submission } }
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = LEP_utilize_the_jingxing_society
+		icon = GFX_goal_ANQ_court_vermilion_society
+		cost = 5
+
+		relative_position_id = LEP_go_our_own_way
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		prerequisite = { focus = LEP_go_our_own_way }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_utilize_the_jingxing_society"
+			add_timed_idea = {
+				idea = LEP_formenting_pro_german_intellectuals
+				days = 250
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_authdem_to_coalition = yes
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = LEP_secure_german_support
+		icon = GFX_goal_align_germany
+		cost = 5
+
+		relative_position_id = LEP_utilize_the_jingxing_society
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+		}
+		prerequisite = { focus = LEP_utilize_the_jingxing_society }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_secure_german_support"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = GER
+			}
+			add_command_power = 50
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.07
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ARMY_BONUS
+		}
+	}
+
+	focus = {
+		id = LEP_heir_to_the_jade_marshal
+		icon = GFX_goal_QIE_zhili
+		cost = 5
+
+		relative_position_id = LEP_foster_economic_cooperation
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+			modifier = {
+				factor = 1.25
+				QIE = { has_completed_focus = QIE_restore_order_in_the_middle_kingdom }
+			}
+			modifier = {
+				factor = 3
+				QIE = { has_war = yes }
+			}
+		}
+		prerequisite = { focus = LEP_foster_economic_cooperation }
+		prerequisite = { focus = LEP_end_southern_intransigence }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEP_heir_to_the_jade_marshal"
+			custom_effect_tooltip = LEP_heir_to_the_jade_marshal_tt
+			if = {
+				limit = {
+					QIE = { is_monarchy = no }
+				}
+				set_cosmetic_tag = LEP_LEP_REP
+			}
+			else = {
+				set_cosmetic_tag = LEP_LEP
+			}
+			hidden_effect = {
+				overlord = { country_event = china_events.12 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
 	focus = {
 		id = LEP_our_china_now
 		icon = GFX_goal_AOG_Unification_From_Nanjing
-		x = 0
-		y = 1
-		cost = 5
-		ai_will_do = { factor = 100 }
-		available = { owns_state = 608 }
 		relative_position_id = LEP_go_our_own_way
-		prerequisite = { focus = LEP_go_our_own_way }
+		x = 0
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0.1
+				NOT = { has_completed_focus = LEP_peace_in_countryside }
+			}
+			modifier = {
+				factor = 3
+				QIE = { has_war = yes }
+			}
+		}
+		
+		will_lead_to_war_with = QIE
+		will_lead_to_war_with = SHD
+		will_lead_to_war_with = FNG
+		will_lead_to_war_with = SHX
+
+		prerequisite = { focus = LEP_secure_german_support }
+		prerequisite = { focus = LEP_end_southern_intransigence }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_our_china_now"
-			set_cosmetic_tag = LEP_CHI
-			add_political_power = 100
-			add_research_slot = 1
-			country_event = lepfp.6
-			hidden_effect = {
-				set_potential_national_government = yes
-				set_country_flag = has_united_china
+			custom_effect_tooltip = LEP_northern_china_submission_tt
+			if = {
+				limit = { can_declare_war_on = QIE }
+				activate_targeted_decision = { target = QIE decision = china_attack_decision }
+			}
+			if = {
+				limit = { can_declare_war_on = FNG }
+				activate_targeted_decision = { target = FNG decision = china_attack_decision }
+			}
+			if = {
+				limit = {
+					can_declare_war_on = SQI
+					SQI = {
+						is_subject = no
+						has_civil_war = no
+						china_is_potential_government = no
+					}
+				}
+				add_to_array = { ROOT.china_possible_targets_array = SQI }
+				add_to_array = { china_possible_allies_array = SQI }
+				effect_tooltip = { activate_targeted_decision = { target = SQI decision = china_demand_submission } }
+			}
+			else_if = {
+				limit = { can_declare_war_on = SQI }
+				activate_targeted_decision = { target = SQI decision = china_attack_decision }
+			}
+			if = {
+				limit = {
+					can_declare_war_on = SHX
+					SHX = {
+						is_subject = no
+						has_civil_war = no
+						china_is_potential_government = no
+					}
+				}
+				add_to_array = { ROOT.china_possible_targets_array = SHX }
+				add_to_array = { china_possible_allies_array = SHX }
+				effect_tooltip = { activate_targeted_decision = { target = SHX decision = china_demand_submission } }
+			}
+			else_if = {
+				limit = { can_declare_war_on = SHX }
+				activate_targeted_decision = { target = SHX decision = china_attack_decision }
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
@@ -4680,11 +5150,19 @@ focus_tree = {
 	focus = {
 		id = LEP_join_germany
 		icon = GFX_goal_AOG_Dragon_Eagle_Flying_Together
-		x = 3
+		relative_position_id = AOG_look_outward
+		x = -6
 		y = 1
 		cost = 5
+
 		ai_will_do = { factor = 500 }
 		available = {
+			if = {
+				limit = { 
+					has_completed_focus = LEP_our_china_now
+				}
+				has_country_flag = has_united_china
+			}
 			if = {
 				limit = {
 					has_global_flag = GER_became_GEX
@@ -4699,7 +5177,6 @@ focus_tree = {
 				}
 			}
 		}
-		relative_position_id = LEP_our_china_now
 		prerequisite = { focus = LEP_our_china_now }
 		mutually_exclusive = { focus = LEP_help_germany }
 		completion_reward = {
@@ -4722,7 +5199,7 @@ focus_tree = {
 	focus = {
 		id = LEP_help_germany
 		icon = GFX_goal_GER_Mitteleuropa_German
-		x = 5
+		x = -4
 		y = 1
 		cost = 5
 		ai_will_do = { factor = 50 }
@@ -4731,8 +5208,14 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 			}
+			if = {
+				limit = { 
+					has_completed_focus = LEP_our_china_now
+				}
+				has_country_flag = has_united_china
+			}
 		}
-		relative_position_id = LEP_our_china_now
+		relative_position_id = AOG_look_outward
 		prerequisite = { focus = LEP_our_china_now }
 		mutually_exclusive = { focus = LEP_join_germany }
 		completion_reward = {
@@ -4837,7 +5320,7 @@ focus_tree = {
 			focus = AOG_look_outward
 		}
 		x = -4
-		y = 1
+		y = 2
 		relative_position_id = AOG_look_outward
 		ai_will_do = { factor = 100 }
 		completion_reward = {
@@ -4883,13 +5366,14 @@ focus_tree = {
 		id = LEP_fate_of_LEC
 		icon = GFX_goal_LEC_establish
 		cost = 8
+		
 		prerequisite = {
 			focus = LEP_join_germany
 			focus = LEP_help_germany
 			focus = AOG_look_outward
 		}
 		x = -6
-		y = 1
+		y = 2
 		relative_position_id = AOG_look_outward
 		ai_will_do = { factor = 100 }
 		will_lead_to_war_with = LEC

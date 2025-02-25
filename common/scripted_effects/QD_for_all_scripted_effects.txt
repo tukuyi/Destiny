@@ -638,6 +638,12 @@ SZH_set_leader_effect = {#南直系领导人
 	save_global_event_target_as = SZH_leader
 }
 
+UPC_set_leader_effect = {#联省派领导人
+	#Anguojun/Fengtian
+	custom_effect_tooltip = UPC_set_leader_tt
+	save_global_event_target_as = UPC_leader
+}
+
 set_potential_national_government = {#宣布统一、枣核时间
 	if = {
 		limit = {

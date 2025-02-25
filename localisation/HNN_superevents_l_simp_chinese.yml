@@ -106,6 +106,8 @@
  CHN_join_SZH_decision_desc: "南直系军阀是直系军阀的一个分支，他们以孙传芳及其八省联合的遗产为中心。南直系军阀与德国和使馆城市合作密切，并能为国家带来繁荣，因此我们决定加入他们。"
  CHN_join_CSP_decision: "加入[CSP.GetName]"
  CHN_join_CSP_decision_desc: "真正属于无产阶级普罗大众的革命已经到来，我们必须遵从中央的指示，共同扫除军阀反动残余与带着革命假面的国民党反动分子，革命万岁！中国社会主义万岁！中国工团党万岁！无产阶级万岁！"
+ CHN_join_UPC_decision: "加入[UPC.GetName]"
+ CHN_join_UPC_decision_desc: "联省运动主要由南方政党组成，旨在以联邦模式建立一个全新的共和中华。若尔等期盼中国成为一个能尊重各省权利的国家，那么就应投入心血参与此一联盟。"
 
  china_break_free: "挑战[ROOT.Overlord.GetLeader]权威"
  china_half_strength_of_overlord_tt: "与宗主的陆军实力之比估计不低于§Y50%§!"

@@ -52,7 +52,7 @@ CHN_no_aligned_unifier_exists_trigger = {#统一全国的前置要求
 			}
 		}
 	}
-	else_if = {
+	else_if = {#南直系
 		limit = { check_variable = { country_leader:china_alignment = token:southern_zhili } }
 		custom_trigger_tooltip = {
 			tooltip = CHN_No_Other_SZH_tt

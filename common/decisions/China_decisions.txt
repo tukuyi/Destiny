@@ -874,7 +874,7 @@ chinese_unification = {
 		}
 	}
 
-	china_integration_timer = {
+	china_integration_timer = {#提升整合度
 		icon = eng_trade_unions_demand
 
 		allowed = { always = no } #activated by china_integrate_subjects
@@ -904,7 +904,7 @@ chinese_unification = {
 			if = {
 				limit = { overlord = { china_compatible_alignment_to_PREV = yes } }
 				add_stability = -0.2
-				add_political_power = -200
+				add_political_power = -100
 				if = {
 					limit = { overlord = { china_same_alignment_as_PREV = yes } }
 					var:country_leader = { clear_variable = china_alignment }
@@ -945,6 +945,49 @@ chinese_unification = {
 
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout china_integration_timer target: [From.GetName]"
+			effect_tooltip = {
+				if = {
+					limit = { has_autonomy_state = integrated_governorate }
+					save_event_target_as = target
+					overlord = {
+						add_collaboration = { target = FROM value = 0.05 }
+						china_integrate_TARGET_effect = yes
+					}
+				}
+				else_if = {
+					limit = { has_autonomy_state = governorate }
+					overlord = {
+						add_collaboration = { target = FROM value = 0.05 }
+						set_autonomy = {
+							target = FROM
+							autonomy_state = integrated_governorate
+							end_wars = no
+						}
+					}
+				}
+				else_if = {
+					limit = { has_autonomy_state = autonomous_governorate }
+					overlord = {
+						add_collaboration = { target = FROM value = 0.05 }
+						set_autonomy = {
+							target = FROM
+							autonomy_state = governorate
+							end_wars = no
+						}
+					}
+				}
+				else_if = {
+					limit = { has_autonomy_state = associated_governorate }
+					overlord = {
+						add_collaboration = { target = FROM value = 0.05 }
+						set_autonomy = {
+							target = FROM
+							autonomy_state = autonomous_governorate
+							end_wars = no
+						}
+					}
+				}
+			}
 		}
 	}
 

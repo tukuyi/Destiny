@@ -19,18 +19,6 @@ country_event = {#测试事件
 		# 		}
 		# 	}
 		# }
-
-		# if = {
-		# 	limit = { 
-		# 		has_government = totalist
-		# 		has_government = social_democrat
-		# 		has_government = radical_socialist
-		# 		has_government = social_conservative
-		# 		has_government = authoritarian_democrat
-		# 		has_government = paternal_autocrat
-		# 		has_government = national_populist
-		# 	}
-		# }
 		
 		# set_cosmetic_tag = SHX_FU
 		# set_country_flag = SHX_shao_zhuang_victory_over_all
@@ -66,16 +54,16 @@ country_event = {#点火事件
 }
 
 country_event = {#火焰依旧
-	id = hnn.fire.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.fire.1" }
-	title = hnn.fire.1.t 
-	desc = hnn.fire.1.d
+	id = hnn.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = hnn.2.t 
+	desc = hnn.2.d
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = { #同意
-		name = hnn.fire.1.a
+		name = hnn.2.a
 		SZC = {
 			add_manpower = -10000
 		}

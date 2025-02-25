@@ -1085,7 +1085,7 @@
 		}
 	}
 
-#广东	
+#广东
 	GXC_CSA_build = {#麦当劳联合工团
 		release = CSA
 		puppet = CSA

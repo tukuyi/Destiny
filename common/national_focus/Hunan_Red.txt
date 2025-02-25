@@ -9362,7 +9362,7 @@ focus_tree = {
 
 	focus = {#
 		id = HNN_hou_qing_da_ji
-		icon = GFX_goal_generic_air_command
+		icon = GFX_goal_CZE_air_industry
 		relative_position_id = HNN_air_frcoe
 		cost = 5
 		x = 1
@@ -9412,7 +9412,7 @@ focus_tree = {
 	
 	focus = {
 		id = HNN_PROC_navy
-		icon = GFX_goal_HNN_PROC_navy
+		icon = GFX_goal_generic_naval_cruiser2
 		relative_position_id = HNN_improve_army
 		cost = 5.00
 		x = -7
@@ -9778,7 +9778,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_cruisers
-		icon = GFX_goal_generic_naval_cruiser2
+		icon = GFX_goal_HNN_PROC_navy
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = 0
