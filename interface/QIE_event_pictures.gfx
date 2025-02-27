@@ -72,10 +72,6 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/QIE/QIE_huang_fu_speech.png"
 	}	
 	spriteType  = {
-		name = "GFX_report_event_LEP_qi_xieyuan_suit_2"
-		texturefile = "gfx/event_news_pictures/QIE/LEP_qi_xieyuan_suit_2.png"
-	}	
-	spriteType  = {
 		name = "GFX_report_event_QIE_kong_miao"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_kong_miao.png"
 	}
@@ -106,6 +102,10 @@ spriteTypes = {
 	spriteType  = {
 		name = "GFX_report_event_QIE_tui_xiu"
 		texturefile = "gfx/event_news_pictures/QIE/QIE_tui_xiu.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_QIE_puyi_speech"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_puyi_speech.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_qing_nian_dang"

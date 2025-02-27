@@ -2,6 +2,36 @@ characters = {
 ################
 ###  领导人  ###
 ################
+#顧維鈞
+	QIE_wellington_koo = {
+		name = QIE_wellington_koo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QIE_Koo
+				small = GFX_Portrait_QIE_Koo
+			}
+		}
+		country_leader = {
+			desc = POLITICS_WELLINGTON_KOO_DESC
+			ideology = oligarchy_subtype
+			traits = { CHN_northern_zhili_aligned }
+		}
+	}
+#胡適
+	QIE_hu_shih = {
+		name = QIE_hu_shih
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_QIE_Hu_Shih
+				small = GFX_Portrait_QIE_Hu_Shih
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HU_SHIH_DESC
+			ideology = oligarchy_subtype
+			traits = { CHN_northern_zhili_aligned }
+		}
+	}
 #颜惠庆
 	QIE_yan_huiqing = {
 		name = QIE_yan_huiqing
@@ -127,6 +157,7 @@ characters = {
 		country_leader = {
 			desc = QIE_yu_xuezhong_high_command_desc
 			ideology = pataut_national_conservative_subtype
+			traits = { CHN_northern_zhili_aligned }
 		}
 		corps_commander = {
 			desc = QIE_yu_xuezhong_high_command_desc
@@ -951,6 +982,82 @@ characters = {
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
+		}
+	}	
+################
+###   海军   ###
+################
+#吴纫礼
+	QIE_wu_yulin = {
+		name = QIE_wu_yulin
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_wu_yulin
+				large = GFX_Portrait_QIE_wu_yulin
+			}
+		}
+		navy_leader = {
+			desc = QIE_WU_RENLI_NAVY_DESC
+			traits = { 
+				navy_career_officer 
+				politically_connected 
+				chief_engineer 
+				safety_first 
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}	
+#薩鎮冰
+	QIE_sa_zhenbing = {
+		name = QIE_sa_zhenbing
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_sa_zhenbing
+				large = GFX_Portrait_QIE_sa_zhenbing
+			}
+		}
+		navy_leader = {
+			desc = QIE_SA_ZHENBING_NAVY_DESC
+			traits = { 
+				gentlemanly 
+				bold 
+				navy_career_officer 
+				battleship_adherent 
+				naval_lineage 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}	
+#杜錫珪
+	QIE_du_xigui = {
+		name = QIE_du_xigui
+		portraits = {
+			army = {
+				small = GFX_Portrait_QIE_du_xigui
+				large = GFX_Portrait_QIE_du_xigui
+			}
+		}
+		navy_leader = {
+			desc = QIE_DU_XIGUI_NAVY_DESC
+			traits = { 
+				navy_career_officer 
+				politically_connected 
+				superior_tactician 
+				gunnery_expert 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
 		}
 	}	
 }

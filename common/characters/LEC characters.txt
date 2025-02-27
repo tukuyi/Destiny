@@ -1,0 +1,335 @@
+characters = {
+##################
+#### Generals ####
+##################
+#英国#
+	#弗朗西斯·沃根·费斯廷（菲士廷）
+		LEC_francis_wogan_festing = {
+			name = LEC_francis_wogan_festing
+			portraits = {
+				army = {
+					large = GFX_Portrait_Francis_Festing
+					small = GFX_Portrait_Francis_Festing
+				}
+			}
+			field_marshal = {
+				desc = LEC_FRANCIS_FESTING_ARMY_DESC
+				traits = { 
+					LEC_british_commander 
+					career_officer 
+					inflexible_strategist 
+					infantry_leader 
+					organisational_leader 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+	#爱德华·巴雷特
+		LEC_edward_barrett = {
+			name = LEC_edward_barrett
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Edward_Barrett
+					small = GFX_Portrait_LEC_Edward_Barrett
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_british_commander 
+					irregulars_officer 
+					career_officer 
+					media_personality 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+#日本#
+	#小松原道太郎
+		LEC_michitaro_komatsubara = {
+			name = LEC_michitaro_komatsubara
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Michitaro_Komatsubara
+					small = GFX_Portrait_LEC_Michitaro_Komatsubara
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_japanese_commander 
+					trait_cautious 
+					career_officer 
+					infantry_officer 
+					organizer 
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+	#犬塚惟重	
+		LEC_koreshige_inuzuka = {
+			name = LEC_koreshige_inuzuka
+			portraits = {
+				army = {
+					large = GFX_Portrait_Koreshige_Inuzuka
+					small = GFX_Portrait_Koreshige_Inuzuka
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_japanese_commander 
+					naval_invader 
+					politically_connected 
+					career_officer 
+					trait_reckless 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+#德国#
+	#格奥尔格·韦策尔
+		LEC_georg_wetzell = {
+			name = LEC_georg_wetzell
+			portraits = {
+				army = {
+					large = GFX_Portrait_Georg_Wetzell
+					small = GFX_Portrait_Georg_Wetzell
+				}
+			}
+			field_marshal = {
+				traits = { 
+					LEC_german_commander 
+					trait_reckless 
+					career_officer 
+					infantry_officer 
+					fast_planner 
+					skilled_staffer 
+					old_guard 
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+	#瓦尔特·施坦内斯	
+		LEC_walter_stennes = {
+			name = LEC_walter_stennes
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Walter_Stennes
+					small = GFX_Portrait_LEC_Walter_Stennes
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_german_commander 
+					career_officer 
+					infantry_officer 
+					harsh_leader 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+#国际#
+	#威廉·尤尔特·费尔贝恩	
+		LEC_william_ewart_fairbairn = {
+			name = LEC_william_ewart_fairbairn
+			portraits = {
+				army = {
+					large = GFX_Portrait_William_Fairbairn
+					small = GFX_Portrait_William_Fairbairn
+				}
+			}
+			corps_commander = {
+				desc = LEC_WILLIAM_FAIRBAIRN_ARMY_DESC
+				traits = { 
+					LEC_international_commander 
+					light_infantry_officer 
+					career_officer 
+					commando 
+					brilliant_strategist 
+					urban_assault_specialist 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+	#雷金纳德·约克·蒂里特
+		LEC_reginald_yorke_tyrwhitt = {
+			name = LEC_reginald_yorke_tyrwhitt
+			portraits = {
+				army = {
+					large = GFX_Portrait_Reginald_Tyrwhitt
+					small = GFX_Portrait_Reginald_Tyrwhitt
+				}
+			}
+			navy_leader = {
+				desc = LEC_REGINALD_TYRWHITT_NAVY_DESC
+				traits = { 
+					LEC_international_commander 
+					old_guard_navy 
+					air_controller 
+				}
+				skill = 3
+				attack_skill = 4
+				defense_skill = 2
+				maneuvering_skill = 3
+				coordination_skill = 1
+			}
+		}
+	#格尔曼·蒂梅	
+		LEC_german_time = { 
+			name = LEC_german_time
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_German_Time
+					small = GFX_Portrait_LEC_German_Time
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_international_commander 
+					career_officer 
+					cavalry_officer 
+					cavalry_leader 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}	
+#黑帮#
+	#诸龙头联合
+		LEC_Crime_Bosses = { 
+			name = LEC_Crime_Bosses
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Crime_Bosses
+					small = GFX_Portrait_LEC_Crime_Bosses
+				}
+			}
+			field_marshal = {
+				traits = { 
+					incorporeal 
+					LEC_triad_commander 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}	
+	#陈南
+		LEC_Brilliant_Chang = { 
+			name = LEC_Brilliant_Chang
+			portraits = {
+				army = {
+					large = GFX_Portrait_Brilliant_Chang
+					small = GFX_Portrait_Brilliant_Chang
+				}
+			}
+			corps_commander = {
+				traits = { 
+					LEC_triad_commander  
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}			
+#恒社#
+	#徐大统		
+		LEC_Xudatong = { 
+			name = LEC_Xudatong
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Xudatong
+					small = GFX_Portrait_LEC_Xudatong
+				}
+			}
+			corps_commander = {
+				desc = LEC_Xudatong_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}	
+#新义安#
+	#向前	
+		LEC_Heung_Chin = { 
+			name = LEC_Heung_Chin
+			portraits = {
+				army = {
+					large = GFX_Portrait_Heung_Chin
+					small = GFX_Portrait_Heung_Chin
+				}
+			}
+			corps_commander = {
+				desc = LEC_Heung_Chin_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}		
+#14K
+	#葛肇煌
+		LEC_Kot_Siu_Wong = { 
+			name = LEC_Kot_Siu_Wong
+			portraits = {
+				army = {
+					large = GFX_Portrait_Kot_Siu_Wong
+					small = GFX_Portrait_Kot_Siu_Wong
+				}
+			}
+			corps_commander = {
+				desc = LEC_Kot_Siu_Wong_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+					career_officer 
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+		}		
+}

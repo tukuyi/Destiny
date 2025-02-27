@@ -1008,6 +1008,9 @@ focus_tree = {
 	focus = {
 		id = HNN_repudiate_the_canton_squatters
 		icon = GFX_goal_KMT_Autarky
+		relative_position_id = HNN_victory_of_the_united_front
+		x = 0
+		y = 3
 		cost = 4
 		dynamic = yes
 
@@ -1032,10 +1035,6 @@ focus_tree = {
 			}
 		}
 
-		relative_position_id = HNN_victory_of_the_united_front
-		x = 0
-		y = 3
-
 		available = {
 			OR = {
 				has_country_leader = { name = "唐生智" ruling_only = yes }
@@ -1043,14 +1042,15 @@ focus_tree = {
 				has_country_leader = { name = "何键" ruling_only = yes }
 				has_completed_focus = HNN_Our_Own_Path
 			}
-			if = {
-				limit = {
-					is_subject = no
-				}
-				can_declare_war_on = var:592.owner
-				NOT = { has_non_aggression_pact_with = var:592.owner }
-			}
 			has_global_flag = GXC_civil_war_over
+			OR = {
+				is_subject = yes
+				has_war_with = GXC
+				AND = {
+					can_declare_war_on = GXC
+					NOT = { has_non_aggression_pact_with = GXC }
+				}
+			}
 		}
 		bypass = {
 			AND = {
@@ -2453,7 +2453,7 @@ focus_tree = {
 					array = global.china_tags_array
 					NOT = { tag = PREV } #Exclude themselves because they'll always share the same alignment as themselves
 					NOT = { tag = XSM } #Exclude tags outside of China proper
-					NOT = { tag = KUM } #Exclude tags outside of China proper
+					NOT = { tag = TAN } #Exclude tags outside of China proper
 					NOT = { tag = GXC } #Tang Xiangming doesn't care that Ma Ji is zhili aligned since the zhili has collapsed at this point
 					is_subject = no
 					exists = yes
@@ -3180,7 +3180,9 @@ focus_tree = {
 				is_subject = yes
 			}
 		}
+
 		available = {
+			has_global_flag = GXC_civil_war_over
 			has_country_leader = { name = "谭延闿" ruling_only = yes }
 			if = {
 				limit = {
@@ -3191,15 +3193,17 @@ focus_tree = {
 					HNN_opposition_strength < 30
 				}
 			}
-			if = {
-				limit = {
-					is_subject = no
+			OR = {
+				is_subject = yes
+				NOT = { country_exists = GXC }
+				has_war_with = GXC
+				AND = {
+					can_declare_war_on = GXC
+					NOT = { has_non_aggression_pact_with = GXC }
 				}
-				can_declare_war_on = var:592.owner
-				NOT = { has_non_aggression_pact_with = var:592.owner }
 			}
-			has_global_flag = GXC_civil_war_over
 		}
+
 		prerequisite = {
 			focus = HNN_form_a_grand_coalition
 		}
@@ -3442,6 +3446,7 @@ focus_tree = {
 			has_country_leader = { name = "谭延闿" ruling_only = yes }
 			is_subject = no
 			owns_state = 592
+			CHN_no_aligned_unifier_exists_trigger = yes
 		}
 		prerequisite = {
 			focus = HNN_revise_the_monroe_doctrine

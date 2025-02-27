@@ -3665,6 +3665,8 @@ country_event = {#汤芗铭输了
 		}
 		hidden_effect = {
 			country_event = { id = hunbao.14 }
+			HNN_Chen_San_Li = { HNN_recruit_characters_effect = yes }
+			HNN_Lu_Di_Ping = { HNN_recruit_characters_effect = yes }
 			HNN_he_long = { HNN_recruit_characters_effect = yes }
 			HNN_peng_dehuai = { HNN_recruit_characters_effect = yes }
 			HNN_yang_jie = { HNN_recruit_characters_effect = yes }
@@ -4981,29 +4983,18 @@ country_event = {#右派合作者
 
 	option = {#陈三立
 		name = hunbao.1.a
-		create_country_leader = {
-			name = "陈三立"
-			desc = "POLITICS_HNN_CHEN_SANLI_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Chen_San_Li.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = HNN_Chen_San_Li
 			ideology = neo_confucianism_subtype
 		}
 		set_politics = {
 			ruling_party = social_conservative
 		}
-		set_party_name = { 
-			ideology = social_conservative 
-			name = HNN_social_conservative1 
-			long_name = HNN_social_conservative1_long 
-		}
 	}
 	option = {#鲁涤平
 		name = hunbao.1.b
-		create_country_leader = {
-			name = "鲁涤平"
-			desc = "POLITICS_HNN_LU_DIPING_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Lu_Di_Ping.png"
-			expire = "1965.1.1"
+		promote_character = {
+			character = HNN_Lu_Di_Ping
 			ideology = national_conservative_subtype
 		}
 		set_politics = {
@@ -5018,6 +5009,10 @@ country_event = {#右派合作者
 		promote_character = {
 			character = HNN_Tan_Yan_Kai
 			ideology = national_conservative_subtype
+		}
+		HNN_Tan_Yan_Kai = {
+			var:country_leader = { clear_variable = china_alignment }
+			set_variable = { china_alignment = token:right_kuomintang }
 		}
 		set_politics = {
 			ruling_party = social_conservative
@@ -11374,12 +11369,14 @@ country_event = {#军队开始行动
 	option = {#
 		name = hunqingxi.18.a
 		complete_national_focus = HNN_hong_jun_de_san_tou_tong_meng 
-		create_country_leader = {
-			name = "贺龙"
-			desc = "POLITICS_HNN_HE_LONG_DESC"
-			picture = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
-			expire = "1965.1.1"
-			ideology = syndicalist_subtype
+		HNN_he_long = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HNN_HE_LONG_DESC
+					ideology = syndicalist_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = syndicalist

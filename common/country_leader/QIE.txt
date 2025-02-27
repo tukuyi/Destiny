@@ -40,6 +40,18 @@ leader_traits = {
 		random = no
 		stability_factor = 0.1
 	}
+	QIE_the_diplomatic_offensive = { #Wellington Koo
+		random = no
+		opinion_gain_monthly_factor = 0.25
+		political_power_factor = 0.05
+		civilian_intel_factor = 0.10
+	}
+	QIE_idealist_against_the_storm = { #Hu Shih
+		random = no
+		stability_factor = 0.1
+		research_speed_factor = 0.05
+		social_liberal_drift = 0.02
+	}
 	QIE_son_of_heaven = { #Puyi, Anti-Concessionist
 		random = no
 		stability_factor = 0.15

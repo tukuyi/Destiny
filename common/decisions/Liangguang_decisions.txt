@@ -3498,7 +3498,7 @@ GXC_quan_qiu_da_bing_gou = {#全球大并购
 					}
 				}	
 				country_event = {
-					id = hnn.2
+					id = lngst.59
 					days = 3
 				}
 			}

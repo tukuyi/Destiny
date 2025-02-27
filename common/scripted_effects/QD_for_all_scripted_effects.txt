@@ -626,6 +626,12 @@ CSP_set_leader_effect = {#工团领导人
 	save_global_event_target_as = CSP_leader
 }
 
+MCU_set_leader_effect = {#满洲领导人
+	#Manchu
+	custom_effect_tooltip = MCU_set_leader_tt
+	save_global_event_target_as = MCU_leader
+}
+
 NZH_set_leader_effect = {#北直系领导人
 	#Northern Zhili
 	custom_effect_tooltip = NZH_set_leader_tt
@@ -674,6 +680,15 @@ set_potential_national_government = {#宣布统一、枣核时间
 				check_variable = { country_leader:china_alignment = token:southern_zhili }
 			}
 			SZH_set_leader_effect = yes
+		}
+		else_if = {
+			limit = {
+				OR = {
+					check_variable = { country_leader:china_alignment = token:manchu_qing }
+					# has_country_leader = { character = SQI_zhang_tianran } #This is here to show a player if they make a goverment as Zhang Tianran they will be the Manchu leader
+				}
+			}
+			MCU_set_leader_effect = yes
 		}
 
 		every_state = {

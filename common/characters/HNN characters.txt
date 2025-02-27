@@ -1113,6 +1113,40 @@ characters = {
 ######################
 ####### RKMT  ########
 ######################
+#陈三立
+	HNN_Chen_San_Li = {
+		name = HNN_Chen_San_Li
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Chen_San_Li
+				large = GFX_Portrait_HNN_Chen_San_Li
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_CHEN_SANLI_DESC
+			ideology = neo_confucianism_subtype
+			traits = {
+				CHN_right_kuomintang_aligned
+			}
+		}
+	}
+#鲁涤平
+	HNN_Lu_Di_Ping = {
+		name = HNN_Lu_Di_Ping
+		portraits = {
+			army = {
+				small = GFX_Portrait_HNN_Lu_Di_Ping
+				large = GFX_Portrait_HNN_Lu_Di_Ping
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_LU_DIPING_DESC
+			ideology = national_conservative_subtype
+			traits = {
+				CHN_right_kuomintang_aligned
+			}
+		}
+	}	
 #谭延闿
 	HNN_Tan_Yan_Kai = {
 		name = HNN_Tan_Yan_Kai

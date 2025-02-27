@@ -96,7 +96,12 @@ QIE_kuomintang_exists = {#存在国民党
 			AND = {
 				can_declare_war_on = HNN
 				NOT = { has_non_aggression_pact_with = HNN }
-				HNN = { is_ruled_by_kmt = yes }
+				HNN = { 
+					OR = {
+						is_ruled_by_kmt = yes 
+						china_is_aligned_with_gong_tuan_dang = yes
+					}
+				}
 			}
 			AND = {
 				has_war_with = HNN

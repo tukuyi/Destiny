@@ -107,7 +107,6 @@ recruit_character = HNN_chen_quzhen
 recruit_character = HNN_tian_yingzhao
 recruit_character = HNN_he_yaozu
 recruit_character = HNN_yuan_zuming
-recruit_character = HNN_yang_xuancheng
 recruit_character = HNN_long_yunfei
 recruit_character = HNN_dai_jitao
 recruit_character = HNN_zhou_xicheng
@@ -160,6 +159,9 @@ recruit_character = HNN_Lin_Bo_Qu
 recruit_character = HNN_Hu_Yao_Bang
 recruit_character = HNN_Tan_Yan_Kai
 
+recruit_character = HNN_Chen_San_Li
+recruit_character = HNN_Lu_Di_Ping
+
 recruit_character = HNN_wang_gan_chang
 recruit_character = HNN_Qian_Xuesen
 recruit_character = HNN_zhao_jiu_zhang
@@ -177,6 +179,11 @@ HNN_tang_xiangming = {
 	set_character_flag = CHN_original_unit_leader
 }
 HNN_zhao_hengti = {
+	set_variable = { china_alignment = token:federalists }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_fed_loyalist_flag
+}
+HNN_Tan_Yan_Kai = {
 	set_variable = { china_alignment = token:federalists }
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = HNN_fed_loyalist_flag
@@ -201,6 +208,14 @@ HNN_tang_shengzhi = {
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = HNN_KMT_loyalist_flag
 	set_character_flag = CHI_PAC_military_loyalist_flag
+	retire = yes
+}
+HNN_Chen_San_Li = {
+	set_variable = { china_alignment = token:right_kuomintang }
+	retire = yes
+}
+HNN_Lu_Di_Ping = {
+	set_variable = { china_alignment = token:right_kuomintang }
 	retire = yes
 }
 HNN_cheng_qian = {
@@ -467,6 +482,7 @@ promote_character = {
 	ideology = kleptocracy_subtype
 }
 
+recruit_character = HNN_yang_xuancheng
 recruit_character = HNN_ma_long
 
 HNN_ma_long = {

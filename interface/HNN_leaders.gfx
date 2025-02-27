@@ -365,6 +365,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_li_pinxian.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_Chen_San_Li"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Chen_San_Li.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_HNN_tao_guang"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_HNN_tao_guang.png"
 	}
@@ -631,6 +635,42 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Big_Ears.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Reginald_Tyrwhitt"
+		texturefile = "gfx/leaders/LEC/Portrait_Reginald_Tyrwhitt.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_Walter_Stennes"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Walter_Stennes.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_Michitaro_Komatsubara"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Michitaro_Komatsubara.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Koreshige_Inuzuka"
+		texturefile = "gfx/leaders/LEC/Portrait_Koreshige_Inuzuka.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Francis_Festing"
+		texturefile = "gfx/leaders/LEC/Portrait_Francis_Festing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_Edward_Barrett"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Edward_Barrett.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_German_Time"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_German_Time.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_William_Fairbairn"
+		texturefile = "gfx/leaders/LEC/Portrait_William_Fairbairn.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Georg_Wetzell"
+		texturefile = "gfx/leaders/LEC/Portrait_Georg_Wetzell.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_LEC_Huang_Jinrong"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Huang_Jinrong.png"
 	}
@@ -657,6 +697,22 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_Xudatong"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Xudatong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Heung_Chin"
+		texturefile = "gfx/leaders/LEC/Portrait_Heung_Chin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Kot_Siu_Wong"
+		texturefile = "gfx/leaders/LEC/Portrait_Kot_Siu_Wong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brilliant_Chang"
+		texturefile = "gfx/leaders/LEC/Portrait_Brilliant_Chang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_Crime_Bosses"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Crime_Bosses.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_Wang_Shou_Hua"
@@ -1134,6 +1190,14 @@ spriteTypes = {
 	}
 ###大清
 	spriteType = {
+		name = "GFX_Portrait_QIE_Koo"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_Hu_Shih"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_Hu_Shih.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_QIE_Yu_Feng"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Yu_Feng.png"
 	}
@@ -1172,6 +1236,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_QIE_Li_Bingzhi"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_Li_Bingzhi.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_wu_yulin"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_wu_yulin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_sa_zhenbing"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_sa_zhenbing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_QIE_du_xigui"
+		texturefile = "gfx/leaders/QIE/Portrait_QIE_du_xigui.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_QIE_Xiao_Yaonan"

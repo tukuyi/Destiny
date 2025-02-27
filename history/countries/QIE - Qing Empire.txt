@@ -358,9 +358,24 @@ recruit_character = QIE_Wang_Lingyun
 recruit_character = QIE_li_jichen
 recruit_character = QIE_Pugong
 
+recruit_character = QIE_hu_shih
+recruit_character = QIE_wellington_koo
+
 QIE_wu_peifu = { set_variable = { china_alignment = token:northern_zhili } }
 QIE_aisin_gioro_puyi = {
 	set_variable = { china_alignment = token:northern_zhili }
+}
+QIE_yu_xuezhong = { set_variable = { china_alignment = token:northern_zhili } }
+QIE_hu_shih = { set_variable = { china_alignment = token:northern_zhili } }
+QIE_yan_huiqing = { set_variable = { china_alignment = token:northern_zhili } }
+QIE_wellington_koo = { set_variable = { china_alignment = token:northern_zhili } }
+QIE_jiang_bai_li = {
+	set_variable = { china_alignment = token:northern_zhili }
+	set_character_flag = QIE_zhili_leader
+}
+QIE_wang_chengbin = {
+	set_variable = { china_alignment = token:northern_zhili }
+	set_character_flag = QIE_zhili_leader
 }
 
 QIE_li_shuchun = {
@@ -402,49 +417,8 @@ QIE_Tong_Jixu = {
 }
 
 ### Admirals ###
-create_navy_leader = {
-	name = "吴纫礼"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wu_Renli.png"
-	desc = "QIE_WU_RENLI_NAVY_DESC"
-	traits = {
-		superior_tactician
-		navy_career_officer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	maneuvering_skill = 3
-	coordination_skill = 2
-}
-create_navy_leader = {
-	name = "萨镇冰"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Sa_Zhenbing.png"
-	desc = "QIE_SA_ZHENBING_NAVY_DESC"
-	traits = {
-		battleship_adherent
-		navy_career_officer
-		gentlemanly
-		naval_lineage
-	}
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	maneuvering_skill = 4
-	coordination_skill = 3
-}
-create_navy_leader = {
-	name = "杜锡珪"
-	portrait_path = "gfx/leaders/QIE/Portrait_QIE_Du_Xigui.png"
-	desc = "QIE_DU_XIGUI_NAVY_DESC"
-	traits = {
-		old_guard_navy
-		navy_career_officer
-	}
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	maneuvering_skill = 2
-	coordination_skill = 2
-}
+recruit_character = QIE_wu_yulin
+recruit_character = QIE_sa_zhenbing
+recruit_character = QIE_du_xigui
 
 QIE_start_naval_variant = yes

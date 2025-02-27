@@ -99,6 +99,10 @@
  china_is_aligned_with_zhili_NOT: "§R未§!由§L亲直系§!政权统治"
  china_is_aligned_with_gong_tuan: "由§R亲工团党§!政权统治"
  china_is_aligned_with_gong_tuan_NOT: "§R未§!由§R亲工团党§!政权统治"
+ china_is_aligned_with_federalists: "由§f联省派§!统治"
+ china_is_aligned_with_federalists_NOT: "§R未§!由§f联省派§!统治"
+ china_is_aligned_with_manchu: "由§q亲满洲§!政权统治"
+ china_is_aligned_with_manchu_NOT: "§R未§!由§q亲满洲§!政权统治"
 
  CHN_join_NZH_decision: "加入[NZH.GetName]"
  CHN_join_NZH_decision_desc: "自从直系在1927年取得胜利之后，他们一直主宰着中国政坛，并经受住了来自北洋内部政治风波、南方革命派和北方竞争对手的考验。尽管他们的霸权最近受到了挑战，但他们必将取得胜利，并维护中国的道德和政治秩序。"

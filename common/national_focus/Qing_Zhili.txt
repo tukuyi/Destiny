@@ -3217,10 +3217,10 @@ focus_tree = {
 			OR = {
 				NOT = { country_exists = HNN }
 				OR = {
-					HNN = { is_ruled_by_federalists = no }
+					HNN = { china_is_aligned_with_federalists = no }
 					if = {
 						limit = { HNN = { is_subject = yes } }
-						HNN = { overlord = { is_ruled_by_federalists = no } }
+						HNN = { overlord = { china_is_aligned_with_federalists = no } }
 					}
 					else = {
 						hidden_trigger = {
@@ -3233,10 +3233,10 @@ focus_tree = {
 			OR = {
 				NOT = { country_exists = SZC }
 				OR = {
-					SZC = { is_ruled_by_federalists = no }
+					SZC = { china_is_aligned_with_federalists = no }
 					if = {
 						limit = { SZC = { is_subject = yes } }
-						SZC = { overlord = { is_ruled_by_federalists = no } }
+						SZC = { overlord = { china_is_aligned_with_federalists = no } }
 					}
 					else = {
 						hidden_trigger = {
@@ -3248,10 +3248,10 @@ focus_tree = {
 			OR = {
 				NOT = { country_exists = YUN }
 				OR = {
-					YUN = { is_ruled_by_federalists = no }
+					YUN = { china_is_aligned_with_federalists = no }
 					if = {
 						limit = { YUN = { is_subject = yes } }
-						YUN = { overlord = { is_ruled_by_federalists = no } }
+						YUN = { overlord = { china_is_aligned_with_federalists = no } }
 					}
 					else = {
 						hidden_trigger = {
@@ -3315,7 +3315,7 @@ focus_tree = {
 			}
 			if = {#湖南
 				limit = {
-					HNN = { is_ruled_by_federalists = yes }
+					HNN = { china_is_aligned_with_federalists = yes }
 					HNN = { is_subject = no }
 					NOT = { GXC = { has_country_leader = { character = GXC_chen_jiongming } } }
 					NOT = { SZC = { is_ruled_by_federalists = yes } } 
@@ -3341,7 +3341,7 @@ focus_tree = {
 						can_declare_war_on = HNN
 						has_war_with = HNN
 					}
-					HNN = { is_ruled_by_federalists = yes }
+					HNN = { china_is_aligned_with_federalists = yes }
 				}
 				add_timed_idea = {
 					idea = QIE_attack_fed_HNN_idea
@@ -3360,7 +3360,7 @@ focus_tree = {
 						can_declare_war_on = SZC
 						has_war_with = SZC
 					}
-					SZC = { is_ruled_by_federalists = yes }
+					SZC = { china_is_aligned_with_federalists = yes }
 				}
 				add_timed_idea = {
 					idea = QIE_attack_fed_SZC_idea
@@ -3379,7 +3379,7 @@ focus_tree = {
 						can_declare_war_on = YUN
 						has_war_with = YUN
 					}
-					YUN = { is_ruled_by_federalists = yes }
+					YUN = { china_is_aligned_with_federalists = yes }
 				}
 				add_timed_idea = {
 					idea = QIE_attack_fed_YUN_idea
@@ -3670,7 +3670,12 @@ focus_tree = {
 						can_declare_war_on = HNN
 						has_war_with = HNN
 					}
-					HNN = { is_ruled_by_kmt = yes }
+					HNN = { 
+						OR = {
+							is_ruled_by_kmt = yes 
+							china_is_aligned_with_gong_tuan_dang = yes
+						}
+					}
 				}
 				add_timed_idea = {
 					idea = QIE_attack_kmt_HNN_idea
@@ -4186,6 +4191,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_president_hu"
+			QIE_hu_shih = { 
+				add_trait = { 
+					trait = QIE_idealist_against_the_storm 
+					ideology = oligarchy_subtype 
+				} 
+			}
 			add_political_power = 50
 			add_popularity = {
 				ideology = social_liberal
@@ -4220,6 +4231,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_president_koo"
+			QIE_wellington_koo = { 
+				add_trait = { 
+					trait = QIE_the_diplomatic_offensive 
+					ideology = oligarchy_subtype 
+				} 
+			}
 			add_stability = 0.05
 			608 = { 
 				add_dynamic_modifier = { 

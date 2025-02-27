@@ -8,3 +8,6 @@ NZH = {#北直系
 SZH = {#南直系
 	global_event_target = SZH_leader
 }
+MCU = {#满洲
+	global_event_target = MCU_leader
+}

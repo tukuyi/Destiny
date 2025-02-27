@@ -73,6 +73,16 @@ CHN_no_aligned_unifier_exists_trigger = {#统一全国的前置要求
 			}
 		}
 	}
+	else_if = {
+		limit = { check_variable = { country_leader:china_alignment = token:manchu_qing } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_MCU_tt
+			OR = {
+				NOT = { country_exists = MCU }
+				tag = MCU
+			}
+		}
+	}
 }
 
 china_is_aligned_with_northern_zhili = {#南直系
@@ -109,5 +119,25 @@ china_is_aligned_with_gong_tuan_dang = {#工团党
 	custom_trigger_tooltip = {
 		tooltip = china_is_aligned_with_gong_tuan
 		check_variable = { country_leader:china_alignment = token:Syndicalists }
+	}
+}
+
+china_is_aligned_with_federalists = {#联省派
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_federalists
+		OR = {
+			check_variable = { country_leader:china_alignment = token:chinese_southern_republican }
+			check_variable = { country_leader:china_alignment = token:federalists }
+		}
+	}
+}
+
+china_is_aligned_with_manchu = {#满洲
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_manchu
+		OR = {
+			check_variable = { country_leader:china_alignment = token:manchu_qing }
+			check_variable = { country_leader:china_alignment = token:beiyang }
+		}
 	}
 }

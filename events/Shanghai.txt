@@ -7,7 +7,7 @@ add_namespace = Shchuming
 add_namespace = Shcxinjiao
 add_namespace = Shcgong
 
-country_event = {
+country_event = {#上海大战
 	id = SHCqiehuan.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event SHCqiehuan.1"}
 	title = SHCqiehuan.1.t

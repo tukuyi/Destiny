@@ -37,12 +37,12 @@ characters = {
 		country_leader = {
 			desc = POLITICS_YUNNAN_TANG_JIYAO_DESC
 			ideology = authoritarian_democrat_subtype
-			traits = { CHN_others_aligned }
+			traits = { CHN_southern_republican_aligned }
 		}
 		country_leader = {
 			desc = POLITICS_YUNNAN_TANG_JIYAO_DESC
 			ideology = pataut_warlordism_subtype
-			traits = { CHN_others_aligned }
+			traits = { CHN_southern_republican_aligned }
 		}
 		field_marshal = {
 			desc = POLITICS_YUNNAN_TANG_JIYAO_ARMY_DESC

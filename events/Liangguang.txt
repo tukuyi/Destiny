@@ -11549,6 +11549,23 @@ country_event = {#幸运大转盘
 	}
 }
 
+country_event = {#火焰依旧
+	id = lngst.59
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lngst.59" }
+	title = lngst.59.t 
+	desc = lngst.59.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = lngst.59.a
+		SZC = {
+			add_manpower = -10000
+		}
+	}
+}
+
 ########################################
 ########-       百色起义     -##########
 ########################################

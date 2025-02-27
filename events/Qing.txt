@@ -6873,7 +6873,7 @@ country_event = {
 	}
 }
 
-country_event = {#
+country_event = {#卫兵冲进了大殿！
 	id = qiecoup.21 #Puyi flees the room and guards rush in to arrest them!
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiecoup.21" }
 	title = qiecoup.21.t
@@ -6885,7 +6885,7 @@ country_event = {#
 	option = {
 		name = qiecoup.21.a #政变成功
 		ai_chance = {
-			factor = 80
+			base = 80
 			modifier = {
 				factor = 0
 				OR = {
@@ -6932,7 +6932,7 @@ country_event = {#
 	option = { #政变失败
 		name = qiecoup.21.b
 		ai_chance = {
-			factor = 20
+			base = 20
 			modifier = {
 				factor = 0
 				has_game_rule = {
@@ -6949,7 +6949,7 @@ country_event = {#
 	option = { #无人生还
 		name = qiecoup.21.c
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		create_country_leader = {
 			name = "王座空悬"
@@ -6964,6 +6964,7 @@ country_event = {#
 		retire_ideology_leader = authoritarian_democrat
 		retire_ideology_leader = paternal_autocrat
 		hidden_effect = {
+			clear_global_event_target = NZH_leader
 			remove_ideas = QIE_leadership_crisis
 			QIE_wu_peifu = {
 				retire = yes
@@ -6988,7 +6989,7 @@ country_event = {#皇帝一鸣惊人
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiecoup.22" }
 	title = qiecoup.22.t
 	desc = qiecoup.22.d
-	picture = GFX_report_event_QIE_worship_puyi
+	picture = GFX_report_event_QIE_puyi_speech
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -6997,10 +6998,24 @@ country_event = {#皇帝一鸣惊人
 		name = qiecoup.22.a #crush the traitors!
 		remove_ideas = QIE_legitimacy_of_the_monarchy
 		clr_country_flag = legation_council_member
+		set_country_flag = QIE_manchu_restoration
 		hidden_effect = {
 			clear_global_event_target = NZH_leader
+
+			complete_national_focus = QIE_unrest
+			complete_national_focus = QIE_restoration
+
+			set_politics = {
+				ruling_party = social_conservative
+			}
+			add_soclib_to_coalition = yes
+			add_socdem_to_coalition = yes
+
+			MCU_set_leader_effect = yes
 			
 			QIE_zhili_clique_flees = yes
+			add_ideas = QIE_zhili_manchu_war_idea
+
 			QIE_Tong_Jixu = {
 				set_nationality = ROOT
 			}
@@ -7033,11 +7048,8 @@ country_event = {#皇帝一鸣惊人
 				}
 			}
 
-			set_politics = {
-				ruling_party = social_conservative
-			}
-			add_soclib_to_coalition = yes
-			add_socdem_to_coalition = yes
+			QIE_enable_manchu_qing_alignment = yes
+
 			QIE_aisin_gioro_puyi = {
 				set_portraits = {
 					civilian = { large = GFX_Portrait_QIE_aisin_gioro_puyi_uniform }
@@ -7114,8 +7126,10 @@ country_event = {#皇帝一鸣惊人
 			}
 			QIE_ma_dengying_flees_effect = yes
 			QIE_sun_liren_flees_effect = yes
+
 			set_country_flag = Jiang_Baili_dead
 			set_country_flag = Wu_Peifu_dead
+
 			every_owned_state = {
 				limit = {
 					NOT = {
@@ -7125,10 +7139,8 @@ country_event = {#皇帝一鸣惊人
 				}
 				set_demilitarized_zone = yes
 			}
-			complete_national_focus = QIE_unrest
-			complete_national_focus = QIE_restoration
-			set_country_flag = QIE_manchu_restoration
-			if = {
+			
+			if = {#求助阎锡山
 				limit = {
 					has_country_flag = QIE_yan_backs_coup
 					SHX = {
@@ -7146,7 +7158,7 @@ country_event = {#皇帝一鸣惊人
 				}
 				SHX = { country_event = qiecoup.23 } #the coup succeeds! time to intervene
 			}
-			else_if = {
+			else_if = {#求助其他人
 				limit = {
 					OR = {
 						has_country_flag = QIE_song_backs_coup
@@ -7174,7 +7186,24 @@ country_event = {#皇帝一鸣惊人
 			country_event = qiecoup.29
 			add_political_power = 30
 			set_country_flag = zhili_manchu_war
-			add_ideas = QIE_zhili_manchu_war_idea
+			
+			if = {
+				limit = {
+					LEP = { has_completed_focus = LEP_two_marshals_under_the_sky }
+				}
+				LEP = {
+					uncomplete_national_focus = {
+						focus = LEP_two_marshals_under_the_sky
+						uncomplete_children = yes
+					}
+				}
+			}
+
+			every_subject_country = {
+				limit = { china_is_aligned_with_manchu = no }
+				china_break_puppet_effect = yes
+			}
+
 			delete_unit_template_and_units = { division_template = "Zhili Infantry Division" }
 			random_other_country = {
 				limit = { is_ai = yes }
@@ -7192,7 +7221,7 @@ country_event = {#皇帝一鸣惊人
 					hours = 3
 				}
 			}
-			if = {
+			if = {#山东的反应
 				limit = { 
 					SQI = {
 						has_country_leader = {
@@ -7836,10 +7865,8 @@ country_event = { #inaugurating the new government
 			}
 			if = {
 				limit = { has_country_flag = hu_picked }
-				create_country_leader = {
-					name = "胡适"
-					desc = "POLITICS_HU_SHIH_DESC"
-					picture = "gfx/leaders/QIE/Portrait_QIE_Hu_Shih.png"
+				promote_character = {
+					character = QIE_hu_shih
 					ideology = oligarchy_subtype
 				}
 				remove_ideas_with_trait = head_of_government
@@ -7847,10 +7874,8 @@ country_event = { #inaugurating the new government
 			}
 			if = {
 				limit = { has_country_flag = koo_picked }
-				create_country_leader = {
-					name = "顾维钧"
-					desc = "POLITICS_WELLINGTON_KOO_DESC"
-					picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
+				promote_character = {
+					character = QIE_wellington_koo
 					ideology = oligarchy_subtype
 				}
 				remove_ideas_with_trait = head_of_government
@@ -10385,12 +10410,17 @@ country_event = {#新进步党
 
 	option = { 
 		name = qieroc.4.a 
-		create_country_leader = {
-			name = "胡适"
-			desc = "POLITICS_HU_SHIH_ROC_DESC"
-			picture = "gfx/leaders/QIE/Portrait_QIE_Hu_Shih.png"
-			expire = "1.1.1"
-			ideology = meritocratic_liberalism_subtype
+		QIE_hu_shih = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = POLITICS_HU_SHIH_ROC_DESC
+					ideology = meritocratic_liberalism_subtype
+					traits = {
+						QIE_idealist_against_the_storm
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		set_party_name = {
 			ideology = social_liberal
@@ -10431,12 +10461,17 @@ country_event = {#民主宪政党成立
 
 	option = { 
 		name = qieroc.5.a 
-		create_country_leader = {
-			name = "顾维钧"
-			desc = "POLITICS_GU_WEIJUN_ROC_DESC"
-			picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
-			expire = "1.1.1"
-			ideology = marlib_classical_liberalism_subtype
+		QIE_wellington_koo = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = POLITICS_GU_WEIJUN_ROC_DESC
+					ideology = marlib_classical_liberalism_subtype
+					traits = {
+						QIE_the_diplomatic_offensive
+					}
+				}
+				promote_leader = yes
+			}
 		}
 		create_country_leader = {
 			name = "章士钊"
@@ -11362,12 +11397,17 @@ country_event = {#第二次选举
 			limit = { 
 				has_country_flag = QIE_JBD_hu_shi
 			}
-			create_country_leader = {
-				name = "胡适"
-				desc = "POLITICS_HU_SHIH_ROC_DESC"
-				picture = "gfx/leaders/QIE/Portrait_QIE_Hu_Shih.png"
-				expire = "1.1.1"
-				ideology = meritocratic_liberalism_subtype
+			QIE_hu_shih = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_HU_SHIH_ROC_DESC
+						ideology = meritocratic_liberalism_subtype
+						traits = {
+							QIE_idealist_against_the_storm
+						}
+					}
+					promote_leader = yes
+				}
 			}
 		}
 		else_if = {
@@ -11411,12 +11451,17 @@ country_event = {#第二次选举
 			limit = { 
 				has_country_flag = QIE_XZD_gu_wei_jun
 			}
-			create_country_leader = {
-				name = "顾维钧"
-				desc = "POLITICS_GU_WEIJUN_ROC_DESC"
-				picture = "gfx/leaders/QIE/Portrait_QIE_Koo.png"
-				expire = "1.1.1"
-				ideology = marlib_classical_liberalism_subtype
+			QIE_wellington_koo = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = POLITICS_GU_WEIJUN_ROC_DESC
+						ideology = marlib_classical_liberalism_subtype
+						traits = {
+							QIE_the_diplomatic_offensive
+						}
+					}
+					promote_leader = yes
+				}
 			}
 		}
 		else_if = {

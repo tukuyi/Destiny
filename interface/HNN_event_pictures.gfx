@@ -320,6 +320,10 @@ spriteTypes = {
 		name = "GFX_report_event_LEP_fang_benren_3"
 		texturefile = "gfx/event_news_pictures/LEP/LEP_fang_benren_3.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_LEP_qi_xieyuan_suit_2"
+		texturefile = "gfx/event_news_pictures/LEP/LEP_qi_xieyuan_suit_2.png"
+	}	
 	#新闻
 	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna"

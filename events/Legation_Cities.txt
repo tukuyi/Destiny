@@ -13121,15 +13121,8 @@ country_event = { #黑帮联合夺取权力
 			set_nationality = NSW
 		}
 		
-		create_field_marshal = {
-			name = "United Dragon Head Council "
-			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Crime_Bosses.png"
-			traits = { incorporeal LEC_triad_commander }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+		LEC_Crime_Bosses = {
+			set_nationality = ROOT
 		}
 
 		create_corps_commander = {
@@ -13179,45 +13172,17 @@ country_event = { #黑帮联合夺取权力
 			planning_skill = 1
 			logistics_skill = 2
 		}
-		create_corps_commander = {
-			name = "Billy 'Brilliant' Chang"
-			portrait_path = "gfx/leaders/LEC/Portrait_Brilliant_Chang.png"
-			traits = { LEC_triad_commander }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+		LEC_Brilliant_Chang = {
+			set_nationality = ROOT
 		}
-		create_corps_commander = {
-			name = "Kot Siu Wong"
-			portrait_path = "gfx/leaders/LEC/Portrait_Kot_Siu_Wong.png"
-			traits = { LEC_triad_commander career_officer }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
+		LEC_Kot_Siu_Wong = {
+			set_nationality = ROOT
 		}
-		create_corps_commander = {
-			name = "Heung Chin"
-			portrait_path = "gfx/leaders/LEC/Portrait_Heung_Chin.png"
-			traits = { LEC_triad_commander }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+		LEC_Heung_Chin = {
+			set_nationality = ROOT
 		}
-		create_corps_commander = {
-			name = "徐大统"
-			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Xudatong.png"
-			traits = { LEC_triad_commander }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+		LEC_Xudatong = {
+			set_nationality = ROOT
 		}
 
 		set_country_flag = LEC_Triad_Power
