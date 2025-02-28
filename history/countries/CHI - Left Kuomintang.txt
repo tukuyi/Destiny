@@ -301,19 +301,7 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = militarism_subtype
 }
-### Field Marshals ###
-create_field_marshal = {
-	name = "Li Jishen"
-	desc = "POLITICS_CHI_Li_JISHEN_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Li_Jishen.png"
-	traits = { politically_connected irregulars_officer infantry_officer war_hero organisational_leader CHI_left_kmt_officer }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 2
-	id = 2297
-}
+
 ### Corps Commanders ###
 create_corps_commander = {
 	name = "Hu Zongnan "
@@ -351,32 +339,6 @@ create_corps_commander = {
 	planning_skill = 1
 	logistics_skill = 1
 	id = 5066
-}
-
-create_corps_commander = {
-	name = "Zhang Fakui"
-	desc = "POLITICS_CHI_ZHANG_FAKUI_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhang_Fakui.png"
-	traits = { media_personality harsh_leader infantry_officer war_hero CHI_left_kmt_officer }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-	id = 2204
-}
-
-create_corps_commander = {
-	name = "薛岳"
-	desc = "POLITICS_CHI_XUE_YUE_ARMY_DESC"
-	portrait_path = "gfx/leaders/CHI/Portrait_CHI_Xue_Yue_KX.png"
-	traits = { career_officer brilliant_strategist trait_reckless CHI_left_kmt_officer hill_fighter }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-	id = 2203
 }
 
 create_corps_commander = {
@@ -502,22 +464,6 @@ random_unit_leader = {
 	set_unit_leader_flag = CHI_original_unit_leader
 }
 
-#RF
-random_unit_leader = {
-	limit = { has_id = 2297 }
-	set_unit_leader_flag = CHI_RF_military_loyalist_flag
-	set_unit_leader_flag = CHI_original_unit_leader
-}
-random_unit_leader = {
-	limit = { has_id = 2204 }
-	set_unit_leader_flag = CHI_RF_military_loyalist_flag
-}
-random_unit_leader = {
-	limit = { has_id = 2203 }
-	set_unit_leader_flag = CHI_RF_military_loyalist_flag
-}
-
-
 #CRS
 random_unit_leader = {
 	limit = { has_id = 2299 }
@@ -547,14 +493,6 @@ random_unit_leader = {
 
 #Ship Some Advisors to Other Tags
 random_unit_leader = {
-	limit = { has_id = 2204 }
-	set_nationality = BHC
-}
-random_unit_leader = {
-	limit = { has_id = 2203 }
-	set_nationality = BHC
-}
-random_unit_leader = {
 	limit = { has_id = 5059 }
 	set_nationality = XXA
 }
@@ -570,6 +508,10 @@ random_unit_leader = {#让关向应别去奉天
 	limit = { has_id = 5066 }
 	set_nationality = XXA
 }
+
+recruit_character = CHI_xue_yue
+recruit_character = CHI_li_jishen
+recruit_character = CHI_zhang_fakui
 
 recruit_character = CHI_Qiu_Qingquan
 recruit_character = CHI_Gui_Yongqing
@@ -597,6 +539,20 @@ recruit_character = CHI_xiao_jinguang
 recruit_character = CHI_li_zhilong #Admiral
 
 recruit_character = CHI_luo_ronghuan
+
+#RF
+CHI_li_jishen = {
+	set_unit_leader_flag = CHI_RF_military_loyalist_flag
+	set_unit_leader_flag = CHI_original_unit_leader
+}
+CHI_xue_yue = {
+	set_unit_leader_flag = CHI_RF_military_loyalist_flag
+	set_nationality = BHC
+}
+CHI_zhang_fakui = {
+	set_unit_leader_flag = CHI_RF_military_loyalist_flag
+	set_nationality = BHC
+}
 
 #RCA
 CHI_zhou_enlai = {

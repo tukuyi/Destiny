@@ -405,6 +405,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengming.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Hunan_Tang_Shengming_csp"
+		texturefile = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengming_csp.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_dai_jitao"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_dai_jitao.png"
 	}

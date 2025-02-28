@@ -20,6 +20,18 @@ spriteTypes = {
 		texturefile = "gfx/leaders/CHI/Portrait_CHI_xu_xiangqian.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_CHI_li_jishen"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_li_jishen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_xue_yue"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_xue_yue.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CHI_Zhang_Fakui"
+		texturefile = "gfx/leaders/CHI/Portrait_CHI_Zhang_Fakui.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_CHI_su_yu"
 		texturefile = "gfx/leaders/CHI/Portrait_CHI_su_yu.png"
 	}

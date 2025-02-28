@@ -168,7 +168,14 @@ HNN_revolution_victory = {#工团上台初始设定
 	HNN_geng_biao = { HNN_recruit_characters_effect = yes }
 	HNN_Tan_zheng = { HNN_recruit_characters_effect = yes }
 	HNN_Chen_Yun = { HNN_recruit_characters_effect = yes }
-	HNN_tang_shengming = { HNN_recruit_characters_effect = yes }
+	HNN_tang_shengming = { 
+		HNN_recruit_characters_effect = yes 
+		set_portraits = {
+			army = { 
+				large = GFX_Portrait_Hunan_Tang_Shengming_csp
+			}
+		}
+	}
 
 	set_party_name = {
 		ideology = totalist

@@ -154,7 +154,6 @@ recruit_character = HNN_Tan_zheng
 recruit_character = HNN_Chen_Yun 
 recruit_character = HNN_Hua_Guofeng
 recruit_character = HNN_Shi_Dingwu
-recruit_character = HNN_Shi_tai_xu
 recruit_character = HNN_Lin_Bo_Qu
 recruit_character = HNN_Hu_Yao_Bang
 recruit_character = HNN_Tan_Yan_Kai
@@ -167,6 +166,14 @@ recruit_character = HNN_Qian_Xuesen
 recruit_character = HNN_zhao_jiu_zhang
 recruit_character = HNN_guo_yong_huai
 recruit_character = HNN_luo_pei_lin
+
+recruit_character = HNN_Shi_tai_xu
+recruit_character = HNN_Gu_bo_xu
+
+HNN_Gu_bo_xu = {
+	set_variable = { china_alignment = token:others }
+	retire = yes
+}
 
 HNN_chen_quzhen = { 
 	set_variable = { china_alignment = token:northern_zhili }

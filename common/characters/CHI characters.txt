@@ -257,6 +257,82 @@ characters = {
 ####################
 ###   国党将领   ###
 ####################
+
+#张发奎
+	CHI_zhang_fakui = {
+		name = CHI_zhang_fakui
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_Zhang_Fakui
+				small = GFX_Portrait_CHI_Zhang_Fakui
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_ZHANG_FAKUI_ARMY_DESC
+			traits = { 
+				war_hero 
+				harsh_leader 
+				infantry_officer 
+				war_hero 
+				CHI_left_kmt_officer 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+#李济深
+	CHI_li_jishen = {
+		name = CHI_li_jishen
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_li_jishen
+				small = GFX_Portrait_CHI_li_jishen
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_CHI_Li_JISHEN_ARMY_DESC
+			traits = { 
+				war_hero 
+				politically_connected 
+				light_infantry_officer 
+				organisational_leader 
+				CHI_left_kmt_officer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#薛岳
+	CHI_xue_yue = {
+		name = CHI_xue_yue
+		portraits = {
+			army = {
+				large = GFX_Portrait_CHI_xue_yue
+				small = GFX_Portrait_CHI_xue_yue
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_CHI_XUE_YUE_ARMY_DESC
+			traits = { 
+				career_officer 
+				brilliant_strategist 
+				trait_reckless 
+				CHI_left_kmt_officer 
+				hill_fighter 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
 #张治中
 	CHI_zhang_zhizhong = {
 		name = CHI_zhang_zhizhong

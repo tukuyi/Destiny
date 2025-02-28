@@ -4766,9 +4766,8 @@ shared_focus = {
 		add_one_random_civilian_factory = yes
 		hidden_effect = {
 			CHI = {
-				random_unit_leader = {
-					limit = { has_id = 2297 }
-					set_nationality = GXC 
+				CHI_li_jishen = {
+					set_nationality = GXC
 				}
 				random_unit_leader = {
 					limit = { has_id = 2299 }
@@ -4783,8 +4782,7 @@ shared_focus = {
 				CHI_wang_yaowu = {
 					set_nationality = GXC 	
 				}
-				random_unit_leader = {
-					limit = { has_id = 2203 }
+				CHI_xue_yue = {
 					set_nationality = GXC 
 				}
 				CHI_du_yuming = {

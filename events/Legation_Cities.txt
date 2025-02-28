@@ -13128,7 +13128,7 @@ country_event = { #黑帮联合夺取权力
 		create_corps_commander = {
 			name = "杜月笙 "
 			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Big_Ears.png"
-			traits = { incorporeal LEC_triad_commander }
+			traits = { LEC_triad_commander }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -13138,7 +13138,7 @@ country_event = { #黑帮联合夺取权力
 		create_corps_commander = {
 			name = "黄金荣 "
 			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Huang_Jinrong.png"
-			traits = { incorporeal LEC_triad_commander }
+			traits = { LEC_triad_commander }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -13148,7 +13148,7 @@ country_event = { #黑帮联合夺取权力
 		create_corps_commander = {
 			name = "张啸林 "
 			portrait_path = "gfx/leaders/LEC/Portrait_Zhang_Xiaolin.png"
-			traits = { incorporeal LEC_triad_commander }
+			traits = { LEC_triad_commander }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -13159,7 +13159,6 @@ country_event = { #黑帮联合夺取权力
 			name = "王亚樵"
 			portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
 			traits = { 
-				incorporeal
 				fast_planner
 				offensive_doctrine
 				irregulars_officer

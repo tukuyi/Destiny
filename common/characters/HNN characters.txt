@@ -1504,6 +1504,19 @@ characters = {
 ######################
 ####     佛教    #####
 ######################
+#正明法师
+	HNN_Gu_bo_xu = { 
+		name = HNN_Gu_bo_xu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HNN_Gu_bo_xu
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HNN_GU_DESC
+			ideology = national_populist_subtype
+		}
+	}	
 #释太虚
 	HNN_Shi_tai_xu = { 
 		name = HNN_Shi_tai_xu

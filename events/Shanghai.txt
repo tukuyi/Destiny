@@ -18,7 +18,6 @@ country_event = {#上海大战
 
 	option = {
 		name = SHCqiehuan.1.a
-		add_political_power = 10
 		create_country_leader = {
 			name = "汪寿华"
 			desc = "WANG_SHOU_HUA_DESC"
@@ -46,19 +45,24 @@ country_event = {#上海大战
 		}
 		set_country_flag = zong_gong_hui_victory
 		set_cosmetic_tag = LEC_GT
-		remove_all_ministers = yes
-		remove_ideas = {
-			LEC_Du_Yuesheng_boss_sli
-			LEC_Huang_Jinrong_boss_sli
-			LEC_Zhang_Xiaolin_boss_sli
-		}
-		add_ideas = {
-			LEC_wang_shou_hua_hog
-			LEC_Liu_Hongsheng_eco_sli
-			LEC_zhao_si_yan_for
-			LEC_tian_han_eco
-		}
 		hidden_effect = {
+			load_oob = SHC_Revolutionary_Militia
+
+			SHC_gong_tuan_leader_coming = yes
+
+			remove_all_ministers = yes
+			remove_ideas = {
+				LEC_Du_Yuesheng_boss_sli
+				LEC_Huang_Jinrong_boss_sli
+				LEC_Zhang_Xiaolin_boss_sli
+			}
+			add_ideas = {
+				LEC_wang_shou_hua_hog
+				LEC_Liu_Hongsheng_eco_sli
+				LEC_zhao_si_yan_for
+				LEC_tian_han_eco
+			}
+
 			country_event = {
 				id = lecgong.1
 				days = 2
@@ -71,7 +75,6 @@ country_event = {#上海大战
 				id = Shcgong.26
 				days = 25
 			}
-			load_oob = SHC_Revolutionary_Militia
 			if = {
 				limit = { 
 					QYG = {
@@ -120,100 +123,12 @@ country_event = {#上海大战
 				ideology = social_liberal
 				long_name = LEC_social_liberal_party_GT_long
 				name = LEC_social_liberal_party_GT
-			}
-			create_field_marshal = {
-				name = "汪寿华"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				traits = { 
-
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			SHC_Alexander_Ivanovich_Cherepanov = {
-				set_nationality = ROOT
-			}
-			SHC_Nikolay_Kuibyshev = {
-				set_nationality = ROOT
-			}
-			SHC_Background_Alternate = {
-				set_nationality = ROOT
-			}
-			SHC_Sun_Fuyuan = {
-				set_nationality = ROOT
-			}
-			SHC_Rao_Shu_Shi = {
-				set_nationality = ROOT
-			}
-			create_corps_commander = {
-				name = "王亚樵"
-				portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
-				traits = { 
-					fast_planner
-					offensive_doctrine
-					irregulars_officer
-					urban_assault_specialist
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2
-			}
-			create_corps_commander = {
-				name = "鲁迅"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			create_corps_commander = {
-				name = "彭述之"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
-				traits = {  
-					urban_assault_specialist
-				}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			SHC_Kang_Sheng = {
-				set_nationality = ROOT
-			}
-			SHC_Tian_Han = {
-				set_nationality = ROOT
-			}
-			SHC_Mao_Dun = {
-				set_nationality = ROOT
-			}
-			SHC_rou_shi = {
-				set_nationality = ROOT
-			}
-			SHC_Zhang_Chunqiao = {
-				set_nationality = ROOT
-			}
-			SHC_Zhou_Yang = {
-				set_nationality = ROOT
-			}
-			SHC_Zhao_Shi_Yan = {
-				set_nationality = ROOT
-			}
-			SHC_hu_feng = {
-				set_nationality = ROOT
-			}
+			}	
 		}
 	}
 }
 
-country_event = {
+country_event = {#上海的命运
 	id = SHCqiehuan.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event SHCqiehuan.2"}
 	title = SHCqiehuan.2.t
@@ -268,20 +183,9 @@ country_event = {
 			ruling_party = syndicalist
 			elections_allowed = no
 		}
-		set_country_flag = zong_gong_hui_victory
 		set_cosmetic_tag = LEC_GT
-		remove_all_ministers = yes
-		remove_ideas = {
-			LEC_Du_Yuesheng_boss_sli
-			LEC_Huang_Jinrong_boss_sli
-			LEC_Zhang_Xiaolin_boss_sli
-		}
-		add_ideas = {
-			LEC_wang_shou_hua_hog
-			LEC_Liu_Hongsheng_eco_sli
-			LEC_zhao_si_yan_for
-			LEC_tian_han_eco
-		}
+		set_country_flag = zong_gong_hui_victory
+		load_oob = SHC_Revolutionary_Militia
 		add_timed_idea = {
 			idea = SHC_di_xia_she_hui_de_fan_pu
 			days = 180
@@ -291,6 +195,21 @@ country_event = {
 			days = 180
 		}
 		hidden_effect = {
+			SHC_gong_tuan_leader_coming = yes
+
+			remove_all_ministers = yes
+			remove_ideas = {
+				LEC_Du_Yuesheng_boss_sli
+				LEC_Huang_Jinrong_boss_sli
+				LEC_Zhang_Xiaolin_boss_sli
+			}
+			add_ideas = {
+				LEC_wang_shou_hua_hog
+				LEC_Liu_Hongsheng_eco_sli
+				LEC_zhao_si_yan_for
+				LEC_tian_han_eco
+			}
+
 			country_event = {
 				id = lecgong.1
 				days = 2
@@ -303,7 +222,6 @@ country_event = {
 				id = Shcgong.26
 				days = 25
 			}
-			load_oob = SHC_Revolutionary_Militia
 			if = {
 				limit = { 
 					QYG = {
@@ -352,90 +270,6 @@ country_event = {
 				ideology = social_liberal
 				long_name = LEC_social_liberal_party_GT_long
 				name = LEC_social_liberal_party_GT
-			}
-			create_field_marshal = {
-				name = "汪寿华"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			create_corps_commander = {
-				name = "鲁迅"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			create_corps_commander = {
-				name = "彭述之"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-			}
-			SHC_Kang_Sheng = {
-				set_nationality = ROOT
-			}
-			create_corps_commander = {
-				name = "王亚樵"
-				portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
-				traits = { 
-					fast_planner
-					offensive_doctrine
-					irregulars_officer
-					urban_assault_specialist
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2
-			}
-			SHC_Alexander_Ivanovich_Cherepanov = {
-				set_nationality = ROOT
-			}
-			SHC_Nikolay_Kuibyshev = {
-				set_nationality = ROOT
-			}
-			SHC_Background_Alternate = {
-				set_nationality = ROOT
-			}
-			SHC_Sun_Fuyuan = {
-				set_nationality = ROOT
-			}
-			SHC_Rao_Shu_Shi = {
-				set_nationality = ROOT
-			}
-			SHC_Tian_Han = {
-				set_nationality = ROOT
-			}
-			SHC_Mao_Dun = {
-				set_nationality = ROOT
-			}
-			SHC_rou_shi = {
-				set_nationality = ROOT
-			}
-			SHC_Zhang_Chunqiao = {
-				set_nationality = ROOT
-			}
-			SHC_Zhou_Yang = {
-				set_nationality = ROOT
-			}
-			SHC_Zhao_Shi_Yan = {
-				set_nationality = ROOT
-			}
-			SHC_hu_feng = {
-				set_nationality = ROOT
 			}
 		}
 	}

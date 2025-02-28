@@ -4102,11 +4102,9 @@ country_event = {#顾伯叙入湖南
 
 	option = {
 		name = hunfo.2.a
-		create_country_leader = {
-			name = "正明法师"
-			desc = "POLITICS_HNN_GU_DESC"
-			picture = "gfx/leaders/HNN/Portrait_HNN_Gu_bo_xu.png"
-			expire = "1965.1.1"
+		HNN_Gu_bo_xu = { HNN_recruit_characters_effect = yes }
+		promote_character = {
+			character = HNN_Gu_bo_xu
 			ideology = national_populist_subtype
 		}
 		set_party_name ={
@@ -14330,6 +14328,9 @@ country_event = {###国民党左派革命失败
 					set_nationality = ROOT
 					remove_unit_leader_trait = CHI_left_kmt_officer
 				}
+				CHI_zhang_fakui = {
+					set_nationality = ROOT 
+				}
 			}
 			if = {#彭雪枫
 				limit = { 
@@ -14410,10 +14411,6 @@ country_event = {###国民党左派革命失败
 			CHI = {
 				random_unit_leader = {
 					limit = { has_id = 2207 }
-					set_nationality = ROOT 
-				}
-				random_unit_leader = {
-					limit = { has_id = 2204 }
 					set_nationality = ROOT 
 				}
 			}
@@ -14498,16 +14495,22 @@ country_event = {###国民党左派革命失败
 				CHI_he_zhonghan = {
 					set_nationality = ROOT
 				}
+				CHI_li_jishen = {
+					set_nationality = ROOT
+				}
+				CHI_xue_yue = {
+					set_nationality = ROOT
+				}
+				CHI_zhang_fakui = {
+					set_nationality = ROOT
+				}
 			}
 			every_other_country = {
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 2297  
 							has_id = 2299  
 							has_id = 2207     
-							has_id = 2204
-							has_id = 2203  
 							has_id = 5059  
 							has_id = 5071  
 						}

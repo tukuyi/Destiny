@@ -255,6 +255,7 @@ characters = {
 				}
 			}
 			corps_commander = {
+				desc = LEC_Brilliant_Chang_AMRY_DESC
 				traits = { 
 					LEC_triad_commander  
 				}

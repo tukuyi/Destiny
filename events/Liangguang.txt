@@ -3800,15 +3800,8 @@ country_event = {
 		name = lngkmt.30.a
 		add_political_power = -40
 		CHI = {
-			every_unit_leader = {
-				limit = {
-					OR = {
-						has_id = 2203 # Xue Yue
-						has_id = 2204 # Zhang Fakui
-					}
-				}
-				set_nationality = ROOT
-			}
+			CHI_xue_yue = { set_nationality = ROOT }
+			CHI_zhang_fakui = { set_nationality = ROOT }
 		}
 	}
 	option = {

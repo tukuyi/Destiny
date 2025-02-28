@@ -30,3 +30,94 @@ SHC_HD_idaa_change = {
 		add_ideas = LEC_fu_hao_yi_hui
 	}
 }
+
+SHC_gong_tuan_leader_coming = {#上海将领
+	create_field_marshal = {
+		name = "汪寿华"
+		portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
+		traits = { 
+
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	SHC_Alexander_Ivanovich_Cherepanov = {
+		set_nationality = ROOT
+	}
+	SHC_Nikolay_Kuibyshev = {
+		set_nationality = ROOT
+	}
+	SHC_Background_Alternate = {
+		set_nationality = ROOT
+	}
+	SHC_Sun_Fuyuan = {
+		set_nationality = ROOT
+	}
+	SHC_Rao_Shu_Shi = {
+		set_nationality = ROOT
+	}
+	create_corps_commander = {
+		name = "王亚樵"
+		portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
+		traits = { 
+			fast_planner
+			offensive_doctrine
+			irregulars_officer
+			urban_assault_specialist
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "鲁迅"
+		portrait_path = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
+		traits = {  }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "彭述之"
+		portrait_path = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
+		traits = {  
+			urban_assault_specialist
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	SHC_Kang_Sheng = {
+		set_nationality = ROOT
+	}
+	SHC_Tian_Han = {
+		set_nationality = ROOT
+	}
+	SHC_Mao_Dun = {
+		set_nationality = ROOT
+	}
+	SHC_rou_shi = {
+		set_nationality = ROOT
+	}
+	SHC_Zhang_Chunqiao = {
+		set_nationality = ROOT
+	}
+	SHC_Zhou_Yang = {
+		set_nationality = ROOT
+	}
+	SHC_Zhao_Shi_Yan = {
+		set_nationality = ROOT
+	}
+	SHC_hu_feng = {
+		set_nationality = ROOT
+	}
+}

@@ -2873,7 +2873,6 @@ country_event = {
 		trigger = { NOT = { tag = CHI } }
 		add_political_power = 15
 		set_country_flag = refused_BHC_chinese_advisers
-		hidden_effect = { BHC_chinese_advisers_flees = yes }
 	}
 }
 country_event = {
@@ -2909,6 +2908,7 @@ country_event = { #The WMARCA Prevails
 
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #Arrivals from India
 		name = CHI.midgame.201.a
 		ai_chance = {
@@ -2928,8 +2928,10 @@ country_event = { #The WMARCA Prevails
 		add_political_power = -50
 		CHI_RF_medium_effect = yes
 		CHI_PAC_medium_effect = yes
-		BHC_chinese_advisers_flees = yes
+		CHI_xue_yue = { CHI_recruit_general_effect = yes }
+		CHI_zhang_fakui = {	CHI_recruit_general_effect = yes }
 	}
+
 	option = { #No thanks
 		ai_chance = {
 			base = 25
@@ -3944,7 +3946,7 @@ unit_leader_event = {
 	}
 	title = {
 		text = CHI.midgame.213.t.zhang
-		trigger = { THIS = { has_id = 2204 } }
+		trigger = { THIS = { is_character = CHI_zhang_fakui } }
 	}
 	title = {
 		text = CHI.midgame.213.t.xiao
@@ -3965,7 +3967,7 @@ unit_leader_event = {
 	}
 	desc = {
 		text = CHI.midgame.213.d.zhang
-		trigger = { THIS = { has_id = 2204 } }
+		trigger = { THIS = { is_character = CHI_zhang_fakui } }
 	}
 	desc = {
 		text = CHI.midgame.213.d.xiao
@@ -3979,7 +3981,7 @@ unit_leader_event = {
 				has_id = 2207
 				is_character = CHI_zhou_enlai
 				has_id = 2299
-				has_id = 2204
+				is_character = CHI_zhang_fakui
 				is_character = CHI_xiao_jinguang
 			}
 		}
@@ -4007,7 +4009,7 @@ unit_leader_event = {
 	}
 	option = {
 		name = CHI.midgame.213.d #It seems his career is not over yet.
-		trigger = { THIS = { has_id = 2204 } }
+		trigger = { THIS = { is_character = CHI_zhang_fakui } }
 		CHI_RF_medium_effect = yes
 		custom_effect_tooltip = CHI_champion_effect_tt
 	}
@@ -8554,8 +8556,7 @@ country_event = { #Fuijan Falls at Last
 			limit = { has_id = 2207 }
 			retire = yes
 		}
-		random_unit_leader = {
-			limit = { has_id = 2297 }
+		CHI_li_jishen = {
 			retire = yes
 		}
 		add_stability = 0.05
@@ -8880,11 +8881,8 @@ country_event = { #Rising Backlash
 
 	option = {
 		name = CHI.lategame.301.a
-		XXA = {
-			random_unit_leader = {
-				limit = { has_id = 2297 }
-				CHI_recruit_general_effect = yes
-			}
+		CHI_li_jishen = {
+			CHI_recruit_general_effect = yes
 		}
 		CHI_purge_RCA_advisors_effect = yes
 		hidden_effect = { clr_country_flag = Gu_Mengyu_dead }
@@ -8932,6 +8930,7 @@ country_event = { #The breaking point
 	fire_only_once = yes
 	is_triggered_only = yes
 	timeout_days = 7
+
 	option = { #We need a unity government
 		name = CHI.lategame.304.a
 		ai_chance = {
@@ -8945,8 +8944,7 @@ country_event = { #The breaking point
 				syndicalist > 0.25
 			}
 		}
-		random_unit_leader = {
-			limit = { has_id = 2297 }
+		CHI_li_jishen = {
 			retire = yes
 		}
 		hidden_effect = {
@@ -8964,10 +8962,10 @@ country_event = { #The breaking point
 				radical_socialist > 0.50
 			}
 		}
-		random_unit_leader = {
-			limit = { has_id = 2297 }
+		CHI_li_jishen = {
 			retire = yes
 		}
+
 		hidden_effect = {
 			country_event = { id = CHI.lategame.320 days = 15 } #Fall of the Chairman
 			country_event = { id = CHI.lategame.321 days = 23 } #A Day in Kangaroo Court
@@ -9384,8 +9382,7 @@ country_event = {
 	option = {
 		name = CHI.lategame.351.a #Safe Travels President Wang
 		add_political_power = -100
-		random_unit_leader = {
-			limit = { has_id = 2297 }
+		CHI_li_jishen = {
 			retire = yes
 		}
 		CHI_purge_PAC_generals_effect = yes
