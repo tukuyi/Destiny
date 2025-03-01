@@ -393,6 +393,14 @@ spriteTypes = {
 		name = "GFX_idea_CHL_KIDNAPP_POLITICAL_STUFF_SYNDI"
 		texturefile = "gfx/interface/ideas/QIE/CHL_KIDNAPP_POLITICAL_STUFF_SYNDI.png"
 	}
+	spriteType = {
+		name = "GFX_idea_SHC_attack_LEP"
+		texturefile = "gfx/interface/ideas/SHC/SHC_attack_LEP.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SHC_attack_ANQ"
+		texturefile = "gfx/interface/ideas/SHC/SHC_attack_ANQ.png"
+	}
 	#制造商
 	spriteType = {
 		name = "GFX_idea_HNN_tie"

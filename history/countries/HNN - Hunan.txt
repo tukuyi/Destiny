@@ -491,7 +491,11 @@ promote_character = {
 
 recruit_character = HNN_yang_xuancheng
 recruit_character = HNN_ma_long
+recruit_character = HNN_liu_chang_yi
 
 HNN_ma_long = {
+	retire = yes
+}
+HNN_liu_chang_yi = {
 	retire = yes
 }

@@ -44,4 +44,20 @@ spriteTypes = {
 		name = "GFX_report_event_SHC_nan_ming_wen_ti"
 		texturefile = "gfx/event_news_pictures/SHC/SHC_nan_ming_wen_ti.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_zheng_dan_wen_li"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_zheng_dan_wen_li.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_shuang_qiang_ke_en"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_shuang_qiang_ke_en.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_yu_bing"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_yu_bing.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_zhu_de_guo"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_zhu_de_guo.png"
+	}
 }

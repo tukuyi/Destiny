@@ -526,7 +526,7 @@ China_build_ROC = {#成立民国
 		limit = { 
 			tag = SHC
 		}
-		if = {
+		if = {#沙逊
 			limit = { 
 				has_country_leader = {
 					name = "维克托·沙逊"
@@ -535,7 +535,7 @@ China_build_ROC = {#成立民国
 			}
 			set_cosmetic_tag = SHC_YTC
 		}
-		else_if = {
+		else_if = {#俄共
 			limit = { 
 				has_country_leader = {
 					name = "帕维尔·米夫"
@@ -544,7 +544,7 @@ China_build_ROC = {#成立民国
 			}
 			set_cosmetic_tag = LEC_PRC
 		}
-		else_if = {
+		else_if = {#何东
 			limit = { 
 				has_country_leader = {
 					name = "何东"
@@ -558,14 +558,15 @@ China_build_ROC = {#成立民国
 				}
 			}
 		}
-		else_if = {
+		else_if = {#天主教
 			limit = { 
 				has_completed_focus = LEC_shang_di_de_huai_bao
 			}
 			set_cosmetic_tag = LEC_TZ_T
 			hidden_effect = {
 				country_event = {
-					id = lecjidu.8
+					id = Shcjidu.5
+					days = 5
 				}
 			}
 		}

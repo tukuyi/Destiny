@@ -1675,6 +1675,10 @@ focus_tree = {
 						id = lngRkmt.29
 					}
 				}	
+				country_event = {
+					id = Shcjidu.4
+					days = 25
+				}
 			}
 		}
 	}
@@ -1703,7 +1707,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_shang_hai_qi_shi_tuan"
 			custom_effect_tooltip = LEC_shang_hai_qi_shi_tuan_tooltip
 			hidden_effect = {
-				load_oob = "SHC_rider"
+				load_oob = SHC_rider
 				add_ideas = LEC_qi_shi_tuan
 				country_event = {
 					days = 5
@@ -6205,7 +6209,7 @@ focus_tree = {
 	focus = {
 		id = SHC_bao_wei_shang_hai
 		icon = GFX_focus_HKG_Military_Cabinet
-		cost = 5
+		cost = 3
 		x = 60
 		y = 15
 
@@ -6224,6 +6228,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_bao_wei_shang_hai"
 			add_political_power = 100
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500
+				producer = SHC
+			}
 		}
 	}	
 
@@ -6445,17 +6454,80 @@ focus_tree = {
 			is_puppet = no
 		}
 
+		will_lead_to_war_with = CHI
+		will_lead_to_war_with = ANQ
+		will_lead_to_war_with = LEP
+		will_lead_to_war_with = SQI
+
 		ai_will_do = { base = 20 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_xiang_nan_jing_jin_jun"
-			create_wargoal = {
-				type = annex_everything
-				target = var:613.owner
+			if = {
+				limit = {
+					CHI = {
+						exists = yes
+					}
+				}
+				add_timed_idea = {
+					idea = QIE_attack_kmt_CHI_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = CHI
+					}
+					activate_targeted_decision = { target = CHI decision = china_attack_decision }
+				}
 			}
-			var:613.owner = {
-				add_opinion_modifier = {
-					target = SHC
-					modifier = KR_hostile
+			if = {
+				limit = {
+					ANQ = {
+						exists = yes
+					}
+				}
+				add_timed_idea = {
+					idea = SHC_attack_ANQ_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = ANQ
+					}
+					activate_targeted_decision = { target = ANQ decision = china_attack_decision }
+				}
+			}
+			if = {
+				limit = {
+					LEP = {
+						exists = yes
+					}
+				}
+				add_timed_idea = {
+					idea = SHC_attack_LEP_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = LEP
+					}
+					activate_targeted_decision = { target = LEP decision = china_attack_decision }
+				}
+			}
+			if = {
+				limit = {
+					SQI = {
+						exists = yes
+					}
+				}
+				add_timed_idea = {
+					idea = SHC_attack_SQI_idea
+					days = 180
+				}
+				if = {
+					limit = {
+						can_declare_war_on = SQI
+					}
+					activate_targeted_decision = { target = SQI decision = china_attack_decision }
 				}
 			}
 			every_state = {
@@ -6542,7 +6614,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			set_potential_national_government = yes
 			hidden_effect = {
-				H_to_china = yes
+				china_enable_all_attack_decisions = yes
 			}
 		}
 	}		

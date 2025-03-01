@@ -293,6 +293,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_ma_long.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_liu_chang_yi"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_liu_chang_yi.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_liu_jianxu"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_liu_jianxu.png"
 	}
@@ -691,10 +695,6 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_ma_san_li.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_liu_qi"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_liu_qi.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_Peng_Shu_Zhi"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
 	}
@@ -725,14 +725,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_He_Dong"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_He_Dong.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Hui_Ji"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Hui_Ji.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Ding_Bi"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Ding_Bi.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_Elizabeth_II"

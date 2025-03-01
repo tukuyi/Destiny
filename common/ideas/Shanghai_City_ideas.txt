@@ -60,6 +60,39 @@ ideas = {
 				political_power_factor = -0.10
 			}
 		}		
+		SHC_attack_LEP_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_attack_LEP_idea" }
+			picture = SHC_attack_LEP
+			allowed = { always = no }
+			available = { LEP = { exists = yes } }
+			targeted_modifier = {
+				tag = LEP
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		SHC_attack_ANQ_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_attack_ANQ_idea" }
+			picture = SHC_attack_ANQ
+			allowed = { always = no }
+			available = { ANQ = { exists = yes } }
+			targeted_modifier = {
+				tag = ANQ
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		SHC_attack_SQI_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_attack_SQI_idea" }
+			picture = SHC_attack_SQI
+			allowed = { always = no }
+			available = { SQI = { exists = yes } }
+			targeted_modifier = {
+				tag = SQI
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
 	###沪民
 		SHC_xin_ming_zhu_jue_xing = {# 
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_xin_ming_zhu_jue_xing"}

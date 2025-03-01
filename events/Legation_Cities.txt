@@ -13635,21 +13635,6 @@ country_event = {#大道政府
 	}
 }
 
-country_event = {
-	id = legcities.99
-	immediate = {log = "[GetDateText]: [Root.GetName]: event legcities.99"}
-	title = legcities.99.t
-	desc = legcities.99.d
-	picture = GFX_report_event_LEC_opium
-	
-	is_triggered_only = yes
-
-	option = {
-		name = legcities.99.a
-	   add_political_power = 20
-	}
-}
-
 country_event = {#山巅之龙夺取了天命
 	id = legcities.100
 	immediate = {log = "[GetDateText]: [Root.GetName]: event legcities.100"}
@@ -13771,70 +13756,6 @@ country_event = {#皇帝
 			}
 		}
 	}
-
-	option = {
-		name = legcities.101.e
-		trigger = {
-			NOT = {
-				has_country_leader = { ruling_only = yes name = "王亚樵" }
-			}
-		}
-		create_country_leader = {
-			name = "光武帝"
-			desc = "POLITICS_Guang_Wu_DESC"
-			picture = "gfx/leaders/LEC/Portrait_LEC_liu_qi.png"
-			expire = "1.1.1"
-			ideology = socdem_clientelism_subtype
-		}
-		set_cosmetic_tag = LEC_HAN
-		set_party_name = {
-			ideology = social_democrat
-			long_name = LEC_triad_ming_social_democrat_party_long
-			name = LEC_triad_ming_social_democrat_party
-		}
-		set_politics = {
-			ruling_party = social_democrat
-		}
-		set_capital = { state = 613 }
-		hidden_effect = {
-			country_event = {
-				id = china_shared.1000
-				days = 15
-			}
-		}
-	}
-
-	option = {
-		name = legcities.101.f
-		trigger = {
-			NOT = {
-				has_country_leader = { ruling_only = yes name = "王亚樵" }
-			}
-		}
-		create_country_leader = {
-			name = "文宪王"
-			desc = "POLITICS_Wen_Wang_DESC"
-			picture = "gfx/leaders/HNN/Portrait_CHI_Zhou_Enlai.png"
-			expire = "1.1.1"
-			ideology = soclib_crime_syndicate_subtype
-		}
-		set_cosmetic_tag = LEC_ZHO
-		set_party_name = {
-			ideology = social_liberal
-			long_name = LEC_triad_ming_social_liberal_party_long
-			name = LEC_triad_ming_social_liberal_party
-		}
-		set_politics = {
-			ruling_party = social_liberal
-		}
-		set_capital = { state = 613 }
-		hidden_effect = {
-			country_event = {
-				id = china_shared.1000
-				days = 15
-			}
-		}
-	}
 }
 
 country_event = { #孔令贻死了
@@ -13854,104 +13775,6 @@ country_event = { #孔令贻死了
 			expire = "1.1.1"
 			ideology = absolute_monarchy_subtype
 		}
-	}
-}
-
-country_event = { #三合会的红夫人
-	id = legcities.103
-	title = legcities.103.t
-	desc = legcities.103.d
-	picture = GFX_report_event_LEC_qing
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {
-		name = legcities.103.a
-		add_political_power = 30
-	}
-	option = {
-		name = legcities.103.b
-		add_political_power = 30
-		set_country_leader_ideology = pataut_caponism_subtype
-	}
-	option = {
-		name = legcities.103.c
-		add_political_power = 30
-		set_politics = {
-				ruling_party = totalist
-				elections_allowed = no
-		}
-		add_popularity = {
-				ideology = totalist
-				popularity = 0.30
-		}
-		create_country_leader = {
-				name = "Jiang Qing"
-				desc = "JIANG_QING_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Jiang_Qing.png"
-				expire = "1.1.1"
-				ideology = caponism_subtype
-				traits = {}
-		}
-		set_party_name = {
-			ideology = totalist
-			long_name = LEC_triad_paternal_autocrat_party_long
-			name = LEC_triad_paternal_autocrat_party
-		}
-		add_pataut_to_coalition = yes
-	}
-	option = {
-		name = legcities.103.e
-		add_political_power = 30
-		set_politics = {
-				ruling_party = syndicalist
-				elections_allowed = no
-		}
-		add_popularity = {
-				ideology = syndicalist
-				popularity = 0.30
-		}
-		create_country_leader = {
-				name = "Jiang Qing"
-				desc = "JIANG_QING_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Jiang_Qing.png"
-				expire = "1.1.1"
-				ideology = syn_kleptocracy_subtype
-				traits = {}
-		}
-		set_party_name = {
-			ideology = syndicalist
-			long_name = LEC_triad_paternal_autocrat_party_long
-			name = LEC_triad_paternal_autocrat_party
-		}
-		add_pataut_to_coalition = yes
-	}
-	option = {
-		name = legcities.103.f
-		add_political_power = 30
-		set_politics = {
-				ruling_party = radical_socialist
-				elections_allowed = no
-		}
-		add_popularity = {
-				ideology = radical_socialist
-				popularity = 0.30
-		}
-		create_country_leader = {
-				name = "Jiang Qing"
-				desc = "JIANG_QING_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Jiang_Qing.png"
-				expire = "1.1.1"
-				ideology = illegalism_subtype
-				traits = {}
-		}
-		set_party_name = {
-			ideology = radical_socialist
-			long_name = LEC_triad_paternal_autocrat_party_long
-			name = LEC_triad_paternal_autocrat_party
-		}
-		add_pataut_to_coalition = yes
 	}
 }
 
@@ -16747,6 +16570,7 @@ country_event = {#名誉大团长
 country_event = {#我们的领导者
 	id = lecjidu.4
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecjidu.4"}
+	picture = GFX_report_event_SHC_yu_bing
 	title = lecjidu.4.t
 	desc = lecjidu.4.d
 
@@ -16850,21 +16674,6 @@ country_event = {#对新教的态度
 		# 		}
 		# 	}
 		# }
-	}
-}
-
-country_event = {#中华民国
-	id = lecjidu.8
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lecjidu.8" }
-	title = lecjidu.8.t
-	desc = lecjidu.8.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {	# damn
-		name = lecjidu.8.a
-		add_political_power = 100
 	}
 }
 

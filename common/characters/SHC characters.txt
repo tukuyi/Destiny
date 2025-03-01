@@ -281,4 +281,64 @@ characters = {
 			logistics_skill = 2
 		}
 	}	
+####################
+###   教会将领   ###
+####################	
+#惠济良
+	SHC_Hui_Ji_liang = {
+		name = SHC_Hui_Ji_liang
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Hui_Ji_liang
+				large = GFX_Portrait_SHC_Hui_Ji_liang
+			}
+			civilian = {
+				large = GFX_Portrait_SHC_Hui_Ji_liang
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HUI_JI_LIANG_DESC
+			ideology = progressive_conservatism_subtype
+		}
+	}	
+#于斌
+	SHC_yu_bing = {
+		name = SHC_yu_bing
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_yu_bing
+				large = GFX_Portrait_SHC_yu_bing
+			}
+			civilian = {
+				large = GFX_Portrait_SHC_yu_bing
+			}
+		}
+		country_leader = {
+			desc = POLITICS_YU_BING_DESC
+			ideology = authdem_tridemism_subtype
+		}
+	}		
+#莫里斯·亚伯拉罕·科恩
+	SHC_Morris_Abraham_Cohen = {
+		name = SHC_Morris_Abraham_Cohen
+		portraits = {
+			army = {
+				small = GFX_Portrait_Morris_Abraham_Cohen
+				large = GFX_Portrait_Morris_Abraham_Cohen
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_SHC_Morris_Abraham_Cohen_DESC
+			traits = {
+				war_hero
+				trait_reckless
+				irregulars_officer
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}			
 }

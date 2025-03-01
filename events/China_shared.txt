@@ -5416,7 +5416,7 @@ country_event = { #Council members: China backs down
 	}
 }
 
-country_event = { #BIG CHINA
+country_event = { #一雪百年之耻
 	id = china_events.999
 	title = china_events.999.t
 	desc = china_events.999.d
@@ -5428,7 +5428,12 @@ country_event = { #BIG CHINA
 		OR = {
 			has_completed_focus = CHI_national_regneration
 			has_completed_focus = CHI_the_red_generalissmo
-			has_country_leader_ideology = authdem_tridemism_subtype
+			AND = {
+				NOT = {
+					tag = SHC
+				}
+				has_country_leader_ideology = authdem_tridemism_subtype
+			}
 		}
 	}
 	

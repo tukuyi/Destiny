@@ -152,6 +152,9 @@ country_event = {
 	days = 45
 }
 
+recruit_character = SHC_Hui_Ji_liang
+recruit_character = SHC_yu_bing
+
 create_country_leader = {
 	name = "王凡西"
 	desc = "LU_XUN_DESC"
@@ -190,18 +193,12 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = free_market_capitalist_subtype
 }
-create_country_leader = {
-	name = "惠济良"
-	desc = "HUI_JI_DESC"
-	picture = "gfx/leaders/LEC/Portrait_LEC_Hui_Ji.png"
-	expire = "1.1.1"
+promote_character = {
+	character = SHC_Hui_Ji_liang
 	ideology = progressive_conservatism_subtype
 }
-create_country_leader = {
-	name = "于斌"
-	desc = "YU_BING_DESC"
-	picture = "gfx/leaders/LEC/Portrait_LEC_Ding_Bi.png"
-	expire = "1.1.1"
+promote_character = {
+	character = SHC_yu_bing
 	ideology = authdem_tridemism_subtype
 }
 create_country_leader = {
@@ -210,9 +207,6 @@ create_country_leader = {
 	picture = "gfx/leaders/LEC/Portrait_LEC_yuan_liang.png"
 	expire = "1.1.1"
 	ideology = pataut_oligarchy_subtype
-	traits = {
-		 
-	}
 }
 create_country_leader = {
 	name = "苏锡文"
@@ -220,9 +214,6 @@ create_country_leader = {
 	picture = "gfx/leaders/LEC/Portrait_LEC_su_xi_wen.png"
 	expire = "1.1.1"
 	ideology = natpop_pan_asianism_subtype
-	traits = {
-		 
-	}
 }
 
 recruit_character = SHC_Sun_Fuyuan
@@ -280,7 +271,11 @@ SHC_Kang_Sheng = {
 }
 
 recruit_character = SHC_robbie_hoshailai
-
 SHC_robbie_hoshailai = {
+	retire = yes
+}
+
+recruit_character = SHC_Morris_Abraham_Cohen
+SHC_Morris_Abraham_Cohen = {
 	retire = yes
 }

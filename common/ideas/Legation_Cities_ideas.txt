@@ -91,52 +91,6 @@ ideas = {
 				hog_silent_workhorse
 			}
 		}
-		LEC_hui_ji_liang_hog = {#惠济良
-			allowed = { original_tag = LEC }
-			picture = LEC_hui_ji_liang_hog
-			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
-			}
-			visible = {
-				NOT = { has_country_flag = Dong_Biwu_dead }
-			}
-			cancel_if_invalid = no
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea LEC_hui_ji_liang_hog"
-				
-			}
-			traits = {
-				head_of_government
-				social_conservative
-				hog_scholar
-			}
-		}
-		LEC_yu_bing_hog = {#于斌
-			allowed = { original_tag = LEC }
-			picture = LEC_yu_bing_hog
-			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
-			}
-			visible = {
-				NOT = { has_country_flag = Dong_Biwu_dead }
-			}
-			cancel_if_invalid = no
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea LEC_yu_bing_hog"
-				
-			}
-			traits = {
-				head_of_government
-				authoritarian_democrat
-				hog_spiritual_leader
-			}
-		}
 	}
 
 	person_of_influence = {

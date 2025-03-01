@@ -185,7 +185,6 @@ country_event = {#上海的命运
 		}
 		set_cosmetic_tag = LEC_GT
 		set_country_flag = zong_gong_hui_victory
-		load_oob = SHC_Revolutionary_Militia
 		add_timed_idea = {
 			idea = SHC_di_xia_she_hui_de_fan_pu
 			days = 180
@@ -195,6 +194,8 @@ country_event = {#上海的命运
 			days = 180
 		}
 		hidden_effect = {
+			load_oob = SHC_Revolutionary_Militia
+
 			SHC_gong_tuan_leader_coming = yes
 
 			remove_all_ministers = yes
@@ -342,29 +343,7 @@ country_event = {#上海的命运
 			LEC_he_gan_tang_for
 			LEC_he_shi_li_sec
 		}
-		division_template = { #Guangxi Army
-			name = "上海雇佣军"
-			division_names_group = "LEC_GAR_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-			}
-			support = {
-					
-			}
-		}
-		random_owned_controlled_state = {
-			prioritize = { 743 }
-			limit = { is_in_home_area = yes }
-			create_unit = {
-				division = "division_template = \"上海雇佣军\" start_experience_factor = 0.5"
-				owner = PREV
-				count = 3
-			}
-		}
+		load_oob = SHC_gu_yong_bing
 		add_timed_idea = {
 			idea = SHC_she_hui_zhu_yi_yu_wen
 			days = 180
@@ -507,18 +486,6 @@ country_event = {#上海的命运
 			elections_allowed = no
 		}
 		set_cosmetic_tag = LEC_TZ
-		remove_all_ministers = yes
-		remove_ideas = {
-			LEC_Du_Yuesheng_boss_sli
-			LEC_Huang_Jinrong_boss_sli
-			LEC_Zhang_Xiaolin_boss_sli
-		}
-		add_ideas = {
-			LEC_hui_ji_liang_hog
-			LEC_Lothar_Eisentraeger_eco_pau
-			LEC_Hubert_Knipping_for_pau
-			LEC_Thomas_Tien_Ken_sin_sec_sli
-		}
 		add_timed_idea = {
 			idea = SHC_she_hui_zhu_yi_yu_wen
 			days = 180
@@ -531,53 +498,45 @@ country_event = {#上海的命运
 			days = 5
 			id = lecjidu.4
 		}
-		division_template = { #Guangxi Army
-			name = "护卫骑士团"
-			division_names_group = "LEC_GAR_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-			}
-			support = {
-					
-			}
-		}
-		random_owned_controlled_state = {
-			prioritize = { 743 }
-			limit = { is_in_home_area = yes }
-			create_unit = {
-				division = "division_template = \"护卫骑士团\" start_experience_factor = 0.5"
-				owner = PREV
-				count = 3
-			}
-		}
 		hidden_effect = {
-			country_event = {
-				days = 30
-				id = lecjidu.5
+			remove_all_ministers = yes
+			remove_ideas = {
+				LEC_Du_Yuesheng_boss_sli
+				LEC_Huang_Jinrong_boss_sli
+				LEC_Zhang_Xiaolin_boss_sli
 			}
-			create_corps_commander = {
-				name = "于斌"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Ding_Bi.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+			add_ideas = {
+				LEC_hui_ji_liang_hog
+				LEC_Lothar_Eisentraeger_eco_pau
+				LEC_Hubert_Knipping_for_pau
+				LEC_Thomas_Tien_Ken_sin_sec_sli
 			}
-			create_corps_commander = {
-				name = "惠济良"
-				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Hui_Ji.png"
-				traits = {  }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
+
+			load_oob = SHC_rider_first
+
+			SHC_yu_bing = {
+				add_corps_commander_role = {
+					traits = { 
+						trait_cautious 
+					}
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
+			SHC_Hui_Ji_liang = {
+				add_corps_commander_role = {
+					traits = { 
+						trait_cautious 
+					}
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
 			}
 			LEC = {
 				every_unit_leader = {
@@ -589,6 +548,10 @@ country_event = {#上海的命运
 					}
 					set_nationality = ROOT
 				}
+			}
+			country_event = {
+				days = 30
+				id = lecjidu.5
 			}
 		}
 	}	
@@ -656,30 +619,8 @@ country_event = {#上海的命运
 			idea = SHC_di_xia_she_hui_de_fan_pu
 			days = 180
 		}
-		division_template = { #Guangxi Army
-			name = "上海警察"
-			division_names_group = "LEC_GAR_01"
-			regiments = {
-				infantry = { x = 0 y = 0 }
-				infantry = { x = 0 y = 1 }
-				infantry = { x = 0 y = 2 }
-				infantry = { x = 1 y = 0 }
-				infantry = { x = 1 y = 1 }
-			}
-			support = {
-					
-			}
-		}
-		random_owned_controlled_state = {
-			prioritize = { 743 }
-			limit = { is_in_home_area = yes }
-			create_unit = {
-				division = "division_template = \"上海警察\" start_experience_factor = 0.5"
-				owner = PREV
-				count = 3
-			}
-		}
 		hidden_effect = {
+			load_oob = SHC_jing_cha
 			LEC = {
 				every_unit_leader = {
 					limit = {
@@ -2056,6 +1997,7 @@ country_event = {#自由王国
 country_event = {#震旦大学
 	id = Shcjidu.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcjidu.1" }
+	picture = GFX_report_event_SHC_zheng_dan_wen_li
 	title = Shcjidu.1.t
 	desc = Shcjidu.1.d
 
@@ -2126,6 +2068,86 @@ country_event = {#南京总教区
 			long_name = SHC_authoritarian_democrat_party_new_long
 			name = SHC_authoritarian_democrat_party_new
 		}
+	}
+}
+
+country_event = {#双枪科恩
+	id = Shcjidu.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcjidu.4" }
+	picture = GFX_report_event_SHC_shuang_qiang_ke_en
+	title = Shcjidu.4.t
+	desc = Shcjidu.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {	# damn
+		name = Shcjidu.4.a
+		SHC_Morris_Abraham_Cohen = {
+			set_nationality = ROOT
+		}
+	}
+}
+
+country_event = {#中华民国
+	id = Shcjidu.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcjidu.5" }
+	picture = GFX_report_event_SHC_zhu_de_guo
+	title = Shcjidu.5.t
+	desc = Shcjidu.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#孙科
+		name = Shcjidu.5.a
+		create_country_leader = {
+			name = "孙科"
+			desc = "POLITICS_SHC_Jiang_Jing_Guo_DESC"
+			picture = "gfx/leaders/CHI/Portrait_CHI_Sun_Fo.png"
+			expire = "1.1.1"
+			ideology = christian_democracy_subtype
+		}
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = social_conservative
+				long_name = SHC_social_conservative_party_JD_long
+				name = SHC_social_conservative_party_JD
+			}
+			add_authdem_to_coalition = yes
+		}
+	}
+
+	option = {#蒋经国
+		name = Shcjidu.5.a
+		create_country_leader = {
+			name = "蒋经国"
+			desc = "POLITICS_SHC_Jiang_Jing_Guo_DESC"
+			picture = "gfx/leaders/CHI/Portrait_KMT_Chiang_Ching_kuo.png"
+			expire = "1.1.1"
+			ideology = christian_democracy_subtype
+		}
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = social_conservative
+				long_name = SHC_social_conservative_party_JD_long
+				name = SHC_social_conservative_party_JD
+			}
+			add_authdem_to_coalition = yes
+		}
+	}
+
+	option = {
+		name = Shcjidu.5.c
+		add_political_power = 100
 	}
 }
 

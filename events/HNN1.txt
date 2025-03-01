@@ -11,14 +11,9 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect HNN = {
-		# 	NZH = {
-		# 		activate_targeted_decision = { 
-		# 			target = FROM` 
-		# 			decision = china_integrate_subjects 
-		# 		}
-		# 	}
-		# }
+		eval_effect SHC = {
+			china_enable_all_attack_decisions = yes
+		}
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

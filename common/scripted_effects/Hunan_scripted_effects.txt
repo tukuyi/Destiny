@@ -281,6 +281,7 @@ HNN_victory_all_china = {#工团党统一
 	}
 
 	HNN_ma_long = { HNN_recruit_characters_effect = yes }
+	HNN_liu_chang_yi = { HNN_recruit_characters_effect = yes }
 	HNN_Xi_Zhong_Xun = { HNN_recruit_characters_effect = yes }
 	HNN_Lin_Bo_Qu = { HNN_recruit_characters_effect = yes }
 	HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }

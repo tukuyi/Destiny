@@ -1468,6 +1468,28 @@ characters = {
 			coordination_skill = 1
 		}
 	}	
+#刘昌毅
+	HNN_liu_chang_yi = {
+		name = HNN_liu_chang_yi
+		portraits = {
+			army = {
+				large = GFX_Portrait_HNN_liu_chang_yi
+				small = GFX_Portrait_HNN_liu_chang_yi
+			}
+		}
+		navy_leader = {
+			traits = { 
+				navy_career_officer 
+				silent_hunter
+				ironside
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}		
 ######################
 ####   三期普渡  #####
 ######################

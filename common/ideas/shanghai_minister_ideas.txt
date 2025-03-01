@@ -1,5 +1,51 @@
 ideas = {
 	head_of_government = {
+		LEC_hui_ji_liang_hog = {#惠济良
+			allowed = { original_tag = SHC }
+			picture = LEC_hui_ji_liang_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_hui_ji_liang_hog"
+				
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_scholar
+			}
+		}
+		LEC_yu_bing_hog = {#于斌
+			allowed = { original_tag = SHC }
+			picture = LEC_yu_bing_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_yu_bing_hog"
+				
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_spiritual_leader
+			}
+		}
 	#左臂	
 		LEC_kang_sheng_hog = {#康生
 			allowed = { original_tag = SHC }
@@ -11,7 +57,7 @@ ideas = {
 				}
 			}
 			visible = {
-				NOT = { has_country_flag = Dong_Biwu_dead }
+				has_country_flag = zong_gong_hui_victory
 			}
 			cancel_if_invalid = no
 			on_add = {
@@ -33,6 +79,9 @@ ideas = {
 					always = no
 				}
 			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
 			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_lu_xun_hog"
@@ -51,6 +100,9 @@ ideas = {
 					tooltip = head_of_gov_available
 					always = no
 				}
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
 			}
 			cancel_if_invalid = no
 			on_add = {
@@ -71,6 +123,9 @@ ideas = {
 					always = no
 				}
 			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
 			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_mi_fu_hog"
@@ -89,6 +144,9 @@ ideas = {
 					tooltip = head_of_gov_available
 					always = no
 				}
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
 			}
 			cancel_if_invalid = no
 			on_add = {
@@ -109,6 +167,9 @@ ideas = {
 					always = no
 				}
 			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
 			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_min_hog"
@@ -128,6 +189,9 @@ ideas = {
 					always = no
 				}
 			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
+			}
 			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhang_wen_tian_hog"
@@ -146,6 +210,9 @@ ideas = {
 					tooltip = head_of_gov_available
 					always = no
 				}
+			}
+			visible = {
+				has_country_flag = zong_gong_hui_victory
 			}
 			cancel_if_invalid = no
 			on_add = {
