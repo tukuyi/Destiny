@@ -16575,7 +16575,6 @@ country_event = {#我们的领导者
 	desc = lecjidu.4.d
 
 	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {#

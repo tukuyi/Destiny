@@ -60,4 +60,8 @@ spriteTypes = {
 		name = "GFX_report_event_SHC_zhu_de_guo"
 		texturefile = "gfx/event_news_pictures/SHC/SHC_zhu_de_guo.png"
 	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_shen_pan_ri"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_shen_pan_ri.png"
+	}
 }

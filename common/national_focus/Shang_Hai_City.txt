@@ -1737,6 +1737,43 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_tian_zhu_jiao_gong_hui"
 			add_ideas = LEC_tian_zhu_jiao_gong_hui
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_country_leader = {
+						name = "于斌"
+						ruling_only = yes
+					}
+				}
+				SHC_yu_bing = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+							ideology = syndicalist_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				SHC_Hui_Ji_liang = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+							ideology = syndicalist_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			add_synd_to_coalition = yes
+			hidden_effect = {
+				set_party_name = {
+					ideology = syndicalist
+					long_name = SHC_syndicalist_party_JD_long
+					name = SHC_syndicalist_party_JD
+				}
+			}
 		}
 	}
 
@@ -1804,8 +1841,24 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
-				days = 5
 				id = Shcjidu.1
+				days = 5
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						PAP = {
+							has_country_leader = {
+								name = "Leo XIV"
+								ruling_only = yes
+							}
+						}
+					}
+					country_event = {
+						id = Shcjidu.6
+						days = 15
+					}
+				}
 			}
 		}
 	}
@@ -6530,6 +6583,7 @@ focus_tree = {
 					activate_targeted_decision = { target = SQI decision = china_attack_decision }
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			every_state = {
 				limit = {
 					OR = {

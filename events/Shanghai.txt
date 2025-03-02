@@ -2041,18 +2041,8 @@ country_event = {#南京总教区
 	fire_only_once = yes
 	trigger = {
 		tag = SHC
-		#昆明
-		#owns_state = 325
-		#广州
-		# owns_state = 592
-		#北京
-		# owns_state = 608
 		#南京
 		owns_state = 613
-		#重庆
-		#owns_state = 650
-		#沈阳
-		# owns_state = 716
 		has_country_flag = ji_du_tu_victory
 	}
 
@@ -2118,12 +2108,13 @@ country_event = {#中华民国
 				long_name = SHC_social_conservative_party_JD_long
 				name = SHC_social_conservative_party_JD
 			}
+			add_synd_to_coalition = yes
 			add_authdem_to_coalition = yes
 		}
 	}
 
 	option = {#蒋经国
-		name = Shcjidu.5.a
+		name = Shcjidu.5.b
 		create_country_leader = {
 			name = "蒋经国"
 			desc = "POLITICS_SHC_Jiang_Jing_Guo_DESC"
@@ -2141,6 +2132,7 @@ country_event = {#中华民国
 				long_name = SHC_social_conservative_party_JD_long
 				name = SHC_social_conservative_party_JD
 			}
+			add_synd_to_coalition = yes
 			add_authdem_to_coalition = yes
 		}
 	}
@@ -2148,6 +2140,33 @@ country_event = {#中华民国
 	option = {
 		name = Shcjidu.5.c
 		add_political_power = 100
+	}
+}
+
+country_event = {#向梵蒂冈宣战
+	id = Shcjidu.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcjidu.6" }
+	picture = GFX_report_event_SHC_shen_pan_ri
+	title = Shcjidu.6.t
+	desc = Shcjidu.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {	# damn
+		name = Shcjidu.6.a
+		create_wargoal = {
+			target = PAP
+			type = annex_everything
+		}
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = PAP
+				}
+				add_core_of = ROOT
+			}
+		}
 	}
 }
 
