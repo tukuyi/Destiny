@@ -265,6 +265,33 @@ characters = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
+		}		
+	#杨虎
+		LEC_yang_hu = { 
+			name = LEC_yang_hu
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_yang_hu
+					small = GFX_Portrait_LEC_yang_hu
+				}
+				civilian = {
+					large = GFX_Portrait_LEC_yang_hu
+				}
+			}
+			corps_commander = {
+				desc = LEC_yang_hu_AMRY_DESC
+				traits = { 
+					LEC_triad_commander  
+					career_officer
+					naval_liason
+					expert_improviser
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
+			}
 		}			
 #恒社#
 	#徐大统		

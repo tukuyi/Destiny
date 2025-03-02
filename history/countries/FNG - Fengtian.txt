@@ -437,11 +437,6 @@ FNG_zhang_xue_cheng = {
 	retire = yes
 }
 
-# create_corps_commander = {
-# 	name = "张学良 "
-# 	id = 1101
-# }
-
 create_corps_commander = {
 	name = "Francis Arthur Sutton"
 	desc = ""
@@ -459,84 +454,6 @@ create_corps_commander = {
 	
 	id = 11111
 }
-
-# create_corps_commander = {
-# 	name = "Wu Junsheng"
-# }
-
-# create_corps_commander = {
-# 	name = "Zhang Zuoxiang"
-# 	id = 1102
-# }
-
-# create_corps_commander = {
-# 	name = "杨宇霆 "
-# 	id = 1103
-# }
-
-# create_corps_commander = {
-# 	name = "Wang Shuchang"
-# 	id = 1104
-# }
-
-# create_corps_commander = {
-# 	name = "Ma Zhanshan"
-# 	id = 1105
-# }
-
-# create_corps_commander = {
-# 	name = "Wan Fulin"
-# 	id = 1106
-# }
-
-# create_corps_commander = {
-# 	name = "Zang Shiyi"
-# 	id = 1107
-# }
-
-# create_corps_commander = {
-# 	name = "Zhang Haipeng"
-# 	id = 1108
-# }
-
-# create_corps_commander = {
-# 	name = "Tang Yulin"
-# 	id = 1109
-# }
-
-# create_corps_commander = {
-# 	name = "Bao Wenyue"
-# }
-
-# create_corps_commander = {
-# 	name = "Zhang Jinghui"
-# }
-
-# create_corps_commander = {
-# 	name = "Feng Zhanhai"
-# }
-
-# create_corps_commander = {
-# 	name = "Su Bingwen"
-# }
-
-# create_corps_commander = {
-# 	name = "Yu Zhishan"
-# }
-
-# create_corps_commander = {
-# 	name = "Zou Zuoha"
-# }
-
-### Admirals ###
-
-# create_navy_leader = {
-# 	name = "Shen Honglie"
-# }
-
-# create_navy_leader = {
-# 	name = "Yin Zuoqian"
-# }
 
 FNG_start_naval_variant = yes
 

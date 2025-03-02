@@ -203,25 +203,3 @@ add_soccon_to_coalition = yes
 add_authdem_to_coalition = yes
 add_marlib_to_coalition = yes
 add_natpop_to_coalition = yes
-
-# create_field_marshal = {
-# 	name = "阎锡山"
-# 	id = 1146
-# }
-
-# create_field_marshal = {
-# 	name = "冯玉祥"
-# 	id = 1147
-# }
-# create_corps_commander = {
-# 	name = "Yang Hucheng"
-# 	id = 5065
-# }
-# create_corps_commander = {
-# 	name = "Shang Zhen"
-# 	id = 5052
-# }
-# create_corps_commander = {
-# 	name = "Fu Zuoyi"
-# 	id = 5053
-# }

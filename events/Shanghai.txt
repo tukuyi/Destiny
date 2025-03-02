@@ -2115,7 +2115,7 @@ country_event = {#中华民国
 		create_country_leader = {
 			name = "蒋经国"
 			desc = "POLITICS_SHC_Jiang_Jing_Guo_DESC"
-			picture = "gfx/leaders/CHI/Portrait_KMT_Chiang_Ching_kuo.png"
+			picture = "gfx/leaders/GXC/Portrait_GXC_Jiang_jing_guo_civ.png"
 			expire = "1.1.1"
 			ideology = christian_democracy_subtype
 		}
