@@ -1409,8 +1409,8 @@
  LEC_belgium_motion:0 "启动从使馆城理事会中移出[BEL.GetName]动议"
  LEC_recognition_motion:0 "启动讨论美国政府合法性动议"
  LEC_leader_motion:0 "确定下一任高级专员"
+ LEC_budget_motion:0 "启动讨论来年预算动议“
  LEC_recognize_america_motion:0 "承认一方美国政府"
- LEC_budget_motion:0 "启动讨论来年预算动议"
  LEC_later_budget_motion:0 "启动讨论来年预算动议"
  LEC_bankruptcy_warning:0 "濒临破产"
  LEC_influence_category:0 "使馆城市内的各方势力"
