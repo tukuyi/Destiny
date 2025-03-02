@@ -1436,7 +1436,7 @@
  RULE_OPTION_GXC_PATH_PATAUT_RADSOC: "£KR_game_rule_flag_GXC_LKMT £KR_game_rule_flag_GXC_OLDG 国民党左派/旧桂系"
  RULE_OPTION_GXC_PATH_PATAUT_RADSOC_DESC: "$RULE_OPTION_GXC_PATH_PATAUT_DESC$\n在随后的权力真空中，陈铭枢的§R国民党左派§!$RULE_OPTION_GXC_PATH_PATAUT_END_DESC$"
  RULE_OPTION_GXC_PATH_PATAUT_QIE: "£KR_game_rule_flag_GXC_OLDG £KR_game_rule_flag_QIE_monarchy 旧桂系 - 直系"
- RULE_OPTION_GXC_PATH_PATAUT_QIE_DESC: "$RULE_OPTION_GXC_PATH_PATAUT_DESC$\n如果马济成功拿下广东，他便会与直系重修旧好。\n\n§R需要：§!\n§R没有§!在§Y$QIE_PATH$§!中选择任意§C宣统维新§!路线"
+ RULE_OPTION_GXC_PATH_PATAUT_QIE_DESC: "$RULE_OPTION_GXC_PATH_PATAUT_DESC$\n如果马济成功拿下广东，他便会与直系重修旧好。\n\n§R需要：§!\n§R没有§!在§Y$QIE_LEP_PATH$§!中选择任意§C宣统维新§!路线"
  RULE_OPTION_GXC_PATH_MARLIB_JAP: "£KR_game_rule_flag_GXC_MER £KR_game_rule_flag_JAP 商团 - 共荣圈"
  RULE_OPTION_GXC_PATH_MARLIB_JAP_DESC: "陈炯明遇刺，马济和旧桂系杀入粤地。\n在随后的权力真空中，陈廉伯的§m商团§!$RULE_OPTION_GXC_PATH_PATAUT_END_DESC$\n如果陈廉伯拿下广西，他便会与日本人沆瀣一气。"
  RULE_OPTION_GXC_PATH_NPA: "£KR_game_rule_flag_GXC_MER £KR_game_rule_flag_GXC_OLDG 护国联盟"
@@ -1827,10 +1827,14 @@
 
 
 
+
+
+
+
 #调整
- QIE_LEP_PATH:0 "£KR_game_rule_flag_QIE 鼠年"
+ QIE_LEP_PATH:0 "£KR_game_rule_flag_QIE 丙子鼠年"
  RULE_OPTION_QIE_DEFAULT:0 "默认"
- RULE_OPTION_QIE_DEFAULT_DESC:0 "AI将会基于设定好的权重随机选择路线。"
+ RULE_OPTION_QIE_DEFAULT_DESC:0 "随着孙传芳那宝贵的八省联合崩溃，直系在中国本就不稳固的统治开始发生严重的摇晃。北京的抗议在不断增加，吴佩孚和曹锟等直系高层领导人，以及其他幕后的阴谋家，都可能会决定这个国家的命运。"
  RULE_OPTION_QIE_PRO_LEP:0 "£KR_game_rule_flag_QIE £KR_game_rule_flag_LEP 直系君主制 - 亲宁系"
  RULE_OPTION_QIE_PRO_LEP_DESC:0 "八省联合崩溃时，吴佩孚会支持南京的联合残党，安排其走上亲德的道路。"
  RULE_OPTION_QIE_PRO_ANQ:0 "£KR_game_rule_flag_QIE £KR_game_rule_flag_ANQ 直系君主制 - 亲新皖系"
@@ -1849,6 +1853,15 @@
  RULE_OPTION_QIE_xinhai_WIN_DESC:0 "汉人们再一次推翻了满人王朝"
  RULE_OPTION_QIE_xinhai_LOSE:0 "£KR_game_rule_flag_QIE 皇权永固"
  RULE_OPTION_QIE_xinhai_LOSE_DESC:0 "北京城内的反贼们被扫了个一干二净"
+
+ LEP_FORPOL: "£KR_game_rule_flag_LEP  宁系军阀结盟政策"
+ RULE_OPTION_LEP_FORPOL_RANDOM: "默认"
+ RULE_OPTION_LEP_FORPOL_RANDOM_DESC: "八省联军的腐败官僚统治仍在延续！虽然根基尚浅、不受欢迎，但联军仍然击败了国民党和反租界分子。\n齐燮元大帅清点损失，重组了德国的投资，他必须决定新的联合在中国舞台上的位置。"
+ RULE_OPTION_LEP_FORPOL_LEP: "£KR_game_rule_flag_LEP  自成派系"
+ RULE_OPTION_LEP_FORPOL_LEP_DESC: "玉帅吴佩孚和保定王曹锟是齐燮元唯一可能获得的盟友，但由于两人的蔑视，新任联帅不得不靠自己的力量去统一中国。\n\n§R要求：§!\n§C宁系军阀赢得华东混战§!\n\n§Y$QIE_LEP_PATH$§!中§R没有§!选择§C直系大清 - 亲宁系§!"
+ RULE_OPTION_LEP_FORPOL_QIE: "£KR_game_rule_flag_LEP  £KR_game_rule_flag_QIE_monarchy  承认北京政府"
+ RULE_OPTION_LEP_FORPOL_QIE_DESC: "$RULE_OPTION_LEP_FORPOL_ZHILI$北京的中央政府结盟。\n\n§R要求：§!\n§C宁系军阀赢得华东混战§!\n\n§Y$QIE_LEP_PATH$§!中§R没有§!选择任一§C宣统维新§!"
+ RULE_OPTION_LEP_FORPOL_ZHILI: "为了弥合南北直系的分歧，将占领的地盘合法化，新任联帅齐燮元决定与"
 
  SQI_PATH:0 "£KR_game_rule_flag_SQI 山东省的最终时刻"
  RULE_OPTION_SQI_DEFAULT:0 "默认"
@@ -1951,8 +1964,6 @@
  RULE_OPTION_HNN_DBW_DESC:0 "在军阀们的反动面目昭告于天下后，湖南的劳动群众支持湖南的工团党支部发动了一场大革命推翻长沙腐朽的反动独裁政府，建立起来了第一个由工团党主政的革命政权，但是不管是工团党内还是党外群众都不知道工团党将为湖南带来什么样的未来。"
  RULE_OPTION_HNN_HSH:0 "£KR_game_rule_flag_HNN_GT 工团革命 - 何叔衡主席"
  RULE_OPTION_HNN_HSH_DESC:0 "在军阀们的反动面目昭告于天下后，湖南的劳动群众支持湖南的工团党支部发动了一场大革命推翻长沙腐朽的反动独裁政府，建立起来了第一个由工团党主政的革命政权，但是不管是工团党内还是党外群众都不知道工团党将为湖南带来什么样的未来。"
- RULE_OPTION_HNN_TSM:0 "£KR_game_rule_flag_HNN_GTA 工团革命 - 唐生明主席"
- RULE_OPTION_HNN_TSM_DESC:0 "在军阀们的反动面目昭告于天下后，湖南的劳动群众支持湖南的工团党支部发动了一场大革命推翻长沙腐朽的反动独裁政府，建立起来了第一个由工团党主政的革命政权，但是不管是工团党内还是党外群众都不知道工团党将为湖南带来什么样的未来。"
 
  YUN_PATH:0 "£KR_game_rule_flag_YUN 共和派堡垒崩塌"
  RULE_OPTION_YUN_PATH_RANDOM:0 "默认"

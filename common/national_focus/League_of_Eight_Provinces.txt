@@ -4636,6 +4636,11 @@ focus_tree = {
 					has_country_flag = wu_intervenes_proLEP
 				}
 			}
+			modifier = {
+				factor = 0
+				NOT = { has_game_rule = { rule = LEP_forpol option = DEFAULT } }
+				NOT = { has_game_rule = { rule = LEP_forpol option = LEP_FORPOL_LEP } }
+			}
 		}
 
 		available = {
@@ -4694,6 +4699,8 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
+				NOT = { has_game_rule = { rule = LEP_forpol option = DEFAULT } }
+				NOT = { has_game_rule = { rule = LEP_forpol option = LEP_FORPOL_QIE } }
 				NOT = {
 					QIE = {
 						exists = yes

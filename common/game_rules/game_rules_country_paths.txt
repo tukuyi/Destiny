@@ -15823,7 +15823,9 @@ SIA_path = {
 	}
 }
 
-#调整
+########################################
+##########-       调整     -############
+########################################
 QIE_lep_path = {#大清-鼠年
 	name = "QIE_LEP_PATH"
 	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
@@ -15884,6 +15886,29 @@ QIE_xinhai_path = {#大清-二次辛亥
 		name = QIE_xinhai_LOSE
 		text = "RULE_OPTION_QIE_xinhai_LOSE"
 		desc = "RULE_OPTION_QIE_xinhai_LOSE_DESC"
+		allow_achievements = yes
+	}
+}
+
+LEP_forpol = {#宁系外交
+	name = LEP_FORPOL
+	group = RULE_GROUP_KAISERREICH_RULES_EAST_ASIA
+	default = {
+		name = DEFAULT
+		text = RULE_OPTION_LEP_FORPOL_RANDOM
+		desc = RULE_OPTION_LEP_FORPOL_RANDOM_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = LEP_FORPOL_LEP
+		text = RULE_OPTION_LEP_FORPOL_LEP
+		desc = RULE_OPTION_LEP_FORPOL_LEP_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = LEP_FORPOL_QIE
+		text = RULE_OPTION_LEP_FORPOL_QIE
+		desc = RULE_OPTION_LEP_FORPOL_QIE_DESC
 		allow_achievements = yes
 	}
 }
@@ -15979,12 +16004,6 @@ HNN_path = {#湖南
 		name = HNN_HSH
 		text = "RULE_OPTION_HNN_HSH"
 		desc = "RULE_OPTION_HNN_HSH_DESC"
-		allow_achievements = yes
-	}
-	option = {#唐生明
-		name = HNN_TSM
-		text = "RULE_OPTION_HNN_TSM"
-		desc = "RULE_OPTION_HNN_TSM_DESC"
 		allow_achievements = yes
 	}
 }

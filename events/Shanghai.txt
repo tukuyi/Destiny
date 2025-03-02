@@ -507,9 +507,6 @@ country_event = {#上海的命运
 			}
 			add_ideas = {
 				LEC_hui_ji_liang_hog
-				LEC_Lothar_Eisentraeger_eco_pau
-				LEC_Hubert_Knipping_for_pau
-				LEC_Thomas_Tien_Ken_sin_sec_sli
 			}
 
 			load_oob = SHC_rider_first

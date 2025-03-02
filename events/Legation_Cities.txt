@@ -16538,6 +16538,7 @@ country_event = {#加入帝国公约
 country_event = {#祝圣仪式
 	id = lecjidu.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecjidu.2"}
+	picture = GFX_report_event_SHC_zu_sheng_sun_zhong_shan
 	title = lecjidu.2.t
 	desc = lecjidu.2.d
 
@@ -16696,7 +16697,9 @@ country_event = {#白马修道院
 	}
 }
 
-###大明
+########################################
+##########-       大明     -############
+########################################
 country_event = {#南京的威胁
 	id = lecming.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecming.1"}

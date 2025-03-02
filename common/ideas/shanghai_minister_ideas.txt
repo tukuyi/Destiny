@@ -1,5 +1,6 @@
 ideas = {
 	head_of_government = {
+	#教U	
 		LEC_hui_ji_liang_hog = {#惠济良
 			allowed = { original_tag = SHC }
 			picture = LEC_hui_ji_liang_hog
@@ -46,7 +47,7 @@ ideas = {
 				hog_spiritual_leader
 			}
 		}
-	#左臂	
+	#左臂
 		LEC_kang_sheng_hog = {#康生
 			allowed = { original_tag = SHC }
 			picture = LEC_kang_sheng_hog
@@ -490,11 +491,108 @@ ideas = {
 			}
 		}			
 	#外交部长	
-
+		LEC_Thomas_Tien_Ken_sin_for = {#田耕莘
+			allowed = { original_tag = SHC }
+			picture = LEC_Thomas_Tien_Ken_sin_for
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_Thomas_Tien_Ken_sin_for"
+				
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_great_compromiser
+			}
+		}
 	#经济部长
-		
+		LEC_lei_ming_yuan_eco = {#雷鸣远
+			allowed = { original_tag = SHC }
+			picture = LEC_lei_ming_yuan_eco
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_lei_ming_yuan_eco"
+				
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				sec_catholic_firebrand
+			}
+		}
+		LEC_zhu_zhi_yao_eco = {#朱志尧
+			allowed = { original_tag = SHC }
+			picture = LEC_zhu_zhi_yao_eco
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhu_zhi_yao_eco"
+				
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_vernacular_industrialiser
+			}
+		}
 	#内政部长	
-		
+		LEC_zhou_ji_si_sec = {#周济世
+			allowed = { original_tag = SHC }
+			picture = LEC_zhou_ji_si_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhou_ji_si_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_compassionate_gentleman
+			}
+		}
+		LEC_zhang_xiu_ya_sec = {#张秀亚
+			allowed = { original_tag = SHC }
+			picture = LEC_zhang_xiu_ya_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhang_xiu_ya_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_prominent_feminist
+			}
+		}
 	}	
 
 	chief_of_staff = {

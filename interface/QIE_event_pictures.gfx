@@ -105,7 +105,7 @@ spriteTypes = {
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_puyi_speech"
-		texturefile = "gfx/event_news_pictures/QIE/QIE_puyi_speech.png"
+		texturefile = "gfx/event_news_pictures/QIE/QIE_puyi_speech_time.png"
 	}
 	spriteType  = {
 		name = "GFX_report_event_QIE_qing_nian_dang"

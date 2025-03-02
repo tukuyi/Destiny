@@ -149,10 +149,6 @@ country_event = { #省议会问题
 					}
 					has_game_rule = {
 						rule = HNN_path
-						option = HNN_TSM
-					}
-					has_game_rule = {
-						rule = HNN_path
 						option = HNN_ZHAO
 					}
 					has_game_rule = {
@@ -7132,10 +7128,6 @@ country_event = {#革命成功
 						rule = HNN_path
 						option = HNN_HSH
 					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_TSM
-					}
 				}
 			}
 		}
@@ -13658,10 +13650,6 @@ country_event = {#经济政策
 						rule = HNN_path
 						option = HNN_HSH
 					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_TSM
-					}
 				}
 			}
 		}
@@ -13727,10 +13715,6 @@ country_event = {#外交政策
 					has_game_rule = {
 						rule = HNN_path
 						option = HNN_HSH
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_TSM
 					}
 				}
 			}
@@ -13852,13 +13836,6 @@ country_event = {#赵恒惕的问题
 		name = hungong.12.a
 		ai_chance = {
 			base = 10
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = HNN_path
-					option = HNN_TSM
-				}
-			}
 		}
 		country_event = { 
 			id = hungong.19
@@ -13875,23 +13852,6 @@ country_event = {#赵恒惕的问题
 		name = hungong.12.b
 		ai_chance = {
 			base = 5
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_PDH
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_DBW
-					}
-					has_game_rule = {
-						rule = HNN_path
-						option = HNN_HSH
-					}
-				}
-			}
 		}
 		if = {
 			limit = { 
