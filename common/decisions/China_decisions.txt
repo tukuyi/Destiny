@@ -559,7 +559,7 @@ chinese_unification = {
 		}
 	}
 
-	china_offer_alliance = {
+	china_offer_alliance = {#向[FROM.GetNameDef]提议结盟
 		icon = eng_trade_unions_demand
 
 		available = {
@@ -569,6 +569,20 @@ chinese_unification = {
 				FROM = { any_subject_country = { is_neighbor_of = ROOT } }
 			}
 			FROM = { has_civil_war = no }
+			if = {
+				limit = { FROM = { tag = YUN } }
+				NOT = { FROM = { has_idea = YUN_chaos_army } }
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						tag = SQI
+						has_dictatorship_government = yes
+					}
+					NOT = { has_global_flag = LEP_collapse_SQI_out }
+				}
+				has_global_flag = LEP_league_war_over
+			}
 		}
 
 		visible = {
@@ -1075,7 +1089,7 @@ chinese_unification = {
 	}
 	
 	### Dealing with the Outskirts ###
-	china_demand_annexation = {
+	china_demand_annexation = {#要求吞并[FROM.GetNameDef]
 		icon = ger_mefo_bills
 
 		allowed = { always = no }
@@ -2056,6 +2070,7 @@ chinese_unification = {
 		}
 	}
 }
+
 political_actions = {
 	LEC_china_observer_rights = {
 		icon = GFX_decision_generic_political_discourse

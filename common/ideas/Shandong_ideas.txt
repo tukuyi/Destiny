@@ -872,7 +872,7 @@ ideas = {
 			SQI_honored_master_2 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_2"}
 				name = SQI_honored_master
-				picture = GFX_idea_SQI_honored_master
+				picture = SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.01
@@ -884,7 +884,7 @@ ideas = {
 			SQI_honored_master_3 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_3"}
 				name = SQI_honored_master
-				picture = GFX_idea_SQI_honored_master
+				picture = SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.05
@@ -897,7 +897,7 @@ ideas = {
 			SQI_honored_master_4 = {
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea SQI_honored_master_4"}
 				name = SQI_honored_master
-				picture = GFX_idea_SQI_honored_master
+				picture = SQI_honored_master
 				allowed = { always = no }
 				modifier = {
 					conscription = 0.05

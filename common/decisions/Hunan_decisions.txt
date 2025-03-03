@@ -1,42 +1,3 @@
-chinese_unification = {
-	HNN_union_asia = {#亚洲步调一致
-		available = {
-			RUS = {
-				exists = no
-			}
-			JAP = {
-				exists = no
-			}
-			AFG = {
-				exists = no
-			}
-			BHU = {
-				exists = no
-			}
-			GEA = {
-				exists = no
-			}
-		}
-
-		visible = {
-			tag = HNN
-			has_completed_focus = HNN_e_luo_si
-		}
-
-		days_remove = 10
-		cost = 0
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_chong_jian_gao_li"
-			
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_chong_jian_gao_li"
-			set_cosmetic_tag = HNN_ASIA
-		}
-	}
-}
-
 political_actions = {
 	HNN_gao_gang_Portrait_Picker = {
 		icon = GFX_decision_portraits_picker
@@ -381,6 +342,43 @@ political_actions = {
 					}
 				}
 			}
+		}
+	}
+
+	HNN_union_asia = {#亚洲步调一致
+		available = {
+			RUS = {
+				exists = no
+			}
+			JAP = {
+				exists = no
+			}
+			AFG = {
+				exists = no
+			}
+			BHU = {
+				exists = no
+			}
+			GEA = {
+				exists = no
+			}
+		}
+
+		visible = {
+			tag = HNN
+			has_completed_focus = HNN_e_luo_si
+		}
+
+		days_remove = 10
+		cost = 0
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_chong_jian_gao_li"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_chong_jian_gao_li"
+			set_cosmetic_tag = HNN_ASIA
 		}
 	}
 }
@@ -1573,194 +1571,6 @@ HNN_foreign_category = {#中国结盟决议
 				country_event = {
 					id = hnn.72
 					days = 2
-				}
-			}
-		}
-	}
-
-	HNN_try_align_right_kmt = {
-		available = {
-			has_war = no
-		}
-		visible = {
-			has_country_leader = { name = "程潜" ruling_only = yes }
-			has_government = authoritarian_democrat
-			any_of_scopes = {
-				array = global.china_tags_array
-				is_faction_leader = yes
-				is_ruled_by_right_kmt = yes
-			}
-			is_in_faction = no
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 10
-				event_target:current_china_leader = {
-					is_faction_leader = yes
-					is_ruled_by_right_kmt = yes
-				}
-			}
-		}
-
-		fire_only_once = yes
-		cost = 0
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_try_align_right_kmt"
-			every_other_country = {
-				limit = {
-					is_faction_leader = yes
-					is_ruled_by_right_kmt = yes
-				}
-				country_event = {
-					id = hnn.73
-					days = 1
-				}
-			}
-		}
-	}
-
-	HNN_get_back_left_kmt = {
-		available = {
-			has_war = no
-		}
-		visible = {
-			has_country_leader = { name = "程潜" ruling_only = yes }
-			has_government = authoritarian_democrat
-			any_of_scopes = {
-				array = global.china_tags_array
-				is_faction_leader = yes
-				is_ruled_by_left_kmt = yes
-			}
-			is_in_faction = no
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 10
-				event_target:current_china_leader = {
-					is_faction_leader = yes
-					is_ruled_by_left_kmt = yes
-				}
-			}
-		}
-
-		fire_only_once = yes
-		cost = 0
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_get_back_left_kmt"
-			every_other_country = {
-				limit = {
-					is_faction_leader = yes
-					is_ruled_by_left_kmt = yes
-				}
-				country_event = {
-					id = hnn.74
-					days = 1
-				}
-			}
-		}
-	}
-
-	HNN_join_left_kmt = { #still cant be integrated yet
-		available = {
-			has_war = no
-		}
-		visible = {
-			has_country_leader = { name = "程潜" ruling_only = yes }
-			any_of_scopes = {
-				array = global.china_tags_array
-				is_faction_leader = yes
-				is_ruled_by_left_kmt = yes
-			}
-			has_government = authoritarian_democrat
-			is_in_faction = no
-		}
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 10
-				event_target:current_china_leader = {
-					is_faction_leader = yes
-					is_ruled_by_left_kmt = yes
-				}
-			}
-		}
-
-		fire_only_once = yes
-		cost = 0
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_join_left_kmt"
-			every_other_country = {
-				limit = {
-					is_faction_leader = yes
-					is_ruled_by_left_kmt = yes
-				}
-				country_event = {
-					id = hnn.75
-					days = 1
-				}
-			}
-		}
-	}
-
-	HNN_fight_north_now_tang = {
-		available = {
-			has_war = no
-			NOT = {
-				has_country_flag = {
-					flag = HNN_tang_cannot_war
-					days < 180
-				}
-			}
-		}
-		visible = {
-			has_country_leader = { name = "唐生智" ruling_only = yes }
-			has_government = social_democrat
-			is_in_faction = yes
-			QIE = {
-				is_ruled_by_pro_zhili = yes
-				is_subject = no
-				exists = yes
-			}
-		}
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 10
-				QIE = {
-					has_war = yes
-				}
-			}
-		}
-
-		fire_only_once = yes
-		cost = 30
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_fight_north_now_tang"
-			if = {
-				limit = {
-					is_faction_leader = no
-				}
-				every_other_country = {
-					limit = {
-						is_faction_leader = yes
-						is_in_faction_with = HNN
-					}
-					country_event = {
-						id = hnn.76
-						days = 1
-					}
-				}
-			}
-			else = {
-				declare_war_on = {
-					target = QIE
-					type = annex_everything
 				}
 			}
 		}

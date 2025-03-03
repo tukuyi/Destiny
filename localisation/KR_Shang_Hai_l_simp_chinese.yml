@@ -963,11 +963,13 @@
  LEC_TZ_T_ADJ: "中华民国"
  LEC_TZ_T_DEF: "中华民国"
 
+ LEC_yu_bing_for: "于斌"
  LEC_yu_bing_hog: "于斌"
  LEC_zhou_ji_si_sec: "周济世"
  LEC_zhu_zhi_yao_eco: "朱志尧"
  LEC_zhang_xiu_ya_sec: "张秀亚"
  LEC_hui_ji_liang_hog: "惠济良"
+ LEC_hui_ji_liang_for: "惠济良"
  LEC_lei_ming_yuan_eco: "雷鸣远"
  LEC_Thomas_Tien_Ken_sin_for: "田耕莘"
 

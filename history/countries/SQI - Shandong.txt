@@ -149,71 +149,14 @@ country_event = {
 country_event = { 
 	id = shandong.436 #Tianran's death
 	days = 4018
-	random = 4320
+	random_hours = 4320
 }
 
 country_event = { 
 	id = shandong.437 #Zheyuan's death
 	days = 4018
-	random = 4320
+	random_hours = 4320
 }
-
-# create_field_marshal = {
-# 	name = "李景林"
-# 	id = 1305
-# }
-# create_corps_commander = {
-# 	name = "宋哲元"
-# 	id = 1190
-# }
-# create_field_marshal = {
-# 	name = "张宗昌"
-# 	id = 1191
-# }
-# create_corps_commander = {
-# 	name = "冯安邦"
-# 	id = 1192
-# }
-# create_corps_commander = {
-# 	name = "张怀芝"
-# 	id = 1193
-# }
-# create_corps_commander = {
-# 	name = "徐源泉"
-# 	id = 1194
-# }
-# create_corps_commander = {
-# 	name = "小日向白朗"
-# 	id = 1195
-# }
-# create_corps_commander = {
-# 	name = "伊达顺之助"
-# 	id = 1196
-# }
-# create_corps_commander = {
-# 	name = "孙殿英"
-# 	id = 1197
-# }
-# create_corps_commander = {
-# 	name = "张敬尧"
-# 	id = 1198
-# }
-# create_corps_commander = {
-# 	name = "李丽久"
-# 	id = 1199
-# }
-# create_corps_commander = {
-# 	name = "薛颠"
-# 	id = 1304
-# }
-# create_corps_commander = {
-# 	name = "卢永祥"
-# 	id = 1301
-# }
-# create_corps_commander = {
-# 	name = "鲍里斯·阿年科夫"
-# 	id = 454
-# }
 
 recruit_character = SQI_jin_yune
 recruit_character = SQI_zhang_jingyao
@@ -238,7 +181,8 @@ recruit_character = SQI_Konstantin_Nechaev
 recruit_character = SQI_ke_xi_ke_tu
 
 SQI_jin_yune = {
-	set_variable = { china_alignment = token:others }
+	set_variable = { china_alignment = token:northern_zhili }
+	set_character_flag = CHN_original_unit_leader
 }
 SQI_zhang_zongchang = {
 	set_variable = { china_alignment = token:fengtian }

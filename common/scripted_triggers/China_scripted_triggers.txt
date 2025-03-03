@@ -342,24 +342,6 @@ is_ruled_by_pro_fengtian = {#奉天领导人
 					tag = SHX
 					has_country_flag = SHX_alliance_FNG
 				}
-				AND = {
-					original_tag = GXC
-					OR = {
-						AND = {
-							has_government = market_liberal
-							FNG_JAP_hostile = no
-						}
-						AND = {
-							has_country_leader = {
-								name = "马济"
-								ruling_only = yes
-							}
-							QIE = { 
-								has_country_flag = QIE_manchu_restoration 
-							}
-						}
-					}
-				}
 			}
 		}
 	}
@@ -925,6 +907,7 @@ china_refused_alliance = {
 }
 
 china_is_valid_government_to_join = {
+	china_is_potential_government = yes
 	exists = yes
 	is_subject = no
 	NOT = {

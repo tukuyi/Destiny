@@ -511,6 +511,50 @@ ideas = {
 				for_great_compromiser
 			}
 		}
+		LEC_hui_ji_liang_for = {#惠济良
+			allowed = { original_tag = SHC }
+			picture = LEC_hui_ji_liang_hog
+			cost = 100
+			available = {
+				NOT = {
+					has_country_leader = { name = "惠济良" ruling_only = yes }
+				}
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_hui_ji_liang_for"
+				
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_tireless_organiser
+			}
+		}
+		LEC_yu_bing_for = {#于斌
+			allowed = { original_tag = SHC }
+			picture = LEC_yu_bing_hog
+			cost = 100
+			available = {
+				NOT = {
+					has_country_leader = { name = "于斌" ruling_only = yes }
+				}
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_yu_bing_for"
+				
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				hog_scholar
+			}
+		}
 	#经济部长
 		LEC_lei_ming_yuan_eco = {#雷鸣远
 			allowed = { original_tag = SHC }

@@ -498,8 +498,8 @@ focus_tree = {
 				add_compliance = 10
 			}
 			add_to_variable = { CHI.kr_china_provinceintegration_cost_small = -10 }
-			add_to_variable = { CHI.kr_china_provinceintegration_cost_medium = -10 }
-			add_to_variable = { CHI.kr_china_provinceintegration_cost_large = -10 }
+			add_to_variable = { CHI.kr_china_provinceintegration_cost_medium = -20 }
+			add_to_variable = { CHI.kr_china_provinceintegration_cost_large = -20 }
 			add_to_variable = { CHI.kr_china_concessionintegration_cost = -5 }
 			add_to_variable = { CHI.kr_china_provinceintegration_speed = -20 }
 			add_to_variable = { CHI.kr_china_concessionintegration_speed = -15 }

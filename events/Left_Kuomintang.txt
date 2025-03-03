@@ -822,8 +822,10 @@ country_event = {
 	title = CHI.midgame.000.t
 	desc = CHI.midgame.000.d
 	picture = GFX_report_event_CHI_successful_northern_expedition_flag
+
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = CHI.midgame.000.a #We shall recover
 		CHI_insurgent_army_transition_effect = yes
@@ -991,7 +993,6 @@ country_event = { #Closing of the Congress
 				long_name = CHI_pac_party_long
 				name = CHI_pac_party
 			}
-			country_event = CHI.midgame.999
 		}
 	}
 }

@@ -909,11 +909,7 @@ focus_tree = {
 
 		ai_will_do = { factor = 100 }
 		available = {
-			OR = {
-				has_country_leader = { name = "唐生智" ruling_only = yes }
-				has_country_leader = { name = "程潜" ruling_only = yes }
-				has_completed_focus = HNN_Our_Own_Path
-			}
+			china_is_aligned_with_kmt = yes
 		}
 
 		prerequisite = {
@@ -1035,13 +1031,7 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				china_is_aligned_with_kmt = yes
-				hidden_trigger = {
-					has_country_leader = { name = "何键" ruling_only = yes }
-					
-				}
-			}
+			china_is_aligned_with_kmt = yes
 			has_global_flag = GXC_civil_war_over
 			OR = {
 				is_subject = yes
@@ -1088,13 +1078,7 @@ focus_tree = {
 		y = 4
 
 		available = {
-			OR = {
-				china_is_aligned_with_kmt = yes
-				hidden_trigger = {
-					has_country_leader = { name = "何键" ruling_only = yes }
-					
-				}
-			}
+			china_is_aligned_with_kmt = yes
 			is_subject = no
 			owns_state = 592
 			CHN_no_aligned_unifier_exists_trigger = yes
@@ -1612,12 +1596,7 @@ focus_tree = {
 		y = 5
 
 		available = {
-			OR = {
-				has_country_leader = { name = "唐生智" ruling_only = yes }
-				has_country_leader = { name = "程潜" ruling_only = yes }
-				has_country_leader = { name = "何键" ruling_only = yes }
-				has_completed_focus = HNN_Our_Own_Path
-			}
+			china_is_aligned_with_kmt = yes
 		}
 
 		ai_will_do = {
@@ -2221,10 +2200,6 @@ focus_tree = {
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.10
-			}
-			hidden_effect = {
-				# activate_targeted_decision = { target = QIE decision = HNN_join_zhili }
-				# activate_targeted_decision = { target = SZC decision = HNN_join_zhili }
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -9111,15 +9086,8 @@ focus_tree = {
 		available = {
 			has_country_flag = HNN_political_stability
 			OR = {
-				OR = {
-					AND = {
-						has_country_leader = { name = "谭延闿" ruling_only = yes }
-						has_government = social_liberal
-					}
-					has_country_leader = { name = "陈渠珍" ruling_only = yes }
-					has_country_leader = { name = "赵恒惕" ruling_only = yes }
-					has_completed_focus = HNN_Buddhism
-				}
+				HNN_lian_sheng_goverment = yes
+				has_completed_focus = HNN_Buddhism
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 				has_country_leader = { name = "石顶武" ruling_only = yes }
 			}
