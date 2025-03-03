@@ -651,6 +651,18 @@ UPC_set_leader_effect = {#联省派领导人
 	save_global_event_target_as = UPC_leader
 }
 
+LKT_set_leader_effect = {#国左领导人
+	#Left Kuomintang
+	custom_effect_tooltip = LKT_set_leader_tt
+	save_global_event_target_as = LKT_leader
+}
+
+RKT_set_leader_effect = {#国右领导人
+	#Right Kuomintang
+	custom_effect_tooltip = RKT_set_leader_tt
+	save_global_event_target_as = RKT_leader
+}
+
 set_potential_national_government = {#宣布统一、枣核时间
 	if = {
 		limit = {
@@ -690,6 +702,14 @@ set_potential_national_government = {#宣布统一、枣核时间
 				}
 			}
 			MCU_set_leader_effect = yes
+		}
+		else_if = {
+			limit = { check_variable = { country_leader:china_alignment = token:left_kuomintang } }
+			LKT_set_leader_effect = yes
+		}
+		else_if = {
+			limit = { check_variable = { country_leader:china_alignment = token:right_kuomintang } }
+			RKT_set_leader_effect = yes
 		}
 
 		every_state = {

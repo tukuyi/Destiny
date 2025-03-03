@@ -6667,9 +6667,7 @@ focus_tree = {
 			add_political_power = 50
 			custom_effect_tooltip = tooltip_white_line
 			set_potential_national_government = yes
-			hidden_effect = {
-				china_enable_all_attack_decisions = yes
-			}
+			china_enable_all_demand_submission_decisions = yes
 		}
 	}		
 

@@ -968,7 +968,6 @@ focus_tree = {
 			show_unit_leaders_tooltip = HNN_gong_hao
 			show_unit_leaders_tooltip = HNN_tao_guang
 			hidden_effect = {
-				HNN_he_jian = { HNN_recruit_characters_effect = yes }
 				HNN_que_hanqian = { HNN_recruit_characters_effect = yes }
 				HNN_lu_dangping = { HNN_recruit_characters_effect = yes }
 				HNN_liu_jianxu = { HNN_recruit_characters_effect = yes }
@@ -977,14 +976,14 @@ focus_tree = {
 				HNN_gong_hao = { HNN_recruit_characters_effect = yes }
 				HNN_tao_guang = { HNN_recruit_characters_effect = yes }
 				HNN_li_pinxian = { HNN_recruit_characters_effect = yes }
-				create_country_leader = {
-					name = "何键"
-					desc = "POLITICS_HNN_HE_JIAN_DESC"
-					picture = "gfx/leaders/HNN/Portrait_Hunan_He_Jian.png"
-					expire = "1.1.1"
-					ideology = pataut_oligarchy_subtype
-					traits = {
-						
+				HNN_he_jian = { 
+					HNN_recruit_characters_effect = yes 
+					add_country_leader_role = {
+						country_leader = { 
+							desc = POLITICS_HNN_HE_JIAN_DESC
+							ideology = pataut_oligarchy_subtype
+						}
+						promote_leader = yes
 					}
 				}
 				set_party_name = { 
@@ -1037,10 +1036,11 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_country_leader = { name = "唐生智" ruling_only = yes }
-				has_country_leader = { name = "程潜" ruling_only = yes }
-				has_country_leader = { name = "何键" ruling_only = yes }
-				has_completed_focus = HNN_Our_Own_Path
+				china_is_aligned_with_kmt = yes
+				hidden_trigger = {
+					has_country_leader = { name = "何键" ruling_only = yes }
+					
+				}
 			}
 			has_global_flag = GXC_civil_war_over
 			OR = {
@@ -1052,6 +1052,7 @@ focus_tree = {
 				}
 			}
 		}
+
 		bypass = {
 			AND = {
 				owns_state = 592 #canton
@@ -1065,11 +1066,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_repudiate_the_canton_squatters"
+			add_war_support = 0.10
 			if = {
 				limit = { is_subject = no }
 				HNN_march_south_effect = yes
 			}
-			add_war_support = 0.10
+			else = {
+				overlord = { country_event = hunbao.28 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 	}
@@ -1085,25 +1089,15 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_country_leader = { name = "唐生智" ruling_only = yes }
-				has_country_leader = { name = "程潜" ruling_only = yes }
-				has_country_leader = { name = "何键" ruling_only = yes }
-				has_completed_focus = HNN_Our_Own_Path
+				china_is_aligned_with_kmt = yes
+				hidden_trigger = {
+					has_country_leader = { name = "何键" ruling_only = yes }
+					
+				}
 			}
 			is_subject = no
 			owns_state = 592
-			if = {
-				limit = { 
-					has_country_leader = { name = "唐生智" ruling_only = yes }
-				}
-				custom_trigger_tooltip = {
-					tooltip = CHN_No_Other_LKT_tt
-					OR = {
-						NOT = { country_exists = CHI }
-						tag = CHI
-					}
-				}
-			}
+			CHN_no_aligned_unifier_exists_trigger = yes
 		}
 
 		prerequisite = {

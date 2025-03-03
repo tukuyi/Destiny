@@ -5874,6 +5874,98 @@ country_event = {#程潜逃回昆明
 		ai_chance = { base = 0 }
 	}
 }
+country_event = {#我们在湖南的盟友
+	id = hunbao.28
+	title = hunbao.28.t
+	desc = {
+		text = hunbao.28.d1
+		trigger = {
+			ROOT = { china_is_aligned_with_federalists = yes }
+		}
+	}
+	desc = {
+		text = hunbao.28.d2
+		trigger = {
+			ROOT = { 
+				OR = {
+					is_ruled_by_left_kmt = yes
+					china_is_aligned_with_left_kmt = yes 
+				}
+			}
+		}
+	}
+	desc = {
+		text = hunbao.28.d3
+		trigger = {
+			ROOT = { 
+				OR = {
+					is_ruled_by_right_kmt = yes
+					china_is_aligned_with_right_kmt = yes 
+				}
+			}
+		}
+	}
+	desc = {
+		text = hunbao.28.d4
+		trigger = {
+			ROOT = { 
+				NOT = { 
+					is_ruled_by_kmt = yes
+					china_is_aligned_with_kmt = yes 
+				} 
+			}
+			ROOT = { NOT = { china_is_aligned_with_federalists = yes } }
+		}
+	}
+
+	picture = GFX_report_event_CHI_propaganda_flag_raising
+	is_triggered_only = yes
+
+	option = { #Better the devil you know...
+		log = "[GetLogInfo]: event hunbao.28 option hunbao.28.a"
+		name = hunbao.28.a
+		trigger = {
+			ROOT = { 
+				NOT = { 
+					is_ruled_by_kmt = yes
+					china_is_aligned_with_kmt = yes 
+				} 
+			}
+		}
+		add_political_power = -10
+
+	}
+	option = { #Congratulate Provincial Chairman [HNN.GetLeader]!
+		log = "[GetLogInfo]: event hunbao.28 option hunbao.28.b"
+		name = hunbao.28.b
+		trigger = {
+			ROOT = { china_is_aligned_with_left_kmt = yes }
+		}
+		if = {
+			limit = {
+				original_tag = CHI
+				CHI = { has_power_balance = { id = CHI_power_balance } }
+			}
+			CHI_PAC_medium_effect = yes
+		}
+		add_political_power = 10
+		add_opinion_modifier = { target = HNN modifier = KR_approves_of_govt }
+	}
+	option = { #Hopefully Cheng Qian can keep control of things.
+		log = "[GetLogInfo]: event hunbao.28 option hunbao.28.c"
+		name = hunbao.28.c
+		trigger = {
+			ROOT = { 
+				OR = {
+					is_ruled_by_right_kmt = yes
+					china_is_aligned_with_right_kmt = yes 
+				}
+			}
+		}
+		add_political_power = 10
+		add_opinion_modifier = { target = HNN modifier = KR_approves_of_govt }
+	}
+}
 country_event = {#湖南的谈判申请
 	id = hunbao.40
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunbao.40" }

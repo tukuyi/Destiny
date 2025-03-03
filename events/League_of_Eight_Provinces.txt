@@ -1015,6 +1015,7 @@ country_event = { #Uprisings in Fujian
 					days = 1
 				} 
 			} 
+			CHI = { save_global_event_target_as = LKT_leader }
 			add_ideas = LEP_war_surrender_limit_idea
 		}
 	}

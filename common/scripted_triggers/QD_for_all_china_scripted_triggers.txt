@@ -73,13 +73,33 @@ CHN_no_aligned_unifier_exists_trigger = {#统一全国的前置要求
 			}
 		}
 	}
-	else_if = {
+	else_if = {#满族
 		limit = { check_variable = { country_leader:china_alignment = token:manchu_qing } }
 		custom_trigger_tooltip = {
 			tooltip = CHN_No_Other_MCU_tt
 			OR = {
 				NOT = { country_exists = MCU }
 				tag = MCU
+			}
+		}
+	}
+	else_if = {#国左
+		limit = { check_variable = { country_leader:china_alignment = token:left_kuomintang } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_LKT_tt
+			OR = {
+				NOT = { country_exists = LKT }
+				tag = LKT
+			}
+		}
+	}
+	else_if = {#国右
+		limit = { check_variable = { country_leader:china_alignment = token:right_kuomintang } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_RKT_tt
+			OR = {
+				NOT = { country_exists = RKT }
+				tag = RKT
 			}
 		}
 	}
@@ -141,3 +161,34 @@ china_is_aligned_with_manchu = {#满洲
 		}
 	}
 }
+
+china_is_aligned_with_left_kmt = {#国左
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_left_kmt
+		OR = {
+			check_variable = { country_leader:china_alignment = token:chinese_southern_republican }
+			check_variable = { country_leader:china_alignment = token:left_kuomintang }
+		}
+	}
+}
+
+china_is_aligned_with_right_kmt = {#国右
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_right_kmt
+		OR = {
+			check_variable = { country_leader:china_alignment = token:chinese_southern_republican }
+			check_variable = { country_leader:china_alignment = token:right_kuomintang }
+		}
+	}
+}
+
+china_is_aligned_with_kmt = {#国民党
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_kmt
+		OR = {
+			china_is_aligned_with_left_kmt = yes
+			china_is_aligned_with_right_kmt = yes
+		}
+	}
+}
+

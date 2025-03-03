@@ -225,6 +225,13 @@ HNN_Lu_Di_Ping = {
 	set_variable = { china_alignment = token:right_kuomintang }
 	retire = yes
 }
+HNN_he_jian = {
+	set_variable = { china_alignment = token:right_kuomintang }
+	set_character_flag = CHN_original_unit_leader
+	set_character_flag = HNN_KMT_loyalist_flag
+	set_character_flag = CHI_RCF_military_loyalist_flag
+	retire = yes
+}
 HNN_cheng_qian = {
 	set_variable = { china_alignment = token:right_kuomintang }
 	set_character_flag = CHI_RCF_military_loyalist_flag
@@ -290,12 +297,6 @@ HNN_tao_guang = { #Appears in KMT Content
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = HNN_KMT_loyalist_flag
 	set_character_flag = CHI_PAC_military_loyalist_flag
-	retire = yes
-}
-HNN_he_jian = {
-	set_character_flag = CHN_original_unit_leader
-	set_character_flag = HNN_KMT_loyalist_flag
-	set_character_flag = CHI_RCF_military_loyalist_flag
 	retire = yes
 }
 HNN_he_long = {

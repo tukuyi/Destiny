@@ -11,3 +11,9 @@ SZH = {#南直系
 MCU = {#满洲
 	global_event_target = MCU_leader
 }
+LKT = {#国左
+	global_event_target = LKT_leader
+}
+RKT = {#国右
+	global_event_target = RKT_leader
+}

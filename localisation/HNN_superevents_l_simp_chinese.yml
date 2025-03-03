@@ -103,6 +103,12 @@
  china_is_aligned_with_federalists_NOT: "§R未§!由§f联省派§!统治"
  china_is_aligned_with_manchu: "由§q亲满洲§!政权统治"
  china_is_aligned_with_manchu_NOT: "§R未§!由§q亲满洲§!政权统治"
+ china_is_aligned_with_left_kmt: "由§k国民党左派§!统治"
+ china_is_aligned_with_left_kmt_NOT: "§R未§!由§k国民党左派§!统治"
+ china_is_aligned_with_right_kmt: "由§c国民党右派§!统治"
+ china_is_aligned_with_right_kmt_NOT: "§R未§!由§c国民党右派§!统治"
+ china_is_aligned_with_kmt: "由§k国民党§!统治"
+ china_is_aligned_with_kmt_NOT: "§R未§!由§R国民党§!统治"
 
  CHN_join_NZH_decision: "加入[NZH.GetName]"
  CHN_join_NZH_decision_desc: "自从直系在1927年取得胜利之后，他们一直主宰着中国政坛，并经受住了来自北洋内部政治风波、南方革命派和北方竞争对手的考验。尽管他们的霸权最近受到了挑战，但他们必将取得胜利，并维护中国的道德和政治秩序。"
@@ -112,6 +118,10 @@
  CHN_join_CSP_decision_desc: "真正属于无产阶级普罗大众的革命已经到来，我们必须遵从中央的指示，共同扫除军阀反动残余与带着革命假面的国民党反动分子，革命万岁！中国社会主义万岁！中国工团党万岁！无产阶级万岁！"
  CHN_join_UPC_decision: "加入[UPC.GetName]"
  CHN_join_UPC_decision_desc: "联省运动主要由南方政党组成，旨在以联邦模式建立一个全新的共和中华。若尔等期盼中国成为一个能尊重各省权利的国家，那么就应投入心血参与此一联盟。"
+ CHN_join_LKT_decision: "加入[LKT.GetName]"
+ CHN_join_LKT_decision_desc: "中国的左翼势力已团结在了[LKT.GetLeader]的领导下，中国的未来必须掌握在那些富有远见之人手中，以实现将国家开创未来所需的彻底变革。我们将加入革命同志的行列，共同带领祖国走进新时代！"
+ CHN_join_RKT_decision: "加入[RKT.GetName]"
+ CHN_join_RKT_decision_desc: "中国国民党是由孙中山先生创立的，其宗旨是作为国民革命的先锋队，从帝国主义和国内腐败的侵害中拯救。我们有责任加入新生国民革命军的行列，共同保家卫国！"
 
  china_break_free: "挑战[ROOT.Overlord.GetLeader]权威"
  china_half_strength_of_overlord_tt: "与宗主的陆军实力之比估计不低于§Y50%§!"
