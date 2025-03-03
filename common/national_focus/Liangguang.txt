@@ -3220,14 +3220,6 @@ shared_focus = {
 			remove_ideas = GXC_philantropic_investments
 			add_ideas = GXC_chinese_washington_idea
 		}
-		# if = {
-		# 	limit = {
-		# 		is_subject = no
-		# 		china_is_potential_government = no
-		# 		JAP = { is_faction_leader = yes }
-		# 	}
-		# 	activate_targeted_decision = { target = JAP decision = GXC_align_with_japan }
-		# }
 	}
 	search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 }
@@ -4081,7 +4073,11 @@ shared_focus = {
 shared_focus = {
 	id = GXC_join_KMT
 	icon = GFX_goal_CHI_YUN_reconcile
+	relative_position_id = GXC_renovate_whampoa
 	cost = 2
+	x = -1
+	y = 1
+
 	prerequisite = {
 		focus = GXC_minquan_focus
 		focus = GXC_minzu_focus
@@ -4097,6 +4093,7 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = GXC_claim_leadership
 	}
+
 	available = {
 		is_in_faction = no
 		is_subject = no
@@ -4115,9 +4112,7 @@ shared_focus = {
 			YUN = { has_government = social_liberal }
 		}
 	}
-	x = -1
-	y = 1
-	relative_position_id = GXC_renovate_whampoa
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_join_KMT"
 		if = {
@@ -4138,7 +4133,11 @@ shared_focus = {
 shared_focus = {
 	id = GXC_claim_leadership
 	icon = GFX_YUN_Goal_Deal_with_the_Left_KMT
+	relative_position_id = GXC_renovate_whampoa
 	cost = 2
+	x = 1
+	y = 1
+
 	prerequisite = {
 		focus = GXC_minzu_focus
 		focus = GXC_minquan_focus
@@ -4173,9 +4172,7 @@ shared_focus = {
 		}
 	}
 	will_lead_to_war_with = CHI
-	x = 1
-	y = 1
-	relative_position_id = GXC_renovate_whampoa
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_claim_leadership"
 		hidden_effect = {

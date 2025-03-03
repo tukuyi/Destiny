@@ -1910,6 +1910,7 @@ chinese_unification = {
 				tag = HNN
 				tag = GXC
 				tag = SHX
+				tag = LEC
 			}
 		}
 		available = {
@@ -1941,6 +1942,10 @@ chinese_unification = {
 				limit = { tag = SHX }
 				has_country_leader = { character = SHX_feng_yuxiang }
 				has_completed_focus = SHX_beyond_borders
+			}
+			else_if = {
+				limit = { tag = LEC }
+				china_is_aligned_with_kmt = yes
 			}
 		}
 
@@ -2002,6 +2007,7 @@ chinese_unification = {
 			OR = {
 				tag = HNN
 				tag = SHX
+				tag = LEC
 			}
 		}
 		available = {
@@ -2027,6 +2033,10 @@ chinese_unification = {
 			else_if = {
 				limit = { tag = SHX }
 				has_completed_focus = SHX_beyond_borders
+			}
+			else_if = {
+				limit = { tag = LEC }
+				china_is_aligned_with_kmt = yes
 			}
 		}
 
