@@ -295,10 +295,13 @@ recruit_character = LEC_william_ewart_fairbairn
 recruit_character = LEC_german_time
 recruit_character = LEC_reginald_yorke_tyrwhitt
 
-recruit_character = LEC_Crime_Bosses
+recruit_character = LEC_yang_hu
 recruit_character = LEC_Xudatong
 recruit_character = LEC_Heung_Chin
+recruit_character = LEC_gu_jia_tang
+recruit_character = LEC_Crime_Bosses
 recruit_character = LEC_Kot_Siu_Wong
+recruit_character = LEC_ye_chao_shan
 recruit_character = LEC_Brilliant_Chang
 
 LEC_Crime_Bosses = {
@@ -314,5 +317,15 @@ LEC_Kot_Siu_Wong = {
 	retire = yes
 }
 LEC_Brilliant_Chang = {
+	retire = yes
+}
+LEC_gu_jia_tang = {
+	retire = yes
+}
+LEC_yang_hu = {
+	set_variable = { china_alignment = token:right_kuomintang }
+	retire = yes
+}
+LEC_ye_chao_shan = {
 	retire = yes
 }

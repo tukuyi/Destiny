@@ -559,6 +559,9 @@ characters = {
 				small = GFX_Portrait_Hunan_Tang_Shengming
 				large = GFX_Portrait_Hunan_Tang_Shengming
 			}
+			civilian = {
+				large = GFX_Portrait_Hunan_Tang_Shengming
+			}
 		}
 		corps_commander = {
 			desc = POLITICS_HNN_TANG_SHENGMING_ARMY_DESC

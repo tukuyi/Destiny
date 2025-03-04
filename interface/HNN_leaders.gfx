@@ -635,6 +635,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_LEC_gu_jia_tang"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_gu_jia_tang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_ye_chao_shan"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_ye_chao_shan.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Zhang_Xiaolin"
 		texturefile = "gfx/leaders/LEC/Portrait_Zhang_Xiaolin.png"
 	}

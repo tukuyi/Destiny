@@ -294,7 +294,7 @@ characters = {
 			}
 		}			
 #恒社#
-	#徐大统		
+	#徐大统
 		LEC_Xudatong = { 
 			name = LEC_Xudatong
 			portraits = {
@@ -314,7 +314,54 @@ characters = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
+		}
+	#顾嘉棠
+		LEC_gu_jia_tang = { 
+			name = LEC_gu_jia_tang
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_gu_jia_tang
+					small = GFX_Portrait_LEC_gu_jia_tang
+				}
+			}
+			corps_commander = {
+				desc = LEC_gu_jia_tang_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+					trait_reckless
+					urban_assault_specialist
+				}
+				skill = 1
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
 		}	
+	#叶焯山
+		LEC_ye_chao_shan = { 
+			name = LEC_ye_chao_shan
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_ye_chao_shan
+					small = GFX_Portrait_LEC_ye_chao_shan
+				}
+			}
+			corps_commander = {
+				desc = LEC_ye_chao_shan_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+					winter_expert
+					aggressive_assaulter_short
+					urban_assault_specialist
+				}
+				skill = 1
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}		
 #新义安#
 	#向前	
 		LEC_Heung_Chin = { 

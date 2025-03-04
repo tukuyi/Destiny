@@ -289,6 +289,11 @@ HNN_victory_all_china = {#工团党统一
 	HNN_guo_yong_huai = { HNN_recruit_characters_effect = yes }
 	HNN_luo_pei_lin = { HNN_recruit_characters_effect = yes }
 	HNN_Hu_Yao_Bang = { HNN_recruit_characters_effect = yes }
+	event_target:original_liangguang = {
+		GXC_ye_jianying = {
+			HNN_recruit_characters_effect = yes
+		}
+	}	
 
 	SZC_Deng_Xiao_Ping = {
 		set_portraits = {

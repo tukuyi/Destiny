@@ -534,6 +534,9 @@ characters = {
 				small = GFX_Portrait_GXC_ye_jianying_army
 				large = GFX_Portrait_GXC_ye_jianying_army
 			}
+			civilian = {
+				large = GFX_Portrait_HNN_ye_jianying_generalissimo
+			}
 		}
 		corps_commander = {
 			desc = POLITICS_GXC_YE_JIANYING_ARMY_DESC

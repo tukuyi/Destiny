@@ -13183,6 +13183,15 @@ country_event = { #黑帮联合夺取权力
 		LEC_Xudatong = {
 			set_nationality = ROOT
 		}
+		LEC_gu_jia_tang = {
+			set_nationality = ROOT
+		}
+		LEC_yang_hu = {
+			set_nationality = ROOT
+		}
+		LEC_ye_chao_shan = {
+			set_nationality = ROOT
+		}
 
 		set_country_flag = LEC_Triad_Power
 		set_cosmetic_tag = LEC_triad
