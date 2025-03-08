@@ -7,7 +7,7 @@
 ideas = {
 	country = {
 
-		LEP_formenting_pro_german_intellectuals = {#亲徳知识分子
+		LEP_formenting_pro_german_intellectuals = {#亲德知识分子
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEP_formenting_pro_german_intellectuals" }
 			picture = KTG_Mitteleuropan_Industrial_Support
 			allowed = { always = no }

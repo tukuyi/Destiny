@@ -230,6 +230,22 @@ GXC_chen_mingshu = {
 	set_character_flag = GXC_guangdong_character
 }
 
+recruit_character = GXC_albrecht_von_urach
+recruit_character = GXC_wilhelm_iv_elected
+recruit_character = GXC_Alfried_Krupp
+GXC_Alfried_Krupp = {
+	set_variable = { china_alignment = token:germangangs } 
+	retire = yes
+}
+GXC_albrecht_von_urach = {
+	set_variable = { china_alignment = token:germangangs } 
+	retire = yes
+}
+GXC_wilhelm_iv_elected = {
+	set_variable = { china_alignment = token:germangangs } 
+	retire = yes
+}
+
 #将领
 recruit_character = GXC_yang_kunru
 recruit_character = GXC_Wei_Guo_Qing
@@ -315,10 +331,18 @@ GXC_yu_zuobai = {
 	set_character_flag = GXC_guangxi_character
 	retire = yes
 }
-GXC_lin_hu = { set_character_flag = GXC_guangxi_character }
-GXC_lu_yuguang = { set_character_flag = GXC_guangxi_character }
-GXC_liu_fei = { set_character_flag = GXC_guangxi_character }
-GXC_zhang_gan = { set_character_flag = GXC_guangxi_character }
+GXC_lin_hu = { 
+	set_character_flag = GXC_guangxi_character 
+}
+GXC_lu_yuguang = { 
+	set_character_flag = GXC_guangxi_character 
+}
+GXC_liu_fei = { 
+	set_character_flag = GXC_guangxi_character 
+}
+GXC_zhang_gan = { 
+	set_character_flag = GXC_guangxi_character 
+}
 GXC_gu_zhu_tong = {
 	set_character_flag = CHN_original_unit_leader
 	set_character_flag = GXC_guangxi_character
@@ -379,3 +403,45 @@ recruit_character = GXC_li_qingwen
 GXC_Deng_Zhao_Xiang = { set_character_flag = GXC_guangdong_character }
 GXC_chen_ce = { set_character_flag = GXC_guangdong_character }
 GXC_li_qingwen = { set_character_flag = GXC_guangdong_character }
+
+recruit_character = TIX_Alvitr
+recruit_character = TIX_hu_teng
+recruit_character = TIX_Bismarck
+recruit_character = TIX_Duisburg
+recruit_character = TIX_Ai_ji_er
+recruit_character = TIX_fei_te_lie
+recruit_character = TIX_Prinz_Eugen
+recruit_character = TIX_xing_deng_bao
+recruit_character = TIX_Prinz_Adalbert
+recruit_character = TIX_Peter_Strasser
+
+TIX_Alvitr = {
+	retire = yes
+}
+TIX_hu_teng = {
+	retire = yes
+}
+TIX_Bismarck = {
+	retire = yes
+}
+TIX_Duisburg = {
+	retire = yes
+}
+TIX_Ai_ji_er = {
+	retire = yes
+}
+TIX_fei_te_lie = {
+	retire = yes
+}
+TIX_Prinz_Eugen = {
+	retire = yes
+}
+TIX_xing_deng_bao = {
+	retire = yes
+}
+TIX_Prinz_Adalbert = {
+	retire = yes
+}
+TIX_Peter_Strasser = {
+	retire = yes
+}

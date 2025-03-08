@@ -4,16 +4,16 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/LEC_zhong_cheng_de_shang_hai.png"
 	}
 	spriteType = {
-		name = "GFX_goal_LEC_tu_5"
-		texturefile = "gfx/interface/goals/LEC_tu_5.png"
+		name = "GFX_goal_LEC_madames_east_asian_fiefdom"
+		texturefile = "gfx/interface/goals/LEC_madames_east_asian_fiefdom.png"
 	}
 	spriteType = {
-		name = "GFX_goal_LEC_qing_5"
-		texturefile = "gfx/interface/goals/LEC_qing_5.png"
+		name = "GFX_goal_LEC_republican_connectio"
+		texturefile = "gfx/interface/goals/LEC_republican_connectio.png"
 	}
 	spriteType = {
-		name = "GFX_goal_LEC_qing_6"
-		texturefile = "gfx/interface/goals/LEC_qing_6.png"
+		name = "GFX_goal_LEC_yang_hu_tuo_ying_er_chu"
+		texturefile = "gfx/interface/goals/LEC_yang_hu_tuo_ying_er_chu.png"
 	}
 	spriteType = {
 		name = "GFX_goal_LEC_tu_6"

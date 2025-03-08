@@ -29,7 +29,7 @@ focus_tree = {
 	#################################################
 	focus = {
 		id = CHI_last_bastion_of_chinese_socialism
-		icon = GFX_goal_LEP_kmt_encirclement
+		icon = GFX_focus_HKG_Rev_Com_KMT
 		cost = 8
 
 		x = 5
@@ -13750,7 +13750,7 @@ focus_tree = {
 
 	focus = {
 		id = CHI_intrigues_four_elders			# puppet focus
-		icon = GFX_goal_backstab
+		icon = GFX_goal_CHI_paramilitary_double
 		cost = 8
 
 		relative_position_id = CHI_national_peoples_congress

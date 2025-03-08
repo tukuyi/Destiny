@@ -3843,7 +3843,7 @@ add_namespace = Ostasien
 				autonomy_state = autonomy_puppet
 			}
 			GXC = {
-				load_focus_tree = {#徳属两广
+				load_focus_tree = {#德属两广
 					tree = KR_Guangdong_Merchants
 					keep_completed = yes 
 				}

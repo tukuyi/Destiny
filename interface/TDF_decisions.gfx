@@ -13,6 +13,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/Book.png"
 	}
 	spriteType = {
+		name = "GFX_decision_mo_fang"
+		texturefile = "gfx/interface/decisions/mo_fang.png"
+	}
+	spriteType = {
 		name = "GFX_decision_boot"
 		texturefile = "gfx/interface/decisions/boot.png"
 	}

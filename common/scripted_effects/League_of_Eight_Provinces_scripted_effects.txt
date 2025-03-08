@@ -949,48 +949,6 @@ LEP_NKPOP = {
 	}
 }
 
-LEP_SETUP_AOG = {
-	create_country_leader = {
-		name = "Alexander von Falkenhausen"
-		desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-		picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-		expire = "1.1.1"
-		ideology = free_market_capitalist_subtype
-		traits = {}
-	}
-	hidden_effect = {
-		LEP_remove_tsingtau_spirit = yes
-		add_ideas = LEP_german_government
-		set_variable = { LEPAOG_krupp_angery = 0 }
-		create_country_leader = {
-			name = "Board of Directors"
-			desc = "POLITICS_AOG_BOARD_DESC"
-			picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-			expire = "1.1.1"
-			ideology = corporatocracy_subtype
-			traits = {}
-		}
-		create_country_leader = {
-			name = "Alexander von Falkenhausen"
-			desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-			picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-			expire = "1.1.1"
-			ideology = colonial_govt_subtype
-			traits = {}
-		}
-		set_party_name = {
-			ideology = authoritarian_democrat
-			name = LEP_market_liberal_party
-			long_name = LEP_authoritarian_democrat_party_aog_long
-		}
-		set_party_name = {
-			ideology = paternal_autocrat
-			name = LEP_paternal_autocrat_party_aog
-			long_name = LEP_paternal_autocrat_party_aog_long
-		}
-	}
-}
-
 AOG_setup_puppet_puyi = {
 	if = {
 		limit = { has_completed_focus = LEP_krupp_victory }
@@ -1182,13 +1140,13 @@ AOG_setup_chinesisches_kaiserreich = {
 		}
 		clr_country_flag = AOG_willyii_gang
 		create_country_leader = {
-			name = "Weilian "
+			name = "威廉三世"
 			picture = "gfx/leaders/AOG/Portrait_AOG_Wilhelm_III.png"
 			expire = "1.1.1"
 			ideology = corporatocracy_subtype
 		}
 		create_country_leader = {
-			name = "Weilian "
+			name = "威廉三世"
 			picture = "gfx/leaders/AOG/Portrait_AOG_Wilhelm_III.png"
 			expire = "1.1.1"
 			ideology = oligarchy_subtype
@@ -1198,13 +1156,13 @@ AOG_setup_chinesisches_kaiserreich = {
 		limit = { has_global_flag = Wilhelm_II_Dead }
 		clr_country_flag = AOG_willyii_gang
 		create_country_leader = {
-			name = "Weilian "
+			name = "威廉三世"
 			picture = "gfx/leaders/AOG/Portrait_AOG_Wilhelm_III.png"
 			expire = "1.1.1"
 			ideology = prussian_constitutionalism_subtype
 		}
 		create_country_leader = {
-			name = "Weilian "
+			name = "威廉三世"
 			picture = "gfx/leaders/AOG/Portrait_AOG_Wilhelm_III.png"
 			expire = "1.1.1"
 			ideology = absolute_monarchy_subtype

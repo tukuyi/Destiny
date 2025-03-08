@@ -6084,7 +6084,6 @@ country_event = {
 				}
 			}
 		}
-		set_global_flag = QIE_MON_supported_coup
 		MON = {
 			country_event = {
 				id = qiecoup.32
@@ -7531,6 +7530,7 @@ country_event = {
 				}
 			}
 		}
+		set_global_flag = QIE_MON_supported_coup
 		QIE = {
 			set_country_flag = QIE_ungern_qing
 			country_event = {
@@ -16454,7 +16454,7 @@ country_event = {#使馆城市
 	}
 }
 
-country_event = {#徳属东亚和葡萄牙
+country_event = {#德属东亚和葡萄牙
 	id = qiehunluan.25
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiehunluan.25" }
 	title = qiehunluan.25.t 
@@ -16477,7 +16477,7 @@ country_event = {#徳属东亚和葡萄牙
 	}
 }
 
-country_event = {#徳属东亚和葡萄牙
+country_event = {#德属东亚和葡萄牙
 	id = qiehunluan.26
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiehunluan.25" }
 	title = qiehunluan.25.t 

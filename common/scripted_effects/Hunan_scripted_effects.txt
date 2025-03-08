@@ -41,6 +41,8 @@ HNN_revolution_victory = {#工团上台初始设定
 	}
 
 	CSP_set_leader_effect = yes
+	china_break_puppet_effect = yes
+	set_country_flag = china_is_potential_government
 
 	add_stability = -0.40
 	add_war_support = -0.30

@@ -12859,27 +12859,11 @@ shared_focus = {
 	y = 6
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_xian_xue_zu_jiu
 		focus = GXC_han_shui_bi_you 
 	}
-	prerequisite = {
-		
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-		 
-	}
 
-	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_xin_de_ming"
 		add_ideas = GXC_guang_nan_ren_tong 
@@ -12907,12 +12891,6 @@ shared_focus = {
 	y = 7
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_xin_de_ming
 	}
@@ -12960,9 +12938,6 @@ shared_focus = {
 			ruling_only = yes
 		}
 	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_xu_ri_dong_sheng
 	}
@@ -12992,20 +12967,8 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_rang_ri_li_zhu_dao
-	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
 	}
 	
 	completion_reward = {
@@ -13025,20 +12988,8 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_rang_ri_li_zhu_dao
-	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
 	}
 	
 	completion_reward = {
@@ -13061,20 +13012,11 @@ shared_focus = {
 	y = 5
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_jun_gong_fu_he_ti
 	}
 	prerequisite = {
 		focus = GXC_yu_jun_fang_de_jiao_yi
-	}
-	prerequisite = {
-		 
 	}
 	
 	completion_reward = {
@@ -13100,21 +13042,13 @@ shared_focus = {
 	y = 2
 	cost = 1
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_Reapproachment_with_Yunnan2
 	}
 	prerequisite = {
 		focus = GXC_Chinese_Washington
 	}
-	prerequisite = {
-		 
-	}
+
 	mutually_exclusive = {
 		focus = GXC_lun_de_zi_jin_bu_zai_shou_xian
 		focus = GXC_xu_ri_dong_sheng
@@ -13145,18 +13079,15 @@ shared_focus = {
 			}
 		}
 		add_ideas = free_trade
-		create_field_marshal = {
-			name = "亚历山大·冯·法肯豪森"
-			portrait_path = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen_general.png"
-			traits = {
-				infantry_officer
-				defensive_doctrine
+		if = {
+			limit = { 
+				LEP = {
+					has_character = LEP_AOG_Alexander_von_Falkenhausen
+				}
 			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
+			LEP_AOG_Alexander_von_Falkenhausen = {
+				set_nationality = ROOT
+			}
 		}
 		GEA = {
 			every_owned_state = {
@@ -13192,17 +13123,8 @@ shared_focus = {
 			ruling_only = yes
 		}
 	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_ying_zi_xi_lai
-	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
 	}
 	mutually_exclusive = {
 		focus = GXC_zhuan_yuan_ed_xin_ling_di
@@ -13223,26 +13145,10 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_di_shang_jiang_shen
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-		
-	}
 
-	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_wu_li_bu_qi_zao"
 		add_stability = -0.05
@@ -13281,25 +13187,9 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_di_shang_jiang_shen
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-		
-	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_fang_shou_long_duan"
@@ -13315,26 +13205,13 @@ shared_focus = {
 	y = 5
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_wu_li_bu_qi_zao
 	}
 	prerequisite = {
 		focus = GXC_fang_shou_long_duan 
 	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-		
-	}
 
-	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_cai_ke_tong_shen"
 		swap_ideas = {
@@ -13353,27 +13230,19 @@ shared_focus = {
 	cost = 5
 
 	available = {
-		has_country_leader = {
-			name = "亚历山大·冯·法肯豪森"
-			ruling_only = yes
+		NOT = {
+			has_country_leader = {
+				name = "阿尔弗雷德·克虏伯"
+				ruling_only = yes
+			}
 		}
-	}
-	bypass = {
-		
 	}
 	prerequisite = {
 		focus = GXC_ying_zi_xi_lai
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
 	mutually_exclusive = {
 		focus = GXC_di_shang_jiang_shen
 	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zhuan_yuan_ed_xin_ling_di"
@@ -13389,26 +13258,10 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_zhuan_yuan_ed_xin_ling_di
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-		 
-	}
 
-	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gai_zao_jun_dui"
 		army_experience = 50
@@ -13431,25 +13284,9 @@ shared_focus = {
 	y = 4
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_zhuan_yuan_ed_xin_ling_di
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-	 
-	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_de_shi_jiao_yu_fa"
@@ -13465,25 +13302,12 @@ shared_focus = {
 	y = 5
 	cost = 5
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_de_shi_jiao_yu_fa
 	}
 	prerequisite = {
 		focus = GXC_gai_zao_jun_dui 
 	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-	 
-	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_jun_dui_huan_shi"
@@ -13502,34 +13326,51 @@ shared_focus = {
 	y = 6
 	cost = 7
 
-	available = {
-
-	}
-	bypass = {
-		
-	}
 	prerequisite = {
 		focus = GXC_jun_dui_huan_shi
 		focus = GXC_cai_ke_tong_shen 
 	}
-	prerequisite = {
-		
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-	 
-	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_bi_xia_de_xin_wang_guan"
-		H_in_china = yes
-		H_to_china = yes 
+		if = {
+			limit = {
+				has_idea = GXC_de_yi_zhi_li_nian2
+			}
+			swap_ideas = {
+				remove_idea = GXC_de_yi_zhi_li_nian2
+				add_idea = GXC_de_yi_zhi_li_nian3
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = GXC_ke_nu_bo_de_li_run2
+			}
+			swap_ideas = {
+				remove_idea = GXC_ke_nu_bo_de_li_run2
+				add_idea = GXC_ke_nu_bo_de_li_run3
+			}
+		}
+		else = {
+			custom_effect_tooltip = SHX_Depends_tooltip
+			custom_effect_tooltip = GXC_if_favor_gui_zu_tooltip
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GXC_de_yi_zhi_li_nian2
+					add_idea = GXC_de_yi_zhi_li_nian3
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = GXC_if_favor_shang_tuan_tooltip
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GXC_ke_nu_bo_de_li_run2
+					add_idea = GXC_ke_nu_bo_de_li_run3
+				}
+			}
+		}
 	}
 }
-
 
 shared_focus = {
 	id = GXC_zhen_zhi_de_ya
@@ -13540,39 +13381,43 @@ shared_focus = {
 	cost = 7
 
 	available = {
-		QIE = {
-			exists = no
+		#北京
+		608 = {
+			is_owned_by = GXC
 		}
-	}
-	bypass = {
-		
+		#南京
+		613 = {
+			is_owned_by = GXC
+		}	
 	}
 	prerequisite = {
 		focus = GXC_bi_xia_de_xin_wang_guan
 	}
-	prerequisite = {
-		 
-	}
-	prerequisite = {
-		 
-	}
-	mutually_exclusive = {
-	 
-	}
-
 	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_zhen_zhi_de_ya"
 		add_research_slot = 1
+		custom_effect_tooltip = tooltip_white_line
 		add_ideas = GXC_xin_zhi_xu
-		set_country_flag = has_united_china
-		set_global_flag = china_united
-		GER = {
-			add_to_faction = ROOT
+		custom_effect_tooltip = tooltip_white_line
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GXC_break_time
+				}
+			}
+			GER = {
+				add_to_faction = ROOT
+			}
 		}
+		custom_effect_tooltip = tooltip_white_line
 		create_wargoal = {
 			type = annex_everything
 			target = JAP
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = KOR
 		}
 		create_wargoal = {
 			type = annex_everything
@@ -13606,9 +13451,12 @@ shared_focus = {
 	y = 11
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_shang_tuan_jun_shi_gai_ge"
@@ -13638,9 +13486,12 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
-
 
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_chuan_jian_zhi_ye_xue_yuan"
@@ -13673,7 +13524,11 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13698,7 +13553,11 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13743,7 +13602,11 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13765,7 +13628,11 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13787,8 +13654,13 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
+
 	available = {
 		has_country_flag = GXC_si_ren
 	}
@@ -13818,7 +13690,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13859,7 +13735,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13887,7 +13767,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13918,7 +13802,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13951,7 +13839,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -13979,7 +13871,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14004,16 +13900,21 @@ shared_focus = {
 	cost = 5
 	x = 3
 	y = 1
+	
+	ai_will_do = {
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
+	}
+
+	available = {
+		has_country_flag = GXC_shang_hui
+	}
 
 	prerequisite = {
 		focus = GXC_shang_tuan_jun_shi_gai_ge
-	}
-	
-	ai_will_do = {
-		factor = 0.25
-	}
-	available = {
-		has_country_flag = GXC_shang_hui
 	}
 
 	completion_reward = {
@@ -14035,13 +13936,17 @@ shared_focus = {
 	cost = 5
 	x = -1
 	y = 1
+	
+	ai_will_do = {
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
+	}
 
 	prerequisite = {
 		focus = GXC_shang_hui_ji_yi_qie
-	}
-	
-	ai_will_do = {
-		factor = 0.25
 	}
 
 	completion_reward = {
@@ -14052,8 +13957,8 @@ shared_focus = {
 			if = {
 				limit = { has_template = "Shang Tuan Minbing" }
 				delete_unit_template_and_units = { division_template = "Shang Tuan Minbing" disband = yes } #no cheating
-				}
 			}
+		}
 		division_template = {
 			name = "Shang Tuan Minbing"
 			division_names_group = "GXC_INF_01"
@@ -14104,7 +14009,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14132,7 +14041,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14161,9 +14074,13 @@ shared_focus = {
 	prerequisite = {
 		focus = GXC_zai_shao_ye_shi
 	}
-	
+
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14188,7 +14105,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14213,7 +14134,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14247,7 +14172,11 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
 
 	completion_reward = {
@@ -14274,9 +14203,13 @@ shared_focus = {
 	}
 	
 	ai_will_do = {
-		factor = 0.25
+		base = 40
+		modifier = {
+			factor = 2
+			has_war = yes
+		}
 	}
-
+	
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus GXC_gong_wu_bu_ke"
 		add_political_power = 100

@@ -1143,7 +1143,7 @@ ideas = {
 				eco_ambitious_engineer
 			}
 		}
-		HNN_hou_de_bang_eco = {#侯徳榜
+		HNN_hou_de_bang_eco = {#侯德榜
 			allowed = { original_tag = HNN }
 			picture = HNN_hou_de_bang_eco
 			cost = 100

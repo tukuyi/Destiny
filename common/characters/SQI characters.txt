@@ -32,8 +32,8 @@ characters = {
 			traits = { 
 				politically_connected 
 				cavalry_officer 
-				trait_reckless 
-				substance_abuser 
+				trait_reckless
+				substance_abuser
 				offensive_doctrine 
 				inspirational_leader 
 			}

@@ -198,11 +198,12 @@ country_event = { id = lep.1 days = 1 }
 
 recruit_character = LEP_Qian_Zhuoren
 recruit_character = LEP_sun_chuanfang
+recruit_character = LEP_AOG_Board
 
-create_country_leader = {
-	name = "Board of Directors"
-	picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-	expire = "1.1.1"
+LEP_AOG_Board = { set_variable = { china_alignment = token:germangangs } }
+
+promote_character = {
+	character = LEP_AOG_Board
 	ideology = free_market_capitalist_subtype
 }
 promote_character = {
@@ -220,6 +221,11 @@ create_country_leader = {
 	ideology = national_populist_subtype
 }
 
+recruit_character = LEP_AOG_Alexander_von_Falkenhausen
+LEP_AOG_Alexander_von_Falkenhausen = { 
+	set_variable = { china_alignment = token:germangangs } 
+	retire = yes
+}
 
 recruit_character = LEP_qi_xieyuan
 recruit_character = LEP_zheng_junyan

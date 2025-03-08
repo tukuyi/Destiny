@@ -12,6 +12,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/traits/trait_SQI_yue_dui.png"
 	}
 	spriteType = {
+		name = "GFX_trait_GXC_tie_xue"
+		texturefile = "gfx/interface/traits/trait_tie_xue.png"
+	}
+	spriteType = {
+		name = "GFX_trait_cruiser"
+		texturefile = "gfx/interface/traits/trait_cruiser.png"
+	}
+	spriteType = {
+		name = "GFX_trait_Battleship"
+		texturefile = "gfx/interface/traits/trait_Battleship.png"
+	}
+	spriteType = {
+		name = "GFX_trait_hang_mu"
+		texturefile = "gfx/interface/traits/trait_hang_mu.png"
+	}
+	spriteType = {
+		name = "GFX_trait_tun_shi"
+		texturefile = "gfx/interface/traits/trait_tun_shi.png"
+	}
+	spriteType = {
 		name = "GFX_trait_rising_star"
 		texturefile = "gfx/interface/traits/trait_gifted_officer.png"
 		legacy_lazy_load = no

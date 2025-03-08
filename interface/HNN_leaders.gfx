@@ -273,6 +273,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_ye_ting.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_ye_ting_civ"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_ye_ting_civ.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_xu_xiang_qian"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_xu_xiang_qian.png"
 	}
@@ -643,12 +647,12 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_ye_chao_shan.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_Zhang_Xiaolin"
-		texturefile = "gfx/leaders/LEC/Portrait_Zhang_Xiaolin.png"
+		name = "GFX_Portrait_LEC_Zhang_Xiaolin"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhang_Xiaolin.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_LEC_Big_Ears"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Big_Ears.png"
+		name = "GFX_Portrait_LEC_Du_Yuesheng"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Du_Yuesheng.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_Reginald_Tyrwhitt"
@@ -772,8 +776,60 @@ spriteTypes = {
 	}
 ###广东
 	spriteType = {
+		name = "GFX_Portrait_TIX_Ai_ji_er"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Ai_ji_er.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_xing_deng_bao"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_xing_deng_bao.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Alvitr"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Alvitr.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_fei_te_lie"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_fei_te_lie.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_hu_teng"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_hu_teng.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Peter_Strasser"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Peter_Strasser.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Duisburg"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Duisburg.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Bismarck"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Bismarck.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_fei_te_lie_leader"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_fei_te_lie_leader.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Bismarck_leader"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Bismarck_leader.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Prinz_Adalbert"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Prinz_Adalbert.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Prinz_Eugen"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Prinz_Eugen.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_GXC_Hu_Han_Ming"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_Hu_Han_Ming.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_chen_mingshu_kuomintang"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_mingshu_kuomintang.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_Jiang_jing_guo_civ"
@@ -824,8 +880,24 @@ spriteTypes = {
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_Chen_Hao_Ren_army.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_GEA_Alfried_Krupp"
-		texturefile = "gfx/leaders/GXC/Portrait_GEA_Alfried_Krupp.png"
+		name = "GFX_Portrait_GXC_Alfried_Krupp"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_Alfried_Krupp.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_wilhelm_iv_elected"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_wilhelm_iv_elected.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_wilhelm_iv"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_wilhelm_iv.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_albrecht_von_urach"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_albrecht_von_urach.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_albrecht_von_urach_first"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_albrecht_von_urach_first.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_xu_chongzhi"
@@ -1127,6 +1199,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_SQI_Jin_Yune"
 		texturefile = "gfx/leaders/SQI/Portrait_SQI_Jin_Yune.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SQI_Jin_Yune_civ"
+		texturefile = "gfx/leaders/SQI/Portrait_SQI_Jin_Yune_civ.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_SQI_Jin_Yun_peng"

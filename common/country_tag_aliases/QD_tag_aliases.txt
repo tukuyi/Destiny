@@ -17,3 +17,6 @@ LKT = {#国左
 RKT = {#国右
 	global_event_target = RKT_leader
 }
+GRG = {#德国傀儡
+	global_event_target = GRG_leader
+}

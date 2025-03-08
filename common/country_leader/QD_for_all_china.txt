@@ -26,6 +26,9 @@ leader_traits = {
 	CHN_right_kuomintang_aligned = {
 		random = no
 	}
+	CHN_germangangs_aligned = {
+		random = no
+	}
 	CHN_southern_republican_aligned = {
 		random = no
 	}

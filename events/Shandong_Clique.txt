@@ -4282,7 +4282,7 @@ country_event = {#《民国日报》
 	}
 }
 
-country_event = {#徳属东亚海军殴打中国警察
+country_event = {#德属东亚海军殴打中国警察
 	id = sqiwr.39
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.39" }
 	title = sqiwr.39.t
@@ -4330,7 +4330,7 @@ country_event = {#鲍里斯黯然靠后-清
 	}
 }
 
-country_event = {#鲍里斯黯然靠后-徳
+country_event = {#鲍里斯黯然靠后-德
 	id = sqiwr.41
 	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.41" }
 	title = sqiwr.41.t
@@ -5401,6 +5401,13 @@ country_event = {#靳云鹗的抉择
 		add_popularity = {
 			ideology = paternal_autocrat
 			popularity = 0.10
+		}
+		SQI_jin_yune = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_SQI_Jin_Yune_civ
+				}
+			}
 		}
 	}
 

@@ -8,7 +8,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 10  y = 1500 }
+	continuous_focus_position = { x = -300  y = 1500 }
 
 	focus = {
 		id = LEC_new_status_quo
@@ -915,7 +915,7 @@ focus_tree = {
 	}
 	focus = {
 		id = LEC_deal_with_zhang
-		icon = GFX_goal_LEC_zhang
+		icon = GFX_goal_LEC_zhang_question
 		cost = 7
 		prerequisite = {
 			focus = LEC_weapons_smuggling
@@ -1019,7 +1019,7 @@ focus_tree = {
 		available = { controls_state = 743 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_greater_shanghai_plan"
-			add_ideas = { LEC_shanghai_plan }
+			add_ideas = { LEC_struggle_for_shanghai_plan }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 80 }
@@ -2268,7 +2268,7 @@ focus_tree = {
 		dynamic = yes
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_the_shanghai_yuan"
-			add_ideas = { LEC_shanghai_yuan }
+			add_ideas = { LEC_struggle_for_shanghai_yuan }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY  FOCUS_FILTER_STABILITY }
 		ai_will_do = { factor = 75 }
@@ -2537,7 +2537,7 @@ focus_tree = {
 		icon = GFX_LEC_49ers
 		cost = 5
 		prerequisite = { focus = LEC_settle_enlistment_debate }
-		available = { has_completed_focus = LEC_triad1 }
+		available = { has_completed_focus = LEC_night_of_monkeys_head }
 		relative_position_id = LEC_settle_enlistment_debate
 		x = 3
 		y = 1
@@ -2915,9 +2915,10 @@ focus_tree = {
 	focus = {
 		id = LEC_stabilize_shanghai
 		icon = GFX_goal_generic_stable_government
-		cost = 2
-		x = 10
-		y = 10
+		cost = 6
+		x = 37
+		y = 8
+
 		available = {
 			NOT = {
 				has_government = social_democrat
@@ -2937,6 +2938,7 @@ focus_tree = {
 				}
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_stabilize_shanghai"
 			increase_ruling_party_popularity_by_5 = yes
@@ -2958,7 +2960,7 @@ focus_tree = {
 		mutually_exclusive = { focus = LEC_under_german_protection }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_under_japanese_rule"
-			add_ideas = { LEC_japanese_shanghai }
+			add_ideas = LEC_japanese_shanghai 
 			add_political_power = 50
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -3167,38 +3169,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LEC_the_transfer_of_power
-		icon = GFX_goal_ELS_Presidential_Restoration_1
-		cost = 10
-		relative_position_id = LEC_stabilize_shanghai
-		x = 4
-		y = 5
-		prerequisite = { focus = LEC_abolish_the_volunteer_force }
-		available = { always = no }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_the_transfer_of_power"
-			custom_effect_tooltip = "This focus currently has no effect, disregard"
-		}
-		ai_will_do = { factor = 100 }
-	}
-
-	focus = {
-		id = LEC_support_chinese_allies
-		icon = GFX_goal_china_deal
-		cost = 10
-		relative_position_id = LEC_stabilize_shanghai
-		x = 4
-		y = 6
-		prerequisite = { focus = LEC_the_transfer_of_power }
-		available = { always = no }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_support_chinese_allies"
-			custom_effect_tooltip = "This focus currently has no effect, disregard"
-		}
-		ai_will_do = { factor = 100 }
-	}
-
-	focus = {
 		id = LEC_restore_chinese_government
 		icon = GFX_UKR_Militarization_Bureaucracy
 		cost = 10
@@ -3350,22 +3320,6 @@ focus_tree = {
 		ai_will_do = { factor = 75 }
 	}
 
-	focus = {
-		id = LEC_choose_a_side
-		icon = GFX_focus_rus_china
-		cost = 10
-		relative_position_id = LEC_stabilize_shanghai
-		x = 2
-		y = 7
-		prerequisite = { focus = LEC_illicit_industries }
-		prerequisite = { focus = LEC_support_chinese_allies }
-		available = { always = no }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_choose_a_side"
-			custom_effect_tooltip = "This focus currently has no effect, disregard"
-		}
-		ai_will_do = { factor = 100 }
-	}
 
 	focus = {
 		id = LEC_maintain_western_rule
@@ -3541,56 +3495,57 @@ focus_tree = {
 	#triads focuses
 	
 	focus = {
-		id = LEC_shanghai
-		text = LEC_shanghai
+		id = LEC_struggle_for_shanghai
 		icon = GFX_goal_LEC_big_trouble
 		cost = 2
-		x = 52
-		y = 0
+		x = 13
+		y = 7
+
+		ai_will_do = { base = 100 }
+
 		available = {
-			has_country_leader = {
-				ruling_only = yes
-				name = "Leaderless Mandate"
-			}
 			has_country_flag = shanghai_gang_victory
 		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_shanghai"
-			add_ideas = LEC_Triad_Idea
-			add_political_power = 150
+		bypass = {
+			has_country_flag = shanghai_gang_victory
 		}
-		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_struggle_for_shanghai"
+
+		}
 	}
 	
 	focus = {
-		id = LEC_triad1
-		text = LEC_triad1
+		id = LEC_night_of_monkeys_head
+		text = LEC_night_of_monkeys_head
 		icon = GFX_LEC_monekys_head
-		cost = 2
-		prerequisite = { focus = LEC_shanghai }
-		relative_position_id = LEC_shanghai
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 3
 		x = 0
 		y = 1
-		ai_will_do = { factor = 100 }
+
+		ai_will_do = { base = 100 }
+
+		prerequisite = { focus = LEC_struggle_for_shanghai }
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_triad1"
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_night_of_monkeys_head"
+			add_political_power = 150
+			add_manpower = -5000
+			custom_effect_tooltip = tooltip_white_line
 			add_popularity = {
 				ideology = paternal_autocrat
-				popularity = 0.10
+				popularity = 0.20
 			}
 			hidden_effect = {
-				add_manpower = -5000
-				country_event = {
-					days = 7
-					id = legcities.45
+				add_popularity = {
+					ideology = market_liberal
+					popularity = -0.20
 				}
 				country_event = {
-					days = 14
-					id = legcities.59
-				}
-				country_event = {
-					days = 20
 					id = legcities.202
+					days = 20
 				}
 				remove_ideas = LEC_black_monday
 				remove_ideas = LEC_black_monday2
@@ -3605,132 +3560,426 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = LEC_triad2
-		text = LEC_triad2
+		id = LEC_green_gang_syndicate_split
 		icon = GFX_goal_LEC_monkey
-		cost = 1.00
-		prerequisite = { focus = LEC_triad1 }
-		relative_position_id = LEC_shanghai
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 2.00
 		x = 0
 		y = 2
+
+		prerequisite = { focus = LEC_night_of_monkeys_head }
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_triad2"
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.30
 			}
+			custom_effect_tooltip = tooltip_white_line
+			country_event = legcities.104
 		}
 	}
 	
 	focus = {
-		id = LEC_qing1
-		text = LEC_qing1
-		icon = GFX_goal_LEC_zhang_xiao_lin
-		x = -6
+		id = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		icon = GFX_goal_LEC_zhang
+		relative_position_id = LEC_struggle_for_shanghai
+		x = 4
 		y = 3
 		cost = 2
-		prerequisite = { focus = LEC_triad2 }
-		relative_position_id = LEC_shanghai
-		mutually_exclusive = {
-			focus = LEC_tu1
-			focus = LEC_jinrong1
-			focus = LEC_wang1
+
+		available = {
+			always = no
 		}
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_DU
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_HUANG
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_WANG
-					}
-				}
-			}
-		}
+
+		prerequisite = { focus = LEC_green_gang_syndicate_split }
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing1"
-			add_political_power = 10
-			country_event = legcities.47
-			hidden_effect = {
-				country_event = {
-					days = 100
-					id = legcities.208
-				}
-				country_event = {
-					days = 50
-					id = legcities.209
-				}
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_arch_collaborator_zhang_xiaolin_zones_in"
+
 		}
 	}
 	
 	focus = {
-		id = LEC_qing_2
-		text = LEC_qing2
-		icon = GFX_GEA_open_labor_camps
+		id = LEC_employ_tmkkd
+		icon = GFX_goal_LEC_employ_tmkkd
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
 		cost = 5.00
-		prerequisite = { focus = LEC_qing1 }
-		relative_position_id = LEC_shanghai
-		x = -7
-		y = 4
+		x = -1
+		y = 1
+
+		prerequisite = { focus = LEC_arch_collaborator_zhang_xiaolin_zones_in }
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing_2"
-			add_ideas = LEC_Opium_Idea
-			add_political_power = 50
-			set_country_flag = LEC_Opium_Flag
-			set_variable = {
-				var = LEC_Opium_Profit
-				value = 0
-			}
-			set_variable = {
-				var = LEC_Opium_Stock
-				value = 0
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
-					state_population > 250000
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_employ_tmkkd"
+			add_ideas = LEC_employ_TMKKD_idea
+			hidden_effect = {
+				remove_all_ministers = yes
+				remove_ideas_with_trait = underworld_boss
+				add_ideas = {
+					LEC_Huang_Jinrong_hog_pau
+					LEC_Masahiko_Amakasu_for_npo
+					LEC_Zhang_Xiaolin_boss_sli
+					LEC_Huang_Jinrong_sec_pau
 				}
+			}
+			add_ideas = LEC_Masahiko_Amakasu_for_npo
+			NSW = {
+				every_unit_leader = {
+					limit = {
+						has_trait = LEC_japanese_commander
+					}
+					set_nationality = LEC
+				}
+			}	
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	focus = {
+		id = LEC_talks_anhui_communications_clique
+		icon = GFX_goal_MON_Communications_Clique
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		cost = 5.00
+		x = 1
+		y = 1
+
+		prerequisite = { focus = LEC_arch_collaborator_zhang_xiaolin_zones_in }
+
+		available = {
+			has_completed_focus = LEC_employ_tmkkd
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_talks_anhui_communications_clique"
+			random_owned_state = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 250
+				producer = JAP
+			}
+			custom_effect_tooltip = tooltip_white_line
+			FNG = { add_opinion_modifier = { target = LEC modifier = medium_increase } }
+			add_popularity = { ideology = market_liberal popularity = 0.06 }
+			add_marlib_to_coalition = yes
+			hidden_effect = {
+				set_party_name = {
+					ideology = market_liberal
+					long_name = LEC_communications_clique_party_long
+					name = LEC_communications_clique_party
+				}
+			}	
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	focus = {
+		id = LEC_notes_pudongs_great_way
+		icon = GFX_goal_LEC_cooperate_great_way
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		cost = 5.00
+		x = 0
+		y = 2
+
+		available_if_capitulated = yes
+
+		prerequisite = { focus = LEC_employ_tmkkd }
+		prerequisite = { focus = LEC_talks_anhui_communications_clique }
+
+		ai_will_do = {
+			base = 1
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			add_political_power = 50
+			add_manpower = 2500
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_Hiraya_Amane_boss_npo
+			add_ideas = LEC_Su_Xiwen_sec_npo
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				remove_all_ministers = yes
+				remove_ideas_with_trait = underworld_boss
+				add_ideas = {
+					LEC_Huang_Jinrong_hog_pau
+					LEC_Masahiko_Amakasu_for_npo
+					LEC_Hiraya_Amane_boss_npo
+					LEC_Su_Xiwen_sec_npo
+				}
+			}
+			add_natpop_to_coalition = yes
+		}
+	}
+
+	focus = {
+		id = LEC_settlements_subsidies_sakura
+		icon = GFX_goal_LEC_subsidies_settlements_sakura
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		cost = 5.00
+		x = 1
+		y = 3
+
+		prerequisite = { focus = LEC_notes_pudongs_great_way }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_settlements_subsidies_sakura"
+			random_owned_state = {
+				add_manpower = 2500
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
+			}
+			random_owned_state = {
+				add_manpower = 2500
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				increase_state_category_by_one_level = yes
 			}
 		}
 		ai_will_do = { factor = 100 }
 	}
 
 	focus = {
-		id = LEC_qing3
-		text = LEC_qing3
-		icon = GFX_LEC_Afghan_Opium
+		id = LEC_lucratively_lease_jiangnan_shipyard
+		icon = GFX_goal_LEC_lease_shipyard
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
 		cost = 5.00
-		prerequisite = { focus = LEC_qing1 }
-		relative_position_id = LEC_shanghai
-		x = -5
+		x = -1
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_notes_pudongs_great_way
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_lucratively_lease_jiangnan_shipyard"
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 50
+				producer = JAP
+			}
+			custom_effect_tooltip = tooltip_white_line
+			743 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			JAP = { add_offsite_building = { type = dockyard level = 2 } }
+			hidden_effect = {
+				country_event = {
+					id = legcities.145
+					days = 21
+				}
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+		}
+	}
+
+	focus = {
+		id = LEC_toiling_towards_model_prefecture
+		icon = GFX_goal_LEC_model_prefecture
+		relative_position_id = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		cost = 5.00
+		x = 0
 		y = 4
 
+		prerequisite = { 
+			focus = LEC_lucratively_lease_jiangnan_shipyard 
+		}
+		prerequisite = { 
+			focus = LEC_settlements_subsidies_sakura
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_toiling_towards_model_prefecture"
+			add_ideas = LEC_toiling_towards_model_prefecture_idea
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					LEC = { is_in_faction = no }
+				}
+				JAP = {
+					add_to_faction = LEC
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = LEC_yang_hu_tuo_ying_er_chu
+		icon = GFX_goal_LEC_yang_hu_tuo_ying_er_chu
+		relative_position_id = LEC_struggle_for_shanghai
+		x = 8
+		y = 3
+		cost = 2
+
 		available = {
-			has_completed_focus = LEC_qing_2
+			always = no
+		}
+
+		prerequisite = { focus = LEC_green_gang_syndicate_split }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_yang_hu_tuo_ying_er_chu"
+
+		}
+	}
+
+	focus = {
+		id = LEC_criminality_supported_three_principles
+		icon = GFX_goal_LEC_criminality_supported_by_three_principles
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
+		cost = 5.00
+		x = -1
+		y = 1
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 10
+		}
+
+		prerequisite = { focus = LEC_yang_hu_tuo_ying_er_chu }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_criminality_supported_three_principles"
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_vice_politics
+		}
+	}
+
+	focus = {
+		id = LEC_republican_connection
+		icon = GFX_goal_LEC_republican_connectio
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
+		cost = 5.00
+		x = 1
+		y = 1
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 10
+		}
+
+		prerequisite = { focus = LEC_yang_hu_tuo_ying_er_chu }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_republican_connection"
+			add_political_power = 75
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_TV_Soong_for_sde
+			add_ideas =	LEC_Yuan_Kewen_boss_sli
+			hidden_effect = {
+				remove_all_ministers = yes
+				remove_ideas_with_trait = underworld_boss
+				add_ideas = {
+					LEC_Tu_Yueh_sen_hog_pau
+					LEC_TV_Soong_for_sde
+					LEC_Yuan_Kewen_boss_sli
+					LEC_Huang_Jinrong_sec_pau
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_popularity = { ideology = social_democrat popularity = 0.06 }
+			add_popularity = { ideology = social_liberal popularity = 0.06 }
+			add_popularity = { ideology = social_conservative popularity = 0.06 }
+			add_popularity = { ideology = market_liberal popularity = 0.06 }
+			custom_effect_tooltip = tooltip_white_line
+			add_socdem_to_coalition = yes
+			add_soclib_to_coalition = yes
+			add_soccon_to_coalition = yes
+			add_marlib_to_coalition = yes
+		}
+	}
+
+	focus = {
+		id = LEC_steal_mantle_sun_yat_sen
+		icon = GFX_goal_LEC_steal_the_mantle_of_sun_yat_sen
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
+		cost = 5.00
+		x = 0
+		y = 2
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_republican_connection }
+		prerequisite = { focus = LEC_criminality_supported_three_principles }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			swap_ideas = {
+				remove_idea = LEC_vice_politics
+				add_idea = LEC_vice_politics_ideas
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_reactionaries_to_work
+		icon = GFX_goal_FOP_Put_Reaccionarios_Work
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
+		cost = 5.00
+		x = -1
+		y = 3
+
+		ai_will_do = {
+			base = 40
+		}
+		prerequisite = {
+			focus = LEC_steal_mantle_sun_yat_sen
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing3"
-			add_political_power = 75
-			random_owned_state = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_reactionaries_to_work"
+			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -3738,104 +3987,65 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			custom_effect_tooltip = LEC_Opium_Market_tt
-			set_country_flag = LEC_Afghan_Opium
+			add_ideas = FOP_working_reactionaries
 		}
-		ai_will_do = { factor = 100 }
 	}
+
 	focus = {
-		id = LEC_qing4
-		text = LEC_qing4
-		icon = GFX_LEC_Bengali_Opium
+		id = LEC_revolutionary_ideas_xinhai_made_pious
+		icon = GFX_goal_LEC_ideas_of_xinhai_made_pious
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
 		cost = 5.00
-		prerequisite = { focus = LEC_qing3 }
-		relative_position_id = LEC_shanghai
-		x = -5
-		y = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing4"
-			add_political_power = 100
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = LEC_Opium_Market_tt
-			set_country_flag = LEC_Bengal_Opium
-		}
-		ai_will_do = { factor = 100 }
-	}
-	
-	focus = {
-		id = LEC_tu1
-		text = LEC_tu1
-		icon = GFX_goal_LEC_du
-		cost = 2
-		prerequisite = { focus = LEC_triad2 }
-		relative_position_id = LEC_shanghai
-		x = -2
+		x = 1
 		y = 3
-		mutually_exclusive = {
-			focus = LEC_qing1
-			focus = LEC_jinrong1
-			focus = LEC_wang1
-		}
+
 		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_ZHANG
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_HUANG
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_WANG
-					}
-				}
-			}
+			base = 40
 		}
+		prerequisite = {
+			focus = LEC_steal_mantle_sun_yat_sen
+		}
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu1"
-			add_political_power = 10
-			country_event = legcities.49
-			hidden_effect = {
-				country_event = {
-					days = 5
-					id = legcities.203
-				}
-				country_event = {
-					days = 100
-					id = legcities.208
-				}
-				country_event = {
-					days = 50
-					id = legcities.209
-				}
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_revolutionary_ideas_xinhai_made_pious"
+			add_political_power = 75
+			add_stability = 0.03
+			add_war_support = 0.03
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_revolutionary_ideas_xinhai_made_pious_idea
 		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
-	
+
 	focus = {
-		id = LEC_tu2
-		text = LEC_tu2
-		icon = GFX_goal_LEC_arms_dealing
+		id = LEC_take_torch_anti_qing_sentiment
+		icon = GFX_goal_LEC_anti_concessionist_torch
+		relative_position_id = LEC_yang_hu_tuo_ying_er_chu
 		cost = 5.00
-		prerequisite = { focus = LEC_tu1 }
-		relative_position_id = LEC_shanghai
-		x = -3
+		x = 0
 		y = 4
+
+		ai_will_do = {
+			base = 40
+		}
+
+		prerequisite = {
+			focus = LEC_reactionaries_to_work
+		}
+		prerequisite = {
+			focus = LEC_revolutionary_ideas_xinhai_made_pious
+		}
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu2"
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_forged_anew"
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -3843,35 +4053,510 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			set_country_flag = LEC_Arms_flag_2
-			set_variable = {
-				var = LEC_Guns
-				value = 0
-			}
-			set_variable = {
-				var = LEC_Guns_Profits
-				value = 0
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 1500
-				producer = GEA
+			add_ideas = LEC_take_torch_anti_qing_sentiment_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = LEC_big_ears_du_yuesheng_wins_big
+		icon = GFX_goal_LEC_du
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 2
+		x = 0
+		y = 3
+
+		prerequisite = { focus = LEC_green_gang_syndicate_split }
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_big_ears_du_yuesheng_wins_big"
+
+		}
+	}
+
+	
+	focus = {
+		id = LEC_gangsters_governors
+		icon = GFX_goal_LEC_gangsters_to_governors
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
+		cost = 5.00
+		x = -1
+		y = 1
+
+		prerequisite = { focus = LEC_big_ears_du_yuesheng_wins_big }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_gangsters_governors"
+			add_command_power = 50
+			add_stability = 0.06
+			add_war_support = 0.06
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_gangsters_governors_idea
+			hidden_effect = {
+				country_event = {
+					id = legcities.152
+					days = 14
+				}
 			}
 		}
 		ai_will_do = { factor = 100 }
 	}
 	focus = {
-		id = LEC_tu3
-		text = LEC_tu3
-		icon = GFX_goal_LEC_protection_rackets
+		id = LEC_anti_concessionist_facade
+		icon = GFX_goal_LEC_anti_concessionist_facade
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
 		cost = 5.00
-		prerequisite = { focus = LEC_tu1 }
-		relative_position_id = LEC_shanghai
-		x = -1
-		y = 4
+		x = 1
+		y = 1
+
+		prerequisite = { focus = LEC_big_ears_du_yuesheng_wins_big }
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu3"
-			add_ideas = LEC_Rackets_Idea
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_anti_concessionist_facade"
+			add_manpower = 3500
+			add_war_support = 0.10
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1500
+				producer = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_anti_concessionist_facade_idea
+		}
+		ai_will_do = { factor = 100 }
+	}
+	focus = {
+		id = LEC_shang_hai_huang_di
+		icon = GFX_goal_LEC_tu_6
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
+		cost = 5.00
+		x = 0
+		y = 2
+
+		prerequisite = { focus = LEC_gangsters_governors }
+		prerequisite = { focus = LEC_anti_concessionist_facade }
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_shang_hai_huang_di"
+			add_country_leader_trait = LEC_wu_mian_zhi_wang
+			add_ideas = LEC_du_mian_zhi_wang
+		}
+	}
+	focus = {
+		id = LEC_breathing_life_business_sector
+		icon = GFX_goal_LEC_breathe_life_financial_sector
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
+		cost = 5.00
+		x = 1
+		y = 3
+
+		prerequisite = { focus = LEC_shang_hai_huang_di }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_breathing_life_business_sector"
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = industry
+				bonus = 0.50
+				uses = 2
+				category = industry
+			}
+			hidden_effect = {
+				country_event = {
+					id = legcities.126
+					days = 14
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	focus = {
+		id = LEC_police_forces_in_grip
+		icon = GFX_goal_TEX_Squeeze_Police_Force
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
+		cost = 5.00
+		x = -1
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_shang_hai_huang_di 
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_police_forces_in_grip"
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.20
+			}
+			add_ideas = LEC_fan_ri_xuan_chuan
+		}
+	}
+
+	focus = {
+		id = LEC_business_empire
+		icon = GFX_goal_TEX_Business_Empire_Our_Own
+		relative_position_id = LEC_big_ears_du_yuesheng_wins_big
+		cost = 5.00
+		x = 0
+		y = 4
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_police_forces_in_grip }
+		prerequisite = { focus = LEC_breathing_life_business_sector }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_business_empire"
+			swap_ideas = {
+				remove_idea = LEC_gangsters_governors_idea
+				add_idea = LEC_steal_mantle_sun_yat_sen_idea
+			}
+		}
+	}
+	
+	focus = {
+		id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		text = LEC_pockmarked_huang_jinrong_pulls_ahead
+		icon = GFX_goal_LEC_huang
+		relative_position_id = LEC_struggle_for_shanghai
+		x = -4
+		y = 3
+		cost = 2
+
+		prerequisite = { focus = LEC_green_gang_syndicate_split }
+
+		available = {
+			always = no
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_pockmarked_huang_jinrong_pulls_ahead"
+
+		}
+	}
+	focus = {
+		id = LEC_cordiality_through_unfettered_capital
+		icon = GFX_goal_LEC_cordiality_unfettered_capital
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = -1
+		y = 1
+
+		prerequisite = { focus = LEC_pockmarked_huang_jinrong_pulls_ahead }
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_cordiality_through_unfettered_capital"
+			add_popularity = { ideology = social_liberal popularity = 0.06 }
+			add_popularity = { ideology = market_liberal popularity = 0.06 }
+			add_soclib_to_coalition = yes
+			add_marlib_to_coalition = yes
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_cordiality_through_unfettered_capital_idea
+		}
+	}
+	focus = {
+		id = LEC_coopt_cops_lins_youth_gang
+		icon = GFX_goal_LEC_co_opt_cops_and_lin_youth_gangs
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = 1
+		y = 1
+
+		prerequisite = { focus = LEC_pockmarked_huang_jinrong_pulls_ahead }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_coopt_cops_lins_youth_gang"
+			add_manpower = 2000
+			add_stability = 0.075
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 900
+				producer = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				remove_ideas_with_trait = foreign_minister
+			}
+			add_ideas = LEC_Lin_Guisheng_for_pau
+			add_ideas = LEC_coopt_cops_lins_youth_gang_idea
+			custom_effect_tooltip = tooltip_white_line
+			NSW = {
+				every_unit_leader = {
+					limit = {
+						has_id = 1355
+					}
+					set_nationality = LEC
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = legcities.125
+					days = 7
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	focus = {
+		id = LEC_municipal_council_puppet_strings
+		icon = GFX_goal_LEC_puppet_municipal_council
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = 0
+		y = 2
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 10
+		}
+
+		prerequisite = { focus = LEC_cordiality_through_unfettered_capital }
+		prerequisite = { focus = LEC_coopt_cops_lins_youth_gang }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			add_political_power = 100
+			add_command_power = 50
+			custom_effect_tooltip = tooltip_white_line
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.1
+			}
+			add_authdem_to_coalition = yes
+			hidden_effect = {
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = LEC_authoritarian_democrat_party_long
+					name = LEC_authoritarian_democrat_party
+				}
+			}
+		}
+	}
+	focus = {
+		id = LEC_crooked_home_global_finance
+		icon = GFX_goal_LEC_crooked_center_global_finance
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = 1
+		y = 3
+
+		prerequisite = { focus = LEC_municipal_council_puppet_strings }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_crooked_home_global_finance"
+			swap_ideas = {
+				remove_idea = LEC_cordiality_through_unfettered_capital_idea
+				add_idea = LEC_crooked_home_global_finance_idea
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	focus = {
+		id = LEC_open_door_policy_suit_our_needs
+		icon = GFX_goal_LEC_open_door_to_suit_our_needs
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = -1
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_municipal_council_puppet_strings 
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_open_door_policy_suit_our_needs"
+			add_political_power = 50
+			743 = {
+				add_extra_state_shared_building_slots = 1
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.05
+						state_production_speed_buildings_factor = 0.05
+					}
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.03
+						state_production_speed_buildings_factor = 0.03
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.03
+						state_production_speed_buildings_factor = 0.03
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_wang_shang_hai_luo_bing_xun
+		icon = GFX_goal_LEC_wang_1
+		relative_position_id = LEC_struggle_for_shanghai
+		x = -8
+		y = 3
+		cost = 2
+
+		prerequisite = { focus = LEC_green_gang_syndicate_split }
+		
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang_shang_hai_luo_bing_xun"
+
+		}
+	}
+
+	focus = {
+		id = LEC_wang_fire_durg
+		icon = GFX_goal_WHR_Immolate_Monetary_System
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
+		cost = 5.00
+		x = -1
+		y = 1
+
+		prerequisite = { 
+			focus = LEC_wang_shang_hai_luo_bing_xun 
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang_fire_durg"
+			country_event = {
+				id = legcities.205
+				days = 5
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_sao_hui_du_ping_ye
+		}
+	}
+
+	focus = {
+		id = LEC_ally_zuolian_minor_triads
+		icon = GFX_goal_LEC_cooperate_zuolian
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
+		cost = 5.00
+		x = 1
+		y = 1
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		prerequisite = { focus = LEC_wang_shang_hai_luo_bing_xun }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			add_political_power = 100
+			add_manpower = 1500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 650
+				producer = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_popularity = { ideology = totalist popularity = 0.06 }
+			add_popularity = { ideology = syndicalist popularity = 0.06 }
+			add_popularity = { ideology = radical_socialist popularity = 0.06 }
+			add_popularity = { ideology = social_democrat popularity = 0.06 }
+			custom_effect_tooltip = tooltip_white_line
+			add_tot_to_coalition = yes
+			add_synd_to_coalition = yes
+			add_radsoc_to_coalition = yes
+			add_socdem_to_coalition = yes
+			hidden_effect = {
+				set_party_name = {
+					ideology = social_democrat
+					long_name = LEC_social_liberal_party_GT_long
+					name = LEC_social_liberal_party_GT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_wang4
+		icon = GFX_goal_WHR_Property_Enemy_Freedom
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
+		cost = 5.00
+		x = 0
+		y = 2
+
+		prerequisite = { 
+			focus = LEC_wang_fire_durg 
+		}
+		prerequisite = {
+			focus = LEC_ally_zuolian_minor_triads
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang4"
+			add_political_power = 100
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.10
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+				producer = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -3880,175 +4565,198 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_manpower = 5000
-		}
-		ai_will_do = { factor = 100 }
-	}
-	focus = {
-		id = LEC_tu4
-		text = LEC_tu4
-		icon = GFX_LEC_Cigarettes
-		cost = 5.00
-		prerequisite = { focus = LEC_tu3 }
-		relative_position_id = LEC_shanghai
-		x = -1
-		y = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu4"
-			add_political_power = 10
-			add_ideas = LEC_cigarettes
-		}
-		ai_will_do = { factor = 100 }
-	}
-	
-	focus = {
-		id = LEC_jinrong1
-		text = LEC_jinrong1
-		icon = GFX_goal_LEC_huang
-		x = 2
-		y = 3
-		cost = 2
-		prerequisite = { focus = LEC_triad2 }
-		relative_position_id = LEC_shanghai
-		mutually_exclusive = {
-			focus = LEC_qing1
-			focus = LEC_tu1
-			focus = LEC_wang1
-		}
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_ZHANG
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_DU
-					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_WANG
-					}
-				}
-			}
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong1"
-			add_political_power = 10
-			country_event = legcities.48
-			hidden_effect = {
-				country_event = {
-					days = 100
-					id = legcities.208
-				}
-				country_event = {
-					days = 50
-					id = legcities.209
-				}
-			}
-		}
-	}
-	focus = {
-		id = LEC_jinrong2
-		text = LEC_jinrong2
-		icon = GFX_LEC_Smugglers
-		cost = 5.00
-		prerequisite = { focus = LEC_jinrong1 }
-		relative_position_id = LEC_shanghai
-		x = 1
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong2"
 			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
-					state_population > 250000
-				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		ai_will_do = { factor = 100 }
-	}
-	focus = {
-		id = LEC_jinrong3
-		text = LEC_jinrong3
-		icon = GFX_LEC_Passports2
-		cost = 5.00
-		prerequisite = { focus = LEC_jinrong1 }
-		relative_position_id = LEC_shanghai
-		x = 3
-		y = 4
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong3"
-			add_ideas = LEC_counterfeit_passports
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 2
-					}
-					state_population > 250000
-				}
-				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
 			}
-		}
-		ai_will_do = { factor = 100 }
-	}
-	focus = {
-		id = LEC_jinrong4
-		text = LEC_jinrong4
-		icon = GFX_LEC_Human_Traffic
-		cost = 5.00
-		prerequisite = { focus = LEC_jinrong3 }
-		relative_position_id = LEC_shanghai
-		x = 3
-		y = 5
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong4"
-			add_ideas = LEC_red_light
-			set_country_flag = LEC_Human_Trafficking_flag
-			set_variable = {
-				var = LEC_Human_Traffic_Supply
-				value = 0
-			}
-			set_variable = {
-				var = LEC_Human_Traffic_Profit
-				value = 0
+			custom_effect_tooltip = tooltip_white_line
+			add_country_leader_trait = FOP_red_robin_hood_trait
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas =  LEC_jue_xin_de_ge_ming_zhe
+			custom_effect_tooltip = tooltip_white_line
+			SHC = {
+				SHC_Background_Alternate = {
+					set_nationality = ROOT
+				}
+				SHC_Nikolay_Kuibyshev = {
+					set_nationality = ROOT
+				}
+				SHC_Sun_Fuyuan = {
+					set_nationality = ROOT
+				}
+				SHC_Alexander_Ivanovich_Cherepanov = {
+					set_nationality = ROOT
+				}
+				SHC_Rao_Shu_Shi = {
+					set_nationality = ROOT
+				}
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}
-	
+
 	focus = {
-		id = LEC_triad_war
-		text = LEC_triad_war
-		icon = GFX_goal_LEC_Arm_Factions
+		id = LEC_revolutionizing_our_metropolitan_culture
+		icon = GFX_goal_LEC_melting_pot_criminal_leftism
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
 		cost = 5.00
-		prerequisite = {
-			focus = LEC_qing_6
-			focus = LEC_tu_6
-			focus = LEC_jinrong_6
-			focus = LEC_wang6
-		}
-		relative_position_id = LEC_shanghai
 		x = -1
-		y = 7
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_wang4
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		ai_will_do = { factor = 100 }
+
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_revolutionizing_our_metropolitan_culture"
+			add_ideas = LEC_melting_pot_criminal_leftism_idea
+		}
+	}
+
+	focus = {
+		id = LEC_wang5
+		icon = GFX_goal_WHR_Black_Banner_Engulfs_Nation
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
+		cost = 5.00
+		x = 1
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_wang4
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang5"
+			swap_ideas = {
+				remove_idea = LEC_jue_xin_de_ge_ming_zhe
+				add_idea = LEC_jue_xin_de_ge_ming_zhe2
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_wu_chan_zhe_de_tian_tang
+		icon = GFX_goal_WHR_Anarchy_Above_All_Borders
+		relative_position_id = LEC_wang_shang_hai_luo_bing_xun
+		cost = 5.00
+		x = 0
+		y = 4
+
+		prerequisite = { 
+			focus = LEC_wang5
+		}
+		prerequisite = { 
+			focus = LEC_revolutionizing_our_metropolitan_culture
+		}
+		available = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wu_chan_zhe_de_tian_tang"
+			swap_ideas = {
+				remove_idea = LEC_jue_xin_de_ge_ming_zhe2
+				add_idea = LEC_jue_xin_de_ge_ming_zhe3
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_court_corrupt_western_titans
+		icon = GFX_goal_LEC_court_and_corrupt_western_titans
+		relative_position_id = LEC_pockmarked_huang_jinrong_pulls_ahead
+		cost = 5.00
+		x = 0
+		y = 4
+
+		prerequisite = { 
+			focus = LEC_open_door_policy_suit_our_needs 
+		}
+		prerequisite = { 
+			focus = LEC_crooked_home_global_finance
+		}
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_court_corrupt_western_titans"
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = USA
+						tag = CAL
+						tag = TEX
+						tag = AUS
+						tag = NEE
+						tag = BEL
+						tag = GER
+						tag = GEX
+						tag = CAN
+						tag = GBR
+						tag = JAP
+						tag = RUS
+						tag = TRM
+					}
+					exists = yes
+					is_subject = no
+					has_socialist_government = no
+				}
+				country_event = {
+					id = legcities.109
+					days = 7
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_eastern_enterprises_global_operations
+		icon = GFX_goal_chi_one_china_policy_KMT
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 5.00
+		x = 0
+		y = 8
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = {
+			focus = LEC_toiling_towards_model_prefecture
+			focus = LEC_business_empire
+			focus = LEC_court_corrupt_western_titans
+			focus = LEC_wu_chan_zhe_de_tian_tang
+			focus = LEC_take_torch_anti_qing_sentiment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_eastern_enterprises_global_operations"
+			custom_effect_tooltip = LEC_Crime_Empire_tt
+			set_country_flag = LEC_Crime_Expansion
+			custom_effect_tooltip = tooltip_white_line
+			743 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 10068
+				}
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -4063,62 +4771,26 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 1500
-				producer = LEC
-			}
-			set_country_flag = LEC_Arms_flag_2
-			custom_effect_tooltip = LEC_Sell_arms_tt
-		}
-		ai_will_do = { factor = 100 }
-	}
-	
-	focus = {
-		id = LEC_triad_defence
-		text = LEC_triad_defence
-		icon = GFX_LEC_triad_defence
-		cost = 5.00
-		prerequisite = {
-			focus = LEC_qing_6
-			focus = LEC_tu_6
-			focus = LEC_jinrong_6
-			focus = LEC_wang6
-		}
-		relative_position_id = LEC_shanghai
-		x = 1
-		y = 7
-		completion_reward = {
-			743 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					instant_build = yes
-					province = 10068
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
 				amount = 1500
 				producer = LEC
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}
 	
 	focus = {
-		id = LEC_criminal_empire
-		text = LEC_criminal_empire
+		id = LEC_pearls_east_dragons_claw
 		icon = GFX_goal_LEC_Criminal_Empire
+		relative_position_id = LEC_struggle_for_shanghai
 		cost = 5.00
-		prerequisite = { focus = LEC_triad_war }
-		prerequisite = { focus = LEC_triad_defence }
-		relative_position_id = LEC_shanghai
 		x = 0
-		y = 8
+		y = 9
+
+		prerequisite = { focus = LEC_eastern_enterprises_global_operations }
+
 		completion_reward = {
-			set_country_flag = LEC_Crime_Expansion
-			custom_effect_tooltip = LEC_Crime_Empire_tt
 			add_state_claim = 592
 			add_state_claim = 729
 			add_state_claim = 326
@@ -4136,128 +4808,399 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 	}
 
-###黑帮新添加
 	focus = {
-		id = LEC_wang1
-		text = LEC_wang1
-		icon = GFX_goal_LEC_wang_1
-		x = 6
-		y = 3
-		cost = 2
-		prerequisite = { focus = LEC_triad2 }
-		relative_position_id = LEC_shanghai
-		mutually_exclusive = {
-			focus = LEC_qing1
-			focus = LEC_tu1
-			focus = LEC_jinrong1
-		}
+		id = LEC_madames_east_asian_fiefdom
+		icon = GFX_goal_LEC_madames_east_asian_fiefdom
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 5.00
+		x = -3
+		y = 10
+
+		available_if_capitulated = yes
 		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_ZHANG
+			base = 30
+		}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				name = "王亚樵"
+			}
+			is_subject = no
+			CHN_no_aligned_unifier_exists_trigger = yes
+		}
+
+		prerequisite = { focus = LEC_pearls_east_dragons_claw }
+
+		mutually_exclusive = { focus = LEC_heralds_hongmen_restoration }
+		mutually_exclusive = { focus = LEC_coastal_concessions_under_rising_sun }
+		mutually_exclusive = { focus = LEC_five_races_under_triads_flag }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_madames_east_asian_fiefdom"
+			custom_effect_tooltip = LEC_jiang_conquest_tt
+			custom_effect_tooltip = tooltip_white_line
+			every_state = {
+				limit = {
+					OR = {
+						is_claims_china = yes
+						is_core_of = JAP
+						is_core_of = VIN
+						is_core_of = LAO
+						is_core_of = CAM
+						is_core_of = SIA
+						is_core_of = BRM
+						is_core_of = MLY
+						is_siberia = yes
+						is_central_asia = yes
+						state = 537
+						state = 756
 					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_DU
+				}
+				add_claim_by = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			set_potential_national_government = yes
+			china_enable_all_demand_submission_decisions = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = LEC_factions_tt
+		}
+	}
+
+	focus = {
+		id = LEC_heralds_hongmen_restoration
+		icon = GFX_goal_FNG_Hongwu
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 5.00
+		x = -1
+		y = 10
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			is_subject = no
+		}
+
+		prerequisite = { focus = LEC_pearls_east_dragons_claw }
+
+		mutually_exclusive = { focus = LEC_madames_east_asian_fiefdom }
+		mutually_exclusive = { focus = LEC_coastal_concessions_under_rising_sun }
+		mutually_exclusive = { focus = LEC_five_races_under_triads_flag }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_heralds_hongmen_restoration"
+			custom_effect_tooltip = LEC_hongmen_conquest_tt
+			custom_effect_tooltip = tooltip_white_line
+			every_state = {
+                limit = {
+					is_claims_china = yes
+				}
+				add_claim_by = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			set_potential_national_government = yes
+			china_enable_all_demand_submission_decisions = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = LEC_factions_tt
+			hidden_effect = {
+				if = {
+					limit = { 
+						has_country_leader = {
+							character = LEC_Wang_Yaqiao
+						}
 					}
-					has_game_rule = {
-						rule = SHC_PATH
-						option = SHC_TRIADS_HUANG
+					LEC_Wang_Yaqiao = {
+						remove_ideas_with_trait = CHN_Syndicalists_aligned
+						var:country_leader = { clear_variable = china_alignment }
+					}
+				}
+				if = {
+					limit = { 
+						limit = { 
+							has_country_leader = {
+								character = LEC_yang_hu
+							}
+						}
+						LEC_yang_hu = {
+							remove_ideas_with_trait = CHN_right_kuomintang_aligned
+							var:country_leader = { clear_variable = china_alignment }
+						}
 					}
 				}
 			}
 		}
+	}
+
+	focus = {
+		id = LEC_five_races_under_triads_flag
+		icon = GFX_goal_chinese_investment
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 5.00
+		x = 1
+		y = 10
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "张啸林"
+				}
+			}
+			is_subject = no
+			CHN_no_aligned_unifier_exists_trigger = yes
+		}
+
+		prerequisite = { focus = LEC_pearls_east_dragons_claw }
+
+		mutually_exclusive = { focus = LEC_madames_east_asian_fiefdom }
+		mutually_exclusive = { focus = LEC_heralds_hongmen_restoration }
+		mutually_exclusive = { focus = LEC_coastal_concessions_under_rising_sun }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			custom_effect_tooltip = LEC_republic_conquest_tt
+			custom_effect_tooltip = tooltip_white_line
+			every_state = {
+                limit = {
+					is_claims_china = yes
+					}
+				add_claim_by = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			set_potential_national_government = yes
+			china_enable_all_demand_submission_decisions = yes
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = LEC_factions_tt
+		}
+	}
+
+	focus = {
+		id = LEC_coastal_concessions_under_rising_sun
+		icon = GFX_goal_JAP_greater_asian_sphere
+		relative_position_id = LEC_struggle_for_shanghai
+		cost = 5.00
+		x = 3
+		y = 10
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				name = "张啸林"
+			}
+		}
+
+		prerequisite = { focus = LEC_pearls_east_dragons_claw }
+
+		mutually_exclusive = { focus = LEC_madames_east_asian_fiefdom }
+		mutually_exclusive = { focus = LEC_heralds_hongmen_restoration }
+		mutually_exclusive = { focus = LEC_five_races_under_triads_flag }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_green_gang_syndicate_split"
+			custom_effect_tooltip = LEC_coast_conquest_tt
+			custom_effect_tooltip = tooltip_white_line
+			every_state = {
+                limit = {
+					is_claims_china = yes
+					is_coastal = yes
+					NOT = { 
+					state = 716
+					state = 328
+					}
+				}
+				add_claim_by = LEC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_state_claim = 1067
+			add_state_claim = 595
+			add_state_claim = 594
+			add_state_claim = 1053
+		}
+	}
+
+	focus = {
+		id = LEC_ascent_our_reforged_enterprise
+		icon = GFX_goal_LEC_reforged_enterprise
+		x = 28
+		y = 9
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			has_country_flag = LEC_triad_leader_chosen
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_ascent_our_reforged_enterprise"
+			add_ideas = LEC_Triad_Idea
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_commence_cigarette_counterfitting
+		icon = GFX_LEC_Cigarettes
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = -4
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_ascent_our_reforged_enterprise }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_commence_cigarette_counterfitting"
+			add_ideas = LEC_cigarettes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_swivel_back_salt_smuggling
+		icon = GFX_LEC_Smugglers
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = -2
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_ascent_our_reforged_enterprise }
 		
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang1"
-			add_political_power = 10
-			country_event = legcities.204
-			hidden_effect = {
-				country_event = {
-					days = 30
-					id = legcities.206
-				}
-				country_event = {
-					days = 100
-					id = legcities.208
-				}
-				country_event = {
-					days = 50
-					id = legcities.209
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = LEC_wang2
-		icon = GFX_goal_WHR_Immolate_Monetary_System
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_wang1 
-		}
-		relative_position_id = LEC_shanghai
-		available = {
-			has_country_leader = { name = "王亚樵" ruling_only = yes }
-		}
-
-		x = 5
-		y = 4
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang2"
-			country_event = {
-				days = 5
-				id = legcities.205
-			}
-			add_ideas = LEC_sao_hui_du_ping_ye
-		}
-	}
-
-	focus = {
-		id = LEC_wang4
-		icon = GFX_goal_WHR_Property_Enemy_Freedom
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_wang2 
-		}
-		relative_position_id = LEC_shanghai
-		available = {
-			has_country_leader = { name = "王亚樵" ruling_only = yes }
-		}
-
-		x = 5
-		y = 5
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang4"
-			add_political_power = 100
-			add_popularity = {
-				ideology = syndicalist
-				popularity = 0.10
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 1000
-				producer = LEC
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_swivel_back_salt_smuggling"
 			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_foster_ties_french_connection
+		icon = GFX_goal_LEC_french_connection
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = -3
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		available = {
+			NOT = {
+				has_country_leader = { name = "王亚樵" ruling_only = yes }
+			}
+		}
+		bypass = {
+			has_country_leader = { name = "王亚樵" ruling_only = yes }
+		}
+
+		prerequisite = { focus = LEC_commence_cigarette_counterfitting }
+		prerequisite = { focus = LEC_swivel_back_salt_smuggling }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_foster_ties_french_connection"
+			add_political_power = 50
+			custom_effect_tooltip = LEC_Crime_Empire_tt
+			set_country_flag = LEC_Indochina_Opium
+			set_country_flag = LEC_Burma_Opium
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_Opium_Idea
+			custom_effect_tooltip = tooltip_white_line
+			set_country_flag = LEC_Opium_Flag
+			set_variable = {
+				var = LEC_Opium_Profit
+				value = 0
+			}
+			set_variable = {
+				var = LEC_Opium_Stock
+				value = 0
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = LEC_arch_collaborator_zhang_xiaolin_zones_in
+					}
+					country_event = {
+						id = legcities.147
+						days = 14
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_reach_into_arms_trade
+		icon = GFX_goal_LEC_arms_dealing
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 0
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_ascent_our_reforged_enterprise }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_reach_into_arms_trade"
+			custom_effect_tooltip = LEC_Sell_Arms_tt
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -4265,293 +5208,314 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		}
-	}
-
-	focus = {
-		id = LEC_wang3
-		icon = GFX_goal_WHR_Groups_Revolutionary_Actives
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_wang1 
-		}
-		relative_position_id = LEC_shanghai
-		available = {
-			has_country_leader = { name = "王亚樵" ruling_only = yes }
-		}
-
-		x = 7
-		y = 4
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang3"
-			add_ideas =  LEC_jue_xin_de_ge_ming_zhe
-		}
-	}
-
-	focus = {
-		id = LEC_wang5
-		icon = GFX_goal_WHR_Black_Banner_Engulfs_Nation
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_wang3 
-		}
-		relative_position_id = LEC_shanghai
-		available = {
-			has_country_leader = { name = "王亚樵" ruling_only = yes }
-		}
-
-		x = 7
-		y = 5
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang5"
-			swap_ideas = {
-				remove_idea = LEC_jue_xin_de_ge_ming_zhe
-				add_idea = LEC_jue_xin_de_ge_ming_zhe2
+			set_country_flag = LEC_Arms_flag_2
+			set_variable = {
+				var = LEC_Guns
+				value = 0
+			}
+			set_variable = {
+				var = LEC_Guns_Profits
+				value = 0
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1500
+				producer = GEA
 			}
 		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
-		id = LEC_wang6
-		icon = GFX_goal_WHR_Anarchy_Above_All_Borders
-		cost = 5.00
+		id = LEC_tap_into_human_trafficking_prostitution
+		icon = GFX_LEC_Human_Traffic
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 0
+		y = 2
+		cost = 5
 
-		prerequisite = { 
-			focus = LEC_wang5 
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
 		}
-		prerequisite = { 
-			focus = LEC_wang4 
-		}
-		relative_position_id = LEC_shanghai
 		available = {
-			has_country_leader = { name = "王亚樵" ruling_only = yes }
-		}
-
-		x = 6
-		y = 6
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_wang6"
-			swap_ideas = {
-				remove_idea = LEC_jue_xin_de_ge_ming_zhe2
-				add_idea = LEC_jue_xin_de_ge_ming_zhe3
+			NOT = {
+				has_country_leader = { name = "王亚樵" ruling_only = yes }
 			}
 		}
+
+		prerequisite = { focus = LEC_reach_into_arms_trade }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_tap_into_human_trafficking_prostitution"
+			custom_effect_tooltip = LEC_Crime_Empire_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_red_light
+			custom_effect_tooltip = tooltip_white_line
+			set_country_flag = LEC_Human_Trafficking_flag
+			set_variable = {
+				var = LEC_Human_Traffic_Supply
+				value = 0
+			}
+			set_variable = {
+				var = LEC_Human_Traffic_Profit
+				value = 0
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
-		id = LEC_qing_5
-		icon = GFX_goal_LEC_qing_5
-		cost = 5.00
+		id = LEC_peddle_pseudo_passports
+		icon = GFX_LEC_Passports2
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 2
+		y = 1
+		cost = 5
 
-		prerequisite = { 
-			focus = LEC_qing_2 
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
 		}
-		relative_position_id = LEC_shanghai
 
-		x = -7
-		y = 5
-		ai_will_do = { factor = 100 }
+		prerequisite = { focus = LEC_ascent_our_reforged_enterprise }
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing_5"
-			custom_effect_tooltip = LEC_new_technology_tt
-			set_country_flag = LEC_new_technology
-			swap_ideas = {
-				remove_idea = LEC_Opium_Idea
-				add_idea = LEC_Opium_Idea1
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_peddle_pseudo_passports"
+			add_ideas = LEC_counterfeit_passports
+			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = LEC_qing_6
-		icon = GFX_goal_LEC_qing_6
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_qing_5 
-		}
-		prerequisite = { 
-			focus = LEC_qing4
-		}
-		relative_position_id = LEC_shanghai
-
-		x = -6
-		y = 6
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing_5"
-			add_political_power = 100
-			custom_effect_tooltip = LEC_new_shop_tt
-			set_country_flag = LEC_wrold_shop
-			swap_ideas = {
-				remove_idea = LEC_Opium_Idea1
-				add_idea = LEC_Opium_Idea3
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
-			every_country = {
-				limit = {
-					NOT = {	
-						has_war_with = LEC
-					}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-				add_opinion_modifier = {
-					target = PREV
-					modifier = KR_trade_agreement
-				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
-		id = LEC_tu_5
-		icon = GFX_goal_LEC_tu_5
-		cost = 5.00
+		id = LEC_galvanize_gambling_industry
+		icon = GFX_goal_LEC_galvanize_gambling_industry
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 3
+		y = 2
+		cost = 5
 
-		prerequisite = { 
-			focus = LEC_tu2 
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
 		}
 
-		relative_position_id = LEC_shanghai
-
-		x = -3
-		y = 5
-		ai_will_do = { factor = 100 }
+		prerequisite = { focus = LEC_peddle_pseudo_passports }
+		prerequisite = { focus = LEC_pile_protection_rackets }
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu_5"
-			add_popularity = {
-				ideology = paternal_autocrat
-				popularity = 0.20
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_galvanize_gambling_industry"
+			add_political_power = 50
+			add_ideas = LEC_galvanize_gambling_industry_idea
+			hidden_effect = {
+				country_event = {
+					id = legcities.154
+					days = 14
+				}
 			}
-			add_ideas = LEC_fan_ri_xuan_chuan
 		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
-		id = LEC_tu_6
-		icon = GFX_goal_LEC_tu_6
-		cost = 5.00
+		id = LEC_pile_protection_rackets
+		icon = GFX_goal_LEC_protection_rackets
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 4
+		y = 1
+		cost = 5
 
-		prerequisite = { 
-			focus = LEC_tu_5
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
 		}
-		prerequisite = { 
-			focus = LEC_tu4
-		}
-		relative_position_id = LEC_shanghai
 
+		prerequisite = { focus = LEC_ascent_our_reforged_enterprise }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_pile_protection_rackets"
+			add_manpower = 5000
+			add_ideas = LEC_Rackets_Idea
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_militarize_gangs
+		icon = GFX_goal_LEC_Arm_Factions
+		relative_position_id = LEC_ascent_our_reforged_enterprise
 		x = -2
-		y = 6
-		ai_will_do = { factor = 100 }
+		y = 3
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_foster_ties_french_connection }
+		prerequisite = { focus = LEC_tap_into_human_trafficking_prostitution }
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tu_6"
-			add_country_leader_trait = LEC_wu_mian_zhi_wang
-			add_ideas = LEC_du_mian_zhi_wang
-		}
-	}
-
-	focus = {
-		id = LEC_jinrong_5
-		icon = GFX_goal_LEC_jinrong_5
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_jinrong2 
-		}
-
-		relative_position_id = LEC_shanghai
-
-		x = 1
-		y = 5
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong_5"
-			add_stability = 0.05
-			add_war_support = 0.05
-			add_ideas = LEC_hei_bang_jing_cha_ju
-		}
-	}
-
-	focus = {
-		id = LEC_jinrong_6
-		icon = GFX_goal_LEC_jinrong_6
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_jinrong_5 
-		}
-		prerequisite = { 
-			focus = LEC_jinrong4
-		}
-
-		relative_position_id = LEC_shanghai
-
-		x = 2
-		y = 6
-		ai_will_do = { factor = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_jinrong_6"
-			every_country = {
-				limit ={
-					NOT = {
-						is_chinese_tag = yes
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_militarize_gangs"
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
 					}
 				}
-				diplomatic_relation = {
-					country = LEC
-					relation = non_aggression_pact
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1500
+				producer = LEC
+			}
 		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_safeguard_our_safehouses
+		icon = GFX_LEC_triad_defence
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 2
+		y = 3
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+		
+		prerequisite = { focus = LEC_tap_into_human_trafficking_prostitution }
+		prerequisite = { focus = LEC_galvanize_gambling_industry }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_safeguard_our_safehouses"
+			743 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 7014
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1500
+				producer = LEC
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_criminal_empire_span_east
+		icon = GFX_goal_LEC_criminal_empire_to_span_the_east
+		relative_position_id = LEC_ascent_our_reforged_enterprise
+		x = 0
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+		ai_will_do = {
+			base = 30
+		}
+
+		prerequisite = { focus = LEC_militarize_gangs }
+		prerequisite = { focus = LEC_safeguard_our_safehouses }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_criminal_empire_span_east"
+			swap_ideas = {
+				remove_idea = LEC_Triad_Idea
+				add_idea = LEC_criminal_empire_span_east_idea
+			}
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = LEC_true_heirs_taiping
+		icon = GFX_goal_LEC_taiping_heirs
+		x = 0
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		allow_branch = { always = no }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		prerequisite = { focus = LEC_dispelling_false_notions_about_christianity }
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 ###大明
 	focus = {
 		id = LEC_fan_qing_fu_ming
 		icon = GFX_goal_FNG_Ming
-		relative_position_id = LEC_shanghai
-
+		relative_position_id = LEC_struggle_for_shanghai
+		
 		x = 0
-		y = 10
+		y = 12
 		cost = 5.00
-
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
 
 		available = {
 			has_country_flag = LEC_da_ming_back
+		}
+
+		allow_branch = {
+			always = no
 		}
 
 		completion_reward = {
@@ -4844,7 +5808,7 @@ focus_tree = {
 			if = {
 				limit = { 
 					NOT = {
-						has_completed_focus = LEC_wang6
+						has_completed_focus = LEC_wu_chan_zhe_de_tian_tang
 					}
 				}
 				country_event = {
@@ -4900,16 +5864,6 @@ focus_tree = {
 		prerequisite = { 
 			focus = LEC_zhen_long_tian_zi
 		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
-		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_di_guo_de_shi_kiang"
@@ -4943,16 +5897,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_zhen_long_tian_zi
-		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
 		}
 
 		completion_reward = {
@@ -5006,12 +5950,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_xi_xi_rang_rang
-		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
 		}
 
 		mutually_exclusive = {
@@ -5086,16 +6024,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_ban_ju_ru_ban_hu
-		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
 		}
 
 		completion_reward = {
@@ -5179,6 +6107,8 @@ focus_tree = {
 			has_country_leader = { ruling_only = yes name = "王亚樵" }	
 		}
 
+		ai_will_do = { base = 100 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ren_ren_jie_di_wang"
 			add_country_leader_trait = LEC_ren_ming
@@ -5187,7 +6117,6 @@ focus_tree = {
 				add_idea = LEC_national_rebirth_ideaQ
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}		
 
 	focus = {
@@ -5203,11 +6132,12 @@ focus_tree = {
 			focus = LEC_ren_ren_jie_di_wang
 		}
 
+		ai_will_do = { base = 100 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ren_ren_jie_di_wang"
 			add_ideas = LEC_red_deal
 		}
-		ai_will_do = { factor = 100 }
 	}	
 
 	focus = {
@@ -5222,16 +6152,8 @@ focus_tree = {
 		prerequisite = { 
 			focus = LEC_ren_ren_jie_di_wang
 		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
 
-		available = {
-			 
-		}
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_tong_zuo_yi_zhi_ren_bing_xing"
@@ -5249,14 +6171,12 @@ focus_tree = {
 				name = LEC_syndicalist_party_WYQ
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}	
 
 	focus = {
 		id = LEC_zi_you_de_wu_tuo_bang
 		icon = GFX_goal_LEC_tong_zuo_yi_zhi_ren_bing_xing
 		relative_position_id = LEC_fan_qing_fu_ming
-
 		x = 6
 		y = 6
 		cost = 5.00
@@ -5267,13 +6187,8 @@ focus_tree = {
 		prerequisite = { 
 			focus = LEC_gng_ren_bu_zai_wei_nu
 		}
-		prerequisite = { 
-			
-		}
 
-		available = {
-			 
-		}
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_you_de_wu_tuo_bang"
@@ -5282,14 +6197,12 @@ focus_tree = {
 				add_idea = LEC_national_rebirth_ideaW
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}
 
 	focus = {
 		id = LEC_zhong_cheng_jie_you_feng_shang
 		icon = GFX_goal_LEC_zhong_cheng_jie_you_feng_shang
 		relative_position_id = LEC_fan_qing_fu_ming
-
 		x = -3
 		y = 5
 		cost = 5.00
@@ -5298,6 +6211,8 @@ focus_tree = {
 			focus = LEC_zhen_long_tian_zi
 			focus = LEC_ban_ju_ru_ban_hu
 		}
+
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhong_cheng_jie_you_feng_shang"
@@ -5331,14 +6246,12 @@ focus_tree = {
 				popularity = 0.10
 			}
 		}
-		ai_will_do = { factor = 100 }
 	}	
 
 	focus = {
 		id = LEC_da_ming_yi_ying
 		icon = GFX_goal_LEC_da_ming_yi_ying
 		relative_position_id = LEC_fan_qing_fu_ming
-
 		x = -3
 		y = 6
 		cost = 5.00
@@ -5347,18 +6260,18 @@ focus_tree = {
 			focus = LEC_zhong_cheng_jie_you_feng_shang
 		}
 
+		ai_will_do = { base = 100 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_da_ming_yi_ying"
 			add_ideas = LEC_guerilla_mob
 		}
-		ai_will_do = { factor = 100 }
 	}	
 
 	focus = {
 		id = LEC_qing_xi_jiu_ri_zhi_e
 		icon = GFX_goal_LEC_qing_xi_jiu_ri_zhi_e
 		relative_position_id = LEC_fan_qing_fu_ming
-
 		x = 3
 		y = 5
 		cost = 5.00
@@ -5367,7 +6280,8 @@ focus_tree = {
 			focus = LEC_ren_ren_jie_di_wang
 			focus = LEC_ban_ju_ru_ban_hu
 		}
-		ai_will_do = { factor = 100 }
+
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_qing_xi_jiu_ri_zhi_e"

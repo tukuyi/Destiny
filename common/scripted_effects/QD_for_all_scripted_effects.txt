@@ -420,6 +420,48 @@ China_build_ROC = {#成立民国
 		}
 	}
 	else_if = {#GXC 广东
+		limit = { 
+			tag = GXC
+		}
+		if = {
+			limit = {#克努伯
+				has_country_leader = {
+					name = "阿尔弗雷德·克虏伯"
+					ruling_only = yes
+				}
+			}
+			set_cosmetic_tag = AOG_CHINA_REICH
+			hidden_effect = {
+				country_event = { 
+					id = lngst.35
+					days = 3 
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					character = GXC_wilhelm_iv_elected
+				}
+			}
+			country_event = { 
+				id = lngst.34
+				days = 3 
+			}
+		}
+		else_if = {
+			limit = { 
+				has_country_leader = {
+					character = GXC_albrecht_von_urach
+				}
+			}
+			country_event = { 
+				id = lngst.60
+				days = 3 
+			}
+		}
+	}
+	else_if = {#GXC 广东
 		limit = {
 			OR = {
 				is_ruled_by_left_kmt = yes
@@ -522,6 +564,64 @@ China_build_ROC = {#成立民国
 			}
 		}
 	}
+	else_if = {
+		limit = { 
+			tag = LEC
+		}
+		if = {#王亚樵 - 红色线
+			limit = { 
+				has_completed_focus = LEC_madames_east_asian_fiefdom
+			}
+			set_cosmetic_tag = LEC_GT_C
+			every_state = {
+				limit = {
+					OR = {
+						is_claims_china = yes
+						is_core_of = JAP
+						is_core_of = VIN
+						is_core_of = LAO
+						is_core_of = CAM
+						is_core_of = SIA
+						is_core_of = BRM
+						is_core_of = MLY
+						is_siberia = yes
+						is_central_asia = yes
+						state = 537
+						state = 756
+					}
+				}
+				add_core_of = LEC
+			}
+		}
+		else_if = {#大明
+			limit = { 
+				has_completed_focus = LEC_heralds_hongmen_restoration
+			}
+			country_event = legcities.101
+			set_capital = { state = 608 }
+			custom_effect_tooltip = LEC_additional_conquest_tt
+			set_country_flag = LEC_reclaimed_china
+		}
+		else_if = {#民国
+			limit = { 
+				has_completed_focus = LEC_five_races_under_triads_flag
+			}
+			if = {
+				limit = { 
+					has_country_leader = {
+						character = LEC_yang_hu
+					}
+				}
+				set_cosmetic_tag = LEC_TRIAD_KMT_BLUE_1
+			}
+			else = {
+				set_cosmetic_tag = ROC
+			}
+			set_capital = { state = 608 }
+			custom_effect_tooltip = LEC_additional_conquest_tt
+			set_country_flag = LEC_reclaimed_china
+		}
+	}
 	else_if = {#SHC 上海
 		limit = { 
 			tag = SHC
@@ -570,7 +670,7 @@ China_build_ROC = {#成立民国
 				}
 			}
 		}
-		else_if = {
+		else_if = {#警察局
 			limit = { 
 				has_completed_focus = SHC_jing_cha_sha_chu_cong_wei
 				NOT = {
@@ -584,7 +684,7 @@ China_build_ROC = {#成立民国
 				}
 			}
 		}
-		else_if = {
+		else_if = {#工团
 			limit = { 
 				OR = {
 					has_completed_focus = LEC_lu_xun_zhu_xi
@@ -637,6 +737,12 @@ NZH_set_leader_effect = {#北直系领导人
 	#Northern Zhili
 	custom_effect_tooltip = NZH_set_leader_tt
 	save_global_event_target_as = NZH_leader
+}
+
+GRG_set_leader_effect = {#帝国公约领导人
+	#Northern Zhili
+	custom_effect_tooltip = GRG_set_leader_tt
+	save_global_event_target_as = GRG_leader
 }
 
 SZH_set_leader_effect = {#南直系领导人
@@ -698,7 +804,10 @@ set_potential_national_government = {#宣布统一、枣核时间
 			limit = {
 				OR = {
 					check_variable = { country_leader:china_alignment = token:manchu_qing }
-					# has_country_leader = { character = SQI_zhang_tianran } #This is here to show a player if they make a goverment as Zhang Tianran they will be the Manchu leader
+					has_country_leader = {
+						name = "张天然"
+						ruling_only = yes
+					}
 				}
 			}
 			MCU_set_leader_effect = yes
@@ -710,6 +819,10 @@ set_potential_national_government = {#宣布统一、枣核时间
 		else_if = {
 			limit = { check_variable = { country_leader:china_alignment = token:right_kuomintang } }
 			RKT_set_leader_effect = yes
+		}
+		else_if = {
+			limit = { check_variable = { country_leader:china_alignment = token:germangangs } }
+			GRG_set_leader_effect = yes
 		}
 
 		every_state = {

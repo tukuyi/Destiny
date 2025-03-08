@@ -103,6 +103,16 @@ CHN_no_aligned_unifier_exists_trigger = {#统一全国的前置要求
 			}
 		}
 	}
+	else_if = {#帝国公约
+		limit = { check_variable = { country_leader:china_alignment = token:germangangs } }
+		custom_trigger_tooltip = {
+			tooltip = CHN_No_Other_GRG_tt
+			OR = {
+				NOT = { country_exists = GRG }
+				tag = GRG
+			}
+		}
+	}
 }
 
 china_is_aligned_with_northern_zhili = {#南直系
@@ -189,6 +199,13 @@ china_is_aligned_with_kmt = {#国民党
 			china_is_aligned_with_left_kmt = yes
 			china_is_aligned_with_right_kmt = yes
 		}
+	}
+}
+
+china_is_aligned_with_di_guo_gong_yue = {#帝国公约
+	custom_trigger_tooltip = {
+		tooltip = china_is_aligned_with_di_guo_gong_yue
+		check_variable = { country_leader:china_alignment = token:germangangs }
 	}
 }
 

@@ -200,11 +200,17 @@ country_event = {
 	days = 750
 }
 
+country_event = { #San-K
+	id = legcities.132
+	days = 530
+}
 
 add_ideas = {
 	LEC_volunteer_force
 	LEC_currency_6
+	
 	free_trade
+
 	LEC_Cornell_Sidney_Franklin_hog_mli
 	LEC_Du_Yuesheng_boss_sli
 	LEC_Zhang_Xiaolin_boss_sli
@@ -214,9 +220,9 @@ add_ideas = {
 create_country_leader = {
 	name = "T. V. Soong"
 	desc = "POLITICS_T_V_SOONG_DESC"
-	picture = "gfx/leaders/LEC/Portrait_T_V_Soong.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_T_V_Soong.png"
 	expire = "1.1.1"
-	ideology = social_democrat_subtype
+	ideology = socdem_tridemism_subtype
 	traits = {
 		economic_reformer
 	}
@@ -224,9 +230,9 @@ create_country_leader = {
 create_country_leader = {
 	name = "Robert Ho Shai Lai"
 	desc = "POLITICS_Robert_Ho_Shai_Lai_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Robert_Ho_Shai_Lai.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Robert_Ho_Shai_Lai.png"
 	expire = "1.1.1"
-	ideology = social_liberal_subtype
+	ideology = soclib_humanistic_capitalism_subtype
 	traits = {
 		quartermaster_general
 	}
@@ -234,7 +240,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Norman Lockhart Smith"
 	desc = "POLITICS_Norman_Lockheart_Smith_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Norman_Lockheart_Smith.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Norman_Lockheart_Smith.png"
 	expire = "1.1.1"
 	ideology = social_conservative_subtype
 	traits = {
@@ -244,7 +250,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Nelson T. Johnson"
 	desc = "POLITICS_Nelson_T_Johnson_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Nelson_Trusler_Johnson.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Nelson_Trusler_Johnson.png"
 	expire = "1.1.1"
 	ideology = free_market_capitalist_subtype
 	traits = {
@@ -254,7 +260,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Cornell Franklin"
 	desc = "POLITICS_Cornell_Franklin_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Cornell_Franklin.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Cornell_Franklin.png"
 	expire = "1.1.1"
 	ideology = authoritarian_democrat_subtype
 	traits = {
@@ -264,7 +270,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Siegmund Bodenheimer"
 	desc = "POLITICS_SIEGMUND_BODENHEIMER_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Siegmund_Bodenheimer.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Siegmund_Bodenheimer.png"
 	expire = "1.1.1"
 	ideology = paternal_autocrat_subtype
 	traits = {
@@ -274,12 +280,29 @@ create_country_leader = {
 create_country_leader = {
 	name = "Katsuo Okazaki"
 	desc = "POLITICS_Katsuo_Okazaki_DESC"
-	picture = "gfx/leaders/LEC/Portrait_Katsuo_Okazaki.png"
+	picture = "gfx/leaders/LEC/Portrait_LEC_Katsuo_Okazaki.png"
 	expire = "1.1.1"
 	ideology = national_populist_subtype
 	traits = {
 		silent_workhorse
 	}
+}
+
+create_field_marshal = {
+	name = "上海警察局"
+	portrait_path = "gfx/leaders/LEC/Portrait_LEC_Legation_Police_Blue.png"
+	traits = {
+		incorporeal
+		urban_assault_specialist
+		LEC_international_commander
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+
+	id = 1355
 }
 
 recruit_character = LEC_francis_wogan_festing
@@ -303,6 +326,10 @@ recruit_character = LEC_Crime_Bosses
 recruit_character = LEC_Kot_Siu_Wong
 recruit_character = LEC_ye_chao_shan
 recruit_character = LEC_Brilliant_Chang
+recruit_character = LEC_Wang_Yaqiao
+recruit_character = LEC_Huang_Jinrong
+recruit_character = LEC_Zhang_Xiaolin
+recruit_character = LEC_Du_Yuesheng
 
 LEC_Crime_Bosses = {
 	retire = yes
@@ -322,10 +349,24 @@ LEC_Brilliant_Chang = {
 LEC_gu_jia_tang = {
 	retire = yes
 }
+LEC_ye_chao_shan = {
+	retire = yes
+}
+
+LEC_Du_Yuesheng = {
+	retire = yes
+}
 LEC_yang_hu = {
 	set_variable = { china_alignment = token:right_kuomintang }
 	retire = yes
 }
-LEC_ye_chao_shan = {
+LEC_Huang_Jinrong = {
+	retire = yes
+}
+LEC_Wang_Yaqiao = {
+	set_variable = { china_alignment = token:Syndicalists }
+	retire = yes
+}
+LEC_Zhang_Xiaolin = {
 	retire = yes
 }

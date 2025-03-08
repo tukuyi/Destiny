@@ -171,6 +171,64 @@ political_actions = {
 			}
 		}
 	}
+
+	GXC_zhao_huan_jian_niang = {#召唤舰娘
+		icon = GFX_decision_mo_fang
+
+		available = {
+			has_completed_focus = GXC_ying_zi_xi_lai
+		}
+
+		visible = {
+			has_completed_focus = GXC_ying_zi_xi_lai
+		}
+
+		cost = 200
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_zhao_huan_jian_niang"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GXC_zhao_huan_jian_niang"
+			TIX_Alvitr = {
+				set_nationality = ROOT
+			}
+			TIX_hu_teng = {
+				set_nationality = ROOT
+			}
+			TIX_Bismarck = {
+				set_nationality = ROOT
+			}
+			TIX_Duisburg = {
+				set_nationality = ROOT
+			}
+			TIX_Ai_ji_er = {
+				set_nationality = ROOT
+			}
+			TIX_fei_te_lie = {
+				set_nationality = ROOT
+			}
+			TIX_Prinz_Eugen = {
+				set_nationality = ROOT
+			}
+			TIX_xing_deng_bao = {
+				set_nationality = ROOT
+			}
+			TIX_Peter_Strasser = {
+				set_nationality = ROOT
+			}
+			TIX_Prinz_Adalbert = {
+				set_nationality = ROOT
+			}
+		}
+	}
 }
 
 GXC_border_raid_decisions = {#袭击
@@ -1483,7 +1541,7 @@ GXC_zou_si_wang_lu = {#发财之路
 			}
 		}
 	}
-	GXC_sell_gea = {#向徳属东亚倾销
+	GXC_sell_gea = {#向德属东亚倾销
 		icon = generic_agriculture
 
 		available = {

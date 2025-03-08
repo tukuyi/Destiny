@@ -11,8 +11,13 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect SHC = {
-		# 	set_potential_national_government = yes
+		# eval_effect GXC = {
+		# 	every_unit_leader = {
+		# 		limit = {
+		# 			has_character_flag = GXC_guangdong_character
+		# 		}
+		# 		retire = yes
+		# 	}
 		# }
 
 		# YUN = {

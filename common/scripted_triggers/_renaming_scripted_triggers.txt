@@ -132,6 +132,10 @@ is_han_chinese_tag = {
 		original_tag = PRC
 		original_tag = QYG #琼崖
 		original_tag = SHC #上海
+		AND = {
+			original_tag = LEC
+			has_completed_focus = LEC_struggle_for_shanghai
+		}
 	}
 }
 is_non_han_chinese_tag = {

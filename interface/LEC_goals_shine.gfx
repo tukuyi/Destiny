@@ -1,5 +1,36 @@
 spriteTypes = {	
 	SpriteType = {
+		name = "GFX_goal_LEC_madames_east_asian_fiefdom_shine"
+		texturefile = "gfx/interface/goals/LEC_madames_east_asian_fiefdom.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/LEC_madames_east_asian_fiefdom.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/LEC_madames_east_asian_fiefdom.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
 		name = "GFX_goal_LEC_zhong_cheng_de_shang_hai_shine"
 		texturefile = "gfx/interface/goals/LEC_zhong_cheng_de_shang_hai.png"
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -31,11 +62,11 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	SpriteType = {
-		name = "GFX_goal_LEC_tu_5_shine"
-		texturefile = "gfx/interface/goals/LEC_tu_5.png"
+		name = "GFX_goal_LEC_yang_hu_tuo_ying_er_chu_shine"
+		texturefile = "gfx/interface/goals/LEC_yang_hu_tuo_ying_er_chu.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_tu_5.png"
+			animationmaskfile = "gfx/interface/goals/LEC_yang_hu_tuo_ying_er_chu.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -48,7 +79,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_tu_5.png"
+			animationmaskfile = "gfx/interface/goals/LEC_yang_hu_tuo_ying_er_chu.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -62,11 +93,11 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	SpriteType = {
-		name = "GFX_goal_LEC_qing_5_shine"
-		texturefile = "gfx/interface/goals/LEC_qing_5.png"
+		name = "GFX_goal_LEC_republican_connectio_shine"
+		texturefile = "gfx/interface/goals/LEC_republican_connectio.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_qing_5.png"
+			animationmaskfile = "gfx/interface/goals/LEC_republican_connectio.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -79,38 +110,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_qing_5.png"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-	SpriteType = {
-		name = "GFX_goal_LEC_qing_6_shine"
-		texturefile = "gfx/interface/goals/LEC_qing_6.png"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_qing_6.png"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/goals/LEC_qing_6.png"
+			animationmaskfile = "gfx/interface/goals/LEC_republican_connectio.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

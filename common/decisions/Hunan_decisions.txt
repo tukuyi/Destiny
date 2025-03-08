@@ -4019,7 +4019,7 @@ HNN_da_song_wang_chao ={#大宋的天命扩张
 			}
 		}
 	}
-	HNN_de_shu_dong_ya = {#徳属东亚
+	HNN_de_shu_dong_ya = {#德属东亚
 		available = {
 			has_completed_focus = HNN_an_nan_du_hu_fu
 			GEA = {

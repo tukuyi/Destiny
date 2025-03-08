@@ -1,5 +1,297 @@
 characters = {
 ################
+###   德国   ###
+################	
+#威廉四世
+	GXC_wilhelm_iv_elected = {
+		name = GXC_wilhelm_iv_elected
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_wilhelm_iv_elected
+			}
+			army = {
+				small = GFX_Portrait_GXC_wilhelm_iv_elected
+				large = GFX_Portrait_GXC_wilhelm_iv_elected
+			}
+		}
+		country_leader = {
+			desc = GXC_wilhelm_iv_elected_leader_desc
+			ideology = prussian_constitutionalism_subtype
+			traits = { CHN_germangangs_aligned }
+		}
+	}
+#阿尔布雷希特·冯·乌拉赫
+	GXC_albrecht_von_urach = {
+		name = GXC_albrecht_von_urach
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_albrecht_von_urach
+			}
+			army = {
+				small = GFX_Portrait_GXC_albrecht_von_urach
+				large = GFX_Portrait_GXC_albrecht_von_urach
+			}
+		}
+		country_leader = {
+			desc = GXC_albrecht_von_urach_leader_desc
+			ideology = prussian_constitutionalism_subtype
+			traits = { CHN_germangangs_aligned }
+		}
+	}	
+#阿尔弗雷德·克虏伯
+	GXC_Alfried_Krupp = {
+		name = GXC_Alfried_Krupp
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GXC_Alfried_Krupp
+			}
+			army = {
+				small = GFX_Portrait_GXC_Alfried_Krupp
+				large = GFX_Portrait_GXC_Alfried_Krupp
+			}
+		}
+		country_leader = {
+			desc = Portrait_Portrait_GEA_Alfried_Krupp_DESC
+			ideology = authdem_corporatocracy_subtype
+			traits = { CHN_germangangs_aligned }
+		}
+	}		
+#腓特烈大帝
+	TIX_fei_te_lie = {
+		name = TIX_fei_te_lie
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_fei_te_lie
+				large = GFX_Portrait_TIX_fei_te_lie
+			}
+			civilian = {
+				large = GFX_Portrait_TIX_fei_te_lie_leader
+			}
+		}
+		field_marshal = {
+			traits = { 
+				GXC_tie_xue 
+				Battleship
+				thorough_planner
+				organisational_leader
+				inspirational_leader
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}		
+#俾斯麦
+	TIX_Bismarck = {
+		name = TIX_Bismarck
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Bismarck
+				large = GFX_Portrait_TIX_Bismarck
+			}
+			civilian = {
+				large = GFX_Portrait_TIX_Bismarck_leader
+			}
+		}
+		field_marshal = {
+			traits = { 
+				GXC_tie_xue
+				Battleship
+				offensive_doctrine 
+				brilliant_strategist 
+				trait_cautious 
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}	
+#阿达尔伯特亲王
+	TIX_Prinz_Adalbert = {
+		name = TIX_Prinz_Adalbert
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Prinz_Adalbert
+				large = GFX_Portrait_TIX_Prinz_Adalbert
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				cruiser
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#欧根亲王
+	TIX_Prinz_Eugen = {
+		name = TIX_Prinz_Eugen
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Prinz_Eugen
+				large = GFX_Portrait_TIX_Prinz_Eugen
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				cruiser
+				inflexible_strategist 
+				armor_officer
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+#埃吉尔
+	TIX_Ai_ji_er = {
+		name = TIX_Ai_ji_er
+		portraits = {
+			army = {
+				small = GFX_Portrait_TIX_Ai_ji_er
+				large = GFX_Portrait_TIX_Ai_ji_er
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				cruiser
+				tun_shi
+				armor_officer 
+				panzer_leader
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 6
+		}
+	}		
+#兴登堡
+	TIX_xing_deng_bao = {
+		name = TIX_xing_deng_bao
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_xing_deng_bao
+				large = GFX_Portrait_TIX_xing_deng_bao
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue 
+				cruiser
+				brilliant_strategist 
+				armor_officer 
+				panzer_leader 
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}	
+#亚尔薇特
+	TIX_Alvitr = {
+		name = TIX_Alvitr
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Alvitr
+				large = GFX_Portrait_TIX_Alvitr
+			}
+		}
+		corps_commander = {
+			traits = { 				
+				GXC_tie_xue 
+				cruiser
+				Battleship
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}	
+#杜伊斯堡
+	TIX_Duisburg = {
+		name = TIX_Duisburg
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Duisburg
+				large = GFX_Portrait_TIX_Duisburg
+			}
+		}
+		corps_commander = {
+			traits = { 				
+				GXC_tie_xue 
+				cruiser
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}		
+#乌尔里希·冯·胡滕
+	TIX_hu_teng = {
+		name = TIX_hu_teng
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_hu_teng
+				large = GFX_Portrait_TIX_hu_teng
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				Battleship
+				bearer_of_artillery 
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}	
+#彼得·史特拉塞
+	TIX_Peter_Strasser = {
+		name = TIX_Peter_Strasser
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Peter_Strasser
+				large = GFX_Portrait_TIX_Peter_Strasser
+			}
+		}
+		corps_commander = {
+			traits = {
+				GXC_tie_xue
+				hang_mu
+				trait_cautious 
+				harsh_leader 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+################
 ###   元帅   ###
 ################	
 #陈铭枢

@@ -115,4 +115,16 @@ spriteTypes = {
 		name = "GFX_Portrait_LEP_shi_yousan"
 		texturefile = "gfx/leaders/LEP/Portrait_LEP_shi_yousan.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_AOG_Board"
+		texturefile = "gfx/leaders/LEP/Portrait_AOG_Board.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_AOG_Alexander_von_Falkenhausen"
+		texturefile = "gfx/leaders/LEP/Portrait_AOG_Alexander_von_Falkenhausen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_AOG_Alexander_von_Falkenhausen_general"
+		texturefile = "gfx/leaders/LEP/Portrait_AOG_Alexander_von_Falkenhausen_general.png"
+	}
 }

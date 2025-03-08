@@ -300,8 +300,9 @@ chinese_unification = {
 		}
 	}
 	
-	form_republic_china_decision = {#成立中华民国
+	china_declare_unification = {#成立中华民国
 		icon = GFX_decision_chinese_flag
+
 		allowed = {
 			OR = {
 				is_han_chinese_tag = yes
@@ -310,13 +311,12 @@ chinese_unification = {
 			}
 			NOT = {
 				tag = QYG
-				tag = LEC
 				tag = QIE
 				tag = FNG
 				tag = UPC
-				tag = LEP
 			}
 		}
+
 		available = {
 			is_subject = no
 			china_no_rival_governments_left = yes
@@ -337,6 +337,7 @@ chinese_unification = {
 				}
 			}
 		}
+
 		visible = {
 			china_is_potential_government = yes
 			if = {
@@ -383,7 +384,6 @@ chinese_unification = {
 					OR = {
 						has_completed_focus = GXC_xu_ri_dong_sheng
 						has_completed_focus = GXC_lun_de_zi_jin_bu_zai_shou_xian
-						has_completed_focus = GXC_ying_zi_xi_lai
 					}
 				}
 			}
@@ -416,6 +416,23 @@ chinese_unification = {
 					has_government = radical_socialist
 				}
 			}
+			else_if = {
+				limit = { 
+					tag = LEP
+				}
+				NOT = {
+					has_completed_focus = LEP_AOG_supremacy
+				}
+			}
+			else_if = {
+				limit = { 
+					tag = LEC
+				}
+				has_completed_focus = LEC_struggle_for_shanghai
+				NOT = {
+					has_completed_focus = LEC_coastal_concessions_under_rising_sun
+				}
+			}
 		}
 
 		cost = 0
@@ -424,7 +441,7 @@ chinese_unification = {
 		ai_will_do = { factor = 1000 }
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision form_republic_china_decision"
+			log = "[GetDateText]: [Root.GetName]: Decision china_declare_unification"
 			#set_potential_national_government = yes
 			set_country_flag = has_united_china
 			set_global_flag = china_united
@@ -1010,10 +1027,12 @@ chinese_unification = {
 
 		available = {
 			has_war = no
-			custom_trigger_tooltip = {
-				tooltip = china_half_strength_of_overlord_tt
-				overlord = { strength_ratio = { tag = ROOT ratio < 2 } }
-			}
+			# overlord = {
+			# 	strength_ratio = {
+			# 		tag = ROOT
+			# 		ratio > 0.6
+			# 	}
+			# }
 			custom_trigger_tooltip = {
 				tooltip = china_has_been_365_days_tt
 				NOT = { has_country_flag = china_submission_mandatory_loyalty_timer_flag }
@@ -1041,7 +1060,7 @@ chinese_unification = {
 		cost = 50
 		fire_only_once = yes
 
-		ai_will_do = { factor = 0 }
+		ai_will_do = { base = 0 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete china_break_free target: [From.GetName]"
@@ -1761,22 +1780,18 @@ chinese_unification = {
 			if = {
 				limit = { tag = HNN }
 				OR = {
-					has_completed_focus = HNN_xiang_xi_wang_de_sheng_li
-					has_completed_focus = HNN_strongarm_the_assembly
-					GXC = {
-						NOT = {
-							has_country_leader = {
-								name = "陈炯明"
-								ruling_only = yes
-							}
-						}
+					AND = {
+						has_country_leader = { character = HNN_tang_xiangming }
+						has_completed_focus = HNN_strongarm_the_assembly
 					}
-				}
-				if = {
-					limit = {
+					AND = {
+						has_country_leader = { character = HNN_chen_quzhen }
+						has_completed_focus = HNN_xiang_xi_wang_de_sheng_li
+					}
+					AND = {
 						has_country_leader = { character = HNN_zhao_hengti }
+						FROM = { original_tag = QIE }
 					}
-					FROM = { original_tag = QIE } #Zhao should only be able to ally the Zhili in Beijing
 				}
 			}
 			else_if = {
@@ -1830,10 +1845,7 @@ chinese_unification = {
 			if = {
 				limit = { tag = HNN }
 				NOT = { country_exists = NZH }
-				OR = {
-					has_completed_focus = HNN_strongarm_the_assembly
-					has_completed_focus = HNN_strongarm_the_assembly
-				}
+				china_is_aligned_with_zhili = yes
 			}
 		}
 
@@ -1862,6 +1874,7 @@ chinese_unification = {
 				tag = HNN
 				tag = GXC
 				tag = SHC
+				tag = LEC
 			}
 		}
 		available = {
@@ -2580,6 +2593,7 @@ china_united_front_decisions = {
 			tag = event_target:current_china_leader
 		}
 		available = {
+			is_subject = no
 			if = {
 				limit = {
 					NOT = { tag = FNG }

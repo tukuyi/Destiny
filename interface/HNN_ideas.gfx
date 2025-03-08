@@ -401,6 +401,10 @@ spriteTypes = {
 		name = "GFX_idea_SHC_attack_ANQ"
 		texturefile = "gfx/interface/ideas/SHC/SHC_attack_ANQ.png"
 	}
+	spriteType = {
+		name = "GFX_idea_SHC_attack_SQI"
+		texturefile = "gfx/interface/ideas/SHC/SHC_attack_SQI.png"
+	}
 	#制造商
 	spriteType = {
 		name = "GFX_idea_HNN_tie"

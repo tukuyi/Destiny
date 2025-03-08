@@ -4042,13 +4042,14 @@ country_event = {
 }
 
 
-country_event = {
+country_event = {#亚历山大·冯·法肯豪森的回归
 	id = lep.111
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lep.111" }
 	title = lep.111.t
 	desc = lep.111.d
 	picture = GFX_report_event_GEA_falkenhausen
 	fire_only_once = yes
+
 	trigger = {
 		tag = GEA
 		LEP = {
@@ -4069,12 +4070,13 @@ country_event = {
 			}
 		}
 	}
+
 	mean_time_to_happen = { days = 5 }
+
 	option = {
 		name = lep.111.a
 		LEP = {
-			random_unit_leader = {
-				limit = { has_id = 12045 }
+			LEP_AOG_Alexander_von_Falkenhausen = {
 				set_nationality = GEA
 			}
 			if = {
@@ -6001,19 +6003,8 @@ country_event = { # von falkenhausen returns to duty
 		}
 		LEP_calculate_tsingtau_level = yes
 		LEP_add_tsingtau_spirit = yes
-		create_field_marshal = {
-			name = "Alexander von Falkenhausen "
-			portrait_path = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen_general.png"
-			traits = {
-				infantry_officer
-				defensive_doctrine
-			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
-			id = 12045
+		LEP_AOG_Alexander_von_Falkenhausen = {
+			set_nationality = ROOT
 		}
 		hidden_effect = {
 			LEP = { clr_country_flag = Alexander_von_Falkenhausen_dead }
@@ -6025,7 +6016,7 @@ country_event = { # von falkenhausen returns to duty
 	}
 }
 
-country_event = { # von falkenhausen becomes the boss
+country_event = { #监事会宣称其掌控联合
 	id = lepaog.59
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lepaog.59" }
 	title = lepaog.59.t
@@ -6047,6 +6038,7 @@ country_event = { # von falkenhausen becomes the boss
 			retire = yes
 		}
 		hidden_effect = {
+			GRG_set_leader_effect = yes
 			remove_ideas_with_trait = head_of_government
 			LEP_remove_tsingtau_spirit = yes
 			add_ideas = LEP_german_government
@@ -6055,29 +6047,33 @@ country_event = { # von falkenhausen becomes the boss
 				add_idea = export_focus
 			}
 			set_variable = { LEPAOG_krupp_angery = 0 }
-			create_country_leader = {
-				name = "Alexander von Falkenhausen"
-				desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-				expire = "1.1.1"
-				ideology = free_market_capitalist_subtype
-				traits = {}
+			LEP_AOG_Alexander_von_Falkenhausen = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC
+						ideology = free_market_capitalist_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC
+						ideology = colonial_govt_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
 			}
-			create_country_leader = {
-				name = "Board of Directors"
-				desc = "POLITICS_AOG_BOARD_DESC"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-				expire = "1.1.1"
-				ideology = corporatocracy_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Alexander von Falkenhausen"
-				desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-				expire = "1.1.1"
-				ideology = colonial_govt_subtype
-				traits = {}
+			LEP_AOG_Board = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_AOG_BOARD_DESC
+						ideology = corporatocracy_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
 			}
 			set_party_name = {
 				ideology = authoritarian_democrat
@@ -6089,7 +6085,10 @@ country_event = { # von falkenhausen becomes the boss
 				name = LEP_paternal_autocrat_party_aog
 				long_name = LEP_paternal_autocrat_party_aog_long
 			}
-			country_event = { id = allost.3 days = 20 }
+			country_event = { 
+				id = allost.3
+				days = 20 
+			}
 		}
 		add_ideas = { AOG_Alexander_von_Falkenhausen_hog_ade }
 		GEA = {
@@ -6112,7 +6111,7 @@ country_event = { # von falkenhausen becomes the boss
 	}
 }
 
-country_event = { # AOG administrative reshuffle?
+country_event = { #行政岗位问题
 	id = lepaog.60
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lepaog.60" }
 	title = lepaog.60.t
@@ -6200,14 +6199,15 @@ country_event = { # AOG military purge?
 	}
 }
 
-country_event = { # Krupp Complains, wat nou?
+country_event = {#克虏伯开始行动
 	id = lepaog.63
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lepaog.63" }
 	title = lepaog.63.t
 	desc = lepaog.63.d
-	#picture = GFX_report_event_CHI_warlords
+
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	immediate = {
 		hidden_effect = {
 			if = {
@@ -6217,6 +6217,7 @@ country_event = { # Krupp Complains, wat nou?
 			else = { country_event = { id = lepaog.65 days = 7 } }
 		}
 	}
+
 	option = {
 		name = lepaog.63.a
 		trigger = { check_variable = { LEPAOG_krupp_angery < 2 } }
@@ -6240,13 +6241,15 @@ country_event = { # Krupp Complains, they get skill issued
 		name = lepaog.64.a
 		add_political_power = 50
 		hidden_effect = {
-			create_country_leader = {
-				name = "Alexander von Falkenhausen"
-				desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-				expire = "1.1.1"
-				ideology = autocratic_colonial_govt_subtype
-				traits = {}
+			LEP_AOG_Alexander_von_Falkenhausen = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC
+						ideology = autocratic_colonial_govt_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
 			}
 			set_party_name = {
 				ideology = paternal_autocrat
@@ -6303,7 +6306,7 @@ country_event = { # Krupp Complains, they get skill issued
 	}
 }
 
-country_event = { # Krupp Complains, the AOG hangs in the balance
+country_event = { #监事会安危未定
 	id = lepaog.65
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lepaog.65" }
 	title = lepaog.65.t
@@ -6327,13 +6330,15 @@ country_event = { # Krupp Complains, the AOG hangs in the balance
 		}
 		add_political_power = -40
 		hidden_effect = {
-			create_country_leader = {
-				name = "Alexander von Falkenhausen"
-				desc = "POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Alexander_von_Falkenhausen.png"
-				expire = "1.1.1"
-				ideology = autocratic_colonial_govt_subtype
-				traits = {}
+			LEP_AOG_Alexander_von_Falkenhausen = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_ALEXANDER_VON_FALKENHAUSEN_DESC
+						ideology = autocratic_colonial_govt_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
 			}
 			set_party_name = {
 				ideology = paternal_autocrat
@@ -6381,7 +6386,7 @@ country_event = { # Krupp Complains, the AOG hangs in the balance
 	option = { # Krupp
 		name = lepaog.65.b
 		ai_chance = {
-			factor = 35
+			base = 35
 			modifier = {
 				factor = 0.33
 				GER = { has_government = social_democrat }
@@ -6428,23 +6433,31 @@ country_event = { # Krupp Complains, the AOG hangs in the balance
 			}
 		}
 		hidden_effect = {
-			create_country_leader = {
-				name = "Board of Directors"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-				expire = "1.1.1"
-				ideology = free_market_capitalist_subtype
-			}
-			create_country_leader = {
-				name = "Board of Directors"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-				expire = "1.1.1"
-				ideology = corporatocracy_subtype
-			}
-			create_country_leader = {
-				name = "Board of Directors"
-				picture = "gfx/leaders/AOG/Portrait_AOG_Board.png"
-				expire = "1.1.1"
-				ideology = oligarchy_subtype
+			LEP_AOG_Board = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_AOG_BOARD_DESC
+						ideology = free_market_capitalist_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_AOG_BOARD_DESC
+						ideology = corporatocracy_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_AOG_BOARD_DESC
+						ideology = oligarchy_subtype
+						traits = { CHN_germangangs_aligned }
+					}
+					promote_leader = yes
+				}
 			}
 			add_ideas = {
 				AOG_Alfred_Felix_Alwyn_von_Krupp_von_Bohlen_und_Halbach_pos_gov
@@ -6480,13 +6493,15 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = lepfp.1 #What to do about Hunan?
+country_event = {#着眼湖南
+	id = lepfp.1 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lepfp.1" }
 	title = lepfp.1.t
 	desc = lepfp.1.d
 	picture = GFX_report_event_military_planning
+
 	is_triggered_only = yes
+
 	option = {
 		name = lepfp.1.a #Gibmedat
 		ai_chance = { factor = 100 }
@@ -6501,6 +6516,7 @@ country_event = {
 		}
 		else = { 602 = { owner = { country_event = lepfp.3 } } }
 	}
+
 	option = {
 		name = lepfp.1.b #Krump em
 		ai_chance = { factor = 0 }
@@ -7014,10 +7030,6 @@ country_event = { # Fading Falkenhausen
 						limit = {
 							owner = {
 								is_in_faction_with = GER
-								#OR = {
-								#	any_enemy_country = { is_chinese_tag = yes }
-								#	tag = GEA
-								#}
 							}
 							OR = {
 								custom_trigger_tooltip = {
@@ -7180,6 +7192,7 @@ country_event = {
 	desc = allost.2.d
 	picture = GFX_report_event_falkenhausen
 	is_triggered_only = yes
+
 	option = {
 		name = allost.2.a #Yay
 		ai_chance = { factor = 100 }
@@ -7195,7 +7208,7 @@ country_event = {
 	}
 }
 
-country_event = { # The Burning of the Head-Office
+country_event = { #联帅府邸被焚毁
 	id = allost.3
 	immediate = {log = "[GetDateText]: [Root.GetName]: event allost.3"}
 	title = allost.3.t
@@ -7206,11 +7219,14 @@ country_event = { # The Burning of the Head-Office
 	option = {
 		name = allost.3.a
 		add_stability = -0.06
-		country_event = { id = allost.4 days = 1 }
+		country_event = { 
+			id = allost.4 
+			days = 1 
+		}
 	}
 }
 
-country_event = { # The Burning of the Head-Office
+country_event = { #联帅的新府邸
 	id = allost.4
 	immediate = {log = "[GetDateText]: [Root.GetName]: event allost.4"}
 	title = allost.4.t
@@ -7220,26 +7236,26 @@ country_event = { # The Burning of the Head-Office
 	fire_only_once = yes
 	option = {
 		name = allost.4.a
-		ai_chance = { factor = 30 }
+		ai_chance = { base = 30 }
 		add_stability = 0.06
 	}
 	option = {
 		name = allost.4.b
 		trigger = { controls_state = 744 }
-		ai_chance = { factor = 30 }
+		ai_chance = { base = 30 }
 		set_capital = { state = 744 }
 		add_political_power = 30
 	}
 	option = {
 		name = allost.4.c
 		trigger = { controls_state = 592 }
-		ai_chance = { factor = 25 }
+		ai_chance = { base = 25 }
 		set_capital = { state = 592 }
 		592 = { add_extra_state_shared_building_slots = 1 }
 	}
 	option = {
 		name = allost.4.e
-		ai_chance = { factor = 15 }
+		ai_chance = { base = 15 }
 		trigger = { controls_state = 1075 }
 		set_capital = { state = 1075 }
 		add_war_support = 0.10
@@ -7274,7 +7290,7 @@ country_event = { # You is winner, AOG pov
 	}
 }
 
-country_event = { # You SUCK, AOG pov
+country_event = { #帝国反击战
 	id = allost.7
 	immediate = {log = "[GetDateText]: [Root.GetName]: event allost.7"}
 	title = allost.7.t
@@ -7286,7 +7302,7 @@ country_event = { # You SUCK, AOG pov
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 12045
+					is_character = LEP_AOG_Alexander_von_Falkenhausen
 					has_id = 12046
 					has_id = 12047
 					has_id = 12048
@@ -7333,7 +7349,7 @@ country_event = { # You SUCK, AOG pov
 		every_unit_leader = {
 			limit = {
 				OR = {
-					has_id = 12045
+					is_character = LEP_AOG_Alexander_von_Falkenhausen
 					has_id = 12046
 					has_id = 12047
 					has_id = 12048
@@ -7786,16 +7802,6 @@ country_event = { # chinese empire gang
 		name = allost.22.a
 		set_cosmetic_tag = MON_CHINA_EMPIRE
 		AOG_setup_puppet_keding = yes
-		create_corps_commander = {
-			name = "Zhang Jingyao"
-			portrait_path = "gfx/leaders/MON/Portrait_MON_Zhang_Jingyao.png"
-			traits = { trait_reckless substance_abuser }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-		}
 	}
 	option = {
 		trigger = { has_country_flag = AOG_hongwu_leader }
@@ -7805,14 +7811,16 @@ country_event = { # chinese empire gang
 	}
 }
 
-country_event = { # willy 2 death
+country_event = { #威廉三世即位
 	id = aogdeathevent.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event aogdeathevent.1"}
 	title = aogdeathevent.1.t
 	desc = aogdeathevent.1.d
 	picture = GFX_report_event_spain_civil_war_soldiers
+
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = aogdeathevent.1.a
 		hidden_effect = { AOG_setup_chinesisches_kaiserreich = yes }

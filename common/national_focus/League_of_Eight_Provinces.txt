@@ -1907,16 +1907,23 @@ focus_tree = {
 	focus = {
 		id = LEP_AOG_supremacy
 		icon = GFX_goal_AOG_board_2
+		relative_position_id = LEP_opening_the_interior
 		x = 0
 		y = 1
 		cost = 2
-		ai_will_do = { factor = 100 }
-		relative_position_id = LEP_opening_the_interior
-		prerequisite = { focus = LEP_opening_the_interior }
+		
+		ai_will_do = { base = 100 }
+
+		prerequisite = { 
+			focus = LEP_opening_the_interior 
+		}
 		available = {
-			NOT = { has_completed_focus = LEP_zhili_consolidation }
+			NOT = { 
+				has_completed_focus = LEP_zhili_consolidation 
+			}
 			market_liberal > 0.4
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_AOG_supremacy"
 			set_country_flag = LEP_AOG_rule
@@ -2043,19 +2050,30 @@ focus_tree = {
 	focus = {
 		id = LEP_ostasia_direktorum_victory
 		icon = GFX_goal_aog_falkenhausen
+		relative_position_id = LEP_AOG_supremacy
 		x = -1
 		y = 3
 		cost = 5
 		ai_will_do = { factor = 100 }
-		relative_position_id = LEP_AOG_supremacy
-		available = { hidden_trigger = { NOT = { has_completed_focus = LEP_krupp_victory } } }
+
+		available = { 
+			hidden_trigger = { 
+				NOT = { 
+					has_completed_focus = LEP_krupp_victory 
+				} 
+			} 
+		}
+
 		prerequisite = {
 			focus = LEP_the_union_in_forty_years
 			focus = LEP_limited_self_rule
 		}
 		prerequisite = { focus = LEP_german_economic_reforms }
+
 		mutually_exclusive = { focus = LEP_krupp_victory }
+
 		select_effect = { country_event = lepaog.63 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_ostasia_direktorum_victory"
 			set_temp_variable = { NKPOP = 10 }
@@ -2118,18 +2136,23 @@ focus_tree = {
 	focus = {
 		id = LEP_krupp_victory
 		icon = GFX_goal_AOG_board_1
+		relative_position_id = LEP_AOG_supremacy
 		x = 1
 		y = 3
 		cost = 5
 		ai_will_do = { factor = 50 }
-		relative_position_id = LEP_AOG_supremacy
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			hidden_trigger = { always = no } 
+		}
+
 		prerequisite = {
 			focus = LEP_the_union_in_forty_years
 			focus = LEP_limited_self_rule
 		}
 		prerequisite = { focus = LEP_german_economic_reforms }
+
 		mutually_exclusive = { focus = LEP_ostasia_direktorum_victory }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_krupp_victory"
 			custom_effect_tooltip = unlock_focuses
@@ -2273,13 +2296,16 @@ focus_tree = {
 	focus = {
 		id = LEP_pride_of_service
 		icon = GFX_goal_Sturmtruppen
+		relative_position_id = LEP_buck_break_dissent
 		x = 1
 		y = 1
 		cost = 5
 		ai_will_do = { factor = 100 }
-		relative_position_id = LEP_buck_break_dissent
+
 		prerequisite = { focus = LEP_buck_break_dissent }
+
 		mutually_exclusive = { focus = LEP_pay_them_more }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_buck_break_dissent"
 			add_stability = 0.05
@@ -3475,13 +3501,17 @@ focus_tree = {
 	focus = {
 		id = LEP_securing_our_grip
 		icon = GFX_goal_AOG_Secure_our_Grip
+		relative_position_id = LEP_qi_rules_nanjing
 		x = 34
 		y = 0
 		cost = 5
+
 		ai_will_do = { factor = 30 }
-		relative_position_id = LEP_qi_rules_nanjing
 		available = { has_completed_focus = LEP_buck_break_dissent }
-		allow_branch = { NOT = { has_completed_focus = LEP_zhili_consolidation } }
+		allow_branch = { 
+			NOT = { has_completed_focus = LEP_zhili_consolidation } 
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEP_securing_our_grip"
 			army_experience = 50

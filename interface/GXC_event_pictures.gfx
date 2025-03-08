@@ -8,6 +8,10 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/GXC/GXC_bai_chong_xi.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_GXC_wei_lian"
+		texturefile = "gfx/event_news_pictures/GXC/GXC_wei_lian.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_GXC_bai_chong_ruo"
 		texturefile = "gfx/event_news_pictures/GXC/GXC_bai_chong_ruo.png"
 	}

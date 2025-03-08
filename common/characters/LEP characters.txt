@@ -2,6 +2,49 @@ characters = {
 ####################
 ###    领导人    ###
 ####################
+#AOG
+	LEP_AOG_Board = {
+		name = LEP_AOG_Board
+		portraits = {
+			army = {
+				small = GFX_Portrait_AOG_Board
+				large = GFX_Portrait_AOG_Board
+			}
+			civilian = {
+				large = GFX_Portrait_AOG_Board
+			}
+		}
+		country_leader = {
+			desc = POLITICS_AOG_BOARD_DESC
+			ideology = free_market_capitalist_subtype
+			traits = { CHN_germangangs_aligned }
+		}
+	}
+#亚历山大·冯·法肯豪森
+	LEP_AOG_Alexander_von_Falkenhausen = {
+		name = LEP_AOG_Alexander_von_Falkenhausen
+		portraits = {
+			army = {
+				small = GFX_Portrait_AOG_Alexander_von_Falkenhausen_general
+				large = GFX_Portrait_AOG_Alexander_von_Falkenhausen_general
+			}
+			civilian = {
+				large = GFX_Portrait_AOG_Alexander_von_Falkenhausen
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_AOG_ALEXANDER_VON_FALKENHAUSEN_ARMY_DESC
+			traits = {
+				infantry_officer
+				defensive_doctrine
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	
 #孫傳芳
 	LEP_sun_chuanfang = {
 		name = LEP_sun_chuanfang

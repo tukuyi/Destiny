@@ -59,20 +59,11 @@ SHC_gong_tuan_leader_coming = {#上海将领
 	SHC_Rao_Shu_Shi = {
 		set_nationality = ROOT
 	}
-	create_corps_commander = {
-		name = "王亚樵"
-		portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
-		traits = { 
-			fast_planner
-			offensive_doctrine
-			irregulars_officer
-			urban_assault_specialist
+	LEC = {
+		LEC_Wang_Yaqiao = {
+			set_nationality = ROOT
+			remove_unit_leader_trait = LEC_triad_commander
 		}
-		skill = 2
-		attack_skill = 3
-		defense_skill = 1
-		planning_skill = 1
-		logistics_skill = 2
 	}
 	create_corps_commander = {
 		name = "鲁迅"

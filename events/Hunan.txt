@@ -1940,7 +1940,7 @@ country_event = {#使馆城市
 		HNN = { country_event = hnn.118 }
 	}
 }
-country_event = {#徳属东亚和葡萄牙
+country_event = {#德属东亚和葡萄牙
 	id = hnn.116
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.116" }
 	title = hnn.116.t 
@@ -1962,7 +1962,7 @@ country_event = {#徳属东亚和葡萄牙
 		FROM = { country_event = hnn.118 }
 	}
 }
-country_event = {#徳属东亚和葡萄牙
+country_event = {#德属东亚和葡萄牙
 	id = hnn.135
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.116" }
 	title = hnn.116.t 
@@ -3443,6 +3443,7 @@ country_event = {#大战
 		}
 		custom_effect_tooltip = HNN_tang_loses_tt
 		hidden_effect = {
+			china_break_puppet_effect = yes
 			country_event = hnnzhili.3
 			HNN_tang_xiangming = {
 				demote_to_general = yes
@@ -6625,6 +6626,9 @@ country_event = {#湘西暴动
 						country_leader = {
 							desc = POLITICS_HNN_HE_LONG_SHEN_BING_DESC
 							ideology = comrades_coast_subtype
+							traits = {
+								CHN_Syndicalists_aligned
+							}
 						}
 						promote_leader = yes
 					}
@@ -14106,7 +14110,7 @@ country_event = {#选举结果
 	}
 }
 
-country_event = { 
+country_event = {#独裁者的末路
 	id = hungong.15
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.15" }
 	title = hungong.15.t
@@ -14270,7 +14274,10 @@ country_event = {###国民党左派革命失败
 					set_nationality = ROOT
 					set_portraits = {
 						army = { 
-							large = GFX_Portrait_HNN_ye_ting 
+							large = GFX_Portrait_HNN_ye_ting
+						}
+						civilian = {
+							large = GFX_Portrait_HNN_ye_ting_civ
 						}
 					}
 					remove_unit_leader_trait = CHI_left_kmt_officer

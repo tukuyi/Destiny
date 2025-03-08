@@ -257,7 +257,6 @@ characters = {
 ####################
 ###   国党将领   ###
 ####################
-
 #张发奎
 	CHI_zhang_fakui = {
 		name = CHI_zhang_fakui

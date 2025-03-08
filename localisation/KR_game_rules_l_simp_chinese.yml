@@ -1824,8 +1824,14 @@
  RULE_OPTION_NFL_MIKMAQ_LAND_NEGOTIATION_YES_DESC:0 "加拿大欣然同意了米克马克人的要求。"
  RULE_OPTION_NFL_MIKMAQ_LAND_NEGOTIATION_NO:0 "£KR_game_rule_flag_NFL_WAB 加拿大拒绝"
  RULE_OPTION_NFL_MIKMAQ_LAND_NEGOTIATION_NO_DESC:0 "加拿大政府拒绝交出新斯科舍、新不伦瑞克和爱德华王子岛。"
-
-
+ RULE_OPTION_ARM_FORPOL_UKR:0 "£KR_game_rule_flag_ARM £KR_game_rule_flag_UKR 海间联邦"
+ RULE_OPTION_ARM_FORPOL_UKR_DESC:0 "亚美尼亚不会与任何大国结盟，而是积极同乌克兰政府开展地区合作。\n§R需要：§!\n§C亚美尼亚和乌克兰同为社会主义政权§!或§C同为非社会主义政权§!"
+ RULE_OPTION_ARM_FORPOL_NEUTRALITY:0 "£KR_game_rule_flag_ARM 中立"
+ RULE_OPTION_ARM_FORPOL_NEUTRALITY_DESC:0 "亚美尼亚会维持中立，不加入任何阵营。"
+ RULE_OPTION_LEC_TRIADS_ZHANG:0 "£KR_game_rule_flag_LEC_TRIAD 猴头之夜 - 张啸林得胜"
+ RULE_OPTION_LEC_TRIADS_ZHANG_DESC:0 "使馆城市因财政运作失当终至破产，张啸林麾下的三合会趁机夺权，带领城市投入了日本的怀抱。"
+ RULE_OPTION_LEC_TRIADS_SHUNTIAN:0 "£KR_game_rule_flag_LEC_SHUNTIAN_REGENCY 大明顺天国兴起"
+ RULE_OPTION_LEC_TRIADS_SHUNTIAN_DESC:0 "使馆城市因财政运作失当终至破产，三合会趁乱妄图夺权。值此危局，沪上革命志士谢缵泰力挫帮会暴动，拥立皇明后人，行君主立宪之制。"
 
 
 
@@ -1904,6 +1910,8 @@
  RULE_OPTION_SHC_TRIADS_DESC:0 "上海滩的地下皇帝们从幕后走到了台前。"
  RULE_OPTION_SHC_TRIADS_ZHANG:0 "£KR_game_rule_flag_LEC_china_triad 黑帮掌权 - 张啸林当选龙头"
  RULE_OPTION_SHC_TRIADS_ZHANG_DESC:0 "上海滩的地下皇帝们从幕后走到了台前。"
+ RULE_OPTION_SHC_TRIADS_YANG:0 "£KR_game_rule_flag_LEC_china_triad 黑帮掌权 - 杨虎当选龙头"
+ RULE_OPTION_SHC_TRIADS_YANG_DESC:0 "上海起义的侩子手，残暴的屠夫坐上了龙头的椅子，左派们，快跑吧，你们的末日到了！"
  RULE_OPTION_SHC_TRIADS_DU:0 "£KR_game_rule_flag_LEC_china_triad 黑帮掌权 - 杜月笙当选龙头"
  RULE_OPTION_SHC_TRIADS_DU_DESC:0 "上海滩的地下皇帝们从幕后走到了台前。"
  RULE_OPTION_SHC_TRIADS_HUANG:0 "£KR_game_rule_flag_LEC_china_triad 黑帮掌权 - 黄金荣当选龙头"
