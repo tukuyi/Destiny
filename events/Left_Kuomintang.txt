@@ -3646,6 +3646,9 @@ country_event = {#间谍
 				HNN = {
 					NOT = {
 						has_country_flag = HNN_gong_tuan_victory_flag
+						has_country_leader = {
+							character = HNN_he_long
+						}
 					}
 				}
 			}
@@ -3785,6 +3788,9 @@ country_event = {#间谍
 				HNN = {
 					NOT = {
 						has_country_flag = HNN_gong_tuan_victory_flag
+						has_country_leader = {
+							character = HNN_he_long
+						}
 					}
 				}
 			}

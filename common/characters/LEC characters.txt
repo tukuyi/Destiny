@@ -127,7 +127,7 @@ characters = {
 				logistics_skill = 3
 			}
 		}
-	#瓦尔特·施坦内斯	
+	#瓦尔特·施坦内斯
 		LEC_walter_stennes = {
 			name = LEC_walter_stennes
 			portraits = {
@@ -151,7 +151,7 @@ characters = {
 			}
 		}
 #国际#
-	#威廉·尤尔特·费尔贝恩	
+	#威廉·尤尔特·费尔贝恩
 		LEC_william_ewart_fairbairn = {
 			name = LEC_william_ewart_fairbairn
 			portraits = {
@@ -200,7 +200,7 @@ characters = {
 				coordination_skill = 1
 			}
 		}
-	#格尔曼·蒂梅	
+	#格尔曼·蒂梅
 		LEC_german_time = { 
 			name = LEC_german_time
 			portraits = {
@@ -223,6 +223,28 @@ characters = {
 				logistics_skill = 1
 			}
 		}	
+	#上海警察局
+		LEC_Legation_Police = { 
+			name = LEC_Legation_Police
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Legation_Police_Blue
+					small = GFX_Portrait_LEC_Legation_Police_Blue
+				}
+			}
+			field_marshal = {
+				traits = {
+					incorporeal
+					urban_assault_specialist
+					LEC_international_commander
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}		
 #黑帮#
 	#诸龙头联合
 		LEC_Crime_Bosses = { 

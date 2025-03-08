@@ -1181,6 +1181,7 @@ LEC_triad_enterprise = {#犯罪活动
 }
 
 LEC_triad_expansion = {#扩张帮会
+	#宁波
 	LEC_expand_operation_ningbo = {
 		icon = GFX_decision_generic_agreement
 		available = {
@@ -1271,6 +1272,7 @@ LEC_triad_expansion = {#扩张帮会
 		}
 	}
 
+	#福州
 	LEC_expand_operation_Fuzhou = {
 		icon = GFX_decision_generic_agreement
 		available = {
@@ -1361,6 +1363,7 @@ LEC_triad_expansion = {#扩张帮会
 		}
 	}
 
+	#汕头
 	LEC_expand_operation_Shantou = {
 		icon = GFX_decision_generic_agreement
 		available = {
@@ -1451,6 +1454,7 @@ LEC_triad_expansion = {#扩张帮会
 		}
 	}
 
+	#香港
 	LEC_expand_operation_Hong_Kong = {
 		icon = GFX_decision_generic_agreement
 		available = {
@@ -1541,6 +1545,7 @@ LEC_triad_expansion = {#扩张帮会
 		}
 	}
 
+	#天津
 	LEC_expand_operation_Tianjin = {
 		icon = GFX_decision_generic_agreement
 		available = {
@@ -1628,6 +1633,188 @@ LEC_triad_expansion = {#扩张帮会
 			log = "[GetDateText]: [Root.GetName]: Decision LEC_france_macao"
 			add_political_power = -50
 			transfer_state = 609
+		}
+	}
+
+	#澳门
+	LEC_expand_operation_macau = {
+		icon = GFX_decision_generic_agreement
+		available = {
+			NOT = {
+				owns_state = 729
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 729
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Crime_Expansion
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_expand_operation_macau"
+			add_state_core = 729
+			set_country_flag = LEC_Operations_macau
+		}
+	}
+	LEC_Bribe_Officals_macau = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = {
+				owns_state = 729
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 729
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_macau
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Bribe_Officals_macau"
+			add_political_power = -50
+			729 = {
+				controller = {
+					add_political_power = 50
+				}
+			}
+			set_country_flag = LEC_Operations_macau_2
+		}
+	}
+	LEC_Establish_macau_Syndicate = {
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = {
+				owns_state = 729
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 729
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_macau_2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_macau_Syndicate"
+			add_political_power = -50
+			transfer_state = 729
+		}
+	}
+
+	#青岛
+	LEC_expand_operation_qingdao = {
+		icon = GFX_decision_generic_agreement
+		available = {
+			NOT = {
+				owns_state = 744
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 744
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Crime_Expansion
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_expand_operation_qingdao"
+			add_state_core = 744
+			set_country_flag = LEC_Operations_qingdao
+		}
+	}
+	LEC_Bribe_Officals_qingdao = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = {
+				owns_state = 744
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 744
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_qingdao
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Bribe_Officals_qingdao"
+			add_political_power = -50
+			744 = {
+				controller = {
+					add_political_power = 50
+				}
+			}
+			set_country_flag = LEC_Operations_qingdao_2
+		}
+	}
+	LEC_Establish_qingdao_Syndicate = {
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = {
+				owns_state = 744
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 744
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_qingdao_2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_qingdao_Syndicate"
+			add_political_power = -50
+			transfer_state = 744
 		}
 	}
 

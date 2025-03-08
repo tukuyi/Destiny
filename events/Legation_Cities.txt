@@ -14182,7 +14182,7 @@ country_event = {#青帮四分五裂
 
 	option = {#杜月笙
 		name = legcities.104.c
-		ai_will_do = {
+		ai_chance = {
 			base = 100
 			modifier = {
 				factor = 0
@@ -14236,7 +14236,7 @@ country_event = {#青帮四分五裂
 
 	option = {#张啸林
 		name = legcities.104.e
-		ai_will_do = {
+		ai_chance = {
 			base = 100
 			modifier = {
 				factor = 0
@@ -14269,7 +14269,7 @@ country_event = {#青帮四分五裂
 
 	option = {#杨虎
 		name = legcities.104.f
-		ai_will_do = {
+		ai_chance = {
 			base = 100
 			modifier = {
 				factor = 0
@@ -14354,8 +14354,6 @@ country_event = {#皇帝
 			limit = { 
 				has_country_leader = { ruling_only = yes name = "王亚樵" }	
 			}
-			set_country_flag = LEC_da_ming_back
-			set_cosmetic_tag = LEC_MING
 			set_politics = {
 				ruling_party = radical_socialist
 			}
@@ -14369,10 +14367,10 @@ country_event = {#皇帝
 				}
 			}
 		}
+		set_country_flag = LEC_da_ming_back
+		set_cosmetic_tag = LEC_MING
 		set_capital = { 
 			state = 613
-			set_country_flag = LEC_da_ming_back
-			set_cosmetic_tag = LEC_MING
 		}
 	}
 	

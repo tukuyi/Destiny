@@ -4314,7 +4314,7 @@ focus_tree = {
 			NSW = {
 				every_unit_leader = {
 					limit = {
-						has_id = 1355
+						is_character = LEC_Legation_Police
 					}
 					set_nationality = LEC
 				}
@@ -4401,29 +4401,26 @@ focus_tree = {
 			add_political_power = 50
 			743 = {
 				add_extra_state_shared_building_slots = 1
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.05
-						state_production_speed_buildings_factor = 0.05
-					}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.03
-						state_production_speed_buildings_factor = 0.03
-					}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.03
-						state_production_speed_buildings_factor = 0.03
-					}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
 			}
 		}
@@ -4911,22 +4908,20 @@ focus_tree = {
 						}
 					}
 					LEC_Wang_Yaqiao = {
-						remove_ideas_with_trait = CHN_Syndicalists_aligned
-						var:country_leader = { clear_variable = china_alignment }
+						remove_country_leader_trait = CHN_Syndicalists_aligned
 					}
+					var:country_leader = { clear_variable = china_alignment }
 				}
 				if = {
 					limit = { 
-						limit = { 
-							has_country_leader = {
-								character = LEC_yang_hu
-							}
-						}
-						LEC_yang_hu = {
-							remove_ideas_with_trait = CHN_right_kuomintang_aligned
-							var:country_leader = { clear_variable = china_alignment }
+						has_country_leader = {
+							character = LEC_yang_hu
 						}
 					}
+					LEC_yang_hu = {
+						remove_country_leader_trait = CHN_right_kuomintang_aligned
+					}
+					var:country_leader = { clear_variable = china_alignment }
 				}
 			}
 		}
@@ -5486,14 +5481,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		cost = 5
-		available_if_capitulated = yes
+
 		allow_branch = { always = no }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-		}
-		prerequisite = { focus = LEC_dispelling_false_notions_about_christianity }
+
 		completion_reward = {
 
 		}

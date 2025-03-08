@@ -288,23 +288,6 @@ create_country_leader = {
 	}
 }
 
-create_field_marshal = {
-	name = "上海警察局"
-	portrait_path = "gfx/leaders/LEC/Portrait_LEC_Legation_Police_Blue.png"
-	traits = {
-		incorporeal
-		urban_assault_specialist
-		LEC_international_commander
-	}
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-
-	id = 1355
-}
-
 recruit_character = LEC_francis_wogan_festing
 recruit_character = LEC_edward_barrett
 
@@ -316,6 +299,7 @@ recruit_character = LEC_georg_wetzell
 
 recruit_character = LEC_william_ewart_fairbairn
 recruit_character = LEC_german_time
+recruit_character = LEC_Legation_Police
 recruit_character = LEC_reginald_yorke_tyrwhitt
 
 recruit_character = LEC_yang_hu

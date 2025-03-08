@@ -19,6 +19,42 @@ shared_focus = {
 	}
 }
 shared_focus = {
+	id = YUN_tradgey_strikes_the_empire
+	icon = GFX_goal_YUN_The_Period_of_Tragedy_and_Autumns
+	cost = 2
+	x = 47
+	y = 7
+	ai_will_do = {
+		base = 75
+	}
+	allow_branch = {
+		always = no
+	}
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_CHI_BO_PO_MO_FO"
+		
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+}
+shared_focus = {
+	id = YUN_end_of_da_chaos
+	icon = GFX_goal_YUN_Preserving_the_Heavenly_Peace
+	cost = 2
+	relative_position_id = YUN_tradgey_strikes_the_empire
+	x = 0
+	y = 4
+	ai_will_do = {
+		base = 75
+	}
+	allow_branch = {
+		always = no
+	}
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus YUN_CHI_BO_PO_MO_FO"
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+}
+shared_focus = {
 	id = YUN_Seize_the_Chance
 	icon = GFX_goal_rolling_the_dice
 	cost = 5.00
