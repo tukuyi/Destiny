@@ -336,7 +336,7 @@ characters = {
 			logistics_skill = 3
 		}
 	}	
-#罗恩	
+#罗恩
 	TIX_Roon = {
 		name = TIX_Roon
 		portraits={
