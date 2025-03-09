@@ -59,7 +59,7 @@ leader_traits = {
 			factor = 0
 		}
 	}
-	Zerstörer = {#驱逐舰
+	Destroyer = {#驱逐舰
 		type = land
 		trait_type = personality_trait
 
@@ -100,6 +100,26 @@ leader_traits = {
 
 		field_marshal_modifier = {
 			max_army_group_size = -4
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	qian_ting = {#潜艇
+		type = navy
+		trait_type = personality_trait
+
+		attack_skill = 1
+
+		maneuvering_skill_factor = 1
+		coordination_skill_factor = 1
+
+		modifier = {
+			spotting_chance = 0.10
+			naval_speed_factor = 0.10
+			naval_has_potf_in_combat_attack = 0.1
+			naval_has_potf_in_combat_defense = 0.1
 		}
 
 		new_commander_weight = {

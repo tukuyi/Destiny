@@ -153,6 +153,26 @@ ideas = {
 ##############
 
 	country = {
+		YUN_steep_attack = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea Yunnan_Raids"}
+			picture = MON_Horse_Riders
+			allowed = { always = no }
+            modifier = { 
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				heat_attrition_factor = -0.3
+			}
+		}
+		YUN_welfare = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea Yunnan_Raids"}
+			picture = generic_welfare_state
+			allowed = { always = no }
+            modifier = { 
+				monthly_population = 0.05
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.07
+			}
+		}
 	###白族
 		YUN_bao_jin_an_ming = {#保境安民
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea YUN_bao_jin_an_ming"}

@@ -14347,40 +14347,25 @@ country_event = {#皇帝
 	
 	is_triggered_only = yes
 
-	option = {
+	option = {#自己当
 		name = legcities.101.a
 		add_political_power = 50
 		if = {
 			limit = { 
-				has_country_leader = { ruling_only = yes name = "王亚樵" }	
-			}
-			set_politics = {
-				ruling_party = radical_socialist
-			}
-			LEC_Wang_Yaqiao = {
-				add_country_leader_role = {
-					country_leader = { 
-						desc = POLITICS_WANG_YA_QIAO_DESC
-						ideology = anarcho_communism_subtype
-					}
-					promote_leader = yes
+				has_country_leader = {
+					character = LEC_yang_hu
 				}
 			}
+			set_cosmetic_tag = LEC_TRIAD_CHINA
 		}
-		set_country_flag = LEC_da_ming_back
-		set_cosmetic_tag = LEC_MING
-		set_capital = { 
-			state = 613
+		else = {
+			set_cosmetic_tag = QIE_CN
 		}
+		set_capital = { state = 613 }
 	}
 	
-	option = {
+	option = {#大明
 		name = legcities.101.b
-		trigger = {
-			NOT = {
-				has_country_leader = { ruling_only = yes name = "王亚樵" }
-			}
-		}
 		set_country_flag = LEC_da_ming_back
 		create_country_leader = {
 			name = "洪武二世"
@@ -14404,13 +14389,8 @@ country_event = {#皇帝
 		}
 	}
 
-	option = {
+	option = {#商
 		name = legcities.101.c
-		trigger = {
-			NOT = {
-				has_country_leader = { ruling_only = yes name = "王亚樵" }
-			}
-		}
 		create_country_leader = {
 			name = "文宣王"
 			desc = "SHANG_EMPEROR_DESC"
@@ -14421,8 +14401,8 @@ country_event = {#皇帝
 		set_cosmetic_tag = SHANG_EMPIRE
 		set_party_name = {
 			ideology = paternal_autocrat
-			long_name = "Shang Dynasty"
-			name = "Shang Dynasty"
+			long_name = "商王朝"
+			name = "商王朝"
 		}
 		set_capital = { state = 613 }
 		hidden_effect = {
@@ -14430,10 +14410,10 @@ country_event = {#皇帝
 				id = china_shared.1000
 				days = 15
 			}
-			country_event = {
-				id = legcities.102
-				days = 365
-			}
+			# country_event = {
+			# 	id = legcities.102
+			# 	days = 365
+			# }
 		}
 	}
 }
@@ -14451,7 +14431,6 @@ country_event = {#孔令贻死了
 		create_country_leader = {
 			name = "Kong Decheng"
 			picture = "gfx/leaders/FNG/Portrait_FNG_Kong_Decheng.png"
-			desc = ""
 			expire = "1.1.1"
 			ideology = absolute_monarchy_subtype
 		}

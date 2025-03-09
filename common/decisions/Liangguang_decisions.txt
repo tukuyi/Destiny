@@ -197,10 +197,25 @@ political_actions = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GXC_zhao_huan_jian_niang"
+			TIX_Z9 = {
+				set_nationality = ROOT
+			}
 			TIX_Z46 = {
 				set_nationality = ROOT
 			}
 			TIX_Z52 = {
+				set_nationality = ROOT
+			}
+			TIX_U_96 = {
+				set_nationality = ROOT
+			}
+			TIX_U_37 = {
+				set_nationality = ROOT
+			}
+			TIX_U_81 = {
+				set_nationality = ROOT
+			}
+			TIX_U_47 = {
 				set_nationality = ROOT
 			}
 			TIX_Roon = {
@@ -234,6 +249,12 @@ political_actions = {
 				set_nationality = ROOT
 			}
 			TIX_Prinz_Adalbert = {
+				set_nationality = ROOT
+			}
+			TIX_Friedrich_Carl = {
+				set_nationality = ROOT
+			}
+			TIX_August_von_Parseval = {
 				set_nationality = ROOT
 			}
 			TIX_Otto_von_Alvensleben = {

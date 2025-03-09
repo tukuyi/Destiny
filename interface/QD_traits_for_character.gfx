@@ -32,8 +32,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/traits/trait_tun_shi.png"
 	}
 	spriteType = {
-		name = "GFX_trait_Zerstörer"
-		texturefile = "gfx/interface/traits/trait_Zerstörer.png"
+		name = "GFX_trait_Destroyer"
+		texturefile = "gfx/interface/traits/trait_Destroyer.png"
+	}
+	spriteType = {
+		name = "GFX_trait_qian_ting"
+		texturefile = "gfx/interface/traits/trait_qian_ting.png"
 	}
 	spriteType = {
 		name = "GFX_trait_rising_star"

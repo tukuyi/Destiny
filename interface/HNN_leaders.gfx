@@ -788,6 +788,34 @@ spriteTypes = {
 		texturefile = "gfx/leaders/TIX/Portrait_TIX_Z46.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_TIX_August_von_Parseval"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_August_von_Parseval.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_U_96"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_U_96.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_U_37"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_U_37.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_U_81"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_U_81.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_U_47"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_U_47.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Friedrich_Carl"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Friedrich_Carl.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Z9"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Z9.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_TIX_Roon"
 		texturefile = "gfx/leaders/TIX/Portrait_TIX_Roon.png"
 	}

@@ -3228,8 +3228,13 @@
 
  autonomous_rich_puppet: "子公司"
 
+ TIX_Z9: "Z9"
  TIX_Z46: "Z46"
  TIX_Z52: "Z52"
+ TIX_U_96: "U-96"
+ TIX_U_37: "U-37"
+ TIX_U_81: "U-81"
+ TIX_U_47: "U-47"
  TIX_Roon: "罗恩"
  TIX_Alvitr: "亚尔薇特"
  TIX_Ai_ji_er: "埃吉尔"
@@ -3239,8 +3244,10 @@
  TIX_Prinz_Eugen: "欧根亲王"
  TIX_fei_te_lie: "腓特烈大帝"
  TIX_hu_teng: "乌尔里希·冯·胡滕"
+ TIX_Friedrich_Carl: "腓特烈·卡尔"
  TIX_Peter_Strasser: "彼得·史特拉塞"
  TIX_Prinz_Adalbert: "阿达尔伯特亲王"
+ TIX_August_von_Parseval: "奥古斯特·冯·帕塞瓦尔"
  TIX_Otto_von_Alvensleben: "奥托·冯·阿尔文斯莱本"
 
  GXC_Alfried_Krupp: "阿尔弗雷德·克虏伯"

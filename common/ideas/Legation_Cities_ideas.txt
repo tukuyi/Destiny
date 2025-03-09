@@ -1405,10 +1405,14 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe"}
-			picture = UKR_mace
+			picture = ALB_rejuvenation_classes
 			allowed = { always = no }
-			available = { 
-				has_country_leader = { name = "王亚樵" ruling_only = yes }
+			available = {	
+				OR = {
+					has_country_leader = { name = "巴金" ruling_only = yes }
+					has_country_leader = { name = "陈铭枢" ruling_only = yes }
+					has_country_leader = { name = "王亚樵" ruling_only = yes }
+				}
 			}
             modifier = {
 				conscription = 0.03
@@ -1424,10 +1428,15 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe2 = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe2"}
-			picture = UKR_mace
+			picture = ALB_rejuvenation_classes
+			name = LEC_jue_xin_de_ge_ming_zhe
 			allowed = { always = no }
 			available = { 
-				has_country_leader = { name = "王亚樵" ruling_only = yes }
+				OR = {
+					has_country_leader = { name = "巴金" ruling_only = yes }
+					has_country_leader = { name = "陈铭枢" ruling_only = yes }
+					has_country_leader = { name = "王亚樵" ruling_only = yes }
+				}
 			}
             modifier = {
 				conscription = 0.03
@@ -1446,10 +1455,15 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe3 = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe3"}
-			picture = UKR_mace
+			picture = ALB_rejuvenation_classes
+			name = LEC_jue_xin_de_ge_ming_zhe
 			allowed = { always = no }
 			available = { 
-				has_country_leader = { name = "王亚樵" ruling_only = yes }
+				OR = {
+					has_country_leader = { name = "巴金" ruling_only = yes }
+					has_country_leader = { name = "陈铭枢" ruling_only = yes }
+					has_country_leader = { name = "王亚樵" ruling_only = yes }
+				}
 			}
             modifier = {
 				conscription = 0.03
@@ -2695,6 +2709,45 @@ ideas = {
 			}
 		}
 	#大明
+		LEC_tanglarp_code = {#儒法革命
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_tanglarp_code"}
+			picture = YUN_tangcodeidea
+			allowed = { always = no }
+            modifier = {
+				surrender_limit = 0.05
+				army_org_factor = 0.10
+				stability_factor = 0.10
+				war_support_factor = 0.15
+				out_of_supply_factor = 0.15
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		LEC_wealth_cap = { #财富限额
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_wealth_cap"}
+			allowed = { always = no }
+			picture = wealth_cap
+			modifier = {
+				stability_weekly = 0.005
+				political_power_gain = 0.05
+				research_speed_factor = -0.03
+				consumer_goods_factor = -0.06
+				production_speed_buildings_factor = 0.03
+				production_factory_efficiency_gain_factor = -0.06
+				production_factory_max_efficiency_factor = -0.08
+			}
+		}
+		LEC_workers_bill = { #传统教育
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_workers_bill"}
+			allowed = { always = no }
+			picture = f_l_bill
+			modifier = { 
+				consumer_goods_factor = -0.1
+				stability_weekly = 0.001
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.03
+			}
+		}
 		LEC_national_rebirth_idea = {#国家重生
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_idea"}
 			allowed = { always = no }
@@ -2782,7 +2835,6 @@ ideas = {
 		LEC_national_rebirth_idea2 = {#国家重生-明
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_idea2"}
 			allowed = { always = no }
-			removal_cost = -1
 			allowed_civil_war = { always = yes }
 			picture = generic_phoenix
 			modifier = {

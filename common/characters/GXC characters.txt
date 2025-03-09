@@ -291,6 +291,50 @@ characters = {
 			logistics_skill = 3
 		}
 	}
+#奥古斯特·冯·帕塞瓦尔
+	TIX_August_von_Parseval = {
+		name = TIX_August_von_Parseval
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_August_von_Parseval
+				large = GFX_Portrait_TIX_August_von_Parseval
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				hang_mu
+				brilliant_strategist 
+				harsh_leader
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#腓特烈·卡尔
+	TIX_Friedrich_Carl = {
+		name = TIX_Friedrich_Carl
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Friedrich_Carl
+				large = GFX_Portrait_TIX_Friedrich_Carl
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				cruiser
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 6
+			planning_skill = 2
+			logistics_skill = 5
+		}
+	}	
 #Z52
 	TIX_Z52 = {
 		name = TIX_Z52
@@ -303,7 +347,7 @@ characters = {
 		corps_commander = {
 			traits = {
 				GXC_tie_xue
-				Zerstörer
+				Destroyer
 				cavalry_leader
 				cavalry_officer
 				trait_reckless
@@ -327,7 +371,7 @@ characters = {
 		corps_commander = {
 			traits = {
 				GXC_tie_xue
-				Zerstörer
+				Destroyer
 			}
 			skill = 3
 			attack_skill = 5
@@ -369,7 +413,7 @@ characters = {
 		corps_commander = {
 			traits = { 
 				GXC_tie_xue
-				Zerstörer
+				Destroyer
 				rising_star
 			}
 			skill = 2
@@ -377,6 +421,121 @@ characters = {
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 1
+		}
+	}
+#Z9
+	TIX_Z9 = {
+		name = TIX_Z9
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Z9
+				large = GFX_Portrait_TIX_Z9
+			}
+		}
+		corps_commander = {
+			traits = {
+				GXC_tie_xue
+				Destroyer
+				lancer
+				rising_star
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+#U-96
+	TIX_U_96= {
+		name = TIX_U_96
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_U_96
+				large = GFX_Portrait_TIX_U_96
+			}
+		}
+		navy_leader = {
+			traits = { 
+				GXC_tie_xue
+				qian_ting
+				seawolf
+				torpedo_bomber
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}	
+#U37
+	TIX_U_37 = {
+		name = TIX_U_37
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_U_37
+				large = GFX_Portrait_TIX_U_37
+			}
+		}
+		navy_leader = {
+			traits = { 
+				GXC_tie_xue
+				qian_ting
+				seawolf
+				silent_hunter
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+#U81
+	TIX_U_81 = {
+		name = TIX_U_81
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_U_81
+				large = GFX_Portrait_TIX_U_81
+			}
+		}
+		navy_leader = {
+			traits = { 
+				GXC_tie_xue
+				qian_ting
+				seawolf
+				torpedo_expert
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}	
+#U47
+	TIX_U_47 = {
+		name = TIX_U_47
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_U_47
+				large = GFX_Portrait_TIX_U_47
+			}
+		}
+		navy_leader = {
+			traits = { 
+				GXC_tie_xue
+				qian_ting
+				seawolf
+				hunter_killer
+			}
+			skill = 4
+			attack_skill = 6
+			defense_skill = 1
+			maneuvering_skill = 4
+			coordination_skill = 1
 		}
 	}	
 ################

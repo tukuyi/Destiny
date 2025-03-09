@@ -405,8 +405,13 @@ GXC_chen_ce = { set_character_flag = GXC_guangdong_character }
 GXC_li_qingwen = { set_character_flag = GXC_guangdong_character }
 
 #铁血
+recruit_character = TIX_Z9
 recruit_character = TIX_Z46
 recruit_character = TIX_Z52
+recruit_character = TIX_U_96
+recruit_character = TIX_U_37
+recruit_character = TIX_U_81
+recruit_character = TIX_U_47
 recruit_character = TIX_Roon
 recruit_character = TIX_Alvitr
 recruit_character = TIX_hu_teng
@@ -418,12 +423,29 @@ recruit_character = TIX_Prinz_Eugen
 recruit_character = TIX_xing_deng_bao
 recruit_character = TIX_Prinz_Adalbert
 recruit_character = TIX_Peter_Strasser
+recruit_character = TIX_Friedrich_Carl
+recruit_character = TIX_August_von_Parseval
 recruit_character = TIX_Otto_von_Alvensleben
 
+TIX_Z9 = {
+	retire = yes
+}
 TIX_Z46 = {
 	retire = yes
 }
 TIX_Z52 = {
+	retire = yes
+}
+TIX_U_96 = {
+	retire = yes
+}
+TIX_U_37 = {
+	retire = yes
+}
+TIX_U_81 = {
+	retire = yes
+}
+TIX_U_47 = {
 	retire = yes
 }
 TIX_Roon = {
@@ -457,6 +479,12 @@ TIX_Prinz_Adalbert = {
 	retire = yes
 }
 TIX_Peter_Strasser = {
+	retire = yes
+}
+TIX_Friedrich_Carl = {
+	retire = yes
+}
+TIX_August_von_Parseval = {
 	retire = yes
 }
 TIX_Otto_von_Alvensleben = {

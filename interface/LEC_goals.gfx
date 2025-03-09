@@ -16,6 +16,18 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/LEC_yang_hu_tuo_ying_er_chu.png"
 	}
 	spriteType = {
+		name = "GFX_goal_LEC_ru_fa_ge_ming"
+		texturefile = "gfx/interface/goals/LEC_ru_fa_ge_ming.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_ren_ren_jie_di_wang"
+		texturefile = "gfx/interface/goals/LEC_ren_ren_jie_di_wang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_cai_fu_xian_e"
+		texturefile = "gfx/interface/goals/LEC_cai_fu_xian_e.png"
+	}
+	spriteType = {
 		name = "GFX_goal_LEC_tu_6"
 		texturefile = "gfx/interface/goals/LEC_tu_6.png"
 	}

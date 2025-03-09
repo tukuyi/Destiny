@@ -564,13 +564,22 @@ China_build_ROC = {#成立民国
 			}
 		}
 	}
-	else_if = {
+	else_if = {#LEC 上海
 		limit = { 
 			tag = LEC
 		}
 		if = {#王亚樵 - 红色线
 			limit = { 
 				has_completed_focus = LEC_madames_east_asian_fiefdom
+			}
+			LEC_Wang_Yaqiao = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_WANG_YA_QIAO_DESC
+						ideology = anarcho_communism_subtype
+					}
+					promote_leader = yes
+				}
 			}
 			set_cosmetic_tag = LEC_GT_C
 			every_state = {
@@ -613,6 +622,23 @@ China_build_ROC = {#成立民国
 					}
 				}
 				set_cosmetic_tag = LEC_TRIAD_KMT_BLUE_1
+			}
+			else_if = {
+				limit = { 
+					has_country_leader = {
+						character = LEC_Wang_Yaqiao
+					}
+				}
+				LEC_Wang_Yaqiao = {
+					add_country_leader_role = {
+						country_leader = { 
+							desc = POLITICS_WANG_YA_QIAO_DESC
+							ideology = anarcho_communism_subtype
+						}
+						promote_leader = yes
+					}
+				}
+				set_cosmetic_tag = LEC_GT_C
 			}
 			else = {
 				set_cosmetic_tag = ROC

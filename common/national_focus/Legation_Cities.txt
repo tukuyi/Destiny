@@ -8,7 +8,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = -300  y = 1500 }
+	continuous_focus_position = { x = 2700  y = 2000 }
 
 	focus = {
 		id = LEC_new_status_quo
@@ -4877,6 +4877,12 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "王亚樵"
+				}
+			}
 		}
 
 		prerequisite = { focus = LEC_pearls_east_dragons_claw }
@@ -5490,6 +5496,545 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
+	focus = {
+		id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		icon = {
+			trigger = { 
+				NOT = {
+					has_completed_focus = LEC_heralds_hongmen_restoration
+				}
+			}
+			value = GFX_goal_GXC_tuna_jie_zuo_yi
+		}
+		icon = {
+			trigger = { 
+				has_completed_focus = LEC_heralds_hongmen_restoration
+			}
+			value = GFX_goal_LEC_san_bai_nian_de_yuan_jing
+		}
+		relative_position_id = LEC_struggle_for_shanghai
+		x = 0
+		y = 12
+		cost = 5.00
+
+		available = {
+			has_country_flag = has_united_china
+		}
+		bypass = {
+			has_country_flag = has_united_china
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_jiu_zou_chong_lai_xiang_yi_tong"
+			custom_effect_tooltip = LEC_final_china_tt
+		}
+	}
+
+	focus = {
+		id = LEC_zhu_ming_zhen_long_tian_zi
+		icon = GFX_goal_LEC_ban_ju_ru_ban_hu
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = -5
+		y = 1
+		cost = 5.00
+
+		ai_will_do = { base = 100 }
+
+		prerequisite = { focus = LEC_jiu_zou_chong_lai_xiang_yi_tong }
+
+		available = {
+			has_country_flag = LEC_da_ming_back
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhu_ming_zhen_long_tian_zi"
+			custom_effect_tooltip = LEC_he_is_back_tt
+		}
+	}
+
+	focus = {
+		id = LEC_chong_qi_feng_fan_zhi
+		icon = GFX_goal_LEC_da_ming_yi_ying
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = -6
+		y = 2
+		cost = 5.00
+
+		ai_will_do = { base = 100 }
+
+		prerequisite = { focus = LEC_zhu_ming_zhen_long_tian_zi }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_chong_qi_feng_fan_zhi"
+			add_ideas = LEC_national_rebirth_idea
+		}
+	}
+
+	focus = {
+		id = LEC_jiao_hua_zhi_guo
+		icon = GFX_goal_YUN_A_New_Golden_Age
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		cost = 5
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_SHANG_EMPIRE_back
+				has_cosmetic_tag = SHANG_EMPIRE
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_jiao_hua_zhi_guo"
+			add_ideas = LEC_workers_bill
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = LEC_ru_fa_ge_ming
+		icon = GFX_goal_LEC_ru_fa_ge_ming
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = -4
+		y = 2
+		cost = 5.00
+
+		ai_will_do = { base = 100 }
+
+		prerequisite = {
+			focus = LEC_jiao_hua_zhi_guo
+			focus = LEC_zhu_ming_zhen_long_tian_zi 
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_ru_fa_ge_ming"
+			add_ideas = LEC_tanglarp_code
+		}
+	}
+
+	focus = {
+		id = LEC_bu_fu_tai_zu_zhi_ming
+		icon = GFX_goal_LEC_bu_fu_tai_zu_zhi_ming
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = -5
+		y = 3
+		cost = 5.00
+
+		prerequisite = { 
+			focus = LEC_ru_fa_ge_ming
+		}
+		prerequisite = { 
+			focus = LEC_chong_qi_feng_fan_zhi
+		}
+		prerequisite = { 
+			focus = LEC_zhu_ming_zhen_long_tian_zi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_bu_fu_tai_zu_zhi_ming"
+			add_country_leader_trait = LEC_bu_mu_zi_wei
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = LEC_national_rebirth_idea
+				add_idea = LEC_national_rebirth_idea2
+			}
+		}
+	}	
+
+	focus = {
+		id = LEC_di_wang_ban_de_zong_tong
+		icon = GFX_goal_YUN_Revitalize_Yunnan_Military_Academy
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		cost = 5
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		}
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = LEC_long_tou_control
+					has_cosmetic_tag = QIE_CN
+				}
+				AND = {
+					has_completed_focus = LEC_five_races_under_triads_flag
+					NOT = {
+						has_country_leader = {
+							ruling_only = yes
+							name = "王亚樵"
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_di_wang_ban_de_zong_tong"
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = LEC_cai_fu_xian_e
+		icon = GFX_goal_LEC_cai_fu_xian_e
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = -2
+		y = 2
+		cost = 5.00
+
+		ai_will_do = { base = 100 }
+
+		prerequisite = {
+			focus = LEC_jiao_hua_zhi_guo
+			focus = LEC_di_wang_ban_de_zong_tong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_cai_fu_xian_e"
+			add_country_leader_trait = HNN_fu_jia_weng
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_wealth_cap
+		}
+	}
+
+	focus = {
+		id = LEC_steep_legacy_or_smth
+		icon = GFX_goal_YUN_Modernizing_Our_Mixed_Martial_Legacy
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		cost = 2
+		x = -3
+		y = 3
+
+		ai_will_do = {
+			base = 75
+		}
+
+		prerequisite = {
+			focus = LEC_cai_fu_xian_e
+		}
+		prerequisite = {
+			focus = LEC_ru_fa_ge_ming
+		}
+		prerequisite = {
+			focus = LEC_jiao_hua_zhi_guo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_steep_legacy_or_smth"
+			add_ideas = YUN_steep_attack
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = LEC_bao_li_er_xue_xing
+		icon = GFX_goal_LEC_bao_li_er_xue_xing
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		cost = 5
+		x = -1
+		y = 3
+
+		prerequisite = { 
+			focus = LEC_cai_fu_xian_e
+		}
+		prerequisite = { 
+			focus = LEC_fu_xu_ping_kong_zhi_ren
+		}
+		prerequisite = { 
+			focus = LEC_di_wang_ban_de_zong_tong
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_bao_li_er_xue_xing"
+			add_ideas = LEC_te_xu_jin_yin
+		}
+	}	
+
+	focus = {
+		id = LEC_wen_he_ge_ming_dao_lu
+		icon = GFX_goal_LEC_tong_zuo_yi_zhi_ren_bing_xing
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		cost = 5
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "陈铭枢" }	
+		}
+
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wen_he_ge_ming_dao_lu"
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = LEC_fu_xu_ping_kong_zhi_ren
+		icon = GFX_goal_YUN_Birth_of_the_Imperial_Welfare_Bureau
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 0
+		y = 2
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_wen_he_ge_ming_dao_lu
+			focus = LEC_di_wang_ban_de_zong_tong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_fu_xu_ping_kong_zhi_ren"
+			add_ideas = YUN_welfare
+		}
+	}	
+
+	focus = {
+		id = LEC_gong_ren_bu_zai_wei_nu
+		icon = GFX_goal_LEC_gng_ren_bu_zai_wei_nu
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 3
+		y = 1
+		cost = 5.00
+
+		prerequisite = { 
+			focus = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "巴金" }	
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_gong_ren_bu_zai_wei_nu"
+			add_ideas = LEC_red_deal
+		}
+	}	
+
+	focus = {
+		id = LEC_tong_zuo_yi_zhi_ren_bing_xing
+		icon = GFX_goal_LEC_zi_you_de_wu_tuo_bang
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 2
+		y = 2
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_gong_ren_bu_zai_wei_nu
+			focus = LEC_di_wang_ban_de_zong_tong
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_tong_zuo_yi_zhi_ren_bing_xing"
+
+		}
+	}	
+
+	focus = {
+		id = LEC_xian_zheng_zhi_zhi
+		icon = GFX_goal_GXC_tui_dong_chan_ye
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 1
+		y = 3
+		cost = 5
+	
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_fu_xu_ping_kong_zhi_ren
+		}
+		prerequisite = {
+			focus = LEC_wen_he_ge_ming_dao_lu
+		}
+		prerequisite = {
+			focus = LEC_tong_zuo_yi_zhi_ren_bing_xing
+		}
+	
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_xian_zheng_zhi_zhi"
+			add_ideas = GXC_centralised_economy
+		}
+	}	
+
+	focus = {
+		id = LEC_ren_ren_jie_di_wang
+		icon = GFX_goal_LEC_ren_ren_jie_di_wang
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 5
+		y = 1
+		cost = 5.00
+
+		prerequisite = { 
+			focus = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes name = "王亚樵" }	
+		}
+
+		ai_will_do = { base = 100 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_ren_ren_jie_di_wang"
+			add_country_leader_trait = LEC_ren_ming
+		}
+	}	
+
+	focus = {
+		id = LEC_wu_zheng_fu_zhu_yi_gai_zao
+		icon = GFX_goal_ETS_di_shang_tian_guo
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 4
+		y = 2
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_gong_ren_bu_zai_wei_nu
+			focus = LEC_ren_ren_jie_di_wang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_wu_zheng_fu_zhu_yi_gai_zao"
+
+		}
+	}	
+
+	focus = {
+		id = LEC_zi_you_ren_de_lian_he
+		icon = GFX_goal_HNN_zhi_wei_shi
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 3
+		y = 3
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_tong_zuo_yi_zhi_ren_bing_xing
+		}
+		prerequisite = {
+			focus = LEC_gong_ren_bu_zai_wei_nu
+		}
+		prerequisite = {
+			focus = LEC_wu_zheng_fu_zhu_yi_gai_zao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_you_ren_de_lian_he"
+
+		}
+	}	
+
+	focus = {
+		id = LEC_chui_hui_yi_qie
+		icon = GFX_goal_ETS_zhi_mian_shi_bai
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 6
+		y = 2
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_ren_ren_jie_di_wang
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_chui_hui_yi_qie"
+
+		}
+	}	
+
+	focus = {
+		id = LEC_ci_she_li_ming
+		icon = GFX_goal_HNN_ming_zu_ping_deng
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 5
+		y = 3
+		cost = 5.00
+
+		ai_will_do = {
+			base = 75
+		}
+		prerequisite = {
+			focus = LEC_chui_hui_yi_qie
+		}
+		prerequisite = {
+			focus = LEC_ren_ren_jie_di_wang
+		}
+		prerequisite = {
+			focus = LEC_wu_zheng_fu_zhu_yi_gai_zao
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_ci_she_li_ming"
+
+		}
+	}	
+
+	focus = {
+		id = YUN_end_of_da_chaos
+		icon = GFX_goal_YUN_Preserving_the_Heavenly_Peace
+		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
+		x = 0
+		y = 4
+		cost = 5.00
+
+		prerequisite = {
+			focus = LEC_bu_fu_tai_zu_zhi_ming
+			focus = LEC_steep_legacy_or_smth
+			focus = LEC_bao_li_er_xue_xing
+			focus = LEC_xian_zheng_zhi_zhi
+			focus = LEC_zi_you_ren_de_lian_he
+			focus = LEC_ci_she_li_ming
+		}
+		ai_will_do = {
+			base = 75
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus YUN_CHI_BO_PO_MO_FO"
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
 ###大明
 	focus = {
 		id = LEC_fan_qing_fu_ming
@@ -5529,16 +6074,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_fan_qing_fu_ming
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
- 
-		}
-		bypass = {
- 
 		}
 
 		completion_reward = {
@@ -5612,9 +6147,6 @@ focus_tree = {
 		prerequisite = { 
 			focus = LEC_fan_qing_fu_ming
 		}
-		prerequisite = { 
-			
-		}
 
 		available = {
 			FNG = {
@@ -5666,16 +6198,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_fan_qing_fu_ming
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-
-		}
-		bypass = {
-
 		}
 
 		completion_reward = {
@@ -5825,7 +6347,6 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = LEC_ban_ju_ru_ban_hu
-			focus = LEC_ren_ren_jie_di_wang
 		}
 
 		available = {
@@ -5891,40 +6412,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_te_xu_jing_ying"
-			add_ideas = LEC_te_xu_jin_yin	
-		}
-		ai_will_do = { factor = 100 }
-	}	
-
-	focus = {
-		id = LEC_bao_li_er_xue_xing
-		icon = GFX_goal_LEC_bao_li_er_xue_xing
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = -6
-		y = 6
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_te_xu_jing_ying
-		}
-		prerequisite = { 
-			focus = LEC_di_guo_de_shi_kiang
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_bao_li_er_xue_xing"
-			swap_ideas = {
-				remove_idea = LEC_national_rebirth_ideaB
-				add_idea = LEC_national_rebirth_ideaC
-			}
+				
 		}
 		ai_will_do = { factor = 100 }
 	}	
@@ -5944,7 +6432,6 @@ focus_tree = {
 
 		mutually_exclusive = {
 			focus = LEC_zhen_long_tian_zi
-			focus = LEC_ren_ren_jie_di_wang
 		}
 
 		available = {
@@ -5973,16 +6460,6 @@ focus_tree = {
 
 		prerequisite = { 
 			focus = LEC_ban_ju_ru_ban_hu
-		}
-		prerequisite = { 
-			
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
 		}
 
 		completion_reward = {
@@ -6036,132 +6513,7 @@ focus_tree = {
 			}
 		}
 		ai_will_do = { factor = 100 }
-	}	
-
-	focus = {
-		id = LEC_bu_fu_tai_zu_zhi_ming
-		icon = GFX_goal_LEC_bu_fu_tai_zu_zhi_ming
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = 0
-		y = 6
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_qing_shao_bu_zhong_zhi_cheng
-		}
-		prerequisite = { 
-			focus = LEC_huang_quan_bu_rong_you_shi
-		}
-		prerequisite = { 
-			
-		}
-
-		available = {
-			 
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_bu_fu_tai_zu_zhi_ming"
-			country_event = {
-				id = lecming.12
-				days = 5
-			}
-			swap_ideas = {
-				remove_idea = LEC_national_rebirth_idea2
-				add_idea = LEC_national_rebirth_idea3
-			}
-		}
-		ai_will_do = { factor = 100 }
-	}	
-
-	focus = {
-		id = LEC_ren_ren_jie_di_wang
-		icon = GFX_goal_AFG_Establish_Peoples_Jirgas
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = 6
-		y = 4
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_xi_xi_rang_rang
-		}
-
-		mutually_exclusive = {
-			focus = LEC_zhen_long_tian_zi
-			focus = LEC_ban_ju_ru_ban_hu
-		}
-
-		available = {
-			has_country_leader = { ruling_only = yes name = "王亚樵" }	
-		}
-
-		ai_will_do = { base = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_ren_ren_jie_di_wang"
-			add_country_leader_trait = LEC_ren_ming
-			swap_ideas = {
-				remove_idea = LEC_national_rebirth_idea
-				add_idea = LEC_national_rebirth_ideaQ
-			}
-		}
 	}		
-
-	focus = {
-		id = LEC_gng_ren_bu_zai_wei_nu
-		icon = GFX_goal_LEC_gng_ren_bu_zai_wei_nu
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = 5
-		y = 5
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_ren_ren_jie_di_wang
-		}
-
-		ai_will_do = { base = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_ren_ren_jie_di_wang"
-			add_ideas = LEC_red_deal
-		}
-	}	
-
-	focus = {
-		id = LEC_tong_zuo_yi_zhi_ren_bing_xing
-		icon = GFX_goal_LEC_zi_you_de_wu_tuo_bang
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = 7
-		y = 5
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_ren_ren_jie_di_wang
-		}
-
-		ai_will_do = { base = 100 }
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_tong_zuo_yi_zhi_ren_bing_xing"
-			add_synd_to_coalition = yes
-			add_ideas = {
-				HNN_Liu_Shaoqi_hog
-			}
-			add_popularity = {
-				ideology = syndicalist
-				popularity = 0.10
-			}
-			set_party_name = {
-				ideology = syndicalist
-				long_name = LEC_syndicalist_party_WYQ_long
-				name = LEC_syndicalist_party_WYQ
-			}
-		}
-	}	
 
 	focus = {
 		id = LEC_zi_you_de_wu_tuo_bang
@@ -6170,14 +6522,12 @@ focus_tree = {
 		x = 6
 		y = 6
 		cost = 5.00
-
 		prerequisite = { 
-			focus = LEC_tong_zuo_yi_zhi_ren_bing_xing
+			focus = LEC_qing_shao_bu_zhong_zhi_cheng
 		}
 		prerequisite = { 
-			focus = LEC_gng_ren_bu_zai_wei_nu
+			focus = LEC_huang_quan_bu_rong_you_shi
 		}
-
 		ai_will_do = { base = 100 }
 
 		completion_reward = {
@@ -6267,7 +6617,6 @@ focus_tree = {
 		cost = 5.00
 
 		prerequisite = { 
-			focus = LEC_ren_ren_jie_di_wang
 			focus = LEC_ban_ju_ru_ban_hu
 		}
 
@@ -6295,28 +6644,6 @@ focus_tree = {
 	}	
 
 	focus = {
-		id = LEC_fu_xu_ping_kong_zhi_ren
-		icon = GFX_goal_LEC_fu_xu_ping_kong_zhi_ren
-		relative_position_id = LEC_fan_qing_fu_ming
-
-		x = 3
-		y = 6
-		cost = 5.00
-
-		prerequisite = { 
-			focus = LEC_qing_xi_jiu_ri_zhi_e
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_fu_xu_ping_kong_zhi_ren"
-			swap_ideas = {
-				remove_idea = LEC_she_hui_fu_li2
-				add_idea = LEC_she_hui_fu_li
-			}
-		}
-		ai_will_do = { factor = 100 }
-	}	
-
-	focus = {
 		id = LEC_di_gup_yong_heng
 		icon = GFX_goal_LEC_di_gup_yong_heng
 		relative_position_id = LEC_fan_qing_fu_ming
@@ -6326,8 +6653,6 @@ focus_tree = {
 		cost = 4.00
 
 		prerequisite = { 
-			focus = LEC_bao_li_er_xue_xing
-			focus = LEC_bu_fu_tai_zu_zhi_ming
 			focus = LEC_zi_you_de_wu_tuo_bang
 		}
 		prerequisite = { 
