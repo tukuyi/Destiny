@@ -3228,6 +3228,9 @@
 
  autonomous_rich_puppet: "子公司"
 
+ TIX_Z46: "Z46"
+ TIX_Z52: "Z52"
+ TIX_Roon: "罗恩"
  TIX_Alvitr: "亚尔薇特"
  TIX_Ai_ji_er: "埃吉尔"
  TIX_Bismarck: "俾斯麦"
@@ -3238,6 +3241,7 @@
  TIX_hu_teng: "乌尔里希·冯·胡滕"
  TIX_Peter_Strasser: "彼得·史特拉塞"
  TIX_Prinz_Adalbert: "阿达尔伯特亲王"
+ TIX_Otto_von_Alvensleben: "奥托·冯·阿尔文斯莱本"
 
  GXC_Alfried_Krupp: "阿尔弗雷德·克虏伯"
  GXC_wilhelm_iv_elected: "威廉·奥拉夫"

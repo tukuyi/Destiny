@@ -59,6 +59,53 @@ leader_traits = {
 			factor = 0
 		}
 	}
+	Zerstörer = {#驱逐舰
+		type = land
+		trait_type = personality_trait
+
+		planning_skill= 1
+
+		modifier = {
+			terrain_penalty_reduction = 0.05
+			army_speed_factor = 0.05
+			desert = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			forest = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+			plains = {
+				movement = 0.05
+			}
+			urban = {
+				movement = 0.05
+			}
+			jungle = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+		}
+
+		corps_commander_modifier = {
+			max_commander_army_size = -4
+		}
+
+		field_marshal_modifier = {
+			max_army_group_size = -4
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
 	cruiser = {#战列舰
 		type = land
 		trait_type = personality_trait

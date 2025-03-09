@@ -780,6 +780,22 @@ spriteTypes = {
 	}
 ###广东
 	spriteType = {
+		name = "GFX_Portrait_TIX_Z52"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Z52.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Z46"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Z46.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Roon"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Roon.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_TIX_Otto_von_Alvensleben"
+		texturefile = "gfx/leaders/TIX/Portrait_TIX_Otto_von_Alvensleben.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_TIX_Ai_ji_er"
 		texturefile = "gfx/leaders/TIX/Portrait_TIX_Ai_ji_er.png"
 	}

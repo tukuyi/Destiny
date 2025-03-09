@@ -404,6 +404,10 @@ GXC_Deng_Zhao_Xiang = { set_character_flag = GXC_guangdong_character }
 GXC_chen_ce = { set_character_flag = GXC_guangdong_character }
 GXC_li_qingwen = { set_character_flag = GXC_guangdong_character }
 
+#铁血
+recruit_character = TIX_Z46
+recruit_character = TIX_Z52
+recruit_character = TIX_Roon
 recruit_character = TIX_Alvitr
 recruit_character = TIX_hu_teng
 recruit_character = TIX_Bismarck
@@ -414,7 +418,17 @@ recruit_character = TIX_Prinz_Eugen
 recruit_character = TIX_xing_deng_bao
 recruit_character = TIX_Prinz_Adalbert
 recruit_character = TIX_Peter_Strasser
+recruit_character = TIX_Otto_von_Alvensleben
 
+TIX_Z46 = {
+	retire = yes
+}
+TIX_Z52 = {
+	retire = yes
+}
+TIX_Roon = {
+	retire = yes
+}
 TIX_Alvitr = {
 	retire = yes
 }
@@ -443,5 +457,8 @@ TIX_Prinz_Adalbert = {
 	retire = yes
 }
 TIX_Peter_Strasser = {
+	retire = yes
+}
+TIX_Otto_von_Alvensleben = {
 	retire = yes
 }

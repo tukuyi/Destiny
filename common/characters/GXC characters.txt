@@ -291,6 +291,94 @@ characters = {
 			logistics_skill = 3
 		}
 	}
+#Z52
+	TIX_Z52 = {
+		name = TIX_Z52
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Z52
+				large = GFX_Portrait_TIX_Z52
+			}
+		}
+		corps_commander = {
+			traits = {
+				GXC_tie_xue
+				Zerstörer
+				cavalry_leader
+				cavalry_officer
+				trait_reckless
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+#奥托·冯·阿尔文斯莱本
+	TIX_Otto_von_Alvensleben = {
+		name = TIX_Otto_von_Alvensleben
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Otto_von_Alvensleben
+				large = GFX_Portrait_TIX_Otto_von_Alvensleben
+			}
+		}
+		corps_commander = {
+			traits = {
+				GXC_tie_xue
+				Zerstörer
+			}
+			skill = 3
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}	
+#罗恩	
+	TIX_Roon = {
+		name = TIX_Roon
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Roon
+				large = GFX_Portrait_TIX_Roon
+			}
+		}
+		corps_commander = {
+			traits = {
+				GXC_tie_xue
+				cruiser
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+#Z46
+	TIX_Z46 = {
+		name = TIX_Z46
+		portraits={
+			army = {
+				small = GFX_Portrait_TIX_Z46
+				large = GFX_Portrait_TIX_Z46
+			}
+		}
+		corps_commander = {
+			traits = { 
+				GXC_tie_xue
+				Zerstörer
+				rising_star
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
 ################
 ###   元帅   ###
 ################	

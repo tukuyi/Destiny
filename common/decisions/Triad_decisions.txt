@@ -1818,6 +1818,97 @@ LEC_triad_expansion = {#扩张帮会
 		}
 	}
 
+	#温州
+	LEC_expand_operation_wenzhou = {
+		icon = GFX_decision_generic_agreement
+		available = {
+			NOT = {
+				owns_state = 803
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 803
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Crime_Expansion
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_expand_operation_wenzhou"
+			add_state_core = 803
+			set_country_flag = LEC_Operations_wenzhou
+		}
+	}
+	LEC_Bribe_Officals_wenzhou = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = {
+				owns_state = 803
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 803
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_wenzhou
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Bribe_Officals_wenzhou"
+			add_political_power = -50
+			803 = {
+				controller = {
+					add_political_power = 50
+				}
+			}
+			set_country_flag = LEC_Operations_wenzhou_2
+		}
+	}
+	LEC_Establish_wenzhou_Syndicate = {
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = {
+				owns_state = 803
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 803
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_wenzhou_2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_wenzhou_Syndicate"
+			add_political_power = -50
+			transfer_state = 803
+		}
+	}
+
 	#
 	LEC_triad_reclaim_outer_manchuria = {
 		icon = generic_prepare_civil_war

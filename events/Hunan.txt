@@ -6593,6 +6593,8 @@ country_event = {#湘西暴动
 		name = hnnshenbing.1.a
 		custom_effect_tooltip = HNN_shen_bing_victory_tt
 		hidden_effect = {
+			remove_ideas = HNN_a_democratic_province
+			
 			set_cosmetic_tag = HNN_GT
 			set_politics = {
 				ruling_party = totalist

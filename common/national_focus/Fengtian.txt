@@ -6003,8 +6003,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FNG_xin_guo_hui
-		icon = GFX_goal_FNG_xin_guo_hui
+		id = FNG_chong_zu_yang_hang
+		icon = GFX_goal_FNG_chong_zu_yang_hang
 		relative_position_id = FNG_xiang_shao_shuai_zhi_jing
 		x = 0
 		y = 4
@@ -6016,18 +6016,21 @@ focus_tree = {
 		prerequisite = {
 			focus = FNG_nong_ye_bu_tie
 		}
-
-		available = {
-			608 = {
-				is_owned_by_ROOT_or_subject = yes
-				is_controlled_by_ROOT_or_subject = yes
-			}
-		}
 		
 		ai_will_do = { factor = 60 }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_xin_guo_hui"
-			add_ideas = FNG_new_fa
+			log = "[GetDateText]: [Root.GetName]: Focus FNG_chong_zu_yang_hang"
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+			608 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -6040,16 +6043,9 @@ focus_tree = {
 		cost = 5
 
 		prerequisite = { 
-			focus = FNG_xin_guo_hui
-		}
-		prerequisite = {
-		
+			focus = FNG_chong_zu_yang_hang
 		}
 
-		available = {
-
-		}
-		
 		ai_will_do = { factor = 60 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_bao_zhang_quan_li"
@@ -6092,14 +6088,7 @@ focus_tree = {
 		cost = 5
 
 		prerequisite = { 
-			focus = FNG_xin_guo_hui
-		}
-		prerequisite = {
-		
-		}
-
-		available = {
-
+			focus = FNG_chong_zu_yang_hang
 		}
 		
 		ai_will_do = { factor = 60 }
@@ -6138,7 +6127,7 @@ focus_tree = {
 		cost = 5
 
 		prerequisite = { 
-			focus = FNG_xin_guo_hui
+			focus = FNG_chong_zu_yang_hang
 		}
 		prerequisite = {
 		
@@ -6159,8 +6148,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FNG_chong_zu_yang_hang
-		icon = GFX_goal_FNG_chong_zu_yang_hang
+		id = FNG_xin_guo_hui
+		icon = GFX_goal_FNG_xin_guo_hui
 		relative_position_id = FNG_xiang_shao_shuai_zhi_jing
 		x = 0
 		y = 6
@@ -6177,23 +6166,16 @@ focus_tree = {
 		}
 
 		available = {
-
+			608 = {
+				is_owned_by_ROOT_or_subject = yes
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		
 		ai_will_do = { factor = 60 }
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FNG_chong_zu_yang_hang"
-			add_stability = 0.05
-			add_war_support = 0.05
-			add_political_power = 50
-			608 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus FNG_xin_guo_hui"
+			add_ideas = FNG_new_fa
 		}
 	}
 

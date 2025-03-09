@@ -32,6 +32,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/traits/trait_tun_shi.png"
 	}
 	spriteType = {
+		name = "GFX_trait_Zerstörer"
+		texturefile = "gfx/interface/traits/trait_Zerstörer.png"
+	}
+	spriteType = {
 		name = "GFX_trait_rising_star"
 		texturefile = "gfx/interface/traits/trait_gifted_officer.png"
 		legacy_lazy_load = no
