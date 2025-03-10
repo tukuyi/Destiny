@@ -15121,6 +15121,9 @@ country_event = {#血战
 		LEC_Wang_Yaqiao = {
 			retire = yes
 		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+		}
 		complete_national_focus = LEC_yang_hu_tuo_ying_er_chu
 		LEC_yang_hu = {
 			add_country_leader_role = {
