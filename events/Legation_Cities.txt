@@ -14124,6 +14124,9 @@ country_event = {#青帮四分五裂
 		LEC_Wang_Yaqiao = {
 			set_nationality = ROOT
 		}
+		LEC_yu_li_kui = {
+			set_nationality = ROOT
+		}
 		promote_character = {
 			character = LEC_Wang_Yaqiao
 			ideology = syn_illegalism_subtype
@@ -14674,7 +14677,7 @@ country_event = {#沪上教母
 	}
 }
 
-country_event = { #三K党
+country_event = {#三K党
 	id = legcities.132
 	title = legcities.132.t
 	desc = legcities.132.d
@@ -14699,7 +14702,7 @@ country_event = { #三K党
 	}
 }
 
-country_event = { #啸林决战极道
+country_event = {#啸林决战极道
 	id = legcities.145
 	title = legcities.145.t
 	desc = legcities.145.d
@@ -14746,6 +14749,23 @@ country_event = {#台湾鸦片
 	}
 }
 
+country_event = {#与虎谋皮
+	id = legcities.148
+	title = legcities.148.t
+	desc = legcities.148.d
+	picture = GFX_report_event_LEC_xiaolin
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = legcities.148.a
+		add_command_power = 25
+		add_war_support = 0.01
+		add_stability = 0.01
+	}
+}
+
 country_event = {#逸园教父
 	id = legcities.152
 	title = legcities.152.t
@@ -14771,6 +14791,28 @@ country_event = {#逸园教父
 		743 = {
 			add_extra_state_shared_building_slots = 2
 		}
+	}
+}
+
+country_event = {#上海童子军
+	id = legcities.153
+	title = legcities.153.t
+	desc = legcities.153.d
+	picture = GFX_report_event_LEC_shanghai_scouts
+	
+	fire_only_once = yes
+	trigger = {
+		tag = LEC
+		LEC = { has_war = yes }
+		date > 1937.6.1
+		has_completed_focus = LEC_big_ears_du_yuesheng_wins_big
+	}
+	
+	option = {
+		name = legcities.153.a
+		add_war_support = 0.05
+		increase_ruling_party_popularity_by_5 = yes
+		add_manpower = 1000
 	}
 }
 
@@ -17024,42 +17066,90 @@ country_event = {#白马修道院
 ########################################
 ##########-       大明     -############
 ########################################
-country_event = {#南京的威胁
+country_event = {#祭天大典
 	id = lecming.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecming.1"}
 	title = lecming.1.t
 	desc = lecming.1.d
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {#yes
 		name = lecming.1.a
-		ai_chance = {
-			factor = 10
-		}
-		LEC = {
-			country_event = {
-				id = lecming.2
-				days = 2
+		LEC_Zhu_yuan_zhang = {
+			add_field_marshal_role = {
+				skill = 8
+				attack_skill = 8
+				defense_skill = 8
+				planning_skill = 8
+				logistics_skill = 8
 			}
 		}
-	}
+		create_field_marshal = {
+			name = "永乐帝"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_yan_wang.png"
+			traits = {  
 
-	option = {#no
-		name = lecming.1.b
-		ai_chance = {
-			factor = 40
-		}
-		LEC = {
-			country_event = {
-				id = lecming.3
-				days = 2
 			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "正统帝"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhu_qi_zhen.png"
+			traits = { 
+
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		create_corps_commander = {
+			name = "景泰帝"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_jing_tai.png"
+			traits = { 
+				
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "嘉靖帝"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_jia_jing.png"
+			traits = { 
+				
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "万历帝"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_wan_li.png"
+			traits = { 
+
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 }
 
-country_event = {#他们同意了
+country_event = {#儒学革命
 	id = lecming.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.2" }
 	title = lecming.2.t
@@ -17069,139 +17159,7 @@ country_event = {#他们同意了
 	
 	option = {#同意
 		name = lecming.2.a
-		china_puppet_FROM_effect = yes
-	}
-}
-
-country_event = {#他们拒绝了
-	id = lecming.3
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.3" }
-	title = lecming.3.t
-	desc = lecming.3.d
-
-	is_triggered_only = yes
-	
-	option = {#同意
-		name = lecming.3.a
-		create_wargoal = {
-			target = FROM
-			type = annex_everything
-		}
-	}
-}
-
-country_event = {#南方人的来信
-	id = lecming.4
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.4" }
-	title = lecming.4.t
-	desc = lecming.4.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#同意
-		name = lecming.4.a
-		ai_chance = {
-			factor = 30
-		}
-		diplomatic_relation = {
-			country = LEC
-			relation = non_aggression_pact
-			active = yes
-		}
-		LEC = {
-			diplomatic_relation = {
-				country = FNG
-				relation = non_aggression_pact
-				active = yes
-			}
-		}
-	}
-
-	option = {#同意
-		name = lecming.4.b
-		ai_chance = {
-			factor = 10
-		}
-		LEC = {
-			country_event = {
-				id = lecming.5
-				days = 2
-			}
-		}
-	}
-}
-
-country_event = {#奉天的回答
-	id = lecming.5
-	immediate = {log = "[GetDateText]: [Root.GetName]: event lecming.5"}
-	title = lecming.5.t
-	desc = lecming.5.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {#yes
-		name = lecming.5.a
-		ai_chance = {
-			factor = 10
-		}
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = -1000
-			producer = LEC
-		}
-		FNG = {
-			country_event = {
-				id = lecming.6
-				days = 2
-			}
-		}
-	}
-
-	option = {#no
-		name = lecming.5.b
-		ai_chance = {
-			factor = 40
-		}
-		create_wargoal = {
-			target = FNG
-			type = annex_everything
-		}
-	}
-}
-
-country_event = {#南方人的态度
-	id = lecming.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.6" }
-	title = lecming.6.t
-	desc = lecming.6.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	option = {#同意
-		name = lecming.6.a
-		ai_chance = {
-			factor = 30
-		}
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = 1000
-			producer = LEC
-		}
-		diplomatic_relation = {
-			country = LEC
-			relation = non_aggression_pact
-			active = yes
-		}
-		LEC = {
-			diplomatic_relation = {
-				country = FNG
-				relation = non_aggression_pact
-				active = yes
-			}
-		}
+		add_political_power = 10
 	}
 }
 
@@ -17218,7 +17176,7 @@ country_event = {#熙熙攘攘
 	option = {#yes
 		name = lecming.7.a
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -17226,6 +17184,129 @@ country_event = {#熙熙攘攘
 				days = 2
 			}
 		}
+	}
+}
+
+country_event = {#洗雪百年国耻？
+	id = lecming.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.3" }
+	picture = GFX_report_event_CHI_KMT_Cope_Map
+	title = lecming.3.t
+	desc = lecming.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #
+		name = lecming.3.a
+		add_political_power = -200
+		every_state = {
+			limit = {
+				OR = {
+					is_siberia = yes
+					is_central_asia = yes
+					state = 537
+				}
+			}
+			add_claim_by = FROM
+		}
+	}
+
+	option = { #
+		name = lecming.3.b
+	}
+}
+
+country_event = {#我们的明天
+	id = lecming.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.4" }
+	picture = GFX_report_event_LEC_future
+	title = lecming.4.t
+	desc = lecming.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {#陈炯明
+		name = lecming.4.a
+		ai_chance = {
+			base = 30
+		}
+		create_country_leader = {
+			name = "陈铭枢"
+			picture = "gfx/leaders/GXC/Portrait_GXC_chen_mingshu_civilian.png"
+			expire = "1.1.1"
+			ideology = socdem_tridemism_subtype
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = LEC_social_democrat_party_WYQ_long
+			name = LEC_social_democrat_party_WYQ
+		}
+		add_synd_to_coalition = yes
+		add_radsoc_to_coalition = yes
+		set_cosmetic_tag = YUN_CHI_ROC
+	}
+
+	option = {#巴金
+		name = lecming.4.b
+		ai_chance = {
+			base = 10
+		}
+		create_country_leader = {
+			name = "巴金"
+			picture = "gfx/leaders/SZC/Portrait_SZC_ba_jin.png"
+			expire = "1.1.1"
+			ideology = anarcho_communism_subtype
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = LEC_radical_socialist_party_WYQ_long
+			name = LEC_radical_socialist_party_WYQ
+		}
+		add_synd_to_coalition = yes
+		set_cosmetic_tag = LEC_FREE
+	}
+
+	option = {#王亚樵
+		name = lecming.4.c
+		ai_chance = {
+			base = 10
+		}
+		LEC_Wang_Yaqiao = {
+			set_country_leader_ideology = syn_anarcho_communism_subtype
+		}
+	}
+}
+
+country_event = {#怎样建设真正自由平等的社会
+	id = lecming.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event lecming.5"}
+	picture = GFX_report_event_LEC_anarchy
+	title = lecming.5.t
+	desc = lecming.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#yes
+		name = lecming.5.a
+		increase_ruling_party_popularity_by_5 = yes
+	}
+}
+
+country_event = {#无政府主义绝非恐怖主义
+	id = lecming.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lecming.6" }
+	title = lecming.6.t
+	desc = lecming.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = lecming.6.a
+		increase_ruling_party_popularity_by_5 = yes
 	}
 }
 
@@ -17242,7 +17323,7 @@ country_event = {#熙熙攘攘
 	option = {#yes
 		name = lecming.8.a
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -17261,46 +17342,11 @@ country_event = {#血溅北平
 
 	fire_only_once = yes
 	is_triggered_only = yes
-
-	option = {#死亡
-		name = lecming.9.a
-		ai_chance = {
-			factor = 10
-		}
-		set_country_flag = LEC_long_tou_control
-		if = {
-			limit = { 
-				has_completed_focus = LEC_arch_collaborator_zhang_xiaolin_zones_in
-			}
-			promote_character = {
-				character = LEC_Zhang_Xiaolin
-				ideology = crime_syndicate_subtype
-			}
-		}
-		else_if = {
-			limit = { 
-				has_completed_focus = LEC_big_ears_du_yuesheng_wins_big
-			}
-			promote_character = {
-				character = LEC_Du_Yuesheng
-				ideology = crime_syndicate_subtype
-			}
-		}
-		else_if = {
-			limit = { 
-				has_completed_focus = LEC_pockmarked_huang_jinrong_pulls_ahead
-			}
-			promote_character = {
-				character = LEC_Huang_Jinrong
-				ideology = crime_syndicate_subtype
-			}
-		}
-	}
 	
 	option = {#没死
-		name = lecming.9.b
+		name = lecming.9.a
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -17314,6 +17360,7 @@ country_event = {#血溅北平
 country_event = {#王者归来
 	id = lecming.10
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecming.10"}
+	picture = GFX_report_event_LEC_he_is_back_picture
 	title = lecming.10.t
 	desc = lecming.10.d
 
@@ -17323,34 +17370,140 @@ country_event = {#王者归来
 	option = {#
 		name = lecming.10.a
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
-		set_country_flag = LEC_he_is_back
 		set_politics = {
 			ruling_party = paternal_autocrat
 			elections_allowed = no
 		}
-		remove_all_ministers = yes
-		create_country_leader = {
-			name = "洪武帝"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Zhu_yuan_zhang.png"
-			expire = "1.1.1"
+		LEC_Zhu_yuan_zhang = {
+			set_nationality = yes
+		}
+		promote_character = {
+			character = LEC_Zhu_yuan_zhang
 			ideology = absolute_monarchy_subtype
-			traits = {}
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
-			long_name = LEC_paternal_autocrat_party_WYQ_long
-			name = LEC_paternal_autocrat_party_WYQ
+			long_name = LEC_paternal_autocrat_party_ming_long
+			name = LEC_paternal_autocrat_party_ming
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 1.00
 		}
 		hidden_effect = {
-			# country_event = {
-			# 	id = lecming.14
-			# 	days = 40
-			# }
+			every_unit_leader = {
+				limit = {
+					has_trait = LEC_triad_commander
+				}
+				retire = yes
+			}
+			LEC_Zhu_yuan_zhang = {
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = totalist_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = syndicalist_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = radical_socialist_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = social_democrat_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = social_liberal_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = social_conservative_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = market_liberal_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = authoritarian_democrat_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						ideology = national_populist_subtype
+					}
+					promote_leader = yes
+				}
+			}
+			set_party_name = {
+				ideology = totalist
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = syndicalist
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = radical_socialist
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = social_democrat
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = social_liberal
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = market_liberal
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = social_conservative
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
+			set_party_name = {
+				ideology = national_populist
+				long_name = LEC_paternal_autocrat_party_ming_long
+				name = LEC_paternal_autocrat_party_ming
+			}
 		}
 	}
 }
+
 
 country_event = {#清洗奸佞
 	id = lecming.11

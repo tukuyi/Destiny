@@ -635,6 +635,30 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhang_Wen_Tian.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_LEC_yu_li_kui"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_yu_li_kui.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_yan_wang"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_yan_wang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_Zhu_qi_zhen"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhu_qi_zhen.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_jing_tai"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_jing_tai.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_jia_jing"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_jia_jing.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_wan_li"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_wan_li.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_LEC_Lu_Xun"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
 	}
@@ -878,6 +902,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_GXC_chen_mingshu_kuomintang"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_mingshu_kuomintang.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_GXC_chen_mingshu_civilian"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_chen_mingshu_civilian.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_GXC_Jiang_jing_guo_civ"

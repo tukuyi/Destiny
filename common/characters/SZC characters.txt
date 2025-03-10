@@ -153,7 +153,7 @@ characters = {
 				large = GFX_Portrait_SZC_liu_xiang
 			}
 			civilian = {
-				large = GFX_Portrait_SZC_liu_xiang
+				large = GFX_Portrait_SZC_liu_xiang_civ
 			}
 		}
 		country_leader = {
@@ -185,6 +185,9 @@ characters = {
 				small = GFX_Portrait_SZC_pan_wenhua
 				large = GFX_Portrait_SZC_pan_wenhua
 			}
+			civilian = {
+				large = GFX_Portrait_SZC_pan_wenhua_civ
+			}
 		}
 		corps_commander = {
 			desc = SZC_pan_wenhua_high_command_desc
@@ -209,6 +212,9 @@ characters = {
 			army = {
 				small = GFX_Portrait_SZC_tang_shizun
 				large = GFX_Portrait_SZC_tang_shizun
+			}
+			civilian = {
+				large = GFX_Portrait_SZC_tang_shizun_civ
 			}
 		}
 		corps_commander = {

@@ -406,7 +406,31 @@ characters = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-		}			
+		}		
+	#余立奎
+		LEC_yu_li_kui = { 
+			name = LEC_yu_li_kui
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_yu_li_kui
+					small = GFX_Portrait_LEC_yu_li_kui
+				}
+				civilian = {
+					large = GFX_Portrait_LEC_yu_li_kui
+				}
+			}
+			corps_commander = {
+				desc = POLITICS_LEC_yu_li_kui_AMRY_DESC
+				traits = { 
+					LEC_triad_commander  
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}		
 #恒社#
 	#杜月笙
 		LEC_Du_Yuesheng = { 
@@ -539,14 +563,29 @@ characters = {
 			corps_commander = {
 				desc = LEC_Kot_Siu_Wong_AMRY_DESC
 				traits = { 
-					LEC_triad_commander 
-					career_officer 
+					LEC_triad_commander
+					career_officer
 				}
 				skill = 2
 				attack_skill = 1
 				defense_skill = 2
 				planning_skill = 1
 				logistics_skill = 2
+			}
+		}		
+#大明		
+	#朱元璋
+		LEC_Zhu_yuan_zhang = { 
+			name = LEC_Zhu_yuan_zhang
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Zhu_yuan_zhang
+					small = GFX_Portrait_LEC_Zhu_yuan_zhang
+				}
+			}
+			country_leader = {
+				desc = POLITICS_LEC_Zhu_yuan_zhang_DESC
+				ideology = absolute_monarchy_subtype
 			}
 		}		
 }

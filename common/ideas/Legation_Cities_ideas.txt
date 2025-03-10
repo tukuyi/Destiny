@@ -1405,7 +1405,7 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe"}
-			picture = ALB_rejuvenation_classes
+			picture = WHR_theology_of_liberation
 			allowed = { always = no }
 			available = {	
 				OR = {
@@ -1428,7 +1428,7 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe2 = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe2"}
-			picture = ALB_rejuvenation_classes
+			picture = WHR_theology_of_liberation
 			name = LEC_jue_xin_de_ge_ming_zhe
 			allowed = { always = no }
 			available = { 
@@ -1455,7 +1455,7 @@ ideas = {
 		}
 		LEC_jue_xin_de_ge_ming_zhe3 = {#觉醒的革命者
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe3"}
-			picture = ALB_rejuvenation_classes
+			picture = WHR_theology_of_liberation
 			name = LEC_jue_xin_de_ge_ming_zhe
 			allowed = { always = no }
 			available = { 
@@ -1480,6 +1480,73 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.75
 			}
 		}
+		LEC_jue_xin_de_ge_ming_zhe4 = {#觉醒的革命者
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_jue_xin_de_ge_ming_zhe4"}
+			picture = WHR_theology_of_liberation
+			name = LEC_jue_xin_de_ge_ming_zhe
+			allowed = { always = no }
+			available = { 
+				OR = {
+					has_country_leader = { name = "巴金" ruling_only = yes }
+					has_country_leader = { name = "陈铭枢" ruling_only = yes }
+					has_country_leader = { name = "王亚樵" ruling_only = yes }
+				}
+			}
+            modifier = {
+				conscription = 0.05
+				weekly_manpower = 200
+				army_speed_factor = 0.10
+				stability_factor = -0.40
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				stability_weekly_factor = -0.01
+				consumer_goods_expected_value = -0.10
+				conversion_cost_civ_to_mil_factor = -0.30
+				production_speed_arms_factory_factor = -0.75
+				production_factory_max_efficiency_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.20
+				production_factory_start_efficiency_factor = 0.20
+				production_speed_industrial_complex_factor = 0.75
+				production_lack_of_resource_penalty_factor = -0.20
+			}
+		}
+		LEC_abolition_of_money_shock = {#废除货币体系
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_abolition_of_money_shock"}
+			picture = WHR_abolition_of_money_shock
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.10
+				consumer_goods_factor = 0.15
+				radical_socialist_drift = 0.03
+				production_factory_efficiency_gain_factor = 0.03
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.07
+			}
+		}
+		LEC_a_new_man = {#新一代
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_a_new_man"}
+			picture = WHR_a_new_man
+			allowed = { always = no }
+			modifier = {
+				monthly_population = 0.25
+				political_power_gain = 0.03
+				research_speed_factor = 0.05
+				experience_loss_factor = -0.1
+			}
+			research_bonus = {
+				artillery = 0.05
+				construction_tech = 0.1
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					soft_attack = 0.08
+					hard_attack = 0.05
+					breakthrough = 0.08
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}	
 	###基督教
 		LEC_ren_ci_de_zhu = {#主的仁慈
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu"}
@@ -2740,12 +2807,51 @@ ideas = {
 		LEC_workers_bill = { #传统教育
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_workers_bill"}
 			allowed = { always = no }
-			picture = f_l_bill
+			picture = LEC_workers_bill
 			modifier = { 
 				consumer_goods_factor = -0.1
 				stability_weekly = 0.001
 				production_factory_start_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = -0.03
+			}
+		}
+		LEC_founders_idea = { #既是皇帝又是总统
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_founders_idea"}
+			allowed = { always = no }
+			picture = citizen_dignities
+			modifier = {
+				surrender_limit = 0.1
+				political_power_gain = 0.05
+				production_speed_buildings_factor = 0.03
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = -0.07
+			}
+		}
+		LEC_workers_cooperatives_idea = {#工人合作社
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_workers_cooperatives_idea"}
+			allowed = { always = no }
+			picture = worker_coops
+            modifier = {
+				stability_weekly = 0.001
+				consumer_goods_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = -0.02
+			}
+		}
+		LEC_decentralized_planning_idea = {#社会主义邦联
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_decentralized_planning_idea"}
+			allowed = { always = no }
+			picture = gift_economy
+            modifier = {
+				surrender_limit = -0.2
+				war_support_factor = 0.2
+				stability_weekly = 0.002
+				army_defence_factor = 0.05
+				consumer_goods_factor = -0.15
+				supply_consumption_factor = -0.08
+				party_popularity_stability_factor = 0.25
+				production_lack_of_resource_penalty_factor = -0.10
 			}
 		}
 		LEC_national_rebirth_idea = {#国家重生

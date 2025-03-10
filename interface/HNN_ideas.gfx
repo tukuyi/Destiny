@@ -330,6 +330,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/LEC/LEC_separatism.png"
 	}
 	spriteType = {
+		name = "GFX_idea_LEC_workers_bill"
+		texturefile = "gfx/interface/ideas/LEC/LEC_workers_bill.png"
+	}
+	spriteType = {
 		name = "GFX_idea_GXC_Jie_ji"
 		texturefile = "gfx/interface/ideas/GXC/GXC_Jie_ji.png"
 	}

@@ -25,6 +25,18 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/LEC/LEC_guang_bo.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_LEC_future"
+		texturefile = "gfx/event_news_pictures/LEC/LEC_future.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_LEC_he_is_back_picture"
+		texturefile = "gfx/event_news_pictures/LEC/LEC_he_is_back_picture.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_LEC_anarchy"
+		texturefile = "gfx/event_news_pictures/LEC/LEC_anarchy.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_LEC_hai_dao"
 		texturefile = "gfx/event_news_pictures/LEC/LEC_hai_dao.png"
 	}

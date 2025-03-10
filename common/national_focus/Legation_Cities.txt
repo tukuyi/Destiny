@@ -3732,6 +3732,10 @@ focus_tree = {
 					LEC_Hiraya_Amane_boss_npo
 					LEC_Su_Xiwen_sec_npo
 				}
+				country_event = {
+					id = legcities.148
+					days = 14
+				}
 			}
 			add_natpop_to_coalition = yes
 		}
@@ -4781,11 +4785,13 @@ focus_tree = {
 		id = LEC_pearls_east_dragons_claw
 		icon = GFX_goal_LEC_Criminal_Empire
 		relative_position_id = LEC_struggle_for_shanghai
-		cost = 5.00
+		cost = 2.00
 		x = 0
 		y = 9
 
 		prerequisite = { focus = LEC_eastern_enterprises_global_operations }
+		
+		ai_will_do = { base = 100 }
 
 		completion_reward = {
 			add_state_claim = 592
@@ -4802,7 +4808,6 @@ focus_tree = {
 			add_state_claim = 609
 			add_state_claim = 745
 		}
-		ai_will_do = { factor = 100 }
 	}
 
 	focus = {
@@ -5549,6 +5554,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhu_ming_zhen_long_tian_zi"
 			custom_effect_tooltip = LEC_he_is_back_tt
+			hidden_effect = {
+				country_event = {
+					id = lecming.7
+					days = 7
+				}
+			}
 		}
 	}
 
@@ -5567,6 +5578,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_chong_qi_feng_fan_zhi"
 			add_ideas = LEC_national_rebirth_idea
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = lecming.1
+				days = 5
+			}
 		}
 	}
 
@@ -5616,6 +5632,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ru_fa_ge_ming"
 			add_ideas = LEC_tanglarp_code
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = lecming.2
+				days = 5
+			}
 		}
 	}
 
@@ -5682,7 +5703,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_di_wang_ban_de_zong_tong"
-			
+			add_ideas = LEC_founders_idea
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -5787,7 +5808,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_wen_he_ge_ming_dao_lu"
-			
+			add_ideas = GXC_heroic_idealism
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -5835,6 +5856,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_gong_ren_bu_zai_wei_nu"
 			add_ideas = LEC_red_deal
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = lecming.6
+				days = 5
+			}
 		}
 	}	
 
@@ -5856,7 +5882,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_tong_zuo_yi_zhi_ren_bing_xing"
-
+			add_ideas = LEC_workers_cooperatives_idea
+			hidden_effect = {
+				set_party_name = {
+					ideology = syndicalist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+			}
 		}
 	}	
 
@@ -5884,6 +5917,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_xian_zheng_zhi_zhi"
 			add_ideas = GXC_centralised_economy
+			custom_effect_tooltip = tooltip_white_line
+			country_event = { 
+				id = lnggxgt.18
+				days = 5
+			}
 		}
 	}	
 
@@ -5913,7 +5951,7 @@ focus_tree = {
 
 	focus = {
 		id = LEC_wu_zheng_fu_zhu_yi_gai_zao
-		icon = GFX_goal_ETS_di_shang_tian_guo
+		icon = GFX_goal_LEC_wu_zheng_fu_zhu_yi_gai_zao
 		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
 		x = 4
 		y = 2
@@ -5929,13 +5967,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_wu_zheng_fu_zhu_yi_gai_zao"
-
+			add_ideas = LEC_a_new_man
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = lecming.5
+				days = 5
+			}
 		}
 	}	
 
 	focus = {
 		id = LEC_zi_you_ren_de_lian_he
-		icon = GFX_goal_HNN_zhi_wei_shi
+		icon = GFX_goal_LEC_zi_you_ren_de_lian_he
 		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
 		x = 3
 		y = 3
@@ -5956,7 +5999,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_you_ren_de_lian_he"
-
+			add_ideas = LEC_decentralized_planning_idea
 		}
 	}	
 
@@ -5977,7 +6020,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_chui_hui_yi_qie"
-
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.20
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = LEC_abolition_of_money_shock
 		}
 	}	
 
@@ -6004,7 +6052,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ci_she_li_ming"
-
+			swap_ideas = {
+				remove_idea = LEC_jue_xin_de_ge_ming_zhe3
+				add_idea = LEC_jue_xin_de_ge_ming_zhe4
+			}
 		}
 	}	
 
@@ -6031,6 +6082,16 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus YUN_CHI_BO_PO_MO_FO"
 			add_research_slot = 1
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { 
+					has_completed_focus = LEC_zhu_ming_zhen_long_tian_zi
+				}
+				country_event = {
+					id = lecming.3
+					days = 5
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}

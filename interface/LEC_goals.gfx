@@ -1,4 +1,12 @@
-SpriteTypes = {	
+SpriteTypes = {
+	spriteType = {
+		name = "GFX_goal_LEC_zi_you_ren_de_lian_he"
+		texturefile = "gfx/interface/goals/LEC_zi_you_ren_de_lian_he.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_wu_zheng_fu_zhu_yi_gai_zao"
+		texturefile = "gfx/interface/goals/LEC_wu_zheng_fu_zhu_yi_gai_zao.png"
+	}
 	spriteType = {
 		name = "GFX_goal_LEC_zhong_cheng_de_shang_hai"
 		texturefile = "gfx/interface/goals/LEC_zhong_cheng_de_shang_hai.png"

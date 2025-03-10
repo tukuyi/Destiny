@@ -8,6 +8,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SZC/Portrait_SZC_xiong_kewu.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_SZC_ba_jin"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_ba_jin.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SZC_lu_chao"
 		texturefile = "gfx/leaders/SZC/Portrait_SZC_lu_chao.png"
 	}
@@ -24,8 +28,20 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_xiang.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_SZC_liu_xiang_civ"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_liu_xiang_civ.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_pan_wenhua_civ"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_pan_wenhua_civ.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SZC_tang_shizun"
 		texturefile = "gfx/leaders/SZC/Portrait_SZC_tang_shizun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_tang_shizun_civ"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_tang_shizun_civ.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_SZC_guo_xunqi"

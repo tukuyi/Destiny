@@ -20,6 +20,8 @@ country_event = {#测试事件
 		# 	}
 		# }
 
+		add_ideas = WHR_abolition_of_money_shock
+
 		# YUN = {
 		# 	YUN_tang_jiyao = {
 		# 		var:country_leader = { clear_variable = china_alignment }
