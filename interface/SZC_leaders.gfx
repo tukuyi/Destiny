@@ -99,4 +99,8 @@ spriteTypes = {
 		name = "GFX_Portrait_SZC_lu_jian_bo"
 		texturefile = "gfx/leaders/SZC/Portrait_SZC_lu_jian_bo.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SZC_gao_jian_fu"
+		texturefile = "gfx/leaders/SZC/Portrait_SZC_gao_jian_fu.png"
+	}
 }

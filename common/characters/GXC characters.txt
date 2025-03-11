@@ -653,9 +653,9 @@ characters = {
 	GXC_li_zongren = {
 		name = GXC_li_zongren
 		portraits = {
-			# civilian = {
-			# 	large = GFX_Portrait_GXC_Li_Zhong_Ren
-			# }
+			civilian = {
+				large = GFX_Portrait_GXC_Li_Zhong_Ren
+			}
 			army = {
 				large = GFX_Portrait_GXC_li_zongren_kuomintang
 				small = GFX_Portrait_GXC_li_zongren_kuomintang

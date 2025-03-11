@@ -4680,6 +4680,14 @@ LEC_HNN_FREE = {
 	color = rgb { 79 0 20 }
 	color_ui = rgb { 163 17 31 }
 }
+LEC_GXC_FREE = {
+	color = rgb { 79 0 20 }
+	color_ui = rgb { 163 17 31 }
+}
+LEC_SHX_FREE = {
+	color = rgb { 79 0 20 }
+	color_ui = rgb { 163 17 31 }
+}
 LEC_GT = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }

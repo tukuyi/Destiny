@@ -2340,6 +2340,12 @@
  LEC_HNN_FREE:0 "湖南自由地区"
  LEC_HNN_FREE_ADJ:0 "湖南自由地区"
  LEC_HNN_FREE_DEF:0 "湖南自由地区"
+ LEC_GXC_FREE:0 "粤桂自由地区"
+ LEC_GXC_FREE_ADJ:0 "粤桂自由地区"
+ LEC_GXC_FREE_DEF:0 "粤桂自由地区"
+ LEC_SHX_FREE:0 "山西自由地区"
+ LEC_SHX_FREE_ADJ:0 "山西自由地区"
+ LEC_SHX_FREE_DEF:0 "山西自由地区"
 
  LEC_du_yue_sheng: "杜月笙"
  LEC_Huang_Jinrong: "黄金荣"

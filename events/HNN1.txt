@@ -18,8 +18,8 @@ country_event = {#测试事件
 		# LEC_SZC_build = yes
 		# LEC_SHC_build = yes
 		# LEC_HNN_build = yes
-
-		load_focus_tree = SHC_focus
+		# LEC_GXC_build = yes
+		# LEC_SHX_build = yes
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

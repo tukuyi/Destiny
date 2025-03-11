@@ -5723,6 +5723,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_di_wang_ban_de_zong_tong"
+			add_political_power = 200
+			add_command_power = 50
+			add_stability = -0.1
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_founders_idea
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -5828,6 +5832,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_wen_he_ge_ming_dao_lu"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.10
+			}
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = GXC_heroic_idealism
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -5875,6 +5885,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_gong_ren_bu_zai_wei_nu"
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.10
+			}
+			add_stability = 0.05
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_red_deal
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
@@ -6019,6 +6035,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_you_ren_de_lian_he"
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.10
+			}
+			add_political_power = 50
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_decentralized_planning_idea
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
@@ -6029,6 +6051,8 @@ focus_tree = {
 				# LEC_SZC_build = yes
 				# LEC_SHC_build = yes
 				# LEC_HNN_build = yes
+				# LEC_GXC_build = yes
+				# LEC_SHX_build = yes
 			}
 		}
 	}	
@@ -6056,6 +6080,12 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_abolition_of_money_shock
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 3000
+				producer = LEC
+			}
 		}
 	}	
 

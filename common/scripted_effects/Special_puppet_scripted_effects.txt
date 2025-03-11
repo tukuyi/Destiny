@@ -2608,7 +2608,7 @@
 		hidden_effect = {
 			HNN = {
 				set_cosmetic_tag = LEC_HNN_FREE
-				load_focus_tree = generic_focus
+				load_focus_tree = hunan_focus
 		
 				create_country_leader = {
 					name = "彭璜"
@@ -2645,6 +2645,192 @@
 				}
 				1052 = {
 					add_core_of = HNN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}
+	LEC_GXC_build = {#两广
+		release = GXC
+		puppet = GXC
+		set_autonomy = {
+			target = GXC
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			GXC = {
+				set_cosmetic_tag = LEC_GXC_FREE
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "高剑父"
+					picture = "gfx/leaders/SZC/Portrait_SZC_gao_jian_fu.png"
+					expire = "1.1.1"
+					ideology = anarchism_subtype
+				}
+				set_politics = {
+					ruling_party = radical_socialist
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 1
+				}
+		
+				transfer_state = 326
+				transfer_state = 591
+				transfer_state = 592
+				transfer_state = 593
+				transfer_state = 594
+				transfer_state = 599
+				transfer_state = 728
+				transfer_state = 729
+				transfer_state = 800
+				transfer_state = 801
+				transfer_state = 1012
+				transfer_state = 1053
+				transfer_state = 1054
+				transfer_state = 1055
+				transfer_state = 1056
+
+				326 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				591 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				592 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				593 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				594 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				599 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				800 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				728 ={
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				729 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				801 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1012 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1053 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1054 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1055 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1056 = {
+					add_core_of = GXC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}
+	LEC_SHX_build = {#山西
+		release = SHX
+		puppet = SHX
+		set_autonomy = {
+			target = SHX
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			SHX = {
+				set_cosmetic_tag = LEC_SHX_FREE
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "景梅九"
+					picture = "gfx/leaders/LEC/Portrait_LEC_Jing_Mei_Jiu.png"
+					expire = "1.1.1"
+					ideology = anarchism_subtype
+				}
+				set_politics = {
+					ruling_party = radical_socialist
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 1
+				}
+		
+				transfer_state = 615
+				transfer_state = 622
+				transfer_state = 799
+				transfer_state = 1015
+
+				615 = {
+					add_core_of = SHX
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				622 = {
+					add_core_of = SHX
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				799 = {
+					add_core_of = SHX
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1015 = {
+					add_core_of = SHX
 					remove_core_of = LEC
 					remove_claim_by = LEC
 				}
