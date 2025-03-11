@@ -6048,11 +6048,12 @@ focus_tree = {
 				days = 5
 			}
 			hidden_effect = {
-				# LEC_SZC_build = yes
-				# LEC_SHC_build = yes
-				# LEC_HNN_build = yes
-				# LEC_GXC_build = yes
-				# LEC_SHX_build = yes
+				LEC_SZC_build = yes
+				LEC_SHC_build = yes
+				LEC_HNN_build = yes
+				LEC_GXC_build = yes
+				LEC_SHX_build = yes
+				LEC_ANQ_build = yes
 			}
 		}
 	}	

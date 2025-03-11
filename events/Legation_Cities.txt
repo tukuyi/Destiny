@@ -14181,6 +14181,13 @@ country_event = {#青帮四分五裂
 		}
 		add_ideas = LEC_Lin_Guisheng_hog_pau
 		complete_national_focus = LEC_pockmarked_huang_jinrong_pulls_ahead
+		hidden_effect = {
+			set_party_name = {
+				ideology = paternal_autocrat
+				long_name = LEC_triad_huang_jin_rong_party_long
+				name = LEC_triad_huang_jin_rong_party
+			}
+		}
 	}
 
 	option = {#杜月笙

@@ -11,15 +11,19 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect LEC = {
-		# 	set_cosmetic_tag = LEC_MING
+		# eval_effect ROOT = {
+		# 	promote_character = {
+		# 		character = LEC_Wang_Yaqiao
+		# 		ideology = syn_illegalism_subtype
+		# 	}
 		# }
 
-		# LEC_SZC_build = yes
-		# LEC_SHC_build = yes
-		# LEC_HNN_build = yes
-		# LEC_GXC_build = yes
-		# LEC_SHX_build = yes
+		LEC_SZC_build = yes
+		LEC_SHC_build = yes
+		LEC_HNN_build = yes
+		LEC_GXC_build = yes
+		LEC_SHX_build = yes
+		LEC_ANQ_build = yes
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

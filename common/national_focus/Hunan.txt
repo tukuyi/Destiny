@@ -4650,7 +4650,7 @@ focus_tree = {
 	focus = {
 		id = HNN_Buddhism
 		icon = GFX_goal_HNN_Buddhism
-		x = -19
+		x = -18
 		y = 10
 		cost = 1
 
@@ -5170,7 +5170,7 @@ focus_tree = {
 	focus = {
 		id = HNN_ya_li_an_jue_qi
 		icon = GFX_goal_HNN_ya_li_an_jue_qi
-		x = -22
+		x = -21
 		y = 18
 		cost = 2
 
@@ -5455,7 +5455,7 @@ focus_tree = {
 	focus = {
 		id = HNN_ren_jian_fo_jiao
 		icon = GFX_goal_ZAM_reforms_support
-		x = -16
+		x = -15
 		y = 18
 		cost = 2
 
@@ -10079,7 +10079,7 @@ focus_tree = {
 	focus = {
 		id = HNN_xiang_xi_wang_de_sheng_li
 		icon = GFX_goal_HNN_xiang_xi_wang_de_sheng_li
-		x = -19
+		x = -18
 		y = 0
 		cost = 1
 
@@ -10592,7 +10592,7 @@ focus_tree = {
 	focus = {
 		id = HNN_ran_deng_ji_si
 		icon = GFX_goal_HNN_ran_deng_ji_si
-		x = -11
+		x = -10
 		y = 10
 		cost = 2
 
@@ -11363,6 +11363,115 @@ focus_tree = {
 				remove_idea = HNN_chu_mo_dang_kou_B
 				add_idea = HNN_chu_mo_dang_kou_C
 			}
+		}
+	}
+
+	#彭璜
+	focus = {
+		id = HNN_xin_gong_ren_yun_dong
+		icon = GFX_goal_ZAM_reforms_support
+		x = -7
+		y = 18
+		cost = 2
+
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		allow_branch = {
+			always = no
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_xin_gong_ren_yun_dong"
+
+		}
+	}
+
+	focus = {
+		id = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 0
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_xin_gong_ren_yun_dong
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_yong_wu_ting_xi_de_tu_di_gai_ge"
+
+		}
+	}
+
+	focus = {
+		id = HNN_zi_xia_er_shang_de_gaI_ge
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = -1
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_zi_xia_er_shang_de_gaI_ge"
+
+		}
+	}
+
+	focus = {
+		id = HNN_chong_jian_huo_bi
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 1
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_chong_jian_huo_bi"
+
+		}
+	}
+
+	focus = {
+		id = HNN_jiao_yu_ge_xin
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 0
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_chong_jian_huo_bi
+		}
+		prerequisite = {
+			focus = HNN_zi_xia_er_shang_de_gaI_ge
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_jiao_yu_ge_xin"
+
 		}
 	}
 }

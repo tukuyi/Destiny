@@ -5259,6 +5259,18 @@
  hnnshenbing.8.d:0 "我们农民协会，为了我们自己的利益，要同地主豪绅作斗争。我们斗争的纲领如下：1、不还地主租稞。2、不还富人的债，取消高利借贷。3、反抗一切苛捐杂税(门牌捐、月捐、鸦片捐、屠宰税等...)，取消收税机关。4、没收地主、富农的粮食、财务、衣物，分给贫苦的农民。5、要求增加工资，改良待遇，减少工作时间。6、释放被官府捕去的农民。7、逮捕和惩办一切官吏豪绅（区长、保董)及收税人员。8、组织农民自卫队，武装自已，保护身家。9、因为农民协会是一个革命的团体，凡是反帝国主义反封建反军阀，拥护工农利益之革命的团体，我们都与联合。10、我们主张信教自由，凡是信神的，不信神的，信教的，不信教的农民，均可加入协会。"
  hnnshenbing.8.a:0 "武装起来"
 
+#彭璜
+ HNN_xin_gong_ren_yun_dong:0 "新工人运动"
+ HNN_xin_gong_ren_yun_dong_desc:0 " "
+ HNN_yong_wu_ting_xi_de_tu_di_gai_ge:0 "永不停息的土地改革"
+ HNN_yong_wu_ting_xi_de_tu_di_gai_ge_desc:0 " "
+ HNN_zi_xia_er_shang_de_gaI_ge:0 "自下而上的改革"
+ HNN_zi_xia_er_shang_de_gaI_ge_desc:0 " "
+ HNN_chong_jian_huo_bi:0 "货币改革"
+ HNN_chong_jian_huo_bi_desc:0 " "
+ HNN_jiao_yu_ge_xin:0 "革新教育"
+ HNN_jiao_yu_ge_xin_desc:0 " "
+
  CHI_xue_yue: "薛岳"
  CHI_zhang_fakui: "张发奎"
  CHI_li_jishen: "李济深"

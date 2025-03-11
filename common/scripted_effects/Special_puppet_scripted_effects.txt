@@ -2837,3 +2837,66 @@
 			}
 		}
 	}
+	LEC_ANQ_build = {#安徽
+		release = ANQ
+		puppet = ANQ
+		set_autonomy = {
+			target = ANQ
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			ANQ = {
+				set_cosmetic_tag = LEC_ANQ_FREE
+				load_focus_tree = generic_focus
+		
+				LEC = {
+					LEC_Wang_Yaqiao = {
+						set_nationality = ANQ
+					}
+				}
+				promote_character = {
+					character = LEC_Wang_Yaqiao
+					ideology = syn_illegalism_subtype
+				}
+				set_politics = {
+					ruling_party = syndicalist
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 1
+				}
+		
+				transfer_state = 606
+				transfer_state = 598
+				transfer_state = 1050
+				transfer_state = 1047
+
+				606 = {
+					add_core_of = ANQ
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				598 = {
+					add_core_of = ANQ
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1050 = {
+					add_core_of = ANQ
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1047 = {
+					add_core_of = ANQ
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}	
