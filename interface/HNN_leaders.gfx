@@ -444,6 +444,10 @@ spriteTypes = {
 		name = "GFX_Portrait_HNN_Huang_ke_cheng"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Huang_ke_cheng.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_HNN_peng_huang"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_peng_huang.png"
+	}
 ###奉天	
 	spriteType = {
 		name = "GFX_Portrait_FNG_FNG_guo_enlin"
@@ -683,6 +687,26 @@ spriteTypes = {
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Du_Yuesheng.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_LEC_Wan_Mo_lin"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_Wan_Mo_lin.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_ren_zong"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_ren_zong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_wu_zong"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_wu_zong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_xian_zong"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_xian_zong.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_LEC_xiao_zong"
+		texturefile = "gfx/leaders/LEC/Portrait_LEC_xiao_zong.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Reginald_Tyrwhitt"
 		texturefile = "gfx/leaders/LEC/Portrait_Reginald_Tyrwhitt.png"
 	}
@@ -725,10 +749,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_LEC_yang_hu"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_yang_hu.png"
-	}
-	spriteType = {
-		name = "GFX_Portrait_LEC_Zhu_yuan_zhang_meme"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Zhu_yuan_zhang_meme.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_LEC_Zhu_yuan_zhang"

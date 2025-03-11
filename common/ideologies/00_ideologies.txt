@@ -826,6 +826,7 @@ ideologies = {
 	paternal_autocrat = {
 		types = {
 			paternal_autocrat_subtype = {}
+			absolute_monarchy_CN_subtype = {can_be_randomly_selected = no color = { 255 216 0 } } #绝对君主制
 			pataut_new_legalism_subtype = {can_be_randomly_selected = no} #新法家
 			pataut_yan_xishan_thought_subtype = {can_be_randomly_selected = no} #阎锡山思想
 			buddhist_autocrat_subtype = {can_be_randomly_selected = no} #佛教神权制

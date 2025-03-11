@@ -309,6 +309,7 @@ recruit_character = LEC_gu_jia_tang
 recruit_character = LEC_Crime_Bosses
 recruit_character = LEC_Kot_Siu_Wong
 recruit_character = LEC_ye_chao_shan
+recruit_character = LEC_Wan_Mo_lin
 recruit_character = LEC_yu_li_kui
 recruit_character = LEC_Brilliant_Chang
 recruit_character = LEC_Wang_Yaqiao
@@ -335,6 +336,9 @@ LEC_gu_jia_tang = {
 	retire = yes
 }
 LEC_ye_chao_shan = {
+	retire = yes
+}
+LEC_Wan_Mo_lin = {
 	retire = yes
 }
 LEC_yu_li_kui = {

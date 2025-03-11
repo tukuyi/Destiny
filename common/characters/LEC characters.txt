@@ -527,7 +527,28 @@ characters = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-		}		
+		}
+	#万墨林
+		LEC_Wan_Mo_lin = { 
+			name = LEC_Wan_Mo_lin
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_Wan_Mo_lin
+					small = GFX_Portrait_LEC_Wan_Mo_lin
+				}
+			}
+			corps_commander = {
+				desc = LEC_Wan_Mo_lin_AMRY_DESC
+				traits = { 
+					LEC_triad_commander 
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}	
 #新义安#
 	#向前	
 		LEC_Heung_Chin = { 
@@ -585,7 +606,7 @@ characters = {
 			}
 			country_leader = {
 				desc = POLITICS_LEC_Zhu_yuan_zhang_DESC
-				ideology = absolute_monarchy_subtype
+				ideology = absolute_monarchy_CN_subtype
 			}
 		}		
 }

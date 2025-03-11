@@ -2480,3 +2480,174 @@
 			SZC_industrial_army_16
 		}
 	}
+
+#上海
+	LEC_SZC_build = {#四川
+		release = SZC
+		puppet = SZC
+		set_autonomy = {
+			target = SZC
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			SZC = {
+				set_cosmetic_tag = LEC_SZC_FREE
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "卢剑波"
+					picture = "gfx/leaders/SZC/Portrait_SZC_lu_jian_bo.png"
+					expire = "1.1.1"
+					ideology = esperanto_syndicalism_subtype
+				}
+				set_politics = {
+					ruling_party = syndicalist
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 1
+				}
+		
+				transfer_state = 1049
+				transfer_state = 788
+				transfer_state = 661
+				transfer_state = 650
+				transfer_state = 605
+				transfer_state = 601
+
+				1049 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				788 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				661 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC		
+				}
+				650 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				605 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC					
+				}
+				601 = {
+					add_core_of = SZC
+					remove_core_of = LEC
+					remove_claim_by = LEC					
+				}
+			}
+		}
+	}
+	LEC_SHC_build = {#上海
+		release = SHC
+		puppet = SHC
+		set_autonomy = {
+			target = SHC
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			SHC = {
+				set_cosmetic_tag = LEC_SHC_FREE
+				load_focus_tree = SHC_focus
+		
+				create_country_leader = {
+					name = "李储文"
+					desc = "Portrait_LEC_li_chu_wen_DESC"
+					picture = "gfx/leaders/LEC/Portrait_LEC_li_chu_wen.png"
+					expire = "1.1.1"
+					ideology = christian_communism_subtype
+				}
+				set_politics = {
+					ruling_party = totalist
+				}
+				set_party_name = {
+					ideology = totalist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = 1
+				}
+		
+				transfer_state = 743
+
+				743 = {
+					add_core_of = SHC
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}
+	LEC_HNN_build = {#湖南
+		release = HNN
+		puppet = HNN
+		set_autonomy = {
+			target = HNN
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			HNN = {
+				set_cosmetic_tag = LEC_HNN_FREE
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "彭璜"
+					picture = "gfx/leaders/HNN/Portrait_HNN_peng_huang.png"
+					expire = "1.1.1"
+					ideology = radsoc_anarcho_syndicalist_subtype
+				}
+				set_politics = {
+					ruling_party = radical_socialist
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 1
+				}
+		
+				transfer_state = 602
+				transfer_state = 1013
+				transfer_state = 1052
+
+				602 = {
+					add_core_of = HNN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1013 = {
+					add_core_of = HNN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1052 = {
+					add_core_of = HNN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}

@@ -34,6 +34,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/autonomy/autonomous_rich.png"
 	}
 	spriteType = {
+		name = "GFX_autonomous_free_puppet_icon"
+		textureFile = "gfx/interface/autonomy/autonomous_free.png"
+	}
+	spriteType = {
 		name = "GFX_associated_governorate_icon"
 		textureFile = "gfx/interface/decisions/decision_generic_nationalism.dds"
 	}

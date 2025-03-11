@@ -68,6 +68,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/socdem_datong_shu_thought.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_absolute_monarchy_CN_subtype"
+		texturefile = "gfx/ideologies/subideologies/absolute_monarchy_CN.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_radsoc_datong_shu_thought_subtype"
 		texturefile = "gfx/ideologies/subideologies/radsoc_datong_shu_thought.png"
 	}

@@ -11,16 +11,15 @@ country_event = {#测试事件
 
 	option = { #同意
 		name = hnn.100000.a
-		# eval_effect GXC = {
-		# 	every_unit_leader = {
-		# 		limit = {
-		# 			has_character_flag = GXC_guangdong_character
-		# 		}
-		# 		retire = yes
-		# 	}
+		# eval_effect LEC = {
+		# 	set_cosmetic_tag = LEC_MING
 		# }
 
-		add_ideas = WHR_abolition_of_money_shock
+		# LEC_SZC_build = yes
+		# LEC_SHC_build = yes
+		# LEC_HNN_build = yes
+
+		load_focus_tree = SHC_focus
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

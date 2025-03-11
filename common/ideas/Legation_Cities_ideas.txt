@@ -1516,7 +1516,7 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.10
-				consumer_goods_factor = 0.15
+				consumer_goods_factor = -0.15
 				radical_socialist_drift = 0.03
 				production_factory_efficiency_gain_factor = 0.03
 				production_factory_max_efficiency_factor = -0.05
@@ -2865,78 +2865,6 @@ ideas = {
 				army_core_attack_factor = 0.10
 				army_core_defence_factor = 0.10
 			}
-		}	
-		LEC_national_rebirth_ideaQ = {#国家重生-王亚樵
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_ideaQ"}
-			allowed = { always = no }
-			allowed_civil_war = { always = yes }
-			picture = generic_phoenix
-			modifier = {
-				supply_factor = 0.10
-				army_morale_factor = 0.05
-				conscription_factor = 0.12
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				supply_consumption_factor = -0.05
-				industrial_capacity_factory = 0.10
-				industrial_capacity_dockyard = 0.10
-			}
-		}
-		LEC_national_rebirth_ideaW = {#国家重生-王亚樵
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_ideaW"}
-			allowed = { always = no }
-			allowed_civil_war = { always = yes }
-			name = LEC_national_rebirth_ideaQ
-			picture = generic_phoenix
-			modifier = {
-				supply_factor = 0.10
-				army_morale_factor = 0.07
-				conscription_factor = 0.12
-				out_of_supply_factor = 0.05
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				supply_consumption_factor = -0.10
-				industrial_capacity_factory = 0.10
-				industrial_capacity_dockyard = 0.10
-				production_factory_start_efficiency_factor = 0.10
-				production_lack_of_resource_penalty_factor = -0.10
-			}
-		}
-		LEC_national_rebirth_ideaB = {#国家重生-龙头
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_ideaB"}
-			allowed = { always = no }
-			allowed_civil_war = { always = yes }
-			picture = generic_phoenix
-			modifier = {
-				stability_factor = -0.10
-				army_morale_factor = 0.07
-				conscription_factor = 0.12
-				political_power_gain = 0.10
-				political_power_factor = 0.05
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				production_factory_max_efficiency_factor = 0.10
-			}
-		}	
-		LEC_national_rebirth_ideaC = {#国家重生-龙头
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_ideaC"}
-			allowed = { always = no }
-			name = LEC_national_rebirth_ideaB
-			allowed_civil_war = { always = yes }
-			picture = generic_phoenix
-			modifier = {
-				stability_factor = -0.15
-				army_morale_factor = 0.07
-				conscription_factor = 0.12
-				political_power_gain = 0.10
-				production_oil_factor = 0.05
-				political_power_factor = 0.05
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				production_factory_max_efficiency_factor = 0.10
-				line_change_production_efficiency_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.10
-			}
 		}
 		LEC_national_rebirth_idea2 = {#国家重生-明
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_idea2"}
@@ -2972,35 +2900,6 @@ ideas = {
 				production_lack_of_resource_penalty_factor = -0.10
 			}
 		}
-		LEC_huang_quan_wen_gu = {#皇权稳固
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_huang_quan_wen_gu"}
-			allowed = { always = no }
-			removal_cost = -1
-			allowed_civil_war = { always = yes }
-			picture = ALB_nationalization
-			modifier = {
-				stability_weekly = 0.005
-				compliance_growth = 0.10
-				resistance_growth = -0.10
-				industry_free_repair_factor = 0.10
-			}
-		}	
-		LEC_huang_quan_wen_gu2 = {#皇权稳固
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_huang_quan_wen_gu2"}
-			allowed = { always = no }
-			name = LEC_huang_quan_wen_gu
-			allowed_civil_war = { always = yes }
-			picture = ALB_nationalization
-			modifier = {
-				stability_weekly = 0.010
-				compliance_growth = 0.10
-				resistance_growth = -0.10
-				market_liberal_drift = -0.05
-				social_liberal_drift = -0.05
-				industrial_capacity_factory = 0.10
-				industry_free_repair_factor = 0.10
-			}
-		}	
 		LEC_Opium_Idea4 = {#鸦片贸易
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_Opium_Idea4"}
 			picture = LEC_opium
@@ -3030,19 +2929,6 @@ ideas = {
 				consumer_goods_expected_value = -0.05
 				production_speed_buildings_factor = 0.10
 				production_speed_industrial_complex_factor = 0.10
-			}
-		}
-		LEC_guerilla_mob = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_guerilla_mob"}
-			allowed = { always = no }
-			picture = CAN_king_visit
-			modifier = {
-				breakthrough_factor = 0.075
-				army_attack_factor = 0.075
-				army_speed_factor = 0.08
-				org_loss_when_moving = -0.06
-				out_of_supply_factor = -0.1
-				pocket_penalty = -0.1
 			}
 		}
 		LEC_she_hui_fu_li2 = {#福利主义
