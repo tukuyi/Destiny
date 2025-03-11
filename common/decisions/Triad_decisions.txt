@@ -672,7 +672,35 @@ LEC_triad_enterprise = {#犯罪活动
 		}
 	}
 		
-	
+	LEC_Expanding_Entertainment = {#娱乐风俗
+		icon = GFX_decision_cat_annexation
+		visible = {
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Human_Trafficking_flag
+		}
+		available = {
+			check_variable = {
+				var = LEC_Human_Traffic_Supply
+				value = 2
+				compare = greater_than
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		days_remove = 15
+		cost = 25
+		days_re_enable = 15
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_france_macao"
+			custom_effect_tooltip = LEC_increase_human_Profits_1
+			add_to_variable = {
+				var = LEC_Human_Traffic_Profit
+				value = 1
+			}
+		}
+	}
 	LEC_Sell_Subjects = {#贩卖人口
 		icon = GFX_decision_cat_annexation
 		visible = {
@@ -681,13 +709,13 @@ LEC_triad_enterprise = {#犯罪活动
 		}
 		available = {
 			check_variable = {
-						var = LEC_Human_Traffic_Supply
-						value = 2
-						compare = greater_than
-					}
+				var = LEC_Human_Traffic_Supply
+				value = 2
+				compare = greater_than
+			}
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		days_remove = 15
 		cost = 25
@@ -701,16 +729,16 @@ LEC_triad_enterprise = {#犯罪活动
 			add_to_variable = {
 				var = LEC_Human_Traffic_Supply
 				value = -2
-				}
+			}
 				
 			add_to_variable = {
 				var = LEC_Human_Traffic_Profit
 				value = 2
-				}
+			}
 			
 		}
 	}
-	LEC_Expanding_Entertainment = {
+	LEC_Sell_Subjects_to_nan_mei = {#贩卖人口到南美
 		icon = GFX_decision_cat_annexation
 		visible = {
 			has_country_flag = LEC_Triad_Power
@@ -718,25 +746,33 @@ LEC_triad_enterprise = {#犯罪活动
 		}
 		available = {
 			check_variable = {
-						var = LEC_Human_Traffic_Supply
-						value = 2
-						compare = greater_than
-					}
+				var = LEC_Human_Traffic_Supply
+				value = 3
+				compare = greater_than
+			}
 		}
 		ai_will_do = {
-			factor = 100
+			base = 100
 		}
 		days_remove = 15
 		cost = 25
 		days_re_enable = 15
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision LEC_france_macao"
-			custom_effect_tooltip = LEC_increase_human_Profits_1
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Sell_Subjects_to_nan_mei"
+			custom_effect_tooltip = LEC_increase_human_Profits_3
+			custom_effect_tooltip = LEC_decrease_human_supply_3
+			
+			add_to_variable = {
+				var = LEC_Human_Traffic_Supply
+				value = -3
+			}
+				
 			add_to_variable = {
 				var = LEC_Human_Traffic_Profit
-				value = 1
-				}
+				value = 3
+			}
+			
 		}
 	}
 
@@ -1906,6 +1942,188 @@ LEC_triad_expansion = {#扩张帮会
 			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_wenzhou_Syndicate"
 			add_political_power = -50
 			transfer_state = 803
+		}
+	}
+
+	#威海卫
+	LEC_expand_operation_weihaiwei = {
+		icon = GFX_decision_generic_agreement
+		available = {
+			NOT = {
+				owns_state = 996
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 996
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Crime_Expansion
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_expand_operation_weihaiwei"
+			add_state_core = 996
+			set_country_flag = LEC_Operations_weihaiwei
+		}
+	}
+	LEC_Bribe_Officals_weihaiwei = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = {
+				owns_state = 996
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 996
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_weihaiwei
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Bribe_Officals_weihaiwei"
+			add_political_power = -50
+			996 = {
+				controller = {
+					add_political_power = 50
+				}
+			}
+			set_country_flag = LEC_Operations_weihaiwei_2
+		}
+	}
+	LEC_Establish_weihaiwei_Syndicate = {
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = {
+				owns_state = 996
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 996
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_weihaiwei_2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_weihaiwei_Syndicate"
+			add_political_power = -50
+			transfer_state = 996
+		}
+	}
+
+	#琉球
+	LEC_expand_operation_liuqiu = {
+		icon = GFX_decision_generic_agreement
+		available = {
+			NOT = {
+				owns_state = 526
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 526
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Crime_Expansion
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_expand_operation_liuqiu"
+			add_state_core = 526
+			set_country_flag = LEC_Operations_liuqiu
+		}
+	}
+	LEC_Bribe_Officals_liuqiu = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = {
+				owns_state = 526
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 526
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_liuqiu
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Bribe_Officals_liuqiu"
+			add_political_power = -50
+			526 = {
+				controller = {
+					add_political_power = 50
+				}
+			}
+			set_country_flag = LEC_Operations_liuqiu_2
+		}
+	}
+	LEC_Establish_liuqiu_Syndicate = {
+		icon = GFX_decision_soldierly_discipline
+		available = {
+			NOT = {
+				owns_state = 526
+			}
+			has_completed_focus = LEC_pearls_east_dragons_claw
+		}
+		visible = {
+			NOT = {
+				owns_state = 526
+			}
+			has_country_flag = LEC_Triad_Power
+			has_country_flag = LEC_Operations_liuqiu_2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 15
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_Establish_liuqiu_Syndicate"
+			add_political_power = -50
+			transfer_state = 526
 		}
 	}
 

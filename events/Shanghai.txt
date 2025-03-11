@@ -319,12 +319,14 @@ country_event = {#上海的命运
 		}
 		set_country_flag = zi_ben_jia_victory
 		add_political_power = 10
-		create_country_leader = {
-			name = "何东"
-			desc = "HE_DONG_DESC"
-			picture = "gfx/leaders/LEC/Portrait_LEC_He_Dong.png"
-			expire = "1.1.1"
-			ideology = national_socialism_subtype
+		SHC_He_Dong = {
+			add_country_leader_role = {
+				country_leader = { 
+					desc = POLITICS_HE_DONG_DESC
+					ideology = national_socialism_subtype
+				}
+				promote_leader = yes
+			}
 		}
 		set_politics = {
 			ruling_party = social_liberal
@@ -360,19 +362,35 @@ country_event = {#上海的命运
 			set_nationality = ROOT
 		}
 		hidden_effect = {
-			create_country_leader = {
-				name = "何东"
-				desc = "HE_DONG_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				expire = "1.1.1"
-				ideology = minarchism_subtype
-			}
-			create_country_leader = {
-				name = "何东"
-				desc = "HE_DONG_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				expire = "1.1.1"
-				ideology = socdem_humanistic_capitalism_subtype
+			SHC_He_Dong = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_HE_DONG_DESC
+						ideology = minarchism_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_HE_DONG_DESC
+						ideology = socdem_humanistic_capitalism_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_HE_DONG_DESC
+						ideology = corporatocracy_subtype
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_HE_DONG_DESC
+						ideology = natpop_corporatocracy_subtype
+					}
+					promote_leader = yes
+				}
 			}
 			set_party_name = {
 				ideology = social_democrat
@@ -391,24 +409,10 @@ country_event = {#上海的命运
 				long_name = LEC_social_conservative_party_HD_long
 				name = LEC_social_conservative_party_HD
 			}
-			create_country_leader = {
-				name = "何东"
-				desc = "HE_DONG_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				expire = "1.1.1"
-				ideology = corporatocracy_subtype
-			}
 			set_party_name = {
 				ideology = paternal_autocrat
 				long_name = LEC_paternal_autocrat_party_HD_long
 				name = LEC_paternal_autocrat_party_HD
-			}
-			create_country_leader = {
-				name = "何东"
-				desc = "HE_DONG_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				expire = "1.1.1"
-				ideology = natpop_corporatocracy_subtype
 			}
 			set_party_name = {
 				ideology = national_populist
@@ -2308,12 +2312,14 @@ country_event = {#真正的话事人
 				days = 100
 				id = leche.20
 			}
-			create_country_leader = {
-				name = "何东"
-				desc = "HE_DONG_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
-				expire = "1.1.1"
-				ideology = soccon_oligarchy_subtype
+			SHC_He_Dong = {
+				add_country_leader_role = {
+					country_leader = { 
+						desc = POLITICS_HE_DONG_DESC
+						ideology = soccon_oligarchy_subtype
+					}
+					promote_leader = yes
+				}
 			}
 			set_party_name = {
 				ideology = social_conservative

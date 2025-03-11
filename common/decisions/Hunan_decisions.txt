@@ -524,7 +524,26 @@ HNN_revolution_category = {#革命之火
 			}
 		}
 
-		ai_will_do = { factor = 25 }
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 2
+				NOT = {
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_PDH
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_DBW
+					}
+					has_game_rule = {
+						rule = HNN_path
+						option = HNN_HSH
+					}
+				}
+			}
+		}
 		cost = 40
 		days_remove = 30
 		days_re_enable = 60

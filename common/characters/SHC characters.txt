@@ -259,6 +259,27 @@ characters = {
 ####################
 ###   何东将领   ###
 ####################
+#何东
+	SHC_He_Dong = {
+		name = SHC_He_Dong
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_He_Dong
+				large = GFX_Portrait_SHC_He_Dong
+			}
+			civilian = {
+				large = GFX_Portrait_SHC_He_Dong
+			}
+		}
+		country_leader = {
+			desc = POLITICS_HE_DONG_DESC
+			ideology = national_socialism_subtype
+		}
+		country_leader = {
+			desc = POLITICS_HE_DONG_DESC
+			ideology = free_market_capitalist_subtype
+		}
+	}	
 #何世礼
 	SHC_robbie_hoshailai = {
 		name = SHC_robbie_hoshailai

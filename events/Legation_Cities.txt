@@ -14278,6 +14278,13 @@ country_event = {#青帮四分五裂
 			ideology = crime_syndicate_subtype
 		}
 		complete_national_focus = LEC_arch_collaborator_zhang_xiaolin_zones_in
+		hidden_effect = {
+			set_party_name = {
+				ideology = paternal_autocrat
+				long_name = LEC_triad_zhang_xiao_lin_party_long
+				name = LEC_triad_zhang_xiao_lin_party
+			}
+		}
 	}
 
 	option = {#杨虎
