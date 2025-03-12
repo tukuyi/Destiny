@@ -259,6 +259,23 @@ characters = {
 ####################
 ###   何东将领   ###
 ####################
+#维克托·沙逊
+	SHC_Sha_Xun = {
+		name = SHC_Sha_Xun
+		portraits = {
+			army = {
+				small = GFX_Portrait_SHC_Sha_Xun
+				large = GFX_Portrait_SHC_Sha_Xun
+			}
+			civilian = {
+				large = GFX_Portrait_SHC_Sha_Xun
+			}
+		}
+		country_leader = {
+			desc = POLITICS_Sha_Xun_DESC
+			ideology = toryism_subtype
+		}
+	}	
 #何东
 	SHC_He_Dong = {
 		name = SHC_He_Dong

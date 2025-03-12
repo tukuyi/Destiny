@@ -71,4 +71,8 @@ spriteTypes = {
 		name = "GFX_Portrait_SHC_Kang_Sheng"
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_Kang_Sheng.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Sha_Xun"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Sha_Xun.png"
+	}
 }

@@ -967,8 +967,8 @@ LEC_votes_category = {
 		}
 		activation = {
 			OR = {
-			has_country_flag = LEC_ACW
-			has_global_flag = USA_civil_war_avoided_flag
+				has_country_flag = LEC_ACW
+				has_global_flag = USA_civil_war_avoided_flag
 			}
 			NOT = {
 				has_global_flag = legation_vote_ongoing

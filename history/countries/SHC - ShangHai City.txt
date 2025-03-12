@@ -155,6 +155,7 @@ country_event = {
 recruit_character = SHC_Hui_Ji_liang
 recruit_character = SHC_yu_bing
 recruit_character = SHC_He_Dong
+recruit_character = SHC_Sha_Xun
 
 create_country_leader = {
 	name = "王凡西"

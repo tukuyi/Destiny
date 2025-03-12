@@ -14,6 +14,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Dong_Biwu_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				syndicalist
@@ -30,6 +31,7 @@ ideas = {
 			visible = {
 				has_character = HNN_peng_dehuai
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Pong_Dehuai_hog"
 				
@@ -50,6 +52,7 @@ ideas = {
 			visible = {
 				has_character = HNN_he_long
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_He_Long_hog"
 				
@@ -70,6 +73,7 @@ ideas = {
 			visible = {
 				has_country_flag = HNN_PROC_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Lin_Biao_hog"
 				
@@ -94,6 +98,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Ye_Jian_Ying_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				paternal_autocrat
@@ -117,6 +122,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Den_Xiao_Ping_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				totalist
@@ -143,6 +149,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chen_Yun_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				radical_socialist
@@ -169,6 +176,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhou_En_Lai_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				radical_socialist
@@ -192,6 +200,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Mao_Ze_Dong_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				radical_socialist
@@ -219,6 +228,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Gao_Gang_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				syndicalist
@@ -246,6 +256,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Liu_Shaoqi_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				syndicalist
@@ -273,6 +284,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_XI_Zhong_Xun_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_liberal
@@ -300,6 +312,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Hu_Yao_Bang_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_democrat
@@ -325,6 +338,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_qian_xue_sheng_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				radical_socialist
@@ -347,6 +361,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Tang_Shengzhi_hog_sde"
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_democrat
@@ -367,6 +382,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Cheng_Qian_hog_sli"
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_liberal
@@ -389,6 +405,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Zhao_Hengti_hog_sco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_conservative
@@ -407,6 +424,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chen_Quzhen_hog_pau"
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				paternal_autocrat
@@ -436,6 +454,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_tan_yan_kai_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_conservative
@@ -456,6 +475,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_chen_san_li_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				social_conservative
@@ -475,6 +495,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_tang_xiangming_hog"
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				paternal_autocrat
@@ -495,6 +516,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_ding_wu_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				national_populist
@@ -515,6 +537,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_ding_wu_hog"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				head_of_government
 				radical_socialist
@@ -544,6 +567,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				totalist
@@ -570,6 +594,7 @@ ideas = {
 					custom_effect_tooltip = HNN_tot_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				radical_socialist
@@ -593,6 +618,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				radical_socialist
@@ -626,6 +652,7 @@ ideas = {
 					remove_dynamic_modifier = { modifier = HNN_industrial_region }
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				paternal_autocrat
@@ -654,6 +681,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				totalist
@@ -679,6 +707,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tot_right
 				totalist
@@ -712,6 +741,7 @@ ideas = {
 			on_remove = {
 				add_to_variable = { china_build_all_country_time = 25 }
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				radical_socialist
@@ -740,6 +770,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				syndicalist
@@ -764,6 +795,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				totalist
@@ -789,6 +821,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				syndicalist
@@ -814,6 +847,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				syndicalist
@@ -839,6 +873,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				syn_right
 				syndicalist
@@ -849,9 +884,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_ren_bishi_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
 			}
@@ -872,9 +904,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_li_wei_han_for
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_gong_tuan_victory_flag
 				has_country_flag = HNN_PROC_victory
@@ -896,9 +925,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_xiao_ke_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
 			}
@@ -955,6 +981,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -984,6 +1011,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1012,6 +1040,7 @@ ideas = {
 					custom_effect_tooltip = HNN_tech_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1035,6 +1064,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1061,6 +1091,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1137,6 +1168,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1160,6 +1192,7 @@ ideas = {
 					popularity = 0.02
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				tech_right
 				radical_socialist
@@ -1188,6 +1221,7 @@ ideas = {
 					custom_effect_tooltip = HNN_mao_ze_dong_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				market_right
 				social_democrat
@@ -1213,6 +1247,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				market_right
 				social_liberal
@@ -1238,6 +1273,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				market_right
 				market_liberal
@@ -1263,6 +1299,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Mao_Ze_Dong_eco_2"
 				custom_effect_tooltip = HNN_mao_ze_dong_add_tooltip
 			}
+			cancel_if_invalid = no
 			traits = {
 				nong_ming_right
 				radical_socialist
@@ -1285,6 +1322,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_liu_bocheng_eco"
 				army_experience = 20
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				syndicalist
@@ -1304,6 +1342,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_liu_hua_qing_eco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				syndicalist
@@ -1323,6 +1362,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Qiu_Hui_Zuo_sec"
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				totalist
@@ -1350,6 +1390,7 @@ ideas = {
 					}
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				totalist
@@ -1369,6 +1410,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_li_zuo_peng_eco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				totalist
@@ -1391,6 +1433,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_huang_yong_shen_eco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				red_army_right
 				totalist
@@ -1398,7 +1441,7 @@ ideas = {
 			}
 		}	
 
-	#外交部长	
+	#外交部长
 		HNN_li_jiannong_for = {#李剑农
 			allowed = { original_tag = HNN }
 			picture = HNN_li_jiannong_for
@@ -1422,9 +1465,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_li_wei_han_for
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_gong_tuan_victory_flag
 				NOT = {
@@ -1460,6 +1500,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chen_Yi_for"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				radical_socialist
@@ -1483,6 +1524,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Geng_Biao_for"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				totalist
@@ -1503,6 +1545,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_song_xilian_for"
 				custom_effect_tooltip = HNN_song_xilian_add_tooltip
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				social_democrat
@@ -1525,6 +1568,7 @@ ideas = {
 					custom_effect_tooltip = HNN_huang_shiheng_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				social_conservative
@@ -1549,6 +1593,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Luo_Shujia_for_sco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				social_conservative
@@ -1573,6 +1618,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Wang_Dongyuan_for_sco"
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				social_conservative
@@ -1657,6 +1703,7 @@ ideas = {
 					custom_effect_tooltip = HNN_zhong_boyi_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				social_conservative
@@ -1679,6 +1726,7 @@ ideas = {
 					custom_effect_tooltip = HNN_tian_yingzhao_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				foreign_minister
 				authoritarian_democrat
@@ -1719,6 +1767,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_yin_shun_eco"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				economy_minister
 				radical_socialist
@@ -1744,6 +1793,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Mao_Ze_Dong_eco"
 				custom_effect_tooltip = HNN_mao_ze_dong_add_tooltip
 			}
+			cancel_if_invalid = no
 			traits = {
 				economy_minister
 				radical_socialist
@@ -1769,6 +1819,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_Chen_Yun_eco"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				economy_minister
 				radical_socialist
@@ -1813,6 +1864,7 @@ ideas = {
 					has_country_flag = HNN_gong_tuan_victory_flag
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				economy_minister
 				market_liberal
@@ -1858,6 +1910,7 @@ ideas = {
 					custom_effect_tooltip = HNN_zhong_boyi_add_tooltip
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				economy_minister
 				social_conservative
@@ -1910,6 +1963,7 @@ ideas = {
 					has_country_leader = { name = "鲁涤平" ruling_only = yes }
 				}
 			}
+			cancel_if_invalid = no
 			visible = {
 				NOT = {
 					has_country_flag = HNN_gong_tuan_victory_flag
@@ -1967,7 +2021,7 @@ ideas = {
 			}
 		}
 
-	#内政部长	
+	#内政部长
 		HNN_huang_gonglue_sec = {#黄公略
 			allowed = { original_tag = HNN }
 			picture = HNN_huang_gonglue_sec
@@ -1994,9 +2048,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_xiao_ke_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_gong_tuan_victory_flag
 				NOT = {
@@ -2048,9 +2099,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_ren_bishi_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_gong_tuan_victory_flag
 				NOT = {
@@ -2070,9 +2118,6 @@ ideas = {
 			allowed = { original_tag = HNN }
 			picture = HNN_luo_yi_nong_sec
 			cost = 100
-			available = {
-				
-			}
 			visible = {
 				has_country_flag = HNN_gong_tuan_victory_flag
 			}
@@ -2099,6 +2144,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_shi_tai_xu_sec"
 				
 			}
+			cancel_if_invalid = no
 			traits = {
 				security_minister
 				radical_socialist
@@ -2156,6 +2202,7 @@ ideas = {
 					has_country_flag = HNN_gong_tuan_victory_flag
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				security_minister
 				authoritarian_democrat
@@ -2221,6 +2268,7 @@ ideas = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_lu_dangping_sec"
 
 			}
+			cancel_if_invalid = no
 			traits = {
 				security_minister
 				social_conservative
@@ -2273,6 +2321,7 @@ ideas = {
 					has_country_leader = { name = "汤芗铭" ruling_only = yes }
 				}
 			}
+			cancel_if_invalid = no
 			traits = {
 				security_minister
 				social_liberal

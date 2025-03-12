@@ -2707,7 +2707,14 @@ focus_tree = {
 			focus = FNG_From_Beijing_to_the_Begonia_Leaf
 		}
 
-		ai_will_do = { factor = 80 }
+		ai_will_do = { 
+			base = 20 
+			modifier = {
+				add = -10
+				date < 1938.1.1
+			}
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Toward_Japan"
 			FNG_zhang_xue_cheng = {
@@ -5041,7 +5048,9 @@ focus_tree = {
 			FNG_JAP_hostile = yes
 		}
 
-		ai_will_do = { base = 70 }
+		ai_will_do = { 
+			base = 20
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Shikan_Clique_Chosen"
@@ -5306,6 +5315,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FNG_Shikan_Clique_Chosen
 		}
+
 		ai_will_do = { factor = 70 }
 
 		completion_reward = {

@@ -40,7 +40,7 @@ FRA_phalanstere_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision FRA_Develop_Caribbean target: [From.GetName]"
 			set_global_flag = { 
 				flag = FRA_ongoing_phalanstere_development 
-				days = @FRA_phalantere_decision_time 
+				days = @FRA_phalantere_decision_time
 				value = 1 
 			}
 		}

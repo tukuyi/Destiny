@@ -1138,15 +1138,17 @@ focus_tree = {
 				expire = "1.1.1"
 				ideology = market_liberal_subtype
 			}
-			set_party_name = {
-				ideology = market_liberal
-				long_name = LEC_authoritarian_democrat_party_SX_long
-				name = LEC_authoritarian_democrat_party_SX
-			}
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = shche.8
 				days = 10
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = market_liberal
+					long_name = LEC_authoritarian_democrat_party_SX_long
+					name = LEC_authoritarian_democrat_party_SX
+				}
 			}
 		}
 	}

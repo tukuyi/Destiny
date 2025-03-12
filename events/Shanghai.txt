@@ -397,11 +397,8 @@ country_event = {#上海的命运
 				long_name = LEC_social_democrat_party_HD_long
 				name = LEC_social_democrat_party_HD
 			}
-			create_country_leader = {
-				name = "维克托·沙逊"
-				desc = "Sha_Xun_DESC"
-				picture = "gfx/leaders/LEC/Portrait_LEC_Sha_Xun.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = SHC_Sha_Xun
 				ideology = toryism_subtype
 			}
 			set_party_name = {

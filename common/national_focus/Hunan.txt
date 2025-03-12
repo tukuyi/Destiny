@@ -10582,9 +10582,6 @@ focus_tree = {
 				remove_idea = HNN_a_democratic_province_2
 				add_idea = HNN_a_democratic_province_3
 			}
-			hidden_effect = {
-				H_to_china = yes 
-			}
 		}
 	}		
 

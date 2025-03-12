@@ -921,7 +921,14 @@ set_potential_national_government = {#宣布统一、枣核时间
 			NOT = { has_variable = kr_china_concessionintegration_speed }
 		}
 		set_variable = { kr_china_concessionintegration_speed = 40 }
-	}		
+	}	
+	
+	if = {#全国大开发
+		limit = {
+			NOT = { has_variable = china_build_all_country_time }
+		}
+		set_variable = { china_build_all_country_time = 110 }
+	}
 }
 
 china_submission_mandatory_loyalty_timer_effect = {#设置365天的傀儡标准

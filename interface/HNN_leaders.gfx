@@ -615,10 +615,6 @@ spriteTypes = {
 	}	
 ###上海
 	spriteType = {
-		name = "GFX_Portrait_LEC_Sha_Xun"
-		texturefile = "gfx/leaders/LEC/Portrait_LEC_Sha_Xun.png"
-	}
-	spriteType = {
 		name = "GFX_Portrait_LEC_Legation_Police_Blue"
 		texturefile = "gfx/leaders/LEC/Portrait_LEC_Legation_Police_Blue.png"
 	}
