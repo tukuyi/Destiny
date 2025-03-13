@@ -7214,6 +7214,7 @@ country_event = {#革命成功
 country_event = {#给党内同志的一封信
 	id = hungong.17
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.17" }
+	picture = GFX_report_event_HNN_deng_nei_yi_feng_xin
 	title = hungong.17.t
 	desc = hungong.17.d
 
@@ -7245,6 +7246,7 @@ country_event = {#《一江春水向东流》在湖南上映
 country_event = {#改造清理哥老会
 	id = hungong.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.20" }
+	picture = GFX_report_event_HNN_ge_lao_hui
 	title = hungong.20.t
 	desc = hungong.20.d
 
@@ -7266,6 +7268,7 @@ country_event = {#改造清理哥老会
 country_event = {#鸦片问题
 	id = hungong.21
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.21" }
+	picture = GFX_report_event_HNN_ye_pian
 	title = hungong.21.t
 	desc = hungong.21.d
 
@@ -7285,6 +7288,7 @@ country_event = {#鸦片问题
 			}
 		}
 	}
+
 	option = {#允许
 		name = hungong.21.b
 		add_popularity = {
@@ -9302,7 +9306,7 @@ country_event = {#国家彩券
 	}
 }
 
-country_event = {#下一代 
+country_event = {#下一代
 	id = hungong.103
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.103" }
 	title = hungong.103.t
@@ -12697,6 +12701,7 @@ country_event = {#反对官僚主义
 country_event = {#农民运动问题
 	id = hunmao.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunmao.6" }
+	picture = GFX_report_event_HNN_nong_ming_wen_ti
 	title = hunmao.6.t
 	desc = hunmao.6.d
 
@@ -14529,7 +14534,7 @@ country_event = {###国民党左派革命失败
 	}
 }
 
-country_event = {#中华民国 
+country_event = {#中华民国
 	id = hunbao.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunbao.12" }
 	title = hunbao.12.t

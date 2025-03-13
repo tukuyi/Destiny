@@ -6121,7 +6121,7 @@ focus_tree = {
 	}	
 
 	focus = {
-		id = YUN_end_of_da_chaos
+		id = LEC_end_of_da_chaos
 		icon = GFX_goal_YUN_Preserving_the_Heavenly_Peace
 		relative_position_id = LEC_jiu_zou_chong_lai_xiang_yi_tong
 		x = 0

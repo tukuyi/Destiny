@@ -10,10 +10,21 @@ ideas = {
 			picture = TIB_fire_bird
 			modifier = {
 				justify_war_goal_time = 1
-				enemy_justify_war_goal_time = 1	
-				army_core_defence_factor = 0.1
 				land_reinforce_rate = 0.01
 				war_support_factor = -0.05
+				army_core_defence_factor = 0.50
+				enemy_justify_war_goal_time = 1
+			}
+		}
+		SHC_international_neutral_zone = {#国际中立区
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_international_neutral_zone"}
+			allowed = { always = no }
+			picture = market_efficiency_2
+			modifier = {
+				trade_opinion_factor = 0.2
+				consumer_goods_factor = -0.14
+				industrial_capacity_factory = 0.02
+				line_change_production_efficiency_factor = 0.02
 			}
 		}
 		SHC_city_never_sleeps_never_falls_idea = {#生存是第一要务

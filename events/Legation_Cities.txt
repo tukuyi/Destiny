@@ -15620,7 +15620,6 @@ country_event = {#起义！
 	desc = lecgong.7.d
 
 	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
@@ -16398,6 +16397,7 @@ country_event = {#我们的合作者
 		trigger = {
 			LEP = {
 				exists = yes
+				is_puppet = no
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -16417,6 +16417,12 @@ country_event = {#我们的合作者
 			country_event = {
 				days = 5
 				id = leche.8
+			}
+		}
+		SHC_He_Dong = {
+			set_variable = { china_alignment = token:southern_zhili }
+			add_country_leader_trait = {
+				trait = CHI_Southern_Zhili
 			}
 		}
 	}
@@ -17498,7 +17504,7 @@ country_event = {#王者归来
 		}
 		promote_character = {
 			character = LEC_Zhu_yuan_zhang
-			ideology = absolute_monarchy_subtype
+			ideology = absolute_monarchy_CN_subtype
 		}
 		set_party_name = {
 			ideology = paternal_autocrat

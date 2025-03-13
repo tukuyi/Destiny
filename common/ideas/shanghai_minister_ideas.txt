@@ -251,6 +251,7 @@ ideas = {
 					has_country_flag = zong_gong_hui_victory
 				}
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_bo_gu_for"
 				
@@ -282,6 +283,7 @@ ideas = {
 					has_country_flag = zong_gong_hui_victory
 				}
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhao_si_yan_for"
 				
@@ -305,6 +307,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_mei_jiu_for"
 			}
+			cancel_if_invalid = no
 			traits = {
 				left_writer
 				syndicalist
@@ -326,6 +329,7 @@ ideas = {
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_rao_shu_shi_for"
 			}
+			cancel_if_invalid = no
 			traits = {
 				left_writer
 				syndicalist
@@ -353,6 +357,7 @@ ideas = {
 					has_country_flag = zong_gong_hui_victory
 				}
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_wang_ming_eco"
 			}
@@ -372,6 +377,7 @@ ideas = {
 			visible = {
 				has_country_flag = zong_gong_hui_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zheng_chao_ling_eco"
 			}
@@ -391,6 +397,7 @@ ideas = {
 			visible = {
 				has_country_flag = zong_gong_hui_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_tian_han_eco"
 			}
@@ -410,6 +417,7 @@ ideas = {
 			visible = {
 				has_country_flag = zong_gong_hui_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_mao_dun_for"
 			}
@@ -440,6 +448,7 @@ ideas = {
 					has_country_flag = zong_gong_hui_victory
 				}
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhou_yang_hog"
 				
@@ -460,6 +469,7 @@ ideas = {
 			visible = {
 				has_country_flag = zong_gong_hui_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_rou_shi_for"
 				
@@ -480,6 +490,7 @@ ideas = {
 			visible = {
 				has_country_flag = zong_gong_hui_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_hu_feng_for"
 				
@@ -501,6 +512,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_Thomas_Tien_Ken_sin_for"
 				
@@ -523,6 +535,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_hui_ji_liang_for"
 				
@@ -545,6 +558,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_yu_bing_for"
 				
@@ -566,6 +580,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_lei_ming_yuan_eco"
 				
@@ -586,6 +601,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhu_zhi_yao_eco"
 				
@@ -607,6 +623,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhou_ji_si_sec"
 				
@@ -627,6 +644,7 @@ ideas = {
 			visible = {
 				has_country_flag = ji_du_tu_victory
 			}
+			cancel_if_invalid = no
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhang_xiu_ya_sec"
 				

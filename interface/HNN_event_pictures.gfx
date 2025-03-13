@@ -229,6 +229,22 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/HNN/HNN_Yi_Guan_dao.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_HNN_ye_pian"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_ye_pian.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_nong_ming_wen_ti"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_nong_ming_wen_ti.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_ge_lao_hui"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_ge_lao_hui.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_deng_nei_yi_feng_xin"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_deng_nei_yi_feng_xin.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_gongtuan_victory"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_gongtuan_victory.png"
 	}

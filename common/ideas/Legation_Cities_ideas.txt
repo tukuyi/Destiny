@@ -1962,19 +1962,31 @@ ideas = {
 				consumer_goods_expected_value = -0.05
 			}
 		}
-		LEC_yi_wu_lao_don = {#义务劳动
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_yi_wu_lao_don"}
-			picture = generic_capitalism
+		LEC_make_shanghai_great_again = {#让上海再次伟大
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_make_shanghai_great_again"}
+			picture = NYC_make_great
 			allowed = { always = no }
-			available = { 
-				has_country_flag = economic_control_icon
-			}
             modifier = {
 				stability_weekly = -0.001
 				consumer_goods_factor = 0.10
+				industrial_capacity_factory = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		LEC_make_shanghai_great_again_B = {#让上海再次伟大
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_make_shanghai_great_again_B"}
+			name = LEC_make_shanghai_great_again
+			picture = NYC_make_great
+			allowed = { always = no }
+            modifier = {
+				stability_weekly = -0.005
+				market_liberal_drift = 0.05
+				consumer_goods_factor = 0.10
 				industrial_capacity_factory = 0.20
-				production_factory_efficiency_gain_factor = 0.20
 				production_factory_max_efficiency_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.20
 				production_factory_start_efficiency_factor = 0.20
 			}
 		}
@@ -1982,15 +1994,44 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_city_defant"}
 			picture = cop_idea
 			allowed = { always = no }
-			available = { 
-				has_country_flag = economic_control_icon
-			}
             modifier = {
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.05
-				production_speed_coastal_bunker_factor = 0.20
 				production_speed_bunker_factor = 0.20
+				production_speed_coastal_bunker_factor = 0.20
 				state_production_speed_bunker_factor = 0.20
+			}
+		}
+		LEC_champion_people = {#爱国宣传
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_champion_people"}
+			allowed = { always = no }
+			name = LEC_industrial_peace_idea
+            picture = VNC_soc-con_victory
+			modifier = {
+				local_manpower = 0.03
+				monthly_population = 0.06
+				war_support_weekly = 0.002
+				consumer_goods_factor = -0.19
+				industrial_capacity_factory = 0.075
+				production_factory_max_efficiency_factor = 0.10
+				production_lack_of_resource_penalty_factor = -0.08
+				state_production_speed_industrial_complex_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		LEC_industrial_peace_idea = {#爱国企业家
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea NEE_industrial_peace"}
+			allowed = { always = no }
+			picture = NEE_union_peace
+			modifier = {
+				industrial_capacity_factory = 0.075
+				production_factory_max_efficiency_factor = 0.10
+				production_lack_of_resource_penalty_factor = -0.08
+				state_production_speed_industrial_complex_factor = 0.05
 			}
 		}
 	###工团
