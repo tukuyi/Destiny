@@ -137,6 +137,7 @@
 
  tooltip_enable_hidden_tech: "启用$TECH|Y$\n$EFFECT$"
 
+ autonomous_free_puppet:0 "自由地区"
  associated_governorate: "合作省"
  autonomous_governorate: "自治省"
  governorate: "系属省"

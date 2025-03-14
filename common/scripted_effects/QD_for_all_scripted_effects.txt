@@ -929,6 +929,44 @@ set_potential_national_government = {#宣布统一、枣核时间
 		}
 		set_variable = { china_build_all_country_time = 110 }
 	}
+
+	#地块宣称
+	404 = {
+		add_claim_by = ROOT
+	}
+	408 = {
+		add_claim_by = ROOT
+	}
+	409 = {
+		add_claim_by = ROOT
+	}
+	537 = {
+		add_claim_by = ROOT
+	}
+	560 = {
+		add_claim_by = ROOT
+	}
+	561 = {
+		add_claim_by = ROOT
+	}
+	586 = {
+		add_claim_by = ROOT
+	}
+	589 = {
+		add_claim_by = ROOT
+	}
+	657 = {
+		add_claim_by = ROOT
+	}
+	810 = {
+		add_claim_by = ROOT
+	}
+	858 = {
+		add_claim_by = ROOT
+	}
+	1246 = {
+		add_claim_by = ROOT
+	}
 }
 
 china_submission_mandatory_loyalty_timer_effect = {#设置365天的傀儡标准

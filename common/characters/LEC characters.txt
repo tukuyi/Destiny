@@ -594,7 +594,7 @@ characters = {
 				logistics_skill = 2
 			}
 		}		
-#大明		
+#大明
 	#朱元璋
 		LEC_Zhu_yuan_zhang = { 
 			name = LEC_Zhu_yuan_zhang

@@ -1487,7 +1487,7 @@ integrate_china = {#整合
 		}
 	}
 
-	kr_integrate_outer_manchuria_province = {
+	kr_integrate_outer_manchuria_province = {#外满洲
 		icon = infiltrate_state
 		highlight_states = { highlight_state_targets = { state = 408 } }
 		allowed = {
@@ -1495,13 +1495,14 @@ integrate_china = {#整合
 		}
 		visible = {
 			OR = {
+				has_country_flag = has_united_china
 				408 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
-				1246 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				409 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				560 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				561 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				657 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				537 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				1246 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 			}
 		}
 		available = {
@@ -1538,7 +1539,7 @@ integrate_china = {#整合
 		}
 	}
 
-	kr_integrate_outer_northwest_province = {
+	kr_integrate_outer_northwest_province = {#外西北
 		icon = infiltrate_state
 		highlight_states = { highlight_state_targets = { state = 404 } }
 		allowed = {
@@ -1546,6 +1547,7 @@ integrate_china = {#整合
 		}
 		visible = {
 			OR = {
+				has_country_flag = has_united_china
 				810 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				589 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
 				586 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
@@ -1580,7 +1582,7 @@ integrate_china = {#整合
 		}
 	}
 	
-	kr_integrate_Kashmir_province = {
+	kr_integrate_Kashmir_province = {#克什米尔
 		icon = infiltrate_state
 		highlight_states = { highlight_state_targets = { state = 441 } }
 		allowed = {
@@ -1589,7 +1591,12 @@ integrate_china = {#整合
 				is_han_chinese_tag = yes
 			}
 		}
-		visible = { 858 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes } }
+		visible = {
+			OR = {
+				has_country_flag = has_united_china
+				858 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
 		available = {
 			has_full_control_of_state = 441
 			if = {

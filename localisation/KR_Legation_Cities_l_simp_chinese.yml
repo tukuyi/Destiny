@@ -2305,6 +2305,12 @@
  LEC_MING_radical_socialist:0 "大明无产阶级帝国"
  LEC_MING_radical_socialist_ADJ:0 "大明无产阶级帝国"
  LEC_MING_radical_socialist_DEF:0 "大明无产阶级帝国"
+ LEC_MING_ANNAN:0 "安南都护府"
+ LEC_MING_ANNAN_ADJ:0 "安南都护府"
+ LEC_MING_ANNAN_DEF:0 "安南都护府"
+ LEC_MING_FUNAN:0 "抚南都护府"
+ LEC_MING_FUNAN_ADJ:0 "抚南都护府"
+ LEC_MING_FUNAN_DEF:0 "抚南都护府"
  LEC_china:0 "中国国际托管区"
  LEC_china_ADJ:0 "国际托管区"
  LEC_china_DEF:0 "中国国际托管区"
@@ -2444,7 +2450,8 @@
  LEC_da_ming_back:0 "§H旧日王朝已然东山再起§!"
  LEC_long_tou_control:0 "§H龙头们的掌控将持续§!"
 
- autonomous_free_puppet:0 "自由地区"
+ LEC_chong_jian_GEA:0 "建立安南都护府"
+ LEC_chong_jian_AST:0 "建立抚南都护府"
 
  LEC_Opium_Idea1:0 "鸦片贸易"
  LEC_Opium_Idea3:0 "鸦片贸易"

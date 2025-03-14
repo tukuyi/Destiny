@@ -18,6 +18,10 @@ country_event = {#测试事件
 		# 	}
 		# }
 
+		AST = {
+			set_cosmetic_tag = LEC_MING_FUNAN
+		}
+
 		# YUN = {
 		# 	YUN_tang_jiyao = {
 		# 		var:country_leader = { clear_variable = china_alignment }

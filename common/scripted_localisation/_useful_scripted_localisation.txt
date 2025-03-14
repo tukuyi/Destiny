@@ -4738,4 +4738,10 @@ defined_text = {
 		}
 		localization_key = soccon_tridemism_subtype
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = absolute_monarchy_CN_subtype
+		}
+		localization_key = absolute_monarchy_CN_subtype
+	}
 }
