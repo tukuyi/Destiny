@@ -6956,6 +6956,7 @@ country_event = {#农会纲领
 country_event = { 
 	id = hungong.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.1" }
+	picture = GFX_report_event_HNN_dong_bi_wu_smile
 	title = hungong.1.t
 	desc = hungong.1.d
 

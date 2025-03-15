@@ -133,6 +133,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Hu_Ruoyu.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Yunnan_Zhu_jia_bi"
+		texturefile = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_jia_bi.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_YUN_tang_ji_yu"
 		texturefile = "gfx/leaders/YUN/Portrait_YUN_tang_ji_yu.png"
 	}

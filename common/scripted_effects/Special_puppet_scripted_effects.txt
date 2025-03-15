@@ -2873,6 +2873,67 @@
 			}
 		}
 	}	
+	LEC_YUN_build = {#云南
+		release = YUN
+		puppet = YUN
+		set_autonomy = {
+			target = YUN
+			autonomy_state = autonomous_free_puppet
+			end_wars = yes
+		}
+		hidden_effect = {
+			YUN = {
+				set_cosmetic_tag = LEC_YUN_FREE
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "朱家璧"
+					picture = "gfx/leaders/LEC/Portrait_Yunnan_Zhu_jia_bi.png"
+					expire = "1.1.1"
+					ideology = anarcho_bolshevism_subtype
+				}
+				set_politics = {
+					ruling_party = totalist
+				}
+				set_party_name = {
+					ideology = totalist
+					long_name = LEC_radical_socialist_party_WYQ_long
+					name = LEC_radical_socialist_party_WYQ
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = 1
+				}
+		
+				transfer_state = 325
+				transfer_state = 603
+				transfer_state = 816
+				transfer_state = 1051
+
+				325 = {
+					add_core_of = YUN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				603 = {
+					add_core_of = YUN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				816 = {
+					add_core_of = YUN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+				1051 = {
+					add_core_of = YUN
+					remove_core_of = LEC
+					remove_claim_by = LEC
+				}
+			}
+		}
+	}	
+
 
 	SHC_GEA_build = {#安南都护府
 		release = GEA
@@ -2973,6 +3034,8 @@
 				set_cosmetic_tag = LEC_MING_FUNAN
 				load_focus_tree = generic_focus
 		
+				set_province_name = { id = 7859 name = "新南京" }
+
 				create_country_leader = {
 					name = "建文帝"
 					picture = "gfx/leaders/LEC/Portrait_LEC_jian_wen.png"
@@ -3037,6 +3100,96 @@
 					long_name = LEC_paternal_autocrat_party_ming_long
 					name = LEC_paternal_autocrat_party_ming
 				}
+			}		
+		}
+	}
+	SHC_MON_build = {#鞑靼都护府
+		release = MON
+		puppet = MON
+		hidden_effect = {
+			MON = {
+				set_cosmetic_tag = LEC_MING_DADA
+				load_focus_tree = generic_focus
+
+				create_country_leader = {
+					name = "天顺帝"
+					picture = "gfx/leaders/LEC/Portrait_LEC_Zhu_qi_zhen.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_CN_subtype
+					traits = {}
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+				add_popularity = {
+					ideology = paternal_autocrat
+					popularity = 1
+				}
+				set_party_name = {
+					ideology = totalist
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = social_democrat
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = social_liberal
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = market_liberal
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = social_conservative
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+				set_party_name = {
+					ideology = national_populist
+					long_name = LEC_paternal_autocrat_party_ming_long
+					name = LEC_paternal_autocrat_party_ming
+				}
+
+				transfer_state = 330
+				transfer_state = 612
+				transfer_state = 1084
+				transfer_state = 1239
+				transfer_state = 329
+				transfer_state = 811
+				transfer_state = 654
+	
+				330 = { add_core_of = MON }
+				612 = { add_core_of = MON }
+				1084 = { add_core_of = MON }
+				329 = { add_core_of = MON }
+				811 = { add_core_of = MON }
+				654 = { add_core_of = MON }
 			}		
 		}
 	}

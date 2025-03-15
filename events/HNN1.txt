@@ -18,9 +18,7 @@ country_event = {#测试事件
 		# 	}
 		# }
 
-		AST = {
-			set_cosmetic_tag = LEC_MING_FUNAN
-		}
+		set_province_name = { id = 7859 name = "新南京" }
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

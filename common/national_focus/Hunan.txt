@@ -11389,7 +11389,7 @@ focus_tree = {
 		id = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
 		icon = GFX_goal_ZAM_reforms_support
 		relative_position_id = HNN_xin_gong_ren_yun_dong
-		x = 0
+		x = -1
 		y = 1
 		cost = 2
 
@@ -11410,7 +11410,7 @@ focus_tree = {
 		id = HNN_zi_xia_er_shang_de_gaI_ge
 		icon = GFX_goal_ZAM_reforms_support
 		relative_position_id = HNN_xin_gong_ren_yun_dong
-		x = -1
+		x = -3
 		y = 2
 		cost = 2
 
@@ -11432,11 +11432,11 @@ focus_tree = {
 		icon = GFX_goal_ZAM_reforms_support
 		relative_position_id = HNN_xin_gong_ren_yun_dong
 		x = 1
-		y = 2
+		y = 1
 		cost = 2
 
 		prerequisite = {
-			focus = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+			focus = HNN_xin_gong_ren_yun_dong
 		}
 		available = {
 			has_country_leader = { name = "彭璜" ruling_only = yes }
@@ -11452,13 +11452,10 @@ focus_tree = {
 		id = HNN_jiao_yu_ge_xin
 		icon = GFX_goal_ZAM_reforms_support
 		relative_position_id = HNN_xin_gong_ren_yun_dong
-		x = 0
+		x = -4
 		y = 3
 		cost = 2
 
-		prerequisite = {
-			focus = HNN_chong_jian_huo_bi
-		}
 		prerequisite = {
 			focus = HNN_zi_xia_er_shang_de_gaI_ge
 		}
@@ -11468,6 +11465,156 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_jiao_yu_ge_xin"
+
+		}
+	}
+
+	focus = {
+		id = HNN_bu_zai_ya_po
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 0
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_chong_jian_huo_bi
+		}
+		prerequisite = {
+			focus = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_bu_zai_ya_po"
+
+		}
+	}
+
+	focus = {
+		id = HNN_yi_lao_dong_qu_dai_huo_bi
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 2
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_chong_jian_huo_bi
+		}
+		prerequisite = {
+			focus = HNN_yong_wu_ting_xi_de_tu_di_gai_ge
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_yi_lao_dong_qu_dai_huo_bi"
+
+		}
+	}
+
+	focus = {
+		id = HNN_hu_lao
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = -1
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_bu_zai_ya_po
+		}
+		prerequisite = {
+			focus = HNN_yi_lao_dong_qu_dai_huo_bi
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_hu_lao"
+
+		}
+	}
+
+	focus = {
+		id = HNN_hu_zu
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 1
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_bu_zai_ya_po
+		}
+		prerequisite = {
+			focus = HNN_yi_lao_dong_qu_dai_huo_bi
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_hu_zu"
+
+		}
+	}
+
+	focus = {
+		id = HNN_hu_ai
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 3
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_bu_zai_ya_po
+		}
+		prerequisite = {
+			focus = HNN_yi_lao_dong_qu_dai_huo_bi
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_hu_ai"
+
+		}
+	}
+
+	focus = {
+		id = HNN_you_ai_gong_yi
+		icon = GFX_goal_ZAM_reforms_support
+		relative_position_id = HNN_xin_gong_ren_yun_dong
+		x = 0
+		y = 4
+		cost = 2
+
+		prerequisite = {
+			focus = HNN_hu_ai
+		}
+		prerequisite = {
+			focus = HNN_hu_zu
+		}
+		prerequisite = {
+			focus = HNN_hu_lao
+		}
+		prerequisite = {
+			focus = HNN_jiao_yu_ge_xin
+		}
+		available = {
+			has_country_leader = { name = "彭璜" ruling_only = yes }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_you_ai_gong_yi"
 
 		}
 	}

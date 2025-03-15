@@ -587,11 +587,11 @@ characters = {
 			}
 		}
 		# country_leader = {
-		# 	desc = GXC_chen_jiongming_leader_desc
+		# 	desc = POLITICS_GXC_CHEN_JIONGMING_DESC
 		# 	ideology = socdem_warlordism_subtype
 		# }
 		# country_leader = {
-		# 	desc = GXC_chen_jiongming_leader_desc
+		# 	desc = POLITICS_GXC_CHEN_JIONGMING_DESC
 		# 	ideology = soclib_lianshengism_subtype
 		# }
 		field_marshal = {

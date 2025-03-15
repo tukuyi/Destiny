@@ -4692,6 +4692,10 @@ LEC_ANQ_FREE = {
 	color = rgb { 79 0 20 }
 	color_ui = rgb { 163 17 31 }
 }
+LEC_YUN_FREE = {
+	color = rgb { 79 0 20 }
+	color_ui = rgb { 163 17 31 }
+}
 LEC_GT = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }
@@ -4765,6 +4769,10 @@ LEC_PLE = {
 	color_ui = rgb { 252 201 185 }
 }
 LEC_MING_ANNAN = {
+	color = rgb { 255 201 14 }
+	color_ui = rgb { 255 201 14 }
+}
+LEC_MING_DADA = {
 	color = rgb { 255 201 14 }
 	color_ui = rgb { 255 201 14 }
 }

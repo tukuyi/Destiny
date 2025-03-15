@@ -1572,11 +1572,8 @@ focus_tree = {
 				}
 			}
 			country_event = {
+				id = Shcjidu.8
 				days = 5
-				id = lecjidu.7
-			}
-			hidden_effect = {
-
 			}
 		}
 	}
@@ -1679,8 +1676,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_wo_men_de_zhu_bao_shen_ren"
 			country_event = {
+				id = Shcjidu.13
 				days = 5
-				id = lecjidu.2
 			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
@@ -1734,8 +1731,8 @@ focus_tree = {
 				load_oob = SHC_rider
 				add_ideas = LEC_qi_shi_tuan
 				country_event = {
+					id = Shcjidu.12
 					days = 5
-					id = lecjidu.3
 				}
 			}
 		}
@@ -2006,8 +2003,8 @@ focus_tree = {
 			}
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
+				id = Shcjidu.9
 				days = 5
-				id = lecjidu.6
 			}
 		}
 	}
@@ -2073,7 +2070,7 @@ focus_tree = {
 		id = LEC_zong_gong_hui_de_sheng_li
 		icon = GFX_goal_LEC_liu_wang_zhe_gui_lai
 		cost = 2
-		x = 32
+		x = 30
 		y = 0
 
 		bypass = {

@@ -6054,6 +6054,7 @@ focus_tree = {
 				LEC_GXC_build = yes
 				LEC_SHX_build = yes
 				LEC_ANQ_build = yes
+				LEC_YUN_build = yes
 			}
 		}
 	}	

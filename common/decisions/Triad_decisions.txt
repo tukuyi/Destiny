@@ -132,6 +132,35 @@ chinese_unification = {
 			}
 		}
 	}
+	LEC_chong_jian_MON = {#瓦剌
+		icon = eng_trade_unions_demand
+		visible = {
+			has_country_leader = {
+				character = LEC_Zhu_yuan_zhang
+			}
+		}
+		available = {
+			AND = {
+				owns_state = 612
+				owns_state = 330
+				owns_state = 1084
+				owns_state = 1239
+			}
+		}
+
+		fire_only_once = yes
+		days_remove = 0
+		cost = 0
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision LEC_chong_jian_MON"
+			SHC_MON_build = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove LEC_chong_jian_MON"
+			
+		}
+	}
 	LEC_chong_jian_GEA = {#中南
 		icon = eng_trade_unions_demand
 		visible = {

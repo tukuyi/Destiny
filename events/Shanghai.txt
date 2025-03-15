@@ -496,8 +496,8 @@ country_event = {#上海的命运
 			days = 180
 		}
 		country_event = {
+			id = Shcjidu.11
 			days = 5
-			id = lecjidu.4
 		}
 		hidden_effect = {
 			remove_all_ministers = yes
@@ -548,8 +548,8 @@ country_event = {#上海的命运
 				}
 			}
 			country_event = {
+				id = Shcjidu.10
 				days = 30
-				id = lecjidu.5
 			}
 		}
 	}	
@@ -2168,6 +2168,202 @@ country_event = {#向梵蒂冈宣战
 	}
 }
 
+country_event = {#白马修道院
+	id = Shcjidu.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.7"}
+	picture = GFX_report_event_LEC_guang_bo
+	title = Shcjidu.7.t
+	desc = Shcjidu.7.d
+
+	fire_only_once = yes
+	trigger = {
+		owns_state = 607 #洛阳
+		has_country_flag = ji_du_tu_victory
+	}
+
+	option = {#
+		name = Shcjidu.7.a
+		add_stability = -0.01
+	}
+}
+
+country_event = {#对新教的态度
+	id = Shcjidu.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.8"}
+	title = Shcjidu.8.t
+	desc = Shcjidu.8.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.8.a
+		add_political_power = 50
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.05
+		}
+	}
+
+	option = {#
+		name = Shcjidu.8.b
+		add_political_power = 50
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.05
+		}
+	}
+
+	option = {#
+		name = Shcjidu.8.c
+		add_political_power = 100
+		# hidden_effect = {
+		# 	if = {
+		# 		limit = { 
+		# 			has_idea = SHC_she_hui_zhu_yi_yu_wen
+		# 		}
+		# 		country_event = {
+		# 			id = Shcxinjiao.1
+		# 			days = 5
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+country_event = {#益世广播电台
+	id = Shcjidu.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.9"}
+	picture = GFX_report_event_LEC_guang_bo
+	title = Shcjidu.9.t
+	desc = Shcjidu.9.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.9.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#拆除夜总会
+	id = Shcjidu.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.10"}
+	title = Shcjidu.10.t
+	desc = Shcjidu.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.10.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#我们的领导者
+	id = Shcjidu.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.11"}
+	picture = GFX_report_event_SHC_yu_bing
+	title = Shcjidu.11.t
+	desc = Shcjidu.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.11.a
+		add_political_power = 10
+	}
+
+	option = {#
+		name = Shcjidu.11.b
+		add_political_power = 10
+		remove_ideas = LEC_hui_ji_liang_hog
+		add_ideas = LEC_yu_bing_hog
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.20
+		}
+	}
+}
+
+country_event = {#名誉大团长
+	id = Shcjidu.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.12"}
+	title = Shcjidu.12.t
+	desc = Shcjidu.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.12.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#祝圣仪式
+	id = Shcjidu.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.13"}
+	picture = GFX_report_event_SHC_zu_sheng_sun_zhong_shan
+	title = Shcjidu.13.t
+	desc = Shcjidu.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.13.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#加入帝国公约
+	id = Shcjidu.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.14"}
+	title = Shcjidu.14.t
+	desc = Shcjidu.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {# let them in
+		name = Shcjidu.14.a
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = -5
+		SHC = {
+			country_event = {
+				id = lec.38
+				days = 3
+			}
+		}
+	}
+
+	option = {# nada
+		name = Shcjidu.14.b
+		ai_chance = {
+			base = 25
+		}
+		add_political_power = 5
+		SHC = {
+			country_event = {
+				id = lec.39
+				days = 3
+			}
+		}
+	}
+}
+
 ########################################
 ##########-     资本家     -############
 ########################################
@@ -2401,6 +2597,21 @@ country_event = {#绯闻
 	option = {
 		name = shche.10.a
 		add_political_power = 10
+	}
+}
+
+country_event = {#英语补习班
+	id = shche.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event shche.11"}
+	title = shche.11.t
+	desc = shche.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = shche.11.a
+		add_political_power = 20
 	}
 }
 

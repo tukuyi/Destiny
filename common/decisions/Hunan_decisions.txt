@@ -1417,6 +1417,148 @@ chinese_unification = {
 			overlord = { country_event = hnnzhili.9 }
 		}
 	}
+
+	HNN_tou_zi_ji_chu_jian_she = {#投资基础设施
+		icon = cement_mixer
+		available = {
+			OR = {
+				owns_state = 602
+				owns_state = 1013
+				owns_state = 1052
+			}
+			OR = {
+				has_completed_focus = HNN_the_crossroads_of_china
+				has_country_flag = HNN_gong_tuan_victory_flag
+			}
+			has_manpower > 1000
+			num_of_owned_factories < 20
+		}
+		visible = {
+			OR = {
+				owns_state = 602
+				owns_state = 1013
+				owns_state = 1052
+			}
+			OR = {
+				has_completed_focus = HNN_the_crossroads_of_china
+				has_country_flag = HNN_gong_tuan_victory_flag
+			}
+			num_of_owned_factories < 20
+		}
+
+		days_remove = 60
+		cost = 50
+		days_re_enable = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_tou_zi_ji_chu_jian_she"
+			add_manpower = -1000
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_tou_zi_ji_chu_jian_she"
+			random_list = {
+				25 = {
+					602 = {
+						add_extra_state_shared_building_slots = 1
+					}
+				}
+				25 = {
+					1013 = {
+						add_extra_state_shared_building_slots = 1
+					}
+				}
+				25 = {
+					1052 = {
+						add_extra_state_shared_building_slots = 1
+					}
+				}
+				1 = {
+					602 = {
+						add_extra_state_shared_building_slots = 2
+					}
+				}
+				1 = {
+					1013 = {
+						add_extra_state_shared_building_slots = 2
+					}
+				}
+				1 = {
+					1052 = {
+						add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
+		}
+	}
+	HNN_tou_zi_gong_chang = {#投资民用工厂
+		icon = cement_mixer
+		available = {
+			OR = {
+				owns_state = 602
+				owns_state = 1013
+				owns_state = 1052
+			}
+			OR = {
+				has_completed_focus = HNN_the_crossroads_of_china
+				has_country_flag = HNN_gong_tuan_victory_flag
+			}
+			has_manpower > 1000
+			num_of_owned_factories < 20
+		}
+		visible = {
+			OR = {
+				owns_state = 602
+				owns_state = 1013
+				owns_state = 1052
+			}
+			OR = {
+				has_completed_focus = HNN_the_crossroads_of_china
+				has_country_flag = HNN_gong_tuan_victory_flag
+			}
+			num_of_owned_factories < 20
+		}
+
+		days_remove = 90
+		cost = 100
+		days_re_enable = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_tou_zi_gong_chang"
+			add_manpower = -1000
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_tou_zi_gong_chang"
+			random_list = {
+				20 = {
+					602 = {
+						add_building_construction = {
+							type =  arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				20 = {
+					1013 = {
+						add_building_construction = {
+							type =  arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				20 = {
+					1052 = {
+						add_building_construction = {
+							type =  arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 HNN_foreign_category = {#中国结盟决议
@@ -3113,147 +3255,6 @@ HNN_budd_category = {#佛教权力统一
 }
 
 HNN_bei_zhan_category = {#统一事宜
-	HNN_tou_zi_ji_chu_jian_she = {#投资基础设施
-		icon = cement_mixer
-		available = {
-			OR = {
-				owns_state = 602
-				owns_state = 1013
-				owns_state = 1052
-			}
-			OR = {
-				has_completed_focus = HNN_the_crossroads_of_china
-				has_country_flag = HNN_gong_tuan_victory_flag
-			}
-			has_manpower > 1000
-			num_of_owned_factories < 20
-		}
-		visible = {
-			OR = {
-				owns_state = 602
-				owns_state = 1013
-				owns_state = 1052
-			}
-			OR = {
-				has_completed_focus = HNN_the_crossroads_of_china
-				has_country_flag = HNN_gong_tuan_victory_flag
-			}
-			num_of_owned_factories < 20
-		}
-
-		days_remove = 60
-		cost = 50
-		days_re_enable = 15
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_tou_zi_ji_chu_jian_she"
-			add_manpower = -1000
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_tou_zi_ji_chu_jian_she"
-			random_list = {
-				25 = {
-					602 = {
-						add_extra_state_shared_building_slots = 1
-					}
-				}
-				25 = {
-					1013 = {
-						add_extra_state_shared_building_slots = 1
-					}
-				}
-				25 = {
-					1052 = {
-						add_extra_state_shared_building_slots = 1
-					}
-				}
-				1 = {
-					602 = {
-						add_extra_state_shared_building_slots = 2
-					}
-				}
-				1 = {
-					1013 = {
-						add_extra_state_shared_building_slots = 2
-					}
-				}
-				1 = {
-					1052 = {
-						add_extra_state_shared_building_slots = 2
-					}
-				}
-			}
-		}
-	}
-	HNN_tou_zi_gong_chang = {#投资民用工厂
-		icon = cement_mixer
-		available = {
-			OR = {
-				owns_state = 602
-				owns_state = 1013
-				owns_state = 1052
-			}
-			OR = {
-				has_completed_focus = HNN_the_crossroads_of_china
-				has_country_flag = HNN_gong_tuan_victory_flag
-			}
-			has_manpower > 1000
-			num_of_owned_factories < 20
-		}
-		visible = {
-			OR = {
-				owns_state = 602
-				owns_state = 1013
-				owns_state = 1052
-			}
-			OR = {
-				has_completed_focus = HNN_the_crossroads_of_china
-				has_country_flag = HNN_gong_tuan_victory_flag
-			}
-			num_of_owned_factories < 20
-		}
-
-		days_remove = 90
-		cost = 100
-		days_re_enable = 30
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_tou_zi_gong_chang"
-			add_manpower = -1000
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_tou_zi_gong_chang"
-			random_list = {
-				20 = {
-					602 = {
-						add_building_construction = {
-							type =  arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-				20 = {
-					1013 = {
-						add_building_construction = {
-							type =  arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-				20 = {
-					1052 = {
-						add_building_construction = {
-							type =  arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-			}
-		}
-	}
 	HNN_he_liang_guang_jun_fa_tan_pan = {#和两广军阀谈判
 		icon = GFX_decision_category_red_start
 
@@ -3285,10 +3286,7 @@ HNN_bei_zhan_category = {#统一事宜
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_liang_guang_jun_fa_tan_pan"
 			var:592.owner = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
+				country_event = china_events.1
 			}
 		}
 	}
@@ -3323,10 +3321,7 @@ HNN_bei_zhan_category = {#统一事宜
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_yun_nan_jun_fa_tan_pan"
 			YUN = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
+				country_event = china_events.1
 			}
 		}
 	}
@@ -3363,10 +3358,7 @@ HNN_bei_zhan_category = {#统一事宜
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_yun_nan_jun_fa_tan_pan_1"
 			YUN = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
+				country_event = china_events.1
 			}
 		}
 	}
@@ -3404,10 +3396,7 @@ HNN_bei_zhan_category = {#统一事宜
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_meng_gu_jun_fa_tan_pan_1"
 			MON = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
+				country_event = china_events.1
 			}
 		}
 	}
@@ -3451,10 +3440,7 @@ HNN_bei_zhan_category = {#统一事宜
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_liang_guang_jun_fa_tan_pan_1"
 			var:592.owner = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
+				country_event = china_events.1
 			}
 		}
 	}	
@@ -3491,12 +3477,7 @@ HNN_bei_zhan_category = {#统一事宜
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_dong_tu_Jue_si_tam_tan_pan"
-			ETS = {
-				country_event = { 
-					id = hunbao.40
-					days = 3
-				}
-			}
+			ETS = { country_event = china_events.1 }
 		}
 	}	
 }
