@@ -24,7 +24,9 @@ country_event = { # Intro
 	title = lec.1.t
 	desc = lec.1.d
 	picture = GFX_report_event_LEC_shanghai_river
+
 	is_triggered_only = yes
+
 	option = {
 		name = lec.1.a
 		USA = {
@@ -97,6 +99,12 @@ country_event = { # Intro
 			country_event = {
 				id = lec.3
 				days = 3
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = lecgong.19
+				days = 5
 			}
 		}
 	}
@@ -14131,6 +14139,9 @@ country_event = {#青帮四分五裂
 		LEC_yu_li_kui = {
 			set_nationality = ROOT
 		}
+		LEC_hua_ke_zhi = {
+			set_nationality = ROOT
+		}
 		promote_character = {
 			character = LEC_Wang_Yaqiao
 			ideology = syn_illegalism_subtype
@@ -15138,6 +15149,12 @@ country_event = {#血战
 		LEC_Wang_Yaqiao = {
 			retire = yes
 		}
+		LEC_yu_li_kui = {
+			retire = yes
+		}
+		LEC_hua_ke_zhi = {
+			retire = yes
+		}
 		set_politics = {
 			ruling_party = authoritarian_democrat
 		}
@@ -15489,11 +15506,11 @@ country_event = {#一些奇怪的思想
 country_event = {#罢工
 	id = lecgong.4
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecgong.4"}
+	picture = GFX_report_event_LEC_ba_gong
 	title = lecgong.4.t
 	desc = lecgong.4.d
 
 	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {#同意
@@ -16246,6 +16263,22 @@ country_event = {#打开保险库
 	option = {
 		name = lecgong.16.a
 		add_political_power = 40
+	}
+}
+
+country_event = {#上海的工人们
+	id = lecgong.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event lecgong.19"}
+	picture = GFX_report_event_LEC_shang_hai_gong_hui
+	title = lecgong.19.t
+	desc = lecgong.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = lecgong.19.a
+		add_political_power = 10
 	}
 }
 

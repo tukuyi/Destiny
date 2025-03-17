@@ -11003,6 +11003,47 @@ unit_leader_event = { #懒得个
 	}
 }
 
+country_event = {#贺龙的头像
+	id = hungong.175
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.175" }
+	picture = GFX_report_event_HNN_he_long_picture
+	title = hungong.175.t
+	desc = hungong.175.d
+
+	is_triggered_only = yes
+
+	option = { #军服
+		name = hungong.175.a
+		HNN_he_long = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_Hunan_He_Long
+				}
+			}
+		}
+	}
+	option = { #常服
+		name = hungong.175.b
+		HNN_he_long = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_Hunan_He_Long_victory
+				}
+			}
+		}
+	}
+	option = { #笑脸
+		name = hungong.175.c
+		HNN_he_long = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_Hunan_He_Long_victory_smeil
+				}
+			}
+		}
+	}
+}
+
 ########################################
 ##########-      中社部    -############
 ########################################

@@ -430,7 +430,31 @@ characters = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
-		}		
+		}	
+	#华克之
+		LEC_hua_ke_zhi = { 
+			name = LEC_hua_ke_zhi
+			portraits = {
+				army = {
+					large = GFX_Portrait_LEC_hua_ke_zhi
+					small = GFX_Portrait_LEC_hua_ke_zhi
+				}
+				civilian = {
+					large = GFX_Portrait_LEC_hua_ke_zhi
+				}
+			}
+			corps_commander = {
+				desc = POLITICS_LEC_hua_ke_zhi_AMRY_DESC
+				traits = { 
+					LEC_triad_commander  
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}			
 #恒社#
 	#杜月笙
 		LEC_Du_Yuesheng = { 

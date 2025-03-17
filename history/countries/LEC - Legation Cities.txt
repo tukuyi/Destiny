@@ -155,9 +155,11 @@ add_opinion_modifier = { target = JAP modifier = LEC_member }
 add_opinion_modifier = { target = USA modifier = LEC_member }
 add_opinion_modifier = { target = AUS modifier = LEC_member }
 add_opinion_modifier = { target = BEL modifier = LEC_member }
+
 set_variable = { global.legations_yes_votes = 0 }
 set_variable = { global.legations_no_votes = 0 }
 set_variable = { global.legations_abstain_votes = 0 }
+
 country_event = {
 	id = lec.1
 	days = 3
@@ -311,6 +313,7 @@ recruit_character = LEC_Kot_Siu_Wong
 recruit_character = LEC_ye_chao_shan
 recruit_character = LEC_Wan_Mo_lin
 recruit_character = LEC_yu_li_kui
+recruit_character = LEC_hua_ke_zhi
 recruit_character = LEC_Brilliant_Chang
 recruit_character = LEC_Wang_Yaqiao
 recruit_character = LEC_Huang_Jinrong
@@ -342,6 +345,9 @@ LEC_Wan_Mo_lin = {
 	retire = yes
 }
 LEC_yu_li_kui = {
+	retire = yes
+}
+LEC_hua_ke_zhi = {
 	retire = yes
 }
 

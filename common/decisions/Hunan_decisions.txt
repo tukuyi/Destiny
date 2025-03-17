@@ -1,5 +1,5 @@
 political_actions = {
-	HNN_gao_gang_Portrait_Picker = {
+	HNN_gao_gang_Portrait_Picker = {#高岗头像
 		icon = GFX_decision_portraits_picker
 		allowed = { 
 			tag = HNN
@@ -21,6 +21,36 @@ political_actions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_Portrait_Picker"
 			country_event = hungong.169
+		}
+	}
+	HNN_he_long_Portrait_Picker = {#贺龙
+		icon = GFX_decision_portraits_picker
+		allowed = { 
+			tag = HNN
+		}
+		visible = {
+			has_country_leader = {
+				name = "贺龙"
+				ruling_only = yes
+			}
+			if = {
+				limit = { 
+					has_country_flag = HNN_shen_bing_victory
+				}
+				has_completed_focus = HNN_zheng_zhi_su_fan
+			}
+		}
+
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 1
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_long_Portrait_Picker"
+			country_event = hungong.175
 		}
 	}
 	MON_bulid_yi_er = {

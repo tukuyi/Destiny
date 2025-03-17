@@ -922,29 +922,29 @@ ideas = {
 
 		LEC_galvanize_gambling_industry_idea = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_galvanize_gambling_industry_idea"}
-				picture = NYC_Gambling_New_York
-				allowed = { always = no }
-				available = { tag = LEC }
-				modifier = {
-					industrial_factory_donations = 1
-					local_resources = 0.05
-					consumer_goods_factor = -0.05
-					political_power_gain = -0.05
-				}
+			picture = NYC_Gambling_New_York
+			allowed = { always = no }
+			available = { tag = LEC }
+			modifier = {
+				industrial_factory_donations = 1
+				local_resources = 0.05
+				consumer_goods_factor = -0.05
+				political_power_gain = -0.05
 			}
-			LEC_criminal_empire_span_east_idea = {
-				on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_criminal_idea_span_east_idea"}
-				picture = LEC_triads
-				allowed = { always = no }
-				available = { tag = LEC }
-				modifier = {
-					consumer_goods_factor = 0.3
-					trade_opinion_factor = -0.1
-					war_support_factor = 0.1
-					conscription = 0.015
-					justify_war_goal_time = -0.25
-				}
+		}
+		LEC_criminal_empire_span_east_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_criminal_idea_span_east_idea"}
+			picture = LEC_triads
+			allowed = { always = no }
+			available = { tag = LEC }
+			modifier = {
+				conscription = 0.015
+				war_support_factor = 0.10
+				consumer_goods_factor = 0.10
+				trade_opinion_factor = -0.10
+				justify_war_goal_time = -0.30
 			}
+		}
 			
 	### Jiang Qing ###
 		
@@ -1501,7 +1501,7 @@ ideas = {
 				army_core_defence_factor = 0.05
 				stability_weekly_factor = -0.01
 				consumer_goods_expected_value = -0.10
-				conversion_cost_civ_to_mil_factor = -0.30
+				conversion_cost_civ_to_mil_factor = -0.40
 				production_speed_arms_factory_factor = -0.75
 				production_factory_max_efficiency_factor = 0.20
 				production_factory_efficiency_gain_factor = 0.20

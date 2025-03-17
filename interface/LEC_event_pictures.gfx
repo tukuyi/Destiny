@@ -49,6 +49,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/LEC/LEC_jian_shi.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_LEC_ba_gong"
+		texturefile = "gfx/event_news_pictures/LEC/LEC_ba_gong.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_LEC_shang_hai_gong_hui"
+		texturefile = "gfx/event_news_pictures/LEC/LEC_shang_hai_gong_hui.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_SHC_bai_e_nan_ming"
 		texturefile = "gfx/event_news_pictures/SHC/SHC_bai_e_nan_ming.png"
 	}

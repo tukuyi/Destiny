@@ -347,30 +347,30 @@ spriteTypes = {
 	#新闻
 	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna"
-		texturefile = "gfx/event_news_pictures/news/NEWS_vienna.png"
+		texturefile = "gfx/news/NEWS_vienna.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna_olympics"
-		texturefile = "gfx/event_news_pictures/news/NEWS_vienna_olympics.png"
+		texturefile = "gfx/news/NEWS_vienna_olympics.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_NEWS_Hong_kong"
-		texturefile = "gfx/event_news_pictures/news/NEWS_Hong_kong.png"
+		texturefile = "gfx/news/NEWS_Hong_kong.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_NEWS_guang_zhou"
-		texturefile = "gfx/event_news_pictures/news/NEWS_guang_zhou.png"
+		texturefile = "gfx/news/NEWS_guang_zhou.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_SIK_western_china"
-		texturefile = "gfx/event_news_pictures/news/news_event_SIK_western_china.png"
+		texturefile = "gfx/news/news_event_SIK_western_china.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_SHX_central_plains_war"
-		texturefile = "gfx/event_news_pictures/news/news_event_SHX_central_plains_war.png"
+		texturefile = "gfx/news/news_event_SHX_central_plains_war.png"
 	}
 	spriteType  = {
 		name = "GFX_news_event_NEWS_ao_men"
-		texturefile = "gfx/event_news_pictures/news/NEWS_ao_men.png"
+		texturefile = "gfx/news/NEWS_ao_men.png"
 	}
 }
