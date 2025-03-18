@@ -191,11 +191,28 @@ focus_tree = {
 		y = 2
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FNG_shaoshuai_zuo_wei_le_xi_wei
-				OR = {
-					paternal_autocrat > 0.5
-					market_liberal < 0.1
+			if = {
+				limit = { 
+					is_ai = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = FNG_shaoshuai_zuo_wei_le_xi_wei
+					OR = {
+						paternal_autocrat > 0.5
+						market_liberal < 0.1
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					is_ai = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = FNG_shaoshuai_zuo_wei_le_xi_wei
+					OR = {
+						paternal_autocrat > 0.40
+						market_liberal < 0.20
+					}
 				}
 			}
 		} 
@@ -235,9 +252,23 @@ focus_tree = {
 		y = 2
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FNG_yangyu_zuo_wei_le_xi_wei
-				market_liberal > 0.4
+			if = {
+				limit = { 
+					is_ai = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = FNG_yangyu_zuo_wei_le_xi_wei
+					market_liberal > 0.4
+				}
+			}
+			else_if = {
+				limit = { 
+					is_ai = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = FNG_yangyu_zuo_wei_le_xi_wei
+					market_liberal > 0.60
+				}
 			}
 		} 
 		prerequisite = {
@@ -397,7 +428,9 @@ focus_tree = {
 			FNG_JAP_not_hostile = yes
 			NOT = { has_global_flag = JAP_Fading_Sun }
 		}
-		ai_will_do = { base = 80 }
+		ai_will_do = { 
+			base = 40
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Mantetsu_Collaboration"
@@ -475,7 +508,9 @@ focus_tree = {
 
 		prerequisite = { focus = FNG_Develop_the_Nine_Provinces }
 
-		ai_will_do = { base =50 }
+		ai_will_do = { 
+			base = 50 
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FNG_Found_the_Northeast_IDC"

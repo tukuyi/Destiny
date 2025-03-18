@@ -10,6 +10,7 @@ add_namespace = Shcgong
 country_event = {#上海大战
 	id = SHCqiehuan.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event SHCqiehuan.1"}
+	picture = GFX_report_event_SHC_shang_hai_huo_bing
 	title = SHCqiehuan.1.t
 	desc = SHCqiehuan.1.d
 
@@ -46,6 +47,8 @@ country_event = {#上海大战
 		set_country_flag = zong_gong_hui_victory
 		set_cosmetic_tag = LEC_GT
 		hidden_effect = {
+			news_event = Shcgong.40
+
 			load_oob = SHC_Revolutionary_Militia
 
 			SHC_gong_tuan_leader_coming = yes
@@ -131,6 +134,7 @@ country_event = {#上海大战
 country_event = {#上海的命运
 	id = SHCqiehuan.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event SHCqiehuan.2"}
+	picture = GFX_report_event_SHC_shang_hai_huo_bing
 	title = SHCqiehuan.2.t
 	desc = SHCqiehuan.2.d
 
@@ -194,6 +198,8 @@ country_event = {#上海的命运
 			days = 180
 		}
 		hidden_effect = {
+			news_event = Shcgong.40
+
 			load_oob = SHC_Revolutionary_Militia
 
 			SHC_gong_tuan_leader_coming = yes
@@ -345,7 +351,6 @@ country_event = {#上海的命运
 			LEC_he_gan_tang_for
 			LEC_he_shi_li_sec
 		}
-		load_oob = SHC_gu_yong_bing
 		add_timed_idea = {
 			idea = SHC_she_hui_zhu_yi_yu_wen
 			days = 180
@@ -362,6 +367,7 @@ country_event = {#上海的命运
 			set_nationality = ROOT
 		}
 		hidden_effect = {
+			load_oob = SHC_gu_yong_bing
 			SHC_He_Dong = {
 				add_country_leader_role = {
 					country_leader = { 
@@ -500,6 +506,8 @@ country_event = {#上海的命运
 			days = 5
 		}
 		hidden_effect = {
+			news_event = Shcjidu.25
+
 			remove_all_ministers = yes
 			remove_ideas = {
 				LEC_Du_Yuesheng_boss_sli
@@ -546,6 +554,10 @@ country_event = {#上海的命运
 					}
 					set_nationality = ROOT
 				}
+			}
+			country_event = {
+				id = Shcjidu.16
+				days = 7
 			}
 			country_event = {
 				id = Shcjidu.10
@@ -983,6 +995,7 @@ country_event = {#棚户人
 country_event = {#青年们
 	id = SHCwaijiao.16
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SHCwaijiao.16" }
+	picture = GFX_report_event_LEC_qing_nian_men
 	title = SHCwaijiao.16.t
 	desc = SHCwaijiao.16.d
 
@@ -992,9 +1005,6 @@ country_event = {#青年们
 	option = {	# damn
 		name = SHCwaijiao.16.a
 		add_stability = 0.01
-		hidden_effect = {
-			
-		}
 	}
 }
 
@@ -1010,9 +1020,6 @@ country_event = {#邻里之间
 	option = {	# damn
 		name = SHCwaijiao.17.a
 		add_stability = 0.01
-		hidden_effect = {
-			
-		}
 	}
 }
 
@@ -1037,6 +1044,7 @@ country_event = {#人靠衣装
 country_event = {#陈月华的一天
 	id = SHCwaijiao.19
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SHCwaijiao.19" }
+	picture = GFX_report_event_LEC_nv_xing_men
 	title = SHCwaijiao.19.t
 	desc = SHCwaijiao.19.d
 
@@ -1047,8 +1055,26 @@ country_event = {#陈月华的一天
 		name = SHCwaijiao.19.a
 		add_political_power = 10
 		hidden_effect = {
-			
+			country_event = {
+				id = SHCwaijiao.20
+			}
 		}
+	}
+}
+
+country_event = {#陈月华的一天
+	id = SHCwaijiao.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SHCwaijiao.20" }
+	picture = GFX_report_event_LEC_nv_xing_men
+	title = SHCwaijiao.20.t
+	desc = SHCwaijiao.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {	# damn
+		name = SHCwaijiao.20.a
+		add_political_power = 10
 	}
 }
 
@@ -1989,6 +2015,26 @@ country_event = {#自由王国
 	}
 }
 
+news_event = {#上海革命成功
+	id = Shcgong.40
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcgong.40" }
+	title = Shcgong.40.t
+	desc = Shcgong.40.d
+	picture = GFX_news_event_left_writers_united
+
+	major = yes
+	is_triggered_only = yes
+
+	trigger = { wants_world_news = yes }
+
+	option = {#
+		name = Shcgong.40.a
+		ai_chance = {
+			base = 10
+		}
+	}
+} 
+
 ########################################
 ##########-      教会      -############
 ########################################
@@ -2252,6 +2298,7 @@ country_event = {#益世广播电台
 country_event = {#拆除夜总会
 	id = Shcjidu.10
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.10"}
+	picture = GFX_report_event_SHC_ye_zhong_hui
 	title = Shcjidu.10.t
 	desc = Shcjidu.10.d
 
@@ -2261,6 +2308,12 @@ country_event = {#拆除夜总会
 	option = {#
 		name = Shcjidu.10.a
 		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.17
+				days = 20
+			}
+		}
 	}
 }
 
@@ -2277,6 +2330,7 @@ country_event = {#我们的领导者
 	option = {#
 		name = Shcjidu.11.a
 		add_political_power = 10
+		add_authdem_to_coalition = yes
 	}
 
 	option = {#
@@ -2284,6 +2338,7 @@ country_event = {#我们的领导者
 		add_political_power = 10
 		remove_ideas = LEC_hui_ji_liang_hog
 		add_ideas = LEC_yu_bing_hog
+		add_soccon_to_coalition = yes
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
@@ -2363,6 +2418,224 @@ country_event = {#加入帝国公约
 		}
 	}
 }
+
+country_event = {#胜利？
+	id = Shcjidu.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.16"}
+	picture = GFX_report_event_SHC_shang_hai_jiao_hui
+	title = Shcjidu.16.t
+	desc = Shcjidu.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.16.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#清理异教
+	id = Shcjidu.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.16"}
+	title = Shcjidu.16.t
+	desc = Shcjidu.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.16.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#午后三点十七分
+	id = Shcjidu.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.17"}
+	title = Shcjidu.17.t
+	desc = Shcjidu.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.17.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.18
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#夜晚十一点五十六分
+	id = Shcjidu.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.18"}
+	title = Shcjidu.18.t
+	desc = Shcjidu.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.18.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.19
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#傍晚六点五十分
+	id = Shcjidu.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.19"}
+	picture = GFX_report_event_SHC_ye_su_huai_bao
+	title = Shcjidu.19.t
+	desc = Shcjidu.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.19.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.20
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#午夜一点二十分
+	id = Shcjidu.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.20"}
+	title = Shcjidu.20.t
+	desc = Shcjidu.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.20.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.21
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#晨曦四点四十分
+	id = Shcjidu.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.21"}
+	picture = GFX_report_event_SHC_ye_su_shen_tian
+	title = Shcjidu.21.t
+	desc = Shcjidu.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.21.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.22
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#午夜十二点整
+	id = Shcjidu.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.22"}
+	picture = GFX_report_event_SHC_ye_su_shi_zi_jia
+	title = Shcjidu.22.t
+	desc = Shcjidu.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.22.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.23
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#下午三点整
+	id = Shcjidu.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.23"}
+	picture = GFX_report_event_SHC_ye_su_zhi_si
+	title = Shcjidu.23.t
+	desc = Shcjidu.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.23.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.24
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {#破晓
+	id = Shcjidu.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.24"}
+	picture = GFX_report_event_SHC_ye_su_fu_huo
+	title = Shcjidu.24.t
+	desc = Shcjidu.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.24.a
+		add_political_power = 10
+	}
+}
+
+news_event = {#上海革命成功
+	id = Shcjidu.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shcjidu.25" }
+	picture = GFX_news_event_catholic_unified
+	title = Shcjidu.25.t
+	desc = Shcjidu.25.d
+
+	major = yes
+	is_triggered_only = yes
+
+	trigger = { wants_world_news = yes }
+
+	option = {#
+		name = Shcjidu.25.a
+		ai_chance = {
+			base = 10
+		}
+	}
+} 
 
 ########################################
 ##########-     资本家     -############

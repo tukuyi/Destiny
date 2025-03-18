@@ -13780,6 +13780,7 @@ country_event = {#上海陷入混乱
 country_event = {#奔溃后的斗争
 	id = legcities.200
 	immediate = {log = "[GetDateText]: [Root.GetName]: event legcities.200"}
+	picture = GFX_report_event_SHC_shang_hai_huo_bing
 	title = legcities.200.t
 	desc = legcities.200.d
 

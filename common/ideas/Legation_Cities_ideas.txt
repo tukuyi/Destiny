@@ -1558,7 +1558,6 @@ ideas = {
             modifier = {
 				stability_factor = 0.10
 				stability_weekly = 0.005
-				stability_weekly_factor = 0.005
 				weekly_manpower = 200
 				opinion_gain_monthly = 0.10
 			}
@@ -1574,7 +1573,6 @@ ideas = {
 				stability_factor = 0.10
 				stability_weekly = 0.010
 				weekly_manpower = 400
-				stability_weekly_factor = 0.010
 				surrender_limit = 0.10
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.10
@@ -1594,7 +1592,6 @@ ideas = {
 				stability_weekly = 0.005
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.20
-				stability_weekly_factor = 0.050
 				party_popularity_stability_factor = 0.20
 			}
 		}
@@ -1614,7 +1611,6 @@ ideas = {
 				opinion_gain_monthly = 0.20
 				consumer_goods_factor = -0.20
 				justify_war_goal_time = -0.20
-				stability_weekly_factor = 0.050
 				offensive_war_stability_factor = 0.20
 				defensive_war_stability_factor = 0.20
 				party_popularity_stability_factor = 0.20

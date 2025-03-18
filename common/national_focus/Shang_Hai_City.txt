@@ -1575,6 +1575,12 @@ focus_tree = {
 				id = Shcjidu.8
 				days = 5
 			}
+			hidden_effect = {
+				country_event = {
+					id = Shcjidu.16
+					days = 10
+				}
+			}
 		}
 	}
 
@@ -1592,7 +1598,7 @@ focus_tree = {
 		}
 
 		prerequisite = { 
-			focus = LEC_jie_shou_pa_pa_de_jiao_hui 
+			focus = LEC_pai_chu_yi_duan
 		}
 
 		ai_will_do = { base = 20 }

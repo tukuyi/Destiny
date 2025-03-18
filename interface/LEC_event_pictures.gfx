@@ -85,6 +85,46 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/SHC/SHC_shen_pan_ri.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_LEC_qing_nian_men"
+		texturefile = "gfx/event_news_pictures/SHC/LEC_qing_nian_men.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_LEC_nv_xing_men"
+		texturefile = "gfx/event_news_pictures/SHC/LEC_nv_xing_men.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_shang_hai_huo_bing"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_shang_hai_huo_bing.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_zhong_hui"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_zhong_hui.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_su_huai_bao"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_su_huai_bao.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_su_shen_tian"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_su_shen_tian.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_su_shi_zi_jia"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_su_shi_zi_jia.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_su_zhi_si"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_su_zhi_si.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ye_su_fu_huo"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_su_fu_huo.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_shang_hai_jiao_hui"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_shang_hai_jiao_hui.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_SHC_zu_sheng_sun_zhong_shan"
 		texturefile = "gfx/event_news_pictures/SHC/SHC_zu_sheng_sun_zhong_shan.png"
 	}

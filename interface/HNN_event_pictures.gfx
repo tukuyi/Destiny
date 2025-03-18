@@ -346,6 +346,14 @@ spriteTypes = {
 	}	
 	#新闻
 	spriteType  = {
+		name = "GFX_news_event_left_writers_united"
+		texturefile = "gfx/news/news_event_left_writers_united.png"
+	}
+	spriteType  = {
+		name = "GFX_news_event_catholic_unified"
+		texturefile = "gfx/news/news_event_catholic_unified.png"
+	}
+	spriteType  = {
 		name = "GFX_news_event_NEWS_vienna"
 		texturefile = "gfx/news/NEWS_vienna.png"
 	}
