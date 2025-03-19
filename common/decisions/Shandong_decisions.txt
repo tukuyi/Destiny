@@ -2015,7 +2015,10 @@ SQI_GER_yin_xiang_li = {#德意志的阴影之下
 			}
 			else_if = {
 				limit = { 
-					check_variable = { SQI_gea_influence_variable > 95 }
+					check_variable = { 
+						SQI_gea_influence_variable > 95 
+					}
+					is_puppet = no
 				}
 				activate_mission = SQI_de_yi_zhi_de_da_shou_mission
 			}

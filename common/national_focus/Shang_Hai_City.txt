@@ -1800,6 +1800,10 @@ focus_tree = {
 					long_name = SHC_syndicalist_party_JD_long
 					name = SHC_syndicalist_party_JD
 				}
+				country_event = {
+					id = Shcjidu.26
+					days = 5
+				}
 			}
 		}
 	}
@@ -1826,6 +1830,12 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = LEC_tian_zhu_jiao_gong_hui
 				add_idea = LEC_tian_zhu_jiao_gong_hui2
+			}
+			hidden_effect = {
+				country_event = {
+					id = Shcjidu.27
+					days = 5
+				}
 			}
 		}
 	}

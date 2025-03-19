@@ -15252,6 +15252,7 @@ country_event = {#新春
 country_event = {#领导人
 	id = lecgong.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event lecgong.1"}
+	picture = GFX_report_event_SHC_shang_hai_zong_gong_hui
 	title = lecgong.1.t
 	desc = lecgong.1.d
 

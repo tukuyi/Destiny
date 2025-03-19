@@ -543,7 +543,7 @@ country_event = {#天喜的故事：如今
 	}
 }
 
-country_event = {#破釜沉舟 
+country_event = {#破釜沉舟
 	id = SQI.26
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SQI.26" }
 	title = SQI.26.t

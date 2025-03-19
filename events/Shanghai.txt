@@ -2338,7 +2338,6 @@ country_event = {#我们的领导者
 		add_political_power = 10
 		remove_ideas = LEC_hui_ji_liang_hog
 		add_ideas = LEC_yu_bing_hog
-		add_soccon_to_coalition = yes
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
@@ -2347,6 +2346,7 @@ country_event = {#我们的领导者
 			ideology = authoritarian_democrat
 			popularity = 0.20
 		}
+		add_soccon_to_coalition = yes
 	}
 }
 
@@ -2474,6 +2474,7 @@ country_event = {#午后三点十七分
 country_event = {#夜晚十一点五十六分
 	id = Shcjidu.18
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.18"}
+	picture = GFX_report_event_SHC_ye_su_shi_zi_jia_shi
 	title = Shcjidu.18.t
 	desc = Shcjidu.18.d
 
@@ -2636,6 +2637,44 @@ news_event = {#上海革命成功
 		}
 	}
 } 
+
+country_event = {#光与影之间
+	id = Shcjidu.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.26"}
+	picture = GFX_report_event_SHC_ji_du_gong_hui
+	title = Shcjidu.26.t
+	desc = Shcjidu.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.26.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.01
+		}
+	}
+}
+
+country_event = {#信仰与钢铁
+	id = Shcjidu.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.27"}
+	picture = GFX_report_event_SHC_ji_du_gong_hui_2
+	title = Shcjidu.27.t
+	desc = Shcjidu.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.27.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.01
+		}
+	}
+}
 
 ########################################
 ##########-     资本家     -############

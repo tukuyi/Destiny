@@ -3636,7 +3636,6 @@ shared_focus = {
 		add_ideas = YUN_Kuomintang1
 		clr_country_flag = Zhu_De_READY
 		increase_ruling_party_popularity_by_10 = yes
-		set_potential_national_government = yes
 		if = {
 			limit = {
 				has_country_flag = NGxC_in_hiding
@@ -3979,7 +3978,10 @@ shared_focus = {
 		}
 	}
 	available = {
-		has_government = social_liberal
+		has_country_leader = {
+			name = "朱培德"
+			ruling_only = yes
+		}
 		is_subject = no
 		is_in_faction = no
 	}
@@ -4028,7 +4030,6 @@ shared_focus = {
 		factor = 50
 	}
 	available = {
-		has_government = social_liberal
 		is_subject = no
 	}
 	x = 27
