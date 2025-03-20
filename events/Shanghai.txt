@@ -555,6 +555,9 @@ country_event = {#上海的命运
 					set_nationality = ROOT
 				}
 			}
+
+			mark_focus_tree_layout_dirty = yes
+
 			country_event = {
 				id = Shcjidu.16
 				days = 7
@@ -1002,7 +1005,7 @@ country_event = {#青年们
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = SHCwaijiao.16.a
 		add_stability = 0.01
 	}
@@ -2230,6 +2233,41 @@ country_event = {#白马修道院
 	option = {#
 		name = Shcjidu.7.a
 		add_stability = -0.01
+		hidden_effect = {
+			if = {
+				limit = { 
+					has_country_leader = {
+						name = "于斌"
+						ruling_only = yes
+					}
+				}
+				SHC_yu_bing = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+							ideology = national_populist_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				SHC_Hui_Ji_liang = {
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_HNN_ZHOU_ENLAI_DESC
+							ideology = national_populist_subtype
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			set_party_name = {
+				ideology = national_populist
+				long_name = SHC_national_populist_party_new_long
+				name = SHC_national_populist_party_new
+			}
+		}
 	}
 }
 
@@ -2615,6 +2653,12 @@ country_event = {#破晓
 	option = {#
 		name = Shcjidu.24.a
 		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.32
+				days = 20
+			}
+		}	
 	}
 }
 
@@ -2673,6 +2717,83 @@ country_event = {#信仰与钢铁
 			ideology = syndicalist
 			popularity = -0.01
 		}
+	}
+}
+
+country_event = {#晨祷钟声
+	id = Shcjidu.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.28"}
+	picture = GFX_report_event_SHC_jiao_hui_school
+	title = Shcjidu.28.t
+	desc = Shcjidu.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.28.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#光明之城
+	id = Shcjidu.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.29"}
+	picture = GFX_report_event_SHC_rich_guy
+	title = Shcjidu.29.t
+	desc = Shcjidu.29.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.29.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#沉寂的夜上海
+	id = Shcjidu.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.30"}
+	title = Shcjidu.30.t
+	desc = Shcjidu.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.30.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#繁荣昌盛
+	id = Shcjidu.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.31"}
+	title = Shcjidu.31.t
+	desc = Shcjidu.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.31.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#金玉其外
+	id = Shcjidu.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.32"}
+	title = Shcjidu.32.t
+	desc = Shcjidu.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.32.a
+		add_political_power = 10
 	}
 }
 

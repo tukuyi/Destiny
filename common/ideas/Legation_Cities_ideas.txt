@@ -1634,6 +1634,7 @@ ideas = {
 		LEC_tian_zhu_jiao_gong_hui2 = {#天主教工会
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_tian_zhu_jiao_gong_hui2"}
 			picture = TEX_catholic_unions_idea
+			name = LEC_tian_zhu_jiao_gong_hui
 			allowed = { always = no }
 			available = { 
 				has_country_flag = ji_du_tu_victory

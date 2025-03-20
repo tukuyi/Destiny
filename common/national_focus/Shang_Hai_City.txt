@@ -25,6 +25,12 @@ focus_tree = {
 			has_country_flag = zi_ben_jia_victory
 		}
 		ai_will_do = { base = 20 }
+		allow_branch = {
+			NOT = {
+				has_country_flag = ji_du_tu_victory
+			}
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_ben_jia_de_sheng_li"
 
@@ -1364,6 +1370,13 @@ focus_tree = {
 		cost = 5
 		x = 10
 		y = 10
+		offset = {
+			x = 0
+			y = -10
+			trigger = { 
+				has_country_flag = ji_du_tu_victory
+			}
+		}
 
 		available = {
 			has_country_flag = ji_du_tu_victory
@@ -1372,6 +1385,7 @@ focus_tree = {
 			has_country_flag = ji_du_tu_victory
 		}
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_shang_di_de_huai_bao"
 
@@ -1656,6 +1670,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zu_fu_qing_fen_zhi_ren"
 			add_ideas = LEC_qing_fen_shi_yi_zhong_mei_de
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = Shcjidu.31
+				days = 5
+			}
 		}
 	}
 
@@ -1882,6 +1901,10 @@ focus_tree = {
 				days = 5
 			}
 			hidden_effect = {
+				country_event = {
+					id = Shcjidu.28
+					days = 9
+				}
 				if = {
 					limit = { 
 						PAP = {
@@ -1893,7 +1916,7 @@ focus_tree = {
 					}
 					country_event = {
 						id = Shcjidu.6
-						days = 15
+						days = 17
 					}
 				}
 			}
@@ -1943,6 +1966,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_pei_yang_you_de_zhi_ren"
 			add_ideas = LEC_you_de_zhi_ren
+			hidden_effect = {
+				country_event = {
+					id = Shcjidu.29
+					days = 9
+				}
+			}	
 		}
 	}
 
@@ -5889,6 +5918,25 @@ focus_tree = {
 			country_event = {
 				id = SHCwaijiao.8
 				days = 3
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						NOT = {
+							has_country_flag = ji_du_tu_victory
+						}
+					}
+					country_event = {
+						id = SHCwaijiao.16
+						days = 15
+					}
+				}
+				else = {
+					country_event = {
+						id = Shcjidu.30
+						days = 15
+					}
+				}
 			}
 		}
 	}

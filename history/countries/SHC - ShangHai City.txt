@@ -147,10 +147,6 @@ country_event = {
 	id = SHCwaijiao.10
 	days = 30
 }
-country_event = {
-	id = SHCwaijiao.16
-	days = 45
-}
 
 recruit_character = SHC_Hui_Ji_liang
 recruit_character = SHC_yu_bing
