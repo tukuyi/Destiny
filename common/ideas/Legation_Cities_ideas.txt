@@ -1606,7 +1606,7 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
-				local_supplies = 0.15LEC
+				local_supplies = 0.15
 				weekly_manpower = 1000
 				surrender_limit = 0.40
 				stability_factor = 0.20
