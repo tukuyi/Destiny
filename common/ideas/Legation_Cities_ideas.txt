@@ -1570,10 +1570,10 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
-				stability_factor = 0.10
-				stability_weekly = 0.010
 				weekly_manpower = 400
 				surrender_limit = 0.10
+				stability_factor = 0.10
+				stability_weekly = 0.010
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.10
 			}
@@ -1586,12 +1586,15 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
-				stability_factor = 0.10
+				local_supplies = 0.10
 				weekly_manpower = 1000
 				surrender_limit = 0.10
+				stability_factor = 0.10
 				stability_weekly = 0.005
 				trade_opinion_factor = 0.20
 				opinion_gain_monthly = 0.20
+				offensive_war_stability_factor = 0.10
+				defensive_war_stability_factor = 0.10
 				party_popularity_stability_factor = 0.20
 			}
 		}
@@ -1603,6 +1606,7 @@ ideas = {
 				has_country_flag = ji_du_tu_victory
 			}
             modifier = {
+				local_supplies = 0.15LEC
 				weekly_manpower = 1000
 				surrender_limit = 0.40
 				stability_factor = 0.20

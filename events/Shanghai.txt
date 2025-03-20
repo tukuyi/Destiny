@@ -2755,6 +2755,7 @@ country_event = {#光明之城
 country_event = {#沉寂的夜上海
 	id = Shcjidu.30
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.30"}
+	picture = GFX_report_event_SHC_ye_shang_hai
 	title = Shcjidu.30.t
 	desc = Shcjidu.30.d
 
@@ -2770,6 +2771,7 @@ country_event = {#沉寂的夜上海
 country_event = {#繁荣昌盛
 	id = Shcjidu.31
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.31"}
+	picture = GFX_report_event_SHC_ma_tou_xie_huo
 	title = Shcjidu.31.t
 	desc = Shcjidu.31.d
 

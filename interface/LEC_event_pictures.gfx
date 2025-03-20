@@ -149,6 +149,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/SHC/SHC_shang_hai_jiao_hui.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_SHC_ye_shang_hai"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ye_shang_hai.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_SHC_ma_tou_xie_huo"
+		texturefile = "gfx/event_news_pictures/SHC/SHC_ma_tou_xie_huo.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_SHC_zu_sheng_sun_zhong_shan"
 		texturefile = "gfx/event_news_pictures/SHC/SHC_zu_sheng_sun_zhong_shan.png"
 	}
