@@ -1968,9 +1968,6 @@ SQI_di_guo_de_shi_wu = {#帝国的事务
 				target = TRM
 				transfer_troops = yes
 			}
-			hidden_effect = {
-				
-			}
 		}
 	}
 }

@@ -13,7 +13,7 @@ division_template = {
 
 units = {
 	division = {
-		name = "第二小队"
+		name = "第一小队"
 		location = 7014
 		division_template = "上海雇佣军"
 		start_experience_factor = 1
@@ -27,7 +27,7 @@ units = {
 		start_equipment_factor = 1
 	}
 	division = {
-		name = "第二小队"
+		name = "第三小队"
 		location = 7014
 		division_template = "上海雇佣军"	
 		start_experience_factor = 1

@@ -328,6 +328,7 @@ LEC_wai_jiao_category = {
 				owns_state = 613
 			}
 		}
+
 		cost = 50
 		days_remove = 5
 		days_re_enable = 50
@@ -675,6 +676,693 @@ LEC_economy = {
 
 		ai_will_do = {
 			factor = 0
+		}
+	}
+}
+
+SHC_weapon_for_all = {#军事外交
+	SHC_hidden_weapon_for_all_china = {#隐藏决议
+		icon = GFX_decision_artillery
+
+		available = {
+			NOT = {
+				has_country_flag = SHC_weapon_for_all_china_hidden
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = SHC_weapon_for_all_china_hidden
+			}
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 100
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_weapon_for_all_china"
+			set_country_flag = SHC_weapon_for_all_china_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_weapon_for_all_china"
+			
+		}
+	}
+	SHC_not_hidden_weapon_for_all_china = {#显示决议
+		icon = GFX_decision_artillery
+
+		available = {
+			has_country_flag = SHC_weapon_for_all_china_hidden
+		}
+
+		visible = {
+			has_country_flag = SHC_weapon_for_all_china_hidden
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 100
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_weapon_for_all_china"
+			clr_country_flag = SHC_weapon_for_all_china_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_weapon_for_all_china"
+			
+		}
+	}
+	SHC_weapon_for_all_china = {#出售军火
+		icon = GFX_decision_global_trade
+		
+		available = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			has_equipment = {
+				infantry_equipment > 500
+			}
+		}
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_weapon_for_all_china_hidden
+			}
+			FROM = { 
+				exists = yes
+				NOT = {
+					has_war_with = SHC
+					is_puppet_of = SHC
+					is_in_faction_with = SHC
+				}
+			}
+		}
+		
+		targets = { QIE CHI LEP FNG SHX GXC HNN YUN SZC XSM ETS SIK TAN TIB SIA PHI MON TRM NZL DEI NYC MAD BRM }
+		target_trigger = {
+			FROM = { exists = yes }
+		}
+
+		cost = 15
+		days_remove = 15
+		days_re_enable = 30
+		fire_only_once = no
+		ai_will_do = {
+			base = 0
+		}
+		priority = 100
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_weapon_for_all_china"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_weapon_for_all_china"
+			SHC = {
+				add_political_power = 80
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+				}
+			}
+		}
+	}
+
+	SHC_hidden_buy_weapon_for_wrold = {#隐藏决议
+		icon = GFX_decision_artillery
+
+		available = {
+			NOT = {
+				has_country_flag = SHC_buy_weapon_for_wrold_hidden
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = SHC_buy_weapon_for_wrold_hidden
+			}
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 70
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_buy_weapon_for_wrold"
+			set_country_flag = SHC_buy_weapon_for_wrold_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_buy_weapon_for_wrold"
+			
+		}
+	}
+	SHC_not_hidden_buy_weapon_for_wrold = {#显示决议
+		icon = GFX_decision_artillery
+
+		available = {
+			has_country_flag = SHC_buy_weapon_for_wrold_hidden
+		}
+
+		visible = {
+			has_country_flag = SHC_buy_weapon_for_wrold_hidden
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 70
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_buy_weapon_for_wrold"
+			clr_country_flag = SHC_buy_weapon_for_wrold_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_buy_weapon_for_wrold"
+			
+		}
+	}
+	SHC_buy_weapon_for_wrold = {#购买
+		icon = GFX_decision_artillery
+		
+		available = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+		}
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_buy_weapon_for_wrold_hidden
+			}
+			FROM = { 
+				exists = yes
+				has_socialist_government = no
+				NOT = {
+					has_war_with = SHC
+					is_puppet_of = SHC
+				}
+			}
+		}
+		
+		targets = { JAP GER NFA CAN USA RUS TEX COR CAL AST NEE }
+		target_trigger = {
+			FROM = { exists = yes }
+		}
+
+		cost = 30
+		days_remove = 30
+		days_re_enable = 30
+		fire_only_once = no
+		ai_will_do = {
+			base = 0
+		}
+		priority = 70
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_weapon_for_all_china"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_weapon_for_all_china"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			FROM = {
+				add_political_power = 30
+			}
+		}
+	}
+
+	SHC_hidden_xun_lian_ta_men_de_jun_dui = {#隐藏决议
+		icon = GFX_decision_artillery
+
+		available = {
+			NOT = {
+				has_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+			}
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 55
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_xun_lian_ta_men_de_jun_dui"
+			set_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_xun_lian_ta_men_de_jun_dui"
+			
+		}
+	}
+	SHC_not_hidden_xun_lian_ta_men_de_jun_dui = {#显示决议
+		icon = GFX_decision_artillery
+
+		available = {
+			has_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+		}
+
+		visible = {
+			has_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 55
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_xun_lian_ta_men_de_jun_dui"
+			clr_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_xun_lian_ta_men_de_jun_dui"
+			
+		}
+	}
+	SHC_xun_lian_ta_men_de_jun_dui = {#为军阀们提供军队训练
+		icon = GFX_decision_soldierly_discipline
+
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_xun_lian_ta_men_de_jun_dui_hidden
+			}
+			FROM = { 
+				exists = yes
+				NOT = {
+					has_war_with = SHC
+					is_puppet_of = SHC
+					is_in_faction_with = SHC
+				}
+			}
+		}
+		
+		targets = { QIE CHI LEP FNG SHX GXC HNN YUN SZC XSM ETS SIK TAN TIB SIA PHI MON TRM NZL DEI NYC MAD BRM }
+		target_trigger = {
+			FROM = { exists = yes }
+		}
+
+		cost = 30
+		days_remove = 50
+		days_re_enable = 30
+		fire_only_once = no
+		ai_will_do = {
+			base = 0
+		}
+		priority = 55
+
+		modifier = {
+			political_power_gain = 0.20
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_xun_lian_ta_men_de_jun_dui"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_xun_lian_ta_men_de_jun_dui"
+			army_experience = 15
+			FROM = {
+				add_political_power = -30
+				army_experience = 30
+			}
+		}
+	}
+
+	SHC_hidden_our_money_to_where = {#隐藏决议
+		icon = GFX_decision_artillery
+
+		available = {
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_our_money_to_where"
+			set_country_flag = SHC_our_money_to_where
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_hidden_our_money_to_where"
+			
+		}
+	}
+	SHC_not_hidden_our_money_to_where = {#显示决议
+		icon = GFX_decision_artillery
+
+		available = {
+			has_country_flag = SHC_our_money_to_where
+		}
+
+		visible = {
+			has_country_flag = SHC_our_money_to_where
+		}
+
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		ai_will_do = {
+			base = 0
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_our_money_to_where"
+			clr_country_flag = SHC_our_money_to_where
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_not_hidden_our_money_to_where"
+			
+		}
+	}
+	SHC_sheng_chan_zhi_shang = {#积极生产
+		icon = cash
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 200
+		days_remove = 100
+		days_re_enable = 100
+		ai_will_do = {
+			base = 0
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_sheng_chan_zhi_shang"
+			add_ideas = SHC_gu_yi_sheng_chan
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_sheng_chan_zhi_shang"
+			remove_ideas = SHC_gu_yi_sheng_chan
+		}
+	}
+	SHC_Irrigation_decision = {#发展上海城
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 100
+		days_remove = 60
+		days_re_enable = 100
+		priority = 40
+
+		state_target = yes
+		targets = { 743 746 613 596 598 1075 608 609 592 729 326 744 }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		on_map_mode = map_only
+
+		modifier = {
+			civilian_factory_use = 3
+			weekly_manpower = -200
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_Irrigation_decision"
+			FROM = {
+				increase_state_category_by_one_level = yes
+			}
+		}
+	}
+	SHC_build_army_factor_decision = {#扩大生产
+		icon = factories
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+				free_building_slots = { 
+					building = arms_factory
+					size > 0
+					include_locked = yes 
+				}
+			}
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+				has_country_flag = has_united_china
+			}
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 50
+		days_remove = 50
+		days_re_enable = 50
+		priority = 40
+
+		state_target = yes
+		targets = { 743 746 613 596 598 1075 608 609 592 729 326 744 }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		on_map_mode = map_only
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_build_army_factor_decision"
+			743 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	SHC_xun_lian_yong_bing = {#招募外籍雇佣兵
+		icon = martial_law
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 200
+		days_remove = 50
+		fire_only_once = yes
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 3
+				has_political_power > 400
+			}
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_xun_lian_yong_bing"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_xun_lian_yong_bing"
+			custom_effect_tooltip = SHC_xun_lian_yong_bing_tt
+			set_country_flag = SHC_xun_lian_yong_bing_flag
+			hidden_effect = {
+				load_oob = SHC_gu_yong_bing_ling_shi
+			}
+		}
+	}
+	SHC_zhao_mu_wai_ji_gu_yong_bing_number = {#招募外籍雇佣兵
+		icon = martial_law
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_number_trigger_tt
+				check_variable = {
+					var = SHC_zhao_mu_wai_ji_gu_yong_bing_number_var
+					value > 0
+				}
+			}
+		}
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+			check_variable = {
+				var = SHC_zhao_mu_wai_ji_gu_yong_bing_number_var
+				value > 0
+			}
+		}
+
+		cost = 100
+		days_remove = 50
+		days_re_enable = 60
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 3
+				has_political_power > 400
+			}
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_zhao_mu_wai_ji_gu_yong_bing"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_zhao_mu_wai_ji_gu_yong_bing"
+			custom_effect_tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_number_tt
+			hidden_effect = {
+				add_to_variable = {
+					SHC_zhao_mu_wai_ji_gu_yong_bing_number_var = -1
+				}
+				add_to_variable = {
+					SHC_zhao_mu_wai_ji_gu_yong_bing_var = 3
+				}
+			}
+		}
+	}
+	SHC_zhao_mu_wai_ji_gu_yong_bing = {#招募外籍雇佣兵
+		icon = martial_law
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_trigger_tt
+				check_variable = {
+					var = SHC_zhao_mu_wai_ji_gu_yong_bing_var
+					value > 0
+				}
+			}
+		}
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 100
+		days_remove = 80
+		days_re_enable = 60
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 3
+				has_political_power > 400
+			}
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_zhao_mu_wai_ji_gu_yong_bing"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_zhao_mu_wai_ji_gu_yong_bing"
+			custom_effect_tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_tt
+			hidden_effect = {
+				add_to_variable = {
+					SHC_zhao_mu_wai_ji_gu_yong_bing_var = -1
+				}
+				if = {
+					limit = { 
+						has_country_flag = SHC_xun_lian_yong_bing_flag
+					}
+					743 = {
+						create_unit = {
+							division = "name = \"特别行动队\" division_template = \"上海精英雇佣军\" start_experience_factor = 0.25" 
+							owner = ROOT
+						}
+					}
+				}
+				else = {
+					743 = {
+						create_unit = {
+							division = "name = \"特别行动队\" division_template = \"上海雇佣军\" start_experience_factor = 0.5" 
+							owner = ROOT
+						}
+					}
+				}
+			}
 		}
 	}
 }

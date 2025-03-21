@@ -12,10 +12,7 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 		# eval_effect ROOT = {
-		# 	promote_character = {
-		# 		character = LEC_Zhu_yuan_zhang
-		# 		ideology = absolute_monarchy_CN_subtype
-		# 	}
+		# 	load_oob = SHC_gu_yong_bing_ling_shi
 		# }
 
 		set_province_name = { id = 7859 name = "新南京" }

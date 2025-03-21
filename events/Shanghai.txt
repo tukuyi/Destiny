@@ -368,6 +368,14 @@ country_event = {#上海的命运
 		}
 		hidden_effect = {
 			load_oob = SHC_gu_yong_bing
+
+			set_variable = {
+				SHC_zhao_mu_wai_ji_gu_yong_bing_var = 3
+			}
+			set_variable = {
+				SHC_zhao_mu_wai_ji_gu_yong_bing_number_var = 3 
+			}
+
 			SHC_He_Dong = {
 				add_country_leader_role = {
 					country_leader = { 

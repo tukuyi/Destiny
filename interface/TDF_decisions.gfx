@@ -25,6 +25,14 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/PRC_rocket_strike.png"
 	}
 	spriteType = {
+		name = "GFX_decision_martial_law"
+		texturefile = "gfx/interface/decisions/martial_law.png"
+	}
+	spriteType = {
+		name = "GFX_decision_cash"
+		texturefile = "gfx/interface/decisions/cash.png"
+	}
+	spriteType = {
 		name = "GFX_decision_drug"
 		texturefile = "gfx/interface/decisions/drug.png"
 	}

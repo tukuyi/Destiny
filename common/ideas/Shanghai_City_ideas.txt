@@ -4,6 +4,21 @@
 
 ideas = {
 	country = {
+		SHC_gu_yi_sheng_chan = {#鼓励军火生产
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHC_gu_yi_sheng_chan"}
+			allowed = { always = no }
+			picture = guns_shield
+			modifier = {
+				stability_weekly = -0.010
+				industrial_capacity_factory = 0.20
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
 		SHC_zi_you_gang_kou = {#自由港
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHC_zi_you_gang_kou"}
 			allowed = { always = no }
