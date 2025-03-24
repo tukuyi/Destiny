@@ -339,32 +339,13 @@ country_event = {#上海的命运
 			elections_allowed = no
 		}
 		set_cosmetic_tag = LEC_HD
-		remove_all_ministers = yes
-		remove_ideas = {
-			LEC_Du_Yuesheng_boss_sli
-			LEC_Huang_Jinrong_boss_sli
-			LEC_Zhang_Xiaolin_boss_sli
+		326 = {
+			add_core_of = SHC
 		}
-		add_ideas = {
-			LEC_Robert_Hotung_hog
-			LEC_he_fu_eco
-			LEC_he_gan_tang_for
-			LEC_he_shi_li_sec
-		}
-		add_timed_idea = {
-			idea = SHC_she_hui_zhu_yi_yu_wen
-			days = 180
-		}
-		add_timed_idea = {
-			idea = SHC_di_xia_she_hui_de_fan_pu
-			days = 180
-		}
+		transfer_state = 326
 		country_event = {
 			id = shche.7
 			days = 1
-		}
-		SHC_robbie_hoshailai = {
-			set_nationality = ROOT
 		}
 		hidden_effect = {
 			load_oob = SHC_gu_yong_bing
@@ -376,6 +357,32 @@ country_event = {#上海的命运
 				SHC_zhao_mu_wai_ji_gu_yong_bing_number_var = 3 
 			}
 
+			add_timed_idea = {
+				idea = SHC_she_hui_zhu_yi_yu_wen
+				days = 180
+			}
+			add_timed_idea = {
+				idea = SHC_di_xia_she_hui_de_fan_pu
+				days = 180
+			}
+
+			remove_all_ministers = yes
+			remove_ideas = {
+				LEC_Du_Yuesheng_boss_sli
+				LEC_Huang_Jinrong_boss_sli
+				LEC_Zhang_Xiaolin_boss_sli
+			}
+			add_ideas = {
+				LEC_Robert_Hotung_hog
+			}
+
+			SHC_robbie_hoshailai = {
+				set_nationality = ROOT
+			}
+			SHC_Philip_Sassoon = {
+				set_nationality = ROOT
+			}
+			
 			SHC_He_Dong = {
 				add_country_leader_role = {
 					country_leader = { 
@@ -2984,9 +2991,6 @@ country_event = {#真正的话事人
 		remove_all_ministers = yes
 		add_ideas = {
 			LEC_sha_he_hog
-			LEC_T_Sassoon_eco_pau
-			AOG_He_Fengshang_for_ade
-			LEC_Sir_Harold_McMichael_sec_mli
 		}
 		set_cosmetic_tag = SHC_YT
 		hidden_effect = {

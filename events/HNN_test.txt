@@ -12,7 +12,7 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 		# eval_effect ROOT = {
-		# 	load_oob = SHC_gu_yong_bing_ling_shi
+		# 	add_ideas = HNN_deng_yue
 		# }
 
 		set_province_name = { id = 7859 name = "新南京" }

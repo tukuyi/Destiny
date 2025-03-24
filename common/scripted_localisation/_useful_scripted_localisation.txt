@@ -4656,6 +4656,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_country_leader_ideology = Anti_Posadasism_subtype
+		}
+		localization_key = Anti_Posadasism_subtype
+	}
+	text = {
+		trigger = {
 			has_country_leader_ideology = Coca_Cola_Monarchy
 		}
 		localization_key = Coca_Cola_Monarchy

@@ -28,3 +28,15 @@ SHC_weapon_for_all = {#“军事”外交
 		has_completed_focus = LEC_zi_ben_jia_de_sheng_li
 	}
 }
+
+SHC_jiao_hui_for_all = {#传播主的福音
+	icon = GFX_decision_category_neosanfedisti
+	picture = GFX_decision_category_chuan_jiao
+	
+	allowed = { 
+		tag = SHC 
+	}
+	visible = {
+		has_completed_focus = LEC_shang_di_de_huai_bao
+	}
+}

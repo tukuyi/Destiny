@@ -275,6 +275,32 @@ characters = {
 			desc = POLITICS_Sha_Xun_DESC
 			ideology = toryism_subtype
 		}
+	}
+#菲利普·沙逊
+	SHC_Philip_Sassoon = {
+		name = SHC_Philip_Sassoon
+		portraits = {
+			army = {
+				small = GFX_Portrait_Philip_Sassoon
+				large = GFX_Portrait_Philip_Sassoon
+			}
+			civilian = {
+				large = GFX_Portrait_Philip_Sassoon_civ
+			}
+		}
+		field_marshal = {
+			desc = POLITICS_Philip_Sassoon_DESC
+			traits = {
+				trait_engineer
+				irregulars_officer
+				politically_connected
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
 	}	
 #何东
 	SHC_He_Dong = {
@@ -307,6 +333,7 @@ characters = {
 			}
 		}
 		field_marshal = {
+			desc = POLITICS_robbie_hoshailai_DESC
 			traits = { 
 				organizer 
 				career_officer

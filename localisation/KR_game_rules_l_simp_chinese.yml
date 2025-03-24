@@ -2003,3 +2003,9 @@
 
  RULE_OPTION_ETS_RED_MOON:0 "£KR_game_rule_flag_ETS_RED  红月亮"
  RULE_OPTION_ETS_RED_MOON_DESC:0 "“他在信徒的心降下安宁，以便他们增加信仰，继他们原有的信仰之后。”赤色分子从废土中崛起，他们掀翻了那些王公老爷独裁军阀，东突厥斯坦将自由，全民族的自由。"  
+
+ TXM_STRUGGLE:0 "我们的坐标暴露了"
+ TXM_STRUGGLE_IS_COMING_NO: "才怪"
+ TXM_STRUGGLE_IS_COMING_NO_DESC:0 "我劝你少看点科幻小说，少玩点游戏！"
+ TXM_STRUGGLE_IS_COMING_YES:0 "他来了..."
+ TXM_STRUGGLE_IS_COMING_YES_DESC:0 "我们都被骗了，世界已经完蛋了！"

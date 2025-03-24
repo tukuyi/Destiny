@@ -7079,7 +7079,17 @@ HNN_chu_mo_tian_kong_category = {#触摸天空
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_581_progress"
-			
+			hidden_effect = {
+				if = {
+					limit = { 
+						has_global_flag = QI_E_IS_COMING
+					}
+					country_event = { 
+						id = TXM.1
+						days = 15
+					}
+				}
+			}
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_581_progress"
@@ -7172,6 +7182,11 @@ HNN_ren_ti_ke_xue_category = {#人体科学研究
 		}
 		visible = {
 			has_completed_focus = HNN_yu_shen_de_jiao_yi
+			hidden_trigger = {
+				NOT = {
+					has_idea = HNN_jing_shen_si_jie
+				}
+			}
 		}
 
 		cost = 100
@@ -7213,6 +7228,11 @@ HNN_ren_ti_ke_xue_category = {#人体科学研究
 		visible = {
 			has_completed_focus = HNN_yu_shen_de_jiao_yi
 			has_idea = HNN_jing_shen_si_jieB
+			hidden_trigger = {
+				NOT = {
+					has_idea = HNN_jing_shen_si_jie
+				}
+			}
 		}
 
 		cost = 100

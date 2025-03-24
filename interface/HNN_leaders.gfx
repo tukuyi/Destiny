@@ -177,6 +177,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Qian_Xuesen.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_HNN_Qian_Xuesen_xiu_xian"
+		texturefile = "gfx/leaders/HNN/Portrait_HNN_Qian_Xuesen_xiu_xian.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_HNN_Qian_Xue_sen_sic"
 		texturefile = "gfx/leaders/HNN/Portrait_HNN_Qian_Xue_sen_sic.png"
 	}
@@ -1763,4 +1767,9 @@ spriteTypes = {
 		name = "GFX_Portrait_ETS_Qasimi"
 		texturefile = "gfx/leaders/ETS/Portrait_SIK_Qasimi.png"
 	}	
+	#meme
+	spriteType = {
+		name = "GFX_Portrait_tai_kong_huang_di"
+		texturefile = "gfx/leaders/meme/Portrait_tai_kong_huang_di.png"
+	}
 }

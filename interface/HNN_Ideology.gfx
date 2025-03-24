@@ -120,6 +120,10 @@ spriteTypes = {
 		texturefile = "gfx/ideologies/subideologies/Yiguandao.png"
 	}
 	spriteType = {
+		name = "GFX_ideology_Anti_Posadasism_subtype"
+		texturefile = "gfx/ideologies/subideologies/Anti_Posadasism.png"
+	}
+	spriteType = {
 		name = "GFX_ideology_Coca_Cola_Monarchy"
 		texturefile = "gfx/ideologies/subideologies/Coca_Cola_Monarchy.png"
 	}

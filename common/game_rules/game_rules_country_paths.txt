@@ -16368,7 +16368,7 @@ SHX_path = {#山西
 	}
 }
 
-ETS_night = {
+ETS_night = {#东突
 	name = "ETS_NIGHT"
 	group = "RULE_GROUP_KAISERREICH_RULES_EAST_ASIA"
 	option = {
@@ -16429,6 +16429,24 @@ ETS_night = {
 		name = ETS_RED_MOON #红月亮
 		text = "RULE_OPTION_ETS_RED_MOON"
 		desc = "RULE_OPTION_ETS_RED_MOON_DESC"
+		allow_achievements = yes
+	}
+}
+
+TXM_path = {#逆波萨达斯
+	name = "TXM_STRUGGLE"
+	group = "RULE_GROUP_MEME_MODE_RULES"
+	icon = "GFX_game_rule_trotsky"
+	option = {#默认
+		name = TXM_STRUGGLE_IS_COMING_YES
+		text = "TXM_STRUGGLE_IS_COMING_YES"
+		desc = "TXM_STRUGGLE_IS_COMING_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {#阎锡山
+		name = TXM_STRUGGLE_IS_COMING_NO
+		text = "TXM_STRUGGLE_IS_COMING_NO"
+		desc = "TXM_STRUGGLE_IS_COMING_NO_DESC"
 		allow_achievements = yes
 	}
 }

@@ -7,4 +7,8 @@ spriteTypes = {
 		name = "GFX_modifiers_state_bai_shi"
 		texturefile = "gfx/interface/state_modifiers/state_bai_shi.png"
 	}
+	SpriteType = {
+		name = "GFX_modifiers_for_the_god"
+		texturefile = "gfx/interface/state_modifiers/for_the_god.png"
+	}
 }

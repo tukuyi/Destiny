@@ -252,7 +252,11 @@ SHC_Kang_Sheng = {
 	retire = yes
 }
 
+recruit_character = SHC_Philip_Sassoon
 recruit_character = SHC_robbie_hoshailai
+SHC_Philip_Sassoon = {
+	retire = yes
+}
 SHC_robbie_hoshailai = {
 	retire = yes
 }
@@ -260,4 +264,30 @@ SHC_robbie_hoshailai = {
 recruit_character = SHC_Morris_Abraham_Cohen
 SHC_Morris_Abraham_Cohen = {
 	retire = yes
+}
+
+#传教
+set_variable = {
+	SHC_jiao_hui_for_all_small_cost = 30
+}
+set_variable = {
+	SHC_jiao_hui_for_all_middle_cost = 50
+}
+set_variable = {
+	SHC_jiao_hui_for_all_large_cost = 70
+}
+set_variable = {
+	SHC_jiao_hui_for_all_huge_cost = 100
+}
+set_variable = {
+	SHC_jiao_hui_for_all_small_time = 50
+}
+set_variable = {
+	SHC_jiao_hui_for_all_middle_time = 70
+}
+set_variable = {
+	SHC_jiao_hui_for_all_large_time = 100
+}
+set_variable = {
+	SHC_jiao_hui_for_all_huge_time = 130
 }

@@ -75,4 +75,16 @@ spriteTypes = {
 		name = "GFX_Portrait_SHC_Sha_Xun"
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_Sha_Xun.png"
 	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Sha_Xun"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Sha_Xun.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Philip_Sassoon"
+		texturefile = "gfx/leaders/SHC/Portrait_Philip_Sassoon.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Philip_Sassoon_civ"
+		texturefile = "gfx/leaders/SHC/Portrait_Philip_Sassoon_civ.png"
+	}
 }

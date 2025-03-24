@@ -16552,48 +16552,6 @@ country_event = {#我们的合作者
 	}
 }
 
-country_event = {#收购香港
-	id = leche.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.7"}
-	title = leche.7.t
-	desc = leche.7.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {#同意
-		name = leche.7.a
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				has_war = yes
-			}
-		}
-		add_political_power = 200
-		SHC = {
-			country_event = {
-				days = 5
-				id = leche.9
-			}
-		}
-	}
-
-	option = {#否决
-		name = leche.7.b
-		ai_chance = {
-			factor = 20
-		}
-		SHC = {
-			country_event = {
-				days = 5
-				id = leche.10
-			}
-		}
-	}
-}
-
 country_event = {#上海的礼物
 	id = leche.8
 	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.8"}
@@ -16620,48 +16578,6 @@ country_event = {#上海的礼物
 			relation = guarantee
 			active = yes
 		}
-	}
-}
-
-country_event = {#同意
-	id = leche.9
-	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.9"}
-	title = leche.9.t
-	desc = leche.9.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {#
-		name = leche.9.a
-		add_political_power = -200
-		transfer_state = 326
-		326 = {
-			add_core_of = SHC
-		}
-		hidden_effect = {
-			country_event = {
-				days = 5
-				id = leche.11
-			}
-		}
-	}
-}
-
-country_event = {#拒绝
-	id = leche.10
-	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.10"}
-	title = leche.10.t
-	desc = leche.10.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {#
-		name = leche.10.a
-		add_stability = -0.05
 	}
 }
 

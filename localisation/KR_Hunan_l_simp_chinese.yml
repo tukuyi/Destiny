@@ -2163,6 +2163,8 @@
  HNN_new_order:0 "新秩序"
  HNN_jing_shen_si_jieB:0 "外景"
  HNN_jing_shen_si_jieC:0 "内景"
+ HNN_jing_shen_si_jieD:0 "灵气复苏"
+ HNN_jing_shen_si_jieD_desc:0 "回来了，都回来了，我终于可以成仙了！！！"
  HNN_casc:0 "航空航天局"
  HNN_industrial_cooperation_idea:0 "非洲进口"
 
@@ -5205,6 +5207,7 @@
 
  HNN_huo_long:0 "“活龙”\n§g贺龙原名贺文常，号云卿，但是这个名字他并不满意，其幕僚提出“云中卿客，唯龙也”，贺文常便改名贺龙，后来打出名号，人称“活龙”。§!"
  HNN_he_qing_tian:0 "贺青天"
+ HNN_lu_di_shen_xian:0 "陆地神仙\n§g他本可以飞升成真仙，但是为了人世间的安宁他毅然决然的选择留下§!"
 
  HNN_shen_bing_victory:0 "§R神兵起义§!成功"
  HNN_shen_bing_revolution_tt:0 "这将化解湘西§R神兵§!危机"

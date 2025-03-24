@@ -1,0 +1,174 @@
+add_namespace = TXM
+
+country_event = {#企鹅们来力
+	id = TXM.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TXM.1" }
+	title = TXM.1.t 
+	desc = TXM.1.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = TXM.1.a
+		country_event = { 
+			id = TXM.2
+			days = 15
+		}
+	}
+}
+
+country_event = {#企鹅们来力
+	id = TXM.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TXM.2" }
+	title = TXM.2.t 
+	desc = TXM.2.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = TXM.2.a
+		TXM = {
+			add_state_core = 720
+			add_state_core = 299
+			add_state_core = 1028
+			transfer_state = 720
+			transfer_state = 299
+			transfer_state = 1028
+		}
+		country_event = { 
+			id = TXM.3
+			days = 4
+		}
+	}
+}
+
+country_event = {#同他们交涉
+	id = TXM.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TXM.3" }
+	title = TXM.3.t 
+	desc = TXM.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = TXM.3.a
+		hidden_effect = {
+			country_event = { 
+				id = TXM.4
+				days = 4
+			}
+
+			TXM = {
+				create_wargoal = {
+					type = annex_everything target = ECU
+				}
+				create_wargoal = {
+					type = annex_everything target = ARG
+				}
+				create_wargoal = {
+					type = annex_everything target = BRA
+				}
+				create_wargoal = {
+					type = annex_everything target = PRU
+				}
+				create_wargoal = {
+					type = annex_everything target = VEN
+				}
+				create_wargoal = {
+					type = annex_everything target = COL
+				}
+				create_wargoal = {
+					type = annex_everything target = BOL
+				}
+				create_wargoal = {
+					type = annex_everything target = PAR
+				}
+				create_wargoal = {
+					type = annex_everything target = URG
+				}
+				add_manpower = 100000000
+				army_experience = 250
+				add_political_power = 250
+				load_oob = ANT_ARMY
+				add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 5000 }
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100000 }
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100000 }
+			}
+			every_state = {
+				limit = { 
+					OR = {
+						is_core_of = VEN
+						is_core_of = PRU
+						is_core_of = BRA
+						is_core_of = COL
+						is_core_of = ARG
+						is_core_of = ECU 
+						is_core_of = BOL
+						is_core_of = PAR
+						is_core_of = URG
+						is_core_of = FOP
+						is_core_of = CHL
+					} 
+				}
+				add_core_of = TXM
+			}
+		}
+	}
+}
+
+country_event = {#灵气复苏？
+	id = TXM.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TXM.4" }
+	title = TXM.4.t 
+	desc = TXM.4.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #同意
+		name = TXM.4.a
+		HNN_Qian_Xuesen = {
+			set_portraits = {
+				civilian = {
+					large = GFX_Portrait_HNN_Qian_Xuesen_xiu_xian
+				}
+			}
+		}
+		add_country_leader_trait = HNN_lu_di_shen_xian
+		hidden_effect = {
+			if = {
+				limit = { 
+					has_idea = HNN_jing_shen_si_jie
+				}
+				swap_ideas = {
+					remove_idea = HNN_jing_shen_si_jie
+					add_idea = HNN_jing_shen_si_jieD
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = HNN_jing_shen_si_jieB
+				}
+				swap_ideas = {
+					remove_idea = HNN_jing_shen_si_jieB
+					add_idea = HNN_jing_shen_si_jieD
+				}
+			}
+			else_if = {
+				limit = { 
+					has_idea = HNN_jing_shen_si_jieC
+				}
+				swap_ideas = {
+					remove_idea = HNN_jing_shen_si_jieC
+					add_idea = HNN_jing_shen_si_jieD
+				}
+			}
+			else = {
+				add_ideas = HNN_jing_shen_si_jieD
+			}
+		}
+	}
+}

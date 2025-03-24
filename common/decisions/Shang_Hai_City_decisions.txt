@@ -742,7 +742,7 @@ SHC_weapon_for_all = {#军事外交
 		}
 	}
 	SHC_weapon_for_all_china = {#出售军火
-		icon = GFX_decision_global_trade
+		icon = generic_prepare_civil_war
 		
 		available = {
 			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
@@ -758,6 +758,7 @@ SHC_weapon_for_all = {#军事外交
 			}
 			FROM = { 
 				exists = yes
+				has_socialist_government = no
 				NOT = {
 					has_war_with = SHC
 					is_puppet_of = SHC
@@ -983,6 +984,7 @@ SHC_weapon_for_all = {#军事外交
 			}
 			FROM = { 
 				exists = yes
+				has_socialist_government = no
 				NOT = {
 					has_war_with = SHC
 					is_puppet_of = SHC
@@ -1110,6 +1112,69 @@ SHC_weapon_for_all = {#军事外交
 			remove_ideas = SHC_gu_yi_sheng_chan
 		}
 	}
+	SHC_weapon_tech_develop = {#投资武器开发
+		icon = wrenches
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 60
+		days_remove = 40
+		days_re_enable = 40
+		ai_will_do = {
+			base = 0
+		}
+		priority = 40
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_sheng_chan_zhi_shang"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_sheng_chan_zhi_shang"
+			add_tech_bonus = {
+				name = SHC_sheng_chan_zhi_shang
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	SHC_tou_zi_jiao_yu = {#投资教育
+		icon = Book
+		
+		visible = {
+			has_completed_focus = LEC_zi_ben_jia_de_sheng_li
+			NOT = {
+				has_country_flag = SHC_our_money_to_where
+			}
+		}
+
+		cost = 60
+		days_remove = 50
+		days_re_enable = 70
+		ai_will_do = {
+			base = 0
+		}
+		priority = 40
+
+		modifier = {
+			research_speed_factor = 0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_tou_zi_jiao_yu"
+			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_tou_zi_jiao_yu"
+
+		}
+	}
 	SHC_Irrigation_decision = {#发展上海城
 		icon = GFX_decision_hol_draw_up_staff_plans
 
@@ -1212,7 +1277,7 @@ SHC_weapon_for_all = {#军事外交
 			}
 		}
 	}
-	SHC_xun_lian_yong_bing = {#招募外籍雇佣兵
+	SHC_xun_lian_yong_bing = {#招募外籍雇佣兵-强化佣兵
 		icon = martial_law
 		
 		visible = {
@@ -1247,7 +1312,7 @@ SHC_weapon_for_all = {#军事外交
 			}
 		}
 	}
-	SHC_zhao_mu_wai_ji_gu_yong_bing_number = {#招募外籍雇佣兵
+	SHC_zhao_mu_wai_ji_gu_yong_bing_number = {#招募外籍雇佣兵-增加次数
 		icon = martial_law
 		
 		available = {
@@ -1338,15 +1403,13 @@ SHC_weapon_for_all = {#军事外交
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SHC_zhao_mu_wai_ji_gu_yong_bing"
-			custom_effect_tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_tt
-			hidden_effect = {
-				add_to_variable = {
-					SHC_zhao_mu_wai_ji_gu_yong_bing_var = -1
+			
+			if = {
+				limit = { 
+					has_country_flag = SHC_xun_lian_yong_bing_flag
 				}
-				if = {
-					limit = { 
-						has_country_flag = SHC_xun_lian_yong_bing_flag
-					}
+				custom_effect_tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_jing_ying_tt
+				hidden_effect = {
 					743 = {
 						create_unit = {
 							division = "name = \"特别行动队\" division_template = \"上海精英雇佣军\" start_experience_factor = 0.25" 
@@ -1354,13 +1417,217 @@ SHC_weapon_for_all = {#军事外交
 						}
 					}
 				}
-				else = {
+			}
+			else = {
+				custom_effect_tooltip = SHC_zhao_mu_wai_ji_gu_yong_bing_tt
+				hidden_effect = {
 					743 = {
 						create_unit = {
 							division = "name = \"特别行动队\" division_template = \"上海雇佣军\" start_experience_factor = 0.5" 
 							owner = ROOT
 						}
 					}
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					SHC_zhao_mu_wai_ji_gu_yong_bing_var = -1
+				}
+			}
+		}
+	}
+}
+
+SHC_jiao_hui_for_all = {#传播主的福音
+	SHC_jiao_hui_for_all_small = {
+		icon = GFX_decision_chuan_jiao
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = SHC_jiao_hui_for_all_small_cost
+		days_remove = SHC_jiao_hui_for_all_small_time
+		priority = 40
+
+		state_target = yes
+		targets = { 743 746 803 747 802 801 326 529 729 728 1075 774 996 609 745 592 }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_small"
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = LEC_for_the_god_state
+				}
+			}
+		}
+	}
+	SHC_jiao_hui_for_all_middle = {
+		icon = GFX_decision_chuan_jiao
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = SHC_jiao_hui_for_all_middle_cost
+		days_remove = SHC_jiao_hui_for_all_middle_time
+		priority = 40
+
+		state_target = yes
+		targets = { 519 593 594 596 597 598 599 600 606 613 800 801 1012 1014 1044 1045 1046 1047 1050 1054 1055 1056 1064 1065 1066 1067 1068 1069 }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_middle"
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = LEC_for_the_god_state
+				}
+			}
+		}
+	}
+	SHC_jiao_hui_for_all_large = {
+		icon = GFX_decision_chuan_jiao
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = SHC_jiao_hui_for_all_large_cost
+		days_remove = SHC_jiao_hui_for_all_large_time
+		priority = 40
+
+		state_target = yes
+		targets = { 328 601 602 603 605 607 608 610 611 614 615 620 622 650 661 714 715 716 717 788 799 883 884 885 886 1013 1015 1048 1058 1059 1051 1060 1061 1062 1063 1072 }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.30
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_large"
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = LEC_for_the_god_state
+				}
+			}
+		}
+	}
+	SHC_jiao_hui_for_all_huge = {
+		icon = GFX_decision_chuan_jiao
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = SHC_jiao_hui_for_all_huge_cost
+		days_remove = SHC_jiao_hui_for_all_huge_time
+		priority = 40
+
+		state_target = yes
+		targets = { 283 287 322 325 329 330 348 353 604 612 616 617 618 619 621 654 693 748 774 811 816 897 1083 1084 1085 1086 1293  }
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.40
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_huge"
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = LEC_for_the_god_state
 				}
 			}
 		}

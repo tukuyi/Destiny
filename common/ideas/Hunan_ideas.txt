@@ -3156,6 +3156,44 @@ ideas = {
 				}
 			}
 		}	
+		HNN_jing_shen_si_jieD = {#精神世界
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_jing_shen_si_jieD"}
+			picture = NEE_lovecraft_cosmicism
+			allowed = { always = no }
+			modifier = {
+				min_export = -0.20
+				conscription = 0.15
+				army_org_regain = 0.20
+				army_org_factor = 0.20
+				max_dig_in_factor = 0.25
+				stability_factor = -0.50
+				resistance_growth = -0.40
+				stability_weekly = -0.050
+				dig_in_speed_factor	= 0.10
+				breakthrough_factor	= 0.20
+				army_strength_factor = 0.20
+				political_power_gain = 1.00
+				training_time_factor = 0.40
+				research_speed_factor = -0.10
+				experience_loss_factor = -0.25
+				supply_consumption_factor = -0.20
+				army_fuel_consumption_factor = -0.20
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = -0.10
+				modifier_army_sub_unit_militia_speed_factor = 0.20
+				modifier_army_sub_unit_marines_speed_factor = 0.20
+				modifier_army_sub_unit_paratrooper_speed_factor = 0.20
+				modifier_army_sub_unit_mountaineers_speed_factor = 0.20
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.50
+					hard_attack = 0.50
+					casualty_trickleback = 0.30
+					instant = yes
+				}
+			}
+		}	
 	#郭沫若
 		HNN_media_help_idea = {#管控媒体
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_media_help_idea"}

@@ -1,5 +1,51 @@
 ideas = {
 	head_of_government = {
+	#资本家
+		LEC_sha_he_hog = {#维克托·沙逊
+			allowed = { original_tag = SHC }
+			picture = LEC_sha_he_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_sha_he_hog"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_gentleman_politician
+			}
+		}
+		LEC_Robert_Hotung_hog = {#何东
+			allowed = { original_tag = SHC }
+			picture = LEC_Robert_Hotung_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_Robert_Hotung_hog"
+				
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_silent_workhorse
+			}
+		}
 	#教U	
 		LEC_hui_ji_liang_hog = {#惠济良
 			allowed = { original_tag = SHC }
@@ -569,6 +615,48 @@ ideas = {
 				hog_scholar
 			}
 		}
+		LEC_he_gan_tang_for = {#何甘棠
+			allowed = { original_tag = SHC }
+			picture = LEC_he_gan_tang_for
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_he_gan_tang_for"
+				
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		LEC_li_de_er_for = {#李德尔
+			allowed = { original_tag = SHC }
+			picture = LEC_li_de_er_for
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_li_de_er_for"
+				
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_biased_intellectual
+			}
+		}
 	#经济部长
 		LEC_lei_ming_yuan_eco = {#雷鸣远
 			allowed = { original_tag = SHC }
@@ -612,7 +700,111 @@ ideas = {
 				eco_vernacular_industrialiser
 			}
 		}
-	#内政部长	
+		LEC_he_fu_eco = {#何福
+			allowed = { original_tag = SHC }
+			picture = LEC_he_fu_eco
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_he_fu_eco"
+				
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_laissez_faire_capitalist
+			}
+		}
+		LEC_kadoorie_eco = {#艾利·嘉道理
+			allowed = { original_tag = SHC }
+			picture = LEC_kadoorie_eco
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_kadoorie_eco"
+				
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_captain_of_industry
+			}
+		}
+		LEC_kai_zi_wei_eco = {#凯自威
+			allowed = { original_tag = SHC }
+			picture = LEC_kai_zi_wei_eco		
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_kai_zi_wei_eco"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_pious_entrepreneur
+			}
+		}
+		LEC_shi_huai_ya_eco = {#约克·基兹顿·施怀雅
+			picture = LEC_shi_huai_ya_eco
+			allowed = { original_tag = SHC }
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_shi_huai_ya_eco"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				hog_financial_expert
+			}
+		}
+		SHC_T_Sassoon_eco_pau = {#维克托·沙逊
+			picture = LEC_sha_he_hog
+			allowed = { original_tag = SHC }
+			cost = 100
+			available = {
+				NOT = {
+					has_country_leader = { name = "维克托·沙逊" ruling_only = yes }
+				}
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SHC_T_Sassoon_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_laissez_faire_capitalist
+			}
+		}
+	#内政部长
 		LEC_zhou_ji_si_sec = {#周济世
 			allowed = { original_tag = SHC }
 			picture = LEC_zhou_ji_si_sec
@@ -653,6 +845,46 @@ ideas = {
 				security_minister
 				social_conservative
 				sec_prominent_feminist
+			}
+		}
+		LEC_Philip_sec = {#菲利普-沙逊
+			allowed = { original_tag = SHC }
+			picture = LEC_Philip_sec
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_Philip_sec"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				eco_heer_advocate
+			}
+		}
+		LEC_he_shi_li_sec = {#何世礼
+			allowed = { original_tag = SHC }
+			picture = LEC_he_shi_li_sec
+			cost = 100
+			available = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			visible = {
+				has_country_flag = zi_ben_jia_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_he_shi_li_sec"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_compassionate_gentleman
 			}
 		}
 	}	
