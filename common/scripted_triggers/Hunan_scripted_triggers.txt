@@ -5,8 +5,16 @@ HNN_no_cosmetic_flag_check = {
 	}
 }
 uses_governorate_autonomy_state = {
-	overlord = { is_chinese_tag = yes }
-	is_chinese_tag = yes
+	overlord = { 
+		OR = {
+			is_chinese_tag = yes 
+			is_central_asian_tag = yes 
+		}	
+	}
+	OR = {
+		is_chinese_tag = yes
+		is_central_asian_tag = yes
+	}
 }
 HNN_lian_sheng_goverment = {
 	custom_trigger_tooltip = {

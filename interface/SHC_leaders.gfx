@@ -36,6 +36,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_He_Dong.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_SHC_Saburou_Miura"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Saburou_Miura.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SHC_Eiichi_Kinoshita"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Eiichi_Kinoshita.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SHC_Zhao_Shi_Yan"
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_Zhao_Shi_Yan.png"
 	}

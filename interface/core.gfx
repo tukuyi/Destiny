@@ -802,6 +802,9 @@ bitmapfonts = {
 		q = { 8 99 156 }	# Restorationist
 		s = { 42 96 59 }	# Southern Republican
 		e = { 248 198 0 }	# Southern Zhili
+
+		p = { 193 0 32 }	# bright red
+		u = { 248 23 62 }	# american pink
 	}
 
 

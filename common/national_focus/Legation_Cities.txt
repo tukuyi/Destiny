@@ -531,6 +531,11 @@ focus_tree = {
 		x = 3
 		y = 2
 		relative_position_id = LEC_jardines
+
+		bypass = {
+			has_country_flag = LEC_Triad_Power 
+		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_star_ferry_tax"
 			if = {
@@ -1703,11 +1708,14 @@ focus_tree = {
 		prerequisite = { focus = LEC_improving_shipping_lanes }
 		prerequisite = { focus = LEC_improving_port_facilities }
 		bypass = {
-			NOT = {
-			   OR = {
-				has_idea = LEC_black_monday3
-				has_idea = LEC_black_monday2
-			   }
+			OR = {
+				NOT = {
+					OR = {
+					 	has_idea = LEC_black_monday3
+						 has_idea = LEC_black_monday2
+					}
+			    }
+				has_country_flag = LEC_Triad_Power 
 			}
 		}
 		x = 5
@@ -3925,7 +3933,7 @@ focus_tree = {
 					LEC_Tu_Yueh_sen_hog_pau
 					LEC_TV_Soong_for_sde
 					LEC_Yuan_Kewen_boss_sli
-					LEC_Huang_Jinrong_sec_pau
+					LEC_Lu_Jingshi_sec_sco
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line

@@ -508,20 +508,21 @@ country_event = {#上海的命运
 			elections_allowed = no
 		}
 		set_cosmetic_tag = LEC_TZ
-		add_timed_idea = {
-			idea = SHC_she_hui_zhu_yi_yu_wen
-			days = 180
-		}
-		add_timed_idea = {
-			idea = SHC_di_xia_she_hui_de_fan_pu
-			days = 180
-		}
 		country_event = {
 			id = Shcjidu.11
 			days = 5
 		}
 		hidden_effect = {
 			news_event = Shcjidu.25
+
+			add_timed_idea = {
+				idea = SHC_she_hui_zhu_yi_yu_wen
+				days = 180
+			}
+			add_timed_idea = {
+				idea = SHC_di_xia_she_hui_de_fan_pu
+				days = 180
+			}
 
 			remove_all_ministers = yes
 			remove_ideas = {
@@ -636,19 +637,21 @@ country_event = {#上海的命运
 		}
 		set_cosmetic_tag = SHC_PLE
 		country_event = {
-			days = 2
 			id = Shcjingcha.1
-		}
-		add_timed_idea = {
-			idea = SHC_she_hui_zhu_yi_yu_wen
-			days = 180
-		}
-		add_timed_idea = {
-			idea = SHC_di_xia_she_hui_de_fan_pu
-			days = 180
+			days = 2
 		}
 		hidden_effect = {
 			load_oob = SHC_jing_cha
+
+			add_timed_idea = {
+				idea = SHC_she_hui_zhu_yi_yu_wen
+				days = 180
+			}
+			add_timed_idea = {
+				idea = SHC_di_xia_she_hui_de_fan_pu
+				days = 180
+			}
+
 			LEC = {
 				every_unit_leader = {
 					limit = {
@@ -3119,7 +3122,19 @@ country_event = {#抉择
 			LEC_Michitaro_Komatsubara_eco_npo
 			LEC_Geoffry_Northcote_sec_sco
 			LEC_Hiraya_Amane_boss_npo
-		} 
+		}
+		SHC_Saburou_Miura = {
+			set_nationality = ROOT
+		}
+		SHC_Eiichi_Kinoshita = {
+			set_nationality = ROOT
+		}
+		every_unit_leader = {
+			limit = {
+				has_trait = LEC_international_commander
+			}
+			retire = yes
+		}
 	}	
 }
 

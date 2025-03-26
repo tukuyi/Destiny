@@ -532,8 +532,16 @@ defined_text = {
 	text = {
 		trigger = {
 			has_country_leader_ideology = tot_islamic_socialism_subtype
+			NOT = { tag = TTR }
 		}
 		localization_key = tot_islamic_socialism_subtype
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = tot_islamic_socialism_subtype
+			tag = TTR
+		}
+		localization_key = TTR_tot_islamic_socialism_subtype
 	}
 	text = {
 		trigger = {
@@ -973,6 +981,12 @@ defined_text = {
 			has_country_leader_ideology = anarcho_abertzalism_subtype
 		}
 		localization_key =  anarcho_abertzalism_subtype
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = syn_sandinismo_subtype
+		}
+		localization_key =  syn_sandinismo_subtype
 	}
 
 	text = {
@@ -1460,6 +1474,12 @@ defined_text = {
 			has_country_leader_ideology = left_carlism_subtype
 		}
 		localization_key = left_carlism_subtype
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = radsoc_syndicalist_subtype
+		}
+		localization_key = radsoc_syndicalist_subtype
 	}
 
 	text = {
@@ -3344,6 +3364,12 @@ defined_text = {
 		}
 		localization_key = maurism_subtype
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = authdem_solidarism_subtype
+		}
+		localization_key = authdem_solidarism_subtype
+	}
 
 	text = {
 		trigger = {
@@ -3818,6 +3844,18 @@ defined_text = {
 			has_country_leader_ideology = integrism_subtype
 		}
 		localization_key = integrism_subtype
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_maurrassism_subtype
+		}
+		localization_key = pataut_maurrassism_subtype
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_toryism_subtype
+		}
+		localization_key = pataut_toryism_subtype
 	}
 
 	text = {

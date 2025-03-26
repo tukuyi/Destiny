@@ -26,3 +26,34 @@ SHC_nagoya_arsenal_organisation = {
 		}
 	}
 }
+##################
+### Naval MIOs ###
+##################
+SHC_Star_Ferry_organisation = {
+	include = generic_refurbishment_repair_organization
+	name = SHC_Star_Ferry
+	icon = GFX_idea_SHC_Star_Ferry
+	allowed = {
+		is_chinese_tag = yes
+	}
+	visible = {
+		FROM = { 
+			owns_state = 326
+		}
+	}
+	available = {
+		if = {
+			limit = { 
+				FROM = { 
+					NOT = {
+						tag = SHC
+						tag = LEC
+					}
+				} 
+			}
+			FROM = { 
+				has_country_flag = SHC_Star_Ferry_organisation_unlock
+			}
+		}
+	}
+}

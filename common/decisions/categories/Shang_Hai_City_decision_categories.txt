@@ -40,3 +40,15 @@ SHC_jiao_hui_for_all = {#传播主的福音
 		has_completed_focus = LEC_shang_di_de_huai_bao
 	}
 }
+
+SHC_cong_ri_ben_huo_qu_yuan_zu = {#从日本获取援助
+	icon = GFX_decision_category_neosanfedisti
+	picture = GFX_decision_category_chuan_jiao
+	
+	allowed = { 
+		tag = SHC 
+	}
+	visible = {
+		has_completed_focus = SHC_xin_ming_zhu_jue_xing
+	}
+}

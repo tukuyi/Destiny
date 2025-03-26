@@ -412,7 +412,15 @@ spriteTypes = {
 	#制造商
 	spriteType = {
 		name = "GFX_idea_HNN_tie"
-		texturefile = "gfx/interface/compannies/HNN_tie.png"
+		texturefile = "gfx/interface/compannies/HNN_tie_ma.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SHC_hui_feng"
+		texturefile = "gfx/interface/compannies/SHC_hui_feng.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SHC_Star_Ferry"
+		texturefile = "gfx/interface/compannies/SHC_Star_Ferry.png"
 	}
 	spriteType = {
 		name = "GFX_idea_HNN_faw_motors"

@@ -7,9 +7,22 @@ HNN_tiema_organisation = {#铁马
 	allowed = { 
 		is_chinese_tag = yes 
 	}
-	available = {
-		FROM = {
+	visible = {
+		FROM = { 
 			owns_state = 602
+		} 
+	}
+	available = { 
+		if = {
+			limit = { FROM = { tag = HNN } }
+			FROM = {
+				owns_state = 602  
+			}
+		}
+		else = {
+			FROM = { 
+				has_country_flag = HNN_tiema_organisation_unlock
+			} 
 		}
 	}
 	equipment_type = {

@@ -62,8 +62,9 @@ characters = {
 				}
 			}
 			corps_commander = {
+				desc = LEC_michitaro_komatsubara_commander_desc
 				traits = { 
-					LEC_japanese_commander 
+					LEC_japanese_commander
 					trait_cautious 
 					career_officer 
 					infantry_officer 
@@ -86,6 +87,7 @@ characters = {
 				}
 			}
 			corps_commander = {
+				desc = LEC_koreshige_inuzuka_commander_desc
 				traits = { 
 					LEC_japanese_commander 
 					naval_invader 

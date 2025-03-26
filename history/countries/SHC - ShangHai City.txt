@@ -152,6 +152,7 @@ recruit_character = SHC_Hui_Ji_liang
 recruit_character = SHC_yu_bing
 recruit_character = SHC_He_Dong
 recruit_character = SHC_Sha_Xun
+recruit_character = SHC_su_xi_wen
 
 create_country_leader = {
 	name = "王凡西"
@@ -190,11 +191,8 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = pataut_oligarchy_subtype
 }
-create_country_leader = {
-	name = "苏锡文"
-	desc = "Portrait_LEC_su_xi_wen_DESC"
-	picture = "gfx/leaders/LEC/Portrait_LEC_su_xi_wen.png"
-	expire = "1.1.1"
+promote_character = {
+	character = SHC_su_xi_wen
 	ideology = natpop_pan_asianism_subtype
 }
 
@@ -263,6 +261,15 @@ SHC_robbie_hoshailai = {
 
 recruit_character = SHC_Morris_Abraham_Cohen
 SHC_Morris_Abraham_Cohen = {
+	retire = yes
+}
+
+recruit_character = SHC_Saburou_Miura
+recruit_character = SHC_Eiichi_Kinoshita
+SHC_Saburou_Miura = {
+	retire = yes
+}
+SHC_Eiichi_Kinoshita = {
 	retire = yes
 }
 

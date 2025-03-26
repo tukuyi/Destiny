@@ -124,6 +124,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/HNN/HNN_wu_fa_xian.png"
 	}
 	spriteType = {
+		name = "GFX_idea_HNN_Mao_Ze_Dong_eco"
+		texturefile = "gfx/interface/ministers/HNN/HNN_Mao_Ze_Dong.png"
+	}
+	spriteType = {
 		name = "GFX_idea_HNN_wu_fa_xian_eco"
 		texturefile = "gfx/interface/ministers/HNN/HNN_wu_fa_xian.png"
 	}

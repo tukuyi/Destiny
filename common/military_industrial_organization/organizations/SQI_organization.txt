@@ -52,12 +52,22 @@ SQI_zao_xin_lun_chuan_organisation = {#肇兴轮船
 	include = generic_escort_ship_organization
 	allowed = { is_chinese_tag = yes }
 	visible = {
-		FROM = {
+		FROM = { 
 			owns_state = 597
 		}
 	}
-	available = {
-		597 = { is_core_of = FROM }
+	available = { 
+		if = {
+			limit = { FROM = { tag = SQI } }
+			FROM = {
+				owns_state = 597  
+			}
+		}
+		else = {
+			FROM = { 
+				has_country_flag = SQI_zao_xin_lun_chuan_organisation_unlock
+			} 
+		}
 	}
 }
 
@@ -111,10 +121,18 @@ SQI_jinan_arsenal_organisation = {#济南兵工厂
 			owns_state = 597 
 		} 
 	}
-	available = { 
-		FROM = { 
-			owns_state = 597 
-		} 
+	available = {
+		if = {
+			limit = { FROM = { tag = SQI } }
+			FROM = {
+				owns_state = 597  
+			}
+		}
+		else = {
+			FROM = { 
+				has_country_flag = SQI_jinan_arsenal_organisation_unlock
+			} 
+		}
 	}
 	ai_will_do = { 
 		base = 1000 
@@ -349,12 +367,17 @@ SQI_jinan_arsenal_organisation = {#济南兵工厂
 SQI_seventy_two_cannon_artillery_foundry = {#七二炮铸造厂
 	name = seventy_two_cannon_artillery_foundry
 	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
-	allowed = { 
+	allowed = {
 		is_chinese_tag = yes
+	}
+	visible = {
+		FROM = { 
+			owns_state = 597
+		}
 	}
 	available = { 
 		if = {
-			limit = { FROM = { original_tag = SQI } }
+			limit = { FROM = { tag = SQI } }
 			FROM = {
 				has_completed_focus = SQI_da_pao_fang_an
 				owns_state = 597  
@@ -362,7 +385,7 @@ SQI_seventy_two_cannon_artillery_foundry = {#七二炮铸造厂
 		}
 		else = {
 			FROM = { 
-				owns_state = 597 
+				has_country_flag = SQI_seventy_two_cannon_artillery_foundry_unlock
 			} 
 		}
 	}

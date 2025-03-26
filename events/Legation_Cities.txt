@@ -11837,7 +11837,10 @@ country_event = { #Skirmish at the Japanese Consulate
 	trigger = {
 		tag = LEC
 		JAP = { has_war = yes }
-		NOT = { has_country_flag = LEC_ongoing_storyline }
+		NOT = { 
+			has_country_flag = LEC_ongoing_storyline 
+			has_country_flag = LEC_Triad_Power 
+		}
 		owns_state = 609
 	}
 
@@ -13300,13 +13303,17 @@ country_event = {#大道政府
 			type = industrial_complex
 			level = 1
 		}
+		hidden_effect = {
+			SHC = {
+				SHC_su_xi_wen = {
+					set_nationality = LEC
+				}
+			}
+		}
 		LEC = {
 			set_cosmetic_tag = LEC_GREAT_WAY
-			create_country_leader = {
-				name = "苏锡文"
-				desc = ""
-				picture = "gfx/leaders/LEC/Portrait_LEC_Su_Xiwen.png"
-				expire = "1.1.1"
+			promote_character = {
+				character = SHC_su_xi_wen
 				ideology = natpop_pan_asianism_subtype
 			}		
 		}

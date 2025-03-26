@@ -13,6 +13,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decisions_categories_pictures/decision_category_chuan_jiao.png"
 	}
 	spriteType  = {
+		name = "GFX_decision_category_taiyuan_arsenan"
+		texturefile = "gfx/interface/decisions/decisions_categories_pictures/decision_category_taiyuan_arsenan.png"
+	}
+	spriteType  = {
 		name = "GFX_decision_category_industry_KMT"
 		texturefile = "gfx/interface/decisions/decisions_categories_pictures/industry_KMT.png"
 	}

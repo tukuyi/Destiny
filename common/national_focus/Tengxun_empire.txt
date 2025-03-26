@@ -1,0 +1,424 @@
+focus_tree = {
+	id = TXM_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TXM
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 10  y = 2000 }
+
+	focus = {
+		id = TXM_he_is_coming
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		cost = 2.00
+		x = 10
+		y = 0
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_he_is_coming"
+
+		}
+	}
+
+	focus = { 
+		id = TXM_jun_fa
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_he_is_coming
+		cost = 5
+		x = -9
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_he_is_coming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_jun_fa"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_wei_ta_de_jiang_ling
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = 0
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_jun_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_wei_ta_de_jiang_ling"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_sheng_wu_quan_deng_ji
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = -3
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_jun_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_sheng_wu_quan_deng_ji"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_quan_bu_gei_wo_pa_xia
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = -2
+		y = 2
+
+		prerequisite = { 
+			focus = TXM_sheng_wu_quan_deng_ji
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_quan_bu_gei_wo_pa_xia"
+			
+		}
+	}
+	
+	focus = { 
+		id = TXM_mo_ri_fang_zhou_jue_yi
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = -1
+		y = 3
+
+		prerequisite = { 
+			focus = TXM_quan_bu_gei_wo_pa_xia
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_mo_ri_fang_zhou_jue_yi"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_chui_hui_ren_lei
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = 3
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_jun_fa
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_chui_hui_ren_lei"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_si_Lao_chong_bu_cun_zai
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = 2
+		y = 2
+
+		prerequisite = { 
+			focus = TXM_chui_hui_ren_lei
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_si_Lao_chong_bu_cun_zai"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_fan_jin_hua_fa_ting
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = 1
+		y = 3
+
+		prerequisite = { 
+			focus = TXM_si_Lao_chong_bu_cun_zai
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_fan_jin_hua_fa_ting"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_he_zhong_wei_yi
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_jun_fa
+		cost = 5
+		x = 0
+		y = 4
+
+		prerequisite = { 
+			focus = TXM_fan_jin_hua_fa_ting
+		}
+		prerequisite = { 
+			focus = TXM_mo_ri_fang_zhou_jue_yi
+		}
+		prerequisite = { 
+			focus = TXM_wei_ta_de_jiang_ling
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_he_zhong_wei_yi"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_huang_di
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_he_is_coming
+		cost = 5
+		x = 0
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_he_is_coming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_huang_di"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_e_la_ke_si
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = -3
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_huang_di
+		}
+		mutually_exclusive = {
+			focus = TXM_gor
+			focus = TXM_chuan_tuo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_e_la_ke_si"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_qing_chu_wu_yong_sheng_wu
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = -3
+		y = 2
+
+		prerequisite = {
+			focus = TXM_e_la_ke_si
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_qing_chu_wu_yong_sheng_wu"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_jia_she_sheng_wy_zhi
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = -3
+		y = 3
+
+		prerequisite = {
+			focus = TXM_qing_chu_wu_yong_sheng_wu
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_jia_she_sheng_wy_zhi"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_chuan_tuo
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 0
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_huang_di
+		}
+		mutually_exclusive = {
+			focus = TXM_gor
+			focus = TXM_e_la_ke_si
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_chuan_tuo"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_yu_zhou_ke_wang_zhi_qiu
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 0
+		y = 2
+
+		prerequisite = { 
+			focus = TXM_chuan_tuo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_yu_zhou_ke_wang_zhi_qiu"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_yi_qie_de_zhong_xin_dian
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 0
+		y = 3
+
+		prerequisite = { 
+			focus = TXM_chuan_tuo
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_yi_qie_de_zhong_xin_dian"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_gor
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = TXM_huang_di
+		}
+		mutually_exclusive = {
+			focus = TXM_chuan_tuo
+			focus = TXM_e_la_ke_si
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_gor"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_ji_yin_gai_zao_ji_hua
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 3
+		y = 2
+
+		prerequisite = { 
+			focus = TXM_gor
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_ji_yin_gai_zao_ji_hua"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_nu_yi_ke_yong_zhi_wu
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_huang_di
+		cost = 5
+		x = 3
+		y = 3
+
+		prerequisite = { 
+			focus = TXM_ji_yin_gai_zao_ji_hua
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_nu_yi_ke_yong_zhi_wu"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_huang_di_guan_mian_shang_de
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_he_is_coming
+		cost = 5
+		x = 0
+		y = 5
+
+		prerequisite = {
+			focus = TXM_yi_qie_de_zhong_xin_dian
+			focus = TXM_nu_yi_ke_yong_zhi_wu
+			focus = TXM_jia_she_sheng_wy_zhi
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_huang_di_guan_mian_shang_de"
+			
+		}
+	}
+
+	focus = { 
+		id = TXM_cai_fa
+		icon = GFX_goal_GXC_xiang_bai_shi_xiang_zhong
+		relative_position_id = TXM_he_is_coming
+		cost = 5
+		x = 9
+		y = 1
+
+		prerequisite = { 
+			focus = TXM_he_is_coming
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus TXM_cai_fa"
+			
+		}
+	}
+}

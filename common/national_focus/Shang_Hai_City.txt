@@ -4067,6 +4067,9 @@ focus_tree = {
 				type = annex_everything
 				target = TAN
 			}
+			hidden_effect = {
+				H_in_china = yes
+			}
 		}
 	}
 

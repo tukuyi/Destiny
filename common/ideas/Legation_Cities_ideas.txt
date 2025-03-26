@@ -2819,43 +2819,6 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.10
 				production_factory_efficiency_gain_factor = 0.10
 			}
-		}	
-		LEC_national_rebirth_idea3 = {#国家重生-明
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEC_national_rebirth_idea3"}
-			allowed = { always = no }
-			name = LEC_national_rebirth_idea2
-			allowed_civil_war = { always = yes }
-			picture = generic_phoenix
-			modifier = {
-				army_morale_factor = 0.05
-				conscription_factor = 0.12
-				paternal_autocrat_drift = 0.05
-				army_core_attack_factor = 0.10
-				army_core_defence_factor = 0.10
-				consumer_goods_expected_value = -0.20
-				production_factory_max_efficiency_factor = 0.20
-				production_factory_efficiency_gain_factor = 0.20
-				production_lack_of_resource_penalty_factor = -0.10
-			}
-		}
-		LEC_Opium_Idea4 = {#鸦片贸易
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_Opium_Idea4"}
-			picture = LEC_opium
-			name = LEC_Opium_Idea
-			allowed = { always = no }
-			available = { 
-				has_country_flag = shanghai_gang_victory
-			}
-            modifier = {
-				refit_ic_cost = -0.25
-				army_org_factor = -0.025
-				stability_weekly = -0.010
-				conscription_factor = -0.03
-				political_power_gain = 0.50
-				consumer_goods_factor = -0.20
-				industrial_capacity_factory = 0.10
-				production_speed_industrial_complex_factor = 0.10
-			}
 		}
 		LEC_te_xu_jin_yin = {#特许经营
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_te_xu_jin_yin"}
@@ -2867,17 +2830,6 @@ ideas = {
 				consumer_goods_expected_value = -0.05
 				production_speed_buildings_factor = 0.10
 				production_speed_industrial_complex_factor = 0.10
-			}
-		}
-		LEC_she_hui_fu_li2 = {#福利主义
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_she_hui_fu_li"}
-			picture = enlightenment
-			name = LEC_she_hui_fu_li
-			allowed = { always = no }
-			modifier = {
-				stability_factor = 0.05
-				war_support_factor = 0.05
-				stability_weekly = 0.005
 			}
 		}
 		LEC_red_deal = {#红色法案
@@ -2904,9 +2856,7 @@ ideas = {
 					tag = SHC
 				}
 			}
-			traits = {
-				electronics_manufacturer
-			}
+			traits = { electronics_manufacturer }
 			research_bonus = {
 				electronics = 0.1
 			}

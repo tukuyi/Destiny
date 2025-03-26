@@ -53,12 +53,28 @@
  GFX_SPEVNT_EG_Reunification_DESC:0 "很少有人料到俄罗斯社会主义共和国能从中国内战的灰烬中崛起。更少有人料到重生的社会主义共和国能够统一俄罗斯，然而他们真的做到了。在帕维尔·米夫的带领下，流亡者从上海出发一统中俄，他们重新建立起那个覆灭的无产阶级国家。这个新生国家无意就此罢休，红军将向柏林、东京和其间的任何一处地区进军！"
 
  has_united_china:0 "中国已经统一"
+
  chinese_unification_desc: "数十年来的外来帝国主义、政治反覆和国内动乱令天朝丧失了中央权威，大清帝国风雨飘摇之际，它的软弱催生了一批新的地方军阀。辛亥革命使得国家的动荡进一步加剧，加入革命的将军们夺取了不少省份，并着手建立起由军队军官、亲密商人、地主士绅、友善知识分子和政府官员组成的复杂网络。\n\n风吹过雨打过，我们共同的国族认同仍然存在，全国各地，各路人马都致力于统一国家，以自己的构想重建中华。各方势力都利用自己的恩庇网络、外国支持和不断壮大的军队，在城市和农村竞争影响力。不过，中国纷繁的军阀时代令人眼花缭乱，公然开战并非竞争的唯一途径。外国入侵近在眼前，而结盟背盟的故事也在不断上演......"
  kr_integrate_Kashmir_province:0 "整合克什米尔地区"
  kr_integrate_outer_manchuria_province:0 "整合外满洲地区"
  kr_integrate_outer_northwest_province:0 "整合外西北地区"
  china_declare_unification: "宣告中国重新统一"
  china_declare_unification_desc: "我们的敌人已经被粉碎了，那些之前肆意宣称自己领导全国的人也不敢再出声了。我们现在已经是几乎全中国的统治者，剩下唯一一件要做的事就是正式宣告我们对全国的领导。无论如何，我们是军阀时代的胜利者，我们有责任领导中国走向更美好的未来。"
+
+ china_mio_arsenal_integration_decision_category: "建立中国本土国防企业"
+ china_mio_arsenal_integration_decision_category_desc: "几十年的内战给中国留下的希望并不多，其中之一，便是各势力投入大笔军费为现代军工复合体奠定的坚实基础。但是，困难也有不少：腐败、缺乏经验和战时混乱等都是常见问题；而且中国士兵手里的武器要么是进口的，要么是国外设计、国内制造的，这制约了国内军工业的发展。此外，由于军阀的地方主义，大部分大型兵工厂设施都非常分散，严重缺乏协调，在统一之路上，我们必须占领、整合这些军工企业，充分释放中国这个工业巨人的潜力！"
+ CHN_integrate_major_navy_HK: "整合天星小轮"
+ CHN_integrate_major_navy_zhao_xing: "整合肇兴轮船"
+ CHN_integrate_major_arsenal_SQI: "整合七二炮铸造厂"
+ CHN_integrate_minor_small_arms_arsenal_jinan: "整合济南兵工厂"
+ CHN_integrate_minor_small_arms_arsenal_jinan_desc: "山东兵工厂由山东巡抚丁宝桢在1875年作为山东机器局而首建，并在1883年后的几年内得到了生产武器所需要的机器。随着这里开始生产西方设计的一系列轻武器，并迅速地扩展了其厂房占地以快速提升步枪和其他步兵装备的产量，北洋政府将其更名为山东兵工厂。在张宗昌的统治之下，该厂被命名为济南兵工厂并进一步发掘出了生产潜力。"
+ CHN_integrate_minor_small_arms_arsenal_tie_ma: "整合铁马空气压缩厂"
+
+ SQI_jinan_arsenal_organisation_unlock: "已整合济南兵工厂"
+ SHC_Star_Ferry_organisation_unlock: "已整合天星小轮"
+ SQI_zao_xin_lun_chuan_organisation_unlock: "已整合肇兴轮船"
+ SQI_seventy_two_cannon_artillery_foundry_unlock: "已整合七二炮铸造厂"
+ HNN_tiema_organisation_unlock: "已整合铁马空气压缩厂"
 
  northern_zhili: "§z北直系§!"
  southern_zhili: "§m南直系§!"

@@ -348,7 +348,7 @@ characters = {
 	}	
 ####################
 ###   教会将领   ###
-####################	
+####################
 #惠济良
 	SHC_Hui_Ji_liang = {
 		name = SHC_Hui_Ji_liang
@@ -405,5 +405,69 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 		}
-	}			
+	}
+####################
+###   警察/汉奸  ###
+####################
+#苏锡文
+	SHC_su_xi_wen = {
+		name = SHC_su_xi_wen
+		portraits = {
+			army = {
+				small = GFX_Portrait_LEC_su_xi_wen
+				large = GFX_Portrait_LEC_su_xi_wen
+			}
+		}
+		country_leader = {
+			desc = Portrait_LEC_su_xi_wen_DESC
+			ideology = natpop_pan_asianism_subtype
+		}
+	}
+#三浦三郎
+	SHC_Saburou_Miura = {
+		name = SHC_Saburou_Miura
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHC_Saburou_Miura
+				small = GFX_Portrait_SHC_Saburou_Miura
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Saburou_Miura_DESC
+			traits = { 
+				LEC_japanese_commander
+				career_officer
+				infantry_officer
+				infantry_expert
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}	
+#木下荣市
+	SHC_Eiichi_Kinoshita = {
+		name = SHC_Eiichi_Kinoshita
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHC_Eiichi_Kinoshita
+				small = GFX_Portrait_SHC_Eiichi_Kinoshita
+			}
+		}
+		corps_commander = {
+			desc = POLITICS_Eiichi_Kinoshita_DESC
+			traits = { 
+				LEC_japanese_commander
+				career_officer
+				infantry_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}		
 }

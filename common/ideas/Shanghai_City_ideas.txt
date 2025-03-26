@@ -363,5 +363,24 @@ ideas = {
 			}
 		}	
 	}
+	industrial_concern = {
+
+		SHC_hui_feng_company = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_hui_feng"}
+			picture = SHC_hui_feng
+			allowed = {
+				tag = SHC
+			}
+			traits = { mining_company }
+            modifier = {
+				political_power_factor = 0.025
+				production_speed_arms_factory_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+	}
 }
 
