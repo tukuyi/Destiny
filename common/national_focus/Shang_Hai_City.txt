@@ -8591,6 +8591,14 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_jia_shen_lian_xi"
+			add_to_variable = { SHC_JAP_support = 30 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_increase_JAP_mid_support
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = SHC_rui_ri_mao_yi
 			hidden_effect = {
 				country_event = {
@@ -8656,6 +8664,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_fa_xing_xin_hup_bi"
 			add_ideas = SHC_shanghai_yuan
+			hidden_effect = {
+				country_event = {
+					id = Shchuming.7
+					days = 5
+				}
+			}
 		}
 	}		
 
@@ -8694,18 +8708,26 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_fang_quan_wai_zi"
+			add_to_variable = { SHC_JAP_support = 30 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_increase_JAP_mid_support
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { has_dlc_aat = yes }
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = HNN_krupp_tank_organisation
+				custom_effect_tooltip = tooltip_white_line
 			}
-			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { has_dlc_aat = yes }
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = SHC_nagoya_arsenal_organisation
+				custom_effect_tooltip = tooltip_white_line
 			}
-			custom_effect_tooltip = tooltip_white_line
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {

@@ -26,30 +26,6 @@ ideas = {
 				hog_silent_workhorse
 			}
 		}
-
-		LEC_su_xi_wen_hog = {#苏锡文
-			allowed = { original_tag = LEC }
-			picture = LEC_su_xi_wen_hog
-			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
-			}
-			visible = {
-				 
-			}
-			cancel_if_invalid = no
-			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea LEC_su_xi_wen_hog"
-				
-			}
-			traits = {
-				head_of_government
-				national_populist
-				hog_silent_workhorse
-			}
-		}
 	}
 
 	country = {

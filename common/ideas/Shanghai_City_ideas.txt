@@ -158,6 +158,7 @@ ideas = {
 				national_populist_drift = 0.02
 				industrial_capacity_factory = 0.05
 				production_speed_infrastructure_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.04
 			}
 		}		
 		SHC_shanghai_yuan2 = {#沪圆
@@ -171,6 +172,7 @@ ideas = {
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
 				production_speed_infrastructure_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
 			}
 		}		
 		SHC_hu_ren_you_xian = {#沪人优先

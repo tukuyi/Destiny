@@ -1,0 +1,30 @@
+defined_text = {
+	name = GetSHC_JAP_support
+	text = {
+		trigger = {
+			check_variable = { SHC_JAP_support > 79 }
+		}
+		localization_key = SHC_JAP_support_very_high
+	}
+	text = {
+		trigger = {
+			check_variable = { SHC_JAP_support > 59 }
+		}
+		localization_key = SHC_JAP_support_high
+	}
+	text = {
+		trigger = {
+			check_variable = { SHC_JAP_support > 39 }
+		}
+		localization_key = SHC_JAP_support_medium
+	}
+	text = {
+		trigger = {
+			check_variable = { SHC_JAP_support > 19 }
+		}
+		localization_key = SHC_JAP_support_low
+	}
+	text = {
+		localization_key = SHC_JAP_support_very_low
+	}
+}

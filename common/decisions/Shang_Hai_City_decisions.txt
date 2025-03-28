@@ -320,18 +320,22 @@ LEC_wai_jiao_category = {
 				is_puppet = no
 			}
 		}
-		ai_will_do = {
-			factor = 100
-		}
 		visible = {
 			NOT = {
 				owns_state = 613
+				has_country_leader = {
+					character = SHC_su_xi_wen
+				}
 			}
 		}
 
 		cost = 50
 		days_remove = 5
 		days_re_enable = 50
+
+		ai_will_do = {
+			base = 100
+		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision LEC_xie_yue_guo_de_wu_qi"
@@ -1636,5 +1640,258 @@ SHC_jiao_hui_for_all = {#传播主的福音
 }
 
 SHC_cong_ri_ben_huo_qu_yuan_zu = {#从日本获取援助
+	SHC_improve_JAP_relations = {
+		icon = cash_flow
+		available = {
+			NOT = { has_war_with = JAP }
+		}
+		visible = {
+			check_variable = { SHC_JAP_support < 80 }
+		}
 
+		days_re_enable = 60
+		cost = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_improve_JAP_relations"
+			add_to_variable = { SHC_JAP_support = 10 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_increase_JAP_low_support
+		}
+	}
+
+	SHC_buy_JAP_guns = {
+		icon = generic_prepare_civil_war
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_20_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 14 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 0
+			}
+		}
+		days_remove = 14
+		days_re_enable = 180
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_buy_JAP_guns"
+			subtract_from_variable = { AMR_JAP_support = 5 }
+			clamp_variable = { 
+				var = AMR_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_low_tt
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_buy_JAP_guns"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = JAP
+			}
+		}
+	}
+
+	SHC_buy_JAP_trucks = {
+		icon = GFX_decision_generic_motorized
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_40_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 39 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 1
+			}
+		}
+
+		days_remove = 14
+		days_re_enable = 180
+		cost = 25
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_buy_JAP_trucks"
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_0
+				amount = 200
+				producer = JAP
+			}
+			subtract_from_variable = { SHC_JAP_support = 10 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_med_tt
+		}
+	}
+
+	SHC_buy_JAP_artillery = {
+		icon = GFX_decision_artillery
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_60_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 59 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 1
+			}
+		}
+
+		days_remove = 14
+		days_re_enable = 180
+		cost = 25
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_buy_JAP_artillery"
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_2
+				amount = 150
+				producer = JAP
+			}
+			subtract_from_variable = { SHC_JAP_support = 10 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_med_tt
+		}
+	}
+
+	SHC_industrial_experts = {
+		icon = GFX_decision_generic_construction
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_60_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 59 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 2
+			}
+		}
+
+		days_remove = 14
+		days_re_enable = 365
+		cost = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_industrial_experts"
+			add_tech_bonus = {
+				name = industry
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+			subtract_from_variable = { SHC_JAP_support = 10 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_med_tt
+		}
+	}
+
+	SHC_electronics_experts = {
+		icon = electrify
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_60_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 59 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 2
+			}
+		}
+
+		days_remove = 14
+		days_re_enable = 180
+		cost = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_electronics_experts"
+			add_tech_bonus = {
+				name = electronics
+				bonus = 0.75
+				uses = 1
+				category = electronics
+			}
+			subtract_from_variable = { SHC_JAP_support = 10 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_med_tt
+		}
+	}
+
+	SHC_military_policeman_coming = {
+		icon = soldierly_discipline
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_80_support_tp
+				ROOT = {
+					check_variable = { SHC_JAP_support > 79 }
+				}
+			}
+			any_controlled_state = {
+				is_coastal = yes
+				naval_base > 2
+			}
+			NOT = {
+				613 = {
+					is_owned_by = ROOT
+				}
+			}
+		}
+
+		days_remove = 30
+		days_re_enable = 180
+		cost = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision SHC_military_policeman_coming"
+			743 = {
+				create_unit = {
+					division = "name = \"日本宪兵队\" division_template = \"日本宪兵队\" start_experience_factor = 0.4 start_equipment_factor = 0.8" 
+					owner = ROOT
+				}
+			}
+			subtract_from_variable = { SHC_JAP_support = 40 }
+			clamp_variable = { 
+				var = SHC_JAP_support 
+				min = 0 
+				max = 100 
+			}
+			custom_effect_tooltip = SHC_decrease_JAP_support_high_tt
+		}
+	}
 }

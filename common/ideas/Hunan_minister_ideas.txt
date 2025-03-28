@@ -204,7 +204,7 @@ ideas = {
 			traits = {
 				head_of_government
 				radical_socialist
-				hog_revelatory_speaker
+				QYG_nong_ye_da_wang
 			}
 		}	
 		HNN_Gao_Gang_hog = {#高岗

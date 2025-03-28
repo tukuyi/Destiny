@@ -198,21 +198,27 @@ on_actions = {
 				limit = { 
 					FROM = { tag = ANQ }
 				}
-				LEP = {
-					ANQ = {
-						ANQ_Li_Shengchun = {
-							set_nationality = ROOT
-						}
+				ANQ_Li_Shengchun = {
+					set_nationality = LEP
+				}
+				ANQ_shi_zhongcheng = {
+					set_nationality = CHI
+					set_portraits = {
+						army = { large = GFX_Portrait_ANQ_shi_zhongcheng_kuomintang }
 					}
 				}
-				CHI = {
-					ANQ = {
-						ANQ_shi_zhongcheng = {
-							set_nationality = CHI
-							set_portraits = {
-								army = { large = GFX_Portrait_ANQ_shi_zhongcheng_kuomintang }
-							}
-						}
+			}
+			if = {
+				limit = { 
+					FROM = { tag = SHX }
+					SHC = {
+						has_country_flag = ji_du_tu_victory
+					}
+				}
+				SHC = {
+					country_event = {
+						id = Shcjidu.33
+						days = 5
 					}
 				}
 			}

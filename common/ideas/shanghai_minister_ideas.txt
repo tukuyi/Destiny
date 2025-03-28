@@ -46,7 +46,7 @@ ideas = {
 				hog_silent_workhorse
 			}
 		}
-	#教U	
+	#教U
 		LEC_hui_ji_liang_hog = {#惠济良
 			allowed = { original_tag = SHC }
 			picture = LEC_hui_ji_liang_hog
@@ -93,6 +93,30 @@ ideas = {
 				hog_spiritual_leader
 			}
 		}
+	#汉奸
+		LEC_su_xi_wen_hog = {#苏锡文
+			allowed = { original_tag = SHC }
+			picture = LEC_su_xi_wen_hog
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				has_country_flag = han_jian_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_su_xi_wen_hog"
+				
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_silent_workhorse
+			}
+		}	
 	#左臂
 		LEC_kang_sheng_hog = {#康生
 			allowed = { original_tag = SHC }
@@ -547,7 +571,7 @@ ideas = {
 				lama_natural_philosopher
 			}
 		}			
-	#外交部长	
+	#外交部长
 		LEC_Thomas_Tien_Ken_sin_for = {#田耕莘
 			allowed = { original_tag = SHC }
 			picture = LEC_Thomas_Tien_Ken_sin_for
@@ -658,25 +682,24 @@ ideas = {
 			}
 		}
 	#经济部长
-		LEC_lei_ming_yuan_eco = {#雷鸣远
+		LEC_Fu_Xiaoan_eco = {#傅筱庵
 			allowed = { original_tag = SHC }
-			picture = LEC_lei_ming_yuan_eco
+			picture = LEC_Fu_Xiaoan_eco
 			cost = 100
 			available = {
-				has_country_flag = ji_du_tu_victory
+				has_country_flag = han_jian_victory
 			}
 			visible = {
-				has_country_flag = ji_du_tu_victory
+				has_country_flag = han_jian_victory
 			}
 			cancel_if_invalid = no
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea LEC_lei_ming_yuan_eco"
-				
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_Fu_Xiaoan_eco"
 			}
 			traits = {
 				economy_minister
-				social_conservative
-				sec_catholic_firebrand
+				authoritarian_democrat
+				eco_bank_president
 			}
 		}
 		LEC_zhu_zhi_yao_eco = {#朱志尧
@@ -826,9 +849,9 @@ ideas = {
 				sec_compassionate_gentleman
 			}
 		}
-		LEC_zhang_xiu_ya_sec = {#张秀亚
+		LEC_lei_ming_yuan_eco = {#雷鸣远
 			allowed = { original_tag = SHC }
-			picture = LEC_zhang_xiu_ya_sec
+			picture = LEC_lei_ming_yuan_eco
 			cost = 100
 			available = {
 				has_country_flag = ji_du_tu_victory
@@ -838,13 +861,186 @@ ideas = {
 			}
 			cancel_if_invalid = no
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhang_xiu_ya_sec"
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_lei_ming_yuan_eco"
+				ROOT = {
+					add_popularity = {
+						ideology = social_democrat
+						popularity = 0.02
+					}
+					custom_effect_tooltip = SHC_china_jiao_hua_country_middle_time_tt
+					custom_effect_tooltip = tooltip_white_line
+					subtract_from_variable = { SHC_jiao_hui_for_all_middle_time = 20 }
+					subtract_from_variable = { SHC_jiao_hui_for_all_middle_cost = 20 }
+				}
+			}
+			on_remove = {
+				add_to_variable = { SHC_jiao_hui_for_all_middle_time = 20 }
+				add_to_variable = { SHC_jiao_hui_for_all_middle_cost = 20 }
+			}
+			traits = {
+				security_minister
+				social_democrat
+				SHC_catholic_firebrand
+			}
+		}
+		LEC_shi_ai_le_sec = {#石爱乐
+			allowed = { original_tag = SHC }
+			picture = LEC_shi_ai_le_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_shi_ai_le_sec"
+				ROOT = {
+					add_popularity = {
+						ideology = social_democrat
+						popularity = 0.02
+					}
+					custom_effect_tooltip = SHC_china_jiao_hua_country_huge_time_tt
+					custom_effect_tooltip = tooltip_white_line
+					subtract_from_variable = { SHC_jiao_hui_for_all_huge_time = 20 }
+					subtract_from_variable = { SHC_jiao_hui_for_all_huge_cost = 20 }
+				}
+			}
+			on_remove = {
+				add_to_variable = { SHC_jiao_hui_for_all_huge_time = 20 }
+				add_to_variable = { SHC_jiao_hui_for_all_huge_cost = 20 }
+			}
+			traits = {
+				security_minister
+				social_democrat
+				SHC_catholic_firebrand
+			}
+		}
+		LEC_fan_xue_yan_sec = {#范学淹
+			allowed = { original_tag = SHC }
+			picture = LEC_fan_xue_yan_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_fan_xue_yan_sec"
 				
 			}
 			traits = {
 				security_minister
 				social_conservative
-				sec_prominent_feminist
+				for_staunch_idealist
+			}
+		}
+		LEC_man_de_yi_sec = {#满德贻
+			allowed = { original_tag = SHC }
+			picture = LEC_man_de_yi_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_man_de_yi_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				for_tireless_organiser
+			}
+		}
+		LEC_zhen_yuan_sec = {#雷震远
+			allowed = { original_tag = SHC }
+			picture = LEC_zhen_yuan_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_zhen_yuan_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				for_ideological_crusader
+			}
+		}
+		LEC_deng_yi_ming_sec = {#邓以明
+			allowed = { original_tag = SHC }
+			picture = LEC_deng_yi_ming_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_deng_yi_ming_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_preserver_of_culture
+			}
+		}
+		LEC_wei_chang_mao_sec = {#魏畅茂
+			allowed = { original_tag = SHC }
+			picture = LEC_wei_chang_mao_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_wei_chang_mao_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				for_pious_intellectual
+			}
+		}
+		LEC_hua_lang_ting_sec = {#华朗廷
+			allowed = { original_tag = SHC }
+			picture = LEC_hua_lang_ting_sec
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_hua_lang_ting_sec"
+				
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_catholic_firebrand
 			}
 		}
 		LEC_Philip_sec = {#菲利普-沙逊
@@ -885,6 +1081,26 @@ ideas = {
 				security_minister
 				social_liberal
 				sec_compassionate_gentleman
+			}
+		}
+		LEC_xi_chun_sec = {#西村展藏
+			allowed = { original_tag = SHC }
+			picture = LEC_xi_chun_sec
+			cost = 100
+			available = {
+				has_country_flag = han_jian_victory
+			}
+			visible = {
+				has_country_flag = han_jian_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_xi_chun_sec"
+			}
+			traits = {
+				security_minister
+				national_populist
+				boss_the_japanese_connection
 			}
 		}
 	}	

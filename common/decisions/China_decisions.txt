@@ -3985,7 +3985,7 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 		}
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_navy_HK"
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SHC_Star_Ferry_organisation
 			hidden_effect = {
 				set_country_flag = SHC_Star_Ferry_organisation_unlock
@@ -4026,7 +4026,7 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 		}
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_navy_zhao_xing"
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SQI_zao_xin_lun_chuan_organisation
 			hidden_effect = {
 				set_country_flag = SQI_zao_xin_lun_chuan_organisation_unlock
@@ -4067,7 +4067,7 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 		}
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_arsenal_SQI"
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SQI_seventy_two_cannon_artillery_foundry
 			hidden_effect = {
 				set_country_flag = SQI_seventy_two_cannon_artillery_foundry_unlock
@@ -4108,7 +4108,7 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 		}
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_small_arms_arsenal_jinan"
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = SQI_jinan_arsenal_organisation
 			hidden_effect = {
 				set_country_flag = SQI_jinan_arsenal_organisation_unlock
@@ -4149,7 +4149,7 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 		}
 		remove_effect = {
 			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_small_arms_arsenal_tie_ma"
-			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = HNN_tiema_organisation
 			hidden_effect = {
 				set_country_flag = HNN_tiema_organisation_unlock

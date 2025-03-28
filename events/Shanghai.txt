@@ -642,6 +642,7 @@ country_event = {#上海的命运
 		}
 		hidden_effect = {
 			load_oob = SHC_jing_cha
+			load_oob = SHC_Military_Police
 
 			add_timed_idea = {
 				idea = SHC_she_hui_zhu_yi_yu_wen
@@ -2671,12 +2672,6 @@ country_event = {#破晓
 	option = {#
 		name = Shcjidu.24.a
 		add_political_power = 10
-		hidden_effect = {
-			country_event = {
-				id = Shcjidu.32
-				days = 20
-			}
-		}	
 	}
 }
 
@@ -2802,17 +2797,17 @@ country_event = {#繁荣昌盛
 	}
 }
 
-country_event = {#金玉其外
-	id = Shcjidu.32
-	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.32"}
-	title = Shcjidu.32.t
-	desc = Shcjidu.32.d
+country_event = {#荒原劫难
+	id = Shcjidu.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.33"}
+	title = Shcjidu.33.t
+	desc = Shcjidu.33.d
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {#
-		name = Shcjidu.32.a
+		name = Shcjidu.33.a
 		add_political_power = 10
 	}
 }
@@ -3120,8 +3115,8 @@ country_event = {#抉择
 		add_ideas = {
 			LEC_su_xi_wen_hog
 			LEC_Michitaro_Komatsubara_eco_npo
-			LEC_Geoffry_Northcote_sec_sco
-			LEC_Hiraya_Amane_boss_npo
+			LEC_Fu_Xiaoan_eco
+			LEC_xi_chun_sec
 		}
 		SHC_Saburou_Miura = {
 			set_nationality = ROOT
@@ -3134,6 +3129,9 @@ country_event = {#抉择
 				has_trait = LEC_international_commander
 			}
 			retire = yes
+		}
+		set_variable = {
+			SHC_JAP_support = 40
 		}
 	}	
 }
@@ -3451,6 +3449,7 @@ country_event = {#沪民？
 country_event = {#小东京
 	id = Shchuming.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.4" }
+	picture = GFX_report_event_SHC_xiao_shang_hai
 	title = Shchuming.4.t
 	desc = Shchuming.4.d
 
@@ -3469,13 +3468,14 @@ country_event = {#小东京
 country_event = {#黄包车夫
 	id = Shchuming.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.5" }
+	picture = GFX_report_event_SHC_huang_bao_che_fu
 	title = Shchuming.5.t
 	desc = Shchuming.5.d
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = Shchuming.5.a
 		add_stability = -0.01
 		hidden_effect = {
@@ -3498,7 +3498,51 @@ country_event = {#黄包车夫
 
 	option = {	# damn
 		name = Shchuming.6.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.01
+		}
+		hidden_effect = {
+			country_event = {
+				id = Shchuming.8
+				days = 7
+			}
+		}
+	}
+}
 
+country_event = {#身份
+	id = Shchuming.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.7" }
+	picture = GFX_report_event_SHC_ri_yu_jiao_yu
+	title = Shchuming.7.t
+	desc = Shchuming.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.7.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#流亡之途
+	id = Shchuming.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.8" }
+	picture = GFX_report_event_SHC_nv_gong
+	title = Shchuming.8.t
+	desc = Shchuming.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.8.a
+		add_stability = -0.01
 	}
 }
 

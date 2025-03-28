@@ -13315,7 +13315,13 @@ country_event = {#大道政府
 			promote_character = {
 				character = SHC_su_xi_wen
 				ideology = natpop_pan_asianism_subtype
-			}		
+			}
+			set_variable = {
+				SHC_JAP_support = 40
+			}
+			hidden_effect = {
+				load_oob = SHC_Military_Police
+			}
 		}
 	}
 	option = {

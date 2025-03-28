@@ -125,6 +125,7 @@ uses_generic_mios = {
 		original_tag = TTR
 		original_tag = BKN
 		original_tag = SHX #山西
+		original_tag = SHC #上海
 	}
 }
 

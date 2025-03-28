@@ -61,6 +61,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decisions_categories/neosanfedisti.png"
 	}
 	spriteType = {
+		name = "GFX_decision_category_Japanese"
+		texturefile = "gfx/interface/decisions/decisions_categories/Japanese.png"
+	}
+	spriteType = {
 		name = "GFX_decision_category_industrial_china"
 		texturefile = "gfx/interface/decisions/decisions_categories/industrial_china.png"
 	}
