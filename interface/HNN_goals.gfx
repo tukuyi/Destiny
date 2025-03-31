@@ -212,52 +212,8 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/HNN_hong_jun_ge_Ming.png"
 	}
 	spriteType = {
-		name = "GFX_goal_HNN_jin_ji_ji_hua"
-		texturefile = "gfx/interface/goals/HNN_jin_ji_ji_hua.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_quan_sheng_tu_gai"
-		texturefile = "gfx/interface/goals/HNN_quan_sheng_tu_gai.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_tang_sheng_ming_jiang_ling_dao_us"
-		texturefile = "gfx/interface/goals/HNN_tang_sheng_ming_jiang_ling_dao_us.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_yue_yue_you_zhu_chi"
-		texturefile = "gfx/interface/goals/HNN_yue_yue_you_zhu_chi.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_ge_ming_qing_bao_ju"
-		texturefile = "gfx/interface/goals/HNN_ge_ming_qing_bao_ju.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_nei_zhan_de_jiao_xun"
-		texturefile = "gfx/interface/goals/HNN_nei_zhan_de_jiao_xun.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_wu_hai_hua_dang_nei_fan_dui_pai"
-		texturefile = "gfx/interface/goals/HNN_wu_hai_hua_dang_nei_fan_dui_pai.png"
-	}
-	spriteType = {
 		name = "GFX_goal_HNN_peng_de_huai_jiang_ling_dao_us"
 		texturefile = "gfx/interface/goals/HNN_peng_de_huai_jiang_ling_dao_us.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_ming_zhu_ji_zhong"
-		texturefile = "gfx/interface/goals/HNN_ming_zhu_ji_zhong.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_ji_shi_gongre_yeshi_junren"
-		texturefile = "gfx/interface/goals/HNN_ji_shi_gongre_yeshi_junren.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_gao_xiao_jing_ji_ji_qi"
-		texturefile = "gfx/interface/goals/HNN_gao_xiao_jing_ji_ji_qi.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_dong_ting_hu_qi_ji"
-		texturefile = "gfx/interface/goals/HNN_dong_ting_hu_qi_ji.png"
 	}
 	spriteType = {
 		name = "GFX_goal_HNN_dong_bi_wu_jiang_ling_dao_us"
@@ -266,14 +222,6 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_goal_HNN_he_shu_huan_jiang_ling_dao_us"
 		texturefile = "gfx/interface/goals/HNN_he_shu_huan_jiang_ling_dao_us.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_cheng_shi_gong_ye_Hua"
-		texturefile = "gfx/interface/goals/HNN_cheng_shi_gong_ye_Hua.png"
-	}
-	spriteType = {
-		name = "GFX_goal_HNN_nong_ye_ji_ti_hua"
-		texturefile = "gfx/interface/goals/HNN_nong_ye_ji_ti_hua.png"
 	}
 	spriteType = {
 		name = "GFX_goal_HNN_dui_guo_ming_dang_tuo_xie"

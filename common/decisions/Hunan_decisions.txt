@@ -5909,10 +5909,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory 
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu
 			}
@@ -6004,10 +6001,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu
 			}
@@ -6051,10 +6045,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu
 			}
@@ -6099,10 +6090,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu
 			}
@@ -6137,10 +6125,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory 
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu
 			}
@@ -6196,14 +6181,8 @@ HNN_tu_di_gai_ge_category = {#土地改革
 	HNN_kuo_jian_tuo_la_ji = {#扩建拖拉机厂
 		icon = cement_mixer
 
-		available = {
-			
-		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory 
 		}
 
 		cost = 100
@@ -6603,10 +6582,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 		visible = {
-			OR = {
-				has_country_flag = HNN_PROC_victory 
-				# has_completed_focus = HNN_quan_sheng_tu_gai
-			}
+			has_country_flag = HNN_PROC_victory 
 			NOT = {
 				has_country_flag = HNN_tu_gai_jie_shu 
 			}

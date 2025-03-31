@@ -8,7 +8,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 1000  y = 2500 }
+	continuous_focus_position = { x = 800  y = 2600 }
 
 ###何东
 	focus = {
@@ -24,12 +24,13 @@ focus_tree = {
 		bypass = {
 			has_country_flag = zi_ben_jia_victory
 		}
-		ai_will_do = { base = 20 }
 		allow_branch = {
 			NOT = {
 				has_country_flag = ji_du_tu_victory
 			}
 		}
+
+		ai_will_do = { base = 20 }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zi_ben_jia_de_sheng_li"
@@ -104,12 +105,12 @@ focus_tree = {
 			add_ideas = LEC_qing_chu_hei_bang
 			hidden_effect = {
 				country_event = {
-					days = 14
 					id = shche.1
+					days = 14
 				}
 				country_event = {
-					days = 25
 					id = shche.2
+					days = 25
 				}
 			}
 		}
@@ -182,6 +183,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -239,6 +244,10 @@ focus_tree = {
 			add_authdem_to_coalition = yes
 			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_fan_ri_xuan_chuan
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -371,6 +380,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -411,11 +424,17 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 
 	focus = {
 		id = LEC_huo_lun_yi_xiang
-		icon = GFX_goal_USA_liberty_ships
+		icon = GFX_BBR_nest_for_brown_condors
 		cost = 5.00
 		relative_position_id = LEC_zi_ben_jia_de_sheng_li
 		x = -1
@@ -432,7 +451,7 @@ focus_tree = {
 			add_equipment_to_stockpile = {
 				type = convoy
 				amount = 50
-				producer = LEC
+				producer = SHC
 			}
 			every_country = {
 				limit = {
@@ -521,6 +540,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 	}
 
 	focus = {
@@ -597,6 +620,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
 		}
 	}
 
@@ -989,6 +1017,10 @@ focus_tree = {
 			}
 			add_research_slot = 1
 		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 	}
 
 	focus = {
@@ -1054,6 +1086,10 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_ideas = LEC_welcoming_da_jews
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
 	}
 
 	focus = {
@@ -1094,6 +1130,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhen_dun_bao_ye"
 			add_popularity = {
@@ -1113,6 +1150,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 	}
 
@@ -1210,6 +1253,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_kuo_jian_sha_xun_xue_xiao"
 			add_research_slot = 1
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 	}
 
@@ -1401,8 +1448,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LEC_zhu_de_ren_ci
-		icon = GFX_goal_LEC_zhu_de_ren_ci
+		id = LEC_chong_zu_shang_hai_chen
+		icon = GFX_goal_NEE_Industrial_Peace
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
 		x = 0
@@ -1418,6 +1465,61 @@ focus_tree = {
 
 		ai_will_do = { base = 20 }
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_chong_zu_shang_hai_chen"
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			remove_ideas = SHC_di_xia_she_hui_de_fan_pu
+		}
+	}
+
+	focus = {
+		id = LEC_zhu_de_ren_ci
+		icon = GFX_goal_LEC_zhu_de_ren_ci
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = 1
+		y = 2
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		prerequisite = { 
+			focus = LEC_chong_zu_shang_hai_chen
+		}
+
+		ai_will_do = { base = 20 }
+		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhu_de_ren_ci"
 			add_stability = 0.10
 			custom_effect_tooltip = tooltip_white_line
@@ -1428,6 +1530,10 @@ focus_tree = {
 				days = -70
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -1435,15 +1541,15 @@ focus_tree = {
 		icon = GFX_goal_LEC_jie_shou_pa_pa_de_jiao_hui
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = -2
-		y = 1
+		x = -1
+		y = 2
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_shang_di_de_huai_bao 
+			focus = LEC_chong_zu_shang_hai_chen
 		}
 
 		ai_will_do = { base = 20 }
@@ -1504,58 +1610,9 @@ focus_tree = {
 				}
 			}
 		}
-	}
 
-	focus = {
-		id = LEC_chong_zu_shang_hai_chen
-		icon = GFX_goal_NEE_Industrial_Peace
-		relative_position_id = LEC_shang_di_de_huai_bao
-		cost = 5
-		x = 2
-		y = 1
-
-		available = {
-			has_country_flag = ji_du_tu_victory
-		}
-
-		prerequisite = { 
-			focus = LEC_shang_di_de_huai_bao 
-		}
-
-		ai_will_do = { base = 20 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_chong_zu_shang_hai_chen"
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = tooltip_white_line
-			random_owned_state = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-				}
-			}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
 		}
 	}
 
@@ -1564,15 +1621,18 @@ focus_tree = {
 		icon = GFX_goal_LEC_pai_chu_yi_duan
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = -4
-		y = 2
+		x = 3
+		y = 3
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_jie_shou_pa_pa_de_jiao_hui 
+			focus = LEC_zhu_de_ren_ci
+		}
+		prerequisite = { 
+			focus = LEC_jie_shou_pa_pa_de_jiao_hui
 		}
 
 		ai_will_do = { base = 20 }
@@ -1580,24 +1640,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_pai_chu_yi_duan"
 			add_manpower = -500
 			add_political_power = 100
-			if = {
-				limit = {
-					has_government = social_conservative
-				}
-				add_popularity = {
-					ideology = social_conservative
-					popularity = 0.10
-				}
-			}
-			else_if = {
-				limit = { 
-					has_government = authoritarian_democrat
-				}
-				add_popularity = {
-					ideology = authoritarian_democrat
-					popularity = 0.10
-				}
-			}
+			increase_ruling_party_popularity_by_10 = yes
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = Shcjidu.8
@@ -1610,16 +1653,20 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_POLITICAL
+		}
 	}
 
-	
 	focus = {
 		id = LEC_chuan_bo_zhen_xin
-		icon = GFX_goal_TEX_focus_Encourage_Conversions
+		icon = GFX_goal_LEC_chuan_bo_zhen_xin
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = -4
-		y = 3
+		x = 2
+		y = 4
 
 		available = {
 			has_country_flag = ji_du_tu_victory
@@ -1630,66 +1677,24 @@ focus_tree = {
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_chuan_bo_zhen_xin"
+			custom_effect_tooltip = SHC_china_jiao_hua_country_time_tt
+			subtract_from_variable = { SHC_jiao_hui_for_all_middle_time = 20 }
+			subtract_from_variable = { SHC_jiao_hui_for_all_middle_cost = 20 }
+			subtract_from_variable = { SHC_jiao_hui_for_all_large_time = 20 }
+			subtract_from_variable = { SHC_jiao_hui_for_all_large_cost = 20 }
+			subtract_from_variable = { SHC_jiao_hui_for_all_huge_time = 20 }
+			subtract_from_variable = { SHC_jiao_hui_for_all_huge_cost = 20 }
+			custom_effect_tooltip = tooltip_white_line
+			add_stability = 0.04
 			add_political_power = 100
-			add_stability = 0.10
-			add_war_support = 0.10
-			custom_effect_tooltip = tooltip_white_line
-			if = {
-				limit = {
-					has_government = social_conservative
-				}
-				add_popularity = {
-					ideology = social_conservative
-					popularity = 0.10
-				}
-			}
-			else_if = {
-				limit = { 
-					has_government = authoritarian_democrat
-				}
-				add_popularity = {
-					ideology = authoritarian_democrat
-					popularity = 0.10
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = LEC_zu_fu_qing_fen_zhi_ren
-		icon = GFX_goal_LEC_zu_fu_qing_fen_zhi_ren
-		relative_position_id = LEC_shang_di_de_huai_bao
-		cost = 5
-		x = -2
-		y = 2
-
-		available = {
-			has_country_flag = ji_du_tu_victory
 		}
 
-		prerequisite = { 
-			focus = LEC_jie_shou_pa_pa_de_jiao_hui 
-		}
-
-		ai_will_do = { base = 20 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus LEC_zu_fu_qing_fen_zhi_ren"
-			add_ideas = LEC_qing_fen_shi_yi_zhong_mei_de
-			custom_effect_tooltip = tooltip_white_line
-			country_event = {
-				id = Shcjidu.31
-				days = 5
-			}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_POLITICAL
 		}
 	}
 
@@ -1699,17 +1704,17 @@ focus_tree = {
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
 		x = 0
-		y = 2
+		y = 4
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_jie_shou_pa_pa_de_jiao_hui 
+			focus = LEC_shang_hai_zhi_shen
 		}
 		prerequisite = { 
-			focus = LEC_zhu_de_ren_ci 
+			focus = LEC_shang_hai_qi_shi_tuan
 		}
 
 		ai_will_do = { base = 20 }
@@ -1750,18 +1755,18 @@ focus_tree = {
 		icon = GFX_goal_LEC_shang_hai_qi_shi_tuan
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 2
-		y = 2
+		x = 1
+		y = 3
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_chong_zu_shang_hai_chen 
+			focus = LEC_zhu_de_ren_ci
 		}
 		prerequisite = { 
-			focus = LEC_zhu_de_ren_ci 
+			focus = LEC_jie_shou_pa_pa_de_jiao_hui
 		}
 
 		ai_will_do = { base = 20 }
@@ -1785,15 +1790,18 @@ focus_tree = {
 		icon = GFX_goal_LEC_tian_zhu_jiao_gong_hui
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 4
-		y = 2
+		x = -3
+		y = 3
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_chong_zu_shang_hai_chen 
+			focus = LEC_zhu_de_ren_ci
+		}
+		prerequisite = { 
+			focus = LEC_jie_shou_pa_pa_de_jiao_hui
 		}
 
 		ai_will_do = { base = 20 }
@@ -1845,19 +1853,50 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LEC_fen_chan_zhu_yi
-		icon = GFX_goal_NEE_Social_Security
+		id = LEC_zu_fu_qing_fen_zhi_ren
+		icon = GFX_goal_LEC_zu_fu_qing_fen_zhi_ren
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 4
-		y = 3
+		x = -4
+		y = 4
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_tian_zhu_jiao_gong_hui 
+			focus = LEC_tian_zhu_jiao_gong_hui
+		}
+
+		ai_will_do = { base = 20 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_zu_fu_qing_fen_zhi_ren"
+			add_ideas = LEC_qing_fen_shi_yi_zhong_mei_de
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = Shcjidu.31
+				days = 5
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_fen_chan_zhu_yi
+		icon = GFX_goal_LEC_fen_chan_zhu_yi
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = -3
+		y = 5
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		prerequisite = { 
+			focus = LEC_luo_tuo_zhen_yan
+		}
+		prerequisite = { 
+			focus = LEC_zu_fu_qing_fen_zhi_ren
 		}
 
 		ai_will_do = { base = 20 }
@@ -1876,6 +1915,37 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+
+	focus = {
+		id = LEC_Righteous_Order
+		icon = GFX_goal_NEE_Social_Security
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = -3
+		y = 6
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		prerequisite = { 
+			focus = LEC_fen_chan_zhu_yi
+		}
+
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_Righteous_Order"
+			swap_ideas = {
+				remove_idea = LEC_qing_fen_shi_yi_zhong_mei_de
+				add_idea = LEC_qing_fen_shi_yi_zhong_mei_de_B
+			}
+		}
 	}
 
 	focus = {
@@ -1883,21 +1953,18 @@ focus_tree = {
 		icon = GFX_goal_LEC_kuo_jian_jiao_hui_xue_xiao
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 0
-		y = 3
+		x = 4
+		y = 4
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
-
 		prerequisite = { 
-			focus = LEC_zu_fu_qing_fen_zhi_ren 
-		}
-		prerequisite = { 
-			focus = LEC_shang_hai_qi_shi_tuan 
+			focus = LEC_pai_chu_yi_duan
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_kuo_jian_jiao_hui_xue_xiao"
 			add_research_slot = 1
@@ -1924,21 +1991,11 @@ focus_tree = {
 					id = Shcjidu.28
 					days = 9
 				}
-				if = {
-					limit = { 
-						PAP = {
-							has_country_leader = {
-								name = "Leo XIV"
-								ruling_only = yes
-							}
-						}
-					}
-					country_event = {
-						id = Shcjidu.6
-						days = 17
-					}
-				}
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 	}
 
@@ -1948,14 +2005,14 @@ focus_tree = {
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
 		x = -2
-		y = 3
+		y = 4
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_zu_fu_qing_fen_zhi_ren 
+			focus = LEC_tian_zhu_jiao_gong_hui
 		}
 
 		ai_will_do = { base = 20 }
@@ -1967,21 +2024,25 @@ focus_tree = {
 
 	focus = {
 		id = LEC_pei_yang_you_de_zhi_ren
-		icon = GFX_goal_LEC_pei_yang_you_de_zhi_ren
+		icon = GFX_goal_LEC_zhen_li_de_guang_zhao
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 2
-		y = 3
+		x = 3
+		y = 5
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_shang_hai_qi_shi_tuan 
+			focus = LEC_chuan_bo_zhen_xin
+		}
+		prerequisite = { 
+			focus = LEC_kuo_jian_jiao_hui_xue_xiao
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_pei_yang_you_de_zhi_ren"
 			add_ideas = LEC_you_de_zhi_ren
@@ -1995,28 +2056,135 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LEC_pu_shi_de_jiu_su
-		icon = GFX_goal_LEC_pu_shi_de_jiu_su
+		id = LEC_zhen_li_de_guang_zhao
+		icon = GFX_goal_LEC_pei_yang_you_de_zhi_ren
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = -1
-		y = 4
+		x = 3
+		y = 6
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_kuo_jian_jiao_hui_xue_xiao 
+			focus = LEC_pei_yang_you_de_zhi_ren
+		}
+
+		ai_will_do = { base = 20 }
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_zhen_li_de_guang_zhao"
+			swap_ideas = {
+				remove_idea = LEC_you_de_zhi_ren
+				add_idea = LEC_you_de_zhi_ren_B
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_jie_jin_ji_kong_yi_shi
+		icon = GFX_goal_LEC_jie_jin_ji_kong_yi_shi
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = 1
+		y = 5
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		prerequisite = { 
+			focus = LEC_wo_men_de_zhu_bao_shen_ren
+		}
+
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_jie_jin_ji_kong_yi_shi"
+			increase_ruling_party_popularity_by_5 = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = Shcjidu.34
+				days = 5
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_sheng_tu_yi_hui
+		icon = GFX_goal_LEC_sheng_tu_yi_hui
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = -1
+		y = 5
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		prerequisite = { 
+			focus = LEC_wo_men_de_zhu_bao_shen_ren
+		}
+
+		ai_will_do = { base = 20 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus LEC_sheng_tu_yi_hui"
+			add_political_power = 50
+			add_stability = 0.10
+			add_war_support = 0.10
+			custom_effect_tooltip = tooltip_white_line
+			increase_ruling_party_popularity_by_5 = yes
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+
+	focus = {
+		id = LEC_pu_shi_de_jiu_su
+		icon = GFX_goal_LEC_pu_shi_de_jiu_su
+		relative_position_id = LEC_shang_di_de_huai_bao
+		cost = 5
+		x = 0
+		y = 6
+
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+		prerequisite = {
+			focus = LEC_sheng_tu_yi_hui
 		}
 		prerequisite = { 
-			focus = LEC_luo_tuo_zhen_yan 
+			focus = LEC_jie_jin_ji_kong_yi_shi
 		}
 
 		ai_will_do = { base = 20 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_pu_shi_de_jiu_su"
-			add_political_power = 100
+			add_political_power = 50
 			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = LEC_ren_ci_de_zhu
@@ -2034,18 +2202,18 @@ focus_tree = {
 		icon = GFX_goal_LEC_shang_hai_zhi_shen
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
-		x = 1
-		y = 4
+		x = -1
+		y = 3
 
 		available = {
 			has_country_flag = ji_du_tu_victory
 		}
 
 		prerequisite = { 
-			focus = LEC_kuo_jian_jiao_hui_xue_xiao 
+			focus = LEC_zhu_de_ren_ci
 		}
 		prerequisite = { 
-			focus = LEC_pei_yang_you_de_zhi_ren 
+			focus = LEC_jie_shou_pa_pa_de_jiao_hui
 		}
 
 		ai_will_do = { base = 20 }
@@ -2080,7 +2248,7 @@ focus_tree = {
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
 		x = 0
-		y = 5
+		y = 7
 
 		available = {
 			has_country_flag = ji_du_tu_victory
@@ -2089,16 +2257,36 @@ focus_tree = {
 		prerequisite = { 
 			focus = LEC_pu_shi_de_jiu_su 
 		}
-		prerequisite = { 
-			focus = LEC_shang_hai_zhi_shen 
+		prerequisite = {
+			focus = LEC_Righteous_Order
+		}
+		prerequisite = {
+			focus = LEC_zhen_li_de_guang_zhao
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_sheng_jie_de_Yuan_dong_min_zhu"
 			swap_ideas = {
 				remove_idea = LEC_ren_ci_de_zhu2
 				add_idea = LEC_ren_ci_de_zhu3
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						PAP = {
+							has_country_leader = {
+								name = "Leo XIV"
+								ruling_only = yes
+							}
+						}
+					}
+					country_event = {
+						id = Shcjidu.6
+						days = 17
+					}
+				}
 			}
 		}
 	}
@@ -2109,7 +2297,7 @@ focus_tree = {
 		relative_position_id = LEC_shang_di_de_huai_bao
 		cost = 5
 		x = 0
-		y = 6
+		y = 8
 
 		available = {
 			has_country_flag = ji_du_tu_victory
@@ -2129,6 +2317,10 @@ focus_tree = {
 				remove_idea = LEC_ren_ci_de_zhu3
 				add_idea = LEC_ren_ci_de_zhu4
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 ###工团
@@ -2207,6 +2399,11 @@ focus_tree = {
 				ideology = social_liberal
 				popularity = 0.10
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -2296,6 +2493,10 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -2321,6 +2522,11 @@ focus_tree = {
 			add_research_slot = 1
 			add_stability = 0.10
 			add_ideas = LEC_chuan_bo_si_xiang
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -2646,6 +2852,12 @@ focus_tree = {
 				popularity = 0.1
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 	
 	focus = {
@@ -2799,10 +3011,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_ba_xiao_shi_gong_zuo_zhi"
-			swap_ideas = {
-				remove_idea = LEC_lao_gong_zhi_ci
-				add_idea = LEC_lao_gong_zhi_ci2
-			}
+			add_stability = 0.08
+			add_ideas = CSA_workers_rights
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -2839,9 +3053,9 @@ focus_tree = {
 
 	focus = {
 		id = LEC_kuo_jian_gong_ren_jiu_cha_dui
-		icon = GFX_CSA_defensive_outlook
-		cost = 5.00
+		icon = GFX_goal_CSA_for_fair_days_work
 		relative_position_id = LEC_zong_gong_hui_de_sheng_li
+		cost = 5.00
 		x = 2
 		y = 4
 
@@ -2857,7 +3071,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_kuo_jian_gong_ren_jiu_cha_dui"
-			add_ideas = LEC_jiu_cha_dui
+			swap_ideas = {
+				remove_idea = LEC_lao_gong_zhi_ci
+				add_idea = LEC_lao_gong_zhi_ci2
+			}
 		}
 	}
 
@@ -2886,6 +3103,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_wu_chan_jie_ji_yi_shu"
 			add_research_slot = 1
 			add_ideas = HNN_acrt_worker_and_former
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 	}
 
@@ -3072,6 +3293,10 @@ focus_tree = {
 			}
 			add_stability = 0.20
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -3135,6 +3360,12 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 
 	focus = {
@@ -3165,6 +3396,10 @@ focus_tree = {
 				popularity = 0.1
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 	}
 
 	focus = {
@@ -3189,6 +3424,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_jun_shi_hua_jiu_cha_dui"
 			army_experience = 50
 			add_ideas = LEC_jiu_cha_dui_jun
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
 		}
 	}
 
@@ -3360,6 +3599,11 @@ focus_tree = {
 			add_war_support = 0.10
 			add_stability = 0.10
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 
 	focus = {
@@ -3488,6 +3732,10 @@ focus_tree = {
 			add_stability = -0.20
 			add_ideas = LEC_jia_da_sheng_chan 
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
 	}
 
 	focus = {
@@ -3523,6 +3771,10 @@ focus_tree = {
 				remove_idea = LEC_jia_da_sheng_chan
 				add_idea = LEC_jia_da_sheng_chan2
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -3643,6 +3895,10 @@ focus_tree = {
 			add_manpower = 20154
 			add_ideas = HNN_mass_conscription_idea
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
 	}
 
 	focus = {
@@ -3754,6 +4010,11 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 
 	focus = {
@@ -3832,6 +4093,11 @@ focus_tree = {
 				producer = SHC
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}
 
 	focus = {
@@ -3854,6 +4120,10 @@ focus_tree = {
 			add_synd_to_coalition = yes
 			add_radsoc_to_coalition = yes
 			add_socdem_to_coalition = yes
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -4173,6 +4443,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_she_hui_zhu_yi_jiao_yu"
 			add_research_slot = 1
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 	}
 
@@ -4517,6 +4791,11 @@ focus_tree = {
 				category = land_doctrine
 			}
 			add_ideas = LEC_red_army
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+			FOCUS_FILTER_MANPOWER
 		}
 	}
 
@@ -5101,6 +5380,11 @@ focus_tree = {
 				days = 3
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_STABILITY
+		}
 	}
 	
 	focus = {
@@ -5230,6 +5514,10 @@ focus_tree = {
 				id = Shcgong.36
 				days = 3
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -5591,6 +5879,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus LEC_Attack_Europe"
 			add_war_support = 0.05
 			add_political_power = 25
+		}
+
+		search_filters = { 
+			FOCUS_FILTER_WAR_SUPPORT 
 		}
 	}
 
@@ -6074,6 +6366,10 @@ focus_tree = {
 			add_research_slot = 1
 			add_ideas = LEC_zhi_ye_jiao_yu
 		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 	}
 
 	focus = {
@@ -6102,6 +6398,10 @@ focus_tree = {
 				id = SHCwaijiao.14
 				days = 3
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -6137,6 +6437,10 @@ focus_tree = {
 				amount = 50
 				producer = LEC
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}
 
@@ -6373,7 +6677,7 @@ focus_tree = {
 		icon = GFX_focus_HKG_Military_Cabinet
 		cost = 3
 		x = 60
-		y = 15
+		y = 7
 
 		available = {
 			is_puppet = no
@@ -6808,10 +7112,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { base = 20 }
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_shang_hai_shou_hu_zhe"
 			add_stability = -0.05
 			add_war_support = 0.05
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
 		}
 	}	
 
@@ -6941,15 +7251,23 @@ focus_tree = {
 		id = SHC_sheng_cun_shi_di_yi_yao_wu
 		icon = GFX_focus_HKG_kowloon_march
 		cost = 4
-		x = 60
-		y = 7
+		x = 27
+		y = 17
 
-		ai_will_do = { base = 20 }
+		ai_will_do = { 
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_sheng_cun_shi_di_yi_yao_wu"
-			add_command_power = 100
+			add_command_power = 40.0
 			army_experience = 100
+			add_war_support = 0.05
+			add_stability = 0.05
 			hidden_effect = {
 				country_event = {
 					id = SHCwaijiao.18
@@ -6957,14 +7275,20 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
 	}		
 
 	focus = {
 		id = SHC_emergency_draft
-		icon = GFX_goal_NYC_new_york_volunteers
+		icon = GFX_focus_HKG_Happy_Soldier
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
 		cost = 5		
-		x = 0
+		x = -1
 		y = 1
 
 		prerequisite = {
@@ -6972,181 +7296,55 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_emergency_draft"
 			add_manpower = 2500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = SHC
+			}
 			increase_conscription = yes
 		}
-	}	
 
-	focus = {
-		id = SHC_industrialization_funded_by_elite
-		icon = GFX_GRU_CORPORATE_MILITARY_INDUSTRIAL_COMPLEX
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = 1
-		y = 2
-
-		prerequisite = {
-			focus = SHC_emergency_draft
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
 		}
-
-		ai_will_do = {
-			base = 10
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_industrialization_funded_by_elite"
-			743 = { 
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { 
-					type = arms_factory level = 1
-					instant_build = yes 
-				}
-				add_building_construction = { 
-					type = industrial_complex level = 1
-					instant_build = yes 
-				}
-			}
-		}
-	}	
-
-	focus = {
-		id = SHC_call_for_aid
-		icon = GFX_goal_generic_phone_crisis
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = 1
-		y = 3
-
-		prerequisite = {
-			focus = SHC_industrialization_funded_by_elite
-		}
-
-		ai_will_do = {
-			base = 10
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_call_for_aid"
-			add_political_power = 100 
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}	
-
-	focus = {
-		id = SHC_emergency_fortifications
-		icon = GFX_goal_NYC_emergency_fortifications
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = -1
-		y = 2
-
-		prerequisite = {
-			focus = SHC_emergency_draft
-		}
-
-		ai_will_do = {
-			base = 10
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_emergency_fortifications"
-			743 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12052
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 10034
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12076
-					instant_build = yes
-				}
-			}
-		}
-	}	
-
-	focus = {
-		id = SHC_build_up_for_hamilton
-		icon = GFX_EGY_Palestine_Defence
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = -1
-		y = 3
-
-		prerequisite = {
-			focus = SHC_emergency_fortifications
-		}
-
-		ai_will_do = {
-			base = 10
-		}
-
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_build_up_for_hamilton"
-			743 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12052
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 10034
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12076
-					instant_build = yes
-				}
-			}
-		}
-	}	
+	}
 
 	focus = {
 		id = SHC_utilize_the_national_guard
-		icon = GFX_focus_HKG_secure_the_streets
+		icon = GFX_focus_HKG_Murray_Protocols
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		x = 0
-		y = 4
 		cost = 5
+		x = 1
+		y = 1
 
 		prerequisite = {
-			focus = SHC_build_up_for_hamilton
-		}
-		prerequisite = {
-			focus = SHC_call_for_aid
+			focus = SHC_sheng_cun_shi_di_yi_yao_wu
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_utilize_the_national_guard"
+			custom_effect_tooltip = BBR_The_Souls_Go_Marching_On_tooltip
+			add_war_support = 0.05
+			add_stability = 0.02
+			add_manpower = 12000
 			division_template = {
 				name = "上海护卫军"
 				division_names_group = USA_GAR_01
@@ -7157,132 +7355,1394 @@ focus_tree = {
 					infantry = { x = 1 y = 0 }
 					infantry = { x = 1 y = 1 }
 				}
+				support = {
+					artillery = { x = 0 y = 0 }
+				}
 			}
-			random_owned_state = {
-				create_unit = {
-					division = "name = \"上海护卫军\" division_template = \"上海护卫军\" start_experience_factor = 0.7" 
-					owner = ROOT
-					count = 2
+			hidden_effect = {
+				random_owned_state = {
+					create_unit = {
+						division = "name = \"上海护卫军\" division_template = \"上海护卫军\" start_experience_factor = 0.7 start_equipment_factor = 0.7" 
+						owner = ROOT
+						count = 3
+					}
 				}
 			}
 		}
-	}	
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
+	}
 
 	focus = {
-		id = SHC_pull_exiles
-		icon = GFX_focus_HKG_19_Army
+		id = SHC_industrialization_funded_by_elite
+		icon = GFX_GRU_CORPORATE_MILITARY_INDUSTRIAL_COMPLEX
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		x = -1
-		y = 5
 		cost = 5
+		x = -3
+		y = 2
 
+		prerequisite = {
+			focus = SHC_emergency_draft
+		}
 		prerequisite = {
 			focus = SHC_utilize_the_national_guard
 		}
+		available = {
+			has_country_flag = zi_ben_jia_victory
+		}
+		mutually_exclusive = {
+			focus = SHC_for_the_god
+			focus = SHC_pu_jiang_tie_po
+			focus = SHC_zheng_bian_gong_ren
+		}
 
 		ai_will_do = {
-			base = 10
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_pull_exiles"
-			add_manpower = 1200
-			add_tech_bonus = {
-				name = NYC_pull_exiles
-				bonus = 1
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_industrialization_funded_by_elite"
+			add_ideas = SHC_Yi_zhang_yong_bing_idea
+			custom_effect_tooltip = tooltip_white_line
 			add_doctrine_cost_reduction = {
-				name = NYC_pull_exiles
+				name = land_doc_bonus
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+			army_experience = 25
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+		}
+	}
+
+	focus = {
+		id = SHC_zhong_jing_zhi_xia
+		icon = GFX_goal_GXC_shang_tuan_jun_shi_gai_ge
+		relative_position_id = SHC_industrialization_funded_by_elite
+		cost = 5		
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_industrialization_funded_by_elite
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_zhong_jing_zhi_xia"
+			swap_ideas = {
+				remove_idea = SHC_Yi_zhang_yong_bing_idea
+				add_idea = SHC_Yi_zhang_yong_bing_idea_B
+			}
+			add_war_support = 0.04
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		search_filters = { 
+			FOCUS_FILTER_WAR_SUPPORT 
 		}
 	}	
 
 	focus = {
-		id = SHC_global_arms_trade
-		icon = GFX_goal_NFA_subsidize_guns
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
+		id = SHC_call_for_aid
+		icon = GFX_GEA_economic_recovery
+		relative_position_id = SHC_industrialization_funded_by_elite
+		cost = 5		
 		x = 1
-		y = 5
-		cost = 5
+		y = 1
 
 		prerequisite = {
-			focus = SHC_utilize_the_national_guard
+			focus = SHC_industrialization_funded_by_elite
 		}
 
 		ai_will_do = {
-			base = 10
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_call_for_aid"
+			add_ideas = SHC_ba_qian_hua_zai
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_global_arms_trade
+		icon = GFX_GEA_focus_economy
+		relative_position_id = SHC_industrialization_funded_by_elite
+		cost = 5
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = SHC_call_for_aid
+		}
+		available = {
+			has_country_flag = zi_ben_jia_victory
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_global_arms_trade"
+			swap_ideas = {
+				remove_idea = SHC_ba_qian_hua_zai
+				add_idea = SHC_ba_qian_hua_zai_B
+			}
+			custom_effect_tooltip = tooltip_white_line
 			add_equipment_to_stockpile = { 
 				type = infantry_equipment_1 
-				amount = 1000 
+				amount = 4000
 				producer = JAP 
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment
 				amount = 500
-				producer = 	CHI
+				producer = NFA
 			}
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 200
-				producer = CHI
+				producer = CAN
 			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 200
+				producer = GER
+			}
+			custom_effect_tooltip = tooltip_white_line
 			add_tech_bonus = {
-				name = NYC_pull_exiles
+				name = infantry_bonus
 				bonus = 1
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				category = motorized_equipment
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
 			}
 		}
-	}	
+	}
 
 	focus = {
 		id = SHC_city_never_sleeps_never_falls
-		icon = GFX_focus_HKG_Recompense_Soldiers
-		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		x = 0
-		y = 6
+		icon = GFX_goal_GXC_si_ren_ding_zhi
+		relative_position_id = SHC_industrialization_funded_by_elite
 		cost = 5
+		x = -2
+		y = 2
+
+		prerequisite = {
+			focus = SHC_call_for_aid
+		}
+		prerequisite = {
+			focus = SHC_zhong_jing_zhi_xia
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_city_never_sleeps_never_falls"
+			swap_ideas = {
+				remove_idea = SHC_Yi_zhang_yong_bing_idea_B
+				add_idea = SHC_Yi_zhang_yong_bing_idea_C
+			}
+			every_army_leader = {
+				add_unit_leader_trait = organizer
+				add_unit_leader_trait = commando
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = marine_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_Duty_Honor_Country
+		icon = GFX_goal_NEE_From_Soldiers_Rebuilders
+		relative_position_id = SHC_industrialization_funded_by_elite
+		cost = 5
+		x = -1
+		y = 3
 
 		prerequisite = {
 			focus = SHC_global_arms_trade
 		}
 		prerequisite = {
-			focus = SHC_pull_exiles
+			focus = SHC_city_never_sleeps_never_falls
 		}
-
 		ai_will_do = {
-			base = 10
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_city_never_sleeps_never_falls"
-			every_army_leader = {
-				add_unit_leader_trait = organizer
-				add_unit_leader_trait = commando
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_Duty_Honor_Country"
+			swap_ideas = {
+				remove_idea = SHC_Yi_zhang_yong_bing_idea_C
+				add_idea = SHC_Yi_zhang_yong_bing_idea_D
 			}
-			add_command_power = 100
-			army_experience = 100
-			add_ideas = SHC_city_never_sleeps_never_falls_idea
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = signal_company_tech
+			}
 		}
-	}	
+	}
+
+	focus = {
+		id = SHC_jun_shi_ji_hua
+		icon = GFX_NEE_Imperial_Economy
+		relative_position_id = SHC_industrialization_funded_by_elite
+		cost = 5
+		x = -3
+		y = 3
+
+		prerequisite = {
+			focus = SHC_global_arms_trade
+			focus = SHC_wu_chan_jie_ji_jun_bei
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_jun_shi_ji_hua"
+			743 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { 
+					has_country_flag = zi_ben_jia_victory
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 1000
+					producer = SHC
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 500
+					producer = SHC
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_zheng_bian_gong_ren
+		icon = GFX_goal_SHC_zheng_bian_gong_ren
+		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
+		cost = 5		
+		x = -7
+		y = 2
+
+		prerequisite = {
+			focus = SHC_emergency_draft
+		}
+		prerequisite = {
+			focus = SHC_utilize_the_national_guard
+		}
+		available = {
+			has_country_flag = zong_gong_hui_victory
+		}
+		mutually_exclusive = {
+			focus = SHC_for_the_god
+			focus = SHC_pu_jiang_tie_po
+			focus = SHC_industrialization_funded_by_elite
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_zheng_bian_gong_ren"
+			add_ideas = SHC_red_militias_idea
+			custom_effect_tooltip = tooltip_white_line
+			add_manpower = 1000
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+	}
+
+	focus = {
+		id = SHC_build_up_for_hamilton
+		icon = GFX_goal_SHC_build_up_for_hamilton
+		relative_position_id = SHC_zheng_bian_gong_ren
+		cost = 5
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_zheng_bian_gong_ren
+		}
+		available = {
+			has_country_flag = zong_gong_hui_victory
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_build_up_for_hamilton"
+			swap_ideas = {
+				remove_idea = SHC_red_militias_idea
+				add_idea = SHC_red_militias_idea_B
+			}
+			add_manpower = 2500
+			add_war_support = 0.05
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
+	}
+
+	focus = {
+		id = SHC_wu_qi_bing_gong_chang
+		icon = GFX_goal_COR_new_tank_forces_icon
+		relative_position_id = SHC_zheng_bian_gong_ren
+		cost = 5
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_zheng_bian_gong_ren
+		}
+		available = {
+			has_country_flag = zong_gong_hui_victory
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_qi_bing_gong_chang"
+			add_ideas = SHC_militia_support
+			custom_effect_tooltip = tooltip_white_line
+			add_manpower = 2500
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_1 
+				amount = 3000 
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1000
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+				producer = SHC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+	}
+
+	focus = {
+		id = SHC_kuai_su_fan_ying_bu_dui
+		icon = GFX_goal_NEE_Armored_Rangers
+		relative_position_id = SHC_zheng_bian_gong_ren
+		cost = 5
+		x = -2
+		y = 2
+
+		prerequisite = {
+			focus = SHC_build_up_for_hamilton
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_kuai_su_fan_ying_bu_dui"
+			swap_ideas = {
+				remove_idea = SHC_red_militias_idea_B
+				add_idea = SHC_red_militias_idea_C
+			}
+			if = {
+				limit = { NOT = { has_tech = tech_engineers } }
+				set_technology = { tech_engineers = 1 }
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.50
+					uses = 1
+					category = engineers_tech
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_wu_chan_jie_ji_jun_bei
+		icon = GFX_goal_FNG_qin_zhong_gong_ye
+		relative_position_id = SHC_zheng_bian_gong_ren
+		cost = 5
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = SHC_build_up_for_hamilton
+		}
+		prerequisite = {
+			focus = SHC_wu_qi_bing_gong_chang
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_chan_jie_ji_jun_bei"
+			swap_ideas = {
+				remove_idea = SHC_militia_support
+				add_idea = SHC_militia_support_B
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_da_ge_ming_de_jing_yan
+		icon = GFX_goal_AUS_wissen_und_befreiung
+		relative_position_id = SHC_zheng_bian_gong_ren
+		cost = 5
+		x = -1
+		y = 3
+
+		prerequisite = {
+			focus = SHC_wu_chan_jie_ji_jun_bei
+		}
+		prerequisite = {
+			focus = SHC_kuai_su_fan_ying_bu_dui
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_da_ge_ming_de_jing_yan"
+			swap_ideas = {
+				remove_idea = SHC_red_militias_idea_C
+				add_idea = SHC_red_militias_idea_D
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_for_the_god
+		icon = GFX_goal_SHC_for_the_god
+		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
+		cost = 5
+		x = 3
+		y = 2
+
+		prerequisite = {
+			focus = SHC_emergency_draft
+		}
+		prerequisite = {
+			focus = SHC_utilize_the_national_guard
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+		mutually_exclusive = {
+			focus = SHC_pu_jiang_tie_po
+			focus = SHC_zheng_bian_gong_ren
+			focus = SHC_industrialization_funded_by_elite
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_for_the_god"
+			add_ideas = SHC_wei_Le_xin_yang_er_zhan
+			custom_effect_tooltip = tooltip_white_line
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_sheng_hui_yun_dong
+		icon = GFX_goal_SHC_sheng_hui_yun_dong
+		relative_position_id = SHC_for_the_god
+		cost = 5
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_for_the_god
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_sheng_hui_yun_dong"
+			add_ideas = SHC_san_min_zhi_huo
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_1 
+				amount = 2000
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = SHC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_fang_rui_shi_wei_dui
+		icon = GFX_goal_SHC_fang_rui_shi_wei_dui
+		relative_position_id = SHC_for_the_god
+		cost = 5
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_for_the_god
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_fang_rui_shi_wei_dui"
+			swap_ideas = {
+				remove_idea = SHC_wei_Le_xin_yang_er_zhan
+				add_idea = SHC_wei_Le_xin_yang_er_zhan_B
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 500
+				producer = SHC
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_zheng_zhi_bi_hu
+		icon = GFX_goal_SHC_zheng_zhi_bi_hu
+		relative_position_id = SHC_for_the_god
+		cost = 5
+		x = 2
+		y = 2
+
+		prerequisite = {
+			focus = SHC_sheng_hui_yun_dong
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_zheng_zhi_bi_hu"
+			swap_ideas = {
+				remove_idea = SHC_san_min_zhi_huo
+				add_idea = SHC_san_ming_zhi_huo_B
+			}
+			add_manpower = 19568
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = support_tech
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+	}
+
+	focus = {
+		id = SHC_da_she_nian_dong_yuan
+		icon = GFX_goal_SHC_da_she_nian_dong_yuan
+		relative_position_id = SHC_for_the_god
+		cost = 5
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = SHC_sheng_hui_yun_dong
+		}
+		prerequisite = {
+			focus = SHC_fang_rui_shi_wei_dui
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_da_she_nian_dong_yuan"
+			swap_ideas = {
+				remove_idea = SHC_wei_Le_xin_yang_er_zhan_B
+				add_idea = SHC_wei_Le_xin_yang_er_zhan_C
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_mo_ri_shen_pan_ji_hua
+		icon = GFX_goal_SHC_mo_ri_shen_pan_ji_hua
+		relative_position_id = SHC_for_the_god
+		cost = 5
+		x = 1
+		y = 3
+
+		prerequisite = {
+			focus = SHC_zheng_zhi_bi_hu
+		}
+		prerequisite = {
+			focus = SHC_da_she_nian_dong_yuan
+		}
+		available = {
+			has_country_flag = ji_du_tu_victory
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_mo_ri_shen_pan_ji_hua"
+			swap_ideas = {
+				remove_idea = SHC_wei_Le_xin_yang_er_zhan_C
+				add_idea = SHC_wei_Le_xin_yang_er_zhan_D
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = atomic_research }
+					NOT = { is_researching_technology = atomic_research }
+				}
+				add_tech_bonus = {
+					name = CHI_the_dongfeng_project
+					bonus = 0.5
+					uses = 1
+					technology = atomic_research
+				}
+			}
+			else = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.5
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_pu_jiang_tie_po
+		icon = GFX_goal_JAP_sots_infantry
+		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
+		cost = 5
+		x = 7
+		y = 2
+
+		prerequisite = {
+			focus = SHC_emergency_draft
+		}
+		prerequisite = {
+			focus = SHC_utilize_the_national_guard
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+		mutually_exclusive = {
+			focus = SHC_for_the_god
+			focus = SHC_zheng_bian_gong_ren
+			focus = SHC_industrialization_funded_by_elite
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_pu_jiang_tie_po"
+			add_ideas = SHC_yi_shi_zhi_sheng
+			custom_effect_tooltip = tooltip_white_line
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 15
+				producer = SHC
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_xiang_wu_shi_dao_kan_qi
+		icon = GFX_goal_japan_helmet
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_pu_jiang_tie_po
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_xiang_wu_shi_dao_kan_qi"
+			swap_ideas = {
+				remove_idea = SHC_yi_shi_zhi_sheng
+				add_idea = SHC_yi_shi_zhi_sheng_B
+			}
+			custom_effect_tooltip = tech_anti-partisan_effect
+			hidden_effect = {
+				set_technology = { tech_anti-partisan = 1 popup = no }
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 600
+				producer = SHC
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_gai_zu_jun_guan_tuan
+		icon = GFX_goal_JAP_toseiha
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_pu_jiang_tie_po
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_gai_zu_jun_guan_tuan"
+			add_ideas = SHC_gui_zu_jun_guan_tuan
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_tech
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_kuai_su_fan_ying_bu
+		icon = GFX_goal_JAP_supremacy_of_mind
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = SHC_gai_zu_jun_guan_tuan
+		}
+		prerequisite = {
+			focus = SHC_xiang_wu_shi_dao_kan_qi
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_kuai_su_fan_ying_bu"
+			swap_ideas = {
+				remove_idea = SHC_yi_shi_zhi_sheng_B
+				add_idea = SHC_yi_shi_zhi_sheng_C
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = construction_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = engineers_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_yin_jin_zhong_zhan_che
+		icon = GFX_goal_japanese_tank_import
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = 2
+		y = 2
+
+		prerequisite = {
+			focus = SHC_gai_zu_jun_guan_tuan
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_yin_jin_zhong_zhan_che"
+			add_ideas = SHC_zhan_che_hong_ming
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_huang_guo_de_rong_yao
+		icon = GFX_goal_JAP_samurai
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = 1
+		y = 3
+
+		prerequisite = {
+			focus = SHC_kuai_su_fan_ying_bu
+		}
+		prerequisite = {
+			focus = SHC_yin_jin_zhong_zhan_che
+		}
+		available = {
+			OR = {
+				has_country_flag = han_jian_victory
+				has_country_flag = jin_cha_ju_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_huang_guo_de_rong_yao"
+			swap_ideas = {
+				remove_idea = SHC_yi_shi_zhi_sheng_C
+				add_idea = SHC_yi_shi_zhi_sheng_D
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_hou_qing_sheng_yu_yi_qie
+		icon = GFX_goal_NEE_Vogue_War
+		relative_position_id = SHC_pu_jiang_tie_po
+		cost = 5
+		x = -1
+		y = 3
+
+		prerequisite = {
+			focus = SHC_zheng_zhi_bi_hu
+			focus = SHC_kuai_su_fan_ying_bu
+		}
+
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_hou_qing_sheng_yu_yi_qie"
+			add_ideas = BBR_Reap_Seeds_Preparation_idea
+			custom_effect_tooltip = tooltip_white_line
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 250
+				producer = SHC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = SHC
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = logistics_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_wu_song_pao_tai
+		icon = GFX_goal_generic_mountain_artillery
+		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
+		cost = 5		
+		x = 0
+		y = 3
+
+		prerequisite = {
+			focus = SHC_for_the_god
+			focus = SHC_pu_jiang_tie_po
+			focus = SHC_zheng_bian_gong_ren
+			focus = SHC_industrialization_funded_by_elite
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_song_pao_tai"
+			743 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 12052
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 10034
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 12076
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SHC_wan_guo_hong_si_zi
+		icon = GFX_goal_WHR_Paint_Red_Cross_Black
+		relative_position_id = SHC_wu_song_pao_tai
+		cost = 5		
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_wu_song_pao_tai
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_song_pao_tai"
+			hidden_effect = {
+				set_technology = { improved_field_hospitals = 1 }
+			}
+			custom_effect_tooltip = improved_field_hospitals_effect
+			custom_effect_tooltip = tooltip_white_line
+			add_stability = 0.05
+			add_war_support = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT 
+		}
+	}
+
+	focus = {
+		id = SHC_bi_ling_ji_hua
+		icon = GFX_goal_AUS_Nation_Of_Nature_alt
+		relative_position_id = SHC_wu_song_pao_tai
+		cost = 5		
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = SHC_wu_song_pao_tai
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_bi_ling_ji_hua"
+			add_stability = 0.05
+			add_manpower = 25000
+			custom_effect_tooltip = tooltip_white_line
+			add_potential_special_forces_tree = yes
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_STABILITY
+		}
+	}
+
+	focus = {
+		id = SHC_shang_hai_da_xue_jun_yan_ji_hua
+		icon = GFX_goal_SHC_shang_hai_da_xue_jun_yan_ji_hua
+		relative_position_id = SHC_wu_song_pao_tai
+		cost = 5		
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = SHC_bi_ling_ji_hua
+		}
+		prerequisite = {
+			focus = SHC_wan_guo_hong_si_zi
+		}
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SHC_shang_hai_da_xue_jun_yan_ji_hua"
+			add_research_slot = 1
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
 
 	focus = {
 		id = SHC_build_up_municipal_airstrip
 		icon = GFX_goal_CZE_air_industry
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
 		cost = 5		
-		x = -3
+		x = -9
 		y = 2
 
 		prerequisite = {
@@ -7309,9 +8769,9 @@ focus_tree = {
 		id = SHC_steal_planes
 		icon = GFX_goal_USA_organic_air_support
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		x = -3
-		y = 1
 		cost = 5
+		x = -8
+		y = 1
 
 		prerequisite = {
 			focus = SHC_sheng_cun_shi_di_yi_yao_wu
@@ -7340,7 +8800,7 @@ focus_tree = {
 		id = SHC_central_park_aerodrome
 		icon = GFX_CAL_aerial_contracts
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		x = -3
+		x = -10
 		y = 3
 		cost = 5
 
@@ -7373,8 +8833,8 @@ focus_tree = {
 		id = SHC_expand_brooklyn_naval_yard
 		icon = GFX_goal_generic_naval_industry
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = 3
+		cost = 5
+		x = 8
 		y = 1
 
 		prerequisite = {
@@ -7408,8 +8868,8 @@ focus_tree = {
 		id = SHC_pride_of_fleet_week
 		icon = GFX_goal_TEX_naval_prominence
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
-		cost = 5		
-		x = 3
+		cost = 5
+		x = 9
 		y = 2
 
 		prerequisite = {
@@ -7447,7 +8907,7 @@ focus_tree = {
 		icon = GFX_goal_generic_naval_base
 		relative_position_id = SHC_sheng_cun_shi_di_yi_yao_wu
 		cost = 5		
-		x = 3
+		x = 10
 		y = 3
 
 		prerequisite = {
@@ -7546,6 +9006,10 @@ focus_tree = {
 					id = Shcjingcha.9
 				}
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}		
 
@@ -7659,6 +9123,10 @@ focus_tree = {
 					tech_military_police3 = 1
 				}
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 	}	
 
@@ -7790,8 +9258,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_yi_jun_yi_jing"
 			country_event = {
-				days = 5
 				id = Shcjingcha.6
+				days = 5
 			}
 			army_experience = 50.0
 			add_doctrine_cost_reduction = {
@@ -7800,6 +9268,10 @@ focus_tree = {
 				uses = 2
 				category = land_doctrine
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
 		}
 	}		
 
@@ -7832,6 +9304,13 @@ focus_tree = {
 					id = Shcjingcha.4
 				}	
 			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_STABILITY
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 	}	
 
@@ -8744,6 +10223,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = Shchuming.9
+				days = 5
+			}
 		}
 	}			
 
@@ -8812,6 +10296,11 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_STABILITY
+		}
 	}		
 
 	focus = {
@@ -8834,8 +10323,8 @@ focus_tree = {
 			add_ideas = SHC_crakkka_understanding2
 			hidden_effect = {
 				country_event = {
-					days = 15
 					id = Shchuming.5
+					days = 15
 				}
 			}
 		}
@@ -8859,6 +10348,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHC_hu_ren_xiang_hu"
 			add_ideas = SHC_no_yourself
+			hidden_effect = {
+				country_event = {
+					id = Shchuming.12
+					days = 7
+				}
+			}
 		}
 	}	
 

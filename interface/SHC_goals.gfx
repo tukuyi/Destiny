@@ -1,4 +1,60 @@
-SpriteTypes = {	
+SpriteTypes = {
+	spriteType = {
+		name = "GFX_goal_LEC_zhen_li_de_guang_zhao"
+		texturefile = "gfx/interface/goals/LEC_zhen_li_de_guang_zhao.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_chuan_bo_zhen_xin"
+		texturefile = "gfx/interface/goals/LEC_chuan_bo_zhen_xin.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_jie_jin_ji_kong_yi_shi"
+		texturefile = "gfx/interface/goals/LEC_jie_jin_ji_kong_yi_shi.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_sheng_tu_yi_hui"
+		texturefile = "gfx/interface/goals/LEC_sheng_tu_yi_hui.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_fen_chan_zhu_yi"
+		texturefile = "gfx/interface/goals/LEC_fen_chan_zhu_yi.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_fang_rui_shi_wei_dui"
+		texturefile = "gfx/interface/goals/SHC_fang_rui_shi_wei_dui.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_shang_hai_da_xue_jun_yan_ji_hua"
+		texturefile = "gfx/interface/goals/SHC_shang_hai_da_xue_jun_yan_ji_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_mo_ri_shen_pan_ji_hua"
+		texturefile = "gfx/interface/goals/SHC_mo_ri_shen_pan_ji_hua.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_da_she_nian_dong_yuan"
+		texturefile = "gfx/interface/goals/SHC_da_she_nian_dong_yuan.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_zheng_zhi_bi_hu"
+		texturefile = "gfx/interface/goals/SHC_zheng_zhi_bi_hu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_sheng_hui_yun_dong"
+		texturefile = "gfx/interface/goals/SHC_sheng_hui_yun_dong.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_for_the_god"
+		texturefile = "gfx/interface/goals/SHC_for_the_god.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_zheng_bian_gong_ren"
+		texturefile = "gfx/interface/goals/SHC_zheng_bian_gong_ren.png"
+	}
+	spriteType = {
+		name = "GFX_goal_SHC_build_up_for_hamilton"
+		texturefile = "gfx/interface/goals/SHC_build_up_for_hamilton.png"
+	}
 	spriteType = {
 		name = "GFX_goal_SHC_rang_shang_hai_zai_ci_wei_da"
 		texturefile = "gfx/interface/goals/SHC_rang_shang_hai_zai_ci_wei_da.png"

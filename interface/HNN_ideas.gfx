@@ -398,6 +398,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/QIE/CHL_KIDNAPP_POLITICAL_STUFF_SYNDI.png"
 	}
 	spriteType = {
+		name = "GFX_idea_SHC_san_min_zhi_huo"
+		texturefile = "gfx/interface/ideas/SHC/SHC_san_min_zhi_huo.png"
+	}
+	spriteType = {
 		name = "GFX_idea_SHC_attack_LEP"
 		texturefile = "gfx/interface/ideas/SHC/SHC_attack_LEP.png"
 	}
@@ -408,6 +412,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_SHC_attack_SQI"
 		texturefile = "gfx/interface/ideas/SHC/SHC_attack_SQI.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SHC_for_the_god"
+		texturefile = "gfx/interface/ideas/SHC/SHC_for_the_god.png"
 	}
 	#制造商
 	spriteType = {

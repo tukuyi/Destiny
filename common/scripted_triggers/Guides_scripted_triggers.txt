@@ -114,5 +114,6 @@ is_guides_nation = {
 		tag = EGY
 		tag = NFL
 		tag = TTR
+		tag = BKN
 	}
 }

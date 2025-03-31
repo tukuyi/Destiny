@@ -16830,46 +16830,6 @@ country_event = {#柳幸福的一天
 	}
 }
 
-country_event = {#买下故宫
-	id = leche.19 
-	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.19"}
-	title = leche.19.t
-	desc = leche.19.d
-
-	fire_only_once = yes
-	trigger = {
-		tag = SHC
-		owns_state = 608 #北京
-		has_country_leader = { name = "何东" ruling_only = yes }
-		has_completed_focus = LEC_zhong_cheng_de_shang_hai
-	}
-
-	option = {#
-		name = leche.19.a
-		add_stability = 0.01
-	}
-}
-
-country_event = {#犹太阴谋
-	id = leche.20
-	immediate = {log = "[GetDateText]: [Root.GetName]: event leche.20"}
-	title = leche.20.t
-	desc = leche.20.d
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-
-	option = {#
-		name = leche.20.a
-		add_political_power = 100
-		add_popularity = {
-			ideology = market_liberal
-			popularity = -0.05
-		}
-	}
-}
-
 ########################################
 ##########-       大明     -############
 ########################################

@@ -7,6 +7,11 @@ SQI_tan_ke_organisation = {#济南坦克制造厂
 	allowed = { 
 		is_chinese_tag = yes
 	}
+	visible = {
+		FROM = { 
+			owns_state = 597 
+		} 
+	}
 	available = { 
 		if = {
 			limit = { FROM = { original_tag = SQI } }

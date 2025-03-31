@@ -3689,6 +3689,7 @@ RUS_Foreign_Policy_decisions = {
 		cancel_trigger = {
 			FROM = { ALO_has_russian_influence = no }
 		}
+		cancel_if_not_visible = yes
 
 		cost = 0
 		days_remove = 14
@@ -3912,7 +3913,6 @@ RUS_Foreign_Policy_decisions = {
 	################
 	
 	RUS_Attack_Eastern_Europe = {
-		name = RUS_Attack_Region
 		icon = hol_draw_up_staff_plans
 
 		available = {

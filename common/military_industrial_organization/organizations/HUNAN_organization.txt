@@ -147,14 +147,6 @@ HNN_tiema_organisation = {#铁马
 		name = putilovets_upgrade_2_1
 		icon = GFX_icon_HNN_tie
 
-		visible = {
-			FROM = {
-				NOT = {
-					has_country_flag = RUS_rename_industries
-				}
-			}
-		}
-
 		special_trait_background = yes
 
 		available = {
@@ -187,7 +179,7 @@ HNN_tiema_organisation = {#铁马
 			}
 		}
 
-		all_parents = { putilovets_upgrade_1_1 putilovets_upgrade_1_2 putilovets_upgrade_3_1 }
+		all_parents = { putilovets_upgrade_1_1 putilovets_upgrade_1_2 }
 
 		position = { x = 4 y = 2 }
 
@@ -202,7 +194,7 @@ HNN_tiema_organisation = {#铁马
 		name = putilovets_upgrade_3_1
 		icon = GFX_generic_mio_trait_icon_hard_attack
 
-		any_parent = { putilovets_upgrade_4_1 putilovets_upgrade_4_2 }
+		all_parents = { putilovets_upgrade_2_1 }
 
 		position = { x = 4 y = 3 }
 
@@ -216,6 +208,8 @@ HNN_tiema_organisation = {#铁马
 		token = putilovets_upgrade_4_1
 		name = putilovets_upgrade_4_1
 		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		all_parents = { putilovets_upgrade_3_1 }
 
 		mutually_exclusive = { putilovets_upgrade_4_2 }
 
@@ -231,6 +225,8 @@ HNN_tiema_organisation = {#铁马
 		token = putilovets_upgrade_4_2
 		name = putilovets_upgrade_4_2
 		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		all_parents = { putilovets_upgrade_3_1 }
 
 		mutually_exclusive = { putilovets_upgrade_4_1 }
 

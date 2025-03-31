@@ -1112,7 +1112,7 @@ country_event = {#丝厂女工曲
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = Shcgong.1.a
 		add_popularity = {
 			ideology = syndicalist
@@ -2124,6 +2124,12 @@ country_event = {#南京总教区
 			long_name = SHC_authoritarian_democrat_party_new_long
 			name = SHC_authoritarian_democrat_party_new
 		}
+		hidden_effect = {
+			country_event = {
+				id = Shcjidu.32
+				days = 20
+			}
+		}
 	}
 }
 
@@ -2362,7 +2368,7 @@ country_event = {#拆除夜总会
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {#
+	option = {
 		name = Shcjidu.10.a
 		add_political_power = 10
 		hidden_effect = {
@@ -2797,6 +2803,22 @@ country_event = {#繁荣昌盛
 	}
 }
 
+country_event = {#南京弥撒
+	id = Shcjidu.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.32"}
+	picture = GFX_report_event_SHC_nan_jing_mi_sha
+	title = Shcjidu.32.t
+	desc = Shcjidu.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.32.a
+		add_political_power = 10
+	}
+}
+
 country_event = {#荒原劫难
 	id = Shcjidu.33
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.33"}
@@ -2809,6 +2831,23 @@ country_event = {#荒原劫难
 	option = {#
 		name = Shcjidu.33.a
 		add_political_power = 10
+	}
+}
+
+country_event = {#天主的赦免
+	id = Shcjidu.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.34"}
+	picture = GFX_report_event_SHC_dang_ye_shu_yu_dao
+	title = Shcjidu.34.t
+	desc = Shcjidu.34.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.34.a
+		add_political_power = 10
+		add_stability = 0.05
 	}
 }
 
@@ -2950,8 +2989,8 @@ country_event = {#真正的话事人
 				id = shche.6
 			}
 			country_event = {
+				id = shche.12
 				days = 100
-				id = leche.20
 			}
 			SHC_He_Dong = {
 				add_country_leader_role = {
@@ -3060,6 +3099,45 @@ country_event = {#英语补习班
 	}
 }
 
+country_event = {#犹太阴谋
+	id = shche.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event shche.12"}
+	title = shche.12.t
+	desc = shche.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = shche.12.a
+		add_political_power = 100
+		add_popularity = {
+			ideology = market_liberal
+			popularity = -0.05
+		}
+	}
+}
+
+country_event = {#买下故宫
+	id = shche.13 
+	immediate = {log = "[GetDateText]: [Root.GetName]: event shche.13"}
+	title = shche.13.t
+	desc = shche.13.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = SHC
+		owns_state = 608 #北京
+		has_country_leader = { name = "何东" ruling_only = yes }
+		has_completed_focus = LEC_zhong_cheng_de_shang_hai
+	}
+
+	option = {#
+		name = shche.13.a
+		add_stability = 0.01
+	}
+}
+
 ########################################
 ##########-      警察      -############
 ########################################
@@ -3109,8 +3187,6 @@ country_event = {#抉择
 			ruling_party = national_populist
 			elections_allowed = no
 		}
-		clr_country_flag = jin_cha_ju_victory
-		set_country_flag = han_jian_victory
 		set_cosmetic_tag = LEC_PLE
 		add_ideas = {
 			LEC_su_xi_wen_hog
@@ -3132,6 +3208,15 @@ country_event = {#抉择
 		}
 		set_variable = {
 			SHC_JAP_support = 40
+		}
+		hidden_effect = {
+			clr_country_flag = jin_cha_ju_victory
+			set_country_flag = han_jian_victory
+
+			country_event = {
+				id = Shchuming.11
+				days = 5
+			}
 		}
 	}	
 }
@@ -3402,7 +3487,7 @@ country_event = {#未来的上海
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = Shchuming.1.a
 		add_popularity = {
 			ideology = national_populist
@@ -3440,7 +3525,7 @@ country_event = {#沪民？
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	option = {	# damn
+	option = {
 		name = Shchuming.3.a
 		add_stability = -0.03
 	}
@@ -3456,12 +3541,12 @@ country_event = {#小东京
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = Shchuming.4.a
 		add_popularity = {
 			ideology = national_populist
 			popularity = 0.01
-		} 
+		}
 	}
 }
 
@@ -3543,6 +3628,78 @@ country_event = {#流亡之途
 	option = {
 		name = Shchuming.8.a
 		add_stability = -0.01
+	}
+}
+
+country_event = {#海上浮梦
+	id = Shchuming.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.9" }
+	picture = GFX_report_event_SHC_xin_ren_dao_da
+	title = Shchuming.9.t
+	desc = Shchuming.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.9.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {
+				id = Shchuming.10
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = {#新兵的渡口
+	id = Shchuming.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.10" }
+	picture = GFX_report_event_SHC_xian_bing_dui
+	title = Shchuming.10.t
+	desc = Shchuming.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.10.a
+		add_stability = -0.01
+	}
+}
+
+country_event = {#告上海市民书
+	id = Shchuming.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.11" }
+	picture = GFX_report_event_SHC_gao_shang_hai_ren_ming
+	title = Shchuming.11.t
+	desc = Shchuming.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.11.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.05
+		}
+	}
+}
+
+country_event = {#小摊贩
+	id = Shchuming.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.12" }
+	title = Shchuming.12.t
+	desc = Shchuming.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.12.a
+		add_political_power = -1
 	}
 }
 
