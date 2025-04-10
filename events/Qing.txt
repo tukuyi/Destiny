@@ -6965,12 +6965,17 @@ country_event = {#卫兵冲进了大殿！
 		hidden_effect = {
 			clear_global_event_target = NZH_leader
 			remove_ideas = QIE_leadership_crisis
+			
 			QIE_wu_peifu = {
 				retire = yes
 			}
 			QIE_aisin_gioro_pujie = {
 				retire = yes
 			}
+			QIE_aisin_gioro_puyi = {
+				retire = yes
+			}
+
 			country_event = {
 				id = qiehunluan.1
 				days = 1
@@ -15808,9 +15813,10 @@ country_event = { #训话
 }
 
 #混乱主宰一切
-country_event = { #
+country_event = {#北京城的新黎明
 	id = qiehunluan.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event qiehunluan.1" }
+	picture = GFX_report_event_QIE_jiang_bai_li
 	title = qiehunluan.1.t
 	desc = qiehunluan.1.d
 
@@ -15833,6 +15839,10 @@ country_event = { #
 		}
 		complete_national_focus = QIE_shi_liao_wei_ji
 		hidden_effect = {
+			remove_ideas = QIE_legitimacy_of_the_monarchy
+
+			delete_unit_template_and_units = { division_template = "Zhili Infantry Division" }
+
 			if = {
 				limit = {
 					SHX = {
@@ -15866,6 +15876,16 @@ country_event = { #
 				transfer_state = 1059
 				transfer_state = 1058
 			}
+
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 608
+					}
+				}
+				set_demilitarized_zone = yes
+			}
+
 			set_popularities = {
 				totalist = 0
 				syndicalist = 0

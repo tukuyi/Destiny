@@ -1,6 +1,9 @@
 ﻿l_simp_chinese:
  Legation_Cities:0 "使馆城市国策树"
 
+ LEC_klan_party:0 "三K党"
+ LEC_klan_party_long:0 "三K党上海分部(Shanghai Chapter of the Ku Klux Klan)"
+
  LEC_totalist_party:0 "信特法"
  LEC_totalist_party_long:0 "信息和特殊方法委员会(XinTeFa Bureau)\n§g这片戴春风在上海的意识形态飞地主导着国民党的情报工作，并在党内掀起了一股新风潮。可以这么说，哪里有破坏和工团起事，哪里就有信特法特工。§!"
  LEC_syndicalist_party:0 "中国工团党"

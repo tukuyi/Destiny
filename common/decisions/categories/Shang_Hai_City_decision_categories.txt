@@ -41,6 +41,21 @@ SHC_jiao_hui_for_all = {#传播主的福音
 	}
 }
 
+# SHC_zhu_sheng_shi_zi = {#祝圣十字
+# 	icon = GFX_decision_category_neosanfedisti
+	
+# 	allowed = { 
+# 		# tag = SHC
+# 	}
+# 	visible = {
+# 		# has_completed_focus = LEC_shang_di_de_huai_bao
+# 	}
+# 	priority = 110
+
+# 	visible_when_empty = yes
+# 	scripted_gui = SHC_zhu_sheng_shi_zi_gui_window
+# }
+
 SHC_cong_ri_ben_huo_qu_yuan_zu = {#从日本获取援助
 	icon = GFX_decision_category_Japanese
 	picture = GFX_decision_category_da_dao_zheng_fu

@@ -1,0 +1,7 @@
+scripted_gui = {
+	SHC_zhu_sheng_shi_zi_gui_window = {
+		context_type = decision_category
+		window_name = "SHC_zhu_sheng_shi_zi_gui_window"
+		dirty = dyrektoria_dirty
+	}
+}

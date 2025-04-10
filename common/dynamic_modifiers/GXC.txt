@@ -21,18 +21,3 @@ GXC_jue_fa_shua_guo_shui_state = {#百事思想塔
 	state_production_speed_buildings_factor = 0.20
 }
 
-LEC_for_the_god_state = {#天主赐福之地
-	icon = GFX_modifiers_for_the_god
-	
-	enable = {
-		is_owned_and_controlled_by = SHC
-	}
-
-	local_manpower = 0.1
-	local_supplies = 0.05
-	compliance_gain = 0.10
-	compliance_growth = 0.25
-	local_building_slots_factor = 0.15
-	recruitable_population_factor = 0.05
-	state_production_speed_buildings_factor = 0.1
-}

@@ -12,6 +12,23 @@ spriteTypes = {
 		texturefile = "gfx/interface/gui/HNN_HE.png"
 	}
 
+	spriteType = {
+		name = "GFX_SHC_Religion_orthodox"
+		texturefile = "gfx/interface/gui/SHC/SHC_Religion_orthodox.png"
+	}
+	spriteType = {
+		name = "GFX_SHC_Religion_nestorian"
+		texturefile = "gfx/interface/gui/SHC/SHC_Religion_nestorian.png"
+	}
+	spriteType = {
+		name = "GFX_SHC_Religion_coptic"
+		texturefile = "gfx/interface/gui/SHC/SHC_Religion_coptic.png"
+	}
+	spriteType = {
+		name = "GFX_SHC_Religion_catholicism"
+		texturefile = "gfx/interface/gui/SHC/SHC_Religion_catholicism.png"
+	}
+
 	spriteType = {#阎锡山
 		name = "GFX_Portrait_QIE_Yan_Xishan"
 		texturefile = "gfx/leaders/QIE/Portrait_QIE_yan_xishan.png"

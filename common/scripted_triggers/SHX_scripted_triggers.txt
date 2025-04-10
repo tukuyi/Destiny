@@ -22,7 +22,10 @@ SHX_QIE_influence_active = {
 	}
 	QIE = {
 		exists = yes
-		NOT = { has_war_with = SHX }
+		NOT = { 
+			has_war_with = SHX
+			has_completed_focus = QIE_shi_liao_wei_ji
+		}
 	}
 }
 

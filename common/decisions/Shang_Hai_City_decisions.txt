@@ -1464,6 +1464,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 
 		cost = SHC_jiao_hui_for_all_small_cost
 		days_remove = SHC_jiao_hui_for_all_small_time
+		fire_only_once = yes
 		priority = 40
 
 		state_target = yes
@@ -1484,6 +1485,36 @@ SHC_jiao_hui_for_all = {#传播主的福音
 			political_power_gain = -0.20
 		}
 
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { 
+						FROM = {
+							state = 745
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.45
+							days = 5
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						FROM = {
+							state = 746
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.46
+							days = 5
+						}
+					}
+				}
+			}
+		}	
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_small"
 			FROM = {
@@ -1513,6 +1544,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 
 		cost = SHC_jiao_hui_for_all_middle_cost
 		days_remove = SHC_jiao_hui_for_all_middle_time
+		fire_only_once = yes
 		priority = 40
 
 		state_target = yes
@@ -1532,6 +1564,36 @@ SHC_jiao_hui_for_all = {#传播主的福音
 			political_power_gain = -0.20
 		}
 
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { 
+						FROM = {
+							state = 1046
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.38
+							days = 5
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						FROM = {
+							state = 596
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.40
+							days = 5
+						}
+					}
+				}
+			}
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_middle"
 			FROM = {
@@ -1561,6 +1623,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 
 		cost = SHC_jiao_hui_for_all_large_cost
 		days_remove = SHC_jiao_hui_for_all_large_time
+		fire_only_once = yes
 		priority = 40
 
 		state_target = yes
@@ -1580,11 +1643,71 @@ SHC_jiao_hui_for_all = {#传播主的福音
 			political_power_gain = -0.30
 		}
 
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { 
+						FROM = {
+							state = 608
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.35
+							days = 5
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						FROM = {
+							state = 605
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.37
+							days = 5
+						}
+						country_event = {
+							id = Shcjidu.42
+							days = 35
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						FROM = {
+							state = 1051
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.47
+							days = 5
+						}
+					}
+				}
+			}
+		}
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_large"
 			FROM = {
-				add_dynamic_modifier = {
-					modifier = LEC_for_the_god_state
+				if = {
+					limit = { 
+						NOT = {
+							state = 885
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = LEC_for_the_god_state
+					}
+				}
+				else = {
+					add_dynamic_modifier = {
+						modifier = LEC_for_the_god_orthodox_state
+					}
 				}
 			}
 		}
@@ -1609,10 +1732,11 @@ SHC_jiao_hui_for_all = {#传播主的福音
 
 		cost = SHC_jiao_hui_for_all_huge_cost
 		days_remove = SHC_jiao_hui_for_all_huge_time
+		fire_only_once = yes
 		priority = 40
 
 		state_target = yes
-		targets = { 283 287 322 325 329 330 348 353 604 612 616 617 618 619 621 654 693 748 774 811 816 897 1083 1084 1085 1086 1293  }
+		targets = { 283 287 322 325 329 330 348 353 604 612 616 617 618 619 621 654 693 748 774 811 816 897 1049 1052 1083 1084 1085 1086 1293  }
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
@@ -1628,6 +1752,36 @@ SHC_jiao_hui_for_all = {#传播主的福音
 			political_power_gain = -0.40
 		}
 
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { 
+						FROM = {
+							state = 283
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.33
+							days = 5
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						FROM = {
+							state = 322
+						}
+					}
+					SHC = {
+						country_event = {
+							id = Shcjidu.36
+							days = 5
+						}
+					}
+				}
+			}
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove SHC_jiao_hui_for_all_huge"
 			FROM = {

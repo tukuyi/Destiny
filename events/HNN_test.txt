@@ -13,12 +13,18 @@ country_event = {#测试事件
 		name = hnn.100000.a
 		# eval_effect ROOT = {
 		# 	set_politics = {
-		# 		ruling_party = national_populist
+		# 		ruling_party = radical_socialist
 		# 		elections_allowed = no
 		# 	}
 		# }
 
-		set_province_name = { id = 7859 name = "新南京" }
+		885 = {
+			add_dynamic_modifier = {
+				modifier = LEC_for_the_god_orthodox_state
+			}
+		}
+
+		# set_province_name = { id = 7859 name = "新南京" }
 
 		# YUN = {
 		# 	YUN_tang_jiyao = {

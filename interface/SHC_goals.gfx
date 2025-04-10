@@ -1,5 +1,33 @@
 SpriteTypes = {
 	spriteType = {
+		name = "GFX_goal_LEC_ta_de_guo"
+		texturefile = "gfx/interface/goals/LEC_ta_de_guo.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_zheng_bian_zhong_yang"
+		texturefile = "gfx/interface/goals/LEC_zheng_bian_zhong_yang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_chong_su_zheng_zhi_ge_ju"
+		texturefile = "gfx/interface/goals/LEC_chong_su_zheng_zhi_ge_ju.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_pu_zao_shang_di_zhi_rong_guang"
+		texturefile = "gfx/interface/goals/LEC_pu_zao_shang_di_zhi_rong_guang.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_hong_yang_zhi_xu"
+		texturefile = "gfx/interface/goals/LEC_hong_yang_zhi_xu.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_shi_zi_jun_xi_zheng"
+		texturefile = "gfx/interface/goals/LEC_shi_zi_jun_xi_zheng.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LEC_dao_bian_jiang_qu"
+		texturefile = "gfx/interface/goals/LEC_dao_bian_jiang_qu.png"
+	}
+	spriteType = {
 		name = "GFX_goal_LEC_zhen_li_de_guang_zhao"
 		texturefile = "gfx/interface/goals/LEC_zhen_li_de_guang_zhao.png"
 	}

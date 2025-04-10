@@ -8554,6 +8554,7 @@ country_event = {#放权
 			ruling_party = totalist
 		}
 		HNN_fcations_change = yes 
+		set_cosmetic_tag = HNN_PROC_CY
 	}
 
 	option = {#周恩来
@@ -8994,9 +8995,6 @@ country_event = {#未来
 	option = {#中华
 		name = hungong.97.a
 		set_cosmetic_tag = HNN_PROC_Q
-		hidden_effect = {
-			
-		}
 	}
 
 	option = {#泛亚
@@ -11004,16 +11002,16 @@ unit_leader_event = { #懒得个
 }
 
 country_event = {#贺龙的头像
-	id = hungong.175
-	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.175" }
+	id = hungong.176
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hungong.176" }
 	picture = GFX_report_event_HNN_he_long_picture
-	title = hungong.175.t
-	desc = hungong.175.d
+	title = hungong.176.t
+	desc = hungong.176.d
 
 	is_triggered_only = yes
 
 	option = { #军服
-		name = hungong.175.a
+		name = hungong.176.a
 		HNN_he_long = {
 			set_portraits = {
 				civilian = {
@@ -11023,7 +11021,7 @@ country_event = {#贺龙的头像
 		}
 	}
 	option = { #常服
-		name = hungong.175.b
+		name = hungong.176.b
 		HNN_he_long = {
 			set_portraits = {
 				civilian = {
@@ -11033,7 +11031,7 @@ country_event = {#贺龙的头像
 		}
 	}
 	option = { #笑脸
-		name = hungong.175.c
+		name = hungong.176.c
 		HNN_he_long = {
 			set_portraits = {
 				civilian = {

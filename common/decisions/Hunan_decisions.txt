@@ -50,7 +50,7 @@ political_actions = {
 		
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_he_long_Portrait_Picker"
-			country_event = hungong.175
+			country_event = hungong.176
 		}
 	}
 	MON_bulid_yi_er = {
@@ -7235,6 +7235,19 @@ HNN_ren_ti_ke_xue_category = {#人体科学研究
 			swap_ideas = {
 				remove_idea = HNN_jing_shen_si_jieB
 				add_idea = HNN_jing_shen_si_jieC
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = QI_E_IS_COMING
+						}
+					}
+					country_event = { 
+						id = TXM.4
+						days = 70
+					}
+				}
 			}
 		}
 	}

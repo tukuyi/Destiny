@@ -77,7 +77,7 @@ focus_tree = {
 
 	focus = {
 		id = QIE_wen_ding_di_qu_zhi_xu
-		icon = GFX_goal_AUS_heimwehr
+		icon = GFX_TTR_Waisi_Warriors_Allah
 		relative_position_id = QIE_shi_liao_wei_ji
 		cost = 2.00
 		x = 0
@@ -92,6 +92,12 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = QIE_huan_luan_de_yi_qie
 				add_idea = QIE_huan_luan_de_yi_qie2
+			}
+			every_owned_state = {
+				limit = {
+					is_demilitarized_zone = yes
+				}
+				set_demilitarized_zone = no
 			}
 		}
 	}
@@ -321,7 +327,7 @@ focus_tree = {
 
 	focus = {
 		id = QIE_chong_jian_zhi_hui_xi_tong
-		icon = GFX_goal_QIE_chong_jian_zhi_hui_xi_tong
+		icon = GFX_goal_RUS_All_For_Needs_Front
 		relative_position_id = QIE_shi_liao_wei_ji
 		cost = 2.00
 		x = -4
@@ -334,6 +340,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_chong_jian_zhi_hui_xi_tong"
 			add_ideas = QIE_zong_chan_mou_bu
+			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = qiehunluan.6
 				days = 2
@@ -419,20 +426,22 @@ focus_tree = {
 			add_political_power = 50
 			add_stability = 0.05
 			add_marlib_to_coalition = yes
-			add_popularity = {
-				ideology = market_liberal
-				popularity = 0.05
-			}
 			create_country_leader = {
 				name = "章宗祥"
 				picture = "gfx/leaders/SQI/Portrait_SQI_cao_ru_lin.png"
 				expire = "1.1.1"
 				ideology = marlib_authoritarian_liberalism_subtype
 			}
-			set_party_name = {
+			add_popularity = {
 				ideology = market_liberal
-				long_name = SQI_market_liberal_party_wan_long
-				name =  SQI_market_liberal_party_wan
+				popularity = 0.05
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = market_liberal
+					long_name = SQI_market_liberal_party_wan_long
+					name =  SQI_market_liberal_party_wan
+				}
 			}
 			custom_effect_tooltip = tooltip_white_line
 			if = {
@@ -483,11 +492,12 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_political_power = 50
 			add_stability = 0.05
-			add_marlib_to_coalition = yes
 			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.05
 			}
+			custom_effect_tooltip = tooltip_white_line
+			add_marlib_to_coalition = yes
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = qiehunluan.8
@@ -525,6 +535,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_xiang_yin_hang_jie_kuan"
 			remove_ideas = QIE_big_debt
+			custom_effect_tooltip = tooltip_white_line
 			add_timed_idea = {
 				idea = QIE_defaulted_debt2
 				days = 365
@@ -681,13 +692,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_yin_jin_xin_ji_shu"
-			country_event = {
-				id = qiehunluan.11
-				days = 1
-			}
 			add_timed_idea = {
 				idea = QIE_shou_mai_gong_ren
 				days = 720
+			}
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = qiehunluan.11
+				days = 1
 			}
 		}
 	}
@@ -713,8 +725,6 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_da_hui_luo_mu"
-			remove_ideas = QIE_fractured_empire
-			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = qiehunluan.4
 				days = 1
@@ -1500,7 +1510,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_jia_zhang_zhi"
-			add_ideas = alo_socdem_4
+			add_ideas = ALO_agriculture_4
 		}
 	}
 
@@ -1519,8 +1529,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus QIE_da_qing_fu_xing"
 			swap_ideas = {
-				remove_idea = alo_socdem_4
-				add_idea = alo_socdem_5
+				remove_idea = ALO_agriculture_4
+				add_idea = ALO_agriculture_5
 			}
 		}
 	}

@@ -520,6 +520,274 @@ ideas = {
 				}
 			}
 		}
+	###天主教
+		LEC_ren_ci_de_zhu = {#主的仁慈
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu"}
+			picture = COR_truly_christian_return
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				weekly_manpower = 200
+				stability_factor = 0.10
+				stability_weekly = 0.005
+				opinion_gain_monthly = 0.10
+				political_power_factor = 0.05
+			}
+		}
+		SHC_the_war_for_the_god = {#十字军西征
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SHC_the_war_for_the_god"}
+			allowed = { always = no }
+			available = {
+				454 = {
+					NOT = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+			}
+			picture = MON_Papa_Rule
+			modifier = {
+				attrition = -0.1
+				stability_factor = -0.05
+				army_morale_factor = 0.20
+				heat_attrition_factor = -0.30
+				winter_attrition_factor = -0.30
+			}
+			targeted_modifier = {
+				tag = TUR
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1   
+			}
+			targeted_modifier = {
+				tag = PER
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1   
+			}
+		}
+		LEC_ren_ci_de_zhu2 = {#主的仁慈
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu2"}
+			picture = COR_truly_christian_return
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				weekly_manpower = 400
+				stability_factor = 0.10
+				stability_weekly = 0.010
+				compliance_growth = 0.10
+				resistance_growth = -0.10
+				opinion_gain_monthly = 0.10
+				political_power_factor = 0.05
+				required_garrison_factor = -0.10
+			}
+		}
+		LEC_ren_ci_de_zhu3 = {#主的仁慈
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu3"}
+			picture = COR_truly_christian_return
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				weekly_manpower = 1000
+				surrender_limit = 0.10
+				stability_factor = 0.10
+				non_core_manpower = 0.04
+				stability_weekly = 0.005
+				compliance_growth = 0.15
+				resistance_growth = -0.15
+				opinion_gain_monthly = 0.20
+				political_power_gain = 0.05
+				political_power_factor = 0.05
+				required_garrison_factor = -0.10
+				resistance_damage_to_garrison = -0.10
+				defensive_war_stability_factor = 0.10
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		LEC_ren_ci_de_zhu4 = {#主的仁慈
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu4"}
+			picture = COR_truly_christian_return
+			name = LEC_ren_ci_de_zhu3
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				weekly_manpower = 1000
+				surrender_limit = 0.15
+				stability_factor = 0.20
+				non_core_manpower = 0.07
+				stability_weekly = 0.005
+				compliance_growth = 0.20
+				resistance_growth = -0.20
+				opinion_gain_monthly = 0.20
+				political_power_gain = 0.10
+				local_resources_factor = 0.05
+				political_power_factor = 0.10
+				required_garrison_factor = -0.15
+				resistance_damage_to_garrison = -0.10
+				defensive_war_stability_factor = 0.20
+				offensive_war_stability_factor = 0.10
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		LEC_ren_ci_de_zhu5 = {#主的仁慈
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_ren_ci_de_zhu5"}
+			picture = COR_truly_christian_return
+			name = LEC_ren_ci_de_zhu3
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				weekly_manpower = 1000
+				surrender_limit = 0.20
+				stability_factor = 0.20
+				non_core_manpower = 0.10
+				stability_weekly = 0.010
+				compliance_growth = 0.20
+				resistance_growth = -0.20
+				resistance_target = -0.05
+				political_power_gain = 0.20
+				opinion_gain_monthly = 0.20
+				local_resources_factor = 0.10
+				political_power_factor = 0.15
+				required_garrison_factor = -0.15
+				resistance_damage_to_garrison = -0.10
+				defensive_war_stability_factor = 0.20
+				offensive_war_stability_factor = 0.20
+				party_popularity_stability_factor = 0.20
+			}
+		}
+		LEC_tian_zhu_jiao_gong_hui = {#天主教工会
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_tian_zhu_jiao_gong_hui"}
+			picture = TEX_catholic_unions_idea
+			allowed = { always = no }
+			available = { 
+				has_country_flag = ji_du_tu_victory
+			}
+            modifier = {
+				political_power_gain = 0.10
+				political_power_cost = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.005
+			}
+		}
+		LEC_tian_zhu_jiao_gong_hui2 = {#天主教工会
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_tian_zhu_jiao_gong_hui2"}
+			picture = TEX_catholic_unions_idea
+			name = LEC_tian_zhu_jiao_gong_hui
+			allowed = { always = no }
+            modifier = {
+				political_power_gain = 0.10
+				political_power_cost = -0.05
+				equipment_conversion_speed = 0.05
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+			}
+		}
+		LEC_qi_shi_tuan = {#圣方济各骑士团
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_qi_shi_tuan"}
+			picture = PAP_Legionary_Spirit
+			allowed = { always = no }
+            modifier = {
+				conscription_factor = 0.10
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				production_speed_bunker_factor = 0.20
+			}
+		}
+		LEC_qing_fen_shi_yi_zhong_mei_de = {#勤奋是一种美德
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_qing_fen_shi_yi_zhong_mei_de"}
+			picture = BBR_revolutionary_economy
+			allowed = { always = no }
+            modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		LEC_qing_fen_shi_yi_zhong_mei_de_B = {#勤奋是一种美德
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_qing_fen_shi_yi_zhong_mei_de_B"}
+			picture = BBR_revolutionary_economy
+			name = LEC_qing_fen_shi_yi_zhong_mei_de
+			allowed = { always = no }
+            modifier = {
+				trade_opinion_factor = 0.20
+				consumer_goods_factor = -0.06
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.10
+				line_change_production_efficiency_factor = 0.05
+				production_speed_industrial_complex_factor = 0.10
+				production_lack_of_resource_penalty_factor = -0.04
+			}
+		}
+		LEC_qing_fen_shi_yi_zhong_mei_de_C = {#勤奋是一种美德
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_qing_fen_shi_yi_zhong_mei_de_C"}
+			picture = BBR_revolutionary_economy
+			name = LEC_qing_fen_shi_yi_zhong_mei_de
+			allowed = { always = no }
+            modifier = {
+				trade_opinion_factor = 0.20
+				consumer_goods_factor = -0.10
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.10
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.15
+				line_change_production_efficiency_factor = 0.10
+				production_speed_industrial_complex_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.10
+			}
+		}
+		LEC_bu_lao_zhe_bu_shi = {#不劳者不食
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_bu_lao_zhe_bu_shi"}
+			picture = PAP_Legionary_Spirit
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.10
+				stability_weekly = 0.0010
+				war_support_weekly = 0.0010
+				political_power_gain = 0.50
+			}
+		}
+		LEC_you_de_zhi_ren = {#有德之人
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_you_de_zhi_ren"}
+			picture = TEX_radtradgang
+			allowed = { always = no }
+            modifier = {
+				stability_factor = 0.05
+				monthly_population = 0.10
+				social_conservative_drift = 0.05
+				authoritarian_democrat_drift = 0.05
+				operation_boost_resistance_cost = -0.05
+				operation_boost_resistance_outcome = 0.05
+			}
+		}
+		LEC_you_de_zhi_ren_B = {#有德之人
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_you_de_zhi_ren_B"}
+			picture = TEX_radtradgang
+			name = LEC_you_de_zhi_ren
+			allowed = { always = no }
+            modifier = {
+				attrition = -0.04
+				stability_factor = 0.10
+				monthly_population = 0.10
+				political_power_gain = 0.10
+				equipment_capture_factor = 0.05
+				social_conservative_drift = 0.10
+				authoritarian_democrat_drift = 0.10
+				operation_boost_resistance_cost = -0.10
+				operation_boost_resistance_outcome = 0.10
+			}
+		}	
 	###沪民
 		SHC_xin_ming_zhu_jue_xing = {# 
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SHC_xin_ming_zhu_jue_xing"}

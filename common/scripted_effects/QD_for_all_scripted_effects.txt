@@ -674,6 +674,12 @@ China_build_ROC = {#成立民国
 				}
 			}
 		}
+		else_if = {#英属
+			limit = { 
+				has_completed_focus = LEC_zhong_cheng_de_shang_hai
+			}
+			set_cosmetic_tag = LEC_CHD_Y
+		}
 		else_if = {#天主教
 			limit = { 
 				has_completed_focus = LEC_shang_di_de_huai_bao

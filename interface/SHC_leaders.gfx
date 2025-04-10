@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_Sun_Fuyuan.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_SHC_Guo_Ming_Da_Sai"
+		texturefile = "gfx/leaders/SHC/Portrait_SHC_Guo_Ming_Da_Sai.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_SHC_robbie_hoshailai"
 		texturefile = "gfx/leaders/SHC/Portrait_SHC_robbie_hoshailai.png"
 	}

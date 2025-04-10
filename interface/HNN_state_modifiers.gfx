@@ -11,4 +11,8 @@ spriteTypes = {
 		name = "GFX_modifiers_for_the_god"
 		texturefile = "gfx/interface/state_modifiers/for_the_god.png"
 	}
+	SpriteType = {
+		name = "GFX_modifiers_for_the_god_orthodox"
+		texturefile = "gfx/interface/state_modifiers/for_the_god_orthodox.png"
+	}
 }

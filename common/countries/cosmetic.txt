@@ -4674,6 +4674,10 @@ HNN_PROC_Q = {
 	color = rgb { 255 0 0 }
 	color_ui = rgb { 255 0 0 }
 }
+HNN_PROC_CY = {
+	color = rgb { 255 0 0 }
+	color_ui = rgb { 255 0 0 }
+}
 HNN_PROC_Y = {
 	color = rgb { 255 0 0 }
 	color_ui = rgb { 255 0 0 }

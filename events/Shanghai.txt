@@ -366,6 +366,8 @@ country_event = {#上海的命运
 				days = 180
 			}
 
+			mark_focus_tree_layout_dirty = yes
+
 			remove_all_ministers = yes
 			remove_ideas = {
 				LEC_Du_Yuesheng_boss_sli
@@ -2212,6 +2214,21 @@ country_event = {#中华民国
 	option = {
 		name = Shcjidu.5.c
 		add_political_power = 100
+		hidden_effect = {
+			if = {
+				limit = {
+					608 = {
+						has_dynamic_modifier = {
+							modifier = LEC_for_the_god_state
+						}
+					}
+				}
+				country_event = {
+					id = Shcjidu.39
+					days = 100
+				}
+			}
+		}
 	}
 }
 
@@ -2299,6 +2316,7 @@ country_event = {#白马修道院
 country_event = {#对新教的态度
 	id = Shcjidu.8
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.8"}
+	picture = GFX_report_event_SHC_jadge_you
 	title = Shcjidu.8.t
 	desc = Shcjidu.8.d
 
@@ -2306,7 +2324,7 @@ country_event = {#对新教的态度
 
 	is_triggered_only = yes
 
-	option = {#
+	option = {
 		name = Shcjidu.8.a
 		add_political_power = 50
 		add_popularity = {
@@ -2315,7 +2333,7 @@ country_event = {#对新教的态度
 		}
 	}
 
-	option = {#
+	option = {
 		name = Shcjidu.8.b
 		add_political_power = 50
 		add_popularity = {
@@ -2324,7 +2342,7 @@ country_event = {#对新教的态度
 		}
 	}
 
-	option = {#
+	option = {
 		name = Shcjidu.8.c
 		add_political_power = 100
 		# hidden_effect = {
@@ -2482,25 +2500,10 @@ country_event = {#加入帝国公约
 	}
 }
 
-country_event = {#胜利？
+country_event = {#上午九点四十五分
 	id = Shcjidu.16
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.16"}
 	picture = GFX_report_event_SHC_shang_hai_jiao_hui
-	title = Shcjidu.16.t
-	desc = Shcjidu.16.d
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {#
-		name = Shcjidu.16.a
-		add_political_power = 10
-	}
-}
-
-country_event = {#清理异教
-	id = Shcjidu.16
-	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.16"}
 	title = Shcjidu.16.t
 	desc = Shcjidu.16.d
 
@@ -2848,6 +2851,256 @@ country_event = {#天主的赦免
 		name = Shcjidu.34.a
 		add_political_power = 10
 		add_stability = 0.05
+	}
+}
+
+country_event = {#合理的选择
+	id = Shcjidu.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.35"}
+	picture = GFX_report_event_SHC_pu_yi_shou_xi
+	title = Shcjidu.35.t
+	desc = Shcjidu.35.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.35.a
+		increase_ruling_party_popularity_by_2 = yes
+	}
+}
+
+country_event = {#日记
+	id = Shcjidu.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.36"}
+	picture = GFX_report_event_SHC_tibet_chri
+	title = Shcjidu.36.t
+	desc = Shcjidu.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.36.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#成都教区：[GetYear]年传教成果报告
+	id = Shcjidu.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.37"}
+	title = Shcjidu.37.t
+	desc = Shcjidu.37.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.37.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#羊群中出现了豺狼
+	id = Shcjidu.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.38"}
+	picture = GFX_report_event_SHC_hong_se_zhu_jiao
+	title = Shcjidu.38.t
+	desc = Shcjidu.38.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.38.a
+		add_stability = -0.01
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = {#无冠者
+	id = Shcjidu.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.39"}
+	picture = GFX_report_event_SHC_pu_yi_shou_xi_old
+	title = Shcjidu.39.t
+	desc = Shcjidu.39.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.39.a
+		hidden_effect = {
+			QIE = {
+				QIE_aisin_gioro_puyi = {
+					set_character_name = "威廉主教"
+					set_portraits = {
+						civilian = {
+							large = GFX_Portrait_Portrait_QIE_aisin_gioro_puyi_zhu_jiao
+						}
+					}
+					add_country_leader_role = {
+						country_leader = {
+							desc = POLITICS_QIE_aisin_gioro_puyi_zhu_jiao_DESC
+							ideology = christian_democracy_subtype
+						}
+					}
+					set_nationality = SHC
+				}
+			}
+			promote_character = {
+				character = QIE_aisin_gioro_puyi
+				ideology = christian_democracy_subtype
+			}
+		}
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = social_conservative
+				long_name = SHC_social_conservative_party_JD_long
+				name = SHC_social_conservative_party_JD
+			}
+			country_event = {
+				id = Shcjidu.41
+				days = 250
+			}
+		}
+	}
+}
+
+country_event = {#他踏上了石径
+	id = Shcjidu.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.40"}
+	title = Shcjidu.40.t
+	desc = Shcjidu.40.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.40.a
+		increase_ruling_party_popularity_by_2 = yes
+	}
+}
+
+country_event = {#最后的受难
+	id = Shcjidu.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.41"}
+	picture = GFX_report_event_SHC_everything_is_over
+	title = Shcjidu.41.t
+	desc = Shcjidu.41.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.41.a
+		increase_ruling_party_popularity_by_2 = yes
+		hidden_effect = {
+			create_country_leader = {
+				name = "国民大会"
+				picture = "gfx/leaders/SHC/Portrait_SHC_Guo_Ming_Da_Sai.png"
+				expire = "1.1.1"
+				ideology = christian_democracy_subtype
+			}
+		}
+	}
+}
+
+country_event = {#1937年
+	id = Shcjidu.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.42"}
+	title = Shcjidu.42.t
+	desc = Shcjidu.42.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.42.a
+		increase_ruling_party_popularity_by_2 = yes
+	}
+}
+
+country_event = {#到边疆去
+	id = Shcjidu.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.43"}
+	title = Shcjidu.43.t
+	desc = Shcjidu.43.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.43.a
+		increase_ruling_party_popularity_by_2 = yes
+	}
+}
+
+country_event = {#圣战的号角
+	id = Shcjidu.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.44"}
+	picture = GFX_report_event_SHC_shi_zi_jun
+	title = Shcjidu.44.t
+	desc = Shcjidu.44.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.44.a
+		add_stability = -0.02
+	}
+}
+
+country_event = {#暗影尽头的呼唤
+	id = Shcjidu.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.45"}
+	title = Shcjidu.45.t
+	desc = Shcjidu.45.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.45.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#浪子与圣坛
+	id = Shcjidu.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.46"}
+	title = Shcjidu.46.t
+	desc = Shcjidu.46.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.46.a
+		add_political_power = 10
+	}
+}
+
+country_event = {#麦田与火光
+	id = Shcjidu.47
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Shcjidu.47"}
+	title = Shcjidu.47.t
+	desc = Shcjidu.47.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = Shcjidu.47.a
+		add_political_power = 10
 	}
 }
 
@@ -3715,11 +3968,11 @@ country_event = {#新教骚乱
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = {	# damn
+	option = {
 		name = Shcxinjiao.1.a
 	 
 	}
-	option = {	# damn
+	option = {
 		name = Shcxinjiao.1.b
 	 	
 		hidden_effect = {

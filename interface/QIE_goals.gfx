@@ -884,10 +884,6 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/QIE_zai_wu_zhuang_jing_cha_bu_dui.png"
 	}
 	spriteType = {
-		name = "GFX_goal_QIE_chong_jian_zhi_hui_xi_tong"
-		texturefile = "gfx/interface/goals/QIE_chong_jian_zhi_hui_xi_tong.png"
-	}
-	spriteType = {
 		name = "GFX_goal_QIE_yu_jiao_tong_xi_he_zuo"
 		texturefile = "gfx/interface/goals/QIE_yu_jiao_tong_xi_he_zuo.png"
 	}
