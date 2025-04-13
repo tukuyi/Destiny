@@ -38,6 +38,12 @@ leader_traits = {
 
 		random = no
 	}
+	sec_orthodox_rabblerouser = { #东正教传教士
+		stability_factor = 0.1
+		consumer_goods_factor = -0.03
+
+		random = no
+	}
 	QYG_nong_ye_da_wang = {#农民大王
 		random = no
 		war_support_factor = 0.03

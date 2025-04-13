@@ -849,6 +849,36 @@ ideas = {
 				sec_compassionate_gentleman
 			}
 		}
+		LEC_San_Francisco_eco = {#伊望主教
+			allowed = { original_tag = SHC }
+			picture = LEC_San_Francisco_eco
+			cost = 100
+			available = {
+				has_country_flag = ji_du_tu_victory
+			}
+			visible = {
+				has_country_flag = ji_du_tu_victory
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea LEC_San_Francisco_eco"
+				ROOT = {
+					743 = {
+						add_dynamic_modifier = { modifier = LEC_orthodox_church_state }
+					}
+				}
+			}
+			on_remove = {
+				743 = {
+					remove_dynamic_modifier = { modifier = LEC_orthodox_church_state }
+				}
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_orthodox_rabblerouser
+			}
+		}
 		LEC_lei_ming_yuan_eco = {#雷鸣远
 			allowed = { original_tag = SHC }
 			picture = LEC_lei_ming_yuan_eco

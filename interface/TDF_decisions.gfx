@@ -29,6 +29,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/PRC_rocket_strike.png"
 	}
 	spriteType = {
+		name = "GFX_decision_Religion_orthodox"
+		texturefile = "gfx/interface/decisions/Religion_orthodox.png"
+	}
+	spriteType = {
+		name = "GFX_decision_Religion_catholicism"
+		texturefile = "gfx/interface/decisions/Religion_catholicism.png"
+	}
+	spriteType = {
+		name = "GFX_decision_Religion_nestorian"
+		texturefile = "gfx/interface/decisions/Religion_nestorian.png"
+	}
+	spriteType = {
 		name = "GFX_decision_martial_law"
 		texturefile = "gfx/interface/decisions/martial_law.png"
 	}

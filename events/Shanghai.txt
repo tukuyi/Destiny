@@ -2819,6 +2819,9 @@ country_event = {#南京弥撒
 	option = {#
 		name = Shcjidu.32.a
 		add_political_power = 10
+		hidden_effect = {
+			scoped_sound_effect = "ya_mei_ni_ya"
+		}
 	}
 }
 

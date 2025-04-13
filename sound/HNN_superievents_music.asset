@@ -14,6 +14,10 @@ category = {
 		lizongren
 		dengyue
 		sulian
+		SHC_mi_sha
+		dong_zheng_jiao
+		SHC_jingjiao
+		ya_mei_ni_ya
 	}
 }
 
@@ -171,5 +175,53 @@ soundeffect = {
 	volume = 0.80
 	sounds = {
 		sound = dengyue
+	}
+}
+sound = {
+	name = "SHC_mi_sha"
+	file = "SHC_mi_sha.wav"
+	volume = 2.00
+}
+soundeffect = {
+	name = SHC_mi_sha
+	volume = 2.00
+	sounds = {
+		sound = SHC_mi_sha
+	}
+}
+sound = {
+	name = "dong_zheng_jiao"
+	file = "dong_zheng_jiao.wav"
+	volume = 1.50
+}
+soundeffect = {
+	name = dong_zheng_jiao
+	volume = 1.50
+	sounds = {
+		sound = dong_zheng_jiao
+	}
+}
+sound = {
+	name = "SHC_jingjiao"
+	file = "SHC_jingjiao.wav"
+	volume = 1.50
+}
+soundeffect = {
+	name = SHC_jingjiao
+	volume = 1.50
+	sounds = {
+		sound = SHC_jingjiao
+	}
+}
+sound = {
+	name = "ya_mei_ni_ya"
+	file = "ya_mei_ni_ya.wav"
+	volume = 1.00
+}
+soundeffect = {
+	name = ya_mei_ni_ya
+	volume = 1.00
+	sounds = {
+		sound = ya_mei_ni_ya
 	}
 }

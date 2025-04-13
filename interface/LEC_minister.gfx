@@ -96,6 +96,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/LEC/LEC_lei_ming_yuan.png"
 	}
 	spriteType = {
+		name = "GFX_idea_LEC_San_Francisco_eco"
+		texturefile = "gfx/interface/ministers/LEC/LEC_San_Francisco.png"
+	}
+	spriteType = {
 		name = "GFX_idea_LEC_zhu_zhi_yao_eco"
 		texturefile = "gfx/interface/ministers/LEC/LEC_zhu_zhi_yao.png"
 	}

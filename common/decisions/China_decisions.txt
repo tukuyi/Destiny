@@ -670,7 +670,7 @@ chinese_unification = {
 		}
 	}
 
-	china_demand_submission = {
+	china_demand_submission = {#要求屈服
 		icon = eng_trade_unions_demand
 
 		available = {

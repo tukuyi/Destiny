@@ -1908,7 +1908,6 @@ focus_tree = {
 				add_idea = LEC_tian_zhu_jiao_gong_hui2
 			}
 			add_stability = 0.10
-			add_political_power = 100
 			hidden_effect = {
 				country_event = {
 					id = Shcjidu.27
@@ -9788,7 +9787,7 @@ focus_tree = {
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
 		relative_position_id = SHC_ren_ming_de_jiao_hui
 		cost = 5.00
-		x = -4
+		x = -6
 		y = 1
 
 		prerequisite = { 
@@ -9814,16 +9813,13 @@ focus_tree = {
 	focus = {
 		id = SHC_yi_shou_sheng_jing_yi_shou_jing_shu
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
 		cost = 5.00
-		x = -5
-		y = 2
+		x = -1
+		y = 1
 
 		prerequisite = { 
-			focus = SHC_sheng_gong_hui_de_jue_qi 
-		}
-		bypass = {
-
+			focus = SHC_sheng_gong_hui_de_jue_qi
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9839,16 +9835,13 @@ focus_tree = {
 	focus = {
 		id = SHC_qi_shi_bu_zai
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
 		cost = 5.00
-		x = -3
-		y = 2
+		x = 1
+		y = 1
 
 		prerequisite = { 
 			focus = SHC_sheng_gong_hui_de_jue_qi 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9861,16 +9854,13 @@ focus_tree = {
 	focus = {
 		id = SHC_zai_xing_dong_zhong_jian_zheng
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
 		cost = 5.00
-		x = -3
-		y = 3
+		x = 1
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_qi_shi_bu_zai 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9883,16 +9873,13 @@ focus_tree = {
 	focus = {
 		id = SHC_bang_zu_you_xu_yao_de_ern
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
 		cost = 5.00
-		x = -5
-		y = 3
+		x = -1
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_yi_shou_sheng_jing_yi_shou_jing_shu 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9905,19 +9892,16 @@ focus_tree = {
 	focus = {
 		id = SHC_geng_jia_mei_hao_de_she_hui
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
 		cost = 5.00
-		x = -4
-		y = 4
+		x = 0
+		y = 3
 
 		prerequisite = { 
 			focus = SHC_bang_zu_you_xu_yao_de_ern 
 		}
 		prerequisite = { 
 			focus = SHC_zai_xing_dong_zhong_jian_zheng 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9932,7 +9916,7 @@ focus_tree = {
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
 		relative_position_id = SHC_ren_ming_de_jiao_hui
 		cost = 5.00
-		x = 0
+		x = -2
 		y = 1
 
 		prerequisite = { 
@@ -9943,9 +9927,6 @@ focus_tree = {
 				name = "江长川"
 				ruling_only = yes
 			}
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -9958,12 +9939,12 @@ focus_tree = {
 	focus = {
 		id = SHC_jie_fang_fu_nv
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
 		cost = 5.00
 		x = -1
-		y = 2
+		y = 1
 
-		prerequisite = { 
+		prerequisite = {
 			focus = SHC_wei_si_li_zong_de_jue_qi 
 		}
 		bypass = {
@@ -9980,16 +9961,13 @@ focus_tree = {
 	focus = {
 		id = SHC_er_tong_jiao_yu
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
 		cost = 5.00
 		x = -1
-		y = 3
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_jie_fang_fu_nv 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10002,16 +9980,13 @@ focus_tree = {
 	focus = {
 		id = SHC_ti_mian_de_lao_dong_zhe
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
 		cost = 5.00
 		x = 1
-		y = 2
+		y = 1
 
 		prerequisite = { 
 			focus = SHC_wei_si_li_zong_de_jue_qi 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10024,16 +9999,13 @@ focus_tree = {
 	focus = {
 		id = SHC_bao_wei_ji_sjhi
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
 		cost = 5.00
 		x = 1
-		y = 3
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_ti_mian_de_lao_dong_zhe 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10046,10 +10018,10 @@ focus_tree = {
 	focus = {
 		id = SHC_geng_jia_gong_ping_de_she_hui
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
 		cost = 5.00
 		x = 0
-		y = 4
+		y = 3
 
 		prerequisite = { 
 			focus = SHC_bao_wei_ji_sjhi 
@@ -10073,14 +10045,11 @@ focus_tree = {
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
 		relative_position_id = SHC_ren_ming_de_jiao_hui
 		cost = 5.00
-		x = 4
+		x = 6
 		y = 1
 
 		prerequisite = { 
 			focus = SHC_ren_ming_de_jiao_hui 
-		}
-		bypass = {
-
 		}
 		available = {
 			has_country_leader = {
@@ -10099,16 +10068,13 @@ focus_tree = {
 	focus = {
 		id = SHC_jie_fang_shen_xue
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_qing_nian_men_de_sheng_li
 		cost = 5.00
-		x = 5
-		y = 2
+		x = 1
+		y = 1
 
 		prerequisite = { 
 			focus = SHC_qing_nian_men_de_sheng_li 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10121,16 +10087,13 @@ focus_tree = {
 	focus = {
 		id = SHC_rang_ge_ming_zhi_huo_ran_shao
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_qing_nian_men_de_sheng_li
 		cost = 5.00
-		x = 5
-		y = 3
+		x = 1
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_jie_fang_shen_xue 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10146,16 +10109,13 @@ focus_tree = {
 	focus = {
 		id = SHC_wu_chan_jie_ji_zhuan_zheng
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_qing_nian_men_de_sheng_li
 		cost = 5.00
-		x = 3
-		y = 2
+		x = -1
+		y = 1
 
 		prerequisite = { 
 			focus = SHC_qing_nian_men_de_sheng_li 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10171,16 +10131,13 @@ focus_tree = {
 	focus = {
 		id = SHC_bu_lao_zhe_wu_shi
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_qing_nian_men_de_sheng_li
 		cost = 5.00
-		x = 3
-		y = 3
+		x = -1
+		y = 2
 
 		prerequisite = { 
 			focus = SHC_wu_chan_jie_ji_zhuan_zheng 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }
@@ -10193,19 +10150,16 @@ focus_tree = {
 	focus = {
 		id = SHC_shang_di_ji_gong_chan
 		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
+		relative_position_id = SHC_qing_nian_men_de_sheng_li
 		cost = 5.00
-		x = 4
-		y = 4
+		x = 0
+		y = 3
 
 		prerequisite = { 
 			focus = SHC_bu_lao_zhe_wu_shi 
 		}
 		prerequisite = { 
 			focus = SHC_rang_ge_ming_zhi_huo_ran_shao 
-		}
-		bypass = {
-
 		}
 
 		ai_will_do = { factor = 100 }

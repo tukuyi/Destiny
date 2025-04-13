@@ -1444,6 +1444,128 @@ SHC_weapon_for_all = {#军事外交
 }
 
 SHC_jiao_hui_for_all = {#传播主的福音
+	SHC_Religion_catholicism_decision = {#天主教
+		icon = GFX_decision_Religion_catholicism
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_Religion_catholicism_tt
+				743 = {
+					has_dynamic_modifier = {
+						modifier = LEC_for_the_god_state
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = SHC_mi_sha_flag
+			}
+		}
+
+		cost = 200
+		days_remove = 150
+		days_re_enable = 30
+		priority = 50
+
+		modifier = {
+			stability_factor = 0.10
+			stability_weekly = 0.010
+			political_power_gain = 0.10
+			political_power_factor = 0.05
+			party_popularity_stability_factor = 0.10
+		}
+
+		complete_effect = {
+			set_country_flag = SHC_mi_sha_flag
+			hidden_effect = {
+				scoped_sound_effect = "SHC_mi_sha"
+			}
+		}	
+		remove_effect = {
+			clr_country_flag = SHC_mi_sha_flag
+		}
+	}
+	SHC_Religion_nestorian_decision = {#景教
+		icon = GFX_decision_Religion_nestorian
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_Religion_nestorian_tt
+				607 = {
+					has_dynamic_modifier = {
+						modifier = LEC_for_the_god_state
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = SHC_mi_sha_flag
+			}
+		}
+
+		cost = 200
+		days_remove = 150
+		days_re_enable = 30
+		priority = 50
+
+		modifier = {
+			industrial_capacity_factory = 0.05
+			industrial_capacity_dockyard = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			production_factory_start_efficiency_factor = 0.05
+		}
+
+		complete_effect = {
+			add_stability = -0.20
+			set_country_flag = SHC_mi_sha_flag
+			hidden_effect = {
+				scoped_sound_effect = "SHC_jingjiao"
+			}
+		}	
+		remove_effect = {
+			clr_country_flag = SHC_mi_sha_flag
+		}
+	}
+	SHC_Religion_orthodox_decision = {#东正教
+		icon = GFX_decision_Religion_orthodox
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SHC_Religion_orthodox_tt
+				885 = {
+					has_dynamic_modifier = {
+						modifier = LEC_for_the_god_orthodox_state
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = SHC_mi_sha_flag
+			}
+		}
+
+		cost = 200
+		days_remove = 150
+		days_re_enable = 30
+		priority = 50
+
+		modifier = {
+			stability_weekly = -0.010
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			winter_attrition_factor = -0.20
+			modifier_army_sub_unit_irregular_cavalry_attack_factor = 0.05
+		}
+
+		complete_effect = {
+			add_stability = -0.20
+			set_country_flag = SHC_mi_sha_flag
+			hidden_effect = {
+				scoped_sound_effect = "dong_zheng_jiao"
+			}
+		}
+		remove_effect = {
+			clr_country_flag = SHC_mi_sha_flag
+		}
+	}
 	SHC_jiao_hui_for_all_small = {
 		icon = GFX_decision_chuan_jiao
 
@@ -1482,6 +1604,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 		}
 
 		modifier = {
+			stability_weekly = -0.005
 			political_power_gain = -0.20
 		}
 
@@ -1561,6 +1684,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 		}
 
 		modifier = {
+			stability_weekly = -0.010
 			political_power_gain = -0.20
 		}
 
@@ -1640,6 +1764,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 		}
 
 		modifier = {
+			stability_weekly = -0.015
 			political_power_gain = -0.30
 		}
 
@@ -1696,17 +1821,23 @@ SHC_jiao_hui_for_all = {#传播主的福音
 			FROM = {
 				if = {
 					limit = { 
-						NOT = {
-							state = 885
-						}
+						state = 885
 					}
 					add_dynamic_modifier = {
-						modifier = LEC_for_the_god_state
+						modifier = LEC_for_the_god_orthodox_state
+					}
+				}
+				else_if = {
+					limit = { 
+						state = 607
+					}
+					add_dynamic_modifier = {
+						modifier = LEC_for_the_god_nestorian_state
 					}
 				}
 				else = {
 					add_dynamic_modifier = {
-						modifier = LEC_for_the_god_orthodox_state
+						modifier = LEC_for_the_god_state
 					}
 				}
 			}
@@ -1749,6 +1880,7 @@ SHC_jiao_hui_for_all = {#传播主的福音
 		}
 
 		modifier = {
+			stability_weekly = -0.020
 			political_power_gain = -0.40
 		}
 

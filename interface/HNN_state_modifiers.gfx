@@ -8,8 +8,16 @@ spriteTypes = {
 		texturefile = "gfx/interface/state_modifiers/state_bai_shi.png"
 	}
 	SpriteType = {
+		name = "GFX_modifiers_orthodox_church"
+		texturefile = "gfx/interface/state_modifiers/orthodox_church.png"
+	}
+	SpriteType = {
 		name = "GFX_modifiers_for_the_god"
 		texturefile = "gfx/interface/state_modifiers/for_the_god.png"
+	}
+	SpriteType = {
+		name = "GFX_modifiers_for_the_god_nestorian"
+		texturefile = "gfx/interface/state_modifiers/for_the_god_nestorian.png"
 	}
 	SpriteType = {
 		name = "GFX_modifiers_for_the_god_orthodox"

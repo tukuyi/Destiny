@@ -12,17 +12,10 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 		# eval_effect ROOT = {
-		# 	set_politics = {
-		# 		ruling_party = radical_socialist
-		# 		elections_allowed = no
-		# 	}
+		# 	scoped_sound_effect = "SHC_mi_sha"
 		# }
 
-		885 = {
-			add_dynamic_modifier = {
-				modifier = LEC_for_the_god_orthodox_state
-			}
-		}
+		scoped_sound_effect = "SHC_jingjiao"
 
 		# set_province_name = { id = 7859 name = "新南京" }
 

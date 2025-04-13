@@ -674,7 +674,7 @@ ideas = {
 				political_power_cost = -0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				production_factory_start_efficiency_factor = 0.005
+				production_factory_start_efficiency_factor = 0.05
 			}
 		}
 		LEC_tian_zhu_jiao_gong_hui2 = {#天主教工会
@@ -749,7 +749,7 @@ ideas = {
 		}
 		LEC_bu_lao_zhe_bu_shi = {#不劳者不食
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea LEC_bu_lao_zhe_bu_shi"}
-			picture = PAP_Legionary_Spirit
+			picture = TEX_american_revovery_period
 			allowed = { always = no }
             modifier = {
 				stability_factor = 0.10
@@ -777,7 +777,6 @@ ideas = {
 			name = LEC_you_de_zhi_ren
 			allowed = { always = no }
             modifier = {
-				attrition = -0.04
 				stability_factor = 0.10
 				monthly_population = 0.10
 				political_power_gain = 0.10
