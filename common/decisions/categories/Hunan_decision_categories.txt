@@ -164,6 +164,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 		has_country_flag = HNN_PROC_victory
 	}
 	priority = 0
+	scripted_gui = HNN_tu_di_gai_ge_gui_window
 }
 
 HNN_education_category = {#识字率
@@ -304,9 +305,6 @@ HNN_hai_fang = {#海防
 				tag = GXC
 			}
 			has_completed_focus = GXC_hai_fang
-		}
-		else = {
-			
 		}
 	}
 }

@@ -8208,6 +8208,7 @@ country_event = {#推广桃园经验
 			var = HNN_tu_gai
 			value = 1
 		}
+		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		set_country_flag = HNN_tao_yuan
 		hidden_effect = {
 			country_event = { 
@@ -8233,6 +8234,7 @@ country_event = {#推广桃园经验
 			var = HNN_tu_gai
 			value = 1
 		}
+		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		set_country_flag = HNN_tao_yuan_no
 		hidden_effect = {
 			country_event = { 
@@ -8404,6 +8406,7 @@ country_event = {#三反运动
 			var = HNN_tu_gai
 			value = 1
 		}
+		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		hidden_effect = {
 			country_event = { 
 				id = hunqingxi.15

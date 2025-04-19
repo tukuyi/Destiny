@@ -9762,510 +9762,539 @@ focus_tree = {
 		}
 	}		
 ###新教
-	focus = {
-		id = SHC_ren_ming_de_jiao_hui
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		cost = 5
-		x = 10
-		y = 25
+	# focus = {
+	# 	id = SHC_ren_ming_de_jiao_hui
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	cost = 5
+	# 	x = 10
+	# 	y = 25
 
-		available = {
-			has_country_flag = xin_jiao_du_tu_victory
-		}
-		bypass = {
+	# 	available = {
+	# 		has_country_flag = xin_jiao_du_tu_victory
+	# 	}
+	# 	bypass = {
 			 
-		}
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_ren_ming_de_jiao_hui"
+	# 	}
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_ren_ming_de_jiao_hui"
 
-		}
-	}	
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_sheng_gong_hui_de_jue_qi
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = -6
-		y = 1
+	# focus = {
+	# 	id = SHC_sheng_gong_hui_de_jue_qi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = -6
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_ren_ming_de_jiao_hui 
-		}
-		bypass = {
+	# 	prerequisite = { 
+	# 		focus = SHC_ren_ming_de_jiao_hui 
+	# 	}
+	# 	bypass = {
 
-		}
-		available = {
-			has_country_leader = {
-				name = "丁光训"
-				ruling_only = yes
-			}
-		}
+	# 	}
+	# 	available = {
+	# 		has_country_leader = {
+	# 			name = "丁光训"
+	# 			ruling_only = yes
+	# 		}
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_sheng_gong_hui_de_jue_qi"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_sheng_gong_hui_de_jue_qi"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_yi_shou_sheng_jing_yi_shou_jing_shu
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
-		cost = 5.00
-		x = -1
-		y = 1
+	# focus = {
+	# 	id = SHC_yi_shou_sheng_jing_yi_shou_jing_shu
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_sheng_gong_hui_de_jue_qi
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_sheng_gong_hui_de_jue_qi
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_yi_shou_sheng_jing_yi_shou_jing_shu"
-			country_event = {
-				days = 5
-				id = Shcxinjiao.4
-			}
-		}
-	}		
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_yi_shou_sheng_jing_yi_shou_jing_shu"
+	# 		country_event = {
+	# 			days = 5
+	# 			id = Shcxinjiao.4
+	# 		}
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_qi_shi_bu_zai
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
-		cost = 5.00
-		x = 1
-		y = 1
+	# focus = {
+	# 	id = SHC_qi_shi_bu_zai
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_sheng_gong_hui_de_jue_qi 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_sheng_gong_hui_de_jue_qi 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_qi_shi_bu_zai"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_qi_shi_bu_zai"
 
-		}
-	}		
+	# 	}
+	# }
 
-	focus = {
-		id = SHC_zai_xing_dong_zhong_jian_zheng
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
-		cost = 5.00
-		x = 1
-		y = 2
+	# focus = {
+	# 	id = SHC_xing_yang_yu_lang_zhi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 2
 
-		prerequisite = { 
-			focus = SHC_qi_shi_bu_zai 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_qi_shi_bu_zai 
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_yi_shou_sheng_jing_yi_shou_jing_shu 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_zai_xing_dong_zhong_jian_zheng"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_zai_xing_dong_zhong_jian_zheng"
 
-		}
-	}	
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_bang_zu_you_xu_yao_de_ern
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
-		cost = 5.00
-		x = -1
-		y = 2
+	# focus = {
+	# 	id = SHC_zai_xing_dong_zhong_jian_zheng
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 3
 
-		prerequisite = { 
-			focus = SHC_yi_shou_sheng_jing_yi_shou_jing_shu 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_xing_yang_yu_lang_zhi
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_bang_zu_you_xu_yao_de_ern"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_zai_xing_dong_zhong_jian_zheng"
 
-		}
-	}		
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_geng_jia_mei_hao_de_she_hui
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_sheng_gong_hui_de_jue_qi
-		cost = 5.00
-		x = 0
-		y = 3
+	# focus = {
+	# 	id = SHC_bang_zu_you_xu_yao_de_ern
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 3
 
-		prerequisite = { 
-			focus = SHC_bang_zu_you_xu_yao_de_ern 
-		}
-		prerequisite = { 
-			focus = SHC_zai_xing_dong_zhong_jian_zheng 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_xing_yang_yu_lang_zhi 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_geng_jia_mei_hao_de_she_hui"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_bang_zu_you_xu_yao_de_ern"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_wei_si_li_zong_de_jue_qi
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = -2
-		y = 1
+	# focus = {
+	# 	id = SHC_geng_jia_mei_hao_de_she_hui
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_sheng_gong_hui_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 4
 
-		prerequisite = { 
-			focus = SHC_ren_ming_de_jiao_hui 
-		}
-		available = {
-			has_country_leader = {
-				name = "江长川"
-				ruling_only = yes
-			}
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_bang_zu_you_xu_yao_de_ern 
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_zai_xing_dong_zhong_jian_zheng 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_wei_si_li_zong_de_jue_qi"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_geng_jia_mei_hao_de_she_hui"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_jie_fang_fu_nv
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
-		cost = 5.00
-		x = -1
-		y = 1
+	# focus = {
+	# 	id = SHC_wei_si_li_zong_de_jue_qi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = -2
+	# 	y = 1
 
-		prerequisite = {
-			focus = SHC_wei_si_li_zong_de_jue_qi 
-		}
-		bypass = {
+	# 	prerequisite = { 
+	# 		focus = SHC_ren_ming_de_jiao_hui 
+	# 	}
+	# 	available = {
+	# 		has_country_leader = {
+	# 			name = "江长川"
+	# 			ruling_only = yes
+	# 		}
+	# 	}
 
-		}
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_wei_si_li_zong_de_jue_qi"
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_jie_fang_fu_nv"
+	# 	}
+	# }		
 
-		}
-	}		
+	# focus = {
+	# 	id = SHC_jie_fang_fu_nv
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 1
 
-	focus = {
-		id = SHC_er_tong_jiao_yu
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
-		cost = 5.00
-		x = -1
-		y = 2
+	# 	prerequisite = {
+	# 		focus = SHC_wei_si_li_zong_de_jue_qi 
+	# 	}
+	# 	bypass = {
 
-		prerequisite = { 
-			focus = SHC_jie_fang_fu_nv 
-		}
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_er_tong_jiao_yu"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_jie_fang_fu_nv"
 
-		}
-	}	
+	# 	}
+	# }
 
-	focus = {
-		id = SHC_ti_mian_de_lao_dong_zhe
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
-		cost = 5.00
-		x = 1
-		y = 1
+	# focus = {
+	# 	id = SHC_er_tong_jiao_yu
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_wei_si_li_zong_de_jue_qi 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_wei_si_li_zong_de_jue_qi
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_ti_mian_de_lao_dong_zhe"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_er_tong_jiao_yu"
 
-		}
-	}
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = SHC_she_li_gong_ren_tuan_qi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 2
+
+	# 	prerequisite = { 
+	# 		focus = SHC_jie_fang_fu_nv
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_er_tong_jiao_yu
+	# 	}
+
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_she_li_gong_ren_tuan_qi"
+
+	# 	}
+	# }	
+
+	# focus = {
+	# 	id = SHC_ti_mian_de_lao_dong_zhe
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 3
+
+	# 	prerequisite = { 
+	# 		focus = SHC_she_li_gong_ren_tuan_qi
+	# 	}
+
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_ti_mian_de_lao_dong_zhe"
+
+	# 	}
+	# }
 	
-	focus = {
-		id = SHC_bao_wei_ji_sjhi
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
-		cost = 5.00
-		x = 1
-		y = 2
+	# focus = {
+	# 	id = SHC_bao_wei_ji_sjhi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 3
 
-		prerequisite = { 
-			focus = SHC_ti_mian_de_lao_dong_zhe 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_she_li_gong_ren_tuan_qi
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_bao_wei_ji_sjhi"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_bao_wei_ji_sjhi"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_geng_jia_gong_ping_de_she_hui
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_wei_si_li_zong_de_jue_qi
-		cost = 5.00
-		x = 0
-		y = 3
+	# focus = {
+	# 	id = SHC_geng_jia_gong_ping_de_she_hui
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_wei_si_li_zong_de_jue_qi
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 4
 
-		prerequisite = { 
-			focus = SHC_bao_wei_ji_sjhi 
-		}
-		prerequisite = { 
-			focus = SHC_er_tong_jiao_yu 
-		}
-		bypass = {
+	# 	prerequisite = { 
+	# 		focus = SHC_bao_wei_ji_sjhi 
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_ti_mian_de_lao_dong_zhe
+	# 	}
+	# 	bypass = {
 
-		}
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_geng_jia_gong_ping_de_she_hui"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_geng_jia_gong_ping_de_she_hui"
 
-		}
-	}	
+	# 	}
+	# }	
 	
-	focus = {
-		id = SHC_qing_nian_men_de_sheng_li
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = 6
-		y = 1
+	# focus = {
+	# 	id = SHC_qing_nian_men_de_sheng_li
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = 6
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_ren_ming_de_jiao_hui 
-		}
-		available = {
-			has_country_leader = {
-				name = "李储文"
-				ruling_only = yes
-			}
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_ren_ming_de_jiao_hui 
+	# 	}
+	# 	available = {
+	# 		has_country_leader = {
+	# 			name = "李储文"
+	# 			ruling_only = yes
+	# 		}
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_qing_nian_men_de_sheng_li"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_qing_nian_men_de_sheng_li"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_jie_fang_shen_xue
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_qing_nian_men_de_sheng_li
-		cost = 5.00
-		x = 1
-		y = 1
+	# focus = {
+	# 	id = SHC_jie_fang_shen_xue
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_qing_nian_men_de_sheng_li
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_qing_nian_men_de_sheng_li 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_qing_nian_men_de_sheng_li 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_jie_fang_shen_xue"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_jie_fang_shen_xue"
 
-		}
-	}	
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_rang_ge_ming_zhi_huo_ran_shao
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_qing_nian_men_de_sheng_li
-		cost = 5.00
-		x = 1
-		y = 2
+	# focus = {
+	# 	id = SHC_rang_ge_ming_zhi_huo_ran_shao
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_qing_nian_men_de_sheng_li
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 2
 
-		prerequisite = { 
-			focus = SHC_jie_fang_shen_xue 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_jie_fang_shen_xue 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_rang_ge_ming_zhi_huo_ran_shao"
-			country_event = {
-				days = 5
-				id = Shcxinjiao.7
-			}
-		}
-	}	
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_rang_ge_ming_zhi_huo_ran_shao"
+	# 		country_event = {
+	# 			days = 5
+	# 			id = Shcxinjiao.7
+	# 		}
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_wu_chan_jie_ji_zhuan_zheng
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_qing_nian_men_de_sheng_li
-		cost = 5.00
-		x = -1
-		y = 1
+	# focus = {
+	# 	id = SHC_wu_chan_jie_ji_zhuan_zheng
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_qing_nian_men_de_sheng_li
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 1
 
-		prerequisite = { 
-			focus = SHC_qing_nian_men_de_sheng_li 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_qing_nian_men_de_sheng_li 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_chan_jie_ji_zhuan_zheng"
-			country_event = {
-				days = 5
-				id = Shcxinjiao.5
-			}
-		}
-	}	
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_wu_chan_jie_ji_zhuan_zheng"
+	# 		country_event = {
+	# 			days = 5
+	# 			id = Shcxinjiao.5
+	# 		}
+	# 	}
+	# }	
 
-	focus = {
-		id = SHC_bu_lao_zhe_wu_shi
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_qing_nian_men_de_sheng_li
-		cost = 5.00
-		x = -1
-		y = 2
+	# focus = {
+	# 	id = SHC_bu_lao_zhe_wu_shi
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_qing_nian_men_de_sheng_li
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 2
 
-		prerequisite = { 
-			focus = SHC_wu_chan_jie_ji_zhuan_zheng 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_wu_chan_jie_ji_zhuan_zheng 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_bu_lao_zhe_wu_shi"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_bu_lao_zhe_wu_shi"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_shang_di_ji_gong_chan
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_qing_nian_men_de_sheng_li
-		cost = 5.00
-		x = 0
-		y = 3
+	# focus = {
+	# 	id = SHC_shang_di_ji_gong_chan
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_qing_nian_men_de_sheng_li
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 3
 
-		prerequisite = { 
-			focus = SHC_bu_lao_zhe_wu_shi 
-		}
-		prerequisite = { 
-			focus = SHC_rang_ge_ming_zhi_huo_ran_shao 
-		}
+	# 	prerequisite = { 
+	# 		focus = SHC_bu_lao_zhe_wu_shi 
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_rang_ge_ming_zhi_huo_ran_shao 
+	# 	}
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_shang_di_ji_gong_chan"
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_shang_di_ji_gong_chan"
 
-		}
-	}		
+	# 	}
+	# }		
 
-	focus = {
-		id = SHC_ji_du_jiao_gong_hui
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = -1
-		y = 5
+	# focus = {
+	# 	id = SHC_ji_du_jiao_gong_hui
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = -1
+	# 	y = 6
 
-		prerequisite = { 
-			focus = SHC_geng_jia_mei_hao_de_she_hui 
-			focus = SHC_geng_jia_gong_ping_de_she_hui
-			focus = SHC_shang_di_ji_gong_chan 
-		}
-		prerequisite = { 
-			
-		}
-		bypass = {
+	# 	prerequisite = { 
+	# 		focus = SHC_geng_jia_mei_hao_de_she_hui 
+	# 		focus = SHC_geng_jia_gong_ping_de_she_hui
+	# 		focus = SHC_shang_di_ji_gong_chan 
+	# 	}
 
-		}
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_ji_du_jiao_gong_hui"
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_ji_du_jiao_gong_hui"
+	# 	}
+	# }			
 
-		}
-	}			
+	# focus = {
+	# 	id = SHC_she_hui_zhu_yi_lian_he
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = 1
+	# 	y = 6
 
-	focus = {
-		id = SHC_she_hui_zhu_yi_lian_he
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = 1
-		y = 5
+	# 	prerequisite = { 
+	# 		focus = SHC_geng_jia_mei_hao_de_she_hui 
+	# 		focus = SHC_geng_jia_gong_ping_de_she_hui
+	# 		focus = SHC_shang_di_ji_gong_chan 
+	# 	}
 
-		prerequisite = { 
-			focus = SHC_geng_jia_mei_hao_de_she_hui 
-			focus = SHC_geng_jia_gong_ping_de_she_hui
-			focus = SHC_shang_di_ji_gong_chan 
-		}
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_she_hui_zhu_yi_lian_he"
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_she_hui_zhu_yi_lian_he"
+	# 	}
+	# }		
 
-		}
-	}		
+	# focus = {
+	# 	id = SHC_suo_you_ren_zheng_jiu_suo_you_ren
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 7
 
-	focus = {
-		id = SHC_suo_you_ren_zheng_jiu_suo_you_ren
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = 0
-		y = 6
+	# 	prerequisite = { 
+	# 		focus = SHC_ji_du_jiao_gong_hui 
+	# 	}
+	# 	prerequisite = { 
+	# 		focus = SHC_she_hui_zhu_yi_lian_he 
+	# 	}
 
-		prerequisite = { 
-			focus = SHC_ji_du_jiao_gong_hui 
-		}
-		prerequisite = { 
-			focus = SHC_she_hui_zhu_yi_lian_he 
-		}
-		bypass = {
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_suo_you_ren_zheng_jiu_suo_you_ren"
 
-		}
+	# 	}
+	# }		
 
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_suo_you_ren_zheng_jiu_suo_you_ren"
+	# focus = {
+	# 	id = SHC_guo_ji_zhu_yi_jing_shen
+	# 	icon = GFX_goal_LEC_shang_di_de_huai_bao
+	# 	relative_position_id = SHC_ren_ming_de_jiao_hui
+	# 	cost = 5.00
+	# 	x = 0
+	# 	y = 8
 
-		}
-	}		
+	# 	prerequisite = { 
+	# 		focus = SHC_suo_you_ren_zheng_jiu_suo_you_ren 
+	# 	}
 
-	focus = {
-		id = SHC_guo_ji_zhu_yi_jing_shen
-		icon = GFX_goal_LEC_shang_di_de_huai_bao
-		relative_position_id = SHC_ren_ming_de_jiao_hui
-		cost = 5.00
-		x = 0
-		y = 7
+	# 	ai_will_do = { factor = 100 }
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus SHC_guo_ji_zhu_yi_jing_shen"
 
-		prerequisite = { 
-			focus = SHC_suo_you_ren_zheng_jiu_suo_you_ren 
-		}
-		prerequisite = { 
- 
-		}
-		bypass = {
-
-		}
-
-		ai_will_do = { factor = 100 }
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus SHC_guo_ji_zhu_yi_jing_shen"
-
-		}
-	}
+	# 	}
+	# }
 ###大道政府
 	focus = {
 		id = SHC_xin_ming_zhu_jue_xing

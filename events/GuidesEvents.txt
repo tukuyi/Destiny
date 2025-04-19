@@ -498,6 +498,14 @@ country_event = { #GXC Guides Event
 			factor = 100
 		}
 	}
+
+	option = { #
+		name = guides.13.b
+		ai_chance = {
+			base = 100
+		}
+		country_event = guides.1002
+	}
 }
 
 ### KMT China ###

@@ -552,3 +552,46 @@ defined_text = {
 		localization_key = HNN_a_new_academy_desc_fallback
 	}
 }
+
+defined_text = {
+	name = GetHNN_tu_di_gai_ge
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 89 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge89"
+	}
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 75 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge75"
+	}
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 60 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge60"
+	}
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 45 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge45"
+	}
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 30 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge30"
+	}
+	text = {
+		trigger = {
+			check_variable = { HNN_tu_gai > 15 }
+		}
+		localization_key = "GetHNN_tu_di_gai_ge15"
+	}
+	text = {
+		localization_key = "GetHNN_tu_di_gai_ge00"
+	}
+}

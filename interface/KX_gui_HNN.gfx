@@ -11,6 +11,18 @@ spriteTypes = {
 		name = "GFX_HNN_HE"
 		texturefile = "gfx/interface/gui/HNN_HE.png"
 	}
+	spriteType = {
+		name = "GFX_HNN_agrarian_socialism"
+		texturefile = "gfx/interface/gui/HNN_agrarian_socialism.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_socdem_agrarianism_group"
+		texturefile = "gfx/interface/gui/HNN_socdem_agrarianism_group.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_agrarian_socialism_group"
+		texturefile = "gfx/interface/gui/HNN_agrarian_socialism_group.png"
+	}
 
 	spriteType = {
 		name = "GFX_SHC_Religion_orthodox"

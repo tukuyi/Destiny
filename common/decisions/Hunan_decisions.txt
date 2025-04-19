@@ -5927,6 +5927,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { 
 					has_completed_focus = HNN_zu_jian_ji_wei
@@ -5990,6 +5991,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 					value = 4
 				}
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_bao_hu_ping_nong = {#保护失地农民
@@ -6034,6 +6036,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 					value = 4
 				}
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_bu_tie_nong_ye = {#补贴农业
@@ -6079,6 +6082,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 2
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_yin_jin_xin_zuo_wu = {#引进新作物
@@ -6110,10 +6114,11 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_yin_jin_xin_zuo_wu"
 			custom_effect_tooltip = HNN_increase_opium_profit_2
 			add_stability = 0.02
-			add_to_variable = {		
+			add_to_variable = {
 				var = HNN_tu_gai
 				value = 2
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_tou_zi_nong_ji = {#投资农业机械
@@ -6176,6 +6181,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 					value = 2
 				}
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_kuo_jian_tuo_la_ji = {#扩建拖拉机厂
@@ -6214,6 +6220,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 4
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_yu_fu_nong_he_zuo = {#与中农合作
@@ -6281,6 +6288,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 1
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_tu_di_kai_fa = {#土地开发
@@ -6327,6 +6335,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 					value = 4
 				}
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_da_dao_fu_nong = {#陈-打倒富农
@@ -6365,6 +6374,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 1
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_qing_cha_chang_ku = {#刘-清查仓库
@@ -6399,6 +6409,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 2
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_qing_cha_chang_zu_zhi = {#刘-清查组织
@@ -6433,6 +6444,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 2
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_fan_fu_bai = {#高-反腐运动
@@ -6467,6 +6479,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 2
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_tao_yuan_jing_yan = {#刘-桃园经验
@@ -6499,6 +6512,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				ideology = syndicalist
 				popularity = 0.02
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_tao_yuan_jing_yan_ting_zhi = {#刘-停止羞辱
@@ -6532,10 +6546,11 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				popularity = 0.02
 			}
 			custom_effect_tooltip = HNN_increase_opium_profit_1
-			add_to_variable = {		
+			add_to_variable = {
 				var = HNN_tu_gai
 				value = 1
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_chi_jiao_yi_sheng = {#习-赤脚医生
@@ -6569,6 +6584,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 				var = HNN_tu_gai
 				value = 1
 			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
 	HNN_tu_gai_jie_su = {#土改结束
@@ -6588,9 +6604,10 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			}
 		}
 
-		cost = 0
+		cost = 5
 		days_remove = 30
 		fire_only_once = yes
+		priority = 90
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_tu_gai_jie_su"

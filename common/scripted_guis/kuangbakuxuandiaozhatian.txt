@@ -5,8 +5,45 @@ scripted_gui = {
 		dirty = dyrektoria_dirty
 
 		properties = {
-			HTR_Picture = {
-				image = "[GFX_HNN_UVO]"
+			# HTR_Picture = {
+			# 	image = "[GFX_HNN_UVO]"
+			# }
+		}
+	}
+
+	HNN_tu_di_gai_ge_gui_window = {
+		context_type = decision_category
+		window_name = "HNN_tu_di_gai_ge_gui_window"
+		dirty = HNN_tu_di_gai_ge_gui_dirty
+
+		triggers = {
+			HNN_agrarian_socialism_big_visible = {
+				check_variable = {
+					var = HNN_tu_gai
+					value = 60
+					compare = greater_than_or_equals
+				}
+			}
+			HNN_agrarian_socialism_samll_visible = {
+				AND = {
+					check_variable = {
+						var = HNN_tu_gai
+						value = 60
+						compare = less_than
+					}
+					check_variable = {
+						var = HNN_tu_gai
+						value = 30
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			HNN_agrarian_socialism_zero_visible = {
+				check_variable = {
+					var = HNN_tu_gai
+					value = 30
+					compare = less_than
+				}
 			}
 		}
 	}

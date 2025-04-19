@@ -26,7 +26,7 @@ scripted_gui = {
 					AND = {
 						has_socialist_government = yes
 						exists = yes
-					}jiu
+					}
 				}
 			}
 			Burma_ger_Map_visible = {

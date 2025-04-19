@@ -274,12 +274,14 @@ HNN_victory_all_china = {#工团党统一
 			var = HNN_tu_gai
 			value = 10
 		}
+		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 	}
 	else = {
 		set_variable = {
 			var = HNN_tu_gai
 			value = 0
 		}
+		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 	}
 
 	HNN_ma_long = { HNN_recruit_characters_effect = yes }
