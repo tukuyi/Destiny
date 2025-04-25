@@ -5124,7 +5124,7 @@ country_event = {#渔工案
 	}
 
 	option = {
-		name = sqiwan.12.a
+		name = sqiwan.12.b
 		ai_chance = {
 			base = 20
 		}
@@ -5170,7 +5170,7 @@ country_event = {#德国水兵殴打车夫
 	}
 
 	option = {
-		name = sqiwan.13.a
+		name = sqiwan.13.b
 		ai_chance = {
 			base = 20
 		}
@@ -5207,7 +5207,7 @@ country_event = {#青岛罢工
 	}
 
 	option = {
-		name = sqiwan.14.a
+		name = sqiwan.14.b
 		ai_chance = {
 			base = 20
 		}

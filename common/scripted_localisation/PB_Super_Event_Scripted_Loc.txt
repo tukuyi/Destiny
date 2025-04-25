@@ -91,6 +91,13 @@ defined_text = { #SUPER EVENT TITLES
 		}
 		localization_key = "GFX_SPEVNT_EG_Reunification"
 	}	
+
+	text = { #俄共
+		trigger = {
+			has_global_flag = SHC_reunification_TZJ
+		}
+		localization_key = "GFX_SPEVNT_Catholic_Reunification"
+	}	
 	
 	text = { 
 		trigger = {
@@ -889,6 +896,13 @@ defined_text = { #SUPER EVENT QUOTES
 		localization_key = "GFX_SPEVNT_EG_Reunification_TEXT"
 	}	
 	
+	text = { #天主教
+		trigger = {
+			has_global_flag = SHC_reunification_TZJ
+		}
+		localization_key = "GFX_SPEVNT_Catholic_Reunification_TEXT"
+	}
+
 	text = { 
 		trigger = {
 			has_global_flag = GER_Second_Weltkrieg
@@ -1685,6 +1699,12 @@ defined_text = { #SUPER EVENT REMARKS
 		localization_key = "GFX_SPEVNT_EG_Reunification_REMARK"
 	}		
 	
+	text = { #天主教
+		trigger = {
+			has_global_flag = SHC_reunification_TZJ
+		}
+		localization_key = "GFX_SPEVNT_Catholic_Reunification_REMARK"
+	}	
 	
 	text = { 
 		trigger = {
@@ -2480,7 +2500,14 @@ defined_text = { #SUPER EVENT DESCS
 			has_global_flag = SHC_reunification_EG
 		}
 		localization_key = "GFX_SPEVNT_EG_Reunification_DESC"
-	}		
+	}	
+	
+	text = { #天主教
+		trigger = {
+			has_global_flag = SHC_reunification_TZJ
+		}
+		localization_key = "GFX_SPEVNT_Catholic_Reunification_DESC"
+	}	
 
 	text = { 
 		trigger = {

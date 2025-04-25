@@ -9,6 +9,7 @@ category = {
 		maozedong
 		dasong
 		fojiao
+		jidujiao
 		ancap
 		pengbai
 		lizongren
@@ -223,5 +224,17 @@ soundeffect = {
 	volume = 1.00
 	sounds = {
 		sound = ya_mei_ni_ya
+	}
+}
+sound = {
+	name = "jidujiao"
+	file = "jidujiao.wav"
+	volume = 1.00
+}
+soundeffect = {
+	name = jidujiao
+	volume = 1.00
+	sounds = {
+		sound = jidujiao
 	}
 }

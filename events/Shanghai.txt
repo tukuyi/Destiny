@@ -3941,6 +3941,12 @@ country_event = {#告上海市民书
 			ideology = national_populist
 			popularity = 0.05
 		}
+		hidden_effect = {
+			country_event = {
+				id = Shchuming.13
+				days = 45
+			}
+		}
 	}
 }
 
@@ -3955,6 +3961,21 @@ country_event = {#小摊贩
 
 	option = {
 		name = Shchuming.12.a
+		add_political_power = -1
+	}
+}
+
+country_event = {#清晨
+	id = Shchuming.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event Shchuming.13" }
+	title = Shchuming.13.t
+	desc = Shchuming.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = Shchuming.13.a
 		add_political_power = -1
 	}
 }

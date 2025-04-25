@@ -85,6 +85,12 @@ scripted_gui = {
 				has_global_flag = SHC_reunification_EG
 			}
 		}			
+
+		triggers = {#天主教
+			Super_Event_Image_TZJ_Reunification_visible = {
+				has_global_flag = SHC_reunification_TZJ
+			}
+		}	
 		
 		triggers = {
 			Super_Event_Image_Default_visible = {
@@ -816,6 +822,13 @@ scripted_gui = {
 					}
 					clr_global_flag = SHC_reunification_EG
 				}				
+
+				if = {#天主教
+					limit = { 
+						has_global_flag = SHC_reunification_TZJ
+					}
+					clr_global_flag = SHC_reunification_TZJ
+				}	
 
 				if = {
 					limit = {	

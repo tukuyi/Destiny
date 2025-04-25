@@ -25,43 +25,36 @@ guiTypes = {
 			spriteType = "GFX_SPEVNT_HNN_Reunification_QXS"
 			position = { x = -150 y = -45 }
 		}
-
 		iconType = {#湖南-董必武
 			name ="Super_Event_Image_HNN_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification"
 			position = { x = -150 y = -45 }
 		}
-
 		iconType = {#湖南-彭德怀
 			name ="Super_Event_Image_PDF_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_PDF"
 			position = { x = -150 y = -45 }
 		}
-
 		iconType = {#湖南-中社部
 			name ="Super_Event_Image_ZSB_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_ZSB"
 			position = { x = -150 y = -45 }
-		}	
-		
+		}
 		iconType = {#湖南-三头
 			name ="Super_Event_Image_ST_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_ST"
 			position = { x = -150 y = -45 }
-		}	
-		
+		}
 		iconType = {#湖南-毛泽东
 			name ="Super_Event_Image_MZD_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_MZD"
 			position = { x = -150 y = -45 }
-		}		
-
+		}
 		iconType = {#湖南-大宋
 			name ="Super_Event_Image_DS_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_DS"
 			position = { x = -150 y = -45 }
 		}			
-
 		iconType = {#湖南-佛教
 			name ="Super_Event_Image_FJ_Reunification"
 			spriteType = "GFX_SPEVNT_HNN_Reunification_FJ"
@@ -73,13 +66,11 @@ guiTypes = {
 			spriteType = "GFX_SPEVNT_GXC_Reunification_PB"
 			position = { x = -150 y = -45 }
 		}
-
 		iconType = {#两广-李宗仁
 			name ="Super_Event_Image_LZR_Reunification"
 			spriteType = "GFX_SPEVNT_GXC_Reunification_LZR"
 			position = { x = -150 y = -45 }
 		}
-
 		iconType = {#两广-陈廉伯
 			name ="Super_Event_Image_CLB_Reunification"
 			spriteType = "GFX_SPEVNT_GXC_Reunification_CLB"
@@ -95,6 +86,11 @@ guiTypes = {
 		iconType = {#上海-俄共
 			name ="Super_Event_Image_EG_Reunification"
 			spriteType = "GFX_SPEVNT_SHC_Reunification_EG"
+			position = { x = -150 y = -45 }
+		}
+		iconType = {#上海-俄共
+			name ="Super_Event_Image_TZJ_Reunification"
+			spriteType = "GFX_SPEVNT_SHC_Reunification_TZJ"
 			position = { x = -150 y = -45 }
 		}
 

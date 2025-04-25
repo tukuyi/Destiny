@@ -120,5 +120,10 @@ spriteTypes = {
 		texturefile = "gfx/super_events/SPEVNT_SHC_Reunification_EG.png"
 		legacy_lazy_load = no
 	}	
+	spriteType = {#天主教
+		name = "GFX_SPEVNT_SHC_Reunification_TZJ"
+		texturefile = "gfx/super_events/SPEVNT_SHC_Reunification_JDJ.png"
+		legacy_lazy_load = no
+	}	
 }
 

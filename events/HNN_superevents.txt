@@ -554,7 +554,7 @@ country_event = {#俄共
 	picture = GFX_report_event_diplomatic_message
 
 	is_triggered_only = no
-	
+
 	trigger = {
 		has_global_flag = liu_wang_zhe_guo_xiang
 		NOT = { has_global_flag = KX_superevent_total_off }
@@ -577,6 +577,40 @@ country_event = {#俄共
 				}
 			}
 			scoped_sound_effect = "sulian"
+		}
+	}
+}
+
+country_event = {#天主教统一
+	id = hnnsuper.14
+	title = hnnsuper.14.t
+	desc = hnnsuper.14.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	trigger = {
+		has_global_flag = tian_zhu_jiang_ling
+		NOT = { has_global_flag = KX_superevent_total_off }
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = hnnsuper.14.a
+
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHC_reunification_TZJ
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "jidujiao"
 		}
 	}
 }

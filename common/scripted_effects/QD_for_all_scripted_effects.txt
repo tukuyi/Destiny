@@ -685,6 +685,7 @@ China_build_ROC = {#成立民国
 				has_completed_focus = LEC_shang_di_de_huai_bao
 			}
 			set_cosmetic_tag = LEC_TZ_T
+			set_global_flag = tian_zhu_jiang_ling
 			hidden_effect = {
 				country_event = {
 					id = Shcjidu.5

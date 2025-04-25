@@ -51,6 +51,10 @@
  GFX_SPEVNT_EG_Reunification_TEXT:0 "大海不会干涸，人民不会迷路。————\n§Y俄国谚语§!"
  GFX_SPEVNT_EG_Reunification_REMARK:0 "是时候复仇了"
  GFX_SPEVNT_EG_Reunification_DESC:0 "很少有人料到俄罗斯社会主义共和国能从中国内战的灰烬中崛起。更少有人料到重生的社会主义共和国能够统一俄罗斯，然而他们真的做到了。在帕维尔·米夫的带领下，流亡者从上海出发一统中俄，他们重新建立起那个覆灭的无产阶级国家。这个新生国家无意就此罢休，红军将向柏林、东京和其间的任何一处地区进军！"
+ GFX_SPEVNT_Catholic_Reunification:0 "唯有圣教"
+ GFX_SPEVNT_Catholic_Reunification_TEXT:0 "除了教会之外，别无救恩；除了真理之外，皆为迷途。————\n§Y《教宗良十三世通谕》§!"
+ GFX_SPEVNT_Catholic_Reunification_REMARK:0 "那不是帝国的再生，而是公教的临现。"
+ GFX_SPEVNT_Catholic_Reunification_DESC:0 "当最后一位主教在南京主教座堂为国家祈祷时，圣教会已悄然接掌了中华的命运。十字架不仅矗立在每座城市的高处，也进入了亿万家庭的心灵深处。这里不再是混乱与偶像的温床，而是恩典之邦、信仰之城。天主之爱穿越血缘、阶级与方言，藉由教会的母性，抚慰所有曾在战乱与罪恶中流离失所的灵魂。\n\n这不是一次征服，而是一场归乡。中华并未沦为教权的殖民地，而是在永恒真理中找到了自己的位置。"
 
  has_united_china:0 "中国已经统一"
 
