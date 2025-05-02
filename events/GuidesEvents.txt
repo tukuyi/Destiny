@@ -493,10 +493,10 @@ country_event = { #GXC Guides Event
 
 	option = { #
 		name = guides.13.a
-
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
+		country_event = guides.1002
 	}
 
 	option = { #
@@ -504,7 +504,6 @@ country_event = { #GXC Guides Event
 		ai_chance = {
 			base = 100
 		}
-		country_event = guides.1002
 	}
 }
 

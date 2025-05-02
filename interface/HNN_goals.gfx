@@ -4,6 +4,10 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/HNN_PROC_navy.png"
 	}
 	spriteType = {
+		name = "GFX_goal_HNN_Republican_naval_academy"
+		texturefile = "gfx/interface/goals/HNN_Republican_naval_academy.png"
+	}
+	spriteType = {
 		name = "GFX_goal_HNN_shi_zi_ben"
 		texturefile = "gfx/interface/goals/HNN_shi_zi_ben.png"
 	}

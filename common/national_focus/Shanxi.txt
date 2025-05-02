@@ -2825,17 +2825,17 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = available_designer
-				show_mio_tooltip = SHX_taiyuan_arsenal_organisation
+				show_mio_tooltip = CHN_small_arms_industry_organisation
 			}
 			else = {
 				if = {
 					limit = { 
-						mio:SHX_taiyuan_arsenal_organisation = { is_mio_available = no } 
+						mio:CHN_small_arms_industry_organisation = { is_mio_available = no } 
 					}
 					custom_effect_tooltip = available_mio_tt
-					show_mio_tooltip = SHX_taiyuan_arsenal_organisation
+					show_mio_tooltip = CHN_small_arms_industry_organisation
 				}
-				mio:SHX_taiyuan_arsenal_organisation = {
+				mio:CHN_small_arms_industry_organisation = {
 					set_mio_flag = CHN_mio_unlocked
 					add_mio_size = 1
 				}
@@ -3537,7 +3537,7 @@ focus_tree = {
 				set_mio_flag = CHN_mio_unlocked
 				add_mio_size = 1
 			}
-			mio:SHX_taiyuan_arsenal_organisation = {
+			mio:CHN_small_arms_industry_organisation = {
 				set_mio_flag = CHN_mio_unlocked
 				add_mio_size = 1
 			}

@@ -1568,9 +1568,7 @@ shared_focus = {
 			}
 		}
 		else = {
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = YUN_kunming_arsenal_organisation
-			mio:YUN_kunming_arsenal_organisation = { add_mio_size = 2 }
+			mio:CHN_artillery_industry_organisation = { add_mio_size = 2 }
 		}
 	}
 	search_filters = { FOCUS_FILTER_ARMY_BONUS }

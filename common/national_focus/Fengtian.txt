@@ -3974,7 +3974,7 @@ focus_tree = {
 				custom_effect_tooltip = FNG_standardize_equipment_unlock
 			}
 			else = {
-				mio:FNG_shenyang_arsenal_organisation = {
+				mio:CHN_small_arms_industry_organisation = {
 					add_mio_size = 1
 					add_mio_funds = 500
 				}
@@ -4162,7 +4162,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { has_dlc_aat = yes }
-				mio:FNG_dadong_artillery_complex_organisation = {
+				mio:CHN_artillery_industry_organisation = {
 					add_mio_size = 1
 					add_mio_funds = 500
 				}

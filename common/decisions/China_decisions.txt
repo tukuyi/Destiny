@@ -3948,7 +3948,272 @@ china_land_reform_decisions = {
 }
 
 china_mio_arsenal_integration_decision_category = {#建立中国本土国防企业
-	CHN_integrate_major_navy_HK = {#整合海军船坞
+	CHN_integrate_major_arsenal_decision = {#整合兵工厂
+		allowed = { always = no } #Targeted decision made on start up
+		icon = GFX_decision_ger_military_buildup
+		visible = {
+			owns_state = FROM
+		}
+		available = {
+			controls_state = FROM
+		}
+		highlight_states = {
+			highlight_state_targets = { state = FROM }
+		}
+		state_target = yes
+		cancel_trigger = { NOT = { controls_state = FROM } }
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { base = 100 }
+		cost = 50
+		days_remove = 200
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_major_arsenal_decision"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_major_arsenal_decision"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_arsenal_decision"
+			if = {
+				limit = { from = { state = 743 } }
+				mio:CHN_small_arms_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_shanghai
+					set_mio_flag = integrated_shanghai
+				}
+				mio:CHN_support_equipment_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_shanghai
+					set_mio_flag = integrated_shanghai
+				}
+				mio:CHN_artillery_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_shanghai
+					set_mio_flag = integrated_shanghai
+				}
+			}
+			else_if = {
+				limit = { from = { state = 613 } }
+				mio:CHN_small_arms_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_jinling
+					set_mio_flag = integrated_jinling
+				}
+				mio:CHN_support_equipment_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_jinling
+					set_mio_flag = integrated_jinling
+				}
+			}
+			else_if = {
+				limit = { from = { state = 592 } }
+				mio:CHN_support_equipment_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_guangdong
+					set_mio_flag = integrated_guangdong
+				}
+			}
+			else_if = {
+				limit = { from = { state = 1048 } }
+				mio:CHN_support_equipment_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_hanyang
+					set_mio_flag = integrated_hanyang
+				}
+			}
+			else_if = {
+				limit = { from = { state = 716 } }
+				mio:CHN_small_arms_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_shenyang
+					set_mio_flag = integrated_shenyang
+				}
+			}
+			else_if = {
+				limit = { from = { state = 1072 } }
+				mio:CHN_artillery_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_taiyuan
+					set_mio_flag = integrated_taiyuan
+				}
+			}
+			else_if = {
+				limit = { from = { state = 1059 } }
+				mio:CHN_small_arms_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_gongxian
+					set_mio_flag = integrated_gongxian
+				}
+			}
+		}
+	}
+
+	CHN_integrate_minor_small_arms_arsenal_decision = {#整合兵工厂
+		allowed = { always = no } #Targeted decision made on start up
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			owns_state = FROM
+		}
+		available = {
+			controls_state = FROM
+		}
+		highlight_states = {
+			highlight_state_targets = { state = FROM }
+		}
+		state_target = yes
+		cancel_trigger = { NOT = { controls_state = FROM } }
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { factor = 100 }
+		cost = 25
+		days_remove = 100
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_minor_small_arms_arsenal_decision"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_minor_small_arms_arsenal_decision"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_small_arms_arsenal_decision"
+			mio:CHN_small_arms_industry_organisation = {
+				add_mio_funds = 500
+			}
+		}
+	}
+	CHN_integrate_minor_support_equipment_arsenal_decision = {#整合兵工厂
+		allowed = { always = no } #Targeted decision made on start up
+		icon = GFX_decision_support_equipment
+		visible = {
+			owns_state = FROM
+		}
+		available = {
+			controls_state = FROM
+		}
+		highlight_states = {
+			highlight_state_targets = { state = FROM }
+		}
+		state_target = yes
+		cancel_trigger = { NOT = { controls_state = FROM } }
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { factor = 100 }
+		cost = 25
+		days_remove = 100
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_minor_support_equipment_arsenal_decision"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_minor_support_equipment_arsenal_decision"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_support_equipment_arsenal_decision"
+			mio:CHN_support_equipment_industry_organisation = {
+				add_mio_funds = 500
+			}
+		}
+	}
+	CHN_integrate_minor_artillery_arsenal_decision = {#整合兵工厂
+		allowed = { always = no } #Targeted decision made on start up
+		icon = GFX_decision_artillery
+		visible = {
+			owns_state = FROM
+		}
+		available = {
+			controls_state = FROM
+		}
+		highlight_states = {
+			highlight_state_targets = { state = FROM }
+		}
+		state_target = yes
+		cancel_trigger = { NOT = { controls_state = FROM } }
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { factor = 100 }
+		cost = 25
+		days_remove = 100
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_minor_artillery_arsenal_decision"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_minor_artillery_arsenal_decision"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_artillery_arsenal_decision"
+			mio:CHN_artillery_industry_organisation = {
+				add_mio_funds = 500
+			}
+		}
+	}
+
+	CHN_integrate_major_dockyard_decision = {#整合海军船坞
+		allowed = { always = no } #Targeted decision made on start up
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			owns_state = FROM
+		}
+		available = {
+			controls_state = FROM
+		}
+		highlight_states = {
+			highlight_state_targets = { state = FROM }
+		}
+		state_target = yes
+		cancel_trigger = { NOT = { controls_state = FROM } }
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { factor = 100 }
+		cost = 25
+		days_remove = 100
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_major_dockyard_decision"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_major_dockyard_decision"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_dockyard_decision"
+			if = {
+				limit = { from = { state = 743 } }
+				mio:LEC_jiangnan_shipyard_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					set_mio_flag = LEC_jiangnan_shipyard_organisation_unlock
+				}
+			}
+			else = {
+				mio:CHN_naval_industry_organisation = {
+					add_mio_funds = 500
+				}
+			}
+		}
+	}
+
+	CHN_integrate_major_navy_HK = {#整合天星小轮
 		icon = GFX_decision_generic_merge_plant_ship
 		visible = {
 			NOT = {
@@ -3987,47 +4252,6 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 			show_mio_tooltip = SHC_Star_Ferry_organisation
 			hidden_effect = {
 				set_country_flag = SHC_Star_Ferry_organisation_unlock
-			}
-		}
-	}
-	CHN_integrate_major_navy_zhao_xing = {#整合海军船坞-肇兴轮船
-		icon = GFX_decision_generic_merge_plant_ship
-		visible = {
-			NOT = {
-				tag = SQI
-			}
-			owns_state = 597
-		}
-		available = {
-			controls_state = 597
-		}
-		highlight_states = {
-			highlight_state_targets = { state = 597 }
-		}
-		
-		cancel_trigger = { NOT = { controls_state = 597 } }
-		cancel_if_not_visible = yes
-
-		fire_only_once = yes
-		ai_will_do = { base = 100 }
-		cost = 25
-		days_remove = 100
-		modifier = {
-			political_power_cost = 0.5
-		}
-
-		complete_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_major_navy_zhao_xing"
-		}
-		cancel_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_major_navy_zhao_xing"
-		}
-		remove_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_major_navy_zhao_xing"
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = SQI_zao_xin_lun_chuan_organisation
-			hidden_effect = {
-				set_country_flag = SQI_zao_xin_lun_chuan_organisation_unlock
 			}
 		}
 	}
@@ -4072,85 +4296,101 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 			}
 		}
 	}
-	CHN_integrate_minor_small_arms_arsenal_jinan = {#整合济南兵工厂
-		icon = GFX_decision_ger_military_buildup
-		visible = {
-			NOT = {
-				tag = SQI
-			}
-			owns_state = 597
-		}
-		available = {
-			controls_state = 597
-		}
-		highlight_states = {
-			highlight_state_targets = { state = 597 }
-		}
-		
-		cancel_trigger = { NOT = { controls_state = 597 } }
+
+	PRC_cheng_li_zhong_gong_ye_bu = {#成立重工业部
+		allowed = { always = no } 
+		icon = GFX_decision_norinco
+
 		cancel_if_not_visible = yes
 
 		fire_only_once = yes
 		ai_will_do = { base = 100 }
-		cost = 25
-		days_remove = 100
+
+		cost = 50
+		days_remove = 200
 		modifier = {
 			political_power_cost = 0.5
 		}
 
 		complete_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_minor_small_arms_arsenal_jinan"
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_cheng_li_zhong_gong_ye_bu"
 		}
 		cancel_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_minor_small_arms_arsenal_jinan"
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_cheng_li_zhong_gong_ye_bu"
 		}
 		remove_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_small_arms_arsenal_jinan"
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = SQI_jinan_arsenal_organisation
-			hidden_effect = {
-				set_country_flag = SQI_jinan_arsenal_organisation_unlock
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_cheng_li_zhong_gong_ye_bu"
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
 			}
 		}
 	}
-	CHN_integrate_minor_small_arms_arsenal_tie_ma = {#整合铁马空气压缩厂
-		icon = GFX_decision_support_equipment
-		visible = {
-			NOT = {
-				tag = HNN
-			}
-			owns_state = 602
-		}
-		available = {
-			controls_state = 602
-		}
-		highlight_states = {
-			highlight_state_targets = { state = 602 }
-		}
-		
-		cancel_trigger = { NOT = { controls_state = 602 } }
+	PRC_HNN_tiema_motors_organisation = {#成立第二机械部
+		allowed = { always = no } 
+		icon = GFX_decision_HNN_tie
+
 		cancel_if_not_visible = yes
 
 		fire_only_once = yes
 		ai_will_do = { base = 100 }
-		cost = 25
-		days_remove = 100
+		available = {
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+			}
+		}
+		
+		cost = 50
+		days_remove = 200
 		modifier = {
 			political_power_cost = 0.5
 		}
 
 		complete_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision complete CHN_integrate_minor_small_arms_arsenal_tie_ma"
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_HNN_tiema_motors_organisation"
 		}
 		cancel_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision cancel CHN_integrate_minor_small_arms_arsenal_tie_ma"
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_HNN_tiema_motors_organisation"
 		}
 		remove_effect = {
-			log = "[GetLogRoot][GetLogFrom]: Decision remove CHN_integrate_minor_small_arms_arsenal_tie_ma"
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = HNN_tiema_organisation
-			hidden_effect = {
-				set_country_flag = HNN_tiema_organisation_unlock
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_HNN_tiema_motors_organisation"
+			mio:HNN_tiema_organisation = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_tiema_organisation_unlock
+			}
+		}
+	}
+	PRC_HNN_faw_motors_organisation = {#成立一汽
+		allowed = { always = no } 
+		icon = GFX_decision_faw_motors
+
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { base = 100 }
+		available = {
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+			}
+		}
+		
+		cost = 50
+		days_remove = 200
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_HNN_faw_motors_organisation"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_HNN_faw_motors_organisation"
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_HNN_faw_motors_organisation"
+			mio:HNN_faw_motors_organisation = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_faw_motors_organisation_unlock
 			}
 		}
 	}

@@ -5546,14 +5546,25 @@ country_event = { #romanov tsar picking gang
 		}
 		set_party_name = {
 			ideology = paternal_autocrat
-			long_name = "House of Temüjin"
-			name = "House of Temüjin"
+			long_name = MON_TEMUJIN_TSAR_long
+			name = MON_TEMUJIN_TSAR
 		}
-		create_country_leader = {
-			name = "Vladimir III"
-			picture = "gfx/leaders/UZB/Portrait_UZB_Mohammed_Alim.png"
-			expire = "1.1.1"
-			ideology = absolute_monarchy_subtype
+		if = {
+			limit = { UZB = { has_country_flag = Mohammed_Alim_Khan_dead } }
+			create_country_leader = {
+				name = "Vladimir III"
+				picture = "gfx/leaders/UZB/Portrait_UZB_Shahmurad_Khan.png"
+				expire = "1.1.1"
+				ideology = absolute_monarchy_subtype
+			}
+		}
+		else = {
+			create_country_leader = {
+				name = "Vladimir III"
+				picture = "gfx/leaders/UZB/Portrait_UZB_Mohammed_Alim.png"
+				expire = "1.1.1"
+				ideology = absolute_monarchy_subtype
+			}
 		}
 	}
 	option = {
@@ -14946,8 +14957,8 @@ country_event = { #Leaders
 	option = {
 		name = tot_mon_flavor.24.q
 		trigger = {
-		TIB = { exists = no } 
-		owns_state = 322
+			TIB = { exists = no } 
+			owns_state = 322
 		}
 		create_country_leader = {
 			name = "Nicholas Roerich"
@@ -14960,8 +14971,8 @@ country_event = { #Leaders
 	option = {
 		name = tot_mon_flavor.24.r
 		trigger = {
-		SKM = { exists = no } 
-		owns_state = 888
+			SKM = { exists = no } 
+			owns_state = 888
 		}
 		set_politics = {
 			ruling_party = radical_socialist
@@ -14973,6 +14984,16 @@ country_event = { #Leaders
 			expire = "1.1.1"
 			ideology = jermanism_subtype
 			traits = {}
+		}
+	}
+	option = {
+		name = tot_mon_flavor.24.u
+		create_country_leader = {
+			name = "Guo Muruo"
+			picture = "gfx/leaders/CHI/Portrait_CHI_Guo_Moruo.png"
+			expire = "1.1.1"
+			ideology = technocracy_subtype
+			traits = { eco_technocrat }
 		}
 	}
 }

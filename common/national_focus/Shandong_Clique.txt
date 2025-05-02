@@ -1048,13 +1048,8 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			mio:LEP_jinling_arsenal_organisation = {
+			mio:CHN_small_arms_industry_organisation = {
 				add_mio_funds = 500
-			}
-			mio:LEP_jinling_arsenal_organisation = {
-				unlock_mio_trait_tooltip = {
-					trait = toz_upgrade_4_1
-				}
 			}
 			add_tech_bonus = {
 				name = SQI_Research_Replacements_For_Old_Weapons
@@ -4891,10 +4886,8 @@ focus_tree = {
 			}
 			if = {
 				limit = { has_dlc_aat = yes }
-				mio:SQI_jinan_arsenal_organisation = {
-					unlock_mio_trait_tooltip = {
-						trait = imz_upgrade_3_1
-					}
+				mio:CHN_small_arms_industry_organisation = {
+					add_mio_size = 2
 				}
 			}
 			else = {
@@ -5807,7 +5800,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			mio:SQI_jinan_arsenal_organisation = {
+			mio:CHN_small_arms_industry_organisation = {
 				add_mio_size = 2
 			}
 		}

@@ -54,9 +54,24 @@ LEC_jiangnan_shipyard_organisation = {
 	name = jiangnan_shipyard
 	icon = GFX_idea_jiangnan_shipyard
 	allowed = {
-		OR = {
-			tag = LEC
-			tag = SHC
+		is_chinese_tag = yes
+	}
+	visible = {
+		FROM = { 
+			owns_state = 743
+		}
+	}
+	available = {
+		if = {
+			limit = { 
+				FROM = { 
+					NOT = {
+						tag = SHC
+						tag = LEC
+					}
+				}
+			}
+			has_mio_flag = LEC_jiangnan_shipyard_organisation_unlock
 		}
 	}
 }

@@ -1,0 +1,45 @@
+###################
+### Armour MIOs ###
+###################
+SZC_chongqing_tank_plant_organisation = {
+	include = generic_tank_refurbishment_plant_organization
+	name = chongqing_tank_plant
+	icon = GFX_idea_chongqing_tank_plant
+	allowed = {
+		original_tag = SZC
+	}
+	available = {
+		if = {
+			limit = { NOT = { FROM = { has_focus_tree = Federalist_China_Tree } } }
+			FROM = { has_completed_focus = SZC_Expand_Production_Tanks }
+		}
+	}
+}
+
+##################
+### Naval MIOs ###
+##################
+SZC_minsheng_shipping_organisation = {
+	include = generic_refurbishment_repair_organization
+	name = minsheng_shipping
+	icon = GFX_idea_minsheng_shipping
+	allowed = {
+		original_tag = SZC
+	}
+	available = {
+		if = {
+			limit = { NOT = { FROM = { has_focus_tree = Federalist_China_Tree } } }
+			FROM = { has_completed_focus = SZC_Expand_Production_Aircraft }
+		}
+	}
+}
+
+#####################
+### Airplane MIOs ###
+#####################
+
+
+#####################
+### Materiel MIOs ###
+#####################
+

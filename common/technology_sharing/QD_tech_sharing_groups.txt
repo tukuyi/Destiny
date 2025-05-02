@@ -1,0 +1,14 @@
+technology_sharing_group = { #国际科学技术合作协会
+	id = PRC_tech_gourp
+	name = PRC_tech_gourp_name
+	desc = PRC_tech_gourp_desc
+	picture = GFX_PRC_tech_gourp
+
+	research_sharing_per_country_bonus = 0.15
+
+	available = {
+		country_exists = CSP
+		NOT = { has_war_with = CSP }
+		has_socialist_government = yes
+	}
+}

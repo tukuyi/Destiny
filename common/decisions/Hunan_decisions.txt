@@ -6338,6 +6338,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
+
 	HNN_da_dao_fu_nong = {#陈-打倒富农
 		icon = hand_grab
 	
@@ -6377,6 +6378,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
+
 	HNN_qing_cha_chang_ku = {#刘-清查仓库
 		icon = GFX_decision_give_cash
 
@@ -6439,41 +6441,6 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_qing_cha_chang_zu_zhi"
 			add_stability = -0.02
 			add_manpower = -100
-			custom_effect_tooltip = HNN_increase_opium_profit_2
-			add_to_variable = {		
-				var = HNN_tu_gai
-				value = 2
-			}
-			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
-		}
-	}
-	HNN_fan_fu_bai = {#高-反腐运动
-		icon = GFX_decision_trumpet
-
-		available = {
-			has_completed_focus = HNN_san_fan
-			NOT = {
-				has_country_flag = HNN_tu_gai_jie_shu
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_san_fan
-			NOT = {
-				has_country_flag = HNN_tu_gai_jie_shu
-			}
-		}
-
-		cost = 30
-		days_remove = 10
-		days_re_enable = 30
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_fan_fu_bai"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_fan_fu_bai"
-			add_stability = -0.02
-			add_political_power = 50
 			custom_effect_tooltip = HNN_increase_opium_profit_2
 			add_to_variable = {		
 				var = HNN_tu_gai
@@ -6553,6 +6520,43 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
+
+	HNN_fan_fu_bai = {#高-反腐运动
+		icon = GFX_decision_trumpet
+
+		available = {
+			has_completed_focus = HNN_san_fan
+			NOT = {
+				has_country_flag = HNN_tu_gai_jie_shu
+			}
+		}
+		visible = {
+			has_completed_focus = HNN_san_fan
+			NOT = {
+				has_country_flag = HNN_tu_gai_jie_shu
+			}
+		}
+
+		cost = 30
+		days_remove = 10
+		days_re_enable = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_fan_fu_bai"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_fan_fu_bai"
+			add_stability = -0.02
+			add_political_power = 50
+			custom_effect_tooltip = HNN_increase_opium_profit_2
+			add_to_variable = {		
+				var = HNN_tu_gai
+				value = 2
+			}
+			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
+		}
+	}
+
 	HNN_chi_jiao_yi_sheng = {#习-赤脚医生
 		icon = generic_healthcare
 
@@ -6587,6 +6591,7 @@ HNN_tu_di_gai_ge_category = {#土地改革
 			add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 		}
 	}
+	
 	HNN_tu_gai_jie_su = {#土改结束
 		icon = generic_agriculture
 
@@ -7290,7 +7295,6 @@ HNN_let_he_in = {#拉人入伙
 	# 	cost = 25
 	# 	fire_only_once = no
 
-	# 	priority = 5
 	# 	targets = { 
 	# 		ANQ 
 	# 		AST 
@@ -7340,1184 +7344,268 @@ HNN_let_he_in = {#拉人入伙
 	# 	}
 
 	# 	ai_will_do = {
-	# 		factor = 10
-	# 		modifier = {
-	# 			factor = 0
-	# 			FROM = {
-	# 				NOT = { is_in_faction_with = ROOT }
-	# 				any_owned_state = { is_claim_or_core_of_ROOT = yes }
-	# 			}
-	# 		}
-	# 		modifier = {
-	# 			factor = 0
-	# 			FROM = { NOT = { has_country_flag = tokyo_conference_trade_ally } }
-	# 			is_in_array = { global.JAP_possible_allies_array = FROM }
-	# 			NOT = { is_in_faction_with = FROM }
-	# 		}
-	# 		modifier = {
-	# 			factor = 2
-	# 			FROM = {
-	# 				NOT = { is_subject_of = ROOT }
-	# 				is_in_faction_with = ROOT
-	# 			}
-	# 		}
-	# 		modifier = {
-	# 			factor = 5
-	# 			FROM = {
-	# 				OR = {
-	# 					is_subject_of = ROOT
-	# 					has_country_flag = tokyo_conference_trade_ally
-	# 				}
-	# 			}
-	# 		}
-	# 		modifier = {
-	# 			factor = 0.5
-	# 			FROM = { num_of_civilian_factories < 4 }
-	# 		}
-	# 		modifier = {
-	# 			factor = 3
-	# 			FROM = { num_of_civilian_factories > 6 }
-	# 		}
+	# 		base = 10
 	# 	}
 	# }
-	HNN_let_VAN = {#拉越南
-		available = {
-			VIN = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			VIN = {
-				exists = yes
-			}
-		}
+	HNN_asia_let_them_in_targeted_decision = {#邀请盟友
 		icon = GFX_decision_category_patriotic
 
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
+		target_array = global.african_tags_array
+		target_array = global.european_tags_array
+		target_array = global.asian_tags_array
+		target_array = global.indian_tags_array
+		target_array = global.middle_eastern_tags_array
+		target_array = global.north_african_tags_array
 
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_VAN"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_VAN"
-			VIN = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_SIA = {#拉泰国
-		available = {
-			SIA = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
+		target_root_trigger = {
 			has_completed_focus = HNN_wm_zj_de_lu
-			SIA = {
-				exists = yes
-			}
+			has_socialist_government = yes
+			is_faction_leader = yes
 		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_SIA"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_SIA"
-			SIA = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_BRM = {#拉缅甸
-		available = {
-			BRM = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			BRM = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_BRM"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_BRM"
-			BRM = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_BHC = {#拉印度
-		available = {
-			BHC = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			BHC = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_BHC"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_BHC"
-			BHC = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_BHU = {#拉不丹
-		available = {
-			BHU = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			BHU = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_BHU"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_BHU"
-			BHU = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_SKM = {#拉锡金
-		available = {
-			SKM = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			SKM = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_SKM"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_SKM"
-			SKM = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_AFG = {#拉阿富汗
-		available = {
-			AFG = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			AFG = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_AFG"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_AFG"
-			AFG = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_PER = {#拉波斯
-		available = {
-			PER = {
-				has_war = no
-				is_puppet = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			PER = {
-				exists = yes
-			}
-		}
-		icon = GFX_decision_category_patriotic
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_PER"
-			set_country_flag = SRI_INVITING_SOMEONE
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_PER"
-			PER = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
-		}
-	}
-	HNN_let_AST = {#拉澳大利亚
-		available = {
-			AST = {
-				has_war = no
-				is_puppet = no
+		target_trigger = {
+			FROM = {
+				has_socialist_government = yes
 				is_in_faction = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
+				is_subject = no
+				NOT = {
+					is_in_faction_with = ROOT
 				}
 			}
 		}
+
 		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			AST = {
-				exists = yes
+			is_subject = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = HNN_INVITING_SOMEONE
+			}
+			FROM = {
+				has_war = no
 			}
 		}
-		icon = GFX_decision_category_patriotic
+
+		on_map_mode = map_and_decisions_view
 
 		cost = 20
 		days_remove = 20
 		fire_only_once = yes
 
-		ai_will_do = { factor = 1000 }
-
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_AST"
-			set_country_flag = SRI_INVITING_SOMEONE
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_asia_let_them_in_targeted_decision"
+			set_country_flag = HNN_INVITING_SOMEONE
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_AST"
-			AST = {	
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_asia_let_them_in_targeted_decision"
+			FROM = {
 				country_event = {
 					id = hungong.134
 					days = 2
 				}
 			}
-			clr_country_flag = SRI_INVITING_SOMEONE
+			clr_country_flag = HNN_INVITING_SOMEONE
 		}
 	}
-	HNN_let_TRM = {#拉外阿穆尔
+	HNN_build_PRC_tech_gourp = {#成立科技合作组织
 		available = {
-			TRM = {
-				has_war = no
-				is_puppet = no
-				is_in_faction = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
+			has_war = no
+			is_faction_leader = yes
 		}
 		visible = {
 			has_completed_focus = HNN_wm_zj_de_lu
-			TRM = {
-				exists = yes
-			}
 		}
-		icon = GFX_decision_category_patriotic
+		icon = generic_research
 
 		cost = 20
 		days_remove = 20
 		fire_only_once = yes
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { base = 40 }
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_TRM"
-			set_country_flag = SRI_INVITING_SOMEONE
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_build_PRC_tech_gourp"
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_TRM"
-			TRM = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_build_PRC_tech_gourp"
+			add_to_tech_sharing_group = PRC_tech_gourp
+			set_global_flag = PRC_tech_gourp_created
 		}
 	}
-	HNN_let_NYC = {#拉纽约
+}
+
+PRC_tech_gourp_decisions = {#加入科技合作组织
+	HNN_join_CAISTC_decision = {
+		icon = generic_research
+
 		available = {
-			NYC = {
-				has_war = no
-				is_puppet = no
-				is_in_faction = no
-				OR = {
-					has_government = totalist 
-					has_government = syndicalist
-					has_government = social_democrat 
-					has_government = radical_socialist
-				}
-			}
+			is_in_faction_with = CSP
 		}
 		visible = {
-			has_completed_focus = HNN_wm_zj_de_lu
-			NYC = {
-				exists = yes
-				is_in_faction = no
+			is_in_faction_with = CSP
+			has_global_flag = PRC_tech_gourp_created
+			NOT = { is_in_tech_sharing_group = PRC_tech_gourp }
+			FROM = {
+				is_faction_leader = yes
+				is_in_faction_with = ROOT
 			}
 		}
-		icon = GFX_decision_category_patriotic
 
-		cost = 20
-		days_remove = 20
 		fire_only_once = yes
+		cost = 0
 
-		ai_will_do = { factor = 1000 }
+		target_root_trigger = { is_in_faction = yes }
+		targets = { CSP }
+		target_trigger = {
+			FROM = {
+				is_faction_leader = yes
+				is_in_faction_with = ROOT
+			}
+		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_let_NYC"
-			set_country_flag = SRI_INVITING_SOMEONE
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_join_CAISTC_decision target: [From.GetName]"
+			add_to_tech_sharing_group = PRC_tech_gourp
 		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_let_NYC"
-			NYC = {	
-				country_event = {
-					id = hungong.134
-					days = 2
-				}
-			}
-			clr_country_flag = SRI_INVITING_SOMEONE
+
+		ai_will_do = {
+			base = 100
 		}
 	}
 }
 
 HNN_shu_chu_ge_min = {#输出革命
-	HNN_het_GEA = {#
-		available = {
+	HNN_shu_chu_ge_min_targeted_decision = {#输出革命
+		icon = GFX_decision_eng_propaganda_campaigns
 
-		}
-		visible = {
+		targets = { GEA SIA BRM BHC DEH PRF MAD BHU SKM NEP CEY INR MYS TRV}
+		target_root_trigger = {
 			has_completed_focus = HNN_shu_chu_ge_ming
-			GEA = {
+		}
+		target_trigger = {
+			FROM = {
 				exists = yes
+				has_socialist_government = no
+				is_subject = no
 				NOT = {
-					is_puppet_of = HNN
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
 				}
 			}
 		}
-		icon = GFX_decision_eng_propaganda_campaigns
 
-		cost = 20
+		on_map_mode = map_and_decisions_view
+
+		cost = 40
 		days_remove = 20
 		fire_only_once = yes
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_GEA"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_GEA"
-			create_wargoal = {
-				type = annex_everything
-				target = GEA
-		 	}
-		}
-	}
-	HNN_het_SIA = {#
-		available = {
-			SIA = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			SIA = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_SIA"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_SIA"
-			create_wargoal = {
-				type = annex_everything
-				target = SIA
-		 	}
-		}
-	}
-	HNN_het_BRM = {#
-		available = {
-			BRM = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			BRM = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_BRM"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_BRM"
-			create_wargoal = {
-				type = annex_everything
-				target = BRM
-		 	}
-		}
-	}
-	HNN_het_BHC = {#
-		available = {
-			BHC = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			BHC = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_BHC"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_BHC"
-			create_wargoal = {
-				type = annex_everything
-				target = BHC
-		 	}
-		}
-	}
-	HNN_het_BEH = {#
-		available = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_shu_chu_ge_min_targeted_decision"
 			
 		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			DEH = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_BEH"
-		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_BEH"
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_shu_chu_ge_min_targeted_decision"
 			create_wargoal = {
 				type = annex_everything
-				target = DEH
+				target = FROM
 		 	}
 		}
 	}
-	HNN_het_PRF = {#
-		available = {
+	HNN_mid_asia_shu_chu_ge_min_targeted_decision = {#输出革命
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		target_array = global.middle_eastern_tags_array
+		target_root_trigger = {
+			has_completed_focus = HNN_fan_yue_sha_mo
+		}
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_socialist_government = no
+				is_subject = no
+				NOT = {
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_mid_asia_shu_chu_ge_min_targeted_decision"
 			
 		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			PRF = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_PRF"
-		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_PRF"
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_mid_asia_shu_chu_ge_min_targeted_decision"
 			create_wargoal = {
 				type = annex_everything
-				target = PRF
+				target = FROM
 		 	}
 		}
 	}
-	HNN_het_MAD = {#
-		available = {
+	HNN_soea_asia_shu_chu_ge_min_targeted_decision = {#输出革命
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		targets = { PHI DEI AST NZL }
+		target_root_trigger = {
+			has_completed_focus = HNN_ta_shang_tan_tu
+		}
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_socialist_government = no
+				is_subject = no
+				NOT = {
+					is_puppet_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 40
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete HNN_soea_asia_shu_chu_ge_min_targeted_decision"
 			
 		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			MAD = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_MAD"
-		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_MAD"
+			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_soea_asia_shu_chu_ge_min_targeted_decision"
 			create_wargoal = {
 				type = annex_everything
-				target = MAD
-		 	}
-		}
-	}
-	HNN_het_BHU = {#
-		available = {
-			BHU = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			BHU = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_BHU"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_BHU"
-			create_wargoal = {
-				type = annex_everything
-				target = BHU
-		 	}
-		}
-	}
-	HNN_het_SKM = {#
-		available = {
-			SKM = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			SKM = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_SKM"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_SKM"
-			create_wargoal = {
-				type = annex_everything
-				target = SKM
-		 	}
-		}
-	}
-	HNN_het_NEP = {#
-		available = {
-			
-		}
-		visible = {
-			has_completed_focus = HNN_shu_chu_ge_ming
-			NEP = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_NEP"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_NEP"
-			create_wargoal = {
-				type = annex_everything
-				target = NEP
-		 	}
-		}
-	}
-	HNN_het_AFG = {#
-		available = {
-			AFG = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			AFG = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_AFG"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_AFG"
-			create_wargoal = {
-				type = annex_everything
-				target = AFG
-		 	}
-		}
-	}
-	HNN_het_PER = {#
-		available = {
-			PER = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			PER = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_PER"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_PER"
-			create_wargoal = {
-				type = annex_everything
-				target = PER
-		 	}
-		}
-	}
-	HNN_het_ALO = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			ALO = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_ALO"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_ALO"
-			create_wargoal = {
-				type = annex_everything
-				target = ALO
-		 	}
-		}
-	}
-	HNN_het_KYR = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			KYR = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_KYR"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_KYR"
-			create_wargoal = {
-				type = annex_everything
-				target = KYR
-		 	}
-		}
-	}
-	HNN_het_TRK = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			TRK = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_TRK"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_TRK"
-			create_wargoal = {
-				type = annex_everything
-				target = TRK
-		 	}
-		}
-	}
-	HNN_het_UZB = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_fan_yue_sha_mo
-			UZB = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_UZB"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_UZB"
-			create_wargoal = {
-				type = annex_everything
-				target = UZB
-		 	}
-		}
-	}
-	HNN_het_PHI = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_ta_shang_tan_tu
-			PHI = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_PHI"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_PHI"
-			create_wargoal = {
-				type = annex_everything
-				target = PHI
-		 	}
-		}
-	}
-	HNN_het_DEI = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_ta_shang_tan_tu
-			DEI = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_DEI"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_DEI"
-			create_wargoal = {
-				type = annex_everything
-				target = DEI
-		 	}
-		}
-	}
-	HNN_het_AST = {#
-		available = {
-			AST = {
-				NOT = {
-					is_in_faction_with = HNN
-				}
-			}
-		}
-		visible = {
-			has_completed_focus = HNN_ta_shang_tan_tu
-			AST = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_AST"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_AST"
-			create_wargoal = {
-				type = annex_everything
-				target = AST
-		 	}
-		}
-	}
-	HNN_het_NZL = {#
-		available = {
-
-		}
-		visible = {
-			has_completed_focus = HNN_ta_shang_tan_tu
-			NZL = {
-				exists = yes
-				NOT = {
-					is_puppet_of = HNN
-				}
-			}
-		}
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 20
-		days_remove = 20
-		fire_only_once = yes
-
-		ai_will_do = { factor = 1000 }
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_het_NZL"
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove HNN_het_NZL"
-			create_wargoal = {
-				type = annex_everything
-				target = NZL
+				target = FROM
 		 	}
 		}
 	}

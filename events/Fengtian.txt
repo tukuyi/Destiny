@@ -12831,7 +12831,7 @@ country_event = { #Fengtian's Ultimatum, non concessions
 			limit = {
 				is_not_claim_or_core_of_ROOT = yes
 				OR = {
-					is_owned_by = ROOT
+					is_owned_and_controlled_by = ROOT
 					owner = {
 						is_subject_of = ROOT
 					}
@@ -13046,7 +13046,7 @@ country_event = { #Fengtian's Ultimatum, all land
 			limit = {
 				is_not_claim_or_core_of_ROOT = yes
 				OR = {
-					is_owned_by = ROOT
+					is_owned_and_controlled_by = ROOT
 					owner = {
 						is_subject_of = ROOT
 					}
@@ -13158,7 +13158,7 @@ country_event = { #Fengtian's Ultimatum, all land
 			limit = {
 				is_not_claim_or_core_of_ROOT = yes
 				OR = {
-					is_owned_by = ROOT
+					is_owned_and_controlled_by = ROOT
 					owner = {
 						is_subject_of = ROOT
 					}

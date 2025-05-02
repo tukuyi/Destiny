@@ -843,9 +843,7 @@ focus_tree = {
 				add_ideas = shenyang_arsenal
 			}
 			else = {
-				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = FNG_shenyang_arsenal_organisation
-				mio:FNG_shenyang_arsenal_organisation = { add_mio_size = 1 }
+				mio:CHN_small_arms_industry_organisation = { add_mio_size = 1 }
 			}
 			custom_effect_tooltip = anq_increase_fng_2
 			hidden_effect = {
@@ -1940,7 +1938,7 @@ focus_tree = {
 				}
 				country_event = {
 					id = anq.36
-					random = 2400
+					random_hours = 2400
 					days = 100
 				}
 				country_event = {

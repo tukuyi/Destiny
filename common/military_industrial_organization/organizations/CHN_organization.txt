@@ -1,0 +1,534 @@
+##################
+### Naval MIOs ###
+##################
+CHN_naval_industry_organisation = {#中国海军企业
+	name = CHN_naval_industry_organisation
+	icon = GFX_idea_whampoa_dock_company #Wanted to throw Guangdong a bone
+	include = generic_small_fleet_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else_if = {
+			limit = { FROM = { original_tag = CHI } }
+			FROM = {
+				OR = {
+					has_completed_focus = CHI_six_year_programme
+					has_completed_focus = CHI_invite_foreign_naval_advisors
+				}
+			}
+		}
+		else = {
+			FROM = {
+				if = {
+					limit = { original_tag = SZC }
+					OR = {
+						has_completed_focus = SZC_The_Yangtze_Lifeline
+						owns_any_state_of = {
+							716 #Liaoning (Yingkou)
+							743 #Shanghai (Jiangnan Shipyards)
+							747 #Fuzhou (Mawei Arsenal/Foo-chow Shipyards/Fuzhou Shipyards)
+							592 #Guangzhou (Whampoa Dock Company)
+							609 #Tianjin (Dagu Shipyard)
+						}
+					}
+					else = {
+						owns_any_state_of = {
+							716 #Liaoning (Yingkou)
+							743 #Shanghai (Jiangnan Shipyards)
+							747 #Fuzhou (Mawei Arsenal/Foo-chow Shipyards/Fuzhou Shipyards)
+							592 #Guangzhou (Whampoa Dock Company)
+							609 #Tianjin (Dagu Shipyard)
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####################
+### Airplane MIOs ###
+#####################
+CHN_aviation_industry_organisation = {#空军企业
+	name = china_aviation_corporation
+	icon = GFX_idea_china_aviation_corporation #Prboably one of the few legit aircraft manufacturers in China
+	include = generic_general_aircraft_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else_if = {
+			limit = { FROM = { original_tag = CHI } }
+			OR = {
+				FROM = {
+					OR = {
+						has_completed_focus = CHI_study_european_air
+						has_completed_focus = CHI_central_aviation_school
+						has_completed_focus = CHI_xp_zero_project
+						has_completed_focus = CHI_patrol_the_coasts
+					}
+				}
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = FNG } }
+			OR = {
+				FROM = { has_completed_focus = FNG_Yamato_Hotel_Licenses }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = MAN } }
+			FROM = { has_completed_focus = MAN_manchurian_airplane_manufacturing_company }
+		}
+		else_if = {
+			limit = { FROM = { original_tag = SHX } }
+			OR = {
+				FROM = { has_completed_focus = SHX_shan_xi_kong_jun }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = SZC } }
+			OR = {
+				FROM = { has_completed_focus = SZC_Expand_Production_Aircraft }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else = {
+			china_basic_mio_available_trigger = yes
+		}
+	}
+}
+
+#####################
+### Materiel MIOs ###
+#####################
+CHN_small_arms_industry_organisation = {#中国轻武器企业
+	name = CHN_small_arms_industry_organisation
+	icon = GFX_idea_hanyang_arsenal #Famous Central China Arsenal
+	include = generic_infantry_equipment_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	add_trait = {
+		token = China_mio_trait_integrated_shenyang
+		name = China_mio_trait_integrated_shenyang
+		icon = GFX_icon_shenyang_arsenal
+		special_trait_background = yes
+
+		position = { x = 0 y = 0 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = FNG
+						}
+					}
+				}
+				has_mio_flag = integrated_shenyang
+			}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.03
+			reliability = 0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.10
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_gongxian
+		name = China_mio_trait_integrated_gongxian
+		icon = GFX_icon_gongxian_arsenal
+		special_trait_background = yes
+
+		position = { x = 0 y = 1 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = QIE
+						}
+					}
+				}
+				has_mio_flag = integrated_gongxian
+			}
+		}
+
+		equipment_bonus = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_shanghai
+		name = China_mio_trait_integrated_shanghai
+		icon = GFX_KR_generic_mio_trait_icon_production_output
+		special_trait_background = yes
+
+		position = { x = 0 y = 2 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							tag = SHC
+						}
+					}
+				}
+				has_mio_flag = integrated_shanghai
+			}
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_jinling
+		name = China_mio_trait_integrated_jinling
+		icon = GFX_icon_jinling_arsenal
+		special_trait_background = yes
+
+		position = { x = 2 y = 1 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = LEP
+						}
+					}
+				}
+				has_mio_flag = integrated_jinling
+			}
+		}
+
+		equipment_bonus = {
+			defense = 0.05
+			breakthrough = 0.05
+			reliability = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else = {
+			FROM = {
+				OR = {
+					#Major Arsenals
+					owns_any_state_of = {
+						716 #Shenyang (Shenyang Arsenal)
+						1072 #West Shanxi (Taiyuan Arsenal)
+						1059 #Kaifeng (Gongxian Arsenal)
+						1048 #Wuhan (Hanyang Arsenal)
+						592 #Canton (Guangdong Arsenal)
+						743 #Shanghai (Shanghai Arsenal)
+						613 #Jinling (Jinling Arsenal)
+
+						#Minor Arsenals
+						597 #Jinan (Jinan Arsenal)
+						605 #Chengdu (Chengdu Arsenal)
+						1051 #Guixi (Guizhou Arsenal)
+						594 #Nanning (Guangxi Arsenal)
+					}
+				}
+			}
+		}
+	}
+}
+
+CHN_support_equipment_industry_organisation = {#中国轻型装备企业
+	name = CHN_support_equipment_industry_organisation
+	icon = GFX_idea_gongxian_arsenal #Famous Central China Arsenal
+	include = generic_support_equipment_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	add_trait = {
+		token = China_mio_trait_integrated_hanyang
+		name = China_mio_trait_integrated_hanyang
+		icon = GFX_icon_hanyang_arsenal
+		special_trait_background = yes
+
+		position = { x = 3 y = 0 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = QIE
+						}
+					}
+				}
+				has_mio_flag = integrated_hanyang
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_guangdong
+		name = China_mio_trait_integrated_guangdong
+		icon = GFX_icon_guangdong_arsenal
+		special_trait_background = yes
+
+		position = { x = 3 y = 1 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = GXC
+						}
+					}
+				}
+				has_mio_flag = integrated_guangdong
+			}
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_jinling
+		name = China_mio_trait_integrated_jinling
+		icon = GFX_icon_jinling_arsenal
+		special_trait_background = yes
+
+		position = { x = 3 y = 2 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = LEP
+						}
+					}
+				}
+				has_mio_flag = integrated_jinling
+			}
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_shanghai
+		name = China_mio_trait_integrated_shanghai
+		icon = GFX_KR_generic_mio_trait_icon_production_output
+		special_trait_background = yes
+
+		position = { x = 3 y = 3 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = SHC
+						}
+					}
+				}
+				has_mio_flag = integrated_shanghai
+			}
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else = {
+			FROM = {
+				OR = {
+					if = {
+						limit = { original_tag = SZC }
+						has_completed_focus = SZC_Industrial_Silk
+					}
+					else = {
+						hidden_trigger = { always = no }
+					}
+					owns_any_state_of = {
+						#Major Arsenals
+						716 #Shenyang (Shenyang Arsenal)
+						1072 #West Shanxi (Taiyuan Arsenal)
+						1059 #Kaifeng (Gongxian Arsenal)
+						1048 #Wuhan (Hanyang Arsenal)
+						592 #Canton (Guangdong Arsenal)
+						743 #Shanghai (Shanghai Arsenal)
+						613 #Jinling (Jinling Arsenal)
+
+						#Minor Arsenals
+						325 #Kunming (Yunnan Arsenal)
+						602 #Xiangjiang (Zhuzhou Arsenal)
+						617 #Dihua (Dihua/Xinjiang Arsenal)
+					}
+				}
+			}
+		}
+	}
+}
+
+CHN_artillery_industry_organisation = {#中国火炮企业
+	name = CHN_artillery_industry_organisation
+	icon = GFX_idea_taiyuan_arsenal_company #Famous for their artillery
+	include = generic_artillery_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	add_trait = {
+		token = China_mio_trait_integrated_taiyuan
+		name = China_mio_trait_integrated_taiyuan
+		icon = GFX_icon_taiyuan_arsenal_company
+		special_trait_background = yes
+
+		position = { x = 3 y = 4 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = SHX
+						}
+					}
+				}
+				has_mio_flag = integrated_taiyuan
+			}
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	add_trait = {
+		token = China_mio_trait_integrated_shanghai
+		name = China_mio_trait_integrated_shanghai
+		icon = GFX_KR_generic_mio_trait_icon_production_output
+		special_trait_background = yes
+
+		position = { x = 4 y = 4 }
+
+		available = {
+			if = {
+				limit = { 
+					FROM = {
+						NOT = {
+							original_tag = SHC
+						}
+					}
+				}
+				has_mio_flag = integrated_shanghai
+			}
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
+		ai_will_do = { base = 2 }
+	}
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else = {
+			FROM = {
+				OR = {
+					if = {
+						limit = { original_tag = CHI }
+						has_completed_focus = CHI_repossesed_national_arsenals
+					}
+					else_if = {
+						limit = { original_tag = SZC }
+						has_completed_focus = SZC_Expand_Production_Artillery
+					}
+					else = {
+						hidden_trigger = { always = no }
+					}
+					owns_any_state_of = {
+						#Major Arsenals
+						716 #Shenyang (Shenyang Arsenal)
+						1072 #West Shanxi (Taiyuan Arsenal)
+						1059 #Kaifeng (Gongxian Arsenal)
+						1048 #Wuhan (Hanyang Arsenal)
+						592 #Canton (Guangdong Arsenal)
+						743 #Shanghai (Shanghai Arsenal)
+						613 #Jinling (Jinling Arsenal)
+
+						#Minor Arsenals
+						283 #Lanzhou (Lanzhou Arsenal)
+					}
+				}
+			}
+		}
+	}
+}
+

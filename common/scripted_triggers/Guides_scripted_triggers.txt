@@ -67,6 +67,7 @@ is_guides_nation = {
 		tag = TRK
 		tag = KHI
 		tag = DKB
+		tag = KLY
 		tag = KUB
 		tag = MTR
 		tag = WHR
@@ -115,5 +116,6 @@ is_guides_nation = {
 		tag = NFL
 		tag = TTR
 		tag = BKN
+		tag = KLY
 	}
 }

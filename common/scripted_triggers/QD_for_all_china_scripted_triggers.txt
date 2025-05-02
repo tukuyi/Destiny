@@ -28,6 +28,41 @@ has_compele_china2 = {#全国大开发
 	}
 }
 
+china_basic_mio_available_trigger = {
+	FROM = { china_is_the_unifier_of_china_trigger = yes }
+}
+
+china_is_the_unifier_of_china_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = china_is_the_chinese_unifier_tt
+		has_global_flag = china_united
+		has_country_flag = china_is_potential_government
+		tag = CHN
+	}
+}
+
+is_chinese_or_potential_chinese_tag = { #This is for ALLOWED or POSSIBLE checks since they are done on startup, since KUM is here this needs to be used in conjunction with KUM_is_chinese_tag to not cause unintended behaviour
+	OR = {
+		original_tag = ANQ
+		original_tag = CHI
+		original_tag = FNG
+		original_tag = GXC
+		original_tag = HNN
+		original_tag = LEP
+		original_tag = QIE
+		original_tag = SHX
+		original_tag = SIK
+		original_tag = SQI
+		original_tag = SZC
+		original_tag = XSM
+		original_tag = YUN
+		original_tag = TAN
+
+		original_tag = SHC #上海
+		original_tag = QYG #琼崖
+	}
+}
+
 china_proper_not_united = { #中国标签的一些逻辑，他们应该在攻击奉天之前先统一中国本土
 	any_of_scopes = {
 		array = global.china_tags_array

@@ -2914,7 +2914,7 @@ focus_tree = {
 				category = support_tech
 			}
 			custom_effect_tooltip = tooltip_white_line
-			mio:QIE_gongxian_arsenal_organisation = {
+			mio:CHN_small_arms_industry_organisation = {
 				add_mio_size = 3
 				add_mio_funds = 500
 			}

@@ -7345,13 +7345,28 @@ focus_tree = {
 				custom_effect_tooltip = HNN_tian_yingzhao_helpful_tooltip
 			}
 			custom_effect_tooltip = tooltip_white_line
-			random_owned_state = {
-				prioritize = { 602 } #Changsha
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				random_owned_state = {
+					prioritize = { 602 } #Changsha
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { mio:CHN_small_arms_industry_organisation = { is_mio_available = no } }
+					custom_effect_tooltip = available_mio_tt
+					show_mio_tooltip = CHN_small_arms_industry_organisation
+				}
+				mio:CHN_small_arms_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 2
 				}
 			}
 			add_one_random_military_factory = yes
@@ -9741,17 +9756,24 @@ focus_tree = {
 				amount = 250
 				producer = HNN
 			}
-			add_tech_bonus = {
-				name = HNN_revitalise_zhuzhou_arsenal
-				bonus = 1
-				uses = 1
-				category = support_tech
+			if = {
+				limit = { has_dlc_aat = no }
+				add_tech_bonus = {
+					name = HNN_revitalise_zhuzhou_arsenal
+					bonus = 1
+					uses = 1
+					category = support_tech
+				}
+				add_tech_bonus = {
+					name = HNN_revitalise_zhuzhou_arsenal
+					bonus = 1
+					uses = 1
+					category = infantry_weapons
+				}
 			}
-			add_tech_bonus = {
-				name = HNN_revitalise_zhuzhou_arsenal
-				bonus = 1
-				uses = 1
-				category = infantry_weapons
+			else = {
+				mio:CHN_support_equipment_industry_organisation = { add_mio_size = 2 }
+				mio:CHN_support_equipment_industry_organisation = { add_mio_funds_gain_factor = 0.10 }
 			}
 			add_one_random_military_factory = yes
 		}
@@ -10160,6 +10182,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_xiang_xi_wang_de_sheng_li
 		}
@@ -10236,6 +10261,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_fen_sui_ni_dang
 		}
@@ -10267,6 +10295,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_fen_sui_ni_dang
 		}
@@ -10305,6 +10336,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_fen_sui_fo_jiao
 		}
@@ -10375,6 +10409,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_miao_ren_zhi_xiang
 		}
@@ -10424,6 +10461,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_miao_ren_zhi_xiang
 		}
@@ -10450,6 +10490,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_jing_ji_tuo_zhan
 		}
@@ -10476,6 +10519,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_jing_ji_tuo_zhan
 		}
@@ -10501,6 +10547,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_jing_ji_tuo_zhan
 		}
@@ -10568,6 +10617,9 @@ focus_tree = {
 			base = 15
 		}
 
+		available = {
+			has_country_leader = { name = "陈渠珍" ruling_only = yes }
+		}
 		prerequisite = {
 			focus = HNN_kai_cai_kuang_chang
 		}

@@ -2875,7 +2875,15 @@ ideas = {
 					instant = yes
 				}
 			}	
-		} 		
+		}
+		HNN_attack_submarine_idea = {#潜艇战术
+			on_add = { log = "[GetLogRoot]: add idea RUS_attack_submarine_idea" }
+			picture = generic_navy_submarines
+			modifier = {
+				submarine_attack = 6
+				naval_torpedo_reveal_chance_factor = -0.25
+			}
+		}
 		HNN_continental_marines = {#海军陆战队
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_continental_marines"}
 			picture = eng_preparing_the_second_front
@@ -5207,9 +5215,9 @@ ideas = {
 			}
 			modifier = {
 				stability_factor = 0.10
+				command_power_gain = 0.25
 				political_power_gain = 0.15
 				army_core_defence_factor = 0.10
-				command_power_gain = 0.25
 			}
 		}
 		HNN_lingering_kmt_insurgents = {
@@ -5220,9 +5228,9 @@ ideas = {
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 			modifier = {
-				political_power_factor = -0.05
 				stability_factor = -0.15
 				command_power_gain = -0.05
+				political_power_factor = -0.05
 			}
 		}
 		HNN_the_western_diarchy_2 = {
@@ -5242,9 +5250,6 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_alliance_with_the_diarchy" }
 			picture = ALB_cooperate_chief_capital
 			allowed = { always = no }
-			available = { 
-				# has_country_leader = { name = "汤芗铭" ruling_only = yes }
-			}
 			modifier = {
 				planning_speed = 0.05
 				land_doctrine_cost_factor = -0.10
@@ -5269,8 +5274,8 @@ ideas = {
 				has_country_leader = { name = "汤芗铭" ruling_only = yes }
 			}
 			modifier = {
-				stability_factor = 0.20
 				compliance_gain = 0.01
+				stability_factor = 0.20
 				resistance_growth = -0.10
 			}
 		}
@@ -5746,6 +5751,9 @@ ideas = {
 			allowed = { 
 				original_tag = HNN
 			}
+			visible = {
+				has_country_flag = HNN_PROC_victory	
+			}
 			available = { 
 				has_country_flag = HNN_PROC_victory	
 			} 
@@ -5761,6 +5769,9 @@ ideas = {
 			picture = CN_zhong_ke_yuan
 			allowed = { 
 				original_tag = HNN
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory	
 			}
 			available = {
 				OR = {

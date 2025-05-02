@@ -12,7 +12,7 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 		# eval_effect ROOT = {
-		# 	scoped_sound_effect = "SHC_mi_sha"
+
 		# }
 
 		# scoped_sound_effect = "SHC_jingjiao"
@@ -24,11 +24,11 @@ country_event = {#测试事件
 		# 	value = 0
 		# }
 
-		add_to_variable = {
-			var = HNN_tu_gai
-			value = 5
-		}
-		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
+		# add_to_variable = {
+		# 	var = HNN_tu_gai
+		# 	value = 5
+		# }
+		# add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 
 		# set_province_name = { id = 7859 name = "新南京" }
 

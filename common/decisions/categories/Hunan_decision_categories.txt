@@ -157,16 +157,6 @@ HNN_gong_tuan_dang_dou_zheng_category = {#工团党内的政治斗争
 	}
 }
 
-HNN_tu_di_gai_ge_category = {#土地改革
-	icon = GFX_decision_agriculture_grain
-	allowed = { original_tag = HNN }
-	visible = {
-		has_country_flag = HNN_PROC_victory
-	}
-	priority = 0
-	scripted_gui = HNN_tu_di_gai_ge_gui_window
-}
-
 HNN_education_category = {#识字率
 	icon = GFX_decision_category_agriculture
 	picture = GFX_decision_category_chinese_mass_exodus
@@ -182,27 +172,9 @@ HNN_education_category = {#识字率
 	visible_when_empty = yes
 }
 
-HNN_chu_mo_tian_kong_category = {#触摸天空
-	icon = GFX_decision_category_Research
-	allowed = { original_tag = HNN }
-	visible = {
-		has_completed_focus = HNN_chu_mo_tian_kong
-	}
-	priority = 0
-}
-
-HNN_ren_ti_ke_xue_category = {#人体科学
-	icon = GFX_decision_category_Research
-	allowed = { original_tag = HNN }
-	visible = {
-		has_completed_focus = HNN_yu_shen_de_jiao_yi
-	}
-	priority = 0
-}
-
-HNN_let_he_in = {#第三世界
+HNN_let_he_in = {#结盟
 	icon = GFX_decision_category_foreign_policy
-	priority = 80
+	priority = 70
 
 	allowed = {
 		tag = HNN
@@ -213,9 +185,30 @@ HNN_let_he_in = {#第三世界
 	}
 }
 
+HNN_tu_di_gai_ge_category = {#土地改革
+	icon = GFX_decision_agriculture_grain
+	picture = GFX_decision_category_tu_di_gaI_ge
+	priority = 60
+
+	allowed = { original_tag = HNN }
+	visible = {
+		has_country_flag = HNN_PROC_victory
+	}
+	scripted_gui = HNN_tu_di_gai_ge_gui_window
+}
+PRC_tech_gourp_decisions = {#科技合作
+	icon = GFX_decision_category_patriotic
+	visible = {
+		OR = {
+			tag = CSP
+			is_in_faction_with = CSP
+		}
+	}
+}
+
 HNN_shu_chu_ge_min = {#输出革命
 	icon = GFX_decision_category_generic_purge
-	priority = 80
+	priority = 50
 
 	allowed = {
 		tag = HNN
@@ -224,6 +217,25 @@ HNN_shu_chu_ge_min = {#输出革命
 	visible = {
 		has_completed_focus = HNN_shu_chu_ge_ming
 	}
+}
+
+
+HNN_chu_mo_tian_kong_category = {#触摸天空
+	icon = GFX_decision_category_Research
+	allowed = { original_tag = HNN }
+	visible = {
+		has_completed_focus = HNN_chu_mo_tian_kong
+	}
+	priority = 40
+}
+
+HNN_ren_ti_ke_xue_category = {#人体科学
+	icon = GFX_decision_category_Research
+	allowed = { original_tag = HNN }
+	visible = {
+		has_completed_focus = HNN_yu_shen_de_jiao_yi
+	}
+	priority = 40
 }
 
 HNN_dyrektoria_uprising = {#三头同盟 最新最炫的功能
@@ -245,7 +257,8 @@ HNN_dyrektoria_uprising = {#三头同盟 最新最炫的功能
 
 HNN_tie_lu_category = {#全国大开发
 	icon = GFX_decision_category_industrial_china
-	
+	priority = 20
+
 	allowed = {
 		OR = {
 			is_chinese_tag = yes
@@ -284,7 +297,7 @@ HNN_tie_lu_category = {#全国大开发
 
 HNN_hai_fang = {#海防
 	icon = GFX_decision_category_breadbasket
-	priority = 80
+	priority = 20
 
 	allowed = {
 		OR = {

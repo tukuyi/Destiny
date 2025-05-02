@@ -500,3 +500,8 @@ HNN_ma_long = {
 HNN_liu_chang_yi = {
 	retire = yes
 }
+
+mio:HNN_faw_motors_organisation = {
+	set_variable = { CIC_bonus = 500 }
+	set_variable = { total_campaign_CIC = 0 }
+}

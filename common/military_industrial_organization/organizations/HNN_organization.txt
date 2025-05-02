@@ -1,0 +1,817 @@
+###################
+### Armour MIOs ###
+###################
+HNN_tiema_organisation = {#铁马
+	name = HNN_tie
+	icon = GFX_idea_HNN_tie
+
+	allowed = { 
+		original_tag = HNN 
+	}
+	visible = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_tiema_organisation_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	equipment_type = {
+		armor
+	}
+	research_categories = {
+		mio_cat_tech_all_armor_and_modules
+	}
+	ai_will_do = { base = 10 }
+	initial_trait = {
+		name = HNN_tie_mio_desc
+
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.25
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_1
+		name = putilovets_upgrade_1
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		mutually_exclusive = { putilovets_upgrade_2 }
+
+		position = { x = 1 y = 0 }
+
+		equipment_bonus = {
+			armor_value = 0.1
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_2
+		name = putilovets_upgrade_2
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		mutually_exclusive = { putilovets_upgrade_1 }
+
+		position = { x = 3 y = 0 }
+
+		equipment_bonus = {
+			armor_value = 0.2
+			maximum_speed = -0.1
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_3
+		name = putilovets_upgrade_3
+		icon = GFX_generic_mio_trait_icon_hardness
+
+		mutually_exclusive = { putilovets_upgrade_4 }
+
+		position = { x = 5 y = 0 }
+
+		equipment_bonus = {
+			hardness = 0.2
+			reliability = -0.1
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_4
+		name = putilovets_upgrade_4
+		icon = GFX_generic_mio_trait_icon_hardness
+
+		mutually_exclusive = { putilovets_upgrade_3 }
+
+		position = { x = 7 y = 0 }
+
+		equipment_bonus = {
+			hardness = 0.1
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_1_1
+		name = putilovets_upgrade_1_1
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		any_parent = { putilovets_upgrade_1 putilovets_upgrade_2 }
+
+		position = { x = 2 y = 1 }
+
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_dozer
+		name = putilovets_upgrade_dozer
+		icon = GFX_generic_mio_trait_icon_entrenchment
+
+		visible = {
+			has_dlc_nsb = yes
+		}
+
+		position = { x = 4 y = 1 }
+
+		equipment_bonus = {
+			entrenchment = 0.5
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_1_2
+		name = putilovets_upgrade_1_2
+		icon = GFX_generic_mio_trait_icon_hardness
+
+		any_parent = { putilovets_upgrade_3 putilovets_upgrade_4 }
+
+		position = { x = 6 y = 1 }
+
+		equipment_bonus = {
+			hardness = 0.05
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_2_1
+		name = putilovets_upgrade_2_1
+		icon = GFX_icon_HNN_tie
+
+		special_trait_background = yes
+
+		all_parents = { putilovets_upgrade_1_1 putilovets_upgrade_1_2 }
+
+		position = { x = 4 y = 2 }
+
+		equipment_bonus = {
+			soft_attack = 0.10
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_3_1
+		name = putilovets_upgrade_3_1
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		all_parents = { putilovets_upgrade_2_1 }
+
+		position = { x = 4 y = 3 }
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_4_1
+		name = putilovets_upgrade_4_1
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		all_parents = { putilovets_upgrade_3_1 }
+
+		mutually_exclusive = { putilovets_upgrade_4_2 }
+
+		position = { x = 3 y = 4 }
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = putilovets_upgrade_4_2
+		name = putilovets_upgrade_4_2
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		all_parents = { putilovets_upgrade_3_1 }
+
+		mutually_exclusive = { putilovets_upgrade_4_1 }
+
+		position = { x = 5 y = 4 }
+
+		equipment_bonus = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+			build_cost_ic = 0.1
+		}
+	}
+}
+
+HNN_krupp_tank_organisation = {#克努伯
+	include = generic_infantry_tank_organization
+	name = HNN_krupp
+	icon = GFX_idea_krupp
+	allowed = { 
+		tag = HNN
+		has_completed_focus = HNN_yin_jin_de_shi_zhuang_bei 
+	}
+	available = {
+		FROM = {
+			has_completed_focus = HNN_yin_jin_de_shi_zhuang_bei 
+		}
+	}
+}
+##################
+### Naval MIOs ###
+##################
+
+#####################
+### Airplane MIOs ###
+#####################
+
+#####################
+### Materiel MIOs ###
+#####################
+HNN_faw_motors_organisation = {#一汽
+	name = HNN_faw_motors
+	icon = GFX_idea_HNN_faw_motors
+
+	allowed = { 
+		original_tag = HNN 
+	}
+	visible = {
+		has_dlc_nsb = yes
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_faw_motors_organisation_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	on_tech_research_completed = {
+		set_temp_variable = {
+			var = HNN_faw_cic_base
+			value = 3000
+		}
+		set_temp_variable = {
+			var = HNN_faw_cic_trait_sum
+			value = 500
+		}
+		set_temp_variable = {
+			var = HNN_faw_cic_size_multiplier
+			value = size
+		}
+		if = {
+			limit = {
+				FROM = {
+					mio:HNN_faw_motors_organisation = {
+						is_mio_trait_completed = amo_upgrade_1_2
+					}
+				}
+			}
+			add_to_temp_variable = {
+				var = HNN_faw_cic_trait_sum
+				value = 250
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					mio:HNN_faw_motors_organisation = {
+						is_mio_trait_completed = amo_upgrade_1_4
+					}
+				}
+			}
+			add_to_temp_variable = {
+				var = HNN_faw_cic_trait_sum
+				value = 250
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					mio:HNN_faw_motors_organisation = {
+						has_mio_policy_active = HNN_mio_policy_expand_weapon_deals
+					}
+				}
+			}
+			add_to_temp_variable = {
+				var = HNN_faw_cic_trait_sum
+				value = 250
+			}
+		}
+		multiply_temp_variable = {
+			var = HNN_faw_cic_trait_sum
+			value = HNN_faw_cic_size_multiplier
+		}
+		add_to_temp_variable = {
+			var = HNN_faw_cic_trait_sum
+			value = HNN_faw_cic_base
+		}
+		FROM = { add_cic = HNN_faw_cic_trait_sum }
+		add_to_variable = { total_campaign_CIC = HNN_faw_cic_trait_sum }
+		custom_effect_tooltip = HNN_faw_research_cic_tt
+	}
+
+	equipment_type = {
+		motorized_equipment
+		mechanized_equipment
+		armor
+	}
+
+	research_categories = {
+		mio_cat_tech_all_motorized_mechanized
+		mio_cat_tech_all_armor_and_modules
+	}
+
+	ai_will_do = { base = 1 }
+
+	initial_trait = {
+		name = HNN_faw_motors_organisation_mio_desc
+	}
+
+	trait = {
+		token = amo_upgrade_1
+		name = amo_upgrade_1
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 1 y = 0 }
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_2
+		name = amo_upgrade_2
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 4 y = 0 }
+
+		limit_to_equipment_type = {
+			armor
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_3
+		name = amo_upgrade_3
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 7 y = 0 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_1
+		name = amo_upgrade_1_1
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x = -1 y = 2 }
+		relative_position_id = amo_upgrade_1
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		any_parent = { amo_upgrade_1 amo_upgrade_2 }
+
+		mutually_exclusive = { amo_upgrade_1_2 }
+
+		equipment_bonus = {
+			maximum_speed = 0.2
+			fuel_consumption = 0.1
+		}
+
+		production_bonus = {
+			production_resource_need_factor = 0.1
+		}
+
+		on_complete = {
+			FROM = { add_ideas = SQI_si_fang_cic_1 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_2
+		name = amo_upgrade_1_2
+		icon = GFX_KR_generic_mio_trait_icon_cic
+
+		position = { x = 0 y = 2 }
+		relative_position_id = amo_upgrade_1
+
+		any_parent = { amo_upgrade_1 amo_upgrade_2 }
+
+		mutually_exclusive = { amo_upgrade_1_1 }
+
+		limit_to_equipment_type = { motorized_equipment }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		on_complete = {
+			custom_effect_tooltip = HNN_faw_trait_cic_tt
+			add_to_variable = { CIC_bonus = 250 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_3
+		name = amo_upgrade_1_3
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		all_parents = { amo_upgrade_2 }
+
+		position = { x = -1 y = 2 }
+		relative_position_id = amo_upgrade_2
+
+		mutually_exclusive = { amo_upgrade_1_3.5 }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			fuel_capacity = 1.0
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_3.5
+		name = amo_upgrade_1_3.5
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		all_parents = { amo_upgrade_2 }
+
+		position = { x = 1 y = 2 }
+		relative_position_id = amo_upgrade_2
+
+		mutually_exclusive = { amo_upgrade_1_3 }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			maximum_speed = 0.2
+			fuel_consumption = 0.1
+		}
+
+		production_bonus = {
+			production_resource_need_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_4
+		name = amo_upgrade_1_4
+		icon = GFX_KR_generic_mio_trait_icon_cic
+
+		position = { x = 0 y = 2 }
+		relative_position_id = amo_upgrade_3
+
+		any_parent = { amo_upgrade_2 amo_upgrade_3 }
+
+		mutually_exclusive = { amo_upgrade_1_5 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		on_complete = {
+			custom_effect_tooltip = HNN_faw_trait_cic_tt
+			add_to_variable = { CIC_bonus = 250 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_1_5
+		name = amo_upgrade_1_5
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x = 1 y = 2 }
+		relative_position_id = amo_upgrade_3
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		any_parent = { amo_upgrade_2 amo_upgrade_3 }
+
+		mutually_exclusive = { amo_upgrade_1_4 }
+
+		equipment_bonus = {
+			maximum_speed = 0.2
+			fuel_consumption = 0.1
+		}
+
+		production_bonus = {
+			production_resource_need_factor = 0.1
+		}
+
+		on_complete = {
+			FROM = { add_ideas = SQI_si_fang_cic_2 }
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_2_1
+		name = amo_upgrade_2_1
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x = 0 y = 1 }
+		relative_position_id = amo_upgrade_1_3
+
+		any_parent = { amo_upgrade_1_1 amo_upgrade_1_2 }
+		any_parent = { amo_upgrade_1_3 amo_upgrade_1_3.5 }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			fuel_capacity = 1.0
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_2_2
+		name = amo_upgrade_2_2
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 2 y = 1 }
+		relative_position_id = amo_upgrade_1_3
+
+		any_parent = { amo_upgrade_1_3 amo_upgrade_1_3.5 }
+		any_parent = { amo_upgrade_1_4 amo_upgrade_1_5 }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = amo_upgrade_3_2
+		name = amo_upgrade_3_2
+		icon = GFX_icon_faw_motors
+
+		special_trait_background = yes
+
+		position = { x = 1 y = 2 }
+		relative_position_id = amo_upgrade_1_3
+
+		all_parents = { amo_upgrade_2_1 amo_upgrade_2_2 }
+
+		equipment_bonus = {
+			reliability = 0.1
+			maximum_speed = 0.1
+		}
+	}
+}
+
+HNN_zhong_gong_ye_arsenal_organisation = {#重工业部
+	name = HNN_zhong_gong_ye
+	icon = GFX_idea_norinco
+
+	allowed = { 
+		original_tag = HNN 
+	}
+	visible = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	equipment_type = {
+		infantry_equipment
+		support_equipment
+	}
+
+	research_categories = {
+		infantry_weapons
+		support_tech
+		battlefield_support_tree
+		cat_battlefield_support
+		night_vision
+		cat_special_forces_generic
+	}
+
+	initial_trait = {
+		name = HNN_zhong_gong_ye_desc
+
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.25
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1
+		name = imz_upgrade_1
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x = 1 y = 0 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2
+		name = imz_upgrade_2
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x = 3 y = 1 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_3
+		name = imz_upgrade_3
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 5 y = 1 }
+
+		production_bonus = {
+			production_resource_need_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_4
+		name = imz_upgrade_4
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 7 y = 0 }
+
+		production_bonus = {
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_1
+		name = imz_upgrade_1_1
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x = 0 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_2 }
+
+		all_parents = { imz_upgrade_1 imz_upgrade_2 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_2
+		name = imz_upgrade_1_2
+		icon = GFX_KR_generic_mio_trait_icon_production_output
+
+		position = { x = 2 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_1 imz_upgrade_1_3 }
+
+		all_parents = { imz_upgrade_1 imz_upgrade_2 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+			production_efficiency_cap_factor = 0.1
+			production_resource_need_factor = -0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = 1.0
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_3
+		name = imz_upgrade_1_3
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 4 y = 2 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_2 }
+
+		mutually_exclusive = { imz_upgrade_1_2 imz_upgrade_1_4 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_4
+		name = imz_upgrade_1_4
+		icon = GFX_KR_generic_mio_trait_icon_research_speed
+
+		position = { x = 6 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_3 imz_upgrade_1_5 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_4 }
+
+		on_complete = {
+			FROM = { 
+				if = {
+					limit = { 
+						has_active_mission = SQI_jin_kou_de_guo_shang_ping_mission
+					}
+					SQI_GER_investment_small = yes 
+				}
+			}
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.3
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_1_5
+		name = imz_upgrade_1_5
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 8 y = 2 }
+
+		mutually_exclusive = { imz_upgrade_1_4 }
+
+		all_parents = { imz_upgrade_3 imz_upgrade_4 }
+
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2_1
+		name = imz_upgrade_2_1
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x = 3 y = 3 }
+
+		any_parent = { imz_upgrade_1_1 imz_upgrade_1_2 imz_upgrade_1_3 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_2_2
+		name = imz_upgrade_2_2
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 5 y = 3 }
+
+		any_parent = { imz_upgrade_1_5 imz_upgrade_1_4 imz_upgrade_1_3 }
+
+		production_bonus = {
+			production_resource_need_factor = -0.05
+			production_cost_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = imz_upgrade_3_1
+		name = imz_upgrade_3_1
+		icon = GFX_icon_norinco
+
+		special_trait_background = yes
+
+		position = { x = 4 y = 4 }
+
+		all_parents = { imz_upgrade_2_1 imz_upgrade_2_2 }
+
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_gain_factor = 0.1
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+}

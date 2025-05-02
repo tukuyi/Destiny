@@ -984,3 +984,80 @@ china_submission_mandatory_loyalty_timer_effect = {#设置365天的傀儡标准
 		value = 1 #Has to be 1 or else will break
 	}
 }
+
+#mio相关设置
+CHN_setup_major_arsenal_decision_effect = {
+	if = {
+		limit = { NOT = { PREV = { owns_state = PREV } } }
+		PREV = { activate_targeted_decision = { target = PREV decision = CHN_integrate_major_arsenal_decision } }
+	}
+	else = {
+		PREV = {
+			mio:CHN_small_arms_industry_organisation = {
+				add_mio_funds = 250
+			}
+			mio:CHN_support_equipment_industry_organisation = {
+				add_mio_funds = 250
+			}
+			mio:CHN_artillery_industry_organisation = {
+				add_mio_funds = 250
+			}
+		}
+	}
+}
+
+CHN_setup_minor_small_arms_arsenal_decision_effect = {
+	if = {
+		limit = { NOT = { PREV = { owns_state = PREV } } }
+		PREV = { activate_targeted_decision = { target = PREV decision = CHN_integrate_minor_small_arms_arsenal_decision } }
+	}
+	else = {
+		PREV = {
+			mio:CHN_small_arms_industry_organisation = {
+				add_mio_funds = 250
+			}
+		}
+	}
+}
+
+CHN_setup_minor_support_equipment_arsenal_decision_effect = {
+	if = {
+		limit = { NOT = { PREV = { owns_state = PREV } } }
+		PREV = { activate_targeted_decision = { target = PREV decision = CHN_integrate_minor_support_equipment_arsenal_decision } }
+	}
+	else = {
+		PREV = {
+			mio:CHN_support_equipment_industry_organisation = {
+				add_mio_funds = 250
+			}
+		}
+	}
+}
+
+CHN_setup_minor_artillery_arsenal_decision_effect = {
+	if = {
+		limit = { NOT = { PREV = { owns_state = PREV } } }
+		PREV = { activate_targeted_decision = { target = PREV decision = CHN_integrate_minor_artillery_arsenal_decision } }
+	}
+	else = {
+		PREV = {
+			mio:CHN_artillery_industry_organisation = {
+				add_mio_funds = 250
+			}
+		}
+	}
+}
+
+CHN_setup_major_dockyards_decision_effect = {
+	if = {
+		limit = { NOT = { PREV = { owns_state = PREV } } }
+		PREV = { activate_targeted_decision = { target = PREV decision = CHN_integrate_major_dockyard_decision } }
+	}
+	else = {
+		PREV = {
+			mio:CHN_naval_industry_organisation = {
+				add_mio_funds = 250
+			}
+		}
+	}
+}

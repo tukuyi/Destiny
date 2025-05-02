@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_PRC_tech_gourp"
+		texturefile = "gfx/interface/tech_sharing/PRC_tech_gourp.png"
+	}
+}

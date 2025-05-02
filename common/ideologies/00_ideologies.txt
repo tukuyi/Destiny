@@ -177,6 +177,9 @@ ideologies = {
 			libertarian_possibilism_subtype = {can_be_randomly_selected = no} #Possibilism
 			anarcho_abertzalism_subtype = {can_be_randomly_selected = no} #Anarcho-Abertzalism
 			syn_sandinismo_subtype = {can_be_randomly_selected = no} #Sandinismo
+			syn_utopian_technocracy_subtype = {can_be_randomly_selected = no} #Utopian Technocracy
+			syn_broad_communism_subtype = {can_be_randomly_selected = no} #Broad Communism
+			syn_popcom_subtype = {can_be_randomly_selected = no} #Popular Communism
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_SYNDICALIST_1"
@@ -300,6 +303,8 @@ ideologies = {
 			radsoc_yellow_syndicalism_subtype = {can_be_randomly_selected = no} #Yellow Syndicalism
 			left_carlism_subtype = {can_be_randomly_selected = no} #Left Carlism
 			radsoc_syndicalist_subtype = {can_be_randomly_selected = no} #Syndicalist
+			radsoc_jeffersonianism_subtype = {can_be_randomly_selected = no} #Jeffersonianism
+			radsoc_kritarchy_subtype = {can_be_randomly_selected = no} #Kritarchy
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_RADICAL_SOCIALIST_1"
@@ -417,6 +422,7 @@ ideologies = {
 			lenschian_tendency_subtype = {can_be_randomly_selected = no } #Lenschian Tendency
 			langism_subtype = {can_be_randomly_selected = no } #langism
 			chinese_federalism_subtype = {can_be_randomly_selected = no } #Chinese Federalism
+			socdem_normal_dixiecrat_subtype = {can_be_randomly_selected = no} #Populist Dixiecrat
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_SOCIAL_DEMOCRAT_1"
@@ -513,6 +519,10 @@ ideologies = {
 			soclib_blasquismo_subtype = {can_be_randomly_selected = no } #Blasquismo
 			lerrouxismo_subtype = {can_be_randomly_selected = no } #Lerrouxismo
 			soclib_sicilianism_subtype = {can_be_randomly_selected = no} #Sicilianism
+			soclib_liberal_feminism_subtype = {can_be_randomly_selected = no} #Liberal Feminism
+			soclib_liberal_conservative_subtype = {can_be_randomly_selected = no} #Liberal Conservative
+			soclib_normal_dixiecrat_subtype = {can_be_randomly_selected = no} #Dixiecrat
+			socialist_federalism_subtype = {can_be_randomly_selected = no} #Socialist-Federalism
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_SOCIAL_LIBERAL_1"
@@ -599,6 +609,7 @@ ideologies = {
 			marlib_lerrouxismo_subtype = {can_be_randomly_selected = no } #Lerrouxismo
 			marlib_internationalism_subtype = {can_be_randomly_selected = no} #Internationalism
 			marlib_whiggism_subtype = {can_be_randomly_selected = no} #Whiggism
+			liberal_feminism_subtype = {can_be_randomly_selected = no} #Liberal Feminism
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_MARKET_LIBERAL_1"
@@ -694,6 +705,7 @@ ideologies = {
 			iberian_federalism_subtype = {can_be_randomly_selected = no} #Iberian Federalism
 			soccon_maurism_subtype = {can_be_randomly_selected = no} #Maurismo
 			soccon_populist_dixiecrat_subtype = {can_be_randomly_selected = no} #Populist Dixiecrat
+			soccon_popular_patriotism_subtype = {can_be_randomly_selected = no} #Popular Patriotism
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_SOCIAL_CONSERVATIVE_1"
@@ -919,6 +931,7 @@ ideologies = {
 			integrism_subtype = {can_be_randomly_selected = no} #Integrism
 			pataut_maurrassism_subtype = {can_be_randomly_selected = no} #Maurrassism (Action Francaise)
 			pataut_toryism_subtype = {can_be_randomly_selected = no} #Toryism
+			pataut_agrarianism_subtype = {can_be_randomly_selected = no} #Agrarianism
 	    }
 		dynamic_faction_names = {
 			"FACTION_NAME_PATERNAL_AUTOCRAT_1"

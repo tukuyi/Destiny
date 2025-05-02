@@ -1,0 +1,16 @@
+﻿### LIGHT CRUISER NAMES###
+PRC_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { QIE FNG CHI LEP ANQ YUN SQI XSM SIK SZC LEC GXC HNN SHX PRC }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+
+	#prefix = "ROCS "
+	fallback_name = "%s. Xunyangjian"
+
+	unique = {
+		"重庆" "成都" "南充" "内江" "绵阳" "广安" "达州" "泸州" "宜宾" "乐山" "自贡" "攀枝花" "德阳" "眉山" "资阳" "遂宁" "巴中" "广元"
+	}
+}

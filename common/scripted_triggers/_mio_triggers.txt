@@ -124,8 +124,11 @@ uses_generic_mios = {
 		original_tag = URL
 		original_tag = TTR
 		original_tag = BKN
+
+		original_tag = HNN #湖南
 		original_tag = SHX #山西
 		original_tag = SHC #上海
+		original_tag = YUN #云南
 	}
 }
 
@@ -143,28 +146,20 @@ uses_generic_aircraft_mio = {
 
 uses_generic_artillery_mio = {
 	uses_generic_mios = yes
-	NOT = { original_tag = HNN }
 	NOT = { original_tag = XSM }
-	NOT = { original_tag = YUN }
 }
 
 uses_generic_infantry_mio = {
 	uses_generic_mios = yes
 	NOT = { original_tag = ASY }
-	NOT = { original_tag = HNN }
-	NOT = { original_tag = SQI }
 	NOT = { original_tag = XSM }
-	NOT = { original_tag = YUN }
 	NOT = { original_tag = BKN }
 }
 
 uses_generic_support_mio = {
 	uses_generic_mios = yes
 	NOT = { original_tag = ASY }
-	NOT = { original_tag = HNN }
-	NOT = { original_tag = SQI }
 	NOT = { original_tag = XSM }
-	NOT = { original_tag = YUN }
 }
 
 uses_generic_motorised_mio = {

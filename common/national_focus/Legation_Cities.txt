@@ -2941,7 +2941,7 @@ focus_tree = {
 				has_government = social_liberal
 				has_government = authoritarian_democrat
 				custom_trigger_tooltip = {
-					tooltip = "§Y我们已将缩减了在上海的资产§!"
+					tooltip = "我们已经缩减了在上海的资产"
 					has_cosmetic_tag = LEC_japanese_shanghai_tag
 				}
 			}

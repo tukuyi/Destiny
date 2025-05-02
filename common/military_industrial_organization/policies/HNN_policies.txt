@@ -1,0 +1,46 @@
+HNN_mio_policy_expand_weapon_deals = {
+	name = HNN_mio_policy_expand_mechanised_weapon_deals
+	icon = GFX_idea_SWE_hodgepodge_of_equipment
+	allowed = {
+		is_military_industrial_organization = HNN_faw_motors_organisation
+
+	}
+	available = {
+		has_mio_size > 1
+	}
+	cost = 25
+	organization_modifier = {
+		military_industrial_organization_design_team_assign_cost = 0.25
+	}
+	on_add = {
+		custom_effect_tooltip = HNN_faw_trait_cic_tt
+		add_to_variable = { CIC_bonus = 250 }
+	}
+	on_remove = {
+		subtract_from_variable = { CIC_bonus = 250 }
+	}
+	ai_will_do = { base = 1 }
+}
+HNN_mio_policy_improved_external_equipment = {
+	name = HNN_mio_policy_improved_external_equipment
+	icon = GFX_generic_mio_department_icon_tank_general_engine
+	allowed = {
+		OR = {
+			is_military_industrial_organization = HNN_faw_motors_organisation
+			is_military_industrial_organization = HNN_zhong_gong_ye_arsenal_organisation
+		}
+	}
+	available = {
+		has_mio_size > 5
+	}
+	visible = {
+		has_dlc_nsb = yes
+	}
+	equipment_bonus = {
+		same_as_mio = {
+			fuel_capacity = 0.5
+			entrenchment = 0.5
+		}
+	}
+	ai_will_do = { base = 1000 }
+}

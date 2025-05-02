@@ -33,6 +33,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/Religion_orthodox.png"
 	}
 	spriteType = {
+		name = "GFX_decision_norinco"
+		texturefile = "gfx/interface/decisions/norinco.png"
+	}
+	spriteType = {
+		name = "GFX_decision_HNN_tie"
+		texturefile = "gfx/interface/decisions/HNN_tie.png"
+	}
+	spriteType = {
+		name = "GFX_decision_faw_motors"
+		texturefile = "gfx/interface/decisions/faw_motors.png"
+	}
+	spriteType = {
 		name = "GFX_decision_Religion_catholicism"
 		texturefile = "gfx/interface/decisions/Religion_catholicism.png"
 	}

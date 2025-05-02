@@ -12,6 +12,40 @@ on_actions = {
 				}
 				set_global_flag = QI_E_IS_COMING
 			}
+
+			for_each_scope_loop = {
+				array = global.china_tags_array
+
+				if = {
+					limit = { has_dlc_aat = yes }
+					###- MIO Decision Setup - add half funds if they start off
+					#Major Arsenals
+					716 = { CHN_setup_major_arsenal_decision_effect = yes } #Liaoning
+					1072 = { CHN_setup_major_arsenal_decision_effect = yes } #East Shanxi
+					1059 = { CHN_setup_major_arsenal_decision_effect = yes } #Kaifeng
+					1048 = { CHN_setup_major_arsenal_decision_effect = yes } #Wuhan
+					592 = { CHN_setup_major_arsenal_decision_effect = yes } #Canton
+					613 = { CHN_setup_major_arsenal_decision_effect = yes } #Nanjing
+					743 = { CHN_setup_major_arsenal_decision_effect = yes } #Shanghai
+					#Minor Small Arms Arsenals
+					597 = { CHN_setup_minor_small_arms_arsenal_decision_effect = yes } #Jinan
+					605 = { CHN_setup_minor_small_arms_arsenal_decision_effect = yes } #Chengdu
+					1051 = { CHN_setup_minor_small_arms_arsenal_decision_effect = yes } #Guixi
+					594 = { CHN_setup_minor_small_arms_arsenal_decision_effect = yes } #Nanning
+					#Minor Support Equipment Arsenals
+					325 = { CHN_setup_minor_support_equipment_arsenal_decision_effect = yes } #Yunnan
+					602 = { CHN_setup_minor_support_equipment_arsenal_decision_effect = yes } #zhuzhou
+					617 = { CHN_setup_minor_support_equipment_arsenal_decision_effect = yes } #Dihua
+					#Minor Artillery Arsenals
+					283 = { CHN_setup_minor_artillery_arsenal_decision_effect = yes } #Lanzhou
+					#Major Dockyards
+					716 = { CHN_setup_major_dockyards_decision_effect = yes } #Liaoning
+					743 = { CHN_setup_major_dockyards_decision_effect = yes } #Shanghai
+					747 = { CHN_setup_major_dockyards_decision_effect = yes } #Fuzhou
+					592 = { CHN_setup_major_dockyards_decision_effect = yes } #Canton
+					609 = { CHN_setup_major_dockyards_decision_effect = yes } #Tianjin
+				}
+			}
 		}
 	}
 	on_daily_HNN = {

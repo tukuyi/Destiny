@@ -227,11 +227,11 @@ HNN_revolution_victory = {#工团上台初始设定
 
 	add_popularity = {
 		ideology = syndicalist
-		popularity = 0.1
+		popularity = 0.10
 	}
 	add_popularity = {
 		ideology = authoritarian_democrat
-		popularity = -0.1
+		popularity = -0.10
 	}
 	add_popularity = {
 		ideology = authoritarian_democrat
@@ -284,8 +284,6 @@ HNN_victory_all_china = {#工团党统一
 		add_to_variable = { HNN_tu_di_gai_ge_gui_dirty = 1 }
 	}
 
-	HNN_ma_long = { HNN_recruit_characters_effect = yes }
-	HNN_liu_chang_yi = { HNN_recruit_characters_effect = yes }
 	HNN_Xi_Zhong_Xun = { HNN_recruit_characters_effect = yes }
 	HNN_Lin_Bo_Qu = { HNN_recruit_characters_effect = yes }
 	HNN_zhao_jiu_zhang = { HNN_recruit_characters_effect = yes }
@@ -1781,10 +1779,12 @@ HNN_fcations_change = {#阵营
 
 HNN_zi_zhi_qu = {#释放自治区
 	release = MON
-	release = TIB
-	release = SIK
 	puppet = MON
+
+	release = TIB
 	puppet = TIB
+
+	release = SIK
 	puppet = SIK
 	hidden_effect = {
 		MON = {

@@ -17629,10 +17629,9 @@ country_event = { #leadership
 		create_country_leader = {
 			name = "Chen Gongbo"
 			picture = "gfx/leaders/CHI/Portrait_CHI_Chen_Gongbo.png"
-			traits = { CHI_wang_jingwei_thought }
 			expire = "1.1.1"
 			ideology = tot_tridemism_subtype
-			traits = { captain_of_industry }
+			traits = { CHI_wang_jingwei_thought }
 		}		
 	}
 	option = { #
@@ -17646,17 +17645,17 @@ country_event = { #leadership
 		}		
 	}
 	option = { #
-		name = chi_leader.3.d
+		name = chi_leader.3.e
 		create_country_leader = {
-			name = "Jiang Qing"
-			picture = "gfx/leaders/LEC/Portrait_LEC_Jiang_Qing.png"
+			name = "郭沫若"
+			picture = "gfx/leaders/CHI/Portrait_CHI_Guo_Moruo.png"
 			expire = "1.1.1"
-			ideology = caponism_subtype
-			traits = { backroom_backstabber }
+			ideology = technocracy_subtype
+			traits = { eco_technocrat }
 		}		
 	}
 	option = { #
-		name = chi_leader.3.e
+		name = chi_leader.3.f
 		hidden_effect = {
 			country_event = chi_leader.1
 		}		

@@ -1126,10 +1126,10 @@ focus_tree = {
 				mio:HNN_tiema_organisation = {
 					add_mio_size = 1
 				}
-				mio:HNN_hengyang_arsenal_organisation = { 
+				mio:CHN_support_equipment_industry_organisation = { 
 					add_mio_size = 1 
 				}
-				mio:HNN_zhuzhou_artillery_organisation = { 
+				mio:CHN_artillery_industry_organisation = { 
 					add_mio_size = 1 
 				}
 				random_owned_state = {
@@ -2361,7 +2361,7 @@ focus_tree = {
 					}
 					add_stability = 0.10
 					army_experience = 100
-					mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 1 }
+					mio:CHN_support_equipment_industry_organisation = { add_mio_size = 1 }
 					custom_effect_tooltip = HNN_yang_shang_kun_is_helpful_tooltip
 				}
 				else = {
@@ -8087,7 +8087,7 @@ focus_tree = {
 		icon = GFX_TRM_Fate_Of_Unions
 		cost = 3
 		relative_position_id = HNN_gongtuan
-		x = 20
+		x = 24
 		y = 1
 
 		ai_will_do = {
@@ -8925,6 +8925,19 @@ focus_tree = {
 				}
 				add_trait = { trait = panzer_leader }
 			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = yes }
+				if = {
+					limit = { mio:CHN_small_arms_industry_organisation = { is_mio_available = no } }
+					custom_effect_tooltip = available_mio_tt
+					show_mio_tooltip = CHN_small_arms_industry_organisation
+				}
+				mio:CHN_small_arms_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 2
+				}
+			}
 			hidden_effect = {
 				HNN_geng_biao = { 
 					unit_leader_event = { 
@@ -8981,7 +8994,7 @@ focus_tree = {
 		icon = GFX_WCC_us_airforce
 		relative_position_id = HNN_improve_army
 		cost = 5.00
-		x = 9
+		x = -9
 		y = 1
 
 		ai_will_do = {
@@ -9258,8 +9271,8 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		prerequisite = { focus = HNN_gong_ye_shi_ji_chu }
 
+		prerequisite = { focus = HNN_gong_ye_shi_ji_chu }
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_fighter_command"
@@ -9432,10 +9445,10 @@ focus_tree = {
 	
 	focus = {
 		id = HNN_PROC_navy
-		icon = GFX_goal_generic_naval_cruiser2
+		icon = GFX_goal_HNN_Republican_naval_academy
 		relative_position_id = HNN_improve_army
 		cost = 5.00
-		x = -7
+		x = 9
 		y = 1
 	
 		ai_will_do = {
@@ -9459,23 +9472,10 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_PROC_navy"
-			navy_experience = 75
+			navy_experience = 20
+			custom_effect_tooltip = tooltip_white_line
 			add_ideas = CSA_decentralized_command
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+			custom_effect_tooltip = tooltip_white_line
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -9507,7 +9507,6 @@ focus_tree = {
 			focus = HNN_PROC_navy
 		}
 		
-
 		ai_will_do = {
 			factor = 4
 			modifier = {
@@ -9519,20 +9518,74 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_revolutionary_naval_industry"
 			navy_experience = 100
 			add_ideas = HNN_revolutionary_naval_industry_1
-			hidden_effect = {
-				
-			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}	
+
+	focus = {
+		id = HNN_garden_of_explosives
+		icon = GFX_focus_generic_mine_warfare
+		relative_position_id = HNN_PROC_navy
+		cost = 5
+		x = 2
+		y = 2
+
+		allow_branch = { has_dlc_mtg = yes }
+		available = {
+			has_war = yes
+			owns_state = 613
+			owns_state = 592
+			owns_state = 608
+			has_navy_size = { size > 29 }
+		}
+		prerequisite = {
+			focus = HNN_revolutionary_naval_industry
+		}
+		ai_will_do = { base = 3 }
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_garden_of_explosives"
+			add_mines = { region = 75 amount = 200 }
+			add_mines = { region = 76 amount = 400 }
+			add_mines = { region = 77 amount = 600 }
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = HNN_garden_of_explosives
+				bonus = 1
+				uses = 2
+				category = naval_mines
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = HNN_attack_submarine_brigades
+		icon = GFX_goal_generic_wolf_pack
+		cost = 5
+		relative_position_id = HNN_PROC_navy
+		cost = 5
+		x = 2
+		y = 3
+
+		prerequisite = {
+			focus = HNN_garden_of_explosives
+		}
+		ai_will_do = { factor = 3 }
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_attack_submarine_brigades"
+			add_ideas = HNN_attack_submarine_idea
+		}
+	}
 
 	focus = {
 		id = HNN_old_wan
 		icon = GFX_goal_FNG_beiyang_navy
 		relative_position_id = HNN_PROC_navy
 		cost = 5
-		x = -1
-		y = 2
+		x = -4
+		y = 3
 
 		prerequisite = {
 			focus = HNN_revolutionary_naval_industry
@@ -9540,7 +9593,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = HNN_zhe_new
 		}
-		
 
 		ai_will_do = {
 			factor = 4
@@ -9602,7 +9654,9 @@ focus_tree = {
 				}
 			}
 			QIE = {
-				every_navy_leader = { set_nationality = ROOT }
+				every_navy_leader = { 
+					set_nationality = ROOT 
+				}
 			}
 			if = {
 				limit = { NOT = { country_exists = FNG } }
@@ -9623,8 +9677,8 @@ focus_tree = {
 		icon = GFX_goal_generic_sea_focused_navy2
 		relative_position_id = HNN_PROC_navy
 		cost = 5
-		x = 1
-		y = 2
+		x = -2
+		y = 3
 
 		prerequisite = {
 			focus = HNN_revolutionary_naval_industry
@@ -9689,20 +9743,74 @@ focus_tree = {
 				remove_idea = CSA_decentralized_command
 				add_idea = HNN_american_peoples_navy
 			}
-			hidden_effect = {
-				
-			}
+			HNN_ma_long = { HNN_recruit_characters_effect = yes }
+			HNN_liu_chang_yi = { HNN_recruit_characters_effect = yes }
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
-	}	
+	}
+
+	focus = {
+		id = HNN_expand_personnel_reserves
+		icon = GFX_goal_navy_hat_ships
+		relative_position_id = HNN_PROC_navy
+		cost = 5
+		x = -3
+		y = 4
+
+		prerequisite = {
+			focus = HNN_zhe_new
+			focus = HNN_old_wan
+		}
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus HNN_expand_personnel_reserves"
+			add_ideas = JAP_naval_personnel_expansion
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = HNN_naval_engineers
+		icon = GFX_goal_generic_construct_naval_dockyard
+		relative_position_id = HNN_PROC_navy
+		cost = 5
+		x = -3
+		y = 5
+
+		allow_branch = { has_dlc_mtg = yes }
+		prerequisite = {
+			focus = HNN_expand_personnel_reserves
+		}
+		ai_will_do = { factor = 3 }
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_naval_engineers"
+			add_tech_bonus = {
+				name = HNN_naval_engineers
+				bonus = 0.33
+				uses = 3
+				category = ship_modules_tech
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = {
+					NOT = { has_tech = damage_control_1 }
+				}
+				set_technology = { damage_control_1 = 1 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
 
 	focus = {
 		id = HNN_zao_chuan_chang
 		icon = GFX_goal_generic_shipyard
 		relative_position_id = HNN_PROC_navy
 		cost = 5
-		x = -2
-		y = 3
+		x = 0
+		y = 2
 
 		prerequisite = {
 			focus = HNN_revolutionary_naval_industry
@@ -9750,25 +9858,25 @@ focus_tree = {
 				category = asw_tech
 				category = cat_anti_air
 			}
-			hidden_effect = {
-				
-			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}		
 
 	focus = {
 		id = HNN_revolution_on_high_seas
-		icon = GFX_GRU_carrier_focus-4013
+		icon = GFX_goal_MAG_naval_research_department
 		relative_position_id = HNN_PROC_navy
 		cost = 5
-		x = 2
-		y = 3
+		x = -3
+		y = 2
 
 		prerequisite = {
 			focus = HNN_revolutionary_naval_industry
 		}
-		
+		available = {
+			owns_state = 743
+			has_country_flag = LEC_jiangnan_shipyard_organisation_unlock
+		}		
 
 		ai_will_do = {
 			factor = 4
@@ -9777,21 +9885,38 @@ focus_tree = {
 				enemies_naval_strength_ratio > 0.6
 			}
 		}
+
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_revolution_on_high_seas"
-			navy_experience = 30
-			add_tech_bonus = {
-				name = CSA_revolution_on_high_seas
-				uses = 1
-				bonus = 0.5
-				category = cv_tech
+			743 = {
+				if = {
+					limit = { can_construct_building = naval_facility }
+					add_building_construction = {
+						type = naval_facility
+						level = 1
+						province = 7014
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = { free_building_slots = { building = dockyard size > 2 include_locked = yes } }
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 7014
+					instant_build = yes
+				}
+				construct_building_in_random_province = { naval_facility = 1 }
 			}
-			add_tech_bonus = {
-				name = CSA_revolution_on_high_seas
-				uses = 2
-				bonus = 0.75
-				category = naval_air
-			}
+			custom_effect_tooltip = tooltip_white_line
+			mio:LEC_jiangnan_shipyard_organisation = { add_mio_size = 2 }
 		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}		
@@ -9805,19 +9930,50 @@ focus_tree = {
 		y = 3
 	
 		prerequisite = { 
-			focus = HNN_old_wan
-			focus = HNN_zhe_new 
+			focus = HNN_zao_chuan_chang
 		}
-		prerequisite = {  }
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_cruisers"
 			add_tech_bonus = {
-				name = GXC_cruisers
+				name = JAP_cruiser_innovation_efforts
 				bonus = 1
-				uses = 2
+				uses = 1
 				category = cl_tech
+				category = ca_tech
 			}
+			custom_effect_tooltip = tooltip_white_line
+			complete_special_project = {
+				project = sp:sp_naval_torpedo_cruiser
+				show_modifiers = no
+			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				set_technology = { torpedo_cruiser_mtg = 1 }
+				hidden_effect = {
+					create_equipment_variant = {
+						name = "林仙级"
+						type = ship_hull_torpedo_cruiser
+						name_group = PRC_CL_HISTORICAL
+						parent_version = 0
+						modules = {
+							fixed_ship_battery_slot = ship_light_medium_battery_2
+							fixed_ship_anti_air_slot = ship_anti_air_2
+							fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+							fixed_ship_radar_slot = empty
+							fixed_ship_engine_slot = cruiser_ship_engine_2
+							fixed_ship_secondaries_slot = empty
+							fixed_ship_armor_slot = ship_armor_cruiser_2
+							front_1_custom_slot = ship_anti_air_2
+							mid_1_custom_slot = ship_torpedo_2
+							mid_2_custom_slot = ship_torpedo_2
+							rear_1_custom_slot = ship_torpedo_2
+							rear_2_custom_slot = ship_anti_air_2
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = { 
 					has_idea = HNN_revolutionary_naval_industry_1
@@ -9852,13 +10008,6 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_cruisers
 		}
-		prerequisite = {
-			focus = HNN_zao_chuan_chang
-		}
-		prerequisite = {
-			focus = HNN_revolution_on_high_seas
-		}
-		
 
 		ai_will_do = {
 			factor = 4
@@ -9876,9 +10025,6 @@ focus_tree = {
 				uses = 2
 				category = marine_tech
 			}
-			hidden_effect = {
-				
-			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}	
@@ -9893,12 +10039,6 @@ focus_tree = {
 
 		prerequisite = {
 			focus = HNN_cruisers
-		}
-		prerequisite = {
-			focus = HNN_zao_chuan_chang
-		}
-		prerequisite = {
-			focus = HNN_revolution_on_high_seas
 		}
 
 		ai_will_do = {
@@ -9929,9 +10069,6 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_deng_lu_ji_hua
 		}
-		prerequisite = {
-			 
-		}
 
 		ai_will_do = {
 			factor = 4
@@ -9940,12 +10077,19 @@ focus_tree = {
 				enemies_naval_strength_ratio > 0.6
 			}
 		}
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_feng_yu_yu_lai"
 			swap_ideas = {
 				remove_idea = HNN_revolutionary_naval_industry_3
 				add_idea = HNN_revolutionary_naval_industry_4
-			} 
+			}
+			add_tech_bonus = {
+				name = HNN_feng_yu_yu_lai
+				bonus = 1
+				uses = 2
+				category = cv_tech
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}	
@@ -11596,6 +11740,9 @@ focus_tree = {
 		prerequisite = {
 			focus = HNN_bao_wei_quan_zhong_ge
 		}
+		prerequisite = {
+			focus = HNN_revolutionary_naval_industry
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhong_si_hai_fang"
@@ -12730,12 +12877,15 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_hou_zi_yan"
 			add_political_power = -200
 			custom_effect_tooltip = tooltip_white_line
-			mio:HNN_hengyang_arsenal_organisation = { add_mio_size = 2 }
+			mio:CHN_support_equipment_industry_organisation = { add_mio_size = 2 }
 			mio:HNN_tiema_organisation = { add_mio_size = 2 }
-			mio:HNN_faw_motors_organisation = { add_mio_size = 2 }
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = CN_zhong_ke_yuan
+			custom_effect_tooltip = tooltip_white_line
+			activate_targeted_decision = { target = HNN decision = PRC_cheng_li_zhong_gong_ye_bu }
+			activate_targeted_decision = { target = HNN decision = PRC_HNN_faw_motors_organisation }
+			activate_targeted_decision = { target = HNN decision = PRC_HNN_tiema_motors_organisation }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
