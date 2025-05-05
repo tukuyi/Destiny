@@ -2145,7 +2145,7 @@ political_actions = {
 		}
 	}
 
-	LEC_china_peace = {
+	LEC_china_peace = {#同西方诸国议和
 		icon = generic_agreement
 
 		allowed = {
@@ -2819,7 +2819,7 @@ china_united_front_decisions = {
 	}
 }
 
-china_second_sino_japanese_war_UF_decisions = {
+china_second_sino_japanese_war_UF_decisions = {#第二次中日战争
 	UF_Resistance_Beijing = {
 		icon = generic_ignite_civil_war
 		available = {
@@ -3187,7 +3187,7 @@ china_second_sino_japanese_war_UF_decisions = {
 	}
 }
 
-china_second_sino_japanese_war_japan_decisions = {
+china_second_sino_japanese_war_japan_decisions = {#第二次中日战争
 	JAP_Capture_608 = {
 		icon = generic_ignite_civil_war
 		available = {
@@ -3793,8 +3793,8 @@ china_second_sino_japanese_war_japan_decisions = {
 	}
 }
 
-china_land_reform_decisions = {
-	china_generic_land_reform_decision = {
+china_land_reform_decisions = {#土地改革
+	china_generic_land_reform_decision = {#启动土地改革
 		icon = GFX_decision_generic_agriculture
 
 		allowed = { always = no } #activated by effect
@@ -4391,6 +4391,134 @@ china_mio_arsenal_integration_decision_category = {#建立中国本土国防企�
 			mio:HNN_faw_motors_organisation = {
 				add_mio_funds_gain_factor = 0.10
 				set_mio_flag = HNN_faw_motors_organisation_unlock
+			}
+		}
+	}
+	PRC_HNN_casc_organisation = {#成立成飞
+		allowed = { always = no } 
+		icon = GFX_decision_PRC_avic
+
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { base = 100 }
+		available = {
+			owns_state = 605
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+			}
+			mio:HNN_tiema_organisation = {
+				has_mio_flag = HNN_tiema_organisation_unlock
+			}
+		}
+		
+		cost = 50
+		days_remove = 200
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_HNN_casc_organisation"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_HNN_casc_organisation"
+			605 = {
+				add_building_construction = {
+					type = air_facility
+					level = 1
+					province = 4925
+					instant_build = yes
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_HNN_casc_organisation"
+			mio:HNN_casc_organization = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_casc_organization_unlock
+			}
+		}
+	}
+	PRC_HNN_casc_sheng_fei_organization = {#成立沈飞
+		allowed = { always = no } 
+		icon = GFX_decision_PRC_avic
+
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { base = 100 }
+		available = {
+			owns_state = 716
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+			}
+			mio:HNN_tiema_organisation = {
+				has_mio_flag = HNN_tiema_organisation_unlock
+			}
+		}
+		
+		cost = 50
+		days_remove = 200
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_HNN_casc_sheng_fei_organization"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_HNN_casc_sheng_fei_organization"
+			716 = {
+				add_building_construction = {
+					type = air_facility
+					level = 1
+					province = 11771
+					instant_build = yes
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_HNN_casc_sheng_fei_organization"
+			mio:HNN_casc_sheng_fei_organization = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_casc_sheng_fei_organization_unlock
+			}
+		}
+	}
+	PRC_HNN_csic_wu_han_organization = {#成立武昌造船厂
+		allowed = { always = no } 
+		icon = GFX_decision_PRC_avic
+
+		cancel_if_not_visible = yes
+
+		fire_only_once = yes
+		ai_will_do = { base = 100 }
+		available = {
+			owns_state = 716
+			mio:HNN_zhong_gong_ye_arsenal_organisation = {
+				has_mio_flag = HNN_zhong_gong_ye_arsenal_organisation_unlock
+			}
+		}
+		
+		cost = 50
+		days_remove = 200
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision complete PRC_HNN_csic_wu_han_organization"
+		}
+		cancel_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision cancel PRC_HNN_csic_wu_han_organization"
+
+		}
+		remove_effect = {
+			log = "[GetLogRoot][GetLogFrom]: Decision remove PRC_HNN_csic_wu_han_organization"
+			mio:HNN_csic_wu_chang_organization = {
+				add_mio_funds_gain_factor = 0.10
+				set_mio_flag = HNN_csic_wu_chang_organization_unlock
 			}
 		}
 	}

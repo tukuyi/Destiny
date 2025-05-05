@@ -101,3 +101,5 @@
  RUS_MIO_Research_Gain_R_and_D_negative_tt: "§R当前未获取§!£research_speed_icon §H研究速度§!（§g当前每日§!§H经费§!：§W[?Funds_Difference_loc|.2]§!）"
  RUS_MIO_Research_Gain_R_and_D_positive_tt: "§G当前已获取§!£research_speed_icon §H研究速度§!（§g当前每日§!§H经费§!：§W[?Funds_Difference_loc|.2]§!）"
  RUS_manufacturer_research_reset_tt: "§g所有£research_speed_icon §H研究速度§!加成将重置§!"
+
+ HNN_yi_zhong: "工业企业"

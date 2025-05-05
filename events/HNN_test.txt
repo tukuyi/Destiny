@@ -12,7 +12,11 @@ country_event = {#测试事件
 	option = { #同意
 		name = hnn.100000.a
 		# eval_effect ROOT = {
-
+		# 	add_equipment_to_stockpile = {
+		# 		type = destroyer_2
+		# 		amount = 2
+		# 		producer = CSA
+		# 	}
 		# }
 
 		# scoped_sound_effect = "SHC_jingjiao"

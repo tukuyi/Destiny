@@ -4653,6 +4653,10 @@ HNN_PROC = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }
 }
+HNN_INC = {
+	color = rgb { 222 41 16 }
+	color_ui = rgb { 222 41 16 }
+}
 HNN_PROC_H = {
 	color = rgb { 222 41 16 }
 	color_ui = rgb { 222 41 16 }

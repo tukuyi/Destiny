@@ -45,6 +45,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/faw_motors.png"
 	}
 	spriteType = {
+		name = "GFX_decision_PRC_avic"
+		texturefile = "gfx/interface/decisions/PRC_avic.png"
+	}
+	spriteType = {
 		name = "GFX_decision_Religion_catholicism"
 		texturefile = "gfx/interface/decisions/Religion_catholicism.png"
 	}

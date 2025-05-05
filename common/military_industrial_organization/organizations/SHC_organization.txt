@@ -26,6 +26,7 @@ SHC_nagoya_arsenal_organisation = {
 		}
 	}
 }
+
 ##################
 ### Naval MIOs ###
 ##################

@@ -96,20 +96,3 @@ GXC_national_aviation_corporation_organisation = {
 #####################
 ### Materiel MIOs ###
 #####################
-GXC_liuzhou_machinery_factory_organisation = {
-	name = liuzhou_machinery_factory
-	icon = GFX_idea_liuzhou_machinery_factory
-	include = generic_motorized_mechanized_organization
-	allowed = { is_chinese_tag = yes }
-	visible = {
-		FROM = {
-			OR = {
-				original_tag = GXC
-				owns_state = 1055
-			}
-		}
-	}
-	available = {
-		1055 = { is_core_of = FROM }
-	}
-}

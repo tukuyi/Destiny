@@ -1123,14 +1123,20 @@ focus_tree = {
 		
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus HNN_bu_tie_you_zhi_qi_ye"
-				mio:HNN_tiema_organisation = {
-					add_mio_size = 1
-				}
 				mio:CHN_support_equipment_industry_organisation = { 
 					add_mio_size = 1 
 				}
-				mio:CHN_artillery_industry_organisation = { 
-					add_mio_size = 1 
+				if = {
+					limit = { has_dlc_aat = yes }
+					if = {
+						limit = { mio:CHN_artillery_industry_organisation = { is_mio_available = no } }
+						custom_effect_tooltip = available_mio_tt
+						show_mio_tooltip = CHN_artillery_industry_organisation
+					}
+					mio:CHN_artillery_industry_organisation = {
+						set_mio_flag = CHN_mio_unlocked
+						add_mio_size = 1
+					}
 				}
 				random_owned_state = {
 					add_extra_state_shared_building_slots = 1
@@ -8131,6 +8137,64 @@ focus_tree = {
 	}
 
 	focus = {
+		id = HNN_corps_du_genie_militaire
+		icon = GFX_goal_generic_construction2
+		relative_position_id = HNN_improve_army
+		cost = 5.00
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = HNN_improve_army
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+			modifier = {
+				factor = 3
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 3
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 6
+				date > 1939.1.1
+			}
+		}
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_corps_du_genie_militaire"
+			add_tech_bonus = {
+				name = HNN_corps_du_genie_militaire
+				bonus = 0.75
+				uses = 2
+				category = engineers_tech
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = expanded_engineer_corps_tech_effect
+			hidden_effect = {
+				set_technology = { expanded_engineer_corps_tech = 1 popup = no }
+			}
+			custom_effect_tooltip = tooltip_white_line
+			every_army_leader = {
+				limit = {
+					NOT = { is_character = HNN_mao_ze_dong }
+					NOT = { is_character = HNN_peng_dehuai }
+					NOT = { is_character = HNN_Hua_Guofeng }
+				}
+				random_select_amount = 2
+				add_trait = { trait = trait_engineer }
+			}
+		}
+	}
+
+	focus = {
 		id = HNN_officer_corps_experience
 		icon = GFX_goal_CSA_union_army
 		relative_position_id = HNN_improve_army
@@ -8187,7 +8251,7 @@ focus_tree = {
 		icon = GFX_RUS_Revolutionary_Terror
 		relative_position_id = HNN_officer_corps_experience
 		cost = 5
-		x = 0
+		x = -1
 		y = 1
 
 		prerequisite = {
@@ -8535,7 +8599,7 @@ focus_tree = {
 		icon = GFX_goal_CSA_centralist_reorganization
 		relative_position_id = HNN_central_command
 		cost = 5.00
-		x = 0
+		x = 1
 		y = 1
 		
 		prerequisite = {
@@ -8851,8 +8915,8 @@ focus_tree = {
 		icon = GFX_BBR_red_militia_justice
 		relative_position_id = HNN_improve_army
 		x = 0
-		y = 3
-		cost = 7.00
+		y = 2
+		cost = 8.00
 
 		ai_will_do = {
 			factor = 3
@@ -8870,8 +8934,8 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = HNN_formazione_di_difesa
-			focus = HNN_dissolve_militias
+			focus = HNN_central_command
+			focus = HNN_officer_corps_experience
 		}
 
 		completion_reward = {
@@ -8899,15 +8963,6 @@ focus_tree = {
 				}
 				random_select_amount = 4
 				add_unit_leader_trait = career_officer
-			}
-			every_army_leader = {
-				limit = {
-					NOT = { is_character = HNN_mao_ze_dong }
-					NOT = { is_character = HNN_peng_dehuai }
-					NOT = { is_character = HNN_Hua_Guofeng }
-				}
-				random_select_amount = 2
-				add_trait = { trait = trait_engineer }
 			}
 			random_army_leader = {
 				limit = {
@@ -8952,6 +9007,82 @@ focus_tree = {
 	}
 
 	focus = {
+		id = HNN_roads_of_courage
+		icon = GFX_focus_SOV_the_road_of_life
+		relative_position_id = HNN_improve_army
+		x = 0
+		y = 3
+		cost = 5.00
+
+		prerequisite = {
+			focus = HNN_purge_militia_remains
+		}
+		ai_will_do = { base = 9 }
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_roads_of_courage"
+			custom_effect_tooltip = tech_improved_logistics_effect
+			hidden_effect = {
+				set_technology = { tech_improved_logistics = 1 popup = no }
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = tech_winter_logistics_support_effect
+			hidden_effect = {
+				set_technology = { winter_logistics_support_tech = 1 popup = no }
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = HNN_rapid_response_detachments
+		icon = GFX_focus_generic_field_hostpital
+		relative_position_id = HNN_improve_army
+		x = 0
+		y = 5
+		cost = 5.00
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+			modifier = {
+				factor = 3
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 3
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 6
+				date > 1939.1.1
+			}
+		}
+
+		prerequisite = {
+			focus = HNN_roads_of_courage
+		}
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_rapid_response_detachments"
+			add_tech_bonus = {
+				name = HNN_rapid_response_detachments
+				bonus = 0.75
+				uses = 2
+				category = hospital_tech
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = improved_field_hospitals_effect
+			hidden_effect = {
+				set_technology = { improved_field_hospitals = 1 popup = no }
+			}
+		}
+	}
+
+	focus = {
 		id = HNN_over_time
 		icon = GFX_goal_generic_isolation
 		relative_position_id = HNN_improve_army
@@ -8969,9 +9100,13 @@ focus_tree = {
 		available = {
 			has_country_flag = HNN_PROC_victory
 		}
+
 		prerequisite = {
 			focus = HNN_ge_ming_jun_dui
 			focus = HNN_ren_ming_jun_dui
+		}
+		prerequisite = {
+			focus = HNN_rapid_response_detachments
 		}
 	
 		completion_reward = {
@@ -9497,7 +9632,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_revolutionary_naval_industry
-		icon = GFX_goal_generic_construct_naval_dockyard
+		icon = GFX_GEA_expansion_of_Singaporez_port
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = 0
@@ -9585,10 +9720,10 @@ focus_tree = {
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = -4
-		y = 3
+		y = 1
 
 		prerequisite = {
-			focus = HNN_revolutionary_naval_industry
+			focus = HNN_PROC_navy
 		}
 		mutually_exclusive = {
 			focus = HNN_zhe_new
@@ -9610,6 +9745,7 @@ focus_tree = {
 				uses = 2
 				category = naval_doctrine
 			}
+			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
 					has_dlc = "Man the Guns"
@@ -9653,6 +9789,7 @@ focus_tree = {
 					set_technology = { early_submarine = 1 }
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			QIE = {
 				every_navy_leader = { 
 					set_nationality = ROOT 
@@ -9678,10 +9815,10 @@ focus_tree = {
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = -2
-		y = 3
+		y = 1
 
 		prerequisite = {
-			focus = HNN_revolutionary_naval_industry
+			focus = HNN_PROC_navy
 		}
 		mutually_exclusive = {
 			focus = HNN_old_wan
@@ -9739,6 +9876,7 @@ focus_tree = {
 					set_technology = { early_submarine = 1 }
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = CSA_decentralized_command
 				add_idea = HNN_american_peoples_navy
@@ -9755,7 +9893,7 @@ focus_tree = {
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = -3
-		y = 4
+		y = 2
 
 		prerequisite = {
 			focus = HNN_zhe_new
@@ -9777,7 +9915,7 @@ focus_tree = {
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = -3
-		y = 5
+		y = 3
 
 		allow_branch = { has_dlc_mtg = yes }
 		prerequisite = {
@@ -9806,7 +9944,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_zao_chuan_chang
-		icon = GFX_goal_generic_shipyard
+		icon = GFX_RUS_Modernise_Petrograd_Dockyards
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = 0
@@ -9867,15 +10005,15 @@ focus_tree = {
 		icon = GFX_goal_MAG_naval_research_department
 		relative_position_id = HNN_PROC_navy
 		cost = 5
-		x = -3
-		y = 2
+		x = 2
+		y = 1
 
 		prerequisite = {
-			focus = HNN_revolutionary_naval_industry
+			focus = HNN_PROC_navy
 		}
 		available = {
 			owns_state = 743
-			has_country_flag = LEC_jiangnan_shipyard_organisation_unlock
+			mio:LEC_jiangnan_shipyard_organisation = { is_mio_available = yes }
 		}		
 
 		ai_will_do = {
@@ -9913,7 +10051,6 @@ focus_tree = {
 					province = 7014
 					instant_build = yes
 				}
-				construct_building_in_random_province = { naval_facility = 1 }
 			}
 			custom_effect_tooltip = tooltip_white_line
 			mio:LEC_jiangnan_shipyard_organisation = { add_mio_size = 2 }
@@ -10018,13 +10155,83 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_deng_lu_ji_hua"
-			add_ideas = HNN_continental_marines
-			add_tech_bonus = {
-				name = CSA_red_marines
-				bonus = 0.5
-				uses = 2
-				category = marine_tech
+			if = {
+				limit = { NOT = { has_tech = basic_destroyer } }
+				set_technology = { basic_destroyer = 1 }
+				create_equipment_variant = {
+					name = "鞍山级"
+					type = destroyer_2
+					upgrades = {
+						ship_reliability_upgrade = 2
+						ship_engine_upgrade = 2
+						ship_armor_upgrade = 2
+						ship_gun_upgrade = 2
+					}
+				}
+				add_equipment_production = {
+					equipment = {
+						type = destroyer_2
+						version_name = "鞍山级"
+					}
+					requested_factories = 1
+					progress = 0.45
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = destroyer_2
+						version_name = "鞍山级"
+					}
+					requested_factories = 1
+					progress = 0.45
+					amount = 1
+				}
 			}
+			else = {
+				create_equipment_variant = {
+					name = "鞍山级"
+					type = destroyer_2
+					upgrades = {
+						ship_reliability_upgrade = 2
+						ship_engine_upgrade = 2
+						ship_armor_upgrade = 2
+						ship_gun_upgrade = 2
+					}
+				}
+				add_equipment_production = {
+					equipment = {
+						type = destroyer_2
+						version_name = "鞍山级"
+					}
+					requested_factories = 1
+					progress = 0.45
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = destroyer_2
+						version_name = "鞍山级"
+					}
+					requested_factories = 1
+					progress = 0.45
+					amount = 1
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = navy_bonus
+				bonus = 1
+				uses = 1
+				category = ca_tech
+			}
+			add_tech_bonus = {
+				name = navy_bonus
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = HNN_red_navy_idea
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}	
@@ -11887,25 +12094,13 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_hong_hai_jun"
-			add_ideas = HNN_red_navy_idea
-			add_equipment_to_stockpile = {
-				type = battleship_3
-				amount = 2
-				producer = HNN
-			}
+			add_ideas = HNN_continental_marines
 			add_tech_bonus = {
-				name = navy_bonus
-				bonus = 1
-				uses = 1
-				category = ca_tech
+				name = CSA_red_marines
+				bonus = 0.5
+				uses = 2
+				category = marine_tech
 			}
-			add_tech_bonus = {
-				name = navy_bonus
-				bonus = 1
-				uses = 1
-				category = bb_tech
-			}
-			add_manpower = 10000
 		}
 	}
 
@@ -12220,7 +12415,7 @@ focus_tree = {
 			else = {
 				create_wargoal = {
 					target = RUS
-					type = annex_everything
+					type = topple_government
 				}
 			}
 		}
@@ -12338,11 +12533,11 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhan_shou_guo_wang"
 			create_wargoal = {
 				target = GER
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = AUS
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12369,11 +12564,11 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_bei_oan_zhe_so_xing"
 			create_wargoal = {
 				target = FRA
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = ENG
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12401,19 +12596,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_ba_er_gan_jie_fang_yun_dong"
 			create_wargoal = {
 				target = CRO
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = SER
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = ALB
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = BUL
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12440,11 +12635,11 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_yi_bi_li_ya_zi_you"
 			create_wargoal = {
 				target = SPR
-				type = annex_everything
+				type = topple_government
 			}
 			create_wargoal = {
 				target = POR
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12481,7 +12676,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_ao_da_li_ya"
 			create_wargoal = {
 				target = AST
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12508,7 +12703,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_yuan_zu_mei_li_jian"
 			create_wargoal = {
 				target = USA
-				type = annex_everything
+				type = topple_government
 			}
 		}
 	}
@@ -12726,7 +12921,7 @@ focus_tree = {
 
 	focus = {
 		id = HNN_qiu_xiao_jie
-		icon = GFX_SOV_soviet_technocracy
+		icon = GFX_focus_generic_nuclear_development
 		relative_position_id = HNN_yao_qing_hai_wai_xue_zhe
 		x = 0
 		y = 4
@@ -12744,6 +12939,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_qiu_xiao_jie"
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					can_construct_building = nuclear_facility
+				}
+				construct_building_in_random_province = { nuclear_facility = 1 }
+			}
+			custom_effect_tooltip = tooltip_white_line
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
 				value = 0.25
@@ -12878,14 +13081,20 @@ focus_tree = {
 			add_political_power = -200
 			custom_effect_tooltip = tooltip_white_line
 			mio:CHN_support_equipment_industry_organisation = { add_mio_size = 2 }
-			mio:HNN_tiema_organisation = { add_mio_size = 2 }
+			mio:CHN_small_arms_industry_organisation = { add_mio_size = 2 }
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = CN_zhong_ke_yuan
+			show_ideas_tooltip = HNN_yi_zhong_compny
+			show_ideas_tooltip = HNN_national_railway_corporation
 			custom_effect_tooltip = tooltip_white_line
+			activate_targeted_decision = { target = HNN decision = PRC_HNN_casc_organisation }
 			activate_targeted_decision = { target = HNN decision = PRC_cheng_li_zhong_gong_ye_bu }
 			activate_targeted_decision = { target = HNN decision = PRC_HNN_faw_motors_organisation }
+			activate_targeted_decision = { target = HNN decision = PRC_HNN_csic_wu_han_organization }
 			activate_targeted_decision = { target = HNN decision = PRC_HNN_tiema_motors_organisation }
+			activate_targeted_decision = { target = HNN decision = PRC_HNN_casc_sheng_fei_organization }
+
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }

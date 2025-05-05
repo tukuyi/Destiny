@@ -1,6 +1,7 @@
 HNN_revolution_victory = {#工团上台初始设定
 	remove_ideas = {#移除精神
 		HNN_fire_repubilc
+		HNN_hunanese_high_command_ger_dummy
 		HNN_intense_agricultural_imbalance
 		HNN_stabilising_industrial_sector
 		HNN_independent_industrial_sector

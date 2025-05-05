@@ -3193,3 +3193,89 @@
 			}		
 		}
 	}
+#湖南
+	HNN_INC_build = {#东南亚联合
+		release = INC
+		puppet = INC
+		set_autonomy = {
+			target = INC
+			autonomy_state = associated_governorate
+			end_wars = yes
+		}
+		hidden_effect = {
+			INC = {
+				set_cosmetic_tag = HNN_INC
+				load_focus_tree = generic_focus
+		
+				create_country_leader = {
+					name = "韦国清"
+					picture = "gfx/leaders/GXC/Portrait_GXC_Wei_Guo_Qing.png"
+					expire = "1.1.1"
+					ideology = jun_zheng_ji_quan_subtype
+					traits = {}
+				}
+				create_country_leader = {
+					name = "范文同"
+					picture = "gfx/leaders/INC/Portrait_INC_Pham_Van_Dong.png"
+					expire = "1.1.1"
+					ideology = centralized_syndicalism_subtype
+					traits = {}
+				}
+				create_country_leader = {
+					name = "范文同"
+					picture = "gfx/leaders/INC/Portrait_INC_Pham_Van_Dong.png"
+					expire = "1.1.1"
+					ideology = radsoc_syndicalist_subtype
+					traits = {}
+				}
+				create_country_leader = {
+					name = "范文同"
+					picture = "gfx/leaders/INC/Portrait_INC_Pham_Van_Dong.png"
+					expire = "1.1.1"
+					ideology = socdem_tridemism_subtype
+					traits = {}
+				}
+				set_politics = {
+					ruling_party = syndicalist
+				}
+				set_party_name = {
+					ideology = totalist
+					long_name =  HNN_syndicalist_INC_long
+					name =  HNN_syndicalist_INC
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name =  HNN_syndicalist_INC_long
+					name =  HNN_syndicalist_INC
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name =  HNN_syndicalist_INC_long
+					name =  HNN_syndicalist_INC
+				}
+				set_party_name = {
+					ideology = social_democrat
+					long_name =  HNN_syndicalist_INC_long
+					name =  HNN_syndicalist_INC
+				}
+		
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = DEI
+							is_core_of = GEA
+							is_core_of = PHI
+							is_core_of = SIA
+							is_core_of = BRM
+							is_core_of = INS
+							is_core_of = CAM
+							is_core_of = KAC
+							is_core_of = SHA
+						}
+					}
+					transfer_state_to = INC
+					add_core_of = INC
+				}
+			}		
+		}
+	}

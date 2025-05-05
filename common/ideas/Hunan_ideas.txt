@@ -1615,10 +1615,9 @@ ideas = {
 				production_speed_buildings_factor = 0.20
 			}
 		}
-		HNN_educated_workers_idea = {
+		HNN_educated_workers_idea = {#有知识的农民
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_educated_workers_idea"}
 			allowed = { always = no }
-			removal_cost = -1
 			picture = FRA_educated_workers
 			modifier = {
 				stability_factor = 0.05
@@ -1629,7 +1628,7 @@ ideas = {
 		HNN_chun_jie_de_jun_de = {#纯洁的军队
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_chun_jie_de_jun_de"}
 			allowed = { always = no }
-			picture = GEN_army_doctrine_off
+			picture = CSA_reinforced_weapons
 			modifier = {
 				army_org_factor = 0.05
 				army_speed_factor = 0.05
@@ -1641,7 +1640,7 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_chun_jie_de_jun_de2"}
 			name = HNN_chun_jie_de_jun_de
 			allowed = { always = no }
-			picture = GEN_army_doctrine_off
+			picture = CSA_reinforced_weapons
 			modifier = {
 				compliance_gain = 0.05
 				army_org_factor = 0.05
@@ -1657,7 +1656,7 @@ ideas = {
 		HNN_chun_jie_de_jun_de3 = {#纯洁的军队
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_chun_jie_de_jun_de3"}
 			allowed = { always = no }
-			picture = GEN_army_doctrine_off
+			picture = CSA_reinforced_weapons
 			modifier = {
 				compliance_gain = 0.08
 				army_org_factor = 0.05
@@ -1686,22 +1685,22 @@ ideas = {
 		HNN_dan_yi_zhi = {#单一制
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_dan_yi_zhi"}
 			allowed = { always = no }
+			picture = NOR_secret_police_idea_1
             modifier = {
 				totalist_drift = 0.01
 				stability_factor = 0.05
 				political_power_gain = 0.10
 			}
-			picture = generic_leadership_via_unions
 		}
 		HNN_lian_bang_zhi = {#联邦制
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_lian_bang_zhi"}
 			allowed = { always = no }
+			picture = generic_social_democracy
             modifier = {
 				social_liberal_drift = 0.01
 				stability_factor = 0.05
 				political_power_cost = 0.10
 			}
-			picture = generic_social_democracy
 		}
 		HNN_zong_gong_hui = {#总工会的领导
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_zong_gong_hui"}
@@ -1721,9 +1720,6 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_zheng_zhi_ju"}
 			picture = HNN_zheng_zhi_ju
 			allowed = { always = no }
-			available = { 
-
-			}
             modifier = {
 				totalist_drift = 0.01
 				stability_weekly = 0.005
@@ -1779,7 +1775,7 @@ ideas = {
 		}
 		HNN_ren_da_fa_yuan = {#人大法院
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_ren_da_fa_yuan"}
-			picture = HNN_ren_da_fa_yuan
+			picture = CAN_national_security_act
 			allowed = { always = no }
             modifier = {
 				totalist_drift = -0.01
@@ -1857,7 +1853,7 @@ ideas = {
 		}
 		HNN_si_xiang_ji_ben_yuan_ze2 = {#四项基本原则
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_si_xiang_ji_ben_yuan_ze2"}
-			picture = ALB_transform_rigid_structure
+			picture = HNN_si_xiang_ji_ben_yuan_ze
 			allowed = { always = no }
 			available = { 
 				has_country_leader = { name = "邓小平" ruling_only = yes }
@@ -3461,7 +3457,7 @@ ideas = {
 		}		
 		HNN_ba_gong = {#工人自由
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_ba_gong"}
-			picture = GRU_RED_NEWS
+			picture = NFA_french_corpo
 			allowed = { always = no }
 			modifier = {			
 				industrial_capacity_factory = 0.05	
@@ -3483,7 +3479,7 @@ ideas = {
 		}	
 		HNN_jun_xian = {#取消军衔
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_jun_xian"}
-			picture = GER_Iron_Front
+			picture = HOL_totalist_military
 			allowed = { always = no }
 			modifier = {			
 				promote_cost_factor = -0.20
@@ -3493,7 +3489,7 @@ ideas = {
 		}		
 		HNN_ba_gong2 = {#工人自由
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_ba_gong2"}
-			picture = GRU_RED_NEWS
+			picture = NFA_french_corpo
 			allowed = { always = no }
 			modifier = {			
 				radical_socialist_drift = 0.05
@@ -3882,7 +3878,6 @@ ideas = {
 		HNN_educated_workers_idea2 = {#义务制教育
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea HNN_educated_workers_idea2"}
 			allowed = { always = no }
-			removal_cost = -1
 			picture = FRA_educated_workers
 			modifier = {
 				stability_weekly = 0.01
@@ -5745,6 +5740,26 @@ ideas = {
 	#### General ####
 	industrial_concern = {
 
+		HNN_national_railway_corporation = {#国铁公司
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea national_railway_corporation" }
+			picture = national_railway_corporation
+			allowed = { original_tag = HNN }
+			visible = {
+				has_country_flag = HNN_PROC_victory	
+			}
+			available = { 
+				has_completed_focus = HNN_hou_zi_yan
+			} 
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.2
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+
 		HNN_yi_zhong_compny = {#一重集团
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HNN_yi_zhong_compny" }
 			picture = HNN_yi_zhong
@@ -5755,7 +5770,7 @@ ideas = {
 				has_country_flag = HNN_PROC_victory	
 			}
 			available = { 
-				has_country_flag = HNN_PROC_victory	
+				has_completed_focus = HNN_hou_zi_yan
 			} 
 			traits = { HNN_yi_zhong }
 			research_bonus = {
@@ -5863,5 +5878,4 @@ ideas = {
 			}
 		}
 	}
-
 }

@@ -2910,15 +2910,20 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				if = {
-					limit = { 
-						mio:SHX_aircraft_design_board_organisation = { is_mio_available = no } 
-					}
-					custom_effect_tooltip = available_mio_tt
-					show_mio_tooltip = SHX_aircraft_design_board_organisation
+					limit = { has_dlc_aat = no }
+					custom_effect_tooltip = available_designer
+					show_ideas_tooltip = SHX_aircraft_design_board
 				}
-				mio:SHX_aircraft_design_board_organisation = {
-					set_mio_flag = CHN_mio_unlocked
-					add_mio_size = 1
+				else = {
+					if = {
+						limit = { mio:CHN_aviation_industry_organisation = { is_mio_available = no } }
+						custom_effect_tooltip = available_mio_tt
+						show_mio_tooltip = CHN_aviation_industry_organisation
+					}
+					mio:CHN_aviation_industry_organisation = {
+						set_mio_flag = CHN_mio_unlocked
+						add_mio_size = 1
+					}
 				}
 			}
 		}
@@ -3529,13 +3534,25 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SHX_qi_ye_gai_ge"
-			mio:SHX_aircraft_design_board_organisation = {
+			mio:CHN_aviation_industry_organisation = {
 				set_mio_flag = CHN_mio_unlocked
 				add_mio_size = 1
 			}
-			mio:SHX_arsenal_arms_committee_organisation = {
-				set_mio_flag = CHN_mio_unlocked
-				add_mio_size = 1
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = chongqing_tank_plant
+			}
+			else = {
+				if = {
+					limit = { mio:CHN_armour_industry_organisation = { is_mio_available = no } }
+					custom_effect_tooltip = available_mio_tt
+					show_mio_tooltip = CHN_armour_industry_organisation
+				}
+				mio:CHN_armour_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 2
+				}
 			}
 			mio:CHN_small_arms_industry_organisation = {
 				set_mio_flag = CHN_mio_unlocked

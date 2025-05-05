@@ -5865,8 +5865,20 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = SQI_tan_ke_organisation
+			if = {
+				limit = { mio:CHN_armour_industry_organisation = { is_mio_available = no } }
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = CHN_armour_industry_organisation
+				mio:CHN_armour_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
+					add_mio_size = 1
+				}
+			}
+			else = {
+				mio:CHN_armour_industry_organisation = {
+					add_mio_size = 1
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
 	}

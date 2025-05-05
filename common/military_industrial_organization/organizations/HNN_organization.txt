@@ -1,7 +1,7 @@
 ###################
 ### Armour MIOs ###
 ###################
-HNN_tiema_organisation = {#铁马
+HNN_tiema_organisation = {#第二机械工业部
 	name = HNN_tie
 	icon = GFX_idea_HNN_tie
 
@@ -222,10 +222,76 @@ HNN_krupp_tank_organisation = {#克努伯
 ##################
 ### Naval MIOs ###
 ##################
+HNN_csic_wu_chang_organization = {#武昌造船厂
+	name = HNN_csic
+	icon = GFX_idea_csic
+
+	allowed = {	
+		original_tag = HNN
+	}
+	visible = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_csic_wu_chang_organization_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	include = generic_submarine_organization
+}
 
 #####################
 ### Airplane MIOs ###
 #####################
+HNN_casc_organization = {#国营132厂
+	name = HNN_casc
+	icon = GFX_idea_PRC_avic
+
+	allowed = {	
+		original_tag = HNN 
+		has_dlc = "Arms Against Tyranny"
+	}
+	visible = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_casc_organization_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	include = generic_medium_aircraft_organization
+}
+
+HNN_casc_sheng_fei_organization = {#国营112厂
+	name = HNN_casc_sheng_fei
+	icon = GFX_idea_PRC_avic
+
+	allowed = {	
+		original_tag = HNN 
+		has_dlc = "Arms Against Tyranny"
+	}
+	visible = {
+		FROM = {
+			has_country_flag = HNN_PROC_victory
+		}
+	}
+	available = {
+		has_mio_flag = HNN_casc_sheng_fei_organization_unlock
+	}
+	ai_will_do = { 
+		base = 1000 
+	}
+
+	include = generic_heavy_aircraft_organization
+}
 
 #####################
 ### Materiel MIOs ###

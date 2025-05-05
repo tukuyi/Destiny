@@ -7431,6 +7431,116 @@ HNN_let_he_in = {#拉人入伙
 			set_global_flag = PRC_tech_gourp_created
 		}
 	}
+	HNN_dong_nan_ya_lian_he = {#建立东南亚联合
+		icon = GFX_decision_category_red_start
+
+		available = {
+			GEA = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			BRM = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			PHI = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			DEI = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			SIA = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			INS = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			INC = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			SHA = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			KAC = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			CAM = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			LAO = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			VIN = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			SAR = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			MLY = {
+				OR ={
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+		}
+		visible = {
+			OR = {
+				has_completed_focus = HNN_shu_chu_ge_ming
+				has_completed_focus = HNN_zhong_nan_ban_dao
+				has_completed_focus = HNN_tong_e_mo_de_jiao_yi
+			}
+		}
+
+		cost = 0
+		days_remove = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_dong_nan_ya_lian_he"
+
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_dong_nan_ya_lian_he"
+			HNN_INC_build = yes
+		}
+	}
 }
 
 PRC_tech_gourp_decisions = {#加入科技合作组织

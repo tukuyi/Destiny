@@ -1,3 +1,60 @@
+###################
+### Armour MIOs ###
+###################
+CHN_armour_industry_organisation = {#装甲企业
+	name = CHN_armour_industry_organisation
+	icon = GFX_idea_sinotruk #Generic, post-war state owned industry
+	include = generic_tank_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	available = {
+		if = {
+			limit = { has_mio_flag = CHN_mio_unlocked }
+			#no more checks needed
+		}
+		else_if = {
+			limit = { FROM = { original_tag = CHI } }
+			OR = {
+				FROM = { has_completed_focus = CHI_examine_foreign_designs }
+				FROM = { has_completed_focus = CHI_domestic_armour_production }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { has_focus_tree = Federalist_China_Tree } }
+			OR = {
+				FROM = { has_completed_focus = UPC_Chongqing_Tank_Plant }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = FNG } }
+			OR = {
+				FROM = { has_completed_focus = FNG_Incorporate_Local_Patronage_Networks }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = SHX } }
+			OR = {
+				FROM = { has_completed_focus = SHX_modern_arsenal }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = SZC } }
+			OR = {
+				FROM = { has_completed_focus = SZC_Expand_Production_Tanks }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else = {
+			china_basic_mio_available_trigger = yes
+		}
+	}
+}
+
 ##################
 ### Naval MIOs ###
 ##################
@@ -532,3 +589,54 @@ CHN_artillery_industry_organisation = {#中国火炮企业
 	}
 }
 
+CHN_transportation_industry_organisation = {#中国载具企业
+	name = CHN_transportation_industry_organisation
+	icon = GFX_idea_chongqing_tank_plant #Throw a bone to Western China
+	include = generic_motorized_mechanized_organization
+
+	allowed = { is_chinese_or_potential_chinese_tag = yes }
+
+	available = {
+		if = {
+			limit = { FROM = { original_tag = CHI } }
+			OR = {
+				FROM = { has_completed_focus = CHI_create_supply_corps }
+				FROM = { has_completed_focus = CHI_repossesed_national_arsenals }
+				CHI_is_phase_four_trigger = yes
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = SHX } }
+			OR = {
+				FROM = { has_completed_focus = SHX_da_sheng_gong_cheng }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else_if = {
+			limit = { FROM = { original_tag = FNG } }
+			OR = {
+				FROM = { has_completed_focus = FNG_Militarize_the_Minsheng_Truck }
+				china_basic_mio_available_trigger = yes
+			}
+		}
+		else = {
+			china_basic_mio_available_trigger = yes
+		}
+	}
+}
+
+CHN_automobile_industry_organisation = {#中国汽车企业
+	name = CHN_automobile_industry_organisation
+	icon = GFX_idea_qishuyan_locomotive_works #Nice logo, translates to Car in Chinese, kinda defaulting to Northern China
+	include = generic_armored_car_organization
+
+	allowed = {
+		has_dlc_lar = yes
+		is_chinese_or_potential_chinese_tag = yes
+	}
+
+	available = {
+		china_basic_mio_available_trigger = yes
+	}
+}

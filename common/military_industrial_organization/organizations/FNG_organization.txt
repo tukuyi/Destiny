@@ -42,24 +42,6 @@ FNG_wusong_locomotive_works_organisation = {
 ##################
 ### Naval MIOs ###
 ##################
-FNG_yingkou_naval_yard_organisation = {
-	include = generic_small_fleet_organization
-	name = yingkou_naval_yard
-	icon = GFX_idea_yingkou_naval_yard
-	allowed = { is_chinese_tag = yes }
-	visible = {
-		FROM = {
-			OR = {
-				original_tag = LEP
-				original_tag = MAN
-				owns_state = 716
-			}
-		}
-	}
-	available = {
-		716 = { is_core_of = FROM }
-	}
-}
 FNG_sasebo_naval_arsenal_organisation = {
 	include = generic_escort_ship_organization
 	name = sasebo_naval_arsenal
@@ -216,14 +198,6 @@ FNG_china_aviation_corporation_organisation = {
 #####################
 ### Materiel MIOs ###
 #####################
-FNG_minsheng_automobile_factory_organisation = {
-	include = generic_motorized_mechanized_organization
-	name = minsheng_automobile_factory
-	icon = GFX_idea_minsheng_automobile_company
-	allowed = {
-		original_tag = FNG
-	}
-}
 FNG_shenyang_arsenal_organisation = {
 	include = generic_infantry_equipment_organization
 	name = shenyang_arsenal
@@ -232,3 +206,41 @@ FNG_shenyang_arsenal_organisation = {
 		original_tag = MAN
 	}
 }
+
+FNG_sheng_yang_tie_lu_organisation = {
+	include = generic_tank_refurbishment_plant_organization
+	name = FNG_sheng_yang_tie_lu
+	icon = GFX_idea_FNG_sheng_yang_tie_lu
+	allowed = {
+		original_tag = FNG
+	}
+	available = {
+		FROM = {
+			owns_state = 716
+		}
+	}
+}
+FNG_chuan_bo_organisation = {#船舶重工
+	include = generic_task_force_ship_organization
+	name = FNG_chuan_bo
+	icon = GFX_idea_FNG_chuan_bo
+	allowed = {
+		original_tag = FNG
+	}
+	available = {
+		FROM = {
+			owns_state = 716
+		}
+	}
+}
+# FNG_hai_ju_organisation = {#东北海军学校
+# 	include = generic_submarine_organization
+# 	name = FNG_hai_ju
+# 	icon = GFX_idea_FNG_hai_ju
+# 	allowed = {
+# 		original_tag = FNG
+# 	}
+# 	available = {
+
+# 	}
+# }

@@ -37,7 +37,6 @@ china_is_the_unifier_of_china_trigger = {
 		tooltip = china_is_the_chinese_unifier_tt
 		has_global_flag = china_united
 		has_country_flag = china_is_potential_government
-		tag = CHN
 	}
 }
 

@@ -1,34 +1,6 @@
 ###################
 ### Armour MIOs ###
 ###################
-SQI_tan_ke_organisation = {#济南坦克制造厂
-	name = SQI_tan_ke
-	icon = GFX_idea_NFA_tank_war
-	allowed = { 
-		is_chinese_tag = yes
-	}
-	visible = {
-		FROM = { 
-			owns_state = 597 
-		} 
-	}
-	available = { 
-		if = {
-			limit = { FROM = { original_tag = SQI } }
-			FROM = {
-				has_completed_focus = SQI_ji_dong_cai_shi_wang_dao
-				owns_state = 597  
-			}
-		}
-		else = {
-			FROM = { 
-				owns_state = 597 
-			} 
-		}
-	}
-	ai_will_do = { base = 100 }
-	include = generic_mobile_tank_organization
-}	
 
 ##################
 ### Naval MIOs ###

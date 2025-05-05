@@ -1,26 +1,6 @@
 ###################
 ### Armour MIOs ###
 ###################
-QIE_wusong_locomotive_works_organisation = {
-	include = generic_tank_refurbishment_plant_organization
-	name = wusong_locomotive_works
-	icon = GFX_idea_qishuyan_locomotive_works
-	allowed = { is_chinese_tag = yes }
-	visible = {
-		FROM = {
-			OR = {
-				original_tag = QIE
-				owns_state = 1059
-			}
-			NOT = { 
-				tag = FNG
-			}
-		}
-	}
-	available = {
-		1059 = { is_core_of = FROM }
-	}
-}
 QIE_henschel_organisation = {
 	include = generic_tank_organization
 	name = henschel

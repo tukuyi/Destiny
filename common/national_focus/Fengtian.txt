@@ -2960,8 +2960,18 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_dlc_aat = yes }
-				mio:FNG_yingkou_naval_yard_organisation = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = yingkou_naval_yard
+			}
+			else = {
+				if = {
+					limit = { mio:CHN_naval_industry_organisation = { is_mio_available = no } }
+					custom_effect_tooltip = available_mio_tt
+					show_mio_tooltip = CHN_naval_industry_organisation
+				}
+				mio:CHN_naval_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
 					add_mio_size = 1
 					add_mio_funds = 500
 				}
@@ -4107,15 +4117,16 @@ focus_tree = {
 			if = {
 				limit = { has_dlc_aat = no }
 				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = FNG_manufacture_minsheng_unlock
+				show_ideas_tooltip = minsheng_automobile_factory
 			}
 			else = {
 				if = {
-					limit = { mio:FNG_minsheng_automobile_factory_organisation = { is_mio_available = no } }
+					limit = { mio:CHN_transportation_industry_organisation = { is_mio_available = no } }
 					custom_effect_tooltip = available_mio_tt
-					show_mio_tooltip = FNG_manufacture_minsheng_unlock
+					show_mio_tooltip = CHN_transportation_industry_organisation
 				}
-				mio:FNG_minsheng_automobile_factory_organisation = {
+				mio:CHN_transportation_industry_organisation = {
+					set_mio_flag = CHN_mio_unlocked
 					add_mio_size = 1
 					add_mio_funds = 500
 				}

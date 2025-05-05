@@ -1,20 +1,6 @@
 ###################
 ### Armour MIOs ###
 ###################
-CHI_sinotruk_organisation = {
-	name = sinotruk
-	icon = GFX_idea_sinotruk
-	include = generic_tank_organization
-	allowed = { original_tag = CHI }
-	available = {
-		FROM = {
-			OR = {
-				has_completed_focus = CHI_examine_foreign_designs
-				has_completed_focus = CHI_domestic_armour_production
-			}
-		}
-	}
-}
 
 ##################
 ### Naval MIOs ###
@@ -54,17 +40,3 @@ CHI_central_air_transport_organisation = {
 #####################
 ### Materiel MIOs ###
 #####################
-CHI_faw_motors_organisation = {
-	name = faw_motors
-	icon = GFX_idea_faw_motors
-	include = generic_motorized_mechanized_organization
-	allowed = { original_tag = CHI }
-	available = {
-		FROM = {
-			OR = {
-				has_completed_focus = CHI_create_supply_corps
-				CHI_is_phase_four_trigger = yes
-			}
-		}
-	}
-}
