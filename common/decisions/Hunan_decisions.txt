@@ -7276,77 +7276,6 @@ HNN_ren_ti_ke_xue_category = {#人体科学研究
 }
 
 HNN_let_he_in = {#拉人入伙
-	# HNN_invite_into_economic_sphere = {
-	# 	icon = generic_agreement
-
-	# 	allowed = { tag = JAP }
-
-	# 	available = {
-	# 		surrender_progress < 0.30
-	# 		FROM = { surrender_progress < 0.30 }
-	# 		NOT = { GER = { has_guaranteed = FROM } }
-	# 	}
-
-	# 	visible = {
-	# 		is_faction_leader = yes
-	# 		FROM = { japan_tag_can_be_invited_to_economic_sphere = yes }
-	# 	}
-
-	# 	cost = 25
-	# 	fire_only_once = no
-
-	# 	targets = { 
-	# 		ANQ 
-	# 		AST 
-	# 		BRM 
-	# 		CAM 
-	# 		CEY 
-	# 		ETS 
-	# 		MAN  
-	# 		HAW 
-	# 		INC 
-	# 		INS 
-	# 		KAC 
-	# 		KOR 
-	# 		LAO 
-	# 		MAL 
-	# 		MON 
-	# 		NZL 
-	# 		PHI 
-	# 		PNG 
-	# 		SAR 
-	# 		SHA 
-	# 	 	SIA
-	# 		VIN 
-	# 		NEP 
-	# 		AFG 
-	# 		ALO 
-	# 		TRK 
-	# 		BUK 
-	# 		KHI
-	# 		JAP 
-	# 	}
-	# 	target_array = subjects
-	# 	target_array = faction_members
-	# 	target_array = global.indian_tags_array
-	# 	target_root_trigger = { has_completed_focus = JAP_osaka_conference }
-	# 	target_trigger = {
-	# 		is_faction_leader = yes
-	# 		FROM = { japan_tag_can_be_invited_to_economic_sphere = yes }
-	# 	}
-
-	# 	complete_effect = {
-	# 		log = "[GetDateText]: [Root.GetName]: Decision complete HNN_invite_into_economic_sphere target: [From.GetName]"
-	# 		FROM = {
-	# 			set_country_flag = JAP_was_invited_into_sphere
-	# 			country_event = { id = japfor.401 days = 2 }
-	# 		}
-	# 	}
-
-	# 	ai_will_do = {
-	# 		base = 10
-	# 	}
-	# }
 	HNN_asia_let_them_in_targeted_decision = {#邀请盟友
 		icon = GFX_decision_category_patriotic
 
@@ -7539,6 +7468,44 @@ HNN_let_he_in = {#拉人入伙
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_dong_nan_ya_lian_he"
 			HNN_INC_build = yes
+		}
+	}
+	HNN_gao_gang_to_sov = {#成立苏联
+		icon = GFX_decision_category_red_start
+		allowed = { 
+			tag = HNN
+		}
+
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			has_country_leader = {
+				name = "高岗"
+				ruling_only = yes
+			}
+		}
+		available = {
+			OR = {
+				AND = {
+					owns_state = 195
+					owns_state = 219
+				}
+				RUS = {
+					OR ={
+						exists = no
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_to_sov"
+			set_cosmetic_tag = LEC_SOV
 		}
 	}
 }

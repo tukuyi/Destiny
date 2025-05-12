@@ -25,6 +25,12 @@ state = { #Xiangjiang
 		victory_points = {
 			7159 1
 		}
+		victory_points = {
+			13143 3
+		}
+		victory_points = {
+			12310 1
+		}
 	}
 
 	provinces = {

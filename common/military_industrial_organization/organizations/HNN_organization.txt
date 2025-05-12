@@ -392,8 +392,6 @@ HNN_faw_motors_organisation = {#一汽
 		mio_cat_tech_all_armor_and_modules
 	}
 
-	ai_will_do = { base = 1 }
-
 	initial_trait = {
 		name = HNN_faw_motors_organisation_mio_desc
 	}
@@ -844,6 +842,25 @@ HNN_zhong_gong_ye_arsenal_organisation = {#重工业部
 		production_bonus = {
 			production_efficiency_cap_factor = 0.05
 			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = SPA_engineer_and_radio_innovations
+		name = SPA_engineer_and_radio_innovations
+		icon = GFX_generic_mio_department_icon_support_production
+
+		position = { x = 1 y = 3 }
+
+		any_parent = { imz_upgrade_1_1 imz_upgrade_1_2 }
+
+		limit_to_equipment_type = { support_equipment }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.03
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.05
 		}
 	}
 

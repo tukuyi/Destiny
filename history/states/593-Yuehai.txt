@@ -19,10 +19,19 @@ state = { #Yuehai
 			industrial_complex = 1
 		}
 		victory_points = {
-			11941 3
+			9963 1
 		}
 		victory_points = {
 			1187 1
+		}
+		victory_points = {
+			11941 1
+		}
+		victory_points = {
+			7108 1
+		}
+		victory_points = {
+			7152 5
 		}
 	}
 

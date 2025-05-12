@@ -20,6 +20,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/decisions_categories_pictures/decision_category_da_dao_zheng_fu.png"
 	}
 	spriteType  = {
+		name = "GFX_decision_category_let_him_in"
+		texturefile = "gfx/interface/decisions/decisions_categories_pictures/decision_category_let_him_in.png"
+	}
+	spriteType  = {
 		name = "GFX_decision_category_taiyuan_arsenan"
 		texturefile = "gfx/interface/decisions/decisions_categories_pictures/decision_category_taiyuan_arsenan.png"
 	}

@@ -9910,16 +9910,103 @@ focus_tree = {
 	}
 
 	focus = {
-		id = HNN_naval_engineers
-		icon = GFX_goal_generic_construct_naval_dockyard
+		id = HNN_adopt_the_gufo
+		icon = GFX_goal_generic_radar_instillation
 		relative_position_id = HNN_PROC_navy
 		cost = 5
 		x = -3
 		y = 3
 
-		allow_branch = { has_dlc_mtg = yes }
+		available = {
+			is_special_project_completed = sp:sp_air_radar
+		}
+
 		prerequisite = {
 			focus = HNN_expand_personnel_reserves
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+				enemies_naval_strength_ratio > 1
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.1.1
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.1.1
+			}
+			modifier = {
+				factor = 1.5
+				date > 1939.1.1
+			}
+		}
+
+		completion_reward = {
+			log = "[GetLogRoot]: Focus Completed HNN_adopt_the_gufo"
+			random_owned_controlled_state = {
+				prioritize = { 743 }
+				limit = {
+					is_in_home_area = yes
+					has_maximum_radar_station_level = no
+				}
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 592 }
+				limit = {
+					is_in_home_area = yes
+					has_maximum_radar_station_level = no
+				}
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = HNN_adopt_the_gufo
+				bonus = 0.75
+				uses = 2
+				category = radar_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = HNN_naval_engineers
+		icon = GFX_goal_generic_construct_naval_dockyard
+		relative_position_id = HNN_PROC_navy
+		cost = 5
+		x = -3
+		y = 4
+
+		allow_branch = { has_dlc_mtg = yes }
+		prerequisite = {
+			focus = HNN_adopt_the_gufo
 		}
 		ai_will_do = { factor = 3 }
 
@@ -12531,13 +12618,39 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus HNN_zhan_shou_guo_wang"
-			create_wargoal = {
-				target = GER
-				type = topple_government
+			if = {
+				limit = { 
+					GER = {
+						NOT = {
+							OR = {
+								has_government = totalist
+								has_government = syndicalist
+								has_government = radical_socialist
+							}
+						}
+					}				
+				}
+				create_wargoal = {
+					target = GER
+					type = topple_government
+				}				
 			}
-			create_wargoal = {
-				target = AUS
-				type = topple_government
+			if = {
+				limit = { 
+					AUS = {
+						NOT = {
+							OR = {
+								has_government = totalist
+								has_government = syndicalist
+								has_government = radical_socialist
+							}
+						}
+					}				
+				}
+				create_wargoal = {
+					target = AUS
+					type = topple_government
+				}				
 			}
 		}
 	}
