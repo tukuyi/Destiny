@@ -115,16 +115,6 @@ HNN_balance_of_power_category = {
 	priority = 0
 }
 
-HNN_big_clean_category = {#大清洗
-	icon = GFX_nkvdcat
-	allowed = { original_tag = HNN }
-	visible = { 
-		has_completed_focus = HNN_jian_she_zai_jiao_yu_ying 
-		has_idea = HNN_di_kang_de_da_zong1
-	}
-	priority = 0
-}
-
 HNN_defence_commission_category = {#防务专署
 	icon = decision_category_generic_political_actions
 	priority = 100
@@ -219,6 +209,20 @@ HNN_shu_chu_ge_min = {#输出革命
 	visible = {
 		has_completed_focus = HNN_shu_chu_ge_ming
 	}
+}
+
+HNN_big_clean_category = {#大清洗
+	icon = GFX_nkvdcat
+	allowed = { original_tag = HNN }
+
+	visible = { 
+		has_completed_focus = HNN_jian_she_zai_jiao_yu_ying 
+		has_idea = HNN_di_kang_de_da_zong1
+	}
+
+ 	scripted_gui = HNN_big_wish_social_window
+	
+	priority = 40
 }
 
 

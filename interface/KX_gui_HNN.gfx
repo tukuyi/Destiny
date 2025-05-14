@@ -23,6 +23,72 @@ spriteTypes = {
 		name = "GFX_HNN_agrarian_socialism_group"
 		texturefile = "gfx/interface/gui/HNN_agrarian_socialism_group.png"
 	}
+	spriteType = {
+		name = "GFX_HNN_paranoia"
+		texturefile = "gfx/interface/gui/HNN_paranoia_bg.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_HNN_XI_Zhong_Xun_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_XI_Zhong_Xun_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_zhu_de_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_zhu_de_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_chen_du_xiu_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_chen_du_xiu_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_zhang_wen_tian_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_zhang_wen_tian_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_wu_fa_xian_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_wu_fa_xian_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_li_xian_nian_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_li_xian_nian_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_huang_yong_shen_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_huang_yong_shen_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_huang_ke_chen_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_huang_ke_chen_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_xu_si_you_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_xu_si_you_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_peng_zhen_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_peng_zhen_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_xiang_ying_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_xiang_ying_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_liao_han_sheng_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_liao_han_sheng_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_xu_guang_da_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_xu_guang_da_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_wang_dong_xing_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_wang_dong_xing_dead.png"
+	}
+	spriteType = {
+		name = "GFX_HNN_teng_hai_qing_dead"
+		texturefile = "gfx/interface/gui/HNN/HNN_teng_hai_qing_dead.png"
+	}
 
 	spriteType = {
 		name = "GFX_SHC_Religion_orthodox"

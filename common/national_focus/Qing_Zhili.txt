@@ -2094,9 +2094,14 @@ focus_tree = {
 				}
 			}
 			else = {
-				mio:QIE_wusong_locomotive_works_organisation = {
-					set_mio_flag = CHN_mio_unlocked
-					add_mio_size = 2
+				mio:CHN_artillery_industry_organisation = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.10
+				}
+				mio:CHN_support_equipment_industry_organisation = {
+					add_mio_funds_gain_factor = 0.10
+					complete_mio_trait = China_mio_trait_integrated_hanyang
+					set_mio_flag = integrated_hanyang
 				}
 				if = {
 					limit = { NOT = { has_tech = gwtank_chassis } }

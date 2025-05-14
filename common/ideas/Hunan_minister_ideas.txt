@@ -346,7 +346,7 @@ ideas = {
 			}
 		}		
 
-	#other	
+	#other
 		HNN_Tang_Shengzhi_hog_sde = {#唐生智
 			allowed = { original_tag = HNN }
 			cost = 150
@@ -757,8 +757,10 @@ ideas = {
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
-				NOT = {
-					has_country_flag = li_xian_nian_dead
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = HNN_li_xian_nian_dead
+					}
 				}
 			}
 			on_add = {
@@ -1378,6 +1380,11 @@ ideas = {
 			}
 			visible = {
 				has_country_flag = HNN_PROC_victory
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = HNN_wu_fa_xian_dead
+					}
+				}
 			}
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea HNN_wu_fa_xian_eco"
@@ -1439,7 +1446,53 @@ ideas = {
 				totalist
 				eco_infantry_proponent
 			}
-		}	
+		}
+		HNN_xu_guang_da_eco = {#许光达
+			allowed = { original_tag = HNN }
+			picture = HNN_xu_guang_da_eco
+			cost = 100
+			available = {
+				has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+				NOT = {
+					has_country_flag = HNN_xu_guang_da_dead
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_xu_guang_da_eco"
+			}
+			cancel_if_invalid = no
+			traits = {
+				red_army_right
+				totalist
+				eco_tank_proponent
+			}
+		}
+		HNN_Xu_Si_You_eco = {#许世友
+			allowed = { original_tag = HNN }
+			picture = HNN_Xu_Si_You_eco
+			cost = 100
+			available = {
+				has_completed_focus = HNN_hong_jun_de_san_tou_tong_meng
+			}
+			visible = {
+				has_country_flag = HNN_PROC_victory
+				NOT = {
+					has_country_flag = HNN_Xu_Si_You_dead
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HNN_Xu_Si_You_eco"
+			}
+			cancel_if_invalid = no
+			traits = {
+				red_army_right
+				totalist
+				eco_heer_advocate
+			}
+		}
 
 	#外交部长
 		HNN_li_jiannong_for = {#李剑农

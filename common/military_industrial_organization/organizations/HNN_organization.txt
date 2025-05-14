@@ -357,11 +357,7 @@ HNN_faw_motors_organisation = {#一汽
 		}
 		if = {
 			limit = {
-				FROM = {
-					mio:HNN_faw_motors_organisation = {
-						has_mio_policy_active = HNN_mio_policy_expand_weapon_deals
-					}
-				}
+				HNN_has_amo_policy = yes		
 			}
 			add_to_temp_variable = {
 				var = HNN_faw_cic_trait_sum

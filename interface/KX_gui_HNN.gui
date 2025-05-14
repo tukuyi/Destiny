@@ -1,26 +1,26 @@
 guiTypes = {
-	containerWindowType = {
+	containerWindowType = {#三头同盟
 		name = "three_guis_decision_cat_gui"
 		position = { x = 0 y = 0 }
 		size = { width = 100% height = 200 }
 
 		iconType = {
 			name = "林彪"
-			position = { x= 305 y = 0 }
+			position = { x = 305 y = 0 }
 			spriteType = "GFX_HNN_LIN"
 
 			pdx_tooltip = "HNN_LIN_tooltip"
 		}
 		iconType = {
 			name = "贺龙"
-			position = { x= 175 y = 0 }
+			position = { x = 175 y = 0 }
 			spriteType = "GFX_HNN_HE"
 
 			pdx_tooltip = "HNN_HE_tooltip"
 		}
 		iconType = {
 			name = "叶剑英"
-			position = { x= 45 y = 0 }
+			position = { x = 45 y = 0 }
 			spriteType = "GFX_HNN_YE"
 
 			pdx_tooltip = "HNN_YE_tooltip"
@@ -34,7 +34,7 @@ guiTypes = {
 		# }
 	}
 
-	containerWindowType = {
+	containerWindowType = {#土地改革
 		name = "HNN_tu_di_gai_ge_gui_window"
 		position = { 
 			x = 2 
@@ -47,21 +47,21 @@ guiTypes = {
 
 		iconType = {
 			name = "HNN_agrarian_socialism_zero"
-			position = { x= 215 y = 30 }
+			position = { x = 215 y = 30 }
 			spriteType = "GFX_HNN_socdem_agrarianism_group"
 
 			pdx_tooltip = "HNN_agrarian_socialism_tooltip"
 		}
 		iconType = {
 			name = "HNN_agrarian_socialism_samll"
-			position = { x= 215 y = 30 }
+			position = { x = 215 y = 30 }
 			spriteType = "GFX_HNN_agrarian_socialism_group"
 
 			pdx_tooltip = "HNN_agrarian_socialism_tooltip"
 		}
 		iconType = {
 			name = "HNN_agrarian_socialism_big"
-			position = { x= 215 y = 30 }
+			position = { x = 215 y = 30 }
 			spriteType = "GFX_HNN_agrarian_socialism"
 
 			pdx_tooltip = "HNN_agrarian_socialism_tooltip"
@@ -76,5 +76,99 @@ guiTypes = {
 			maxHeight = 340
 			fixedsize = yes
 		}
+	}
+
+	containerWindowType = {#大清洗
+		name = "HNN_big_wish_social_window"
+		position = { 
+			x = 0 
+			y = 0 
+		}
+		size = { 
+			width = 100% 
+			height= 210 
+		}
+
+		iconType = {
+			name ="paranoia_main_bg"
+			position = { x = 144	y = -3 }
+			spriteType = "GFX_HNN_paranoia"
+		}
+
+		iconType = {
+			name ="HNN_XI_Zhong_Xun_dead"
+			spriteType = "GFX_HNN_XI_Zhong_Xun_dead"
+			position = { x=410	 y=90 }
+		}
+		iconType = {
+			name ="HNN_zhu_de_dead"
+			spriteType = "GFX_HNN_zhu_de_dead"
+			position = { x=445	 y=60 }
+		}
+		iconType = {
+			name ="HNN_chen_du_xiu_dead"
+			spriteType = "GFX_HNN_chen_du_xiu_dead"
+			position = { x=4	 y=80 }
+		}
+		iconType = {
+			name ="HNN_zhang_wen_tian_dead"
+			spriteType = "GFX_HNN_zhang_wen_tian_dead"
+			position = { x=135	 y=2 }
+		}
+		iconType = {
+			name ="HNN_wu_fa_xian_dead"
+			spriteType = "GFX_HNN_wu_fa_xian_dead"
+			position = { x=380	 y=7 }
+		}
+		iconType = {
+			name ="HNN_li_xian_nian_dead"
+			spriteType = "GFX_HNN_li_xian_nian_dead"
+			position = { x=45	 y=140 }
+		}
+		iconType = {
+			name ="HNN_huang_yong_shen_dead"
+			spriteType = "GFX_HNN_huang_yong_shen_dead"
+			position = { x=75	 y=68 }
+		}
+		iconType = {
+			name ="HNN_huang_ke_chen_dead"
+			spriteType = "GFX_HNN_huang_ke_chen_dead"
+			position = { x=100	 y=96 }
+		}
+		iconType = {
+			name ="HNN_xu_si_you_dead"
+			spriteType = "GFX_HNN_xu_si_you_dead"
+			position = { x=430	 y=140 }
+		}
+		iconType = {
+			name ="HNN_peng_zhen_dead"
+			spriteType = "GFX_HNN_peng_zhen_dead"
+			position = { x=355	 y=50 }
+		}
+		iconType = {
+			name ="HNN_xiang_ying_dead"
+			spriteType = "GFX_HNN_xiang_ying_dead"
+			position = { x=10	 y=10 }
+		}
+		iconType = {
+			name ="HNN_liao_han_sheng_dead"
+			spriteType = "GFX_HNN_liao_han_sheng_dead"
+			position = { x=305	 y=2 }
+		}
+		iconType = {
+			name ="HNN_xu_guang_da_dead"
+			spriteType = "GFX_HNN_xu_guang_da_dead"
+			position = { x=25	 y=105 }
+		}
+		iconType = {
+			name ="HNN_wang_dong_xing_dead"
+			spriteType = "GFX_HNN_wang_dong_xing_dead"
+			position = { x=30	 y=22 }
+		}
+		iconType = {
+			name ="HNN_teng_hai_qing_dead"
+			spriteType = "GFX_HNN_teng_hai_qing_dead"
+			position = { x=440	 y=3 }
+		}		
 	}
 }

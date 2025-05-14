@@ -47,5 +47,57 @@ scripted_gui = {
 			}
 		}
 	}
-}
 
+	HNN_big_wish_social_window = {
+		context_type = decision_category
+		window_name = "HNN_big_wish_social_window"
+
+		triggers = {
+			HNN_XI_Zhong_Xun_dead_visible = {
+				has_country_flag = HNN_Xi_Zhong_Xun_dead
+			}
+			HNN_zhu_de_dead_visible = {
+				has_country_flag = HNN_zhu_de_dead
+			}
+			HNN_chen_du_xiu_dead_visible = {
+				has_country_flag = HNN_chen_du_xiu_dead
+			}
+			HNN_zhang_wen_tian_dead_visible = {
+				has_country_flag = HNN_zhang_wen_tian_dead
+			}
+			HNN_wu_fa_xian_dead_visible = {
+				has_country_flag = HNN_wu_fa_xian_dead
+			}
+			HNN_li_xian_nian_dead_visible = {
+				has_country_flag = HNN_li_xian_nian_dead
+			}
+			HNN_huang_yong_shen_dead_visible = {
+				has_country_flag = HNN_huang_yong_shen_dead
+			}
+			HNN_huang_ke_chen_dead_visible = {
+				has_country_flag = HNN_huang_ke_chen_dead
+			}
+			HNN_xu_si_you_dead_visible = {
+				has_country_flag = HNN_xu_si_you_dead
+			}
+			HNN_peng_zhen_dead_visible = {
+				has_country_flag = HNN_peng_zhen_dead
+			}
+			HNN_xiang_ying_dead_visible = {
+				has_country_flag = HNN_xiang_ying_dead
+			}
+			HNN_liao_han_sheng_dead_visible = {
+				has_country_flag = HNN_liao_han_sheng_dead
+			}
+			HNN_xu_guang_da_dead_visible = {
+				has_country_flag = HNN_xu_guang_da_dead
+			}
+			HNN_wang_dong_xing_dead_visible = {
+				has_country_flag = HNN_wang_dong_xing_dead
+			}
+			HNN_teng_hai_qing_dead_visible = {
+				has_country_flag = HNN_teng_hai_qing_dead
+			}
+		}
+	}
+}

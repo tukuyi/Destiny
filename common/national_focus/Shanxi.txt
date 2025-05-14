@@ -1868,11 +1868,11 @@ focus_tree = {
 			}
 			else = {
 				if = {
-					limit = { mio:SHX_shanxi_automobile_company_concern = { is_mio_available = no } }
+					limit = { mio:CHN_transportation_industry_organisation = { is_mio_available = no } }
 					custom_effect_tooltip = available_mio_tt
-					show_mio_tooltip = SHX_shanxi_automobile_company_concern
+					show_mio_tooltip = CHN_transportation_industry_organisation
 				}
-				mio:SHX_shanxi_automobile_company_concern = {
+				mio:CHN_transportation_industry_organisation = {
 					set_mio_flag = CHN_mio_unlocked
 					add_mio_size = 1
 				}

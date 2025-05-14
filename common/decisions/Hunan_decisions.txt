@@ -411,6 +411,55 @@ political_actions = {
 			set_cosmetic_tag = HNN_ASIA
 		}
 	}
+	HNN_gao_gang_to_sov = {#成立苏联
+		icon = GFX_decision_category_red_start
+		allowed = { 
+			tag = HNN
+		}
+
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			has_country_leader = {
+				name = "高岗"
+				ruling_only = yes
+			}
+		}
+		available = {
+			OR = {
+				AND = {
+					owns_state = 195
+					owns_state = 219
+				}
+				RUS = {
+					OR ={
+						exists = no
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_to_sov"
+			set_cosmetic_tag = LEC_SOV
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = RUS
+							is_core_of = TRM
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
 }
 
 HNN_revolution_category = {#革命之火
@@ -4999,9 +5048,11 @@ HNN_big_clean_category = {#大清洗
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_kill_xu_si_you"
 			clr_country_flag = HNN_mang
-			country_event = { 
-				id = hunqingxi.1
-				days = 3
+			HNN_Xu_Si_You = { 
+				unit_leader_event = { 
+					id = hunqingxi.1
+					days = 3
+				} 
 			}
 			if = {
 				limit = { 
@@ -7468,44 +7519,6 @@ HNN_let_he_in = {#拉人入伙
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision HNN_dong_nan_ya_lian_he"
 			HNN_INC_build = yes
-		}
-	}
-	HNN_gao_gang_to_sov = {#成立苏联
-		icon = GFX_decision_category_red_start
-		allowed = { 
-			tag = HNN
-		}
-
-		cost = 0
-		fire_only_once = yes
-		ai_will_do = {
-			base = 0
-		}
-
-		visible = {
-			has_country_leader = {
-				name = "高岗"
-				ruling_only = yes
-			}
-		}
-		available = {
-			OR = {
-				AND = {
-					owns_state = 195
-					owns_state = 219
-				}
-				RUS = {
-					OR ={
-						exists = no
-						is_subject_of = ROOT
-					}
-				}
-			}
-		}
-		
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision HNN_gao_gang_to_sov"
-			set_cosmetic_tag = LEC_SOV
 		}
 	}
 }
