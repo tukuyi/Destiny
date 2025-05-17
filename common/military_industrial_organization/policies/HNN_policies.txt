@@ -1,5 +1,5 @@
 HNN_mio_policy_expand_weapon_deals = {
-	name = HNN_mio_policy_expand_mechanised_weapon_deals
+	name = HNN_mio_policy_expand_weapon_deals
 	icon = GFX_idea_SWE_hodgepodge_of_equipment
 	allowed = {
 		is_military_industrial_organization = HNN_faw_motors_organisation

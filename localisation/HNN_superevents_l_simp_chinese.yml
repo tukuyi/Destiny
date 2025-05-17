@@ -302,21 +302,6 @@
  MON_ilkhanate_four: "重建大汗国"
  MON_ilkhanate_four_desc:0 "和前人一样，我们也可以考虑在波斯建立一个附属国，他们可以更好地利用当地领土，减轻我们肩上繁重的行政负担。"
 
- CHN_anguojun_aligned: "所属：§a安国军§!"
- CHN_beiyang_aligned: "所属：§N北洋政府§!"
- CHN_geacps_aligned: "所属：§j共荣圈§!"
- CHN_federalist_aligned: "所属：§f联省派§!"
- CHN_left_kuomintang_aligned: "所属：§k国民党左派§!"
- CHN_right_kuomintang_aligned: "所属：§c国民党右派§!"
- CHN_non_aligned: "所属：中立"
- CHN_others_aligned: "所属：各种各样的其他主张"
- CHN_northern_zhili_aligned: "所属：§z北直系§!"
- CHN_restorationist_aligned: "所属：§q保皇党§!"
- CHN_southern_republican_aligned: "所属：§G南方共和派§!"
- CHN_southern_zhili_aligned: "所属：§m南直系§!"
- CHN_Syndicalists_aligned: "所属：§R工团党§!"
- CHN_germangangs_aligned: "所属：§g帝国公约§!"
-
  KR_diplomatic_row: "外交纠纷"
 
  TRIGGER_OWNS_ANY_STATE_OF: "拥有以下任意地区："

@@ -43,6 +43,7 @@ china_generate_chinese_theorists = {
 		}
 	}
 }
+
 purge_LEP_templates = {
 	if = {
 		limit = { has_template = "Qibing Xie" }

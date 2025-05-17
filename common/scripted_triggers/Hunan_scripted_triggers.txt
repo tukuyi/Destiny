@@ -36,3 +36,7 @@ HNN_has_amo_policy = {
 		}
 	}	
 }
+should_have_red_belt_medals_trigger = {
+	original_tag = HNN
+	has_country_flag = HNN_gong_tuan_victory_flag
+}

@@ -128,10 +128,6 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/YUN_Yan_15.png"
 	}
 	spriteType = {
-		name = "GFX_goal_YUN_she_ming_1"
-		texturefile = "gfx/interface/goals/YUN_she_ming_1.png"
-	}
-	spriteType = {
 		name = "GFX_goal_YUN_she_ming_3"
 		texturefile = "gfx/interface/goals/YUN_she_ming_3.png"
 	}

@@ -332,6 +332,14 @@ spriteTypes = {
 		texturefile = "gfx/event_news_pictures/HNN/HNN_zhu_de.png"
 	}
 	spriteType  = {
+		name = "GFX_report_event_HNN_peng_zhen"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_peng_zhen.png"
+	}
+	spriteType  = {
+		name = "GFX_report_event_HNN_chen_du_xiu"
+		texturefile = "gfx/event_news_pictures/HNN/HNN_chen_du_xiu.png"
+	}
+	spriteType  = {
 		name = "GFX_report_event_HNN_xi_zhong"
 		texturefile = "gfx/event_news_pictures/HNN/HNN_xi_zhong.png"
 	}

@@ -3919,6 +3919,9 @@ shared_focus = {
 	id = YUN_join_the_left_KMT_committee
 	icon = GFX_goal_LKMT_A_New_China
 	cost = 7.2
+	x = 26
+	y = 4
+
 	prerequisite = {
 		focus = YUN_Reform_KMT_Organization
 	}
@@ -3926,20 +3929,18 @@ shared_focus = {
 		focus = YUN_join_the_right_KMT_committee
 	}
 	available = {
+		has_government = social_democrat
+		is_subject = no
+		is_in_faction = no
 		NOT  = {
 			has_country_flag = YUN_bai_zhu_victory
 		}
 	}
+
 	ai_will_do = {
-		factor = 50
+		base = 50
 	}
-	available = {
-		has_government = social_democrat
-		is_subject = no
-		is_in_faction = no
-	}
-	x = 26
-	y = 4
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_join_the_left_KMT_committee"
 		if = {
@@ -3964,6 +3965,9 @@ shared_focus = {
 	id = YUN_join_the_right_KMT_committee
 	icon = GFX_goal_RKMT_A_New_China
 	cost = 7.2
+	x = 28
+	y = 4
+
 	prerequisite = {
 		focus = YUN_Reform_KMT_Organization
 	}
@@ -3971,23 +3975,22 @@ shared_focus = {
 		focus = YUN_join_the_left_KMT_committee
 	}
 	available = {
+		is_subject = no
+		is_in_faction = no		
 		NOT  = {
 			has_country_flag = YUN_bai_zhu_victory
 		}
-	}
-	available = {
 		has_country_leader = {
 			name = "朱培德"
 			ruling_only = yes
 		}
-		is_subject = no
-		is_in_faction = no
+		has_global_flag = GXC_civil_war_over
 	}
+
 	ai_will_do = {
-		factor = 50
+		base = 50
 	}
-	x = 28
-	y = 4
+
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus YUN_join_the_right_KMT_committee"
 		if = {

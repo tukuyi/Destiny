@@ -7,8 +7,23 @@
  red_army_right: "§a红军§!"
  nong_ming_right: "§R农民派§!"
 
+ CHN_anguojun_aligned: "所属：§a安国军§!"
+ CHN_beiyang_aligned: "所属：§N北洋政府§!"
+ CHN_geacps_aligned: "所属：§j共荣圈§!"
+ CHN_federalist_aligned: "所属：§f联省派§!"
+ CHN_left_kuomintang_aligned: "所属：§k国民党左派§!"
+ CHN_right_kuomintang_aligned: "所属：§c国民党右派§!"
+ CHN_non_aligned: "所属：中立"
+ CHN_others_aligned: "所属：各种各样的其他主张"
+ CHN_northern_zhili_aligned: "所属：§z北直系§!"
+ CHN_restorationist_aligned: "所属：§q保皇党§!"
+ CHN_southern_republican_aligned: "所属：§G南方共和派§!"
+ CHN_southern_zhili_aligned: "所属：§m南直系§!"
+ CHN_Syndicalists_aligned: "所属：§R工团党§!"
+ CHN_germangangs_aligned: "所属：§g帝国公约§!"
+
  LEC_bu_mu_zi_wei: "千古一帝"
- LEC_di_guo_zong_du:0 "帝国总督"
+ LEC_di_guo_zong_du: "帝国总督"
  LEC_ren_ming: "为人民而战"
  GXC_really_kaiser: "中华的凯撒\n§g其人身负普鲁士铁血传统与东方天命观之双重血脉，乃是万王之王，龙与鹰之主，一切的统治者，德意志的威廉三世，中华的威廉一世！§!"
  HNN_shen_pan_zhe: "裁决者"
@@ -57,6 +72,8 @@
  KR_republican_firebrand: "共和派鼓动者"
  KR_political_specialist: "政治专家"
  KR_conductor_of_the_banking_clans: "银行界红人"
+
+ PRC_red_start_level_one: "一等红星勋章"
 
  KR_air_chief_reform_2: "空军改革\n（大师）"
  KR_army_chief_organisational_1: "陆军组织\n（专家）"

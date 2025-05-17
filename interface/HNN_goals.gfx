@@ -4,6 +4,14 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/HNN_PROC_navy.png"
 	}
 	spriteType = {
+		name = "GFX_goal_HNN_wei_le_dou_zheng_er_tuan_jie"
+		texturefile = "gfx/interface/goals/HNN_wei_le_dou_zheng_er_tuan_jie.png"
+	}
+	spriteType = {
+		name = "GFX_goal_HNN_qian_jin_qian_Jin_qian_jin"
+		texturefile = "gfx/interface/goals/HNN_qian_jin_qian_Jin_qian_jin.png"
+	}
+	spriteType = {
 		name = "GFX_goal_HNN_Republican_naval_academy"
 		texturefile = "gfx/interface/goals/HNN_Republican_naval_academy.png"
 	}

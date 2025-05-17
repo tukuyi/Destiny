@@ -212,7 +212,7 @@ HNN_shu_chu_ge_min = {#输出革命
 }
 
 HNN_big_clean_category = {#大清洗
-	icon = GFX_nkvdcat
+	icon = GFX_decision_category_generic_purge
 	allowed = { original_tag = HNN }
 
 	visible = { 

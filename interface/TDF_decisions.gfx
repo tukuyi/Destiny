@@ -112,4 +112,16 @@ spriteTypes = {
 		name = "GFX_decision_category_GEA_decision"
 		texturefile = "gfx/interface/decisions/GEA_decision.png"
 	}
+
+	    spriteType = {
+		name = "GFX_medal_icon_PRC"
+		texturefile = "gfx/interface/medals/PRC_medal_strip.png"
+		noOfFrames = 1
+    }
+	
+	spriteType = {
+		name = "GFX_medal_icon_PRC_large"
+		texturefile = "gfx/interface/medals/PRC_medal_strip_large.png"
+		noOfFrames = 1
+    }
 }

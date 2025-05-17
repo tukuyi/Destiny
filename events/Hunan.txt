@@ -11095,13 +11095,14 @@ country_event = {#吴法宪案
 country_event = {#彭真案
 	id = hunqingxi.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunqingxi.3" }
+	picture = GFX_report_event_HNN_peng_zhen
 	title = hunqingxi.3.t
 	desc = hunqingxi.3.d
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #yes
+	option = {
 		name = hunqingxi.3.a
 		add_manpower = -1
 		add_stability = -0.01
@@ -11311,6 +11312,7 @@ country_event = {#朱德案
 country_event = {#陈独秀案
 	id = hunqingxi.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event hunqingxi.13" }
+	picture = GFX_report_event_HNN_chen_du_xiu
 	title = hunqingxi.13.t
 	desc = hunqingxi.13.d
 
